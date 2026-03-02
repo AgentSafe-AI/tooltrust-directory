@@ -1,0 +1,33 @@
+{
+  "tool_id": "mcp-server-github",
+  "version": "2.0.0",
+  "grade": "C",
+  "risk_score": 34,
+  "scan_date": "2026-03-01T20:00:00Z",
+  "scanner": "AgentSentry/1.0.0",
+  "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+  "findings": [
+    {
+      "id": "AS-005",
+      "severity": "High",
+      "title": "Overly Broad Token Scope",
+      "description": "The server requests a GitHub personal access token with repo scope (full read/write). Most use cases only require repo:read or specific sub-scopes, creating unnecessary privilege.",
+      "recommendation": "Document minimum required scopes and validate at startup that the provided token does not exceed them."
+    },
+    {
+      "id": "AS-011",
+      "severity": "Medium",
+      "title": "No Rate Limit Handling",
+      "description": "The tool does not gracefully handle GitHub API rate-limit responses (HTTP 429), which can cause agents to enter busy-retry loops.",
+      "recommendation": "Implement exponential backoff and surface rate-limit state to the calling agent."
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
+}
