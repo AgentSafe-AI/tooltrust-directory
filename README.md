@@ -19,8 +19,8 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | Tool | Version | Grade | Findings | Scan Date | Report |
 |------|---------|:-----:|:--------:|-----------|--------|
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | 0.6.2 | **A** | 1 Low | 2026-03-01 | [JSON](./data/reports/mcp-server-brave-search.json) |
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 1.2.0 | **B** | 1 Medium | 2026-03-01 | [JSON](./data/reports/mcp-server-filesystem.json) |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 2.0.0 | **B** | 1 High, 1 Low | 2026-03-01 | [JSON](./data/reports/mcp-server-github.json) |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 1.2.0 | **B** | 1 Medium | 2026-03-01 | [JSON](./data/reports/mcp-server-filesystem.json) |
 
 <!-- AGENTSENTRY:END -->
 
