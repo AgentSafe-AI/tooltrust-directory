@@ -34,6 +34,7 @@ type Report struct {
 	Vendor      string    `json:"vendor"`
 	Stars       int       `json:"stars"`
 	Language    string    `json:"language"`
+	Category    string    `json:"category"`
 	Description string    `json:"description"`
 	Findings    []Finding `json:"findings"`
 	Summary     struct {
@@ -165,24 +166,21 @@ func gradeRank(g string) int {
 
 func buildTable(reports []Report) string {
 	var sb strings.Builder
-	sb.WriteString("\n| Tool | Vendor | Lang | ⭐ | Version | Grade | Findings | Scan Date | Details |\n")
-	sb.WriteString("|------|--------|:----:|:--:|---------|:-----:|:--------:|:---------:|---------|\n")
+	sb.WriteString("\n| Tool | Category | Description | Grade |\n")
+	sb.WriteString("|------|----------|-------------|:-----:|\n")
 	for _, r := range reports {
-		lang := orDash(r.Language)
-		vendor := orDash(r.Vendor)
-		stars := "—"
-		if r.Stars > 0 {
-			stars = fmt.Sprintf("%d", r.Stars)
+		desc := r.Description
+		if desc == "" {
+			desc = "—"
+		} else if len(desc) > 80 {
+			desc = desc[:77] + "..."
 		}
+		cat := orDash(r.Category)
 		fmt.Fprintf(&sb,
-			"| [%s](%s) | %s | %s | %s | %s | **%s** | %s | %s | [detail](./docs/tools/%s.md) · [JSON](./data/reports/%s.json) |\n",
+			"| [%s](%s) | %s | %s | **[%s](./docs/tools/%s.md)** |\n",
 			r.ToolID, r.SourceURL,
-			vendor, lang, stars,
-			r.Version,
-			r.Grade,
-			summarise(r),
-			r.ScanDate.Format("2006-01-02"),
-			r.ToolID, r.ToolID,
+			cat, desc,
+			r.Grade, r.ToolID,
 		)
 	}
 	return sb.String()

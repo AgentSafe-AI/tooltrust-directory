@@ -69,6 +69,7 @@ type TrustReport struct {
 	ScanDate    time.Time   `json:"scan_date"`
 	Scanner     string      `json:"scanner"`
 	SourceURL   string      `json:"source_url"`
+	Category    string      `json:"category,omitempty"`
 	Vendor      string      `json:"vendor,omitempty"`
 	Stars       int         `json:"stars,omitempty"`
 	Language    string      `json:"language,omitempty"`
