@@ -39,6 +39,10 @@ type PendingScan struct {
 	RepoName     string    `json:"repo_name"`
 	Version      string    `json:"version"`
 	SourceURL    string    `json:"source_url"`
+	Vendor       string    `json:"vendor"`
+	Stars        int       `json:"stars"`
+	Language     string    `json:"language"`
+	Description  string    `json:"description"`
 	DiscoveredAt time.Time `json:"discovered_at"`
 }
 
@@ -172,6 +176,10 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 				RepoName:     repo.GetName(),
 				Version:      version,
 				SourceURL:    repo.GetHTMLURL(),
+				Vendor:       repo.GetOwner().GetLogin(),
+				Stars:        repo.GetStargazersCount(),
+				Language:     repo.GetLanguage(),
+				Description:  repo.GetDescription(),
 				DiscoveredAt: time.Now().UTC(),
 			})
 		}

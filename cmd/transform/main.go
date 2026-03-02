@@ -69,6 +69,10 @@ type TrustReport struct {
 	ScanDate    time.Time   `json:"scan_date"`
 	Scanner     string      `json:"scanner"`
 	SourceURL   string      `json:"source_url"`
+	Vendor      string      `json:"vendor,omitempty"`
+	Stars       int         `json:"stars,omitempty"`
+	Language    string      `json:"language,omitempty"`
+	Description string      `json:"description,omitempty"`
 	Findings    []TTFinding `json:"findings"`
 	Summary     TTSummary   `json:"summary"`
 	Methodology string      `json:"methodology"`
@@ -139,11 +143,15 @@ const (
 )
 
 func main() {
-	inputPath  := flag.String("input",   "", "path to AgentSentry JSON output (required)")
-	toolID     := flag.String("tool-id", "", "kebab-case tool_id, e.g. mcp-server-filesystem (required)")
-	version    := flag.String("version", "", "scanned semver, e.g. 1.2.0 (required)")
-	sourceURL  := flag.String("source",  "", "canonical source URL (required)")
-	outputPath := flag.String("output",  "", "destination path for ToolTrust report (required)")
+	inputPath   := flag.String("input",        "", "path to AgentSentry JSON output (required)")
+	toolID      := flag.String("tool-id",     "", "kebab-case tool_id (required)")
+	version     := flag.String("version",     "", "scanned semver (required)")
+	sourceURL   := flag.String("source",      "", "canonical source URL (required)")
+	outputPath  := flag.String("output",      "", "destination path for ToolTrust report (required)")
+	vendor      := flag.String("vendor",      "", "GitHub org/user that owns the repo")
+	stars       := flag.Int(  "stars",        0,  "GitHub star count at scan time")
+	language    := flag.String("language",    "", "primary programming language")
+	description := flag.String("description", "", "repository description")
 	flag.Parse()
 
 	if *inputPath == "" || *toolID == "" || *version == "" || *sourceURL == "" || *outputPath == "" {
@@ -161,7 +169,7 @@ func main() {
 		log.Fatalf("parse AgentSentry output: %v", err)
 	}
 
-	report := transform(as, *toolID, *version, *sourceURL)
+	report := transform(as, *toolID, *version, *sourceURL, *vendor, *stars, *language, *description)
 
 	out, err := json.MarshalIndent(report, "", "  ")
 	if err != nil {
@@ -179,7 +187,7 @@ func main() {
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as AgentSentryOutput, toolID, version, sourceURL string) TrustReport {
+func transform(as AgentSentryOutput, toolID, version, sourceURL, vendor string, stars int, language, description string) TrustReport {
 	var allFindings []TTFinding
 	maxScore := 0
 	summary := TTSummary{}
@@ -221,6 +229,10 @@ func transform(as AgentSentryOutput, toolID, version, sourceURL string) TrustRep
 		ScanDate:    scanDate,
 		Scanner:     scannerVersion,
 		SourceURL:   sourceURL,
+		Vendor:      vendor,
+		Stars:       stars,
+		Language:    language,
+		Description: description,
 		Findings:    allFindings,
 		Summary:     summary,
 		Methodology: methodologyURL,
