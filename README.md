@@ -1,108 +1,92 @@
-# ToolTrust Directory
+# 🛡️ ToolTrust Directory
 
-> **The trust layer for AI Agents.** Security-audited MCP servers and AI Skills with transparent A–F risk grading.
+**The Security Trust Layer for AI Agent Tools.**
 
-[![Scanned by AgentSentry](https://img.shields.io/badge/scanned%20by-AgentSentry-blue)](https://github.com/AgentSafe-AI/agentsentry)
-[![Reports](https://img.shields.io/badge/reports-3-brightgreen)](./data/reports/)
-[![Methodology](https://img.shields.io/badge/methodology-v1.0-lightgrey)](./docs/methodology.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+Independent, automated security audits for MCP servers, OpenAI Skills, and AI agent tools.
+Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agentsentry) — a deterministic static-analysis engine written in Go.
 
----
-
-## What is ToolTrust?
-
-In 2026, AI Agents invoke dozens of tools autonomously. A single compromised MCP server can exfiltrate files, leak credentials, or pivot across your infrastructure — without the user ever knowing.
-
-ToolTrust is the **security rating registry** for the MCP ecosystem. Every report is:
-
-- **Deterministic** — produced by [AgentSentry](https://github.com/AgentSafe-AI/agentsentry), a static-analysis engine written in Go.
-- **Auditable** — stored as plain JSON in `data/reports/`, with full Git history.
-- **Machine-readable** — your agent can `GET` any report directly from this repo.
-- **Standardised** — all reports conform to [`report.schema.json`](./report.schema.json).
+[![Grade A Tools](https://img.shields.io/badge/Grade%20A%20tools-1-brightgreen)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--01-blue)](./data/reports/)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](./LICENSE)
+[![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
 ---
 
-## Verified Tools
+## 📊 Security Registry
 
-| Tool | Version | Grade | Risk Score | Scan Date | Report |
-|------|---------|:-----:|:----------:|-----------|--------|
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 1.2.0 | **B** | 18 | 2026-03-01 | [↗](./data/reports/mcp-server-filesystem.json) |
-| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | 0.6.2 | **A** | 4 | 2026-03-01 | [↗](./data/reports/mcp-server-brave-search.json) |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 2.0.0 | **C** | 34 | 2026-03-01 | [↗](./data/reports/mcp-server-github.json) |
+<!-- AGENTSENTRY:BEGIN — Do not edit this section manually. Updated automatically by .github/workflows/update-registry.yml -->
 
-### Grade Reference
+| Tool | Version | Grade | Findings | Scan Date | Report |
+|------|---------|:-----:|:--------:|-----------|--------|
+| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | 0.6.2 | **A** | 1 Low | 2026-03-01 | [JSON](./data/reports/mcp-server-brave-search.json) |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 1.2.0 | **B** | 1 Medium | 2026-03-01 | [JSON](./data/reports/mcp-server-filesystem.json) |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 2.0.0 | **C** | 1 High, 1 Medium | 2026-03-01 | [JSON](./data/reports/mcp-server-github.json) |
 
-| Grade | Risk Score | Meaning |
-|-------|:----------:|---------|
-| **A** | 0 – 9 | Minimal risk. Safe for production agents. |
-| **B** | 10 – 24 | Low risk. Minor issues; review findings before deploying. |
-| **C** | 25 – 49 | Moderate risk. Remediation recommended. |
-| **D** | 50 – 74 | High risk. Sandboxed environments only. |
-| **F** | 75+ | Critical risk. Do not use in agentic pipelines. |
+<!-- AGENTSENTRY:END -->
 
 ---
 
-## Query a Report Programmatically
+## ⚖️ Grading System (A–F)
 
-```bash
-# Fetch the filesystem server report
-curl https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/data/reports/mcp-server-filesystem.json
-```
-
-From an AI Agent (MCP tool call example):
-
-```json
-{
-  "tool": "fetch",
-  "arguments": {
-    "url": "https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/data/reports/mcp-server-filesystem.json"
-  }
-}
-```
-
----
-
-## Repository Structure
-
-```
-tooltrust-directory/
-├── data/
-│   └── reports/          # One JSON report per audited tool
-├── docs/
-│   └── methodology.md    # Scoring formula & check categories
-├── .github/
-│   └── ISSUE_TEMPLATE/
-│       └── SCAN_REQUEST.md
-├── report.schema.json    # JSON Schema for all reports
-└── README.md
-```
-
----
-
-## Request a Scan
-
-Want a tool audited? [Open a Scan Request →](.github/ISSUE_TEMPLATE/SCAN_REQUEST.md)
-
----
-
-## Methodology
-
-Risk scores are calculated using:
+Risk scores are calculated using a weighted severity model:
 
 $$\text{RiskScore} = \sum_{i=1}^{n} \left( \text{SeverityWeight}_{i} \times \text{FindingCount}_{i} \right)$$
 
-Full specification: [docs/methodology.md](./docs/methodology.md)
+| Grade | Risk Score | Severity Weights Used | Meaning |
+|:-----:|:----------:|----------------------|---------|
+| **A** | 0 – 9 | Info (0) | Safe for production. No significant risks found. |
+| **B** | 10 – 24 | Low (2) | Low risk. Review findings before deploying. |
+| **C** | 25 – 49 | Medium (8) | Use with caution. Minor permission or scope overlaps. |
+| **D** | 50 – 74 | High (15) | High risk. Sandboxed environments only. |
+| **F** | 75+ | Critical (25) | **CRITICAL RISK.** Found active injection or unauthorized access. |
+
+Full methodology: [docs/methodology.md](./docs/methodology.md)
 
 ---
 
-## Contributing
+## 🔍 Scanner Catalog
 
-- **Submit a scan request:** open an issue with the `scan-request` template.
-- **Dispute a finding:** open an issue referencing the finding ID (e.g. `AS-002`).
-- **Integrate AgentSentry:** see the [AgentSentry repo](https://github.com/AgentSafe-AI/agentsentry) for the Go scanner.
+AgentSentry check IDs referenced in all reports:
+
+| ID | Category | Description |
+|----|----------|-------------|
+| AS-001 | Tool Poisoning | Detects hidden adversarial prompts embedded in tool descriptions |
+| AS-002 | Permission Surface | Detects path traversal and file-system escape vulnerabilities |
+| AS-003 | Scope Mismatch | Detects contradictions between tool names and actual API schemas |
+| AS-004 | Supply Chain | Checks for known CVEs in underlying dependencies |
+| AS-005 | Privilege Escalation | Verifies OAuth / token scopes are not broader than necessary |
+| AS-010 | Secret Handling | Identifies API keys or credentials at risk of leakage |
+| AS-011 | DoS Resilience | Detects missing rate-limit and retry handling |
+
+Full catalog: [docs/methodology.md#3-check-categories](./docs/methodology.md#3-check-categories)
 
 ---
 
-## License
+## 🤝 Contribute
 
-MIT © AgentSafe AI
+**Request a scan** — [open an issue](https://github.com/AgentSafe-AI/tooltrust-directory/issues/new?template=SCAN_REQUEST.md) with the tool's public URL and version.
+
+**Dispute a finding** — open an issue referencing the finding ID (e.g. `AS-002`).
+
+**Integrate AgentSentry** — see [docs/dev.md](./docs/dev.md) for the data pipeline and schema spec.
+
+---
+
+## ⚙️ Automation
+
+The registry table above is kept up to date by a GitHub Actions workflow:
+
+```
+.github/workflows/update-registry.yml   ← triggers on AgentSentry scan completion
+```
+
+When AgentSentry publishes a new report to `data/reports/`, the workflow:
+1. Validates the report against `report.schema.json`
+2. Re-generates the `AGENTSENTRY:BEGIN … END` block in this README
+3. Opens a PR (or commits directly to `main` if auto-merge is enabled)
+
+> Workflow not yet active — tracked in [#1](https://github.com/AgentSafe-AI/tooltrust-directory/issues/1).
+
+---
+
+*Reports are licensed [CC BY 4.0](./LICENSE). Scanner engine © AgentSafe AI.*
