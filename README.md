@@ -16,11 +16,11 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 
 <!-- AGENTSENTRY:BEGIN — Do not edit this section manually. Updated automatically by .github/workflows/update-registry.yml -->
 
-| Tool | Vendor | Lang | ⭐ | Version | Grade | Findings | Scan Date | Details |
-|------|--------|:----:|:--:|---------|:-----:|:--------:|:---------:|---------|
-| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | modelcontextprotocol | TypeScript | 12400 | 0.6.2 | **A** | 1 Low | 2026-03-01 | [detail](./docs/tools/mcp-server-brave-search.md) · [JSON](./data/reports/mcp-server-brave-search.json) |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | modelcontextprotocol | TypeScript | 12400 | 2.0.0 | **B** | 1 High, 1 Low | 2026-03-01 | [detail](./docs/tools/mcp-server-github.md) · [JSON](./data/reports/mcp-server-github.json) |
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | modelcontextprotocol | TypeScript | 12400 | 1.2.0 | **B** | 1 Medium | 2026-03-01 | [detail](./docs/tools/mcp-server-filesystem.md) · [JSON](./data/reports/mcp-server-filesystem.json) |
+| Tool | Category | Description | Grade |
+|------|----------|-------------|:-----:|
+| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | Web Search | MCP server integrating Brave Search API for web and local search capabilities. | **[A](./docs/tools/mcp-server-brave-search.md)** |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Developer Tools | MCP server for GitHub API integration — repository management, file operati... | **[B](./docs/tools/mcp-server-github.md)** |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Developer Tools | Reference MCP server providing safe, configurable access to the local filesys... | **[B](./docs/tools/mcp-server-filesystem.md)** |
 
 <!-- AGENTSENTRY:END -->
 
