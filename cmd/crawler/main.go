@@ -42,7 +42,9 @@ type PendingScan struct {
 	Vendor       string    `json:"vendor"`
 	Stars        int       `json:"stars"`
 	Language     string    `json:"language"`
+	Category     string    `json:"category"`
 	Description  string    `json:"description"`
+	License      string    `json:"license"`
 	DiscoveredAt time.Time `json:"discovered_at"`
 }
 
@@ -136,7 +138,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		opts := &github.SearchOptions{
 			Sort:  "stars",
 			Order: "desc",
-			ListOptions: github.ListOptions{PerPage: 30},
+			ListOptions: github.ListOptions{PerPage: 50},
 		}
 		result, resp, err := client.Search.Repositories(ctx, q, opts)
 		if err != nil {
@@ -170,6 +172,10 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 				continue
 			}
 
+			license := ""
+			if repo.GetLicense() != nil {
+				license = repo.GetLicense().GetSPDXID()
+			}
 			pending = append(pending, PendingScan{
 				ToolID:       toolID,
 				RepoOwner:    repo.GetOwner().GetLogin(),
@@ -179,7 +185,9 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 				Vendor:       repo.GetOwner().GetLogin(),
 				Stars:        repo.GetStargazersCount(),
 				Language:     repo.GetLanguage(),
+				Category:     languageToCategory(repo.GetLanguage()),
 				Description:  repo.GetDescription(),
+				License:      license,
 				DiscoveredAt: time.Now().UTC(),
 			})
 		}
@@ -224,6 +232,21 @@ func writePendingScans(path string, scans []PendingScan) error {
 		return err
 	}
 	return os.WriteFile(path, data, 0o644)
+}
+
+// languageToCategory provides a best-effort category from the primary language.
+// This is overridden by mcpmarket.com data when available.
+func languageToCategory(lang string) string {
+	switch lang {
+	case "TypeScript", "JavaScript":
+		return "Developer Tools"
+	case "Python":
+		return "Developer Tools"
+	case "Go":
+		return "Developer Tools"
+	default:
+		return "Other"
+	}
 }
 
 func envOr(key, fallback string) string {

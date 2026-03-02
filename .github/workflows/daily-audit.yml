@@ -115,17 +115,25 @@ jobs:
           }
 
           for i in $(seq 0 $((COUNT - 1))); do
-            TOOL_ID=$(jq -r ".[$i].tool_id"    "$PENDING")
-            VERSION=$(jq -r ".[$i].version"    "$PENDING")
-            OWNER=$(jq  -r ".[$i].repo_owner"  "$PENDING")
-            REPO=$(jq   -r ".[$i].repo_name"   "$PENDING")
-            SOURCE=$(jq -r ".[$i].source_url"  "$PENDING")
+            TOOL_ID=$(jq  -r ".[$i].tool_id"     "$PENDING")
+            VERSION=$(jq  -r ".[$i].version"     "$PENDING")
+            OWNER=$(jq    -r ".[$i].repo_owner"  "$PENDING")
+            REPO=$(jq     -r ".[$i].repo_name"   "$PENDING")
+            SOURCE=$(jq   -r ".[$i].source_url"  "$PENDING")
+            VENDOR=$(jq   -r ".[$i].vendor"      "$PENDING")
+            STARS=$(jq    -r ".[$i].stars"       "$PENDING")
+            LANGUAGE=$(jq -r ".[$i].language"    "$PENDING")
+            CATEGORY=$(jq -r ".[$i].category"   "$PENDING")
+            LICENSE=$(jq  -r ".[$i].license"     "$PENDING")
+            DESC=$(jq     -r ".[$i].description" "$PENDING")
             OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
             CLONE_DIR="/tmp/${TOOL_ID}"
             RAW_OUT="/tmp/${TOOL_ID}-agentsentry.json"
+            OSV_OUT="/tmp/${TOOL_ID}-osv.json"
 
             echo "════════════════════════════════════════"
-            echo "Tool : $TOOL_ID @ $VERSION  ($OWNER/$REPO)"
+            echo "Tool    : $TOOL_ID @ $VERSION  ($OWNER/$REPO)"
+            echo "Vendor  : $VENDOR  ⭐ $STARS  License: $LICENSE"
 
             # Shallow-clone at release tag, fall back to HEAD
             git clone --depth 1 --branch "v${VERSION}" \
@@ -134,35 +142,54 @@ jobs:
               "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
             { echo "SKIP: cannot clone $OWNER/$REPO"; continue; }
 
-            # Find MCP tool-definition file
+            # ── AS-004: OSV supply-chain CVE scan ─────────────────────────────
+            go run ./cmd/analyze --dir "$CLONE_DIR" --output "$OSV_OUT" || \
+              echo "[]" > "$OSV_OUT"
+            echo "AS-004  : $(jq 'length' "$OSV_OUT") CVE finding(s)"
+
+            # ── AgentSentry: MCP tool-definition scan ─────────────────────────
             TOOL_DEF=""
-            for candidate in tools.json mcp.json .mcp/tools.json src/tools.json; do
+            for candidate in \
+              tools.json mcp.json \
+              testdata/tools.json \
+              .mcp/tools.json \
+              src/tools.json \
+              src/testdata/tools.json \
+              test/tools.json; do
               [ -f "$CLONE_DIR/$candidate" ] && TOOL_DEF="$CLONE_DIR/$candidate" && break
             done
 
             if [ -z "$TOOL_DEF" ]; then
-              echo "SKIP: no tool-definition file found in $OWNER/$REPO"
-              rm -rf "$CLONE_DIR"; continue
+              echo "INFO    : no tools.json — AS-001/002/003 skipped (OSV-only report)"
+              echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
+            else
+              echo "Def     : $TOOL_DEF"
+              if ! run_agentsentry "$TOOL_DEF" "$RAW_OUT"; then
+                echo "WARN: AgentSentry scan failed — using OSV-only report"
+                echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
+              fi
             fi
-            echo "Def  : $TOOL_DEF"
 
-            if ! run_agentsentry "$TOOL_DEF" "$RAW_OUT"; then
-              echo "SKIP: AgentSentry scan failed for $TOOL_ID"
-              rm -rf "$CLONE_DIR"; continue
-            fi
-
+            # ── Transform: merge AgentSentry + OSV → ToolTrust report ─────────
             if ! go run ./cmd/transform \
-              --input   "$RAW_OUT"  \
-              --tool-id "$TOOL_ID"  \
-              --version "$VERSION"  \
-              --source  "$SOURCE"   \
-              --output  "$OUT"; then
+              --input        "$RAW_OUT"  \
+              --tool-id      "$TOOL_ID"  \
+              --version      "$VERSION"  \
+              --source       "$SOURCE"   \
+              --vendor       "$VENDOR"   \
+              --stars        "$STARS"    \
+              --license      "$LICENSE"  \
+              --language     "$LANGUAGE" \
+              --category     "$CATEGORY" \
+              --description  "$DESC"     \
+              --osv-findings "$OSV_OUT"  \
+              --output       "$OUT"; then
               echo "SKIP: transform failed for $TOOL_ID"
             else
-              echo "OK   : $OUT"
+              echo "OK      : $OUT"
             fi
 
-            rm -rf "$CLONE_DIR" "$RAW_OUT"
+            rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
           done
 
       - name: Upload scan results

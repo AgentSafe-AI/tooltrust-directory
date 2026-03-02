@@ -72,6 +72,7 @@ type TrustReport struct {
 	Category    string      `json:"category,omitempty"`
 	Vendor      string      `json:"vendor,omitempty"`
 	Stars       int         `json:"stars,omitempty"`
+	License     string      `json:"license,omitempty"`
 	Language    string      `json:"language,omitempty"`
 	Description string      `json:"description,omitempty"`
 	Findings    []TTFinding `json:"findings"`
@@ -144,15 +145,18 @@ const (
 )
 
 func main() {
-	inputPath   := flag.String("input",        "", "path to AgentSentry JSON output (required)")
-	toolID      := flag.String("tool-id",     "", "kebab-case tool_id (required)")
-	version     := flag.String("version",     "", "scanned semver (required)")
-	sourceURL   := flag.String("source",      "", "canonical source URL (required)")
-	outputPath  := flag.String("output",      "", "destination path for ToolTrust report (required)")
-	vendor      := flag.String("vendor",      "", "GitHub org/user that owns the repo")
-	stars       := flag.Int(  "stars",        0,  "GitHub star count at scan time")
-	language    := flag.String("language",    "", "primary programming language")
-	description := flag.String("description", "", "repository description")
+	inputPath   := flag.String("input",        "",  "path to AgentSentry JSON output (required)")
+	toolID      := flag.String("tool-id",     "",  "kebab-case tool_id (required)")
+	version     := flag.String("version",     "",  "scanned semver (required)")
+	sourceURL   := flag.String("source",      "",  "canonical source URL (required)")
+	outputPath  := flag.String("output",      "",  "destination path for ToolTrust report (required)")
+	vendor      := flag.String("vendor",      "",  "GitHub org/user that owns the repo")
+	stars       := flag.Int(  "stars",        0,   "GitHub star count at scan time")
+	license     := flag.String("license",     "",  "SPDX license identifier, e.g. MIT")
+	language    := flag.String("language",    "",  "primary programming language")
+	category    := flag.String("category",   "",  "functional category, e.g. Developer Tools")
+	description := flag.String("description", "",  "repository description")
+	osvFindings := flag.String("osv-findings","",  "path to AS-004 OSV findings JSON from cmd/analyze")
 	flag.Parse()
 
 	if *inputPath == "" || *toolID == "" || *version == "" || *sourceURL == "" || *outputPath == "" {
@@ -170,7 +174,23 @@ func main() {
 		log.Fatalf("parse AgentSentry output: %v", err)
 	}
 
-	report := transform(as, *toolID, *version, *sourceURL, *vendor, *stars, *language, *description)
+	// Load optional AS-004 OSV findings from cmd/analyze
+	var extraFindings []TTFinding
+	if *osvFindings != "" {
+		raw2, err := os.ReadFile(*osvFindings)
+		if err != nil {
+			log.Printf("warning: cannot read osv-findings %s: %v", *osvFindings, err)
+		} else {
+			// pkg/analyzer.Finding matches TTFinding shape exactly
+			if err := json.Unmarshal(raw2, &extraFindings); err != nil {
+				log.Printf("warning: parse osv-findings: %v", err)
+				extraFindings = nil
+			}
+		}
+	}
+
+	report := transform(as, extraFindings, *toolID, *version, *sourceURL,
+		*vendor, *stars, *license, *language, *category, *description)
 
 	out, err := json.MarshalIndent(report, "", "  ")
 	if err != nil {
@@ -188,7 +208,7 @@ func main() {
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as AgentSentryOutput, toolID, version, sourceURL, vendor string, stars int, language, description string) TrustReport {
+func transform(as AgentSentryOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description string) TrustReport {
 	var allFindings []TTFinding
 	maxScore := 0
 	summary := TTSummary{}
@@ -222,6 +242,25 @@ func transform(as AgentSentryOutput, toolID, version, sourceURL, vendor string, 
 		}
 	}
 
+	// Merge AS-004 OSV findings and recalculate score
+	for _, f := range extra {
+		allFindings = append(allFindings, f)
+		w := severityWeight(f.Severity)
+		maxScore += w
+		switch strings.ToLower(f.Severity) {
+		case "critical":
+			summary.Critical++
+		case "high":
+			summary.High++
+		case "medium":
+			summary.Medium++
+		case "low":
+			summary.Low++
+		default:
+			summary.Info++
+		}
+	}
+
 	return TrustReport{
 		ToolID:      toolID,
 		Version:     version,
@@ -230,8 +269,10 @@ func transform(as AgentSentryOutput, toolID, version, sourceURL, vendor string, 
 		ScanDate:    scanDate,
 		Scanner:     scannerVersion,
 		SourceURL:   sourceURL,
+		Category:    category,
 		Vendor:      vendor,
 		Stars:       stars,
+		License:     license,
 		Language:    language,
 		Description: description,
 		Findings:    allFindings,
@@ -286,6 +327,22 @@ func scoreToGrade(score int) string {
 		return "D"
 	default:
 		return "F"
+	}
+}
+
+// severityWeight maps severity labels to AS-XXX scoring weights.
+func severityWeight(sev string) int {
+	switch strings.ToLower(sev) {
+	case "critical":
+		return 25
+	case "high":
+		return 15
+	case "medium":
+		return 8
+	case "low":
+		return 2
+	default:
+		return 0
 	}
 }
 

@@ -33,6 +33,7 @@ type Report struct {
 	SourceURL   string    `json:"source_url"`
 	Vendor      string    `json:"vendor"`
 	Stars       int       `json:"stars"`
+	License     string    `json:"license"`
 	Language    string    `json:"language"`
 	Category    string    `json:"category"`
 	Description string    `json:"description"`
@@ -166,24 +167,41 @@ func gradeRank(g string) int {
 
 func buildTable(reports []Report) string {
 	var sb strings.Builder
-	sb.WriteString("\n| Tool | Category | Description | Grade |\n")
-	sb.WriteString("|------|----------|-------------|:-----:|\n")
+	sb.WriteString("\n| Tool | Category | Description | Grade | Key Findings |\n")
+	sb.WriteString("|------|----------|-------------|:-----:|:------------:|\n")
 	for _, r := range reports {
 		desc := r.Description
 		if desc == "" {
 			desc = "—"
-		} else if len(desc) > 80 {
-			desc = desc[:77] + "..."
+		} else if len(desc) > 72 {
+			desc = desc[:69] + "..."
 		}
-		cat := orDash(r.Category)
 		fmt.Fprintf(&sb,
-			"| [%s](%s) | %s | %s | **[%s](./docs/tools/%s.md)** |\n",
+			"| [%s](%s) | %s | %s | **[%s](./docs/tools/%s.md)** | %s |\n",
 			r.ToolID, r.SourceURL,
-			cat, desc,
+			orDash(r.Category), desc,
 			r.Grade, r.ToolID,
+			keyFindings(r),
 		)
 	}
 	return sb.String()
+}
+
+// keyFindings returns a compact comma-separated list of unique finding rule IDs,
+// or "None" when the tool is clean.
+func keyFindings(r Report) string {
+	seen := make(map[string]bool)
+	var ids []string
+	for _, f := range r.Findings {
+		if !seen[f.ID] {
+			seen[f.ID] = true
+			ids = append(ids, "`"+f.ID+"`")
+		}
+	}
+	if len(ids) == 0 {
+		return "None ✅"
+	}
+	return strings.Join(ids, ", ")
 }
 
 // buildDetailPage generates a Markdown detail page for a single tool, rich
