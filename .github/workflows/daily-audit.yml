@@ -95,10 +95,11 @@ jobs:
       - name: Build AgentSentry from source
         run: |
           git clone --depth 1 https://github.com/AgentSafe-AI/agentsentry /tmp/agentsentry
-          # Discover the CLI entry-point (cmd/agentsentry or cmd/scan, etc.)
-          ENTRY=$(find /tmp/agentsentry/cmd -maxdepth 1 -mindepth 1 -type d | head -1)
-          echo "Building entry-point: $ENTRY"
-          go build -o /usr/local/bin/agentsentry "$ENTRY"
+          # Must cd into the cloned repo so go build resolves within its own module
+          cd /tmp/agentsentry
+          ENTRY=$(find cmd -maxdepth 1 -mindepth 1 -type d | head -1)
+          echo "Building entry-point: ./$ENTRY"
+          go build -o /usr/local/bin/agentsentry "./$ENTRY"
           agentsentry --version
 
       - name: Scan each pending tool
