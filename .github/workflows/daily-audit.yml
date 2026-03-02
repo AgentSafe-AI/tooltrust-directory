@@ -89,53 +89,28 @@ jobs:
           path: data/
 
       # ── Install AgentSentry ──────────────────────────────────────────────────
-      # Strategy:
-      #   1. Try downloading the pre-built binary from the latest GitHub release.
-      #   2. Verify the download is an ELF binary (not a 404 HTML page).
-      #   3. Fall back to the official Docker image if the binary is unavailable.
-      #
-      # Binary URL: https://github.com/AgentSafe-AI/agentsentry/releases/latest
-      # Docker:     ghcr.io/agentsafe-ai/agentsentry:latest
-      - name: Install AgentSentry
+      # Build from source — the repo is public and Go is already available.
+      # Pre-built binaries and the GHCR image are not yet publicly distributed.
+      # https://github.com/AgentSafe-AI/agentsentry
+      - name: Build AgentSentry from source
         run: |
-          OS=$(uname -s | tr '[:upper:]' '[:lower:]')
-          ARCH=$(uname -m | sed 's/x86_64/amd64/')
-          BINARY_URL="https://github.com/AgentSafe-AI/agentsentry/releases/latest/download/agentsentry_${OS}_${ARCH}"
-
-          echo "Attempting binary install from: $BINARY_URL"
-          HTTP_STATUS=$(curl -sL --write-out "%{http_code}" "$BINARY_URL" \
-            -o /usr/local/bin/agentsentry)
-
-          if [ "$HTTP_STATUS" = "200" ] && file /usr/local/bin/agentsentry | grep -q 'ELF'; then
-            chmod +x /usr/local/bin/agentsentry
-            echo "Binary installed OK."
-            agentsentry --version
-            echo "AGENTSENTRY_MODE=binary" >> "$GITHUB_ENV"
-          else
-            echo "Binary unavailable (HTTP $HTTP_STATUS) or not an ELF — falling back to Docker."
-            rm -f /usr/local/bin/agentsentry
-            docker pull ghcr.io/agentsafe-ai/agentsentry:latest
-            echo "AGENTSENTRY_MODE=docker" >> "$GITHUB_ENV"
-          fi
+          git clone --depth 1 https://github.com/AgentSafe-AI/agentsentry /tmp/agentsentry
+          # Discover the CLI entry-point (cmd/agentsentry or cmd/scan, etc.)
+          ENTRY=$(find /tmp/agentsentry/cmd -maxdepth 1 -mindepth 1 -type d | head -1)
+          echo "Building entry-point: $ENTRY"
+          go build -o /usr/local/bin/agentsentry "$ENTRY"
+          agentsentry --version
 
       - name: Scan each pending tool
         run: |
           PENDING="${{ env.PENDING_SCANS_PATH }}"
           COUNT=$(jq 'length' "$PENDING")
-          echo "Scanning $COUNT tool(s) via $AGENTSENTRY_MODE…"
+          echo "Scanning $COUNT tool(s)…"
           mkdir -p "${{ env.REPORTS_DIR }}"
 
           run_agentsentry() {
-            local INPUT="$1"
-            local OUTPUT="$2"
-            if [ "$AGENTSENTRY_MODE" = "binary" ]; then
-              agentsentry scan --protocol mcp --input "$INPUT" > "$OUTPUT"
-            else
-              docker run --rm \
-                -v "$(realpath "$INPUT"):/tools.json:ro" \
-                ghcr.io/agentsafe-ai/agentsentry:latest \
-                scan --protocol mcp --input /tools.json > "$OUTPUT"
-            fi
+            local INPUT="$1" OUTPUT="$2"
+            agentsentry scan --protocol mcp --input "$INPUT" > "$OUTPUT"
           }
 
           for i in $(seq 0 $((COUNT - 1))); do
