@@ -16,11 +16,11 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 
 <!-- AGENTSENTRY:BEGIN — Do not edit this section manually. Updated automatically by .github/workflows/update-registry.yml -->
 
-| Tool | Category | Description | Grade |
-|------|----------|-------------|:-----:|
-| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | Web Search | MCP server integrating Brave Search API for web and local search capabilities. | **[A](./docs/tools/mcp-server-brave-search.md)** |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Developer Tools | MCP server for GitHub API integration — repository management, file operati... | **[B](./docs/tools/mcp-server-github.md)** |
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Developer Tools | Reference MCP server providing safe, configurable access to the local filesys... | **[B](./docs/tools/mcp-server-filesystem.md)** |
+| Tool | Category | Description | Grade | Key Findings |
+|------|----------|-------------|:-----:|:------------:|
+| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | Web Search | MCP server integrating Brave Search API for web and local search capa... | **[A](./docs/tools/mcp-server-brave-search.md)** | `AS-010` |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Developer Tools | MCP server for GitHub API integration — repository management, file... | **[B](./docs/tools/mcp-server-github.md)** | `AS-005`, `AS-011` |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Developer Tools | Reference MCP server providing safe, configurable access to the local... | **[B](./docs/tools/mcp-server-filesystem.md)** | `AS-002` |
 
 <!-- AGENTSENTRY:END -->
 
