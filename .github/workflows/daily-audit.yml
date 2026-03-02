@@ -75,10 +75,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # cache: false — avoids tar/race conflict with discover job's cache upload.
+      # The scan job reads Go source but never writes a new cache.
       - uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
-          cache: true
+          cache: false
 
       - name: Download pending-scans artifact
         uses: actions/download-artifact@v4
@@ -86,88 +88,102 @@ jobs:
           name: pending-scans
           path: data/
 
-      # Install AgentSentry from the public release — no token required.
-      # Binary naming: agentsentry_linux_amd64, agentsentry_darwin_arm64, etc.
-      # https://github.com/AgentSafe-AI/agentsentry/releases
+      # ── Install AgentSentry ──────────────────────────────────────────────────
+      # Strategy:
+      #   1. Try downloading the pre-built binary from the latest GitHub release.
+      #   2. Verify the download is an ELF binary (not a 404 HTML page).
+      #   3. Fall back to the official Docker image if the binary is unavailable.
+      #
+      # Binary URL: https://github.com/AgentSafe-AI/agentsentry/releases/latest
+      # Docker:     ghcr.io/agentsafe-ai/agentsentry:latest
       - name: Install AgentSentry
         run: |
           OS=$(uname -s | tr '[:upper:]' '[:lower:]')
           ARCH=$(uname -m | sed 's/x86_64/amd64/')
-          URL="https://github.com/AgentSafe-AI/agentsentry/releases/latest/download/agentsentry_${OS}_${ARCH}"
-          echo "Downloading AgentSentry from $URL"
-          curl -sL "$URL" -o /usr/local/bin/agentsentry
-          chmod +x /usr/local/bin/agentsentry
-          agentsentry --version
+          BINARY_URL="https://github.com/AgentSafe-AI/agentsentry/releases/latest/download/agentsentry_${OS}_${ARCH}"
+
+          echo "Attempting binary install from: $BINARY_URL"
+          HTTP_STATUS=$(curl -sL --write-out "%{http_code}" "$BINARY_URL" \
+            -o /usr/local/bin/agentsentry)
+
+          if [ "$HTTP_STATUS" = "200" ] && file /usr/local/bin/agentsentry | grep -q 'ELF'; then
+            chmod +x /usr/local/bin/agentsentry
+            echo "Binary installed OK."
+            agentsentry --version
+            echo "AGENTSENTRY_MODE=binary" >> "$GITHUB_ENV"
+          else
+            echo "Binary unavailable (HTTP $HTTP_STATUS) or not an ELF — falling back to Docker."
+            rm -f /usr/local/bin/agentsentry
+            docker pull ghcr.io/agentsafe-ai/agentsentry:latest
+            echo "AGENTSENTRY_MODE=docker" >> "$GITHUB_ENV"
+          fi
 
       - name: Scan each pending tool
         run: |
           PENDING="${{ env.PENDING_SCANS_PATH }}"
           COUNT=$(jq 'length' "$PENDING")
-          echo "Scanning $COUNT tool(s)…"
+          echo "Scanning $COUNT tool(s) via $AGENTSENTRY_MODE…"
+          mkdir -p "${{ env.REPORTS_DIR }}"
+
+          run_agentsentry() {
+            local INPUT="$1"
+            local OUTPUT="$2"
+            if [ "$AGENTSENTRY_MODE" = "binary" ]; then
+              agentsentry scan --protocol mcp --input "$INPUT" > "$OUTPUT"
+            else
+              docker run --rm \
+                -v "$(realpath "$INPUT"):/tools.json:ro" \
+                ghcr.io/agentsafe-ai/agentsentry:latest \
+                scan --protocol mcp --input /tools.json > "$OUTPUT"
+            fi
+          }
 
           for i in $(seq 0 $((COUNT - 1))); do
-            TOOL_ID=$(jq  -r ".[$i].tool_id"    "$PENDING")
-            VERSION=$(jq  -r ".[$i].version"    "$PENDING")
-            OWNER=$(jq    -r ".[$i].repo_owner" "$PENDING")
-            REPO=$(jq     -r ".[$i].repo_name"  "$PENDING")
-            SOURCE=$(jq   -r ".[$i].source_url" "$PENDING")
+            TOOL_ID=$(jq -r ".[$i].tool_id"    "$PENDING")
+            VERSION=$(jq -r ".[$i].version"    "$PENDING")
+            OWNER=$(jq  -r ".[$i].repo_owner"  "$PENDING")
+            REPO=$(jq   -r ".[$i].repo_name"   "$PENDING")
+            SOURCE=$(jq -r ".[$i].source_url"  "$PENDING")
             OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
             CLONE_DIR="/tmp/${TOOL_ID}"
             RAW_OUT="/tmp/${TOOL_ID}-agentsentry.json"
 
             echo "════════════════════════════════════════"
-            echo "Tool    : $TOOL_ID @ $VERSION"
-            echo "Repo    : $OWNER/$REPO"
+            echo "Tool : $TOOL_ID @ $VERSION  ($OWNER/$REPO)"
 
-            # Shallow-clone at the exact release tag; fall back to HEAD
+            # Shallow-clone at release tag, fall back to HEAD
             git clone --depth 1 --branch "v${VERSION}" \
               "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
             git clone --depth 1 \
               "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
-            { echo "WARNING: cannot clone $OWNER/$REPO — skipping"; continue; }
+            { echo "SKIP: cannot clone $OWNER/$REPO"; continue; }
 
-            # Locate the MCP tool-definition file
+            # Find MCP tool-definition file
             TOOL_DEF=""
             for candidate in tools.json mcp.json .mcp/tools.json src/tools.json; do
-              if [ -f "$CLONE_DIR/$candidate" ]; then
-                TOOL_DEF="$CLONE_DIR/$candidate"
-                echo "Tool def: $TOOL_DEF"
-                break
-              fi
+              [ -f "$CLONE_DIR/$candidate" ] && TOOL_DEF="$CLONE_DIR/$candidate" && break
             done
 
             if [ -z "$TOOL_DEF" ]; then
-              echo "WARNING: no tool-definition file found in $OWNER/$REPO — skipping"
-              rm -rf "$CLONE_DIR"
-              continue
+              echo "SKIP: no tool-definition file found in $OWNER/$REPO"
+              rm -rf "$CLONE_DIR"; continue
+            fi
+            echo "Def  : $TOOL_DEF"
+
+            if ! run_agentsentry "$TOOL_DEF" "$RAW_OUT"; then
+              echo "SKIP: AgentSentry scan failed for $TOOL_ID"
+              rm -rf "$CLONE_DIR"; continue
             fi
 
-            # Run AgentSentry
-            # Docs: agentsentry scan --protocol mcp --input <tools.json>
-            # https://github.com/AgentSafe-AI/agentsentry#quick-integration
-            agentsentry scan \
-              --protocol mcp \
-              --input    "$TOOL_DEF" \
-              > "$RAW_OUT"
-
-            if [ $? -ne 0 ]; then
-              echo "WARNING: AgentSentry scan failed for $TOOL_ID — skipping"
-              rm -rf "$CLONE_DIR"
-              continue
-            fi
-
-            # Transform AgentSentry output → ToolTrust report schema
-            go run ./cmd/transform \
+            if ! go run ./cmd/transform \
               --input   "$RAW_OUT"  \
               --tool-id "$TOOL_ID"  \
               --version "$VERSION"  \
               --source  "$SOURCE"   \
-              --output  "$OUT"
-
-            if [ $? -ne 0 ]; then
-              echo "WARNING: transform failed for $TOOL_ID — skipping"
+              --output  "$OUT"; then
+              echo "SKIP: transform failed for $TOOL_ID"
             else
-              echo "Report  : $OUT"
+              echo "OK   : $OUT"
             fi
 
             rm -rf "$CLONE_DIR" "$RAW_OUT"
