@@ -2,16 +2,15 @@ name: Daily Security Audit
 
 on:
   schedule:
-    # Runs every day at 00:00 UTC
+    # Every day at 00:00 UTC
     - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       force_rescan:
-        description: 'Re-scan all tools regardless of version (true/false)'
+        description: 'Ignore existing versions and re-scan all discovered tools'
         required: false
         default: 'false'
 
-# Allow the workflow to push commits back to this repository.
 permissions:
   contents: write
 
@@ -21,7 +20,7 @@ env:
   PENDING_SCANS_PATH: data/pending-scans.json
 
 jobs:
-  # ── 1. Discovery ─────────────────────────────────────────────────────────────
+  # ── 1. Discover ──────────────────────────────────────────────────────────────
   discover:
     name: Discover MCP Tools
     runs-on: ubuntu-latest
@@ -46,19 +45,19 @@ jobs:
       - name: Check for pending scans
         id: check
         run: |
-          if [ -f "${{ env.PENDING_SCANS_PATH }}" ]; then
-            COUNT=$(jq 'length' "${{ env.PENDING_SCANS_PATH }}")
-            echo "Pending scans: $COUNT"
-            if [ "$COUNT" -gt 0 ] || [ "${{ inputs.force_rescan }}" = "true" ]; then
-              echo "has_pending=true" >> "$GITHUB_OUTPUT"
-            else
-              echo "has_pending=false" >> "$GITHUB_OUTPUT"
-            fi
+          if [ ! -f "${{ env.PENDING_SCANS_PATH }}" ]; then
+            echo "has_pending=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          COUNT=$(jq 'length' "${{ env.PENDING_SCANS_PATH }}")
+          echo "Pending tools: $COUNT"
+          if [ "$COUNT" -gt 0 ] || [ "${{ inputs.force_rescan }}" = "true" ]; then
+            echo "has_pending=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_pending=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Upload pending scans artifact
+      - name: Upload pending-scans artifact
         if: steps.check.outputs.has_pending == 'true'
         uses: actions/upload-artifact@v4
         with:
@@ -76,72 +75,102 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download pending scans
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache: true
+
+      - name: Download pending-scans artifact
         uses: actions/download-artifact@v4
         with:
           name: pending-scans
           path: data/
 
-      # ── Install AgentSentry ──────────────────────────────────────────────────
-      # When the AgentSentry binary is published as a GitHub Release asset,
-      # replace this step with the real download:
-      #
-      #   curl -sL \
-      #     https://github.com/AgentSafe-AI/agentsentry/releases/latest/download/agentsentry-linux-amd64 \
-      #     -o /usr/local/bin/agentsentry
-      #   chmod +x /usr/local/bin/agentsentry
-      #
-      - name: Install AgentSentry (placeholder)
+      # Install AgentSentry from the public release — no token required.
+      # Binary naming: agentsentry_linux_amd64, agentsentry_darwin_arm64, etc.
+      # https://github.com/AgentSafe-AI/agentsentry/releases
+      - name: Install AgentSentry
         run: |
-          cat > /usr/local/bin/agentsentry << 'EOF'
-          #!/usr/bin/env bash
-          # Stub: replace with real AgentSentry binary.
-          # Expected call signature:
-          #   agentsentry scan --source <url> --version <ver> --output <path>
-          echo "AgentSentry stub: scan not yet wired — skipping $*" >&2
-          exit 0
-          EOF
+          OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+          ARCH=$(uname -m | sed 's/x86_64/amd64/')
+          URL="https://github.com/AgentSafe-AI/agentsentry/releases/latest/download/agentsentry_${OS}_${ARCH}"
+          echo "Downloading AgentSentry from $URL"
+          curl -sL "$URL" -o /usr/local/bin/agentsentry
           chmod +x /usr/local/bin/agentsentry
+          agentsentry --version
 
       - name: Scan each pending tool
-        env:
-          AGENTSENTRY_TOKEN: ${{ secrets.AGENTSENTRY_TOKEN }}
         run: |
           PENDING="${{ env.PENDING_SCANS_PATH }}"
-          if [ ! -f "$PENDING" ]; then
-            echo "No pending scans file found."
-            exit 0
-          fi
-
           COUNT=$(jq 'length' "$PENDING")
-          echo "Scanning $COUNT tool(s)..."
+          echo "Scanning $COUNT tool(s)…"
 
           for i in $(seq 0 $((COUNT - 1))); do
-            TOOL_ID=$(jq -r ".[$i].tool_id"   "$PENDING")
-            VERSION=$(jq -r ".[$i].version"   "$PENDING")
-            SOURCE=$(jq -r  ".[$i].source_url" "$PENDING")
-            OUT="data/reports/${TOOL_ID}.json"
+            TOOL_ID=$(jq  -r ".[$i].tool_id"    "$PENDING")
+            VERSION=$(jq  -r ".[$i].version"    "$PENDING")
+            OWNER=$(jq    -r ".[$i].repo_owner" "$PENDING")
+            REPO=$(jq     -r ".[$i].repo_name"  "$PENDING")
+            SOURCE=$(jq   -r ".[$i].source_url" "$PENDING")
+            OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
+            CLONE_DIR="/tmp/${TOOL_ID}"
+            RAW_OUT="/tmp/${TOOL_ID}-agentsentry.json"
 
-            echo "──────────────────────────────────────────"
-            echo "Scanning: $TOOL_ID @ $VERSION"
-            echo "Source  : $SOURCE"
-            echo "Output  : $OUT"
+            echo "════════════════════════════════════════"
+            echo "Tool    : $TOOL_ID @ $VERSION"
+            echo "Repo    : $OWNER/$REPO"
 
-            agentsentry scan \
-              --source  "$SOURCE" \
-              --version "$VERSION" \
-              --output  "$OUT"
+            # Shallow-clone at the exact release tag; fall back to HEAD
+            git clone --depth 1 --branch "v${VERSION}" \
+              "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
+            git clone --depth 1 \
+              "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
+            { echo "WARNING: cannot clone $OWNER/$REPO — skipping"; continue; }
 
-            if [ $? -ne 0 ]; then
-              echo "WARNING: scan failed for $TOOL_ID — skipping"
+            # Locate the MCP tool-definition file
+            TOOL_DEF=""
+            for candidate in tools.json mcp.json .mcp/tools.json src/tools.json; do
+              if [ -f "$CLONE_DIR/$candidate" ]; then
+                TOOL_DEF="$CLONE_DIR/$candidate"
+                echo "Tool def: $TOOL_DEF"
+                break
+              fi
+            done
+
+            if [ -z "$TOOL_DEF" ]; then
+              echo "WARNING: no tool-definition file found in $OWNER/$REPO — skipping"
+              rm -rf "$CLONE_DIR"
               continue
             fi
 
-            # Validate the output against our JSON Schema.
-            if command -v ajv &>/dev/null; then
-              ajv validate -s report.schema.json -d "$OUT" --spec=draft2020 || \
-                echo "WARNING: $OUT failed schema validation"
+            # Run AgentSentry
+            # Docs: agentsentry scan --protocol mcp --input <tools.json>
+            # https://github.com/AgentSafe-AI/agentsentry#quick-integration
+            agentsentry scan \
+              --protocol mcp \
+              --input    "$TOOL_DEF" \
+              > "$RAW_OUT"
+
+            if [ $? -ne 0 ]; then
+              echo "WARNING: AgentSentry scan failed for $TOOL_ID — skipping"
+              rm -rf "$CLONE_DIR"
+              continue
             fi
+
+            # Transform AgentSentry output → ToolTrust report schema
+            go run ./cmd/transform \
+              --input   "$RAW_OUT"  \
+              --tool-id "$TOOL_ID"  \
+              --version "$VERSION"  \
+              --source  "$SOURCE"   \
+              --output  "$OUT"
+
+            if [ $? -ne 0 ]; then
+              echo "WARNING: transform failed for $TOOL_ID — skipping"
+            else
+              echo "Report  : $OUT"
+            fi
+
+            rm -rf "$CLONE_DIR" "$RAW_OUT"
           done
 
       - name: Upload scan results
@@ -160,8 +189,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # Use a PAT (REGISTRY_PUSH_TOKEN) if you need to bypass branch
-          # protection rules; GITHUB_TOKEN is sufficient otherwise.
+          # Use REGISTRY_PUSH_TOKEN (PAT) if branch protection is enabled;
+          # GITHUB_TOKEN is sufficient for a repo with no protection rules.
           token: ${{ secrets.REGISTRY_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-go@v5
@@ -187,14 +216,15 @@ jobs:
           REPO_DIR: .
         run: go run ./cmd/sync
 
-      - name: Summary
+      - name: Write job summary
         run: |
-          echo "### Registry Updated" >> "$GITHUB_STEP_SUMMARY"
+          echo "### 🛡️ Registry Updated — $(date -u +%Y-%m-%d)" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Reports in \`data/reports/\`:" >> "$GITHUB_STEP_SUMMARY"
-          ls data/reports/*.json | while read f; do
-            TOOL=$(jq -r '.tool_id' "$f")
-            GRADE=$(jq -r '.grade'  "$f")
+          echo "| Tool | Grade | Risk Score |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|------|:-----:|:----------:|" >> "$GITHUB_STEP_SUMMARY"
+          for f in data/reports/*.json; do
+            TOOL=$(jq  -r '.tool_id'    "$f")
+            GRADE=$(jq -r '.grade'      "$f")
             SCORE=$(jq -r '.risk_score' "$f")
-            echo "- **$TOOL** — Grade **$GRADE** (score: $SCORE)" >> "$GITHUB_STEP_SUMMARY"
+            echo "| $TOOL | **$GRADE** | $SCORE |" >> "$GITHUB_STEP_SUMMARY"
           done

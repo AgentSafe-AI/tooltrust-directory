@@ -26,12 +26,14 @@ where:
 
 ### 1.1 Severity Weights
 
-| Severity | Weight ($w$) | Rationale |
-|----------|-------------|-----------|
-| Critical | 25 | Can lead to full system compromise or data exfiltration |
-| High     | 15 | Significant privilege escalation or data exposure |
-| Medium   | 8  | Exploitable under certain conditions |
-| Low      | 2  | Defense-in-depth; minimal direct risk |
+Weights are defined by [AgentSentry v0.1.2](https://github.com/AgentSafe-AI/agentsentry#risk-grades).
+
+| Severity | Weight ($w$) | Example trigger |
+|----------|:-----------:|-----------------|
+| Critical | 25 | Prompt injection (AS-001) |
+| High     | 15 | exec/network permission (AS-002), scope mismatch (AS-003), broad OAuth scope (AS-005) |
+| Medium   | 8  | Insecure secret handling (AS-010) |
+| Low      | 2  | Over-broad schema (AS-002), missing rate-limit (AS-011) |
 | Info     | 0  | Informational only; no exploitability |
 
 ### 1.2 Worked Example
@@ -46,41 +48,31 @@ $$
 
 ## 2. Grade Boundaries
 
-| Grade | RiskScore Range | Meaning |
-|-------|-----------------|---------|
-| **A** | 0 – 9           | Minimal risk. Safe for production agents. |
-| **B** | 10 – 24         | Low risk. Minor issues; review findings. |
-| **C** | 25 – 49         | Moderate risk. Remediation recommended before production use. |
-| **D** | 50 – 74         | High risk. Use only in isolated/sandboxed environments. |
-| **F** | 75+             | Critical risk. Do not use in agentic pipelines. |
+Grades and gateway actions are defined by [AgentSentry v0.1.2](https://github.com/AgentSafe-AI/agentsentry#risk-grades).
+
+| Grade | RiskScore Range | Gateway Action | Meaning |
+|-------|:---------------:|:--------------:|---------|
+| **A** | 0 – 9           | ALLOW | Minimal risk. Safe for production agents. |
+| **B** | 10 – 24         | ALLOW + rate limit | Low risk. Minor issues; review findings. |
+| **C** | 25 – 49         | REQUIRE_APPROVAL | Moderate risk. Remediation recommended before production use. |
+| **D** | 50 – 74         | REQUIRE_APPROVAL | High risk. Use only in isolated/sandboxed environments. |
+| **F** | 75+             | BLOCK | Critical risk. Do not use in agentic pipelines. |
 
 ---
 
-## 3. Check Categories
+## 3. Check Catalog
 
-AgentSentry evaluates tools across the following security domains:
+All active rules as of [AgentSentry v0.1.2](https://github.com/AgentSafe-AI/agentsentry#scan-catalog):
 
-### 3.1 Input Validation (AS-001 – AS-009)
-- Path traversal and directory escape (AS-002)
-- Command injection via unsanitized arguments (AS-003)
-- SSRF via user-controlled URLs (AS-004)
-
-### 3.2 Credential & Secret Handling (AS-010 – AS-019)
-- API keys in environment variables (AS-010)
-- Secrets logged to stdout/stderr (AS-013)
-- Insecure credential storage patterns (AS-015)
-
-### 3.3 Privilege & Scope (AS-020 – AS-029)
-- Overly broad OAuth/token scopes (AS-005)
-- Unnecessary file system or network permissions (AS-021)
-
-### 3.4 Denial of Service & Resilience (AS-030 – AS-039)
-- Missing rate-limit handling (AS-011)
-- Unbounded resource consumption (AS-031)
-
-### 3.5 Supply Chain (AS-040 – AS-049)
-- Unpinned dependencies (AS-041)
-- Missing SBOM or provenance attestation (AS-042)
+| ID | Category | Severity | What it detects |
+|----|----------|:--------:|-----------------|
+| AS-001 | Tool Poisoning | **Critical** | Hidden adversarial prompts in tool descriptions (`ignore previous instructions`, `system:`, `<INST>`) |
+| AS-002 | Permission Surface | High / Low | Tools declaring `exec`, `network`, `db`, or `fs` beyond their stated purpose; unnecessarily broad input schema |
+| AS-003 | Scope Mismatch | **High** | Tool names that contradict their permissions (e.g. `read_config` secretly holding `exec`) |
+| AS-004 | Supply Chain (CVE) | High / Critical | Third-party dependencies with known CVEs — queried live from [OSV database](https://osv.dev) |
+| AS-005 | Privilege Escalation | **High** | OAuth/token scopes broader than stated purpose (`admin`, `:write` wildcards); description-level escalation signals (`sudo`, `impersonate`) |
+| AS-010 | Secret Handling | **Medium** | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
+| AS-011 | DoS Resilience | **Low** | Network/execution tools with no rate-limit, timeout, or retry configuration |
 
 ---
 

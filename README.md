@@ -20,7 +20,7 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 |------|---------|:-----:|:--------:|-----------|--------|
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | 0.6.2 | **A** | 1 Low | 2026-03-01 | [JSON](./data/reports/mcp-server-brave-search.json) |
 | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 1.2.0 | **B** | 1 Medium | 2026-03-01 | [JSON](./data/reports/mcp-server-filesystem.json) |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 2.0.0 | **C** | 1 High, 1 Medium | 2026-03-01 | [JSON](./data/reports/mcp-server-github.json) |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | 2.0.0 | **B** | 1 High, 1 Low | 2026-03-01 | [JSON](./data/reports/mcp-server-github.json) |
 
 <!-- AGENTSENTRY:END -->
 
@@ -32,13 +32,13 @@ Risk scores are calculated using a weighted severity model:
 
 $$\text{RiskScore} = \sum_{i=1}^{n} \left( \text{SeverityWeight}_{i} \times \text{FindingCount}_{i} \right)$$
 
-| Grade | Risk Score | Severity Weights Used | Meaning |
-|:-----:|:----------:|----------------------|---------|
-| **A** | 0 – 9 | Info (0) | Safe for production. No significant risks found. |
-| **B** | 10 – 24 | Low (2) | Low risk. Review findings before deploying. |
-| **C** | 25 – 49 | Medium (8) | Use with caution. Minor permission or scope overlaps. |
-| **D** | 50 – 74 | High (15) | High risk. Sandboxed environments only. |
-| **F** | 75+ | Critical (25) | **CRITICAL RISK.** Found active injection or unauthorized access. |
+| Grade | Score | Gateway | Weights: Crit·High·Med·Low |
+|:-----:|:-----:|:-------:|----------------------------|
+| **A** | 0 – 9 | ALLOW | 25 · 15 · 8 · 2 |
+| **B** | 10 – 24 | ALLOW + rate limit | 25 · 15 · 8 · 2 |
+| **C** | 25 – 49 | REQUIRE_APPROVAL | 25 · 15 · 8 · 2 |
+| **D** | 50 – 74 | REQUIRE_APPROVAL | 25 · 15 · 8 · 2 |
+| **F** | 75+ | BLOCK | 25 · 15 · 8 · 2 |
 
 Full methodology: [docs/methodology.md](./docs/methodology.md)
 
@@ -48,15 +48,15 @@ Full methodology: [docs/methodology.md](./docs/methodology.md)
 
 AgentSentry check IDs referenced in all reports:
 
-| ID | Category | Description |
-|----|----------|-------------|
-| AS-001 | Tool Poisoning | Detects hidden adversarial prompts embedded in tool descriptions |
-| AS-002 | Permission Surface | Detects path traversal and file-system escape vulnerabilities |
-| AS-003 | Scope Mismatch | Detects contradictions between tool names and actual API schemas |
-| AS-004 | Supply Chain | Checks for known CVEs in underlying dependencies |
-| AS-005 | Privilege Escalation | Verifies OAuth / token scopes are not broader than necessary |
-| AS-010 | Secret Handling | Identifies API keys or credentials at risk of leakage |
-| AS-011 | DoS Resilience | Detects missing rate-limit and retry handling |
+| ID | Sev | Category | Detects |
+|----|:---:|----------|---------|
+| AS-001 | Critical | Tool Poisoning | Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
+| AS-002 | High/Low | Permission Surface | `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
+| AS-003 | High | Scope Mismatch | Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
+| AS-004 | High/Critical | Supply Chain | Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
+| AS-005 | High | Privilege Escalation | `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
+| AS-010 | Medium | Secret Handling | Input params accepting API keys/passwords; credentials logged insecurely |
+| AS-011 | Low | DoS Resilience | No rate-limit, timeout, or retry config on network/exec tools |
 
 Full catalog: [docs/methodology.md#3-check-categories](./docs/methodology.md#3-check-categories)
 
