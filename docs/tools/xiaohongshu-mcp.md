@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **F** |
 | **Risk Score** | 136 |
-| **Version** | `2026.03.01.1740-ed7e493` |
+| **Version** | `2026.03.03.1615-fa6bc02` |
 | **Vendor** | xpzouying |
-| **Stars** | ⭐ 9769 |
+| **Stars** | ⭐ 9929 |
 | **Language** | Go |
 | **Source** | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-03 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

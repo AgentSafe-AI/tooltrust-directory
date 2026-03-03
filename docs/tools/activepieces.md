@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 24 |
-| **Version** | `0.78.2` |
+| **Version** | `0.79.2` |
 | **Vendor** | activepieces |
-| **Stars** | ⭐ 21031 |
+| **Stars** | ⭐ 21050 |
 | **Language** | TypeScript |
 | **Source** | [activepieces](https://github.com/activepieces/activepieces) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-03 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

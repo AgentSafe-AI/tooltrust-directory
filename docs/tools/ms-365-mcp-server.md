@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 24 |
-| **Version** | `0.43.2` |
+| **Version** | `0.44.0` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 498 |
+| **Stars** | ⭐ 501 |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-03 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---
