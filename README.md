@@ -75,7 +75,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 
 ---
 
-## ⚖️ Grading System (A–F)
+## ⚖️ Grading System (S–F)
 
 Risk scores are calculated using a weighted severity model:
 
@@ -83,7 +83,8 @@ $$\text{RiskScore} = \sum_{i=1}^{n} \left( \text{SeverityWeight}_{i} \times \tex
 
 | Grade | Score | Gateway | Weights: Crit·High·Med·Low |
 |:-----:|:-----:|:-------:|----------------------------|
-| **A** | 0 – 9 | ALLOW | 25 · 15 · 8 · 2 |
+| **S** 🌟 | 0 (no findings) | ALLOW | Perfect score |
+| **A** | 1 – 9 | ALLOW | 25 · 15 · 8 · 2 |
 | **B** | 10 – 24 | ALLOW + rate limit | 25 · 15 · 8 · 2 |
 | **C** | 25 – 49 | REQUIRE_APPROVAL | 25 · 15 · 8 · 2 |
 | **D** | 50 – 74 | REQUIRE_APPROVAL | 25 · 15 · 8 · 2 |
@@ -99,10 +100,10 @@ AgentSentry check IDs referenced in all reports:
 
 | ID | Sev | Category | Detects |
 |----|:---:|----------|---------|
-| AS-001 | Critical | Tool Poisoning | Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
-| AS-002 | High/Low | Permission Surface | `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
+| ⚠️ AS-001 | Critical | Tool Poisoning | Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
+| ⚠️ AS-002 | High/Low | Permission Surface | `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
 | AS-003 | High | Scope Mismatch | Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
-| AS-004 | High/Critical | Supply Chain | Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
+| 📦 AS-004 | High/Critical | Supply Chain | Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
 | AS-005 | High | Privilege Escalation | `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
 | AS-010 | Medium | Secret Handling | Input params accepting API keys/passwords; credentials logged insecurely |
 | AS-011 | Low | DoS Resilience | No rate-limit, timeout, or retry config on network/exec tools |

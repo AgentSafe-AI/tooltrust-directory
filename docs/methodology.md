@@ -53,7 +53,7 @@ Grades and gateway actions are defined by [ToolTrust Scanner v0.1.2](https://git
 | Grade | RiskScore Range | Gateway Action | Meaning |
 |-------|:---------------:|:--------------:|---------|
 | **S** | 0 (no findings) | ALLOW | Zero risk. Perfect score. |
-| **A** | 0 – 9           | ALLOW | Minimal risk. Safe for production agents. |
+| **A** | 1 – 9           | ALLOW | Minimal risk. Safe for production agents. |
 | **B** | 10 – 24         | ALLOW + rate limit | Low risk. Minor issues; review findings. |
 | **C** | 25 – 49         | REQUIRE_APPROVAL | Moderate risk. Remediation recommended before production use. |
 | **D** | 50 – 74         | REQUIRE_APPROVAL | High risk. Use only in isolated/sandboxed environments. |
