@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `transports/v1.4.9` |
+| **Version** | `transports/v1.4.10` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 2648 |
+| **Stars** | ⭐ 2667 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-03 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

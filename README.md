@@ -5,7 +5,7 @@
 Independent, automated security audits for MCP servers, OpenAI Skills, and AI agent tools.
 Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner) — a deterministic static-analysis engine written in Go.
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-137-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-141-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--03-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -16,19 +16,21 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 
 <!-- AGENTSENTRY:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 137 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 141 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.9.4` | 177.2k | **[A](./docs/tools/n8n.md)** | None ✅ | Mar 2 |
+| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.2` | 177.4k | **[A](./docs/tools/n8n.md)** | None ✅ | Mar 3 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.31.0` | 96.2k | **[A](./docs/tools/gemini-cli.md)** | None ✅ | Mar 2 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[A](./docs/tools/trendradar.md)** | None ✅ | Mar 2 |
 | [context7](https://github.com/upstash/context7) | `@upstash/c…` | 47.4k | **[A](./docs/tools/context7.md)** | None ✅ | Mar 2 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[A](./docs/tools/ui-tars-desktop.md)** | None ✅ | Mar 2 |
+| [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 28.1k | **[A](./docs/tools/playwright-mcp.md)** | `AS-004` | Mar 3 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.31.0` | 27.4k | **[B](./docs/tools/github-mcp-server.md)** | `AS-004` ×3 | Mar 2 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 27.2k | **[A](./docs/tools/chrome-devtools-mcp.md)** | None ✅ | Mar 2 |
+| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 25.7k | **[B](./docs/tools/claude-task-master.md)** | `AS-004` ×3 | Mar 3 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.2` | 25.5k | **[A](./docs/tools/gpt-researcher.md)** | None ✅ | Mar 2 |
-| [activepieces](https://github.com/activepieces/activepieces) | `0.78.2` | 21.0k | **[B](./docs/tools/activepieces.md)** | `AS-004` ×3 | Mar 2 |
+| [activepieces](https://github.com/activepieces/activepieces) | `0.79.2` | 21.1k | **[B](./docs/tools/activepieces.md)** | `AS-004` ×3 | Mar 3 |
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 20.9k | **[A](./docs/tools/serena.md)** | None ✅ | Mar 2 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.2k | **[A](./docs/tools/maxkb.md)** | None ✅ | Mar 2 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.1` | 20.0k | **[A](./docs/tools/scrapling.md)** | None ✅ | Mar 2 |
@@ -43,11 +45,12 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.3.3` | 10.8k | **[B](./docs/tools/nginx-ui.md)** | `AS-004` ×3 | Mar 2 |
 | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.7` | 10.2k | **[A](./docs/tools/xhs-downloader.md)** | None ✅ | Mar 2 |
 | [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | `3.2.0` | 10.1k | **[A](./docs/tools/skill-seekers.md)** | None ✅ | Mar 2 |
-| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.01…` | 9.8k | **[F](./docs/tools/xiaohongshu-mcp.md)** | `AS-004` ×17 | Mar 2 |
+| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.03…` | 9.9k | **[F](./docs/tools/xiaohongshu-mcp.md)** | `AS-004` ×17 | Mar 3 |
 | [mcp-use](https://github.com/mcp-use/mcp-use) | `python-v1.…` | 9.3k | **[A](./docs/tools/mcp-use.md)** | None ✅ | Mar 2 |
 | [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.12.1-rel…` | 8.8k | **[A](./docs/tools/openmetadata.md)** | None ✅ | Mar 2 |
 | [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | `0.9.1` | 8.7k | **[A](./docs/tools/xiaozhi-esp32-server.md)** | None ✅ | Mar 2 |
 | [mcp](https://github.com/awslabs/mcp) | `2026.02.20…` | 8.3k | **[A](./docs/tools/mcp.md)** | None ✅ | Mar 2 |
+| [ghidramcp](https://github.com/LaurieWired/GhidraMCP) | `1.4` | 7.8k | **[A](./docs/tools/ghidramcp.md)** | None ✅ | Mar 3 |
 | [lamda](https://github.com/firerpa/lamda) | `9.20` | 7.6k | **[A](./docs/tools/lamda.md)** | None ✅ | Mar 2 |
 | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | `1.2.0` | 7.1k | **[A](./docs/tools/browser-tools-mcp.md)** | None ✅ | Mar 2 |
 | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | `1.4.0` | 5.9k | **[A](./docs/tools/ida-pro-mcp.md)** | None ✅ | Mar 2 |
@@ -67,9 +70,6 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `dex-analys…` | 3.5k | **[A](./docs/tools/mcp-server-cloudflare.md)** | None ✅ | Mar 2 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[A](./docs/tools/pptagent.md)** | None ✅ | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[A](./docs/tools/excel-mcp-server.md)** | None ✅ | Mar 2 |
-| [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.2k | **[A](./docs/tools/py-xiaozhi.md)** | None ✅ | Mar 2 |
-| [solon](https://github.com/opensolon/solon) | `3.9.4` | 2.7k | **[A](./docs/tools/solon.md)** | None ✅ | Mar 2 |
-| [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[C](./docs/tools/shadcn-ui-mcp-server.md)** | `AS-004` ×5 | Mar 2 |
 
 <!-- AGENTSENTRY:END -->
 
