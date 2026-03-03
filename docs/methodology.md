@@ -1,12 +1,12 @@
 # ToolTrust Scoring Methodology
 
-> **Version:** 1.0  |  **Effective Date:** 2026-03-01  |  **Scanner:** AgentSentry
+> **Version:** 1.0  |  **Effective Date:** 2026-03-01  |  **Scanner:** [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner)
 
 ---
 
 ## Overview
 
-ToolTrust grades every MCP server and AI Skill on a scale of **A → F** using a deterministic risk score produced by [AgentSentry](https://github.com/AgentSafe-AI/agentsentry). This document defines the scoring formula, severity weights, grade boundaries, and the categories of checks performed.
+ToolTrust grades every MCP server and AI Skill on a scale of **A → F** using a deterministic risk score produced by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner). This document defines the scoring formula, severity weights, grade boundaries, and the categories of checks performed.
 
 ---
 
@@ -26,7 +26,7 @@ where:
 
 ### 1.1 Severity Weights
 
-Weights are defined by [AgentSentry v0.1.2](https://github.com/AgentSafe-AI/agentsentry#risk-grades).
+Weights are defined by [ToolTrust Scanner v0.1.2](https://github.com/AgentSafe-AI/tooltrust-scanner#risk-grades).
 
 | Severity | Weight ($w$) | Example trigger |
 |----------|:-----------:|-----------------|
@@ -48,10 +48,11 @@ $$
 
 ## 2. Grade Boundaries
 
-Grades and gateway actions are defined by [AgentSentry v0.1.2](https://github.com/AgentSafe-AI/agentsentry#risk-grades).
+Grades and gateway actions are defined by [ToolTrust Scanner v0.1.2](https://github.com/AgentSafe-AI/tooltrust-scanner#risk-grades).
 
 | Grade | RiskScore Range | Gateway Action | Meaning |
 |-------|:---------------:|:--------------:|---------|
+| **S** | 0 (no findings) | ALLOW | Zero risk. Perfect score. |
 | **A** | 0 – 9           | ALLOW | Minimal risk. Safe for production agents. |
 | **B** | 10 – 24         | ALLOW + rate limit | Low risk. Minor issues; review findings. |
 | **C** | 25 – 49         | REQUIRE_APPROVAL | Moderate risk. Remediation recommended before production use. |
@@ -62,7 +63,7 @@ Grades and gateway actions are defined by [AgentSentry v0.1.2](https://github.co
 
 ## 3. Check Catalog
 
-All active rules as of [AgentSentry v0.1.2](https://github.com/AgentSafe-AI/agentsentry#scan-catalog):
+All active rules as of [ToolTrust Scanner v0.1.2](https://github.com/AgentSafe-AI/tooltrust-scanner#scan-catalog):
 
 | ID | Category | Severity | What it detects |
 |----|----------|:--------:|-----------------|

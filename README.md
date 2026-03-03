@@ -3,7 +3,7 @@
 **The Security Trust Layer for AI Agent Tools.**
 
 Independent, automated security audits for MCP servers, OpenAI Skills, and AI agent tools.
-Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agentsentry) — a deterministic static-analysis engine written in Go.
+Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner) — a deterministic static-analysis engine written in Go.
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-137-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--03-blue)](./data/reports/)
@@ -117,7 +117,7 @@ Full catalog: [docs/methodology.md#3-check-categories](./docs/methodology.md#3-c
 
 **Dispute a finding** — open an issue referencing the finding ID (e.g. `AS-002`).
 
-**Integrate AgentSentry** — see [docs/dev.md](./docs/dev.md) for the data pipeline and schema spec.
+**Integrate ToolTrust Scanner** — see [docs/dev.md](./docs/dev.md) for the data pipeline and schema spec.
 
 ---
 
@@ -131,10 +131,11 @@ If your MCP server was audited and earned a grade, add our badge to your repo:
 [![ToolTrust Grade A](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-a.svg)](https://github.com/AgentSafe-AI/tooltrust-directory)
 ```
 
-**Other grades** — replace `grade-a` with `grade-b`, `grade-c`, `grade-d`, or `grade-f`:
+**Other grades** — replace `grade-a` with `grade-s`, `grade-b`, `grade-c`, `grade-d`, or `grade-f`:
 
 | Grade | Badge |
 |:-----:|-------|
+| S | [![Grade S](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-s.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
 | A | [![Grade A](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-a.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
 | B | [![Grade B](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-b.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
 | C | [![Grade C](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-c.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
@@ -155,7 +156,7 @@ The registry table above is kept up to date by a daily GitHub Actions workflow:
 
 Each run:
 1. **Discovers** popular MCP servers via GitHub Search (top 50 by stars)
-2. **Scans** new/updated tools with AgentSentry + OSV supply-chain analysis
+2. **Scans** new/updated tools with ToolTrust Scanner + OSV supply-chain analysis
 3. **Publishes** updated reports to `data/reports/` and regenerates this README
 
 ---

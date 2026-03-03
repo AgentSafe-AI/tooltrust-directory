@@ -13,8 +13,8 @@ func TestGradeRank(t *testing.T) {
 		grade string
 		want  int
 	}{
-		{"A", 0}, {"B", 1}, {"C", 2}, {"D", 3}, {"F", 4},
-		{"", 5}, {"X", 5}, {"Z", 5},
+		{"S", 0}, {"A", 1}, {"B", 2}, {"C", 3}, {"D", 4}, {"F", 5},
+		{"", 6}, {"X", 6}, {"Z", 6},
 	}
 	for _, tt := range tests {
 		if got := gradeRank(tt.grade); got != tt.want {
@@ -160,6 +160,9 @@ func TestKeyFindings(t *testing.T) {
 	got := keyFindings(r)
 	if !strings.Contains(got, "AS-004") || !strings.Contains(got, "AS-002") {
 		t.Errorf("keyFindings should contain AS-004 and AS-002, got %q", got)
+	}
+	if !strings.Contains(got, "📦") || !strings.Contains(got, "⚠️") {
+		t.Errorf("keyFindings should add emojis for AS-004 (📦) and AS-002 (⚠️), got %q", got)
 	}
 	if !strings.Contains(got, "×3") {
 		t.Errorf("keyFindings should show count ×3 for AS-004, got %q", got)

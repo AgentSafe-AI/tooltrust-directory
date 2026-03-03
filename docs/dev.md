@@ -1,6 +1,6 @@
 # Developer Guide
 
-Technical reference for contributors, integrators, and the AgentSentry pipeline.
+Technical reference for contributors, integrators, and the ToolTrust Scanner pipeline.
 
 ---
 
@@ -12,7 +12,7 @@ tooltrust-directory/
 │   ├── analyze/main.go             # AS-004 OSV supply-chain CVE scanner
 │   ├── crawler/main.go             # GitHub API discovery of MCP servers
 │   ├── sync/main.go                # README + detail-page generator & git push
-│   └── transform/main.go           # AgentSentry → ToolTrust report converter
+│   └── transform/main.go           # Scanner output → ToolTrust report converter
 ├── pkg/
 │   ├── analyzer/osv.go             # OSV batch-query client
 │   └── sync/github.go              # Registry table builder & git helpers
@@ -44,7 +44,7 @@ GitHub Search API
 data/pending-scans.json
      │
      │  for each tool:
-     │    1. git clone → AgentSentry scan (AS-001/002/003/005/010/011)
+     │    1. git clone → ToolTrust Scanner (AS-001/002/003/005/010/011)
      │    2. go.mod / package.json → OSV API (AS-004 CVEs)
      │    3. cmd/transform merges findings → ToolTrust report
      ▼
@@ -61,7 +61,7 @@ Published to main branch
 
 ### Adding a Report Manually
 
-1. Run AgentSentry against the target tool version.
+1. Run ToolTrust Scanner against the target tool version.
 2. Validate the output:
 
 ```bash
@@ -85,7 +85,7 @@ Key constraints:
 | `version` | `string` | Semver or tag string from the source repository |
 | `grade` | `enum` | One of `A B C D F` |
 | `risk_score` | `integer ≥ 0` | Derived from findings via methodology formula |
-| `scanner` | `string` | Pattern `AgentSentry/\d+\.\d+\.\d+` |
+| `scanner` | `string` | Pattern `AgentSentry/\d+\.\d+\.\d+` (from [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner)) |
 | `findings[].id` | `string` | Pattern `AS-\d{3}` |
 | `findings[].severity` | `enum` | `Critical High Medium Low Info` |
 
@@ -121,7 +121,7 @@ From an AI Agent (MCP `fetch` tool):
 The workflow at `.github/workflows/daily-audit.yml`:
 
 1. **Discover** — runs `cmd/crawler` to search GitHub for MCP servers (top 50 by stars), compares versions against existing reports, emits `pending-scans.json`.
-2. **Scan** — for each pending tool: clones the repo, runs AgentSentry (tool-definition scan) and `cmd/analyze` (OSV CVE scan), then `cmd/transform` to produce a ToolTrust report.
+2. **Scan** — for each pending tool: clones the repo, runs ToolTrust Scanner (tool-definition scan) and `cmd/analyze` (OSV CVE scan), then `cmd/transform` to produce a ToolTrust report.
 3. **Publish** — runs `cmd/sync` to regenerate the README registry table and per-tool detail pages, commits and pushes to `main`.
 
 Triggered by:

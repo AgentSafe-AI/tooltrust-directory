@@ -6,7 +6,7 @@
 // Usage:
 //
 //	go run ./cmd/transform \
-//	  --input   /tmp/agentsentry-raw.json \
+//	  --input   /tmp/tooltrust-scan.json \
 //	  --tool-id mcp-server-filesystem \
 //	  --version 1.2.0 \
 //	  --source  https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem \
@@ -97,7 +97,7 @@ type TTSummary struct {
 }
 
 // ── Rule metadata (canonical titles + recommendations per AS-XXX) ────────────
-// Source: https://github.com/AgentSafe-AI/agentsentry#scan-catalog
+// Source: https://github.com/AgentSafe-AI/tooltrust-scanner#scan-catalog
 
 type ruleMeta struct{ title, recommendation string }
 
@@ -264,7 +264,7 @@ func transform(as AgentSentryOutput, extra []TTFinding, toolID, version, sourceU
 	return TrustReport{
 		ToolID:      toolID,
 		Version:     version,
-		Grade:       scoreToGrade(maxScore),
+		Grade:       computeGrade(maxScore, allFindings),
 		RiskScore:   maxScore,
 		ScanDate:    scanDate,
 		Scanner:     scannerVersion,
@@ -307,8 +307,17 @@ func toTTFinding(f ASFinding) TTFinding {
 	}
 }
 
+// computeGrade assigns S when score==0 and no findings; otherwise uses scoreToGrade.
+// S = zero risk, perfect score. A = 0–9 with any findings.
+func computeGrade(score int, findings []TTFinding) string {
+	if score == 0 && len(findings) == 0 {
+		return "S"
+	}
+	return scoreToGrade(score)
+}
+
 // scoreToGrade matches AgentSentry's published grade boundaries exactly.
-// https://github.com/AgentSafe-AI/agentsentry#risk-grades
+// https://github.com/AgentSafe-AI/tooltrust-scanner#risk-grades
 //
 //	A  0–9    ALLOW
 //	B  10–24  ALLOW + rate limit

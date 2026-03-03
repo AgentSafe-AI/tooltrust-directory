@@ -4,6 +4,25 @@ import (
 	"testing"
 )
 
+func TestComputeGrade(t *testing.T) {
+	tests := []struct {
+		score    int
+		findings []TTFinding
+		want     string
+	}{
+		{0, nil, "S"},
+		{0, []TTFinding{}, "S"},
+		{0, []TTFinding{{ID: "AS-004"}}, "A"}, // score 0 but has findings → A
+		{5, []TTFinding{{ID: "AS-002"}}, "A"},
+		{10, nil, "B"},
+	}
+	for _, tt := range tests {
+		if got := computeGrade(tt.score, tt.findings); got != tt.want {
+			t.Errorf("computeGrade(%d, len=%d) = %q, want %q", tt.score, len(tt.findings), got, tt.want)
+		}
+	}
+}
+
 func TestScoreToGrade(t *testing.T) {
 	tests := []struct {
 		score int
@@ -65,8 +84,8 @@ func TestTransformEmptyInput(t *testing.T) {
 	report := transform(as, nil, "test", "1.0.0", "https://example.com",
 		"vendor", 100, "MIT", "Go", "Dev", "A test tool")
 
-	if report.Grade != "A" {
-		t.Errorf("empty scan should be grade A, got %q", report.Grade)
+	if report.Grade != "S" {
+		t.Errorf("empty scan (0 score, no findings) should be grade S, got %q", report.Grade)
 	}
 	if report.RiskScore != 0 {
 		t.Errorf("empty scan should have score 0, got %d", report.RiskScore)

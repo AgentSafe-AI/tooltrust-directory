@@ -28,6 +28,7 @@ var grades = []struct {
 	label  string
 	title  string
 }{
+	{"S", "#FFD700", "Grade S", "Security audited by ToolTrust — Grade S"},
 	{"A", "#4CAF50", "Grade A", "Security audited by ToolTrust — Grade A"},
 	{"B", "#FFC107", "Grade B", "Security audited by ToolTrust — Grade B"},
 	{"C", "#FF9800", "Grade C", "Security audited by ToolTrust — Grade C"},

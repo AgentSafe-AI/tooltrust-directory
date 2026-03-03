@@ -208,11 +208,11 @@ func loadReports(dir string) ([]Report, error) {
 }
 
 func gradeRank(g string) int {
-	ranks := map[string]int{"A": 0, "B": 1, "C": 2, "D": 3, "F": 4}
+	ranks := map[string]int{"S": 0, "A": 1, "B": 2, "C": 3, "D": 4, "F": 5}
 	if r, ok := ranks[g]; ok {
 		return r
 	}
-	return 5 // unknown grades sort last
+	return 6 // unknown grades sort last
 }
 
 func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix string) string {
@@ -234,16 +234,25 @@ func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix s
 			ver = ver[:10] + "…"
 		}
 		scanDate := r.ScanDate.Format("Jan 2")
+		gradeDisp := formatGradeDisplay(r.Grade)
 		fmt.Fprintf(&sb,
 			"| [%s](%s) | `%s` | %s | **[%s](%s%s.md)** | %s | %s |\n",
 			r.ToolID, r.SourceURL,
 			ver, formatStars(r.Stars),
-			r.Grade, toolLinkPrefix, r.ToolID,
+			gradeDisp, toolLinkPrefix, r.ToolID,
 			keyFindings(r),
 			scanDate,
 		)
 	}
 	return sb.String()
+}
+
+// formatGradeDisplay returns the grade with S 🌟 suffix for S grade.
+func formatGradeDisplay(g string) string {
+	if g == "S" {
+		return "S 🌟"
+	}
+	return g
 }
 
 // formatStars returns a compact display for GitHub star count (e.g. 177k, 12.4k, 124).
@@ -260,8 +269,22 @@ func formatStars(n int) string {
 	return fmt.Sprintf("%d", n)
 }
 
+// findingEmoji returns an emoji prefix by rule category for README display.
+// AS-004 (supply chain) → 📦, AS-001/002 (tool poisoning, permission) → ⚠️.
+func findingEmoji(id string) string {
+	switch id {
+	case "AS-004":
+		return "📦"
+	case "AS-001", "AS-002":
+		return "⚠️"
+	default:
+		return ""
+	}
+}
+
 // keyFindings returns a compact summary of finding rule IDs with counts,
-// e.g. "AS-004 ×12, AS-002" — making it clear why high-risk tools scored poorly.
+// e.g. "📦 AS-004 ×12, ⚠️ AS-002" — making it clear why high-risk tools scored poorly.
+// Grade A tools with findings always list IDs; "None ✅" only when len(Findings)==0.
 func keyFindings(r Report) string {
 	if len(r.Findings) == 0 {
 		return "None ✅"
@@ -278,10 +301,15 @@ func keyFindings(r Report) string {
 
 	var parts []string
 	for _, id := range order {
+		emoji := findingEmoji(id)
+		pre := ""
+		if emoji != "" {
+			pre = emoji + " "
+		}
 		if counts[id] > 1 {
-			parts = append(parts, fmt.Sprintf("`%s` ×%d", id, counts[id]))
+			parts = append(parts, fmt.Sprintf("%s`%s` ×%d", pre, id, counts[id]))
 		} else {
-			parts = append(parts, "`"+id+"`")
+			parts = append(parts, pre+"`"+id+"`")
 		}
 	}
 	return strings.Join(parts, ", ")
@@ -292,8 +320,11 @@ func keyFindings(r Report) string {
 func buildDetailPage(r Report) string {
 	var sb strings.Builder
 
-	gradeEmoji := map[string]string{"A": "🟢", "B": "🟡", "C": "🟠", "D": "🔴", "F": "⛔"}
+	gradeEmoji := map[string]string{"S": "🌟", "A": "🟢", "B": "🟡", "C": "🟠", "D": "🔴", "F": "⛔"}
 	emoji := gradeEmoji[r.Grade]
+	if emoji == "" {
+		emoji = "🟢"
+	}
 
 	fmt.Fprintf(&sb, "# %s %s\n\n", emoji, r.ToolID)
 
@@ -302,7 +333,7 @@ func buildDetailPage(r Report) string {
 	}
 
 	fmt.Fprintf(&sb, "| Field | Value |\n|-------|-------|\n")
-	fmt.Fprintf(&sb, "| **Grade** | **%s** |\n", r.Grade)
+	fmt.Fprintf(&sb, "| **Grade** | **%s** |\n", formatGradeDisplay(r.Grade))
 	fmt.Fprintf(&sb, "| **Risk Score** | %d |\n", r.RiskScore)
 	fmt.Fprintf(&sb, "| **Version** | `%s` |\n", r.Version)
 	if r.Vendor != "" {
@@ -339,7 +370,11 @@ func buildDetailPage(r Report) string {
 		}
 		for _, f := range r.Findings {
 			sev := sevEmoji[f.Severity]
-			fmt.Fprintf(&sb, "### %s `%s` — %s\n\n", sev, f.ID, f.Title)
+			ruleEmoji := findingEmoji(f.ID)
+			if ruleEmoji != "" {
+				ruleEmoji += " "
+			}
+			fmt.Fprintf(&sb, "### %s %s`%s` — %s\n\n", sev, ruleEmoji, f.ID, f.Title)
 			fmt.Fprintf(&sb, "**Severity:** %s\n\n", f.Severity)
 			fmt.Fprintf(&sb, "**Description:**\n%s\n\n", f.Description)
 			fmt.Fprintf(&sb, "**Recommendation:**\n%s\n\n", f.Recommendation)

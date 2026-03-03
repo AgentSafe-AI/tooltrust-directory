@@ -68,7 +68,7 @@ jobs:
 
   # ── 2. Scan ──────────────────────────────────────────────────────────────────
   scan:
-    name: Run AgentSentry Scans
+    name: Run ToolTrust Scanner
     needs: discover
     if: needs.discover.outputs.has_pending == 'true'
     runs-on: ubuntu-latest
@@ -89,15 +89,15 @@ jobs:
           name: pending-scans
           path: data/
 
-      # ── Install AgentSentry ──────────────────────────────────────────────────
+      # ── Install ToolTrust Scanner ────────────────────────────────────────────
       # Build from source — the repo is public and Go is already available.
       # Pre-built binaries and the GHCR image are not yet publicly distributed.
-      # https://github.com/AgentSafe-AI/agentsentry
-      - name: Build AgentSentry from source
+      # https://github.com/AgentSafe-AI/tooltrust-scanner
+      - name: Build ToolTrust Scanner from source
         run: |
-          git clone --depth 1 https://github.com/AgentSafe-AI/agentsentry /tmp/agentsentry
+          git clone --depth 1 https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
           # Must cd into the cloned repo so go build resolves within its own module
-          cd /tmp/agentsentry
+          cd /tmp/tooltrust-scanner
           ENTRY=$(find cmd -maxdepth 1 -mindepth 1 -type d | head -1)
           echo "Building entry-point: ./$ENTRY"
           go build -o /usr/local/bin/agentsentry "./$ENTRY"
@@ -134,7 +134,7 @@ jobs:
             DESC=$(jq     -r ".[$i].description" "$PENDING")
             OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
             CLONE_DIR="/tmp/${TOOL_ID}"
-            RAW_OUT="/tmp/${TOOL_ID}-agentsentry.json"
+            RAW_OUT="/tmp/${TOOL_ID}-scan.json"
             OSV_OUT="/tmp/${TOOL_ID}-osv.json"
 
             echo "════════════════════════════════════════"
@@ -153,7 +153,7 @@ jobs:
               echo "[]" > "$OSV_OUT"
             echo "AS-004  : $(jq 'length' "$OSV_OUT") CVE finding(s)"
 
-            # ── AgentSentry: MCP tool-definition scan ─────────────────────────
+            # ── ToolTrust Scanner: MCP tool-definition scan ───────────────────
             TOOL_DEF=""
             for candidate in \
               tools.json mcp.json \
@@ -171,12 +171,12 @@ jobs:
             else
               echo "Def     : $TOOL_DEF"
               if ! run_agentsentry "$TOOL_DEF" "$RAW_OUT"; then
-                echo "WARN: AgentSentry scan failed — using OSV-only report"
+                echo "WARN: ToolTrust Scanner scan failed — using OSV-only report"
                 echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
               fi
             fi
 
-            # ── Transform: merge AgentSentry + OSV → ToolTrust report ─────────
+            # ── Transform: merge Scanner + OSV → ToolTrust report ──────────────
             if ! go run ./cmd/transform \
               --input        "$RAW_OUT"  \
               --tool-id      "$TOOL_ID"  \
@@ -231,7 +231,7 @@ jobs:
 
       - name: Configure Git identity
         run: |
-          git config user.name  "AgentSentry Bot"
+          git config user.name  "ToolTrust Bot"
           git config user.email "bot@agentsafe.ai"
 
       - name: Regenerate README registry & push
