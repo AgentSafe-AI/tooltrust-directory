@@ -8,20 +8,27 @@ Technical reference for contributors, integrators, and the AgentSentry pipeline.
 
 ```
 tooltrust-directory/
+├── cmd/
+│   ├── analyze/main.go             # AS-004 OSV supply-chain CVE scanner
+│   ├── crawler/main.go             # GitHub API discovery of MCP servers
+│   ├── sync/main.go                # README + detail-page generator & git push
+│   └── transform/main.go           # AgentSentry → ToolTrust report converter
+├── pkg/
+│   ├── analyzer/osv.go             # OSV batch-query client
+│   └── sync/github.go              # Registry table builder & git helpers
 ├── data/
 │   └── reports/                    # One JSON report per audited tool
-│       ├── mcp-server-filesystem.json
-│       ├── mcp-server-brave-search.json
-│       └── mcp-server-github.json
 ├── docs/
 │   ├── methodology.md              # Scoring formula & check categories
-│   └── dev.md                      # This file
+│   ├── dev.md                      # This file
+│   └── tools/                      # Auto-generated per-tool detail pages
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   └── SCAN_REQUEST.md
 │   └── workflows/
-│       └── update-registry.yml     # (planned) Auto-update README registry table
+│       └── daily-audit.yml         # Scheduled daily audit pipeline
 ├── report.schema.json              # JSON Schema Draft 2020-12
+├── go.mod
 └── README.md
 ```
 
@@ -30,19 +37,26 @@ tooltrust-directory/
 ## Data Pipeline
 
 ```
-AgentSentry (Go)
+GitHub Search API
      │
-     │  produces report.json
+     │  cmd/crawler discovers top MCP servers
+     ▼
+data/pending-scans.json
+     │
+     │  for each tool:
+     │    1. git clone → AgentSentry scan (AS-001/002/003/005/010/011)
+     │    2. go.mod / package.json → OSV API (AS-004 CVEs)
+     │    3. cmd/transform merges findings → ToolTrust report
      ▼
 data/reports/<tool-id>.json
      │
-     │  validated against
+     │  cmd/sync regenerates
      ▼
-report.schema.json
+README.md (registry table) + docs/tools/<id>.md (detail pages)
      │
-     │  triggers GitHub Actions
+     │  git commit & push
      ▼
-README.md AGENTSENTRY:BEGIN…END block updated
+Published to main branch
 ```
 
 ### Adding a Report Manually
@@ -51,11 +65,11 @@ README.md AGENTSENTRY:BEGIN…END block updated
 2. Validate the output:
 
 ```bash
-npx ajv-cli validate -s report.schema.json -d data/reports/<tool-id>.json
+npx ajv-cli validate -s report.schema.json -d data/reports/<tool-id>.json --spec=draft2020
 ```
 
 3. Commit the new file to `data/reports/`.
-4. Update the registry table in `README.md` inside the `AGENTSENTRY:BEGIN … END` markers.
+4. Run `go run ./cmd/sync` to regenerate the README table and detail pages.
 
 ---
 
@@ -68,12 +82,14 @@ Key constraints:
 | Field | Type | Notes |
 |-------|------|-------|
 | `tool_id` | `string` | kebab-case; must match filename without `.json` |
-| `version` | `string` | semver pattern `\d+\.\d+\.\d+` |
+| `version` | `string` | Semver or tag string from the source repository |
 | `grade` | `enum` | One of `A B C D F` |
 | `risk_score` | `integer ≥ 0` | Derived from findings via methodology formula |
 | `scanner` | `string` | Pattern `AgentSentry/\d+\.\d+\.\d+` |
 | `findings[].id` | `string` | Pattern `AS-\d{3}` |
 | `findings[].severity` | `enum` | `Critical High Medium Low Info` |
+
+Optional metadata fields: `category`, `vendor`, `stars`, `license`, `language`, `description`.
 
 ---
 
@@ -100,34 +116,55 @@ From an AI Agent (MCP `fetch` tool):
 
 ---
 
-## GitHub Actions: Auto-Registry Update (Planned)
+## GitHub Actions: Daily Audit Pipeline
 
-The workflow at `.github/workflows/update-registry.yml` will:
+The workflow at `.github/workflows/daily-audit.yml`:
 
-1. Trigger on `push` to `data/reports/**`.
-2. Validate every modified report against `report.schema.json`.
-3. Parse all reports in `data/reports/` and regenerate the Markdown table.
-4. Commit the updated `README.md` back to `main` with the message `chore: update registry [skip ci]`.
+1. **Discover** — runs `cmd/crawler` to search GitHub for MCP servers (top 50 by stars), compares versions against existing reports, emits `pending-scans.json`.
+2. **Scan** — for each pending tool: clones the repo, runs AgentSentry (tool-definition scan) and `cmd/analyze` (OSV CVE scan), then `cmd/transform` to produce a ToolTrust report.
+3. **Publish** — runs `cmd/sync` to regenerate the README registry table and per-tool detail pages, commits and pushes to `main`.
 
-Environment variables required in the repo secrets:
+Triggered by:
+- **Cron**: daily at 00:00 UTC
+- **Manual**: `workflow_dispatch` (with optional `force_rescan` flag)
+
+Environment variables / secrets:
 
 | Secret | Purpose |
 |--------|---------|
-| `AGENTSENTRY_WRITE_TOKEN` | GitHub PAT with `contents: write` scope for the auto-commit step |
+| `GITHUB_TOKEN` | Automatic; used for GitHub API search and git push |
+| `REGISTRY_PUSH_TOKEN` | Optional PAT with `contents: write` if branch protection is enabled |
 
 ---
 
 ## Local Development
 
-No build step is required — all data is static JSON and Markdown.
+### Prerequisites
 
-To validate all reports at once:
+- Go 1.24+ (see `go.mod`)
+- Node.js (optional, for schema validation with `ajv-cli`)
+
+### Build & Run
 
 ```bash
-# Install ajv-cli once
+# Run the full sync locally (reads data/reports/, updates README + docs/tools/)
+go run ./cmd/sync
+
+# Run crawler locally (requires GITHUB_TOKEN)
+GITHUB_TOKEN=ghp_xxx go run ./cmd/crawler
+
+# Run OSV analysis on a cloned repo
+go run ./cmd/analyze --dir /path/to/cloned-repo --output /tmp/osv-findings.json
+
+# Run tests
+go test ./...
+```
+
+### Validate Reports
+
+```bash
 npm install -g ajv-cli ajv-formats
 
-# Validate all reports
 for f in data/reports/*.json; do
   echo "Validating $f..."
   ajv validate -s report.schema.json -d "$f" --spec=draft2020
@@ -138,5 +175,6 @@ done
 
 ## License
 
-Report data: [CC BY 4.0](../LICENSE)
-Scanner engine: © AgentSafe AI (proprietary)
+Code and tooling: [MIT](../LICENSE)
+Report data: [MIT](../LICENSE)
+Scanner engine: © AgentSafe AI

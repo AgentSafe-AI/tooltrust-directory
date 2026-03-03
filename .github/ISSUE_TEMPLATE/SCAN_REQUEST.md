@@ -61,7 +61,7 @@ assignees: ''
 
 - [ ] The source URL points to a **public** repository.
 - [ ] I have pinned a specific **version or commit** (not `main`/`latest`).
-- [ ] This tool is **not already listed** in the [Verified Tools table](../../README.md#verified-tools).
+- [ ] This tool is **not already listed** in the [Security Registry](../../README.md#-security-registry).
 - [ ] I understand that AgentSentry performs **static analysis only** (v1.0).
 
 ---

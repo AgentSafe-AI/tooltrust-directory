@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 env:
-  GO_VERSION: '1.24'
+  GO_VERSION: '1.24.0'
   REPORTS_DIR: data/reports
   PENDING_SCANS_PATH: data/pending-scans.json
 
@@ -50,8 +50,9 @@ jobs:
             exit 0
           fi
           COUNT=$(jq 'length' "${{ env.PENDING_SCANS_PATH }}")
-          echo "Pending tools: $COUNT"
-          if [ "$COUNT" -gt 0 ] || [ "${{ inputs.force_rescan }}" = "true" ]; then
+          FORCE="${{ inputs.force_rescan }}"
+          echo "Pending tools: $COUNT (force_rescan=${FORCE:-false})"
+          if [ "$COUNT" -gt 0 ] || [ "${FORCE:-false}" = "true" ]; then
             echo "has_pending=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_pending=false" >> "$GITHUB_OUTPUT"
@@ -108,6 +109,11 @@ jobs:
           COUNT=$(jq 'length' "$PENDING")
           echo "Scanning $COUNT tool(s)…"
           mkdir -p "${{ env.REPORTS_DIR }}"
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "Nothing to scan."
+            exit 0
+          fi
 
           run_agentsentry() {
             local INPUT="$1" OUTPUT="$2"
@@ -241,6 +247,7 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "| Tool | Grade | Risk Score |" >> "$GITHUB_STEP_SUMMARY"
           echo "|------|:-----:|:----------:|" >> "$GITHUB_STEP_SUMMARY"
+          shopt -s nullglob
           for f in data/reports/*.json; do
             TOOL=$(jq  -r '.tool_id'    "$f")
             GRADE=$(jq -r '.grade'      "$f")

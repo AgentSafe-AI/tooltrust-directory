@@ -209,7 +209,7 @@ func main() {
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
 func transform(as AgentSentryOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description string) TrustReport {
-	var allFindings []TTFinding
+	allFindings := make([]TTFinding, 0)
 	maxScore := 0
 	summary := TTSummary{}
 

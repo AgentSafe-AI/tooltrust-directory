@@ -13,6 +13,7 @@ package sync
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -58,6 +59,21 @@ type Finding struct {
 	Recommendation string `json:"recommendation"`
 }
 
+var badgeCountRe = regexp.MustCompile(
+	`(tools%20audited-)\d+(-brightgreen)`,
+)
+var badgeDateRe = regexp.MustCompile(
+	`(last%20scan-)\d{4}--\d{2}--\d{2}(-blue)`,
+)
+
+func updateBadges(readme string, toolCount int) string {
+	now := time.Now().UTC().Format("2006-01-02")
+	datePart := strings.ReplaceAll(now, "-", "--")
+	readme = badgeCountRe.ReplaceAllString(readme, fmt.Sprintf("${1}%d${2}", toolCount))
+	readme = badgeDateRe.ReplaceAllString(readme, "${1}"+datePart+"${2}")
+	return readme
+}
+
 // registryBlock matches the full AGENTSENTRY:BEGIN … END region, including
 // the marker comment lines themselves.
 var registryBlock = regexp.MustCompile(
@@ -78,11 +94,14 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 	if err != nil {
 		return fmt.Errorf("read readme: %w", err)
 	}
-	table := buildTable(reports)
-	updated := registryBlock.ReplaceAllString(string(raw), "${1}"+table+"\n${2}")
-	if updated == string(raw) {
+	readme := string(raw)
+	if !registryBlock.MatchString(readme) {
 		return fmt.Errorf("AGENTSENTRY markers not found in %s — nothing updated", readmePath)
 	}
+
+	table := buildTable(reports)
+	updated := registryBlock.ReplaceAllString(readme, "${1}"+table+"\n${2}")
+	updated = updateBadges(updated, len(reports))
 	if err := os.WriteFile(readmePath, []byte(updated), 0o644); err != nil {
 		return fmt.Errorf("write readme: %w", err)
 	}
@@ -140,12 +159,15 @@ func loadReports(dir string) ([]Report, error) {
 		if e.IsDir() || !strings.HasSuffix(e.Name(), ".json") {
 			continue
 		}
-		raw, err := os.ReadFile(filepath.Join(dir, e.Name()))
+		path := filepath.Join(dir, e.Name())
+		raw, err := os.ReadFile(path)
 		if err != nil {
+			log.Printf("warning: skip %s: %v", e.Name(), err)
 			continue
 		}
 		var r Report
 		if err := json.Unmarshal(raw, &r); err != nil {
+			log.Printf("warning: skip %s (parse error): %v", e.Name(), err)
 			continue
 		}
 		reports = append(reports, r)
@@ -163,7 +185,11 @@ func loadReports(dir string) ([]Report, error) {
 }
 
 func gradeRank(g string) int {
-	return map[string]int{"A": 0, "B": 1, "C": 2, "D": 3, "F": 4}[g]
+	ranks := map[string]int{"A": 0, "B": 1, "C": 2, "D": 3, "F": 4}
+	if r, ok := ranks[g]; ok {
+		return r
+	}
+	return 5 // unknown grades sort last
 }
 
 func buildTable(reports []Report) string {
@@ -267,29 +293,6 @@ func buildDetailPage(r Report) string {
 
 	fmt.Fprintf(&sb, "*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/%s.json)*\n", r.ToolID)
 	return sb.String()
-}
-
-// summarise returns a short human-readable findings summary, e.g. "1 High, 2 Medium".
-func summarise(r Report) string {
-	items := []struct {
-		n     int
-		label string
-	}{
-		{r.Summary.Critical, "Critical"},
-		{r.Summary.High, "High"},
-		{r.Summary.Medium, "Medium"},
-		{r.Summary.Low, "Low"},
-	}
-	var parts []string
-	for _, p := range items {
-		if p.n > 0 {
-			parts = append(parts, fmt.Sprintf("%d %s", p.n, p.label))
-		}
-	}
-	if len(parts) == 0 {
-		return "None"
-	}
-	return strings.Join(parts, ", ")
 }
 
 func sanitizeCell(s string) string {
