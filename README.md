@@ -14,7 +14,7 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 
 ## 📊 Security Registry
 
-<!-- AGENTSENTRY:BEGIN — Do not edit this section manually. Updated automatically by .github/workflows/update-registry.yml -->
+<!-- AGENTSENTRY:BEGIN -- Do not edit this section manually. -->
 
 | Tool | Category | Description | Grade | Key Findings |
 |------|----------|-------------|:-----:|:------------:|
@@ -23,12 +23,12 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | [xiyan-mcp-server](https://github.com/XGenerationLab/xiyan_mcp_server) | Developer Tools | A Model Context Protocol (MCP) server that enables natural language q... | **[A](./docs/tools/xiyan-mcp-server.md)** | None ✅ |
 | [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) | Developer Tools | A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Su... | **[A](./docs/tools/apktool-mcp-server.md)** | None ✅ |
 | [aqara-mcp-server](https://github.com/aqara/aqara-mcp-server) | Developer Tools | Aqara's official MCP Server | **[A](./docs/tools/aqara-mcp-server.md)** | None ✅ |
-| [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | Developer Tools | 本项目为xiaozhi-esp32提供后端服务，帮助您快速搭建ES... | **[A](./docs/tools/xiaozhi-esp32-server.md)** | None ✅ |
+| [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | Developer Tools | 本项目为xiaozhi-esp32提供后端服务，帮助您快速搭建ESP32设备控制服务器。Backend service for xiaoz... | **[A](./docs/tools/xiaozhi-esp32-server.md)** | None ✅ |
 | [bifrost](https://github.com/maximhq/bifrost) | Developer Tools | Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive... | **[A](./docs/tools/bifrost.md)** | None ✅ |
 | [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | Developer Tools | — | **[A](./docs/tools/brave-search-mcp-server.md)** | None ✅ |
 | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | Developer Tools | Monitor browser logs directly from Cursor and other MCP compatible IDEs. | **[A](./docs/tools/browser-tools-mcp.md)** | None ✅ |
 | [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) | Developer Tools | Browse the web, directly from Cursor etc. | **[A](./docs/tools/browser-use-mcp-server.md)** | None ✅ |
-| [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | Developer Tools | 小红书（XiaoHongShu、RedNote）链接提取/作品采集工具�... | **[A](./docs/tools/xhs-downloader.md)** | None ✅ |
+| [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | Developer Tools | 小红书（XiaoHongShu、RedNote）链接提取/作品采集工具：提取账号发布、收藏、点赞、专辑作品链接；提取搜索结果作品、用户链接... | **[A](./docs/tools/xhs-downloader.md)** | None ✅ |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | Developer Tools | Chrome DevTools for coding agents | **[A](./docs/tools/chrome-devtools-mcp.md)** | None ✅ |
 | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) | Developer Tools | A lightweight Model Context Protocol (MCP) server that enables AI ass... | **[A](./docs/tools/weather-mcp-server.md)** | None ✅ |
 | [context7](https://github.com/upstash/context7) | Developer Tools | Context7 MCP Server -- Up-to-date code documentation for LLMs and AI ... | **[A](./docs/tools/context7.md)** | None ✅ |
@@ -40,21 +40,21 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | [doris-mcp-server](https://github.com/apache/doris-mcp-server) | Developer Tools | Apache Doris MCP Server | **[A](./docs/tools/doris-mcp-server.md)** | None ✅ |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | Developer Tools | Trigger.dev – build and deploy fully‑managed AI agents and workflows | **[A](./docs/tools/trigger-dev.md)** | None ✅ |
 | [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) | Developer Tools | A Model Context Protocol (MCP) server implementation that provides El... | **[A](./docs/tools/elasticsearch-mcp-server.md)** | None ✅ |
-| [trendradar](https://github.com/sansan0/TrendRadar) | Developer Tools | ⭐AI-driven public opinion & trend monitor with multi-platform aggre... | **[A](./docs/tools/trendradar.md)** | None ✅ |
+| [trendradar](https://github.com/sansan0/TrendRadar) | Developer Tools | ⭐AI-driven public opinion & trend monitor with multi-platform aggrega... | **[A](./docs/tools/trendradar.md)** | None ✅ |
 | [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | Developer Tools | The Terraform MCP Server provides seamless integration with Terraform... | **[A](./docs/tools/terraform-mcp-server.md)** | None ✅ |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | Developer Tools | A Model Context Protocol server for Excel file manipulation | **[A](./docs/tools/excel-mcp-server.md)** | None ✅ |
 | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) | Developer Tools | Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, ... | **[A](./docs/tools/fastapi-mcp.md)** | None ✅ |
 | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) | Developer Tools | Query MCP enables end-to-end management of Supabase via chat interfac... | **[A](./docs/tools/supabase-mcp-server.md)** | None ✅ |
-| [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | Developer Tools | 🔥 Official Firecrawl MCP Server - Adds powerful web scraping and s... | **[A](./docs/tools/firecrawl-mcp-server.md)** | None ✅ |
+| [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | Developer Tools | 🔥 Official Firecrawl MCP Server - Adds powerful web scraping and sear... | **[A](./docs/tools/firecrawl-mcp-server.md)** | None ✅ |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | Developer Tools | An open-source AI agent that brings the power of Gemini directly into... | **[A](./docs/tools/gemini-cli.md)** | None ✅ |
-| [solon](https://github.com/opensolon/solon) | Other | 🔥 Java enterprise application development framework for full scena... | **[A](./docs/tools/solon.md)** | None ✅ |
+| [solon](https://github.com/opensolon/solon) | Other | 🔥 Java enterprise application development framework for full scenario... | **[A](./docs/tools/solon.md)** | None ✅ |
 | [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | Developer Tools | Convert documentation websites, GitHub repositories, and PDFs into Cl... | **[A](./docs/tools/skill-seekers.md)** | None ✅ |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | Developer Tools | An autonomous agent that conducts deep research on any data using any... | **[A](./docs/tools/gpt-researcher.md)** | None ✅ |
 | [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) | Developer Tools | — | **[A](./docs/tools/signoz-mcp-server.md)** | None ✅ |
 | [serena](https://github.com/oraios/serena) | Developer Tools | A powerful coding agent toolkit providing semantic retrieval and edit... | **[A](./docs/tools/serena.md)** | None ✅ |
 | [ida-mcp-server](https://github.com/MxIris-Reverse-Engineering/ida-mcp-server) | Developer Tools | A Model Context Protocol server for IDA | **[A](./docs/tools/ida-mcp-server.md)** | None ✅ |
 | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | Developer Tools | AI-powered reverse engineering assistant that bridges IDA Pro with la... | **[A](./docs/tools/ida-pro-mcp.md)** | None ✅ |
-| [scrapling](https://github.com/D4Vinci/Scrapling) | Developer Tools | 🕷️ An adaptive Web Scraping framework that handles everything fr... | **[A](./docs/tools/scrapling.md)** | None ✅ |
+| [scrapling](https://github.com/D4Vinci/Scrapling) | Developer Tools | 🕷️ An adaptive Web Scraping framework that handles everything from a ... | **[A](./docs/tools/scrapling.md)** | None ✅ |
 | [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) | Developer Tools | 🪐 🔧 Model Context Protocol (MCP) Server for Jupyter. | **[A](./docs/tools/jupyter-mcp-server.md)** | None ✅ |
 | [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | Developer Tools | Connect AI models like Claude & GPT with robots using MCP and ROS. | **[A](./docs/tools/ros-mcp-server.md)** | None ✅ |
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | Developer Tools | A Python-based Xiaozhi AI for users who want the full Xiaozhi experie... | **[A](./docs/tools/py-xiaozhi.md)** | None ✅ |
@@ -63,13 +63,13 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | Developer Tools | A Model Context Protocol (MCP) server for Kubernetes. Install: npx ku... | **[A](./docs/tools/kubectl-mcp-server.md)** | None ✅ |
 | [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | Developer Tools | A Model Context Protocol (MCP) server that enables AI agents and LLMs... | **[A](./docs/tools/prometheus-mcp-server.md)** | None ✅ |
 | [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | Developer Tools | Model Context Protocol (MCP) server for Kubernetes and OpenShift | **[A](./docs/tools/kubernetes-mcp-server.md)** | None ✅ |
-| [lamda](https://github.com/firerpa/lamda) | Developer Tools |  The most powerful Android RPA agent framework, next generation of mo... | **[A](./docs/tools/lamda.md)** | None ✅ |
+| [lamda](https://github.com/firerpa/lamda) | Developer Tools | The most powerful Android RPA agent framework, next generation of mob... | **[A](./docs/tools/lamda.md)** | None ✅ |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | Developer Tools | An Agentic Framework for Reflective PowerPoint Generation | **[A](./docs/tools/pptagent.md)** | None ✅ |
 | [osaurus](https://github.com/osaurus-ai/osaurus) | Other | AI edge infrastructure for macOS. Run local or cloud models, share to... | **[A](./docs/tools/osaurus.md)** | None ✅ |
 | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | Developer Tools | This MCP server allows Claude and other AI assistants to access your ... | **[A](./docs/tools/linkedin-mcp-server.md)** | None ✅ |
 | [linkwarden-mcp-server](https://github.com/irfansofyana/linkwarden-mcp-server) | Developer Tools | An MCP Server for Linkwarden | **[A](./docs/tools/linkwarden-mcp-server.md)** | None ✅ |
 | [openmetadata](https://github.com/open-metadata/OpenMetadata) | Developer Tools | OpenMetadata is a unified metadata platform for data discovery, data ... | **[A](./docs/tools/openmetadata.md)** | None ✅ |
-| [maxkb](https://github.com/1Panel-dev/MaxKB) | Developer Tools | 🔥 MaxKB is an open-source platform for building enterprise-grade a... | **[A](./docs/tools/maxkb.md)** | None ✅ |
+| [maxkb](https://github.com/1Panel-dev/MaxKB) | Developer Tools | 🔥 MaxKB is an open-source platform for building enterprise-grade agen... | **[A](./docs/tools/maxkb.md)** | None ✅ |
 | [mcp-android-adb-server](https://github.com/github-hewei/mcp-android-adb-server) | Developer Tools | 通过AI大模型操作安卓设备 | **[A](./docs/tools/mcp-android-adb-server.md)** | None ✅ |
 | [mcp-difyworkflow-server](https://github.com/gotoolkits/mcp-difyworkflow-server) | Developer Tools | mcp-difyworkflow-server is an mcp server Tools application that imple... | **[A](./docs/tools/mcp-difyworkflow-server.md)** | None ✅ |
 | [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) | Developer Tools | 钉钉webhook MCP server | **[A](./docs/tools/mcp-dingdingbot-server.md)** | None ✅ |
@@ -101,37 +101,37 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) | Developer Tools | An MCP server for Google Tag Manager. Connect it to your LLM, authent... | **[A](./docs/tools/gtm-mcp-server.md)** | `AS-004` |
 | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | Developer Tools | The most powerful MCP Slack Server with no permission requirements, A... | **[A](./docs/tools/slack-mcp-server.md)** | `AS-004` |
 | [kubefwd](https://github.com/txn2/kubefwd) | Developer Tools | Bulk port forwarding Kubernetes services for local development. | **[A](./docs/tools/kubefwd.md)** | `AS-004` |
-| [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | Developer Tools | Run MATLAB® using AI applications with the official MATLAB MCP Serve... | **[A](./docs/tools/matlab-mcp-core-server.md)** | `AS-004` |
+| [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | Developer Tools | Run MATLAB® using AI applications with the official MATLAB MCP Server... | **[A](./docs/tools/matlab-mcp-core-server.md)** | `AS-004` |
 | [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | Developer Tools | Official MCP Server for Buildkite. | **[A](./docs/tools/buildkite-mcp-server.md)** | `AS-004` |
 | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) | Developer Tools | A powerful multi-database server implementing the Model Context Proto... | **[B](./docs/tools/db-mcp-server.md)** | `AS-004` |
 | [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) | Developer Tools | Go server implementing Model Context Protocol (MCP) for filesystem op... | **[B](./docs/tools/mcp-filesystem-server.md)** | `AS-004` |
 | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) | Developer Tools | A Model Context Protocol server to connect to MongoDB databases and M... | **[B](./docs/tools/mongodb-mcp-server.md)** | `AS-004` |
 | [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) | Developer Tools | A Model Context Protocol (MCP) server that enables LLMs to interact w... | **[B](./docs/tools/mcp-server-simulator-ios-idb.md)** | `AS-004` |
 | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | Developer Tools | MCP server wrapper for OpenAI Codex CLI that enables Claude Code to l... | **[B](./docs/tools/codex-mcp-server.md)** | `AS-004` |
-| [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | Developer Tools | 🗂️🤖 Airtable Model Context Protocol Server, for allowing AI s... | **[B](./docs/tools/airtable-mcp-server.md)** | `AS-004` |
+| [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | Developer Tools | 🗂️🤖 Airtable Model Context Protocol Server, for allowing AI systems t... | **[B](./docs/tools/airtable-mcp-server.md)** | `AS-004` |
 | [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) | Developer Tools | A Model Context Protocol (MCP) server for Apache Kafka implemented in... | **[B](./docs/tools/kafka-mcp-server.md)** | `AS-004` |
 | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) | Developer Tools | This MCP server provides browser automation capabilities through Pupp... | **[B](./docs/tools/puppeteer-mcp-server.md)** | `AS-004` |
 | [apify-mcp-server](https://github.com/apify/apify-mcp-server) | Developer Tools | The Apify MCP server enables your AI agents to extract data from soci... | **[B](./docs/tools/apify-mcp-server.md)** | `AS-004` |
 | [last9-mcp-server](https://github.com/last9/last9-mcp-server) | Developer Tools | Last9 MCP Server | **[B](./docs/tools/last9-mcp-server.md)** | `AS-004` |
 | [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) | Developer Tools | Model Context Protocol server to run commands (tool: `runProcess`) | **[B](./docs/tools/mcp-server-commands.md)** | `AS-004` |
 | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | Developer Tools | MCP server that integrates the LINE Messaging API to connect an AI Ag... | **[B](./docs/tools/line-bot-mcp-server.md)** | `AS-004` |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Developer Tools | MCP server for GitHub API integration — repository management, file... | **[B](./docs/tools/mcp-server-github.md)** | `AS-005`, `AS-011` |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | Developer Tools | MCP server for GitHub API integration — repository management, file o... | **[B](./docs/tools/mcp-server-github.md)** | `AS-005`, `AS-011` |
 | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Developer Tools | Reference MCP server providing safe, configurable access to the local... | **[B](./docs/tools/mcp-server-filesystem.md)** | `AS-002` |
-| [activepieces](https://github.com/activepieces/activepieces) | Developer Tools | AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for A... | **[B](./docs/tools/activepieces.md)** | `AS-004` |
+| [activepieces](https://github.com/activepieces/activepieces) | Developer Tools | AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI ... | **[B](./docs/tools/activepieces.md)** | `AS-004` |
 | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | Developer Tools | MCP server that provides LLMs with tools for interacting with EVM net... | **[B](./docs/tools/evm-mcp-server.md)** | `AS-004` |
 | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | Developer Tools | A Model Context Protocol (MCP) server and CLI that provides tools for... | **[B](./docs/tools/xcodebuildmcp.md)** | `AS-004` |
 | [nginx-ui](https://github.com/0xJacky/nginx-ui) | Developer Tools | Yet another WebUI for Nginx | **[B](./docs/tools/nginx-ui.md)** | `AS-004` |
 | [godoc-mcp-server](https://github.com/yikakia/godoc-mcp-server) | Developer Tools | A mcp server provide infomation from pkg.go.dev. For all golang progr... | **[B](./docs/tools/godoc-mcp-server.md)** | `AS-004` |
 | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) | Developer Tools | Control Neovim using Model Context Protocol (MCP) and the official ne... | **[B](./docs/tools/mcp-neovim-server.md)** | `AS-004` |
-| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | Developer Tools | 🤖 A visualization mcp & skills contains 25+ visual charts using @a... | **[B](./docs/tools/mcp-server-chart.md)** | `AS-004` |
+| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | Developer Tools | 🤖 A visualization mcp & skills contains 25+ visual charts using @antv... | **[B](./docs/tools/mcp-server-chart.md)** | `AS-004` |
 | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) | Developer Tools | — | **[B](./docs/tools/mcp-notion-server.md)** | `AS-004` |
 | [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) | Developer Tools | MCP Server (Model Context Protocol) for turning OpenAPI specification... | **[B](./docs/tools/mcp-openapi-server.md)** | `AS-004` |
-| [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | Developer Tools | MCP Documentation Server - Bridge the AI Knowledge Gap.  ✨ Features... | **[B](./docs/tools/mcp-documentation-server.md)** | `AS-004` |
+| [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | Developer Tools | MCP Documentation Server - Bridge the AI Knowledge Gap.  ✨ Features: ... | **[B](./docs/tools/mcp-documentation-server.md)** | `AS-004` |
 | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | Developer Tools | A Model Context Protocol (MCP) server for interacting with Microsoft ... | **[B](./docs/tools/ms-365-mcp-server.md)** | `AS-004` |
 | [reportportal-mcp-server](https://github.com/reportportal/reportportal-mcp-server) | Developer Tools | MCP server for ReportPortal | **[B](./docs/tools/reportportal-mcp-server.md)** | `AS-004` |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | Developer Tools | GitHub's official MCP Server | **[B](./docs/tools/github-mcp-server.md)** | `AS-004` |
 | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) | Developer Tools | Razorpay's Official MCP Server | **[C](./docs/tools/razorpay-mcp-server.md)** | `AS-004` |
-| [streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) | Developer Tools | Developer-friendly MCP server bridging Kafka and Pulsar protocols—b... | **[C](./docs/tools/streamnative-mcp-server.md)** | `AS-004` |
+| [streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) | Developer Tools | Developer-friendly MCP server bridging Kafka and Pulsar protocols—bui... | **[C](./docs/tools/streamnative-mcp-server.md)** | `AS-004` |
 | [k8s-mcp-server](https://github.com/reza-gholizade/k8s-mcp-server) | Developer Tools | Manage Your Kubernetes Cluster with k8s mcp-server | **[C](./docs/tools/k8s-mcp-server.md)** | `AS-004` |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | Developer Tools | A mcp server to allow LLMS gain context about shadcn ui component str... | **[C](./docs/tools/shadcn-ui-mcp-server.md)** | `AS-004` |
 | [render-mcp-server](https://github.com/render-oss/render-mcp-server) | Developer Tools | The Official Render MCP Server | **[C](./docs/tools/render-mcp-server.md)** | `AS-004` |
@@ -147,13 +147,13 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | Developer Tools | Draw.io Model Context Protocol (MCP) Server | **[F](./docs/tools/drawio-mcp-server.md)** | `AS-004` |
 | [docs-mcp-server](https://github.com/arabold/docs-mcp-server) | Developer Tools | Grounded Docs MCP Server: Open-Source Alternative to Context7, Nia, a... | **[F](./docs/tools/docs-mcp-server.md)** | `AS-004` |
 | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | Developer Tools | Allow AI to wade through complex OpenAPIs using Simple Language | **[F](./docs/tools/openapi-mcp-server.md)** | `AS-004` |
-| [ruflo](https://github.com/ruvnet/ruflo) | Developer Tools | 🌊 The leading agent orchestration platform for Claude. Deploy inte... | **[F](./docs/tools/ruflo.md)** | `AS-004` |
+| [ruflo](https://github.com/ruvnet/ruflo) | Developer Tools | 🌊 The leading agent orchestration platform for Claude. Deploy intelli... | **[F](./docs/tools/ruflo.md)** | `AS-004` |
 | [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | Developer Tools | A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n... | **[F](./docs/tools/n8n-mcp.md)** | `AS-004` |
-| [ig-mcp-server](https://github.com/inspektor-gadget/ig-mcp-server) | Developer Tools | Debug your Container and Kubernetes workloads with an AI interface  | **[F](./docs/tools/ig-mcp-server.md)** | `AS-004` |
+| [ig-mcp-server](https://github.com/inspektor-gadget/ig-mcp-server) | Developer Tools | Debug your Container and Kubernetes workloads with an AI interface | **[F](./docs/tools/ig-mcp-server.md)** | `AS-004` |
 | [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) | Developer Tools | Metoro MCP Server | **[F](./docs/tools/metoro-mcp-server.md)** | `AS-004` |
 | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | Developer Tools | MCP for xiaohongshu.com | **[F](./docs/tools/xiaohongshu-mcp.md)** | `AS-004` |
-| [httprunner](https://github.com/httprunner/httprunner) | Developer Tools | HttpRunner 是一款开源的 API/UI 测试框架，简单易用，�... | **[F](./docs/tools/httprunner.md)** | `AS-004` |
-| [enscan-go](https://github.com/wgpsec/ENScan_GO) | Developer Tools | 一款基于各大企业信息API的工具，解决在遇到的各种... | **[F](./docs/tools/enscan-go.md)** | `AS-004` |
+| [httprunner](https://github.com/httprunner/httprunner) | Developer Tools | HttpRunner 是一款开源的 API/UI 测试框架，简单易用，功能强大，具有丰富的插件化机制和高度的可扩展能力。 | **[F](./docs/tools/httprunner.md)** | `AS-004` |
+| [enscan-go](https://github.com/wgpsec/ENScan_GO) | Developer Tools | 一款基于各大企业信息API的工具，解决在遇到的各种针对国内企业信息收集难题。一键收集控股公司ICP备案、APP、小程序、微信公众号等信息聚... | **[F](./docs/tools/enscan-go.md)** | `AS-004` |
 | [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) | Developer Tools | A Model Context Protocol for checking domain name registration status... | **[F](./docs/tools/fastdomaincheck-mcp-server.md)** | `AS-004` |
 
 <!-- AGENTSENTRY:END -->
