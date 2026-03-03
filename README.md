@@ -16,7 +16,7 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 
 <!-- AGENTSENTRY:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 137 tools → [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 137 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
