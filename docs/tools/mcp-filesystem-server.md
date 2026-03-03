@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.39.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.39.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4440. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.39.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.39.0
 
 **Severity:** Medium
 

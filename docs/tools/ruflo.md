@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-mwcw-c2x4-8c55 in nanoid@5.0.4
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mwcw-c2x4-8c55 in nanoid@5.0.4
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade nanoid to a version that resolves GHSA-mwcw-c2x4-8c55. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4q92-rfm6-2cqx in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4q92-rfm6-2cqx in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-4q92-rfm6-2cqx
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-66q4-vfjg-2qhh in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-66q4-vfjg-2qhh in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-66q4-vfjg-2qhh
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7mv8-j34q-vp7q in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7mv8-j34q-vp7q in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-7mv8-j34q-vp7q
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-ff64-7w26-62rf in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-ff64-7w26-62rf in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-ff64-7w26-62rf
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-jh7p-qr78-84p7 in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-jh7p-qr78-84p7 in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-jh7p-qr78-84p7
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-mhg7-666j-cqg4 in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mhg7-666j-cqg4 in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-mhg7-666j-cqg4
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-q728-gf8j-w49r in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-q728-gf8j-w49r in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -124,7 +124,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-q728-gf8j-w49r
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-qgqw-h4xq-7w8w in @anthropic-ai/claude-code@2.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-qgqw-h4xq-7w8w in @anthropic-ai/claude-code@2.0.1
 
 **Severity:** Medium
 
@@ -136,7 +136,7 @@ Upgrade @anthropic-ai/claude-code to a version that resolves GHSA-qgqw-h4xq-7w8w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.0.4
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.0.4
 
 **Severity:** Medium
 
@@ -148,7 +148,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.0.4
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.0.4
 
 **Severity:** Medium
 
@@ -160,7 +160,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-5j98-mcp5-4vw2 in glob@11.0.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-5j98-mcp5-4vw2 in glob@11.0.3
 
 **Severity:** Medium
 
@@ -172,7 +172,7 @@ Upgrade glob to a version that resolves GHSA-5j98-mcp5-4vw2. Check https://osv.d
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-22r3-9w55-cj54 in pkg@5.8.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-22r3-9w55-cj54 in pkg@5.8.1
 
 **Severity:** Medium
 

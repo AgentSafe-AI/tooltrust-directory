@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7rqq-prvp-x9jh in mermaid@11.6.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7rqq-prvp-x9jh in mermaid@11.6.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade mermaid to a version that resolves GHSA-7rqq-prvp-x9jh. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8gwm-58g9-j8pw in mermaid@11.6.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8gwm-58g9-j8pw in mermaid@11.6.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade mermaid to a version that resolves GHSA-8gwm-58g9-j8pw. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-rwvc-j5jr-mgvh in ai@4.3.12
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-rwvc-j5jr-mgvh in ai@4.3.12
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade ai to a version that resolves GHSA-rwvc-j5jr-mgvh. Check https://osv.dev
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-5f7q-jpqc-wp7h in next@15.5.12
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-5f7q-jpqc-wp7h in next@15.5.12
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade next to a version that resolves GHSA-5f7q-jpqc-wp7h. Check https://osv.d
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-566m-qj78-rww5 in postcss@8
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-566m-qj78-rww5 in postcss@8
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade postcss to a version that resolves GHSA-566m-qj78-rww5. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7fh5-64p2-3v2j in postcss@8
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7fh5-64p2-3v2j in postcss@8
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade postcss to a version that resolves GHSA-7fh5-64p2-3v2j. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-hwj9-h5mp-3pm3 in postcss@8
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-hwj9-h5mp-3pm3 in postcss@8
 
 **Severity:** Medium
 

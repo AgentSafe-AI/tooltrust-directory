@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-qwcr-r2fm-qrc7 in body-parser@1.20.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-qwcr-r2fm-qrc7 in body-parser@1.20.2
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade body-parser to a version that resolves GHSA-qwcr-r2fm-qrc7. Check https:
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.16.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.16.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-345p-7cg4-v4c7
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.16.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.16.0
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.16.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.16.0
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.12.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.12.2
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-73rr-hh4g-fpgx in diff@5.2.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-73rr-hh4g-fpgx in diff@5.2.0
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade diff to a version that resolves GHSA-73rr-hh4g-fpgx. Check https://osv.d
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-qw6h-vgh9-j6wx in express@4.19.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-qw6h-vgh9-j6wx in express@4.19.2
 
 **Severity:** Medium
 

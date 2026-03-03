@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-23c5-xmqv-rm74 in minimatch@10.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-23c5-xmqv-rm74 in minimatch@10.0.1
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade minimatch to a version that resolves GHSA-23c5-xmqv-rm74. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-3ppc-4f35-3m26 in minimatch@10.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-3ppc-4f35-3m26 in minimatch@10.0.1
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade minimatch to a version that resolves GHSA-3ppc-4f35-3m26. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7r86-cg39-jmmj in minimatch@10.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7r86-cg39-jmmj in minimatch@10.0.1
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade minimatch to a version that resolves GHSA-7r86-cg39-jmmj. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.6.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.6.0
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.6.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.6.0
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.8.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.8.3
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.8.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.8.3
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade axios to a version that resolves GHSA-4hjh-wcwx-xvwj. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-73rr-hh4g-fpgx in diff@8.0.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-73rr-hh4g-fpgx in diff@8.0.2
 
 **Severity:** Medium
 

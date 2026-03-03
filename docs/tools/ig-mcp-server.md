@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-m6hq-p25p-ffr2 in github.com/containerd/containerd@1.7.28
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-m6hq-p25p-ffr2 in github.com/containerd/containerd@1.7.28
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade github.com/containerd/containerd to a version that resolves GHSA-m6hq-p2
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-pwhc-rpq9-4c8w in github.com/containerd/containerd@1.7.28
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-pwhc-rpq9-4c8w in github.com/containerd/containerd@1.7.28
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade github.com/containerd/containerd to a version that resolves GHSA-pwhc-rp
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4100 in github.com/containerd/containerd@1.7.28
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4100 in github.com/containerd/containerd@1.7.28
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade github.com/containerd/containerd to a version that resolves GO-2025-4100
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4108 in github.com/containerd/containerd@1.7.28
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4108 in github.com/containerd/containerd@1.7.28
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade github.com/containerd/containerd to a version that resolves GO-2025-4108
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-fcv2-xgw5-pqxf in github.com/sigstore/sigstore@1.9.5
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fcv2-xgw5-pqxf in github.com/sigstore/sigstore@1.9.5
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade github.com/sigstore/sigstore to a version that resolves GHSA-fcv2-xgw5-p
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4358 in github.com/sigstore/sigstore@1.9.5
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4358 in github.com/sigstore/sigstore@1.9.5
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade github.com/sigstore/sigstore to a version that resolves GO-2026-4358. Ch
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.42.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.42.0
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-f6x5-jh6r-wrfv. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.42.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.42.0
 
 **Severity:** Medium
 
@@ -124,7 +124,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-j5w8-q4qc-rx2x. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4116 in golang.org/x/crypto@0.42.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4116 in golang.org/x/crypto@0.42.0
 
 **Severity:** Medium
 
@@ -136,7 +136,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-4116. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.42.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.42.0
 
 **Severity:** Medium
 
@@ -148,7 +148,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-4134. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.42.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.42.0
 
 **Severity:** Medium
 
@@ -160,7 +160,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-4135. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.44.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.44.0
 
 **Severity:** Medium
 
@@ -172,7 +172,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4440. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.44.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.44.0
 
 **Severity:** Medium
 

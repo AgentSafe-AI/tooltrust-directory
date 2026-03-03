@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@0.7.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@0.7.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@0.7.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@0.7.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.6.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.6.2
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.6.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.6.2
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade axios to a version that resolves GHSA-4hjh-wcwx-xvwj. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8hc4-vh64-cxmj in axios@1.6.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8hc4-vh64-cxmj in axios@1.6.2
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade axios to a version that resolves GHSA-8hc4-vh64-cxmj. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-jr5f-v2jv-69x6 in axios@1.6.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-jr5f-v2jv-69x6 in axios@1.6.2
 
 **Severity:** Medium
 

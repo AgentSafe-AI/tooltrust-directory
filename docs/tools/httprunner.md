@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4374-p667-p6c8 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4374-p667-p6c8 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-4374-p667-p6c8. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4v7x-pqxf-cx7m in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4v7x-pqxf-cx7m in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-4v7x-pqxf-cx7m. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-qppj-fm5r-hxr3 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-qppj-fm5r-hxr3 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-qppj-fm5r-hxr3. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-qxp5-gwg8-xv66 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-qxp5-gwg8-xv66 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-qxp5-gwg8-xv66. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-vvgc-356p-c3xw in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-vvgc-356p-c3xw in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-vvgc-356p-c3xw. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2023-2102 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2023-2102 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2023-2102. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-2687 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-2687 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2024-2687. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-3333 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-3333 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -124,7 +124,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2024-3333. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3503 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3503 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -136,7 +136,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2025-3503. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3595 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3595 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -148,7 +148,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2025-3595. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -160,7 +160,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4440. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.14.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.14.0
 
 **Severity:** Medium
 
@@ -172,7 +172,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4441. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-6v2p-p543-phr9 in golang.org/x/oauth2@0.8.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-6v2p-p543-phr9 in golang.org/x/oauth2@0.8.0
 
 **Severity:** Medium
 
@@ -184,7 +184,7 @@ Upgrade golang.org/x/oauth2 to a version that resolves GHSA-6v2p-p543-phr9. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3488 in golang.org/x/oauth2@0.8.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3488 in golang.org/x/oauth2@0.8.0
 
 **Severity:** Medium
 
@@ -196,7 +196,7 @@ Upgrade golang.org/x/oauth2 to a version that resolves GO-2025-3488. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-m425-mq94-257g in google.golang.org/grpc@1.57.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-m425-mq94-257g in google.golang.org/grpc@1.57.0
 
 **Severity:** Medium
 
@@ -208,7 +208,7 @@ Upgrade google.golang.org/grpc to a version that resolves GHSA-m425-mq94-257g. C
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2023-2153 in google.golang.org/grpc@1.57.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2023-2153 in google.golang.org/grpc@1.57.0
 
 **Severity:** Medium
 
@@ -220,7 +220,7 @@ Upgrade google.golang.org/grpc to a version that resolves GO-2023-2153. Check ht
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8r3f-844c-mc37 in google.golang.org/protobuf@1.31.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r3f-844c-mc37 in google.golang.org/protobuf@1.31.0
 
 **Severity:** Medium
 
@@ -232,7 +232,7 @@ Upgrade google.golang.org/protobuf to a version that resolves GHSA-8r3f-844c-mc3
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-2611 in google.golang.org/protobuf@1.31.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-2611 in google.golang.org/protobuf@1.31.0
 
 **Severity:** Medium
 

@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-mw96-cpmx-2vgc in rollup@4.22.5
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mw96-cpmx-2vgc in rollup@4.22.5
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade rollup to a version that resolves GHSA-mw96-cpmx-2vgc. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-38r7-794h-5758 in webpack@5.101.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-38r7-794h-5758 in webpack@5.101.3
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade webpack to a version that resolves GHSA-38r7-794h-5758. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8fgc-7cc6-rx7x in webpack@5.101.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8fgc-7cc6-rx7x in webpack@5.101.3
 
 **Severity:** Medium
 

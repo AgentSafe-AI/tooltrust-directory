@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4559 in golang.org/x/net@0.50.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4559 in golang.org/x/net@0.50.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4559. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-fw7p-63qq-7hpr in filippo.io/edwards25519@1.1.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fw7p-63qq-7hpr in filippo.io/edwards25519@1.1.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade filippo.io/edwards25519 to a version that resolves GHSA-fw7p-63qq-7hpr. 
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4503 in filippo.io/edwards25519@1.1.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4503 in filippo.io/edwards25519@1.1.0
 
 **Severity:** Medium
 

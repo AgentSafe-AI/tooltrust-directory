@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-mh29-5h37-fv8m in js-yaml@4.1.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mh29-5h37-fv8m in js-yaml@4.1.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade js-yaml to a version that resolves GHSA-mh29-5h37-fv8m. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.7.9
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.7.9
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.7.9
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.7.9
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade axios to a version that resolves GHSA-4hjh-wcwx-xvwj. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-jr5f-v2jv-69x6 in axios@1.7.9
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-jr5f-v2jv-69x6 in axios@1.7.9
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade axios to a version that resolves GHSA-jr5f-v2jv-69x6. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-fjxv-7rqg-78g4 in form-data@4.0.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fjxv-7rqg-78g4 in form-data@4.0.1
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade form-data to a version that resolves GHSA-fjxv-7rqg-78g4. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.4.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.4.1
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.4.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.4.1
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-67mh-4wv8-2f99 in esbuild@0.24.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-67mh-4wv8-2f99 in esbuild@0.24.2
 
 **Severity:** Medium
 
@@ -124,7 +124,7 @@ Upgrade esbuild to a version that resolves GHSA-67mh-4wv8-2f99. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-44fp-w29j-9vj5 in multer@1.4.5-lts.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-44fp-w29j-9vj5 in multer@1.4.5-lts.1
 
 **Severity:** Medium
 
@@ -136,7 +136,7 @@ Upgrade multer to a version that resolves GHSA-44fp-w29j-9vj5. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-4pg4-qvpc-4q3h in multer@1.4.5-lts.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4pg4-qvpc-4q3h in multer@1.4.5-lts.1
 
 **Severity:** Medium
 
@@ -148,7 +148,7 @@ Upgrade multer to a version that resolves GHSA-4pg4-qvpc-4q3h. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-fjgf-rc76-4x9p in multer@1.4.5-lts.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fjgf-rc76-4x9p in multer@1.4.5-lts.1
 
 **Severity:** Medium
 
@@ -160,7 +160,7 @@ Upgrade multer to a version that resolves GHSA-fjgf-rc76-4x9p. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-g5hg-p3ph-g8qg in multer@1.4.5-lts.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-g5hg-p3ph-g8qg in multer@1.4.5-lts.1
 
 **Severity:** Medium
 
@@ -172,7 +172,7 @@ Upgrade multer to a version that resolves GHSA-g5hg-p3ph-g8qg. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-9crc-q9x8-hgqq in vitest@2.1.8
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-9crc-q9x8-hgqq in vitest@2.1.8
 
 **Severity:** Medium
 

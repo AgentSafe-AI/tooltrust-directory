@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.13.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.13.2
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-jx2c-rxcm-jvmq in fastify@5.6.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-jx2c-rxcm-jvmq in fastify@5.6.2
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade fastify to a version that resolves GHSA-jx2c-rxcm-jvmq. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-mrq3-vjjr-p77c in fastify@5.6.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mrq3-vjjr-p77c in fastify@5.6.2
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade fastify to a version that resolves GHSA-mrq3-vjjr-p77c. Check https://os
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-23c5-xmqv-rm74 in minimatch@10.1.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-23c5-xmqv-rm74 in minimatch@10.1.1
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade minimatch to a version that resolves GHSA-23c5-xmqv-rm74. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-3ppc-4f35-3m26 in minimatch@10.1.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-3ppc-4f35-3m26 in minimatch@10.1.1
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade minimatch to a version that resolves GHSA-3ppc-4f35-3m26. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7r86-cg39-jmmj in minimatch@10.1.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7r86-cg39-jmmj in minimatch@10.1.1
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade minimatch to a version that resolves GHSA-7r86-cg39-jmmj. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-34x7-hfp2-rc4v in tar@7.5.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-34x7-hfp2-rc4v in tar@7.5.2
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade tar to a version that resolves GHSA-34x7-hfp2-rc4v. Check https://osv.de
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-83g3-92jg-28cx in tar@7.5.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-83g3-92jg-28cx in tar@7.5.2
 
 **Severity:** Medium
 
@@ -124,7 +124,7 @@ Upgrade tar to a version that resolves GHSA-83g3-92jg-28cx. Check https://osv.de
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-8qq5-rm4j-mr97 in tar@7.5.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8qq5-rm4j-mr97 in tar@7.5.2
 
 **Severity:** Medium
 
@@ -136,7 +136,7 @@ Upgrade tar to a version that resolves GHSA-8qq5-rm4j-mr97. Check https://osv.de
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-r6q2-hw4h-h46w in tar@7.5.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-r6q2-hw4h-h46w in tar@7.5.2
 
 **Severity:** Medium
 
@@ -148,7 +148,7 @@ Upgrade tar to a version that resolves GHSA-r6q2-hw4h-h46w. Check https://osv.de
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-43p4-m455-4f4j in @trpc/server@11.4.4
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43p4-m455-4f4j in @trpc/server@11.4.4
 
 **Severity:** Medium
 
@@ -160,7 +160,7 @@ Upgrade @trpc/server to a version that resolves GHSA-43p4-m455-4f4j. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.3
 
 **Severity:** Medium
 
