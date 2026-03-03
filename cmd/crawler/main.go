@@ -19,6 +19,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"sort"
 	"strings"
 	"time"
 
@@ -65,7 +66,11 @@ func main() {
 	}
 	log.Printf("Loaded %d existing reports from %s", len(existing), reportsDir)
 
-	pending, err := discoverTools(ctx, client, existing)
+	seedPath := envOr("SEED_POPULAR_PATH", filepath.Join("data", "seed-popular.json"))
+	seedRepos, _ := loadSeed(seedPath)
+	log.Printf("Loaded %d seed repos from %s (mcpmarket/smithery popular)", len(seedRepos), seedPath)
+
+	pending, err := discoverTools(ctx, client, existing, seedRepos)
 	if err != nil {
 		log.Fatalf("tool discovery: %v", err)
 	}
@@ -120,13 +125,100 @@ func loadExistingReports(dir string) (map[string]string, error) {
 	return out, nil
 }
 
-// discoverTools queries GitHub Search for mcp-server repositories and returns
-// those whose latest release version is newer than (or absent from) existing.
-func discoverTools(ctx context.Context, client *github.Client, existing map[string]string) ([]PendingScan, error) {
+// seedFile is the shape of data/seed-popular.json.
+type seedFile struct {
+	Repos []string `json:"repos"`
+}
+
+func loadSeed(path string) ([]string, error) {
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return nil, nil
+		}
+		return nil, err
+	}
+	var s seedFile
+	if err := json.Unmarshal(raw, &s); err != nil {
+		return nil, err
+	}
+	return s.Repos, nil
+}
+
+// discoverFromSeed fetches seed repos from GitHub and returns PendingScans for
+// those needing (re-)scan. Popular MCPs from mcpmarket/smithery that may lack
+// "mcp-server" in name/topic.
+func discoverFromSeed(ctx context.Context, client *github.Client, seed []string, existing map[string]string, seen map[string]bool) ([]PendingScan, error) {
 	var pending []PendingScan
+	for _, spec := range seed {
+		parts := strings.SplitN(spec, "/", 2)
+		if len(parts) != 2 {
+			continue
+		}
+		owner, repo := parts[0], parts[1]
+		toolID := toToolID(repo)
+		if seen[toolID] {
+			continue
+		}
+		seen[toolID] = true
+
+		ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+		if err != nil {
+			log.Printf("seed %s: %v", spec, err)
+			continue
+		}
+		if ghRepo.GetArchived() || ghRepo.GetFork() {
+			continue
+		}
+
+		version, err := latestVersion(ctx, client, owner, repo)
+		if err != nil {
+			log.Printf("seed %s: no release/tag (%v)", toolID, err)
+			continue
+		}
+
+		if cur, ok := existing[toolID]; ok && cur == version {
+			log.Printf("up-to-date %s @ %s (seed)", toolID, version)
+			continue
+		}
+
+		license := ""
+		if ghRepo.GetLicense() != nil {
+			license = ghRepo.GetLicense().GetSPDXID()
+		}
+		pending = append(pending, PendingScan{
+			ToolID:       toolID,
+			RepoOwner:    owner,
+			RepoName:     repo,
+			Version:      version,
+			SourceURL:    ghRepo.GetHTMLURL(),
+			Vendor:       owner,
+			Stars:        ghRepo.GetStargazersCount(),
+			Language:     ghRepo.GetLanguage(),
+			Category:     languageToCategory(ghRepo.GetLanguage()),
+			Description:  ghRepo.GetDescription(),
+			License:      license,
+			DiscoveredAt: time.Now().UTC(),
+		})
+	}
+	return pending, nil
+}
+
+// discoverTools queries GitHub Search and seed file, merges results, and returns
+// tools whose latest version is newer than (or absent from) existing.
+func discoverTools(ctx context.Context, client *github.Client, existing map[string]string, seedRepos []string) ([]PendingScan, error) {
 	seen := make(map[string]bool)
 
-	// Two complementary queries: topic-based and name-based.
+	var pending []PendingScan
+	if len(seedRepos) > 0 {
+		fromSeed, err := discoverFromSeed(ctx, client, seedRepos, existing, seen)
+		if err != nil {
+			return nil, fmt.Errorf("seed discovery: %w", err)
+		}
+		pending = append(pending, fromSeed...)
+	}
+
+	// GitHub Search: topic-based and name-based
 	queries := []string{
 		"topic:mcp-server",
 		"mcp-server in:name language:TypeScript",
@@ -192,6 +284,10 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 			})
 		}
 	}
+
+	sort.Slice(pending, func(i, j int) bool {
+		return pending[i].Stars > pending[j].Stars
+	})
 	return pending, nil
 }
 

@@ -109,7 +109,7 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 	}
 
 	// loc[2]:loc[3] = group 1 (BEGIN marker line), loc[4]:loc[5] = group 2 (END marker)
-	table := buildTable(tableReports, totalCount)
+	table := buildTable(tableReports, totalCount, true, "./docs/tools/")
 	updated := readme[:loc[3]] + table + "\n" + readme[loc[4]:]
 	updated = updateBadges(updated, len(reports))
 	if err := os.WriteFile(readmePath, []byte(updated), 0o644); err != nil {
@@ -126,6 +126,15 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 		if err := os.WriteFile(detailPath, []byte(buildDetailPage(r)), 0o644); err != nil {
 			fmt.Printf("warning: could not write %s: %v\n", detailPath, err)
 		}
+	}
+
+	// Full directory page: all tools for detailed browsing (paths relative to docs/)
+	fullDirPath := filepath.Join(filepath.Dir(readmePath), "docs", "full-directory.md")
+	fullTable := buildTable(reports, totalCount, false, "tools/")
+	fullContent := fmt.Sprintf("# ToolTrust — Full Directory\n\nAll %d audited tools. [← Back to README](../README.md#-security-registry)\n\n%s\n",
+		totalCount, strings.TrimPrefix(fullTable, "\n"))
+	if err := os.WriteFile(fullDirPath, []byte(fullContent), 0o644); err != nil {
+		return fmt.Errorf("write full-directory: %w", err)
 	}
 	return nil
 }
@@ -206,9 +215,15 @@ func gradeRank(g string) int {
 	return 5 // unknown grades sort last
 }
 
-func buildTable(reports []Report, totalCount int) string {
+func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix string) string {
 	var sb strings.Builder
-	fmt.Fprintf(&sb, "\n*Top 50 by stars. View all %d tools → [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n", totalCount)
+	if compact {
+		if len(reports) < totalCount {
+			fmt.Fprintf(&sb, "\n*Top 50 by stars. View all %d tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n", totalCount)
+		} else {
+			fmt.Fprintf(&sb, "\n*[Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n")
+		}
+	}
 	sb.WriteString("| Tool | Version | Stars | Grade | Key Findings | Scanned |\n")
 	sb.WriteString("|------|---------|:-----:|:-----:|:-------------|:-------:|\n")
 	for _, r := range reports {
@@ -220,10 +235,10 @@ func buildTable(reports []Report, totalCount int) string {
 		}
 		scanDate := r.ScanDate.Format("Jan 2")
 		fmt.Fprintf(&sb,
-			"| [%s](%s) | `%s` | %s | **[%s](./docs/tools/%s.md)** | %s | %s |\n",
+			"| [%s](%s) | `%s` | %s | **[%s](%s%s.md)** | %s | %s |\n",
 			r.ToolID, r.SourceURL,
 			ver, formatStars(r.Stars),
-			r.Grade, r.ToolID,
+			r.Grade, toolLinkPrefix, r.ToolID,
 			keyFindings(r),
 			scanDate,
 		)

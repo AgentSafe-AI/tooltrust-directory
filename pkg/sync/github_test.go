@@ -91,7 +91,7 @@ func TestBuildTable(t *testing.T) {
 			Findings:    nil,
 		},
 	}
-	table := buildTable(reports, len(reports))
+	table := buildTable(reports, len(reports), true, "./docs/tools/")
 	if !strings.Contains(table, "test-tool") {
 		t.Error("table should contain tool name")
 	}
@@ -120,7 +120,7 @@ func TestBuildTableCJKTruncation(t *testing.T) {
 			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
 		},
 	}
-	table := buildTable(reports, len(reports))
+	table := buildTable(reports, len(reports), true, "./docs/tools/")
 
 	for _, b := range []byte(table) {
 		_ = b
@@ -145,7 +145,7 @@ func TestBuildTablePipeInDescription(t *testing.T) {
 			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
 		},
 	}
-	table := buildTable(reports, len(reports))
+	table := buildTable(reports, len(reports), true, "./docs/tools/")
 	if strings.Contains(table, "A | B") {
 		t.Error("pipe characters in description should be sanitized")
 	}

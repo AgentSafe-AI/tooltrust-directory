@@ -37,7 +37,7 @@ func main() {
 	log.Println("README.md updated.")
 
 	log.Println("Staging and pushing changes …")
-	if err := syncer.GitCommitAndPush(repoDir, commitMsg, readmePath, reportsDir); err != nil {
+	if err := syncer.GitCommitAndPush(repoDir, commitMsg, readmePath, reportsDir, "docs/"); err != nil {
 		log.Fatalf("GitCommitAndPush: %v", err)
 	}
 	log.Println("Done.")
