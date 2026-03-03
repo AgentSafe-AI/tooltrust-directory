@@ -193,12 +193,12 @@ func loadReports(dir string) ([]Report, error) {
 	}
 
 	// Primary sort: popularity (stars desc) so widely-used tools surface first.
-	// Secondary: grade (A better than F); tertiary: ascending risk score.
+	// Secondary: grade (S best, then A–F); tertiary: ascending risk score.
 	sort.Slice(reports, func(i, j int) bool {
 		if reports[i].Stars != reports[j].Stars {
 			return reports[i].Stars > reports[j].Stars
 		}
-		gi, gj := gradeRank(reports[i].Grade), gradeRank(reports[j].Grade)
+		gi, gj := gradeRank(displayGrade(reports[i])), gradeRank(displayGrade(reports[j]))
 		if gi != gj {
 			return gi < gj
 		}
@@ -234,7 +234,7 @@ func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix s
 			ver = ver[:10] + "…"
 		}
 		scanDate := r.ScanDate.Format("Jan 2")
-		gradeDisp := formatGradeDisplay(r.Grade)
+		gradeDisp := formatGradeDisplay(displayGrade(r))
 		fmt.Fprintf(&sb,
 			"| [%s](%s) | `%s` | %s | **[%s](%s%s.md)** | %s | %s |\n",
 			r.ToolID, r.SourceURL,
@@ -245,6 +245,15 @@ func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix s
 		)
 	}
 	return sb.String()
+}
+
+// displayGrade returns S when risk_score==0 and no findings; else the stored grade.
+// This ensures legacy reports (stored as A) display correctly as S.
+func displayGrade(r Report) string {
+	if r.RiskScore == 0 && len(r.Findings) == 0 {
+		return "S"
+	}
+	return r.Grade
 }
 
 // formatGradeDisplay returns the grade with S 🌟 suffix for S grade.
@@ -321,7 +330,8 @@ func buildDetailPage(r Report) string {
 	var sb strings.Builder
 
 	gradeEmoji := map[string]string{"S": "🌟", "A": "🟢", "B": "🟡", "C": "🟠", "D": "🔴", "F": "⛔"}
-	emoji := gradeEmoji[r.Grade]
+	dispGrade := displayGrade(r)
+	emoji := gradeEmoji[dispGrade]
 	if emoji == "" {
 		emoji = "🟢"
 	}
@@ -333,7 +343,7 @@ func buildDetailPage(r Report) string {
 	}
 
 	fmt.Fprintf(&sb, "| Field | Value |\n|-------|-------|\n")
-	fmt.Fprintf(&sb, "| **Grade** | **%s** |\n", formatGradeDisplay(r.Grade))
+	fmt.Fprintf(&sb, "| **Grade** | **%s** |\n", formatGradeDisplay(displayGrade(r)))
 	fmt.Fprintf(&sb, "| **Risk Score** | %d |\n", r.RiskScore)
 	fmt.Fprintf(&sb, "| **Version** | `%s` |\n", r.Version)
 	if r.Vendor != "" {
