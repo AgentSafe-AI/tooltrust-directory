@@ -21,7 +21,6 @@ import (
 	"sort"
 	"strings"
 	"time"
-	"unicode/utf8"
 )
 
 // Report mirrors the fields we need from report.schema.json.
@@ -197,21 +196,23 @@ func gradeRank(g string) int {
 
 func buildTable(reports []Report) string {
 	var sb strings.Builder
-	sb.WriteString("\n| Tool | Category | Description | Grade | Key Findings |\n")
-	sb.WriteString("|------|----------|-------------|:-----:|:------------:|\n")
+	sb.WriteString("\n| Tool | Version | Category | Grade | Key Findings | Scanned |\n")
+	sb.WriteString("|------|---------|----------|:-----:|:-------------|:-------:|\n")
 	for _, r := range reports {
-		desc := sanitizeCell(r.Description)
-		if desc == "" {
-			desc = "—"
-		} else if utf8.RuneCountInString(desc) > 72 {
-			desc = truncateRunes(desc, 69) + "..."
+		ver := r.Version
+		if ver == "" {
+			ver = "—"
+		} else if len(ver) > 12 {
+			ver = ver[:10] + "…"
 		}
+		scanDate := r.ScanDate.Format("Jan 2")
 		fmt.Fprintf(&sb,
-			"| [%s](%s) | %s | %s | **[%s](./docs/tools/%s.md)** | %s |\n",
+			"| [%s](%s) | `%s` | %s | **[%s](./docs/tools/%s.md)** | %s | %s |\n",
 			r.ToolID, r.SourceURL,
-			orDash(r.Category), desc,
+			ver, orDash(r.Category),
 			r.Grade, r.ToolID,
 			keyFindings(r),
+			scanDate,
 		)
 	}
 	return sb.String()

@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 16 |
-| **Version** | `0.9.4` |
+| **Version** | `0.9.5` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 834 |
+| **Stars** | ⭐ 840 |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-03 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---
@@ -28,18 +28,6 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.2
-
-**Severity:** Medium
-
-**Description:**
-GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.2 (npm ecosystem).
-
-**Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-345p-7cg4-v4c7. Check https://osv.dev/vulnerability/GHSA-345p-7cg4-v4c7 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
-
----
-
 ### 🟡 `AS-004` — Supply Chain CVE: GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1
 
 **Severity:** Medium
@@ -49,6 +37,18 @@ GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1 (npm ecosystem).
 
 **Recommendation:**
 Upgrade ajv to a version that resolves GHSA-2g4f-4pwh-qvx6. Check https://osv.dev/vulnerability/GHSA-2g4f-4pwh-qvx6 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+
+---
+
+### 🟡 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.2
+
+**Severity:** Medium
+
+**Description:**
+GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.2 (npm ecosystem).
+
+**Recommendation:**
+Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-345p-7cg4-v4c7. Check https://osv.dev/vulnerability/GHSA-345p-7cg4-v4c7 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
 
 ---
 

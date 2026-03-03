@@ -61,10 +61,12 @@ func TestBuildTable(t *testing.T) {
 	reports := []Report{
 		{
 			ToolID:      "test-tool",
+			Version:     "1.2.0",
 			SourceURL:   "https://github.com/example/test-tool",
 			Category:    "Developer Tools",
 			Description: "A test tool for testing purposes",
 			Grade:       "A",
+			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
 			Findings:    nil,
 		},
 	}
@@ -72,11 +74,17 @@ func TestBuildTable(t *testing.T) {
 	if !strings.Contains(table, "test-tool") {
 		t.Error("table should contain tool name")
 	}
+	if !strings.Contains(table, "1.2.0") {
+		t.Error("table should contain version")
+	}
 	if !strings.Contains(table, "Developer Tools") {
 		t.Error("table should contain category")
 	}
 	if !strings.Contains(table, "None") {
 		t.Error("table should show 'None' for no findings")
+	}
+	if !strings.Contains(table, "Mar") {
+		t.Error("table should show scan date")
 	}
 }
 
@@ -84,9 +92,11 @@ func TestBuildTableCJKTruncation(t *testing.T) {
 	reports := []Report{
 		{
 			ToolID:      "cjk-tool",
+			Version:     "1.0.0",
 			SourceURL:   "https://example.com",
 			Description: "这是一个很长很长的中文描述，它的长度超过了七十二个字符的限制，所以它需要被截断以适应表格的宽度要求。",
 			Grade:       "B",
+			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
 		},
 	}
 	table := buildTable(reports)
@@ -107,9 +117,11 @@ func TestBuildTablePipeInDescription(t *testing.T) {
 	reports := []Report{
 		{
 			ToolID:      "pipe-tool",
+			Version:     "1.0.0",
 			SourceURL:   "https://example.com",
 			Description: "Supports A | B | C modes",
 			Grade:       "A",
+			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
 		},
 	}
 	table := buildTable(reports)
@@ -204,13 +216,20 @@ func TestUpdateRegistryDollarInDescription(t *testing.T) {
 		t.Fatalf("UpdateRegistry: %v", err)
 	}
 
+	// README table should contain the tool (description is in detail page, not table)
 	result, _ := os.ReadFile(readmePath)
-	content := string(result)
+	if !strings.Contains(string(result), "dollar-tool") {
+		t.Error("README should contain the tool")
+	}
+
+	// Detail page should preserve $ literally
+	detail, _ := os.ReadFile(filepath.Join(dir, "docs", "tools", "dollar-tool.md"))
+	content := string(detail)
 	if !strings.Contains(content, "$100") {
-		t.Error("$ in description should be preserved literally")
+		t.Error("$ in description should be preserved literally in detail page")
 	}
 	if !strings.Contains(content, "${HOME}") {
-		t.Error("${HOME} in description should be preserved literally")
+		t.Error("${HOME} in description should be preserved literally in detail page")
 	}
 }
 
