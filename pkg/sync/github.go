@@ -20,6 +20,7 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 // Report mirrors the fields we need from report.schema.json.
@@ -170,11 +171,11 @@ func buildTable(reports []Report) string {
 	sb.WriteString("\n| Tool | Category | Description | Grade | Key Findings |\n")
 	sb.WriteString("|------|----------|-------------|:-----:|:------------:|\n")
 	for _, r := range reports {
-		desc := r.Description
+		desc := sanitizeCell(r.Description)
 		if desc == "" {
 			desc = "—"
-		} else if len(desc) > 72 {
-			desc = desc[:69] + "..."
+		} else if utf8.RuneCountInString(desc) > 72 {
+			desc = truncateRunes(desc, 69) + "..."
 		}
 		fmt.Fprintf(&sb,
 			"| [%s](%s) | %s | %s | **[%s](./docs/tools/%s.md)** | %s |\n",
@@ -289,6 +290,21 @@ func summarise(r Report) string {
 		return "None"
 	}
 	return strings.Join(parts, ", ")
+}
+
+func sanitizeCell(s string) string {
+	s = strings.ReplaceAll(s, "|", "/")
+	s = strings.ReplaceAll(s, "\n", " ")
+	s = strings.ReplaceAll(s, "\r", "")
+	return strings.TrimSpace(s)
+}
+
+func truncateRunes(s string, n int) string {
+	runes := []rune(s)
+	if len(runes) <= n {
+		return s
+	}
+	return string(runes[:n])
 }
 
 func orDash(s string) string {
