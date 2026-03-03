@@ -121,16 +121,24 @@ func TestBuildTablePipeInDescription(t *testing.T) {
 func TestKeyFindings(t *testing.T) {
 	r := Report{
 		Findings: []Finding{
-			{ID: "AS-001"}, {ID: "AS-002"}, {ID: "AS-001"},
+			{ID: "AS-004"}, {ID: "AS-004"}, {ID: "AS-004"}, {ID: "AS-002"},
 		},
 	}
 	got := keyFindings(r)
-	if !strings.Contains(got, "AS-001") || !strings.Contains(got, "AS-002") {
-		t.Errorf("keyFindings should contain AS-001 and AS-002, got %q", got)
+	if !strings.Contains(got, "AS-004") || !strings.Contains(got, "AS-002") {
+		t.Errorf("keyFindings should contain AS-004 and AS-002, got %q", got)
 	}
-	// Should deduplicate
-	if strings.Count(got, "AS-001") != 1 {
-		t.Errorf("keyFindings should deduplicate, got %q", got)
+	if !strings.Contains(got, "×3") {
+		t.Errorf("keyFindings should show count ×3 for AS-004, got %q", got)
+	}
+	// AS-002 appears once, should not show count
+	if strings.Contains(got, "AS-002` ×") {
+		t.Errorf("single findings should not show count, got %q", got)
+	}
+
+	single := Report{Findings: []Finding{{ID: "AS-010"}}}
+	if got := keyFindings(single); got != "`AS-010`" {
+		t.Errorf("single finding = %q, want %q", got, "`AS-010`")
 	}
 
 	empty := Report{}

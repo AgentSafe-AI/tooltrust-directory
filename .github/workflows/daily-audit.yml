@@ -245,12 +245,36 @@ jobs:
         run: |
           echo "### 🛡️ Registry Updated — $(date -u +%Y-%m-%d)" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Tool | Grade | Risk Score |" >> "$GITHUB_STEP_SUMMARY"
-          echo "|------|:-----:|:----------:|" >> "$GITHUB_STEP_SUMMARY"
+          TOTAL=$(ls data/reports/*.json 2>/dev/null | wc -l | tr -d ' ')
+          echo "**${TOTAL} tools** audited." >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          # Only show tools with findings (grade B or worse) to keep summary focused
+          echo "#### ⚠️ Tools with findings" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Tool | Grade | Score | Key Findings |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|------|:-----:|:-----:|:-------------|" >> "$GITHUB_STEP_SUMMARY"
           shopt -s nullglob
           for f in data/reports/*.json; do
+            GRADE=$(jq -r '.grade' "$f")
+            if [ "$GRADE" = "A" ]; then continue; fi
             TOOL=$(jq  -r '.tool_id'    "$f")
-            GRADE=$(jq -r '.grade'      "$f")
             SCORE=$(jq -r '.risk_score' "$f")
-            echo "| $TOOL | **$GRADE** | $SCORE |" >> "$GITHUB_STEP_SUMMARY"
+            FINDINGS=$(jq -r '[.findings[].id] | group_by(.) | map("\(.[0]) ×\(length)") | join(", ") // "—"' "$f")
+            echo "| $TOOL | **$GRADE** | $SCORE | $FINDINGS |" >> "$GITHUB_STEP_SUMMARY"
           done
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "#### ✅ Grade A tools" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          A_COUNT=0
+          A_TOOLS=""
+          for f in data/reports/*.json; do
+            GRADE=$(jq -r '.grade' "$f")
+            if [ "$GRADE" = "A" ]; then
+              TOOL=$(jq -r '.tool_id' "$f")
+              A_TOOLS="${A_TOOLS:+$A_TOOLS, }\`$TOOL\`"
+              A_COUNT=$((A_COUNT + 1))
+            fi
+          done
+          echo "**${A_COUNT} tools** passed with no significant findings: ${A_TOOLS}" >> "$GITHUB_STEP_SUMMARY"

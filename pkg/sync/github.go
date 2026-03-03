@@ -217,21 +217,31 @@ func buildTable(reports []Report) string {
 	return sb.String()
 }
 
-// keyFindings returns a compact comma-separated list of unique finding rule IDs,
-// or "None" when the tool is clean.
+// keyFindings returns a compact summary of finding rule IDs with counts,
+// e.g. "AS-004 ×12, AS-002" — making it clear why high-risk tools scored poorly.
 func keyFindings(r Report) string {
-	seen := make(map[string]bool)
-	var ids []string
-	for _, f := range r.Findings {
-		if !seen[f.ID] {
-			seen[f.ID] = true
-			ids = append(ids, "`"+f.ID+"`")
-		}
-	}
-	if len(ids) == 0 {
+	if len(r.Findings) == 0 {
 		return "None ✅"
 	}
-	return strings.Join(ids, ", ")
+
+	counts := make(map[string]int)
+	var order []string
+	for _, f := range r.Findings {
+		if counts[f.ID] == 0 {
+			order = append(order, f.ID)
+		}
+		counts[f.ID]++
+	}
+
+	var parts []string
+	for _, id := range order {
+		if counts[id] > 1 {
+			parts = append(parts, fmt.Sprintf("`%s` ×%d", id, counts[id]))
+		} else {
+			parts = append(parts, "`"+id+"`")
+		}
+	}
+	return strings.Join(parts, ", ")
 }
 
 // buildDetailPage generates a Markdown detail page for a single tool, rich
