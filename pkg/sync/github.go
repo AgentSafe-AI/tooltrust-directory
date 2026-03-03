@@ -175,8 +175,12 @@ func loadReports(dir string) ([]Report, error) {
 		reports = append(reports, r)
 	}
 
-	// Primary sort: grade order (A→F); secondary: ascending risk score.
+	// Primary sort: popularity (stars desc) so widely-used tools surface first.
+	// Secondary: grade (A better than F); tertiary: ascending risk score.
 	sort.Slice(reports, func(i, j int) bool {
+		if reports[i].Stars != reports[j].Stars {
+			return reports[i].Stars > reports[j].Stars
+		}
 		gi, gj := gradeRank(reports[i].Grade), gradeRank(reports[j].Grade)
 		if gi != gj {
 			return gi < gj
@@ -196,8 +200,8 @@ func gradeRank(g string) int {
 
 func buildTable(reports []Report) string {
 	var sb strings.Builder
-	sb.WriteString("\n| Tool | Version | Category | Grade | Key Findings | Scanned |\n")
-	sb.WriteString("|------|---------|----------|:-----:|:-------------|:-------:|\n")
+	sb.WriteString("\n| Tool | Version | Stars | Grade | Key Findings | Scanned |\n")
+	sb.WriteString("|------|---------|:-----:|:-----:|:-------------|:-------:|\n")
 	for _, r := range reports {
 		ver := r.Version
 		if ver == "" {
@@ -209,13 +213,27 @@ func buildTable(reports []Report) string {
 		fmt.Fprintf(&sb,
 			"| [%s](%s) | `%s` | %s | **[%s](./docs/tools/%s.md)** | %s | %s |\n",
 			r.ToolID, r.SourceURL,
-			ver, orDash(r.Category),
+			ver, formatStars(r.Stars),
 			r.Grade, r.ToolID,
 			keyFindings(r),
 			scanDate,
 		)
 	}
 	return sb.String()
+}
+
+// formatStars returns a compact display for GitHub star count (e.g. 177k, 12.4k, 124).
+func formatStars(n int) string {
+	if n <= 0 {
+		return "—"
+	}
+	if n >= 1000000 {
+		return fmt.Sprintf("%.1fM", float64(n)/1e6)
+	}
+	if n >= 1000 {
+		return fmt.Sprintf("%.1fk", float64(n)/1e3)
+	}
+	return fmt.Sprintf("%d", n)
 }
 
 // keyFindings returns a compact summary of finding rule IDs with counts,

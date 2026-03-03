@@ -41,6 +41,27 @@ func TestTruncateRunes(t *testing.T) {
 	}
 }
 
+func TestFormatStars(t *testing.T) {
+	tests := []struct {
+		n    int
+		want string
+	}{
+		{0, "—"},
+		{100, "100"},
+		{999, "999"},
+		{1000, "1.0k"},
+		{1200, "1.2k"},
+		{12400, "12.4k"},
+		{177202, "177.2k"},
+		{1000000, "1.0M"},
+	}
+	for _, tt := range tests {
+		if got := formatStars(tt.n); got != tt.want {
+			t.Errorf("formatStars(%d) = %q, want %q", tt.n, got, tt.want)
+		}
+	}
+}
+
 func TestSanitizeCell(t *testing.T) {
 	tests := []struct {
 		input, want string
@@ -63,7 +84,7 @@ func TestBuildTable(t *testing.T) {
 			ToolID:      "test-tool",
 			Version:     "1.2.0",
 			SourceURL:   "https://github.com/example/test-tool",
-			Category:    "Developer Tools",
+			Stars:       1200,
 			Description: "A test tool for testing purposes",
 			Grade:       "A",
 			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
@@ -77,8 +98,8 @@ func TestBuildTable(t *testing.T) {
 	if !strings.Contains(table, "1.2.0") {
 		t.Error("table should contain version")
 	}
-	if !strings.Contains(table, "Developer Tools") {
-		t.Error("table should contain category")
+	if !strings.Contains(table, "1.2k") {
+		t.Error("table should contain formatted stars (1.2k)")
 	}
 	if !strings.Contains(table, "None") {
 		t.Error("table should show 'None' for no findings")
