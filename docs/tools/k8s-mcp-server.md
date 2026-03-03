@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.43.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.43.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-f6x5-jh6r-wrfv. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.43.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.43.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-j5w8-q4qc-rx2x. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.43.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.43.0
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-4134. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.43.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.43.0
 
 **Severity:** Medium
 

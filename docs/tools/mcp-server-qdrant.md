@@ -1,10 +1,10 @@
-# 🟢 mcp-server-qdrant
+# 🌟 mcp-server-qdrant
 
 > An official Qdrant Model Context Protocol (MCP) server implementation
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.8.1` |
 | **Vendor** | qdrant |

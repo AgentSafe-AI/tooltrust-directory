@@ -1,10 +1,10 @@
-# 🟢 pptagent
+# 🌟 pptagent
 
 > An Agentic Framework for Reflective PowerPoint Generation
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2.0.0` |
 | **Vendor** | icip-cas |

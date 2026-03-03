@@ -1,10 +1,10 @@
-# 🟢 browser-use-mcp-server
+# 🌟 browser-use-mcp-server
 
 > Browse the web, directly from Cursor etc.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.3` |
 | **Vendor** | kontext-dev |

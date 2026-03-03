@@ -1,10 +1,10 @@
-# 🟢 maxkb
+# 🌟 maxkb
 
 > 🔥 MaxKB is an open-source platform for building enterprise-grade agents.  强大易用的开源企业级智能体平台。
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2.6.1` |
 | **Vendor** | 1Panel-dev |

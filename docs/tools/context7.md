@@ -1,10 +1,10 @@
-# 🟢 context7
+# 🌟 context7
 
 > Context7 MCP Server -- Up-to-date code documentation for LLMs and AI code editors
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `@upstash/context7-mcp@2.1.2` |
 | **Vendor** | upstash |

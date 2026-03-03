@@ -1,10 +1,10 @@
-# 🟢 firecrawl-mcp-server
+# 🌟 firecrawl-mcp-server
 
 > 🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `3.2.1` |
 | **Vendor** | firecrawl |

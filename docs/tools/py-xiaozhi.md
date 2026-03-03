@@ -1,10 +1,10 @@
-# 🟢 py-xiaozhi
+# 🌟 py-xiaozhi
 
 > A Python-based Xiaozhi AI for users who want the full Xiaozhi experience without owning specialized hardware.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.1.8` |
 | **Vendor** | huangjunsen0406 |

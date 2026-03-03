@@ -1,10 +1,10 @@
-# 🟢 elasticsearch-mcp-server
+# 🌟 elasticsearch-mcp-server
 
 > A Model Context Protocol (MCP) server implementation that provides Elasticsearch and OpenSearch interaction.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2.0.19` |
 | **Vendor** | cr7258 |

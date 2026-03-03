@@ -1,10 +1,10 @@
-# 🟢 fastapi-mcp
+# 🌟 fastapi-mcp
 
 > Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.4.0` |
 | **Vendor** | tadata-org |

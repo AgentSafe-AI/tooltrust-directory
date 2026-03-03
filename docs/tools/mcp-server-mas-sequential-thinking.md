@@ -1,10 +1,10 @@
-# 🟢 mcp-server-mas-sequential-thinking
+# 🌟 mcp-server-mas-sequential-thinking
 
 > An advanced sequential thinking process using a Multi-Agent System (MAS) built with the Agno framework and served via MCP.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.8.0` |
 | **Vendor** | FradSer |

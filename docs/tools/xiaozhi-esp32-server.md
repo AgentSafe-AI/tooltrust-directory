@@ -1,10 +1,10 @@
-# 🟢 xiaozhi-esp32-server
+# 🌟 xiaozhi-esp32-server
 
 > 本项目为xiaozhi-esp32提供后端服务，帮助您快速搭建ESP32设备控制服务器。Backend service for xiaozhi-esp32, helps you quickly build an ESP32 device control server.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.9.1` |
 | **Vendor** | xinnan-tech |

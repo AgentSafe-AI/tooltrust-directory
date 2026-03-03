@@ -1,10 +1,10 @@
-# 🟢 mcp
+# 🌟 mcp
 
 > Official MCP Servers for AWS
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2026.02.20260224185711` |
 | **Vendor** | awslabs |

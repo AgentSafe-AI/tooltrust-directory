@@ -1,10 +1,10 @@
-# 🟢 excel-mcp-server
+# 🌟 excel-mcp-server
 
 > A Model Context Protocol server for Excel file manipulation
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.1.7` |
 | **Vendor** | haris-musa |

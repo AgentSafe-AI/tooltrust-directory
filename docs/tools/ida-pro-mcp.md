@@ -1,10 +1,10 @@
-# 🟢 ida-pro-mcp
+# 🌟 ida-pro-mcp
 
 > AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.4.0` |
 | **Vendor** | mrexodia |

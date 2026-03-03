@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade ajv to a version that resolves GHSA-2g4f-4pwh-qvx6. Check https://osv.de
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.2
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.2
 
 **Severity:** Medium
 

@@ -1,10 +1,10 @@
-# 🟢 kite-mcp-server
+# 🌟 kite-mcp-server
 
 > Zerodha Kite MCP server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.3.1` |
 | **Vendor** | zerodha |

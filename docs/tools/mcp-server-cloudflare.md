@@ -1,8 +1,8 @@
-# 🟢 mcp-server-cloudflare
+# 🌟 mcp-server-cloudflare
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `dex-analysis@0.3.0` |
 | **Vendor** | cloudflare |

@@ -1,10 +1,10 @@
-# 🟢 mysql-mcp-server-pro
+# 🌟 mysql-mcp-server-pro
 
 > Model Context Protocol (MCP) server that supports secure interaction with MySQL databases and has anomaly analysis capabilities.更加牛逼！更加好用！不仅止于mysql的增删改查功能； 还包含了数据库异常分析能力；且便于开发者们进行个性化的工具扩展 
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.7.0` |
 | **Vendor** | wenb1n-dev |

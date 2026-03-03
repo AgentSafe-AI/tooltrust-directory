@@ -1,10 +1,10 @@
-# 🟢 mcpo
+# 🌟 mcpo
 
 > A simple, secure MCP-to-OpenAPI proxy server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.20` |
 | **Vendor** | open-webui |

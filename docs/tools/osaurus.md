@@ -1,10 +1,10 @@
-# 🟢 osaurus
+# 🌟 osaurus
 
 > AI edge infrastructure for macOS. Run local or cloud models, share tools across apps via MCP, and power AI workflows with a native, always-on runtime.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.12.12` |
 | **Vendor** | osaurus-ai |

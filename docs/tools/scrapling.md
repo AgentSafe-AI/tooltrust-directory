@@ -1,10 +1,10 @@
-# 🟢 scrapling
+# 🌟 scrapling
 
 > 🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.4.1` |
 | **Vendor** | D4Vinci |

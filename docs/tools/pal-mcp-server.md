@@ -1,10 +1,10 @@
-# 🟢 pal-mcp-server
+# 🌟 pal-mcp-server
 
 > The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `9.8.2` |
 | **Vendor** | BeehiveInnovations |

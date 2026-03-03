@@ -1,10 +1,10 @@
-# 🟢 office-word-mcp-server
+# 🌟 office-word-mcp-server
 
 > A Model Context Protocol (MCP) server for creating, reading, and manipulating Microsoft Word documents. This server enables AI assistants to work with Word documents through a standardized interface, providing rich document editing capabilities.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.1.11` |
 | **Vendor** | GongRzhe |

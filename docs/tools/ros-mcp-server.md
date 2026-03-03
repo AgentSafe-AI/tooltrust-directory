@@ -1,10 +1,10 @@
-# 🟢 ros-mcp-server
+# 🌟 ros-mcp-server
 
 > Connect AI models like Claude & GPT with robots using MCP and ROS.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `3.0.1` |
 | **Vendor** | robotmcp |

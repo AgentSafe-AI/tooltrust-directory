@@ -1,10 +1,10 @@
-# 🟢 mcp-use
+# 🌟 mcp-use
 
 > The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `python-v1.6.0` |
 | **Vendor** | mcp-use |

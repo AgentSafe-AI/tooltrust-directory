@@ -1,10 +1,10 @@
-# 🟢 lamda
+# 🌟 lamda
 
 >  The most powerful Android RPA agent framework, next generation of mobile automation robots.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `9.20` |
 | **Vendor** | firerpa |

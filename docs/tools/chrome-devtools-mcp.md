@@ -1,10 +1,10 @@
-# 🟢 chrome-devtools-mcp
+# 🌟 chrome-devtools-mcp
 
 > Chrome DevTools for coding agents
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `chrome-devtools-mcp-v0.18.1` |
 | **Vendor** | ChromeDevTools |

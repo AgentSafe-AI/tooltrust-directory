@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-qxp5-gwg8-xv66 in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-qxp5-gwg8-xv66 in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-qxp5-gwg8-xv66. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-vvgc-356p-c3xw in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-vvgc-356p-c3xw in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade golang.org/x/net to a version that resolves GHSA-vvgc-356p-c3xw. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-3333 in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-3333 in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2024-3333. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3503 in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3503 in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2025-3503. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3595 in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3595 in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2025-3595. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4440. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.25.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.25.0
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade golang.org/x/net to a version that resolves GO-2026-4441. Check https://
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-2x5j-vhc8-9cwm in github.com/cloudflare/circl@1.3.7
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-2x5j-vhc8-9cwm in github.com/cloudflare/circl@1.3.7
 
 **Severity:** Medium
 
@@ -124,7 +124,7 @@ Upgrade github.com/cloudflare/circl to a version that resolves GHSA-2x5j-vhc8-9c
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-q9hv-hpm4-hj6x in github.com/cloudflare/circl@1.3.7
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-q9hv-hpm4-hj6x in github.com/cloudflare/circl@1.3.7
 
 **Severity:** Medium
 
@@ -136,7 +136,7 @@ Upgrade github.com/cloudflare/circl to a version that resolves GHSA-q9hv-hpm4-hj
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3754 in github.com/cloudflare/circl@1.3.7
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3754 in github.com/cloudflare/circl@1.3.7
 
 **Severity:** Medium
 
@@ -148,7 +148,7 @@ Upgrade github.com/cloudflare/circl to a version that resolves GO-2025-3754. Che
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7vpp-9cxj-q8gv in github.com/mholt/archiver/v3@3.5.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7vpp-9cxj-q8gv in github.com/mholt/archiver/v3@3.5.1
 
 **Severity:** Medium
 
@@ -160,7 +160,7 @@ Upgrade github.com/mholt/archiver/v3 to a version that resolves GHSA-7vpp-9cxj-q
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-rhh4-rh7c-7r5v in github.com/mholt/archiver/v3@3.5.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-rhh4-rh7c-7r5v in github.com/mholt/archiver/v3@3.5.1
 
 **Severity:** Medium
 
@@ -172,7 +172,7 @@ Upgrade github.com/mholt/archiver/v3 to a version that resolves GHSA-rhh4-rh7c-7
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-2698 in github.com/mholt/archiver/v3@3.5.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-2698 in github.com/mholt/archiver/v3@3.5.1
 
 **Severity:** Medium
 
@@ -184,7 +184,7 @@ Upgrade github.com/mholt/archiver/v3 to a version that resolves GO-2024-2698. Ch
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3605 in github.com/mholt/archiver/v3@3.5.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3605 in github.com/mholt/archiver/v3@3.5.1
 
 **Severity:** Medium
 
@@ -196,7 +196,7 @@ Upgrade github.com/mholt/archiver/v3 to a version that resolves GO-2025-3605. Ch
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-rwvp-r38j-9rgg in github.com/nwaples/rardecode@1.1.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-rwvp-r38j-9rgg in github.com/nwaples/rardecode@1.1.3
 
 **Severity:** Medium
 
@@ -208,7 +208,7 @@ Upgrade github.com/nwaples/rardecode to a version that resolves GHSA-rwvp-r38j-9
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4020 in github.com/nwaples/rardecode@1.1.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4020 in github.com/nwaples/rardecode@1.1.3
 
 **Severity:** Medium
 
@@ -220,7 +220,7 @@ Upgrade github.com/nwaples/rardecode to a version that resolves GO-2025-4020. Ch
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-47m2-4cr7-mhcw in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-47m2-4cr7-mhcw in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -232,7 +232,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GHSA-47m2-4cr7-mhc
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-c33x-xqrf-c478 in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-c33x-xqrf-c478 in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -244,7 +244,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GHSA-c33x-xqrf-c47
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-g754-hx8w-x2g6 in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-g754-hx8w-x2g6 in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -256,7 +256,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GHSA-g754-hx8w-x2g
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-px8v-pp82-rcvr in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-px8v-pp82-rcvr in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -268,7 +268,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GHSA-px8v-pp82-rcv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-2682 in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-2682 in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -280,7 +280,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GO-2024-2682. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-3302 in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-3302 in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -292,7 +292,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GO-2024-3302. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4017 in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4017 in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -304,7 +304,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GO-2025-4017. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4233 in github.com/quic-go/quic-go@0.41.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4233 in github.com/quic-go/quic-go@0.41.0
 
 **Severity:** Medium
 
@@ -316,7 +316,7 @@ Upgrade github.com/quic-go/quic-go to a version that resolves GO-2025-4233. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-7m29-f4hw-g2vx in github.com/refraction-networking/utls@1.6.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-7m29-f4hw-g2vx in github.com/refraction-networking/utls@1.6.3
 
 **Severity:** Medium
 
@@ -328,7 +328,7 @@ Upgrade github.com/refraction-networking/utls to a version that resolves GHSA-7m
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-pmc3-p9hx-jq96 in github.com/refraction-networking/utls@1.6.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-pmc3-p9hx-jq96 in github.com/refraction-networking/utls@1.6.3
 
 **Severity:** Medium
 
@@ -340,7 +340,7 @@ Upgrade github.com/refraction-networking/utls to a version that resolves GHSA-pm
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-rrxv-pmq9-x67r in github.com/refraction-networking/utls@1.6.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-rrxv-pmq9-x67r in github.com/refraction-networking/utls@1.6.3
 
 **Severity:** Medium
 
@@ -352,7 +352,7 @@ Upgrade github.com/refraction-networking/utls to a version that resolves GHSA-rr
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3638 in github.com/refraction-networking/utls@1.6.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3638 in github.com/refraction-networking/utls@1.6.3
 
 **Severity:** Medium
 
@@ -364,7 +364,7 @@ Upgrade github.com/refraction-networking/utls to a version that resolves GO-2025
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4509 in github.com/refraction-networking/utls@1.6.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4509 in github.com/refraction-networking/utls@1.6.3
 
 **Severity:** Medium
 
@@ -376,7 +376,7 @@ Upgrade github.com/refraction-networking/utls to a version that resolves GO-2026
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4512 in github.com/refraction-networking/utls@1.6.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4512 in github.com/refraction-networking/utls@1.6.3
 
 **Severity:** Medium
 
@@ -388,7 +388,7 @@ Upgrade github.com/refraction-networking/utls to a version that resolves GO-2026
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-jc7w-c686-c4v9 in github.com/ulikunitz/xz@0.5.11
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-jc7w-c686-c4v9 in github.com/ulikunitz/xz@0.5.11
 
 **Severity:** Medium
 
@@ -400,7 +400,7 @@ Upgrade github.com/ulikunitz/xz to a version that resolves GHSA-jc7w-c686-c4v9. 
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3922 in github.com/ulikunitz/xz@0.5.11
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3922 in github.com/ulikunitz/xz@0.5.11
 
 **Severity:** Medium
 
@@ -412,7 +412,7 @@ Upgrade github.com/ulikunitz/xz to a version that resolves GO-2025-3922. Check h
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -424,7 +424,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-f6x5-jh6r-wrfv. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-hcg3-q754-cr77 in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-hcg3-q754-cr77 in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -436,7 +436,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-hcg3-q754-cr77. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -448,7 +448,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-j5w8-q4qc-rx2x. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-v778-237x-gjrc in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-v778-237x-gjrc in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -460,7 +460,7 @@ Upgrade golang.org/x/crypto to a version that resolves GHSA-v778-237x-gjrc. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-3321 in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-3321 in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -472,7 +472,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2024-3321. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3487 in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3487 in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -484,7 +484,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-3487. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4116 in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4116 in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -496,7 +496,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-4116. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 
@@ -508,7 +508,7 @@ Upgrade golang.org/x/crypto to a version that resolves GO-2025-4134. Check https
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.23.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.23.0
 
 **Severity:** Medium
 

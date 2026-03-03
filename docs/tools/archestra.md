@@ -1,10 +1,10 @@
-# 🟢 archestra
+# 🌟 archestra
 
 > Secure cloud-native MCP registry, gateway & orchestrator
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `platform-v1.0.52` |
 | **Vendor** | archestra-ai |

@@ -1,10 +1,10 @@
-# 🟢 supabase-mcp-server
+# 🌟 supabase-mcp-server
 
 > Query MCP enables end-to-end management of Supabase via chat interface: read & write query executions, management API support, automatic migration versioning, access to logs and much more.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.4` |
 | **Vendor** | alexander-zuev |

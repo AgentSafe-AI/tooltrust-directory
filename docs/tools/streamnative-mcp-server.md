@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-mh63-6h87-95cp in github.com/golang-jwt/jwt@3.2.1+incompatible
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mh63-6h87-95cp in github.com/golang-jwt/jwt@3.2.1+incompatible
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade github.com/golang-jwt/jwt to a version that resolves GHSA-mh63-6h87-95cp
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3553 in github.com/golang-jwt/jwt@3.2.1+incompatible
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3553 in github.com/golang-jwt/jwt@3.2.1+incompatible
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade github.com/golang-jwt/jwt to a version that resolves GO-2025-3553. Check
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-9h8m-3fm2-qjrq in go.opentelemetry.io/otel/sdk@1.39.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-9h8m-3fm2-qjrq in go.opentelemetry.io/otel/sdk@1.39.0
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade go.opentelemetry.io/otel/sdk to a version that resolves GHSA-9h8m-3fm2-q
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4394 in go.opentelemetry.io/otel/sdk@1.39.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4394 in go.opentelemetry.io/otel/sdk@1.39.0
 
 **Severity:** Medium
 

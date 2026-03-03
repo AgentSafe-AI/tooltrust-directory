@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-9h8m-3fm2-qjrq in go.opentelemetry.io/otel/sdk@1.35.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-9h8m-3fm2-qjrq in go.opentelemetry.io/otel/sdk@1.35.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade go.opentelemetry.io/otel/sdk to a version that resolves GHSA-9h8m-3fm2-q
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4394 in go.opentelemetry.io/otel/sdk@1.35.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4394 in go.opentelemetry.io/otel/sdk@1.35.0
 
 **Severity:** Medium
 

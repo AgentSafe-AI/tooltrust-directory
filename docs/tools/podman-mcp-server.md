@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2024-3042 in github.com/containers/podman/v5@5.8.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2024-3042 in github.com/containers/podman/v5@5.8.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade github.com/containers/podman/v5 to a version that resolves GO-2024-3042.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3961 in github.com/containers/podman/v5@5.8.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3961 in github.com/containers/podman/v5@5.8.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade github.com/containers/podman/v5 to a version that resolves GO-2025-3961.
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-59jp-pj84-45mr in github.com/sigstore/fulcio@1.7.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-59jp-pj84-45mr in github.com/sigstore/fulcio@1.7.1
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade github.com/sigstore/fulcio to a version that resolves GHSA-59jp-pj84-45m
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-f83f-xpx7-ffpw in github.com/sigstore/fulcio@1.7.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-f83f-xpx7-ffpw in github.com/sigstore/fulcio@1.7.1
 
 **Severity:** Medium
 
@@ -76,7 +76,7 @@ Upgrade github.com/sigstore/fulcio to a version that resolves GHSA-f83f-xpx7-ffp
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-4193 in github.com/sigstore/fulcio@1.7.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4193 in github.com/sigstore/fulcio@1.7.1
 
 **Severity:** Medium
 
@@ -88,7 +88,7 @@ Upgrade github.com/sigstore/fulcio to a version that resolves GO-2025-4193. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4311 in github.com/sigstore/fulcio@1.7.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4311 in github.com/sigstore/fulcio@1.7.1
 
 **Severity:** Medium
 
@@ -100,7 +100,7 @@ Upgrade github.com/sigstore/fulcio to a version that resolves GO-2026-4311. Chec
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-fcv2-xgw5-pqxf in github.com/sigstore/sigstore@1.9.5
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fcv2-xgw5-pqxf in github.com/sigstore/sigstore@1.9.5
 
 **Severity:** Medium
 
@@ -112,7 +112,7 @@ Upgrade github.com/sigstore/sigstore to a version that resolves GHSA-fcv2-xgw5-p
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4358 in github.com/sigstore/sigstore@1.9.5
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4358 in github.com/sigstore/sigstore@1.9.5
 
 **Severity:** Medium
 

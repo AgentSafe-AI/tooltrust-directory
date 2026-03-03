@@ -1,10 +1,10 @@
-# 🟢 klavis
+# 🌟 klavis
 
 > Klavis AI (YC X25):  MCP integration platforms that let AI agents use tools reliably at any scale
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `python-v2.20.0` |
 | **Vendor** | Klavis-AI |

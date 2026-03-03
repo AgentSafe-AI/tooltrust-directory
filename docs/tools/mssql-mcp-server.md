@@ -1,10 +1,10 @@
-# 🟢 mssql-mcp-server
+# 🌟 mssql-mcp-server
 
 > A Model Context Protocol (MCP) server for Microsoft SQL Server that enables secure database interactions through a controlled interface. Allows AI assistants to safely list tables, read data, and execute SQL queries while maintaining security and structure.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.1.0` |
 | **Vendor** | RichardHan |

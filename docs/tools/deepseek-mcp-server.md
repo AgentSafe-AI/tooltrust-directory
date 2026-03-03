@@ -1,10 +1,10 @@
-# 🟢 deepseek-mcp-server
+# 🌟 deepseek-mcp-server
 
 > Model Context Protocol server for DeepSeek's advanced language models
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.3.1` |
 | **Vendor** | DMontgomery40 |

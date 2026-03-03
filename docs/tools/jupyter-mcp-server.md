@@ -1,10 +1,10 @@
-# 🟢 jupyter-mcp-server
+# 🌟 jupyter-mcp-server
 
 > 🪐 🔧 Model Context Protocol (MCP) Server for Jupyter.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.22.1` |
 | **Vendor** | datalayer |

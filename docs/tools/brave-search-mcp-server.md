@@ -1,8 +1,8 @@
-# 🟢 brave-search-mcp-server
+# 🌟 brave-search-mcp-server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2.0.75` |
 | **Vendor** | brave |

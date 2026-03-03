@@ -1,10 +1,10 @@
-# 🟢 mcp-server-kubernetes
+# 🌟 mcp-server-kubernetes
 
 > MCP Server for kubernetes management commands
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `3.3.0` |
 | **Vendor** | Flux159 |

@@ -1,10 +1,10 @@
-# 🟢 md2wechat-mcp-server
+# 🌟 md2wechat-mcp-server
 
 > 微信 Markdown 编辑器 MCP 服务器
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | geekjourneyx |

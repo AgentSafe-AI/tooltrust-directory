@@ -1,10 +1,10 @@
-# 🟢 viper
+# 🌟 viper
 
 > Adversary simulation and Red teaming platform with AI
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `3.1.10` |
 | **Vendor** | FunnyWolf |

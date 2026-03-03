@@ -1,10 +1,10 @@
-# 🟢 mcp-language-server
+# 🌟 mcp-language-server
 
 > mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.1.1` |
 | **Vendor** | isaacphi |

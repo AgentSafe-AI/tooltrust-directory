@@ -1,10 +1,10 @@
-# 🟢 weather-mcp-server
+# 🌟 weather-mcp-server
 
 > A lightweight Model Context Protocol (MCP) server that enables AI assistants like Claude to retrieve and interpret real-time weather data. Discuss on Hacker News:
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.3.0` |
 | **Vendor** | ezh0v |

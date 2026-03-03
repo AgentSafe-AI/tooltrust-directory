@@ -1,10 +1,10 @@
-# 🟢 terraform-mcp-server
+# 🌟 terraform-mcp-server
 
 > The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.4.0` |
 | **Vendor** | hashicorp |

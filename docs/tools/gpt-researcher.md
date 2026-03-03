@@ -1,10 +1,10 @@
-# 🟢 gpt-researcher
+# 🌟 gpt-researcher
 
 > An autonomous agent that conducts deep research on any data using any LLM providers
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `3.4.2` |
 | **Vendor** | assafelovic |

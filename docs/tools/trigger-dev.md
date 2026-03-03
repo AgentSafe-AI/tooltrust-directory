@@ -1,10 +1,10 @@
-# 🟢 trigger-dev
+# 🌟 trigger-dev
 
 > Trigger.dev – build and deploy fully‑managed AI agents and workflows
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `@trigger.dev/core@4.4.1` |
 | **Vendor** | triggerdotdev |

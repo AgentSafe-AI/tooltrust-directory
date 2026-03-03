@@ -1,10 +1,10 @@
-# 🟢 ui-tars-desktop
+# 🌟 ui-tars-desktop
 
 > The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | bytedance |

@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4316 in github.com/go-chi/chi/v5@5.2.3
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4316 in github.com/go-chi/chi/v5@5.2.3
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade github.com/go-chi/chi/v5 to a version that resolves GO-2026-4316. Check 
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-wvj2-96wp-fq3f in github.com/modelcontextprotocol/go-sdk@1.3.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-wvj2-96wp-fq3f in github.com/modelcontextprotocol/go-sdk@1.3.0
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade github.com/modelcontextprotocol/go-sdk to a version that resolves GHSA-w
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2026-4559 in golang.org/x/net@0.50.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4559 in golang.org/x/net@0.50.0
 
 **Severity:** Medium
 

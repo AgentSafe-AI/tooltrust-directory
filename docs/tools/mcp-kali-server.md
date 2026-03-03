@@ -1,10 +1,10 @@
-# 🟢 mcp-kali-server
+# 🌟 mcp-kali-server
 
 > MCP configuration to connect AI agent to a Linux machine.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `security` |
 | **Vendor** | Wh0am123 |

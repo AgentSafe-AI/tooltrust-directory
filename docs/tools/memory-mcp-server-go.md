@@ -1,10 +1,10 @@
-# 🟢 memory-mcp-server-go
+# 🌟 memory-mcp-server-go
 
 > A Model Context Protocol server that provides knowledge graph management capabilities.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.3.1` |
 | **Vendor** | okooo5km |

@@ -1,10 +1,10 @@
-# 🟢 mcp-teams-server
+# 🌟 mcp-teams-server
 
 > An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.6` |
 | **Vendor** | InditexTech |

@@ -1,10 +1,10 @@
-# 🟢 office-powerpoint-mcp-server
+# 🌟 office-powerpoint-mcp-server
 
 > A MCP (Model Context Protocol) server for PowerPoint manipulation using python-pptx. This server provides tools for creating, editing, and manipulating PowerPoint presentations through the MCP protocol.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2.0.7` |
 | **Vendor** | GongRzhe |

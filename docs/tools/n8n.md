@@ -1,10 +1,10 @@
-# 🟢 n8n
+# 🌟 n8n
 
 > Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `n8n@2.10.2` |
 | **Vendor** | n8n-io |

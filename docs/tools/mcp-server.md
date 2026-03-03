@@ -1,10 +1,10 @@
-# 🟢 mcp-server
+# 🌟 mcp-server
 
 > Mapbox Model Context Protocol (MCP) server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.9.0` |
 | **Vendor** | mapbox |

@@ -1,10 +1,10 @@
-# 🟢 bifrost
+# 🌟 bifrost
 
 > Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support & <100 µs overhead at 5k RPS.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `transports/v1.4.10` |
 | **Vendor** | maximhq |

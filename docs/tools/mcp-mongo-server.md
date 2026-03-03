@@ -1,10 +1,10 @@
-# 🟢 mcp-mongo-server
+# 🌟 mcp-mongo-server
 
 > A Model Context Protocol Server for MongoDB
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `2.0.2` |
 | **Vendor** | kiliczsh |

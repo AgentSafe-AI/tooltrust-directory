@@ -1,10 +1,10 @@
-# 🟢 mcp-server-tree-sitter
+# 🌟 mcp-server-tree-sitter
 
 > MCP Server for Tree-sitter
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.5.1` |
 | **Vendor** | wrale |

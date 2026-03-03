@@ -1,10 +1,10 @@
-# 🟢 prometheus-mcp-server
+# 🌟 prometheus-mcp-server
 
 > A Model Context Protocol (MCP) server that enables AI agents and LLMs to query and analyze Prometheus metrics through standardized interfaces.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.5.3` |
 | **Vendor** | pab1it0 |

@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-2464-8j7c-4cjm in github.com/go-viper/mapstructure/v2@2.2.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-2464-8j7c-4cjm in github.com/go-viper/mapstructure/v2@2.2.1
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GHSA-2464
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-fv92-fjc5-jj9h in github.com/go-viper/mapstructure/v2@2.2.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fv92-fjc5-jj9h in github.com/go-viper/mapstructure/v2@2.2.1
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GHSA-fv92
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3787 in github.com/go-viper/mapstructure/v2@2.2.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3787 in github.com/go-viper/mapstructure/v2@2.2.1
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GO-2025-3
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GO-2025-3900 in github.com/go-viper/mapstructure/v2@2.2.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3900 in github.com/go-viper/mapstructure/v2@2.2.1
 
 **Severity:** Medium
 

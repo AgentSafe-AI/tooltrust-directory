@@ -1,10 +1,10 @@
-# 🟢 clay-mcp
+# 🌟 clay-mcp
 
 > A simple Model Context Protocol (MCP) server for Clay.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.5` |
 | **Vendor** | clay-inc |

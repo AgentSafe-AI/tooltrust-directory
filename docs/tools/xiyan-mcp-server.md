@@ -1,10 +1,10 @@
-# 🟢 xiyan-mcp-server
+# 🌟 xiyan-mcp-server
 
 > A Model Context Protocol (MCP) server that enables natural language queries to databases
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | XGenerationLab |

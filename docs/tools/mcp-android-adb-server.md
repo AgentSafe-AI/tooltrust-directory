@@ -1,10 +1,10 @@
-# 🟢 mcp-android-adb-server
+# 🌟 mcp-android-adb-server
 
 > 通过AI大模型操作安卓设备
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.2` |
 | **Vendor** | github-hewei |

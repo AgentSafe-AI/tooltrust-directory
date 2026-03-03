@@ -1,10 +1,10 @@
-# 🟢 serena
+# 🌟 serena
 
 > A powerful coding agent toolkit providing semantic retrieval and editing capabilities (MCP server & other integrations)
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | oraios |

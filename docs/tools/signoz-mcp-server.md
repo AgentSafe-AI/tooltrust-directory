@@ -1,8 +1,8 @@
-# 🟢 signoz-mcp-server
+# 🌟 signoz-mcp-server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.5` |
 | **Vendor** | SigNoz |

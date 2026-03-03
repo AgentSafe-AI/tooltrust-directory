@@ -1,10 +1,10 @@
-# 🟢 kubernetes-mcp-server
+# 🌟 kubernetes-mcp-server
 
 > Model Context Protocol (MCP) server for Kubernetes and OpenShift
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.58` |
 | **Vendor** | containers |

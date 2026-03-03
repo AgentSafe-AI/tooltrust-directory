@@ -1,10 +1,10 @@
-# 🟢 openmetadata
+# 🌟 openmetadata
 
 > OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.12.1-release` |
 | **Vendor** | open-metadata |

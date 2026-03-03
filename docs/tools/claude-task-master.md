@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-g9mf-h72j-4rw9 in undici@7.16.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-g9mf-h72j-4rw9 in undici@7.16.0
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Upgrade undici to a version that resolves GHSA-g9mf-h72j-4rw9. Check https://osv
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Upgrade ajv to a version that resolves GHSA-2g4f-4pwh-qvx6. Check https://osv.de
 
 ---
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-rwvc-j5jr-mgvh in ai@5.0.51
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-rwvc-j5jr-mgvh in ai@5.0.51
 
 **Severity:** Medium
 

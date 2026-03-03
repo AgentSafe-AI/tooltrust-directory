@@ -1,10 +1,10 @@
-# 🟢 browser-tools-mcp
+# 🌟 browser-tools-mcp
 
 > Monitor browser logs directly from Cursor and other MCP compatible IDEs.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.2.0` |
 | **Vendor** | AgentDeskAI |

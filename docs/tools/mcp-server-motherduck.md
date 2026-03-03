@@ -1,10 +1,10 @@
-# 🟢 mcp-server-motherduck
+# 🌟 mcp-server-motherduck
 
 > Local MCP server for DuckDB and MotherDuck
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.2` |
 | **Vendor** | motherduckdb |

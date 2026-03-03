@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-004` — Supply Chain CVE: GHSA-wvj2-96wp-fq3f in github.com/modelcontextprotocol/go-sdk@1.0.0
+### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-wvj2-96wp-fq3f in github.com/modelcontextprotocol/go-sdk@1.0.0
 
 **Severity:** Medium
 

@@ -1,10 +1,10 @@
-# 🟢 ida-mcp-server
+# 🌟 ida-mcp-server
 
 > A Model Context Protocol server for IDA
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.3.4` |
 | **Vendor** | MxIris-Reverse-Engineering |

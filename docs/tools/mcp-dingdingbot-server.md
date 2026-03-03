@@ -1,10 +1,10 @@
-# 🟢 mcp-dingdingbot-server
+# 🌟 mcp-dingdingbot-server
 
 > 钉钉webhook MCP server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.2` |
 | **Vendor** | HundunOnline |

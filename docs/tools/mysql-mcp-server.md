@@ -1,10 +1,10 @@
-# 🟢 mysql-mcp-server
+# 🌟 mysql-mcp-server
 
 > A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.2.2` |
 | **Vendor** | designcomputer |

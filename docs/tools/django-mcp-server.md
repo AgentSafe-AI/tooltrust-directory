@@ -1,10 +1,10 @@
-# 🟢 django-mcp-server
+# 🌟 django-mcp-server
 
 > Django MCP Server is a Django extensions to easily enable AI Agents to interact with Django Apps through the Model Context Protocol it works equally well on WSGI and ASGI
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.5.6` |
 | **Vendor** | gts360 |

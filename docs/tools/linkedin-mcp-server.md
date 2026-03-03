@@ -1,10 +1,10 @@
-# 🟢 linkedin-mcp-server
+# 🌟 linkedin-mcp-server
 
 > This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles, companies and jobs, and perform job searches.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `4.1.2` |
 | **Vendor** | stickerdaniel |

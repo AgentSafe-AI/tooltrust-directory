@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-002` — Unrestricted Path Access
+### 🟡 ⚠️ `AS-002` — Unrestricted Path Access
 
 **Severity:** Medium
 

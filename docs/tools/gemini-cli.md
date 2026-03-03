@@ -1,10 +1,10 @@
-# 🟢 gemini-cli
+# 🌟 gemini-cli
 
 > An open-source AI agent that brings the power of Gemini directly into your terminal.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
 | **Version** | `0.31.0` |
 | **Vendor** | google-gemini |
