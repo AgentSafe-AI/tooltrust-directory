@@ -16,6 +16,8 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 
 <!-- AGENTSENTRY:BEGIN -- Do not edit this section manually. -->
 
+*Top 50 by stars. View all 137 tools → [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.9.4` | 177.2k | **[A](./docs/tools/n8n.md)** | None ✅ | Mar 2 |
@@ -68,93 +70,6 @@ Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agents
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.2k | **[A](./docs/tools/py-xiaozhi.md)** | None ✅ | Mar 2 |
 | [solon](https://github.com/opensolon/solon) | `3.9.4` | 2.7k | **[A](./docs/tools/solon.md)** | None ✅ | Mar 2 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[C](./docs/tools/shadcn-ui-mcp-server.md)** | `AS-004` ×5 | Mar 2 |
-| [bifrost](https://github.com/maximhq/bifrost) | `transports…` | 2.6k | **[A](./docs/tools/bifrost.md)** | None ✅ | Mar 2 |
-| [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) | `1.1.11` | 1.7k | **[A](./docs/tools/office-word-mcp-server.md)** | None ✅ | Mar 2 |
-| [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](./docs/tools/n8n-mcp-server.md)** | `AS-004` ×6 | Mar 2 |
-| [office-powerpoint-mcp-server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server) | `2.0.7` | 1.5k | **[A](./docs/tools/office-powerpoint-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | `0.1.1` | 1.5k | **[A](./docs/tools/mcp-language-server.md)** | None ✅ | Mar 2 |
-| [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | `1.2.2` | 1.4k | **[A](./docs/tools/slack-mcp-server.md)** | `AS-004` | Mar 2 |
-| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.3.0` | 1.3k | **[A](./docs/tools/mcp-server-kubernetes.md)** | None ✅ | Mar 2 |
-| [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | `0.4.0` | 1.3k | **[A](./docs/tools/terraform-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) | `0.8.1` | 1.2k | **[A](./docs/tools/mcp-server-qdrant.md)** | None ✅ | Mar 2 |
-| [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | `0.0.58` | 1.2k | **[A](./docs/tools/kubernetes-mcp-server.md)** | None ✅ | Mar 2 |
-| [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) | `0.2.2` | 1.1k | **[A](./docs/tools/mysql-mcp-server.md)** | None ✅ | Mar 2 |
-| [docs-mcp-server](https://github.com/arabold/docs-mcp-server) | `2.0.4` | 1.1k | **[F](./docs/tools/docs-mcp-server.md)** | `AS-004` ×12 | Mar 2 |
-| [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | `3.0.1` | 1.0k | **[A](./docs/tools/ros-mcp-server.md)** | None ✅ | Mar 2 |
-| [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.1.2` | 956 | **[A](./docs/tools/linkedin-mcp-server.md)** | None ✅ | Mar 2 |
-| [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) | `1.7.0` | 932 | **[B](./docs/tools/mongodb-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) | `0.22.1` | 918 | **[A](./docs/tools/jupyter-mcp-server.md)** | None ✅ | Mar 2 |
-| [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 879 | **[F](./docs/tools/openapi-mcp-server.md)** | `AS-004` ×13 | Mar 2 |
-| [mcp-notion-server](https://github.com/suekou/mcp-notion-server) | `1.2.4` | 862 | **[B](./docs/tools/mcp-notion-server.md)** | `AS-004` ×3 | Mar 2 |
-| [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | `1.24.0` | 840 | **[A](./docs/tools/kubectl-mcp-server.md)** | None ✅ | Mar 2 |
-| [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.9.5` | 840 | **[B](./docs/tools/apify-mcp-server.md)** | `AS-004` ×2 | Mar 3 |
-| [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) | `0.4` | 813 | **[A](./docs/tools/supabase-mcp-server.md)** | None ✅ | Mar 2 |
-| [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) | `1.0.3` | 807 | **[A](./docs/tools/browser-use-mcp-server.md)** | None ✅ | Mar 2 |
-| [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | `1.8.0` | 731 | **[F](./docs/tools/drawio-mcp-server.md)** | `AS-004` ×10 | Mar 2 |
-| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.0.75` | 710 | **[A](./docs/tools/brave-search-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) | `0.11.1` | 606 | **[B](./docs/tools/mcp-filesystem-server.md)** | `AS-004` ×2 | Mar 2 |
-| [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) | `security` | 533 | **[A](./docs/tools/mcp-kali-server.md)** | None ✅ | Mar 2 |
-| [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.4.2` | 524 | **[B](./docs/tools/line-bot-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [ida-mcp-server](https://github.com/MxIris-Reverse-Engineering/ida-mcp-server) | `0.3.4` | 520 | **[A](./docs/tools/ida-mcp-server.md)** | None ✅ | Mar 2 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.43.2` | 498 | **[B](./docs/tools/ms-365-mcp-server.md)** | `AS-004` ×3 | Mar 2 |
-| [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 493 | **[A](./docs/tools/minecraft-mcp-server.md)** | None ✅ | Mar 2 |
-| [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) | `2.7.6` | 478 | **[D](./docs/tools/vibe-check-mcp-server.md)** | `AS-004` ×7 | Mar 2 |
-| [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.0.1` | 431 | **[A](./docs/tools/mcp-server-motherduck.md)** | None ✅ | Mar 2 |
-| [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | `1.12.0` | 426 | **[B](./docs/tools/airtable-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) | `0.7.2` | 402 | **[B](./docs/tools/puppeteer-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | `1.5.3` | 377 | **[A](./docs/tools/prometheus-mcp-server.md)** | None ✅ | Mar 2 |
-| [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | `2.0.4` | 365 | **[B](./docs/tools/evm-mcp-server.md)** | `AS-004` ×3 | Mar 2 |
-| [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | `1.0.6` | 355 | **[A](./docs/tools/mcp-teams-server.md)** | None ✅ | Mar 2 |
-| [db-mcp-server](https://github.com/FreePeak/db-mcp-server) | `1.8.0` | 348 | **[B](./docs/tools/db-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | `mcp-server…` | 340 | **[D](./docs/tools/mcp-server-azure-devops.md)** | `AS-004` ×8 | Mar 2 |
-| [vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) | `0.4.0` | 332 | **[C](./docs/tools/vscode-mcp-server.md)** | `AS-004` ×5 | Mar 2 |
-| [mssql-mcp-server](https://github.com/RichardHan/mssql_mcp_server) | `0.1.0` | 316 | **[A](./docs/tools/mssql-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-server](https://github.com/mapbox/mcp-server) | `0.9.0` | 315 | **[A](./docs/tools/mcp-server.md)** | None ✅ | Mar 2 |
-| [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) | `3.0.0` | 307 | **[A](./docs/tools/apktool-mcp-server.md)** | None ✅ | Mar 2 |
-| [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) | `0.3.1` | 299 | **[A](./docs/tools/deepseek-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) | `1.0.1` | 297 | **[B](./docs/tools/mcp-server-simulator-ios-idb.md)** | `AS-004` ×2 | Mar 2 |
-| [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) | `0.5.5` | 292 | **[B](./docs/tools/mcp-neovim-server.md)** | `AS-004` ×3 | Mar 2 |
-| [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | `1.13.0` | 289 | **[B](./docs/tools/mcp-documentation-server.md)** | `AS-004` ×3 | Mar 2 |
-| [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) | `0.8.0` | 288 | **[A](./docs/tools/mcp-server-mas-sequential-thinking.md)** | None ✅ | Mar 2 |
-| [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) | `1.7.0` | 285 | **[A](./docs/tools/mysql-mcp-server-pro.md)** | None ✅ | Mar 2 |
-| [django-mcp-server](https://github.com/gts360/django-mcp-server) | `0.5.6` | 278 | **[A](./docs/tools/django-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) | `2.0.2` | 276 | **[A](./docs/tools/mcp-mongo-server.md)** | None ✅ | Mar 2 |
-| [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) | `0.5.1` | 268 | **[A](./docs/tools/mcp-server-tree-sitter.md)** | None ✅ | Mar 2 |
-| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.0` | 261 | **[B](./docs/tools/codex-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [doris-mcp-server](https://github.com/apache/doris-mcp-server) | `0.6.0` | 260 | **[A](./docs/tools/doris-mcp-server.md)** | None ✅ | Mar 2 |
-| [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) | `2.0.19` | 255 | **[A](./docs/tools/elasticsearch-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) | `1.6.1` | 247 | **[C](./docs/tools/mcp-server-trello.md)** | `AS-004` ×6 | Mar 2 |
-| [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) | `1.3.0` | 239 | **[A](./docs/tools/weather-mcp-server.md)** | None ✅ | Mar 2 |
-| [xiyan-mcp-server](https://github.com/XGenerationLab/xiyan_mcp_server) | `0.1.4` | 231 | **[A](./docs/tools/xiyan-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) | `1.12.4` | 229 | **[B](./docs/tools/mcp-openapi-server.md)** | `AS-004` ×3 | Mar 2 |
-| [kite-mcp-server](https://github.com/zerodha/kite-mcp-server) | `0.3.1` | 226 | **[A](./docs/tools/kite-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) | `0.7.4` | 225 | **[B](./docs/tools/mcp-server-commands.md)** | `AS-004` ×2 | Mar 2 |
-| [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) | `1.2.1` | 214 | **[C](./docs/tools/razorpay-mcp-server.md)** | `AS-004` ×4 | Mar 2 |
-| [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | `0.5.1` | 193 | **[A](./docs/tools/matlab-mcp-core-server.md)** | `AS-004` | Mar 2 |
-| [k8s-mcp-server](https://github.com/reza-gholizade/k8s-mcp-server) | `1.0.24` | 148 | **[C](./docs/tools/k8s-mcp-server.md)** | `AS-004` ×4 | Mar 2 |
-| [render-mcp-server](https://github.com/render-oss/render-mcp-server) | `0.3.0` | 102 | **[C](./docs/tools/render-mcp-server.md)** | `AS-004` ×5 | Mar 2 |
-| [memory-mcp-server-go](https://github.com/okooo5km/memory-mcp-server-go) | `0.3.1` | 87 | **[A](./docs/tools/memory-mcp-server-go.md)** | None ✅ | Mar 2 |
-| [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) | `0.0.5` | 67 | **[A](./docs/tools/signoz-mcp-server.md)** | None ✅ | Mar 2 |
-| [mcp-difyworkflow-server](https://github.com/gotoolkits/mcp-difyworkflow-server) | `0.0.1` | 59 | **[A](./docs/tools/mcp-difyworkflow-server.md)** | None ✅ | Mar 2 |
-| [podman-mcp-server](https://github.com/manusa/podman-mcp-server) | `0.0.15` | 59 | **[D](./docs/tools/podman-mcp-server.md)** | `AS-004` ×8 | Mar 2 |
-| [last9-mcp-server](https://github.com/last9/last9-mcp-server) | `0.5.1` | 50 | **[B](./docs/tools/last9-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | `0.10.0` | 48 | **[A](./docs/tools/buildkite-mcp-server.md)** | `AS-004` | Mar 2 |
-| [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) | `0.72.0` | 47 | **[F](./docs/tools/metoro-mcp-server.md)** | `AS-004` ×16 | Mar 2 |
-| [md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server) | `1.0.0` | 46 | **[A](./docs/tools/md2wechat-mcp-server.md)** | None ✅ | Mar 2 |
-| [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) | `2.0.2` | 44 | **[B](./docs/tools/kafka-mcp-server.md)** | `AS-004` ×2 | Mar 2 |
-| [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) | `1.0.4` | 36 | **[F](./docs/tools/fastdomaincheck-mcp-server.md)** | `AS-004` ×52 | Mar 2 |
-| [mcp-wecombot-server](https://github.com/gotoolkits/mcp-wecombot-server) | `0.0.1` | 35 | **[A](./docs/tools/mcp-wecombot-server.md)** | None ✅ | Mar 2 |
-| [godoc-mcp-server](https://github.com/yikakia/godoc-mcp-server) | `latest` | 34 | **[B](./docs/tools/godoc-mcp-server.md)** | `AS-004` ×3 | Mar 2 |
-| [vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) | `0.2.0` | 32 | **[D](./docs/tools/vault-mcp-server.md)** | `AS-004` ×7 | Mar 2 |
-| [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) | `1.4.0` | 29 | **[A](./docs/tools/gtm-mcp-server.md)** | `AS-004` | Mar 2 |
-| [aqara-mcp-server](https://github.com/aqara/aqara-mcp-server) | `0.0.2` | 28 | **[A](./docs/tools/aqara-mcp-server.md)** | None ✅ | Mar 2 |
-| [vision-one-mcp-server](https://github.com/trendmicro/vision-one-mcp-server) | `0.7.0` | 27 | **[A](./docs/tools/vision-one-mcp-server.md)** | None ✅ | Mar 2 |
-| [streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) | `snmcp-v0.1…` | 22 | **[C](./docs/tools/streamnative-mcp-server.md)** | `AS-004` ×4 | Mar 2 |
-| [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) | `1.0.2` | 21 | **[A](./docs/tools/mcp-dingdingbot-server.md)** | None ✅ | Mar 2 |
-| [ig-mcp-server](https://github.com/inspektor-gadget/ig-mcp-server) | `0.0.1-beta.4` | 21 | **[F](./docs/tools/ig-mcp-server.md)** | `AS-004` ×13 | Mar 2 |
-| [mcp-android-adb-server](https://github.com/github-hewei/mcp-android-adb-server) | `0.0.2` | 20 | **[A](./docs/tools/mcp-android-adb-server.md)** | None ✅ | Mar 2 |
-| [reportportal-mcp-server](https://github.com/reportportal/reportportal-mcp-server) | `1.2.0` | 19 | **[B](./docs/tools/reportportal-mcp-server.md)** | `AS-004` ×3 | Mar 2 |
-| [linkwarden-mcp-server](https://github.com/irfansofyana/linkwarden-mcp-server) | `0.0.1` | 15 | **[A](./docs/tools/linkwarden-mcp-server.md)** | None ✅ | Mar 2 |
 
 <!-- AGENTSENTRY:END -->
 
@@ -203,6 +118,30 @@ Full catalog: [docs/methodology.md#3-check-categories](./docs/methodology.md#3-c
 **Dispute a finding** — open an issue referencing the finding ID (e.g. `AS-002`).
 
 **Integrate AgentSentry** — see [docs/dev.md](./docs/dev.md) for the data pipeline and schema spec.
+
+---
+
+## 📛 Add to your README
+
+If your MCP server was audited and earned a grade, add our badge to your repo:
+
+**Grade A (recommended)** — copy this into your README:
+
+```markdown
+[![ToolTrust Grade A](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-a.svg)](https://github.com/AgentSafe-AI/tooltrust-directory)
+```
+
+**Other grades** — replace `grade-a` with `grade-b`, `grade-c`, `grade-d`, or `grade-f`:
+
+| Grade | Badge |
+|:-----:|-------|
+| A | [![Grade A](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-a.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
+| B | [![Grade B](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-b.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
+| C | [![Grade C](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-c.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
+| D | [![Grade D](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-d.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
+| F | [![Grade F](https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-directory/main/docs/badges/grade-f.svg)](https://github.com/AgentSafe-AI/tooltrust-directory) |
+
+*Badges link to this directory. Generate SVGs locally: `go run ./cmd/badge`*
 
 ---
 
