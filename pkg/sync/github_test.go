@@ -178,8 +178,8 @@ func TestKeyFindings(t *testing.T) {
 	}
 
 	empty := Report{}
-	if got := keyFindings(empty); got != "None ✅" {
-		t.Errorf("keyFindings(empty) = %q, want %q", got, "None ✅")
+	if got := keyFindings(empty); got != "✅ None" {
+		t.Errorf("keyFindings(empty) = %q, want %q", got, "✅ None")
 	}
 }
 

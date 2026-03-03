@@ -279,24 +279,25 @@ func formatStars(n int) string {
 }
 
 // findingEmoji returns an emoji prefix by rule category for README display.
-// AS-004 (supply chain) → 📦, AS-001/002 (tool poisoning, permission) → ⚠️.
+// Emoji always precedes text for consistent alignment. AS-004 → 📦, AS-001 → 🚨, AS-002 → ⚠️.
 func findingEmoji(id string) string {
 	switch id {
 	case "AS-004":
 		return "📦"
-	case "AS-001", "AS-002":
+	case "AS-001":
+		return "🚨"
+	case "AS-002":
 		return "⚠️"
 	default:
 		return ""
 	}
 }
 
-// keyFindings returns a compact summary of finding rule IDs with counts,
-// e.g. "📦 AS-004 ×12, ⚠️ AS-002" — making it clear why high-risk tools scored poorly.
-// Grade A tools with findings always list IDs; "None ✅" only when len(Findings)==0.
+// keyFindings returns a compact summary of finding rule IDs with counts.
+// Emoji always precedes text: ✅ None, 📦 AS-004 ×12, 🚨 AS-001, ⚠️ AS-002.
 func keyFindings(r Report) string {
 	if len(r.Findings) == 0 {
-		return "None ✅"
+		return "✅ None"
 	}
 
 	counts := make(map[string]int)
