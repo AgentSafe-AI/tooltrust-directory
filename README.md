@@ -5,9 +5,9 @@
 Independent, automated security audits for MCP servers, OpenAI Skills, and AI agent tools.
 Every rating is verified by [AgentSentry](https://github.com/AgentSafe-AI/agentsentry) — a deterministic static-analysis engine written in Go.
 
-[![Grade A Tools](https://img.shields.io/badge/Grade%20A%20tools-1-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--01-blue)](./data/reports/)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](./LICENSE)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-137-brightgreen)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--03-blue)](./data/reports/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
 ---
@@ -208,19 +208,17 @@ Full catalog: [docs/methodology.md#3-check-categories](./docs/methodology.md#3-c
 
 ## ⚙️ Automation
 
-The registry table above is kept up to date by a GitHub Actions workflow:
+The registry table above is kept up to date by a daily GitHub Actions workflow:
 
 ```
-.github/workflows/update-registry.yml   ← triggers on AgentSentry scan completion
+.github/workflows/daily-audit.yml   ← cron 00:00 UTC + manual dispatch
 ```
 
-When AgentSentry publishes a new report to `data/reports/`, the workflow:
-1. Validates the report against `report.schema.json`
-2. Re-generates the `AGENTSENTRY:BEGIN … END` block in this README
-3. Opens a PR (or commits directly to `main` if auto-merge is enabled)
-
-> Workflow not yet active — tracked in [#1](https://github.com/AgentSafe-AI/tooltrust-directory/issues/1).
+Each run:
+1. **Discovers** popular MCP servers via GitHub Search (top 50 by stars)
+2. **Scans** new/updated tools with AgentSentry + OSV supply-chain analysis
+3. **Publishes** updated reports to `data/reports/` and regenerates this README
 
 ---
 
-*Reports are licensed [CC BY 4.0](./LICENSE). Scanner engine © AgentSafe AI.*
+*Licensed [MIT](./LICENSE). Scanner engine © AgentSafe AI.*
