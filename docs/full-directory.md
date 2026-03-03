@@ -1,6 +1,6 @@
 # ToolTrust — Full Directory
 
-All 141 audited tools. [← Back to README](../README.md#-security-registry)
+All 143 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -88,9 +88,11 @@ All 141 audited tools. [← Back to README](../README.md#-security-registry)
 | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.44.0` | 501 | **[B](tools/ms-365-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 493 | **[S 🌟](tools/minecraft-mcp-server.md)** | None ✅ | Mar 2 |
 | [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) | `2.7.6` | 478 | **[D](tools/vibe-check-mcp-server.md)** | 📦 `AS-004` ×7 | Mar 2 |
+| [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) | `2.8.15` | 468 | **[D](tools/atlas-mcp-server.md)** | 📦 `AS-004` ×8 | Mar 3 |
 | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.0.2` | 431 | **[S 🌟](tools/mcp-server-motherduck.md)** | None ✅ | Mar 3 |
 | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | `1.12.0` | 426 | **[B](tools/airtable-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) | `0.7.2` | 402 | **[B](tools/puppeteer-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
+| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `2.0.7` | 383 | **[F](tools/obsidian-mcp-server.md)** | 📦 `AS-004` ×20 | Mar 3 |
 | [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | `1.5.3` | 377 | **[S 🌟](tools/prometheus-mcp-server.md)** | None ✅ | Mar 2 |
 | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | `2.0.4` | 365 | **[B](tools/evm-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
 | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | `1.0.6` | 355 | **[S 🌟](tools/mcp-teams-server.md)** | None ✅ | Mar 2 |
