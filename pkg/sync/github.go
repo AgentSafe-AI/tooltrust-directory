@@ -79,13 +79,22 @@ var registryBlock = regexp.MustCompile(
 	`(?s)(<!-- AGENTSENTRY:BEGIN[^\n]*\n).*?(<!-- AGENTSENTRY:END -->)`,
 )
 
-// UpdateRegistry reads every JSON report from reportsDir, sorts them by grade
-// then risk score, builds a Markdown table, splices it into the README between
-// the AGENTSENTRY markers, and generates per-tool detail pages in docs/tools/.
+// TableMaxRows limits the README table to keep the homepage scannable.
+const TableMaxRows = 50
+
+// UpdateRegistry reads every JSON report from reportsDir, sorts them by stars
+// then grade, builds a Markdown table (top N by popularity), splices it into
+// the README, and generates per-tool detail pages in docs/tools/.
 func UpdateRegistry(reportsDir, readmePath string) error {
 	reports, err := loadReports(reportsDir)
 	if err != nil {
 		return fmt.Errorf("load reports: %w", err)
+	}
+
+	totalCount := len(reports)
+	tableReports := reports
+	if len(reports) > TableMaxRows {
+		tableReports = reports[:TableMaxRows]
 	}
 
 	// Update README registry table
@@ -100,8 +109,7 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 	}
 
 	// loc[2]:loc[3] = group 1 (BEGIN marker line), loc[4]:loc[5] = group 2 (END marker)
-	// Splice: keep everything before end of group 1, insert new table, keep group 2 onward.
-	table := buildTable(reports)
+	table := buildTable(tableReports, totalCount)
 	updated := readme[:loc[3]] + table + "\n" + readme[loc[4]:]
 	updated = updateBadges(updated, len(reports))
 	if err := os.WriteFile(readmePath, []byte(updated), 0o644); err != nil {
@@ -198,9 +206,10 @@ func gradeRank(g string) int {
 	return 5 // unknown grades sort last
 }
 
-func buildTable(reports []Report) string {
+func buildTable(reports []Report, totalCount int) string {
 	var sb strings.Builder
-	sb.WriteString("\n| Tool | Version | Stars | Grade | Key Findings | Scanned |\n")
+	fmt.Fprintf(&sb, "\n*Top 50 by stars. View all %d tools → [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n", totalCount)
+	sb.WriteString("| Tool | Version | Stars | Grade | Key Findings | Scanned |\n")
 	sb.WriteString("|------|---------|:-----:|:-----:|:-------------|:-------:|\n")
 	for _, r := range reports {
 		ver := r.Version
