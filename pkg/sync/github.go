@@ -95,12 +95,15 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 		return fmt.Errorf("read readme: %w", err)
 	}
 	readme := string(raw)
-	if !registryBlock.MatchString(readme) {
+	loc := registryBlock.FindStringSubmatchIndex(readme)
+	if loc == nil {
 		return fmt.Errorf("AGENTSENTRY markers not found in %s — nothing updated", readmePath)
 	}
 
+	// loc[2]:loc[3] = group 1 (BEGIN marker line), loc[4]:loc[5] = group 2 (END marker)
+	// Splice: keep everything before end of group 1, insert new table, keep group 2 onward.
 	table := buildTable(reports)
-	updated := registryBlock.ReplaceAllString(readme, "${1}"+table+"\n${2}")
+	updated := readme[:loc[3]] + table + "\n" + readme[loc[4]:]
 	updated = updateBadges(updated, len(reports))
 	if err := os.WriteFile(readmePath, []byte(updated), 0o644); err != nil {
 		return fmt.Errorf("write readme: %w", err)

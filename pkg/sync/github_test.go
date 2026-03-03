@@ -176,6 +176,36 @@ func TestLoadReports(t *testing.T) {
 	}
 }
 
+func TestUpdateRegistryDollarInDescription(t *testing.T) {
+	dir := t.TempDir()
+	reportsDir := filepath.Join(dir, "data", "reports")
+	os.MkdirAll(reportsDir, 0o755)
+	os.MkdirAll(filepath.Join(dir, "docs", "tools"), 0o755)
+
+	report := `{"tool_id":"dollar-tool","version":"1.0.0","grade":"A","risk_score":0,
+	"scan_date":"2026-01-01T00:00:00Z","scanner":"AgentSentry/0.1.2",
+	"source_url":"https://example.com","findings":[],"summary":{"critical":0,"high":0,"medium":0,"low":0,"info":0},
+	"methodology":"https://example.com/methodology","description":"Save $100 with ${HOME} expansion $1 $2"}`
+	os.WriteFile(filepath.Join(reportsDir, "dollar-tool.json"), []byte(report), 0o644)
+
+	readme := "# Test\n<!-- AGENTSENTRY:BEGIN -->\nold\n<!-- AGENTSENTRY:END -->\n"
+	readmePath := filepath.Join(dir, "README.md")
+	os.WriteFile(readmePath, []byte(readme), 0o644)
+
+	if err := UpdateRegistry(reportsDir, readmePath); err != nil {
+		t.Fatalf("UpdateRegistry: %v", err)
+	}
+
+	result, _ := os.ReadFile(readmePath)
+	content := string(result)
+	if !strings.Contains(content, "$100") {
+		t.Error("$ in description should be preserved literally")
+	}
+	if !strings.Contains(content, "${HOME}") {
+		t.Error("${HOME} in description should be preserved literally")
+	}
+}
+
 func TestUpdateRegistry(t *testing.T) {
 	dir := t.TempDir()
 	reportsDir := filepath.Join(dir, "data", "reports")
