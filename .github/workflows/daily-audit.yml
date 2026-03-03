@@ -100,8 +100,8 @@ jobs:
           cd /tmp/tooltrust-scanner
           ENTRY=$(find cmd -maxdepth 1 -mindepth 1 -type d | head -1)
           echo "Building entry-point: ./$ENTRY"
-          go build -o /usr/local/bin/agentsentry "./$ENTRY"
-          agentsentry version
+          go build -o /usr/local/bin/tooltrust-scanner "./$ENTRY"
+          tooltrust-scanner version
 
       - name: Scan each pending tool
         run: |
@@ -115,9 +115,9 @@ jobs:
             exit 0
           fi
 
-          run_agentsentry() {
+          run_scanner() {
             local INPUT="$1" OUTPUT="$2"
-            agentsentry scan --protocol mcp --input "$INPUT" > "$OUTPUT"
+            tooltrust-scanner scan --protocol mcp --input "$INPUT" > "$OUTPUT"
           }
 
           for i in $(seq 0 $((COUNT - 1))); do
@@ -170,7 +170,7 @@ jobs:
               echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
             else
               echo "Def     : $TOOL_DEF"
-              if ! run_agentsentry "$TOOL_DEF" "$RAW_OUT"; then
+              if ! run_scanner "$TOOL_DEF" "$RAW_OUT"; then
                 echo "WARN: ToolTrust Scanner scan failed — using OSV-only report"
                 echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
               fi
