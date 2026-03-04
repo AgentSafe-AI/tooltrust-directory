@@ -5,7 +5,7 @@ All 143 audited tools. [← Back to README](../README.md#-security-registry)
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.2` | 177.4k | **[S 🌟](tools/n8n.md)** | ✅ None | Mar 3 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.31.0` | 96.2k | **[S 🌟](tools/gemini-cli.md)** | ✅ None | Mar 2 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.32.0` | 96.3k | **[S 🌟](tools/gemini-cli.md)** | ✅ None | Mar 4 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[S 🌟](tools/trendradar.md)** | ✅ None | Mar 2 |
 | [context7](https://github.com/upstash/context7) | `@upstash/c…` | 47.4k | **[S 🌟](tools/context7.md)** | ✅ None | Mar 2 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[S 🌟](tools/ui-tars-desktop.md)** | ✅ None | Mar 2 |
@@ -48,9 +48,9 @@ All 143 audited tools. [← Back to README](../README.md#-security-registry)
 | [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[A](tools/kubefwd.md)** | 📦 `AS-004` | Mar 2 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.0k | **[S 🌟](tools/mcpo.md)** | ✅ None | Mar 2 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.0k | **[D](tools/notion-mcp-server.md)** | 📦 `AS-004` ×9 | Mar 2 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.13.3` | 3.7k | **[S 🌟](tools/osaurus.md)** | ✅ None | Mar 4 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.7k | **[B](tools/mcp-server-chart.md)** | 📦 `AS-004` ×3 | Mar 2 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.12.12` | 3.7k | **[S 🌟](tools/osaurus.md)** | ✅ None | Mar 3 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.6k | **[S 🌟](tools/archestra.md)** | ✅ None | Mar 2 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.6k | **[S 🌟](tools/archestra.md)** | ✅ None | Mar 4 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `dex-analys…` | 3.5k | **[S 🌟](tools/mcp-server-cloudflare.md)** | ✅ None | Mar 2 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[S 🌟](tools/pptagent.md)** | ✅ None | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[S 🌟](tools/excel-mcp-server.md)** | ✅ None | Mar 2 |
@@ -62,7 +62,7 @@ All 143 audited tools. [← Back to README](../README.md#-security-registry)
 | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](tools/n8n-mcp-server.md)** | 📦 `AS-004` ×6 | Mar 2 |
 | [office-powerpoint-mcp-server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server) | `2.0.7` | 1.5k | **[S 🌟](tools/office-powerpoint-mcp-server.md)** | ✅ None | Mar 2 |
 | [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | `0.1.1` | 1.5k | **[S 🌟](tools/mcp-language-server.md)** | ✅ None | Mar 2 |
-| [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | `1.2.2` | 1.4k | **[A](tools/slack-mcp-server.md)** | 📦 `AS-004` | Mar 2 |
+| [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | `1.2.3` | 1.4k | **[A](tools/slack-mcp-server.md)** | 📦 `AS-004` | Mar 4 |
 | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.3.0` | 1.3k | **[S 🌟](tools/mcp-server-kubernetes.md)** | ✅ None | Mar 2 |
 | [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | `0.4.0` | 1.3k | **[S 🌟](tools/terraform-mcp-server.md)** | ✅ None | Mar 2 |
 | [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) | `0.8.1` | 1.2k | **[S 🌟](tools/mcp-server-qdrant.md)** | ✅ None | Mar 2 |

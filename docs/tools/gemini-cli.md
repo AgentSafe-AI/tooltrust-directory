@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `0.31.0` |
+| **Version** | `0.32.0` |
 | **Vendor** | google-gemini |
-| **Stars** | ⭐ 96225 |
+| **Stars** | ⭐ 96348 |
 | **Language** | TypeScript |
 | **Source** | [gemini-cli](https://github.com/google-gemini/gemini-cli) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-04 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

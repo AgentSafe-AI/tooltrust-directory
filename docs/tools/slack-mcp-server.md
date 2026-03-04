@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 8 |
-| **Version** | `1.2.2` |
+| **Version** | `1.2.3` |
 | **Vendor** | korotovsky |
-| **Stars** | ⭐ 1411 |
+| **Stars** | ⭐ 1414 |
 | **Language** | Go |
 | **Source** | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-04 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

@@ -6,7 +6,7 @@ Independent, automated security audits for MCP servers, OpenAI Skills, and AI ag
 Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner) — a deterministic static-analysis engine written in Go.
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-143-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--03-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--04-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -21,7 +21,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.2` | 177.4k | **[S 🌟](./docs/tools/n8n.md)** | ✅ None | Mar 3 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.31.0` | 96.2k | **[S 🌟](./docs/tools/gemini-cli.md)** | ✅ None | Mar 2 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.32.0` | 96.3k | **[S 🌟](./docs/tools/gemini-cli.md)** | ✅ None | Mar 4 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[S 🌟](./docs/tools/trendradar.md)** | ✅ None | Mar 2 |
 | [context7](https://github.com/upstash/context7) | `@upstash/c…` | 47.4k | **[S 🌟](./docs/tools/context7.md)** | ✅ None | Mar 2 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[S 🌟](./docs/tools/ui-tars-desktop.md)** | ✅ None | Mar 2 |
@@ -64,9 +64,9 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[A](./docs/tools/kubefwd.md)** | 📦 `AS-004` | Mar 2 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.0k | **[S 🌟](./docs/tools/mcpo.md)** | ✅ None | Mar 2 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.0k | **[D](./docs/tools/notion-mcp-server.md)** | 📦 `AS-004` ×9 | Mar 2 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.13.3` | 3.7k | **[S 🌟](./docs/tools/osaurus.md)** | ✅ None | Mar 4 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.7k | **[B](./docs/tools/mcp-server-chart.md)** | 📦 `AS-004` ×3 | Mar 2 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.12.12` | 3.7k | **[S 🌟](./docs/tools/osaurus.md)** | ✅ None | Mar 3 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.6k | **[S 🌟](./docs/tools/archestra.md)** | ✅ None | Mar 2 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.6k | **[S 🌟](./docs/tools/archestra.md)** | ✅ None | Mar 4 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `dex-analys…` | 3.5k | **[S 🌟](./docs/tools/mcp-server-cloudflare.md)** | ✅ None | Mar 2 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[S 🌟](./docs/tools/pptagent.md)** | ✅ None | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[S 🌟](./docs/tools/excel-mcp-server.md)** | ✅ None | Mar 2 |
