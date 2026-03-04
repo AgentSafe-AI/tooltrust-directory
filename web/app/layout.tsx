@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Link from "next/link";
 import { Shield } from "lucide-react";
@@ -55,6 +56,7 @@ export default function RootLayout({
           </div>
         </header>
         <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
