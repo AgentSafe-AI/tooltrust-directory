@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `transports/v1.4.10` |
+| **Version** | `helm-chart-v2.0.10` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 2667 |
+| **Stars** | ⭐ 2690 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-03-03 |
+| **Scan Date** | 2026-03-05 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `@upstash/context7-mcp@2.1.2` |
+| **Version** | `@upstash/context7-mcp@2.1.3` |
 | **Vendor** | upstash |
-| **Stars** | ⭐ 47420 |
+| **Stars** | ⭐ 47696 |
 | **Language** | TypeScript |
 | **Source** | [context7](https://github.com/upstash/context7) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-05 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---
