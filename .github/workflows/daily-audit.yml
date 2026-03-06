@@ -115,10 +115,6 @@ jobs:
             exit 0
           fi
 
-          run_scanner() {
-            local INPUT="$1" OUTPUT="$2"
-            tooltrust-scanner scan --protocol mcp --input "$INPUT" > "$OUTPUT"
-          }
 
           for i in $(seq 0 $((COUNT - 1))); do
             TOOL_ID=$(jq  -r ".[$i].tool_id"     "$PENDING")
@@ -155,22 +151,96 @@ jobs:
 
             # ── ToolTrust Scanner: MCP tool-definition scan ───────────────────
             TOOL_DEF=""
+
+            # 1. Explicit manifest files — ordered most-specific first.
             for candidate in \
-              tools.json mcp.json \
+              tools.json mcp.json server.json \
               testdata/tools.json \
               .mcp/tools.json \
               src/tools.json \
               src/testdata/tools.json \
-              test/tools.json; do
-              [ -f "$CLONE_DIR/$candidate" ] && TOOL_DEF="$CLONE_DIR/$candidate" && break
+              src/mcp.json \
+              test/tools.json \
+              tools/tools.json; do
+              if [ -f "$CLONE_DIR/$candidate" ]; then
+                # Validate the file looks like an MCP tools array/object
+                if jq -e '(.tools // .)|arrays|length > 0' "$CLONE_DIR/$candidate" >/dev/null 2>&1; then
+                  TOOL_DEF="$CLONE_DIR/$candidate"
+                  break
+                fi
+              fi
             done
 
+            # 2. Recursive find: any JSON with a "tools" array (skills/, tools/)
             if [ -z "$TOOL_DEF" ]; then
-              echo "INFO    : no tools.json — AS-001/002/003 skipped (OSV-only report)"
+              while IFS= read -r f; do
+                if jq -e '.tools|arrays|length > 0' "$f" >/dev/null 2>&1; then
+                  TOOL_DEF="$f"
+                  break
+                fi
+              done < <(find "$CLONE_DIR" \
+                -not -path '*/.git/*' \
+                -not -path '*/node_modules/*' \
+                -not -name 'package*.json' \
+                -not -name 'tsconfig*.json' \
+                -name '*.json' 2>/dev/null | sort)
+            fi
+
+            # 3. Grep-based synthetic fallback: extract tool names + descriptions
+            #    from TypeScript / Python / Go source.
+            #    Matches patterns like:
+            #      server.tool("evaluate_script", "Evaluates JS...", ...)  [TS]
+            #      @mcp.tool(name="execute_code", description="...")        [Py]
+            #      server.AddTool(mcp.Tool{Name: "run_script", ...})        [Go]
+            if [ -z "$TOOL_DEF" ]; then
+              SYNTH_TOOLS="[]"
+              # TypeScript: server.tool("name", "description", ...)
+              TS_HITS=$(grep -roh \
+                --include='*.ts' --include='*.js' --include='*.mjs' \
+                -E '"[a-z][a-z0-9_]{2,49}",\s*"[^"]{5,200}"' \
+                "$CLONE_DIR/src" "$CLONE_DIR" \
+                2>/dev/null | \
+                grep -v node_modules | \
+                sed 's/",\s*"/|/' | sed 's/"//g' | sort -u | head -60)
+
+              # Python: @mcp.tool / name= / description=
+              PY_HITS=$(grep -roh \
+                --include='*.py' \
+                -E 'name=['\''"][a-z][a-z0-9_]{2,49}['\''"]' \
+                "$CLONE_DIR" 2>/dev/null | \
+                grep -v '.git' | \
+                sed "s/name=['\"]//;s/['\"]$//" | sort -u | head -30)
+
+              TOOL_COUNT=0
+              TOOL_ARRAY="["
+              # Build tools array from TS hits (name|desc pairs)
+              while IFS='|' read -r tname tdesc; do
+                [ -z "$tname" ] && continue
+                TOOL_ARRAY="${TOOL_ARRAY}{\"name\":\"${tname}\",\"description\":\"${tdesc}\",\"inputSchema\":{\"type\":\"object\",\"properties\":{}}},"
+                TOOL_COUNT=$((TOOL_COUNT + 1))
+              done <<< "$TS_HITS"
+              # Append PY hits (name only, no description)
+              while IFS= read -r tname; do
+                [ -z "$tname" ] && continue
+                TOOL_ARRAY="${TOOL_ARRAY}{\"name\":\"${tname}\",\"description\":\"\",\"inputSchema\":{\"type\":\"object\",\"properties\":{}}},"
+                TOOL_COUNT=$((TOOL_COUNT + 1))
+              done <<< "$PY_HITS"
+              TOOL_ARRAY="${TOOL_ARRAY%,}]"  # strip trailing comma
+
+              if [ "$TOOL_COUNT" -gt 0 ]; then
+                SYNTH_FILE="/tmp/${TOOL_ID}-synth-tools.json"
+                printf '{"tools":%s}\n' "$TOOL_ARRAY" > "$SYNTH_FILE"
+                echo "SYNTH   : extracted $TOOL_COUNT tool name(s) from source"
+                TOOL_DEF="$SYNTH_FILE"
+              fi
+            fi
+
+            if [ -z "$TOOL_DEF" ]; then
+              echo "INFO    : no tool definitions found — AS-001/002/003/006 skipped (OSV-only report)"
               echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
             else
               echo "Def     : $TOOL_DEF"
-              if ! run_scanner "$TOOL_DEF" "$RAW_OUT"; then
+              if ! tooltrust-scanner scan --protocol mcp --input "$TOOL_DEF" --output json --file "$RAW_OUT"; then
                 echo "WARN: ToolTrust Scanner scan failed — using OSV-only report"
                 echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
               fi
