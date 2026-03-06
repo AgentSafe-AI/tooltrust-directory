@@ -194,8 +194,8 @@ jobs:
             #      server.AddTool(mcp.Tool{Name: "run_script", ...})        [Go]
             if [ -z "$TOOL_DEF" ]; then
               SYNTH_TOOLS="[]"
-              # TypeScript: server.tool("name", "description", ...)
-              TS_HITS=$(grep -roh \
+              # Pair extraction (TS/JS): server.tool("name", "description")
+              PAIRS=$(grep -roh \
                 --include='*.ts' --include='*.js' --include='*.mjs' \
                 -E '"[a-z][a-z0-9_]{2,49}",\s*"[^"]{5,200}"' \
                 "$CLONE_DIR/src" "$CLONE_DIR" \
@@ -203,28 +203,29 @@ jobs:
                 grep -v node_modules | \
                 sed 's/",\s*"/|/' | sed 's/"//g' | sort -u | head -60)
 
-              # Python: @mcp.tool / name= / description=
-              PY_HITS=$(grep -roh \
-                --include='*.py' \
-                -E 'name=['\''"][a-z][a-z0-9_]{2,49}['\''"]' \
-                "$CLONE_DIR" 2>/dev/null | \
-                grep -v '.git' | \
-                sed "s/name=['\"]//;s/['\"]$//" | sort -u | head -30)
+              # Name-only extraction (TS/JS/PY/GO): name: '...', name="...", Name: "..."
+              NAMES=$(grep -roh \
+                --include='*.ts' --include='*.js' --include='*.py' --include='*.go' \
+                -iE '(name\s*[:=]\s*)['\''"][a-z][a-z0-9_]{2,49}['\''"]' \
+                "$CLONE_DIR/src" "$CLONE_DIR" \
+                2>/dev/null | \
+                grep -v '\.git\|node_modules' | \
+                sed -E "s/.*[nN][aA][mM][eE]\s*[:=]\s*['\"]//" | sed "s/['\"]$//" | sort -u | head -60)
 
               TOOL_COUNT=0
               TOOL_ARRAY="["
-              # Build tools array from TS hits (name|desc pairs)
+              # Build tools array from PAIRS (name|desc)
               while IFS='|' read -r tname tdesc; do
                 [ -z "$tname" ] && continue
                 TOOL_ARRAY="${TOOL_ARRAY}{\"name\":\"${tname}\",\"description\":\"${tdesc}\",\"inputSchema\":{\"type\":\"object\",\"properties\":{}}},"
                 TOOL_COUNT=$((TOOL_COUNT + 1))
-              done <<< "$TS_HITS"
-              # Append PY hits (name only, no description)
+              done <<< "$PAIRS"
+              # Append NAMES hits (name only, no description)
               while IFS= read -r tname; do
                 [ -z "$tname" ] && continue
                 TOOL_ARRAY="${TOOL_ARRAY}{\"name\":\"${tname}\",\"description\":\"\",\"inputSchema\":{\"type\":\"object\",\"properties\":{}}},"
                 TOOL_COUNT=$((TOOL_COUNT + 1))
-              done <<< "$PY_HITS"
+              done <<< "$NAMES"
               TOOL_ARRAY="${TOOL_ARRAY%,}]"  # strip trailing comma
 
               if [ "$TOOL_COUNT" -gt 0 ]; then

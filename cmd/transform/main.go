@@ -26,9 +26,9 @@ import (
 // ── AgentSentry output schema ────────────────────────────────────────────────
 
 type AgentSentryOutput struct {
-	SchemaVersion string     `json:"schema_version"`
-	Policies      []Policy   `json:"policies"`
-	Summary       ASSummary  `json:"summary"`
+	SchemaVersion string    `json:"schema_version"`
+	Policies      []Policy  `json:"policies"`
+	Summary       ASSummary `json:"summary"`
 }
 
 type Policy struct {
@@ -140,23 +140,23 @@ var rules = map[string]ruleMeta{
 }
 
 const (
-	scannerVersion = "AgentSentry/0.1.2"
+	scannerVersion = "tooltrust-scanner/0.1.4"
 	methodologyURL = "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
 )
 
 func main() {
-	inputPath   := flag.String("input",        "",  "path to AgentSentry JSON output (required)")
-	toolID      := flag.String("tool-id",     "",  "kebab-case tool_id (required)")
-	version     := flag.String("version",     "",  "scanned semver (required)")
-	sourceURL   := flag.String("source",      "",  "canonical source URL (required)")
-	outputPath  := flag.String("output",      "",  "destination path for ToolTrust report (required)")
-	vendor      := flag.String("vendor",      "",  "GitHub org/user that owns the repo")
-	stars       := flag.Int(  "stars",        0,   "GitHub star count at scan time")
-	license     := flag.String("license",     "",  "SPDX license identifier, e.g. MIT")
-	language    := flag.String("language",    "",  "primary programming language")
-	category    := flag.String("category",   "",  "functional category, e.g. Developer Tools")
-	description := flag.String("description", "",  "repository description")
-	osvFindings := flag.String("osv-findings","",  "path to AS-004 OSV findings JSON from cmd/analyze")
+	inputPath := flag.String("input", "", "path to AgentSentry JSON output (required)")
+	toolID := flag.String("tool-id", "", "kebab-case tool_id (required)")
+	version := flag.String("version", "", "scanned semver (required)")
+	sourceURL := flag.String("source", "", "canonical source URL (required)")
+	outputPath := flag.String("output", "", "destination path for ToolTrust report (required)")
+	vendor := flag.String("vendor", "", "GitHub org/user that owns the repo")
+	stars := flag.Int("stars", 0, "GitHub star count at scan time")
+	license := flag.String("license", "", "SPDX license identifier, e.g. MIT")
+	language := flag.String("language", "", "primary programming language")
+	category := flag.String("category", "", "functional category, e.g. Developer Tools")
+	description := flag.String("description", "", "repository description")
+	osvFindings := flag.String("osv-findings", "", "path to AS-004 OSV findings JSON from cmd/analyze")
 	flag.Parse()
 
 	if *inputPath == "" || *toolID == "" || *version == "" || *sourceURL == "" || *outputPath == "" {
