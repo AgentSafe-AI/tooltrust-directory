@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `n8n@2.10.2` |
+| **Version** | `n8n@2.10.4` |
 | **Vendor** | n8n-io |
-| **Stars** | ⭐ 177359 |
+| **Stars** | ⭐ 177904 |
 | **Language** | TypeScript |
 | **Source** | [n8n](https://github.com/n8n-io/n8n) |
-| **Scan Date** | 2026-03-03 |
+| **Scan Date** | 2026-03-06 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

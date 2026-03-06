@@ -1,16 +1,16 @@
-# 🌟 archestra
+# 🌟 anki-mcp-server
 
-> Secure cloud-native MCP registry, gateway & orchestrator
+> MCP server for Anki via AnkiConnect
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.0.60` |
-| **Vendor** | archestra-ai |
-| **Stars** | ⭐ 3550 |
+| **Version** | `0.1.8` |
+| **Vendor** | nailuoGG |
+| **Stars** | ⭐ 225 |
 | **Language** | TypeScript |
-| **Source** | [archestra](https://github.com/archestra-ai/archestra) |
+| **Source** | [anki-mcp-server](https://github.com/nailuoGG/anki-mcp-server) |
 | **Scan Date** | 2026-03-06 |
 | **Scanner** | AgentSentry/0.1.2 |
 
@@ -28,4 +28,4 @@
 
 No findings. ✅
 
-*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/archestra.json)*
+*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/anki-mcp-server.json)*

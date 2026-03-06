@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `1.0.2` |
+| **Version** | `1.0.3` |
 | **Vendor** | motherduckdb |
 | **Stars** | ⭐ 431 |
 | **Language** | Python |
 | **Source** | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) |
-| **Scan Date** | 2026-03-03 |
+| **Scan Date** | 2026-03-05 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

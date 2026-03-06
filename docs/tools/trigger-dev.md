@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `@trigger.dev/core@4.4.1` |
+| **Version** | `4.4.2` |
 | **Vendor** | triggerdotdev |
-| **Stars** | ⭐ 13910 |
+| **Stars** | ⭐ 13931 |
 | **Language** | TypeScript |
 | **Source** | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) |
-| **Scan Date** | 2026-03-02 |
+| **Scan Date** | 2026-03-05 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---
