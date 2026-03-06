@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ToolTrust — Security Trust Layer for AI Agents",
+  title: "ToolTrust — Static Analyzer for AI Agents",
   description:
-    "Independent security audits for MCP servers and AI agent tools. Grades and findings for safe tool adoption.",
+    "Automated static analysis and linting for MCP servers and AI agent tools. Grades and findings for safe tool adoption.",
 };
 
 export default function RootLayout({

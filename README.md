@@ -1,9 +1,12 @@
 # 🛡️ ToolTrust Directory
 
-**The Security Trust Layer for AI Agent Tools.**
+**The fast, static heuristic linter for AI agent tool definitions.**
 
-Independent, automated security audits for MCP servers, OpenAI Skills, and AI agent tools.
+Automated static analysis for MCP servers, OpenAI Skills, and AI agent tools.
 Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner) — a deterministic static-analysis engine written in Go.
+
+> [!NOTE]
+> ToolTrust is a fast, static heuristic linter for MCP servers. It is not a replacement for a deep, manual security audit. It catches low-hanging fruit like supply chain CVEs and obvious prompt injection patterns.
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-145-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--06-blue)](./data/reports/)
