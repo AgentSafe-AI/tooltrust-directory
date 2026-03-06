@@ -6,9 +6,9 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `2026.03.20260305133104` |
+| **Version** | `2026.03.20260306090751` |
 | **Vendor** | awslabs |
-| **Stars** | ⭐ 8362 |
+| **Stars** | ⭐ 8377 |
 | **Language** | Python |
 | **Source** | [mcp](https://github.com/awslabs/mcp) |
 | **Scan Date** | 2026-03-06 |

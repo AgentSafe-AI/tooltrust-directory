@@ -6,9 +6,9 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `helm-chart-v2.0.11` |
+| **Version** | `ent-v1.3.8-base` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 2724 |
+| **Stars** | ⭐ 2748 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
 | **Scan Date** | 2026-03-06 |

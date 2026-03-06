@@ -5,7 +5,7 @@
 Independent, automated security audits for MCP servers, OpenAI Skills, and AI agent tools.
 Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner) — a deterministic static-analysis engine written in Go.
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-144-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-145-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--06-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -16,18 +16,18 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 
 <!-- AGENTSENTRY:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 144 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 145 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.3` | 177.6k | **[S 🌟](./docs/tools/n8n.md)** | ✅ None | Mar 5 |
+| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.4` | 177.9k | **[S 🌟](./docs/tools/n8n.md)** | ✅ None | Mar 6 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.32.1` | 96.5k | **[S 🌟](./docs/tools/gemini-cli.md)** | ✅ None | Mar 5 |
+| [context7](https://github.com/upstash/context7) | `ctx7@0.3.2` | 47.9k | **[S 🌟](./docs/tools/context7.md)** | ✅ None | Mar 6 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[S 🌟](./docs/tools/trendradar.md)** | ✅ None | Mar 2 |
-| [context7](https://github.com/upstash/context7) | `@upstash/c…` | 47.7k | **[S 🌟](./docs/tools/context7.md)** | ✅ None | Mar 5 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[S 🌟](./docs/tools/ui-tars-desktop.md)** | ✅ None | Mar 2 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 28.1k | **[A](./docs/tools/playwright-mcp.md)** | 📦 `AS-004` | Mar 3 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 27.6k | **[S 🌟](./docs/tools/chrome-devtools-mcp.md)** | ✅ None | Mar 6 |
-| [github-mcp-server](https://github.com/github/github-mcp-server) | `0.31.0` | 27.4k | **[B](./docs/tools/github-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
+| [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 27.6k | **[S 🌟](./docs/tools/github-mcp-server.md)** | ✅ None | Mar 6 |
 | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 25.7k | **[B](./docs/tools/claude-task-master.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.2` | 25.5k | **[S 🌟](./docs/tools/gpt-researcher.md)** | ✅ None | Mar 2 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.2` | 21.1k | **[B](./docs/tools/activepieces.md)** | 📦 `AS-004` ×3 | Mar 3 |

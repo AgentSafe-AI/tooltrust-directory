@@ -1,17 +1,17 @@
 # ToolTrust — Full Directory
 
-All 144 audited tools. [← Back to README](../README.md#-security-registry)
+All 145 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.3` | 177.6k | **[S 🌟](tools/n8n.md)** | ✅ None | Mar 5 |
+| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.10.4` | 177.9k | **[S 🌟](tools/n8n.md)** | ✅ None | Mar 6 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.32.1` | 96.5k | **[S 🌟](tools/gemini-cli.md)** | ✅ None | Mar 5 |
+| [context7](https://github.com/upstash/context7) | `ctx7@0.3.2` | 47.9k | **[S 🌟](tools/context7.md)** | ✅ None | Mar 6 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[S 🌟](tools/trendradar.md)** | ✅ None | Mar 2 |
-| [context7](https://github.com/upstash/context7) | `@upstash/c…` | 47.7k | **[S 🌟](tools/context7.md)** | ✅ None | Mar 5 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[S 🌟](tools/ui-tars-desktop.md)** | ✅ None | Mar 2 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 28.1k | **[A](tools/playwright-mcp.md)** | 📦 `AS-004` | Mar 3 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 27.6k | **[S 🌟](tools/chrome-devtools-mcp.md)** | ✅ None | Mar 6 |
-| [github-mcp-server](https://github.com/github/github-mcp-server) | `0.31.0` | 27.4k | **[B](tools/github-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
+| [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 27.6k | **[S 🌟](tools/github-mcp-server.md)** | ✅ None | Mar 6 |
 | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 25.7k | **[B](tools/claude-task-master.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.2` | 25.5k | **[S 🌟](tools/gpt-researcher.md)** | ✅ None | Mar 2 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.2` | 21.1k | **[B](tools/activepieces.md)** | 📦 `AS-004` ×3 | Mar 3 |
@@ -55,7 +55,7 @@ All 144 audited tools. [← Back to README](../README.md#-security-registry)
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[S 🌟](tools/pptagent.md)** | ✅ None | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[S 🌟](tools/excel-mcp-server.md)** | ✅ None | Mar 2 |
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.2k | **[S 🌟](tools/py-xiaozhi.md)** | ✅ None | Mar 2 |
-| [bifrost](https://github.com/maximhq/bifrost) | `helm-chart…` | 2.7k | **[S 🌟](tools/bifrost.md)** | ✅ None | Mar 6 |
+| [bifrost](https://github.com/maximhq/bifrost) | `ent-v1.3.8…` | 2.7k | **[S 🌟](tools/bifrost.md)** | ✅ None | Mar 6 |
 | [solon](https://github.com/opensolon/solon) | `3.9.4` | 2.7k | **[S 🌟](tools/solon.md)** | ✅ None | Mar 2 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[C](tools/shadcn-ui-mcp-server.md)** | 📦 `AS-004` ×5 | Mar 2 |
 | [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) | `1.1.11` | 1.7k | **[S 🌟](tools/office-word-mcp-server.md)** | ✅ None | Mar 2 |
@@ -119,6 +119,7 @@ All 144 audited tools. [← Back to README](../README.md#-security-registry)
 | [xiyan-mcp-server](https://github.com/XGenerationLab/xiyan_mcp_server) | `0.1.4` | 231 | **[S 🌟](tools/xiyan-mcp-server.md)** | ✅ None | Mar 2 |
 | [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) | `1.12.4` | 229 | **[B](tools/mcp-openapi-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
 | [kite-mcp-server](https://github.com/zerodha/kite-mcp-server) | `0.3.1` | 226 | **[S 🌟](tools/kite-mcp-server.md)** | ✅ None | Mar 2 |
+| [anki-mcp-server](https://github.com/nailuoGG/anki-mcp-server) | `0.1.8` | 225 | **[S 🌟](tools/anki-mcp-server.md)** | ✅ None | Mar 6 |
 | [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) | `0.7.4` | 225 | **[B](tools/mcp-server-commands.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) | `1.2.1` | 214 | **[C](tools/razorpay-mcp-server.md)** | 📦 `AS-004` ×4 | Mar 2 |
 | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | `0.6.0` | 210 | **[S 🌟](tools/matlab-mcp-core-server.md)** | ✅ None | Mar 6 |
