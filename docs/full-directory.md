@@ -10,7 +10,7 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[S 🌟](tools/trendradar.md)** | ✅ None | Mar 2 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[S 🌟](tools/ui-tars-desktop.md)** | ✅ None | Mar 2 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 28.1k | **[A](tools/playwright-mcp.md)** | 📦 `AS-004` | Mar 3 |
-| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 27.6k | **[S 🌟](tools/chrome-devtools-mcp.md)** | ✅ None | Mar 6 |
+| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 27.8k | **[S 🌟](tools/chrome-devtools-mcp.md)** | ✅ None | Mar 6 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 27.6k | **[S 🌟](tools/github-mcp-server.md)** | ✅ None | Mar 6 |
 | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 25.7k | **[B](tools/claude-task-master.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.2` | 25.5k | **[S 🌟](tools/gpt-researcher.md)** | ✅ None | Mar 2 |
@@ -72,13 +72,13 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | `3.0.1` | 1.0k | **[S 🌟](tools/ros-mcp-server.md)** | ✅ None | Mar 2 |
 | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.2.0` | 991 | **[S 🌟](tools/linkedin-mcp-server.md)** | ✅ None | Mar 6 |
 | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) | `1.8.0` | 939 | **[S 🌟](tools/mongodb-mcp-server.md)** | ✅ None | Mar 5 |
-| [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) | `0.22.1` | 918 | **[S 🌟](tools/jupyter-mcp-server.md)** | ✅ None | Mar 2 |
+| [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) | `0.22.1` | 918 | **[F](tools/jupyter-mcp-server.md)** | `AS-006`, ⚠️ `AS-002` | Mar 6 |
 | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 879 | **[F](tools/openapi-mcp-server.md)** | 📦 `AS-004` ×13 | Mar 2 |
 | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) | `1.2.4` | 862 | **[B](tools/mcp-notion-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
 | [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.9.7` | 852 | **[S 🌟](tools/apify-mcp-server.md)** | ✅ None | Mar 5 |
 | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | `1.24.0` | 840 | **[S 🌟](tools/kubectl-mcp-server.md)** | ✅ None | Mar 2 |
 | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) | `0.4` | 813 | **[S 🌟](tools/supabase-mcp-server.md)** | ✅ None | Mar 2 |
-| [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) | `1.0.3` | 807 | **[S 🌟](tools/browser-use-mcp-server.md)** | ✅ None | Mar 2 |
+| [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) | `1.0.3` | 807 | **[C](tools/browser-use-mcp-server.md)** | `AS-006` | Mar 6 |
 | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | `1.8.0` | 731 | **[F](tools/drawio-mcp-server.md)** | 📦 `AS-004` ×10 | Mar 2 |
 | [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.0.75` | 710 | **[S 🌟](tools/brave-search-mcp-server.md)** | ✅ None | Mar 2 |
 | [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) | `0.11.1` | 606 | **[B](tools/mcp-filesystem-server.md)** | 📦 `AS-004` ×2 | Mar 2 |

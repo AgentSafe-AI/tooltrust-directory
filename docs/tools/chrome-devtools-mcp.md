@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `chrome-devtools-mcp-v0.19.0` |
 | **Vendor** | ChromeDevTools |
-| **Stars** | ⭐ 27618 |
+| **Stars** | ⭐ 27754 |
 | **Language** | TypeScript |
 | **Source** | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
 | **Scan Date** | 2026-03-06 |
