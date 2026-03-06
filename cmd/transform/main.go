@@ -1,6 +1,6 @@
 // cmd/transform/main.go
 //
-// Converts an AgentSentry scan output (schema_version / policies / summary)
+// Converts an ToolTrust Scanner scan output (schema_version / policies / summary)
 // into the ToolTrust Directory report format (report.schema.json v1.0).
 //
 // Usage:
@@ -23,9 +23,9 @@ import (
 	"time"
 )
 
-// ── AgentSentry output schema ────────────────────────────────────────────────
+// ── ToolTrust Scanner output schema ────────────────────────────────────────────────
 
-type AgentSentryOutput struct {
+type ScannerOutput struct {
 	SchemaVersion string    `json:"schema_version"`
 	Policies      []Policy  `json:"policies"`
 	Summary       ASSummary `json:"summary"`
@@ -145,7 +145,7 @@ const (
 )
 
 func main() {
-	inputPath := flag.String("input", "", "path to AgentSentry JSON output (required)")
+	inputPath := flag.String("input", "", "path to ToolTrust Scanner JSON output (required)")
 	toolID := flag.String("tool-id", "", "kebab-case tool_id (required)")
 	version := flag.String("version", "", "scanned semver (required)")
 	sourceURL := flag.String("source", "", "canonical source URL (required)")
@@ -169,9 +169,9 @@ func main() {
 		log.Fatalf("read %s: %v", *inputPath, err)
 	}
 
-	var as AgentSentryOutput
+	var as ScannerOutput
 	if err := json.Unmarshal(raw, &as); err != nil {
-		log.Fatalf("parse AgentSentry output: %v", err)
+		log.Fatalf("parse ToolTrust Scanner output: %v", err)
 	}
 
 	// Load optional AS-004 OSV findings from cmd/analyze
@@ -204,11 +204,11 @@ func main() {
 		*toolID, *version, report.Grade, report.RiskScore, *outputPath)
 }
 
-// transform converts an AgentSentry multi-policy output into a single
+// transform converts an ToolTrust Scanner multi-policy output into a single
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as AgentSentryOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description string) TrustReport {
+func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description string) TrustReport {
 	allFindings := make([]TTFinding, 0)
 	maxScore := 0
 	summary := TTSummary{}
@@ -281,7 +281,7 @@ func transform(as AgentSentryOutput, extra []TTFinding, toolID, version, sourceU
 	}
 }
 
-// toTTFinding maps an AgentSentry finding to the ToolTrust TTFinding shape,
+// toTTFinding maps an ToolTrust Scanner finding to the ToolTrust TTFinding shape,
 // enriching it with our canonical title and recommendation.
 func toTTFinding(f ASFinding) TTFinding {
 	meta, known := rules[f.RuleID]
@@ -316,7 +316,7 @@ func computeGrade(score int, findings []TTFinding) string {
 	return scoreToGrade(score)
 }
 
-// scoreToGrade matches AgentSentry's published grade boundaries exactly.
+// scoreToGrade matches ToolTrust Scanner's published grade boundaries exactly.
 // https://github.com/AgentSafe-AI/tooltrust-scanner#risk-grades
 //
 //	A  0–9    ALLOW

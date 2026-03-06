@@ -200,7 +200,7 @@ func TestLoadReports(t *testing.T) {
 	dir := t.TempDir()
 
 	good := `{"tool_id":"test","version":"1.0.0","grade":"A","risk_score":0,
-	"scan_date":"2026-01-01T00:00:00Z","scanner":"AgentSentry/0.1.2",
+	"scan_date":"2026-01-01T00:00:00Z","scanner":"tooltrust-scanner/0.1.2",
 	"source_url":"https://example.com","findings":[],"summary":{"critical":0,"high":0,"medium":0,"low":0,"info":0},
 	"methodology":"https://example.com/methodology"}`
 	os.WriteFile(filepath.Join(dir, "test.json"), []byte(good), 0o644)
@@ -227,12 +227,12 @@ func TestUpdateRegistryDollarInDescription(t *testing.T) {
 	os.MkdirAll(filepath.Join(dir, "docs", "tools"), 0o755)
 
 	report := `{"tool_id":"dollar-tool","version":"1.0.0","grade":"A","risk_score":0,
-	"scan_date":"2026-01-01T00:00:00Z","scanner":"AgentSentry/0.1.2",
+	"scan_date":"2026-01-01T00:00:00Z","scanner":"tooltrust-scanner/0.1.2",
 	"source_url":"https://example.com","findings":[],"summary":{"critical":0,"high":0,"medium":0,"low":0,"info":0},
 	"methodology":"https://example.com/methodology","description":"Save $100 with ${HOME} expansion $1 $2"}`
 	os.WriteFile(filepath.Join(reportsDir, "dollar-tool.json"), []byte(report), 0o644)
 
-	readme := "# Test\n<!-- AGENTSENTRY:BEGIN -->\nold\n<!-- AGENTSENTRY:END -->\n"
+	readme := "# Test\n<!-- TOOLTRUST:BEGIN -->\nold\n<!-- TOOLTRUST:END -->\n"
 	readmePath := filepath.Join(dir, "README.md")
 	os.WriteFile(readmePath, []byte(readme), 0o644)
 
@@ -264,12 +264,12 @@ func TestUpdateRegistry(t *testing.T) {
 	os.MkdirAll(filepath.Join(dir, "docs", "tools"), 0o755)
 
 	report := `{"tool_id":"demo","version":"1.0.0","grade":"A","risk_score":0,
-	"scan_date":"2026-01-01T00:00:00Z","scanner":"AgentSentry/0.1.2",
+	"scan_date":"2026-01-01T00:00:00Z","scanner":"tooltrust-scanner/0.1.2",
 	"source_url":"https://example.com","findings":[],"summary":{"critical":0,"high":0,"medium":0,"low":0,"info":0},
 	"methodology":"https://example.com/methodology","category":"Dev","description":"A demo tool"}`
 	os.WriteFile(filepath.Join(reportsDir, "demo.json"), []byte(report), 0o644)
 
-	readme := "# Test\n<!-- AGENTSENTRY:BEGIN -->\nold content\n<!-- AGENTSENTRY:END -->\n"
+	readme := "# Test\n<!-- TOOLTRUST:BEGIN -->\nold content\n<!-- TOOLTRUST:END -->\n"
 	readmePath := filepath.Join(dir, "README.md")
 	os.WriteFile(readmePath, []byte(readme), 0o644)
 
@@ -304,7 +304,7 @@ func TestBuildDetailPage(t *testing.T) {
 		Language:    "Go",
 		SourceURL:   "https://example.com",
 		ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
-		Scanner:     "AgentSentry/0.1.2",
+		Scanner:     "tooltrust-scanner/0.1.2",
 		Description: "A test tool",
 		Findings: []Finding{
 			{ID: "AS-002", Severity: "Medium", Title: "Test Finding", Description: "A test", Recommendation: "Fix it"},

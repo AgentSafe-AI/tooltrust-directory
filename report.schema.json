@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/report.schema.json",
   "title": "ToolTrust Security Report",
-  "description": "Standard schema for AgentSentry security reports stored in the ToolTrust Directory.",
+  "description": "Standard schema for ToolTrust Scanner security reports stored in the ToolTrust Directory.",
   "type": "object",
   "required": [
     "tool_id",
@@ -22,18 +22,32 @@
       "type": "string",
       "description": "Unique, kebab-case identifier for the tool. Must match the report filename (without .json).",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-      "examples": ["mcp-server-filesystem", "mcp-server-github"]
+      "examples": [
+        "mcp-server-filesystem",
+        "mcp-server-github"
+      ]
     },
     "version": {
       "type": "string",
       "description": "Version string of the tool that was scanned (semver preferred, but any tag/release name accepted).",
       "minLength": 1,
-      "examples": ["1.2.0", "0.6.2", "2.7"]
+      "examples": [
+        "1.2.0",
+        "0.6.2",
+        "2.7"
+      ]
     },
     "grade": {
       "type": "string",
       "description": "Letter grade: S=0 score, no findings; A=0-9; B=10-24; C=25-49; D=50-74; F=75+.",
-      "enum": ["S", "A", "B", "C", "D", "F"]
+      "enum": [
+        "S",
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ]
     },
     "risk_score": {
       "type": "integer",
@@ -44,13 +58,17 @@
       "type": "string",
       "description": "ISO 8601 UTC timestamp of when the scan was performed.",
       "format": "date-time",
-      "examples": ["2026-03-01T20:00:00Z"]
+      "examples": [
+        "2026-03-01T20:00:00Z"
+      ]
     },
     "scanner": {
       "type": "string",
       "description": "Scanner name and version that produced this report.",
-      "pattern": "^AgentSentry/\\d+\\.\\d+\\.\\d+$",
-      "examples": ["AgentSentry/1.0.0"]
+      "pattern": "^tooltrust-scanner/\\d+\\.\\d+\\.\\d+$",
+      "examples": [
+        "tooltrust-scanner/1.0.0"
+      ]
     },
     "source_url": {
       "type": "string",
@@ -101,19 +119,34 @@
   "$defs": {
     "Finding": {
       "type": "object",
-      "required": ["id", "severity", "title", "description", "recommendation"],
+      "required": [
+        "id",
+        "severity",
+        "title",
+        "description",
+        "recommendation"
+      ],
       "additionalProperties": false,
       "properties": {
         "id": {
           "type": "string",
-          "description": "AgentSentry finding identifier.",
+          "description": "ToolTrust Scanner finding identifier.",
           "pattern": "^AS-\\d{3}$",
-          "examples": ["AS-002", "AS-010"]
+          "examples": [
+            "AS-002",
+            "AS-010"
+          ]
         },
         "severity": {
           "type": "string",
           "description": "Severity level of the finding.",
-          "enum": ["Critical", "High", "Medium", "Low", "Info"]
+          "enum": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+          ]
         },
         "title": {
           "type": "string",
@@ -136,14 +169,35 @@
     "Summary": {
       "type": "object",
       "description": "Aggregated finding counts by severity.",
-      "required": ["critical", "high", "medium", "low", "info"],
+      "required": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "info"
+      ],
       "additionalProperties": false,
       "properties": {
-        "critical": { "type": "integer", "minimum": 0 },
-        "high":     { "type": "integer", "minimum": 0 },
-        "medium":   { "type": "integer", "minimum": 0 },
-        "low":      { "type": "integer", "minimum": 0 },
-        "info":     { "type": "integer", "minimum": 0 }
+        "critical": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "medium": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "low": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "info": {
+          "type": "integer",
+          "minimum": 0
+        }
       }
     }
   }

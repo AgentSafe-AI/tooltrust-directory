@@ -77,7 +77,7 @@ func TestTitleCase(t *testing.T) {
 }
 
 func TestTransformEmptyInput(t *testing.T) {
-	as := AgentSentryOutput{
+	as := ScannerOutput{
 		Policies: nil,
 		Summary:  ASSummary{},
 	}
@@ -99,7 +99,7 @@ func TestTransformEmptyInput(t *testing.T) {
 }
 
 func TestTransformMergesOSVFindings(t *testing.T) {
-	as := AgentSentryOutput{}
+	as := ScannerOutput{}
 	osv := []TTFinding{
 		{ID: "AS-004", Severity: "High", Title: "CVE-1", Description: "a vuln in dep@1.0", Recommendation: "upgrade dep"},
 		{ID: "AS-004", Severity: "Low", Title: "CVE-2", Description: "a minor vuln in dep2@2.0", Recommendation: "upgrade dep2"},

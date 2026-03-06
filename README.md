@@ -14,7 +14,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 
 ## 📊 Security Registry
 
-<!-- AGENTSENTRY:BEGIN -- Do not edit this section manually. -->
+<!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
 *Top 50 by stars. View all 145 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
@@ -71,7 +71,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[S 🌟](./docs/tools/pptagent.md)** | ✅ None | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[S 🌟](./docs/tools/excel-mcp-server.md)** | ✅ None | Mar 2 |
 
-<!-- AGENTSENTRY:END -->
+<!-- TOOLTRUST:END -->
 
 ---
 

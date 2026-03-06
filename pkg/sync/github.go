@@ -3,7 +3,7 @@
 // Provides two public functions used by cmd/sync:
 //
 //   - UpdateRegistry: reads all data/reports/*.json, regenerates the
-//     AGENTSENTRY:BEGIN … AGENTSENTRY:END block in README.md, and writes
+//     TOOLTRUST:BEGIN … TOOLTRUST:END block in README.md, and writes
 //     per-tool detail pages to docs/tools/<id>.md.
 //
 //   - GitCommitAndPush: stages the given paths, commits with the provided
@@ -73,10 +73,10 @@ func updateBadges(readme string, toolCount int) string {
 	return readme
 }
 
-// registryBlock matches the full AGENTSENTRY:BEGIN … END region, including
+// registryBlock matches the full TOOLTRUST:BEGIN … END region, including
 // the marker comment lines themselves.
 var registryBlock = regexp.MustCompile(
-	`(?s)(<!-- AGENTSENTRY:BEGIN[^\n]*\n).*?(<!-- AGENTSENTRY:END -->)`,
+	`(?s)(<!-- TOOLTRUST:BEGIN[^\n]*\n).*?(<!-- TOOLTRUST:END -->)`,
 )
 
 // TableMaxRows limits the README table to keep the homepage scannable.
@@ -105,7 +105,7 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 	readme := string(raw)
 	loc := registryBlock.FindStringSubmatchIndex(readme)
 	if loc == nil {
-		return fmt.Errorf("AGENTSENTRY markers not found in %s — nothing updated", readmePath)
+		return fmt.Errorf("TOOLTRUST markers not found in %s — nothing updated", readmePath)
 	}
 
 	// loc[2]:loc[3] = group 1 (BEGIN marker line), loc[4]:loc[5] = group 2 (END marker)
