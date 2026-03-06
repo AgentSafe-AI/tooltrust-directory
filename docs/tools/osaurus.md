@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `0.13.6` |
+| **Version** | `0.13.9` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 3916 |
+| **Stars** | ⭐ 3963 |
 | **Language** | Swift |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-03-05 |
+| **Scan Date** | 2026-03-06 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

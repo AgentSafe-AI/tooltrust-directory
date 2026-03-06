@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.0.55` |
+| **Version** | `platform-v1.0.57` |
 | **Vendor** | archestra-ai |
-| **Stars** | ⭐ 3554 |
+| **Stars** | ⭐ 3549 |
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
-| **Scan Date** | 2026-03-05 |
+| **Scan Date** | 2026-03-06 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---

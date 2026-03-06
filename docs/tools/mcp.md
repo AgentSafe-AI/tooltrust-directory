@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `2026.03.20260304183356` |
+| **Version** | `2026.03.20260305133104` |
 | **Vendor** | awslabs |
-| **Stars** | ⭐ 8338 |
+| **Stars** | ⭐ 8362 |
 | **Language** | Python |
 | **Source** | [mcp](https://github.com/awslabs/mcp) |
-| **Scan Date** | 2026-03-05 |
+| **Scan Date** | 2026-03-06 |
 | **Scanner** | AgentSentry/0.1.2 |
 
 ---
