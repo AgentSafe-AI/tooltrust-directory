@@ -94,9 +94,9 @@ Full methodology: [docs/methodology.md](./docs/methodology.md)
 
 ---
 
-## 🔍 Scanner Catalog
+## 🔍 Check Catalog
 
-AgentSentry check IDs referenced in all reports:
+ToolTrust Scanner check IDs referenced in all reports:
 
 | ID | Sev | Category | Detects |
 |----|:---:|----------|---------|
@@ -105,10 +105,11 @@ AgentSentry check IDs referenced in all reports:
 | AS-003 | High | Scope Mismatch | Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
 | 📦 AS-004 | High/Critical | Supply Chain | Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
 | AS-005 | High | Privilege Escalation | `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
+| 🚨 AS-006 | Critical | Arbitrary Code Execution | `evaluate_script`, `_evaluate` suffix, `execute javascript`, `page.evaluate()` patterns |
 | AS-010 | Medium | Secret Handling | Input params accepting API keys/passwords; credentials logged insecurely |
 | AS-011 | Low | DoS Resilience | No rate-limit, timeout, or retry config on network/exec tools |
 
-Full catalog: [docs/methodology.md#3-check-categories](./docs/methodology.md#3-check-categories)
+Full details → [docs/methodology.md](./docs/methodology.md)
 
 ---
 
@@ -162,4 +163,4 @@ Each run:
 
 ---
 
-*Licensed [MIT](./LICENSE). Scanner engine © AgentSafe AI.*
+*Licensed [MIT](./LICENSE). Scanner engine: [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner).*
