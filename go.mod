@@ -1,6 +1,6 @@
 module github.com/AgentSafe-AI/tooltrust-directory
 
-go 1.24.0
+go 1.26
 
 require (
 	github.com/google/go-github/v68 v68.0.0
