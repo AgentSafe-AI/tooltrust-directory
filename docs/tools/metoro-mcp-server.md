@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `0.73.0` |
+| **Version** | `0.74.0` |
 | **Vendor** | metoro-io |
 | **Stars** | ⭐ 47 |
 | **Language** | Go |
 | **Source** | [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) |
-| **Scan Date** | 2026-03-06 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-08 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

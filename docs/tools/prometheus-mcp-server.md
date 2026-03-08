@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `1.5.3` |
+| **Version** | `1.6.0` |
 | **Vendor** | pab1it0 |
-| **Stars** | ⭐ 377 |
+| **Stars** | ⭐ 379 |
 | **Language** | Python |
 | **Source** | [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-08 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

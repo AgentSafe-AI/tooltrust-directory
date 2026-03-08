@@ -9,7 +9,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 > ToolTrust is a fast, static heuristic linter for MCP servers. It is not a replacement for a deep, manual security audit. It catches low-hanging fruit like supply chain CVEs and obvious prompt injection patterns.
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-145-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--06-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--08-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -38,7 +38,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.2k | **[S 🌟](./docs/tools/maxkb.md)** | ✅ None | Mar 2 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.1` | 20.0k | **[S 🌟](./docs/tools/scrapling.md)** | ✅ None | Mar 2 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.14` | 19.2k | **[S 🌟](./docs/tools/ruflo.md)** | ✅ None | Mar 6 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.35.6` | 14.3k | **[S 🌟](./docs/tools/n8n-mcp.md)** | ✅ None | Mar 5 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.36.0` | 14.5k | **[B](./docs/tools/n8n-mcp.md)** | ⚠️ `AS-002` ×6, `AS-011` ×5 | Mar 8 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.2` | 13.9k | **[S 🌟](./docs/tools/trigger-dev.md)** | ✅ None | Mar 5 |
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `0.6.2` | 12.4k | **[A](./docs/tools/mcp-server-brave-search.md)** | `AS-010` | Mar 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.0.0` | 12.4k | **[B](./docs/tools/mcp-server-github.md)** | `AS-005`, `AS-011` | Mar 1 |
@@ -60,7 +60,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[S 🌟](./docs/tools/klavis.md)** | ✅ None | Mar 2 |
 | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 5.6k | **[S 🌟](./docs/tools/firecrawl-mcp-server.md)** | ✅ None | Mar 2 |
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[S 🌟](./docs/tools/viper.md)** | ✅ None | Mar 2 |
-| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.1.0` | 4.5k | **[B](./docs/tools/xcodebuildmcp.md)** | 📦 `AS-004` ×3 | Mar 2 |
+| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.2.0` | 4.6k | **[S 🌟](./docs/tools/xcodebuildmcp.md)** | ✅ None | Mar 8 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[D](./docs/tools/deep-research.md)** | 📦 `AS-004` ×7 | Mar 2 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[F](./docs/tools/httprunner.md)** | 📦 `AS-004` ×18 | Mar 2 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.2k | **[F](./docs/tools/enscan-go.md)** | 📦 `AS-004` ×41 | Mar 2 |

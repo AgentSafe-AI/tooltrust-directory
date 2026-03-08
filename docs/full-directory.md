@@ -19,7 +19,7 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.2k | **[S 🌟](tools/maxkb.md)** | ✅ None | Mar 2 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.1` | 20.0k | **[S 🌟](tools/scrapling.md)** | ✅ None | Mar 2 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.14` | 19.2k | **[S 🌟](tools/ruflo.md)** | ✅ None | Mar 6 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.35.6` | 14.3k | **[S 🌟](tools/n8n-mcp.md)** | ✅ None | Mar 5 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.36.0` | 14.5k | **[B](tools/n8n-mcp.md)** | ⚠️ `AS-002` ×6, `AS-011` ×5 | Mar 8 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.2` | 13.9k | **[S 🌟](tools/trigger-dev.md)** | ✅ None | Mar 5 |
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `0.6.2` | 12.4k | **[A](tools/mcp-server-brave-search.md)** | `AS-010` | Mar 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.0.0` | 12.4k | **[B](tools/mcp-server-github.md)** | `AS-005`, `AS-011` | Mar 1 |
@@ -41,7 +41,7 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[S 🌟](tools/klavis.md)** | ✅ None | Mar 2 |
 | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 5.6k | **[S 🌟](tools/firecrawl-mcp-server.md)** | ✅ None | Mar 2 |
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[S 🌟](tools/viper.md)** | ✅ None | Mar 2 |
-| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.1.0` | 4.5k | **[B](tools/xcodebuildmcp.md)** | 📦 `AS-004` ×3 | Mar 2 |
+| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.2.0` | 4.6k | **[S 🌟](tools/xcodebuildmcp.md)** | ✅ None | Mar 8 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[D](tools/deep-research.md)** | 📦 `AS-004` ×7 | Mar 2 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[F](tools/httprunner.md)** | 📦 `AS-004` ×18 | Mar 2 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.2k | **[F](tools/enscan-go.md)** | 📦 `AS-004` ×41 | Mar 2 |
@@ -85,15 +85,15 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) | `security` | 533 | **[S 🌟](tools/mcp-kali-server.md)** | ✅ None | Mar 2 |
 | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.4.2` | 524 | **[B](tools/line-bot-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [ida-mcp-server](https://github.com/MxIris-Reverse-Engineering/ida-mcp-server) | `0.3.4` | 520 | **[S 🌟](tools/ida-mcp-server.md)** | ✅ None | Mar 2 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.44.0` | 501 | **[B](tools/ms-365-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 3 |
+| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.44.1` | 512 | **[S 🌟](tools/ms-365-mcp-server.md)** | ✅ None | Mar 8 |
 | [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 493 | **[S 🌟](tools/minecraft-mcp-server.md)** | ✅ None | Mar 2 |
 | [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) | `2.7.6` | 478 | **[D](tools/vibe-check-mcp-server.md)** | 📦 `AS-004` ×7 | Mar 2 |
 | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) | `2.8.15` | 468 | **[D](tools/atlas-mcp-server.md)** | 📦 `AS-004` ×8 | Mar 3 |
 | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.0.3` | 431 | **[S 🌟](tools/mcp-server-motherduck.md)** | ✅ None | Mar 5 |
-| [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | `1.12.0` | 426 | **[B](tools/airtable-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
+| [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | `1.13.0` | 429 | **[S 🌟](tools/airtable-mcp-server.md)** | ✅ None | Mar 8 |
 | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) | `0.7.2` | 402 | **[B](tools/puppeteer-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `2.0.7` | 383 | **[F](tools/obsidian-mcp-server.md)** | 📦 `AS-004` ×20 | Mar 3 |
-| [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | `1.5.3` | 377 | **[S 🌟](tools/prometheus-mcp-server.md)** | ✅ None | Mar 2 |
+| [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | `1.6.0` | 379 | **[S 🌟](tools/prometheus-mcp-server.md)** | ✅ None | Mar 8 |
 | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | `2.0.4` | 365 | **[B](tools/evm-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
 | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | `1.0.7` | 355 | **[S 🌟](tools/mcp-teams-server.md)** | ✅ None | Mar 5 |
 | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) | `1.8.0` | 348 | **[B](tools/db-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
@@ -110,8 +110,8 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) | `1.7.0` | 285 | **[S 🌟](tools/mysql-mcp-server-pro.md)** | ✅ None | Mar 2 |
 | [django-mcp-server](https://github.com/gts360/django-mcp-server) | `0.5.6` | 278 | **[S 🌟](tools/django-mcp-server.md)** | ✅ None | Mar 2 |
 | [mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) | `2.0.2` | 276 | **[S 🌟](tools/mcp-mongo-server.md)** | ✅ None | Mar 2 |
+| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.2` | 275 | **[S 🌟](tools/codex-mcp-server.md)** | ✅ None | Mar 8 |
 | [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) | `0.5.1` | 268 | **[S 🌟](tools/mcp-server-tree-sitter.md)** | ✅ None | Mar 2 |
-| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.0` | 261 | **[B](tools/codex-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [doris-mcp-server](https://github.com/apache/doris-mcp-server) | `0.6.0` | 260 | **[S 🌟](tools/doris-mcp-server.md)** | ✅ None | Mar 2 |
 | [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) | `2.0.19` | 255 | **[S 🌟](tools/elasticsearch-mcp-server.md)** | ✅ None | Mar 2 |
 | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) | `1.6.1` | 247 | **[C](tools/mcp-server-trello.md)** | 📦 `AS-004` ×6 | Mar 2 |
@@ -131,7 +131,7 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [podman-mcp-server](https://github.com/manusa/podman-mcp-server) | `0.0.15` | 59 | **[D](tools/podman-mcp-server.md)** | 📦 `AS-004` ×8 | Mar 2 |
 | [last9-mcp-server](https://github.com/last9/last9-mcp-server) | `0.5.1` | 50 | **[B](tools/last9-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | `0.10.0` | 48 | **[A](tools/buildkite-mcp-server.md)** | 📦 `AS-004` | Mar 2 |
-| [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) | `0.73.0` | 47 | **[S 🌟](tools/metoro-mcp-server.md)** | ✅ None | Mar 6 |
+| [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) | `0.74.0` | 47 | **[S 🌟](tools/metoro-mcp-server.md)** | ✅ None | Mar 8 |
 | [md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server) | `1.0.0` | 46 | **[S 🌟](tools/md2wechat-mcp-server.md)** | ✅ None | Mar 2 |
 | [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) | `2.0.2` | 44 | **[B](tools/kafka-mcp-server.md)** | 📦 `AS-004` ×2 | Mar 2 |
 | [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) | `1.0.4` | 36 | **[F](tools/fastdomaincheck-mcp-server.md)** | 📦 `AS-004` ×52 | Mar 2 |
@@ -139,8 +139,8 @@ All 145 audited tools. [← Back to README](../README.md#-security-registry)
 | [godoc-mcp-server](https://github.com/yikakia/godoc-mcp-server) | `latest` | 34 | **[B](tools/godoc-mcp-server.md)** | 📦 `AS-004` ×3 | Mar 2 |
 | [vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) | `0.2.0` | 32 | **[D](tools/vault-mcp-server.md)** | 📦 `AS-004` ×7 | Mar 2 |
 | [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) | `1.4.0` | 29 | **[A](tools/gtm-mcp-server.md)** | 📦 `AS-004` | Mar 2 |
-| [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 28 | **[S 🌟](tools/clay-mcp.md)** | ✅ None | Mar 3 |
 | [aqara-mcp-server](https://github.com/aqara/aqara-mcp-server) | `0.0.2` | 28 | **[S 🌟](tools/aqara-mcp-server.md)** | ✅ None | Mar 2 |
+| [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 28 | **[S 🌟](tools/clay-mcp.md)** | ✅ None | Mar 3 |
 | [vision-one-mcp-server](https://github.com/trendmicro/vision-one-mcp-server) | `0.7.0` | 27 | **[S 🌟](tools/vision-one-mcp-server.md)** | ✅ None | Mar 2 |
 | [streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) | `snmcp-v0.1…` | 22 | **[C](tools/streamnative-mcp-server.md)** | 📦 `AS-004` ×4 | Mar 2 |
 | [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) | `1.0.2` | 21 | **[S 🌟](tools/mcp-dingdingbot-server.md)** | ✅ None | Mar 2 |
