@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `0.4.1` |
+| **Version** | `0.4.2` |
 | **Vendor** | D4Vinci |
-| **Stars** | ⭐ 19985 |
+| **Stars** | ⭐ 26321 |
 | **Language** | Python |
 | **Source** | [scrapling](https://github.com/D4Vinci/Scrapling) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-09 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

@@ -9,7 +9,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 > ToolTrust is a fast, static heuristic linter for MCP servers. It is not a replacement for a deep, manual security audit. It catches low-hanging fruit like supply chain CVEs and obvious prompt injection patterns.
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-145-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--08-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--09-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -31,23 +31,23 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 28.1k | **[A](./docs/tools/playwright-mcp.md)** | 📦 `AS-004` | Mar 3 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 27.8k | **[C](./docs/tools/chrome-devtools-mcp.md)** | `AS-006` | Mar 6 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 27.6k | **[S 🌟](./docs/tools/github-mcp-server.md)** | ✅ None | Mar 6 |
+| [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.2` | 26.3k | **[S 🌟](./docs/tools/scrapling.md)** | ✅ None | Mar 9 |
 | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 25.7k | **[B](./docs/tools/claude-task-master.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.2` | 25.5k | **[S 🌟](./docs/tools/gpt-researcher.md)** | ✅ None | Mar 2 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.2` | 21.1k | **[B](./docs/tools/activepieces.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 20.9k | **[S 🌟](./docs/tools/serena.md)** | ✅ None | Mar 2 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.2k | **[S 🌟](./docs/tools/maxkb.md)** | ✅ None | Mar 2 |
-| [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.1` | 20.0k | **[S 🌟](./docs/tools/scrapling.md)** | ✅ None | Mar 2 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.14` | 19.2k | **[S 🌟](./docs/tools/ruflo.md)** | ✅ None | Mar 6 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.36.0` | 14.5k | **[B](./docs/tools/n8n-mcp.md)** | ⚠️ `AS-002` ×6, `AS-011` ×5 | Mar 8 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.36.1` | 14.6k | **[B](./docs/tools/n8n-mcp.md)** | ⚠️ `AS-002` ×6, `AS-011` ×5 | Mar 9 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.2` | 13.9k | **[S 🌟](./docs/tools/trigger-dev.md)** | ✅ None | Mar 5 |
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `0.6.2` | 12.4k | **[A](./docs/tools/mcp-server-brave-search.md)** | `AS-010` | Mar 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.0.0` | 12.4k | **[B](./docs/tools/mcp-server-github.md)** | `AS-005`, `AS-011` | Mar 1 |
 | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `1.2.0` | 12.4k | **[B](./docs/tools/mcp-server-filesystem.md)** | ⚠️ `AS-002` | Mar 1 |
 | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) | `0.4.0` | 11.6k | **[S 🌟](./docs/tools/fastapi-mcp.md)** | ✅ None | Mar 2 |
 | [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) | `9.8.2` | 11.2k | **[S 🌟](./docs/tools/pal-mcp-server.md)** | ✅ None | Mar 2 |
+| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.08…` | 10.8k | **[S 🌟](./docs/tools/xiaohongshu-mcp.md)** | ✅ None | Mar 9 |
 | [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.3.3` | 10.8k | **[B](./docs/tools/nginx-ui.md)** | 📦 `AS-004` ×3 | Mar 2 |
 | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.7` | 10.2k | **[S 🌟](./docs/tools/xhs-downloader.md)** | ✅ None | Mar 2 |
-| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.04…` | 10.2k | **[S 🌟](./docs/tools/xiaohongshu-mcp.md)** | ✅ None | Mar 5 |
 | [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | `3.2.0` | 10.1k | **[S 🌟](./docs/tools/skill-seekers.md)** | ✅ None | Mar 2 |
 | [mcp-use](https://github.com/mcp-use/mcp-use) | `python-v1.…` | 9.3k | **[S 🌟](./docs/tools/mcp-use.md)** | ✅ None | Mar 2 |
 | [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.12.1-rel…` | 8.8k | **[S 🌟](./docs/tools/openmetadata.md)** | ✅ None | Mar 2 |
@@ -60,7 +60,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[S 🌟](./docs/tools/klavis.md)** | ✅ None | Mar 2 |
 | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 5.6k | **[S 🌟](./docs/tools/firecrawl-mcp-server.md)** | ✅ None | Mar 2 |
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[S 🌟](./docs/tools/viper.md)** | ✅ None | Mar 2 |
-| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.2.0` | 4.6k | **[S 🌟](./docs/tools/xcodebuildmcp.md)** | ✅ None | Mar 8 |
+| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.2.1` | 4.6k | **[S 🌟](./docs/tools/xcodebuildmcp.md)** | ✅ None | Mar 9 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[D](./docs/tools/deep-research.md)** | 📦 `AS-004` ×7 | Mar 2 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[F](./docs/tools/httprunner.md)** | 📦 `AS-004` ×18 | Mar 2 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.2k | **[F](./docs/tools/enscan-go.md)** | 📦 `AS-004` ×41 | Mar 2 |
