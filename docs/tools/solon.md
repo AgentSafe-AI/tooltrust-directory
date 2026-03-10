@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `3.9.4` |
+| **Version** | `3.9.5` |
 | **Vendor** | opensolon |
-| **Stars** | ⭐ 2709 |
+| **Stars** | ⭐ 2711 |
 | **Language** | Java |
 | **Source** | [solon](https://github.com/opensolon/solon) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-10 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

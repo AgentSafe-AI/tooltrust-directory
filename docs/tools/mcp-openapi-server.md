@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `1.13.0` |
+| **Version** | `1.14.0` |
 | **Vendor** | ivo-toby |
-| **Stars** | ⭐ 233 |
+| **Stars** | ⭐ 235 |
 | **Language** | TypeScript |
 | **Source** | [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) |
-| **Scan Date** | 2026-03-09 |
+| **Scan Date** | 2026-03-10 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

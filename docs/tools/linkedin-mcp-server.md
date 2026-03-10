@@ -1,18 +1,18 @@
-# 🌟 linkedin-mcp-server
+# 🟢 linkedin-mcp-server
 
 > This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles, companies and jobs, and perform job searches.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
-| **Risk Score** | 0 |
-| **Version** | `4.2.0` |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
+| **Version** | `4.3.0` |
 | **Vendor** | stickerdaniel |
-| **Stars** | ⭐ 991 |
+| **Stars** | ⭐ 1018 |
 | **Language** | Python |
 | **Source** | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) |
-| **Scan Date** | 2026-03-06 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-10 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,10 +22,22 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 0 |
 
-No findings. ✅
+## Detailed Findings
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/linkedin-mcp-server.json)*

@@ -1,21 +1,29 @@
 {
   "tool_id": "mcp-server-cloudflare",
-  "version": "dex-analysis@0.3.0",
+  "version": "graphql-mcp-server@0.1.10",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-03-02T17:12:00.300921739Z",
-  "scanner": "AgentSentry/0.1.2",
+  "risk_score": 8,
+  "scan_date": "2026-03-10T01:15:32.05127501Z",
+  "scanner": "tooltrust-scanner/0.1.4",
   "source_url": "https://github.com/cloudflare/mcp-server-cloudflare",
   "category": "Developer Tools",
   "vendor": "cloudflare",
-  "stars": 3478,
+  "stars": 3520,
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
+    "medium": 1,
     "low": 0,
     "info": 0
   },
