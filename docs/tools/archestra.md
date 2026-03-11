@@ -1,18 +1,18 @@
 # 🌟 archestra
 
-> Secure cloud-native MCP registry, gateway & orchestrator
+> Enterprise AI Platform with guardrails, MCP registry, gateway & orchestrator
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.0.60` |
+| **Version** | `platform-v1.1.4` |
 | **Vendor** | archestra-ai |
-| **Stars** | ⭐ 3550 |
+| **Stars** | ⭐ 3545 |
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
-| **Scan Date** | 2026-03-06 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-11 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

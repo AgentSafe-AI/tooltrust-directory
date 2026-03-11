@@ -1,18 +1,18 @@
 # 🌟 context7
 
-> Context7 MCP Server -- Up-to-date code documentation for LLMs and AI code editors
+> Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `ctx7@0.3.2` |
+| **Version** | `ctx7@0.3.3` |
 | **Vendor** | upstash |
-| **Stars** | ⭐ 47948 |
+| **Stars** | ⭐ 48455 |
 | **Language** | TypeScript |
 | **Source** | [context7](https://github.com/upstash/context7) |
-| **Scan Date** | 2026-03-06 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-11 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
