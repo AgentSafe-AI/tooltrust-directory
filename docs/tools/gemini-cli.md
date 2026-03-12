@@ -1,18 +1,18 @@
-# 🌟 gemini-cli
+# 🟢 gemini-cli
 
 > An open-source AI agent that brings the power of Gemini directly into your terminal.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
-| **Risk Score** | 0 |
-| **Version** | `0.32.1` |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
+| **Version** | `0.33.0` |
 | **Vendor** | google-gemini |
-| **Stars** | ⭐ 96453 |
+| **Stars** | ⭐ 97310 |
 | **Language** | TypeScript |
 | **Source** | [gemini-cli](https://github.com/google-gemini/gemini-cli) |
-| **Scan Date** | 2026-03-05 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-12 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,10 +22,22 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 0 |
 
-No findings. ✅
+## Detailed Findings
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/gemini-cli.json)*
