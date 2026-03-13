@@ -9,7 +9,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 > ToolTrust is a fast, static heuristic linter for MCP servers. It is not a replacement for a deep, manual security audit. It catches low-hanging fruit like supply chain CVEs and obvious prompt injection patterns.
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-146-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--12-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--13-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -24,9 +24,9 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.11.3` | 178.7k | **[B](./docs/tools/n8n.md)** | ⚠️ `AS-002` ×3, `AS-011` ×2 | Mar 12 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.33.0` | 97.3k | **[A](./docs/tools/gemini-cli.md)** | ⚠️ `AS-002` | Mar 12 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.33.1` | 97.4k | **[A](./docs/tools/gemini-cli.md)** | ⚠️ `AS-002` | Mar 13 |
+| [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 48.8k | **[B](./docs/tools/trendradar.md)** | ⚠️ `AS-002`, `AS-011` | Mar 13 |
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.5` | 48.6k | **[S 🌟](./docs/tools/context7.md)** | ✅ None | Mar 12 |
-| [trendradar](https://github.com/sansan0/TrendRadar) | `6.0.0` | 47.8k | **[S 🌟](./docs/tools/trendradar.md)** | ✅ None | Mar 2 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 28.5k | **[S 🌟](./docs/tools/chrome-devtools-mcp.md)** | ✅ None | Mar 12 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.5k | **[S 🌟](./docs/tools/ui-tars-desktop.md)** | ✅ None | Mar 2 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 28.1k | **[A](./docs/tools/playwright-mcp.md)** | 📦 `AS-004` | Mar 3 |
@@ -34,7 +34,7 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.2` | 26.3k | **[S 🌟](./docs/tools/scrapling.md)** | ✅ None | Mar 9 |
 | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 25.7k | **[B](./docs/tools/claude-task-master.md)** | 📦 `AS-004` ×3 | Mar 3 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.2` | 25.5k | **[S 🌟](./docs/tools/gpt-researcher.md)** | ✅ None | Mar 2 |
-| [activepieces](https://github.com/activepieces/activepieces) | `0.79.2` | 21.1k | **[B](./docs/tools/activepieces.md)** | 📦 `AS-004` ×3 | Mar 3 |
+| [activepieces](https://github.com/activepieces/activepieces) | `0.79.3` | 21.2k | **[S 🌟](./docs/tools/activepieces.md)** | ✅ None | Mar 13 |
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 20.9k | **[S 🌟](./docs/tools/serena.md)** | ✅ None | Mar 2 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.15` | 20.2k | **[B](./docs/tools/ruflo.md)** | ⚠️ `AS-002` ×7, `AS-011` ×3 | Mar 10 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.2k | **[S 🌟](./docs/tools/maxkb.md)** | ✅ None | Mar 2 |
@@ -65,11 +65,11 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[F](./docs/tools/httprunner.md)** | 📦 `AS-004` ×18 | Mar 2 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.2k | **[F](./docs/tools/enscan-go.md)** | 📦 `AS-004` ×41 | Mar 2 |
 | [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[A](./docs/tools/kubefwd.md)** | 📦 `AS-004` | Mar 2 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.4` | 4.0k | **[S 🌟](./docs/tools/osaurus.md)** | ✅ None | Mar 12 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.8` | 4.0k | **[S 🌟](./docs/tools/osaurus.md)** | ✅ None | Mar 13 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.0k | **[S 🌟](./docs/tools/mcpo.md)** | ✅ None | Mar 2 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.0k | **[D](./docs/tools/notion-mcp-server.md)** | 📦 `AS-004` ×9 | Mar 2 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.7k | **[B](./docs/tools/mcp-server-chart.md)** | 📦 `AS-004` ×3 | Mar 2 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[S 🌟](./docs/tools/archestra.md)** | ✅ None | Mar 12 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[S 🌟](./docs/tools/archestra.md)** | ✅ None | Mar 13 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[A](./docs/tools/mcp-server-cloudflare.md)** | ⚠️ `AS-002` | Mar 10 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[S 🌟](./docs/tools/pptagent.md)** | ✅ None | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[S 🌟](./docs/tools/excel-mcp-server.md)** | ✅ None | Mar 2 |

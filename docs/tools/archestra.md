@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.1.7` |
+| **Version** | `platform-v1.1.15` |
 | **Vendor** | archestra-ai |
-| **Stars** | ⭐ 3546 |
+| **Stars** | ⭐ 3547 |
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
-| **Scan Date** | 2026-03-12 |
+| **Scan Date** | 2026-03-13 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

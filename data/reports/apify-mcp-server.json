@@ -1,18 +1,25 @@
 {
   "tool_id": "apify-mcp-server",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-03-12T01:14:27.541682691Z",
+  "scan_date": "2026-03-13T01:19:19.083030757Z",
   "scanner": "tooltrust-scanner/0.1.4",
   "source_url": "https://github.com/apify/apify-mcp-server",
   "category": "Developer Tools",
   "vendor": "apify",
-  "stars": 892,
+  "stars": 894,
   "license": "MIT",
   "language": "TypeScript",
   "description": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
   "findings": [
+    {
+      "id": "AS-001",
+      "severity": "Critical",
+      "title": "Tool Poisoning (Prompt Injection)",
+      "description": "possible prompt injection detected in tool description: pattern matched: (?i)(?:(?:transmit|send|forward|post|upload|pipe).*(?:data|info|content)|(?:data|info|content).*(?:transmit|send|forward|post|upload|pipe)).*to\\b",
+      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration."
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -302,7 +309,7 @@
     }
   ],
   "summary": {
-    "critical": 2,
+    "critical": 3,
     "high": 12,
     "medium": 15,
     "low": 12,

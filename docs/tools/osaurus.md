@@ -1,17 +1,17 @@
 # 🌟 osaurus
 
-> AI edge infrastructure for macOS. Run local or cloud models, share tools across apps via MCP, and power AI workflows with a native, always-on runtime.
+> Own your AI. The native macOS harness for AI agents -- any model, persistent memory, autonomous execution, cryptographic identity. Built in Swift. Fully offline. Open source.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **S 🌟** |
 | **Risk Score** | 0 |
-| **Version** | `0.14.4` |
+| **Version** | `0.14.8` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 4015 |
+| **Stars** | ⭐ 4050 |
 | **Language** | Swift |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-03-12 |
+| **Scan Date** | 2026-03-13 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

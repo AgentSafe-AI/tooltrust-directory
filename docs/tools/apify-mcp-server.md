@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 65 |
-| **Version** | `0.9.8` |
+| **Version** | `0.9.9` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 892 |
+| **Stars** | ⭐ 894 |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
-| **Scan Date** | 2026-03-12 |
+| **Scan Date** | 2026-03-13 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
@@ -20,13 +20,25 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 2 |
+| Critical | 3 |
 | High     | 12 |
 | Medium   | 15 |
 | Low      | 12 |
 | Info     | 0 |
 
 ## Detailed Findings
+
+### 🔴 🚨 `AS-001` — Tool Poisoning (Prompt Injection)
+
+**Severity:** Critical
+
+**Description:**
+possible prompt injection detected in tool description: pattern matched: (?i)(?:(?:transmit|send|forward|post|upload|pipe).*(?:data|info|content)|(?:data|info|content).*(?:transmit|send|forward|post|upload|pipe)).*to\b
+
+**Recommendation:**
+Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.
+
+---
 
 ### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
