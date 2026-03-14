@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `helm-chart-v2.0.13` |
+| **Version** | `cli/v0.10.1` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 2856 |
+| **Stars** | ⭐ 2914 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-03-12 |
+| **Scan Date** | 2026-03-14 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

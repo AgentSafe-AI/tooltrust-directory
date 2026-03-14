@@ -1,18 +1,18 @@
-# 🌟 xiaozhi-esp32-server
+# 🟢 xiaozhi-esp32-server
 
 > 本项目为xiaozhi-esp32提供后端服务，帮助您快速搭建ESP32设备控制服务器。Backend service for xiaozhi-esp32, helps you quickly build an ESP32 device control server.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
-| **Risk Score** | 0 |
-| **Version** | `0.9.1` |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
+| **Version** | `0.9.2` |
 | **Vendor** | xinnan-tech |
-| **Stars** | ⭐ 8736 |
+| **Stars** | ⭐ 8864 |
 | **Language** | JavaScript |
 | **Source** | [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scan Date** | 2026-03-14 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,10 +22,22 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 0 |
 
-No findings. ✅
+## Detailed Findings
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/xiaozhi-esp32-server.json)*

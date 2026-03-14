@@ -1,14 +1,14 @@
 {
   "tool_id": "apify-mcp-server",
-  "version": "0.9.9",
+  "version": "0.9.11",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-03-13T01:19:19.083030757Z",
+  "scan_date": "2026-03-14T01:17:40.553854732Z",
   "scanner": "tooltrust-scanner/0.1.4",
   "source_url": "https://github.com/apify/apify-mcp-server",
   "category": "Developer Tools",
   "vendor": "apify",
-  "stars": 894,
+  "stars": 899,
   "license": "MIT",
   "language": "TypeScript",
   "description": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
@@ -72,9 +72,9 @@
     {
       "id": "AS-006",
       "severity": "Critical",
-      "title": "ARBITRARY_CODE_EXECUTION",
+      "title": "Arbitrary Code Execution",
       "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval."
     },
     {
       "id": "AS-011",
@@ -100,9 +100,9 @@
     {
       "id": "AS-006",
       "severity": "Critical",
-      "title": "ARBITRARY_CODE_EXECUTION",
+      "title": "Arbitrary Code Execution",
       "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval."
     },
     {
       "id": "AS-002",
@@ -134,20 +134,6 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent."
-    },
-    {
-      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
@@ -155,38 +141,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent."
-    },
-    {
-      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent."
     },
     {
       "id": "AS-002",
@@ -310,9 +268,9 @@
   ],
   "summary": {
     "critical": 3,
-    "high": 12,
+    "high": 9,
     "medium": 15,
-    "low": 12,
+    "low": 9,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"

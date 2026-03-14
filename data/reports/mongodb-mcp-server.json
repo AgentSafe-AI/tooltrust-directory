@@ -1,22 +1,30 @@
 {
   "tool_id": "mongodb-mcp-server",
-  "version": "1.8.0",
-  "grade": "S",
-  "risk_score": 0,
-  "scan_date": "2026-03-05T01:21:02.391893989Z",
-  "scanner": "AgentSentry/0.1.2",
+  "version": "1.8.1",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-03-14T01:17:39.409242766Z",
+  "scanner": "tooltrust-scanner/0.1.4",
   "source_url": "https://github.com/mongodb-js/mongodb-mcp-server",
   "category": "Developer Tools",
   "vendor": "mongodb-js",
-  "stars": 939,
+  "stars": 958,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A Model Context Protocol server to connect to MongoDB databases and MongoDB Atlas Clusters.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
+    "medium": 1,
     "low": 0,
     "info": 0
   },
