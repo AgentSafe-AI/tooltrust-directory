@@ -85,7 +85,7 @@ Key constraints:
 | `version` | `string` | Semver or tag string from the source repository |
 | `grade` | `enum` | One of `A B C D F` |
 | `risk_score` | `integer ≥ 0` | Derived from findings via methodology formula |
-| `scanner` | `string` | Pattern `AgentSentry/\d+\.\d+\.\d+` (from [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner)) |
+| `scanner` | `string` | Pattern `ToolTrust Scanner/\d+\.\d+\.\d+` (from [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner)) |
 | `findings[].id` | `string` | Pattern `AS-\d{3}` |
 | `findings[].severity` | `enum` | `Critical High Medium Low Info` |
 
