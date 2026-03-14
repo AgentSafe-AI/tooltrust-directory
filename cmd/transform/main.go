@@ -127,6 +127,11 @@ var rules = map[string]ruleMeta{
 		recommendation: "Restrict OAuth/token scopes to the minimum necessary. " +
 			"Remove admin, :write wildcards, and any description-level escalation signals (sudo, impersonate).",
 	},
+	"AS-006": {
+		title: "Arbitrary Code Execution",
+		recommendation: "Avoid tools that execute arbitrary script/code from AI agents. " +
+			"If necessary, run them in a heavily restricted sandbox and require user approval.",
+	},
 	"AS-010": {
 		title: "Insecure Secret Handling",
 		recommendation: "Avoid accepting raw credentials as input parameters. " +
