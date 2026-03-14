@@ -103,14 +103,14 @@ All active rules as of [ToolTrust Scanner v0.1.4](https://github.com/AgentSafe-A
 
 | ID | Category | Severity | What it detects |
 |----|----------|:--------:|-----------------|
-| AS-001 | Tool Poisoning | **Critical** | Hidden adversarial prompts in tool descriptions (`ignore previous instructions`, `system:`, `<INST>`) |
-| AS-002 | Permission Surface | High / Low | Tools declaring `exec`, `network`, `db`, or `fs` beyond their stated purpose; unnecessarily broad input schema |
-| AS-003 | Scope Mismatch | **High** | Tool names that contradict their permissions (e.g. `read_config` secretly holding `exec`) |
-| AS-004 | Supply Chain (CVE) | High / Critical | Third-party dependencies with known CVEs — queried live from [OSV database](https://osv.dev) |
-| AS-005 | Privilege Escalation | **High** | OAuth/token scopes broader than stated purpose (`admin`, `:write` wildcards); escalation signals in description (`sudo`, `impersonate`) |
-| AS-006 | Arbitrary Code Execution | **Critical** | Tool name or description implies arbitrary script/code execution (`evaluate_script`, `execute javascript`, `_evaluate` suffix, `page.evaluate()` patterns) |
-| AS-010 | Secret Handling | **Medium** | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
-| AS-011 | DoS Resilience | **Low** | Network/execution tools with no rate-limit, timeout, or retry configuration |
+| AS-001 | 🛡️ **Tool Poisoning** | **Critical** | Hidden adversarial prompts in tool descriptions (`ignore previous instructions`, `system:`, `<INST>`) |
+| AS-002 | 🔑 **Permission Surface** | High / Low | Tools declaring `exec`, `network`, `db`, or `fs` beyond their stated purpose; unnecessarily broad input schema |
+| AS-003 | 📐 **Scope Mismatch** | **High** | Tool names that contradict their permissions (e.g. `read_config` secretly holding `exec`) |
+| AS-004 | 📦 **Supply Chain (CVE)** | High / Critical | Third-party dependencies with known CVEs — queried live from [OSV database](https://osv.dev) |
+| AS-005 | 🔓 **Privilege Escalation** | **High** | OAuth/token scopes broader than stated purpose (`admin`, `:write` wildcards); escalation signals in description (`sudo`, `impersonate`) |
+| AS-006 | ⚡ **Arbitrary Code Execution** | **Critical** | Tool name or description implies arbitrary script/code execution (`evaluate_script`, `execute javascript`, `_evaluate` suffix, `page.evaluate()` patterns) |
+| AS-010 | 🗝️ **Secret Handling** | **Medium** | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
+| AS-011 | ⚡ **DoS Resilience** | **Low** | Network/execution tools with no rate-limit, timeout, or retry configuration |
 
 ---
 
