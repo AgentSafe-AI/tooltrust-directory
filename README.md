@@ -1,12 +1,10 @@
 # 🛡️ ToolTrust Directory
 
-**The fast, static heuristic linter for AI agent tool definitions.**
+**Discover safe, audited MCP servers before your AI agent blindly trusts them.**
 
-Automated static analysis for MCP servers, OpenAI Skills, and AI agent tools.
-Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner) — a deterministic static-analysis engine written in Go.
+A public registry of AI agent tools, continuously scanned for prompt injection, data exfiltration, and privilege escalation by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner).
 
-> [!NOTE]
-> ToolTrust is a fast, static heuristic linter for MCP servers. It is not a replacement for a deep, manual security audit. It catches low-hanging fruit like supply chain CVEs and obvious prompt injection patterns.
+[Insert Directory UI GIF Here]
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-146-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--14-blue)](./data/reports/)
@@ -78,20 +76,16 @@ Every rating is verified by [ToolTrust Scanner](https://github.com/AgentSafe-AI/
 
 ---
 
-## ⚖️ Grading System (S–F)
+## ⚖️ Grading System
 
-Risk scores are calculated using a weighted severity model:
-
-$$\text{RiskScore} = \sum_{i=1}^{n} \left( \text{SeverityWeight}_{i} \times \text{FindingCount}_{i} \right)$$
-
-| Grade | Score | Gateway | Weights: Crit·High·Med·Low |
-|:-----:|:-----:|:-------:|----------------------------|
-| **S** 🌟 | 0 (no findings) | ALLOW | Perfect score |
-| **A** | 1 – 9 | ALLOW | 25 · 15 · 8 · 2 |
-| **B** | 10 – 24 | ALLOW + rate limit | 25 · 15 · 8 · 2 |
-| **C** | 25 – 49 | REQUIRE_APPROVAL | 25 · 15 · 8 · 2 |
-| **D** | 50 – 74 | REQUIRE_APPROVAL | 25 · 15 · 8 · 2 |
-| **F** | 75+ | BLOCK | 25 · 15 · 8 · 2 |
+| Grade | Gateway Action | Description |
+|:-----:|:--------------:|-------------|
+| **S** 🌟 | `ALLOW` | Perfect score. Zero risks detected. |
+| **A** | `ALLOW` | Minimal risk. Safe for production agents. |
+| **B** | `ALLOW` + rate limit | Low risk. Minor issues, but generally safe. |
+| **C** | `REQUIRE_APPROVAL` | Moderate risk. Remediation recommended. |
+| **D** | `REQUIRE_APPROVAL` | High risk. Use only in isolated environments. |
+| **F** | `BLOCK` | Critical risk. Do not use in agentic pipelines. |
 
 Full methodology: [docs/methodology.md](./docs/methodology.md)
 
