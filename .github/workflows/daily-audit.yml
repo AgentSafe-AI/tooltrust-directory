@@ -241,7 +241,7 @@ jobs:
               echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
             else
               echo "Def     : $TOOL_DEF"
-              if ! tooltrust-scanner scan --protocol mcp --input "$TOOL_DEF" --output json --file "$RAW_OUT"; then
+              if ! tooltrust-scanner scan --protocol mcp --input "$TOOL_DEF" --output json --file "$RAW_OUT" --deep-scan; then
                 echo "WARN: ToolTrust Scanner scan failed — using OSV-only report"
                 echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
               fi
