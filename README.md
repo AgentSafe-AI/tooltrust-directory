@@ -95,16 +95,16 @@ Full methodology: [docs/methodology.md](./docs/methodology.md)
 
 ToolTrust Scanner check IDs referenced in all reports:
 
-| ID | Sev | Category | Detects |
-|----|:---:|----------|---------|
-| 🛡️ AS-001 | Critical | Tool Poisoning | Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
-| 🔑 AS-002 | High/Low | Permission Surface | `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
-| 📐 AS-003 | High | Scope Mismatch | Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
-| 📦 AS-004 | High/Critical | Supply Chain | Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
-| 🔓 AS-005 | High | Privilege Escalation | `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
-| ⚡ AS-006 | Critical | Arbitrary Code Execution | `evaluate_script`, `_evaluate` suffix, `execute javascript`, `page.evaluate()` patterns |
-| 🗝️ AS-010 | Medium | Secret Handling | Input params accepting API keys/passwords; credentials logged insecurely |
-| ⚡ AS-011 | Low | DoS Resilience | No rate-limit, timeout, or retry config on network/exec tools |
+| ID | Detects |
+|----|---------|
+| 🛡️ **AS-001** | **Tool Poisoning** (`Critical`) — Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
+| 🔑 **AS-002** | **Permission Surface** (`High`/`Low`) — `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
+| 📐 **AS-003** | **Scope Mismatch** (`High`) — Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
+| 📦 **AS-004** | **Supply Chain CVEs** (`High`/`Critical`) — Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
+| 🔓 **AS-005** | **Privilege Escalation** (`High`) — `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
+| ⚡ **AS-006** | **Arbitrary Code Execution** (`Critical`) — `evaluate_script`, `_evaluate` suffix, `execute javascript`, `page.evaluate()` patterns |
+| 🗝️ **AS-010** | **Secret Handling** (`Medium`) — Input params accepting API keys/passwords; credentials logged insecurely |
+| ⚡ **AS-011** | **DoS Resilience** (`Low`) — No rate-limit, timeout, or retry config on network/exec tools |
 
 Full details → [docs/methodology.md](./docs/methodology.md)
 
