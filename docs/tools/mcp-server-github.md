@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) |
 | **Scan Date** | 2026-03-01 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) |
 | **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

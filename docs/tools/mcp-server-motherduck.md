@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) |
 | **Scan Date** | 2026-03-05 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

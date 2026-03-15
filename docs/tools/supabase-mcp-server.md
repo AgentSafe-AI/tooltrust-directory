@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) |
 | **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

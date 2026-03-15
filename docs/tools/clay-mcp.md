@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 28 |
 | **Source** | [clay-mcp](https://github.com/clay-inc/clay-mcp) |
 | **Scan Date** | 2026-03-03 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

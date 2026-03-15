@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `cli/v0.10.1` |
+| **Version** | `cli/v0.10.2` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 2914 |
+| **Stars** | ⭐ 2930 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-03-14 |
+| **Scan Date** | 2026-03-15 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

@@ -19,7 +19,7 @@ All 146 audited tools. [← Back to README](../README.md#-security-registry)
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 20.9k | **[S 🌟](tools/serena.md)** | ✅ None | Mar 2 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.15` | 20.2k | **[B](tools/ruflo.md)** | ⚠️ `AS-002` ×7, `AS-011` ×3 | Mar 10 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.2k | **[S 🌟](tools/maxkb.md)** | ✅ None | Mar 2 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.36.1` | 14.6k | **[B](tools/n8n-mcp.md)** | ⚠️ `AS-002` ×6, `AS-011` ×5 | Mar 9 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.37.1` | 15.1k | **[B](tools/n8n-mcp.md)** | ⚠️ `AS-002` ×5, `AS-011` ×4 | Mar 15 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.3` | 14.0k | **[B](tools/trigger-dev.md)** | ⚠️ `AS-002` ×2, `AS-011` ×2 | Mar 11 |
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `0.6.2` | 12.4k | **[A](tools/mcp-server-brave-search.md)** | `AS-010` | Mar 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.0.0` | 12.4k | **[B](tools/mcp-server-github.md)** | `AS-005`, `AS-011` | Mar 1 |
@@ -45,7 +45,7 @@ All 146 audited tools. [← Back to README](../README.md#-security-registry)
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[D](tools/deep-research.md)** | 📦 `AS-004` ×7 | Mar 2 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[F](tools/httprunner.md)** | 📦 `AS-004` ×18 | Mar 2 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.2k | **[F](tools/enscan-go.md)** | 📦 `AS-004` ×41 | Mar 2 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.11` | 4.1k | **[S 🌟](tools/osaurus.md)** | ✅ None | Mar 14 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.15` | 4.2k | **[S 🌟](tools/osaurus.md)** | ✅ None | Mar 15 |
 | [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[A](tools/kubefwd.md)** | 📦 `AS-004` | Mar 2 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.0k | **[S 🌟](tools/mcpo.md)** | ✅ None | Mar 2 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.0k | **[D](tools/notion-mcp-server.md)** | 📦 `AS-004` ×9 | Mar 2 |
@@ -55,7 +55,7 @@ All 146 audited tools. [← Back to README](../README.md#-security-registry)
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.4k | **[S 🌟](tools/pptagent.md)** | ✅ None | Mar 2 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.4k | **[S 🌟](tools/excel-mcp-server.md)** | ✅ None | Mar 2 |
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.2k | **[S 🌟](tools/py-xiaozhi.md)** | ✅ None | Mar 2 |
-| [bifrost](https://github.com/maximhq/bifrost) | `cli/v0.10.1` | 2.9k | **[B](tools/bifrost.md)** | ⚠️ `AS-002` ×2, `AS-011` ×2 | Mar 14 |
+| [bifrost](https://github.com/maximhq/bifrost) | `cli/v0.10.2` | 2.9k | **[B](tools/bifrost.md)** | ⚠️ `AS-002` ×2, `AS-011` ×2 | Mar 15 |
 | [solon](https://github.com/opensolon/solon) | `3.9.5` | 2.7k | **[S 🌟](tools/solon.md)** | ✅ None | Mar 10 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[C](tools/shadcn-ui-mcp-server.md)** | 📦 `AS-004` ×5 | Mar 2 |
 | [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) | `1.1.11` | 1.7k | **[S 🌟](tools/office-word-mcp-server.md)** | ✅ None | Mar 2 |

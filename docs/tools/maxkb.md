@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [maxkb](https://github.com/1Panel-dev/MaxKB) |
 | **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

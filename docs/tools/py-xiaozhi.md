@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) |
 | **Scan Date** | 2026-03-02 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 

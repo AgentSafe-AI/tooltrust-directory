@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [n9e-mcp-server](https://github.com/n9e/n9e-mcp-server) |
 | **Scan Date** | 2026-03-05 |
-| **Scanner** | AgentSentry/0.1.2 |
+| **Scanner** | ToolTrust Scanner/0.1.2 |
 
 ---
 
