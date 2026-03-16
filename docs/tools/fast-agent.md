@@ -1,16 +1,16 @@
-# 🟡 bifrost
+# 🟠 fast-agent
 
-> Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support & <100 µs overhead at 5k RPS.
+> Code, Build and Evaluate agents - excellent Model and Skills/MCP/ACP Support
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
-| **Version** | `ent-v1.3.9-base` |
-| **Vendor** | maximhq |
-| **Stars** | ⭐ 2949 |
-| **Language** | Go |
-| **Source** | [bifrost](https://github.com/maximhq/bifrost) |
+| **Grade** | **C** |
+| **Risk Score** | 42 |
+| **Version** | `0.5.7` |
+| **Vendor** | evalstate |
+| **Stars** | ⭐ 3707 |
+| **Language** | Python |
+| **Source** | [fast-agent](https://github.com/evalstate/fast-agent) |
 | **Scan Date** | 2026-03-16 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 0 |
+| Critical | 1 |
 | High     | 2 |
 | Medium   | 0 |
 | Low      | 2 |
@@ -33,7 +33,7 @@
 **Severity:** High
 
 **Description:**
-tool declares network permission
+tool declares exec permission
 
 **Recommendation:**
 Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
@@ -57,10 +57,22 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** High
 
 **Description:**
-tool declares network permission
+tool declares exec permission
 
 **Recommendation:**
 Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### 🔴 `AS-006` — Arbitrary Code Execution
+
+**Severity:** Critical
+
+**Description:**
+tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+
+**Recommendation:**
+Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval.
 
 ---
 
@@ -76,4 +88,4 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/bifrost.json)*
+*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/fast-agent.json)*

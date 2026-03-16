@@ -1,23 +1,23 @@
 {
-  "tool_id": "bifrost",
-  "version": "ent-v1.3.9-base",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-03-16T01:29:49.579994834Z",
+  "tool_id": "fast-agent",
+  "version": "0.5.7",
+  "grade": "C",
+  "risk_score": 42,
+  "scan_date": "2026-03-16T01:29:42.438290797Z",
   "scanner": "tooltrust-scanner/0.1.4",
-  "source_url": "https://github.com/maximhq/bifrost",
+  "source_url": "https://github.com/evalstate/fast-agent",
   "category": "Developer Tools",
-  "vendor": "maximhq",
-  "stars": 2949,
+  "vendor": "evalstate",
+  "stars": 3707,
   "license": "Apache-2.0",
-  "language": "Go",
-  "description": "Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support \u0026 \u003c100 µs overhead at 5k RPS.",
+  "language": "Python",
+  "description": "Code, Build and Evaluate agents - excellent Model and Skills/MCP/ACP Support",
   "findings": [
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
     },
     {
@@ -31,8 +31,15 @@
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval."
     },
     {
       "id": "AS-011",
@@ -43,7 +50,7 @@
     }
   ],
   "summary": {
-    "critical": 0,
+    "critical": 1,
     "high": 2,
     "medium": 0,
     "low": 2,
