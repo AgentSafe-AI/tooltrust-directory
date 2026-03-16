@@ -1,18 +1,18 @@
-# 🌟 mysql-mcp-server
+# 🟢 mysql-mcp-server
 
 > A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.2.2` |
 | **Vendor** | designcomputer |
-| **Stars** | ⭐ 1142 |
+| **Stars** | ⭐ 1161 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -24,8 +24,20 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 1 |
 
-No findings. ✅
+## Detailed Findings
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/mysql-mcp-server.json)*

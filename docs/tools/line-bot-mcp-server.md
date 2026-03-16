@@ -1,18 +1,18 @@
-# 🟡 line-bot-mcp-server
+# 🟢 line-bot-mcp-server
 
 > MCP server that integrates the LINE Messaging API to connect an AI Agent to the LINE Official Account.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 16 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `0.4.2` |
 | **Vendor** | line |
-| **Stars** | ⭐ 524 |
+| **Stars** | ⭐ 528 |
 | **Language** | TypeScript |
 | **Source** | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,33 +22,57 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 2 |
+| Medium   | 4 |
 | Low      | 0 |
 | Info     | 0 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.8.0
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.8.0 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g. Check https://osv.dev/vulnerability/GHSA-8r9q-7v3j-jr4g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.8.0
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.8.0 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w. Check https://osv.dev/vulnerability/GHSA-w48q-cv73-mx4w for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 

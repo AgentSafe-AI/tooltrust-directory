@@ -1,18 +1,18 @@
-# 🟠 razorpay-mcp-server
+# 🟢 razorpay-mcp-server
 
 > Razorpay's Official MCP Server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `1.2.1` |
 | **Vendor** | razorpay |
 | **Stars** | ⭐ 214 |
 | **Language** | Go |
 | **Source** | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,57 +22,57 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 4 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-2464-8j7c-4cjm in github.com/go-viper/mapstructure/v2@2.2.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-2464-8j7c-4cjm in github.com/go-viper/mapstructure/v2@2.2.1 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GHSA-2464-8j7c-4cjm. Check https://osv.dev/vulnerability/GHSA-2464-8j7c-4cjm for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fv92-fjc5-jj9h in github.com/go-viper/mapstructure/v2@2.2.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-fv92-fjc5-jj9h in github.com/go-viper/mapstructure/v2@2.2.1 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GHSA-fv92-fjc5-jj9h. Check https://osv.dev/vulnerability/GHSA-fv92-fjc5-jj9h for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3787 in github.com/go-viper/mapstructure/v2@2.2.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GO-2025-3787 in github.com/go-viper/mapstructure/v2@2.2.1 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GO-2025-3787. Check https://osv.dev/vulnerability/GO-2025-3787 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-3900 in github.com/go-viper/mapstructure/v2@2.2.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GO-2025-3900 in github.com/go-viper/mapstructure/v2@2.2.1 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade github.com/go-viper/mapstructure/v2 to a version that resolves GO-2025-3900. Check https://osv.dev/vulnerability/GO-2025-3900 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 

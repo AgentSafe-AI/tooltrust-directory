@@ -1,18 +1,18 @@
-# 🔴 notion-mcp-server
+# 🟡 notion-mcp-server
 
 > Official Notion MCP Server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 72 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `2.1.0` |
 | **Vendor** | makenotion |
-| **Stars** | ⭐ 3965 |
+| **Stars** | ⭐ 4051 |
 | **Language** | TypeScript |
 | **Source** | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -21,118 +21,370 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
-| Medium   | 9 |
-| Low      | 0 |
-| Info     | 0 |
+| High     | 2 |
+| Medium   | 2 |
+| Low      | 2 |
+| Info     | 24 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.1
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.25.1 (npm ecosystem).
+tool declares network permission
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-345p-7cg4-v4c7. Check https://osv.dev/vulnerability/GHSA-345p-7cg4-v4c7 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.25.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.25.1 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g. Check https://osv.dev/vulnerability/GHSA-8r9q-7v3j-jr4g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.8.4
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
-**Severity:** Medium
+**Severity:** Low
 
 **Description:**
-GHSA-43fc-jf86-j433 in axios@1.8.4 (npm ecosystem).
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
 
 **Recommendation:**
-Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.dev/vulnerability/GHSA-43fc-jf86-j433 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.8.4
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-4hjh-wcwx-xvwj in axios@1.8.4 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade axios to a version that resolves GHSA-4hjh-wcwx-xvwj. Check https://osv.dev/vulnerability/GHSA-4hjh-wcwx-xvwj for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fjxv-7rqg-78g4 in form-data@4.0.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-fjxv-7rqg-78g4 in form-data@4.0.1 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade form-data to a version that resolves GHSA-fjxv-7rqg-78g4. Check https://osv.dev/vulnerability/GHSA-fjxv-7rqg-78g4 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-44fp-w29j-9vj5 in multer@1.4.5-lts.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-44fp-w29j-9vj5 in multer@1.4.5-lts.1 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade multer to a version that resolves GHSA-44fp-w29j-9vj5. Check https://osv.dev/vulnerability/GHSA-44fp-w29j-9vj5 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4pg4-qvpc-4q3h in multer@1.4.5-lts.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-4pg4-qvpc-4q3h in multer@1.4.5-lts.1 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade multer to a version that resolves GHSA-4pg4-qvpc-4q3h. Check https://osv.dev/vulnerability/GHSA-4pg4-qvpc-4q3h for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-fjgf-rc76-4x9p in multer@1.4.5-lts.1
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-fjgf-rc76-4x9p in multer@1.4.5-lts.1 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade multer to a version that resolves GHSA-fjgf-rc76-4x9p. Check https://osv.dev/vulnerability/GHSA-fjgf-rc76-4x9p for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-g5hg-p3ph-g8qg in multer@1.4.5-lts.1
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-g5hg-p3ph-g8qg in multer@1.4.5-lts.1 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade multer to a version that resolves GHSA-g5hg-p3ph-g8qg. Check https://osv.dev/vulnerability/GHSA-g5hg-p3ph-g8qg for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

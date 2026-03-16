@@ -1,17 +1,17 @@
-# ⛔ jupyter-mcp-server
+# 🟢 jupyter-mcp-server
 
 > 🪐 🔧 Model Context Protocol (MCP) Server for Jupyter.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **F** |
-| **Risk Score** | 75 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `0.22.1` |
 | **Vendor** | datalayer |
-| **Stars** | ⭐ 918 |
+| **Stars** | ⭐ 941 |
 | **Language** | Python |
 | **Source** | [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) |
-| **Scan Date** | 2026-03-06 |
+| **Scan Date** | 2026-03-16 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
@@ -20,35 +20,107 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
-| High     | 1 |
+| Critical | 0 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 8 |
 
 ## Detailed Findings
 
-### 🔴 `AS-006` — Arbitrary Code Execution: executes arbitrary code in Jupyter kernel
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Critical
+**Severity:** Info
 
 **Description:**
-jupyter-mcp-server allows direct execution of arbitrary Python/R/Julia code in a Jupyter kernel via execute_code and run_cell tools. This is the highest possible code execution risk — unrestricted kernel access with full OS-level capabilities from the kernel process.
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-BLOCK or require explicit approval for every invocation. Run the Jupyter kernel in a gVisor/sandbox container. Restrict kernel networking and filesystem access. Never expose to untrusted agents.
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 ⚠️ `AS-002` — Dangerous Permission: exec + filesystem + network permissions implied
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-A Jupyter kernel has full exec, fs, and network capabilities by default. Any agent invoking this server can read/write files, make network requests, and execute OS commands via subprocess.
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Use kernel gateway with restricted profiles. Apply strict network and filesystem policies at the container level.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

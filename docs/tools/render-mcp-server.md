@@ -1,18 +1,18 @@
-# 🟠 render-mcp-server
+# 🟢 render-mcp-server
 
 > The Official Render MCP Server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | render-oss |
-| **Stars** | ⭐ 102 |
+| **Stars** | ⭐ 109 |
 | **Language** | Go |
 | **Source** | [render-mcp-server](https://github.com/render-oss/render-mcp-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,69 +22,165 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 5 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 13 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.39.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-f6x5-jh6r-wrfv in golang.org/x/crypto@0.39.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade golang.org/x/crypto to a version that resolves GHSA-f6x5-jh6r-wrfv. Check https://osv.dev/vulnerability/GHSA-f6x5-jh6r-wrfv for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.39.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-j5w8-q4qc-rx2x in golang.org/x/crypto@0.39.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade golang.org/x/crypto to a version that resolves GHSA-j5w8-q4qc-rx2x. Check https://osv.dev/vulnerability/GHSA-j5w8-q4qc-rx2x for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4116 in golang.org/x/crypto@0.39.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GO-2025-4116 in golang.org/x/crypto@0.39.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade golang.org/x/crypto to a version that resolves GO-2025-4116. Check https://osv.dev/vulnerability/GO-2025-4116 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4134 in golang.org/x/crypto@0.39.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GO-2025-4134 in golang.org/x/crypto@0.39.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade golang.org/x/crypto to a version that resolves GO-2025-4134. Check https://osv.dev/vulnerability/GO-2025-4134 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2025-4135 in golang.org/x/crypto@0.39.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GO-2025-4135 in golang.org/x/crypto@0.39.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade golang.org/x/crypto to a version that resolves GO-2025-4135. Check https://osv.dev/vulnerability/GO-2025-4135 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

@@ -1,18 +1,18 @@
-# 🟡 claude-task-master
+# 🟢 claude-task-master
 
 > An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 24 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `task-master-ai@0.43.0` |
 | **Vendor** | eyaltoledano |
-| **Stars** | ⭐ 25745 |
+| **Stars** | ⭐ 25946 |
 | **Language** | JavaScript |
 | **Source** | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) |
-| **Scan Date** | 2026-03-03 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -22,45 +22,21 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 3 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 0 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-g9mf-h72j-4rw9 in undici@7.16.0
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-g9mf-h72j-4rw9 in undici@7.16.0 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade undici to a version that resolves GHSA-g9mf-h72j-4rw9. Check https://osv.dev/vulnerability/GHSA-g9mf-h72j-4rw9 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
-
----
-
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1
-
-**Severity:** Medium
-
-**Description:**
-GHSA-2g4f-4pwh-qvx6 in ajv@8.17.1 (npm ecosystem).
-
-**Recommendation:**
-Upgrade ajv to a version that resolves GHSA-2g4f-4pwh-qvx6. Check https://osv.dev/vulnerability/GHSA-2g4f-4pwh-qvx6 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
-
----
-
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-rwvc-j5jr-mgvh in ai@5.0.51
-
-**Severity:** Medium
-
-**Description:**
-GHSA-rwvc-j5jr-mgvh in ai@5.0.51 (npm ecosystem).
-
-**Recommendation:**
-Upgrade ai to a version that resolves GHSA-rwvc-j5jr-mgvh. Check https://osv.dev/vulnerability/GHSA-rwvc-j5jr-mgvh for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 

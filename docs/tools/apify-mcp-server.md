@@ -8,10 +8,10 @@
 | **Risk Score** | 65 |
 | **Version** | `0.9.11` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 899 |
+| **Stars** | ⭐ 902 |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
-| **Scan Date** | 2026-03-14 |
+| **Scan Date** | 2026-03-16 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
@@ -21,7 +21,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 3 |
-| High     | 9 |
+| High     | 10 |
 | Medium   | 15 |
 | Low      | 9 |
 | Info     | 0 |
@@ -373,6 +373,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 

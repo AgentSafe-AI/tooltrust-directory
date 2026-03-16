@@ -1,18 +1,18 @@
-# ⛔ obsidian-mcp-server
+# 🟠 obsidian-mcp-server
 
 > Obsidian Knowledge-Management MCP (Model Context Protocol) server that enables AI agents and development tools to interact with an Obsidian vault. It provides a comprehensive suite of tools for reading, writing, searching, and managing notes, tags, and frontmatter, acting as a bridge to the Obsidian Local REST API plugin.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **F** |
-| **Risk Score** | 160 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `2.0.7` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 383 |
+| **Stars** | ⭐ 404 |
 | **Language** | TypeScript |
 | **Source** | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) |
-| **Scan Date** | 2026-03-03 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -21,250 +21,538 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
-| Medium   | 20 |
-| Low      | 0 |
-| Info     | 0 |
+| High     | 6 |
+| Medium   | 9 |
+| Low      | 6 |
+| Info     | 23 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-43fc-jf86-j433 in axios@1.10.0
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-GHSA-43fc-jf86-j433 in axios@1.10.0 (npm ecosystem).
+tool declares network permission
 
 **Recommendation:**
-Upgrade axios to a version that resolves GHSA-43fc-jf86-j433. Check https://osv.dev/vulnerability/GHSA-43fc-jf86-j433 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-4hjh-wcwx-xvwj in axios@1.10.0
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
-**Severity:** Medium
+**Severity:** Low
 
 **Description:**
-GHSA-4hjh-wcwx-xvwj in axios@1.10.0 (npm ecosystem).
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
 
 **Recommendation:**
-Upgrade axios to a version that resolves GHSA-4hjh-wcwx-xvwj. Check https://osv.dev/vulnerability/GHSA-4hjh-wcwx-xvwj for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-3vhc-576x-3qv4 in hono@4.8.2
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-3vhc-576x-3qv4 in hono@4.8.2 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-3vhc-576x-3qv4. Check https://osv.dev/vulnerability/GHSA-3vhc-576x-3qv4 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-6wqw-2p9w-4vw4 in hono@4.8.2
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-6wqw-2p9w-4vw4 in hono@4.8.2 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-6wqw-2p9w-4vw4. Check https://osv.dev/vulnerability/GHSA-6wqw-2p9w-4vw4 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-92vj-g62v-jqhh in hono@4.8.2
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-92vj-g62v-jqhh in hono@4.8.2 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-92vj-g62v-jqhh. Check https://osv.dev/vulnerability/GHSA-92vj-g62v-jqhh for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-9hp6-4448-45g2 in hono@4.8.2
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-9hp6-4448-45g2 in hono@4.8.2 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-9hp6-4448-45g2. Check https://osv.dev/vulnerability/GHSA-9hp6-4448-45g2 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-9r54-q6cx-xmh5 in hono@4.8.2
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-9r54-q6cx-xmh5 in hono@4.8.2 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-9r54-q6cx-xmh5. Check https://osv.dev/vulnerability/GHSA-9r54-q6cx-xmh5 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-f67f-6cw9-8mq4 in hono@4.8.2
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-f67f-6cw9-8mq4 in hono@4.8.2 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-f67f-6cw9-8mq4. Check https://osv.dev/vulnerability/GHSA-f67f-6cw9-8mq4 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-gq3j-xvxp-8hrf in hono@4.8.2
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-gq3j-xvxp-8hrf in hono@4.8.2 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-gq3j-xvxp-8hrf. Check https://osv.dev/vulnerability/GHSA-gq3j-xvxp-8hrf for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-m732-5p4w-x69g in hono@4.8.2
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-m732-5p4w-x69g in hono@4.8.2 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-m732-5p4w-x69g. Check https://osv.dev/vulnerability/GHSA-m732-5p4w-x69g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-q7jf-gf43-6x6p in hono@4.8.2
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-GHSA-q7jf-gf43-6x6p in hono@4.8.2 (npm ecosystem).
+tool declares network permission
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-q7jf-gf43-6x6p. Check https://osv.dev/vulnerability/GHSA-q7jf-gf43-6x6p for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-r354-f388-2fhh in hono@4.8.2
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-r354-f388-2fhh in hono@4.8.2 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-r354-f388-2fhh. Check https://osv.dev/vulnerability/GHSA-r354-f388-2fhh for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w332-q679-j88p in hono@4.8.2
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
-**Severity:** Medium
+**Severity:** Low
 
 **Description:**
-GHSA-w332-q679-j88p in hono@4.8.2 (npm ecosystem).
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
 
 **Recommendation:**
-Upgrade hono to a version that resolves GHSA-w332-q679-j88p. Check https://osv.dev/vulnerability/GHSA-w332-q679-j88p for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-9965-vmph-33xx in validator@13.15.15
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-9965-vmph-33xx in validator@13.15.15 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade validator to a version that resolves GHSA-9965-vmph-33xx. Check https://osv.dev/vulnerability/GHSA-9965-vmph-33xx for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-vghf-hv5q-vc2g in validator@13.15.15
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-GHSA-vghf-hv5q-vc2g in validator@13.15.15 (npm ecosystem).
+tool declares network permission
 
 **Recommendation:**
-Upgrade validator to a version that resolves GHSA-vghf-hv5q-vc2g. Check https://osv.dev/vulnerability/GHSA-vghf-hv5q-vc2g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-mh29-5h37-fv8m in js-yaml@4.1.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-mh29-5h37-fv8m in js-yaml@4.1.0 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade js-yaml to a version that resolves GHSA-mh29-5h37-fv8m. Check https://osv.dev/vulnerability/GHSA-mh29-5h37-fv8m for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-g9hg-qhmf-q45m in @modelcontextprotocol/inspector@0.14.3
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
-**Severity:** Medium
+**Severity:** Low
 
 **Description:**
-GHSA-g9hg-qhmf-q45m in @modelcontextprotocol/inspector@0.14.3 (npm ecosystem).
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/inspector to a version that resolves GHSA-g9hg-qhmf-q45m. Check https://osv.dev/vulnerability/GHSA-g9hg-qhmf-q45m for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.13.0
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.13.0 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-345p-7cg4-v4c7. Check https://osv.dev/vulnerability/GHSA-345p-7cg4-v4c7 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.13.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.13.0 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g. Check https://osv.dev/vulnerability/GHSA-8r9q-7v3j-jr4g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.13.0
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.13.0 (npm ecosystem).
+tool declares fs permission
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w. Check https://osv.dev/vulnerability/GHSA-w48q-cv73-mx4w for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

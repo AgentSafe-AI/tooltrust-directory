@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.5` |
 | **Vendor** | clay-inc |
-| **Stars** | ⭐ 28 |
+| **Stars** | ⭐ 29 |
 | **Source** | [clay-mcp](https://github.com/clay-inc/clay-mcp) |
-| **Scan Date** | 2026-03-03 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

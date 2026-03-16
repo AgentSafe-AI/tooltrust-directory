@@ -5,14 +5,14 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
-| **Risk Score** | 24 |
+| **Risk Score** | 17 |
 | **Version** | `0.5.5` |
 | **Vendor** | bigcodegen |
-| **Stars** | ⭐ 292 |
+| **Stars** | ⭐ 301 |
 | **Language** | TypeScript |
 | **Source** | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -21,46 +21,70 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
-| Medium   | 3 |
-| Low      | 0 |
-| Info     | 0 |
+| High     | 1 |
+| Medium   | 0 |
+| Low      | 1 |
+| Info     | 3 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.17.4
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-GHSA-345p-7cg4-v4c7 in @modelcontextprotocol/sdk@1.17.4 (npm ecosystem).
+tool declares network permission
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-345p-7cg4-v4c7. Check https://osv.dev/vulnerability/GHSA-345p-7cg4-v4c7 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.17.4
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
-**Severity:** Medium
+**Severity:** Low
 
 **Description:**
-GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.17.4 (npm ecosystem).
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g. Check https://osv.dev/vulnerability/GHSA-8r9q-7v3j-jr4g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.17.4
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.17.4 (npm ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w. Check https://osv.dev/vulnerability/GHSA-w48q-cv73-mx4w for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

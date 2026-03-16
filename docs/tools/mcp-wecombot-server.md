@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.1` |
 | **Vendor** | gotoolkits |
-| **Stars** | ⭐ 35 |
+| **Stars** | ⭐ 36 |
 | **Language** | Go |
 | **Source** | [mcp-wecombot-server](https://github.com/gotoolkits/mcp-wecombot-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 

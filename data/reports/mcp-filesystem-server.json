@@ -1,39 +1,60 @@
 {
   "tool_id": "mcp-filesystem-server",
   "version": "0.11.1",
-  "grade": "B",
-  "risk_score": 16,
-  "scan_date": "2026-03-02T17:12:51.481063835Z",
-  "scanner": "ToolTrust Scanner/0.1.2",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-03-16T05:22:23.025372076Z",
+  "scanner": "tooltrust-scanner/0.1.4",
   "source_url": "https://github.com/mark3labs/mcp-filesystem-server",
   "category": "Developer Tools",
   "vendor": "mark3labs",
-  "stars": 606,
+  "stars": 617,
   "license": "MIT",
   "language": "Go",
   "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
   "findings": [
     {
-      "id": "AS-004",
-      "severity": "Medium",
-      "title": "Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.39.0",
-      "description": "GO-2026-4440 in golang.org/x/net@0.39.0 (Go ecosystem).",
-      "recommendation": "Upgrade golang.org/x/net to a version that resolves GO-2026-4440. Check https://osv.dev/vulnerability/GO-2026-4440 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically."
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue."
     },
     {
-      "id": "AS-004",
-      "severity": "Medium",
-      "title": "Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.39.0",
-      "description": "GO-2026-4441 in golang.org/x/net@0.39.0 (Go ecosystem).",
-      "recommendation": "Upgrade golang.org/x/net to a version that resolves GO-2026-4441. Check https://osv.dev/vulnerability/GO-2026-4441 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically."
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary."
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"search_files\" implies read-only operation but declares network permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities."
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue."
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent."
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 2,
-    "low": 0,
-    "info": 0
+    "high": 2,
+    "medium": 0,
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
 }

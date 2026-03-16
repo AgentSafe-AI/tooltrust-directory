@@ -5,14 +5,14 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
-| **Risk Score** | 24 |
+| **Risk Score** | 17 |
 | **Version** | `latest` |
 | **Vendor** | yikakia |
 | **Stars** | ⭐ 34 |
 | **Language** | Go |
 | **Source** | [godoc-mcp-server](https://github.com/yikakia/godoc-mcp-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
@@ -21,46 +21,58 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
-| Medium   | 3 |
-| Low      | 0 |
-| Info     | 0 |
+| High     | 1 |
+| Medium   | 0 |
+| Low      | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GHSA-wvj2-96wp-fq3f in github.com/modelcontextprotocol/go-sdk@0.2.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GHSA-wvj2-96wp-fq3f in github.com/modelcontextprotocol/go-sdk@0.2.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade github.com/modelcontextprotocol/go-sdk to a version that resolves GHSA-wvj2-96wp-fq3f. Check https://osv.dev/vulnerability/GHSA-wvj2-96wp-fq3f for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4440 in golang.org/x/net@0.39.0
+### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-GO-2026-4440 in golang.org/x/net@0.39.0 (Go ecosystem).
+tool declares network permission
 
 **Recommendation:**
-Upgrade golang.org/x/net to a version that resolves GO-2026-4440. Check https://osv.dev/vulnerability/GO-2026-4440 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
 
 ---
 
-### 🟡 📦 `AS-004` — Supply Chain CVE: GO-2026-4441 in golang.org/x/net@0.39.0
+### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-GO-2026-4441 in golang.org/x/net@0.39.0 (Go ecosystem).
+tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Upgrade golang.org/x/net to a version that resolves GO-2026-4441. Check https://osv.dev/vulnerability/GO-2026-4441 for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.
+Review and remediate the identified issue.
+
+---
+
+### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

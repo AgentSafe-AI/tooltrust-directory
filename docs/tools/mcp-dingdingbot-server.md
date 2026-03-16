@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.2` |
 | **Vendor** | HundunOnline |
-| **Stars** | ⭐ 21 |
+| **Stars** | ⭐ 22 |
 | **Language** | Go |
 | **Source** | [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) |
-| **Scan Date** | 2026-03-02 |
-| **Scanner** | ToolTrust Scanner/0.1.2 |
+| **Scan Date** | 2026-03-16 |
+| **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
 
