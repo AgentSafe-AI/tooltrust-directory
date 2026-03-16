@@ -11,7 +11,7 @@ import {
 } from "@/lib/report-utils";
 import { GradeBadge } from "@/lib/grades";
 
-const GRADES = ["All", "S", "A", "B", "C", "D", "F"] as const;
+const GRADES = ["All", "A", "B", "C", "D", "F"] as const;
 
 const GRADE_BUTTON_STYLES: Record<string, string> = {
   All: "bg-zinc-800 text-zinc-200 border-zinc-700",

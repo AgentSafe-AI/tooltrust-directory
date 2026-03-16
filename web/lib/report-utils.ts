@@ -37,8 +37,8 @@ export interface Report {
 }
 
 export function displayGrade(r: Report): string {
-  if (r.risk_score === 0 && (!r.findings || r.findings.length === 0)) {
-    return "S";
+  if (r.risk_score === 0 && r.findings.length === 0) {
+    return "A";
   }
   return r.grade;
 }
