@@ -10,8 +10,8 @@ func TestComputeGrade(t *testing.T) {
 		findings []TTFinding
 		want     string
 	}{
-		{0, nil, "S"},
-		{0, []TTFinding{}, "S"},
+		{0, nil, "A"},
+		{0, []TTFinding{}, "A"},
 		{0, []TTFinding{{ID: "AS-004"}}, "A"}, // score 0 but has findings → A
 		{5, []TTFinding{{ID: "AS-002"}}, "A"},
 		{10, nil, "B"},
@@ -84,8 +84,8 @@ func TestTransformEmptyInput(t *testing.T) {
 	report := transform(as, nil, "test", "1.0.0", "https://example.com",
 		"vendor", 100, "MIT", "Go", "Dev", "A test tool")
 
-	if report.Grade != "S" {
-		t.Errorf("empty scan (0 score, no findings) should be grade S, got %q", report.Grade)
+	if report.Grade != "A" {
+		t.Errorf("empty scan (0 score, no findings) should be grade A, got %q", report.Grade)
 	}
 	if report.RiskScore != 0 {
 		t.Errorf("empty scan should have score 0, got %d", report.RiskScore)

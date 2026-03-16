@@ -178,8 +178,10 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 		}
 
 		if cur, ok := existing[toolID]; ok && cur == version {
-			log.Printf("up-to-date %s @ %s (seed)", toolID, version)
-			continue
+			if os.Getenv("FORCE_RESCAN") != "true" {
+				log.Printf("up-to-date %s @ %s (seed)", toolID, version)
+				continue
+			}
 		}
 
 		license := ""
@@ -260,8 +262,10 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 			}
 
 			if cur, ok := existing[toolID]; ok && cur == version {
-				log.Printf("up-to-date %s @ %s", toolID, version)
-				continue
+				if os.Getenv("FORCE_RESCAN") != "true" {
+					log.Printf("up-to-date %s @ %s", toolID, version)
+					continue
+				}
 			}
 
 			license := ""

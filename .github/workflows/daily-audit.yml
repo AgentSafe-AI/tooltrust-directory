@@ -41,6 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPORTS_DIR: ${{ env.REPORTS_DIR }}
           PENDING_SCANS_PATH: ${{ env.PENDING_SCANS_PATH }}
+          FORCE_RESCAN: ${{ inputs.force_rescan }}
         run: go run ./cmd/crawler
 
       - name: Check for pending scans
