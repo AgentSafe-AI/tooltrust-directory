@@ -312,11 +312,11 @@ func toTTFinding(f ASFinding) TTFinding {
 	}
 }
 
-// computeGrade assigns S when score==0 and no findings; otherwise uses scoreToGrade.
-// S = zero risk, perfect score. A = 0–9 with any findings.
+// computeGrade uses scoreToGrade.
+// S grade is reserved for future dynamic runtime analysis. Static-only scans cap at A.
 func computeGrade(score int, findings []TTFinding) string {
 	if score == 0 && len(findings) == 0 {
-		return "S"
+		return "A"
 	}
 	return scoreToGrade(score)
 }

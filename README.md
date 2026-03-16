@@ -103,6 +103,7 @@ ToolTrust Scanner check IDs referenced in all reports:
 | 📦&nbsp;**AS&#8209;004** | **Supply Chain CVEs** (`High`/`Critical`) — Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
 | 🔓&nbsp;**AS&#8209;005** | **Privilege Escalation** (`High`) — `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
 | ⚡&nbsp;**AS&#8209;006** | **Arbitrary Code Execution** (`Critical`) — `evaluate_script`, `_evaluate` suffix, `execute javascript`, `page.evaluate()` patterns |
+| ℹ️&nbsp;**AS&#8209;007** | **Insufficient Tool Data** (`Info`) — Tool lacks a valid description or schema, preventing agents from understanding its capabilities or limitations |
 | 🗝️&nbsp;**AS&#8209;010** | **Secret Handling** (`Medium`) — Input params accepting API keys/passwords; credentials logged insecurely |
 | ⚡&nbsp;**AS&#8209;011** | **DoS Resilience** (`Low`) — No rate-limit, timeout, or retry config on network/exec tools |
 

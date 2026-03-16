@@ -88,8 +88,8 @@ $$
 
 | Grade | RiskScore Range | Gateway Action | Meaning |
 |-------|:---------------:|:--------------:|---------|
-| **S** | 0 (no findings) | ALLOW | Zero risk. Perfect score. |
-| **A** | 1 – 9           | ALLOW | Minimal risk. Safe for production agents. |
+| **S** | (Reserved)      | ALLOW | S grade is reserved for future dynamic runtime analysis. Static-only scans cap at A. |
+| **A** | 0 – 9           | ALLOW | Minimal risk. Safe for production agents. |
 | **B** | 10 – 24         | ALLOW + rate limit | Low risk. Minor issues; review findings. |
 | **C** | 25 – 49         | REQUIRE_APPROVAL | Moderate risk. Remediation recommended before production use. |
 | **D** | 50 – 74         | REQUIRE_APPROVAL | High risk. Use only in isolated/sandboxed environments. |
@@ -109,6 +109,7 @@ All active rules as of [ToolTrust Scanner v0.1.4](https://github.com/AgentSafe-A
 | 📦 **AS&#8209;004** | High / Critical | Supply Chain (CVE) | Third-party dependencies with known CVEs — queried live from [OSV database](https://osv.dev) |
 | 🔓 **AS&#8209;005** | **High** | Privilege Escalation | OAuth/token scopes broader than stated purpose (`admin`, `:write` wildcards); escalation signals in description (`sudo`, `impersonate`) |
 | ⚡ **AS&#8209;006** | **Critical** | Arbitrary Code Execution | Tool name or description implies arbitrary script/code execution (`evaluate_script`, `execute javascript`, `_evaluate` suffix, `page.evaluate()` patterns) |
+| ℹ️ **AS&#8209;007** | **Info** | Insufficient Tool Data | Tool lacks a valid description or schema, preventing agents from understanding its capabilities or limitations |
 | 🗝️ **AS&#8209;010** | **Medium** | Secret Handling | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
 | ⚡ **AS&#8209;011** | **Low** | DoS Resilience | Network/execution tools with no rate-limit, timeout, or retry configuration |
 
