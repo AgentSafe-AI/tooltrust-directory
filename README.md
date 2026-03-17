@@ -7,7 +7,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 [Insert Directory UI GIF Here]
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-147-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--16-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--17-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -22,8 +22,8 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.11.4` | 179.3k | **[B](./docs/tools/n8n.md)** | ⚠️ `AS-002` ×5, `AS-011` ×4, `AS-007` ×60 | Mar 16 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.33.1` | 97.9k | **[B](./docs/tools/gemini-cli.md)** | ⚠️ `AS-002` ×5, `AS-007` ×60, `AS-011` ×3 | Mar 16 |
-| [context7](https://github.com/upstash/context7) | `ctx7@0.3.5` | 49.2k | **[B](./docs/tools/context7.md)** | ⚠️ `AS-002`, `AS-011` | Mar 16 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.33.2` | 98.0k | **[B](./docs/tools/gemini-cli.md)** | ⚠️ `AS-002` ×5, `AS-007` ×60, `AS-011` ×3 | Mar 17 |
+| [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.3k | **[B](./docs/tools/context7.md)** | ⚠️ `AS-002`, `AS-011` | Mar 17 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.0k | **[B](./docs/tools/trendradar.md)** | ⚠️ `AS-002` ×3, `AS-011` ×2, `AS-007` ×9 | Mar 16 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.2` | 30.0k | **[B](./docs/tools/scrapling.md)** | `AS-007` ×20, ⚠️ `AS-002`, `AS-011` | Mar 16 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 29.3k | **[A](./docs/tools/chrome-devtools-mcp.md)** | `AS-007` ×60 | Mar 16 |
@@ -44,8 +44,8 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.09…` | 11.7k | **[C](./docs/tools/xiaohongshu-mcp.md)** | `AS-007` ×15, ⚠️ `AS-002` ×2, `AS-003`, `AS-011` | Mar 16 |
 | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) | `0.4.0` | 11.7k | **[A](./docs/tools/fastapi-mcp.md)** | `AS-007` ×8, ⚠️ `AS-002` | Mar 16 |
 | [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) | `9.8.2` | 11.3k | **[B](./docs/tools/pal-mcp-server.md)** | `AS-007` ×54, ⚠️ `AS-002` ×4, `AS-011` ×4 | Mar 16 |
+| [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.3.5` | 10.9k | **[A](./docs/tools/nginx-ui.md)** | `AS-007` ×60 | Mar 17 |
 | [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | `3.3.0` | 10.9k | **[C](./docs/tools/skill-seekers.md)** | `AS-007` ×60, ⚠️ `AS-002` ×2, `AS-011` ×2, `AS-003` | Mar 16 |
-| [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.3.4` | 10.9k | **[A](./docs/tools/nginx-ui.md)** | `AS-007` ×60 | Mar 16 |
 | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.7` | 10.4k | **[B](./docs/tools/xhs-downloader.md)** | ⚠️ `AS-002` ×2, `AS-007` ×9, `AS-011` ×2 | Mar 16 |
 | [mcp-use](https://github.com/mcp-use/mcp-use) | `python-v1.…` | 9.4k | **[B](./docs/tools/mcp-use.md)** | ⚠️ `AS-002` ×4, `AS-011` ×4, `AS-007` ×60 | Mar 16 |
 | [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.12.1-rel…` | 8.9k | **[C](./docs/tools/openmetadata.md)** | ⚠️ `AS-002` ×2, `AS-003`, `AS-011` | Mar 16 |
@@ -58,7 +58,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 5.8k | **[B](./docs/tools/firecrawl-mcp-server.md)** | ⚠️ `AS-002` ×6, `AS-007` ×6, `AS-011` ×6 | Mar 16 |
 | [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[B](./docs/tools/klavis.md)** | ⚠️ `AS-002`, `AS-011` | Mar 16 |
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[A](./docs/tools/viper.md)** | `AS-007` ×6 | Mar 16 |
-| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.2.1` | 4.8k | **[B](./docs/tools/xcodebuildmcp.md)** | `AS-007` ×60, ⚠️ `AS-002`, `AS-011` | Mar 16 |
+| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.0` | 4.8k | **[B](./docs/tools/xcodebuildmcp.md)** | `AS-007` ×60, ⚠️ `AS-002`, `AS-011` | Mar 17 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[B](./docs/tools/deep-research.md)** | `AS-007` ×38, ⚠️ `AS-002` ×4, `AS-011` ×4 | Mar 16 |
 | [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.16` | 4.3k | **[A](./docs/tools/osaurus.md)** | `AS-007` | Mar 16 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[B](./docs/tools/httprunner.md)** | `AS-007` ×52, ⚠️ `AS-002` ×2, `AS-011` ×2 | Mar 16 |
@@ -67,8 +67,8 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.1k | **[A](./docs/tools/mcpo.md)** | `AS-007` | Mar 16 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[B](./docs/tools/notion-mcp-server.md)** | ⚠️ `AS-002` ×4, `AS-007` ×24, `AS-011` ×2 | Mar 16 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.8k | **[B](./docs/tools/mcp-server-chart.md)** | ⚠️ `AS-002`, `AS-011` | Mar 16 |
-| [fast-agent](https://github.com/evalstate/fast-agent) | `0.5.7` | 3.7k | **[D](./docs/tools/fast-agent.md)** | `AS-007` ×60, ⚠️ `AS-002` ×13, `AS-011` ×6, `AS-006` | Mar 16 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | `AS-007` | Mar 16 |
+| [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.0` | 3.7k | **[S 🌟](./docs/tools/fast-agent.md)** | ✅ None | Mar 17 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | `AS-007` | Mar 17 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[B](./docs/tools/mcp-server-cloudflare.md)** | ⚠️ `AS-002` ×8, `AS-007` ×50, `AS-011` ×3 | Mar 16 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.5k | **[A](./docs/tools/pptagent.md)** | `AS-007` ×10, ⚠️ `AS-002` ×2 | Mar 16 |
 

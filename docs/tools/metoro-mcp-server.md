@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 8 |
-| **Version** | `0.75.0` |
+| **Version** | `0.77.0` |
 | **Vendor** | metoro-io |
 | **Stars** | ⭐ 48 |
 | **Language** | Go |
 | **Source** | [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
