@@ -247,12 +247,8 @@ func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix s
 	return sb.String()
 }
 
-// displayGrade returns S when risk_score==0 and no findings; else the stored grade.
-// This ensures legacy reports (stored as A) display correctly as S.
+// displayGrade returns the stored grade.
 func displayGrade(r Report) string {
-	if r.RiskScore == 0 && len(r.Findings) == 0 {
-		return "S"
-	}
 	return r.Grade
 }
 
