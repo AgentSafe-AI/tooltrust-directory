@@ -292,17 +292,20 @@ func findingEmoji(id string) string {
 // keyFindings returns a compact summary of finding rule IDs with counts.
 // Emoji always precedes text: ✅ None, 📦 AS-004 ×12, 🚨 AS-001, ⚠️ AS-002.
 func keyFindings(r Report) string {
-	if len(r.Findings) == 0 {
-		return "✅ None"
-	}
-
 	counts := make(map[string]int)
 	var order []string
 	for _, f := range r.Findings {
+		if f.ID == "AS-007" {
+			continue
+		}
 		if counts[f.ID] == 0 {
 			order = append(order, f.ID)
 		}
 		counts[f.ID]++
+	}
+
+	if len(order) == 0 {
+		return "✅ None"
 	}
 
 	var parts []string
