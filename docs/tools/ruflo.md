@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `3.5.15` |
 | **Vendor** | ruvnet |
-| **Stars** | ⭐ 21388 |
+| **Stars** | ⭐ 21394 |
 | **Language** | TypeScript |
 | **Source** | [ruflo](https://github.com/ruvnet/ruflo) |
 | **Scan Date** | 2026-03-17 |

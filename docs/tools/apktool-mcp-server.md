@@ -1,10 +1,10 @@
-# 🌟 apktool-mcp-server
+# 🟢 apktool-mcp-server
 
 > A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites)
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `3.0.0` |
 | **Vendor** | zinja-coder |

@@ -1,10 +1,10 @@
-# 🌟 vscode-mcp-server
+# 🟢 vscode-mcp-server
 
 > MCP server to expose VS Code editing features to an LLM for AI coding
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.4.0` |
 | **Vendor** | juehang |

@@ -1,10 +1,10 @@
-# 🌟 ghidramcp
+# 🟢 ghidramcp
 
 > MCP Server for Ghidra
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `1.4` |
 | **Vendor** | LaurieWired |

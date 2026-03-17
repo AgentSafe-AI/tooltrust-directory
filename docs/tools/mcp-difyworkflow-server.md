@@ -1,10 +1,10 @@
-# 🌟 mcp-difyworkflow-server
+# 🟢 mcp-difyworkflow-server
 
 > mcp-difyworkflow-server is an mcp server Tools application that implements the query and invocation of Dify workflows, supporting the on-demand operation of multiple custom Dify workflows.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.1` |
 | **Vendor** | gotoolkits |

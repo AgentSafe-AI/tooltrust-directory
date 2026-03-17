@@ -1,10 +1,10 @@
-# 🌟 k8s-mcp-server
+# 🟢 k8s-mcp-server
 
 > Manage Your Kubernetes Cluster with k8s mcp-server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.24` |
 | **Vendor** | reza-gholizade |

@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.79.3` |
 | **Vendor** | activepieces |
-| **Stars** | ⭐ 21249 |
+| **Stars** | ⭐ 21250 |
 | **Language** | TypeScript |
 | **Source** | [activepieces](https://github.com/activepieces/activepieces) |
 | **Scan Date** | 2026-03-17 |

@@ -1,10 +1,10 @@
-# 🌟 mcp-server-simulator-ios-idb
+# 🟢 mcp-server-simulator-ios-idb
 
 > A Model Context Protocol (MCP) server that enables LLMs to interact with iOS simulators through natural language commands.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.1` |
 | **Vendor** | InditexTech |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.7` |
 | **Vendor** | haris-musa |
-| **Stars** | ⭐ 3467 |
+| **Stars** | ⭐ 3468 |
 | **Language** | Python |
 | **Source** | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) |
 | **Scan Date** | 2026-03-17 |

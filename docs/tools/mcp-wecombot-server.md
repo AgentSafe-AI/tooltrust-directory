@@ -1,10 +1,10 @@
-# 🌟 mcp-wecombot-server
+# 🟢 mcp-wecombot-server
 
 > An MCP server application that sends various types of messages to the WeCom group robot.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.1` |
 | **Vendor** | gotoolkits |

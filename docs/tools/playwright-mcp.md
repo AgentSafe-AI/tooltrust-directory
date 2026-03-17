@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.68` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 29061 |
+| **Stars** | ⭐ 29062 |
 | **Language** | TypeScript |
 | **Source** | [playwright-mcp](https://github.com/microsoft/playwright-mcp) |
 | **Scan Date** | 2026-03-17 |

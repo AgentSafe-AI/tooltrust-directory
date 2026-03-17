@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.4.2` |
 | **Vendor** | D4Vinci |
-| **Stars** | ⭐ 30350 |
+| **Stars** | ⭐ 30364 |
 | **Language** | Python |
 | **Source** | [scrapling](https://github.com/D4Vinci/Scrapling) |
 | **Scan Date** | 2026-03-17 |

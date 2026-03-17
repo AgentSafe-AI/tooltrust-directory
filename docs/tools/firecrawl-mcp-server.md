@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `3.2.1` |
 | **Vendor** | firecrawl |
-| **Stars** | ⭐ 5783 |
+| **Stars** | ⭐ 5784 |
 | **Language** | JavaScript |
 | **Source** | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) |
 | **Scan Date** | 2026-03-17 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 19 |
 | **Version** | `2.37.3` |
 | **Vendor** | czlonkowski |
-| **Stars** | ⭐ 15256 |
+| **Stars** | ⭐ 15257 |
 | **Language** | TypeScript |
 | **Source** | [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) |
 | **Scan Date** | 2026-03-17 |

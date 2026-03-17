@@ -8,7 +8,7 @@
 | **Risk Score** | 65 |
 | **Version** | `0.9.11` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 903 |
+| **Stars** | ⭐ 905 |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
 | **Scan Date** | 2026-03-17 |

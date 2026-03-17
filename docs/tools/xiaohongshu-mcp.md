@@ -8,7 +8,7 @@
 | **Risk Score** | 32 |
 | **Version** | `2026.03.09.0605-0e16f4b` |
 | **Vendor** | xpzouying |
-| **Stars** | ⭐ 11728 |
+| **Stars** | ⭐ 11732 |
 | **Language** | Go |
 | **Source** | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) |
 | **Scan Date** | 2026-03-17 |

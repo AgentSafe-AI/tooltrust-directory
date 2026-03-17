@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `ent-v1.3.9-base` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 2972 |
+| **Stars** | ⭐ 2973 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
 | **Scan Date** | 2026-03-17 |

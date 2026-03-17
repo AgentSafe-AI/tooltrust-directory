@@ -1,10 +1,10 @@
-# 🌟 fast-agent
+# 🟢 fast-agent
 
 > Code, Build and Evaluate agents - excellent Model and Skills/MCP/ACP Support
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.6.0` |
 | **Vendor** | evalstate |

@@ -1,10 +1,10 @@
-# 🌟 linkwarden-mcp-server
+# 🟢 linkwarden-mcp-server
 
 > An MCP Server for Linkwarden
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.1` |
 | **Vendor** | irfansofyana |

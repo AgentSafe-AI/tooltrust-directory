@@ -1,10 +1,10 @@
-# 🌟 aqara-mcp-server
+# 🟢 aqara-mcp-server
 
 > Aqara's official MCP Server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `0.0.2` |
 | **Vendor** | aqara |

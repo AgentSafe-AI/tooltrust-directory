@@ -51,7 +51,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.12.1-rel…` | 8.9k | **[C](./docs/tools/openmetadata.md)** | ⚠️ `AS-002` ×2, `AS-003`, `AS-011` | Mar 17 |
 | [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | `0.9.2` | 8.9k | **[A](./docs/tools/xiaozhi-esp32-server.md)** | ⚠️ `AS-002` ×2, `AS-007` ×60 | Mar 17 |
 | [mcp](https://github.com/awslabs/mcp) | `2026.03.20…` | 8.5k | **[A](./docs/tools/mcp.md)** | `AS-007` ×60, ⚠️ `AS-002` ×22 | Mar 17 |
-| [ghidramcp](https://github.com/LaurieWired/GhidraMCP) | `1.4` | 7.9k | **[S 🌟](./docs/tools/ghidramcp.md)** | ✅ None | Mar 17 |
+| [ghidramcp](https://github.com/LaurieWired/GhidraMCP) | `1.4` | 7.9k | **[A](./docs/tools/ghidramcp.md)** | ✅ None | Mar 17 |
 | [lamda](https://github.com/firerpa/lamda) | `9.20` | 7.7k | **[A](./docs/tools/lamda.md)** | `AS-007` ×3 | Mar 17 |
 | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | `1.2.0` | 7.1k | **[B](./docs/tools/browser-tools-mcp.md)** | ⚠️ `AS-002`, `AS-011`, `AS-007` ×5 | Mar 17 |
 | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | `1.4.0` | 6.4k | **[A](./docs/tools/ida-pro-mcp.md)** | `AS-007` ×6 | Mar 17 |
@@ -67,7 +67,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.1k | **[A](./docs/tools/mcpo.md)** | `AS-007` | Mar 17 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[B](./docs/tools/notion-mcp-server.md)** | ⚠️ `AS-002` ×4, `AS-007` ×24, `AS-011` ×2 | Mar 17 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.8k | **[B](./docs/tools/mcp-server-chart.md)** | ⚠️ `AS-002`, `AS-011` | Mar 17 |
-| [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.0` | 3.7k | **[S 🌟](./docs/tools/fast-agent.md)** | ✅ None | Mar 17 |
+| [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.0` | 3.7k | **[A](./docs/tools/fast-agent.md)** | ✅ None | Mar 17 |
 | [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | `AS-007` | Mar 17 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.5k | **[A](./docs/tools/pptagent.md)** | `AS-007` ×10, ⚠️ `AS-002` ×2 | Mar 17 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[B](./docs/tools/mcp-server-cloudflare.md)** | ⚠️ `AS-002` ×8, `AS-007` ×50, `AS-011` ×3 | Mar 17 |

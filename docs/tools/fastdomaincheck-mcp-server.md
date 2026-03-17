@@ -1,10 +1,10 @@
-# 🌟 fastdomaincheck-mcp-server
+# 🟢 fastdomaincheck-mcp-server
 
 > A Model Context Protocol for checking domain name registration status in bulk.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **S 🌟** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `1.0.4` |
 | **Vendor** | bingal |
