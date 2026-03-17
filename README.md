@@ -80,7 +80,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 | Grade | Gateway Action | Description |
 |:-----:|:--------------:|-------------|
-| **S** 🌟 | `ALLOW` | Perfect score. Zero risks detected. |
+| **S** 🌟 | `ALLOW` | Reserved for dynamic analysis |
 | **A** | `ALLOW` | Minimal risk. Safe for production agents. |
 | **B** | `ALLOW` + rate limit | Low risk. Minor issues, but generally safe. |
 | **C** | `REQUIRE_APPROVAL` | Moderate risk. Remediation recommended. |
