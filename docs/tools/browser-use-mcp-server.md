@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 812 |
 | **Language** | Python |
 | **Source** | [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

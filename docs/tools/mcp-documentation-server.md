@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 293 |
 | **Language** | TypeScript |
 | **Source** | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

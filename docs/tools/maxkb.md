@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `2.6.1` |
 | **Vendor** | 1Panel-dev |
-| **Stars** | ⭐ 20339 |
+| **Stars** | ⭐ 20368 |
 | **Language** | Python |
 | **Source** | [maxkb](https://github.com/1Panel-dev/MaxKB) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

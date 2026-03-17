@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 347 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

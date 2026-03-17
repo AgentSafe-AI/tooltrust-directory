@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 232 |
 | **Language** | Python |
 | **Source** | [xiyan-mcp-server](https://github.com/XGenerationLab/xiyan_mcp_server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

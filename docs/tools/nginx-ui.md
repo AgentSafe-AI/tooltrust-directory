@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.3.5` |
 | **Vendor** | 0xJacky |
-| **Stars** | ⭐ 10865 |
+| **Stars** | ⭐ 10866 |
 | **Language** | Go |
 | **Source** | [nginx-ui](https://github.com/0xJacky/nginx-ui) |
 | **Scan Date** | 2026-03-17 |

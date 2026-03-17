@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `4.3.6` |
 | **Vendor** | httprunner |
-| **Stars** | ⭐ 4264 |
+| **Stars** | ⭐ 4265 |
 | **Language** | Go |
 | **Source** | [httprunner](https://github.com/httprunner/httprunner) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

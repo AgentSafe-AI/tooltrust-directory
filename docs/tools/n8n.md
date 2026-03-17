@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `n8n@2.11.4` |
 | **Vendor** | n8n-io |
-| **Stars** | ⭐ 179333 |
+| **Stars** | ⭐ 179487 |
 | **Language** | TypeScript |
 | **Source** | [n8n](https://github.com/n8n-io/n8n) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.79.3` |
 | **Vendor** | activepieces |
-| **Stars** | ⭐ 21225 |
+| **Stars** | ⭐ 21249 |
 | **Language** | TypeScript |
 | **Source** | [activepieces](https://github.com/activepieces/activepieces) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

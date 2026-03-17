@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.8` |
 | **Vendor** | huangjunsen0406 |
-| **Stars** | ⭐ 3220 |
+| **Stars** | ⭐ 3222 |
 | **Language** | Python |
 | **Source** | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

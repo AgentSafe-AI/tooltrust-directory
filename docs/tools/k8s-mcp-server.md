@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.24` |
 | **Vendor** | reza-gholizade |
-| **Stars** | ⭐ 149 |
+| **Stars** | ⭐ 150 |
 | **Language** | Go |
 | **Source** | [k8s-mcp-server](https://github.com/reza-gholizade/k8s-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

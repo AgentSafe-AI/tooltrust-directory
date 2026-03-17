@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 21 |
 | **Language** | Go |
 | **Source** | [n9e-mcp-server](https://github.com/n9e/n9e-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `3.4.3` |
 | **Vendor** | assafelovic |
-| **Stars** | ⭐ 25760 |
+| **Stars** | ⭐ 25779 |
 | **Language** | Python |
 | **Source** | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

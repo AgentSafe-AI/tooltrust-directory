@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 266 |
 | **Language** | Python |
 | **Source** | [doris-mcp-server](https://github.com/apache/doris-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
