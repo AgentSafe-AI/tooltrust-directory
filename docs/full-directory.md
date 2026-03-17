@@ -4,7 +4,6 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.11.4` | 179.5k | **[B](tools/n8n.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Mar 17 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.33.2` | 98.0k | **[B](tools/gemini-cli.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Mar 17 |
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.3k | **[B](tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 17 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.1k | **[B](tools/trendradar.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Mar 17 |
@@ -108,14 +107,14 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) | `1.0.1` | 301 | **[A](tools/mcp-server-simulator-ios-idb.md)** | ✅ None | Mar 17 |
 | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) | `0.5.5` | 301 | **[B](tools/mcp-neovim-server.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 17 |
 | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | `1.13.0` | 293 | **[C](tools/mcp-documentation-server.md)** | 🔑 `AS-002` ×7, 📐 `AS-003` ×3, ⚡ `AS-011` ×3 | Mar 17 |
-| [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) | `0.8.0` | 291 | **[B](tools/mcp-server-mas-sequential-thinking.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 17 |
 | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) | `1.7.0` | 291 | **[B](tools/mysql-mcp-server-pro.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 17 |
+| [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) | `0.8.0` | 291 | **[B](tools/mcp-server-mas-sequential-thinking.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 17 |
 | [django-mcp-server](https://github.com/gts360/django-mcp-server) | `0.5.6` | 287 | **[B](tools/django-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 17 |
 | [mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) | `2.0.2` | 276 | **[B](tools/mcp-mongo-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Mar 17 |
 | [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) | `0.5.1` | 271 | **[B](tools/mcp-server-tree-sitter.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 17 |
 | [doris-mcp-server](https://github.com/apache/doris-mcp-server) | `0.6.0` | 266 | **[B](tools/doris-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 17 |
 | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) | `1.6.1` | 263 | **[B](tools/mcp-server-trello.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 17 |
-| [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) | `2.0.19` | 257 | **[A](tools/elasticsearch-mcp-server.md)** | ✅ None | Mar 17 |
+| [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) | `2.0.19` | 256 | **[A](tools/elasticsearch-mcp-server.md)** | ✅ None | Mar 17 |
 | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | `0.6.0` | 246 | **[B](tools/matlab-mcp-core-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 17 |
 | [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) | `1.14.0` | 240 | **[A](tools/mcp-openapi-server.md)** | 🔑 `AS-002` ×5 | Mar 17 |
 | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) | `1.3.0` | 239 | **[A](tools/weather-mcp-server.md)** | ✅ None | Mar 17 |
@@ -145,10 +144,11 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 29 | **[A](tools/clay-mcp.md)** | ✅ None | Mar 17 |
 | [vision-one-mcp-server](https://github.com/trendmicro/vision-one-mcp-server) | `0.7.0` | 27 | **[A](tools/vision-one-mcp-server.md)** | ✅ None | Mar 17 |
 | [mcp-android-adb-server](https://github.com/github-hewei/mcp-android-adb-server) | `0.0.2` | 25 | **[A](tools/mcp-android-adb-server.md)** | ✅ None | Mar 17 |
-| [streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) | `snmcp-v0.1…` | 22 | **[A](tools/streamnative-mcp-server.md)** | ✅ None | Mar 17 |
-| [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) | `1.0.2` | 22 | **[A](tools/mcp-dingdingbot-server.md)** | ✅ None | Mar 17 |
 | [ig-mcp-server](https://github.com/inspektor-gadget/ig-mcp-server) | `0.0.1-beta.4` | 22 | **[A](tools/ig-mcp-server.md)** | ✅ None | Mar 17 |
+| [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) | `1.0.2` | 22 | **[A](tools/mcp-dingdingbot-server.md)** | ✅ None | Mar 17 |
+| [streamnative-mcp-server](https://github.com/streamnative/streamnative-mcp-server) | `snmcp-v0.1…` | 22 | **[A](tools/streamnative-mcp-server.md)** | ✅ None | Mar 17 |
 | [n9e-mcp-server](https://github.com/n9e/n9e-mcp-server) | `0.1.1` | 21 | **[A](tools/n9e-mcp-server.md)** | 🔑 `AS-002` ×2 | Mar 17 |
 | [reportportal-mcp-server](https://github.com/reportportal/reportportal-mcp-server) | `1.2.0` | 20 | **[A](tools/reportportal-mcp-server.md)** | 🔑 `AS-002` ×2 | Mar 17 |
 | [linkwarden-mcp-server](https://github.com/irfansofyana/linkwarden-mcp-server) | `0.0.1` | 15 | **[A](tools/linkwarden-mcp-server.md)** | ✅ None | Mar 2 |
+| [n8n](https://github.com/n8n-io/n8n) | `2.11.4` | — | **[B](tools/n8n.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 17 |
 

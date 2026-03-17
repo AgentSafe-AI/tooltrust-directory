@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.19` |
 | **Vendor** | cr7258 |
-| **Stars** | ⭐ 257 |
+| **Stars** | ⭐ 256 |
 | **Language** | Python |
 | **Source** | [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) |
 | **Scan Date** | 2026-03-17 |

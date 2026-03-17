@@ -21,7 +21,6 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.11.4` | 179.5k | **[B](./docs/tools/n8n.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Mar 17 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.33.2` | 98.0k | **[B](./docs/tools/gemini-cli.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Mar 17 |
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.3k | **[B](./docs/tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 17 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.1k | **[B](./docs/tools/trendradar.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Mar 17 |
@@ -71,6 +70,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | ✅ None | Mar 17 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.5k | **[A](./docs/tools/pptagent.md)** | 🔑 `AS-002` ×2 | Mar 17 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[B](./docs/tools/mcp-server-cloudflare.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 17 |
+| [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.5k | **[A](./docs/tools/excel-mcp-server.md)** | ✅ None | Mar 17 |
 
 <!-- TOOLTRUST:END -->
 
