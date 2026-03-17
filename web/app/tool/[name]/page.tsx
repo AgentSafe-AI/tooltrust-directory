@@ -159,40 +159,64 @@ export default async function ToolPage({ params }: PageProps) {
               No findings in this scan. Safe for production use.
             </p>
           </div>
-        ) : (
-          <ul className="divide-y divide-zinc-800">
-            {report.findings!.map((f, i) => (
-              <li
-                key={i}
-                className="border-b border-zinc-800 bg-zinc-900/50 p-5 last:border-0"
-              >
-                <div className="flex flex-col gap-2">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span
-                      className={`rounded px-2 py-1 text-xs font-bold uppercase ${severityBadgeClass(f.severity)}`}
-                    >
-                      {f.severity}
-                    </span>
-                    <span className="font-semibold text-zinc-100">
-                      {f.title}
-                    </span>
-                  </div>
-                  <p className="text-sm text-zinc-500">{f.description}</p>
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500">
-                    <span>
-                      Rule: <code className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400">{f.id}</code>
-                    </span>
-                    {f.recommendation && (
-                      <span>
-                        Recommendation: {f.recommendation}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+        ) : (() => {
+          // Group findings by ID
+          const grouped = new Map<string, typeof report.findings>();
+          for (const f of report.findings!) {
+            const arr = grouped.get(f.id) || [];
+            arr.push(f);
+            grouped.set(f.id, arr);
+          }
+
+          return (
+            <ul className="divide-y divide-zinc-800">
+              {Array.from(grouped.values()).map((group, i) => {
+                const first = group[0];
+                return (
+                  <li
+                    key={i}
+                    className="border-b border-zinc-800 bg-zinc-900/50 p-5 last:border-0"
+                  >
+                    <div className="flex flex-col gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span
+                          className={`rounded px-2 py-1 text-xs font-bold uppercase ${severityBadgeClass(first.severity)}`}
+                        >
+                          {first.severity}
+                        </span>
+                        <span className="font-semibold text-zinc-100">
+                          {first.title} {group.length > 1 && <span className="ml-1 text-zinc-400">×{group.length}</span>}
+                        </span>
+                      </div>
+
+                      {/* Render dynamic descriptions as a neat list if multiple, else a single paragraph */}
+                      {group.length === 1 ? (
+                        <p className="text-sm text-zinc-500">{first.description}</p>
+                      ) : (
+                        <ul className="list-disc pl-5 text-sm text-zinc-500 space-y-1">
+                          {group.map((f, j) => (
+                            <li key={j}>{f.description}</li>
+                          ))}
+                        </ul>
+                      )}
+
+                      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 mt-1">
+                        <span>
+                          Rule: <code className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400">{first.id}</code>
+                        </span>
+                        {first.recommendation && (
+                          <span>
+                            Recommendation: {first.recommendation}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        })()}
       </section>
 
       {/* Badge */}
