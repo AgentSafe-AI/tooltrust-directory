@@ -86,7 +86,7 @@ type TTFinding struct {
 	Title          string `json:"title"`
 	Description    string `json:"description"`
 	Recommendation string `json:"recommendation"`
-	Location       string `json:"location,omitempty"`
+	ToolName       string `json:"tool_name,omitempty"`
 }
 
 type TTSummary struct {
@@ -310,7 +310,7 @@ func toTTFinding(f ASFinding, toolName string) TTFinding {
 		Title:          title,
 		Description:    desc,
 		Recommendation: recommendation,
-		Location:       toolName,
+		ToolName:       toolName,
 	}
 }
 

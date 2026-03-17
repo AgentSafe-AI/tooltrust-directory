@@ -11,21 +11,23 @@
   "license": "MIT",
   "stars": 12400,
   "language": "TypeScript",
-  "description": "MCP server for GitHub API integration \u2014 repository management, file operations, and search.",
+  "description": "MCP server for GitHub API integration — repository management, file operations, and search.",
   "findings": [
     {
       "id": "AS-005",
       "severity": "High",
       "title": "Privilege Escalation",
       "description": "The server requests a GitHub personal access token with repo scope (full read/write). Most use cases only require repo:read or specific sub-scopes, creating unnecessary privilege.",
-      "recommendation": "Restrict OAuth/token scopes to the minimum necessary. Remove admin, :write wildcards and validate at startup that the provided token does not exceed declared scope."
+      "recommendation": "Restrict OAuth/token scopes to the minimum necessary. Remove admin, :write wildcards and validate at startup that the provided token does not exceed declared scope.",
+      "tool_name": "mcp-server-github"
     },
     {
       "id": "AS-011",
       "severity": "Low",
-      "title": "DoS Resilience \u2014 Missing Rate Limit / Timeout",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "The tool does not gracefully handle GitHub API rate-limit responses (HTTP 429), which can cause agents to enter busy-retry loops.",
-      "recommendation": "Implement exponential back-off and surface rate-limit state to the calling agent."
+      "recommendation": "Implement exponential back-off and surface rate-limit state to the calling agent.",
+      "tool_name": "mcp-server-github"
     }
   ],
   "summary": {
