@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 321 |
 | **Language** | Python |
 | **Source** | [mssql-mcp-server](https://github.com/RichardHan/mssql_mcp_server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

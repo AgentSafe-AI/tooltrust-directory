@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 11653 |
 | **Language** | Python |
 | **Source** | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

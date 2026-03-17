@@ -6,10 +6,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.0` |
 | **Vendor** | hashicorp |
-| **Stars** | ⭐ 35 |
+| **Stars** | ⭐ 37 |
 | **Language** | Go |
 | **Source** | [vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

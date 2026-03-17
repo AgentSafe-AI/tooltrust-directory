@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 52 |
 | **Language** | Go |
 | **Source** | [last9-mcp-server](https://github.com/last9/last9-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `6.5.0` |
 | **Vendor** | sansan0 |
-| **Stars** | ⭐ 49017 |
+| **Stars** | ⭐ 49102 |
 | **Language** | Python |
 | **Source** | [trendradar](https://github.com/sansan0/TrendRadar) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

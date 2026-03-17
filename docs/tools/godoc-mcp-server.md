@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 34 |
 | **Language** | Go |
 | **Source** | [godoc-mcp-server](https://github.com/yikakia/godoc-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

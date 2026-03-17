@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | oraios |
-| **Stars** | ⭐ 21565 |
+| **Stars** | ⭐ 21618 |
 | **Language** | Python |
 | **Source** | [serena](https://github.com/oraios/serena) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

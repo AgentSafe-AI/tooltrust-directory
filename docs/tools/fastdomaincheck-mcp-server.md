@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 36 |
 | **Language** | Go |
 | **Source** | [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

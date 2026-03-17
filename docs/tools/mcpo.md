@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.20` |
 | **Vendor** | open-webui |
-| **Stars** | ⭐ 4060 |
+| **Stars** | ⭐ 4063 |
 | **Language** | Python |
 | **Source** | [mcpo](https://github.com/open-webui/mcpo) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

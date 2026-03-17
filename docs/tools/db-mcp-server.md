@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 354 |
 | **Language** | Go |
 | **Source** | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) |
-| **Scan Date** | 2026-03-16 |
+| **Scan Date** | 2026-03-17 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
