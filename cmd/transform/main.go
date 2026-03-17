@@ -86,6 +86,7 @@ type TTFinding struct {
 	Title          string `json:"title"`
 	Description    string `json:"description"`
 	Recommendation string `json:"recommendation"`
+	Location       string `json:"location,omitempty"`
 }
 
 type TTSummary struct {
@@ -223,7 +224,7 @@ func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, 
 			maxScore = policy.Score.RiskScore
 		}
 		for _, f := range policy.Score.Findings {
-			ttf := toTTFinding(f)
+			ttf := toTTFinding(f, policy.ToolName)
 			allFindings = append(allFindings, ttf)
 			switch strings.ToLower(ttf.Severity) {
 			case "critical":
@@ -288,7 +289,7 @@ func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, 
 
 // toTTFinding maps an ToolTrust Scanner finding to the ToolTrust TTFinding shape,
 // enriching it with our canonical title and recommendation.
-func toTTFinding(f ASFinding) TTFinding {
+func toTTFinding(f ASFinding, toolName string) TTFinding {
 	meta, known := rules[f.RuleID]
 
 	title := f.Code
@@ -309,6 +310,7 @@ func toTTFinding(f ASFinding) TTFinding {
 		Title:          title,
 		Description:    desc,
 		Recommendation: recommendation,
+		Location:       toolName,
 	}
 }
 

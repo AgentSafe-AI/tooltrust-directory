@@ -7,6 +7,7 @@ export interface Finding {
   title: string;
   description: string;
   recommendation: string;
+  location?: string;
 }
 
 export interface Summary {

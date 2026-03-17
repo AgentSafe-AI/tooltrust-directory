@@ -56,6 +56,7 @@ type Finding struct {
 	Title          string `json:"title"`
 	Description    string `json:"description"`
 	Recommendation string `json:"recommendation"`
+	Location       string `json:"location,omitempty"`
 }
 
 var badgeCountRe = regexp.MustCompile(

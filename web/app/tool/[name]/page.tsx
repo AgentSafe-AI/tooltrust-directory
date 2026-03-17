@@ -191,11 +191,17 @@ export default async function ToolPage({ params }: PageProps) {
 
                       {/* Render dynamic descriptions as a neat list if multiple, else a single paragraph */}
                       {group.length === 1 ? (
-                        <p className="text-sm text-zinc-500">{first.description}</p>
+                        <p className="text-sm text-zinc-500">
+                          {first.location && <span className="font-mono text-zinc-300 mr-2">{first.location}:</span>}
+                          {first.description}
+                        </p>
                       ) : (
                         <ul className="list-disc pl-5 text-sm text-zinc-500 space-y-1">
                           {group.map((f, j) => (
-                            <li key={j}>{f.description}</li>
+                            <li key={j}>
+                              {f.location && <span className="font-mono text-zinc-300 mr-2">{f.location}:</span>}
+                              {f.description}
+                            </li>
                           ))}
                         </ul>
                       )}
