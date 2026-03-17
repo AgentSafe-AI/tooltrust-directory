@@ -275,15 +275,26 @@ func formatStars(n int) string {
 }
 
 // findingEmoji returns an emoji prefix by rule category for README display.
-// Emoji always precedes text for consistent alignment. AS-004 → 📦, AS-001 → 🚨, AS-002 → ⚠️.
 func findingEmoji(id string) string {
 	switch id {
+	case "AS-001":
+		return "🛡️"
+	case "AS-002":
+		return "🔑"
+	case "AS-003":
+		return "📐"
 	case "AS-004":
 		return "📦"
-	case "AS-001":
-		return "🚨"
-	case "AS-002":
-		return "⚠️"
+	case "AS-005":
+		return "🔓"
+	case "AS-006":
+		return "⚡"
+	case "AS-007":
+		return "ℹ️"
+	case "AS-010":
+		return "🗝️"
+	case "AS-011":
+		return "⚡"
 	default:
 		return ""
 	}
