@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 

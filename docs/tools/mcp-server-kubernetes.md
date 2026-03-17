@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
@@ -40,7 +40,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
@@ -52,7 +52,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟡 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
@@ -64,7 +64,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
 
@@ -76,7 +76,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
 
@@ -88,7 +88,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
 
@@ -100,7 +100,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟠 `AS-003` — Scope Mismatch
+### 🟠 📐 `AS-003` — Scope Mismatch
 
 **Severity:** High
 
@@ -112,7 +112,7 @@ Ensure tool names, descriptions, and permission declarations are internally cons
 
 ---
 
-### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
 
@@ -124,7 +124,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-### 🟠 ⚠️ `AS-002` — Excessive Permission Surface
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
 
@@ -136,7 +136,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
 

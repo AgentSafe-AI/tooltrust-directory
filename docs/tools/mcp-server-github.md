@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🟠 `AS-005` — Privilege Escalation
+### 🟠 🔓 `AS-005` — Privilege Escalation
 
 **Severity:** High
 
@@ -40,7 +40,7 @@ Restrict OAuth/token scopes to the minimum necessary. Remove admin, :write wildc
 
 ---
 
-### 🔵 `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
 

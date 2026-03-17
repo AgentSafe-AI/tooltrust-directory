@@ -28,7 +28,7 @@
 
 ## Detailed Findings
 
-### 🔵 `AS-010` — API Key in Environment Variable
+### 🔵 🗝️ `AS-010` — API Key in Environment Variable
 
 **Severity:** Low
 

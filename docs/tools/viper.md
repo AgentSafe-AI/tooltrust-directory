@@ -27,7 +27,7 @@
 
 ## Detailed Findings
 
-### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
@@ -39,7 +39,7 @@ Review and remediate the identified issue.
 
 ---
 
-### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
@@ -51,7 +51,7 @@ Review and remediate the identified issue.
 
 ---
 
-### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
@@ -63,7 +63,7 @@ Review and remediate the identified issue.
 
 ---
 
-### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
@@ -75,7 +75,7 @@ Review and remediate the identified issue.
 
 ---
 
-### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
@@ -87,7 +87,7 @@ Review and remediate the identified issue.
 
 ---
 
-### ⚪ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
