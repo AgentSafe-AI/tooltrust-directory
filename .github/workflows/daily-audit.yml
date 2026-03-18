@@ -9,7 +9,7 @@ on:
       force_rescan:
         description: 'Ignore existing versions and re-scan all discovered tools'
         required: false
-        default: 'false'
+        default: 'true'
 
 permissions:
   contents: write
@@ -286,6 +286,7 @@ jobs:
   publish:
     name: Publish Results & Update Registry
     needs: scan
+    if: ${{ !cancelled() && needs.scan.result != 'failure' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -302,6 +303,7 @@ jobs:
 
       - name: Download scan results
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: scan-results
           path: ${{ env.REPORTS_DIR }}/
