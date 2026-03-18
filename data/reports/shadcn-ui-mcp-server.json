@@ -2,21 +2,30 @@
   "tool_id": "shadcn-ui-mcp-server",
   "version": "2.0.0",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-03-18T05:02:31.614008601Z",
+  "risk_score": 8,
+  "scan_date": "2026-03-18T05:23:40.041516406Z",
   "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/Jpisnice/shadcn-ui-mcp-server",
   "category": "Developer Tools",
   "vendor": "Jpisnice",
-  "stars": 2704,
+  "stars": 2705,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A mcp server to allow LLMS gain context about shadcn ui component structure,usage and installation,compaitable with react,svelte 5,vue \u0026 React Native",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "get_directory_structure"
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
+    "medium": 1,
     "low": 0,
     "info": 0
   },

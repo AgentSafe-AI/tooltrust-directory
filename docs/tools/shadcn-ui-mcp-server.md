@@ -5,10 +5,10 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Risk Score** | 8 |
 | **Version** | `2.0.0` |
 | **Vendor** | Jpisnice |
-| **Stars** | ⭐ 2704 |
+| **Stars** | ⭐ 2705 |
 | **Language** | TypeScript |
 | **Source** | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) |
 | **Scan Date** | 2026-03-18 |
@@ -22,10 +22,22 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 0 |
 
-No findings. ✅
+## Detailed Findings
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/shadcn-ui-mcp-server.json)*

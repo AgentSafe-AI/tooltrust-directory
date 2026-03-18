@@ -26,7 +26,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.5k | **[B](./docs/tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 18 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.2k | **[A](./docs/tools/trendradar.md)** | ✅ None | Mar 18 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.2` | 30.8k | **[A](./docs/tools/scrapling.md)** | ✅ None | Mar 18 |
-| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 29.9k | **[A](./docs/tools/chrome-devtools-mcp.md)** | ✅ None | Mar 18 |
+| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 29.9k | **[C](./docs/tools/chrome-devtools-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Mar 18 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 29.1k | **[A](./docs/tools/playwright-mcp.md)** | ✅ None | Mar 18 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.9k | **[A](./docs/tools/ui-tars-desktop.md)** | ✅ None | Mar 18 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 28.0k | **[A](./docs/tools/github-mcp-server.md)** | ✅ None | Mar 18 |
@@ -36,7 +36,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.15` | 21.5k | **[A](./docs/tools/ruflo.md)** | ✅ None | Mar 18 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.3` | 21.3k | **[A](./docs/tools/activepieces.md)** | ✅ None | Mar 18 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.4k | **[A](./docs/tools/maxkb.md)** | ✅ None | Mar 18 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.37.3` | 15.3k | **[A](./docs/tools/n8n-mcp.md)** | ✅ None | Mar 18 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.37.3` | 15.3k | **[C](./docs/tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 18 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.3` | 14.1k | **[A](./docs/tools/trigger-dev.md)** | ✅ None | Mar 18 |
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `0.6.2` | 12.4k | **[A](./docs/tools/mcp-server-brave-search.md)** | 🗝️ `AS-010` | Mar 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.0.0` | 12.4k | **[B](./docs/tools/mcp-server-github.md)** | 🔓 `AS-005`, ⚡ `AS-011` | Mar 1 |
@@ -65,7 +65,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.3k | **[A](./docs/tools/enscan-go.md)** | ✅ None | Mar 18 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.1k | **[A](./docs/tools/mcpo.md)** | ✅ None | Mar 18 |
 | [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[B](./docs/tools/kubefwd.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` | Mar 18 |
-| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[A](./docs/tools/notion-mcp-server.md)** | ✅ None | Mar 18 |
+| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[C](./docs/tools/notion-mcp-server.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×22 | Mar 18 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.8k | **[B](./docs/tools/mcp-server-chart.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 18 |
 | [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.1` | 3.7k | **[A](./docs/tools/fast-agent.md)** | ✅ None | Mar 18 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.6k | **[A](./docs/tools/pptagent.md)** | ✅ None | Mar 18 |

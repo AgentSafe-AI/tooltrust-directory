@@ -1,9 +1,9 @@
 {
   "tool_id": "puppeteer-mcp-server",
   "version": "0.7.2",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-03-18T05:02:54.408095273Z",
+  "grade": "C",
+  "risk_score": 42,
+  "scan_date": "2026-03-18T05:26:51.670801491Z",
   "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/merajmehrabi/puppeteer-mcp-server",
   "category": "Developer Tools",
@@ -12,12 +12,69 @@
   "license": "MIT",
   "language": "TypeScript",
   "description": "This MCP server provides browser automation capabilities through Puppeteer, allowing interaction with both new browser instances and existing Chrome windows.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "puppeteer_connect_active_tab"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "puppeteer_connect_active_tab"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "puppeteer_navigate"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "puppeteer_navigate"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "puppeteer_evaluate"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval.",
+      "tool_name": "puppeteer_evaluate"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "puppeteer_evaluate"
+    }
+  ],
   "summary": {
-    "critical": 0,
-    "high": 0,
+    "critical": 1,
+    "high": 3,
     "medium": 0,
-    "low": 0,
+    "low": 3,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"

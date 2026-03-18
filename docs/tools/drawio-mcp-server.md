@@ -5,7 +5,7 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Risk Score** | 8 |
 | **Version** | `1.8.0` |
 | **Vendor** | lgazo |
 | **Stars** | ⭐ 1049 |
@@ -22,10 +22,34 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
+| Medium   | 2 |
 | Low      | 0 |
 | Info     | 0 |
 
-No findings. ✅
+## Detailed Findings
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/drawio-mcp-server.json)*
