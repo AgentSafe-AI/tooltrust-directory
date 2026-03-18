@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [aqara-mcp-server](https://github.com/aqara/aqara-mcp-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scanner** | tooltrust-scanner/unknown |
 
 ---
 

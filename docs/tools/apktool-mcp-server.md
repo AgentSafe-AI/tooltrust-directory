@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `3.0.0` |
 | **Vendor** | zinja-coder |
-| **Stars** | ⭐ 323 |
+| **Stars** | ⭐ 324 |
 | **Language** | Python |
 | **Source** | [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scanner** | tooltrust-scanner/unknown |
 
 ---
 

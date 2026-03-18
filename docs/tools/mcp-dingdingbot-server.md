@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [mcp-dingdingbot-server](https://github.com/HundunOnline/mcp-dingdingbot-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scanner** | tooltrust-scanner/unknown |
 
 ---
 

@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scanner** | tooltrust-scanner/unknown |
 
 ---
 

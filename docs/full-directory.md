@@ -99,7 +99,7 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) | `1.8.0` | 354 | **[B](tools/db-mcp-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4 | Mar 17 |
 | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | `mcp-server…` | 347 | **[C](tools/mcp-server-azure-devops.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×5, 📐 `AS-003` ×2 | Mar 17 |
 | [vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) | `0.4.0` | 339 | **[A](tools/vscode-mcp-server.md)** | ✅ None | Mar 18 |
-| [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) | `3.0.0` | 323 | **[A](tools/apktool-mcp-server.md)** | ✅ None | Mar 18 |
+| [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) | `3.0.0` | 324 | **[A](tools/apktool-mcp-server.md)** | ✅ None | Mar 18 |
 | [mssql-mcp-server](https://github.com/RichardHan/mssql_mcp_server) | `0.1.0` | 321 | **[A](tools/mssql-mcp-server.md)** | ✅ None | Mar 17 |
 | [mcp-server](https://github.com/mapbox/mcp-server) | `0.9.0` | 316 | **[C](tools/mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, 📐 `AS-003` ×2 | Mar 17 |
 | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.2` | 315 | **[A](tools/codex-mcp-server.md)** | ✅ None | Mar 17 |

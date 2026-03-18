@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.4` |
 | **Vendor** | LaurieWired |
-| **Stars** | ⭐ 7948 |
+| **Stars** | ⭐ 7949 |
 | **Language** | Java |
 | **Source** | [ghidramcp](https://github.com/LaurieWired/GhidraMCP) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scanner** | tooltrust-scanner/unknown |
 
 ---
 
