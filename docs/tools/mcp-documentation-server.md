@@ -1,18 +1,18 @@
-# 🟠 mcp-documentation-server
+# 🟡 mcp-documentation-server
 
 > MCP Documentation Server - Bridge the AI Knowledge Gap.  ✨ Features: Document management • Gemini integration • AI-powered semantic search • File uploads • Smart chunking • Multilingual support • Zero-setup  🎯 Perfect for: New frameworks • API docs • Internal guides 
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `1.13.0` |
 | **Vendor** | andrea9293 |
 | **Stars** | ⭐ 293 |
 | **Language** | TypeScript |
 | **Source** | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) |
-| **Scan Date** | 2026-03-17 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scan Date** | 2026-03-18 |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
@@ -21,7 +21,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 6 |
+| High     | 3 |
 | Medium   | 4 |
 | Low      | 3 |
 | Info     | 13 |
@@ -33,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'add_document' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -57,7 +57,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'delete_document' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -69,7 +69,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'get_context_window' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -81,7 +81,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'get_document' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -93,7 +93,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'get_performance_stats' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -105,43 +105,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'get_ui_url' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -165,7 +129,19 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'get_uploads_path' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'list_documents' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -189,7 +165,31 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'list_uploads_files' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'process_uploads' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -208,24 +208,12 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "search_all_documents" implies read-only operation but declares network permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
-
----
-
 ### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'search_all_documents' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -256,24 +244,12 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "search_documents" implies read-only operation but declares network permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
-
----
-
 ### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'search_documents' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -304,24 +280,12 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 
 ---
 
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "search_documents_with_ai" implies read-only operation but declares network permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
-
----
-
 ### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'search_documents_with_ai' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.

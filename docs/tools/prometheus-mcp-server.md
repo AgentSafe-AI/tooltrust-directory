@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.6.0` |
 | **Vendor** | pab1it0 |
-| **Stars** | ⭐ 382 |
+| **Stars** | ⭐ 383 |
 | **Language** | Python |
 | **Source** | [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) |
-| **Scan Date** | 2026-03-17 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scan Date** | 2026-03-18 |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
@@ -33,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'admin' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -45,7 +45,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'testuser' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -57,7 +57,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'user' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.

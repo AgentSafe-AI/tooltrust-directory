@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `4.4.3` |
 | **Vendor** | triggerdotdev |
-| **Stars** | ⭐ 14052 |
+| **Stars** | ⭐ 14064 |
 | **Language** | TypeScript |
 | **Source** | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) |
-| **Scan Date** | 2026-03-17 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scan Date** | 2026-03-18 |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
@@ -117,7 +117,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'ANOTHER_SECRET' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -129,7 +129,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'AbortTaskRunError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -141,7 +141,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Alice' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -153,7 +153,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Amber' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -177,7 +177,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'ApiClientMissingError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -201,7 +201,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'AttemptTimeout' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -213,7 +213,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'AudioWaveformExtension' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -225,7 +225,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'BRANCH' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -237,7 +237,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'BatchNotSealedError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -249,7 +249,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'BatchRateLimitExceededError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -261,7 +261,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'BatchTriggerError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -273,7 +273,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Blue' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -285,7 +285,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Bob' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -297,7 +297,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'BuildError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -309,7 +309,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Bun' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -321,7 +321,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'CANCEL_CHECKPOINT' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -333,7 +333,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'COORDINATOR_HOST' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -345,7 +345,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'COORDINATOR_PORT' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -357,103 +357,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'COUNT' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -477,7 +381,79 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'CREATE_TASK_RUN_ATTEMPT' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'CancelledProcessError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'ChaosMonkeyError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'CheckpointMessagePresentError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'CleanupProcessError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'CompleteTaskWithOutput' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'Continue' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -501,55 +477,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Create' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -573,7 +501,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'CreateDeclarativeScheduleError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -585,7 +513,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Cyan' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -597,7 +525,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'DATABASE_URL_UNPOOLED' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -609,7 +537,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'DEBUG' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -621,7 +549,31 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'DYNAMIC_CONFIG' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'Deleted' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -633,7 +585,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'DeploymentError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -645,7 +597,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Doe' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -657,7 +609,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'ESTIMATE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -669,7 +621,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Emerald' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -681,7 +633,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Error' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -693,7 +645,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'ExceededProjectLimitError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -705,7 +657,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'ExecutionAbortError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -717,7 +669,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'FinalizeError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -729,7 +681,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Fuchsia' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -741,7 +693,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Gold' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -753,7 +705,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'GracefulExitTimeoutError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -765,7 +717,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Green' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -777,7 +729,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'HMAC' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -789,7 +741,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'HTTP_SERVER_PORT' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -801,7 +753,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'INDEXING_FAILED' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -813,7 +765,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'INDEX_TASKS' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -825,7 +777,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'Indigo' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -837,7 +789,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'InputStreamTimeoutError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -849,7 +801,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'InstallPlaywrightChromium' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -861,7 +813,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'JSONExtract' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -873,7 +825,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'JSONExtractArrayRaw' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -885,7 +837,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'JSONExtractBool' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -897,7 +849,55 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'JSONExtractFloat' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'JSONExtractInt' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'JSONExtractKeys' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'JSONExtractKeysAndValues' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'JSONExtractRaw' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.

@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [mcp-android-adb-server](https://github.com/github-hewei/mcp-android-adb-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/unknown |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 

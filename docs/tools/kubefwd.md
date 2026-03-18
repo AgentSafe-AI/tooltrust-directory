@@ -1,18 +1,18 @@
-# 🟠 kubefwd
+# 🟡 kubefwd
 
 > Bulk port forwarding Kubernetes services for local development.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 34 |
+| **Grade** | **B** |
+| **Risk Score** | 19 |
 | **Version** | `1.25.12` |
 | **Vendor** | txn2 |
-| **Stars** | ⭐ 4067 |
+| **Stars** | ⭐ 4066 |
 | **Language** | Go |
 | **Source** | [kubefwd](https://github.com/txn2/kubefwd) |
-| **Scan Date** | 2026-03-17 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scan Date** | 2026-03-18 |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
@@ -21,7 +21,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 2 |
 | Low      | 2 |
 | Info     | 0 |
@@ -73,18 +73,6 @@ tool declares http permission
 
 **Recommendation:**
 Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
-
----
-
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "get_http_traffic" implies read-only operation but declares network permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
 
 ---
 

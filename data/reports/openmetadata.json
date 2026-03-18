@@ -1,14 +1,14 @@
 {
   "tool_id": "openmetadata",
   "version": "1.12.1-release",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-03-17T04:25:51.780141688Z",
-  "scanner": "tooltrust-scanner/0.1.4",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-18T04:39:42.533026509Z",
+  "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/open-metadata/OpenMetadata",
   "category": "Developer Tools",
   "vendor": "open-metadata",
-  "stars": 8944,
+  "stars": 8955,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.",
@@ -19,7 +19,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "openmetadata"
+      "tool_name": "create-greeting"
     },
     {
       "id": "AS-002",
@@ -27,15 +27,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "openmetadata"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"search_metadata\" implies read-only operation but declares network permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "openmetadata"
+      "tool_name": "search_metadata"
     },
     {
       "id": "AS-011",
@@ -43,12 +35,12 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openmetadata"
+      "tool_name": "search_metadata"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 1,
     "low": 1,
     "info": 0

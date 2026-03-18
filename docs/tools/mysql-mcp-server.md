@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.2` |
 | **Vendor** | designcomputer |
-| **Stars** | ⭐ 1164 |
+| **Stars** | ⭐ 1166 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) |
-| **Scan Date** | 2026-03-17 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scan Date** | 2026-03-18 |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
@@ -33,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'execute_sql' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.

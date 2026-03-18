@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.20` |
 | **Vendor** | open-webui |
-| **Stars** | ⭐ 4063 |
+| **Stars** | ⭐ 4066 |
 | **Language** | Python |
 | **Source** | [mcpo](https://github.com/open-webui/mcpo) |
-| **Scan Date** | 2026-03-17 |
-| **Scanner** | tooltrust-scanner/0.1.4 |
+| **Scan Date** | 2026-03-18 |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
@@ -33,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-tool has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'cache_test_obj1_model' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.

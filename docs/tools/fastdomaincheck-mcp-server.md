@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/unknown |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 

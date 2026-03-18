@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/unknown |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 

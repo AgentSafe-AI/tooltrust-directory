@@ -1,14 +1,14 @@
 {
   "tool_id": "linkedin-mcp-server",
   "version": "4.4.1",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-03-17T04:28:49.606656638Z",
-  "scanner": "tooltrust-scanner/0.1.4",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-18T04:40:41.46642805Z",
+  "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/stickerdaniel/linkedin-mcp-server",
   "category": "Developer Tools",
   "vendor": "stickerdaniel",
-  "stars": 1056,
+  "stars": 1061,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles, companies and jobs, and perform job searches.",
@@ -19,7 +19,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "linkedin-mcp-server"
+      "tool_name": "get_person_profile"
     },
     {
       "id": "AS-002",
@@ -27,15 +27,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "linkedin-mcp-server"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"search_jobs\" implies read-only operation but declares network permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "linkedin-mcp-server"
+      "tool_name": "search_jobs"
     },
     {
       "id": "AS-011",
@@ -43,7 +35,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "linkedin-mcp-server"
+      "tool_name": "search_jobs"
     },
     {
       "id": "AS-002",
@@ -51,15 +43,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "linkedin-mcp-server"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"search_people\" implies read-only operation but declares network permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "linkedin-mcp-server"
+      "tool_name": "search_people"
     },
     {
       "id": "AS-011",
@@ -67,12 +51,12 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "linkedin-mcp-server"
+      "tool_name": "search_people"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 2,
     "medium": 1,
     "low": 2,
     "info": 0

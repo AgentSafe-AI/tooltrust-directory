@@ -1,14 +1,14 @@
 {
   "tool_id": "mcp-server-kubernetes",
   "version": "3.3.0",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-03-17T04:28:08.157723036Z",
-  "scanner": "tooltrust-scanner/0.1.4",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-18T04:40:34.739706355Z",
+  "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/Flux159/mcp-server-kubernetes",
   "category": "Developer Tools",
   "vendor": "Flux159",
-  "stars": 1353,
+  "stars": 1355,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP Server for kubernetes management commands",
@@ -19,7 +19,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "kubectl_apply"
     },
     {
       "id": "AS-002",
@@ -27,7 +27,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "kubectl_delete"
     },
     {
       "id": "AS-002",
@@ -35,7 +35,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "kubectl_create"
     },
     {
       "id": "AS-002",
@@ -43,7 +43,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "kubectl_generic"
     },
     {
       "id": "AS-011",
@@ -51,7 +51,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "kubectl_generic"
     },
     {
       "id": "AS-002",
@@ -59,15 +59,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "mcp-server-kubernetes"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"list_api_resources\" implies read-only operation but declares network permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "list_api_resources"
     },
     {
       "id": "AS-011",
@@ -75,7 +67,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "list_api_resources"
     },
     {
       "id": "AS-002",
@@ -83,7 +75,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "exec_in_pod"
     },
     {
       "id": "AS-011",
@@ -91,12 +83,12 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "mcp-server-kubernetes"
+      "tool_name": "exec_in_pod"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 3,
     "medium": 3,
     "low": 3,
     "info": 0

@@ -1,11 +1,17 @@
 {
   "tool_id": "n8n",
-  "version": "2.11.4",
+  "version": "n8n@2.12.2",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-03-17T21:35:15.146235Z",
-  "scanner": "tooltrust-scanner/0.1.4",
+  "scan_date": "2026-03-18T04:38:15.49920564Z",
+  "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/n8n-io/n8n",
+  "category": "Developer Tools",
+  "vendor": "n8n-io",
+  "stars": 179705,
+  "license": "NOASSERTION",
+  "language": "TypeScript",
+  "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
   "findings": [
     {
       "id": "AS-002",
@@ -13,7 +19,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "execute_workflow"
+      "tool_name": "empty"
     },
     {
       "id": "AS-011",
@@ -21,15 +27,551 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "execute_workflow"
+      "tool_name": "empty"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "geographic_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "geographic_search"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AAAA' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AAAA"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AAC' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AAC"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ABC' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ABC"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ACH' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ACH"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ACL' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ACL"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ACSS' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ACSS"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AES256' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AES256"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AGE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AGE"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AIM' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AIM"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AINode' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AINode"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ALICE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ALICE"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ALL' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ALL"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AMQP' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AMQP"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AND' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AND"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ANOTHER_FEATURE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ANOTHER_FEATURE"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ANY' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ANY"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AN_AI_NODE_TYPE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AN_AI_NODE_TYPE"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AN_NOT_AI_NODE_TYPE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AN_NOT_AI_NODE_TYPE"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'APAccountRef' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "APAccountRef"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "API"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'API' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "API"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "API"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "tool_name": "API_KEY"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'API_KEY' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "API_KEY"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "API_KEY"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'APPLE' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "APPLE"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ARS' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ARS"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ASC' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ASC"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ASCII' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ASCII"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AUD' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AUD"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AUTHORIZATION' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AUTHORIZATION"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AWS' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AWS"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Abandoned' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Abandoned"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Abc' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Abc"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Abe' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Abe"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Abkhazian' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Abkhazian"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Able' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Able"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AbortError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AbortError"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'About' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "About"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AbsXPath' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AbsXPath"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Absolute' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Absolute"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accent' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accent"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accept' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accept"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Access' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Access"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AccessToken' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AccessToken"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AccessTokenNotFoundError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AccessTokenNotFoundError"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accessory' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accessory"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Account' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Account"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AccountSource' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AccountSource"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Account_Name' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Account_Name"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Account_Number' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Account_Number"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Account_Site' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Account_Site"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Account_Type' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Account_Type"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accountant' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accountant"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accounting' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accounting"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'AcctNum' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AcctNum"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accumulator' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accumulator"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accuracy' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accuracy"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Accurate' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Accurate"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Acknowledged' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Acknowledged"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Acknowledgers' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Acknowledgers"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Acks' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Acks"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Action' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Action"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'ActionType' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ActionType"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 1,
-    "info": 0
+    "high": 4,
+    "medium": 1,
+    "low": 4,
+    "info": 60
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
 }

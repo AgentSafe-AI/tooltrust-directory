@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/unknown |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 

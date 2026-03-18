@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [mcp-wecombot-server](https://github.com/gotoolkits/mcp-wecombot-server) |
 | **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/unknown |
+| **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
 
