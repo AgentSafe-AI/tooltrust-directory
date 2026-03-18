@@ -97,16 +97,24 @@ jobs:
       # https://github.com/AgentSafe-AI/tooltrust-scanner
       - name: Build ToolTrust Scanner from source
         run: |
+          # Resolve the latest published release tag before cloning
+          SCANNER_TAG=$(curl -sf \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/AgentSafe-AI/tooltrust-scanner/releases/latest" \
+            | jq -r '.tag_name')
+          if [ -z "$SCANNER_TAG" ] || [ "$SCANNER_TAG" = "null" ]; then
+            SCANNER_TAG="unknown"
+          fi
+          echo "SCANNER_VERSION=${SCANNER_TAG}" >> "$GITHUB_ENV"
+          echo "Scanner version: ${SCANNER_TAG}"
+
           git clone --depth 1 https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
-          # Must cd into the cloned repo so go build resolves within its own module
           cd /tmp/tooltrust-scanner
-          ENTRY=$(find cmd -maxdepth 1 -mindepth 1 -type d | head -1)
-          echo "Building entry-point: ./$ENTRY"
-          go build -o /usr/local/bin/tooltrust-scanner "./$ENTRY"
+          go build \
+            -ldflags "-X main.version=${SCANNER_TAG}" \
+            -o /usr/local/bin/tooltrust-scanner \
+            ./cmd/tooltrust-scanner
           tooltrust-scanner version
-          # Capture version for use in transform step (strips binary name prefix)
-          SCANNER_VER=$(tooltrust-scanner version | awk '{print $NF}')
-          echo "SCANNER_VERSION=${SCANNER_VER}" >> "$GITHUB_ENV"
 
       - name: Scan each pending tool
         run: |
