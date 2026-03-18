@@ -146,7 +146,6 @@ var rules = map[string]ruleMeta{
 }
 
 const (
-	scannerVersion = "tooltrust-scanner/0.1.4"
 	methodologyURL = "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
 )
 
@@ -163,6 +162,7 @@ func main() {
 	category := flag.String("category", "", "functional category, e.g. Developer Tools")
 	description := flag.String("description", "", "repository description")
 	osvFindings := flag.String("osv-findings", "", "path to AS-004 OSV findings JSON from cmd/analyze")
+	scannerVer := flag.String("scanner-version", "", "tooltrust-scanner version string (e.g. v1.0.6)")
 	flag.Parse()
 
 	if *inputPath == "" || *toolID == "" || *version == "" || *sourceURL == "" || *outputPath == "" {
@@ -195,8 +195,15 @@ func main() {
 		}
 	}
 
+	sv := *scannerVer
+	if sv == "" {
+		sv = "tooltrust-scanner/unknown"
+	} else if !strings.HasPrefix(sv, "tooltrust-scanner/") {
+		sv = "tooltrust-scanner/" + sv
+	}
+
 	report := transform(as, extraFindings, *toolID, *version, *sourceURL,
-		*vendor, *stars, *license, *language, *category, *description)
+		*vendor, *stars, *license, *language, *category, *description, sv)
 
 	out, err := json.MarshalIndent(report, "", "  ")
 	if err != nil {
@@ -214,7 +221,7 @@ func main() {
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description string) TrustReport {
+func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description, scannerVersion string) TrustReport {
 	allFindings := make([]TTFinding, 0)
 	maxScore := 0
 	summary := TTSummary{}

@@ -104,6 +104,9 @@ jobs:
           echo "Building entry-point: ./$ENTRY"
           go build -o /usr/local/bin/tooltrust-scanner "./$ENTRY"
           tooltrust-scanner version
+          # Capture version for use in transform step (strips binary name prefix)
+          SCANNER_VER=$(tooltrust-scanner version | awk '{print $NF}')
+          echo "SCANNER_VERSION=${SCANNER_VER}" >> "$GITHUB_ENV"
 
       - name: Scan each pending tool
         run: |
@@ -251,18 +254,19 @@ jobs:
 
             # ── Transform: merge Scanner + OSV → ToolTrust report ──────────────
             if ! go run ./cmd/transform \
-              --input        "$RAW_OUT"  \
-              --tool-id      "$TOOL_ID"  \
-              --version      "$VERSION"  \
-              --source       "$SOURCE"   \
-              --vendor       "$VENDOR"   \
-              --stars        "$STARS"    \
-              --license      "$LICENSE"  \
-              --language     "$LANGUAGE" \
-              --category     "$CATEGORY" \
-              --description  "$DESC"     \
-              --osv-findings "$OSV_OUT"  \
-              --output       "$OUT"; then
+              --input            "$RAW_OUT"             \
+              --tool-id          "$TOOL_ID"             \
+              --version          "$VERSION"             \
+              --source           "$SOURCE"              \
+              --vendor           "$VENDOR"              \
+              --stars            "$STARS"               \
+              --license          "$LICENSE"             \
+              --language         "$LANGUAGE"            \
+              --category         "$CATEGORY"            \
+              --description      "$DESC"                \
+              --osv-findings     "$OSV_OUT"             \
+              --scanner-version  "$SCANNER_VERSION"     \
+              --output           "$OUT"; then
               echo "SKIP: transform failed for $TOOL_ID"
             else
               echo "OK      : $OUT"
