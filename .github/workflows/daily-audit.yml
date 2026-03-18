@@ -199,19 +199,61 @@ jobs:
                 -name '*.json' 2>/dev/null | sort)
             fi
 
-            # Tier 3 (grep-based source extraction) intentionally removed:
-            # it produced false positives by picking up enum values, class names,
-            # and test constants as tool names, corrupting scan reports.
+            # ── Tier 3: live MCP server scan (no static manifest found) ──────────
+            # Source-code extraction (grep fallback) is intentionally absent:
+            # it produced false positives (enum values, class names, constants).
+            # If no manifest exists we attempt a real tools/list connection instead.
+            SCAN_OK=false
 
-            if [ -z "$TOOL_DEF" ]; then
-              echo "INFO    : no tool definitions found — AS-001/002/003/006 skipped (OSV-only report)"
-              echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
-            else
+            if [ -n "$TOOL_DEF" ]; then
               echo "Def     : $TOOL_DEF"
-              if ! tooltrust-scanner scan --protocol mcp --input "$TOOL_DEF" --output json --file "$RAW_OUT" --deep-scan; then
-                echo "WARN: ToolTrust Scanner scan failed — using OSV-only report"
-                echo '{"schema_version":"1.0","policies":[],"summary":{"total":0,"allowed":0,"require_approval":0,"blocked":0,"scanned_at":""}}' > "$RAW_OUT"
+              if tooltrust-scanner scan \
+                  --protocol mcp \
+                  --input "$TOOL_DEF" \
+                  --output json \
+                  --file "$RAW_OUT" \
+                  --deep-scan; then
+                SCAN_OK=true
+              else
+                echo "UNSCANNABLE: static scan failed for $TOOL_DEF"
               fi
+            else
+              # Detect npm package name from the cloned repo's package.json
+              NPM_PKG=""
+              for pkg_json in \
+                "$CLONE_DIR/package.json" \
+                "$CLONE_DIR/server/package.json" \
+                "$CLONE_DIR/src/package.json"; do
+                if [ -f "$pkg_json" ]; then
+                  CANDIDATE=$(jq -r '.name // empty' "$pkg_json" 2>/dev/null)
+                  if [ -n "$CANDIDATE" ] && [ "$CANDIDATE" != "null" ]; then
+                    NPM_PKG="$CANDIDATE"
+                    break
+                  fi
+                fi
+              done
+
+              if [ -n "$NPM_PKG" ]; then
+                echo "LIVE    : no static manifest — trying live scan: npx -y ${NPM_PKG}"
+                if tooltrust-scanner scan \
+                    --server "npx -y ${NPM_PKG}" \
+                    --output json \
+                    --file "$RAW_OUT"; then
+                  echo "LIVE    : live scan succeeded"
+                  SCAN_OK=true
+                else
+                  echo "UNSCANNABLE: live scan failed for ${NPM_PKG}"
+                fi
+              else
+                echo "UNSCANNABLE: no static manifest and no npm package detected"
+              fi
+            fi
+
+            # Fail fast — skip tools we cannot scan rather than emit a fake Grade A
+            if [ "$SCAN_OK" = "false" ]; then
+              echo "SKIP    : $TOOL_ID marked unscannable — no report generated"
+              rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
+              continue
             fi
 
             # ── Transform: merge Scanner + OSV → ToolTrust report ──────────────
