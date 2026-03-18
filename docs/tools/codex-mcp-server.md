@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.4.2` |
 | **Vendor** | tuannvm |
-| **Stars** | ⭐ 319 |
+| **Stars** | ⭐ 320 |
 | **Language** | TypeScript |
 | **Source** | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) |
 | **Scan Date** | 2026-03-18 |
@@ -24,56 +24,8 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 4 |
+| Info     | 0 |
 
-## Detailed Findings
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-Tool 'CommandExecutionError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-Tool 'ToolExecutionError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-Tool 'ValidationError' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
-
-**Severity:** Info
-
-**Description:**
-Tool 'codex' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
+No findings. ✅
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/codex-mcp-server.json)*

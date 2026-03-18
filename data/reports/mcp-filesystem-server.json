@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-filesystem-server",
   "version": "0.11.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-03-18T04:40:50.650179365Z",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-03-18T05:02:48.300408369Z",
   "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/mark3labs/mcp-filesystem-server",
   "category": "Developer Tools",
@@ -12,46 +12,13 @@
   "license": "MIT",
   "language": "Go",
   "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
-  "findings": [
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'read_file' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_file"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
-      "tool_name": "search_files"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'search_files' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_files"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_files"
-    }
-  ],
+  "findings": [],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 1,
-    "info": 2
+    "low": 0,
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
 }
