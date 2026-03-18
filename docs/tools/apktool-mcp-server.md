@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 323 |
 | **Language** | Python |
 | **Source** | [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) |
-| **Scan Date** | 2026-03-17 |
+| **Scan Date** | 2026-03-18 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

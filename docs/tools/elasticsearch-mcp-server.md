@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 256 |
 | **Language** | Python |
 | **Source** | [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) |
-| **Scan Date** | 2026-03-17 |
+| **Scan Date** | 2026-03-18 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---

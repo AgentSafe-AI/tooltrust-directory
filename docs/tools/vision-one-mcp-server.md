@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 27 |
 | **Language** | Go |
 | **Source** | [vision-one-mcp-server](https://github.com/trendmicro/vision-one-mcp-server) |
-| **Scan Date** | 2026-03-17 |
+| **Scan Date** | 2026-03-18 |
 | **Scanner** | tooltrust-scanner/0.1.4 |
 
 ---
