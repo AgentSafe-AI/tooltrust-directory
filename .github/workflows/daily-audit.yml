@@ -163,6 +163,14 @@ jobs:
             echo "AS-004  : $(jq 'length' "$OSV_OUT") CVE finding(s)"
 
             # ── ToolTrust Scanner: MCP tool-definition scan ───────────────────
+            # Helper: count the number of policy entries in a scanner output file.
+            # Returns 0 on any error so callers can treat it as a failed scan.
+            scan_tool_count() {
+              local f="$1"
+              [ -f "$f" ] || { echo 0; return; }
+              jq 'if .policies then (.policies | length) else 0 end' "$f" 2>/dev/null || echo 0
+            }
+
             TOOL_DEF=""
 
             # 1. Explicit manifest files — ordered most-specific first.
@@ -213,7 +221,13 @@ jobs:
                   --output json \
                   --file "$RAW_OUT" \
                   --deep-scan; then
-                SCAN_OK=true
+                STATIC_TOOL_COUNT=$(scan_tool_count "$RAW_OUT")
+                if [ "$STATIC_TOOL_COUNT" -gt 0 ]; then
+                  echo "STATIC  : scan succeeded ($STATIC_TOOL_COUNT tool(s))"
+                  SCAN_OK=true
+                else
+                  echo "UNSCANNABLE: static scan returned 0 tools for $TOOL_DEF — fake Grade A guard triggered"
+                fi
               else
                 echo "UNSCANNABLE: static scan failed for $TOOL_DEF"
               fi
@@ -234,18 +248,71 @@ jobs:
               done
 
               if [ -n "$NPM_PKG" ]; then
+                # ── Step 1: Live Scan ──────────────────────────────────────────
                 echo "LIVE    : no static manifest — trying live scan: npx -y ${NPM_PKG}"
                 if tooltrust-scanner scan \
                     --server "npx -y ${NPM_PKG}" \
                     --output json \
                     --file "$RAW_OUT"; then
-                  echo "LIVE    : live scan succeeded"
-                  SCAN_OK=true
+                  # ── Step 2: Check — exit 0 alone is not enough; must have ≥1 tool
+                  LIVE_TOOL_COUNT=$(scan_tool_count "$RAW_OUT")
+                  if [ "$LIVE_TOOL_COUNT" -gt 0 ]; then
+                    echo "LIVE    : live scan succeeded ($LIVE_TOOL_COUNT tool(s))"
+                    SCAN_OK=true
+                  else
+                    echo "LIVE    : live scan returned 0 tools — fake Grade A guard triggered, trying Smithery fallback"
+                  fi
                 else
-                  echo "UNSCANNABLE: live scan failed for ${NPM_PKG}"
+                  echo "LIVE    : live scan crashed (non-zero exit) — trying Smithery fallback"
                 fi
               else
                 echo "UNSCANNABLE: no static manifest and no npm package detected"
+              fi
+            fi
+
+            # ── Tier 3.5: Smithery registry fallback ─────────────────────────
+            # When both static manifest lookup and live npm scanning fail, query
+            # the Smithery registry for pre-indexed tool definitions.  Two probe
+            # candidates are tried: the npm package name (if detected) and the
+            # GitHub owner/repo slug.
+            if [ "$SCAN_OK" = "false" ]; then
+              SMITHERY_OUT="/tmp/${TOOL_ID}-smithery-tools.json"
+              SMITHERY_OK=false
+
+              for SMITHERY_PKG in "${NPM_PKG:-}" "${OWNER}/${REPO}"; do
+                [ -z "$SMITHERY_PKG" ] && continue
+                echo "SMITHERY: querying Smithery registry for \"${SMITHERY_PKG}\""
+                if go run ./cmd/smithery-fetch \
+                    --package "${SMITHERY_PKG}" \
+                    --output  "${SMITHERY_OUT}"; then
+                  # ── Step 3: Smithery scan — also guard against 0-tool output
+                  echo "SMITHERY: manifest fetched — running static scan"
+                  if tooltrust-scanner scan \
+                      --protocol mcp \
+                      --input    "${SMITHERY_OUT}" \
+                      --output   json \
+                      --file     "$RAW_OUT" \
+                      --deep-scan; then
+                    SMITHERY_TOOL_COUNT=$(scan_tool_count "$RAW_OUT")
+                    if [ "$SMITHERY_TOOL_COUNT" -gt 0 ]; then
+                      echo "SMITHERY: scan succeeded for \"${SMITHERY_PKG}\" ($SMITHERY_TOOL_COUNT tool(s))"
+                      SCAN_OK=true
+                      SMITHERY_OK=true
+                    else
+                      # ── Step 4: Smithery returned 0 tools — hard block on Grade A
+                      echo "SMITHERY: scan returned 0 tools for \"${SMITHERY_PKG}\" — fake Grade A guard triggered"
+                    fi
+                  else
+                    echo "SMITHERY: scan failed for \"${SMITHERY_PKG}\""
+                  fi
+                  rm -f "${SMITHERY_OUT}"
+                  # Stop probing once we have a manifest (even if scan yielded 0 tools)
+                  break
+                fi
+              done
+
+              if [ "$SMITHERY_OK" = "false" ] && [ "$SCAN_OK" = "false" ]; then
+                echo "SMITHERY: no usable tool definitions found in Smithery registry"
               fi
             fi
 
