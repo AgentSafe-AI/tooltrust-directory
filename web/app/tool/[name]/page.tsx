@@ -160,12 +160,15 @@ export default async function ToolPage({ params }: PageProps) {
             </p>
           </div>
         ) : (() => {
-          // Group findings by ID
+          // Group findings by rule ID + severity so that one rule with
+          // mixed severities (e.g. AS-002 High AND AS-002 Medium) renders
+          // as separate cards, keeping the badge label accurate.
           const grouped = new Map<string, typeof report.findings>();
           for (const f of report.findings!) {
-            const arr = grouped.get(f.id) || [];
+            const key = `${f.id}|${f.severity.toUpperCase()}`;
+            const arr = grouped.get(key) || [];
             arr.push(f);
-            grouped.set(f.id, arr);
+            grouped.set(key, arr);
           }
 
           return (

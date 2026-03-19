@@ -316,9 +316,20 @@ jobs:
               fi
             fi
 
-            # Fail fast — skip tools we cannot scan rather than emit a fake Grade A
+            # Fail fast — skip tools we cannot scan rather than emit a fake Grade A.
+            # Also remove any stale report that may have been produced by a previous
+            # run before this guard existed; without this, an old Grade A report
+            # would persist in the registry indefinitely.
             if [ "$SCAN_OK" = "false" ]; then
               echo "SKIP    : $TOOL_ID marked unscannable — no report generated"
+              if [ -f "$OUT" ]; then
+                STALE_GRADE=$(jq -r '.grade // ""' "$OUT" 2>/dev/null)
+                STALE_TOOLS=$(jq '.findings | length' "$OUT" 2>/dev/null || echo -1)
+                if [ "$STALE_GRADE" = "A" ] && [ "$STALE_TOOLS" -eq 0 ]; then
+                  echo "CLEANUP : removing stale Grade A / 0-findings report $OUT"
+                  rm -f "$OUT"
+                fi
+              fi
               rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
               continue
             fi
