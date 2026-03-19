@@ -9,7 +9,7 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.5k | **[B](tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 18 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.2k | **[A](tools/trendradar.md)** | ✅ None | Mar 18 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.2` | 30.8k | **[A](tools/scrapling.md)** | ✅ None | Mar 18 |
-| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 29.9k | **[C](tools/chrome-devtools-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Mar 18 |
+| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 30.1k | **[C](tools/chrome-devtools-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Mar 19 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 29.1k | **[A](tools/playwright-mcp.md)** | ✅ None | Mar 18 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.9k | **[A](tools/ui-tars-desktop.md)** | ✅ None | Mar 18 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 28.0k | **[A](tools/github-mcp-server.md)** | ✅ None | Mar 18 |
@@ -19,7 +19,7 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.15` | 21.5k | **[A](tools/ruflo.md)** | ✅ None | Mar 18 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.3` | 21.3k | **[A](tools/activepieces.md)** | ✅ None | Mar 18 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.4k | **[A](tools/maxkb.md)** | ✅ None | Mar 18 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.37.3` | 15.3k | **[C](tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 18 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.37.4` | 15.4k | **[C](tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 19 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.3` | 14.1k | **[A](tools/trigger-dev.md)** | ✅ None | Mar 18 |
 | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `0.6.2` | 12.4k | **[A](tools/mcp-server-brave-search.md)** | 🗝️ `AS-010` | Mar 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.0.0` | 12.4k | **[B](tools/mcp-server-github.md)** | 🔓 `AS-005`, ⚡ `AS-011` | Mar 1 |
@@ -31,7 +31,7 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.3.5` | 10.9k | **[A](tools/nginx-ui.md)** | ✅ None | Mar 18 |
 | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.7` | 10.4k | **[A](tools/xhs-downloader.md)** | ✅ None | Mar 18 |
 | [mcp-use](https://github.com/mcp-use/mcp-use) | `python-v1.…` | 9.4k | **[A](tools/mcp-use.md)** | ✅ None | Mar 18 |
-| [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.12.1-rel…` | 9.0k | **[B](tools/openmetadata.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` | Mar 18 |
+| [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.11.13-re…` | 9.0k | **[B](tools/openmetadata.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` | Mar 19 |
 | [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | `0.9.2` | 8.9k | **[A](tools/xiaozhi-esp32-server.md)** | ✅ None | Mar 18 |
 | [mcp](https://github.com/awslabs/mcp) | `2026.03.20…` | 8.5k | **[A](tools/mcp.md)** | ✅ None | Mar 18 |
 | [ghidramcp](https://github.com/LaurieWired/GhidraMCP) | `1.4` | 7.9k | **[A](tools/ghidramcp.md)** | ✅ None | Mar 18 |
@@ -43,7 +43,7 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[A](tools/viper.md)** | ✅ None | Mar 18 |
 | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.0` | 4.8k | **[A](tools/xcodebuildmcp.md)** | ✅ None | Mar 18 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[A](tools/deep-research.md)** | ✅ None | Mar 18 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.16` | 4.3k | **[A](tools/osaurus.md)** | ✅ None | Mar 18 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.21` | 4.3k | **[A](tools/osaurus.md)** | ✅ None | Mar 19 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[A](tools/httprunner.md)** | ✅ None | Mar 18 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.3k | **[A](tools/enscan-go.md)** | ✅ None | Mar 18 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.1k | **[A](tools/mcpo.md)** | ✅ None | Mar 18 |
@@ -53,7 +53,7 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.1` | 3.7k | **[A](tools/fast-agent.md)** | ✅ None | Mar 18 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.6k | **[A](tools/pptagent.md)** | ✅ None | Mar 18 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[A](tools/mcp-server-cloudflare.md)** | ✅ None | Mar 18 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](tools/archestra.md)** | ✅ None | Mar 18 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](tools/archestra.md)** | ✅ None | Mar 19 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.5k | **[A](tools/excel-mcp-server.md)** | ✅ None | Mar 18 |
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.2k | **[A](tools/py-xiaozhi.md)** | ✅ None | Mar 18 |
 | [bifrost](https://github.com/maximhq/bifrost) | `ent-v1.3.1…` | 3.0k | **[A](tools/bifrost.md)** | ✅ None | Mar 18 |

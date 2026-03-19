@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `1.12.1-release` |
+| **Version** | `1.11.13-release` |
 | **Vendor** | open-metadata |
-| **Stars** | ⭐ 8955 |
+| **Stars** | ⭐ 8958 |
 | **Language** | TypeScript |
 | **Source** | [openmetadata](https://github.com/open-metadata/OpenMetadata) |
-| **Scan Date** | 2026-03-18 |
+| **Scan Date** | 2026-03-19 |
 | **Scanner** | tooltrust-scanner/v0.1.6 |
 
 ---
