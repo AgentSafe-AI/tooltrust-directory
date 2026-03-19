@@ -6,7 +6,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 [Insert Directory UI GIF Here]
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-147-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-146-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--19-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -17,11 +17,10 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 147 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 146 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.12.2` | 179.7k | **[A](./docs/tools/n8n.md)** | ✅ None | Mar 18 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.34.0` | 98.2k | **[A](./docs/tools/gemini-cli.md)** | ✅ None | Mar 18 |
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.7k | **[B](./docs/tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.2k | **[A](./docs/tools/trendradar.md)** | ✅ None | Mar 18 |
@@ -71,6 +70,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.6k | **[A](./docs/tools/pptagent.md)** | ✅ None | Mar 18 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[A](./docs/tools/mcp-server-cloudflare.md)** | ✅ None | Mar 18 |
 | [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | ✅ None | Mar 19 |
+| [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.5k | **[A](./docs/tools/excel-mcp-server.md)** | ✅ None | Mar 18 |
 
 <!-- TOOLTRUST:END -->
 

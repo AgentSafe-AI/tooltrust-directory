@@ -1,10 +1,9 @@
 # ToolTrust — Full Directory
 
-All 147 audited tools. [← Back to README](../README.md#-security-registry)
+All 146 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.12.2` | 179.7k | **[A](tools/n8n.md)** | ✅ None | Mar 18 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.34.0` | 98.2k | **[A](tools/gemini-cli.md)** | ✅ None | Mar 18 |
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.7k | **[B](tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.2k | **[A](tools/trendradar.md)** | ✅ None | Mar 18 |
@@ -108,8 +107,8 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) | `0.5.5` | 301 | **[A](tools/mcp-neovim-server.md)** | ✅ None | Mar 18 |
 | [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) | `1.0.1` | 301 | **[A](tools/mcp-server-simulator-ios-idb.md)** | ✅ None | Mar 18 |
 | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | `1.13.0` | 294 | **[C](tools/mcp-documentation-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 19 |
-| [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) | `0.8.0` | 291 | **[A](tools/mcp-server-mas-sequential-thinking.md)** | ✅ None | Mar 18 |
 | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) | `1.7.0` | 291 | **[A](tools/mysql-mcp-server-pro.md)** | ✅ None | Mar 18 |
+| [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) | `0.8.0` | 291 | **[A](tools/mcp-server-mas-sequential-thinking.md)** | ✅ None | Mar 18 |
 | [django-mcp-server](https://github.com/gts360/django-mcp-server) | `0.5.6` | 290 | **[A](tools/django-mcp-server.md)** | ✅ None | Mar 18 |
 | [mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) | `2.0.2` | 276 | **[A](tools/mcp-mongo-server.md)** | ✅ None | Mar 18 |
 | [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) | `0.5.1` | 272 | **[A](tools/mcp-server-tree-sitter.md)** | ✅ None | Mar 18 |
@@ -132,14 +131,14 @@ All 147 audited tools. [← Back to README](../README.md#-security-registry)
 | [podman-mcp-server](https://github.com/manusa/podman-mcp-server) | `0.0.15` | 61 | **[A](tools/podman-mcp-server.md)** | ✅ None | Mar 18 |
 | [mcp-difyworkflow-server](https://github.com/gotoolkits/mcp-difyworkflow-server) | `0.0.1` | 59 | **[A](tools/mcp-difyworkflow-server.md)** | ✅ None | Mar 18 |
 | [last9-mcp-server](https://github.com/last9/last9-mcp-server) | `0.5.1` | 52 | **[A](tools/last9-mcp-server.md)** | ✅ None | Mar 18 |
-| [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | `0.11.0` | 48 | **[A](tools/buildkite-mcp-server.md)** | ✅ None | Mar 18 |
 | [metoro-mcp-server](https://github.com/metoro-io/metoro-mcp-server) | `0.77.0` | 48 | **[A](tools/metoro-mcp-server.md)** | ✅ None | Mar 18 |
+| [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | `0.11.0` | 48 | **[A](tools/buildkite-mcp-server.md)** | ✅ None | Mar 18 |
 | [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) | `2.0.2` | 45 | **[A](tools/kafka-mcp-server.md)** | ✅ None | Mar 18 |
 | [md2wechat-mcp-server](https://github.com/geekjourneyx/md2wechat-mcp-server) | `1.0.0` | 45 | **[A](tools/md2wechat-mcp-server.md)** | ✅ None | Mar 18 |
 | [vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) | `0.2.0` | 37 | **[A](tools/vault-mcp-server.md)** | ✅ None | Mar 18 |
-| [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) | `1.5.0` | 36 | **[A](tools/gtm-mcp-server.md)** | ✅ None | Mar 18 |
-| [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) | `1.0.4` | 36 | **[A](tools/fastdomaincheck-mcp-server.md)** | ✅ None | Mar 18 |
 | [mcp-wecombot-server](https://github.com/gotoolkits/mcp-wecombot-server) | `0.0.1` | 36 | **[A](tools/mcp-wecombot-server.md)** | ✅ None | Mar 18 |
+| [fastdomaincheck-mcp-server](https://github.com/bingal/FastDomainCheck-MCP-Server) | `1.0.4` | 36 | **[A](tools/fastdomaincheck-mcp-server.md)** | ✅ None | Mar 18 |
+| [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) | `1.5.0` | 36 | **[A](tools/gtm-mcp-server.md)** | ✅ None | Mar 18 |
 | [godoc-mcp-server](https://github.com/yikakia/godoc-mcp-server) | `latest` | 34 | **[A](tools/godoc-mcp-server.md)** | ✅ None | Mar 18 |
 | [aqara-mcp-server](https://github.com/aqara/aqara-mcp-server) | `0.0.2` | 30 | **[A](tools/aqara-mcp-server.md)** | ✅ None | Mar 18 |
 | [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 29 | **[B](tools/clay-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×6 | Mar 19 |
