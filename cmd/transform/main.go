@@ -109,9 +109,8 @@ var rules = map[string]ruleMeta{
 			"Validate all tool-definition strings against a safe-pattern allowlist before registration.",
 	},
 	"AS-002": {
-		title: "Excessive Permission Surface",
-		recommendation: "Restrict tool capabilities to the minimum required. " +
-			"Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+		title:          "Excessive Permission Surface",
+		recommendation: "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
 	},
 	"AS-003": {
 		title: "Scope Mismatch",
@@ -129,9 +128,8 @@ var rules = map[string]ruleMeta{
 			"Remove admin, :write wildcards, and any description-level escalation signals (sudo, impersonate).",
 	},
 	"AS-006": {
-		title: "Arbitrary Code Execution",
-		recommendation: "Avoid tools that execute arbitrary script/code from AI agents. " +
-			"If necessary, run them in a heavily restricted sandbox and require user approval.",
+		title:          "Arbitrary Code Execution",
+		recommendation: "This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.",
 	},
 	"AS-010": {
 		title: "Insecure Secret Handling",
