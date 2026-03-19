@@ -8,7 +8,7 @@
 | **Risk Score** | 42 |
 | **Version** | `chrome-devtools-mcp-v0.20.2` |
 | **Vendor** | ChromeDevTools |
-| **Stars** | ⭐ 30086 |
+| **Stars** | ⭐ 30153 |
 | **Language** | TypeScript |
 | **Source** | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
 | **Scan Date** | 2026-03-19 |
@@ -36,7 +36,7 @@
 tool declares exec permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -48,7 +48,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
 
 **Recommendation:**
-Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval.
+This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.
 
 ---
 
@@ -72,7 +72,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -84,7 +84,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares network permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -108,7 +108,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -120,7 +120,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares network permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -144,7 +144,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 tool declares network permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -156,7 +156,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares exec permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -168,7 +168,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares network permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -180,7 +180,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -192,7 +192,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -204,7 +204,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -216,7 +216,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -228,7 +228,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -240,7 +240,7 @@ Restrict tool capabilities to the minimum required. Audit each declared permissi
 tool declares fs permission
 
 **Recommendation:**
-Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

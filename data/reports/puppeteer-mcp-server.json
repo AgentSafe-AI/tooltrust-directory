@@ -3,12 +3,12 @@
   "version": "0.7.2",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-03-18T05:26:51.670801491Z",
+  "scan_date": "2026-03-19T05:54:55.068706858Z",
   "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/merajmehrabi/puppeteer-mcp-server",
   "category": "Developer Tools",
   "vendor": "merajmehrabi",
-  "stars": 410,
+  "stars": 413,
   "license": "MIT",
   "language": "TypeScript",
   "description": "This MCP server provides browser automation capabilities through Puppeteer, allowing interaction with both new browser instances and existing Chrome windows.",
@@ -18,7 +18,7 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "puppeteer_connect_active_tab"
     },
     {
@@ -34,7 +34,7 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "puppeteer_navigate"
     },
     {
@@ -50,7 +50,7 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "puppeteer_evaluate"
     },
     {
@@ -58,7 +58,7 @@
       "severity": "Critical",
       "title": "Arbitrary Code Execution",
       "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval.",
+      "recommendation": "This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.",
       "tool_name": "puppeteer_evaluate"
     },
     {

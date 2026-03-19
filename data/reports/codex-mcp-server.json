@@ -3,12 +3,12 @@
   "version": "1.4.2",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-03-18T05:27:26.039318227Z",
+  "scan_date": "2026-03-19T05:55:36.280160906Z",
   "scanner": "tooltrust-scanner/v0.1.6",
   "source_url": "https://github.com/tuannvm/codex-mcp-server",
   "category": "Developer Tools",
   "vendor": "tuannvm",
-  "stars": 320,
+  "stars": 321,
   "language": "TypeScript",
   "description": "MCP server wrapper for OpenAI Codex CLI that enables Claude Code to leverage Codex's AI capabilities directly.",
   "findings": [
@@ -17,7 +17,7 @@
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "codex"
     },
     {
@@ -25,7 +25,7 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "codex"
     },
     {
@@ -33,7 +33,7 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "codex"
     },
     {
@@ -41,7 +41,7 @@
       "severity": "Critical",
       "title": "Arbitrary Code Execution",
       "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "Avoid tools that execute arbitrary script/code from AI agents. If necessary, run them in a heavily restricted sandbox and require user approval.",
+      "recommendation": "This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.",
       "tool_name": "codex"
     },
     {
@@ -57,7 +57,7 @@
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "review"
     },
     {
@@ -65,7 +65,7 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Restrict tool capabilities to the minimum required. Audit each declared permission (exec, network, db, fs) and remove any not strictly necessary.",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "websearch"
     },
     {

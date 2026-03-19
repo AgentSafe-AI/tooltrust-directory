@@ -23,14 +23,14 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.12.2` | 179.7k | **[A](./docs/tools/n8n.md)** | ✅ None | Mar 18 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.34.0` | 98.2k | **[A](./docs/tools/gemini-cli.md)** | ✅ None | Mar 18 |
-| [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.5k | **[B](./docs/tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 18 |
+| [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.7k | **[B](./docs/tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 49.2k | **[A](./docs/tools/trendradar.md)** | ✅ None | Mar 18 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.2` | 30.8k | **[A](./docs/tools/scrapling.md)** | ✅ None | Mar 18 |
-| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 30.1k | **[C](./docs/tools/chrome-devtools-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Mar 19 |
+| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 30.2k | **[C](./docs/tools/chrome-devtools-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Mar 19 |
 | [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.68` | 29.1k | **[A](./docs/tools/playwright-mcp.md)** | ✅ None | Mar 18 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.9k | **[A](./docs/tools/ui-tars-desktop.md)** | ✅ None | Mar 18 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 28.0k | **[A](./docs/tools/github-mcp-server.md)** | ✅ None | Mar 18 |
-| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 26.0k | **[A](./docs/tools/claude-task-master.md)** | 🔑 `AS-002` | Mar 18 |
+| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 26.0k | **[A](./docs/tools/claude-task-master.md)** | 🔑 `AS-002` | Mar 19 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.4.3` | 25.8k | **[A](./docs/tools/gpt-researcher.md)** | ✅ None | Mar 18 |
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 21.7k | **[A](./docs/tools/serena.md)** | ✅ None | Mar 18 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.15` | 21.5k | **[A](./docs/tools/ruflo.md)** | ✅ None | Mar 18 |
@@ -56,18 +56,18 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | `1.2.0` | 7.1k | **[A](./docs/tools/browser-tools-mcp.md)** | ✅ None | Mar 18 |
 | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | `1.4.0` | 6.5k | **[A](./docs/tools/ida-pro-mcp.md)** | ✅ None | Mar 18 |
 | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 5.8k | **[A](./docs/tools/firecrawl-mcp-server.md)** | ✅ None | Mar 18 |
-| [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[B](./docs/tools/klavis.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 18 |
+| [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[B](./docs/tools/klavis.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[A](./docs/tools/viper.md)** | ✅ None | Mar 18 |
 | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.0` | 4.8k | **[A](./docs/tools/xcodebuildmcp.md)** | ✅ None | Mar 18 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[A](./docs/tools/deep-research.md)** | ✅ None | Mar 18 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.21` | 4.3k | **[A](./docs/tools/osaurus.md)** | ✅ None | Mar 19 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.21` | 4.4k | **[A](./docs/tools/osaurus.md)** | ✅ None | Mar 19 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[A](./docs/tools/httprunner.md)** | ✅ None | Mar 18 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.3k | **[A](./docs/tools/enscan-go.md)** | ✅ None | Mar 18 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.1k | **[A](./docs/tools/mcpo.md)** | ✅ None | Mar 18 |
-| [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[B](./docs/tools/kubefwd.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` | Mar 18 |
-| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[C](./docs/tools/notion-mcp-server.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×22 | Mar 18 |
-| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.8k | **[B](./docs/tools/mcp-server-chart.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 18 |
-| [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.1` | 3.7k | **[A](./docs/tools/fast-agent.md)** | ✅ None | Mar 18 |
+| [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[B](./docs/tools/kubefwd.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` | Mar 19 |
+| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[C](./docs/tools/notion-mcp-server.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×22 | Mar 19 |
+| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.8k | **[B](./docs/tools/mcp-server-chart.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
+| [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.1` | 3.7k | **[A](./docs/tools/fast-agent.md)** | ✅ None | Mar 19 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.6k | **[A](./docs/tools/pptagent.md)** | ✅ None | Mar 18 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.5k | **[A](./docs/tools/mcp-server-cloudflare.md)** | ✅ None | Mar 18 |
 | [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | ✅ None | Mar 19 |
