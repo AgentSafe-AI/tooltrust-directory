@@ -8,7 +8,7 @@
 | **Risk Score** | 8 |
 | **Version** | `0.4.2` |
 | **Vendor** | line |
-| **Stars** | ⭐ 530 |
+| **Stars** | ⭐ 531 |
 | **Language** | TypeScript |
 | **Source** | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) |
 | **Scan Date** | 2026-03-20 |

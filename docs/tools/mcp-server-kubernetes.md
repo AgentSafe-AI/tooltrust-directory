@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `3.3.0` |
 | **Vendor** | Flux159 |
-| **Stars** | ⭐ 1357 |
+| **Stars** | ⭐ 1358 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) |
 | **Scan Date** | 2026-03-20 |

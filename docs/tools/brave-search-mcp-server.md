@@ -6,7 +6,7 @@
 | **Risk Score** | 29 |
 | **Version** | `2.0.75` |
 | **Vendor** | brave |
-| **Stars** | ⭐ 800 |
+| **Stars** | ⭐ 803 |
 | **Language** | TypeScript |
 | **Source** | [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) |
 | **Scan Date** | 2026-03-20 |

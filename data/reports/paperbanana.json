@@ -1,0 +1,41 @@
+{
+  "tool_id": "paperbanana",
+  "version": "0.1.2",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-20T16:02:44.318749449Z",
+  "scanner": "tooltrust-scanner/v0.1.8",
+  "source_url": "https://github.com/llmsresearch/paperbanana",
+  "category": "Developer Tools",
+  "vendor": "llmsresearch",
+  "stars": 1201,
+  "license": "MIT",
+  "language": "Python",
+  "description": "Open source implementation and extension of Google Research’s PaperBanana for automated academic figures, diagrams, and research visuals, expanded to new domains like slide generation.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "evaluate_diagram"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "evaluate_diagram"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
+}

@@ -2,38 +2,30 @@
   "tool_id": "mcp-server-commands",
   "version": "0.7.4",
   "grade": "B",
-  "risk_score": 16,
-  "scan_date": "2026-03-02T17:12:28.428064267Z",
-  "scanner": "ToolTrust Scanner/0.1.2",
+  "risk_score": 15,
+  "scan_date": "2026-03-20T16:10:41.087700635Z",
+  "scanner": "tooltrust-scanner/v0.1.8",
   "source_url": "https://github.com/g0t4/mcp-server-commands",
   "category": "Developer Tools",
   "vendor": "g0t4",
-  "stars": 225,
+  "stars": 226,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol server to run commands (tool: `runProcess`)",
   "findings": [
     {
-      "id": "AS-004",
-      "severity": "Medium",
-      "title": "Supply Chain CVE: GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.9.0",
-      "description": "GHSA-8r9q-7v3j-jr4g in @modelcontextprotocol/sdk@1.9.0 (npm ecosystem).",
-      "recommendation": "Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-8r9q-7v3j-jr4g. Check https://osv.dev/vulnerability/GHSA-8r9q-7v3j-jr4g for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.",
-      "tool_name": "mcp-server-commands"
-    },
-    {
-      "id": "AS-004",
-      "severity": "Medium",
-      "title": "Supply Chain CVE: GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.9.0",
-      "description": "GHSA-w48q-cv73-mx4w in @modelcontextprotocol/sdk@1.9.0 (npm ecosystem).",
-      "recommendation": "Upgrade @modelcontextprotocol/sdk to a version that resolves GHSA-w48q-cv73-mx4w. Check https://osv.dev/vulnerability/GHSA-w48q-cv73-mx4w for patched versions. Enable Dependabot or OSV-Scanner in CI to catch future CVEs automatically.",
-      "tool_name": "mcp-server-commands"
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "run_process"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 2,
+    "high": 1,
+    "medium": 0,
     "low": 0,
     "info": 0
   },

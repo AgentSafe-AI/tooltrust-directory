@@ -6,9 +6,9 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 8 |
-| **Version** | `0.6.0` |
+| **Version** | `0.6.1` |
 | **Vendor** | matlab |
-| **Stars** | ⭐ 258 |
+| **Stars** | ⭐ 259 |
 | **Language** | Go |
 | **Source** | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) |
 | **Scan Date** | 2026-03-20 |

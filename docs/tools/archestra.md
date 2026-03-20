@@ -6,7 +6,7 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.1.33` |
+| **Version** | `platform-v1.1.34` |
 | **Vendor** | archestra-ai |
 | **Stars** | ⭐ 3539 |
 | **Language** | TypeScript |

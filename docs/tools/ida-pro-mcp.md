@@ -1,14 +1,14 @@
-# 🟠 ida-pro-mcp
+# 🟡 ida-pro-mcp
 
 > AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 35 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `1.4.0` |
 | **Vendor** | mrexodia |
-| **Stars** | ⭐ 6523 |
+| **Stars** | ⭐ 6547 |
 | **Language** | Python |
 | **Source** | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) |
 | **Scan Date** | 2026-03-20 |
@@ -22,45 +22,21 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 1 |
-| Medium   | 2 |
+| Medium   | 0 |
 | Low      | 2 |
 | Info     | 0 |
 
 ## Detailed Findings
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
 
 **Severity:** High
 
 **Description:**
-tool declares exec permission
+input parameter "api_key" appears to accept a secret or credential
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
@@ -69,7 +45,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 18 properties (threshold: 10)
+tool declares http permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

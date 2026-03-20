@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.11.0` |
 | **Vendor** | u14app |
-| **Stars** | ⭐ 4519 |
+| **Stars** | ⭐ 4523 |
 | **Language** | JavaScript |
 | **Source** | [deep-research](https://github.com/u14app/deep-research) |
 | **Scan Date** | 2026-03-20 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `2.7` |
 | **Vendor** | JoeanAmier |
-| **Stars** | ⭐ 10448 |
+| **Stars** | ⭐ 10461 |
 | **Language** | Python |
 | **Source** | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) |
 | **Scan Date** | 2026-03-20 |
