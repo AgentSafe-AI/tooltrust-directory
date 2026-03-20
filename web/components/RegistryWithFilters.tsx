@@ -24,6 +24,14 @@ const GRADE_BUTTON_STYLES: Record<string, string> = {
   F: "bg-red-500/20 text-red-400 border-red-500/50",
 };
 
+const GRADE_BUTTON_INACTIVE_STYLES: Record<string, string> = {
+  A: "border-zinc-800 bg-zinc-900 text-emerald-600 hover:text-emerald-400 hover:border-emerald-900",
+  B: "border-zinc-800 bg-zinc-900 text-blue-600 hover:text-blue-400 hover:border-blue-900",
+  C: "border-zinc-800 bg-zinc-900 text-yellow-700 hover:text-yellow-400 hover:border-yellow-900",
+  D: "border-zinc-800 bg-zinc-900 text-orange-600 hover:text-orange-400 hover:border-orange-900",
+  F: "border-zinc-800 bg-zinc-900 text-red-700 hover:text-red-400 hover:border-red-900",
+};
+
 function sortReports(reports: Report[]) {
   return [...reports].sort((a, b) => {
     const starsA = a.stars ?? 0;
@@ -165,7 +173,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             className={`rounded-lg border px-2.5 py-2 text-sm font-medium transition ${
               gradeFilter === g
                 ? GRADE_BUTTON_STYLES[g] ?? "bg-zinc-700 text-zinc-200 border-zinc-600"
-                : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
+                : GRADE_BUTTON_INACTIVE_STYLES[g] ?? "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
             }`}
           >
             {g}
