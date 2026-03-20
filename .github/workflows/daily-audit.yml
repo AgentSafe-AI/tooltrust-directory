@@ -278,6 +278,31 @@ jobs:
               fi
             fi
 
+            # ── Tier 3.4: Static tools manifest override ──────────────────────
+            # For servers that can't be live-scanned (e.g. Python/uvx packages),
+            # a curated tools.json can be placed in data/static-tools/<tool_id>.json.
+            # This takes priority over Smithery to prevent wrong-server matching.
+            STATIC_OVERRIDE="data/static-tools/${TOOL_ID}.json"
+            if [ "$SCAN_OK" = "false" ] && [ -f "$STATIC_OVERRIDE" ]; then
+              echo "STATIC_OVERRIDE: using $STATIC_OVERRIDE"
+              if tooltrust-scanner scan \
+                  --protocol mcp \
+                  --input    "$STATIC_OVERRIDE" \
+                  --output   json \
+                  --file     "$RAW_OUT" \
+                  --deep-scan; then
+                OVERRIDE_TOOL_COUNT=$(scan_tool_count "$RAW_OUT")
+                if [ "$OVERRIDE_TOOL_COUNT" -gt 0 ]; then
+                  echo "STATIC_OVERRIDE: scan succeeded ($OVERRIDE_TOOL_COUNT tool(s))"
+                  SCAN_OK=true
+                else
+                  echo "STATIC_OVERRIDE: scan returned 0 tools — falling through to Smithery"
+                fi
+              else
+                echo "STATIC_OVERRIDE: scan crashed — falling through to Smithery"
+              fi
+            fi
+
             # ── Tier 3.5: Smithery registry fallback ─────────────────────────
             # When both static manifest lookup and live npm scanning fail, query
             # the Smithery registry for pre-indexed tool definitions.  Two probe
