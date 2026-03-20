@@ -340,7 +340,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	// PerPage:100 (API max) sorted by stars captures the top ~400 repos across
 	// 4 queries. A minimum-star threshold filters out stub/test repos that
 	// crowd out genuine tools with lower star counts.
-	const minStars = 50
+	const minStars = 100
 	queries := []string{
 		"topic:mcp-server",
 		"mcp-server in:name language:TypeScript",
