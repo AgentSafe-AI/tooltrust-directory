@@ -92,6 +92,9 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Registry with search, filters, cards */}
+      <RegistryWithFilters reports={reports} />
+
       {/* Quick Start */}
       <section className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">
         <div className="flex items-center gap-2">
@@ -130,9 +133,6 @@ export default function HomePage() {
           Full docs & GitHub Actions integration →
         </a>
       </section>
-
-      {/* Registry with search, filters, cards */}
-      <RegistryWithFilters reports={reports} />
     </div>
   );
 }
