@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [openmetadata](https://github.com/open-metadata/OpenMetadata) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

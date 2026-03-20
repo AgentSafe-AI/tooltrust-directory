@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

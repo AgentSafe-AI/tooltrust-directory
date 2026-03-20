@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [memory-mcp-server-go](https://github.com/okooo5km/memory-mcp-server-go) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

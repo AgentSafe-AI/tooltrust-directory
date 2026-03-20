@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 
@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 6 |
 | Medium   | 12 |
 | Low      | 8 |
@@ -61,18 +61,6 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
-
-**Severity:** Critical
-
-**Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
-
-**Recommendation:**
-This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.
 
 ---
 

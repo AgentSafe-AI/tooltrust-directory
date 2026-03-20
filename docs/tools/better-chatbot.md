@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [better-chatbot](https://github.com/cgoinglove/better-chatbot) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

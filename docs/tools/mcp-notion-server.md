@@ -1,16 +1,16 @@
-# 🔴 mcp-notion-server
+# 🟠 mcp-notion-server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 65 |
+| **Grade** | **C** |
+| **Risk Score** | 48 |
 | **Version** | `1.2.4` |
 | **Vendor** | suekou |
 | **Stars** | ⭐ 870 |
 | **Language** | TypeScript |
 | **Source** | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 12 |
 | Medium   | 14 |
 | Low      | 9 |
@@ -95,18 +95,6 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
-
-**Severity:** Critical
-
-**Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
-
-**Recommendation:**
-This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.
 
 ---
 

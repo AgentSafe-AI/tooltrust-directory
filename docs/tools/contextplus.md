@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.8` |
 | **Vendor** | ForLoopCodes |
-| **Stars** | ⭐ 1483 |
+| **Stars** | ⭐ 1484 |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/ForLoopCodes/contextplus) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

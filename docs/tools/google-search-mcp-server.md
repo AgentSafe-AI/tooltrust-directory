@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

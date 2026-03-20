@@ -1,18 +1,18 @@
-# 🔴 aws-finops-mcp-server
+# 🟠 aws-finops-mcp-server
 
 > An MCP (Model Context Protocol) server that brings powerful AWS FinOps capabilities directly into your AI assistant. Analyze cloud costs, audit for waste, and get budget insights using natural language, all while keeping your credentials secure on your local machine.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 66 |
+| **Grade** | **C** |
+| **Risk Score** | 41 |
 | **Version** | `0.1.1` |
 | **Vendor** | ravikiranvm |
 | **Stars** | ⭐ 176 |
 | **Language** | Python |
 | **Source** | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 
@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 4 |
 | Medium   | 4 |
 | Low      | 7 |
@@ -193,18 +193,6 @@ tool declares env permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
-
-**Severity:** Critical
-
-**Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
-
-**Recommendation:**
-This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.
 
 ---
 

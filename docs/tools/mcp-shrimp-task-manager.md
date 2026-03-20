@@ -1,18 +1,18 @@
-# 🔴 mcp-shrimp-task-manager
+# 🟠 mcp-shrimp-task-manager
 
 > Shrimp Task Manager is a task tool built for AI Agents, emphasizing chain-of-thought, reflection, and style consistency. It converts natural language into structured dev tasks with dependency tracking and iterative refinement, enabling agent-like developer behavior in reasoning AI systems.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 50 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `1.0.21` |
 | **Vendor** | cjo4m06 |
 | **Stars** | ⭐ 2056 |
 | **Language** | JavaScript |
 | **Source** | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 
@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 6 |
 | Medium   | 4 |
 | Low      | 6 |
@@ -73,18 +73,6 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
-
-**Severity:** Critical
-
-**Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
-
-**Recommendation:**
-This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.
 
 ---
 

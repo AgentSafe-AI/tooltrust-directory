@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.7.90` |
 | **Vendor** | Azure |
-| **Stars** | ⭐ 1341 |
+| **Stars** | ⭐ 1342 |
 | **Language** | C# |
 | **Source** | [data-api-builder](https://github.com/Azure/data-api-builder) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 

@@ -1,18 +1,18 @@
-# 🔴 aws-mcp-server
+# 🟠 aws-mcp-server
 
 > A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 66 |
+| **Grade** | **C** |
+| **Risk Score** | 41 |
 | **Version** | `1.7.0` |
 | **Vendor** | alexei-led |
 | **Stars** | ⭐ 182 |
 | **Language** | Python |
 | **Source** | [aws-mcp-server](https://github.com/alexei-led/aws-mcp-server) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 
@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 4 |
 | Medium   | 4 |
 | Low      | 7 |
@@ -193,18 +193,6 @@ tool declares env permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
-
-**Severity:** Critical
-
-**Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
-
-**Recommendation:**
-This tool can execute arbitrary code. If not strictly needed, remove it. If required, you MUST set approval_required: true in your MCP client config to ensure human-in-the-loop confirmation.
 
 ---
 

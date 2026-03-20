@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [klavis](https://github.com/Klavis-AI/klavis) |
 | **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
 
