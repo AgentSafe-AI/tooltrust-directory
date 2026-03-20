@@ -83,7 +83,14 @@ export default async function ToolPage({ params }: PageProps) {
           />
         </div>
         <div className="min-w-0 flex-1 space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
+            {report.vendor && (
+              <img
+                src={`https://github.com/${report.vendor}.png?size=80`}
+                alt={report.vendor}
+                className="h-10 w-10 shrink-0 rounded-xl bg-zinc-800"
+              />
+            )}
             <h1 className="text-2xl font-bold text-zinc-100">
               {report.tool_id}
             </h1>

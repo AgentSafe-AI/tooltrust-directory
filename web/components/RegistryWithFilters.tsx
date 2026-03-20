@@ -224,17 +224,26 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
               className="flex flex-col rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition hover:border-zinc-700 hover:bg-zinc-800/60"
             >
               <div className="flex items-start justify-between gap-2">
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-bold text-zinc-100">{r.tool_id}</h3>
-                  <div className="mt-1 flex flex-wrap gap-1.5">
-                    <span className="rounded border border-zinc-700 bg-zinc-800/80 px-1.5 py-0.5 text-xs text-zinc-400">
-                      mcp
-                    </span>
-                    {r.version && (
+                <div className="flex items-start gap-3 min-w-0 flex-1">
+                  {r.vendor && (
+                    <img
+                      src={`https://github.com/${r.vendor}.png?size=64`}
+                      alt={r.vendor}
+                      className="h-9 w-9 shrink-0 rounded-lg bg-zinc-800"
+                    />
+                  )}
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-zinc-100">{r.tool_id}</h3>
+                    <div className="mt-1 flex flex-wrap gap-1.5">
                       <span className="rounded border border-zinc-700 bg-zinc-800/80 px-1.5 py-0.5 text-xs text-zinc-400">
-                        {r.version}
+                        mcp
                       </span>
-                    )}
+                      {r.version && (
+                        <span className="rounded border border-zinc-700 bg-zinc-800/80 px-1.5 py-0.5 text-xs text-zinc-400">
+                          {r.version}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <GradeBadge grade={displayGrade(r)} size="sm" dark showEmoji={false} />
