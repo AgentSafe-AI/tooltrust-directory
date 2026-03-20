@@ -6,7 +6,7 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `0.57.0` |
+| **Version** | `0.57.1` |
 | **Vendor** | IvanMurzak |
 | **Stars** | ⭐ 1389 |
 | **Language** | C# |
