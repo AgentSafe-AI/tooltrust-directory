@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `1.13.0` |
 | **Vendor** | andrea9293 |
-| **Stars** | ⭐ 294 |
+| **Stars** | ⭐ 295 |
 | **Language** | TypeScript |
 | **Source** | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) |
 | **Scan Date** | 2026-03-20 |
