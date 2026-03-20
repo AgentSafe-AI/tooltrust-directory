@@ -229,6 +229,12 @@ jobs:
             # it produced false positives (enum values, class names, constants).
             # If no manifest exists we attempt a real tools/list connection instead.
             SCAN_OK=false
+            # Set to true only when a scan tier ran successfully but returned 0
+            # tools — this is a confirmed "no tools", not a transient failure.
+            # Used to guard the stale Grade-A cleanup: we only delete a report
+            # when we can confirm the tool is genuinely empty, not when every
+            # tier crashed or timed out (which would wrongly remove valid reports).
+            CONFIRMED_ZERO=false
 
             if [ -n "$TOOL_DEF" ]; then
               echo "Def     : $TOOL_DEF"
@@ -244,6 +250,7 @@ jobs:
                   SCAN_OK=true
                 else
                   echo "UNSCANNABLE: static scan returned 0 tools for $TOOL_DEF — fake Grade A guard triggered"
+                  CONFIRMED_ZERO=true
                 fi
               else
                 echo "UNSCANNABLE: static scan failed for $TOOL_DEF"
@@ -283,6 +290,7 @@ jobs:
                     SCAN_OK=true
                   else
                     echo "LIVE    : live scan returned 0 tools — fake Grade A guard triggered, trying Smithery fallback"
+                    CONFIRMED_ZERO=true
                   fi
                 else
                   echo "LIVE    : live scan crashed (non-zero exit) — trying Smithery fallback"
@@ -311,6 +319,7 @@ jobs:
                   SCAN_OK=true
                 else
                   echo "STATIC_OVERRIDE: scan returned 0 tools — falling through to Smithery"
+                  CONFIRMED_ZERO=true
                 fi
               else
                 echo "STATIC_OVERRIDE: scan crashed — falling through to Smithery"
@@ -351,6 +360,7 @@ jobs:
                     else
                       # ── Step 4: Smithery returned 0 tools — hard block on Grade A
                       echo "SMITHERY: scan returned 0 tools for \"${SMITHERY_PKG}\" — fake Grade A guard triggered"
+                      CONFIRMED_ZERO=true
                     fi
                   else
                     echo "SMITHERY: scan failed for \"${SMITHERY_PKG}\""
@@ -372,13 +382,20 @@ jobs:
             # would persist in the registry indefinitely.
             if [ "$SCAN_OK" = "false" ]; then
               echo "SKIP    : $TOOL_ID marked unscannable — no report generated"
-              if [ -f "$OUT" ]; then
+              if [ -f "$OUT" ] && [ "$CONFIRMED_ZERO" = "true" ]; then
+                # Only remove a stale Grade-A/0-findings report when we positively
+                # confirmed zero tools from a successful scan attempt.  A crashed
+                # or timed-out scan is NOT confirmation — keep the existing report
+                # so high-star tools (playwright-mcp, kubernetes-mcp-server, etc.)
+                # are not silently dropped during transient scan failures.
                 STALE_GRADE=$(jq -r '.grade // ""' "$OUT" 2>/dev/null)
                 STALE_TOOLS=$(jq '.findings | length' "$OUT" 2>/dev/null || echo -1)
                 if [ "$STALE_GRADE" = "A" ] && [ "$STALE_TOOLS" -eq 0 ]; then
-                  echo "CLEANUP : removing stale Grade A / 0-findings report $OUT"
+                  echo "CLEANUP : removing stale Grade A / 0-findings report $OUT (confirmed zero tools)"
                   rm -f "$OUT"
                 fi
+              elif [ -f "$OUT" ]; then
+                echo "PRESERVE: keeping existing report — scan tiers crashed/timed-out (not confirmed zero)"
               fi
               rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
               exit 0
