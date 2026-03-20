@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 317 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server](https://github.com/mapbox/mcp-server) |
-| **Scan Date** | 2026-03-19 |
-| **Scanner** | tooltrust-scanner/v0.1.6 |
+| **Scan Date** | 2026-03-20 |
+| **Scanner** | tooltrust-scanner/v0.1.8 |
 
 ---
 

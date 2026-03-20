@@ -8,11 +8,11 @@
 | **Risk Score** | 40 |
 | **Version** | `2.0.4` |
 | **Vendor** | mcpdotdirect |
-| **Stars** | ⭐ 369 |
+| **Stars** | ⭐ 370 |
 | **Language** | TypeScript |
 | **Source** | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) |
-| **Scan Date** | 2026-03-19 |
-| **Scanner** | tooltrust-scanner/v0.1.6 |
+| **Scan Date** | 2026-03-20 |
+| **Scanner** | tooltrust-scanner/v0.1.8 |
 
 ---
 

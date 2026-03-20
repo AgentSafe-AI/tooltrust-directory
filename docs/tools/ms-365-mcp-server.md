@@ -1,18 +1,18 @@
-# 🔴 ms-365-mcp-server
+# 🟠 ms-365-mcp-server
 
 > A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Office services through the Graph API
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 52 |
+| **Grade** | **C** |
+| **Risk Score** | 37 |
 | **Version** | `0.45.2` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 541 |
+| **Stars** | ⭐ 543 |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-03-19 |
-| **Scanner** | tooltrust-scanner/v0.1.6 |
+| **Scan Date** | 2026-03-20 |
+| **Scanner** | tooltrust-scanner/v0.1.8 |
 
 ---
 
