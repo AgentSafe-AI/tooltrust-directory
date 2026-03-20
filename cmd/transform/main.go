@@ -229,6 +229,9 @@ func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, 
 			maxScore = policy.Score.RiskScore
 		}
 		for _, f := range policy.Score.Findings {
+			if isBroadExfiltrationFP(f) {
+				continue
+			}
 			ttf := toTTFinding(f, policy.ToolName)
 			allFindings = append(allFindings, ttf)
 			switch strings.ToLower(ttf.Severity) {
@@ -372,4 +375,48 @@ func titleCase(s string) string {
 		return s
 	}
 	return strings.ToUpper(s[:1]) + strings.ToLower(s[1:])
+}
+
+// isBroadExfiltrationFP returns true for AS-001 findings triggered by the
+// overly-broad data-exfiltration regex rather than an explicit injection
+// marker.
+//
+// The problematic pattern matches any description containing a transfer verb
+// (send/forward/transmit/…) near a data noun (content/info/data) near "to" —
+// which fires on everyday API documentation language like "send the reply to
+// the recipient" and is not evidence of prompt injection.
+//
+// We suppress such a finding only when the description does NOT also contain
+// a genuine injection signal (ignore previous instructions, jailbreak,
+// exfiltrate, <INST>, system:, attacker, or an external URL/base64 payload).
+func isBroadExfiltrationFP(f ASFinding) bool {
+	if f.RuleID != "AS-001" {
+		return false
+	}
+	desc := strings.ToLower(f.Description)
+
+	// Fingerprint of the broad exfiltration pattern the scanner uses.
+	if !strings.Contains(desc, "transmit|send|forward|post|upload|pipe") ||
+		!strings.Contains(desc, "data|info|content") {
+		return false
+	}
+
+	// Solid injection markers that make a finding genuinely suspicious.
+	solidMarkers := []string{
+		"ignore previous instructions",
+		"jailbreak",
+		"exfiltrate",
+		"<inst>",
+		"system:",
+		"attacker",
+		"base64",
+		"https://",
+		"http://",
+	}
+	for _, m := range solidMarkers {
+		if strings.Contains(desc, m) {
+			return false
+		}
+	}
+	return true
 }
