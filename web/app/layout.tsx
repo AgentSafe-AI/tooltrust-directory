@@ -41,14 +41,14 @@ export default function RootLayout({
               ToolTrust
             </Link>
             <nav className="flex gap-6 text-sm text-zinc-400">
-              <Link href="/" className="hover:text-zinc-100">
+              <Link href="/" className="flex items-center py-3 hover:text-zinc-100">
                 Directory
               </Link>
               <a
                 href="https://github.com/AgentSafe-AI/tooltrust-directory"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-zinc-100"
+                className="flex items-center py-3 hover:text-zinc-100"
               >
                 GitHub
               </a>

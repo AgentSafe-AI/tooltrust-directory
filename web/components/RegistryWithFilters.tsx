@@ -117,7 +117,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
           <button
             type="button"
             onClick={() => setViewMode("table")}
-            className={`rounded-lg border px-3 py-1.5 text-sm transition ${
+            className={`rounded-lg border px-3 py-2.5 text-sm transition ${
               viewMode === "table"
                 ? "border-zinc-600 bg-zinc-800 text-zinc-100"
                 : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
@@ -129,7 +129,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
           <button
             type="button"
             onClick={() => setViewMode("cards")}
-            className={`rounded-lg border px-3 py-1.5 text-sm transition ${
+            className={`rounded-lg border px-3 py-2.5 text-sm transition ${
               viewMode === "cards"
                 ? "border-zinc-600 bg-zinc-800 text-zinc-100"
                 : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
@@ -162,7 +162,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             key={g}
             type="button"
             onClick={() => setGradeFilter(g)}
-            className={`rounded-lg border px-2.5 py-1 text-sm font-medium transition ${
+            className={`rounded-lg border px-2.5 py-2 text-sm font-medium transition ${
               gradeFilter === g
                 ? GRADE_BUTTON_STYLES[g] ?? "bg-zinc-700 text-zinc-200 border-zinc-600"
                 : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
@@ -179,7 +179,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
         <button
           type="button"
           onClick={() => setCategoryFilter("All")}
-          className={`rounded-lg border px-2.5 py-1 text-sm transition ${
+          className={`rounded-lg border px-2.5 py-2 text-sm transition ${
             categoryFilter === "All"
               ? "border-zinc-600 bg-zinc-800 text-zinc-100"
               : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
@@ -192,7 +192,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             key={c}
             type="button"
             onClick={() => setCategoryFilter(c)}
-            className={`rounded-lg border px-2.5 py-1 text-sm transition ${
+            className={`rounded-lg border px-2.5 py-2 text-sm transition ${
               categoryFilter === c
                 ? "border-zinc-600 bg-zinc-800 text-zinc-100"
                 : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
