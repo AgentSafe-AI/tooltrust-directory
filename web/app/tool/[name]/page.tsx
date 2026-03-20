@@ -163,6 +163,7 @@ export default async function ToolPage({ params }: PageProps) {
           // Group findings by rule ID + severity so that one rule with
           // mixed severities (e.g. AS-002 High AND AS-002 Medium) renders
           // as separate cards, keeping the badge label accurate.
+          const severityOrder: Record<string, number> = { CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3, INFO: 4 };
           const grouped = new Map<string, typeof report.findings>();
           for (const f of report.findings!) {
             const key = `${f.id}|${f.severity.toUpperCase()}`;
@@ -170,10 +171,15 @@ export default async function ToolPage({ params }: PageProps) {
             arr.push(f);
             grouped.set(key, arr);
           }
+          const sortedGroups = Array.from(grouped.values()).sort((a, b) => {
+            const sa = severityOrder[a[0].severity.toUpperCase()] ?? 5;
+            const sb = severityOrder[b[0].severity.toUpperCase()] ?? 5;
+            return sa - sb;
+          });
 
           return (
             <ul className="divide-y divide-zinc-800">
-              {Array.from(grouped.values()).map((group, i) => {
+              {sortedGroups.map((group, i) => {
                 const first = group[0];
                 return (
                   <li
