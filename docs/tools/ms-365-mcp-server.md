@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 2 |
+| Critical | 0 |
 | High     | 11 |
 | Medium   | 52 |
 | Low      | 166 |
@@ -1732,18 +1732,6 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-### 🔴 🛡️ `AS-001` — Tool Poisoning (Prompt Injection)
-
-**Severity:** Critical
-
-**Description:**
-possible prompt injection detected in tool description: pattern matched: (?i)(?:(?:transmit|send|forward|post|upload|pipe).*(?:data|info|content)|(?:data|info|content).*(?:transmit|send|forward|post|upload|pipe)).*to\b
-
-**Recommendation:**
-Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.
-
----
-
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -1789,18 +1777,6 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### 🔴 🛡️ `AS-001` — Tool Poisoning (Prompt Injection)
-
-**Severity:** Critical
-
-**Description:**
-possible prompt injection detected in tool description: pattern matched: (?i)(?:(?:transmit|send|forward|post|upload|pipe).*(?:data|info|content)|(?:data|info|content).*(?:transmit|send|forward|post|upload|pipe)).*to\b
-
-**Recommendation:**
-Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.
 
 ---
 

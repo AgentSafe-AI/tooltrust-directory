@@ -6,7 +6,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 [Insert Directory UI GIF Here]
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-37-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-36-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--20-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -41,10 +41,9 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.4.1` | 1.1k | **[B](./docs/tools/linkedin-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Mar 19 |
 | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | `1.8.0` | 1.1k | **[A](./docs/tools/drawio-mcp-server.md)** | 🔑 `AS-002` ×2 | Mar 19 |
 | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) | `1.8.1` | 965 | **[C](./docs/tools/mongodb-mcp-server.md)** | 🔑 `AS-002` ×31, ⚡ `AS-011` ×3 | Mar 19 |
-| [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.9.11` | 919 | **[D](./docs/tools/apify-mcp-server.md)** | 🛡️ `AS-001`, 🔑 `AS-002` ×27, ⚡ `AS-011` ×7, ⚡ `AS-006` ×2 | Mar 19 |
 | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 887 | **[C](./docs/tools/openapi-mcp-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×2 | Mar 19 |
 | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | `1.24.0` | 847 | **[C](./docs/tools/kubectl-mcp-server.md)** | 🔑 `AS-002` ×94, ⚡ `AS-011` ×54, 🗝️ `AS-010` ×2 | Mar 19 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.45.2` | 541 | **[D](./docs/tools/ms-365-mcp-server.md)** | 🔑 `AS-002` ×157, ⚡ `AS-011` ×72, 🛡️ `AS-001` ×2 | Mar 19 |
+| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.45.2` | 541 | **[D](./docs/tools/ms-365-mcp-server.md)** | 🔑 `AS-002` ×157, ⚡ `AS-011` ×72 | Mar 19 |
 | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.4.2` | 530 | **[A](./docs/tools/line-bot-mcp-server.md)** | 🔑 `AS-002` ×4 | Mar 19 |
 | [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 514 | **[A](./docs/tools/minecraft-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Mar 19 |
 | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.0.3` | 443 | **[C](./docs/tools/mcp-server-motherduck.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` | Mar 19 |
@@ -56,7 +55,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [mcp-server](https://github.com/mapbox/mcp-server) | `0.9.0` | 317 | **[C](./docs/tools/mcp-server.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×6 | Mar 19 |
 | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | `1.13.0` | 294 | **[C](./docs/tools/mcp-documentation-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 19 |
 | [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) | `0.7.4` | 225 | **[B](./docs/tools/mcp-server-commands.md)** | 📦 `AS-004` ×2 | Mar 2 |
-| [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) | `0.0.5` | 74 | **[C](./docs/tools/signoz-mcp-server.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×5, 🛡️ `AS-001` | Mar 19 |
+| [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) | `0.0.5` | 74 | **[C](./docs/tools/signoz-mcp-server.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×5 | Mar 19 |
 | [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 29 | **[B](./docs/tools/clay-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×6 | Mar 19 |
 
 <!-- TOOLTRUST:END -->

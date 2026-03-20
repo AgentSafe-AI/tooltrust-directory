@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 6 |
 | Medium   | 6 |
 | Low      | 5 |
@@ -205,18 +205,6 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔴 🛡️ `AS-001` — Tool Poisoning (Prompt Injection)
-
-**Severity:** Critical
-
-**Description:**
-possible prompt injection detected in tool description: pattern matched: (?i)(?:(?:transmit|send|forward|post|upload|pipe).*(?:data|info|content)|(?:data|info|content).*(?:transmit|send|forward|post|upload|pipe)).*to\b
-
-**Recommendation:**
-Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.
 
 ---
 
