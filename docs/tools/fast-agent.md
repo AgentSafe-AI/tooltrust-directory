@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.1` |
 | **Vendor** | evalstate |
-| **Stars** | ⭐ 3713 |
+| **Stars** | ⭐ 3714 |
 | **Language** | Python |
 | **Source** | [fast-agent](https://github.com/evalstate/fast-agent) |
 | **Scan Date** | 2026-03-20 |

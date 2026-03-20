@@ -8,7 +8,7 @@
 | **Risk Score** | 37 |
 | **Version** | `0.45.2` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 544 |
+| **Stars** | ⭐ 546 |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
 | **Scan Date** | 2026-03-20 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 47 |
 | **Version** | `1.24.0` |
 | **Vendor** | rohitg00 |
-| **Stars** | ⭐ 853 |
+| **Stars** | ⭐ 852 |
 | **Language** | Python |
 | **Source** | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) |
 | **Scan Date** | 2026-03-20 |
