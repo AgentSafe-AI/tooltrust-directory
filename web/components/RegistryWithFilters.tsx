@@ -255,23 +255,29 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                   </p>
                 )}
               </div>
-              <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-zinc-800 pt-3 text-xs text-zinc-500">
-                {r.category && (
-                  <span className="rounded bg-blue-500/10 px-1.5 py-0.5 text-blue-400">
-                    {r.category}
+              <div className="mt-3 border-t border-zinc-800 pt-3 space-y-1.5">
+                <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                  {r.category && (
+                    <span className="rounded bg-blue-500/10 px-1.5 py-0.5 text-blue-400">
+                      {r.category}
+                    </span>
+                  )}
+                  {r.findings && r.findings.length > 0 && (
+                    <span className="rounded bg-orange-500/10 px-1.5 py-0.5 text-orange-400">
+                      {r.findings.length} findings
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center justify-between text-xs text-zinc-500">
+                  <span>
+                    {r.stars != null && r.stars > 0
+                      ? `⭐ ${r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars}`
+                      : ""}
                   </span>
-                )}
-                {r.findings && r.findings.length > 0 && (
-                  <span className="rounded bg-orange-500/10 px-1.5 py-0.5 text-orange-400">
-                    {r.findings.length} findings
-                  </span>
-                )}
-                {r.stars != null && r.stars > 0 && (
-                  <span>⭐ {r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars}</span>
-                )}
-                {r.scan_date && (
-                  <span>Scanned {formatScannedAgo(r.scan_date)}</span>
-                )}
+                  {r.scan_date && (
+                    <span>Scanned {formatScannedAgo(r.scan_date)}</span>
+                  )}
+                </div>
               </div>
             </Link>
           ))}
