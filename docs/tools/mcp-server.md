@@ -8,7 +8,7 @@
 | **Risk Score** | 35 |
 | **Version** | `0.9.0` |
 | **Vendor** | mapbox |
-| **Stars** | ⭐ 317 |
+| **Stars** | ⭐ 318 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server](https://github.com/mapbox/mcp-server) |
 | **Scan Date** | 2026-03-20 |

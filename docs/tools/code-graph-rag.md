@@ -8,7 +8,7 @@
 | **Risk Score** | 32 |
 | **Version** | `0.0.100` |
 | **Vendor** | vitali87 |
-| **Stars** | ⭐ 2162 |
+| **Stars** | ⭐ 2163 |
 | **Language** | Python |
 | **Source** | [code-graph-rag](https://github.com/vitali87/code-graph-rag) |
 | **Scan Date** | 2026-03-20 |

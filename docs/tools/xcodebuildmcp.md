@@ -8,7 +8,7 @@
 | **Risk Score** | 23 |
 | **Version** | `2.3.0` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 4823 |
+| **Stars** | ⭐ 4824 |
 | **Language** | TypeScript |
 | **Source** | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) |
 | **Scan Date** | 2026-03-20 |

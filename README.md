@@ -6,7 +6,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 [Insert Directory UI GIF Here]
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-136-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-130-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--20-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -17,18 +17,18 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 136 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 130 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `stable` | 180.2k | **[C](./docs/tools/n8n.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Mar 20 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.34.0` | 98.5k | **[D](./docs/tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Mar 20 |
-| [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 81.6k | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | ✅ None | Mar 20 |
-| [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | `2026.1.26` | 81.6k | **[B](./docs/tools/mcp-server-fetch.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 20 |
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `2026.1.26` | 81.6k | **[C](./docs/tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` | Mar 20 |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2026.1.26` | 81.6k | **[C](./docs/tools/mcp-server-github.md)** | 🔑 `AS-002` ×35, ⚡ `AS-011` ×18 | Mar 20 |
-| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `2026.1.26` | 81.6k | **[C](./docs/tools/mcp-server-brave-search.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×6 | Mar 20 |
-| [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 81.6k | **[D](./docs/tools/mcp-server-time.md)** | 🔑 `AS-002` ×5, 🗝️ `AS-010`, ⚡ `AS-011` ×2 | Mar 20 |
+| [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 81.7k | **[A](./docs/tools/mcp-server-time.md)** | ✅ None | Mar 20 |
+| [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 81.7k | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | ✅ None | Mar 20 |
+| [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | `2026.1.26` | 81.7k | **[B](./docs/tools/mcp-server-fetch.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 20 |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `2026.1.26` | 81.7k | **[C](./docs/tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` | Mar 20 |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2026.1.26` | 81.7k | **[C](./docs/tools/mcp-server-github.md)** | 🔑 `AS-002` ×35, ⚡ `AS-011` ×18 | Mar 20 |
+| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `2026.1.26` | 81.7k | **[C](./docs/tools/mcp-server-brave-search.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×6 | Mar 20 |
 | [context7](https://github.com/upstash/context7) | `ctx7@0.3.6` | 49.9k | **[B](./docs/tools/context7.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 20 |
 | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 30.5k | **[C](./docs/tools/chrome-devtools-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Mar 20 |
 | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.0` | 28.9k | **[D](./docs/tools/ui-tars-desktop.md)** | 🔑 `AS-002` ×26, 📐 `AS-003` ×7, ⚡ `AS-011` ×6 | Mar 20 |

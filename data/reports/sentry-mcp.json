@@ -1,9 +1,9 @@
 {
   "tool_id": "sentry-mcp",
   "version": "0.30.0",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-03-20T21:41:51.295648744Z",
+  "grade": "D",
+  "risk_score": 50,
+  "scan_date": "2026-03-20T23:35:09.736122189Z",
   "scanner": "tooltrust-scanner/v0.1.11",
   "source_url": "https://github.com/getsentry/sentry-mcp",
   "category": "Developer Tools",
@@ -342,6 +342,14 @@
       "tool_name": "analyze_issue_with_seer"
     },
     {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "analyze_issue_with_seer"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -390,6 +398,14 @@
       "tool_name": "get_doc"
     },
     {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "get_doc"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -423,7 +439,7 @@
     }
   ],
   "summary": {
-    "critical": 0,
+    "critical": 2,
     "high": 17,
     "medium": 16,
     "low": 18,

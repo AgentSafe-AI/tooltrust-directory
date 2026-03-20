@@ -1,11 +1,11 @@
-# 🟠 sentry-mcp
+# 🔴 sentry-mcp
 
 > An MCP server for interacting with Sentry via LLMs.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 27 |
+| **Grade** | **D** |
+| **Risk Score** | 50 |
 | **Version** | `0.30.0` |
 | **Vendor** | getsentry |
 | **Stars** | ⭐ 603 |
@@ -20,7 +20,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 0 |
+| Critical | 2 |
 | High     | 17 |
 | Medium   | 16 |
 | Low      | 18 |
@@ -520,6 +520,18 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
+### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+
+**Severity:** Critical
+
+**Description:**
+tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+
+**Recommendation:**
+This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
+
+---
+
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -589,6 +601,18 @@ tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+
+**Severity:** Critical
+
+**Description:**
+tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+
+**Recommendation:**
+This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
 
 ---
 

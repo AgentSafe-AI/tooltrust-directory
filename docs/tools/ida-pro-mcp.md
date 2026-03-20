@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.4.0` |
 | **Vendor** | mrexodia |
-| **Stars** | ⭐ 6552 |
+| **Stars** | ⭐ 6553 |
 | **Language** | Python |
 | **Source** | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) |
 | **Scan Date** | 2026-03-20 |

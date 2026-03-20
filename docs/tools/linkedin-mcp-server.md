@@ -6,7 +6,7 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `4.4.1` |
+| **Version** | `4.4.2` |
 | **Vendor** | stickerdaniel |
 | **Stars** | ⭐ 1091 |
 | **Language** | Python |
