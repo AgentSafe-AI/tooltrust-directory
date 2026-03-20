@@ -23,6 +23,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/AgentSafe-AI/tooltrust-directory/pkg/smithery"
 	"github.com/google/go-github/v68/github"
 	"golang.org/x/oauth2"
 )
@@ -52,6 +53,10 @@ type PendingScan struct {
 	// the individual MCP server (e.g. @modelcontextprotocol/server-filesystem
 	// inside modelcontextprotocol/servers).
 	NPMPackage string `json:"npm_package,omitempty"`
+	// SmitheryQualifiedName is set for Smithery-native tools (and optionally
+	// GitHub-discovered tools). The CI uses this for a direct Smithery lookup,
+	// bypassing keyword search which can match the wrong server.
+	SmitheryQualifiedName string `json:"smithery_qualified_name,omitempty"`
 }
 
 // nonAlphanumHyphen matches characters that should be stripped / replaced.
@@ -310,6 +315,106 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 	return pending, nil
 }
 
+// discoverFromSmithery fetches the top 200 Smithery servers by usage and queues
+// those not already covered by GitHub/seed discovery. Tools that have a GitHub
+// repo are enriched with stars/version data; Smithery-native tools (no GitHub)
+// get queued with SmitheryQualifiedName so the CI can scan them directly.
+func discoverFromSmithery(ctx context.Context, client *github.Client, existing map[string]string, seen map[string]bool) ([]PendingScan, error) {
+	servers, err := smithery.ListTopByUsage(200)
+	if err != nil {
+		log.Printf("Smithery discovery: %v (skipping)", err)
+		return nil, nil // non-fatal
+	}
+	log.Printf("Smithery discovery: fetched %d server(s)", len(servers))
+
+	var pending []PendingScan
+	for _, s := range servers {
+		toolID := toToolID(s.QualifiedName)
+		if seen[toolID] {
+			continue
+		}
+		seen[toolID] = true
+
+		sourceURL := "https://smithery.ai/server/" + s.QualifiedName
+		scan := PendingScan{
+			ToolID:                toolID,
+			Version:               "smithery",
+			SourceURL:             sourceURL,
+			Description:           s.Description,
+			DiscoveredAt:          time.Now().UTC(),
+			SmitheryQualifiedName: s.QualifiedName,
+		}
+
+		// Try to resolve a GitHub owner/repo from repository field or qualifiedName.
+		var ghOwner, ghRepo string
+		if s.Repository != "" {
+			if parts := parseGitHubURL(s.Repository); len(parts) == 2 {
+				ghOwner, ghRepo = parts[0], parts[1]
+			}
+		}
+		if ghOwner == "" {
+			// qualifiedName is often "owner/repo" for GitHub-hosted tools.
+			if parts := strings.SplitN(s.QualifiedName, "/", 2); len(parts) == 2 {
+				ghOwner, ghRepo = parts[0], parts[1]
+			}
+		}
+
+		if ghOwner != "" && ghRepo != "" {
+			ghRepoData, _, err := client.Repositories.Get(ctx, ghOwner, ghRepo)
+			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
+				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
+				if verErr == nil {
+					if cur, ok := existing[toolID]; ok && cur == version {
+						if os.Getenv("FORCE_RESCAN") != "true" {
+							log.Printf("up-to-date %s @ %s (smithery+gh)", toolID, version)
+							continue
+						}
+					}
+					license := ""
+					if ghRepoData.GetLicense() != nil {
+						license = ghRepoData.GetLicense().GetSPDXID()
+					}
+					scan.RepoOwner = ghOwner
+					scan.RepoName = ghRepo
+					scan.Version = version
+					scan.SourceURL = ghRepoData.GetHTMLURL()
+					scan.Vendor = ghOwner
+					scan.Stars = ghRepoData.GetStargazersCount()
+					scan.Language = ghRepoData.GetLanguage()
+					scan.Category = languageToCategory(ghRepoData.GetLanguage())
+					scan.Description = ghRepoData.GetDescription()
+					scan.License = license
+					log.Printf("queued smithery+gh %s @ %s (⭐%d)", toolID, version, scan.Stars)
+				}
+			}
+		}
+
+		if scan.RepoOwner == "" {
+			if _, ok := existing[toolID]; ok && os.Getenv("FORCE_RESCAN") != "true" {
+				log.Printf("up-to-date %s (smithery-native)", toolID)
+				continue
+			}
+			log.Printf("queued smithery-native %s", toolID)
+		}
+
+		pending = append(pending, scan)
+	}
+	return pending, nil
+}
+
+// parseGitHubURL extracts [owner, repo] from a GitHub URL.
+// Handles https://github.com/owner/repo and github.com/owner/repo forms.
+func parseGitHubURL(u string) []string {
+	u = strings.TrimPrefix(u, "https://")
+	u = strings.TrimPrefix(u, "http://")
+	u = strings.TrimPrefix(u, "github.com/")
+	parts := strings.SplitN(strings.TrimSuffix(u, "/"), "/", 2)
+	if len(parts) == 2 && parts[0] != "" && parts[1] != "" {
+		return parts
+	}
+	return nil
+}
+
 // discoverTools queries GitHub Search and seed file, merges results, and returns
 // tools whose latest version is newer than (or absent from) existing.
 func discoverTools(ctx context.Context, client *github.Client, existing map[string]string, seedRepos []string) ([]PendingScan, error) {
@@ -335,6 +440,15 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		}
 		pending = append(pending, fromSeed...)
 	}
+
+	// Smithery discovery: top-200 by usage — catches tools that are popular on
+	// Smithery but have few GitHub stars or no standalone GitHub repo.
+	fromSmithery, err := discoverFromSmithery(ctx, client, existing, seen)
+	if err != nil {
+		log.Printf("Smithery discovery error: %v", err)
+	}
+	pending = append(pending, fromSmithery...)
+	log.Printf("Smithery discovery: %d new tool(s) queued", len(fromSmithery))
 
 	// GitHub Search: topic-based and name-based.
 	// PerPage:100 (API max) sorted by stars captures the top ~400 repos across

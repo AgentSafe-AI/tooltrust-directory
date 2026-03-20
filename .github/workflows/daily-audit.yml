@@ -128,8 +128,20 @@ jobs:
             exit 0
           fi
 
+          # count the number of policy entries in a scanner output file.
+          scan_tool_count() {
+            local f="$1"
+            [ -f "$f" ] || { echo 0; return; }
+            jq 'if .policies then (.policies | length) else 0 end' "$f" 2>/dev/null || echo 0
+          }
+          export -f scan_tool_count
+
+          # Run up to CONCURRENCY scans in parallel.
+          CONCURRENCY=10
+          RUNNING=0
 
           for i in $(seq 0 $((COUNT - 1))); do
+          (
             TOOL_ID=$(jq  -r ".[$i].tool_id"      "$PENDING")
             VERSION=$(jq  -r ".[$i].version"      "$PENDING")
             OWNER=$(jq    -r ".[$i].repo_owner"   "$PENDING")
@@ -144,6 +156,9 @@ jobs:
             # npm_package override: set by seed overrides for monorepo tools whose
             # root package.json does not identify the individual MCP server.
             NPM_PKG_OVERRIDE=$(jq -r ".[$i].npm_package // empty" "$PENDING")
+            # smithery_qualified_name: set for Smithery-discovered tools.
+            # Used for a direct registry lookup, bypassing keyword search.
+            SMITHERY_QN=$(jq -r ".[$i].smithery_qualified_name // empty" "$PENDING")
             OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
             CLONE_DIR="/tmp/${TOOL_ID}"
             RAW_OUT="/tmp/${TOOL_ID}-scan.json"
@@ -153,61 +168,60 @@ jobs:
             echo "Tool    : $TOOL_ID @ $VERSION  ($OWNER/$REPO)"
             echo "Vendor  : $VENDOR  ⭐ $STARS  License: $LICENSE"
 
-            # Shallow-clone at release tag, fall back to HEAD
-            git clone --depth 1 --branch "v${VERSION}" \
-              "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
-            git clone --depth 1 \
-              "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
-            { echo "SKIP: cannot clone $OWNER/$REPO"; continue; }
+            if [ -n "$OWNER" ]; then
+              # Shallow-clone at release tag, fall back to HEAD
+              git clone --depth 1 --branch "v${VERSION}" \
+                "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
+              git clone --depth 1 \
+                "https://github.com/${OWNER}/${REPO}" "$CLONE_DIR" 2>/dev/null || \
+              { echo "SKIP: cannot clone $OWNER/$REPO"; exit 0; }
 
-            # ── AS-004: OSV supply-chain CVE scan ─────────────────────────────
-            go run ./cmd/analyze --dir "$CLONE_DIR" --output "$OSV_OUT" || \
+              # ── AS-004: OSV supply-chain CVE scan ───────────────────────────
+              go run ./cmd/analyze --dir "$CLONE_DIR" --output "$OSV_OUT" || \
+                echo "[]" > "$OSV_OUT"
+              echo "AS-004  : $(jq 'length' "$OSV_OUT") CVE finding(s)"
+            else
+              echo "SMITHERY-NATIVE: no GitHub repo — skipping clone and OSV scan"
               echo "[]" > "$OSV_OUT"
-            echo "AS-004  : $(jq 'length' "$OSV_OUT") CVE finding(s)"
+            fi
 
             # ── ToolTrust Scanner: MCP tool-definition scan ───────────────────
-            # Helper: count the number of policy entries in a scanner output file.
-            # Returns 0 on any error so callers can treat it as a failed scan.
-            scan_tool_count() {
-              local f="$1"
-              [ -f "$f" ] || { echo 0; return; }
-              jq 'if .policies then (.policies | length) else 0 end' "$f" 2>/dev/null || echo 0
-            }
-
             TOOL_DEF=""
 
-            # 1. Explicit manifest files — ordered most-specific first.
-            for candidate in \
-              tools.json mcp.json server.json \
-              testdata/tools.json \
-              .mcp/tools.json \
-              src/tools.json \
-              src/testdata/tools.json \
-              src/mcp.json \
-              test/tools.json \
-              tools/tools.json; do
-              if [ -f "$CLONE_DIR/$candidate" ]; then
-                # Validate the file looks like an MCP tools array/object
-                if jq -e '(.tools // .)|arrays|length > 0' "$CLONE_DIR/$candidate" >/dev/null 2>&1; then
-                  TOOL_DEF="$CLONE_DIR/$candidate"
-                  break
+            if [ -n "$OWNER" ] && [ -d "$CLONE_DIR" ]; then
+              # 1. Explicit manifest files — ordered most-specific first.
+              for candidate in \
+                tools.json mcp.json server.json \
+                testdata/tools.json \
+                .mcp/tools.json \
+                src/tools.json \
+                src/testdata/tools.json \
+                src/mcp.json \
+                test/tools.json \
+                tools/tools.json; do
+                if [ -f "$CLONE_DIR/$candidate" ]; then
+                  # Validate the file looks like an MCP tools array/object
+                  if jq -e '(.tools // .)|arrays|length > 0' "$CLONE_DIR/$candidate" >/dev/null 2>&1; then
+                    TOOL_DEF="$CLONE_DIR/$candidate"
+                    break
+                  fi
                 fi
-              fi
-            done
+              done
 
-            # 2. Recursive find: any JSON with a "tools" array (skills/, tools/)
-            if [ -z "$TOOL_DEF" ]; then
-              while IFS= read -r f; do
-                if jq -e '.tools|arrays|length > 0' "$f" >/dev/null 2>&1; then
-                  TOOL_DEF="$f"
-                  break
-                fi
-              done < <(find "$CLONE_DIR" \
-                -not -path '*/.git/*' \
-                -not -path '*/node_modules/*' \
-                -not -name 'package*.json' \
-                -not -name 'tsconfig*.json' \
-                -name '*.json' 2>/dev/null | sort)
+              # 2. Recursive find: any JSON with a "tools" array (skills/, tools/)
+              if [ -z "$TOOL_DEF" ]; then
+                while IFS= read -r f; do
+                  if jq -e '.tools|arrays|length > 0' "$f" >/dev/null 2>&1; then
+                    TOOL_DEF="$f"
+                    break
+                  fi
+                done < <(find "$CLONE_DIR" \
+                  -not -path '*/.git/*' \
+                  -not -path '*/node_modules/*' \
+                  -not -name 'package*.json' \
+                  -not -name 'tsconfig*.json' \
+                  -name '*.json' 2>/dev/null | sort)
+              fi
             fi
 
             # ── Tier 3: live MCP server scan (no static manifest found) ──────────
@@ -312,7 +326,10 @@ jobs:
               SMITHERY_OUT="/tmp/${TOOL_ID}-smithery-tools.json"
               SMITHERY_OK=false
 
-              for SMITHERY_PKG in "${NPM_PKG:-}" "${OWNER}/${REPO}"; do
+              # Prefer the direct qualifiedName from discovery (no keyword search ambiguity).
+              OWNER_REPO=""
+              [ -n "$OWNER" ] && OWNER_REPO="${OWNER}/${REPO}"
+              for SMITHERY_PKG in "${SMITHERY_QN:-}" "${NPM_PKG:-}" "${OWNER_REPO:-}"; do
                 [ -z "$SMITHERY_PKG" ] && continue
                 echo "SMITHERY: querying Smithery registry for \"${SMITHERY_PKG}\""
                 if go run ./cmd/smithery-fetch \
@@ -364,7 +381,7 @@ jobs:
                 fi
               fi
               rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
-              continue
+              exit 0
             fi
 
             # ── Transform: merge Scanner + OSV → ToolTrust report ──────────────
@@ -388,7 +405,14 @@ jobs:
             fi
 
             rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
+          ) &
+          RUNNING=$((RUNNING + 1))
+          if [ "$RUNNING" -ge "$CONCURRENCY" ]; then
+            wait -n
+            RUNNING=$((RUNNING - 1))
+          fi
           done
+          wait  # drain remaining background jobs
 
       - name: Upload scan results
         uses: actions/upload-artifact@v4
