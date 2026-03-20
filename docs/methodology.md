@@ -115,6 +115,96 @@ All active rules as of [ToolTrust Scanner v0.1.4](https://github.com/AgentSafe-A
 
 ---
 
+### AS-001
+
+**Tool Poisoning (Prompt Injection)** · Severity: Critical
+
+Detects adversarial instructions embedded in a tool's `description` field — e.g. `ignore previous instructions`, `system:` prefixes, `<INST>` tags, jailbreak language, or data-exfiltration directives pointing to external URLs.
+
+MCP tool descriptions are read by the LLM at runtime. A malicious server can use this field to override the agent's system prompt, exfiltrate data, or escalate privileges without the user's knowledge.
+
+**Fix:** Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.
+
+---
+
+### AS-002
+
+**Excessive Permission Surface** · Severity: High / Medium / Low
+
+Detects tools that declare broad permission categories (`exec`, `fs`, `network`) beyond what their stated purpose requires, or whose input schema accepts parameters implying wide access (e.g. arbitrary shell commands, unrestricted file paths).
+
+Over-privileged tools increase blast radius if the agent is manipulated or the tool is misused.
+
+**Fix:** Validate input parameters using Enums where possible. Restrict file-system operations to explicit allowed directories. Scope network access to known hosts.
+
+---
+
+### AS-003
+
+**Scope Mismatch** · Severity: High
+
+Detects inconsistency between a tool's name, description, and declared permissions — e.g. a tool named `read_file` that also declares `exec` permission, or a description that understates actual capabilities.
+
+**Fix:** Use explicit naming conventions that fully reflect actual capabilities.
+
+---
+
+### AS-004
+
+**Supply Chain Vulnerability (CVE)** · Severity: High / Critical
+
+Detects known CVEs in the tool's dependencies via [OSV](https://osv.dev) / Google OSV-Scanner.
+
+**Fix:** Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
+### AS-005
+
+**Privilege Escalation** · Severity: High
+
+Detects OAuth/token scopes that include admin or wildcard write access, or description-level signals suggesting impersonation or privilege escalation (`sudo`, `impersonate`, `act as admin`).
+
+**Fix:** Restrict OAuth/token scopes to the minimum necessary. Remove admin, `:write` wildcards, and any description-level escalation signals.
+
+---
+
+### AS-006
+
+**Arbitrary Code Execution** · Severity: Critical
+
+Detects tools whose description or input schema indicate they can execute arbitrary shell commands, scripts, or code — e.g. parameters named `command`, `script`, `eval`, or descriptions containing "run any command".
+
+Arbitrary code execution tools are the highest-risk category. A single prompt injection on an ACE tool can fully compromise the host.
+
+**Fix:** If not strictly needed, remove the tool. If required, set `approval_required: true` in your MCP client config to ensure human-in-the-loop confirmation.
+
+---
+
+### AS-010
+
+**Insecure Secret Handling** · Severity: Medium / High
+
+Detects input parameters whose names suggest they accept raw secrets or credentials — e.g. `api_key`, `password`, `secret`, `token`, `private_key`.
+
+Secrets passed as plain input parameters appear in agent traces, logs, and LLM context windows. A compromised agent or leaking trace exposes the credential.
+
+**Fix:** Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### AS-011
+
+**DoS Resilience — Missing Rate Limit / Timeout** · Severity: Low
+
+Detects network or execution tools that declare no rate-limit, timeout, or retry configuration in their description or schema.
+
+An agent in a loop can hammer an unthrottled tool, exhausting API quotas, causing cascading failures, or incurring unexpected costs.
+
+**Fix:** Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
 ## 5. Scan Scope & Limitations
 
 - **Static analysis only** (v1.1). Dynamic/runtime analysis is planned for a future release.

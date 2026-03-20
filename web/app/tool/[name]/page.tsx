@@ -217,7 +217,16 @@ export default async function ToolPage({ params }: PageProps) {
 
                       <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 mt-1">
                         <span>
-                          Rule: <code className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400">{first.id}</code>
+                          Rule:{" "}
+                          <a
+                            href={`https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md#${first.id.toLowerCase()}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`Learn what ${first.id} detects`}
+                            className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 transition-colors"
+                          >
+                            {first.id}
+                          </a>
                         </span>
                         {first.recommendation && (
                           <span>
