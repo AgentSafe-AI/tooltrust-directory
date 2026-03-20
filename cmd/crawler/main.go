@@ -47,6 +47,11 @@ type PendingScan struct {
 	Description  string    `json:"description"`
 	License      string    `json:"license"`
 	DiscoveredAt time.Time `json:"discovered_at"`
+	// NPMPackage overrides auto-detection from package.json. Required for tools
+	// that live inside a monorepo where the root package.json does not name
+	// the individual MCP server (e.g. @modelcontextprotocol/server-filesystem
+	// inside modelcontextprotocol/servers).
+	NPMPackage string `json:"npm_package,omitempty"`
 }
 
 // nonAlphanumHyphen matches characters that should be stripped / replaced.
@@ -127,7 +132,22 @@ func loadExistingReports(dir string) (map[string]string, error) {
 
 // seedFile is the shape of data/seed-popular.json.
 type seedFile struct {
-	Repos []string `json:"repos"`
+	Repos     []string      `json:"repos"`
+	Overrides []SeedOverride `json:"overrides"`
+}
+
+// SeedOverride is an explicit tool entry for tools that cannot be reliably
+// discovered by GitHub search — typically individual servers inside a monorepo.
+// All fields except Repo are required.
+type SeedOverride struct {
+	// Repo is the GitHub owner/repo that contains the tool (e.g. "modelcontextprotocol/servers").
+	Repo string `json:"repo"`
+	// ToolID is the canonical kebab-case identifier for the tool (e.g. "mcp-server-filesystem").
+	ToolID string `json:"tool_id"`
+	// NPMPackage is the exact npm package name used for live scanning (e.g. "@modelcontextprotocol/server-filesystem").
+	NPMPackage string `json:"npm_package"`
+	// SourceURL is the canonical URL for this specific tool within the repo.
+	SourceURL string `json:"source_url"`
 }
 
 func loadSeed(path string) ([]string, error) {
@@ -143,6 +163,21 @@ func loadSeed(path string) ([]string, error) {
 		return nil, err
 	}
 	return s.Repos, nil
+}
+
+func loadSeedOverrides(path string) ([]SeedOverride, error) {
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return nil, nil
+		}
+		return nil, err
+	}
+	var s seedFile
+	if err := json.Unmarshal(raw, &s); err != nil {
+		return nil, err
+	}
+	return s.Overrides, nil
 }
 
 // discoverFromSeed fetches seed repos from GitHub and returns PendingScans for
@@ -206,12 +241,93 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 	return pending, nil
 }
 
+// discoverFromOverrides handles explicit monorepo tool entries from seed-popular.json.
+// Each override specifies the containing repo, an explicit tool_id, and the npm
+// package name — bypassing the auto-detection that fails for monorepos.
+func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]string, seen map[string]bool) ([]PendingScan, error) {
+	var pending []PendingScan
+	for _, ov := range overrides {
+		if ov.ToolID == "" || ov.Repo == "" || ov.NPMPackage == "" {
+			log.Printf("seed override: skipping incomplete entry %+v", ov)
+			continue
+		}
+		if seen[ov.ToolID] {
+			continue
+		}
+		seen[ov.ToolID] = true
+
+		parts := strings.SplitN(ov.Repo, "/", 2)
+		if len(parts) != 2 {
+			log.Printf("seed override: invalid repo %q", ov.Repo)
+			continue
+		}
+		owner, repo := parts[0], parts[1]
+
+		ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+		if err != nil {
+			log.Printf("seed override %s: %v", ov.ToolID, err)
+			continue
+		}
+
+		version, err := latestVersion(ctx, client, owner, repo)
+		if err != nil {
+			log.Printf("seed override %s: no release/tag (%v)", ov.ToolID, err)
+			continue
+		}
+
+		if cur, ok := existing[ov.ToolID]; ok && cur == version {
+			if os.Getenv("FORCE_RESCAN") != "true" {
+				log.Printf("up-to-date %s @ %s (override)", ov.ToolID, version)
+				continue
+			}
+		}
+
+		sourceURL := ov.SourceURL
+		if sourceURL == "" {
+			sourceURL = ghRepo.GetHTMLURL()
+		}
+		license := ""
+		if ghRepo.GetLicense() != nil {
+			license = ghRepo.GetLicense().GetSPDXID()
+		}
+		pending = append(pending, PendingScan{
+			ToolID:       ov.ToolID,
+			RepoOwner:    owner,
+			RepoName:     repo,
+			Version:      version,
+			SourceURL:    sourceURL,
+			Vendor:       owner,
+			Stars:        ghRepo.GetStargazersCount(),
+			Language:     ghRepo.GetLanguage(),
+			Category:     languageToCategory(ghRepo.GetLanguage()),
+			Description:  ghRepo.GetDescription(),
+			License:      license,
+			NPMPackage:   ov.NPMPackage,
+			DiscoveredAt: time.Now().UTC(),
+		})
+		log.Printf("queued override %s @ %s (npm: %s)", ov.ToolID, version, ov.NPMPackage)
+	}
+	return pending, nil
+}
+
 // discoverTools queries GitHub Search and seed file, merges results, and returns
 // tools whose latest version is newer than (or absent from) existing.
 func discoverTools(ctx context.Context, client *github.Client, existing map[string]string, seedRepos []string) ([]PendingScan, error) {
 	seen := make(map[string]bool)
 
 	var pending []PendingScan
+
+	seedPath := envOr("SEED_POPULAR_PATH", filepath.Join("data", "seed-popular.json"))
+	overrides, _ := loadSeedOverrides(seedPath)
+	if len(overrides) > 0 {
+		fromOverrides, err := discoverFromOverrides(ctx, client, overrides, existing, seen)
+		if err != nil {
+			return nil, fmt.Errorf("override discovery: %w", err)
+		}
+		pending = append(pending, fromOverrides...)
+		log.Printf("Override discovery: %d tool(s) queued", len(fromOverrides))
+	}
+
 	if len(seedRepos) > 0 {
 		fromSeed, err := discoverFromSeed(ctx, client, seedRepos, existing, seen)
 		if err != nil {

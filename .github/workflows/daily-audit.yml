@@ -130,17 +130,20 @@ jobs:
 
 
           for i in $(seq 0 $((COUNT - 1))); do
-            TOOL_ID=$(jq  -r ".[$i].tool_id"     "$PENDING")
-            VERSION=$(jq  -r ".[$i].version"     "$PENDING")
-            OWNER=$(jq    -r ".[$i].repo_owner"  "$PENDING")
-            REPO=$(jq     -r ".[$i].repo_name"   "$PENDING")
-            SOURCE=$(jq   -r ".[$i].source_url"  "$PENDING")
-            VENDOR=$(jq   -r ".[$i].vendor"      "$PENDING")
-            STARS=$(jq    -r ".[$i].stars"       "$PENDING")
-            LANGUAGE=$(jq -r ".[$i].language"    "$PENDING")
-            CATEGORY=$(jq -r ".[$i].category"   "$PENDING")
-            LICENSE=$(jq  -r ".[$i].license"     "$PENDING")
-            DESC=$(jq     -r ".[$i].description" "$PENDING")
+            TOOL_ID=$(jq  -r ".[$i].tool_id"      "$PENDING")
+            VERSION=$(jq  -r ".[$i].version"      "$PENDING")
+            OWNER=$(jq    -r ".[$i].repo_owner"   "$PENDING")
+            REPO=$(jq     -r ".[$i].repo_name"    "$PENDING")
+            SOURCE=$(jq   -r ".[$i].source_url"   "$PENDING")
+            VENDOR=$(jq   -r ".[$i].vendor"       "$PENDING")
+            STARS=$(jq    -r ".[$i].stars"        "$PENDING")
+            LANGUAGE=$(jq -r ".[$i].language"     "$PENDING")
+            CATEGORY=$(jq -r ".[$i].category"     "$PENDING")
+            LICENSE=$(jq  -r ".[$i].license"      "$PENDING")
+            DESC=$(jq     -r ".[$i].description"  "$PENDING")
+            # npm_package override: set by seed overrides for monorepo tools whose
+            # root package.json does not identify the individual MCP server.
+            NPM_PKG_OVERRIDE=$(jq -r ".[$i].npm_package // empty" "$PENDING")
             OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
             CLONE_DIR="/tmp/${TOOL_ID}"
             RAW_OUT="/tmp/${TOOL_ID}-scan.json"
@@ -232,20 +235,25 @@ jobs:
                 echo "UNSCANNABLE: static scan failed for $TOOL_DEF"
               fi
             else
-              # Detect npm package name from the cloned repo's package.json
-              NPM_PKG=""
-              for pkg_json in \
-                "$CLONE_DIR/package.json" \
-                "$CLONE_DIR/server/package.json" \
-                "$CLONE_DIR/src/package.json"; do
-                if [ -f "$pkg_json" ]; then
-                  CANDIDATE=$(jq -r '.name // empty' "$pkg_json" 2>/dev/null)
-                  if [ -n "$CANDIDATE" ] && [ "$CANDIDATE" != "null" ]; then
-                    NPM_PKG="$CANDIDATE"
-                    break
+              # Prefer explicit npm_package override (set for monorepo tools);
+              # fall back to auto-detection from the cloned repo's package.json.
+              NPM_PKG="${NPM_PKG_OVERRIDE:-}"
+              if [ -n "$NPM_PKG" ]; then
+                echo "NPM_PKG : $NPM_PKG (from seed override)"
+              else
+                for pkg_json in \
+                  "$CLONE_DIR/package.json" \
+                  "$CLONE_DIR/server/package.json" \
+                  "$CLONE_DIR/src/package.json"; do
+                  if [ -f "$pkg_json" ]; then
+                    CANDIDATE=$(jq -r '.name // empty' "$pkg_json" 2>/dev/null)
+                    if [ -n "$CANDIDATE" ] && [ "$CANDIDATE" != "null" ]; then
+                      NPM_PKG="$CANDIDATE"
+                      break
+                    fi
                   fi
-                fi
-              done
+                done
+              fi
 
               if [ -n "$NPM_PKG" ]; then
                 # ── Step 1: Live Scan ──────────────────────────────────────────
