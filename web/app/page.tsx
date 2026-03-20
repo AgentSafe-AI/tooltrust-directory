@@ -3,6 +3,7 @@ import { GradeBadge } from "@/lib/grades";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
 import Link from "next/link";
 import { Terminal } from "lucide-react";
+import { Suspense } from "react";
 
 export const dynamic = "force-dynamic";
 
@@ -93,7 +94,9 @@ export default function HomePage() {
       )}
 
       {/* Registry with search, filters, cards */}
-      <RegistryWithFilters reports={reports} />
+      <Suspense>
+        <RegistryWithFilters reports={reports} />
+      </Suspense>
 
       {/* Quick Start */}
       <section className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">

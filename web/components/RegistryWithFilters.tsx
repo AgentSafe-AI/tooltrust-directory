@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Search, LayoutGrid, List } from "lucide-react";
 import type { Report } from "@/lib/report-utils";
@@ -64,10 +65,38 @@ function filterReports(
 }
 
 export function RegistryWithFilters({ reports }: { reports: Report[] }) {
-  const [query, setQuery] = useState("");
-  const [gradeFilter, setGradeFilter] = useState<string>("All");
-  const [categoryFilter, setCategoryFilter] = useState<string>("All");
-  const [viewMode, setViewMode] = useState<"table" | "cards">("cards");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const [query, setQueryState] = useState(() => searchParams.get("q") ?? "");
+  const [gradeFilter, setGradeFilterState] = useState<string>(
+    () => searchParams.get("grade") ?? "All"
+  );
+  const [categoryFilter, setCategoryFilterState] = useState<string>(
+    () => searchParams.get("category") ?? "All"
+  );
+  const [viewMode, setViewModeState] = useState<"table" | "cards">(() => {
+    const v = searchParams.get("view");
+    return v === "table" ? "table" : "cards";
+  });
+
+  const pushURL = useCallback(
+    (q: string, grade: string, cat: string, view: string) => {
+      const p = new URLSearchParams();
+      if (q) p.set("q", q);
+      if (grade !== "All") p.set("grade", grade);
+      if (cat !== "All") p.set("category", cat);
+      if (view !== "cards") p.set("view", view);
+      const qs = p.toString();
+      router.replace(qs ? `/?${qs}` : "/", { scroll: false });
+    },
+    [router]
+  );
+
+  const setQuery = (v: string) => { setQueryState(v); pushURL(v, gradeFilter, categoryFilter, viewMode); };
+  const setGradeFilter = (v: string) => { setGradeFilterState(v); pushURL(query, v, categoryFilter, viewMode); };
+  const setCategoryFilter = (v: string) => { setCategoryFilterState(v); pushURL(query, gradeFilter, v, viewMode); };
+  const setViewMode = (v: "table" | "cards") => { setViewModeState(v); pushURL(query, gradeFilter, categoryFilter, v); };
 
   const categories = useMemo(() => {
     const set = new Set(reports.map((r) => r.category).filter(Boolean));
