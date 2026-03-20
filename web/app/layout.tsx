@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import { ToolTrustLogo } from "@/components/ToolTrustLogo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +37,7 @@ export default function RootLayout({
               href="/"
               className="flex items-center gap-2 font-semibold text-emerald-400"
             >
-              <Shield className="h-6 w-6" />
+              <ToolTrustLogo className="h-6 w-6" />
               ToolTrust
             </Link>
             <nav className="flex gap-6 text-sm text-zinc-400">
