@@ -160,6 +160,10 @@ func GitCommitAndPush(repoDir, message string, paths ...string) error {
 	if err := git(repoDir, "commit", "-m", message); err != nil {
 		return fmt.Errorf("git commit: %w", err)
 	}
+	// Pull any commits that landed between checkout and now, then push.
+	if err := git(repoDir, "pull", "--rebase", "origin", "HEAD"); err != nil {
+		return fmt.Errorf("git pull --rebase: %w", err)
+	}
 	if err := git(repoDir, "push", "origin", "HEAD"); err != nil {
 		return fmt.Errorf("git push: %w", err)
 	}
