@@ -3,7 +3,7 @@
 import { useMemo, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Search, LayoutGrid, List } from "lucide-react";
+import { Search, LayoutGrid, List, Star } from "lucide-react";
 import type { Report } from "@/lib/report-utils";
 import {
   displayGrade,
@@ -307,9 +307,12 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                 </div>
                 <div className="flex items-center justify-between text-xs text-zinc-500">
                   <span>
-                    {r.stars != null && r.stars > 0
-                      ? `⭐ ${r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars}`
-                      : ""}
+                    {r.stars != null && r.stars > 0 ? (
+                      <span className="flex items-center gap-1">
+                        <Star className="h-3 w-3 fill-zinc-500 text-zinc-500" />
+                        {r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars}
+                      </span>
+                    ) : null}
                   </span>
                   {r.scan_date && (
                     <span>Scanned {formatScannedAgo(r.scan_date)}</span>
