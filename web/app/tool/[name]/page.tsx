@@ -146,12 +146,12 @@ export default async function ToolPage({ params }: PageProps) {
       )}
 
       {/* Security Findings */}
-      <section className="rounded-xl border border-zinc-800 bg-zinc-900/40 overflow-hidden">
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden">
         <h2 className="border-b border-zinc-800 px-5 py-4 text-lg font-semibold text-zinc-100">
           Security Findings ({report.findings?.length ?? 0})
         </h2>
         {!hasFindings ? (
-          <div className="flex flex-col items-center justify-center border-t border-zinc-800/50 bg-zinc-900/30 py-16 text-center">
+          <div className="flex flex-col items-center justify-center border-t border-zinc-800/50 bg-zinc-900 py-16 text-center">
             <CheckCircle2 className="mb-3 h-12 w-12 text-emerald-500" />
             <p className="text-lg font-medium text-zinc-100">
               Zero Security Risks Detected
@@ -185,7 +185,7 @@ export default async function ToolPage({ params }: PageProps) {
                 return (
                   <li
                     key={i}
-                    className="border-b border-zinc-800 bg-zinc-900/50 p-5 last:border-0"
+                    className="border-b border-zinc-800 bg-zinc-900 p-5 last:border-0"
                   >
                     <div className="flex flex-col gap-2">
                       <div className="flex flex-wrap items-center gap-2">
@@ -245,7 +245,7 @@ export default async function ToolPage({ params }: PageProps) {
       </section>
 
       {/* Scan this tool */}
-      <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
         <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-zinc-100">
           <ScanSearch className="h-5 w-5 text-sky-400" />
           Scan this tool yourself
@@ -257,7 +257,7 @@ export default async function ToolPage({ params }: PageProps) {
       </section>
 
       {/* Badge */}
-      <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
         <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-zinc-100">
           <Shield className="h-5 w-5 text-emerald-500" />
           Add badge to your README

@@ -91,7 +91,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             className={`rounded-lg border px-3 py-1.5 text-sm transition ${
               viewMode === "table"
                 ? "border-zinc-600 bg-zinc-800 text-zinc-100"
-                : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
+                : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
             }`}
             aria-pressed={viewMode === "table"}
           >
@@ -103,7 +103,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             className={`rounded-lg border px-3 py-1.5 text-sm transition ${
               viewMode === "cards"
                 ? "border-zinc-600 bg-zinc-800 text-zinc-100"
-                : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
+                : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
             }`}
             aria-pressed={viewMode === "cards"}
           >
@@ -136,7 +136,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             className={`rounded-lg border px-2.5 py-1 text-sm font-medium transition ${
               gradeFilter === g
                 ? GRADE_BUTTON_STYLES[g] ?? "bg-zinc-700 text-zinc-200 border-zinc-600"
-                : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
+                : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
             }`}
           >
             {g}
@@ -153,7 +153,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
           className={`rounded-lg border px-2.5 py-1 text-sm transition ${
             categoryFilter === "All"
               ? "border-zinc-600 bg-zinc-800 text-zinc-100"
-              : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
+              : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
           }`}
         >
           All
@@ -166,7 +166,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             className={`rounded-lg border px-2.5 py-1 text-sm transition ${
               categoryFilter === c
                 ? "border-zinc-600 bg-zinc-800 text-zinc-100"
-                : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
+                : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
             }`}
           >
             {c}
@@ -175,7 +175,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
       </div>
 
       {viewMode === "table" ? (
-        <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/40">
+        <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-zinc-800">
@@ -221,7 +221,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
             <Link
               key={r.tool_id}
               href={`/tool/${r.tool_id}`}
-              className="flex flex-col rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition hover:border-zinc-700"
+              className="flex flex-col rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition hover:border-zinc-700 hover:bg-zinc-800/60"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0 flex-1">
@@ -268,7 +268,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
       )}
 
       {filtered.length === 0 && (
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 py-12 text-center text-zinc-500">
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900 py-12 text-center text-zinc-500">
           No tools match the current filters.
         </div>
       )}

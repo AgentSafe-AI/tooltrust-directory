@@ -37,7 +37,7 @@ export default function HomePage() {
     <div className="space-y-10">
       {/* Hero */}
       <section className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
           AI Agent Tool Security Directory
         </h1>
         <p className="max-w-2xl text-zinc-400">
@@ -48,15 +48,15 @@ export default function HomePage() {
 
         {/* Stats row: 3 dark cards */}
         <div className="grid grid-cols-3 gap-4 pt-4">
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 px-5 py-4">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-zinc-100">{reports.length}</p>
             <p className="text-sm text-zinc-500">Tools Scanned</p>
           </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 px-5 py-4">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
             <p className="text-sm text-zinc-500">Safe (S/A/B)</p>
           </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 px-5 py-4">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-red-400">{riskyCount}</p>
             <p className="text-sm text-zinc-500">Risky (D/F)</p>
           </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
               <Link
                 key={r.tool_id}
                 href={`/tool/${r.tool_id}`}
-                className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-3 transition hover:border-zinc-700"
+                className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 transition hover:border-zinc-700 hover:bg-zinc-800/60"
               >
                 <span className="font-medium text-zinc-100">{r.tool_id}</span>
                 <GradeBadge grade="S" size="sm" dark />
