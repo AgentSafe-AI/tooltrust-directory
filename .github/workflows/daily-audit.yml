@@ -402,6 +402,10 @@ jobs:
             fi
 
             # ── Transform: merge Scanner + OSV → ToolTrust report ──────────────
+            # Pass --existing so transform can detect rug-pull (AS-012): if the
+            # tool set changed between scans of the same version, flag it.
+            EXISTING_FLAG=""
+            [ -f "$OUT" ] && EXISTING_FLAG="--existing $OUT"
             if ! go run ./cmd/transform \
               --input            "$RAW_OUT"             \
               --tool-id          "$TOOL_ID"             \
@@ -415,6 +419,7 @@ jobs:
               --description      "$DESC"                \
               --osv-findings     "$OSV_OUT"             \
               --scanner-version  "$SCANNER_VERSION"     \
+              ${EXISTING_FLAG}                          \
               --output           "$OUT"; then
               echo "SKIP: transform failed for $TOOL_ID"
             else

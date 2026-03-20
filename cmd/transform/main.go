@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strings"
 	"time"
 )
@@ -78,6 +79,10 @@ type TrustReport struct {
 	Findings    []TTFinding `json:"findings"`
 	Summary     TTSummary   `json:"summary"`
 	Methodology string      `json:"methodology"`
+	// ToolNames lists every MCP tool (function) name exposed by this server.
+	// Stored to enable rug-pull detection (AS-012): if the set changes between
+	// scans of the same version, the server description was silently altered.
+	ToolNames []string `json:"tool_names,omitempty"`
 }
 
 type TTFinding struct {
@@ -131,6 +136,10 @@ var rules = map[string]ruleMeta{
 		title:          "Arbitrary Code Execution",
 		recommendation: "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
 	},
+	"AS-009": {
+		title:          "Typosquatting",
+		recommendation: "This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.",
+	},
 	"AS-010": {
 		title: "Insecure Secret Handling",
 		recommendation: "Avoid accepting raw credentials as input parameters. " +
@@ -140,6 +149,14 @@ var rules = map[string]ruleMeta{
 		title: "DoS Resilience — Missing Rate Limit / Timeout",
 		recommendation: "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. " +
 			"Implement exponential back-off and surface resource state to the calling agent.",
+	},
+	"AS-012": {
+		title:          "Rug-Pull (Post-Install Description Change)",
+		recommendation: "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+	},
+	"AS-013": {
+		title:          "Tool Shadowing",
+		recommendation: "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
 	},
 }
 
@@ -161,6 +178,7 @@ func main() {
 	description := flag.String("description", "", "repository description")
 	osvFindings := flag.String("osv-findings", "", "path to AS-004 OSV findings JSON from cmd/analyze")
 	scannerVer := flag.String("scanner-version", "", "tooltrust-scanner version string (e.g. v1.0.6)")
+	existingPath := flag.String("existing", "", "path to previous TrustReport JSON for rug-pull (AS-012) detection")
 	flag.Parse()
 
 	if *inputPath == "" || *toolID == "" || *version == "" || *sourceURL == "" || *outputPath == "" {
@@ -200,7 +218,18 @@ func main() {
 		sv = "tooltrust-scanner/" + sv
 	}
 
-	report := transform(as, extraFindings, *toolID, *version, *sourceURL,
+	// Load previous report for rug-pull (AS-012) detection.
+	var prevReport *TrustReport
+	if *existingPath != "" {
+		if raw3, err := os.ReadFile(*existingPath); err == nil {
+			var prev TrustReport
+			if err := json.Unmarshal(raw3, &prev); err == nil && len(prev.ToolNames) > 0 {
+				prevReport = &prev
+			}
+		}
+	}
+
+	report := transform(as, extraFindings, prevReport, *toolID, *version, *sourceURL,
 		*vendor, *stars, *license, *language, *category, *description, sv)
 
 	out, err := json.MarshalIndent(report, "", "  ")
@@ -219,10 +248,43 @@ func main() {
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, vendor string, stars int, license, language, category, description, scannerVersion string) TrustReport {
+func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, version, sourceURL, vendor string, stars int, license, language, category, description, scannerVersion string) TrustReport {
 	allFindings := make([]TTFinding, 0)
 	maxScore := 0
 	summary := TTSummary{}
+
+	// Collect current tool names for storage + rug-pull comparison.
+	var toolNames []string
+	for _, policy := range as.Policies {
+		if policy.ToolName != "" {
+			toolNames = append(toolNames, policy.ToolName)
+		}
+	}
+	sort.Strings(toolNames)
+
+	// AS-012: Rug-Pull Detection — flag if tool names changed between scans
+	// of the same version. A version bump is expected to change tools; a
+	// silent update to an existing version is suspicious.
+	if prev != nil && prev.Version == version && len(prev.ToolNames) > 0 && len(toolNames) > 0 {
+		if !stringSlicesEqual(toolNames, prev.ToolNames) {
+			added, removed := diffStringSlices(toolNames, prev.ToolNames)
+			desc := fmt.Sprintf(
+				"tool set changed between scans of v%s without a version bump: "+
+					"added=%v removed=%v (previous=%v current=%v)",
+				version, added, removed, prev.ToolNames, toolNames,
+			)
+			rugPull := TTFinding{
+				ID:             "AS-012",
+				Severity:       "High",
+				Title:          rules["AS-012"].title,
+				Description:    desc,
+				Recommendation: rules["AS-012"].recommendation,
+			}
+			allFindings = append(allFindings, rugPull)
+			maxScore += severityWeight("high")
+			summary.High++
+		}
+	}
 
 	for _, policy := range as.Policies {
 		if policy.Score.RiskScore > maxScore {
@@ -292,6 +354,7 @@ func transform(as ScannerOutput, extra []TTFinding, toolID, version, sourceURL, 
 		Findings:    allFindings,
 		Summary:     summary,
 		Methodology: methodologyURL,
+		ToolNames:   toolNames,
 	}
 }
 
@@ -375,6 +438,43 @@ func titleCase(s string) string {
 		return s
 	}
 	return strings.ToUpper(s[:1]) + strings.ToLower(s[1:])
+}
+
+// stringSlicesEqual returns true when two sorted string slices are identical.
+func stringSlicesEqual(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i := range a {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
+// diffStringSlices returns elements in new that are not in old (added) and
+// elements in old that are not in new (removed). Both slices must be sorted.
+func diffStringSlices(newSlice, oldSlice []string) (added, removed []string) {
+	oldSet := make(map[string]bool, len(oldSlice))
+	for _, s := range oldSlice {
+		oldSet[s] = true
+	}
+	newSet := make(map[string]bool, len(newSlice))
+	for _, s := range newSlice {
+		newSet[s] = true
+	}
+	for _, s := range newSlice {
+		if !oldSet[s] {
+			added = append(added, s)
+		}
+	}
+	for _, s := range oldSlice {
+		if !newSet[s] {
+			removed = append(removed, s)
+		}
+	}
+	return
 }
 
 // isBroadExfiltrationFP returns true for AS-001 findings triggered by the
