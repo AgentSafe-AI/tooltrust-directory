@@ -13,12 +13,12 @@ All 37 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `1.2.0` | 12.4k | **[B](tools/mcp-server-filesystem.md)** | 🔑 `AS-002` | Mar 1 |
 | [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.11.13-re…` | 9.0k | **[B](tools/openmetadata.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` | Mar 19 |
 | [klavis](https://github.com/Klavis-AI/klavis) | `python-v2.…` | 5.7k | **[B](tools/klavis.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.21` | 4.4k | **[A](tools/osaurus.md)** | ✅ None | Mar 19 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.23` | 4.4k | **[A](tools/osaurus.md)** | ✅ None | Mar 20 |
 | [kubefwd](https://github.com/txn2/kubefwd) | `1.25.12` | 4.1k | **[B](tools/kubefwd.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` | Mar 19 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[C](tools/notion-mcp-server.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×22 | Mar 19 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 3.8k | **[B](tools/mcp-server-chart.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 19 |
 | [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.1` | 3.7k | **[A](tools/fast-agent.md)** | ✅ None | Mar 19 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](tools/archestra.md)** | ✅ None | Mar 19 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](tools/archestra.md)** | ✅ None | Mar 20 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[A](tools/shadcn-ui-mcp-server.md)** | 🔑 `AS-002` | Mar 19 |
 | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.3.0` | 1.4k | **[B](tools/mcp-server-kubernetes.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Mar 19 |
 | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.4.1` | 1.1k | **[B](tools/linkedin-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Mar 19 |
