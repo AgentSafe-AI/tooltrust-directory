@@ -2,6 +2,7 @@ import { getAllReports, displayGrade } from "@/lib/data";
 import { GradeBadge } from "@/lib/grades";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
 import Link from "next/link";
+import { Terminal } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -90,6 +91,45 @@ export default function HomePage() {
           )}
         </section>
       )}
+
+      {/* Quick Start */}
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">
+        <div className="flex items-center gap-2">
+          <Terminal className="h-5 w-5 text-sky-400" />
+          <h2 className="text-lg font-semibold text-zinc-100">Scan your own MCP tools</h2>
+        </div>
+        <p className="text-sm text-zinc-500 max-w-xl">
+          ToolTrust Scanner is a free CLI that audits MCP servers for prompt injection,
+          permission risks, and supply-chain vulnerabilities.
+        </p>
+        <div className="space-y-2">
+          <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider">1 · Install</p>
+          <div className="flex items-center justify-between gap-3 rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3">
+            <code className="text-sm font-mono text-zinc-300 truncate">
+              <span className="text-zinc-500 select-none">$ </span>
+              <span className="text-emerald-400">curl</span>
+              {" -sfL https://raw.githubusercontent.com/AgentSafe-AI/tooltrust-scanner/main/install.sh | bash"}
+            </code>
+          </div>
+          <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider pt-1">2 · Scan any MCP server</p>
+          <div className="flex items-center justify-between gap-3 rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3">
+            <code className="text-sm font-mono text-zinc-300 truncate">
+              <span className="text-zinc-500 select-none">$ </span>
+              <span className="text-emerald-400">tooltrust-scanner</span>
+              {" scan --server "}
+              <span className="text-amber-400">"npx -y @modelcontextprotocol/server-filesystem /tmp"</span>
+            </code>
+          </div>
+        </div>
+        <a
+          href="https://github.com/AgentSafe-AI/tooltrust-scanner"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-xs text-sky-500 hover:text-sky-400 underline underline-offset-2"
+        >
+          Full docs & GitHub Actions integration →
+        </a>
+      </section>
 
       {/* Registry with search, filters, cards */}
       <RegistryWithFilters reports={reports} />

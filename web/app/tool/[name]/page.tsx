@@ -2,8 +2,9 @@ import { getReportByToolName, displayGrade } from "@/lib/data";
 import { GradeProgressRing } from "@/lib/grades";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Shield, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Shield, ExternalLink, CheckCircle2, ScanSearch } from "lucide-react";
 import { CopyBadgeButton } from "./CopyBadgeButton";
+import { ScanSnippets } from "./ScanSnippets";
 
 interface PageProps {
   params: Promise<{ name: string }>;
@@ -241,6 +242,18 @@ export default async function ToolPage({ params }: PageProps) {
             </ul>
           );
         })()}
+      </section>
+
+      {/* Scan this tool */}
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+        <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-zinc-100">
+          <ScanSearch className="h-5 w-5 text-sky-400" />
+          Scan this tool yourself
+        </h2>
+        <p className="mb-4 text-sm text-zinc-500">
+          Reproduce this audit locally or block risky tools in CI.
+        </p>
+        <ScanSnippets toolId={report.tool_id} sourceUrl={report.source_url} />
       </section>
 
       {/* Badge */}
