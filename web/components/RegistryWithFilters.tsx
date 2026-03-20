@@ -322,8 +322,15 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
       )}
 
       {filtered.length === 0 && (
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900 py-12 text-center text-zinc-500">
-          No tools match the current filters.
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900 py-12 text-center space-y-3">
+          <p className="text-zinc-500">No tools match the current filters.</p>
+          <button
+            type="button"
+            onClick={() => { setQuery(""); setGradeFilter("All"); setCategoryFilter("All"); }}
+            className="rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-600 hover:text-zinc-100 transition"
+          >
+            Clear filters
+          </button>
         </div>
       )}
     </section>
