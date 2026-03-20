@@ -216,7 +216,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
           </table>
         </div>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
           {filtered.map((r) => (
             <Link
               key={r.tool_id}
@@ -248,11 +248,13 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                 </div>
                 <GradeBadge grade={displayGrade(r)} size="sm" dark showEmoji={false} />
               </div>
-              {r.description && (
-                <p className="mt-2 line-clamp-2 text-sm text-zinc-500">
-                  {r.description}
-                </p>
-              )}
+              <div className="flex-1 mt-2">
+                {r.description && (
+                  <p className="line-clamp-2 text-sm text-zinc-500">
+                    {r.description}
+                  </p>
+                )}
+              </div>
               <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-zinc-800 pt-3 text-xs text-zinc-500">
                 {r.category && (
                   <span className="rounded bg-blue-500/10 px-1.5 py-0.5 text-blue-400">
