@@ -336,7 +336,11 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		pending = append(pending, fromSeed...)
 	}
 
-	// GitHub Search: topic-based and name-based
+	// GitHub Search: topic-based and name-based.
+	// PerPage:100 (API max) sorted by stars captures the top ~400 repos across
+	// 4 queries. A minimum-star threshold filters out stub/test repos that
+	// crowd out genuine tools with lower star counts.
+	const minStars = 50
 	queries := []string{
 		"topic:mcp-server",
 		"mcp-server in:name language:TypeScript",
@@ -348,7 +352,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		opts := &github.SearchOptions{
 			Sort:  "stars",
 			Order: "desc",
-			ListOptions: github.ListOptions{PerPage: 50},
+			ListOptions: github.ListOptions{PerPage: 100},
 		}
 		result, resp, err := client.Search.Repositories(ctx, q, opts)
 		if err != nil {
@@ -364,6 +368,11 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		for _, repo := range result.Repositories {
 			if repo.GetArchived() || repo.GetFork() {
 				continue
+			}
+			if repo.GetStargazersCount() < minStars {
+				// Results are star-sorted; once we drop below the threshold
+				// all remaining results are also below it.
+				break
 			}
 			toolID := toToolID(repo.GetName())
 			if seen[toolID] {
@@ -412,7 +421,9 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 }
 
 // latestVersion returns the semver string (without leading "v") of the latest
-// release, falling back to the most recent tag.
+// release or tag. For repos that publish to npm but don't cut git releases
+// (e.g. exa-mcp-server, mcp-server-browserbase), it falls back to the
+// "version" field in the root package.json fetched from the default branch.
 func latestVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
 	release, _, err := client.Repositories.GetLatestRelease(ctx, owner, repo)
 	if err == nil {
@@ -423,10 +434,44 @@ func latestVersion(ctx context.Context, client *github.Client, owner, repo strin
 	if err != nil {
 		return "", fmt.Errorf("ListTags: %w", err)
 	}
-	if len(tags) == 0 {
-		return "", errors.New("no tags found")
+	if len(tags) > 0 {
+		return strings.TrimPrefix(tags[0].GetName(), "v"), nil
 	}
-	return strings.TrimPrefix(tags[0].GetName(), "v"), nil
+
+	// Last resort: read version from package.json on the default branch.
+	// This covers popular npm-published MCP servers that never cut git releases.
+	return packageJSONVersion(ctx, client, owner, repo)
+}
+
+// packageJSONVersion fetches the root package.json from the repo's default
+// branch and returns the "version" field, or an error if unavailable.
+func packageJSONVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
+	ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+	if err != nil {
+		return "", fmt.Errorf("get repo: %w", err)
+	}
+	branch := ghRepo.GetDefaultBranch()
+	if branch == "" {
+		branch = "main"
+	}
+
+	fc, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "package.json",
+		&github.RepositoryContentGetOptions{Ref: branch})
+	if err != nil {
+		return "", fmt.Errorf("no release, tag, or package.json found")
+	}
+	content, err := fc.GetContent()
+	if err != nil {
+		return "", fmt.Errorf("decode package.json: %w", err)
+	}
+
+	var pkg struct {
+		Version string `json:"version"`
+	}
+	if err := json.Unmarshal([]byte(content), &pkg); err != nil || pkg.Version == "" {
+		return "", fmt.Errorf("no version in package.json")
+	}
+	return pkg.Version, nil
 }
 
 // toToolID normalises a GitHub repo name to a lowercase kebab-case string
