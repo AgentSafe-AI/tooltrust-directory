@@ -113,6 +113,7 @@ All active rules as of [ToolTrust Scanner v0.1.12](https://github.com/AgentSafe-
 | 🔤 **AS&#8209;009** | **Medium** | Typosquatting | Tool name within edit-distance 2 of a well-known MCP tool name, suggesting impersonation of a trusted tool |
 | 🗝️ **AS&#8209;010** | **Medium** | Secret Handling | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
 | ⚡ **AS&#8209;011** | **Low** | DoS Resilience | Network/execution tools with no rate-limit, timeout, or retry configuration |
+| 🔄 **AS&#8209;012** | **High** | Rug-Pull / Silent Update | Tool set changed between scans of the same version without a version bump — *directory pipeline only; requires historical scan data* |
 | 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
@@ -216,6 +217,20 @@ Detects network or execution tools that declare no rate-limit, timeout, or retry
 An agent in a loop can hammer an unthrottled tool, exhausting API quotas, causing cascading failures, or incurring unexpected costs.
 
 **Fix:** Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### AS-012
+
+**Rug-Pull / Silent Update** · Severity: High · *Directory pipeline only*
+
+Detects when the set of tools exposed by a server changes between two scans of the **same version** without a version bump. A server that silently adds or removes tools after installation is a supply-chain red flag — commonly called a "rug-pull" attack.
+
+> **Note:** This check requires historical scan data (the previous scan report for the same tool) and therefore runs only in the ToolTrust Directory CI pipeline, not in the standalone `tooltrust-scanner` CLI.
+
+**Example:** `vsmithery` previously exposed `ig_get_media`, `ig_publish_photo`, etc. A later scan of the same version revealed those 22 tools had been silently replaced with 17 new `INSTAGRAM_*` tools — a complete interface swap with no version bump.
+
+**Fix:** Pin your MCP server to a specific commit hash rather than a floating version tag. Audit the changelog and all tool definitions before updating. Enable the ToolTrust Directory daily re-scan to be notified of silent changes.
 
 ---
 

@@ -8,6 +8,7 @@ export interface Finding {
   description: string;
   recommendation: string;
   tool_name?: string;
+  metadata?: Record<string, unknown>;
 }
 
 export interface Summary {

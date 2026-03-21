@@ -206,7 +206,7 @@ export default async function ToolPage({ params }: PageProps) {
                         </span>
                       </div>
 
-                      {/* Render dynamic descriptions as a neat list if multiple, else a single paragraph */}
+                      {/* Description */}
                       {group.length === 1 ? (
                         <p className="text-sm text-zinc-500">
                           {first.tool_name && <span className="font-mono text-zinc-300 mr-2">{first.tool_name}:</span>}
@@ -223,6 +223,36 @@ export default async function ToolPage({ params }: PageProps) {
                         </ul>
                       )}
 
+                      {/* AS-012 Rug-Pull: structured diff of added / removed tools */}
+                      {first.id === "AS-012" && first.metadata && (() => {
+                        const added = (first.metadata.added as string[]) ?? [];
+                        const removed = (first.metadata.removed as string[]) ?? [];
+                        return (
+                          <div className="mt-2 rounded-lg border border-zinc-800 bg-zinc-950 text-xs font-mono overflow-hidden">
+                            {added.length > 0 && (
+                              <div className="border-b border-zinc-800 px-3 py-2">
+                                <p className="mb-1 text-emerald-500 font-semibold">+ {added.length} added</p>
+                                <div className="flex flex-wrap gap-1">
+                                  {added.map((t) => (
+                                    <span key={t} className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-emerald-400">{t}</span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                            {removed.length > 0 && (
+                              <div className="px-3 py-2">
+                                <p className="mb-1 text-red-400 font-semibold">− {removed.length} removed</p>
+                                <div className="flex flex-wrap gap-1">
+                                  {removed.map((t) => (
+                                    <span key={t} className="rounded bg-red-500/10 px-1.5 py-0.5 text-red-400">{t}</span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })()}
+
                       <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 mt-1">
                         <span>
                           Rule:{" "}
@@ -237,8 +267,8 @@ export default async function ToolPage({ params }: PageProps) {
                           </a>
                         </span>
                         {first.recommendation && (
-                          <span>
-                            Recommendation: {first.recommendation}
+                          <span className="text-zinc-500">
+                            <span className="text-zinc-600">Fix: </span>{first.recommendation}
                           </span>
                         )}
                       </div>

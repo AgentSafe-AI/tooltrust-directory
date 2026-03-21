@@ -107,6 +107,7 @@ ToolTrust Scanner check IDs referenced in all reports:
 | 🔤&nbsp;**AS&#8209;009** | **Typosquatting** (`Medium`) — Tool name within edit-distance 2 of a well-known MCP tool, suggesting impersonation |
 | 🗝️&nbsp;**AS&#8209;010** | **Secret Handling** (`Medium`) — Input params accepting API keys/passwords; credentials logged insecurely |
 | ⚡&nbsp;**AS&#8209;011** | **DoS Resilience** (`Low`) — No rate-limit, timeout, or retry config on network/exec tools |
+| 🔄&nbsp;**AS&#8209;012** | **Rug-Pull** (`High`) — Tool set changed between scans of the same version without a version bump *(directory pipeline only)* |
 | 👥&nbsp;**AS&#8209;013** | **Tool Shadowing** (`High`/`Medium`) — Duplicate or near-duplicate tool name hijacks calls intended for a trusted tool |
 
 Full details → [docs/methodology.md](./docs/methodology.md)

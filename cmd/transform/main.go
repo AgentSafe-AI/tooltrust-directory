@@ -86,12 +86,13 @@ type TrustReport struct {
 }
 
 type TTFinding struct {
-	ID             string `json:"id"`
-	Severity       string `json:"severity"`
-	Title          string `json:"title"`
-	Description    string `json:"description"`
-	Recommendation string `json:"recommendation"`
-	ToolName       string `json:"tool_name,omitempty"`
+	ID             string         `json:"id"`
+	Severity       string         `json:"severity"`
+	Title          string         `json:"title"`
+	Description    string         `json:"description"`
+	Recommendation string         `json:"recommendation"`
+	ToolName       string         `json:"tool_name,omitempty"`
+	Metadata       map[string]any `json:"metadata,omitempty"`
 }
 
 type TTSummary struct {
@@ -269,9 +270,8 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 		if !stringSlicesEqual(toolNames, prev.ToolNames) {
 			added, removed := diffStringSlices(toolNames, prev.ToolNames)
 			desc := fmt.Sprintf(
-				"tool set changed between scans of v%s without a version bump: "+
-					"added=%v removed=%v (previous=%v current=%v)",
-				version, added, removed, prev.ToolNames, toolNames,
+				"Tool set changed silently at v%s: %d tool(s) added, %d tool(s) removed without a version bump.",
+				version, len(added), len(removed),
 			)
 			rugPull := TTFinding{
 				ID:             "AS-012",
@@ -279,6 +279,11 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 				Title:          rules["AS-012"].title,
 				Description:    desc,
 				Recommendation: rules["AS-012"].recommendation,
+				Metadata: map[string]any{
+					"version": version,
+					"added":   added,
+					"removed": removed,
+				},
 			}
 			allFindings = append(allFindings, rugPull)
 			maxScore += severityWeight("high")
