@@ -30,6 +30,7 @@ export default function HomePage() {
   const safeCount = reports.filter((r) =>
     ["S", "A", "B"].includes(displayGrade(r))
   ).length;
+  const mediumCount = reports.filter((r) => displayGrade(r) === "C").length;
   const riskyCount = reports.filter((r) =>
     ["D", "F"].includes(displayGrade(r))
   ).length;
@@ -47,8 +48,8 @@ export default function HomePage() {
           mismatches.
         </p>
 
-        {/* Stats row: 3 dark cards */}
-        <div className="grid grid-cols-3 gap-4 pt-4">
+        {/* Stats row: 4 dark cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-zinc-100">{reports.length}</p>
             <p className="text-sm text-zinc-500">Tools Scanned</p>
@@ -56,6 +57,10 @@ export default function HomePage() {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
             <p className="text-sm text-zinc-500">Safe (S/A/B)</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
+            <p className="text-2xl font-bold text-yellow-400">{mediumCount}</p>
+            <p className="text-sm text-zinc-500">Medium Risk (C)</p>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-red-400">{riskyCount}</p>

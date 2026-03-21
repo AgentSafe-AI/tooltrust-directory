@@ -137,8 +137,22 @@ func loadExistingReports(dir string) (map[string]string, error) {
 
 // seedFile is the shape of data/seed-popular.json.
 type seedFile struct {
-	Repos     []string      `json:"repos"`
-	Overrides []SeedOverride `json:"overrides"`
+	Repos          []string       `json:"repos"`
+	Overrides      []SeedOverride `json:"overrides"`
+	SmitherySeeds  []SmitherySeed `json:"smithery_seeds"`
+}
+
+// SmitherySeed is an explicit Smithery-native tool entry — a server that lives
+// on the Smithery platform and has no standalone GitHub repo.  The crawler
+// queues these directly so popular tools (Instagram, Google Sheets, etc.) are
+// always included regardless of whether the Smithery top-200 API is reachable.
+type SmitherySeed struct {
+	// QualifiedName is the Smithery registry slug (e.g. "instagram", "googlesheets").
+	QualifiedName string `json:"qualified_name"`
+	// ToolID is the kebab-case identifier used for the report filename.
+	// Defaults to toToolID(QualifiedName) if omitted.
+	ToolID      string `json:"tool_id,omitempty"`
+	Description string `json:"description,omitempty"`
 }
 
 // SeedOverride is an explicit tool entry for tools that cannot be reliably
@@ -183,6 +197,21 @@ func loadSeedOverrides(path string) ([]SeedOverride, error) {
 		return nil, err
 	}
 	return s.Overrides, nil
+}
+
+func loadSmitherySeeds(path string) ([]SmitherySeed, error) {
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return nil, nil
+		}
+		return nil, err
+	}
+	var s seedFile
+	if err := json.Unmarshal(raw, &s); err != nil {
+		return nil, err
+	}
+	return s.SmitherySeeds, nil
 }
 
 // discoverFromSeed fetches seed repos from GitHub and returns PendingScans for
@@ -415,6 +444,38 @@ func parseGitHubURL(u string) []string {
 	return nil
 }
 
+// discoverFromSmitherySeeds enqueues explicitly listed Smithery-native tools.
+// These are popular servers (Instagram, Google Sheets, etc.) that live on the
+// Smithery platform with no GitHub repo.  Seeding them explicitly guarantees
+// discovery even when the Smithery top-200 API is unreachable.
+func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]string, seen map[string]bool) []PendingScan {
+	var pending []PendingScan
+	for _, s := range seeds {
+		toolID := s.ToolID
+		if toolID == "" {
+			toolID = toToolID(s.QualifiedName)
+		}
+		if seen[toolID] {
+			continue
+		}
+		seen[toolID] = true
+		if _, ok := existing[toolID]; ok && os.Getenv("FORCE_RESCAN") != "true" {
+			log.Printf("up-to-date %s (smithery-seed)", toolID)
+			continue
+		}
+		log.Printf("queued smithery-seed %s (qn=%s)", toolID, s.QualifiedName)
+		pending = append(pending, PendingScan{
+			ToolID:                toolID,
+			Version:               "smithery",
+			SourceURL:             "https://smithery.ai/server/" + s.QualifiedName,
+			Description:           s.Description,
+			DiscoveredAt:          time.Now().UTC(),
+			SmitheryQualifiedName: s.QualifiedName,
+		})
+	}
+	return pending
+}
+
 // discoverTools queries GitHub Search and seed file, merges results, and returns
 // tools whose latest version is newer than (or absent from) existing.
 func discoverTools(ctx context.Context, client *github.Client, existing map[string]string, seedRepos []string) ([]PendingScan, error) {
@@ -432,6 +493,13 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		pending = append(pending, fromOverrides...)
 		log.Printf("Override discovery: %d tool(s) queued", len(fromOverrides))
 	}
+
+	// Smithery-native seeds: explicit popular tools that have no GitHub repo.
+	// Processed before API-based discovery to guarantee inclusion.
+	smitherySeeds, _ := loadSmitherySeeds(seedPath)
+	fromSmitherySeeds := discoverFromSmitherySeeds(smitherySeeds, existing, seen)
+	pending = append(pending, fromSmitherySeeds...)
+	log.Printf("Smithery seed discovery: %d tool(s) queued", len(fromSmitherySeeds))
 
 	if len(seedRepos) > 0 {
 		fromSeed, err := discoverFromSeed(ctx, client, seedRepos, existing, seen)
