@@ -26,7 +26,7 @@ func main() {
 	readmePath := envOr("README_PATH", "README.md")
 	repoDir := envOr("REPO_DIR", ".")
 	commitMsg := envOr("COMMIT_MSG", fmt.Sprintf(
-		"chore: update security registry %s [skip ci]",
+		"chore: update security registry %s [skip actions]",
 		time.Now().UTC().Format("2006-01-02"),
 	))
 
