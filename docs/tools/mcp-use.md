@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `python-v1.7.0` |
 | **Vendor** | mcp-use |
-| **Stars** | ⭐ 9470 |
+| **Stars** | ⭐ 9471 |
 | **Language** | TypeScript |
 | **Source** | [mcp-use](https://github.com/mcp-use/mcp-use) |
 | **Scan Date** | 2026-03-21 |
