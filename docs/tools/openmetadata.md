@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.12.3-release` |
 | **Vendor** | open-metadata |
-| **Stars** | ⭐ 8973 |
+| **Stars** | ⭐ 8974 |
 | **Language** | TypeScript |
 | **Source** | [openmetadata](https://github.com/open-metadata/OpenMetadata) |
 | **Scan Date** | 2026-03-21 |

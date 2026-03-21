@@ -1,0 +1,153 @@
+{
+  "tool_id": "ticktick",
+  "version": "smithery",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-03-21T23:10:07.417552917Z",
+  "scanner": "tooltrust-scanner/v0.1.12",
+  "source_url": "https://smithery.ai/server/ticktick",
+  "description": "TickTick MCP server for task management and to-do list operations.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_CREATE_PROJECT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_CREATE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_CREATE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_DELETE_PROJECT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_DELETE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP1"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP1"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP1"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1"
+    },
+    {
+      "id": "AS-013",
+      "severity": "High",
+      "title": "Tool Shadowing",
+      "description": "tool name \"TICKTICK_OAUTH2_AUTHORIZATION_STEP_1\" duplicates (or near-duplicates) \"TICKTICK_OAUTH2_AUTHORIZATION_STEP1\" already registered in this tool set — a malicious server can shadow a trusted tool by registering an identical name",
+      "recommendation": "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
+      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_UPDATE_PROJECT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_UPDATE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TICKTICK_UPDATE_TASK"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 3,
+    "medium": 8,
+    "low": 4,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "TICKTICK_COMPLETE_TASK",
+    "TICKTICK_CREATE_PROJECT",
+    "TICKTICK_CREATE_TASK",
+    "TICKTICK_DELETE_PROJECT",
+    "TICKTICK_DELETE_TASK",
+    "TICKTICK_GET_PROJECT_WITH_DATA",
+    "TICKTICK_GET_USER_PROJECT",
+    "TICKTICK_OAUTH2_AUTHORIZATION_STEP1",
+    "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1",
+    "TICKTICK_UPDATE_PROJECT",
+    "TICKTICK_UPDATE_TASK"
+  ]
+}

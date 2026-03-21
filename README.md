@@ -6,7 +6,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 [Insert Directory UI GIF Here]
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-190-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-197-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--21-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -17,7 +17,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 190 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 197 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|

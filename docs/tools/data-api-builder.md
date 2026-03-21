@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.7.90` |
 | **Vendor** | Azure |
-| **Stars** | ⭐ 1342 |
+| **Stars** | ⭐ 1343 |
 | **Language** | C# |
 | **Source** | [data-api-builder](https://github.com/Azure/data-api-builder) |
 | **Scan Date** | 2026-03-21 |
