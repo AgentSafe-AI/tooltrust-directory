@@ -1,6 +1,6 @@
 # ToolTrust — Full Directory
 
-All 184 audited tools. [← Back to README](../README.md#-security-registry)
+All 190 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -127,6 +127,7 @@ All 184 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | `1.0.8` | 361 | **[C](tools/mcp-teams-server.md)** | 🔑 `AS-002` ×16, 🗝️ `AS-010`, ⚡ `AS-011` ×6 | Mar 20 |
 | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) | `1.8.0` | 354 | **[A](tools/db-mcp-server.md)** | ✅ None | Mar 18 |
 | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | `mcp-server…` | 348 | **[A](tools/mcp-server-azure-devops.md)** | ✅ None | Mar 18 |
+| [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | `0.1.0` | 347 | **[C](tools/linear-mcp-server.md)** | `AS-009` ×2, 🔑 `AS-002` ×17, ⚡ `AS-011` ×7 | Mar 21 |
 | [vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) | `0.4.0` | 340 | **[C](tools/vscode-mcp-server.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×2 | Mar 20 |
 | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.2` | 331 | **[D](tools/codex-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-006`, ⚡ `AS-011` ×2 | Mar 20 |
 | [mcp-database-server](https://github.com/executeautomation/mcp-database-server) | `1.1.0` | 325 | **[B](tools/mcp-database-server.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 20 |
@@ -188,4 +189,9 @@ All 184 audited tools. [← Back to README](../README.md#-security-registry)
 | [augments-mcp-server](https://github.com/augmnt/augments-mcp-server) | `7.1.0` | 118 | **[B](tools/augments-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Mar 20 |
 | [render-mcp-server](https://github.com/render-oss/render-mcp-server) | `0.3.0` | 109 | **[B](tools/render-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Mar 20 |
 | [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 30 | **[B](tools/clay-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×6 | Mar 20 |
+| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[B](tools/googledocs.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 21 |
+| [instagram](https://smithery.ai/server/instagram) | `smithery` | — | **[B](tools/instagram.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×9 | Mar 21 |
+| [reddit](https://smithery.ai/server/reddit) | `smithery` | — | **[C](tools/reddit.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 21 |
+| [googledrive](https://smithery.ai/server/googledrive) | `smithery` | — | **[C](tools/googledrive.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Mar 21 |
+| [gmail](https://smithery.ai/server/gmail) | `smithery` | — | **[C](tools/gmail.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×6, 🗝️ `AS-010` ×7 | Mar 21 |
 
