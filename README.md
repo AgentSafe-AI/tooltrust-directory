@@ -95,20 +95,20 @@ Full methodology: [docs/methodology.md](./docs/methodology.md)
 
 ToolTrust Scanner check IDs referenced in all reports:
 
-| ID | Detects |
-|----|---------|
-| 🛡️&nbsp;**AS&#8209;001** | **Tool Poisoning** (`Critical`) — Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
-| 🔑&nbsp;**AS&#8209;002** | **Permission Surface** (`High`/`Low`) — `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
-| 📐&nbsp;**AS&#8209;003** | **Scope Mismatch** (`High`) — Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
-| 📦&nbsp;**AS&#8209;004** | **Supply Chain CVEs** (`High`/`Critical`) — Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
-| 🔓&nbsp;**AS&#8209;005** | **Privilege Escalation** (`High`) — `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
-| ⚡&nbsp;**AS&#8209;006** | **Arbitrary Code Execution** (`Critical`) — `evaluate_script`, `_evaluate` suffix, `execute javascript`, `page.evaluate()` patterns |
-| ℹ️&nbsp;**AS&#8209;007** | **Insufficient Tool Data** (`Info`) — Tool lacks a valid description or schema, preventing agents from understanding its capabilities or limitations |
-| 🔤&nbsp;**AS&#8209;009** | **Typosquatting** (`Medium`) — Tool name within edit-distance 2 of a well-known MCP tool, suggesting impersonation |
-| 🗝️&nbsp;**AS&#8209;010** | **Secret Handling** (`Medium`) — Input params accepting API keys/passwords; credentials logged insecurely |
-| ⚡&nbsp;**AS&#8209;011** | **DoS Resilience** (`Low`) — No rate-limit, timeout, or retry config on network/exec tools |
-| 🔄&nbsp;**AS&#8209;012** | **Rug-Pull** (`High`) — Tool set changed between scans of the same version without a version bump *(directory pipeline only)* |
-| 👥&nbsp;**AS&#8209;013** | **Tool Shadowing** (`High`/`Medium`) — Duplicate or near-duplicate tool name hijacks calls intended for a trusted tool |
+| ID | Severity | Detects |
+|----|:--------:|---------|
+| 🛡️&nbsp;**AS&#8209;001** | `Critical` | **Tool Poisoning** — Adversarial prompts hidden in tool descriptions (`ignore previous instructions`, `<INST>`) |
+| 🔑&nbsp;**AS&#8209;002** | `High`/`Low` | **Permission Surface** — `exec`, `network`, `db`, `fs` beyond stated purpose; over-broad input schema |
+| 📐&nbsp;**AS&#8209;003** | `High` | **Scope Mismatch** — Tool name contradicts its permissions (e.g. `read_config` with `exec`) |
+| 📦&nbsp;**AS&#8209;004** | `High`/`Critical` | **Supply Chain CVEs** — Known CVEs in bundled dependencies via [OSV](https://osv.dev) |
+| 🔓&nbsp;**AS&#8209;005** | `High` | **Privilege Escalation** — `admin`/`:write` OAuth scopes; `sudo`/`impersonate` in descriptions |
+| ⚡&nbsp;**AS&#8209;006** | `Critical` | **Arbitrary Code Execution** — `evaluate_script`, `_evaluate` suffix, `execute javascript`, `page.evaluate()` patterns |
+| ℹ️&nbsp;**AS&#8209;007** | `Info` | **Insufficient Tool Data** — Tool lacks a valid description or schema |
+| 🔤&nbsp;**AS&#8209;009** | `Medium` | **Typosquatting** — Tool name within edit-distance 2 of a well-known MCP tool, suggesting impersonation |
+| 🗝️&nbsp;**AS&#8209;010** | `Medium` | **Secret Handling** — Input params accepting API keys/passwords; credentials logged insecurely |
+| ⚡&nbsp;**AS&#8209;011** | `Low` | **DoS Resilience** — No rate-limit, timeout, or retry config on network/exec tools |
+| 🔄&nbsp;**AS&#8209;012** | `High` | **Rug-Pull** — Tool set changed between scans of the same version without a version bump *(directory pipeline only)* |
+| 👥&nbsp;**AS&#8209;013** | `High`/`Medium` | **Tool Shadowing** — Duplicate or near-duplicate tool name hijacks calls intended for a trusted tool |
 
 Full details → [docs/methodology.md](./docs/methodology.md)
 
