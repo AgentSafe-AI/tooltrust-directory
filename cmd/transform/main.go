@@ -358,6 +358,11 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 		}
 	}
 
+	// For Smithery-native tools (no GitHub repo), attribute vendor to Smithery.
+	if vendor == "" && strings.Contains(sourceURL, "smithery.ai") {
+		vendor = "Smithery"
+	}
+
 	return TrustReport{
 		ToolID:         toolID,
 		Version:        version,
