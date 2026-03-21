@@ -1,6 +1,6 @@
 # ToolTrust Scoring Methodology
 
-> **Version:** 1.1  |  **Effective Date:** 2026-03-06  |  **Scanner:** [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner)
+> **Version:** 1.2  |  **Effective Date:** 2026-03-21  |  **Scanner:** [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner)
 
 ---
 
@@ -99,7 +99,7 @@ $$
 
 ## 4. Check Catalog
 
-All active rules as of [ToolTrust Scanner v0.1.4](https://github.com/AgentSafe-AI/tooltrust-scanner):
+All active rules as of [ToolTrust Scanner v0.1.12](https://github.com/AgentSafe-AI/tooltrust-scanner):
 
 | ID | Category | Severity | What it detects |
 |----|----------|:--------:|-----------------|
@@ -110,8 +110,10 @@ All active rules as of [ToolTrust Scanner v0.1.4](https://github.com/AgentSafe-A
 | 🔓 **AS&#8209;005** | **High** | Privilege Escalation | OAuth/token scopes broader than stated purpose (`admin`, `:write` wildcards); escalation signals in description (`sudo`, `impersonate`) |
 | ⚡ **AS&#8209;006** | **Critical** | Arbitrary Code Execution | Tool name or description implies arbitrary script/code execution (`evaluate_script`, `execute javascript`, `_evaluate` suffix, `page.evaluate()` patterns) |
 | ℹ️ **AS&#8209;007** | **Info** | Insufficient Tool Data | Tool lacks a valid description or schema, preventing agents from understanding its capabilities or limitations |
+| 🔤 **AS&#8209;009** | **Medium** | Typosquatting | Tool name within edit-distance 2 of a well-known MCP tool name, suggesting impersonation of a trusted tool |
 | 🗝️ **AS&#8209;010** | **Medium** | Secret Handling | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
 | ⚡ **AS&#8209;011** | **Low** | DoS Resilience | Network/execution tools with no rate-limit, timeout, or retry configuration |
+| 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
 
@@ -193,6 +195,18 @@ Secrets passed as plain input parameters appear in agent traces, logs, and LLM c
 
 ---
 
+### AS-009
+
+**Typosquatting** · Severity: Medium
+
+Detects tool names that are within edit-distance 2 of a curated list of well-known MCP tool names (e.g. `list_files`, `read_file`, `brave_search`). A tool named `read_fille` or `list_filles` could impersonate a trusted tool to intercept agent calls.
+
+Typosquatting is a supply-chain attack vector: a malicious server registers a slightly misspelled version of a popular tool hoping an agent or user selects it by mistake.
+
+**Fix:** Rename the tool to a unique, clearly differentiated name. If the tool genuinely implements the same interface as the popular tool (e.g. a fork), document this explicitly and distinguish it with a vendor prefix.
+
+---
+
 ### AS-011
 
 **DoS Resilience — Missing Rate Limit / Timeout** · Severity: Low
@@ -202,6 +216,18 @@ Detects network or execution tools that declare no rate-limit, timeout, or retry
 An agent in a loop can hammer an unthrottled tool, exhausting API quotas, causing cascading failures, or incurring unexpected costs.
 
 **Fix:** Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### AS-013
+
+**Tool Shadowing** · Severity: High / Medium
+
+Detects tool name collisions across a multi-server tool set. When two servers register tools with identical or near-identical names (edit-distance 1), the order of resolution becomes attacker-controlled. A malicious server can register `read_file` to intercept calls intended for the trusted filesystem server.
+
+Exact duplicates are flagged as High (the hijack is unambiguous). Near-duplicates (edit-distance 1) are flagged as Medium (may be accidental or intentional).
+
+**Fix:** Ensure each MCP server uses a unique namespace prefix for its tools (e.g. `github__search_repos` vs `linear__search_repos`). Audit multi-server configurations for name collisions before deploying to production agents.
 
 ---
 
@@ -222,6 +248,7 @@ This methodology follows [Semantic Versioning](https://semver.org). Breaking cha
 |:-------------------:|:---------------:|--------|
 | 1.0 | v0.1.2 | Initial release |
 | 1.1 | v0.1.4 | Added AS-006 (Arbitrary Code Execution); 3-tier tool discovery |
+| 1.2 | v0.1.12 | Added AS-009 (Typosquatting), AS-013 (Tool Shadowing); false-positive fixes for AS-001 and AS-010 |
 
 ---
 
