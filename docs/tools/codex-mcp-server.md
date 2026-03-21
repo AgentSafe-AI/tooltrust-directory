@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 331 |
 | **Language** | TypeScript |
 | **Source** | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

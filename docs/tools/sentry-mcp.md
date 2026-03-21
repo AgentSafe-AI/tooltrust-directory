@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 603 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/sentry-mcp) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

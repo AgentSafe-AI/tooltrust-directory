@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 292 |
 | **Language** | Python |
 | **Source** | [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

@@ -3,12 +3,12 @@
   "version": "1.8.0",
   "grade": "A",
   "risk_score": 8,
-  "scan_date": "2026-03-20T23:53:04.215642687Z",
+  "scan_date": "2026-03-21T02:07:25.797988214Z",
   "scanner": "tooltrust-scanner/v0.1.11",
   "source_url": "https://github.com/lgazo/drawio-mcp-server",
   "category": "Developer Tools",
   "vendor": "lgazo",
-  "stars": 1065,
+  "stars": 1066,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Draw.io Model Context Protocol (MCP) Server",
@@ -22,6 +22,14 @@
       "tool_name": "delete-cell-by-id"
     },
     {
+      "id": "AS-013",
+      "severity": "Medium",
+      "title": "Tool Shadowing",
+      "description": "tool name \"get-active-layer\" is nearly identical to \"set-active-layer\" (edit distance 1) — could shadow a trusted tool in a multi-server environment",
+      "recommendation": "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
+      "tool_name": "get-active-layer"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
@@ -33,9 +41,29 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 2,
+    "medium": 3,
     "low": 0,
     "info": 0
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "add-cell-of-shape",
+    "add-edge",
+    "add-rectangle",
+    "create-layer",
+    "delete-cell-by-id",
+    "edit-cell",
+    "edit-edge",
+    "get-active-layer",
+    "get-selected-cell",
+    "get-shape-by-name",
+    "get-shape-categories",
+    "get-shapes-in-category",
+    "list-layers",
+    "list-paged-model",
+    "move-cell-to-layer",
+    "set-active-layer",
+    "set-cell-data",
+    "set-cell-shape"
+  ]
 }

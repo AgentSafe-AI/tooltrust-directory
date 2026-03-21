@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 7131 |
 | **Language** | JavaScript |
 | **Source** | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

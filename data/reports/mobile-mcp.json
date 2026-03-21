@@ -3,12 +3,12 @@
   "version": "0.0.48",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-03-20T23:51:56.476625369Z",
+  "scan_date": "2026-03-21T02:06:18.810493591Z",
   "scanner": "tooltrust-scanner/v0.1.11",
   "source_url": "https://github.com/mobile-next/mobile-mcp",
   "category": "Developer Tools",
   "vendor": "mobile-next",
-  "stars": 4012,
+  "stars": 4014,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)",
@@ -54,6 +54,14 @@
       "tool_name": "mobile_save_screenshot"
     },
     {
+      "id": "AS-013",
+      "severity": "Medium",
+      "title": "Tool Shadowing",
+      "description": "tool name \"mobile_get_orientation\" is nearly identical to \"mobile_set_orientation\" (edit distance 1) — could shadow a trusted tool in a multi-server environment",
+      "recommendation": "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
+      "tool_name": "mobile_get_orientation"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
@@ -65,9 +73,32 @@
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 4,
+    "medium": 5,
     "low": 1,
     "info": 0
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "mobile_click_on_screen_at_coordinates",
+    "mobile_double_tap_on_screen",
+    "mobile_get_orientation",
+    "mobile_get_screen_size",
+    "mobile_install_app",
+    "mobile_launch_app",
+    "mobile_list_apps",
+    "mobile_list_available_devices",
+    "mobile_list_elements_on_screen",
+    "mobile_long_press_on_screen_at_coordinates",
+    "mobile_open_url",
+    "mobile_press_button",
+    "mobile_save_screenshot",
+    "mobile_set_orientation",
+    "mobile_start_screen_recording",
+    "mobile_stop_screen_recording",
+    "mobile_swipe_on_screen",
+    "mobile_take_screenshot",
+    "mobile_terminate_app",
+    "mobile_type_keys",
+    "mobile_uninstall_app"
+  ]
 }

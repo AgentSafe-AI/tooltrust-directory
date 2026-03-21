@@ -5,13 +5,13 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Risk Score** | 40 |
 | **Version** | `1.2.1` |
 | **Vendor** | doggybee |
 | **Stars** | ⭐ 131 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-ccxt](https://github.com/doggybee/mcp-server-ccxt) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 12 |
-| Medium   | 0 |
+| Medium   | 1 |
 | Low      | 1 |
 | Info     | 0 |
 
@@ -33,18 +33,6 @@
 **Severity:** High
 
 **Description:**
-input parameter "apiKey" appears to accept a secret or credential
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** High
-
-**Description:**
 input parameter "secret" appears to accept a secret or credential
 
 **Recommendation:**
@@ -93,7 +81,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "secret" appears to accept a secret or credential
+input parameter "apiKey" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -129,7 +117,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "apiKey" appears to accept a secret or credential
+input parameter "secret" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -142,6 +130,18 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 
 **Description:**
 input parameter "secret" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "apiKey" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -181,6 +181,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 `AS-013` — Tool Shadowing
+
+**Severity:** Medium
+
+**Description:**
+tool name "set-proxy-config" is nearly identical to "get-proxy-config" (edit distance 1) — could shadow a trusted tool in a multi-server environment
+
+**Recommendation:**
+Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 

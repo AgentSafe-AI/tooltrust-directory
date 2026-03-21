@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.57.1` |
 | **Vendor** | IvanMurzak |
-| **Stars** | ⭐ 1389 |
+| **Stars** | ⭐ 1391 |
 | **Language** | C# |
 | **Source** | [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 1 |
-| Medium   | 9 |
+| Medium   | 11 |
 | Low      | 1 |
 | Info     | 50 |
 
@@ -316,6 +316,18 @@ Review and remediate the identified issue.
 
 ---
 
+### 🟡 `AS-013` — Tool Shadowing
+
+**Severity:** Medium
+
+**Description:**
+tool name "editor-application-set-state" is nearly identical to "editor-application-get-state" (edit distance 1) — could shadow a trusted tool in a multi-server environment
+
+**Recommendation:**
+Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
+
+---
+
 ### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
 **Severity:** Info
@@ -337,6 +349,18 @@ Tool 'editor-selection-set' has no description - agents cannot reason about its 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### 🟡 `AS-013` — Tool Shadowing
+
+**Severity:** Medium
+
+**Description:**
+tool name "editor-selection-set" is nearly identical to "editor-selection-get" (edit distance 1) — could shadow a trusted tool in a multi-server environment
+
+**Recommendation:**
+Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 

@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `3.5.31` |
 | **Vendor** | ruvnet |
-| **Stars** | ⭐ 22127 |
+| **Stars** | ⭐ 22144 |
 | **Language** | TypeScript |
 | **Source** | [ruflo](https://github.com/ruvnet/ruflo) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 361 |
 | **Language** | Python |
 | **Source** | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -21,7 +21,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 6 |
+| High     | 5 |
 | Medium   | 10 |
 | Low      | 7 |
 | Info     | 0 |
@@ -37,18 +37,6 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** High
-
-**Description:**
-input parameter "is_passcode_required" appears to accept a secret or credential
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 

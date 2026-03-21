@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.8` |
 | **Vendor** | ForLoopCodes |
-| **Stars** | ⭐ 1486 |
+| **Stars** | ⭐ 1487 |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/ForLoopCodes/contextplus) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 4 |
-| Medium   | 13 |
+| Medium   | 14 |
 | Low      | 9 |
 | Info     | 0 |
 
@@ -301,6 +301,18 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 `AS-009` — Typosquatting
+
+**Severity:** Medium
+
+**Description:**
+tool name "create_relation" is suspiciously similar to the well-known MCP tool "create_relations" (edit distance 1) — possible typosquatting
+
+**Recommendation:**
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

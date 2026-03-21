@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 292 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

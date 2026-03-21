@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 124 |
 | **Language** | TypeScript |
 | **Source** | [mcp-client-server](https://github.com/willccbb/mcp-client-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

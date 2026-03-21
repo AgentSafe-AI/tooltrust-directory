@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 164 |
 | **Language** | TypeScript |
 | **Source** | [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -45,7 +45,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** High
 
 **Description:**
-input parameter "api_key" appears to accept a secret or credential
+input parameter "bambu_token" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -57,7 +57,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "bambu_token" appears to accept a secret or credential
+input parameter "api_key" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

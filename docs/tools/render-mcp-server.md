@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 109 |
 | **Language** | Go |
 | **Source** | [render-mcp-server](https://github.com/render-oss/render-mcp-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---

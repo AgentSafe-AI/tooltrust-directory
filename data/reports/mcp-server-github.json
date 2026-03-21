@@ -3,12 +3,12 @@
   "version": "2026.1.26",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-03-20T23:50:53.22927364Z",
+  "scan_date": "2026-03-21T02:05:17.53778051Z",
   "scanner": "tooltrust-scanner/v0.1.11",
   "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
   "category": "Developer Tools",
   "vendor": "modelcontextprotocol",
-  "stars": 81652,
+  "stars": 81656,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Model Context Protocol Servers",
@@ -203,6 +203,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_code"
+    },
+    {
+      "id": "AS-009",
+      "severity": "Medium",
+      "title": "Typosquatting",
+      "description": "tool name \"search_code\" is suspiciously similar to the well-known MCP tool \"search_nodes\" (edit distance 2) — possible typosquatting",
+      "recommendation": "This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.",
       "tool_name": "search_code"
     },
     {
@@ -441,9 +449,37 @@
   "summary": {
     "critical": 0,
     "high": 15,
-    "medium": 14,
+    "medium": 15,
     "low": 24,
     "info": 0
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md"
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "add_issue_comment",
+    "create_branch",
+    "create_issue",
+    "create_or_update_file",
+    "create_pull_request",
+    "create_pull_request_review",
+    "create_repository",
+    "fork_repository",
+    "get_file_contents",
+    "get_issue",
+    "get_pull_request",
+    "get_pull_request_comments",
+    "get_pull_request_files",
+    "get_pull_request_reviews",
+    "get_pull_request_status",
+    "list_commits",
+    "list_issues",
+    "list_pull_requests",
+    "merge_pull_request",
+    "push_files",
+    "search_code",
+    "search_issues",
+    "search_repositories",
+    "search_users",
+    "update_issue",
+    "update_pull_request_branch"
+  ]
 }

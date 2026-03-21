@@ -5,13 +5,13 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 25 |
+| **Risk Score** | 33 |
 | **Version** | `0.1.8` |
 | **Vendor** | nailuoGG |
 | **Stars** | ⭐ 230 |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/nailuoGG/anki-mcp-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 1 |
-| Medium   | 7 |
+| Medium   | 8 |
 | Low      | 1 |
 | Info     | 0 |
 
@@ -85,6 +85,18 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 `AS-009` — Typosquatting
+
+**Severity:** Medium
+
+**Description:**
+tool name "search_notes" is suspiciously similar to the well-known MCP tool "search_nodes" (edit distance 1) — possible typosquatting
+
+**Recommendation:**
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

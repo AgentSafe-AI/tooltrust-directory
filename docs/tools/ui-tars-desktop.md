@@ -5,13 +5,13 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **D** |
-| **Risk Score** | 55 |
+| **Risk Score** | 61 |
 | **Version** | `0.3.0` |
 | **Vendor** | bytedance |
-| **Stars** | ⭐ 28943 |
+| **Stars** | ⭐ 28944 |
 | **Language** | TypeScript |
 | **Source** | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 20 |
-| Medium   | 13 |
+| Medium   | 14 |
 | Low      | 6 |
 | Info     | 0 |
 
@@ -361,6 +361,18 @@ tool name "search_code" implies read-only operation but declares exec permission
 
 **Recommendation:**
 Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
+
+---
+
+### 🟡 `AS-009` — Typosquatting
+
+**Severity:** Medium
+
+**Description:**
+tool name "search_code" is suspiciously similar to the well-known MCP tool "search_nodes" (edit distance 2) — possible typosquatting
+
+**Recommendation:**
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

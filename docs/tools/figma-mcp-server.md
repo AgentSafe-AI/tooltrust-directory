@@ -1,17 +1,17 @@
-# 🔴 figma-mcp-server
+# 🟠 figma-mcp-server
 
 > Model Context Protocol server implementation for Figma API
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 57 |
+| **Grade** | **C** |
+| **Risk Score** | 42 |
 | **Version** | `1.0.0` |
 | **Vendor** | TimHolden |
 | **Stars** | ⭐ 147 |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) |
-| **Scan Date** | 2026-03-20 |
+| **Scan Date** | 2026-03-21 |
 | **Scanner** | tooltrust-scanner/v0.1.11 |
 
 ---
@@ -21,7 +21,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 18 |
+| High     | 16 |
 | Medium   | 37 |
 | Low      | 22 |
 | Info     | 0 |
@@ -97,18 +97,6 @@ tool declares http permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** High
-
-**Description:**
-input parameter "passcode" appears to accept a secret or credential
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
@@ -889,18 +877,6 @@ tool declares http permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** High
-
-**Description:**
-input parameter "passcode" appears to accept a secret or credential
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
