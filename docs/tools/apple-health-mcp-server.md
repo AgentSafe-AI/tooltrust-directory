@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [apple-health-mcp-server](https://github.com/the-momentum/apple-health-mcp-server) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -417,7 +417,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** High
 
 **Description:**
-input parameter "shared_payment_token" appears to accept a secret or credential
+input parameter "bearer_token" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -429,7 +429,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "bearer_token" appears to accept a secret or credential
+input parameter "shared_payment_token" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

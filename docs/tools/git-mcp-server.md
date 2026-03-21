@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [git-mcp-server](https://github.com/cyanheads/git-mcp-server) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 5 |
-| Medium   | 28 |
+| Medium   | 30 |
 | Low      | 13 |
 | Info     | 0 |
 
@@ -217,6 +217,18 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 `AS-009` — Typosquatting
+
+**Severity:** Medium
+
+**Description:**
+tool name "git_commit" is suspiciously similar to the well-known MCP tool "get_commit" (edit distance 1) — possible typosquatting
+
+**Recommendation:**
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 
@@ -553,6 +565,18 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 `AS-009` — Typosquatting
+
+**Severity:** Medium
+
+**Description:**
+tool name "git_tag" is suspiciously similar to the well-known MCP tool "get_tag" (edit distance 1) — possible typosquatting
+
+**Recommendation:**
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

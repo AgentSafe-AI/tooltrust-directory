@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.3` |
 | **Vendor** | kontext-dev |
-| **Stars** | ⭐ 812 |
+| **Stars** | ⭐ 813 |
 | **Language** | Python |
 | **Source** | [browser-use-mcp-server](https://github.com/kontext-dev/browser-use-mcp-server) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 

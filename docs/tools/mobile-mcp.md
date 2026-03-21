@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `0.0.48` |
 | **Vendor** | mobile-next |
-| **Stars** | ⭐ 4014 |
+| **Stars** | ⭐ 4033 |
 | **Language** | TypeScript |
 | **Source** | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 

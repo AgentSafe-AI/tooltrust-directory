@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Source** | [gmail](https://smithery.ai/server/gmail) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 

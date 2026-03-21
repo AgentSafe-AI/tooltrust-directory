@@ -8,11 +8,11 @@
 | **Risk Score** | 15 |
 | **Version** | `0.7.4` |
 | **Vendor** | g0t4 |
-| **Stars** | ⭐ 226 |
+| **Stars** | ⭐ 225 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 

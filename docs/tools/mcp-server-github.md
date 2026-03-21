@@ -8,11 +8,11 @@
 | **Risk Score** | 27 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 81656 |
+| **Stars** | ⭐ 81709 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 15 |
-| Medium   | 15 |
+| Medium   | 14 |
 | Low      | 24 |
 | Info     | 0 |
 
@@ -313,18 +313,6 @@ tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 `AS-009` — Typosquatting
-
-**Severity:** Medium
-
-**Description:**
-tool name "search_code" is suspiciously similar to the well-known MCP tool "search_nodes" (edit distance 2) — possible typosquatting
-
-**Recommendation:**
-This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

@@ -12,7 +12,7 @@
 | **Language** | JavaScript |
 | **Source** | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 6 |
-| Medium   | 4 |
+| Medium   | 5 |
 | Low      | 6 |
 | Info     | 0 |
 
@@ -85,6 +85,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 `AS-009` — Typosquatting
+
+**Severity:** Medium
+
+**Description:**
+tool name "list_tasks" is suspiciously similar to the well-known MCP tool "list_tags" (edit distance 2) — possible typosquatting
+
+**Recommendation:**
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

@@ -10,7 +10,7 @@
 | **Language** | TypeScript |
 | **Source** | [mcp-server-asana](https://github.com/roychri/mcp-server-asana) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -20,7 +20,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 5 |
-| Medium   | 34 |
+| Medium   | 30 |
 | Low      | 6 |
 | Info     | 0 |
 
@@ -242,54 +242,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "ASANA_GET_ALLOCATIONS" is nearly identical to "ASANA_GET_ALLOCATION" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "ASANA_GET_GOALS" is nearly identical to "ASANA_GET_GOAL" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "ASANA_GET_PORTFOLIOS" is nearly identical to "ASANA_GET_PORTFOLIO" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -314,15 +266,15 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟡 `AS-013` — Tool Shadowing
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
 
 **Description:**
-tool name "ASANA_GET_TAGS" is nearly identical to "ASANA_GET_TAG" (edit distance 1) — could shadow a trusted tool in a multi-server environment
+tool declares fs permission
 
 **Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

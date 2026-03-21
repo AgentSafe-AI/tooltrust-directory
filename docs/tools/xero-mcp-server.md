@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 13 |
+| Medium   | 12 |
 | Low      | 4 |
 | Info     | 0 |
 
@@ -109,18 +109,6 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "XERO_GET_CONTACTS" is nearly identical to "XERO_GET_CONTACT" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 

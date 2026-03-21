@@ -8,11 +8,11 @@
 | **Risk Score** | 8 |
 | **Version** | `task-master-ai@0.43.0` |
 | **Vendor** | eyaltoledano |
-| **Stars** | ⭐ 26016 |
+| **Stars** | ⭐ 26039 |
 | **Language** | JavaScript |
 | **Source** | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) |
 | **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
 
@@ -28,15 +28,15 @@
 
 ## Detailed Findings
 
-### 🟡 `AS-013` — Tool Shadowing
+### 🟡 `AS-009` — Typosquatting
 
 **Severity:** Medium
 
 **Description:**
-tool name "get_task" is nearly identical to "get_tasks" (edit distance 1) — could shadow a trusted tool in a multi-server environment
+tool name "get_task" is suspiciously similar to the well-known MCP tool "get_tag" (edit distance 2) — possible typosquatting
 
 **Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
+This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

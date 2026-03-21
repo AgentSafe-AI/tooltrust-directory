@@ -3,8 +3,8 @@
   "version": "2.10.3",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-03-21T02:09:01.189528413Z",
-  "scanner": "tooltrust-scanner/v0.1.11",
+  "scan_date": "2026-03-21T20:52:30.644809552Z",
+  "scanner": "tooltrust-scanner/v0.1.12",
   "source_url": "https://github.com/cyanheads/git-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
@@ -139,6 +139,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "git_commit"
+    },
+    {
+      "id": "AS-009",
+      "severity": "Medium",
+      "title": "Typosquatting",
+      "description": "tool name \"git_commit\" is suspiciously similar to the well-known MCP tool \"get_commit\" (edit distance 1) — possible typosquatting",
+      "recommendation": "This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.",
       "tool_name": "git_commit"
     },
     {
@@ -366,6 +374,14 @@
       "tool_name": "git_tag"
     },
     {
+      "id": "AS-009",
+      "severity": "Medium",
+      "title": "Typosquatting",
+      "description": "tool name \"git_tag\" is suspiciously similar to the well-known MCP tool \"get_tag\" (edit distance 1) — possible typosquatting",
+      "recommendation": "This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.",
+      "tool_name": "git_tag"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
@@ -385,7 +401,7 @@
   "summary": {
     "critical": 0,
     "high": 5,
-    "medium": 28,
+    "medium": 30,
     "low": 13,
     "info": 0
   },
