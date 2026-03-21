@@ -4,7 +4,7 @@ All 190 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `stable` | 180.3k | **[C](tools/n8n.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Mar 21 |
+| [n8n](https://github.com/n8n-io/n8n) | `stable` | 180.4k | **[C](tools/n8n.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Mar 21 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.34.0` | 98.6k | **[D](tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Mar 21 |
 | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 81.7k | **[A](tools/mcp-server-sequential-thinking.md)** | ✅ None | Mar 21 |
 | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 81.7k | **[A](tools/mcp-server-time.md)** | ✅ None | Mar 21 |
@@ -129,7 +129,7 @@ All 190 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | `mcp-server…` | 348 | **[A](tools/mcp-server-azure-devops.md)** | ✅ None | Mar 18 |
 | [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | `0.1.0` | 347 | **[C](tools/linear-mcp-server.md)** | `AS-009` ×2, 🔑 `AS-002` ×17, ⚡ `AS-011` ×7 | Mar 21 |
 | [vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) | `0.4.0` | 340 | **[C](tools/vscode-mcp-server.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×2 | Mar 21 |
-| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.2` | 333 | **[D](tools/codex-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-006`, ⚡ `AS-011` ×2 | Mar 21 |
+| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.2` | 334 | **[D](tools/codex-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-006`, ⚡ `AS-011` ×2 | Mar 21 |
 | [mcp-database-server](https://github.com/executeautomation/mcp-database-server) | `1.1.0` | 325 | **[B](tools/mcp-database-server.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 21 |
 | [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) | `3.0.0` | 324 | **[A](tools/apktool-mcp-server.md)** | ✅ None | Mar 18 |
 | [mssql-mcp-server](https://github.com/RichardHan/mssql_mcp_server) | `0.1.0` | 321 | **[A](tools/mssql-mcp-server.md)** | ✅ None | Mar 18 |
