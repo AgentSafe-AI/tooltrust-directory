@@ -152,6 +152,21 @@ export default async function ToolPage({ params }: PageProps) {
         </div>
       )}
 
+      {/* Incomplete scan warning */}
+      {report.scan_incomplete && (
+        <div className="flex items-start gap-3 rounded-xl border border-yellow-500/30 bg-yellow-500/10 px-5 py-4">
+          <span className="mt-0.5 text-yellow-400 text-lg leading-none">⚠</span>
+          <div>
+            <p className="font-semibold text-yellow-300">Scan Incomplete</p>
+            <p className="mt-1 text-sm text-yellow-400/80">
+              No tool definitions were found in this repository. The grade shown does not reflect
+              actual security analysis — the scanner could not enumerate this server&apos;s tools.
+              Verify the repo contains a valid MCP manifest and re-scan.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Security Findings */}
       <section className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden">
         <h2 className="border-b border-zinc-800 px-5 py-4 text-lg font-semibold text-zinc-100">

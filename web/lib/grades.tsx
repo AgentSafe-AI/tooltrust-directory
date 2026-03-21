@@ -64,6 +64,16 @@ const GRADE_META: Record<
     stroke: "stroke-red-500",
     ringText: "text-red-400",
   },
+  "?": {
+    label: "?",
+    emoji: "⚠️",
+    color: "text-zinc-500",
+    bg: "bg-zinc-100 border-zinc-300",
+    darkBg: "bg-zinc-600",
+    darkText: "text-white",
+    stroke: "stroke-zinc-500",
+    ringText: "text-zinc-400",
+  },
 };
 
 export function GradeBadge({

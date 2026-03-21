@@ -36,12 +36,12 @@ export interface Report {
   findings: Finding[];
   summary: Summary;
   methodology: string;
+  scan_incomplete?: boolean;
 }
 
 export function displayGrade(r: Report): string {
-  if (r.risk_score === 0 && r.findings.length === 0) {
-    return "A";
-  }
+  if (r.scan_incomplete) return "?";
+  if (r.risk_score === 0 && r.findings.length === 0) return "A";
   return r.grade;
 }
 

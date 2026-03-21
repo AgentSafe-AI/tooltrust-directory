@@ -25,6 +25,10 @@ function getReportsDir(): string {
 
 /**
  * Read and parse all JSON reports from data/reports/.
+ * Incomplete scans (no tool definitions found) are excluded from the public
+ * listing — they would show a misleading Grade A with zero findings.
+ * They remain accessible via direct URL (/tool/[name]) where a warning banner
+ * explains the scan was incomplete.
  */
 export function getAllReports(): Report[] {
   const dir = getReportsDir();
@@ -37,7 +41,9 @@ export function getAllReports(): Report[] {
     try {
       const raw = fs.readFileSync(path.join(dir, file), "utf-8");
       const report = JSON.parse(raw) as Report;
-      reports.push(report);
+      if (!report.scan_incomplete) {
+        reports.push(report);
+      }
     } catch {
       // skip invalid files
     }

@@ -76,9 +76,10 @@ type TrustReport struct {
 	License     string      `json:"license,omitempty"`
 	Language    string      `json:"language,omitempty"`
 	Description string      `json:"description,omitempty"`
-	Findings    []TTFinding `json:"findings"`
-	Summary     TTSummary   `json:"summary"`
-	Methodology string      `json:"methodology"`
+	Findings       []TTFinding `json:"findings"`
+	Summary        TTSummary   `json:"summary"`
+	Methodology    string      `json:"methodology"`
+	ScanIncomplete bool        `json:"scan_incomplete,omitempty"`
 	// ToolNames lists every MCP tool (function) name exposed by this server.
 	// Stored to enable rug-pull detection (AS-012): if the set changes between
 	// scans of the same version, the server description was silently altered.
@@ -263,6 +264,21 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 	}
 	sort.Strings(toolNames)
 
+	// Detect empty scans: scanner found no tool definitions at all.
+	// An empty scan gets Grade A by default (score 0, no findings) which is
+	// misleading — the tool was not analyzed, not confirmed safe.
+	scanIncomplete := len(toolNames) == 0 && len(as.Policies) == 0
+	if scanIncomplete {
+		allFindings = append(allFindings, TTFinding{
+			ID:             "AS-007",
+			Severity:       "Info",
+			Title:          rules["AS-007"].title,
+			Description:    "No tool definitions were found in this repository. The scanner could not enumerate this server's tools — this grade reflects an incomplete scan, not a clean bill of health.",
+			Recommendation: "Verify the repository contains a valid MCP tool manifest (tools.json, mcp.json, or TypeScript/Python source with tool definitions). Re-scan after adding tool definitions.",
+		})
+		summary.Info++
+	}
+
 	// AS-012: Rug-Pull Detection — flag if tool names changed between scans
 	// of the same version. A version bump is expected to change tools; a
 	// silent update to an existing version is suspicious.
@@ -343,23 +359,24 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 	}
 
 	return TrustReport{
-		ToolID:      toolID,
-		Version:     version,
-		Grade:       computeGrade(maxScore, allFindings),
-		RiskScore:   maxScore,
-		ScanDate:    scanDate,
-		Scanner:     scannerVersion,
-		SourceURL:   sourceURL,
-		Category:    category,
-		Vendor:      vendor,
-		Stars:       stars,
-		License:     license,
-		Language:    language,
-		Description: description,
-		Findings:    allFindings,
-		Summary:     summary,
-		Methodology: methodologyURL,
-		ToolNames:   toolNames,
+		ToolID:         toolID,
+		Version:        version,
+		Grade:          computeGrade(maxScore, allFindings),
+		RiskScore:      maxScore,
+		ScanDate:       scanDate,
+		Scanner:        scannerVersion,
+		SourceURL:      sourceURL,
+		Category:       category,
+		Vendor:         vendor,
+		Stars:          stars,
+		License:        license,
+		Language:       language,
+		Description:    description,
+		Findings:       allFindings,
+		Summary:        summary,
+		Methodology:    methodologyURL,
+		ScanIncomplete: scanIncomplete,
+		ToolNames:      toolNames,
 	}
 }
 
