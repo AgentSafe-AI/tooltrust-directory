@@ -1,6 +1,6 @@
 # ToolTrust — Full Directory
 
-All 202 audited tools. [← Back to README](../README.md#-security-registry)
+All 203 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -173,6 +173,7 @@ All 202 audited tools. [← Back to README](../README.md#-security-registry)
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | `0.1.1` | 176 | **[C](tools/aws-finops-mcp-server.md)** | 🔑 `AS-002` ×9, 🗝️ `AS-010`, ⚡ `AS-011` ×5 | Mar 21 |
 | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | `0.1.8` | 166 | **[C](tools/railway-mcp-server.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` | Mar 21 |
 | [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | `1.2.2` | 164 | **[C](tools/mcp-3d-printer-server.md)** | 🔑 `AS-002` ×21, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×4 | Mar 21 |
+| [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | `2.8.7` | 160 | **[C](tools/mcp-server-typescript.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×13 | Mar 22 |
 | [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) | `nextcloud-…` | 157 | **[C](tools/nextcloud-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×3 | Mar 21 |
 | [k8s-mcp-server](https://github.com/reza-gholizade/k8s-mcp-server) | `1.0.24` | 150 | **[A](tools/k8s-mcp-server.md)** | ✅ None | Mar 18 |
 | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) | `1.1.0` | 149 | **[B](tools/express-rest-api-and-mcp-server-framework.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3, `AS-009` | Mar 21 |
@@ -193,17 +194,17 @@ All 202 audited tools. [← Back to README](../README.md#-security-registry)
 | [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 30 | **[B](tools/clay-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×6 | Mar 21 |
 | [math-mcp](https://smithery.ai/server/EthanHenrickson/math-mcp) | `smithery` | — | **[A](tools/math-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 21 |
 | [agentmail](https://smithery.ai/server/agentmail) | `smithery` | — | **[B](tools/agentmail.md)** | 🗝️ `AS-010` ×2, 🔑 `AS-002` ×3 | Mar 21 |
-| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[B](tools/googledocs.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 21 |
 | [linkup-mcp-server](https://smithery.ai/server/LinkupPlatform/linkup-mcp-server) | `smithery` | — | **[B](tools/linkup-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 21 |
+| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[B](tools/googledocs.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 21 |
 | [mcp-semantic-scholar](https://smithery.ai/server/hamid-vakilzadeh/mcpsemanticscholar) | `smithery` | — | **[C](tools/mcp-semantic-scholar.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×7 | Mar 21 |
 | [mcp-browserbase](https://smithery.ai/server/browserbasehq/mcp-browserbase) | `smithery` | — | **[C](tools/mcp-browserbase.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Mar 21 |
 | [instagram](https://smithery.ai/server/instagram) | `smithery` | — | **[C](tools/instagram.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×3 | Mar 21 |
 | [reddit](https://smithery.ai/server/reddit) | `smithery` | — | **[C](tools/reddit.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 21 |
 | [googledrive](https://smithery.ai/server/googledrive) | `smithery` | — | **[C](tools/googledrive.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Mar 21 |
 | [googlecalendar](https://smithery.ai/server/googlecalendar) | `smithery` | — | **[C](tools/googlecalendar.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×7, 🗝️ `AS-010` ×14 | Mar 21 |
-| [googlesheets](https://smithery.ai/server/googlesheets) | `smithery` | — | **[C](tools/googlesheets.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×5 | Mar 21 |
-| [slack-smithery](https://smithery.ai/server/slack) | `smithery` | — | **[C](tools/slack-smithery.md)** | 🔑 `AS-002` ×100, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×43 | Mar 21 |
 | [ticktick](https://smithery.ai/server/ticktick) | `smithery` | — | **[C](tools/ticktick.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×2, `AS-013` | Mar 21 |
-| [gmail](https://smithery.ai/server/gmail) | `smithery` | — | **[C](tools/gmail.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×6, 🗝️ `AS-010` ×7 | Mar 21 |
+| [slack-smithery](https://smithery.ai/server/slack) | `smithery` | — | **[C](tools/slack-smithery.md)** | 🔑 `AS-002` ×100, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×43 | Mar 21 |
+| [googlesheets](https://smithery.ai/server/googlesheets) | `smithery` | — | **[C](tools/googlesheets.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×5 | Mar 21 |
 | [googlesuper](https://smithery.ai/server/googlesuper) | `smithery` | — | **[C](tools/googlesuper.md)** | 🔑 `AS-002` ×150, ⚡ `AS-011` ×34, 🗝️ `AS-010` ×40 | Mar 21 |
+| [gmail](https://smithery.ai/server/gmail) | `smithery` | — | **[C](tools/gmail.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×6, 🗝️ `AS-010` ×7 | Mar 21 |
 
