@@ -378,17 +378,13 @@ jobs:
             if [ "$SCAN_OK" = "false" ]; then
               echo "SKIP    : $TOOL_ID marked unscannable — no report generated"
               if [ -f "$OUT" ] && [ "$CONFIRMED_ZERO" = "true" ]; then
-                # Only remove a stale Grade-A/0-findings report when we positively
-                # confirmed zero tools from a successful scan attempt.  A crashed
-                # or timed-out scan is NOT confirmation — keep the existing report
-                # so high-star tools (playwright-mcp, kubernetes-mcp-server, etc.)
-                # are not silently dropped during transient scan failures.
-                STALE_GRADE=$(jq -r '.grade // ""' "$OUT" 2>/dev/null)
-                STALE_TOOLS=$(jq '.findings | length' "$OUT" 2>/dev/null || echo -1)
-                if [ "$STALE_GRADE" = "A" ] && [ "$STALE_TOOLS" -eq 0 ]; then
-                  echo "CLEANUP : removing stale Grade A / 0-findings report $OUT (confirmed zero tools)"
-                  rm -f "$OUT"
-                fi
+                # Remove the stale report regardless of grade: a confirmed zero-tool
+                # result means the up-to-date scanner genuinely cannot scan this server.
+                # Keeping an old report (even Grade B/C/D/F) would misrepresent the
+                # server's current state.  We only remove on CONFIRMED_ZERO (a scan
+                # tier ran and returned 0 tools), never on crash/timeout.
+                echo "CLEANUP : removing stale report $OUT (confirmed zero tools — up-to-date scanner cannot scan this server)"
+                rm -f "$OUT"
               elif [ -f "$OUT" ]; then
                 echo "PRESERVE: keeping existing report — scan tiers crashed/timed-out (not confirmed zero)"
               fi

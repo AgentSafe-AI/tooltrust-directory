@@ -134,6 +134,9 @@ export default async function ToolPage({ params }: PageProps) {
           <p className="text-xs text-zinc-500">
             By {report.vendor || "—"} | {report.findings?.length ?? 0} findings
             | Scanned {formatScanDate(report.scan_date)}
+            {report.scanner && (
+              <> | <span className="font-mono">{report.scanner}</span></>
+            )}
           </p>
         </div>
       </div>

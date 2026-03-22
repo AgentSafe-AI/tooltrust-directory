@@ -398,6 +398,10 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		if ghOwner != "" && ghRepo != "" {
 			ghRepoData, _, err := client.Repositories.Get(ctx, ghOwner, ghRepo)
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
+				if ghRepoData.GetStargazersCount() < 50 {
+					log.Printf("skip smithery %s — %d stars < 50", toolID, ghRepoData.GetStargazersCount())
+					continue
+				}
 				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
 				if verErr == nil {
 					if cur, ok := existing[toolID]; ok && cur.Version == version {
@@ -426,6 +430,10 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		}
 
 		if scan.RepoOwner == "" {
+			if s.UseCount < 50 {
+				log.Printf("skip smithery-native %s — %d useCount < 50", toolID, s.UseCount)
+				continue
+			}
 			if _, ok := existing[toolID]; ok && os.Getenv("FORCE_RESCAN") != "true" {
 				log.Printf("up-to-date %s (smithery-native)", toolID)
 				continue
