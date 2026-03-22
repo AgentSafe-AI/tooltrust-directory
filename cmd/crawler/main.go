@@ -416,14 +416,7 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		if ghOwner != "" && ghRepo != "" {
 			ghRepoData, _, err := client.Repositories.Get(ctx, ghOwner, ghRepo)
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
-				if ghRepoData.GetStargazersCount() < 50 {
-					log.Printf("skip smithery %s — %d stars < 50", toolID, ghRepoData.GetStargazersCount())
-					// Un-mark seen so the backfill can still re-queue existing
-					// reports (stars filter is for new discovery only).
-					delete(seen, toolID)
-					continue
-				}
-				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
+					version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
 				if verErr == nil {
 					if cur, ok := existing[toolID]; ok && cur.Version == version {
 						if os.Getenv("FORCE_RESCAN") != "true" {
@@ -559,7 +552,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	// PerPage:100 (API max) sorted by stars captures the top ~400 repos across
 	// 4 queries. A minimum-star threshold filters out stub/test repos that
 	// crowd out genuine tools with lower star counts.
-	const minStars = 100
+	const minStars = 50
 	queries := []string{
 		"topic:mcp-server",
 		"mcp-server in:name language:TypeScript",
