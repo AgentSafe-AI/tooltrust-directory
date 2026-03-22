@@ -249,8 +249,17 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 
 		version, err := latestVersion(ctx, client, owner, repo)
 		if err != nil {
-			log.Printf("seed %s: no release/tag (%v)", toolID, err)
-			continue
+			if os.Getenv("FORCE_RESCAN") == "true" {
+				if cur, ok := existing[toolID]; ok {
+					version = cur.Version // rescan with last-known version
+				} else {
+					log.Printf("seed %s: no release/tag, skip (%v)", toolID, err)
+					continue
+				}
+			} else {
+				log.Printf("seed %s: no release/tag (%v)", toolID, err)
+				continue
+			}
 		}
 
 		if cur, ok := existing[toolID]; ok && cur.Version == version {
@@ -312,8 +321,17 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 
 		version, err := latestVersion(ctx, client, owner, repo)
 		if err != nil {
-			log.Printf("seed override %s: no release/tag (%v)", ov.ToolID, err)
-			continue
+			if os.Getenv("FORCE_RESCAN") == "true" {
+				if cur, ok := existing[ov.ToolID]; ok {
+					version = cur.Version
+				} else {
+					log.Printf("seed override %s: no release/tag, skip (%v)", ov.ToolID, err)
+					continue
+				}
+			} else {
+				log.Printf("seed override %s: no release/tag (%v)", ov.ToolID, err)
+				continue
+			}
 		}
 
 		if cur, ok := existing[ov.ToolID]; ok && cur.Version == version {
@@ -400,6 +418,9 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
 				if ghRepoData.GetStargazersCount() < 50 {
 					log.Printf("skip smithery %s — %d stars < 50", toolID, ghRepoData.GetStargazersCount())
+					// Un-mark seen so the backfill can still re-queue existing
+					// reports (stars filter is for new discovery only).
+					delete(seen, toolID)
 					continue
 				}
 				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
@@ -432,6 +453,7 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		if scan.RepoOwner == "" {
 			if s.UseCount < 50 {
 				log.Printf("skip smithery-native %s — %d useCount < 50", toolID, s.UseCount)
+				delete(seen, toolID)
 				continue
 			}
 			if _, ok := existing[toolID]; ok && os.Getenv("FORCE_RESCAN") != "true" {
@@ -579,8 +601,17 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 
 			version, err := latestVersion(ctx, client, repo.GetOwner().GetLogin(), repo.GetName())
 			if err != nil {
-				log.Printf("skip %s: no release/tag (%v)", toolID, err)
-				continue
+				if os.Getenv("FORCE_RESCAN") == "true" {
+					if cur, ok := existing[toolID]; ok {
+						version = cur.Version // rescan with last-known version
+					} else {
+						log.Printf("skip %s: no release/tag, skip (%v)", toolID, err)
+						continue
+					}
+				} else {
+					log.Printf("skip %s: no release/tag (%v)", toolID, err)
+					continue
+				}
 			}
 
 			if cur, ok := existing[toolID]; ok && cur.Version == version {
