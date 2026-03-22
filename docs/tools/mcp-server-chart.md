@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.9.10` |
 | **Vendor** | antvis |
-| **Stars** | ⭐ 3865 |
+| **Stars** | ⭐ 3866 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) |
 | **Scan Date** | 2026-03-22 |

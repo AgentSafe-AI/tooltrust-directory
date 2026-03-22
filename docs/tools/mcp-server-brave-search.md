@@ -8,7 +8,7 @@
 | **Risk Score** | 29 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 81721 |
+| **Stars** | ⭐ 81722 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) |
 | **Scan Date** | 2026-03-22 |

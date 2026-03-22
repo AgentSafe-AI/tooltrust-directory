@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 184 |
 | **Language** | Python |
 | **Source** | [photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) |
-| **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scan Date** | 2026-03-22 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

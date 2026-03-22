@@ -21,7 +21,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `stable` | 180.4k | **[B](./docs/tools/n8n.md)** | `AS-012`, 🔑 `AS-002` | Mar 22 |
+| [n8n](https://github.com/n8n-io/n8n) | `stable` | 180.4k | **[C](./docs/tools/n8n.md)** | `AS-012`, 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Mar 22 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.34.0` | 98.6k | **[D](./docs/tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Mar 22 |
 | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 81.7k | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | ✅ None | Mar 22 |
 | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 81.7k | **[A](./docs/tools/mcp-server-time.md)** | ✅ None | Mar 22 |
