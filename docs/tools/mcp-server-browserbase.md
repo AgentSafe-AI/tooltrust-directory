@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `2.4.3` |
 | **Vendor** | browserbase |
-| **Stars** | ⭐ 3197 |
+| **Stars** | ⭐ 3198 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
 | **Scan Date** | 2026-03-22 |

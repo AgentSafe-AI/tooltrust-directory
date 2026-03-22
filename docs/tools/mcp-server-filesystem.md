@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 81722 |
+| **Stars** | ⭐ 81725 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) |
 | **Scan Date** | 2026-03-22 |

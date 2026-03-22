@@ -8,7 +8,7 @@
 | **Risk Score** | 40 |
 | **Version** | `0.32.0` |
 | **Vendor** | github |
-| **Stars** | ⭐ 28132 |
+| **Stars** | ⭐ 28131 |
 | **Language** | Go |
 | **Source** | [github-mcp-server](https://github.com/github/github-mcp-server) |
 | **Scan Date** | 2026-03-22 |
