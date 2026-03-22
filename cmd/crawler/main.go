@@ -30,8 +30,15 @@ import (
 
 // ExistingReport captures the fields we need from a stored report.
 type ExistingReport struct {
-	ToolID  string `json:"tool_id"`
-	Version string `json:"version"`
+	ToolID      string `json:"tool_id"`
+	Version     string `json:"version"`
+	SourceURL   string `json:"source_url"`
+	Vendor      string `json:"vendor"`
+	Stars       int    `json:"stars"`
+	Language    string `json:"language"`
+	Category    string `json:"category"`
+	Description string `json:"description"`
+	License     string `json:"license"`
 }
 
 // PendingScan is one entry in the output pending-scans.json.
@@ -103,10 +110,10 @@ func newGitHubClient(ctx context.Context, token string) *github.Client {
 	return github.NewClient(oauth2.NewClient(ctx, ts))
 }
 
-// loadExistingReports returns a map of tool_id → version for every JSON file
-// in reportsDir. Missing directory is treated as empty (first run).
-func loadExistingReports(dir string) (map[string]string, error) {
-	out := make(map[string]string)
+// loadExistingReports returns a map of tool_id → ExistingReport for every JSON
+// file in reportsDir. Missing directory is treated as empty (first run).
+func loadExistingReports(dir string) (map[string]*ExistingReport, error) {
+	out := make(map[string]*ExistingReport)
 
 	entries, err := os.ReadDir(dir)
 	if errors.Is(err, os.ErrNotExist) {
@@ -130,7 +137,7 @@ func loadExistingReports(dir string) (map[string]string, error) {
 			log.Printf("skip %s (parse error): %v", e.Name(), err)
 			continue
 		}
-		out[r.ToolID] = r.Version
+		out[r.ToolID] = &r
 	}
 	return out, nil
 }
@@ -217,7 +224,7 @@ func loadSmitherySeeds(path string) ([]SmitherySeed, error) {
 // discoverFromSeed fetches seed repos from GitHub and returns PendingScans for
 // those needing (re-)scan. Popular MCPs from mcpmarket/smithery that may lack
 // "mcp-server" in name/topic.
-func discoverFromSeed(ctx context.Context, client *github.Client, seed []string, existing map[string]string, seen map[string]bool) ([]PendingScan, error) {
+func discoverFromSeed(ctx context.Context, client *github.Client, seed []string, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
 	var pending []PendingScan
 	for _, spec := range seed {
 		parts := strings.SplitN(spec, "/", 2)
@@ -246,7 +253,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 			continue
 		}
 
-		if cur, ok := existing[toolID]; ok && cur == version {
+		if cur, ok := existing[toolID]; ok && cur.Version == version {
 			if os.Getenv("FORCE_RESCAN") != "true" {
 				log.Printf("up-to-date %s @ %s (seed)", toolID, version)
 				continue
@@ -278,7 +285,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 // discoverFromOverrides handles explicit monorepo tool entries from seed-popular.json.
 // Each override specifies the containing repo, an explicit tool_id, and the npm
 // package name — bypassing the auto-detection that fails for monorepos.
-func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]string, seen map[string]bool) ([]PendingScan, error) {
+func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
 	var pending []PendingScan
 	for _, ov := range overrides {
 		if ov.ToolID == "" || ov.Repo == "" || ov.NPMPackage == "" {
@@ -309,7 +316,7 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 			continue
 		}
 
-		if cur, ok := existing[ov.ToolID]; ok && cur == version {
+		if cur, ok := existing[ov.ToolID]; ok && cur.Version == version {
 			if os.Getenv("FORCE_RESCAN") != "true" {
 				log.Printf("up-to-date %s @ %s (override)", ov.ToolID, version)
 				continue
@@ -348,7 +355,7 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 // those not already covered by GitHub/seed discovery. Tools that have a GitHub
 // repo are enriched with stars/version data; Smithery-native tools (no GitHub)
 // get queued with SmitheryQualifiedName so the CI can scan them directly.
-func discoverFromSmithery(ctx context.Context, client *github.Client, existing map[string]string, seen map[string]bool) ([]PendingScan, error) {
+func discoverFromSmithery(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
 	servers, err := smithery.ListTopByUsage(200)
 	if err != nil {
 		log.Printf("Smithery discovery: %v (skipping)", err)
@@ -393,7 +400,7 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
 				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
 				if verErr == nil {
-					if cur, ok := existing[toolID]; ok && cur == version {
+					if cur, ok := existing[toolID]; ok && cur.Version == version {
 						if os.Getenv("FORCE_RESCAN") != "true" {
 							log.Printf("up-to-date %s @ %s (smithery+gh)", toolID, version)
 							continue
@@ -448,7 +455,7 @@ func parseGitHubURL(u string) []string {
 // These are popular servers (Instagram, Google Sheets, etc.) that live on the
 // Smithery platform with no GitHub repo.  Seeding them explicitly guarantees
 // discovery even when the Smithery top-200 API is unreachable.
-func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]string, seen map[string]bool) []PendingScan {
+func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]*ExistingReport, seen map[string]bool) []PendingScan {
 	var pending []PendingScan
 	for _, s := range seeds {
 		toolID := s.ToolID
@@ -478,7 +485,7 @@ func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]string,
 
 // discoverTools queries GitHub Search and seed file, merges results, and returns
 // tools whose latest version is newer than (or absent from) existing.
-func discoverTools(ctx context.Context, client *github.Client, existing map[string]string, seedRepos []string) ([]PendingScan, error) {
+func discoverTools(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seedRepos []string) ([]PendingScan, error) {
 	seen := make(map[string]bool)
 
 	var pending []PendingScan
@@ -568,7 +575,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 				continue
 			}
 
-			if cur, ok := existing[toolID]; ok && cur == version {
+			if cur, ok := existing[toolID]; ok && cur.Version == version {
 				if os.Getenv("FORCE_RESCAN") != "true" {
 					log.Printf("up-to-date %s @ %s", toolID, version)
 					continue
@@ -596,10 +603,61 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		}
 	}
 
+	// Backfill: when force-rescanning, re-queue any existing report that was
+	// not reached by any discovery path above (e.g. tools that have fallen out
+	// of Smithery top-200 and don't match GitHub search queries).  Without
+	// this, tools like trendradar (49k stars but no "mcp-server" in the name
+	// and no matching topic) are silently skipped on every force rescan.
+	if os.Getenv("FORCE_RESCAN") == "true" {
+		backfilled := 0
+		for toolID, r := range existing {
+			if seen[toolID] {
+				continue
+			}
+			seen[toolID] = true
+			// Parse owner/repo from source_url if it's a GitHub URL.
+			owner, repo := parseGitHubOwnerRepo(r.SourceURL)
+			pending = append(pending, PendingScan{
+				ToolID:      toolID,
+				RepoOwner:   owner,
+				RepoName:    repo,
+				Version:     r.Version,
+				SourceURL:   r.SourceURL,
+				Vendor:      r.Vendor,
+				Stars:       r.Stars,
+				Language:    r.Language,
+				Category:    r.Category,
+				Description: r.Description,
+				License:     r.License,
+				DiscoveredAt: time.Now().UTC(),
+			})
+			backfilled++
+		}
+		if backfilled > 0 {
+			log.Printf("Backfill (FORCE_RESCAN): %d tool(s) re-queued from existing reports", backfilled)
+		}
+	}
+
 	sort.Slice(pending, func(i, j int) bool {
 		return pending[i].Stars > pending[j].Stars
 	})
 	return pending, nil
+}
+
+// parseGitHubOwnerRepo extracts the owner and repo name from a GitHub URL.
+// Returns empty strings for non-GitHub or unparseable URLs.
+func parseGitHubOwnerRepo(sourceURL string) (owner, repo string) {
+	// e.g. https://github.com/sansan0/TrendRadar
+	trimmed := strings.TrimPrefix(sourceURL, "https://github.com/")
+	trimmed = strings.TrimPrefix(trimmed, "http://github.com/")
+	if trimmed == sourceURL {
+		return "", "" // not a GitHub URL
+	}
+	parts := strings.SplitN(strings.TrimSuffix(trimmed, "/"), "/", 2)
+	if len(parts) != 2 || parts[0] == "" || parts[1] == "" {
+		return "", ""
+	}
+	return parts[0], parts[1]
 }
 
 // latestVersion returns the semver string (without leading "v") of the latest
