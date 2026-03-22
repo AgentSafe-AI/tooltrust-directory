@@ -314,14 +314,9 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                       </span>
                     ) : null}
                   </span>
-                  <span className="flex items-center gap-2">
-                    {r.scanner && (
-                      <span className="font-mono text-zinc-600">{r.scanner}</span>
-                    )}
-                    {r.scan_date && (
-                      <span>Scanned {formatScannedAgo(r.scan_date)}</span>
-                    )}
-                  </span>
+                  {r.scan_date && (
+                    <span>Scanned {formatScannedAgo(r.scan_date)}</span>
+                  )}
                 </div>
               </div>
             </Link>
