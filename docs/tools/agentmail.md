@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [agentmail](https://smithery.ai/server/agentmail) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

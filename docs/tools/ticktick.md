@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [ticktick](https://smithery.ai/server/ticktick) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
@@ -163,7 +163,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** High
 
 **Description:**
-tool name "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1" duplicates (or near-duplicates) "TICKTICK_OAUTH2_AUTHORIZATION_STEP1" already registered in this tool set — a malicious server can shadow a trusted tool by registering an identical name
+tool name "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1" duplicates "TICKTICK_OAUTH2_AUTHORIZATION_STEP1" already registered in this tool set — a malicious server can shadow a trusted tool by registering an identical name
 
 **Recommendation:**
 Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.

@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

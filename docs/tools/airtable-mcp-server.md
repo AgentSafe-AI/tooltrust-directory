@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 1 |
-| Medium   | 8 |
+| Medium   | 7 |
 | Low      | 1 |
 | Info     | 0 |
 
@@ -121,18 +121,6 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 `AS-009` — Typosquatting
-
-**Severity:** Medium
-
-**Description:**
-tool name "create_field" is suspiciously similar to the well-known MCP tool "create_file" (edit distance 2) — possible typosquatting
-
-**Recommendation:**
-This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
 
 ---
 

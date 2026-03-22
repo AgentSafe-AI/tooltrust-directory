@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 42 |
-| Medium   | 17 |
+| Medium   | 10 |
 | Low      | 50 |
 | Info     | 0 |
 
@@ -520,18 +520,6 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getCryptocurrency5MinuteData" is nearly identical to "getCryptocurrency1MinuteData" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
@@ -553,18 +541,6 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getForex5MinuteData" is nearly identical to "getForex1MinuteData" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 
@@ -709,18 +685,6 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getIndex5MinuteData" is nearly identical to "getIndex1MinuteData" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 
@@ -1021,54 +985,6 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getEMA" is nearly identical to "getSMA" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getWMA" is nearly identical to "getEMA" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getDEMA" is nearly identical to "getEMA" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "getTEMA" is nearly identical to "getDEMA" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 

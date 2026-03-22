@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

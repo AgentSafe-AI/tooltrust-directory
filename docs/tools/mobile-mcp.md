@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
@@ -22,7 +22,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 1 |
-| Medium   | 5 |
+| Medium   | 4 |
 | Low      | 1 |
 | Info     | 0 |
 
@@ -85,18 +85,6 @@ tool declares fs permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 `AS-013` — Tool Shadowing
-
-**Severity:** Medium
-
-**Description:**
-tool name "mobile_get_orientation" is nearly identical to "mobile_set_orientation" (edit distance 1) — could shadow a trusted tool in a multi-server environment
-
-**Recommendation:**
-Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
 
 ---
 

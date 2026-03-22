@@ -2,9 +2,9 @@
   "tool_id": "mcp-server-ccxt",
   "version": "1.2.1",
   "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-03-22T03:07:44.035220095Z",
-  "scanner": "tooltrust-scanner/v0.1.12",
+  "risk_score": 32,
+  "scan_date": "2026-03-22T03:25:54.939807401Z",
+  "scanner": "tooltrust-scanner/v0.1.15",
   "source_url": "https://github.com/doggybee/mcp-server-ccxt",
   "category": "Developer Tools",
   "vendor": "doggybee",
@@ -17,6 +17,14 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "account-balance"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
       "description": "input parameter \"secret\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "account-balance"
@@ -25,15 +33,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "account-balance"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "place-market-order"
     },
@@ -41,7 +41,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "place-market-order"
     },
@@ -65,7 +65,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "set-margin-mode"
     },
@@ -73,7 +73,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "set-margin-mode"
     },
@@ -116,20 +116,12 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "set-proxy-config"
-    },
-    {
-      "id": "AS-013",
-      "severity": "Medium",
-      "title": "Tool Shadowing",
-      "description": "tool name \"set-proxy-config\" is nearly identical to \"get-proxy-config\" (edit distance 1) — could shadow a trusted tool in a multi-server environment",
-      "recommendation": "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
-      "tool_name": "set-proxy-config"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 12,
-    "medium": 1,
+    "medium": 0,
     "low": 1,
     "info": 0
   },

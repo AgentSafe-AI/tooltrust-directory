@@ -12,7 +12,7 @@
 | **Language** | JavaScript |
 | **Source** | [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
@@ -22,23 +22,11 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 6 |
-| Medium   | 9 |
+| Medium   | 8 |
 | Low      | 15 |
 | Info     | 0 |
 
 ## Detailed Findings
-
-### 🟡 `AS-009` — Typosquatting
-
-**Severity:** Medium
-
-**Description:**
-tool name "list_comments" is suspiciously similar to the well-known MCP tool "list_commits" (edit distance 2) — possible typosquatting
-
-**Recommendation:**
-This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

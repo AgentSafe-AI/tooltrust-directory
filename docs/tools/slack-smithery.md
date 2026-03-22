@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [slack-smithery](https://smithery.ai/server/slack) |
 | **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
