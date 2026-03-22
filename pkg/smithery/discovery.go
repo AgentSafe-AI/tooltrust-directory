@@ -23,33 +23,54 @@ type SmitheryServer struct {
 	Homepage   string `json:"homepage,omitempty"`
 }
 
-// listResponse is the top-level shape of GET /servers?pageSize=N.
-type listResponse struct {
-	Servers []SmitheryServer `json:"servers"`
+// pagination is the shape of the pagination block in the Smithery list response.
+type pagination struct {
+	CurrentPage int `json:"currentPage"`
+	PageSize    int `json:"pageSize"`
+	TotalPages  int `json:"totalPages"`
+	TotalCount  int `json:"totalCount"`
 }
 
-// ListTopByUsage fetches the top n servers from the Smithery registry.
-// The registry returns servers ordered by usage (call count) by default.
-// Returns a nil slice (not an error) when the registry is unreachable,
-// so callers can treat it as a non-fatal fallback.
-func ListTopByUsage(n int) ([]SmitheryServer, error) {
+// listResponse is the top-level shape of GET /servers?pageSize=N&page=P.
+type listResponse struct {
+	Servers    []SmitheryServer `json:"servers"`
+	Pagination pagination       `json:"pagination"`
+}
+
+const maxPageSize = 200 // Smithery API hard limit per request
+
+// ListAll fetches every server from the Smithery registry by paginating
+// through all pages (pageSize=200). The registry returns servers ordered by
+// usage (call count) descending. Returns a nil slice (not an error) when the
+// registry is unreachable, so callers can treat it as a non-fatal fallback.
+func ListAll() ([]SmitheryServer, error) {
 	client := &http.Client{Timeout: smitheryTimeout}
-	apiURL := fmt.Sprintf("%s/servers?pageSize=%d", smitheryBaseURL, n)
+	var all []SmitheryServer
 
-	resp, err := client.Get(apiURL)
-	if err != nil {
-		return nil, fmt.Errorf("GET %s: %w", apiURL, err)
-	}
-	defer resp.Body.Close()
+	for page := 1; ; page++ {
+		apiURL := fmt.Sprintf("%s/servers?pageSize=%d&page=%d", smitheryBaseURL, maxPageSize, page)
+		resp, err := client.Get(apiURL)
+		if err != nil {
+			return nil, fmt.Errorf("GET %s: %w", apiURL, err)
+		}
+		body, readErr := io.ReadAll(resp.Body)
+		resp.Body.Close()
+		if readErr != nil {
+			return nil, fmt.Errorf("read page %d: %w", page, readErr)
+		}
+		if resp.StatusCode != http.StatusOK {
+			return nil, fmt.Errorf("HTTP %d page %d: %s", resp.StatusCode, page, body)
+		}
 
-	if resp.StatusCode != http.StatusOK {
-		body, _ := io.ReadAll(resp.Body)
-		return nil, fmt.Errorf("HTTP %d: %s", resp.StatusCode, body)
-	}
+		var lr listResponse
+		if err := json.Unmarshal(body, &lr); err != nil {
+			return nil, fmt.Errorf("decode page %d: %w", page, err)
+		}
+		all = append(all, lr.Servers...)
 
-	var lr listResponse
-	if err := json.NewDecoder(resp.Body).Decode(&lr); err != nil {
-		return nil, fmt.Errorf("decode: %w", err)
+		if page >= lr.Pagination.TotalPages || len(lr.Servers) == 0 {
+			break
+		}
 	}
-	return lr.Servers, nil
+	return all, nil
 }

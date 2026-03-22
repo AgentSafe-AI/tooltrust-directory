@@ -351,12 +351,12 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 	return pending, nil
 }
 
-// discoverFromSmithery fetches the top 200 Smithery servers by usage and queues
+// discoverFromSmithery fetches all Smithery servers by usage and queues
 // those not already covered by GitHub/seed discovery. Tools that have a GitHub
 // repo are enriched with stars/version data; Smithery-native tools (no GitHub)
 // get queued with SmitheryQualifiedName so the CI can scan them directly.
 func discoverFromSmithery(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
-	servers, err := smithery.ListTopByUsage(200)
+	servers, err := smithery.ListAll()
 	if err != nil {
 		log.Printf("Smithery discovery: %v (skipping)", err)
 		return nil, nil // non-fatal
@@ -516,8 +516,8 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		pending = append(pending, fromSeed...)
 	}
 
-	// Smithery discovery: top-200 by usage — catches tools that are popular on
-	// Smithery but have few GitHub stars or no standalone GitHub repo.
+	// Smithery discovery: all tools by usage — covers the full Smithery catalog
+	// (~4k tools) including those with few GitHub stars or no standalone repo.
 	fromSmithery, err := discoverFromSmithery(ctx, client, existing, seen)
 	if err != nil {
 		log.Printf("Smithery discovery error: %v", err)
