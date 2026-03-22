@@ -7,8 +7,9 @@
 | **Grade** | **A** |
 | **Risk Score** | 4 |
 | **Version** | `smithery` |
+| **Vendor** | Smithery |
 | **Source** | [math-mcp](https://smithery.ai/server/EthanHenrickson/math-mcp) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

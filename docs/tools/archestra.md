@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3539 |
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

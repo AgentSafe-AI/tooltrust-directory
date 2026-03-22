@@ -7,8 +7,9 @@
 | **Grade** | **B** |
 | **Risk Score** | 17 |
 | **Version** | `smithery` |
+| **Vendor** | Smithery |
 | **Source** | [linkup-mcp-server](https://smithery.ai/server/LinkupPlatform/linkup-mcp-server) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

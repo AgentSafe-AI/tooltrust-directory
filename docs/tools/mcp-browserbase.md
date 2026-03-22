@@ -7,8 +7,9 @@
 | **Grade** | **C** |
 | **Risk Score** | 25 |
 | **Version** | `smithery` |
+| **Vendor** | Smithery |
 | **Source** | [mcp-browserbase](https://smithery.ai/server/browserbasehq/mcp-browserbase) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

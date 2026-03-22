@@ -7,8 +7,9 @@
 | **Grade** | **C** |
 | **Risk Score** | 27 |
 | **Version** | `smithery` |
+| **Vendor** | Smithery |
 | **Source** | [reddit](https://smithery.ai/server/reddit) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

@@ -7,8 +7,9 @@
 | **Grade** | **B** |
 | **Risk Score** | 17 |
 | **Version** | `smithery` |
+| **Vendor** | Smithery |
 | **Source** | [googledocs](https://smithery.ai/server/googledocs) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

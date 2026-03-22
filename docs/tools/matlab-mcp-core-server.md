@@ -8,10 +8,10 @@
 | **Risk Score** | 8 |
 | **Version** | `0.6.1` |
 | **Vendor** | matlab |
-| **Stars** | ⭐ 263 |
+| **Stars** | ⭐ 264 |
 | **Language** | Go |
 | **Source** | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

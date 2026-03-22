@@ -7,8 +7,9 @@
 | **Grade** | **B** |
 | **Risk Score** | 15 |
 | **Version** | `smithery` |
+| **Vendor** | Smithery |
 | **Source** | [agentmail](https://smithery.ai/server/agentmail) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-03-21T23:30:50.396573198Z",
+  "scan_date": "2026-03-22T03:05:59.669806567Z",
   "scanner": "tooltrust-scanner/v0.1.12",
   "source_url": "https://github.com/jerhadf/linear-mcp-server",
   "category": "Developer Tools",
@@ -13,23 +13,6 @@
   "language": "JavaScript",
   "description": "A server that integrates Linear's project management system with the Model Context Protocol (MCP) to allow LLMs to interact with Linear.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.0: 2 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "create_document",
-          "update_document"
-        ],
-        "removed": [
-          "list_my_issues"
-        ],
-        "version": "0.1.0"
-      }
-    },
     {
       "id": "AS-009",
       "severity": "Medium",
@@ -255,22 +238,6 @@
       "tool_name": "update_project"
     },
     {
-      "id": "AS-009",
-      "severity": "Medium",
-      "title": "Typosquatting",
-      "description": "tool name \"list_teams\" is suspiciously similar to the well-known MCP tool \"list_tags\" (edit distance 2) — possible typosquatting",
-      "recommendation": "This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.",
-      "tool_name": "list_teams"
-    },
-    {
-      "id": "AS-009",
-      "severity": "Medium",
-      "title": "Typosquatting",
-      "description": "tool name \"get_team\" is suspiciously similar to the well-known MCP tool \"get_tag\" (edit distance 2) — possible typosquatting",
-      "recommendation": "This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.",
-      "tool_name": "get_team"
-    },
-    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -289,8 +256,8 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 11,
+    "high": 6,
+    "medium": 9,
     "low": 15,
     "info": 0
   },

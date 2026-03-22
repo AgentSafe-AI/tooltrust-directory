@@ -8,10 +8,10 @@
 | **Risk Score** | 8 |
 | **Version** | `task-master-ai@0.43.0` |
 | **Vendor** | eyaltoledano |
-| **Stars** | ⭐ 26041 |
+| **Stars** | ⭐ 26043 |
 | **Language** | JavaScript |
 | **Source** | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
@@ -22,23 +22,11 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 2 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 0 |
 
 ## Detailed Findings
-
-### 🟡 `AS-009` — Typosquatting
-
-**Severity:** Medium
-
-**Description:**
-tool name "get_task" is suspiciously similar to the well-known MCP tool "get_tag" (edit distance 2) — possible typosquatting
-
-**Recommendation:**
-This tool name closely resembles a well-known MCP tool name. Verify the server's authenticity before use. If you maintain this server, rename the tool to avoid collision with the canonical tool it resembles.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

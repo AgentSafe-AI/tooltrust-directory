@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 126 |
 | **Language** | TypeScript |
 | **Source** | [financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) |
-| **Scan Date** | 2026-03-21 |
+| **Scan Date** | 2026-03-22 |
 | **Scanner** | tooltrust-scanner/v0.1.12 |
 
 ---
@@ -1041,7 +1041,7 @@ Two or more tools registered in your MCP environment share an identical or near-
 **Severity:** Medium
 
 **Description:**
-tool name "getWMA" is nearly identical to "getSMA" (edit distance 1) — could shadow a trusted tool in a multi-server environment
+tool name "getWMA" is nearly identical to "getEMA" (edit distance 1) — could shadow a trusted tool in a multi-server environment
 
 **Recommendation:**
 Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.
