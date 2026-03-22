@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 121 |
 | **Language** | TypeScript |
 | **Source** | [quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) |
-| **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.8 |
+| **Scan Date** | 2026-03-22 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

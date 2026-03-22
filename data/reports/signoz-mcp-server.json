@@ -1,13 +1,17 @@
 {
-  "tool_id": "mcp-semantic-scholar",
-  "version": "smithery",
+  "tool_id": "signoz-mcp-server",
+  "version": "0.0.5",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-03-22T04:53:08.506825459Z",
+  "risk_score": 40,
+  "scan_date": "2026-03-22T04:53:05.517866999Z",
   "scanner": "tooltrust-scanner/v0.1.15",
-  "source_url": "https://smithery.ai/server/hamid-vakilzadeh/mcpsemanticscholar",
-  "vendor": "Smithery",
-  "description": "Semantic Scholar MCP server for searching and retrieving academic papers.",
+  "source_url": "https://github.com/SigNoz/signoz-mcp-server",
+  "category": "Developer Tools",
+  "vendor": "SigNoz",
+  "stars": 74,
+  "license": "Apache-2.0",
+  "language": "Go",
+  "description": "MCP Server for SigNoz",
   "findings": [
     {
       "id": "AS-002",
@@ -15,7 +19,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "papers-search-basic"
+      "tool_name": "signoz_search_metric_by_text"
     },
     {
       "id": "AS-002",
@@ -23,7 +27,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "papers-search-basic"
+      "tool_name": "signoz_search_metric_by_text"
     },
     {
       "id": "AS-011",
@@ -31,7 +35,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "papers-search-basic"
+      "tool_name": "signoz_search_metric_by_text"
     },
     {
       "id": "AS-002",
@@ -39,7 +43,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "paper-search-advanced"
+      "tool_name": "signoz_get_logs_for_alert"
     },
     {
       "id": "AS-011",
@@ -47,7 +51,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "paper-search-advanced"
+      "tool_name": "signoz_get_logs_for_alert"
     },
     {
       "id": "AS-002",
@@ -55,7 +59,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search-paper-title"
+      "tool_name": "signoz_search_logs_by_service"
     },
     {
       "id": "AS-011",
@@ -63,7 +67,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search-paper-title"
+      "tool_name": "signoz_search_logs_by_service"
     },
     {
       "id": "AS-002",
@@ -71,7 +75,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "authors-search"
+      "tool_name": "signoz_search_traces_by_service"
     },
     {
       "id": "AS-011",
@@ -79,7 +83,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "authors-search"
+      "tool_name": "signoz_search_traces_by_service"
     },
     {
       "id": "AS-002",
@@ -87,39 +91,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search-arxiv"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search-arxiv"
+      "tool_name": "signoz_execute_builder_query"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "download-full-paper-arxiv"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "download-full-paper-arxiv"
+      "tool_name": "signoz_execute_builder_query"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "analysis-citation-network"
+      "tool_name": "signoz_execute_builder_query"
     },
     {
       "id": "AS-011",
@@ -127,29 +115,74 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "analysis-citation-network"
+      "tool_name": "signoz_execute_builder_query"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "signoz_create_dashboard"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "signoz_create_dashboard"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "signoz_update_dashboard"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "signoz_update_dashboard"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 1,
-    "low": 7,
+    "high": 6,
+    "medium": 6,
+    "low": 5,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "analysis-citation-network",
-    "authors-papers",
-    "authors-search",
-    "download-full-paper-arxiv",
-    "get-paper-abstract",
-    "paper-search-advanced",
-    "papers-batch",
-    "papers-citations",
-    "papers-references",
-    "papers-search-basic",
-    "search-arxiv",
-    "search-paper-title"
+    "signoz_create_dashboard",
+    "signoz_execute_builder_query",
+    "signoz_get_alert",
+    "signoz_get_alert_history",
+    "signoz_get_dashboard",
+    "signoz_get_error_logs",
+    "signoz_get_log_view",
+    "signoz_get_logs_available_fields",
+    "signoz_get_logs_for_alert",
+    "signoz_get_metrics_available_fields",
+    "signoz_get_service_top_operations",
+    "signoz_get_trace_available_fields",
+    "signoz_get_trace_details",
+    "signoz_get_trace_error_analysis",
+    "signoz_get_trace_field_values",
+    "signoz_get_trace_span_hierarchy",
+    "signoz_list_alerts",
+    "signoz_list_dashboards",
+    "signoz_list_log_views",
+    "signoz_list_metric_keys",
+    "signoz_list_services",
+    "signoz_search_logs_by_service",
+    "signoz_search_metric_by_text",
+    "signoz_search_traces_by_service",
+    "signoz_update_dashboard"
   ]
 }

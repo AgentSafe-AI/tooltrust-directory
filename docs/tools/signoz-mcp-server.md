@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 74 |
 | **Language** | Go |
 | **Source** | [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) |
-| **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scan Date** | 2026-03-22 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 

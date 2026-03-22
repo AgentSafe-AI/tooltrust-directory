@@ -1,0 +1,45 @@
+{
+  "tool_id": "alibabacloud-observability-mcp-server",
+  "version": "1.0.8",
+  "grade": "B",
+  "risk_score": 23,
+  "scan_date": "2026-03-22T04:53:07.685104953Z",
+  "scanner": "tooltrust-scanner/v0.1.15",
+  "source_url": "https://github.com/aliyun/alibabacloud-observability-mcp-server",
+  "category": "Developer Tools",
+  "vendor": "aliyun",
+  "stars": 86,
+  "language": "Go",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "auth"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "auth"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "auth",
+    "get_complete_trace",
+    "get_span",
+    "get_trace"
+  ]
+}

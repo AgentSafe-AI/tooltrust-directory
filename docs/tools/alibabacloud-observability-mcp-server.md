@@ -9,8 +9,8 @@
 | **Stars** | ⭐ 86 |
 | **Language** | Go |
 | **Source** | [alibabacloud-observability-mcp-server](https://github.com/aliyun/alibabacloud-observability-mcp-server) |
-| **Scan Date** | 2026-03-20 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scan Date** | 2026-03-22 |
+| **Scanner** | tooltrust-scanner/v0.1.15 |
 
 ---
 
