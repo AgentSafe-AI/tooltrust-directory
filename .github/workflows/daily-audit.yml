@@ -97,18 +97,13 @@ jobs:
       # https://github.com/AgentSafe-AI/tooltrust-scanner
       - name: Build ToolTrust Scanner from source
         run: |
-          # Resolve the latest published release tag before cloning
-          SCANNER_TAG=$(curl -sf \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/AgentSafe-AI/tooltrust-scanner/releases/latest" \
-            | jq -r '.tag_name')
-          if [ -z "$SCANNER_TAG" ] || [ "$SCANNER_TAG" = "null" ]; then
-            SCANNER_TAG="unknown"
-          fi
+          git clone --depth 1 https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
+          # Read version from the VERSION file in the repo — always in sync with
+          # the code on main, no dependency on published GitHub releases.
+          SCANNER_TAG="v$(cat /tmp/tooltrust-scanner/VERSION 2>/dev/null || echo "dev")"
           echo "SCANNER_VERSION=${SCANNER_TAG}" >> "$GITHUB_ENV"
           echo "Scanner version: ${SCANNER_TAG}"
 
-          git clone --depth 1 https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
           cd /tmp/tooltrust-scanner
           go build \
             -ldflags "-X main.version=${SCANNER_TAG}" \
