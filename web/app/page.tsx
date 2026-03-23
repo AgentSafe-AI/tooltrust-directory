@@ -103,11 +103,62 @@ export default function HomePage() {
         <RegistryWithFilters reports={reports} />
       </Suspense>
 
-      {/* Quick Start */}
+      {/* AI Agent Integration */}
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">
+        <div className="flex items-center gap-2">
+          <Terminal className="h-5 w-5 text-emerald-400" />
+          <h2 className="text-lg font-semibold text-zinc-100">Let your AI agent scan its own tools</h2>
+        </div>
+        <p className="text-sm text-zinc-500 max-w-xl">
+          Add ToolTrust as an MCP server and your agent can audit every tool it has access to —
+          before blindly trusting them. Works with Claude Code, Cursor, and Claude Desktop.
+        </p>
+        <div className="space-y-2">
+          <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+            Add to your .mcp.json
+          </p>
+          <div className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3">
+            <pre className="text-sm font-mono text-zinc-300 whitespace-pre">
+{`{
+  "mcpServers": {
+    "tooltrust": {
+      "command": "npx",
+      "args": ["-y", "tooltrust-mcp"]
+    }
+  }
+}`}
+            </pre>
+          </div>
+          <p className="text-xs text-zinc-500 pt-1">
+            Then ask your agent to run <code className="text-emerald-400">tooltrust_scan_config</code> to
+            scan all configured MCP servers in one shot, or <code className="text-emerald-400">tooltrust_scan_server</code> to
+            scan a specific server.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2 pt-1">
+          <span className="rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs text-zinc-400">
+            tooltrust_scan_config
+          </span>
+          <span className="rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs text-zinc-400">
+            tooltrust_scan_server
+          </span>
+          <span className="rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs text-zinc-400">
+            tooltrust_scanner_scan
+          </span>
+          <span className="rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs text-zinc-400">
+            tooltrust_lookup
+          </span>
+          <span className="rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs text-zinc-400">
+            tooltrust_list_rules
+          </span>
+        </div>
+      </section>
+
+      {/* CLI Quick Start */}
       <section className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">
         <div className="flex items-center gap-2">
           <Terminal className="h-5 w-5 text-sky-400" />
-          <h2 className="text-lg font-semibold text-zinc-100">Scan your own MCP tools</h2>
+          <h2 className="text-lg font-semibold text-zinc-100">Scan from the command line</h2>
         </div>
         <p className="text-sm text-zinc-500 max-w-xl">
           ToolTrust Scanner is a free CLI that audits MCP servers for prompt injection,
@@ -128,7 +179,7 @@ export default function HomePage() {
               <span className="text-zinc-500 select-none">$ </span>
               <span className="text-emerald-400">tooltrust-scanner</span>
               {" scan --server "}
-              <span className="text-amber-400">"npx -y @modelcontextprotocol/server-filesystem /tmp"</span>
+              <span className="text-amber-400">{`"npx -y @modelcontextprotocol/server-filesystem /tmp"`}</span>
             </code>
           </div>
         </div>

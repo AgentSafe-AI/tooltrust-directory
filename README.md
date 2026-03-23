@@ -114,6 +114,35 @@ Full details → [docs/methodology.md](./docs/methodology.md)
 
 ---
 
+## 🤖 AI Agent Integration
+
+Let your AI agent scan its own tools. Add ToolTrust as an MCP server in your `.mcp.json` or `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "tooltrust": {
+      "command": "npx",
+      "args": ["-y", "tooltrust-mcp"]
+    }
+  }
+}
+```
+
+This gives your agent five security tools:
+
+| Tool | Description |
+|------|-------------|
+| `tooltrust_scan_config` | Scan all MCP servers in your `.mcp.json` or `~/.claude.json` in parallel |
+| `tooltrust_scan_server` | Launch and scan a specific MCP server |
+| `tooltrust_scanner_scan` | Scan a JSON blob of tool definitions |
+| `tooltrust_lookup` | Look up a server's trust grade from this directory |
+| `tooltrust_list_rules` | List all security rules with IDs and descriptions |
+
+**Claude Code users:** ask your agent to run `tooltrust_scan_config` to audit every MCP server in your project in one shot.
+
+---
+
 ## 🤝 Contribute
 
 **Request a scan** — [open an issue](https://github.com/AgentSafe-AI/tooltrust-directory/issues/new?template=SCAN_REQUEST.md) with the tool's public URL and version.
