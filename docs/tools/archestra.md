@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
 | **Scan Date** | 2026-03-23 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

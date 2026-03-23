@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 2056 |
 | **Language** | JavaScript |
 | **Source** | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

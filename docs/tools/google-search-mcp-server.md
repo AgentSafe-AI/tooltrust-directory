@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 234 |
 | **Language** | TypeScript |
 | **Source** | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

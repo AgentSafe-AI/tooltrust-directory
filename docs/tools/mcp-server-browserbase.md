@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `2.4.3` |
 | **Vendor** | browserbase |
-| **Stars** | ⭐ 3198 |
+| **Stars** | ⭐ 3199 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

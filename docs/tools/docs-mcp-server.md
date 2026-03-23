@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `2.1.1` |
 | **Vendor** | arabold |
-| **Stars** | ⭐ 1158 |
+| **Stars** | ⭐ 1160 |
 | **Language** | TypeScript |
 | **Source** | [docs-mcp-server](https://github.com/arabold/docs-mcp-server) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

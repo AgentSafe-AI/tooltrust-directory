@@ -8,11 +8,11 @@
 | **Risk Score** | 35 |
 | **Version** | `0.9.0` |
 | **Vendor** | mapbox |
-| **Stars** | ⭐ 319 |
+| **Stars** | ⭐ 321 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server](https://github.com/mapbox/mcp-server) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

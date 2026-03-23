@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `7.1.0` |
 | **Vendor** | augmnt |
-| **Stars** | ⭐ 118 |
+| **Stars** | ⭐ 119 |
 | **Language** | TypeScript |
 | **Source** | [augments-mcp-server](https://github.com/augmnt/augments-mcp-server) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 

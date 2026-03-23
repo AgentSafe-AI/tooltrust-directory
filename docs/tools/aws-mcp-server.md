@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 182 |
 | **Language** | Python |
 | **Source** | [aws-mcp-server](https://github.com/alexei-led/aws-mcp-server) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-23 |
+| **Scanner** | tooltrust-scanner/v0.2.0 |
 
 ---
 
