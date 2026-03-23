@@ -7,7 +7,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 [Insert Directory UI GIF Here]
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-207-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--22-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--23-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -42,7 +42,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 21.7k | **[A](./docs/tools/serena.md)** | ✅ None | Mar 18 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.3` | 21.3k | **[A](./docs/tools/activepieces.md)** | ✅ None | Mar 18 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.4k | **[A](./docs/tools/maxkb.md)** | ✅ None | Mar 18 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.40.1` | 15.6k | **[C](./docs/tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 22 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.40.5` | 15.8k | **[C](./docs/tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 23 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.3` | 14.1k | **[A](./docs/tools/trigger-dev.md)** | ✅ None | Mar 18 |
 | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.7.1` | 13.8k | **[C](./docs/tools/figma-context-mcp.md)** | 🔑 `AS-002` ×13, 📐 `AS-003`, 🗝️ `AS-010`, ⚡ `AS-011` ×3 | Mar 22 |
 | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.09…` | 11.8k | **[A](./docs/tools/xiaohongshu-mcp.md)** | ✅ None | Mar 18 |
@@ -66,7 +66,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[A](./docs/tools/viper.md)** | ✅ None | Mar 18 |
 | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.0` | 4.8k | **[B](./docs/tools/xcodebuildmcp.md)** | 🔑 `AS-002` ×35, ⚡ `AS-011` ×3 | Mar 22 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[A](./docs/tools/deep-research.md)** | ✅ None | Mar 22 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.28` | 4.4k | **[A](./docs/tools/osaurus.md)** | ✅ None | Mar 22 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.14.29` | 4.4k | **[A](./docs/tools/osaurus.md)** | ✅ None | Mar 23 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[A](./docs/tools/httprunner.md)** | ✅ None | Mar 18 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.3k | **[A](./docs/tools/enscan-go.md)** | ✅ None | Mar 18 |
 | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 4.1k | **[C](./docs/tools/notion-mcp-server.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×22 | Mar 22 |
