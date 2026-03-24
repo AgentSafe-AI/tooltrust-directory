@@ -292,6 +292,7 @@ jobs:
                 fi
               else
                 echo "UNSCANNABLE: no static manifest and no npm package detected"
+                CONFIRMED_ZERO=true
               fi
             fi
 
@@ -368,6 +369,7 @@ jobs:
 
               if [ "$SMITHERY_OK" = "false" ] && [ "$SCAN_OK" = "false" ]; then
                 echo "SMITHERY: no usable tool definitions found in Smithery registry"
+                CONFIRMED_ZERO=true
               fi
             fi
 
