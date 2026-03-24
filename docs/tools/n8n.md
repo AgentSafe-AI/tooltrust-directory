@@ -8,7 +8,7 @@
 | **Risk Score** | 44 |
 | **Version** | `stable` |
 | **Vendor** | n8n-io |
-| **Stars** | ⭐ 180754 |
+| **Stars** | ⭐ 180757 |
 | **Language** | TypeScript |
 | **Source** | [n8n](https://github.com/n8n-io/n8n) |
 | **Scan Date** | 2026-03-24 |

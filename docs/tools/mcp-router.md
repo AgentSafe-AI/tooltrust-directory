@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.2` |
 | **Vendor** | mcp-router |
-| **Stars** | ⭐ 1889 |
+| **Stars** | ⭐ 1890 |
 | **Language** | TypeScript |
 | **Source** | [mcp-router](https://github.com/mcp-router/mcp-router) |
 | **Scan Date** | 2026-03-24 |
