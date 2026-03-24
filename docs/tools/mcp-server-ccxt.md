@@ -81,7 +81,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "secret" appears to accept a secret or credential
+input parameter "apiKey" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -93,7 +93,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "apiKey" appears to accept a secret or credential
+input parameter "secret" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

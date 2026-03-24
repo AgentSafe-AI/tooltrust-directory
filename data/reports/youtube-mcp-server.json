@@ -1,9 +1,9 @@
 {
   "tool_id": "youtube-mcp-server",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-03-24T04:07:15.726921368Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-24T04:20:11.547766907Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/ZubeidHendricks/youtube-mcp-server",
   "category": "Developer Tools",
@@ -13,60 +13,41 @@
   "description": "MCP Server for YouTube API, enabling video management, Shorts creation, and advanced analytics",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 7 tool(s) added, 16 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "channels_getChannel",
+          "channels_listVideos",
+          "playlists_getPlaylist",
+          "playlists_getPlaylistItems",
+          "transcripts_getTranscript",
+          "videos_getVideo",
+          "videos_searchVideos"
+        ],
+        "removed": [
+          "YOUTUBE_GET_CHANNEL_ACTIVITIES",
+          "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
+          "YOUTUBE_GET_CHANNEL_STATISTICS",
+          "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
+          "YOUTUBE_LIST_CAPTION_TRACK",
+          "YOUTUBE_LIST_CHANNEL_VIDEOS",
+          "YOUTUBE_LIST_PLAYLIST_ITEMS",
+          "YOUTUBE_LIST_USER_PLAYLISTS",
+          "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
+          "YOUTUBE_LOAD_CAPTIONS",
+          "YOUTUBE_SEARCH_YOU_TUBE",
+          "YOUTUBE_SUBSCRIBE_CHANNEL",
+          "YOUTUBE_UPDATE_THUMBNAIL",
+          "YOUTUBE_UPDATE_VIDEO",
+          "YOUTUBE_UPLOAD_VIDEO",
+          "YOUTUBE_VIDEO_DETAILS"
+        ],
+        "version": "1.0.0"
+      }
     },
     {
       "id": "AS-002",
@@ -74,7 +55,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
+      "tool_name": "videos_getVideo"
     },
     {
       "id": "AS-011",
@@ -82,23 +63,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_UPDATE_VIDEO"
+      "tool_name": "videos_getVideo"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_UPDATE_VIDEO"
+      "tool_name": "videos_searchVideos"
     },
     {
       "id": "AS-011",
@@ -106,57 +79,24 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "YOUTUBE_UPDATE_VIDEO"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
+      "tool_name": "videos_searchVideos"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 4,
-    "low": 6,
+    "high": 3,
+    "medium": 0,
+    "low": 2,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "YOUTUBE_GET_CHANNEL_ACTIVITIES",
-    "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
-    "YOUTUBE_GET_CHANNEL_STATISTICS",
-    "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
-    "YOUTUBE_LIST_CAPTION_TRACK",
-    "YOUTUBE_LIST_CHANNEL_VIDEOS",
-    "YOUTUBE_LIST_PLAYLIST_ITEMS",
-    "YOUTUBE_LIST_USER_PLAYLISTS",
-    "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
-    "YOUTUBE_LOAD_CAPTIONS",
-    "YOUTUBE_SEARCH_YOU_TUBE",
-    "YOUTUBE_SUBSCRIBE_CHANNEL",
-    "YOUTUBE_UPDATE_THUMBNAIL",
-    "YOUTUBE_UPDATE_VIDEO",
-    "YOUTUBE_UPLOAD_VIDEO",
-    "YOUTUBE_VIDEO_DETAILS"
+    "channels_getChannel",
+    "channels_listVideos",
+    "playlists_getPlaylist",
+    "playlists_getPlaylistItems",
+    "transcripts_getTranscript",
+    "videos_getVideo",
+    "videos_searchVideos"
   ]
 }

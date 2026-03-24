@@ -3,7 +3,7 @@
   "version": "3.0.5",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-03-24T04:09:40.933009486Z",
+  "scan_date": "2026-03-24T04:22:35.540756309Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/stape-io/google-tag-manager-mcp-server",
   "category": "Developer Tools",
@@ -14,140 +14,55 @@
   "description": "MCP server for Google Tag Manager",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDAR_LIST_UPDATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_DELETE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 23 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_DELETE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 19 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_LIST"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_LIST"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_FIND_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_FIND_EVENT"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.0.5: 8 tool(s) added, 29 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "GOOGLE_MAPS_COMPUTE_ROUTE_MATRIX",
+          "GOOGLE_MAPS_DISTANCE_MATRIX_API",
+          "GOOGLE_MAPS_GEOCODING_API",
+          "GOOGLE_MAPS_GET_DIRECTION",
+          "GOOGLE_MAPS_GET_ROUTE",
+          "GOOGLE_MAPS_MAPS_EMBED_API",
+          "GOOGLE_MAPS_NEARBY_SEARCH",
+          "GOOGLE_MAPS_TEXT_SEARCH"
+        ],
+        "removed": [
+          "GOOGLECALENDAR_ACL_PATCH",
+          "GOOGLECALENDAR_CALENDARS_DELETE",
+          "GOOGLECALENDAR_CALENDARS_UPDATE",
+          "GOOGLECALENDAR_CALENDAR_LIST_INSERT",
+          "GOOGLECALENDAR_CALENDAR_LIST_UPDATE",
+          "GOOGLECALENDAR_CLEAR_CALENDAR",
+          "GOOGLECALENDAR_CREATE_EVENT",
+          "GOOGLECALENDAR_DELETE_EVENT",
+          "GOOGLECALENDAR_DUPLICATE_CALENDAR",
+          "GOOGLECALENDAR_EVENTS_INSTANCES",
+          "GOOGLECALENDAR_EVENTS_LIST",
+          "GOOGLECALENDAR_EVENTS_MOVE",
+          "GOOGLECALENDAR_EVENTS_WATCH",
+          "GOOGLECALENDAR_FIND_EVENT",
+          "GOOGLECALENDAR_FIND_FREE_SLOTS",
+          "GOOGLECALENDAR_FREE_BUSY_QUERY",
+          "GOOGLECALENDAR_GET_CALENDAR",
+          "GOOGLECALENDAR_GET_CURRENT_DATE_TIME",
+          "GOOGLECALENDAR_LIST_ACL_RULES",
+          "GOOGLECALENDAR_LIST_CALENDARS",
+          "GOOGLECALENDAR_PATCH_CALENDAR",
+          "GOOGLECALENDAR_PATCH_EVENT",
+          "GOOGLECALENDAR_QUICK_ADD",
+          "GOOGLECALENDAR_REMOVE_ATTENDEE",
+          "GOOGLECALENDAR_SETTINGS_LIST",
+          "GOOGLECALENDAR_SETTINGS_WATCH",
+          "GOOGLECALENDAR_SYNC_EVENTS",
+          "GOOGLECALENDAR_UPDATE_ACL_RULE",
+          "GOOGLECALENDAR_UPDATE_EVENT"
+        ],
+        "version": "3.0.5"
+      }
     },
     {
       "id": "AS-002",
@@ -155,7 +70,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_FREE_BUSY_QUERY"
+      "tool_name": "GOOGLE_MAPS_DISTANCE_MATRIX_API"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_DISTANCE_MATRIX_API"
     },
     {
       "id": "AS-011",
@@ -163,23 +86,23 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_FREE_BUSY_QUERY"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_LIST_CALENDARS"
+      "tool_name": "GOOGLE_MAPS_DISTANCE_MATRIX_API"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_PATCH_CALENDAR"
+      "tool_name": "GOOGLE_MAPS_GEOCODING_API"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_GEOCODING_API"
     },
     {
       "id": "AS-011",
@@ -187,23 +110,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_PATCH_CALENDAR"
+      "tool_name": "GOOGLE_MAPS_GEOCODING_API"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
+      "tool_name": "GOOGLE_MAPS_GET_DIRECTION"
     },
     {
       "id": "AS-011",
@@ -211,7 +126,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
+      "tool_name": "GOOGLE_MAPS_GET_DIRECTION"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_GET_ROUTE"
     },
     {
       "id": "AS-002",
@@ -219,55 +142,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_REMOVE_ATTENDEE"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_SETTINGS_LIST"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_SETTINGS_WATCH"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_ACL_RULE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "GOOGLE_MAPS_MAPS_EMBED_API"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "GOOGLE_MAPS_MAPS_EMBED_API"
     },
     {
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 23 properties (threshold: 10)",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "GOOGLE_MAPS_MAPS_EMBED_API"
     },
     {
       "id": "AS-011",
@@ -275,46 +166,81 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "GOOGLE_MAPS_MAPS_EMBED_API"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_NEARBY_SEARCH"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_NEARBY_SEARCH"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_MAPS_NEARBY_SEARCH"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_TEXT_SEARCH"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_TEXT_SEARCH"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_MAPS_TEXT_SEARCH"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_MAPS_TEXT_SEARCH"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 11,
-    "medium": 9,
-    "low": 13,
+    "high": 7,
+    "medium": 2,
+    "low": 12,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "GOOGLECALENDAR_ACL_PATCH",
-    "GOOGLECALENDAR_CALENDARS_DELETE",
-    "GOOGLECALENDAR_CALENDARS_UPDATE",
-    "GOOGLECALENDAR_CALENDAR_LIST_INSERT",
-    "GOOGLECALENDAR_CALENDAR_LIST_UPDATE",
-    "GOOGLECALENDAR_CLEAR_CALENDAR",
-    "GOOGLECALENDAR_CREATE_EVENT",
-    "GOOGLECALENDAR_DELETE_EVENT",
-    "GOOGLECALENDAR_DUPLICATE_CALENDAR",
-    "GOOGLECALENDAR_EVENTS_INSTANCES",
-    "GOOGLECALENDAR_EVENTS_LIST",
-    "GOOGLECALENDAR_EVENTS_MOVE",
-    "GOOGLECALENDAR_EVENTS_WATCH",
-    "GOOGLECALENDAR_FIND_EVENT",
-    "GOOGLECALENDAR_FIND_FREE_SLOTS",
-    "GOOGLECALENDAR_FREE_BUSY_QUERY",
-    "GOOGLECALENDAR_GET_CALENDAR",
-    "GOOGLECALENDAR_GET_CURRENT_DATE_TIME",
-    "GOOGLECALENDAR_LIST_ACL_RULES",
-    "GOOGLECALENDAR_LIST_CALENDARS",
-    "GOOGLECALENDAR_PATCH_CALENDAR",
-    "GOOGLECALENDAR_PATCH_EVENT",
-    "GOOGLECALENDAR_QUICK_ADD",
-    "GOOGLECALENDAR_REMOVE_ATTENDEE",
-    "GOOGLECALENDAR_SETTINGS_LIST",
-    "GOOGLECALENDAR_SETTINGS_WATCH",
-    "GOOGLECALENDAR_SYNC_EVENTS",
-    "GOOGLECALENDAR_UPDATE_ACL_RULE",
-    "GOOGLECALENDAR_UPDATE_EVENT"
+    "GOOGLE_MAPS_COMPUTE_ROUTE_MATRIX",
+    "GOOGLE_MAPS_DISTANCE_MATRIX_API",
+    "GOOGLE_MAPS_GEOCODING_API",
+    "GOOGLE_MAPS_GET_DIRECTION",
+    "GOOGLE_MAPS_GET_ROUTE",
+    "GOOGLE_MAPS_MAPS_EMBED_API",
+    "GOOGLE_MAPS_NEARBY_SEARCH",
+    "GOOGLE_MAPS_TEXT_SEARCH"
   ]
 }

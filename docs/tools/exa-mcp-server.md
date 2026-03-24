@@ -8,7 +8,7 @@
 | **Risk Score** | 23 |
 | **Version** | `3.1.9` |
 | **Vendor** | exa-labs |
-| **Stars** | ⭐ 4078 |
+| **Stars** | ⭐ 4079 |
 | **Language** | TypeScript |
 | **Source** | [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) |
 | **Scan Date** | 2026-03-24 |
