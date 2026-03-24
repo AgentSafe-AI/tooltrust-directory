@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `3.3.0` |
 | **Vendor** | yusufkaraaslan |

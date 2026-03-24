@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `1.6.0` |
 | **Vendor** | pab1it0 |

@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `platform-v1.1.37` |
 | **Vendor** | archestra-ai |

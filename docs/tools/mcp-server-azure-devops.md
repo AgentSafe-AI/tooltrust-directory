@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `mcp-server-azure-devops-v0.1.45` |
 | **Vendor** | Tiberriver256 |
