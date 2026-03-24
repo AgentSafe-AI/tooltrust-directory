@@ -34,6 +34,8 @@ export default function HomePage() {
   const riskyCount = reports.filter((r) =>
     ["D", "F"].includes(displayGrade(r))
   ).length;
+  const incompleteCount = reports.filter((r) => displayGrade(r) === "?").length;
+  const scannedCount = reports.length - incompleteCount;
 
   return (
     <div className="space-y-10">
@@ -51,7 +53,7 @@ export default function HomePage() {
         {/* Stats row: 4 dark cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-            <p className="text-2xl font-bold text-zinc-100">{reports.length}</p>
+            <p className="text-2xl font-bold text-zinc-100">{scannedCount}</p>
             <p className="text-sm text-zinc-500">Tools Scanned</p>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">

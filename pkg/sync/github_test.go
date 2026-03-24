@@ -161,8 +161,8 @@ func TestKeyFindings(t *testing.T) {
 	if !strings.Contains(got, "AS-004") || !strings.Contains(got, "AS-002") {
 		t.Errorf("keyFindings should contain AS-004 and AS-002, got %q", got)
 	}
-	if !strings.Contains(got, "📦") || !strings.Contains(got, "⚠️") {
-		t.Errorf("keyFindings should add emojis for AS-004 (📦) and AS-002 (⚠️), got %q", got)
+	if !strings.Contains(got, "📦") || !strings.Contains(got, "🔑") {
+		t.Errorf("keyFindings should add emojis for AS-004 (📦) and AS-002 (🔑), got %q", got)
 	}
 	if !strings.Contains(got, "×3") {
 		t.Errorf("keyFindings should show count ×3 for AS-004, got %q", got)
@@ -173,8 +173,8 @@ func TestKeyFindings(t *testing.T) {
 	}
 
 	single := Report{Findings: []Finding{{ID: "AS-010"}}}
-	if got := keyFindings(single); got != "`AS-010`" {
-		t.Errorf("single finding = %q, want %q", got, "`AS-010`")
+	if got := keyFindings(single); got != "🗝️ `AS-010`" {
+		t.Errorf("single finding = %q, want %q", got, "🗝️ `AS-010`")
 	}
 
 	empty := Report{}

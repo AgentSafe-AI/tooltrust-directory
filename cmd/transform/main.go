@@ -366,7 +366,7 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 	return TrustReport{
 		ToolID:         toolID,
 		Version:        version,
-		Grade:          computeGrade(maxScore, allFindings),
+		Grade:          gradeForReport(maxScore, allFindings, scanIncomplete),
 		RiskScore:      maxScore,
 		ScanDate:       scanDate,
 		Scanner:        scannerVersion,
@@ -410,6 +410,15 @@ func toTTFinding(f ASFinding, toolName string) TTFinding {
 		Recommendation: recommendation,
 		ToolName:       toolName,
 	}
+}
+
+// gradeForReport wraps computeGrade but overrides to "I" (Incomplete) when no
+// tools were found.  An empty scan should not earn Grade A.
+func gradeForReport(score int, findings []TTFinding, scanIncomplete bool) string {
+	if scanIncomplete {
+		return "I"
+	}
+	return computeGrade(score, findings)
 }
 
 // computeGrade uses scoreToGrade.

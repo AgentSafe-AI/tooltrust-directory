@@ -92,10 +92,18 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 		return fmt.Errorf("load reports: %w", err)
 	}
 
-	totalCount := len(reports)
-	tableReports := reports
-	if len(reports) > TableMaxRows {
-		tableReports = reports[:TableMaxRows]
+	// Filter out incomplete scans (grade "I") from the table — they have no
+	// useful data and inflate the "tools scanned" count misleadingly.
+	var complete []Report
+	for _, r := range reports {
+		if r.Grade != "I" {
+			complete = append(complete, r)
+		}
+	}
+	totalCount := len(complete)
+	tableReports := complete
+	if len(complete) > TableMaxRows {
+		tableReports = complete[:TableMaxRows]
 	}
 
 	// Update README registry table
@@ -112,7 +120,7 @@ func UpdateRegistry(reportsDir, readmePath string) error {
 	// loc[2]:loc[3] = group 1 (BEGIN marker line), loc[4]:loc[5] = group 2 (END marker)
 	table := buildTable(tableReports, totalCount, true, "./docs/tools/")
 	updated := readme[:loc[3]] + table + "\n" + readme[loc[4]:]
-	updated = updateBadges(updated, len(reports))
+	updated = updateBadges(updated, totalCount)
 	if err := os.WriteFile(readmePath, []byte(updated), 0o644); err != nil {
 		return fmt.Errorf("write readme: %w", err)
 	}

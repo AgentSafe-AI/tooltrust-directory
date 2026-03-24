@@ -40,7 +40,7 @@ export interface Report {
 }
 
 export function displayGrade(r: Report): string {
-  if (r.scan_incomplete) return "?";
+  if (r.scan_incomplete || r.grade === "I") return "?";
   if (r.risk_score === 0 && r.findings.length === 0) return "A";
   return r.grade;
 }

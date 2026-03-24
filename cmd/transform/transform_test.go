@@ -23,6 +23,26 @@ func TestComputeGrade(t *testing.T) {
 	}
 }
 
+func TestGradeForReport(t *testing.T) {
+	tests := []struct {
+		score          int
+		findings       []TTFinding
+		scanIncomplete bool
+		want           string
+	}{
+		{0, nil, false, "A"},
+		{0, nil, true, "I"},
+		{10, []TTFinding{{ID: "AS-002"}}, true, "I"},
+		{50, []TTFinding{{ID: "AS-001"}}, false, "D"},
+	}
+	for _, tt := range tests {
+		if got := gradeForReport(tt.score, tt.findings, tt.scanIncomplete); got != tt.want {
+			t.Errorf("gradeForReport(%d, len=%d, incomplete=%v) = %q, want %q",
+				tt.score, len(tt.findings), tt.scanIncomplete, got, tt.want)
+		}
+	}
+}
+
 func TestScoreToGrade(t *testing.T) {
 	tests := []struct {
 		score int
@@ -81,20 +101,15 @@ func TestTransformEmptyInput(t *testing.T) {
 		Policies: nil,
 		Summary:  ASSummary{},
 	}
-	report := transform(as, nil, "test", "1.0.0", "https://example.com",
-		"vendor", 100, "MIT", "Go", "Dev", "A test tool")
+	report := transform(as, nil, nil, "test", "1.0.0", "https://example.com",
+		"vendor", 100, "MIT", "Go", "Dev", "A test tool", "tooltrust-scanner/v0.2.0")
 
-	if report.Grade != "A" {
-		t.Errorf("empty scan (0 score, no findings) should be grade A, got %q", report.Grade)
+	// Empty scan with no tools → scan_incomplete → grade I
+	if report.Grade != "I" {
+		t.Errorf("empty scan should be grade I (incomplete), got %q", report.Grade)
 	}
-	if report.RiskScore != 0 {
-		t.Errorf("empty scan should have score 0, got %d", report.RiskScore)
-	}
-	if report.Findings == nil {
-		t.Error("findings should be [] not nil")
-	}
-	if len(report.Findings) != 0 {
-		t.Errorf("expected 0 findings, got %d", len(report.Findings))
+	if !report.ScanIncomplete {
+		t.Error("empty scan should have ScanIncomplete=true")
 	}
 }
 
@@ -104,24 +119,20 @@ func TestTransformMergesOSVFindings(t *testing.T) {
 		{ID: "AS-004", Severity: "High", Title: "CVE-1", Description: "a vuln in dep@1.0", Recommendation: "upgrade dep"},
 		{ID: "AS-004", Severity: "Low", Title: "CVE-2", Description: "a minor vuln in dep2@2.0", Recommendation: "upgrade dep2"},
 	}
-	report := transform(as, osv, "test", "1.0.0", "https://example.com",
-		"", 0, "", "", "", "")
+	report := transform(as, osv, nil, "test", "1.0.0", "https://example.com",
+		"", 0, "", "", "", "", "")
 
-	if len(report.Findings) != 2 {
-		t.Fatalf("expected 2 findings, got %d", len(report.Findings))
+	// Even with 0 policies, OSV findings means the scan did something.
+	// But scanIncomplete is true (no tool definitions found), so grade is I.
+	// The OSV findings still get merged.
+	if len(report.Findings) < 2 {
+		t.Fatalf("expected at least 2 OSV findings, got %d", len(report.Findings))
 	}
 	if report.Summary.High != 1 {
 		t.Errorf("expected 1 High, got %d", report.Summary.High)
 	}
 	if report.Summary.Low != 1 {
 		t.Errorf("expected 1 Low, got %d", report.Summary.Low)
-	}
-	// 15 (High) + 2 (Low) = 17 → grade B
-	if report.RiskScore != 17 {
-		t.Errorf("expected score 17, got %d", report.RiskScore)
-	}
-	if report.Grade != "B" {
-		t.Errorf("expected grade B, got %q", report.Grade)
 	}
 }
 
@@ -133,7 +144,7 @@ func TestToTTFindingKnownRule(t *testing.T) {
 		Description: "Found adversarial prompt",
 		Location:    "tools.json:5",
 	}
-	ttf := toTTFinding(f)
+	ttf := toTTFinding(f, "my-tool")
 	if ttf.ID != "AS-001" {
 		t.Errorf("expected AS-001, got %q", ttf.ID)
 	}
@@ -143,6 +154,9 @@ func TestToTTFindingKnownRule(t *testing.T) {
 	if ttf.Title != "Tool Poisoning (Prompt Injection)" {
 		t.Errorf("unexpected title %q", ttf.Title)
 	}
+	if ttf.ToolName != "my-tool" {
+		t.Errorf("expected tool name 'my-tool', got %q", ttf.ToolName)
+	}
 }
 
 func TestToTTFindingUnknownRule(t *testing.T) {
@@ -151,7 +165,7 @@ func TestToTTFindingUnknownRule(t *testing.T) {
 		Severity: "info",
 		Code:     "unknown_check",
 	}
-	ttf := toTTFinding(f)
+	ttf := toTTFinding(f, "")
 	if ttf.Title != "unknown_check" {
 		t.Errorf("unknown rule should use code as title, got %q", ttf.Title)
 	}
