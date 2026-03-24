@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `python-v2.20.0` |
 | **Vendor** | Klavis-AI |
-| **Stars** | ⭐ 5674 |
+| **Stars** | ⭐ 5675 |
 | **Language** | Python |
 | **Source** | [klavis](https://github.com/Klavis-AI/klavis) |
-| **Scan Date** | 2026-03-23 |
-| **Scanner** | tooltrust-scanner/v0.2.0 |
+| **Scan Date** | 2026-03-24 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

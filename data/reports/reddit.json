@@ -1,29 +1,48 @@
 {
   "tool_id": "reddit",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-03-23T06:26:32.70237019Z",
-  "scanner": "tooltrust-scanner/v0.2.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-24T04:09:27.173548692Z",
+  "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://smithery.ai/server/reddit",
   "vendor": "Smithery",
   "description": "Reddit MCP server for browsing posts, comments, and subreddits.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_CREATE_REDDIT_POST"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 10 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "discover_operations",
+          "execute_operation",
+          "get_operation_schema"
+        ],
+        "removed": [
+          "REDDIT_CREATE_REDDIT_POST",
+          "REDDIT_DELETE_REDDIT_COMMENT",
+          "REDDIT_DELETE_REDDIT_POST",
+          "REDDIT_EDIT_REDDIT_COMMENT_OR_POST",
+          "REDDIT_GET_USER_FLAIR",
+          "REDDIT_POST_REDDIT_COMMENT",
+          "REDDIT_RETRIEVE_POST_COMMENTS",
+          "REDDIT_RETRIEVE_REDDIT_POST",
+          "REDDIT_RETRIEVE_SPECIFIC_COMMENT",
+          "REDDIT_SEARCH_ACROSS_SUBREDDITS"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_CREATE_REDDIT_POST"
+      "tool_name": "execute_operation"
     },
     {
       "id": "AS-011",
@@ -31,91 +50,20 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "REDDIT_CREATE_REDDIT_POST"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_DELETE_REDDIT_COMMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_DELETE_REDDIT_POST"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_GET_USER_FLAIR"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "REDDIT_GET_USER_FLAIR"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_SEARCH_ACROSS_SUBREDDITS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_SEARCH_ACROSS_SUBREDDITS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "REDDIT_SEARCH_ACROSS_SUBREDDITS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "REDDIT_SEARCH_ACROSS_SUBREDDITS"
+      "tool_name": "execute_operation"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 4,
-    "low": 4,
+    "high": 2,
+    "medium": 0,
+    "low": 1,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "REDDIT_CREATE_REDDIT_POST",
-    "REDDIT_DELETE_REDDIT_COMMENT",
-    "REDDIT_DELETE_REDDIT_POST",
-    "REDDIT_EDIT_REDDIT_COMMENT_OR_POST",
-    "REDDIT_GET_USER_FLAIR",
-    "REDDIT_POST_REDDIT_COMMENT",
-    "REDDIT_RETRIEVE_POST_COMMENTS",
-    "REDDIT_RETRIEVE_REDDIT_POST",
-    "REDDIT_RETRIEVE_SPECIFIC_COMMENT",
-    "REDDIT_SEARCH_ACROSS_SUBREDDITS"
+    "discover_operations",
+    "execute_operation",
+    "get_operation_schema"
   ]
 }

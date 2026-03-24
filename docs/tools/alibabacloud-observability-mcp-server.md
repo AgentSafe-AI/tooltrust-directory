@@ -6,11 +6,11 @@
 | **Risk Score** | 23 |
 | **Version** | `1.0.8` |
 | **Vendor** | aliyun |
-| **Stars** | ⭐ 86 |
+| **Stars** | ⭐ 87 |
 | **Language** | Go |
 | **Source** | [alibabacloud-observability-mcp-server](https://github.com/aliyun/alibabacloud-observability-mcp-server) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.15 |
+| **Scan Date** | 2026-03-24 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `platform-v1.1.37` |
 | **Vendor** | archestra-ai |
@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
 | **Scan Date** | 2026-03-24 |
-| **Scanner** | tooltrust-scanner/v0.2.0 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

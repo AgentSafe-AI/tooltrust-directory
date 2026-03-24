@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 466 |
 | **Language** | TypeScript |
 | **Source** | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) |
-| **Scan Date** | 2026-03-21 |
-| **Scanner** | tooltrust-scanner/v0.1.11 |
+| **Scan Date** | 2026-03-24 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

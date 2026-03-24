@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.8` |
 | **Vendor** | formulahendry |
-| **Stars** | ⭐ 239 |
+| **Stars** | ⭐ 240 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-code-runner](https://github.com/formulahendry/mcp-server-code-runner) |
-| **Scan Date** | 2026-03-23 |
-| **Scanner** | tooltrust-scanner/v0.2.0 |
+| **Scan Date** | 2026-03-24 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

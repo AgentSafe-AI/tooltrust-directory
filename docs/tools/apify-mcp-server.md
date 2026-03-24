@@ -12,7 +12,7 @@
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
 | **Scan Date** | 2026-03-24 |
-| **Scanner** | tooltrust-scanner/v0.2.0 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

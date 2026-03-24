@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.8` |
 | **Vendor** | nailuoGG |
-| **Stars** | ⭐ 231 |
+| **Stars** | ⭐ 232 |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/nailuoGG/anki-mcp-server) |
-| **Scan Date** | 2026-03-23 |
-| **Scanner** | tooltrust-scanner/v0.2.0 |
+| **Scan Date** | 2026-03-24 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 
