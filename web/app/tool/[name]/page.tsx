@@ -306,7 +306,7 @@ export default async function ToolPage({ params }: PageProps) {
           Scan this tool yourself
         </h2>
         <p className="mb-4 text-sm text-zinc-500">
-          Reproduce this audit locally or block risky tools in CI.
+          Reproduce this audit locally, integrate into CI, or let your agent audit its own tools.
         </p>
         <ScanSnippets toolId={report.tool_id} sourceUrl={report.source_url} />
       </section>
