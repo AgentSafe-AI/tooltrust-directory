@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 81890 |
+| **Stars** | ⭐ 81991 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

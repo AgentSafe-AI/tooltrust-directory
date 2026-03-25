@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.0.49` |
 | **Vendor** | mobile-next |
-| **Stars** | ⭐ 4116 |
+| **Stars** | ⭐ 4119 |
 | **Language** | TypeScript |
 | **Source** | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) |
 | **Scan Date** | 2026-03-25 |

@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 127 |
 | **Language** | TypeScript |
 | **Source** | [think-mcp-server](https://github.com/PhillipRt/think-mcp-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 183 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-siri-shortcuts](https://github.com/dvcrn/mcp-server-siri-shortcuts) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

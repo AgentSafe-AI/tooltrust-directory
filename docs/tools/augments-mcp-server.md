@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 119 |
 | **Language** | TypeScript |
 | **Source** | [augments-mcp-server](https://github.com/augmnt/augments-mcp-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

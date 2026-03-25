@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.1` |
 | **Vendor** | kimtaeyoon83 |
-| **Stars** | ⭐ 501 |
+| **Stars** | ⭐ 503 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

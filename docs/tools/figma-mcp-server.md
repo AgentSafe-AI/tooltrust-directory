@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 147 |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

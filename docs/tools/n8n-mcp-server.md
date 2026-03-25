@@ -8,10 +8,10 @@
 | **Risk Score** | 44 |
 | **Version** | `0.1.8` |
 | **Vendor** | leonardsellem |
-| **Stars** | ⭐ 1588 |
+| **Stars** | ⭐ 1587 |
 | **Language** | TypeScript |
 | **Source** | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

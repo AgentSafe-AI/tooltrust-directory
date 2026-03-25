@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.5` |
 | **Vendor** | huggingface |
-| **Stars** | ⭐ 210 |
+| **Stars** | ⭐ 211 |
 | **Language** | TypeScript |
 | **Source** | [hf-mcp-server](https://github.com/huggingface/hf-mcp-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

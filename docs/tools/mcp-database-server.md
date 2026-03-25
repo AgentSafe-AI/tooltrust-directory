@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.1.0` |
 | **Vendor** | executeautomation |
-| **Stars** | ⭐ 326 |
+| **Stars** | ⭐ 328 |
 | **Language** | TypeScript |
 | **Source** | [mcp-database-server](https://github.com/executeautomation/mcp-database-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

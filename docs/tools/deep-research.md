@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.11.0` |
 | **Vendor** | u14app |
-| **Stars** | ⭐ 4536 |
+| **Stars** | ⭐ 4544 |
 | **Language** | JavaScript |
 | **Source** | [deep-research](https://github.com/u14app/deep-research) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 40 |
 | **Version** | `1.0.3` |
 | **Vendor** | motherduckdb |
-| **Stars** | ⭐ 447 |
+| **Stars** | ⭐ 448 |
 | **Language** | Python |
 | **Source** | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.21` |
 | **Vendor** | cjo4m06 |
-| **Stars** | ⭐ 2057 |
+| **Stars** | ⭐ 2059 |
 | **Language** | JavaScript |
 | **Source** | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-25 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
