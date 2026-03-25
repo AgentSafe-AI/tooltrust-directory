@@ -94,12 +94,25 @@ jobs:
       # ── Install ToolTrust Scanner ────────────────────────────────────────────
       # Build from source — the repo is public and Go is already available.
       # Pre-built binaries and the GHCR image are not yet publicly distributed.
+      # Clone at the latest git tag (stable release) rather than main HEAD so a
+      # broken commit on the scanner's main branch cannot cascade into a CI failure.
       # https://github.com/AgentSafe-AI/tooltrust-scanner
       - name: Build ToolTrust Scanner from source
         run: |
-          git clone --depth 1 https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
-          # Read version from the VERSION file in the repo — always in sync with
-          # the code on main, no dependency on published GitHub releases.
+          # Resolve the latest semver tag; fall back to main HEAD if no tags exist.
+          LATEST_TAG=$(git ls-remote --tags --sort=-version:refname \
+            https://github.com/AgentSafe-AI/tooltrust-scanner \
+            'refs/tags/v*' | head -1 | sed 's|.*refs/tags/||')
+          if [ -n "$LATEST_TAG" ]; then
+            echo "Cloning tooltrust-scanner at tag ${LATEST_TAG}"
+            git clone --depth 1 --branch "$LATEST_TAG" \
+              https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
+          else
+            echo "No tags found — cloning tooltrust-scanner at main HEAD"
+            git clone --depth 1 \
+              https://github.com/AgentSafe-AI/tooltrust-scanner /tmp/tooltrust-scanner
+          fi
+
           SCANNER_TAG="v$(cat /tmp/tooltrust-scanner/VERSION 2>/dev/null || echo "dev")"
           echo "SCANNER_VERSION=${SCANNER_TAG}" >> "$GITHUB_ENV"
           echo "Scanner version: ${SCANNER_TAG}"
@@ -110,6 +123,16 @@ jobs:
             -o /usr/local/bin/tooltrust-scanner \
             ./cmd/tooltrust-scanner
           tooltrust-scanner version
+
+      # Pre-build internal Go tools once before the parallel scan loop.
+      # Running `go run` inside each subshell compiles the same packages
+      # concurrently, which causes cache-lock contention and slows the scan.
+      - name: Build internal Go tools
+        run: |
+          go build -o /usr/local/bin/tt-analyze    ./cmd/analyze
+          go build -o /usr/local/bin/tt-fetch      ./cmd/smithery-fetch
+          go build -o /usr/local/bin/tt-transform  ./cmd/transform
+          echo "Internal tools built OK"
 
       - name: Scan each pending tool
         run: |
@@ -172,7 +195,7 @@ jobs:
               { echo "SKIP: cannot clone $OWNER/$REPO"; exit 0; }
 
               # ── AS-004: OSV supply-chain CVE scan ───────────────────────────
-              go run ./cmd/analyze --dir "$CLONE_DIR" --output "$OSV_OUT" || \
+              tt-analyze --dir "$CLONE_DIR" --output "$OSV_OUT" || \
                 echo "[]" > "$OSV_OUT"
               echo "AS-004  : $(jq 'length' "$OSV_OUT") CVE finding(s)"
             else
@@ -337,7 +360,7 @@ jobs:
               for SMITHERY_PKG in "${SMITHERY_QN:-}" "${NPM_PKG:-}" "${OWNER_REPO:-}"; do
                 [ -z "$SMITHERY_PKG" ] && continue
                 echo "SMITHERY: querying Smithery registry for \"${SMITHERY_PKG}\""
-                if go run ./cmd/smithery-fetch \
+                if tt-fetch \
                     --package "${SMITHERY_PKG}" \
                     --output  "${SMITHERY_OUT}"; then
                   # ── Step 3: Smithery scan — also guard against 0-tool output
@@ -399,7 +422,7 @@ jobs:
             # tool set changed between scans of the same version, flag it.
             EXISTING_FLAG=""
             [ -f "$OUT" ] && EXISTING_FLAG="--existing $OUT"
-            if ! go run ./cmd/transform \
+            if ! tt-transform \
               --input            "$RAW_OUT"             \
               --tool-id          "$TOOL_ID"             \
               --version          "$VERSION"             \
