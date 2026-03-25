@@ -106,6 +106,27 @@ prompt injection on an ACE tool can fully compromise the host.
 
 ---
 
+### AS-008 — Known Compromised Package Version
+
+**Detects:** Dependencies whose exact version or version range has been confirmed as malicious or
+compromised, matched against an embedded offline blacklist compiled from public advisories
+(Snyk, GitHub Security, NVD). Runs before any network call — zero latency, air-gap safe.
+
+**Why it matters:** Standard CVE databases (OSV/NVD) have a 24–72 hour propagation delay after
+a supply-chain attack is disclosed. The embedded blacklist provides immediate "virtual patching"
+for confirmed incidents such as the March 2026 TeamPCP attack (litellm 1.82.7/8, trivy v0.69.4–6),
+where malicious packages steal SSH keys, AWS credentials, and establish systemd persistence.
+
+**Severity:**
+- `SUPPLY_CHAIN_BLOCK` — confirmed malicious payload → **Critical** (+25 pts)
+- `SUPPLY_CHAIN_WARN` — elevated risk, no confirmed payload → **High** (+15 pts)
+
+**Recommendation:** Remove the affected package immediately and rotate all credentials
+(SSH keys, AWS/GCP tokens, `.env` secrets). Check for persistence artefacts. Upgrade to a
+clean version (e.g. `litellm ≥ 1.82.9`, `trivy ≥ v0.69.7`, `setup-trivy ≥ v0.2.6`).
+
+---
+
 ### AS-010 — Insecure Secret Handling
 
 **Detects:** Input parameters whose names suggest they accept raw secrets or credentials —

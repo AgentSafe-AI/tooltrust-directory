@@ -110,6 +110,7 @@ All active rules as of [ToolTrust Scanner v0.1.12](https://github.com/AgentSafe-
 | 🔓 **AS&#8209;005** | **High** | Privilege Escalation | OAuth/token scopes broader than stated purpose (`admin`, `:write` wildcards); escalation signals in description (`sudo`, `impersonate`) |
 | ⚡ **AS&#8209;006** | **Critical** | Arbitrary Code Execution | Tool name or description implies arbitrary script/code execution (`evaluate_script`, `execute javascript`, `_evaluate` suffix, `page.evaluate()` patterns) |
 | ℹ️ **AS&#8209;007** | **Info** | Insufficient Tool Data | Tool lacks a valid description or schema, preventing agents from understanding its capabilities or limitations |
+| 🚨 **AS&#8209;008** | **Critical** | Known Compromised Package | Dependency or binary matches an embedded offline blacklist of confirmed supply-chain attacks — zero-latency, no network required |
 | 🔤 **AS&#8209;009** | **Medium** | Typosquatting | Tool name within edit-distance 2 of a well-known MCP tool name, suggesting impersonation of a trusted tool |
 | 🗝️ **AS&#8209;010** | **Medium** | Secret Handling | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
 | ⚡ **AS&#8209;011** | **Low** | DoS Resilience | Network/execution tools with no rate-limit, timeout, or retry configuration |
@@ -181,6 +182,34 @@ Detects tools whose description or input schema indicate they can execute arbitr
 Arbitrary code execution tools are the highest-risk category. A single prompt injection on an ACE tool can fully compromise the host.
 
 **Fix:** If not strictly needed, remove the tool. If required, set `approval_required: true` in your MCP client config to ensure human-in-the-loop confirmation.
+
+---
+
+### AS-008
+
+**Known Compromised Package Version** · Severity: Critical (BLOCK) / High (WARN)
+
+Detects dependencies whose exact version — or version range — has been confirmed as malicious or compromised, using an **embedded offline blacklist** compiled from public security advisories. This check runs *before* AS-004 (OSV live query), requires no network access, and returns results in O(1) time.
+
+**Current blacklist entries (as of 2026-03-24):**
+
+| Advisory | Package | Affected versions | Action |
+|----------|---------|-------------------|--------|
+| SNYK-PYTHON-LITELLM-15762713 | `litellm` (PyPI) | 1.82.7, 1.82.8 | **BLOCK** |
+| GHSA-69fq-xp46-6x23 | `trivy` (binary) | v0.69.4, v0.69.5, v0.69.6 | **BLOCK** |
+| GHSA-69fq-xp46-6x23 | `trivy-action` (GitHub Actions) | < v0.35.0 | WARN |
+| GHSA-69fq-xp46-6x23 | `setup-trivy` (GitHub Actions) | < v0.2.6 | WARN |
+| CVE-2026-33017 | `langflow` (PyPI) | < 1.9.0 | **BLOCK** |
+
+**Threat context — TeamPCP supply chain attack (March 2026):**
+
+The `litellm` 1.82.7 and 1.82.8 releases were injected with a malicious `.pth` file that executes automatically on every Python startup. It harvests SSH private keys, AWS/GCP credentials, `.env` files, and Kubernetes tokens, exfiltrates them to a C2 server (`scan[.]aquasecurtiy[.]org · 45.148.10.212`), and establishes systemd persistence. The same threat actor (TeamPCP) compromised `trivy`'s CI/CD pipeline and force-pushed malicious binaries to GHCR, ECR, Docker Hub, and `get.trivy.dev`.
+
+**Severity mapping:**
+- `SUPPLY_CHAIN_BLOCK` (confirmed malicious code) → CRITICAL → contributes 25 pts → Grade F guaranteed
+- `SUPPLY_CHAIN_WARN` (elevated risk, no confirmed payload) → HIGH → contributes 15 pts
+
+**Fix:** Remove the affected package immediately. Rotate all credentials (SSH keys, AWS/GCP tokens, `.env` secrets). Check for systemd user services and files under `~/.config/sysmon/`. Upgrade to a clean version.
 
 ---
 
@@ -264,6 +293,7 @@ This methodology follows [Semantic Versioning](https://semver.org). Breaking cha
 | 1.0 | v0.1.2 | Initial release |
 | 1.1 | v0.1.4 | Added AS-006 (Arbitrary Code Execution); 3-tier tool discovery |
 | 1.2 | v0.1.12 | Added AS-009 (Typosquatting), AS-013 (Tool Shadowing); false-positive fixes for AS-001 and AS-010 |
+| 1.3 | v0.1.13 | Added AS-008 (Known Compromised Package) — offline embedded blacklist for zero-latency supply-chain attack detection; TeamPCP/litellm/trivy/langflow entries |
 
 ---
 
