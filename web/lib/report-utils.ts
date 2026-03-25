@@ -49,6 +49,8 @@ export function findingEmoji(id: string): string {
   switch (id) {
     case "AS-004":
       return "📦";
+    case "AS-008":
+      return "🚨";
     case "AS-001":
       return "🚨";
     case "AS-002":
