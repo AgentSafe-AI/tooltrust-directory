@@ -4,6 +4,9 @@
 
 A public registry of AI agent tools, continuously scanned for prompt injection, data exfiltration, and privilege escalation by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner).
 
+> **🚨 Urgent Security Update (March 24, 2026)**
+> ToolTrust now detects and blocks the LiteLLM / TeamPCP supply chain exploit. If you are adding MCP servers that rely on litellm (v1.82.7/8), ToolTrust will trigger a CRITICAL Grade F warning and block installation to protect your SSH/AWS keys.
+
 [Insert Directory UI GIF Here]
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-158-brightgreen)](./data/reports/)
