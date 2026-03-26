@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `3.5.31` |
+| **Version** | `3.5.48` |
 | **Vendor** | ruvnet |
-| **Stars** | ⭐ 24182 |
+| **Stars** | ⭐ 26236 |
 | **Language** | TypeScript |
 | **Source** | [ruflo](https://github.com/ruvnet/ruflo) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-26 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

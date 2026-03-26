@@ -1,14 +1,14 @@
 {
   "tool_id": "signoz-mcp-server",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-03-25T05:39:37.547381498Z",
+  "scan_date": "2026-03-26T01:31:02.672881333Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/SigNoz/signoz-mcp-server",
   "category": "Developer Tools",
   "vendor": "SigNoz",
-  "stars": 75,
+  "stars": 76,
   "license": "Apache-2.0",
   "language": "Go",
   "description": "MCP Server for SigNoz",
@@ -19,7 +19,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_search_metric_by_text"
+      "tool_name": "signoz_query_metrics"
     },
     {
       "id": "AS-002",
@@ -27,7 +27,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_search_metric_by_text"
+      "tool_name": "signoz_query_metrics"
     },
     {
       "id": "AS-011",
@@ -35,23 +35,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "signoz_search_metric_by_text"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_get_logs_for_alert"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "signoz_get_logs_for_alert"
+      "tool_name": "signoz_query_metrics"
     },
     {
       "id": "AS-002",
@@ -160,9 +144,9 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 6,
+    "high": 5,
     "medium": 6,
-    "low": 5,
+    "low": 4,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -173,23 +157,20 @@
     "signoz_get_alert_history",
     "signoz_get_dashboard",
     "signoz_get_error_logs",
+    "signoz_get_field_keys",
+    "signoz_get_field_values",
     "signoz_get_log_view",
-    "signoz_get_logs_available_fields",
-    "signoz_get_logs_for_alert",
-    "signoz_get_metrics_available_fields",
     "signoz_get_service_top_operations",
-    "signoz_get_trace_available_fields",
     "signoz_get_trace_details",
     "signoz_get_trace_error_analysis",
-    "signoz_get_trace_field_values",
     "signoz_get_trace_span_hierarchy",
     "signoz_list_alerts",
     "signoz_list_dashboards",
     "signoz_list_log_views",
-    "signoz_list_metric_keys",
+    "signoz_list_metrics",
     "signoz_list_services",
+    "signoz_query_metrics",
     "signoz_search_logs_by_service",
-    "signoz_search_metric_by_text",
     "signoz_search_traces_by_service",
     "signoz_update_dashboard"
   ]
