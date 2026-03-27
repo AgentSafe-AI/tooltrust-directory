@@ -60,6 +60,25 @@ export default function RootLayout({
           </div>
         </header>
         <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+        <footer className="border-t border-zinc-800/80 mt-16">
+          <div className="mx-auto max-w-6xl px-4 py-6 flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
+            <span>© 2026 AgentSafe-AI · MIT License</span>
+            <div className="flex items-center gap-6">
+              <a href="mailto:contact@tooltrust.dev" className="hover:text-zinc-300">
+                contact@tooltrust.dev
+              </a>
+              <a
+                href={scannerRepoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-zinc-300"
+              >
+                GitHub
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
+        </footer>
         <Analytics />
       </body>
     </html>
