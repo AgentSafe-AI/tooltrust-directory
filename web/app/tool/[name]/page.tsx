@@ -2,6 +2,7 @@ import { getReportByToolName, displayGrade } from "@/lib/data";
 import { GradeProgressRing } from "@/lib/grades";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Shield, ExternalLink, CheckCircle2, ScanSearch } from "lucide-react";
 import { CopyBadgeButton } from "./CopyBadgeButton";
 import { ScanSnippets } from "./ScanSnippets";
@@ -85,9 +86,11 @@ export default async function ToolPage({ params }: PageProps) {
         <div className="min-w-0 flex-1 space-y-2">
           <div className="flex flex-wrap items-center gap-3">
             {report.vendor && (
-              <img
+              <Image
                 src={`https://github.com/${report.vendor}.png?size=80`}
                 alt={report.vendor}
+                width={40}
+                height={40}
                 className="h-10 w-10 shrink-0 rounded-xl bg-zinc-800"
               />
             )}

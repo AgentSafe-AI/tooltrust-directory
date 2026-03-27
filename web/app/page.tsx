@@ -1,6 +1,7 @@
 import { getAllReports, displayGrade } from "@/lib/data";
 import { GradeBadge } from "@/lib/grades";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
+import { StarBadge } from "@/components/StarBadge";
 import Link from "next/link";
 import { Terminal } from "lucide-react";
 import { Suspense } from "react";
@@ -49,6 +50,12 @@ export default function HomePage() {
           tool is scanned for prompt injection, permission risks, and scope
           mismatches.
         </p>
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <StarBadge />
+          <p className="text-sm text-zinc-500">
+            Like the scans? Star the scanner repo so more teams find it.
+          </p>
+        </div>
 
         {/* Stats row: 4 dark cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">

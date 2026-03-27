@@ -3,6 +3,7 @@
 import { useMemo, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, LayoutGrid, List, Star } from "lucide-react";
 import type { Report } from "@/lib/report-utils";
 import {
@@ -263,9 +264,11 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-start gap-3 min-w-0 flex-1">
                   {r.vendor && (
-                    <img
+                    <Image
                       src={`https://github.com/${r.vendor}.png?size=64`}
                       alt={r.vendor}
+                      width={36}
+                      height={36}
                       className="h-9 w-9 shrink-0 rounded-lg bg-zinc-800"
                     />
                   )}

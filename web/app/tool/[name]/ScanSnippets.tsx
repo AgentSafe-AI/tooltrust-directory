@@ -142,11 +142,11 @@ export function ScanSnippets({ toolId, sourceUrl }: Props) {
             <pre className="overflow-x-auto rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 pr-20 text-sm text-zinc-300 font-mono leading-relaxed">
               <span className="text-zinc-500">{`// .mcp.json\n`}</span>
               {`{\n  "mcpServers": {\n    "tooltrust": {\n      "command": `}
-              <span className="text-amber-400">"npx"</span>
+              <span className="text-amber-400">&quot;npx&quot;</span>
               {`,\n      "args": [`}
-              <span className="text-amber-400">"-y"</span>
+              <span className="text-amber-400">&quot;-y&quot;</span>
               {`, `}
-              <span className="text-amber-400">"tooltrust-mcp"</span>
+              <span className="text-amber-400">&quot;tooltrust-mcp&quot;</span>
               {`]\n    }\n  }\n}`}
             </pre>
             <div className="absolute right-2 top-2">
@@ -160,7 +160,11 @@ export function ScanSnippets({ toolId, sourceUrl }: Props) {
               {`Run `}
               <span className="text-emerald-400">tooltrust_scan_server</span>
               {` with server: `}
-              <span className="text-amber-400">{`"npx -y `}<span className="text-sky-400">{toolId}</span>{`"`}</span>
+              <span className="text-amber-400">
+                {`&quot;npx -y `}
+                <span className="text-sky-400">{toolId}</span>
+                {`&quot;`}
+              </span>
             </code>
             <CopyButton text={`Run tooltrust_scan_server with server: "npx -y ${toolId}"`} />
           </div>
@@ -214,8 +218,8 @@ export function ScanSnippets({ toolId, sourceUrl }: Props) {
               {`- name: `}<span className="text-emerald-400">Audit MCP Server</span>{`\n`}
               {`  uses: `}<span className="text-sky-400">AgentSafe-AI/tooltrust-scanner@main</span>{`\n`}
               {`  with:\n`}
-              {`    server: `}<span className="text-amber-400">{`"npx -y ${toolId}"`}</span>{`\n`}
-              {`    fail-on: `}<span className="text-amber-400">"approval"</span>
+              {`    server: `}<span className="text-amber-400">{`&quot;npx -y ${toolId}&quot;`}</span>{`\n`}
+              {`    fail-on: `}<span className="text-amber-400">&quot;approval&quot;</span>
               <span className="text-zinc-600">{`  # blocks D/F grade`}</span>
             </pre>
             <div className="absolute right-2 top-2">
