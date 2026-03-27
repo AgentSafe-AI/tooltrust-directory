@@ -110,8 +110,8 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 gap-4 pt-2 sm:grid-cols-4">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-              <p className="text-2xl font-bold text-zinc-100">{totalFindings}</p>
-              <p className="text-sm text-zinc-500">Total Findings</p>
+              <p className="text-2xl font-bold text-zinc-100">{scannedCount}</p>
+              <p className="text-sm text-zinc-500">Tools Scanned</p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
               <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
