@@ -5,7 +5,7 @@ import {
 import { GradeBadge } from "@/lib/grades";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
 import Link from "next/link";
-import { ShieldAlert, Terminal, Bomb, KeyRound, Package, Code2 } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { Suspense } from "react";
 
 export const dynamic = "force-dynamic";
@@ -39,127 +39,37 @@ export default function HomePage() {
   ).length;
   const incompleteCount = reports.filter((r) => displayGrade(r) === "?").length;
   const scannedCount = reports.length - incompleteCount;
-  const totalFindings = reports.reduce(
-    (sum, report) => sum + (report.findings?.length ?? 0),
-    0
-  );
-  const whyItMatters = [
-    {
-      id: "AS-001",
-      title: "Prompt Injection",
-      body: "Malicious tool descriptions can hijack the agent's reasoning flow and redirect behavior.",
-      icon: Bomb,
-      accent: "text-red-400",
-    },
-    {
-      id: "AS-002",
-      title: "Excessive Permissions",
-      body: "Agents may be allowed to delete files, upload data, or reach sensitive local resources.",
-      icon: KeyRound,
-      accent: "text-orange-400",
-    },
-    {
-      id: "AS-006",
-      title: "Arbitrary Code Execution",
-      body: "Attackers may be able to make your agent run arbitrary host commands or scripts.",
-      icon: Code2,
-      accent: "text-red-400",
-    },
-    {
-      id: "AS-008",
-      title: "Supply Chain",
-      body: "Known malicious packages such as the LiteLLM .pth backdoor can steal AWS or SSH credentials at startup.",
-      icon: Package,
-      accent: "text-red-400",
-    },
-  ];
 
   return (
     <div className="space-y-10">
       {/* Hero */}
-      <section className="space-y-4">
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
-            <ShieldAlert className="h-3.5 w-3.5" />
-            MCP Security Directory
-          </div>
-          <div className="max-w-3xl space-y-3">
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
-              Protect Your AI Agents from Malicious MCP Tools
-            </h1>
-            <p className="max-w-2xl text-zinc-400">
-              Daily scanning across {scannedCount} MCP tools — detecting prompt injection,
-              supply chain attacks, and excessive permissions before your agent trusts them.
-            </p>
-          </div>
+      <section className="space-y-2">
+        <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+          AI Agent Tool Security Directory
+        </h1>
+        <p className="max-w-2xl text-zinc-400">
+          Security analysis for MCP servers, skills, and AI agent tools. Every
+          tool is scanned for prompt injection, permission risks, and scope
+          mismatches.
+        </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/?grade=D"
-              className="inline-flex items-center justify-center rounded-xl border border-red-500/40 bg-red-500/15 px-5 py-2.5 text-sm font-semibold text-red-300 transition hover:bg-red-500/25 hover:text-red-200"
-            >
-              Browse Risky Tools
-            </Link>
-            <a
-              href="#scan-your-mcp"
-              className="inline-flex items-center justify-center rounded-xl border border-zinc-700 bg-zinc-950/70 px-5 py-2.5 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900"
-            >
-              Scan My MCP
-            </a>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
+            <p className="text-2xl font-bold text-zinc-100">{scannedCount}</p>
+            <p className="text-sm text-zinc-500">Tools Scanned</p>
           </div>
-
-          <div className="grid grid-cols-2 gap-4 pt-2 sm:grid-cols-4">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-              <p className="text-2xl font-bold text-zinc-100">{scannedCount}</p>
-              <p className="text-sm text-zinc-500">Tools Scanned</p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-              <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
-              <p className="text-sm text-zinc-500">Safe (S/A/B)</p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-              <p className="text-2xl font-bold text-yellow-400">{mediumCount}</p>
-              <p className="text-sm text-zinc-500">Medium Risk (C)</p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-              <p className="text-2xl font-bold text-red-400">{riskyCount}</p>
-              <p className="text-sm text-zinc-500">Risky (D/F)</p>
-            </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
+            <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
+            <p className="text-sm text-zinc-500">Safe (S/A/B)</p>
           </div>
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <div className="space-y-2">
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-50 sm:text-3xl">
-            Why These Findings Matter
-          </h2>
-          <p className="max-w-3xl text-sm leading-7 text-zinc-400 sm:text-base">
-            Representative high-impact checks. Full rule coverage is available on each tool page and in the methodology docs.
-          </p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {whyItMatters.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.id}
-                className="rounded-xl border border-zinc-800 bg-zinc-900/80 p-4"
-              >
-                <div className="flex items-start gap-3">
-                  <Icon className={`mt-0.5 h-5 w-5 shrink-0 ${item.accent}`} />
-                  <div className="space-y-2">
-                    <h3 className="text-base font-semibold text-zinc-100">
-                  {item.id} {item.title}
-                    </h3>
-                    <p className="text-sm leading-6 text-zinc-400">
-                  {item.body}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
+            <p className="text-2xl font-bold text-yellow-400">{mediumCount}</p>
+            <p className="text-sm text-zinc-500">Medium Risk (C)</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
+            <p className="text-2xl font-bold text-red-400">{riskyCount}</p>
+            <p className="text-sm text-zinc-500">Risky (D/F)</p>
+          </div>
         </div>
       </section>
 
