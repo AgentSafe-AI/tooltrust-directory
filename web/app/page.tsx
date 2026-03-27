@@ -13,9 +13,6 @@ export const dynamic = "force-dynamic";
 export default function HomePage() {
   const reports = getAllReports();
   const sorted = [...reports].sort((a, b) => {
-    const starsA = a.stars ?? 0;
-    const starsB = b.stars ?? 0;
-    if (starsB !== starsA) return starsB - starsA;
     const rank: Record<string, number> = {
       S: 0,
       A: 1,
@@ -26,7 +23,11 @@ export default function HomePage() {
     };
     const gA = rank[displayGrade(a)] ?? 6;
     const gB = rank[displayGrade(b)] ?? 6;
-    return gA - gB;
+    if (gA !== gB) return gA - gB;
+    const starsA = a.stars ?? 0;
+    const starsB = b.stars ?? 0;
+    if (starsB !== starsA) return starsB - starsA;
+    return a.tool_id.localeCompare(b.tool_id);
   });
   const sTier = sorted.filter((r) => displayGrade(r) === "S");
 
@@ -52,11 +53,29 @@ export default function HomePage() {
           tool is scanned for prompt injection, permission risks, and scope
           mismatches.
         </p>
+        <div className="flex flex-wrap gap-2 pt-1">
+          {[
+            { label: "Prompt Injection" },
+            { label: "Excess Permissions" },
+            { label: "Code Execution" },
+            { label: "Supply Chain" },
+            { label: "Typosquatting" },
+            { label: "Tool Shadowing" },
+          ].map((r) => (
+            <span key={r.label} className="rounded-full border border-zinc-700 bg-zinc-800/50 px-2.5 py-0.5 text-xs text-zinc-400">
+              {r.label}
+            </span>
+          ))}
+        </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+        <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-3 lg:grid-cols-5">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-zinc-100">{scannedCount}</p>
             <p className="text-sm text-zinc-500">Tools Scanned</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
+            <p className="text-2xl font-bold text-zinc-100">{totalFindings}</p>
+            <p className="text-sm text-zinc-500">Total Findings</p>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
             <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
