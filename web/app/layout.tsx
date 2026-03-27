@@ -5,7 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import "./globals.css";
 import Link from "next/link";
 import { ToolTrustLogo } from "@/components/ToolTrustLogo";
-import { StarBadge } from "@/components/StarBadge";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,7 +56,6 @@ export default function RootLayout({
                 GitHub
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
-              <StarBadge compact className="sm:ml-1" />
             </nav>
           </div>
         </header>
