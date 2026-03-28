@@ -323,16 +323,11 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                 </div>
                 <GradeBadge grade={displayGrade(r)} size="sm" dark showEmoji={false} />
               </div>
-              <div className="flex-1 mt-2">
-                {r.description && (
-                  <p className="line-clamp-2 text-sm text-zinc-500">
-                    {r.description}
-                  </p>
-                )}
-                <p className="mt-4 line-clamp-3 text-base leading-8 text-zinc-300">
-                  {getToolImpactLine(r)}
+              {r.description && (
+                <p className="mt-2 line-clamp-2 text-sm text-zinc-500">
+                  {r.description}
                 </p>
-              </div>
+              )}
               <div className="mt-3 border-t border-zinc-800 pt-3 space-y-1.5">
                 <div className="flex flex-wrap items-center gap-1.5 text-xs">
                   {r.category && (
