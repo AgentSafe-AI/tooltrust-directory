@@ -114,6 +114,13 @@
       "type": "string",
       "description": "URL pointing to the methodology document used for this scan.",
       "format": "uri"
+    },
+    "scan_history": {
+      "type": "array",
+      "description": "Lightweight snapshots of previous scans, oldest first. Appended automatically by transform on each new scan.",
+      "items": {
+        "$ref": "#/$defs/ScanSnapshot"
+      }
     }
   },
   "$defs": {
@@ -169,6 +176,18 @@
           "description": "Actionable guidance for the tool maintainer to remediate the finding.",
           "minLength": 20
         }
+      }
+    },
+    "ScanSnapshot": {
+      "type": "object",
+      "description": "A lightweight record of a single past scan.",
+      "required": ["scan_date", "grade", "risk_score", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "scan_date": { "type": "string", "format": "date-time" },
+        "grade":     { "type": "string", "enum": ["A","B","C","D","F","I"] },
+        "risk_score":{ "type": "integer", "minimum": 0 },
+        "version":   { "type": "string" }
       }
     },
     "Summary": {

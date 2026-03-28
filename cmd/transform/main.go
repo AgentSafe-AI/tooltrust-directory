@@ -84,6 +84,9 @@ type TrustReport struct {
 	// Stored to enable rug-pull detection (AS-012): if the set changes between
 	// scans of the same version, the server description was silently altered.
 	ToolNames []string `json:"tool_names,omitempty"`
+	// ScanHistory records past scan snapshots (date, grade, score, version).
+	// Appended from the previous report on each new scan.
+	ScanHistory []ScanSnapshot `json:"scan_history,omitempty"`
 }
 
 type TTFinding struct {
@@ -102,6 +105,15 @@ type TTSummary struct {
 	Medium   int `json:"medium"`
 	Low      int `json:"low"`
 	Info     int `json:"info"`
+}
+
+// ScanSnapshot is a lightweight record of a single past scan, stored in
+// scan_history to enable grade trending over time.
+type ScanSnapshot struct {
+	ScanDate  string `json:"scan_date"`
+	Grade     string `json:"grade"`
+	RiskScore int    `json:"risk_score"`
+	Version   string `json:"version"`
 }
 
 // ── Rule metadata (canonical titles + recommendations per AS-XXX) ────────────
@@ -363,6 +375,19 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 		vendor = "Smithery"
 	}
 
+	// Build scan history: carry forward existing history, then append the
+	// previous report as a new snapshot (if one exists and has a scan date).
+	var scanHistory []ScanSnapshot
+	if prev != nil {
+		scanHistory = append(scanHistory, prev.ScanHistory...)
+		scanHistory = append(scanHistory, ScanSnapshot{
+			ScanDate:  prev.ScanDate.UTC().Format(time.RFC3339),
+			Grade:     prev.Grade,
+			RiskScore: prev.RiskScore,
+			Version:   prev.Version,
+		})
+	}
+
 	return TrustReport{
 		ToolID:         toolID,
 		Version:        version,
@@ -382,6 +407,7 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 		Methodology:    methodologyURL,
 		ScanIncomplete: scanIncomplete,
 		ToolNames:      toolNames,
+		ScanHistory:    scanHistory,
 	}
 }
 
