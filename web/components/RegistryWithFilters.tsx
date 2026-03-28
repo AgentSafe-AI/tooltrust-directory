@@ -35,16 +35,20 @@ const GRADE_BUTTON_INACTIVE_STYLES: Record<string, string> = {
   F: "border-zinc-800 bg-zinc-900 text-red-700 hover:text-red-400 hover:border-red-900",
 };
 
-function sortReports(reports: Report[]) {
+type SortKey = "stars" | "grade";
+type SortDir = "asc" | "desc";
+
+function sortReports(reports: Report[], key: SortKey, dir: SortDir) {
+  const gradeRank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, F: 4 };
   return [...reports].sort((a, b) => {
-    const starsA = a.stars ?? 0;
-    const starsB = b.stars ?? 0;
-    if (starsB !== starsA) return starsB - starsA;
-    const rank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, F: 4 };
-    const gA = rank[displayGrade(a)] ?? 5;
-    const gB = rank[displayGrade(b)] ?? 5;
-    if (gA !== gB) return gA - gB;
-    return a.tool_id.localeCompare(b.tool_id);
+    let cmp = 0;
+    if (key === "stars") {
+      cmp = (b.stars ?? 0) - (a.stars ?? 0);
+    } else {
+      cmp = (gradeRank[displayGrade(a)] ?? 5) - (gradeRank[displayGrade(b)] ?? 5);
+    }
+    if (cmp === 0) cmp = a.tool_id.localeCompare(b.tool_id);
+    return dir === "asc" ? -cmp : cmp;
   });
 }
 
@@ -84,6 +88,17 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
     const v = searchParams.get("view");
     return v === "table" ? "table" : "cards";
   });
+  const [sortKey, setSortKey] = useState<SortKey>("stars");
+  const [sortDir, setSortDir] = useState<SortDir>("desc");
+
+  const toggleSort = (key: SortKey) => {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(key === "grade" ? "asc" : "desc");
+    }
+  };
 
   const pushURL = useCallback(
     (q: string, grade: string, cat: string, view: string) => {
@@ -108,7 +123,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
     return Array.from(set).sort() as string[];
   }, [reports]);
 
-  const sorted = useMemo(() => sortReports(reports), [reports]);
+  const sorted = useMemo(() => sortReports(reports, sortKey, sortDir), [reports, sortKey, sortDir]);
   const filtered = useMemo(
     () => filterReports(sorted, query, gradeFilter, categoryFilter),
     [sorted, query, gradeFilter, categoryFilter]
@@ -215,7 +230,18 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
               <tr className="border-b border-zinc-800">
                 <th className="px-4 py-3 font-medium text-zinc-400">Name</th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Version</th>
-                <th className="px-4 py-3 font-medium text-zinc-400">Grade</th>
+                <th
+                  className="px-4 py-3 font-medium text-zinc-400 cursor-pointer select-none hover:text-zinc-200 whitespace-nowrap"
+                  onClick={() => toggleSort("stars")}
+                >
+                  Stars {sortKey === "stars" ? (sortDir === "desc" ? "↓" : "↑") : <span className="opacity-30">↕</span>}
+                </th>
+                <th
+                  className="px-4 py-3 font-medium text-zinc-400 cursor-pointer select-none hover:text-zinc-200"
+                  onClick={() => toggleSort("grade")}
+                >
+                  Grade {sortKey === "grade" ? (sortDir === "asc" ? "↑" : "↓") : <span className="opacity-30">↕</span>}
+                </th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Impact</th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Key Findings</th>
               </tr>
@@ -236,6 +262,11 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                   </td>
                   <td className="px-4 py-3 font-mono text-xs text-zinc-500">
                     {r.version || "—"}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-zinc-400">
+                    {r.stars != null && r.stars > 0
+                      ? r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars
+                      : "—"}
                   </td>
                   <td className="px-4 py-3">
                     <Link href={`/tool/${r.tool_id}`}>
