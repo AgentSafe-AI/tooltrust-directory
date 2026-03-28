@@ -255,8 +255,18 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                   <td className="px-4 py-3">
                     <Link
                       href={`/tool/${r.tool_id}`}
-                      className="font-medium text-emerald-400 hover:underline"
+                      className="flex items-center gap-2 font-medium text-emerald-400 hover:underline"
                     >
+                      {r.vendor && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={`https://github.com/${r.vendor}.png?size=40`}
+                          alt={r.vendor}
+                          width={20}
+                          height={20}
+                          className="h-5 w-5 shrink-0 rounded-md bg-zinc-800"
+                        />
+                      )}
                       {r.tool_id}
                     </Link>
                   </td>
