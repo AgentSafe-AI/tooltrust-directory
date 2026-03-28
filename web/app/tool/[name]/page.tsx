@@ -160,27 +160,57 @@ export default async function ToolPage({ params }: PageProps) {
       )}
 
       {hasFindings && (() => {
-        const riskStyle: Record<string, { border: string; bg: string; icon: string; heading: string }> = {
-          F: { border: "border-red-500/30",    bg: "bg-red-500/8",    icon: "text-red-400",    heading: "text-red-300" },
-          D: { border: "border-orange-500/30", bg: "bg-orange-500/8", icon: "text-orange-400", heading: "text-orange-300" },
-          C: { border: "border-yellow-500/25", bg: "bg-yellow-500/8", icon: "text-yellow-400", heading: "text-yellow-200" },
-          B: { border: "border-sky-500/20",    bg: "bg-sky-500/5",    icon: "text-sky-400",    heading: "text-sky-300" },
+        const riskStyle: Record<string, { border: string; bg: string; heading: string; badge: string }> = {
+          F: {
+            border: "border-red-500/25",
+            bg: "bg-red-500/8",
+            heading: "text-red-300",
+            badge: "bg-red-500/12 text-red-300 border-red-500/30",
+          },
+          D: {
+            border: "border-orange-500/25",
+            bg: "bg-orange-500/8",
+            heading: "text-orange-300",
+            badge: "bg-orange-500/12 text-orange-300 border-orange-500/30",
+          },
+          C: {
+            border: "border-yellow-500/20",
+            bg: "bg-yellow-500/6",
+            heading: "text-yellow-200",
+            badge: "bg-yellow-500/10 text-yellow-200 border-yellow-500/25",
+          },
+          B: {
+            border: "border-sky-500/20",
+            bg: "bg-sky-500/6",
+            heading: "text-sky-300",
+            badge: "bg-sky-500/10 text-sky-300 border-sky-500/25",
+          },
+          A: {
+            border: "border-emerald-500/20",
+            bg: "bg-emerald-500/6",
+            heading: "text-emerald-300",
+            badge: "bg-emerald-500/10 text-emerald-300 border-emerald-500/25",
+          },
+          S: {
+            border: "border-amber-500/20",
+            bg: "bg-amber-500/6",
+            heading: "text-amber-200",
+            badge: "bg-amber-500/10 text-amber-200 border-amber-500/25",
+          },
         };
         const s = riskStyle[grade] ?? riskStyle["C"];
         return (
           <section className={`rounded-xl border ${s.border} ${s.bg} p-5`}>
-            <div className="flex items-center gap-2">
-              <span className={`text-base ${s.icon}`}>⚠</span>
+            <div className="flex flex-wrap items-center gap-2">
               <h2 className={`text-sm font-semibold uppercase tracking-wider ${s.heading}`}>
                 Risk Summary
               </h2>
+              <span className={`rounded-full border px-2 py-0.5 text-xs font-medium ${s.badge}`}>
+                Grade {grade}
+              </span>
+              <span className="text-xs text-zinc-500">{narrative.title}</span>
             </div>
-            <div className="mt-3 space-y-2 text-sm leading-7">
-              <p className="text-zinc-100">
-                <span className="font-semibold">Grade {grade}</span>
-                {" · "}
-                <span className="text-zinc-300">{narrative.title}</span>
-              </p>
+            <div className="mt-3 space-y-2 text-sm leading-6">
               <p className="text-zinc-300">
                 <span className="font-medium text-zinc-100">Main concern:</span>{" "}
                 {narrative.impactLine}
@@ -318,9 +348,7 @@ export default async function ToolPage({ params }: PageProps) {
                           <span>
                             Rule:{" "}
                             <a
-                              href={`https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md#${first.id.toLowerCase()}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              href={`/methodology#${first.id.toLowerCase()}`}
                               title={`Learn what ${first.id} detects`}
                               className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 transition-colors"
                             >

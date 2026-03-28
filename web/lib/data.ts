@@ -5,6 +5,10 @@ import {
   displayGrade as displayGradeUtil,
   keyFindingsSummary as keyFindingsSummaryUtil,
   findingEmoji as findingEmojiUtil,
+  getBlockSnippet as getBlockSnippetUtil,
+  getFindingNarrative as getFindingNarrativeUtil,
+  getToolImpactLine as getToolImpactLineUtil,
+  getToolNarrative as getToolNarrativeUtil,
 } from "./report-utils";
 
 export type { Report };
@@ -12,6 +16,10 @@ export type { Finding, Summary } from "./report-utils";
 export const displayGrade = displayGradeUtil;
 export const keyFindingsSummary = keyFindingsSummaryUtil;
 export const findingEmoji = findingEmojiUtil;
+export const getBlockSnippet = getBlockSnippetUtil;
+export const getFindingNarrative = getFindingNarrativeUtil;
+export const getToolImpactLine = getToolImpactLineUtil;
+export const getToolNarrative = getToolNarrativeUtil;
 
 const REPORTS_DIR = "data/reports";
 
@@ -67,4 +75,3 @@ export function getReportByToolName(name: string): Report | null {
     return null;
   }
 }
-
