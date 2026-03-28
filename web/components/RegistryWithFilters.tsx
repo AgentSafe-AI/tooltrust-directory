@@ -325,7 +325,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
               </div>
               <div className="flex-1 mt-2">
                 {r.description && (
-                  <p className="line-clamp-1 text-sm text-zinc-500">
+                  <p className="line-clamp-2 text-sm text-zinc-500">
                     {r.description}
                   </p>
                 )}
