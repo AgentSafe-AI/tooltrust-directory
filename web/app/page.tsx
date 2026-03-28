@@ -34,22 +34,15 @@ export default function HomePage() {
           mismatches.
         </p>
         <div className="flex flex-wrap gap-2 pt-1">
-          {[
-            { label: "Prompt Injection", anchor: "as-001" },
-            { label: "Excess Permissions", anchor: "as-002" },
-            { label: "Code Execution", anchor: "as-006" },
-            { label: "Supply Chain", anchor: "as-008" },
-            { label: "Typosquatting", anchor: "as-009" },
-            { label: "Tool Shadowing", anchor: "as-013" },
-          ].map((r) => (
+          {["Prompt Injection", "Excess Permissions", "Code Execution", "Supply Chain", "Typosquatting", "Tool Shadowing"].map((label) => (
             <a
-              key={r.label}
-              href={`https://github.com/AgentSafe-AI/tooltrust-scanner#${r.anchor}`}
+              key={label}
+              href="https://github.com/AgentSafe-AI/tooltrust-scanner#-what-it-catches"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-zinc-700 bg-zinc-800/50 px-2.5 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200 transition-colors"
             >
-              {r.label}
+              {label}
             </a>
           ))}
         </div>
