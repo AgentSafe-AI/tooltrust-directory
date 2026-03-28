@@ -1,6 +1,6 @@
 # 🛡️ ToolTrust Directory
 
-**Discover safe, audited MCP servers before your AI agent blindly trusts them.**
+> **This repo hosts [tooltrust.dev](https://www.tooltrust.dev/) — the website and pre-scanned report data. If you want to scan your own MCP servers, go to [tooltrust-scanner](https://github.com/AgentSafe-AI/tooltrust-scanner).**
 
 A public registry of AI agent tools, continuously scanned for prompt injection, data exfiltration, and privilege escalation by [ToolTrust Scanner](https://github.com/AgentSafe-AI/tooltrust-scanner).
 
