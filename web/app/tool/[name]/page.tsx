@@ -3,7 +3,7 @@ import { GradeProgressRing } from "@/lib/grades";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, ExternalLink, CheckCircle2, ScanSearch } from "lucide-react";
+import { Shield, ExternalLink, CheckCircle2, ScanSearch, Star } from "lucide-react";
 import { CopyBadgeButton } from "./CopyBadgeButton";
 import { ScanSnippets } from "./ScanSnippets";
 
@@ -140,6 +140,9 @@ export default async function ToolPage({ params }: PageProps) {
             | Scanned {formatScanDate(report.scan_date)}
             {report.scanner && (
               <> | <span className="font-mono">{report.scanner}</span></>
+            )}
+            {report.stars != null && report.stars > 0 && (
+              <> | <Star className="inline h-3 w-3 fill-zinc-500 text-zinc-500 mb-0.5" /> {report.stars >= 1000 ? `${(report.stars / 1000).toFixed(1)}k` : report.stars}</>
             )}
           </p>
         </div>
