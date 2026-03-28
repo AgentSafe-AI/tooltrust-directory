@@ -61,26 +61,20 @@ export function displayGrade(r: Report): string {
 
 export function findingEmoji(id: string): string {
   switch (id) {
-    case "AS-004":
-      return "📦";
-    case "AS-008":
-      return "🚨";
-    case "AS-001":
-      return "🚨";
-    case "AS-002":
-      return "⚠️";
-    case "AS-006":
-      return "💻";
-    case "AS-007":
-      return "ℹ️";
-    case "AS-010":
-      return "🔑";
-    case "AS-011":
-      return "ℹ️";
-    case "AS-013":
-      return "👥";
-    default:
-      return "";
+    case "AS-001": return "🚨"; // Prompt Injection
+    case "AS-002": return "⚠️"; // Excessive Permissions
+    case "AS-003": return "🔀"; // Scope Mismatch
+    case "AS-004": return "📦"; // Supply Chain CVEs
+    case "AS-005": return "🔐"; // Privilege Escalation
+    case "AS-006": return "💻"; // Arbitrary Code Execution
+    case "AS-007": return "ℹ️"; // Missing Description/Schema
+    case "AS-008": return "🚨"; // Known-Compromised Packages
+    case "AS-009": return "🎭"; // Typosquatting
+    case "AS-010": return "🔑"; // Insecure Secret Handling
+    case "AS-011": return "ℹ️"; // Missing Rate-Limit/Timeout
+    case "AS-012": return "🔄"; // Tool Drift
+    case "AS-013": return "👥"; // Tool Shadowing
+    default:       return "";
   }
 }
 
