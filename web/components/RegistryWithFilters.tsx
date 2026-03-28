@@ -277,7 +277,11 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                     <p className="max-w-md">{getToolImpactLine(r)}</p>
                   </td>
                   <td className="px-4 py-3 text-zinc-400">
-                    {keyFindingsSummary(r)}
+                    <span className="flex flex-wrap gap-x-1.5 gap-y-0.5">
+                      {keyFindingsSummary(r).split(", ").map((token, i) => (
+                        <span key={i} className="whitespace-nowrap">{token}{i < keyFindingsSummary(r).split(", ").length - 1 ? "," : ""}</span>
+                      ))}
+                    </span>
                   </td>
                 </tr>
               ))}
