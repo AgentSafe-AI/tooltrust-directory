@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `3.3.0` |
+| **Version** | `3.4.0` |
 | **Vendor** | Flux159 |
-| **Stars** | ⭐ 1362 |
+| **Stars** | ⭐ 1364 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-28 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

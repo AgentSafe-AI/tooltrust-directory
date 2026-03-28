@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 65 |
-| **Version** | `0.9.15` |
+| **Version** | `0.9.16` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 964 |
+| **Stars** | ⭐ 972 |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
-| **Scan Date** | 2026-03-27 |
+| **Scan Date** | 2026-03-28 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
