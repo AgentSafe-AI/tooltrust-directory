@@ -69,6 +69,8 @@ export function findingEmoji(id: string): string {
       return "🚨";
     case "AS-002":
       return "⚠️";
+    case "AS-007":
+      return "ℹ️";
     case "AS-011":
       return "ℹ️";
     default:
