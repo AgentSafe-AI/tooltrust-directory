@@ -55,7 +55,6 @@ export interface ToolNarrative {
 
 export function displayGrade(r: Report): string {
   if (r.scan_incomplete || r.grade === "I") return "?";
-  if (r.grade === "S") return "S";
   if (r.risk_score === 0 && r.findings.length === 0) return "A";
   return r.grade;
 }
