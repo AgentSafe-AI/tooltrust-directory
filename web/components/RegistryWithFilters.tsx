@@ -118,11 +118,6 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
   const setCategoryFilter = (v: string) => { setCategoryFilterState(v); pushURL(query, gradeFilter, v, viewMode); };
   const setViewMode = (v: "table" | "cards") => { setViewModeState(v); pushURL(query, gradeFilter, categoryFilter, v); };
 
-  const categories = useMemo(() => {
-    const set = new Set(reports.map((r) => r.category).filter(Boolean));
-    return Array.from(set).sort() as string[];
-  }, [reports]);
-
   const sorted = useMemo(() => sortReports(reports, sortKey, sortDir), [reports, sortKey, sortDir]);
   const filtered = useMemo(
     () => filterReports(sorted, query, gradeFilter, categoryFilter),
@@ -193,35 +188,6 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
         ))}
       </div>
 
-      {/* Category filters */}
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-sm font-medium text-zinc-400">Category:</span>
-        <button
-          type="button"
-          onClick={() => setCategoryFilter("All")}
-          className={`rounded-lg border px-2.5 py-2 text-sm transition ${
-            categoryFilter === "All"
-              ? "border-zinc-600 bg-zinc-800 text-zinc-100"
-              : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
-          }`}
-        >
-          All
-        </button>
-        {categories.map((c) => (
-          <button
-            key={c}
-            type="button"
-            onClick={() => setCategoryFilter(c)}
-            className={`rounded-lg border px-2.5 py-2 text-sm transition ${
-              categoryFilter === c
-                ? "border-zinc-600 bg-zinc-800 text-zinc-100"
-                : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 hover:text-zinc-300"
-            }`}
-          >
-            {c}
-          </button>
-        ))}
-      </div>
 
       {viewMode === "table" ? (
         <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900">
@@ -342,11 +308,6 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
               </div>
               <div className="mt-3 border-t border-zinc-800 pt-3 space-y-1.5">
                 <div className="flex flex-wrap items-center gap-1.5 text-xs">
-                  {r.category && (
-                    <span className="rounded bg-blue-500/10 px-1.5 py-0.5 text-blue-400">
-                      {r.category}
-                    </span>
-                  )}
                   {r.findings && r.findings.length > 0 && (
                     <span className="rounded bg-orange-500/10 px-1.5 py-0.5 text-orange-400">
                       {r.findings.length} findings
