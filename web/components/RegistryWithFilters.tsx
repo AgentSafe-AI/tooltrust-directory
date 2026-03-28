@@ -10,6 +10,7 @@ import {
   displayGrade,
   keyFindingsSummary,
   formatScannedAgo,
+  getToolImpactLine,
 } from "@/lib/report-utils";
 import { GradeBadge } from "@/lib/grades";
 
@@ -26,6 +27,7 @@ const GRADE_BUTTON_STYLES: Record<string, string> = {
 };
 
 const GRADE_BUTTON_INACTIVE_STYLES: Record<string, string> = {
+  S: "border-zinc-800 bg-zinc-900 text-amber-600 hover:text-amber-300 hover:border-amber-900",
   A: "border-zinc-800 bg-zinc-900 text-emerald-600 hover:text-emerald-400 hover:border-emerald-900",
   B: "border-zinc-800 bg-zinc-900 text-blue-600 hover:text-blue-400 hover:border-blue-900",
   C: "border-zinc-800 bg-zinc-900 text-yellow-700 hover:text-yellow-400 hover:border-yellow-900",
@@ -38,17 +40,11 @@ function sortReports(reports: Report[]) {
     const starsA = a.stars ?? 0;
     const starsB = b.stars ?? 0;
     if (starsB !== starsA) return starsB - starsA;
-    const rank: Record<string, number> = {
-      S: 0,
-      A: 1,
-      B: 2,
-      C: 3,
-      D: 4,
-      F: 5,
-    };
-    const gA = rank[displayGrade(a)] ?? 6;
-    const gB = rank[displayGrade(b)] ?? 6;
-    return gA - gB;
+    const rank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, F: 4 };
+    const gA = rank[displayGrade(a)] ?? 5;
+    const gB = rank[displayGrade(b)] ?? 5;
+    if (gA !== gB) return gA - gB;
+    return a.tool_id.localeCompare(b.tool_id);
   });
 }
 
@@ -220,6 +216,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                 <th className="px-4 py-3 font-medium text-zinc-400">Name</th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Version</th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Grade</th>
+                <th className="px-4 py-3 font-medium text-zinc-400">Impact</th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Key Findings</th>
               </tr>
             </thead>
@@ -244,6 +241,9 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                     <Link href={`/tool/${r.tool_id}`}>
                       <GradeBadge grade={displayGrade(r)} size="sm" dark />
                     </Link>
+                  </td>
+                  <td className="px-4 py-3 text-zinc-300">
+                    <p className="max-w-md">{getToolImpactLine(r)}</p>
                   </td>
                   <td className="px-4 py-3 text-zinc-400">
                     {keyFindingsSummary(r)}
@@ -294,6 +294,9 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                     {r.description}
                   </p>
                 )}
+                <p className="mt-4 line-clamp-3 text-base leading-8 text-zinc-300">
+                  {getToolImpactLine(r)}
+                </p>
               </div>
               <div className="mt-3 border-t border-zinc-800 pt-3 space-y-1.5">
                 <div className="flex flex-wrap items-center gap-1.5 text-xs">
