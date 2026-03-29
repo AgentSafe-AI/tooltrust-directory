@@ -1,6 +1,6 @@
 import { getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
 import { GradeProgressRing } from "@/lib/grades";
-import { formatSeverityLabel, getMethodologyHref, getSeverityBadgeClass } from "@/lib/rules";
+import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -213,6 +213,12 @@ export default async function ToolPage({ params }: PageProps) {
                 <span className="font-medium text-zinc-100">Action:</span>{" "}
                 {narrative.actionNow}
               </p>
+              {grade === "C" || grade === "D" ? (
+                <p className="text-zinc-400">
+                  <span className="font-medium text-zinc-100">Approval means:</span>{" "}
+                  keep this server behind manual review and avoid unattended automation until the flagged risks are addressed.
+                </p>
+              ) : null}
             </div>
           </section>
         );
@@ -267,6 +273,7 @@ export default async function ToolPage({ params }: PageProps) {
               <ul className="divide-y divide-zinc-800">
                 {sortedGroups.map((group, i) => {
                   const first = group[0];
+                  const ruleInfo = getRuleInfo(first.id);
                   const isHeuristicAS006 =
                     first.id === "AS-006" &&
                     first.description ===
@@ -274,18 +281,24 @@ export default async function ToolPage({ params }: PageProps) {
                   return (
                     <li
                       key={i}
-                      className="border-b border-zinc-800 bg-zinc-900 p-5 last:border-0"
+                      className={`border-b border-l-2 border-zinc-800 bg-zinc-900 p-5 last:border-b-0 ${getSeverityCardClass(first.severity)}`}
                     >
                       <div className="flex flex-col gap-2">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span
-                            className={getSeverityBadgeClass(first.severity)}
-                          >
+                        <div className="flex flex-wrap items-center gap-3">
+                          <span className={getSeverityBadgeClass(first.severity)}>
                             {formatSeverityLabel(first.severity)}
                           </span>
-                          <span className="font-semibold text-zinc-100">
-                            {first.title} {group.length > 1 && <span className="ml-1 text-zinc-400">×{group.length}</span>}
-                          </span>
+                          <a
+                            href={getMethodologyHref(first.id)}
+                            title={`Learn what ${first.id} detects`}
+                            className="rounded bg-zinc-800 px-2 py-1 font-mono text-sm text-zinc-300 transition hover:bg-zinc-700 hover:text-zinc-100"
+                          >
+                            {first.id}
+                          </a>
+                          <h3 className="text-lg font-semibold text-zinc-100">
+                            <span className="mr-2">{ruleInfo?.emoji ?? ""}</span>
+                            {ruleInfo?.title ?? first.title} {group.length > 1 && <span className="ml-1 text-zinc-400">×{group.length}</span>}
+                          </h3>
                           {isHeuristicAS006 && (
                             <span className="rounded border border-zinc-700 bg-zinc-800 px-2 py-0.5 text-xs text-zinc-400">
                               heuristic signal
@@ -338,21 +351,11 @@ export default async function ToolPage({ params }: PageProps) {
                           );
                         })()}
 
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-500 mt-1">
-                          <span>
-                            Rule:{" "}
-                            <a
-                              href={getMethodologyHref(first.id)}
-                              title={`Learn what ${first.id} detects`}
-                              className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 transition-colors"
-                            >
-                              {first.id}
-                            </a>
-                          </span>
+                        <div className="mt-1 space-y-2 text-xs text-zinc-500">
                           {first.recommendation && (
-                            <span className="text-zinc-500">
+                            <p className="text-zinc-500">
                               <span className="text-zinc-600">Fix: </span>{first.recommendation}
-                            </span>
+                            </p>
                           )}
                         </div>
                       </div>

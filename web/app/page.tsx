@@ -10,6 +10,11 @@ import { Suspense } from "react";
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
+  const sectionLinks = [
+    { href: "#live-registry", label: "Live Registry" },
+    { href: "#scan-your-mcp", label: "Scan your MCP servers" },
+    { href: "#decision-guide", label: "What the decisions mean" },
+  ];
   const reports = getAllReports();
   const featuredRules = ["AS-001", "AS-002", "AS-006", "AS-008", "AS-009", "AS-013"]
     .map((id) => getRuleInfo(id))
@@ -51,50 +56,70 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="space-y-10">
-      {/* Hero */}
-      <section className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
-          AI Agent Tool Security Directory
-        </h1>
-        <p className="max-w-2xl text-zinc-400">
-          Security analysis for MCP servers, skills, and AI agent tools. Every
-          tool is scanned for prompt injection, permission risks, and scope
-          mismatches.
-        </p>
-        <div className="flex flex-wrap gap-2 pt-1">
-          {featuredRules.map((rule) => (
-            <a
-              key={rule.id}
-              href={getMethodologyHref(rule.id)}
-              className="rounded-full border border-zinc-700 bg-zinc-800/50 px-2.5 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200 transition-colors"
-            >
-              {rule.emoji} {rule.shortLabel}
-            </a>
-          ))}
-        </div>
+    <div className="2xl:grid 2xl:grid-cols-[minmax(0,1fr)_240px] 2xl:gap-8">
+      <div className="space-y-10">
+        <nav
+          aria-label="Section navigation"
+          className="2xl:hidden -mx-1 overflow-x-auto pb-1"
+        >
+          <div className="flex min-w-max gap-2 px-1">
+            {sectionLinks.map((section) => (
+              <a
+                key={section.href}
+                href={section.href}
+                className="rounded-full border border-zinc-800 bg-zinc-900/70 px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:border-zinc-700 hover:text-zinc-100"
+              >
+                {section.label}
+              </a>
+            ))}
+          </div>
+        </nav>
 
-        <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className={`rounded-xl border bg-zinc-900/90 px-5 py-4 ${stat.cardClass}`}
-            >
-              <p className={`text-2xl font-semibold tracking-tight ${stat.valueClass}`}>{stat.value}</p>
-              <p className="mt-1 text-sm text-zinc-500">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* Hero */}
+        <section className="space-y-2">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+            AI Agent Tool Security Directory
+          </h1>
+          <p className="max-w-2xl text-zinc-400">
+            Security analysis for MCP servers, skills, and AI agent tools. Every
+            tool is scanned for prompt injection, permission risks, and scope
+            mismatches.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {featuredRules.map((rule) => (
+              <a
+                key={rule.id}
+                href={getMethodologyHref(rule.id)}
+                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-2.5 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200 transition-colors"
+              >
+                {rule.emoji} {rule.shortLabel}
+              </a>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className={`rounded-xl border bg-zinc-900/90 px-5 py-4 ${stat.cardClass}`}
+              >
+                <p className={`text-2xl font-semibold tracking-tight ${stat.valueClass}`}>{stat.value}</p>
+                <p className="mt-1 text-sm text-zinc-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
 
-      {/* Registry with search, filters, cards */}
-      <Suspense>
-        <RegistryWithFilters reports={reports} />
-      </Suspense>
+        {/* Registry with search, filters, cards */}
+        <section id="live-registry" className="scroll-mt-24">
+          <Suspense>
+            <RegistryWithFilters reports={reports} />
+          </Suspense>
+        </section>
 
-      {/* Scan your tools */}
-      <section id="scan-your-mcp" className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-5">
+        {/* Scan your tools */}
+        <section id="scan-your-mcp" className="scroll-mt-24 rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-5">
         <div className="flex items-center gap-2">
           <Terminal className="h-5 w-5 text-emerald-400" />
           <h2 className="text-lg font-semibold text-zinc-100">Scan your MCP servers</h2>
@@ -118,24 +143,6 @@ export default function HomePage() {
           <p className="text-xs text-zinc-500">
             Then ask your agent: <code className="text-emerald-400">run tooltrust_scan_config</code>
           </p>
-        </div>
-
-        <div className="border-t border-zinc-800" />
-
-        <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-red-300">
-            How to block a risky tool
-          </h3>
-          <p className="mt-2 text-sm leading-6 text-zinc-300">
-            If a tool is graded D or F, disable it in your production <code className="text-red-300">.mcp.json</code> before waiting for a fix and re-scan.
-          </p>
-          <pre className="mt-3 overflow-x-auto rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-zinc-300">{`{
-  "mcpServers": {
-    "tool-name": {
-      "disabled": true
-    }
-  }
-}`}</pre>
         </div>
 
         {/* CLI — secondary */}
@@ -165,7 +172,78 @@ export default function HomePage() {
         >
           Full docs & GitHub Actions integration →
         </a>
-      </section>
+        </section>
+
+        <section id="decision-guide" className="scroll-mt-24 space-y-4">
+          <div className="space-y-1">
+            <h2 className="text-xl font-semibold text-zinc-100">What the decisions mean</h2>
+            <p className="max-w-2xl text-sm text-zinc-500">
+              ToolTrust maps findings to three actions so you know what to do next after a scan.
+            </p>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/[0.04] p-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-emerald-300">
+                Allow
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-300">
+                The server is low risk enough to use normally. You can enable it in day-to-day workflows,
+                though it is still worth reviewing findings before broad deployment.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-200">
+                Require approval
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-300">
+                Keep the server behind manual review. Do not run it unattended until you review the findings,
+                keep a human in the loop for risky tool calls, and reduce permissions before enabling automation.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-red-300">
+                Block
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-300">
+                Do not use this server in production. If a tool is graded D or F, disable it in your production{" "}
+                <code className="text-red-300">.mcp.json</code> while waiting for a fix and re-scan.
+              </p>
+              <pre className="mt-3 overflow-x-auto rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-zinc-300">{`{
+  "mcpServers": {
+    "tool-name": {
+      "disabled": true
+    }
+  }
+}`}</pre>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside className="hidden 2xl:block">
+        <div className="sticky top-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">
+            On this page
+          </p>
+          <nav className="mt-4">
+            <ul className="space-y-1.5">
+              {sectionLinks.map((section) => (
+                <li key={section.href}>
+                  <a
+                    href={section.href}
+                    className="block border-l border-transparent pl-4 text-sm text-zinc-500 transition-colors hover:border-zinc-700 hover:text-zinc-100"
+                  >
+                    {section.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
     </div>
   );
 }

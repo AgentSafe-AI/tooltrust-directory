@@ -201,6 +201,25 @@ export function getSeverityBadgeClass(severity: string): string {
   return `${base} border-zinc-500/20 bg-zinc-500/10 text-zinc-500`;
 }
 
+export function getSeverityMetaClass(severity: string): string {
+  const normalized = severity.toUpperCase();
+  const base = "rounded-md border px-2 py-0.5 text-[11px] font-medium";
+  if (normalized.startsWith("CRITICAL")) return `${base} border-red-400/18 bg-red-400/6 text-[#e58a95]`;
+  if (normalized.startsWith("HIGH")) return `${base} border-orange-400/18 bg-orange-400/6 text-[#d79a72]`;
+  if (normalized.startsWith("MEDIUM")) return `${base} border-yellow-300/16 bg-yellow-300/6 text-[#c4a86c]`;
+  if (normalized.startsWith("LOW")) return `${base} border-zinc-500/16 bg-zinc-500/6 text-zinc-400`;
+  return `${base} border-zinc-500/16 bg-zinc-500/6 text-zinc-500`;
+}
+
+export function getSeverityCardClass(severity: string): string {
+  const normalized = severity.toUpperCase();
+  if (normalized.startsWith("CRITICAL")) return "border-l-red-400/45 bg-red-400/[0.03]";
+  if (normalized.startsWith("HIGH")) return "border-l-orange-400/40 bg-orange-400/[0.025]";
+  if (normalized.startsWith("MEDIUM")) return "border-l-yellow-300/35 bg-yellow-300/[0.02]";
+  if (normalized.startsWith("LOW")) return "border-l-zinc-500/30 bg-transparent";
+  return "border-l-zinc-500/25 bg-transparent";
+}
+
 export function formatSeverityLabel(severity: string): string {
   const normalized = severity.trim().toLowerCase();
   if (!normalized) return severity;
