@@ -3,6 +3,7 @@ import {
   displayGrade,
 } from "@/lib/data";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
+import { getMethodologyHref, getRuleInfo } from "@/lib/rules";
 import { Terminal } from "lucide-react";
 import { Suspense } from "react";
 
@@ -10,6 +11,9 @@ export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const reports = getAllReports();
+  const featuredRules = ["AS-001", "AS-002", "AS-006", "AS-008", "AS-009", "AS-013"]
+    .map((id) => getRuleInfo(id))
+    .filter((rule) => rule != null);
   const safeCount = reports.filter((r) =>
     ["S", "A", "B"].includes(displayGrade(r))
   ).length;
@@ -33,40 +37,13 @@ export default function HomePage() {
           mismatches.
         </p>
         <div className="flex flex-wrap gap-2 pt-1">
-          {[
-            {
-              label: "Prompt Injection",
-              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-001--prompt-injection--tool-poisoning",
-            },
-            {
-              label: "Excess Permissions",
-              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#%EF%B8%8F-as-002--excessive-permissions",
-            },
-            {
-              label: "Code Execution",
-              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-006--arbitrary-code-execution",
-            },
-            {
-              label: "Supply Chain",
-              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-008--known-compromised-packages-offline-blacklist",
-            },
-            {
-              label: "Typosquatting",
-              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-009--typosquatting",
-            },
-            {
-              label: "Tool Shadowing",
-              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-013--tool-shadowing",
-            },
-          ].map((r) => (
+          {featuredRules.map((rule) => (
             <a
-              key={r.label}
-              href={r.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              key={rule.id}
+              href={getMethodologyHref(rule.id)}
               className="rounded-full border border-zinc-700 bg-zinc-800/50 px-2.5 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200 transition-colors"
             >
-              {r.label}
+              {rule.emoji} {rule.shortLabel}
             </a>
           ))}
         </div>

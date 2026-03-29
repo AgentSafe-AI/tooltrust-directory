@@ -1,5 +1,6 @@
 import { getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
 import { GradeProgressRing } from "@/lib/grades";
+import { getMethodologyHref } from "@/lib/rules";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -351,7 +352,7 @@ export default async function ToolPage({ params }: PageProps) {
                           <span>
                             Rule:{" "}
                             <a
-                              href={`/methodology#${first.id.toLowerCase()}`}
+                              href={getMethodologyHref(first.id)}
                               title={`Learn what ${first.id} detects`}
                               className="rounded bg-zinc-800 px-1 py-0.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 transition-colors"
                             >

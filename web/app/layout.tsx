@@ -77,6 +77,9 @@ export default function RootLayout({
               <Link href="/" className="flex items-center py-1 hover:text-zinc-100 sm:py-3">
                 Directory
               </Link>
+              <Link href="/methodology" className="flex items-center py-1 hover:text-zinc-100 sm:py-3">
+                Methodology
+              </Link>
               <a
                 href={scannerRepoUrl}
                 target="_blank"

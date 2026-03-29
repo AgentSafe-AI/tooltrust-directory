@@ -1,6 +1,8 @@
 /**
  * Client-safe report helpers (no Node/fs). Used by RegistryWithFilters and server.
  */
+import { getRuleInfo } from "./rules";
+
 export interface Finding {
   id: string;
   severity: string;
@@ -60,22 +62,7 @@ export function displayGrade(r: Report): string {
 }
 
 export function findingEmoji(id: string): string {
-  switch (id) {
-    case "AS-001": return "🚨"; // Prompt Injection
-    case "AS-002": return "⚠️"; // Excessive Permissions
-    case "AS-003": return "🔀"; // Scope Mismatch
-    case "AS-004": return "📦"; // Supply Chain CVEs
-    case "AS-005": return "🔐"; // Privilege Escalation
-    case "AS-006": return "💻"; // Arbitrary Code Execution
-    case "AS-007": return "ℹ️"; // Missing Description/Schema
-    case "AS-008": return "🚨"; // Known-Compromised Packages
-    case "AS-009": return "🎭"; // Typosquatting
-    case "AS-010": return "🔑"; // Insecure Secret Handling
-    case "AS-011": return "ℹ️"; // Missing Rate-Limit/Timeout
-    case "AS-012": return "🔄"; // Tool Drift
-    case "AS-013": return "👥"; // Tool Shadowing
-    default:       return "";
-  }
+  return getRuleInfo(id)?.emoji ?? "";
 }
 
 export function keyFindingsSummary(r: Report): string {
@@ -192,7 +179,7 @@ const FINDING_NARRATIVES: Record<string, FindingNarrative> = {
 export function getFindingNarrative(findingId: string): FindingNarrative {
   return (
     FINDING_NARRATIVES[findingId] ?? {
-      shortLabel: findingId,
+      shortLabel: getRuleInfo(findingId)?.shortLabel ?? findingId,
       impact: "This finding indicates the tool should be reviewed before it is trusted.",
       suggestion:
         "Review the tool's permissions, metadata, and dependencies before allowing it.",
