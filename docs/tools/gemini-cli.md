@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 55 |
-| **Version** | `0.35.2` |
+| **Version** | `0.35.3` |
 | **Vendor** | google-gemini |
-| **Stars** | ⭐ 99207 |
+| **Stars** | ⭐ 99366 |
 | **Language** | TypeScript |
 | **Source** | [gemini-cli](https://github.com/google-gemini/gemini-cli) |
-| **Scan Date** | 2026-03-27 |
+| **Scan Date** | 2026-03-29 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

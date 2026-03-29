@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `4.6.1` |
+| **Version** | `4.7.0` |
 | **Vendor** | stickerdaniel |
-| **Stars** | ⭐ 1140 |
+| **Stars** | ⭐ 1175 |
 | **Language** | Python |
 | **Source** | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-29 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
@@ -22,11 +22,23 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 2 |
-| Medium   | 1 |
+| Medium   | 2 |
 | Low      | 2 |
 | Info     | 0 |
 
 ## Detailed Findings
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

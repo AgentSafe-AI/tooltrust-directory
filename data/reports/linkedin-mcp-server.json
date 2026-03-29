@@ -1,14 +1,14 @@
 {
   "tool_id": "linkedin-mcp-server",
-  "version": "4.6.1",
+  "version": "4.7.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-03-25T05:36:50.769543926Z",
+  "scan_date": "2026-03-29T01:45:23.918742844Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/stickerdaniel/linkedin-mcp-server",
   "category": "Developer Tools",
   "vendor": "stickerdaniel",
-  "stars": 1140,
+  "stars": 1175,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles, companies and jobs, and perform job searches.",
@@ -20,6 +20,14 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_person_profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "connect_with_person"
     },
     {
       "id": "AS-002",
@@ -57,18 +65,27 @@
   "summary": {
     "critical": 0,
     "high": 2,
-    "medium": 1,
+    "medium": 2,
     "low": 2,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "close_session",
+    "connect_with_person",
     "get_company_posts",
     "get_company_profile",
     "get_job_details",
     "get_person_profile",
     "search_jobs",
     "search_people"
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-03-25T05:36:50Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "4.6.1"
+    }
   ]
 }

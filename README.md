@@ -10,7 +10,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 ![ToolTrust Directory UI](./docs/tooltrust-ui.png)
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-159-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--28-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--29-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -25,7 +25,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.13.4` | 181.4k | **[C](./docs/tools/n8n.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 28 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.35.2` | 99.2k | **[D](./docs/tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Mar 27 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.35.3` | 99.4k | **[D](./docs/tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Mar 29 |
 | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 82.0k | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | ✅ None | Mar 25 |
 | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 82.0k | **[A](./docs/tools/mcp-server-time.md)** | ✅ None | Mar 25 |
 | [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | `2026.1.26` | 82.0k | **[B](./docs/tools/mcp-server-fetch.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 25 |
@@ -63,17 +63,17 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | ✅ None | Mar 25 |
 | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | `3.0.0` | 3.2k | **[B](./docs/tools/mcp-server-browserbase.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 28 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[A](./docs/tools/shadcn-ui-mcp-server.md)** | 🔑 `AS-002` | Mar 25 |
-| [solon](https://github.com/opensolon/solon) | `3.9.5` | 2.7k | **[S 🌟](./docs/tools/solon.md)** | ✅ None | Mar 10 |
+| [solon](https://github.com/opensolon/solon) | `3.9.5` | 2.7k | **[A](./docs/tools/solon.md)** | ✅ None | Mar 10 |
 | [code-graph-rag](https://github.com/vitali87/code-graph-rag) | `0.0.148` | 2.2k | **[C](./docs/tools/code-graph-rag.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×22 | Mar 25 |
 | [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) | `2.8.6` | 2.2k | **[C](./docs/tools/brightdata-mcp.md)** | 🔑 `AS-002` ×66, ⚡ `AS-011` ×57 | Mar 25 |
 | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) | `1.0.21` | 2.1k | **[C](./docs/tools/mcp-shrimp-task-manager.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×6 | Mar 25 |
-| [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | `1.16.0` | 1.9k | **[B](./docs/tools/google-workspace-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 28 |
+| [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | `1.16.2` | 2.0k | **[B](./docs/tools/google-workspace-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 29 |
 | [mcp-router](https://github.com/mcp-router/mcp-router) | `0.6.2` | 1.9k | **[A](./docs/tools/mcp-router.md)** | ✅ None | Mar 25 |
-| [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) | `0.61.0` | 1.7k | **[B](./docs/tools/unity-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` | Mar 26 |
+| [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) | `0.62.0` | 1.8k | **[B](./docs/tools/unity-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` | Mar 29 |
+| [contextplus](https://github.com/ForLoopCodes/contextplus) | `1.0.9` | 1.7k | **[C](./docs/tools/contextplus.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010`, ⚡ `AS-011` ×6 | Mar 29 |
 | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](./docs/tools/n8n-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 25 |
 | [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.28.3` | 1.6k | **[B](./docs/tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Mar 27 |
 | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.18` | 1.5k | **[C](./docs/tools/tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Mar 25 |
-| [contextplus](https://github.com/ForLoopCodes/contextplus) | `1.0.8` | 1.5k | **[C](./docs/tools/contextplus.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010`, ⚡ `AS-011` ×6 | Mar 25 |
 
 <!-- TOOLTRUST:END -->
 

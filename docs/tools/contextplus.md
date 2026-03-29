@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `1.0.8` |
+| **Version** | `1.0.9` |
 | **Vendor** | ForLoopCodes |
-| **Stars** | ⭐ 1498 |
+| **Stars** | ⭐ 1692 |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/ForLoopCodes/contextplus) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-29 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
