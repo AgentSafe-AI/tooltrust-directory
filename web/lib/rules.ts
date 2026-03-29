@@ -28,7 +28,7 @@ export const RULE_CATALOG: RuleInfo[] = [
     emoji: "⚠️",
     shortLabel: "Excess Permissions",
     title: "Excessive Permissions",
-    severity: ["High", "Low (depends on permission type)"],
+    severity: ["High", "Medium", "Low"],
     detects:
       "Broad capabilities such as filesystem, network, database, or execution access without a clearly scoped justification.",
     whyItMatters:
@@ -41,7 +41,7 @@ export const RULE_CATALOG: RuleInfo[] = [
     emoji: "🔀",
     shortLabel: "Scope Mismatch",
     title: "Scope Mismatch",
-    severity: ["High"],
+    severity: ["High", "Medium"],
     detects:
       "A mismatch between a tool's name, description, schema, and declared permissions.",
     whyItMatters:
@@ -132,7 +132,7 @@ export const RULE_CATALOG: RuleInfo[] = [
     emoji: "🔑",
     shortLabel: "Secret Handling",
     title: "Insecure Secret Handling",
-    severity: ["Medium"],
+    severity: ["High"],
     detects:
       "Parameters that appear designed to accept raw secrets such as API keys, passwords, tokens, or private keys.",
     whyItMatters:
@@ -158,7 +158,7 @@ export const RULE_CATALOG: RuleInfo[] = [
     emoji: "🔄",
     shortLabel: "Tool Drift",
     title: "Tool Drift",
-    severity: ["Medium"],
+    severity: ["High"],
     detects:
       "Changes in a tool definition since the last scan, such as new parameters, modified descriptions, or expanded permissions.",
     whyItMatters:
@@ -171,7 +171,7 @@ export const RULE_CATALOG: RuleInfo[] = [
     emoji: "👥",
     shortLabel: "Tool Shadowing",
     title: "Tool Shadowing",
-    severity: ["High", "Medium"],
+    severity: ["High"],
     detects:
       "Duplicate normalized tool names that can shadow or override another tool in the same server.",
     whyItMatters:
