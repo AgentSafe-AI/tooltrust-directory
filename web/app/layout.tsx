@@ -65,7 +65,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#09090b] text-zinc-200`}
       >
         <header className="border-b border-zinc-800/80 bg-zinc-900/80 backdrop-blur-md sticky top-0 z-50">
-          <div className="mx-auto flex min-h-14 max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:flex-nowrap sm:py-0">
+          <div className="mx-auto flex min-h-14 max-w-[84rem] flex-wrap items-center justify-between gap-3 px-5 py-3 sm:flex-nowrap sm:py-0">
             <Link
               href="/"
               className="flex items-center gap-2 font-semibold text-emerald-400"
@@ -92,9 +92,9 @@ export default function RootLayout({
             </nav>
           </div>
         </header>
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+        <main className="mx-auto max-w-[84rem] px-5 py-8">{children}</main>
         <footer className="border-t border-zinc-800/80 mt-16">
-          <div className="mx-auto max-w-6xl px-4 py-6 flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
+          <div className="mx-auto max-w-[84rem] px-5 py-6 flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
             <span>© 2026 AgentSafe-AI · MIT License</span>
             <div className="flex items-center gap-6">
               <a href="mailto:contact@tooltrust.dev" className="hover:text-zinc-300">

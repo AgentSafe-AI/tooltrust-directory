@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const sectionLinks = [
+    { href: "#overview", label: "Overview" },
     { href: "#live-registry", label: "Live Registry" },
     { href: "#scan-your-mcp", label: "Scan your MCP servers" },
     { href: "#decision-guide", label: "What the decisions mean" },
@@ -56,7 +57,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="2xl:grid 2xl:grid-cols-[minmax(0,1fr)_240px] 2xl:gap-8">
+    <div className="2xl:grid 2xl:grid-cols-[minmax(0,1fr)_190px] 2xl:gap-6">
       <div className="space-y-10">
         <nav
           aria-label="Section navigation"
@@ -76,7 +77,7 @@ export default function HomePage() {
         </nav>
 
         {/* Hero */}
-        <section className="space-y-2">
+        <section id="overview" className="scroll-mt-24 space-y-2">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
             AI Agent Tool Security Directory
           </h1>
