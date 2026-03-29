@@ -3,7 +3,6 @@ import {
   displayGrade,
 } from "@/lib/data";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
-import Link from "next/link";
 import { Terminal } from "lucide-react";
 import { Suspense } from "react";
 
@@ -35,12 +34,12 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap gap-2 pt-1">
           {[
-            { label: "Prompt Injection", anchor: "as-001" },
-            { label: "Excess Permissions", anchor: "as-002" },
-            { label: "Code Execution", anchor: "as-006" },
-            { label: "Supply Chain", anchor: "as-008" },
-            { label: "Typosquatting", anchor: "as-009" },
-            { label: "Tool Shadowing", anchor: "as-013" },
+            { label: "Prompt Injection", anchor: "-as-001--prompt-injection--tool-poisoning" },
+            { label: "Excess Permissions", anchor: "-as-002--excessive-permissions" },
+            { label: "Code Execution", anchor: "-as-006--arbitrary-code-execution" },
+            { label: "Supply Chain", anchor: "-as-008--known-compromised-packages-offline-blacklist" },
+            { label: "Typosquatting", anchor: "-as-009--typosquatting" },
+            { label: "Tool Shadowing", anchor: "-as-013--tool-shadowing" },
           ].map((r) => (
             <a
               key={r.label}
