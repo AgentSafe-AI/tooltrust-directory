@@ -190,3 +190,19 @@ export function getRuleInfo(id: string): RuleInfo | undefined {
 export function getMethodologyHref(id: string): string {
   return `/methodology#${id.toLowerCase()}`;
 }
+
+export function getSeverityBadgeClass(severity: string): string {
+  const normalized = severity.toUpperCase();
+  const base = "rounded-md border px-2.5 py-1 text-xs font-medium";
+  if (normalized.startsWith("CRITICAL")) return `${base} border-red-400/25 bg-red-400/10 text-[#ff6b6b]`;
+  if (normalized.startsWith("HIGH")) return `${base} border-orange-400/25 bg-orange-400/10 text-[#f4a261]`;
+  if (normalized.startsWith("MEDIUM")) return `${base} border-yellow-300/20 bg-yellow-300/10 text-[#d9b65d]`;
+  if (normalized.startsWith("LOW")) return `${base} border-zinc-500/20 bg-zinc-500/10 text-zinc-400`;
+  return `${base} border-zinc-500/20 bg-zinc-500/10 text-zinc-500`;
+}
+
+export function formatSeverityLabel(severity: string): string {
+  const normalized = severity.trim().toLowerCase();
+  if (!normalized) return severity;
+  return normalized.replace(/\b\w/g, (char) => char.toUpperCase());
+}

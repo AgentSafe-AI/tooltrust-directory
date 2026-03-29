@@ -1,6 +1,6 @@
 import { getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
 import { GradeProgressRing } from "@/lib/grades";
-import { getMethodologyHref } from "@/lib/rules";
+import { formatSeverityLabel, getMethodologyHref, getSeverityBadgeClass } from "@/lib/rules";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,15 +23,6 @@ function formatScanDate(scanDate: string): string {
   } catch {
     return "";
   }
-}
-
-function severityBadgeClass(severity: string): string {
-  const s = severity.toUpperCase();
-  if (s === "CRITICAL") return "bg-red-500/10 text-red-500";
-  if (s === "HIGH") return "bg-orange-500/10 text-orange-500";
-  if (s === "MEDIUM") return "bg-yellow-500/10 text-yellow-500";
-  if (s === "LOW") return "bg-zinc-500/10 text-zinc-400";
-  return "bg-zinc-500/10 text-zinc-500";
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -58,11 +49,11 @@ export default async function ToolPage({ params }: PageProps) {
   const narrative = getToolNarrative(report);
 
   const severityChips = [
-    { label: "Critical", n: summary.critical, className: "bg-red-500/10 text-red-500" },
-    { label: "High", n: summary.high, className: "bg-orange-500/10 text-orange-500" },
-    { label: "Medium", n: summary.medium, className: "bg-yellow-500/10 text-yellow-500" },
-    { label: "Low", n: summary.low, className: "bg-zinc-500/10 text-zinc-400" },
-    { label: "Info", n: summary.info, className: "bg-zinc-500/10 text-zinc-500" },
+    { label: "Critical", n: summary.critical },
+    { label: "High", n: summary.high },
+    { label: "Medium", n: summary.medium },
+    { label: "Low", n: summary.low },
+    { label: "Info", n: summary.info },
   ].filter((s) => s.n > 0);
 
   return (
@@ -155,7 +146,7 @@ export default async function ToolPage({ params }: PageProps) {
           {severityChips.map((s) => (
             <span
               key={s.label}
-              className={`rounded px-2.5 py-1 text-xs font-medium ${s.className}`}
+              className={getSeverityBadgeClass(s.label)}
             >
               {s.n} {s.label}
             </span>
@@ -210,9 +201,8 @@ export default async function ToolPage({ params }: PageProps) {
                 Risk Summary
               </h2>
               <span className={`rounded-full border px-2 py-0.5 text-xs font-medium ${s.badge}`}>
-                Grade {grade}
+                {narrative.title}
               </span>
-              <span className="text-xs text-zinc-500">{narrative.title}</span>
             </div>
             <div className="mt-3 space-y-2 text-sm leading-6">
               <p className="text-zinc-300">
@@ -289,9 +279,9 @@ export default async function ToolPage({ params }: PageProps) {
                       <div className="flex flex-col gap-2">
                         <div className="flex flex-wrap items-center gap-2">
                           <span
-                            className={`rounded px-2 py-1 text-xs font-bold uppercase ${severityBadgeClass(first.severity)}`}
+                            className={getSeverityBadgeClass(first.severity)}
                           >
-                            {first.severity}
+                            {formatSeverityLabel(first.severity)}
                           </span>
                           <span className="font-semibold text-zinc-100">
                             {first.title} {group.length > 1 && <span className="ml-1 text-zinc-400">×{group.length}</span>}

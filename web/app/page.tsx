@@ -23,6 +23,32 @@ export default function HomePage() {
   ).length;
   const incompleteCount = reports.filter((r) => displayGrade(r) === "?").length;
   const scannedCount = reports.length - incompleteCount;
+  const stats = [
+    {
+      label: "Tools Scanned",
+      value: scannedCount,
+      cardClass: "border-slate-500/12 bg-slate-400/[0.03]",
+      valueClass: "text-slate-400",
+    },
+    {
+      label: "Safe (S/A/B)",
+      value: safeCount,
+      cardClass: "border-teal-400/12 bg-teal-400/[0.03]",
+      valueClass: "text-teal-300",
+    },
+    {
+      label: "Medium Risk (C)",
+      value: mediumCount,
+      cardClass: "border-amber-300/12 bg-amber-300/[0.03]",
+      valueClass: "text-[#d9b65d]",
+    },
+    {
+      label: "Risky (D/F)",
+      value: riskyCount,
+      cardClass: "border-rose-400/12 bg-rose-400/[0.03]",
+      valueClass: "text-rose-300",
+    },
+  ];
 
   return (
     <div className="space-y-10">
@@ -48,23 +74,16 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-            <p className="text-2xl font-bold text-zinc-100">{scannedCount}</p>
-            <p className="text-sm text-zinc-500">Tools Scanned</p>
-          </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-            <p className="text-2xl font-bold text-emerald-400">{safeCount}</p>
-            <p className="text-sm text-zinc-500">Safe (S/A/B)</p>
-          </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-            <p className="text-2xl font-bold text-yellow-400">{mediumCount}</p>
-            <p className="text-sm text-zinc-500">Medium Risk (C)</p>
-          </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-4">
-            <p className="text-2xl font-bold text-red-400">{riskyCount}</p>
-            <p className="text-sm text-zinc-500">Risky (D/F)</p>
-          </div>
+        <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className={`rounded-xl border bg-zinc-900/90 px-5 py-4 ${stat.cardClass}`}
+            >
+              <p className={`text-2xl font-semibold tracking-tight ${stat.valueClass}`}>{stat.value}</p>
+              <p className="mt-1 text-sm text-zinc-500">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 

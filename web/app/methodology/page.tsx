@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { RULE_CATALOG } from "@/lib/rules";
+import { RULE_CATALOG, getSeverityBadgeClass } from "@/lib/rules";
+import { GradeBadge } from "@/lib/grades";
 
 export const metadata = {
   title: "Methodology | ToolTrust",
@@ -54,7 +55,9 @@ export default function MethodologyPage() {
             <tbody>
               {GRADES.map((row) => (
                 <tr key={row.grade} className="border-b border-zinc-800/80 last:border-0">
-                  <td className="px-4 py-3 text-zinc-300">{row.grade}</td>
+                  <td className="px-4 py-3 text-zinc-300">
+                    <GradeBadge grade={row.grade} size="sm" dark />
+                  </td>
                   <td className="px-4 py-3 text-zinc-300">{row.score}</td>
                   <td className="px-4 py-3 text-zinc-300">{row.policy}</td>
                 </tr>
@@ -97,7 +100,7 @@ export default function MethodologyPage() {
                   {rule.severity.map((item) => (
                     <span
                       key={item}
-                      className="rounded border border-zinc-700 bg-zinc-800 px-2 py-1 text-xs text-zinc-300"
+                      className={getSeverityBadgeClass(item)}
                     >
                       {item}
                     </span>
