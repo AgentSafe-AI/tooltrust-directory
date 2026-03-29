@@ -34,16 +34,34 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap gap-2 pt-1">
           {[
-            { label: "Prompt Injection", anchor: "-as-001--prompt-injection--tool-poisoning" },
-            { label: "Excess Permissions", anchor: "-as-002--excessive-permissions" },
-            { label: "Code Execution", anchor: "-as-006--arbitrary-code-execution" },
-            { label: "Supply Chain", anchor: "-as-008--known-compromised-packages-offline-blacklist" },
-            { label: "Typosquatting", anchor: "-as-009--typosquatting" },
-            { label: "Tool Shadowing", anchor: "-as-013--tool-shadowing" },
+            {
+              label: "Prompt Injection",
+              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-001--prompt-injection--tool-poisoning",
+            },
+            {
+              label: "Excess Permissions",
+              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#%EF%B8%8F-as-002--excessive-permissions",
+            },
+            {
+              label: "Code Execution",
+              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-006--arbitrary-code-execution",
+            },
+            {
+              label: "Supply Chain",
+              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-008--known-compromised-packages-offline-blacklist",
+            },
+            {
+              label: "Typosquatting",
+              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-009--typosquatting",
+            },
+            {
+              label: "Tool Shadowing",
+              href: "https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#-as-013--tool-shadowing",
+            },
           ].map((r) => (
             <a
               key={r.label}
-              href={`https://github.com/AgentSafe-AI/tooltrust-scanner/blob/main/docs/RULES.md#${r.anchor}`}
+              href={r.href}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-zinc-700 bg-zinc-800/50 px-2.5 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200 transition-colors"
