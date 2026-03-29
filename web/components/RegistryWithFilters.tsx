@@ -35,14 +35,16 @@ const GRADE_BUTTON_INACTIVE_STYLES: Record<string, string> = {
   F: "border-zinc-800 bg-zinc-900 text-red-700 hover:text-red-400 hover:border-red-900",
 };
 
-type SortKey = "stars" | "grade";
+type SortKey = "name" | "stars" | "grade";
 type SortDir = "asc" | "desc";
 
 function sortReports(reports: Report[], key: SortKey, dir: SortDir) {
   const gradeRank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, F: 4 };
   return [...reports].sort((a, b) => {
     let cmp = 0;
-    if (key === "stars") {
+    if (key === "name") {
+      cmp = a.tool_id.localeCompare(b.tool_id);
+    } else if (key === "stars") {
       cmp = (b.stars ?? 0) - (a.stars ?? 0);
     } else {
       cmp = (gradeRank[displayGrade(a)] ?? 5) - (gradeRank[displayGrade(b)] ?? 5);
@@ -96,7 +98,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
       setSortDir((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      setSortDir(key === "grade" ? "asc" : "desc");
+      setSortDir(key === "stars" ? "desc" : "asc");
     }
   };
 
@@ -194,7 +196,12 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-zinc-800">
-                <th className="px-4 py-3 font-medium text-zinc-400">Name</th>
+                <th
+                  className="px-4 py-3 font-medium text-zinc-400 cursor-pointer select-none hover:text-zinc-200 whitespace-nowrap"
+                  onClick={() => toggleSort("name")}
+                >
+                  MCP Name {sortKey === "name" ? (sortDir === "asc" ? "↑" : "↓") : <span className="opacity-30">↕</span>}
+                </th>
                 <th className="px-4 py-3 font-medium text-zinc-400">Version</th>
                 <th
                   className="px-4 py-3 font-medium text-zinc-400 cursor-pointer select-none hover:text-zinc-200 whitespace-nowrap"
