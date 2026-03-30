@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `2.8.6` |
+| **Version** | `2.9.3` |
 | **Vendor** | brightdata |
-| **Stars** | ⭐ 2231 |
+| **Stars** | ⭐ 2245 |
 | **Language** | JavaScript |
 | **Source** | [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-30 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
