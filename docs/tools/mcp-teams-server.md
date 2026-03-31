@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.8` |
 | **Vendor** | InditexTech |
-| **Stars** | ⭐ 361 |
+| **Stars** | ⭐ 364 |
 | **Language** | Python |
 | **Source** | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

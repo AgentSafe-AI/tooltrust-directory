@@ -8,10 +8,10 @@
 | **Risk Score** | 32 |
 | **Version** | `2.6.8` |
 | **Vendor** | imbenrabi |
-| **Stars** | ⭐ 128 |
+| **Stars** | ⭐ 129 |
 | **Language** | TypeScript |
 | **Source** | [financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

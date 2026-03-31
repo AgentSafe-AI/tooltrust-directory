@@ -8,10 +8,10 @@
 | **Risk Score** | 35 |
 | **Version** | `3.1.0` |
 | **Vendor** | aashari |
-| **Stars** | ⭐ 134 |
+| **Stars** | ⭐ 140 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

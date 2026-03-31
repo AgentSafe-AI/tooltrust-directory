@@ -3,22 +3,123 @@
   "version": "1.6.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-03-24T04:39:12.708024245Z",
+  "scan_date": "2026-03-31T22:15:36.709017771Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/roychri/mcp-server-asana",
   "category": "Developer Tools",
   "vendor": "roychri",
-  "stars": 131,
+  "stars": 135,
   "license": "MIT",
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_ALLOCATION"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.6.0: 10 tool(s) added, 85 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "create_project",
+          "create_project_status_update",
+          "get_attachments",
+          "get_items_for_portfolio",
+          "get_portfolio",
+          "get_portfolios",
+          "get_project",
+          "get_projects",
+          "get_status_overview",
+          "search_tasks"
+        ],
+        "removed": [
+          "ASANA_ADD_FOLLOWERS_TO_TASK",
+          "ASANA_ADD_SUPPORTING_RELATIONSHIP",
+          "ASANA_ADD_TASK_TO_SECTION",
+          "ASANA_CREATE_ALLOCATION",
+          "ASANA_CREATE_ATTACHMENT_FOR_TASK",
+          "ASANA_CREATE_A_PROJECT",
+          "ASANA_CREATE_A_TAG_IN_A_WORKSPACE",
+          "ASANA_CREATE_A_TASK",
+          "ASANA_CREATE_CUSTOM_FIELD",
+          "ASANA_CREATE_ENUM_OPTION_FOR_CUSTOM_FIELD",
+          "ASANA_CREATE_PROJECT_STATUS_UPDATE",
+          "ASANA_CREATE_SECTION_IN_PROJECT",
+          "ASANA_CREATE_SUBTASK",
+          "ASANA_CREATE_TASK_COMMENT",
+          "ASANA_CREATE_TEAM",
+          "ASANA_DELETE_ALLOCATION",
+          "ASANA_DELETE_ATTACHMENT",
+          "ASANA_DELETE_CUSTOM_FIELD",
+          "ASANA_DELETE_PROJECT",
+          "ASANA_DELETE_TAG",
+          "ASANA_DELETE_TASK",
+          "ASANA_DUPLICATE_PROJECT",
+          "ASANA_DUPLICATE_TASK",
+          "ASANA_GET_ALLOCATION",
+          "ASANA_GET_ALLOCATIONS",
+          "ASANA_GET_ATTACHMENT",
+          "ASANA_GET_AUDIT_LOG_EVENTS",
+          "ASANA_GET_A_PROJECT",
+          "ASANA_GET_A_TASK",
+          "ASANA_GET_A_USER_TASK_LIST",
+          "ASANA_GET_CURRENT_USER",
+          "ASANA_GET_CUSTOM_FIELD",
+          "ASANA_GET_CUSTOM_FIELDS_FOR_WORKSPACE",
+          "ASANA_GET_EVENTS",
+          "ASANA_GET_GOAL",
+          "ASANA_GET_GOALS",
+          "ASANA_GET_GOAL_RELATIONSHIPS",
+          "ASANA_GET_MEMBERSHIPS",
+          "ASANA_GET_MULTIPLE_PROJECTS",
+          "ASANA_GET_MULTIPLE_TASKS",
+          "ASANA_GET_MULTIPLE_USERS",
+          "ASANA_GET_MULTIPLE_WORKSPACES",
+          "ASANA_GET_PORTFOLIO",
+          "ASANA_GET_PORTFOLIOS",
+          "ASANA_GET_PORTFOLIO_ITEMS",
+          "ASANA_GET_PORTFOLIO_MEMBERSHIPS",
+          "ASANA_GET_PROJECTS_FOR_TEAM",
+          "ASANA_GET_PROJECT_BRIEF",
+          "ASANA_GET_PROJECT_MEMBERSHIPS",
+          "ASANA_GET_PROJECT_STATUS",
+          "ASANA_GET_PROJECT_STATUS_UPDATES",
+          "ASANA_GET_PROJECT_TEMPLATES",
+          "ASANA_GET_SECTION",
+          "ASANA_GET_SECTIONS_IN_PROJECT",
+          "ASANA_GET_STATUS_UPDATES",
+          "ASANA_GET_STORIES_FOR_TASK",
+          "ASANA_GET_STORY",
+          "ASANA_GET_TAG",
+          "ASANA_GET_TAGS",
+          "ASANA_GET_TASKS_FROM_A_PROJECT",
+          "ASANA_GET_TASK_ATTACHMENTS",
+          "ASANA_GET_TASK_SUBTASKS",
+          "ASANA_GET_TASK_TEMPLATES",
+          "ASANA_GET_TEAM",
+          "ASANA_GET_TEAMS_IN_WORKSPACE",
+          "ASANA_GET_TEAM_MEMBERSHIPS",
+          "ASANA_GET_TIME_PERIODS",
+          "ASANA_GET_TYPEAHEAD_OBJECTS",
+          "ASANA_GET_USER",
+          "ASANA_GET_USERS_FOR_TEAM",
+          "ASANA_GET_USERS_FOR_WORKSPACE",
+          "ASANA_GET_WORKSPACE",
+          "ASANA_GET_WORKSPACE_MEMBERSHIPS",
+          "ASANA_GET_WORKSPACE_PROJECTS",
+          "ASANA_INSERT_ENUM_OPTION_FOR_CUSTOM_FIELD",
+          "ASANA_REMOVE_FOLLOWER_FROM_TASK",
+          "ASANA_SEARCH_TASKS_IN_WORKSPACE",
+          "ASANA_SUBMIT_PARALLEL_REQUESTS",
+          "ASANA_UPDATE_ALLOCATION",
+          "ASANA_UPDATE_A_TASK",
+          "ASANA_UPDATE_CUSTOM_FIELD",
+          "ASANA_UPDATE_ENUM_OPTION",
+          "ASANA_UPDATE_PROJECT",
+          "ASANA_UPDATE_TAG",
+          "ASANA_UPDATE_TEAM"
+        ],
+        "version": "1.6.0"
+      }
     },
     {
       "id": "AS-002",
@@ -26,167 +127,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_A_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_A_TAG_IN_A_WORKSPACE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_A_TASK"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_ATTACHMENT_FOR_TASK"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_CUSTOM_FIELD"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_ENUM_OPTION_FOR_CUSTOM_FIELD"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_PROJECT_STATUS_UPDATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_SECTION_IN_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_SUBTASK"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_TASK_COMMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_CREATE_TEAM"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_DELETE_ALLOCATION"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_DELETE_ATTACHMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_DELETE_CUSTOM_FIELD"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_DELETE_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_DELETE_TAG"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_DELETE_TASK"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_GET_ATTACHMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_GET_PROJECT_STATUS_UPDATES"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_GET_STATUS_UPDATES"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_GET_TASK_ATTACHMENTS"
+      "tool_name": "get_attachments"
     },
     {
       "id": "AS-002",
@@ -194,7 +135,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_GET_TEAM"
+      "tool_name": "get_attachments"
     },
     {
       "id": "AS-011",
@@ -202,7 +143,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ASANA_GET_TEAM"
+      "tool_name": "get_attachments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_project_status_update"
     },
     {
       "id": "AS-002",
@@ -210,7 +159,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_GET_TIME_PERIODS"
+      "tool_name": "create_project_status_update"
     },
     {
       "id": "AS-011",
@@ -218,7 +167,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ASANA_GET_TIME_PERIODS"
+      "tool_name": "create_project_status_update"
     },
     {
       "id": "AS-002",
@@ -226,7 +175,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_REMOVE_FOLLOWER_FROM_TASK"
+      "tool_name": "create_project"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_project"
     },
     {
       "id": "AS-002",
@@ -234,7 +191,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_SEARCH_TASKS_IN_WORKSPACE"
+      "tool_name": "search_tasks"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 28 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_tasks"
     },
     {
       "id": "AS-011",
@@ -242,198 +207,35 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ASANA_SEARCH_TASKS_IN_WORKSPACE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_SUBMIT_PARALLEL_REQUESTS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ASANA_SUBMIT_PARALLEL_REQUESTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_ALLOCATION"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_A_TASK"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_CUSTOM_FIELD"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_ENUM_OPTION"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 15 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_TAG"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_TEAM"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ASANA_UPDATE_TEAM"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ASANA_UPDATE_TEAM"
+      "tool_name": "search_tasks"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 30,
-    "low": 6,
+    "high": 4,
+    "medium": 3,
+    "low": 5,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "ASANA_ADD_FOLLOWERS_TO_TASK",
-    "ASANA_ADD_SUPPORTING_RELATIONSHIP",
-    "ASANA_ADD_TASK_TO_SECTION",
-    "ASANA_CREATE_ALLOCATION",
-    "ASANA_CREATE_ATTACHMENT_FOR_TASK",
-    "ASANA_CREATE_A_PROJECT",
-    "ASANA_CREATE_A_TAG_IN_A_WORKSPACE",
-    "ASANA_CREATE_A_TASK",
-    "ASANA_CREATE_CUSTOM_FIELD",
-    "ASANA_CREATE_ENUM_OPTION_FOR_CUSTOM_FIELD",
-    "ASANA_CREATE_PROJECT_STATUS_UPDATE",
-    "ASANA_CREATE_SECTION_IN_PROJECT",
-    "ASANA_CREATE_SUBTASK",
-    "ASANA_CREATE_TASK_COMMENT",
-    "ASANA_CREATE_TEAM",
-    "ASANA_DELETE_ALLOCATION",
-    "ASANA_DELETE_ATTACHMENT",
-    "ASANA_DELETE_CUSTOM_FIELD",
-    "ASANA_DELETE_PROJECT",
-    "ASANA_DELETE_TAG",
-    "ASANA_DELETE_TASK",
-    "ASANA_DUPLICATE_PROJECT",
-    "ASANA_DUPLICATE_TASK",
-    "ASANA_GET_ALLOCATION",
-    "ASANA_GET_ALLOCATIONS",
-    "ASANA_GET_ATTACHMENT",
-    "ASANA_GET_AUDIT_LOG_EVENTS",
-    "ASANA_GET_A_PROJECT",
-    "ASANA_GET_A_TASK",
-    "ASANA_GET_A_USER_TASK_LIST",
-    "ASANA_GET_CURRENT_USER",
-    "ASANA_GET_CUSTOM_FIELD",
-    "ASANA_GET_CUSTOM_FIELDS_FOR_WORKSPACE",
-    "ASANA_GET_EVENTS",
-    "ASANA_GET_GOAL",
-    "ASANA_GET_GOALS",
-    "ASANA_GET_GOAL_RELATIONSHIPS",
-    "ASANA_GET_MEMBERSHIPS",
-    "ASANA_GET_MULTIPLE_PROJECTS",
-    "ASANA_GET_MULTIPLE_TASKS",
-    "ASANA_GET_MULTIPLE_USERS",
-    "ASANA_GET_MULTIPLE_WORKSPACES",
-    "ASANA_GET_PORTFOLIO",
-    "ASANA_GET_PORTFOLIOS",
-    "ASANA_GET_PORTFOLIO_ITEMS",
-    "ASANA_GET_PORTFOLIO_MEMBERSHIPS",
-    "ASANA_GET_PROJECTS_FOR_TEAM",
-    "ASANA_GET_PROJECT_BRIEF",
-    "ASANA_GET_PROJECT_MEMBERSHIPS",
-    "ASANA_GET_PROJECT_STATUS",
-    "ASANA_GET_PROJECT_STATUS_UPDATES",
-    "ASANA_GET_PROJECT_TEMPLATES",
-    "ASANA_GET_SECTION",
-    "ASANA_GET_SECTIONS_IN_PROJECT",
-    "ASANA_GET_STATUS_UPDATES",
-    "ASANA_GET_STORIES_FOR_TASK",
-    "ASANA_GET_STORY",
-    "ASANA_GET_TAG",
-    "ASANA_GET_TAGS",
-    "ASANA_GET_TASKS_FROM_A_PROJECT",
-    "ASANA_GET_TASK_ATTACHMENTS",
-    "ASANA_GET_TASK_SUBTASKS",
-    "ASANA_GET_TASK_TEMPLATES",
-    "ASANA_GET_TEAM",
-    "ASANA_GET_TEAMS_IN_WORKSPACE",
-    "ASANA_GET_TEAM_MEMBERSHIPS",
-    "ASANA_GET_TIME_PERIODS",
-    "ASANA_GET_TYPEAHEAD_OBJECTS",
-    "ASANA_GET_USER",
-    "ASANA_GET_USERS_FOR_TEAM",
-    "ASANA_GET_USERS_FOR_WORKSPACE",
-    "ASANA_GET_WORKSPACE",
-    "ASANA_GET_WORKSPACE_MEMBERSHIPS",
-    "ASANA_GET_WORKSPACE_PROJECTS",
-    "ASANA_INSERT_ENUM_OPTION_FOR_CUSTOM_FIELD",
-    "ASANA_REMOVE_FOLLOWER_FROM_TASK",
-    "ASANA_SEARCH_TASKS_IN_WORKSPACE",
-    "ASANA_SUBMIT_PARALLEL_REQUESTS",
-    "ASANA_UPDATE_ALLOCATION",
-    "ASANA_UPDATE_A_TASK",
-    "ASANA_UPDATE_CUSTOM_FIELD",
-    "ASANA_UPDATE_ENUM_OPTION",
-    "ASANA_UPDATE_PROJECT",
-    "ASANA_UPDATE_TAG",
-    "ASANA_UPDATE_TEAM"
+    "create_project",
+    "create_project_status_update",
+    "get_attachments",
+    "get_items_for_portfolio",
+    "get_portfolio",
+    "get_portfolios",
+    "get_project",
+    "get_projects",
+    "get_status_overview",
+    "search_tasks"
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-03-24T04:39:12Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.6.0"
+    }
   ]
 }

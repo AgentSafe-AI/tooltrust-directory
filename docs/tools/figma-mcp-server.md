@@ -8,10 +8,10 @@
 | **Risk Score** | 42 |
 | **Version** | `1.0.0` |
 | **Vendor** | TimHolden |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 146 |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

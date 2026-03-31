@@ -8,10 +8,10 @@
 | **Risk Score** | 40 |
 | **Version** | `0.8.0` |
 | **Vendor** | GLips |
-| **Stars** | ⭐ 13928 |
+| **Stars** | ⭐ 14068 |
 | **Language** | TypeScript |
 | **Source** | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

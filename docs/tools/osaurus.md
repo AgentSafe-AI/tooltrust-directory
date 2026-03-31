@@ -6,9 +6,9 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.15.13` |
+| **Version** | `0.15.15` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 4490 |
+| **Stars** | ⭐ 4496 |
 | **Language** | Swift |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
 | **Scan Date** | 2026-03-31 |

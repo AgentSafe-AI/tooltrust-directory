@@ -1,25 +1,46 @@
 {
   "tool_id": "browser-tools-mcp",
   "version": "1.2.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-03-25T05:35:44.351950964Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-03-31T22:11:43.215383608Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/AgentDeskAI/browser-tools-mcp",
   "category": "Developer Tools",
   "vendor": "AgentDeskAI",
-  "stars": 7141,
+  "stars": 7155,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Monitor browser logs directly from Cursor and other MCP compatible IDEs.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "browserbase_session_create"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.2.0: 6 tool(s) added, 9 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "act",
+          "end",
+          "extract",
+          "navigate",
+          "observe",
+          "start"
+        ],
+        "removed": [
+          "browserbase_screenshot",
+          "browserbase_session_close",
+          "browserbase_session_create",
+          "browserbase_stagehand_act",
+          "browserbase_stagehand_agent",
+          "browserbase_stagehand_extract",
+          "browserbase_stagehand_get_url",
+          "browserbase_stagehand_navigate",
+          "browserbase_stagehand_observe"
+        ],
+        "version": "1.2.0"
+      }
     },
     {
       "id": "AS-002",
@@ -27,7 +48,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "browserbase_stagehand_navigate"
+      "tool_name": "navigate"
     },
     {
       "id": "AS-011",
@@ -35,66 +56,31 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "browserbase_stagehand_navigate"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "browserbase_stagehand_get_url"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "browserbase_stagehand_get_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "browserbase_stagehand_get_url"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "browserbase_stagehand_agent"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "browserbase_stagehand_agent"
+      "tool_name": "navigate"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 2,
-    "low": 3,
+    "high": 2,
+    "medium": 0,
+    "low": 1,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "browserbase_screenshot",
-    "browserbase_session_close",
-    "browserbase_session_create",
-    "browserbase_stagehand_act",
-    "browserbase_stagehand_agent",
-    "browserbase_stagehand_extract",
-    "browserbase_stagehand_get_url",
-    "browserbase_stagehand_navigate",
-    "browserbase_stagehand_observe"
+    "act",
+    "end",
+    "extract",
+    "navigate",
+    "observe",
+    "start"
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-03-25T05:35:44Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.2.0"
+    }
   ]
 }

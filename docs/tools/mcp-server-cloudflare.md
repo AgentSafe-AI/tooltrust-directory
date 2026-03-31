@@ -4,12 +4,12 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 65 |
-| **Version** | `graphql-mcp-server@0.1.10` |
+| **Version** | `@repo/mcp-common@0.20.4` |
 | **Vendor** | cloudflare |
-| **Stars** | ⭐ 3567 |
+| **Stars** | ⭐ 3579 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

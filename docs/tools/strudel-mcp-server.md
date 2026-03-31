@@ -8,10 +8,10 @@
 | **Risk Score** | 8 |
 | **Version** | `2.4.1` |
 | **Vendor** | williamzujkowski |
-| **Stars** | ⭐ 180 |
+| **Stars** | ⭐ 181 |
 | **Language** | TypeScript |
 | **Source** | [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) |
-| **Scan Date** | 2026-03-25 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

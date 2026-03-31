@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `3.0.0` |
 | **Vendor** | mixelpixx |
-| **Stars** | ⭐ 234 |
+| **Stars** | ⭐ 235 |
 | **Language** | TypeScript |
 | **Source** | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) |
-| **Scan Date** | 2026-03-24 |
+| **Scan Date** | 2026-03-31 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
