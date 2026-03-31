@@ -1,17 +1,17 @@
 {
   "tool_id": "linkedin-mcp-server",
-  "version": "4.7.2",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-03-30T01:48:13.092484666Z",
+  "version": "4.8.0",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-03-31T01:30:45.984984889Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/stickerdaniel/linkedin-mcp-server",
   "category": "Developer Tools",
   "vendor": "stickerdaniel",
-  "stars": 1191,
+  "stars": 1201,
   "license": "Apache-2.0",
   "language": "Python",
-  "description": "This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles, companies and jobs, and perform job searches.",
+  "description": "This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles, companies and jobs, and manage your inbox.",
   "findings": [
     {
       "id": "AS-002",
@@ -23,6 +23,30 @@
     },
     {
       "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_sidebar_profiles"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_sidebar_profiles"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_sidebar_profiles"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
@@ -52,13 +76,37 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "search_people"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_conversations"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_conversations"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "send_message"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
-    "low": 2,
+    "high": 4,
+    "medium": 3,
+    "low": 4,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -67,10 +115,15 @@
     "connect_with_person",
     "get_company_posts",
     "get_company_profile",
+    "get_conversation",
+    "get_inbox",
     "get_job_details",
     "get_person_profile",
+    "get_sidebar_profiles",
+    "search_conversations",
     "search_jobs",
-    "search_people"
+    "search_people",
+    "send_message"
   ],
   "scan_history": [
     {
@@ -84,6 +137,12 @@
       "grade": "B",
       "risk_score": 17,
       "version": "4.7.0"
+    },
+    {
+      "scan_date": "2026-03-30T01:48:13Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "4.7.2"
     }
   ]
 }

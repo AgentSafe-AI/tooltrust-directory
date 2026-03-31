@@ -1,10 +1,10 @@
 # ToolTrust — Full Directory
 
-All 159 audited tools. [← Back to README](../README.md#-security-registry)
+All 161 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.13.4` | 181.4k | **[C](tools/n8n.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 28 |
+| [n8n](https://github.com/n8n-io/n8n) | `n8n@2.14.2` | 181.8k | **[C](tools/n8n.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 31 |
 | [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.35.3` | 99.4k | **[D](tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Mar 29 |
 | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 82.0k | **[A](tools/mcp-server-sequential-thinking.md)** | ✅ None | Mar 25 |
 | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 82.0k | **[A](tools/mcp-server-time.md)** | ✅ None | Mar 25 |
@@ -25,7 +25,7 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 21.7k | **[I](tools/serena.md)** | ✅ None | Mar 18 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.3` | 21.3k | **[I](tools/activepieces.md)** | ✅ None | Mar 18 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.4k | **[I](tools/maxkb.md)** | ✅ None | Mar 18 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.41.3` | 16.7k | **[C](tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 28 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.42.2` | 17.1k | **[C](tools/n8n-mcp.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 31 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.3` | 14.1k | **[I](tools/trigger-dev.md)** | ✅ None | Mar 18 |
 | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.8.0` | 13.9k | **[C](tools/figma-context-mcp.md)** | 🔑 `AS-002` ×13, 📐 `AS-003`, 🗝️ `AS-010`, ⚡ `AS-011` ×3 | Mar 25 |
 | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.09…` | 11.8k | **[I](tools/xiaohongshu-mcp.md)** | ✅ None | Mar 18 |
@@ -49,7 +49,7 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.10` | 5.0k | **[I](tools/viper.md)** | ✅ None | Mar 18 |
 | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.1` | 4.9k | **[B](tools/xcodebuildmcp.md)** | 🔑 `AS-002` ×35, ⚡ `AS-011` ×3 | Mar 28 |
 | [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 4.5k | **[A](tools/deep-research.md)** | ✅ None | Mar 25 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.15.12` | 4.5k | **[A](tools/osaurus.md)** | ✅ None | Mar 30 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `0.15.13` | 4.5k | **[A](tools/osaurus.md)** | ✅ None | Mar 31 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[I](tools/httprunner.md)** | ✅ None | Mar 18 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.4` | 4.3k | **[I](tools/enscan-go.md)** | ✅ None | Mar 18 |
 | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) | `0.0.50` | 4.2k | **[B](tools/mobile-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` | Mar 28 |
@@ -62,7 +62,7 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `graphql-mc…` | 3.6k | **[D](tools/mcp-server-cloudflare.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2, ⚡ `AS-006` | Mar 25 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 3.6k | **[I](tools/pptagent.md)** | ✅ None | Mar 18 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.6k | **[B](tools/excel-mcp-server.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×3, 🗝️ `AS-010` | Mar 24 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](tools/archestra.md)** | ✅ None | Mar 25 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](tools/archestra.md)** | ✅ None | Mar 31 |
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.2k | **[I](tools/py-xiaozhi.md)** | ✅ None | Mar 18 |
 | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | `3.0.0` | 3.2k | **[B](tools/mcp-server-browserbase.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 28 |
 | [bifrost](https://github.com/maximhq/bifrost) | `ent-v1.3.1…` | 3.0k | **[I](tools/bifrost.md)** | ✅ None | Mar 18 |
@@ -77,7 +77,7 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [contextplus](https://github.com/ForLoopCodes/contextplus) | `1.0.9` | 1.7k | **[C](tools/contextplus.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010`, ⚡ `AS-011` ×6 | Mar 29 |
 | [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) | `1.1.11` | 1.7k | **[I](tools/office-word-mcp-server.md)** | ✅ None | Mar 2 |
 | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](tools/n8n-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 25 |
-| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.29.1` | 1.6k | **[B](tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Mar 30 |
+| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.30.0` | 1.6k | **[B](tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Mar 31 |
 | [office-powerpoint-mcp-server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server) | `2.0.7` | 1.5k | **[I](tools/office-powerpoint-mcp-server.md)** | ✅ None | Mar 2 |
 | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.18` | 1.5k | **[C](tools/tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Mar 25 |
 | [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | `0.1.1` | 1.5k | **[I](tools/mcp-language-server.md)** | ✅ None | Mar 18 |
@@ -88,12 +88,14 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | `0.0.58` | 1.3k | **[I](tools/kubernetes-mcp-server.md)** | ✅ None | Mar 18 |
 | [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | `0.4.0` | 1.3k | **[I](tools/terraform-mcp-server.md)** | ✅ None | Mar 18 |
 | [paperbanana](https://github.com/llmsresearch/paperbanana) | `0.1.2` | 1.2k | **[B](tools/paperbanana.md)** | 🔑 `AS-002`, ⚡ `AS-011` | Mar 25 |
-| [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.7.2` | 1.2k | **[B](tools/linkedin-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Mar 30 |
+| [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.8.0` | 1.2k | **[C](tools/linkedin-mcp-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4 | Mar 31 |
+| [xiaozhi-esp32-server-java](https://github.com/joey-zhou/xiaozhi-esp32-server-java) | `4.1.0` | 1.2k | **[A](tools/xiaozhi-esp32-server-java.md)** | 🔑 `AS-002` | Mar 31 |
 | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) | `0.2.2` | 1.2k | **[C](tools/mysql-mcp-server.md)** | 🔑 `AS-002` ×8, 🗝️ `AS-010`, ⚡ `AS-011` ×3 | Mar 24 |
-| [docs-mcp-server](https://github.com/arabold/docs-mcp-server) | `2.1.1` | 1.2k | **[B](tools/docs-mcp-server.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 25 |
+| [docs-mcp-server](https://github.com/arabold/docs-mcp-server) | `2.2.1` | 1.2k | **[B](tools/docs-mcp-server.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 31 |
 | [wenyan-mcp](https://github.com/caol64/wenyan-mcp) | `2.0.1` | 1.1k | **[C](tools/wenyan-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` | Mar 25 |
 | [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | `3.0.1` | 1.1k | **[C](tools/ros-mcp-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Mar 24 |
 | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | `1.8.0` | 1.1k | **[A](tools/drawio-mcp-server.md)** | 🔑 `AS-002` ×2 | Mar 25 |
+| [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | `0.5.7` | 1.1k | **[B](tools/codebase-memory-mcp.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Mar 31 |
 | [zen](https://github.com/sheshbabu/zen) | `1.5.0` | 1.1k | **[B](tools/zen.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` | Mar 25 |
 | [better-chatbot](https://github.com/cgoinglove/better-chatbot) | `1.26.0` | 1.0k | **[D](tools/better-chatbot.md)** | 🔑 `AS-002` ×47, 🗝️ `AS-010` ×2, ⚡ `AS-011` ×14 | Mar 25 |
 | [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.9.16` | 972 | **[D](tools/apify-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×7, ⚡ `AS-006` ×2 | Mar 28 |
@@ -108,7 +110,7 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) | `0.11.1` | 618 | **[I](tools/mcp-filesystem-server.md)** | ✅ None | Mar 18 |
 | [sentry-mcp](https://github.com/getsentry/sentry-mcp) | `0.31.0` | 611 | **[D](tools/sentry-mcp.md)** | 🔑 `AS-002` ×34, ⚡ `AS-011` ×17, ⚡ `AS-006` ×2 | Mar 28 |
 | [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) | `security` | 577 | **[I](tools/mcp-kali-server.md)** | ✅ None | Mar 18 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.47.3` | 570 | **[C](tools/ms-365-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×9 | Mar 28 |
+| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.47.4` | 576 | **[C](tools/ms-365-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×9 | Mar 31 |
 | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.4.2` | 537 | **[A](tools/line-bot-mcp-server.md)** | 🔑 `AS-002` ×4 | Mar 25 |
 | [ida-mcp-server](https://github.com/MxIris-Reverse-Engineering/ida-mcp-server) | `0.3.4` | 533 | **[I](tools/ida-mcp-server.md)** | ✅ None | Mar 18 |
 | [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 516 | **[A](tools/minecraft-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Mar 20 |
@@ -117,7 +119,7 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) | `2.8.15` | 466 | **[C](tools/atlas-mcp-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×2 | Mar 24 |
 | [youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) | `1.0.0` | 463 | **[C](tools/youtube-mcp-server.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Mar 25 |
 | [mcp-redis](https://github.com/redis/mcp-redis) | `0.5.0` | 461 | **[B](tools/mcp-redis.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` | Mar 25 |
-| [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.0.3` | 448 | **[C](tools/mcp-server-motherduck.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` | Mar 25 |
+| [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.0.4` | 452 | **[C](tools/mcp-server-motherduck.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` | Mar 31 |
 | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | `1.13.0` | 429 | **[B](tools/airtable-mcp-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` | Mar 25 |
 | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) | `0.7.2` | 417 | **[C](tools/puppeteer-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, ⚡ `AS-006` | Mar 20 |
 | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `2.0.7` | 416 | **[C](tools/obsidian-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Mar 25 |
@@ -173,9 +175,9 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) | `2.4.1` | 180 | **[A](tools/strudel-mcp-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` | Mar 25 |
 | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) | `0.2.8` | 179 | **[C](tools/plane-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-006`, ⚡ `AS-011` | Mar 25 |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | `0.1.1` | 176 | **[C](tools/aws-finops-mcp-server.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×5 | Mar 24 |
+| [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) | `nextcloud-…` | 169 | **[C](tools/nextcloud-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×3 | Mar 31 |
 | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | `0.1.8` | 168 | **[C](tools/railway-mcp-server.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` | Mar 25 |
 | [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | `1.2.2` | 165 | **[C](tools/mcp-3d-printer-server.md)** | 🔑 `AS-002` ×21, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×4 | Mar 25 |
-| [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) | `nextcloud-…` | 164 | **[C](tools/nextcloud-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×3 | Mar 27 |
 | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | `2.8.7` | 160 | **[C](tools/mcp-server-typescript.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×13 | Mar 22 |
 | [k8s-mcp-server](https://github.com/reza-gholizade/k8s-mcp-server) | `1.0.24` | 150 | **[I](tools/k8s-mcp-server.md)** | ✅ None | Mar 18 |
 | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) | `1.1.0` | 149 | **[B](tools/express-rest-api-and-mcp-server-framework.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 24 |
@@ -200,8 +202,8 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [clay-mcp](https://github.com/clay-inc/clay-mcp) | `1.0.5` | 30 | **[B](tools/clay-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×6 | Mar 25 |
 | [math-mcp](https://smithery.ai/server/EthanHenrickson/math-mcp) | `smithery` | — | **[A](tools/math-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 25 |
 | [agentmail](https://smithery.ai/server/agentmail) | `smithery` | — | **[A](tools/agentmail.md)** | 🔑 `AS-002` ×3 | Mar 25 |
-| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[B](tools/googledocs.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 24 |
 | [linkup-mcp-server](https://smithery.ai/server/LinkupPlatform/linkup-mcp-server) | `smithery` | — | **[B](tools/linkup-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Mar 24 |
+| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[B](tools/googledocs.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 24 |
 | [mcp-semantic-scholar](https://smithery.ai/server/hamid-vakilzadeh/mcpsemanticscholar) | `smithery` | — | **[C](tools/mcp-semantic-scholar.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×7 | Mar 25 |
 | [googledrive](https://smithery.ai/server/googledrive) | `smithery` | — | **[C](tools/googledrive.md)** | 🔑 `AS-002` ×23, ⚡ `AS-011` ×2 | Mar 25 |
 | [mcp-browserbase](https://smithery.ai/server/browserbasehq/mcp-browserbase) | `smithery` | — | **[C](tools/mcp-browserbase.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Mar 25 |
@@ -209,8 +211,8 @@ All 159 audited tools. [← Back to README](../README.md#-security-registry)
 | [instagram](https://smithery.ai/server/instagram) | `smithery` | — | **[C](tools/instagram.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×3 | Mar 25 |
 | [googlecalendar](https://smithery.ai/server/googlecalendar) | `smithery` | — | **[C](tools/googlecalendar.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×7, 🗝️ `AS-010` ×5 | Mar 25 |
 | [gmail](https://smithery.ai/server/gmail) | `smithery` | — | **[C](tools/gmail.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×6 | Mar 25 |
-| [ticktick](https://smithery.ai/server/ticktick) | `smithery` | — | **[C](tools/ticktick.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×2, `AS-013` | Mar 24 |
 | [slack-smithery](https://smithery.ai/server/slack) | `smithery` | — | **[C](tools/slack-smithery.md)** | 🔑 `AS-002` ×100, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×43 | Mar 24 |
+| [ticktick](https://smithery.ai/server/ticktick) | `smithery` | — | **[C](tools/ticktick.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×2, `AS-013` | Mar 24 |
 | [googlesheets](https://smithery.ai/server/googlesheets) | `smithery` | — | **[D](tools/googlesheets.md)** | 🔑 `AS-002` ×23, ⚡ `AS-006`, ⚡ `AS-011` ×5 | Mar 24 |
 | [googlesuper](https://smithery.ai/server/googlesuper) | `smithery` | — | **[D](tools/googlesuper.md)** | 🔑 `AS-002` ×150, ⚡ `AS-011` ×34, 🗝️ `AS-010` ×3, ⚡ `AS-006` | Mar 24 |
 
