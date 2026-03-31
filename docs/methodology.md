@@ -99,7 +99,7 @@ $$
 
 ## 4. Check Catalog
 
-All active rules as of [ToolTrust Scanner v0.1.12](https://github.com/AgentSafe-AI/tooltrust-scanner):
+All active scanner rules as of [ToolTrust Scanner v0.1.12](https://github.com/AgentSafe-AI/tooltrust-scanner), plus the directory-only historical drift check `AS-012`:
 
 | ID | Category | Severity | What it detects |
 |----|----------|:--------:|-----------------|
@@ -115,6 +115,8 @@ All active rules as of [ToolTrust Scanner v0.1.12](https://github.com/AgentSafe-
 | 🗝️ **AS&#8209;010** | **Medium** | Secret Handling | Input parameters accepting API keys/passwords/tokens; credentials logged or stored insecurely |
 | ⚡ **AS&#8209;011** | **Low** | DoS Resilience | Network/execution tools with no rate-limit, timeout, or retry configuration |
 | 🔄 **AS&#8209;012** | **High** | Rug-Pull / Silent Update | Tool set changed between scans of the same version without a version bump — *directory pipeline only; requires historical scan data* |
+| ℹ️ **AS&#8209;014** | **Info** | Dependency Inventory Unavailable | MCP tool exposed neither `metadata.dependencies` nor a `repo_url`, so supply-chain coverage is explicitly incomplete |
+| ⚠️ **AS&#8209;015** | Medium / High | Suspicious NPM Lifecycle Script | npm dependency publishes install-time lifecycle scripts; severity rises for remote-fetch or inline-execution patterns |
 | 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
@@ -260,6 +262,30 @@ Detects when the set of tools exposed by a server changes between two scans of t
 **Example:** `vsmithery` previously exposed `ig_get_media`, `ig_publish_photo`, etc. A later scan of the same version revealed those 22 tools had been silently replaced with 17 new `INSTAGRAM_*` tools — a complete interface swap with no version bump.
 
 **Fix:** Pin your MCP server to a specific commit hash rather than a floating version tag. Audit the changelog and all tool definitions before updating. Enable the ToolTrust Directory daily re-scan to be notified of silent changes.
+
+---
+
+### AS-014
+
+**Dependency Inventory Unavailable** · Severity: Info
+
+Flags MCP tools that do not expose `metadata.dependencies` and do not provide a `repo_url`. In this case ToolTrust can still scan the tool definition itself, but supply-chain analysis coverage is limited because the dependency inventory is incomplete or unavailable.
+
+This is intentionally informational rather than punitive. The goal is to make missing supply-chain visibility explicit so users do not mistake a clean result for comprehensive dependency coverage.
+
+**Fix:** Prefer MCP metadata that includes a direct dependency list and a repository URL. For local scans, keep lockfiles checked into the repo so ToolTrust can recover verified dependency versions.
+
+---
+
+### AS-015
+
+**Suspicious NPM Lifecycle Script** · Severity: Medium / High
+
+Flags npm dependency versions that publish install-time lifecycle scripts such as `preinstall`, `install`, `postinstall`, or `prepare`. These scripts execute automatically during installation and are a common supply-chain attack primitive.
+
+Severity remains Medium for ordinary lifecycle scripts, but is raised to High when the script includes riskier execution patterns such as remote fetches (`curl`, `wget`, `Invoke-WebRequest`) or inline execution (`bash -c`, `sh -c`, `node -e`, `python -c`).
+
+**Fix:** Review the script before use, prefer versions without lifecycle scripts where possible, and install in CI/sandboxed environments with `--ignore-scripts` when appropriate.
 
 ---
 
