@@ -17,12 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ToolTrust — Static Analyzer for AI Agents",
+  title: "ToolTrust Scanner for MCP Servers and AI Agents",
   description:
-    "Automated static analysis and linting for MCP servers and AI agent tools. Grades and findings for safe tool adoption.",
+    "ToolTrust Scanner for MCP servers and AI agents. Scan tools for prompt injection, excessive permissions, and supply-chain risk, then review grades and findings in the directory.",
   metadataBase: new URL("https://www.tooltrust.dev"),
   openGraph: {
-    title: "ToolTrust — Static Analyzer for AI Agents",
+    title: "ToolTrust Scanner for MCP Servers and AI Agents",
     description:
       "Scan MCP servers for prompt injection, excessive permissions, and supply-chain risk before your agent trusts them.",
     url: "https://www.tooltrust.dev",
@@ -40,10 +40,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ToolTrust — Static Analyzer for AI Agents",
+    title: "ToolTrust Scanner for MCP Servers and AI Agents",
     description:
       "Scan MCP servers for prompt injection, excessive permissions, and supply-chain risk before your agent trusts them.",
     images: ["/opengraph-image"],
+  },
+  alternates: {
+    canonical: "https://www.tooltrust.dev",
   },
   icons: {
     icon: "/icon",

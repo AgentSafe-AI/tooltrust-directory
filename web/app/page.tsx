@@ -55,9 +55,36 @@ export default function HomePage() {
       valueClass: "text-rose-300",
     },
   ];
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ToolTrust",
+    url: "https://www.tooltrust.dev",
+    description:
+      "ToolTrust Scanner for MCP servers and AI agents, with a live directory of scan results and security findings.",
+  };
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "AgentSafe-AI",
+    url: "https://www.tooltrust.dev",
+    logo: "https://www.tooltrust.dev/icon",
+    sameAs: [
+      "https://github.com/AgentSafe-AI/tooltrust-scanner",
+      "https://github.com/AgentSafe-AI/tooltrust-directory",
+    ],
+  };
 
   return (
     <div className="2xl:grid 2xl:grid-cols-[minmax(0,1fr)_190px] 2xl:gap-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <div className="space-y-10">
         <nav
           aria-label="Section navigation"
@@ -78,13 +105,16 @@ export default function HomePage() {
 
         {/* Hero */}
         <section id="overview" className="scroll-mt-24 space-y-2">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-emerald-400/90">
+            ToolTrust Scanner for MCP Servers and AI Agents
+          </p>
           <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
             AI Agent Tool Security Directory
           </h1>
           <p className="max-w-2xl text-zinc-400">
-            Security analysis for MCP servers, skills, and AI agent tools. Every
-            tool is scanned for prompt injection, permission risks, and scope
-            mismatches.
+            Powered by ToolTrust Scanner, this live directory helps you review
+            prompt injection, permission risk, supply-chain issues, and scope
+            mismatches before your agent trusts a tool.
           </p>
           <div className="flex flex-wrap gap-2 pt-1">
             {featuredRules.map((rule) => (

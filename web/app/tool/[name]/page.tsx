@@ -30,9 +30,25 @@ export async function generateMetadata({ params }: PageProps) {
   const report = getReportByToolName(name);
   if (!report) return { title: "Tool Not Found | ToolTrust" };
   const grade = displayGrade(report);
+  const canonicalUrl = `https://www.tooltrust.dev/tool/${report.tool_id}`;
   return {
     title: `${report.tool_id} — Grade ${grade} | ToolTrust`,
     description: report.description ?? `Security report for ${report.tool_id}`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${report.tool_id} — Grade ${grade} | ToolTrust`,
+      description: report.description ?? `Security report for ${report.tool_id}`,
+      url: canonicalUrl,
+      siteName: "ToolTrust",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${report.tool_id} — Grade ${grade} | ToolTrust`,
+      description: report.description ?? `Security report for ${report.tool_id}`,
+    },
   };
 }
 
@@ -55,9 +71,59 @@ export default async function ToolPage({ params }: PageProps) {
     { label: "Low", n: summary.low },
     { label: "Info", n: summary.info },
   ].filter((s) => s.n > 0);
+  const pageUrl = `https://www.tooltrust.dev/tool/${report.tool_id}`;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Directory",
+        item: "https://www.tooltrust.dev",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: report.tool_id,
+        item: pageUrl,
+      },
+    ],
+  };
+  const reportJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: `${report.tool_id} security report`,
+    description: report.description ?? `Security report for ${report.tool_id}`,
+    url: pageUrl,
+    author: {
+      "@type": "Organization",
+      name: "AgentSafe-AI",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "AgentSafe-AI",
+      url: "https://www.tooltrust.dev",
+    },
+    dateModified: report.scan_date,
+    about: [
+      "MCP server security",
+      "AI agent security",
+      "Prompt injection",
+      "Supply-chain risk",
+    ],
+  };
 
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reportJsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="text-sm text-zinc-500" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-zinc-400">

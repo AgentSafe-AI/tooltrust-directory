@@ -1,10 +1,31 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { RULE_CATALOG, getSeverityBadgeClass } from "@/lib/rules";
 import { GradeBadge } from "@/lib/grades";
 
-export const metadata = {
+const methodologyUrl = "https://www.tooltrust.dev/methodology";
+
+export const metadata: Metadata = {
   title: "Methodology | ToolTrust",
-  description: "How ToolTrust grades MCP servers and what each AS rule detects.",
+  description:
+    "How ToolTrust Scanner grades MCP servers, what each AS rule detects, and how ToolTrust maps findings to allow, approval, or block decisions.",
+  alternates: {
+    canonical: methodologyUrl,
+  },
+  openGraph: {
+    title: "Methodology | ToolTrust",
+    description:
+      "How ToolTrust Scanner grades MCP servers, what each AS rule detects, and how ToolTrust maps findings to allow, approval, or block decisions.",
+    url: methodologyUrl,
+    siteName: "ToolTrust",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Methodology | ToolTrust",
+    description:
+      "How ToolTrust Scanner grades MCP servers, what each AS rule detects, and how ToolTrust maps findings to allow, approval, or block decisions.",
+  },
 };
 
 const GRADES = [
@@ -16,8 +37,59 @@ const GRADES = [
 ];
 
 export default function MethodologyPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Directory",
+        item: "https://www.tooltrust.dev",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Methodology",
+        item: methodologyUrl,
+      },
+    ],
+  };
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: "ToolTrust Security Methodology",
+    description:
+      "How ToolTrust Scanner grades MCP servers, what each AS rule detects, and how ToolTrust maps findings to allow, approval, or block decisions.",
+    url: methodologyUrl,
+    author: {
+      "@type": "Organization",
+      name: "AgentSafe-AI",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "AgentSafe-AI",
+      url: "https://www.tooltrust.dev",
+    },
+    about: [
+      "MCP server security",
+      "AI agent security",
+      "Static analysis",
+      "Prompt injection",
+      "Supply-chain risk",
+    ],
+  };
+
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <nav className="text-sm text-zinc-500" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-zinc-400">
           Directory
