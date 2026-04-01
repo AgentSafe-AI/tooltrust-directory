@@ -25,7 +25,7 @@ All 161 audited tools. [← Back to README](../README.md#-security-registry)
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 21.7k | **[I](tools/serena.md)** | ✅ None | Mar 18 |
 | [activepieces](https://github.com/activepieces/activepieces) | `0.79.3` | 21.3k | **[I](tools/activepieces.md)** | ✅ None | Mar 18 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 20.4k | **[I](tools/maxkb.md)** | ✅ None | Mar 18 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.43.0` | 17.2k | **[C](tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 31 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.44.0` | 17.2k | **[C](tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Apr 1 |
 | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.8.0` | 14.1k | **[C](tools/figma-context-mcp.md)** | 🔑 `AS-002` ×13, 📐 `AS-003`, 🗝️ `AS-010`, ⚡ `AS-011` ×3 | Mar 31 |
 | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.4.3` | 14.1k | **[I](tools/trigger-dev.md)** | ✅ None | Mar 18 |
 | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.03.09…` | 11.8k | **[I](tools/xiaohongshu-mcp.md)** | ✅ None | Mar 18 |
@@ -78,7 +78,7 @@ All 161 audited tools. [← Back to README](../README.md#-security-registry)
 | [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) | `1.1.11` | 1.7k | **[I](tools/office-word-mcp-server.md)** | ✅ None | Mar 2 |
 | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.18` | 1.6k | **[C](tools/tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Mar 31 |
 | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](tools/n8n-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 25 |
-| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.30.0` | 1.6k | **[B](tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Mar 31 |
+| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.31.1` | 1.6k | **[B](tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Apr 1 |
 | [office-powerpoint-mcp-server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server) | `2.0.7` | 1.5k | **[I](tools/office-powerpoint-mcp-server.md)** | ✅ None | Mar 2 |
 | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | `1.2.3` | 1.5k | **[C](tools/slack-mcp-server.md)** | 🔑 `AS-002` ×100, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×43 | Mar 31 |
 | [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | `0.1.1` | 1.5k | **[I](tools/mcp-language-server.md)** | ✅ None | Mar 18 |
@@ -176,8 +176,8 @@ All 161 audited tools. [← Back to README](../README.md#-security-registry)
 | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) | `0.2.8` | 179 | **[C](tools/plane-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-006`, ⚡ `AS-011` | Mar 25 |
 | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | `0.1.1` | 176 | **[C](tools/aws-finops-mcp-server.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×5 | Mar 24 |
 | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | `0.1.8` | 175 | **[C](tools/railway-mcp-server.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` | Mar 31 |
+| [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) | `nextcloud-…` | 171 | **[C](tools/nextcloud-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×3 | Apr 1 |
 | [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | `1.2.2` | 171 | **[C](tools/mcp-3d-printer-server.md)** | 🔑 `AS-002` ×21, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×4 | Mar 31 |
-| [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) | `nextcloud-…` | 169 | **[C](tools/nextcloud-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×3 | Mar 31 |
 | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | `2.8.7` | 160 | **[C](tools/mcp-server-typescript.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×13 | Mar 22 |
 | [k8s-mcp-server](https://github.com/reza-gholizade/k8s-mcp-server) | `1.0.24` | 150 | **[I](tools/k8s-mcp-server.md)** | ✅ None | Mar 18 |
 | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) | `1.1.0` | 149 | **[B](tools/express-rest-api-and-mcp-server-framework.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Mar 24 |

@@ -10,7 +10,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 ![ToolTrust Directory UI](./docs/tooltrust-ui.png)
 
 [![Tools Audited](https://img.shields.io/badge/tools%20audited-161-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--03--31-blue)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--04--01-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -38,7 +38,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 28.4k | **[C](./docs/tools/github-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×75, ⚡ `AS-011` ×36, 📐 `AS-003`, 🗝️ `AS-010` | Mar 31 |
 | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `task-maste…` | 26.3k | **[A](./docs/tools/claude-task-master.md)** | 🔑 `AS-002` | Mar 31 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.48` | 26.2k | **[B](./docs/tools/ruflo.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×5 | Mar 26 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.43.0` | 17.2k | **[C](./docs/tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Mar 31 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.44.0` | 17.2k | **[C](./docs/tools/n8n-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Apr 1 |
 | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.8.0` | 14.1k | **[C](./docs/tools/figma-context-mcp.md)** | 🔑 `AS-002` ×13, 📐 `AS-003`, 🗝️ `AS-010`, ⚡ `AS-011` ×3 | Mar 31 |
 | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.7` | 10.6k | **[C](./docs/tools/xhs-downloader.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Mar 31 |
 | [mcp-use](https://github.com/mcp-use/mcp-use) | `python-v1.…` | 9.6k | **[B](./docs/tools/mcp-use.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Mar 31 |
@@ -73,7 +73,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [contextplus](https://github.com/ForLoopCodes/contextplus) | `1.0.9` | 1.7k | **[C](./docs/tools/contextplus.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010`, ⚡ `AS-011` ×6 | Mar 31 |
 | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.18` | 1.6k | **[C](./docs/tools/tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Mar 31 |
 | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](./docs/tools/n8n-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Mar 25 |
-| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.30.0` | 1.6k | **[B](./docs/tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Mar 31 |
+| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.31.1` | 1.6k | **[B](./docs/tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Apr 1 |
 
 <!-- TOOLTRUST:END -->
 
