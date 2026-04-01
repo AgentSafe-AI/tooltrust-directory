@@ -117,7 +117,7 @@ All active scanner rules as of [ToolTrust Scanner v0.1.12](https://github.com/Ag
 | 🔄 **AS&#8209;012** | **High** | Rug-Pull / Silent Update | Tool set changed between scans of the same version without a version bump — *directory pipeline only; requires historical scan data* |
 | ℹ️ **AS&#8209;014** | **Info** | Dependency Inventory Unavailable | MCP tool exposed neither `metadata.dependencies` nor a `repo_url`, so supply-chain coverage is explicitly incomplete |
 | ⚠️ **AS&#8209;015** | Medium / High | Suspicious NPM Lifecycle Script | npm dependency publishes install-time lifecycle scripts; severity rises for remote-fetch or inline-execution patterns |
-| 🚨 **AS&#8209;016** | **Critical** | Suspicious NPM IOC Dependency | npm package metadata references a known malicious IOC dependency such as `plain-crypto-js`, helping catch compromised publishes beyond version blacklists |
+| 🚨 **AS&#8209;016** | **Critical** | Suspicious NPM IOC Dependency | npm package metadata or install-time scripts reference a known malicious IOC dependency, domain, URL, or reviewed script pattern such as `plain-crypto-js`, helping catch compromised publishes beyond version blacklists |
 | 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
@@ -194,7 +194,7 @@ Arbitrary code execution tools are the highest-risk category. A single prompt in
 
 Detects dependencies whose exact version — or version range — has been confirmed as malicious or compromised, using an **embedded offline blacklist** compiled from public security advisories. This check runs *before* AS-004 (OSV live query), requires no network access, and returns results in O(1) time.
 
-**Current blacklist entries (as of 2026-03-24):**
+**Current blacklist entries (as of 2026-03-31):**
 
 | Advisory | Package | Affected versions | Action |
 |----------|---------|-------------------|--------|
@@ -203,6 +203,7 @@ Detects dependencies whose exact version — or version range — has been confi
 | GHSA-69fq-xp46-6x23 | `trivy-action` (GitHub Actions) | < v0.35.0 | WARN |
 | GHSA-69fq-xp46-6x23 | `setup-trivy` (GitHub Actions) | < v0.2.6 | WARN |
 | CVE-2026-33017 | `langflow` (PyPI) | < 1.9.0 | **BLOCK** |
+| AXIOS-NPM-COMPROMISE-2026-03-31 | `axios` (npm) | 1.14.1, 0.30.4 | **BLOCK** |
 
 **Threat context — TeamPCP supply chain attack (March 2026):**
 
@@ -213,6 +214,14 @@ The `litellm` 1.82.7 and 1.82.8 releases were injected with a malicious `.pth` f
 - `SUPPLY_CHAIN_WARN` (elevated risk, no confirmed payload) → HIGH → contributes 15 pts
 
 **Fix:** Remove the affected package immediately. Rotate all credentials (SSH keys, AWS/GCP tokens, `.env` secrets). Check for systemd user services and files under `~/.config/sysmon/`. Upgrade to a clean version.
+
+**Additional npm incident coverage (March 31, 2026):**
+
+ToolTrust now also flags the malicious axios npm publish (`axios@1.14.1`, `axios@0.30.4`) and related IOC evidence. For npm-backed MCP servers, this includes:
+
+- direct or transitive dependency recovery from `package-lock.json`, `pnpm-lock.yaml`, and `yarn.lock`
+- install-time lifecycle script review
+- metadata-level IOC matching for helper packages, malicious domains, URLs, and reviewed script patterns
 
 ---
 
