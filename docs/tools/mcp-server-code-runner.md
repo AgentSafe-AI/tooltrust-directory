@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 240 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-code-runner](https://github.com/formulahendry/mcp-server-code-runner) |
-| **Scan Date** | 2026-03-31 |
+| **Scan Date** | 2026-04-01 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---

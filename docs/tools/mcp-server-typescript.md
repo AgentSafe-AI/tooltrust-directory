@@ -8,11 +8,11 @@
 | **Risk Score** | 32 |
 | **Version** | `2.8.7` |
 | **Vendor** | dataforseo |
-| **Stars** | ⭐ 160 |
+| **Stars** | ⭐ 166 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) |
-| **Scan Date** | 2026-03-22 |
-| **Scanner** | tooltrust-scanner/v0.1.12 |
+| **Scan Date** | 2026-04-01 |
+| **Scanner** | tooltrust-scanner/v0.2.1 |
 
 ---
 

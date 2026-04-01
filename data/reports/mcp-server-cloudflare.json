@@ -3,12 +3,12 @@
   "version": "@repo/mcp-common@0.20.4",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-03-31T22:12:09.864717492Z",
+  "scan_date": "2026-04-01T20:12:31.832411439Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/cloudflare/mcp-server-cloudflare",
   "category": "Developer Tools",
   "vendor": "cloudflare",
-  "stars": 3579,
+  "stars": 3580,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "findings": [
@@ -34,6 +34,14 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search"
     },
     {
@@ -75,6 +83,14 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "execute"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute"
     }
   ],
   "summary": {
@@ -82,7 +98,7 @@
     "high": 3,
     "medium": 2,
     "low": 2,
-    "info": 0
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -95,6 +111,12 @@
       "grade": "D",
       "risk_score": 65,
       "version": "graphql-mcp-server@0.1.10"
+    },
+    {
+      "scan_date": "2026-03-31T22:12:09Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "@repo/mcp-common@0.20.4"
     }
   ]
 }

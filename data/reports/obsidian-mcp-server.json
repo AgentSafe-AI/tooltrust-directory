@@ -3,7 +3,7 @@
   "version": "2.0.7",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-03-31T22:13:58.222164103Z",
+  "scan_date": "2026-04-01T20:14:16.031237633Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/cyanheads/obsidian-mcp-server",
   "category": "Developer Tools",
@@ -19,6 +19,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "getFileContents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "getFileContents"
     },
     {
@@ -46,6 +54,14 @@
       "tool_name": "searchFiles"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "searchFiles"
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -60,6 +76,22 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "searchIssues"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "searchIssues"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCommitHistory"
     }
   ],
   "summary": {
@@ -67,7 +99,7 @@
     "high": 2,
     "medium": 2,
     "low": 2,
-    "info": 0
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -79,6 +111,12 @@
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:38:01Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "2.0.7"
+    },
+    {
+      "scan_date": "2026-03-31T22:13:58Z",
       "grade": "C",
       "risk_score": 25,
       "version": "2.0.7"

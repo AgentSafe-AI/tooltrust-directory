@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-03-31T22:14:31.39207524Z",
+  "scan_date": "2026-04-01T20:14:50.744891183Z",
   "scanner": "tooltrust-scanner/v0.2.1",
   "source_url": "https://github.com/mixelpixx/Google-Search-MCP-Server",
   "category": "Developer Tools",
@@ -14,92 +14,44 @@
   "description": "MCP Server built for use with Claude Code, Claude Desktop, VS Code, Cline  - enable google search and ability to follow links and research websites",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_ADD_FILE_SHARING_PREFERENCE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_COPY_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_COMMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_DRIVE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_FILE"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_FILE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLEDRIVE_CREATE_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_FILE_FROM_TEXT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_FOLDER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_REPLY"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_CREATE_SHORTCUT_TO_FILE"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.0.0: 6 tool(s) added, 20 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
+          "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
+          "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
+          "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
+          "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
+          "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
+        ],
+        "removed": [
+          "GOOGLEDRIVE_ADD_FILE_SHARING_PREFERENCE",
+          "GOOGLEDRIVE_COPY_FILE",
+          "GOOGLEDRIVE_CREATE_COMMENT",
+          "GOOGLEDRIVE_CREATE_DRIVE",
+          "GOOGLEDRIVE_CREATE_FILE",
+          "GOOGLEDRIVE_CREATE_FILE_FROM_TEXT",
+          "GOOGLEDRIVE_CREATE_FOLDER",
+          "GOOGLEDRIVE_CREATE_REPLY",
+          "GOOGLEDRIVE_CREATE_SHORTCUT_TO_FILE",
+          "GOOGLEDRIVE_DELETE_COMMENT",
+          "GOOGLEDRIVE_DELETE_DRIVE",
+          "GOOGLEDRIVE_DELETE_PERMISSION",
+          "GOOGLEDRIVE_DELETE_REPLY",
+          "GOOGLEDRIVE_DOWNLOAD_FILE",
+          "GOOGLEDRIVE_EDIT_FILE",
+          "GOOGLEDRIVE_EMPTY_TRASH",
+          "GOOGLEDRIVE_FILES_MODIFY_LABELS",
+          "GOOGLEDRIVE_FIND_FILE",
+          "GOOGLEDRIVE_FIND_FOLDER",
+          "GOOGLEDRIVE_GENERATE_IDS"
+        ],
+        "version": "3.0.0"
+      }
     },
     {
       "id": "AS-002",
@@ -107,39 +59,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_DELETE_COMMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_DELETE_DRIVE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_DELETE_PERMISSION"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_DELETE_REPLY"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_DOWNLOAD_FILE"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
     },
     {
       "id": "AS-002",
@@ -147,7 +67,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_DOWNLOAD_FILE"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
     },
     {
       "id": "AS-011",
@@ -155,7 +75,111 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLEDRIVE_DOWNLOAD_FILE"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
     },
     {
       "id": "AS-002",
@@ -163,90 +187,58 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_EDIT_FILE"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_EMPTY_TRASH"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_FILES_MODIFY_LABELS"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_FIND_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_FIND_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_FIND_FOLDER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDRIVE_GENERATE_IDS"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 21,
-    "low": 2,
-    "info": 0
+    "high": 7,
+    "medium": 2,
+    "low": 6,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "GOOGLEDRIVE_ADD_FILE_SHARING_PREFERENCE",
-    "GOOGLEDRIVE_COPY_FILE",
-    "GOOGLEDRIVE_CREATE_COMMENT",
-    "GOOGLEDRIVE_CREATE_DRIVE",
-    "GOOGLEDRIVE_CREATE_FILE",
-    "GOOGLEDRIVE_CREATE_FILE_FROM_TEXT",
-    "GOOGLEDRIVE_CREATE_FOLDER",
-    "GOOGLEDRIVE_CREATE_REPLY",
-    "GOOGLEDRIVE_CREATE_SHORTCUT_TO_FILE",
-    "GOOGLEDRIVE_DELETE_COMMENT",
-    "GOOGLEDRIVE_DELETE_DRIVE",
-    "GOOGLEDRIVE_DELETE_PERMISSION",
-    "GOOGLEDRIVE_DELETE_REPLY",
-    "GOOGLEDRIVE_DOWNLOAD_FILE",
-    "GOOGLEDRIVE_EDIT_FILE",
-    "GOOGLEDRIVE_EMPTY_TRASH",
-    "GOOGLEDRIVE_FILES_MODIFY_LABELS",
-    "GOOGLEDRIVE_FIND_FILE",
-    "GOOGLEDRIVE_FIND_FOLDER",
-    "GOOGLEDRIVE_GENERATE_IDS"
+    "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
+    "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
+    "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
+    "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
+    "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
+    "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
   ],
   "scan_history": [
     {
       "scan_date": "2026-03-24T04:37:59Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "3.0.0"
+    },
+    {
+      "scan_date": "2026-03-31T22:14:31Z",
       "grade": "C",
       "risk_score": 25,
       "version": "3.0.0"
