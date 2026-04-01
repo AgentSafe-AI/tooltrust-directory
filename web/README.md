@@ -23,8 +23,9 @@ cd web && npm run build && npm run start
 1. Push the repo to GitHub and go to [vercel.com](https://vercel.com).
 2. **Import** the repository.
 3. Set **Root Directory** to `web` (the app and `package.json` live there).
-4. Leave **Build Command** as `npm run build` and **Output Directory** as default.
-5. Deploy. The app reads `../data/reports/*.json` at build time, so the repo root must include the `data/reports` folder (e.g. commit reports or ensure they’re present in the branch you deploy).
+4. Optional: add `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel project settings to enable Google Analytics 4.
+5. Leave **Build Command** as `npm run build` and **Output Directory** as default.
+6. Deploy. The app reads `../data/reports/*.json` at build time, so the repo root must include the `data/reports` folder (e.g. commit reports or ensure they’re present in the branch you deploy).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AgentSafe-AI/tooltrust-directory&project-name=tooltrust-directory&root-directory=web)
 
@@ -34,3 +35,14 @@ cd web && npm run build && npm run start
 - TypeScript, Tailwind CSS
 - lucide-react
 - Data: static JSON from `data/reports/`
+- Optional analytics: Vercel Web Analytics and Google Analytics 4 via `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+
+## Google Analytics 4
+
+To enable GA4, set this environment variable locally or in Vercel:
+
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+When the variable is unset, the GA4 script is not loaded.
