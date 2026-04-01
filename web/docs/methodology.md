@@ -127,6 +127,46 @@ clean version (e.g. `litellm ≥ 1.82.9`, `trivy ≥ v0.69.7`, `setup-trivy ≥ 
 
 ---
 
+### AS-014 — Dependency Inventory Unavailable
+
+**Detects:** MCP tools that expose neither `metadata.dependencies` nor a `repo_url`, so the
+scanner cannot recover a trustworthy dependency inventory.
+
+**Why it matters:** A clean result is much less meaningful when dependency coverage is incomplete.
+ToolTrust surfaces this explicitly so "no findings" is not mistaken for full supply-chain visibility.
+
+**Recommendation:** Prefer tools that expose dependency metadata and a repository URL, and keep
+lockfiles checked into the repo so the scanner can verify transitive dependencies.
+
+---
+
+### AS-015 — Suspicious NPM Lifecycle Script
+
+**Detects:** npm dependency versions that publish install-time lifecycle scripts such as
+`preinstall`, `install`, `postinstall`, or `prepare`. Severity rises when those scripts include
+remote-fetch or inline-execution patterns like `curl`, `wget`, `bash -c`, or `node -e`.
+
+**Why it matters:** Install-time scripts execute automatically during dependency installation and
+are a common primitive in modern npm supply-chain compromises.
+
+**Recommendation:** Review the script before use, prefer versions without lifecycle scripts, and
+use `--ignore-scripts` in CI or sandboxed environments when possible.
+
+---
+
+### AS-016 — Suspicious NPM IOC Dependency
+
+**Detects:** npm dependency versions whose published metadata references known malicious IOC package
+names such as `plain-crypto-js`.
+
+**Why it matters:** IOC-based detection can catch compromised publishes even when the top-level
+package name is new or the malicious version has not yet landed in a public blacklist or CVE feed.
+
+**Recommendation:** Remove the affected version, rotate exposed credentials, and inspect the
+dependency tree for the IOC package before reinstalling.
+
+---
+
 ### AS-010 — Insecure Secret Handling
 
 **Detects:** Input parameters whose names suggest they accept raw secrets or credentials —

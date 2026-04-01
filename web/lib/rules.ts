@@ -179,6 +179,45 @@ export const RULE_CATALOG: RuleInfo[] = [
     recommendation:
       "Reject duplicate names and keep the active tool set unambiguous.",
   },
+  {
+    id: "AS-014",
+    emoji: "ℹ️",
+    shortLabel: "Dep Visibility",
+    title: "Dependency Inventory Unavailable",
+    severity: ["Info"],
+    detects:
+      "MCP tools that expose neither metadata.dependencies nor a repo URL, leaving supply-chain coverage incomplete.",
+    whyItMatters:
+      "A clean report is much less meaningful when the scanner could not recover the dependency inventory in the first place.",
+    recommendation:
+      "Expose dependency metadata and a repository URL, or keep lockfiles available so dependency evidence can be verified.",
+  },
+  {
+    id: "AS-015",
+    emoji: "⚠️",
+    shortLabel: "NPM Scripts",
+    title: "Suspicious NPM Lifecycle Script",
+    severity: ["Medium", "High"],
+    detects:
+      "npm dependency versions that publish install-time lifecycle scripts, especially when they include remote-fetch or inline-execution patterns.",
+    whyItMatters:
+      "Install-time scripts run automatically during dependency installation and are a common primitive in supply-chain compromises.",
+    recommendation:
+      "Review the script before use, prefer versions without lifecycle scripts, and use --ignore-scripts in CI or sandboxed environments when possible.",
+  },
+  {
+    id: "AS-016",
+    emoji: "🚨",
+    shortLabel: "NPM IOC",
+    title: "Suspicious NPM IOC Dependency",
+    severity: ["Critical"],
+    detects:
+      "npm package metadata that references a known malicious IOC dependency such as plain-crypto-js.",
+    whyItMatters:
+      "IOC-based detection can catch compromised publishes even when the top-level package name is new or the malicious version is not yet in a blacklist.",
+    recommendation:
+      "Remove the affected version, rotate exposed credentials, and inspect the dependency tree for the IOC package before reinstalling.",
+  },
 ];
 
 const RULES_BY_ID = new Map(RULE_CATALOG.map((rule) => [rule.id, rule]));

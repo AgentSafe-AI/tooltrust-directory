@@ -117,6 +117,7 @@ All active scanner rules as of [ToolTrust Scanner v0.1.12](https://github.com/Ag
 | 🔄 **AS&#8209;012** | **High** | Rug-Pull / Silent Update | Tool set changed between scans of the same version without a version bump — *directory pipeline only; requires historical scan data* |
 | ℹ️ **AS&#8209;014** | **Info** | Dependency Inventory Unavailable | MCP tool exposed neither `metadata.dependencies` nor a `repo_url`, so supply-chain coverage is explicitly incomplete |
 | ⚠️ **AS&#8209;015** | Medium / High | Suspicious NPM Lifecycle Script | npm dependency publishes install-time lifecycle scripts; severity rises for remote-fetch or inline-execution patterns |
+| 🚨 **AS&#8209;016** | **Critical** | Suspicious NPM IOC Dependency | npm package metadata references a known malicious IOC dependency such as `plain-crypto-js`, helping catch compromised publishes beyond version blacklists |
 | 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
@@ -286,6 +287,18 @@ Flags npm dependency versions that publish install-time lifecycle scripts such a
 Severity remains Medium for ordinary lifecycle scripts, but is raised to High when the script includes riskier execution patterns such as remote fetches (`curl`, `wget`, `Invoke-WebRequest`) or inline execution (`bash -c`, `sh -c`, `node -e`, `python -c`).
 
 **Fix:** Review the script before use, prefer versions without lifecycle scripts where possible, and install in CI/sandboxed environments with `--ignore-scripts` when appropriate.
+
+---
+
+### AS-016
+
+**Suspicious NPM IOC Dependency** · Severity: Critical
+
+Flags npm dependency versions whose published registry metadata references known malicious IOC package names such as `plain-crypto-js`. This is narrower than full tarball signature scanning, but it still helps catch compromised publishes when the attacker introduces a recognizable IOC through dependency metadata.
+
+This rule is especially useful when combined with lockfile-derived transitive dependency evidence from `package-lock.json`, `pnpm-lock.yaml`, or `yarn.lock`, because many MCP servers will not depend on a compromised package directly.
+
+**Fix:** Treat the affected version as a likely compromise. Remove it, rotate exposed credentials, inspect the dependency tree for the IOC package, and reinstall from a verified clean release.
 
 ---
 
