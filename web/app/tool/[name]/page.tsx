@@ -25,6 +25,40 @@ function formatScanDate(scanDate: string): string {
   }
 }
 
+function getDecisionLabel(grade: string): string {
+  if (grade === "D" || grade === "F") return "Block in Production";
+  if (grade === "C") return "Needs Approval";
+  return "Safe With Normal Controls";
+}
+
+function getActionCardStyle(grade: string): { border: string; bg: string; badge: string; title: string; body: string } {
+  if (grade === "D" || grade === "F") {
+    return {
+      border: "border-red-500/25",
+      bg: "bg-red-500/[0.05]",
+      badge: "border-red-400/30 bg-red-400/10 text-red-200",
+      title: "Block In Production",
+      body: "This tool should stay disabled in production agents until the flagged risks are fixed and the scan is clean.",
+    };
+  }
+  if (grade === "C") {
+    return {
+      border: "border-yellow-500/20",
+      bg: "bg-yellow-500/[0.05]",
+      badge: "border-yellow-300/25 bg-yellow-300/10 text-yellow-100",
+      title: "Review Before Use",
+      body: "Keep this tool behind manual approval and avoid unattended runs until the risky capabilities are narrowed or removed.",
+    };
+  }
+  return {
+    border: "border-emerald-500/20",
+    bg: "bg-emerald-500/[0.05]",
+    badge: "border-emerald-400/25 bg-emerald-400/10 text-emerald-200",
+    title: "Safe With Normal Controls",
+    body: "No high-risk findings were detected in this scan, but you should still apply least-privilege defaults and rescan after changes.",
+  };
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { name } = await params;
   const report = getReportByToolName(name);
@@ -63,6 +97,15 @@ export default async function ToolPage({ params }: PageProps) {
     "https://github.com/AgentSafe-AI/tooltrust-directory";
   const summary = report.summary;
   const narrative = getToolNarrative(report);
+  const blockSnippet = `{
+  "mcpServers": {
+    "${report.tool_id}": {
+      "disabled": true
+    }
+  }
+}`;
+  const decisionLabel = getDecisionLabel(grade);
+  const actionStyle = getActionCardStyle(grade);
 
   const severityChips = [
     { label: "Critical", n: summary.critical },
@@ -124,7 +167,6 @@ export default async function ToolPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reportJsonLd) }}
       />
-      {/* Breadcrumb */}
       <nav className="text-sm text-zinc-500" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-zinc-400">
           Directory
@@ -133,7 +175,6 @@ export default async function ToolPage({ params }: PageProps) {
         <span className="text-zinc-400">{report.tool_id}</span>
       </nav>
 
-      {/* Header: progress ring left, tool details right */}
       <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
         <div className="shrink-0">
           <GradeProgressRing
@@ -206,7 +247,6 @@ export default async function ToolPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Summary severity chips */}
       {hasFindings && severityChips.length > 0 && (
         <div className="flex flex-wrap gap-2">
           {severityChips.map((s) => (
@@ -261,36 +301,56 @@ export default async function ToolPage({ params }: PageProps) {
         };
         const s = riskStyle[grade] ?? riskStyle["C"];
         return (
-          <section className={`rounded-xl border ${s.border} ${s.bg} p-5`}>
-            <div className="flex flex-wrap items-center gap-2">
-              <h2 className={`text-sm font-semibold uppercase tracking-wider ${s.heading}`}>
-                Risk Summary
-              </h2>
-              <span className={`rounded-full border px-2 py-0.5 text-xs font-medium ${s.badge}`}>
-                {narrative.title}
-              </span>
-            </div>
-            <div className="mt-3 space-y-2 text-sm leading-6">
-              <p className="text-zinc-300">
-                <span className="font-medium text-zinc-100">Main concern:</span>{" "}
-                {narrative.impactLine}
-              </p>
-              <p className="text-zinc-400">
-                <span className="font-medium text-zinc-100">Action:</span>{" "}
-                {narrative.actionNow}
-              </p>
-              {grade === "C" || grade === "D" ? (
-                <p className="text-zinc-400">
-                  <span className="font-medium text-zinc-100">Approval means:</span>{" "}
-                  keep this server behind manual review and avoid unattended automation until the flagged risks are addressed.
+          <section className={`rounded-xl border ${s.border} ${s.bg} p-6`}>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h2 className={`text-sm font-semibold uppercase tracking-wider ${s.heading}`}>
+                    Risk Summary
+                  </h2>
+                  <span className={`rounded-full border px-2 py-0.5 text-xs font-medium ${s.badge}`}>
+                    {decisionLabel}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">
+                  {narrative.impactLine}
                 </p>
-              ) : null}
+              </div>
+              {(grade === "D" || grade === "F") && (
+                <CopyBadgeButton
+                  snippet={blockSnippet}
+                  label="Copy Block Config"
+                  copiedLabel="Copied Block Config"
+                  className="inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-xs text-zinc-300 hover:border-zinc-600 hover:bg-zinc-800 hover:text-zinc-100"
+                />
+              )}
+            </div>
+            <div className="mt-4 space-y-3">
+              <p className="text-sm leading-6 text-zinc-400">
+                <span className="font-medium text-zinc-100">Potential impact:</span>{" "}
+                {narrative.consequence}
+              </p>
+              <p className="text-sm leading-6 text-zinc-400">
+                <span className="font-medium text-zinc-100">Recommended action:</span>{" "}
+                {actionStyle.body}
+              </p>
+              {grade === "D" || grade === "F" ? (
+                <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
+                  <pre className="overflow-x-auto text-sm text-zinc-300">{blockSnippet}</pre>
+                </div>
+              ) : (
+                <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-zinc-400">
+                  <p>
+                    <span className="font-medium text-zinc-100">Suggested policy:</span>{" "}
+                    keep this tool behind manual approval, do not allow unattended runs, and re-scan after narrowing risky permissions.
+                  </p>
+                </div>
+              )}
             </div>
           </section>
         );
       })()}
 
-      {/* Incomplete scan warning */}
       {report.scan_incomplete && (
         <div className="flex items-start gap-3 rounded-xl border border-yellow-500/30 bg-yellow-500/10 px-5 py-4">
           <span className="mt-0.5 text-yellow-400 text-lg leading-none">⚠</span>
@@ -417,13 +477,11 @@ export default async function ToolPage({ params }: PageProps) {
                           );
                         })()}
 
-                        <div className="mt-1 space-y-2 text-xs text-zinc-500">
-                          {first.recommendation && (
-                            <p className="text-zinc-500">
-                              <span className="text-zinc-600">Fix: </span>{first.recommendation}
-                            </p>
-                          )}
-                        </div>
+                        {first.recommendation && (
+                          <p className="mt-1 text-xs text-zinc-500">
+                            <span className="text-zinc-600">Fix: </span>{first.recommendation}
+                          </p>
+                        )}
                       </div>
                     </li>
                   );
@@ -434,7 +492,6 @@ export default async function ToolPage({ params }: PageProps) {
         )}
       </section>
 
-      {/* Scan this tool */}
       <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
         <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-zinc-100">
           <ScanSearch className="h-5 w-5 text-sky-400" />
@@ -446,7 +503,6 @@ export default async function ToolPage({ params }: PageProps) {
         <ScanSnippets toolId={report.tool_id} sourceUrl={report.source_url} />
       </section>
 
-      {/* Badge */}
       <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
         <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-zinc-100">
           <Shield className="h-5 w-5 text-emerald-500" />
