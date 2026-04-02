@@ -1,16 +1,16 @@
-# 🟢 archestra
+# 🟢 dive
 
-> Enterprise AI Platform with guardrails, MCP registry, gateway & orchestrator
+> Dive is an open-source MCP Host Desktop Application that seamlessly integrates with any LLMs supporting function calling capabilities. ✨
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.2.2` |
-| **Vendor** | archestra-ai |
-| **Stars** | ⭐ 3536 |
+| **Version** | `0.14.2` |
+| **Vendor** | OpenAgentPlatform |
+| **Stars** | ⭐ 1762 |
 | **Language** | TypeScript |
-| **Source** | [archestra](https://github.com/archestra-ai/archestra) |
+| **Source** | [dive](https://github.com/OpenAgentPlatform/Dive) |
 | **Scan Date** | 2026-04-02 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
@@ -28,12 +28,12 @@
 
 ## Detailed Findings
 
-### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -52,4 +52,4 @@ Review and remediate the identified issue.
 
 ---
 
-*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/archestra.json)*
+*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/dive.json)*

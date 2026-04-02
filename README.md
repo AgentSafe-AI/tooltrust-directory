@@ -9,8 +9,8 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 ![ToolTrust Directory UI](./docs/tooltrust-ui.png)
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-162-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--04--01-blue)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-163-brightgreen)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--04--02-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -20,14 +20,14 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by stars. View all 162 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by stars. View all 163 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Stars | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
 | [n8n](https://github.com/n8n-io/n8n) | `n8n@2.14.2` | 182.0k | **[C](./docs/tools/n8n.md)** | `AS-014` ×27, 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Apr 1 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.35.3` | 99.9k | **[D](./docs/tools/gemini-cli.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×8, 🗝️ `AS-010` ×2 | Apr 1 |
-| [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 82.7k | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | ✅ None | Apr 1 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.36.0` | 99.9k | **[C](./docs/tools/gemini-cli.md)** | `AS-014` ×56, 🔑 `AS-002` ×35, ⚡ `AS-011` ×11 | Apr 2 |
 | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2026.1.26` | 82.7k | **[A](./docs/tools/mcp-server-time.md)** | `AS-014` ×2 | Apr 1 |
+| [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2026.1.26` | 82.7k | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | ✅ None | Apr 1 |
 | [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | `2026.1.26` | 82.7k | **[B](./docs/tools/mcp-server-fetch.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Apr 1 |
 | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `2026.1.26` | 82.7k | **[C](./docs/tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` | Apr 1 |
 | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2026.1.26` | 82.7k | **[C](./docs/tools/mcp-server-github.md)** | 🔑 `AS-002` ×35, ⚡ `AS-011` ×18 | Apr 1 |
@@ -60,7 +60,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [fast-agent](https://github.com/evalstate/fast-agent) | `0.6.7` | 3.7k | **[A](./docs/tools/fast-agent.md)** | `AS-014` | Apr 1 |
 | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `0.1.7` | 3.6k | **[B](./docs/tools/excel-mcp-server.md)** | `AS-014` ×49, 🔑 `AS-002` ×17, ⚡ `AS-011` ×3, 🗝️ `AS-010` | Apr 1 |
 | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `@repo/mcp-…` | 3.6k | **[D](./docs/tools/mcp-server-cloudflare.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2, `AS-014` ×2, ⚡ `AS-006` | Apr 1 |
-| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | `AS-014` | Apr 1 |
+| [archestra](https://github.com/archestra-ai/archestra) | `platform-v…` | 3.5k | **[A](./docs/tools/archestra.md)** | `AS-014` | Apr 2 |
 | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | `3.0.0` | 3.2k | **[B](./docs/tools/mcp-server-browserbase.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Apr 1 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 2.7k | **[A](./docs/tools/shadcn-ui-mcp-server.md)** | 🔑 `AS-002` | Apr 1 |
 | [solon](https://github.com/opensolon/solon) | `3.9.5` | 2.7k | **[A](./docs/tools/solon.md)** | ✅ None | Mar 10 |
@@ -70,10 +70,10 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | `1.17.0` | 2.0k | **[B](./docs/tools/google-workspace-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Apr 1 |
 | [mcp-router](https://github.com/mcp-router/mcp-router) | `0.6.2` | 1.9k | **[A](./docs/tools/mcp-router.md)** | ✅ None | Mar 31 |
 | [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) | `0.63.3` | 1.8k | **[B](./docs/tools/unity-mcp.md)** | `AS-014` ×50, 🔑 `AS-002` ×10, ⚡ `AS-011` | Apr 1 |
+| [dive](https://github.com/OpenAgentPlatform/Dive) | `0.14.2` | 1.8k | **[A](./docs/tools/dive.md)** | `AS-014` ×2 | Apr 2 |
 | [contextplus](https://github.com/ForLoopCodes/contextplus) | `1.0.9` | 1.7k | **[C](./docs/tools/contextplus.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010`, ⚡ `AS-011` ×6 | Apr 1 |
 | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.18` | 1.6k | **[C](./docs/tools/tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Apr 1 |
 | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.6k | **[C](./docs/tools/n8n-mcp-server.md)** | `AS-014` ×27, 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, ⚡ `AS-006`, 🗝️ `AS-010` | Apr 1 |
-| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `10.31.1` | 1.6k | **[B](./docs/tools/mcp-memory-service.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Apr 1 |
 
 <!-- TOOLTRUST:END -->
 
