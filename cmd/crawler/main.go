@@ -507,8 +507,8 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		}
 
 		if scan.RepoOwner == "" {
-			if s.UseCount < 50 {
-				log.Printf("skip smithery-native %s — %d useCount < 50", toolID, s.UseCount)
+			if s.UseCount < 10 {
+				log.Printf("skip smithery-native %s — %d useCount < 10", toolID, s.UseCount)
 				delete(seen, toolID)
 				continue
 			}
@@ -615,7 +615,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	// PerPage:100 (API max) sorted by stars captures the top ~400 repos across
 	// 4 queries. A minimum-star threshold filters out stub/test repos that
 	// crowd out genuine tools with lower star counts.
-	const minStars = 50
+	const minStars = 20
 	queries := []string{
 		"topic:mcp-server",
 		"mcp-server in:name language:TypeScript",

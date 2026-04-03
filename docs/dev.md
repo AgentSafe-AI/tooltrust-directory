@@ -120,7 +120,7 @@ From an AI Agent (MCP `fetch` tool):
 
 The workflow at `.github/workflows/daily-audit.yml`:
 
-1. **Discover** — runs `cmd/crawler` to search GitHub for MCP servers (top 50 by stars), compares versions against existing reports, emits `pending-scans.json`.
+1. **Discover** — runs `cmd/crawler` to search GitHub for MCP servers (20+ stars) and Smithery-native servers (10+ uses), compares versions against existing reports, emits `pending-scans.json`.
 2. **Scan** — for each pending tool: clones the repo, runs ToolTrust Scanner (tool-definition scan) and `cmd/analyze` (OSV CVE scan), then `cmd/transform` to produce a ToolTrust report.
 3. **Publish** — runs `cmd/sync` to regenerate the README registry table and per-tool detail pages, commits and pushes to `main`.
 
