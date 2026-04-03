@@ -8,11 +8,11 @@
 | **Risk Score** | 40 |
 | **Version** | `0.2.2` |
 | **Vendor** | designcomputer |
-| **Stars** | ⭐ 1184 |
+| **Stars** | ⭐ 1199 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) |
-| **Scan Date** | 2026-03-24 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 
@@ -24,7 +24,7 @@
 | High     | 5 |
 | Medium   | 4 |
 | Low      | 3 |
-| Info     | 0 |
+| Info     | 5 |
 
 ## Detailed Findings
 
@@ -76,6 +76,18 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
@@ -124,6 +136,18 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
@@ -160,6 +184,18 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -169,6 +205,30 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

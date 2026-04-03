@@ -6,9 +6,9 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `platform-v1.2.2` |
+| **Version** | `platform-v1.2.3` |
 | **Vendor** | archestra-ai |
-| **Stars** | ⭐ 3534 |
+| **Stars** | ⭐ 3536 |
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
 | **Scan Date** | 2026-04-03 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 8 |
 | **Version** | `2.0.0` |
 | **Vendor** | Jpisnice |
-| **Stars** | ⭐ 2743 |
+| **Stars** | ⭐ 2745 |
 | **npm Package** | `@jpisnice/shadcn-ui-mcp-server` |
 | **npm Downloads (30d)** | 7.1k |
 | **Language** | TypeScript |

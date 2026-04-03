@@ -10,7 +10,7 @@
 | **Vendor** | mixelpixx |
 | **Stars** | ⭐ 235 |
 | **npm Package** | `google-search-mcp` |
-| **npm Downloads (30d)** | 188 |
+| **npm Downloads (30d)** | 185 |
 | **Language** | TypeScript |
 | **Source** | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) |
 | **Scan Date** | 2026-04-03 |

@@ -8,9 +8,9 @@
 | **Risk Score** | 8 |
 | **Version** | `2.4.1` |
 | **Vendor** | williamzujkowski |
-| **Stars** | ⭐ 181 |
+| **Stars** | ⭐ 182 |
 | **npm Package** | `@williamzujkowski/strudel-mcp-server` |
-| **npm Downloads (30d)** | 365 |
+| **npm Downloads (30d)** | 372 |
 | **Language** | TypeScript |
 | **Source** | [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) |
 | **Scan Date** | 2026-04-03 |

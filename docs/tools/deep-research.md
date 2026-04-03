@@ -10,7 +10,7 @@
 | **Vendor** | u14app |
 | **Stars** | ⭐ 4551 |
 | **npm Package** | `deep-research` |
-| **npm Downloads (30d)** | 154 |
+| **npm Downloads (30d)** | 157 |
 | **Language** | JavaScript |
 | **Source** | [deep-research](https://github.com/u14app/deep-research) |
 | **Scan Date** | 2026-04-03 |

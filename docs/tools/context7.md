@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `ctx7@0.3.9` |
 | **Vendor** | upstash |
-| **Stars** | ⭐ 51489 |
+| **Stars** | ⭐ 51546 |
 | **npm Package** | `@upstash/context7` |
 | **Language** | TypeScript |
 | **Source** | [context7](https://github.com/upstash/context7) |

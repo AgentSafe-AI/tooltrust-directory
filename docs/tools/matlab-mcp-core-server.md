@@ -8,7 +8,7 @@
 | **Risk Score** | 8 |
 | **Version** | `0.7.0` |
 | **Vendor** | matlab |
-| **Stars** | ⭐ 316 |
+| **Stars** | ⭐ 318 |
 | **Language** | Go |
 | **Source** | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) |
 | **Scan Date** | 2026-04-03 |

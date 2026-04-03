@@ -8,7 +8,7 @@
 | **Vendor** | roychri |
 | **Stars** | ⭐ 135 |
 | **npm Package** | `@roychri/mcp-server-asana` |
-| **npm Downloads (30d)** | 14.3k |
+| **npm Downloads (30d)** | 14.4k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-asana](https://github.com/roychri/mcp-server-asana) |
 | **Scan Date** | 2026-04-03 |

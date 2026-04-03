@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.5.5` |
 | **Vendor** | bigcodegen |
-| **Stars** | ⭐ 304 |
+| **Stars** | ⭐ 305 |
 | **npm Package** | `mcp-neovim-server` |
 | **npm Downloads (30d)** | 795 |
 | **Language** | TypeScript |

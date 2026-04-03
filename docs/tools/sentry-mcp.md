@@ -8,9 +8,9 @@
 | **Risk Score** | 50 |
 | **Version** | `0.31.0` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 616 |
+| **Stars** | ⭐ 619 |
 | **npm Package** | `sentry-mcp` |
-| **npm Downloads (30d)** | 436 |
+| **npm Downloads (30d)** | 444 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/sentry-mcp) |
 | **Scan Date** | 2026-04-03 |

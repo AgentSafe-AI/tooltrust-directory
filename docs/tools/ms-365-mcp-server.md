@@ -6,11 +6,11 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `0.54.1` |
+| **Version** | `0.55.0` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 588 |
+| **Stars** | ⭐ 589 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
-| **npm Downloads (30d)** | 51.0k |
+| **npm Downloads (30d)** | 50.3k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
 | **Scan Date** | 2026-04-03 |

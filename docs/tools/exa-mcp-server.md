@@ -8,9 +8,9 @@
 | **Risk Score** | 50 |
 | **Version** | `3.2.0` |
 | **Vendor** | exa-labs |
-| **Stars** | ⭐ 4136 |
+| **Stars** | ⭐ 4140 |
 | **npm Package** | `exa-mcp-server` |
-| **npm Downloads (30d)** | 62.5k |
+| **npm Downloads (30d)** | 63.6k |
 | **Language** | TypeScript |
 | **Source** | [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) |
 | **Scan Date** | 2026-04-03 |

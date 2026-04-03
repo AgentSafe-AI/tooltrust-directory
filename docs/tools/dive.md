@@ -8,9 +8,9 @@
 | **Risk Score** | 0 |
 | **Version** | `0.14.2` |
 | **Vendor** | OpenAgentPlatform |
-| **Stars** | ⭐ 1763 |
+| **Stars** | ⭐ 1762 |
 | **npm Package** | `dive` |
-| **npm Downloads (30d)** | 37.1k |
+| **npm Downloads (30d)** | 36.9k |
 | **Language** | TypeScript |
 | **Source** | [dive](https://github.com/OpenAgentPlatform/Dive) |
 | **Scan Date** | 2026-04-03 |
