@@ -1,16 +1,16 @@
-# 🟢 matlab-mcp-core-server
+# 🟢 mcp-brasil
 
-> Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®. This MCP server for MATLAB supports a wide range of coding agents like Claude Code® and Visual Studio® Code.
+> MCP Server para 41 APIs públicas brasileiras
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 8 |
-| **Version** | `0.7.0` |
-| **Vendor** | matlab |
-| **Stars** | ⭐ 313 |
-| **Language** | Go |
-| **Source** | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) |
+| **Risk Score** | 0 |
+| **Version** | `0.8.0` |
+| **Vendor** | jxnxts |
+| **Stars** | ⭐ 1191 |
+| **Language** | Python |
+| **Source** | [mcp-brasil](https://github.com/jxnxts/mcp-brasil) |
 | **Scan Date** | 2026-04-03 |
 | **Scanner** | tooltrust-scanner/v0.2.1 |
 
@@ -22,24 +22,12 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 2 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 5 |
+| Info     | 6 |
 
 ## Detailed Findings
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
@@ -49,18 +37,6 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -112,4 +88,16 @@ Review and remediate the identified issue.
 
 ---
 
-*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/matlab-mcp-core-server.json)*
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/mcp-brasil.json)*

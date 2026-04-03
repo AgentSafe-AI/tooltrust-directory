@@ -1,25 +1,25 @@
 {
-  "tool_id": "matlab-mcp-core-server",
-  "version": "0.7.0",
+  "tool_id": "mcp-brasil",
+  "version": "0.8.0",
   "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-04-03T01:30:30.561750321Z",
+  "risk_score": 0,
+  "scan_date": "2026-04-03T01:30:18.138457026Z",
   "scanner": "tooltrust-scanner/v0.2.1",
-  "source_url": "https://github.com/matlab/matlab-mcp-core-server",
+  "source_url": "https://github.com/jxnxts/mcp-brasil",
   "category": "Developer Tools",
-  "vendor": "matlab",
-  "stars": 313,
-  "license": "NOASSERTION",
-  "language": "Go",
-  "description": "Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®. This MCP server for MATLAB supports a wide range of coding agents like Claude Code® and Visual Studio® Code.",
+  "vendor": "jxnxts",
+  "stars": 1191,
+  "license": "MIT",
+  "language": "Python",
+  "description": "MCP Server para 41 APIs públicas brasileiras",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "check_naming"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_postal_code_v1"
     },
     {
       "id": "AS-014",
@@ -27,15 +27,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_naming"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "check_include_guard"
+      "tool_name": "get_postal_code_v2"
     },
     {
       "id": "AS-014",
@@ -43,7 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_include_guard"
+      "tool_name": "get_isbn"
     },
     {
       "id": "AS-014",
@@ -51,7 +43,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_memory_safety"
+      "tool_name": "get_cnpj"
     },
     {
       "id": "AS-014",
@@ -59,7 +51,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "suggest_modern_cpp"
+      "tool_name": "get_all_banks"
     },
     {
       "id": "AS-014",
@@ -67,30 +59,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_const_correctness"
+      "tool_name": "get_bank_by_code"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 2,
+    "medium": 0,
     "low": 0,
-    "info": 5
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "analyze_memory_safety",
-    "check_const_correctness",
-    "check_include_guard",
-    "check_naming",
-    "suggest_modern_cpp"
-  ],
-  "scan_history": [
-    {
-      "scan_date": "2026-03-25T05:38:16Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "0.6.1"
-    }
+    "get_all_banks",
+    "get_bank_by_code",
+    "get_cnpj",
+    "get_isbn",
+    "get_postal_code_v1",
+    "get_postal_code_v2"
   ]
 }
