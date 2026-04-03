@@ -462,11 +462,11 @@ jobs:
           ) &
           RUNNING=$((RUNNING + 1))
           if [ "$RUNNING" -ge "$CONCURRENCY" ]; then
-            wait -n
+            wait -n || true
             RUNNING=$((RUNNING - 1))
           fi
           done
-          wait  # drain remaining background jobs
+          wait || true  # drain remaining background jobs without failing the batch
 
       - name: Upload scan results
         uses: actions/upload-artifact@v4

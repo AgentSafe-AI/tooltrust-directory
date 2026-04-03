@@ -194,7 +194,7 @@ The registry table above is kept up to date by a daily GitHub Actions workflow:
 ```
 
 Each run:
-1. **Discovers** popular MCP servers via GitHub Search (20+ stars) plus Smithery-native servers (10+ uses)
+1. **Discovers** popular MCP servers via GitHub Search (50+ stars) plus Smithery-native servers (10+ uses)
 2. **Scans** new/updated tools with ToolTrust Scanner + OSV supply-chain analysis
 3. **Publishes** updated reports to `data/reports/` and regenerates this README
 
