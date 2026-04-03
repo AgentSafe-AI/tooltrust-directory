@@ -3,7 +3,6 @@ import { GradeProgressRing } from "@/lib/grades";
 import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Shield, ExternalLink, CheckCircle2, ScanSearch, Star } from "lucide-react";
 import { CopyBadgeButton } from "./CopyBadgeButton";
 import { ScanSnippets } from "./ScanSnippets";
@@ -194,12 +193,15 @@ export default async function ToolPage({ params }: PageProps) {
         <div className="min-w-0 flex-1 space-y-2">
           <div className="flex flex-wrap items-center gap-3">
             {report.vendor && (
-              <Image
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
                 src={`https://github.com/${report.vendor}.png?size=80`}
                 alt={report.vendor}
                 width={40}
                 height={40}
                 className="h-10 w-10 shrink-0 rounded-xl bg-zinc-800"
+                loading="eager"
+                decoding="async"
               />
             )}
             <h1 className="text-2xl font-bold text-zinc-100">
