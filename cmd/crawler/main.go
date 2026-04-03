@@ -759,6 +759,8 @@ func parseGitHubOwnerRepo(sourceURL string) (owner, repo string) {
 // release or tag. For repos that publish to npm but don't cut git releases
 // (e.g. exa-mcp-server, mcp-server-browserbase), it falls back to the
 // "version" field in the root package.json fetched from the default branch.
+// As a final fallback, it uses the default-branch HEAD commit SHA so lower-star
+// repos without formal release metadata can still enter the scan pipeline.
 func latestVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
 	release, _, err := client.Repositories.GetLatestRelease(ctx, owner, repo)
 	if err == nil {
@@ -775,7 +777,14 @@ func latestVersion(ctx context.Context, client *github.Client, owner, repo strin
 
 	// Last resort: read version from package.json on the default branch.
 	// This covers popular npm-published MCP servers that never cut git releases.
-	return packageJSONVersion(ctx, client, owner, repo)
+	version, err := packageJSONVersion(ctx, client, owner, repo)
+	if err == nil {
+		return version, nil
+	}
+
+	// Final fallback: use the default branch head SHA as a stable-ish version key
+	// so repos without releases/tags/package.json can still be scanned and tracked.
+	return defaultBranchVersion(ctx, client, owner, repo)
 }
 
 // packageJSONVersion fetches the root package.json from the repo's default
@@ -807,6 +816,30 @@ func packageJSONVersion(ctx context.Context, client *github.Client, owner, repo 
 		return "", fmt.Errorf("no version in package.json")
 	}
 	return pkg.Version, nil
+}
+
+func defaultBranchVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
+	ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+	if err != nil {
+		return "", fmt.Errorf("get repo for default branch version: %w", err)
+	}
+	branch := ghRepo.GetDefaultBranch()
+	if branch == "" {
+		branch = "main"
+	}
+
+	br, _, err := client.Repositories.GetBranch(ctx, owner, repo, branch, 0)
+	if err != nil {
+		return "", fmt.Errorf("no release, tag, package.json, or default branch SHA found")
+	}
+	sha := br.GetCommit().GetSHA()
+	if sha == "" {
+		return "", fmt.Errorf("no release, tag, package.json, or default branch SHA found")
+	}
+	if len(sha) > 12 {
+		sha = sha[:12]
+	}
+	return "sha-" + sha, nil
 }
 
 // toToolID normalises a GitHub repo name to a lowercase kebab-case string
