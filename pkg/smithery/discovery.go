@@ -37,10 +37,10 @@ type listResponse struct {
 	Pagination pagination       `json:"pagination"`
 }
 
-const maxPageSize = 200 // Smithery API hard limit per request
+const maxPageSize = 100 // Smithery API hard limit per request
 
 // ListAll fetches every server from the Smithery registry by paginating
-// through all pages (pageSize=200). The registry returns servers ordered by
+// through all pages (pageSize=100). The registry returns servers ordered by
 // usage (call count) descending. Returns a nil slice (not an error) when the
 // registry is unreachable, so callers can treat it as a non-fatal fallback.
 func ListAll() ([]SmitheryServer, error) {
