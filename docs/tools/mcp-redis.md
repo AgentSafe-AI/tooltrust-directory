@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.5.0` |
 | **Vendor** | redis |
-| **Stars** | ⭐ 470 |
+| **Stars** | ⭐ 471 |
 | **Language** | Python |
 | **Source** | [mcp-redis](https://github.com/redis/mcp-redis) |
 | **Scan Date** | 2026-04-03 |

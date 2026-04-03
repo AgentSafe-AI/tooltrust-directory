@@ -9,7 +9,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 ![ToolTrust Directory UI](./docs/tooltrust-ui.png)
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-169-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-184-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--04--03-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -20,7 +20,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by popularity. View all 169 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by popularity. View all 184 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Popularity | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -45,12 +45,12 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 61.2k/mo | **[C](./docs/tools/mcp-server-serper.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×6, `AS-014` ×6 | Apr 3 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 60.3k/mo | **[B](./docs/tools/mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Apr 3 |
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.51` | 58.2k/mo | **[B](./docs/tools/ruflo.md)** | `AS-014` ×19, 🔑 `AS-002` ×3, ⚡ `AS-011` | Apr 3 |
-| [context7](https://github.com/upstash/context7) | `ctx7@0.3.9` | 51.5k | **[B](./docs/tools/context7.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Apr 3 |
+| [context7](https://github.com/upstash/context7) | `ctx7@0.3.9` | 51.6k | **[B](./docs/tools/context7.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Apr 3 |
 | [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.9.16` | 51.2k/mo | **[D](./docs/tools/apify-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Apr 3 |
 | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.55.0` | 50.3k/mo | **[C](./docs/tools/ms-365-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×9, `AS-014` ×16 | Apr 3 |
 | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.4.0` | 41.2k/mo | **[B](./docs/tools/mcp-server-kubernetes.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Apr 3 |
 | [dive](https://github.com/OpenAgentPlatform/Dive) | `0.14.2` | 36.9k/mo | **[A](./docs/tools/dive.md)** | `AS-014` ×2 | Apr 3 |
-| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.0.75` | 36.0k/mo | **[C](./docs/tools/brave-search-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×6, `AS-014` ×6 | Apr 3 |
+| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.0.75` | 35.9k/mo | **[B](./docs/tools/brave-search-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Apr 3 |
 | [github-mcp-server](https://github.com/github/github-mcp-server) | `0.32.0` | 28.5k | **[C](./docs/tools/github-mcp-server.md)** | 🔑 `AS-002` ×75, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Apr 3 |
 | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | `0.1.8` | 28.1k/mo | **[C](./docs/tools/railway-mcp-server.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` | Apr 3 |
 | [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) | `2.9.3` | 19.5k/mo | **[C](./docs/tools/brightdata-mcp.md)** | 🔑 `AS-002` ×66, ⚡ `AS-011` ×57, `AS-014` ×64 | Apr 3 |
@@ -73,7 +73,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) | `1.6.1` | 8.0k/mo | **[C](./docs/tools/mcp-server-trello.md)** | 🔑 `AS-002` ×126, `AS-014` ×200, ⚡ `AS-011` ×53, 🗝️ `AS-010` | Apr 3 |
 | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | `1.2.0` | 7.2k | **[B](./docs/tools/browser-tools-mcp.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Apr 3 |
 | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `2.0.0` | 7.1k/mo | **[A](./docs/tools/shadcn-ui-mcp-server.md)** | 🔑 `AS-002` | Apr 3 |
-| [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | `1.4.0` | 6.6k | **[B](./docs/tools/ida-pro-mcp.md)** | 🗝️ `AS-010`, 🔑 `AS-002`, ⚡ `AS-011` | Mar 20 |
+| [awesome-mcp-zh](https://github.com/yzfly/Awesome-MCP-ZH) | `sha-3337f7…` | 6.8k | **[B](./docs/tools/awesome-mcp-zh.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Apr 3 |
 
 <!-- TOOLTRUST:END -->
 

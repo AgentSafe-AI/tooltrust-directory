@@ -2,9 +2,9 @@
   "tool_id": "zen",
   "version": "1.5.0",
   "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-03-25T02:34:47.488277567Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "risk_score": 15,
+  "scan_date": "2026-04-03T21:10:50.943951908Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/sheshbabu/zen",
   "category": "Developer Tools",
   "vendor": "sheshbabu",
@@ -14,39 +14,67 @@
   "description": "Selfhosted notes app. Single golang binary, notes stored as markdown within SQLite, full-text search, very low resource usage",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scrape"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.5.0: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "conformance_check"
+        ],
+        "removed": [
+          "scrape"
+        ],
+        "version": "1.5.0"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scrape"
+      "tool_name": "conformance_check"
     },
     {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "scrape"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "conformance_check"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 0,
-    "low": 2,
-    "info": 0
+    "medium": 1,
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "scrape"
+    "conformance_check"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "conformance_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-03-25T02:34:47Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "1.5.0"
+    }
   ]
 }

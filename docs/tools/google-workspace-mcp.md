@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.17.1` |
 | **Vendor** | taylorwilsdon |
-| **Stars** | ⭐ 2010 |
+| **Stars** | ⭐ 2011 |
 | **Language** | Python |
 | **Source** | [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) |
 | **Scan Date** | 2026-04-03 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82907 |
+| **Stars** | ⭐ 82909 |
 | **npm Package** | `@modelcontextprotocol/server-sequential-thinking` |
 | **npm Downloads (30d)** | 403.4k |
 | **Language** | TypeScript |

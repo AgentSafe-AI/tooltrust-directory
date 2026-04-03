@@ -8,7 +8,7 @@
 | **Risk Score** | 44 |
 | **Version** | `n8n@2.14.2` |
 | **Vendor** | n8n-io |
-| **Stars** | ⭐ 182358 |
+| **Stars** | ⭐ 182364 |
 | **npm Package** | `n8n-monorepo` |
 | **npm Downloads (30d)** | 14 |
 | **Language** | TypeScript |

@@ -8,7 +8,7 @@
 | **Risk Score** | 29 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82907 |
+| **Stars** | ⭐ 82909 |
 | **npm Package** | `@modelcontextprotocol/server-brave-search` |
 | **npm Downloads (30d)** | 123.8k |
 | **Language** | TypeScript |

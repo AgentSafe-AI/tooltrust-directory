@@ -8,7 +8,7 @@
 | **Risk Score** | 40 |
 | **Version** | `1.2.3` |
 | **Vendor** | korotovsky |
-| **Stars** | ⭐ 1504 |
+| **Stars** | ⭐ 1505 |
 | **Language** | Go |
 | **Source** | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) |
 | **Scan Date** | 2026-04-03 |
