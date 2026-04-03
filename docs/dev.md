@@ -128,6 +128,14 @@ Triggered by:
 - **Cron**: daily at 00:00 UTC
 - **Manual**: `workflow_dispatch` (with optional `force_rescan` flag)
 
+Automatic full re-scan behavior:
+
+- If the latest released `tooltrust-scanner` tag is newer than the `scanner`
+  version recorded in any existing report, the next daily audit automatically
+  behaves like `force_rescan=true`.
+- This ensures a scanner upgrade is followed by one full refresh of directory
+  reports, after which normal version-based incremental scanning resumes.
+
 Environment variables / secrets:
 
 | Secret | Purpose |

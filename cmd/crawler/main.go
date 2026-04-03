@@ -32,6 +32,7 @@ import (
 type ExistingReport struct {
 	ToolID      string `json:"tool_id"`
 	Version     string `json:"version"`
+	Scanner     string `json:"scanner"`
 	SourceURL   string `json:"source_url"`
 	Vendor      string `json:"vendor"`
 	Stars       int    `json:"stars"`
@@ -83,11 +84,23 @@ func main() {
 	}
 	log.Printf("Loaded %d existing reports from %s", len(existing), reportsDir)
 
+	latestScannerVersion, err := latestScannerVersion(ctx, client)
+	if err != nil {
+		log.Printf("latest scanner version unavailable: %v", err)
+		latestScannerVersion = ""
+	}
+	forceRescan := shouldForceRescan(existing, latestScannerVersion)
+	if latestScannerVersion != "" {
+		log.Printf("Latest scanner release: %s (force_rescan=%t)", latestScannerVersion, forceRescan)
+	} else {
+		log.Printf("Force rescan resolved to %t", forceRescan)
+	}
+
 	seedPath := envOr("SEED_POPULAR_PATH", filepath.Join("data", "seed-popular.json"))
 	seedRepos, _ := loadSeed(seedPath)
 	log.Printf("Loaded %d seed repos from %s (mcpmarket/smithery popular)", len(seedRepos), seedPath)
 
-	pending, err := discoverTools(ctx, client, existing, seedRepos)
+	pending, err := discoverTools(ctx, client, existing, seedRepos, forceRescan)
 	if err != nil {
 		log.Fatalf("tool discovery: %v", err)
 	}
@@ -97,6 +110,53 @@ func main() {
 		log.Fatalf("write pending scans: %v", err)
 	}
 	log.Printf("Wrote pending scans to %s", outPath)
+}
+
+func shouldForceRescan(existing map[string]*ExistingReport, latestScanner string) bool {
+	if strings.EqualFold(os.Getenv("FORCE_RESCAN"), "true") {
+		return true
+	}
+	if latestScanner == "" {
+		return false
+	}
+	for _, report := range existing {
+		if normalizeScannerVersion(report.Scanner) != latestScanner {
+			return true
+		}
+	}
+	return false
+}
+
+func normalizeScannerVersion(scanner string) string {
+	scanner = strings.TrimSpace(scanner)
+	scanner = strings.TrimPrefix(scanner, "tooltrust-scanner/")
+	scanner = strings.TrimPrefix(scanner, "ToolTrust Scanner/")
+	scanner = strings.TrimPrefix(scanner, "ToolTrust Scanner ")
+	if scanner == "" || scanner == "unknown" {
+		return ""
+	}
+	if !strings.HasPrefix(scanner, "v") {
+		scanner = "v" + scanner
+	}
+	return scanner
+}
+
+func latestScannerVersion(ctx context.Context, client *github.Client) (string, error) {
+	release, _, err := client.Repositories.GetLatestRelease(ctx, "AgentSafe-AI", "tooltrust-scanner")
+	if err == nil && strings.TrimSpace(release.GetTagName()) != "" {
+		return normalizeScannerVersion(release.GetTagName()), nil
+	}
+	tags, _, tagErr := client.Repositories.ListTags(ctx, "AgentSafe-AI", "tooltrust-scanner", &github.ListOptions{PerPage: 1})
+	if tagErr != nil {
+		if err != nil {
+			return "", fmt.Errorf("latest release: %w; list tags: %v", err, tagErr)
+		}
+		return "", fmt.Errorf("list tags: %w", tagErr)
+	}
+	if len(tags) == 0 {
+		return "", errors.New("no scanner tags found")
+	}
+	return normalizeScannerVersion(tags[0].GetName()), nil
 }
 
 // newGitHubClient returns an authenticated client when a token is provided,
@@ -144,9 +204,9 @@ func loadExistingReports(dir string) (map[string]*ExistingReport, error) {
 
 // seedFile is the shape of data/seed-popular.json.
 type seedFile struct {
-	Repos          []string       `json:"repos"`
-	Overrides      []SeedOverride `json:"overrides"`
-	SmitherySeeds  []SmitherySeed `json:"smithery_seeds"`
+	Repos         []string       `json:"repos"`
+	Overrides     []SeedOverride `json:"overrides"`
+	SmitherySeeds []SmitherySeed `json:"smithery_seeds"`
 }
 
 // SmitherySeed is an explicit Smithery-native tool entry — a server that lives
@@ -224,7 +284,7 @@ func loadSmitherySeeds(path string) ([]SmitherySeed, error) {
 // discoverFromSeed fetches seed repos from GitHub and returns PendingScans for
 // those needing (re-)scan. Popular MCPs from mcpmarket/smithery that may lack
 // "mcp-server" in name/topic.
-func discoverFromSeed(ctx context.Context, client *github.Client, seed []string, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
+func discoverFromSeed(ctx context.Context, client *github.Client, seed []string, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) ([]PendingScan, error) {
 	var pending []PendingScan
 	for _, spec := range seed {
 		parts := strings.SplitN(spec, "/", 2)
@@ -249,7 +309,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 
 		version, err := latestVersion(ctx, client, owner, repo)
 		if err != nil {
-			if os.Getenv("FORCE_RESCAN") == "true" {
+			if forceRescan {
 				if cur, ok := existing[toolID]; ok {
 					version = cur.Version // rescan with last-known version
 				} else {
@@ -263,7 +323,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 		}
 
 		if cur, ok := existing[toolID]; ok && cur.Version == version {
-			if os.Getenv("FORCE_RESCAN") != "true" {
+			if !forceRescan {
 				log.Printf("up-to-date %s @ %s (seed)", toolID, version)
 				continue
 			}
@@ -294,7 +354,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 // discoverFromOverrides handles explicit monorepo tool entries from seed-popular.json.
 // Each override specifies the containing repo, an explicit tool_id, and the npm
 // package name — bypassing the auto-detection that fails for monorepos.
-func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
+func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) ([]PendingScan, error) {
 	var pending []PendingScan
 	for _, ov := range overrides {
 		if ov.ToolID == "" || ov.Repo == "" || ov.NPMPackage == "" {
@@ -321,7 +381,7 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 
 		version, err := latestVersion(ctx, client, owner, repo)
 		if err != nil {
-			if os.Getenv("FORCE_RESCAN") == "true" {
+			if forceRescan {
 				if cur, ok := existing[ov.ToolID]; ok {
 					version = cur.Version
 				} else {
@@ -335,7 +395,7 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 		}
 
 		if cur, ok := existing[ov.ToolID]; ok && cur.Version == version {
-			if os.Getenv("FORCE_RESCAN") != "true" {
+			if !forceRescan {
 				log.Printf("up-to-date %s @ %s (override)", ov.ToolID, version)
 				continue
 			}
@@ -373,7 +433,7 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 // those not already covered by GitHub/seed discovery. Tools that have a GitHub
 // repo are enriched with stars/version data; Smithery-native tools (no GitHub)
 // get queued with SmitheryQualifiedName so the CI can scan them directly.
-func discoverFromSmithery(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seen map[string]bool) ([]PendingScan, error) {
+func discoverFromSmithery(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) ([]PendingScan, error) {
 	servers, err := smithery.ListAll()
 	if err != nil {
 		log.Printf("Smithery discovery: %v (skipping)", err)
@@ -416,10 +476,10 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		if ghOwner != "" && ghRepo != "" {
 			ghRepoData, _, err := client.Repositories.Get(ctx, ghOwner, ghRepo)
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
-					version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
+				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
 				if verErr == nil {
 					if cur, ok := existing[toolID]; ok && cur.Version == version {
-						if os.Getenv("FORCE_RESCAN") != "true" {
+						if !forceRescan {
 							log.Printf("up-to-date %s @ %s (smithery+gh)", toolID, version)
 							continue
 						}
@@ -449,7 +509,7 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 				delete(seen, toolID)
 				continue
 			}
-			if _, ok := existing[toolID]; ok && os.Getenv("FORCE_RESCAN") != "true" {
+			if _, ok := existing[toolID]; ok && !forceRescan {
 				log.Printf("up-to-date %s (smithery-native)", toolID)
 				continue
 			}
@@ -478,7 +538,7 @@ func parseGitHubURL(u string) []string {
 // These are popular servers (Instagram, Google Sheets, etc.) that live on the
 // Smithery platform with no GitHub repo.  Seeding them explicitly guarantees
 // discovery even when the Smithery top-200 API is unreachable.
-func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]*ExistingReport, seen map[string]bool) []PendingScan {
+func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) []PendingScan {
 	var pending []PendingScan
 	for _, s := range seeds {
 		toolID := s.ToolID
@@ -489,7 +549,7 @@ func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]*Existi
 			continue
 		}
 		seen[toolID] = true
-		if _, ok := existing[toolID]; ok && os.Getenv("FORCE_RESCAN") != "true" {
+		if _, ok := existing[toolID]; ok && !forceRescan {
 			log.Printf("up-to-date %s (smithery-seed)", toolID)
 			continue
 		}
@@ -508,7 +568,7 @@ func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]*Existi
 
 // discoverTools queries GitHub Search and seed file, merges results, and returns
 // tools whose latest version is newer than (or absent from) existing.
-func discoverTools(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seedRepos []string) ([]PendingScan, error) {
+func discoverTools(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seedRepos []string, forceRescan bool) ([]PendingScan, error) {
 	seen := make(map[string]bool)
 
 	var pending []PendingScan
@@ -516,7 +576,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	seedPath := envOr("SEED_POPULAR_PATH", filepath.Join("data", "seed-popular.json"))
 	overrides, _ := loadSeedOverrides(seedPath)
 	if len(overrides) > 0 {
-		fromOverrides, err := discoverFromOverrides(ctx, client, overrides, existing, seen)
+		fromOverrides, err := discoverFromOverrides(ctx, client, overrides, existing, seen, forceRescan)
 		if err != nil {
 			return nil, fmt.Errorf("override discovery: %w", err)
 		}
@@ -527,12 +587,12 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	// Smithery-native seeds: explicit popular tools that have no GitHub repo.
 	// Processed before API-based discovery to guarantee inclusion.
 	smitherySeeds, _ := loadSmitherySeeds(seedPath)
-	fromSmitherySeeds := discoverFromSmitherySeeds(smitherySeeds, existing, seen)
+	fromSmitherySeeds := discoverFromSmitherySeeds(smitherySeeds, existing, seen, forceRescan)
 	pending = append(pending, fromSmitherySeeds...)
 	log.Printf("Smithery seed discovery: %d tool(s) queued", len(fromSmitherySeeds))
 
 	if len(seedRepos) > 0 {
-		fromSeed, err := discoverFromSeed(ctx, client, seedRepos, existing, seen)
+		fromSeed, err := discoverFromSeed(ctx, client, seedRepos, existing, seen, forceRescan)
 		if err != nil {
 			return nil, fmt.Errorf("seed discovery: %w", err)
 		}
@@ -541,7 +601,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 
 	// Smithery discovery: all tools by usage — covers the full Smithery catalog
 	// (~4k tools) including those with few GitHub stars or no standalone repo.
-	fromSmithery, err := discoverFromSmithery(ctx, client, existing, seen)
+	fromSmithery, err := discoverFromSmithery(ctx, client, existing, seen, forceRescan)
 	if err != nil {
 		log.Printf("Smithery discovery error: %v", err)
 	}
@@ -562,8 +622,8 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 
 	for _, q := range queries {
 		opts := &github.SearchOptions{
-			Sort:  "stars",
-			Order: "desc",
+			Sort:        "stars",
+			Order:       "desc",
 			ListOptions: github.ListOptions{PerPage: 100},
 		}
 		result, resp, err := client.Search.Repositories(ctx, q, opts)
@@ -594,7 +654,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 
 			version, err := latestVersion(ctx, client, repo.GetOwner().GetLogin(), repo.GetName())
 			if err != nil {
-				if os.Getenv("FORCE_RESCAN") == "true" {
+				if forceRescan {
 					if cur, ok := existing[toolID]; ok {
 						version = cur.Version // rescan with last-known version
 					} else {
@@ -608,7 +668,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 			}
 
 			if cur, ok := existing[toolID]; ok && cur.Version == version {
-				if os.Getenv("FORCE_RESCAN") != "true" {
+				if !forceRescan {
 					log.Printf("up-to-date %s @ %s", toolID, version)
 					continue
 				}
@@ -640,7 +700,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	// of Smithery top-200 and don't match GitHub search queries).  Without
 	// this, tools like trendradar (49k stars but no "mcp-server" in the name
 	// and no matching topic) are silently skipped on every force rescan.
-	if os.Getenv("FORCE_RESCAN") == "true" {
+	if forceRescan {
 		backfilled := 0
 		for toolID, r := range existing {
 			if seen[toolID] {
@@ -650,17 +710,17 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 			// Parse owner/repo from source_url if it's a GitHub URL.
 			owner, repo := parseGitHubOwnerRepo(r.SourceURL)
 			pending = append(pending, PendingScan{
-				ToolID:      toolID,
-				RepoOwner:   owner,
-				RepoName:    repo,
-				Version:     r.Version,
-				SourceURL:   r.SourceURL,
-				Vendor:      r.Vendor,
-				Stars:       r.Stars,
-				Language:    r.Language,
-				Category:    r.Category,
-				Description: r.Description,
-				License:     r.License,
+				ToolID:       toolID,
+				RepoOwner:    owner,
+				RepoName:     repo,
+				Version:      r.Version,
+				SourceURL:    r.SourceURL,
+				Vendor:       r.Vendor,
+				Stars:        r.Stars,
+				Language:     r.Language,
+				Category:     r.Category,
+				Description:  r.Description,
+				License:      r.License,
 				DiscoveredAt: time.Now().UTC(),
 			})
 			backfilled++
