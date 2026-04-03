@@ -177,10 +177,13 @@ jobs:
             # smithery_qualified_name: set for Smithery-discovered tools.
             # Used for a direct registry lookup, bypassing keyword search.
             SMITHERY_QN=$(jq -r ".[$i].smithery_qualified_name // empty" "$PENDING")
+            NPM_PKG_OVERRIDE=$(jq -r ".[$i].npm_package // empty" "$PENDING")
             OUT="${{ env.REPORTS_DIR }}/${TOOL_ID}.json"
             CLONE_DIR="/tmp/${TOOL_ID}"
             RAW_OUT="/tmp/${TOOL_ID}-scan.json"
             OSV_OUT="/tmp/${TOOL_ID}-osv.json"
+            NPM_PKG=""
+            NPM_DOWNLOADS_MONTHLY=0
 
             echo "════════════════════════════════════════"
             echo "Tool    : $TOOL_ID @ $VERSION  ($OWNER/$REPO)"
@@ -201,6 +204,37 @@ jobs:
             else
               echo "SMITHERY-NATIVE: no GitHub repo — skipping clone and OSV scan"
               echo "[]" > "$OSV_OUT"
+            fi
+
+            # ── npm popularity metadata ─────────────────────────────────────
+            # Prefer explicit monorepo override; otherwise infer from nearby
+            # package.json files when available.
+            NPM_PKG="${NPM_PKG_OVERRIDE:-}"
+            if [ -n "$NPM_PKG" ]; then
+              echo "NPM_PKG : $NPM_PKG (from seed override)"
+            elif [ -n "$CLONE_DIR" ] && [ -d "$CLONE_DIR" ]; then
+              for pkg_json in \
+                "$CLONE_DIR/package.json" \
+                "$CLONE_DIR/server/package.json" \
+                "$CLONE_DIR/src/package.json"; do
+                if [ -f "$pkg_json" ]; then
+                  CANDIDATE=$(jq -r '.name // empty' "$pkg_json" 2>/dev/null)
+                  if [ -n "$CANDIDATE" ] && [ "$CANDIDATE" != "null" ]; then
+                    NPM_PKG="$CANDIDATE"
+                    echo "NPM_PKG : $NPM_PKG (from $(basename "$pkg_json"))"
+                    break
+                  fi
+                fi
+              done
+            fi
+
+            if [ -n "$NPM_PKG" ]; then
+              ENCODED_PKG=$(python3 -c 'import sys, urllib.parse; print(urllib.parse.quote(sys.argv[1], safe=""))' "$NPM_PKG")
+              NPM_DOWNLOADS_MONTHLY=$(curl -fsSL "https://api.npmjs.org/downloads/point/last-month/${ENCODED_PKG}" | jq -r '.downloads // 0' 2>/dev/null || echo 0)
+              case "$NPM_DOWNLOADS_MONTHLY" in
+                ''|null) NPM_DOWNLOADS_MONTHLY=0 ;;
+              esac
+              echo "NPM_DL  : ${NPM_DOWNLOADS_MONTHLY}/30d"
             fi
 
             # ── ToolTrust Scanner: MCP tool-definition scan ───────────────────
@@ -274,26 +308,6 @@ jobs:
                 echo "UNSCANNABLE: static scan failed for $TOOL_DEF"
               fi
             else
-              # Prefer explicit npm_package override (set for monorepo tools);
-              # fall back to auto-detection from the cloned repo's package.json.
-              NPM_PKG="${NPM_PKG_OVERRIDE:-}"
-              if [ -n "$NPM_PKG" ]; then
-                echo "NPM_PKG : $NPM_PKG (from seed override)"
-              else
-                for pkg_json in \
-                  "$CLONE_DIR/package.json" \
-                  "$CLONE_DIR/server/package.json" \
-                  "$CLONE_DIR/src/package.json"; do
-                  if [ -f "$pkg_json" ]; then
-                    CANDIDATE=$(jq -r '.name // empty' "$pkg_json" 2>/dev/null)
-                    if [ -n "$CANDIDATE" ] && [ "$CANDIDATE" != "null" ]; then
-                      NPM_PKG="$CANDIDATE"
-                      break
-                    fi
-                  fi
-                done
-              fi
-
               if [ -n "$NPM_PKG" ]; then
                 # ── Step 1: Live Scan ──────────────────────────────────────────
                 echo "LIVE    : no static manifest — trying live scan: npx -y ${NPM_PKG}"
@@ -429,6 +443,8 @@ jobs:
               --source           "$SOURCE"              \
               --vendor           "$VENDOR"              \
               --stars            "$STARS"               \
+              --npm-package      "$NPM_PKG"             \
+              --npm-downloads-monthly "$NPM_DOWNLOADS_MONTHLY" \
               --license          "$LICENSE"             \
               --language         "$LANGUAGE"            \
               --category         "$CATEGORY"            \

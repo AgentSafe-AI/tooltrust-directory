@@ -102,7 +102,7 @@ func TestTransformEmptyInput(t *testing.T) {
 		Summary:  ASSummary{},
 	}
 	report := transform(as, nil, nil, "test", "1.0.0", "https://example.com",
-		"vendor", 100, "MIT", "Go", "Dev", "A test tool", "tooltrust-scanner/v0.2.0")
+		"vendor", 100, "@example/test-tool", 12000, "MIT", "Go", "Dev", "A test tool", "tooltrust-scanner/v0.2.0")
 
 	// Empty scan with no tools → scan_incomplete → grade I
 	if report.Grade != "I" {
@@ -120,7 +120,7 @@ func TestTransformMergesOSVFindings(t *testing.T) {
 		{ID: "AS-004", Severity: "Low", Title: "CVE-2", Description: "a minor vuln in dep2@2.0", Recommendation: "upgrade dep2"},
 	}
 	report := transform(as, osv, nil, "test", "1.0.0", "https://example.com",
-		"", 0, "", "", "", "", "")
+		"", 0, "", 0, "", "", "", "", "")
 
 	// Even with 0 policies, OSV findings means the scan did something.
 	// But scanIncomplete is true (no tool definitions found), so grade is I.
@@ -168,5 +168,47 @@ func TestToTTFindingUnknownRule(t *testing.T) {
 	ttf := toTTFinding(f, "")
 	if ttf.Title != "unknown_check" {
 		t.Errorf("unknown rule should use code as title, got %q", ttf.Title)
+	}
+}
+
+func TestTransform_CarriesToolContexts(t *testing.T) {
+	as := ScannerOutput{
+		Policies: []Policy{
+			{
+				ToolName:             "search_files",
+				Action:               "REQUIRE_APPROVAL",
+				Behavior:             []string{"reads_files", "uses_network"},
+				Destinations:         []string{"dynamic URL input (url)"},
+				DependencyVisibility: "No dependency data",
+				DependencyNote:       "No metadata.dependencies or repo_url were exposed by this MCP server.",
+				Score: Score{
+					RiskScore: 25,
+					Grade:     "C",
+					Findings: []ASFinding{
+						{RuleID: "AS-002", Severity: "HIGH", Code: "permission_network", Description: "tool declares network permission"},
+					},
+				},
+			},
+		},
+	}
+
+	report := transform(as, nil, nil, "demo", "1.0.0", "https://example.com",
+		"vendor", 0, "", 0, "", "", "", "", "tooltrust-scanner/v0.3.3")
+
+	if len(report.ToolContexts) != 1 {
+		t.Fatalf("expected 1 tool context, got %d", len(report.ToolContexts))
+	}
+	ctx := report.ToolContexts[0]
+	if ctx.ToolName != "search_files" {
+		t.Fatalf("unexpected tool context name %q", ctx.ToolName)
+	}
+	if ctx.Grade != "C" || ctx.Action != "REQUIRE_APPROVAL" {
+		t.Fatalf("unexpected context decision %s/%s", ctx.Action, ctx.Grade)
+	}
+	if len(ctx.Behavior) != 2 || ctx.Behavior[0] != "reads_files" {
+		t.Fatalf("unexpected behavior: %#v", ctx.Behavior)
+	}
+	if len(ctx.Destinations) != 1 || ctx.Destinations[0] != "dynamic URL input (url)" {
+		t.Fatalf("unexpected destinations: %#v", ctx.Destinations)
 	}
 }

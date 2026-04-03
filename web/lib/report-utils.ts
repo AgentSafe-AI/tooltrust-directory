@@ -21,6 +21,16 @@ export interface Summary {
   info: number;
 }
 
+export interface ToolContext {
+  tool_name: string;
+  action: string;
+  grade: string;
+  behavior?: string[];
+  destinations?: string[];
+  dependency_visibility?: string;
+  dependency_note?: string;
+}
+
 export interface Report {
   tool_id: string;
   version: string;
@@ -32,6 +42,8 @@ export interface Report {
   category?: string;
   vendor?: string;
   stars?: number;
+  npm_package?: string;
+  npm_downloads_monthly?: number;
   license?: string;
   language?: string;
   description?: string;
@@ -39,6 +51,7 @@ export interface Report {
   summary: Summary;
   methodology: string;
   scan_incomplete?: boolean;
+  tool_contexts?: ToolContext[];
 }
 
 export interface FindingNarrative {

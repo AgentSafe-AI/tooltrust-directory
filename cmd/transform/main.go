@@ -33,9 +33,13 @@ type ScannerOutput struct {
 }
 
 type Policy struct {
-	ToolName string `json:"tool_name"`
-	Action   string `json:"action"`
-	Score    Score  `json:"score"`
+	ToolName             string   `json:"tool_name"`
+	Action               string   `json:"action"`
+	Behavior             []string `json:"behavior,omitempty"`
+	Destinations         []string `json:"destinations,omitempty"`
+	DependencyVisibility string   `json:"dependency_visibility,omitempty"`
+	DependencyNote       string   `json:"dependency_note,omitempty"`
+	Score                Score    `json:"score"`
 }
 
 type Score struct {
@@ -63,30 +67,46 @@ type ASFinding struct {
 // ── ToolTrust report schema ───────────────────────────────────────────────────
 
 type TrustReport struct {
-	ToolID      string      `json:"tool_id"`
-	Version     string      `json:"version"`
-	Grade       string      `json:"grade"`
-	RiskScore   int         `json:"risk_score"`
-	ScanDate    time.Time   `json:"scan_date"`
-	Scanner     string      `json:"scanner"`
-	SourceURL   string      `json:"source_url"`
-	Category    string      `json:"category,omitempty"`
-	Vendor      string      `json:"vendor,omitempty"`
-	Stars       int         `json:"stars,omitempty"`
-	License     string      `json:"license,omitempty"`
-	Language    string      `json:"language,omitempty"`
-	Description string      `json:"description,omitempty"`
-	Findings       []TTFinding `json:"findings"`
-	Summary        TTSummary   `json:"summary"`
-	Methodology    string      `json:"methodology"`
-	ScanIncomplete bool        `json:"scan_incomplete,omitempty"`
+	ToolID              string      `json:"tool_id"`
+	Version             string      `json:"version"`
+	Grade               string      `json:"grade"`
+	RiskScore           int         `json:"risk_score"`
+	ScanDate            time.Time   `json:"scan_date"`
+	Scanner             string      `json:"scanner"`
+	SourceURL           string      `json:"source_url"`
+	Category            string      `json:"category,omitempty"`
+	Vendor              string      `json:"vendor,omitempty"`
+	Stars               int         `json:"stars,omitempty"`
+	NPMPackage          string      `json:"npm_package,omitempty"`
+	NPMDownloadsMonthly int         `json:"npm_downloads_monthly,omitempty"`
+	License             string      `json:"license,omitempty"`
+	Language            string      `json:"language,omitempty"`
+	Description         string      `json:"description,omitempty"`
+	Findings            []TTFinding `json:"findings"`
+	Summary             TTSummary   `json:"summary"`
+	Methodology         string      `json:"methodology"`
+	ScanIncomplete      bool        `json:"scan_incomplete,omitempty"`
 	// ToolNames lists every MCP tool (function) name exposed by this server.
 	// Stored to enable rug-pull detection (AS-012): if the set changes between
 	// scans of the same version, the server description was silently altered.
 	ToolNames []string `json:"tool_names,omitempty"`
+	// ToolContexts carries per-tool behavior and destination context from the
+	// scanner so the directory UI can explain what a flagged tool appears able
+	// to do and where it may send data.
+	ToolContexts []ToolContext `json:"tool_contexts,omitempty"`
 	// ScanHistory records past scan snapshots (date, grade, score, version).
 	// Appended from the previous report on each new scan.
 	ScanHistory []ScanSnapshot `json:"scan_history,omitempty"`
+}
+
+type ToolContext struct {
+	ToolName             string   `json:"tool_name"`
+	Action               string   `json:"action"`
+	Grade                string   `json:"grade"`
+	Behavior             []string `json:"behavior,omitempty"`
+	Destinations         []string `json:"destinations,omitempty"`
+	DependencyVisibility string   `json:"dependency_visibility,omitempty"`
+	DependencyNote       string   `json:"dependency_note,omitempty"`
 }
 
 type TTFinding struct {
@@ -190,6 +210,8 @@ func main() {
 	language := flag.String("language", "", "primary programming language")
 	category := flag.String("category", "", "functional category, e.g. Developer Tools")
 	description := flag.String("description", "", "repository description")
+	npmPackage := flag.String("npm-package", "", "npm package name used for popularity/download lookups")
+	npmDownloadsMonthly := flag.Int("npm-downloads-monthly", 0, "npm downloads in the last 30 days")
 	osvFindings := flag.String("osv-findings", "", "path to AS-004 OSV findings JSON from cmd/analyze")
 	scannerVer := flag.String("scanner-version", "", "tooltrust-scanner version string (e.g. v1.0.6)")
 	existingPath := flag.String("existing", "", "path to previous TrustReport JSON for rug-pull (AS-012) detection")
@@ -244,7 +266,7 @@ func main() {
 	}
 
 	report := transform(as, extraFindings, prevReport, *toolID, *version, *sourceURL,
-		*vendor, *stars, *license, *language, *category, *description, sv)
+		*vendor, *stars, *npmPackage, *npmDownloadsMonthly, *license, *language, *category, *description, sv)
 
 	out, err := json.MarshalIndent(report, "", "  ")
 	if err != nil {
@@ -262,10 +284,11 @@ func main() {
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, version, sourceURL, vendor string, stars int, license, language, category, description, scannerVersion string) TrustReport {
+func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, version, sourceURL, vendor string, stars int, npmPackage string, npmDownloadsMonthly int, license, language, category, description, scannerVersion string) TrustReport {
 	allFindings := make([]TTFinding, 0)
 	maxScore := 0
 	summary := TTSummary{}
+	var toolContexts []ToolContext
 
 	// Collect current tool names for storage + rug-pull comparison.
 	var toolNames []string
@@ -320,6 +343,17 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 	}
 
 	for _, policy := range as.Policies {
+		if len(policy.Behavior) > 0 || len(policy.Destinations) > 0 || policy.DependencyVisibility != "" {
+			toolContexts = append(toolContexts, ToolContext{
+				ToolName:             policy.ToolName,
+				Action:               policy.Action,
+				Grade:                policy.Score.Grade,
+				Behavior:             append([]string(nil), policy.Behavior...),
+				Destinations:         append([]string(nil), policy.Destinations...),
+				DependencyVisibility: policy.DependencyVisibility,
+				DependencyNote:       policy.DependencyNote,
+			})
+		}
 		if policy.Score.RiskScore > maxScore {
 			maxScore = policy.Score.RiskScore
 		}
@@ -389,25 +423,28 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 	}
 
 	return TrustReport{
-		ToolID:         toolID,
-		Version:        version,
-		Grade:          gradeForReport(maxScore, allFindings, scanIncomplete),
-		RiskScore:      maxScore,
-		ScanDate:       scanDate,
-		Scanner:        scannerVersion,
-		SourceURL:      sourceURL,
-		Category:       category,
-		Vendor:         vendor,
-		Stars:          stars,
-		License:        license,
-		Language:       language,
-		Description:    description,
-		Findings:       allFindings,
-		Summary:        summary,
-		Methodology:    methodologyURL,
-		ScanIncomplete: scanIncomplete,
-		ToolNames:      toolNames,
-		ScanHistory:    scanHistory,
+		ToolID:              toolID,
+		Version:             version,
+		Grade:               gradeForReport(maxScore, allFindings, scanIncomplete),
+		RiskScore:           maxScore,
+		ScanDate:            scanDate,
+		Scanner:             scannerVersion,
+		SourceURL:           sourceURL,
+		Category:            category,
+		Vendor:              vendor,
+		Stars:               stars,
+		NPMPackage:          npmPackage,
+		NPMDownloadsMonthly: npmDownloadsMonthly,
+		License:             license,
+		Language:            language,
+		Description:         description,
+		Findings:            allFindings,
+		Summary:             summary,
+		Methodology:         methodologyURL,
+		ScanIncomplete:      scanIncomplete,
+		ToolNames:           toolNames,
+		ToolContexts:        toolContexts,
+		ScanHistory:         scanHistory,
 	}
 }
 

@@ -25,21 +25,23 @@ import (
 
 // Report mirrors the fields we need from report.schema.json.
 type Report struct {
-	ToolID      string    `json:"tool_id"`
-	Version     string    `json:"version"`
-	Grade       string    `json:"grade"`
-	RiskScore   int       `json:"risk_score"`
-	ScanDate    time.Time `json:"scan_date"`
-	Scanner     string    `json:"scanner"`
-	SourceURL   string    `json:"source_url"`
-	Vendor      string    `json:"vendor"`
-	Stars       int       `json:"stars"`
-	License     string    `json:"license"`
-	Language    string    `json:"language"`
-	Category    string    `json:"category"`
-	Description string    `json:"description"`
-	Findings    []Finding `json:"findings"`
-	Summary     struct {
+	ToolID              string    `json:"tool_id"`
+	Version             string    `json:"version"`
+	Grade               string    `json:"grade"`
+	RiskScore           int       `json:"risk_score"`
+	ScanDate            time.Time `json:"scan_date"`
+	Scanner             string    `json:"scanner"`
+	SourceURL           string    `json:"source_url"`
+	Vendor              string    `json:"vendor"`
+	Stars               int       `json:"stars"`
+	NPMPackage          string    `json:"npm_package,omitempty"`
+	NPMDownloadsMonthly int       `json:"npm_downloads_monthly,omitempty"`
+	License             string    `json:"license"`
+	Language            string    `json:"language"`
+	Category            string    `json:"category"`
+	Description         string    `json:"description"`
+	Findings            []Finding `json:"findings"`
+	Summary             struct {
 		Critical int `json:"critical"`
 		High     int `json:"high"`
 		Medium   int `json:"medium"`
@@ -205,11 +207,12 @@ func loadReports(dir string) ([]Report, error) {
 		reports = append(reports, r)
 	}
 
-	// Primary sort: popularity (stars desc) so widely-used tools surface first.
+	// Primary sort: popularity so widely-used tools surface first.
 	// Secondary: grade (S best, then A–F); tertiary: ascending risk score.
 	sort.Slice(reports, func(i, j int) bool {
-		if reports[i].Stars != reports[j].Stars {
-			return reports[i].Stars > reports[j].Stars
+		pi, pj := popularityValue(reports[i]), popularityValue(reports[j])
+		if pi != pj {
+			return pi > pj
 		}
 		gi, gj := gradeRank(displayGrade(reports[i])), gradeRank(displayGrade(reports[j]))
 		if gi != gj {
@@ -232,12 +235,12 @@ func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix s
 	var sb strings.Builder
 	if compact {
 		if len(reports) < totalCount {
-			fmt.Fprintf(&sb, "\n*Top 50 by stars. View all %d tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n", totalCount)
+			fmt.Fprintf(&sb, "\n*Top 50 by popularity. View all %d tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n", totalCount)
 		} else {
 			fmt.Fprintf(&sb, "\n*[Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*\n\n")
 		}
 	}
-	sb.WriteString("| Tool | Version | Stars | Grade | Key Findings | Scanned |\n")
+	sb.WriteString("| Tool | Version | Popularity | Grade | Key Findings | Scanned |\n")
 	sb.WriteString("|------|---------|:-----:|:-----:|:-------------|:-------:|\n")
 	for _, r := range reports {
 		ver := r.Version
@@ -251,7 +254,7 @@ func buildTable(reports []Report, totalCount int, compact bool, toolLinkPrefix s
 		fmt.Fprintf(&sb,
 			"| [%s](%s) | `%s` | %s | **[%s](%s%s.md)** | %s | %s |\n",
 			r.ToolID, r.SourceURL,
-			ver, formatStars(r.Stars),
+			ver, formatPopularity(r),
 			gradeDisp, toolLinkPrefix, r.ToolID,
 			keyFindings(r),
 			scanDate,
@@ -285,6 +288,20 @@ func formatStars(n int) string {
 		return fmt.Sprintf("%.1fk", float64(n)/1e3)
 	}
 	return fmt.Sprintf("%d", n)
+}
+
+func popularityValue(r Report) int {
+	if r.NPMDownloadsMonthly > 0 {
+		return r.NPMDownloadsMonthly
+	}
+	return r.Stars
+}
+
+func formatPopularity(r Report) string {
+	if r.NPMDownloadsMonthly > 0 {
+		return formatStars(r.NPMDownloadsMonthly) + "/mo"
+	}
+	return formatStars(r.Stars)
 }
 
 // findingEmoji returns an emoji prefix by rule category for README display.
@@ -375,6 +392,12 @@ func buildDetailPage(r Report) string {
 	}
 	if r.Stars > 0 {
 		fmt.Fprintf(&sb, "| **Stars** | ⭐ %d |\n", r.Stars)
+	}
+	if r.NPMPackage != "" {
+		fmt.Fprintf(&sb, "| **npm Package** | `%s` |\n", r.NPMPackage)
+	}
+	if r.NPMDownloadsMonthly > 0 {
+		fmt.Fprintf(&sb, "| **npm Downloads (30d)** | %s |\n", formatStars(r.NPMDownloadsMonthly))
 	}
 	if r.Language != "" {
 		fmt.Fprintf(&sb, "| **Language** | %s |\n", r.Language)

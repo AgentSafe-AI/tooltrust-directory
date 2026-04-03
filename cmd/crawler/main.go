@@ -30,32 +30,35 @@ import (
 
 // ExistingReport captures the fields we need from a stored report.
 type ExistingReport struct {
-	ToolID      string `json:"tool_id"`
-	Version     string `json:"version"`
-	Scanner     string `json:"scanner"`
-	SourceURL   string `json:"source_url"`
-	Vendor      string `json:"vendor"`
-	Stars       int    `json:"stars"`
-	Language    string `json:"language"`
-	Category    string `json:"category"`
-	Description string `json:"description"`
-	License     string `json:"license"`
+	ToolID              string `json:"tool_id"`
+	Version             string `json:"version"`
+	Scanner             string `json:"scanner"`
+	NPMPackage          string `json:"npm_package,omitempty"`
+	NPMDownloadsMonthly int    `json:"npm_downloads_monthly,omitempty"`
+	SourceURL           string `json:"source_url"`
+	Vendor              string `json:"vendor"`
+	Stars               int    `json:"stars"`
+	Language            string `json:"language"`
+	Category            string `json:"category"`
+	Description         string `json:"description"`
+	License             string `json:"license"`
 }
 
 // PendingScan is one entry in the output pending-scans.json.
 type PendingScan struct {
-	ToolID       string    `json:"tool_id"`
-	RepoOwner    string    `json:"repo_owner"`
-	RepoName     string    `json:"repo_name"`
-	Version      string    `json:"version"`
-	SourceURL    string    `json:"source_url"`
-	Vendor       string    `json:"vendor"`
-	Stars        int       `json:"stars"`
-	Language     string    `json:"language"`
-	Category     string    `json:"category"`
-	Description  string    `json:"description"`
-	License      string    `json:"license"`
-	DiscoveredAt time.Time `json:"discovered_at"`
+	ToolID              string    `json:"tool_id"`
+	RepoOwner           string    `json:"repo_owner"`
+	RepoName            string    `json:"repo_name"`
+	Version             string    `json:"version"`
+	SourceURL           string    `json:"source_url"`
+	Vendor              string    `json:"vendor"`
+	Stars               int       `json:"stars"`
+	Language            string    `json:"language"`
+	Category            string    `json:"category"`
+	Description         string    `json:"description"`
+	License             string    `json:"license"`
+	NPMDownloadsMonthly int       `json:"npm_downloads_monthly,omitempty"`
+	DiscoveredAt        time.Time `json:"discovered_at"`
 	// NPMPackage overrides auto-detection from package.json. Required for tools
 	// that live inside a monorepo where the root package.json does not name
 	// the individual MCP server (e.g. @modelcontextprotocol/server-filesystem

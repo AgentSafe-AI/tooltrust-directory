@@ -81,14 +81,16 @@ func TestSanitizeCell(t *testing.T) {
 func TestBuildTable(t *testing.T) {
 	reports := []Report{
 		{
-			ToolID:      "test-tool",
-			Version:     "1.2.0",
-			SourceURL:   "https://github.com/example/test-tool",
-			Stars:       1200,
-			Description: "A test tool for testing purposes",
-			Grade:       "A",
-			ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
-			Findings:    nil,
+			ToolID:              "test-tool",
+			Version:             "1.2.0",
+			SourceURL:           "https://github.com/example/test-tool",
+			Stars:               1200,
+			NPMPackage:          "@example/test-tool",
+			NPMDownloadsMonthly: 12400,
+			Description:         "A test tool for testing purposes",
+			Grade:               "A",
+			ScanDate:            time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
+			Findings:            nil,
 		},
 	}
 	table := buildTable(reports, len(reports), true, "./docs/tools/")
@@ -98,8 +100,8 @@ func TestBuildTable(t *testing.T) {
 	if !strings.Contains(table, "1.2.0") {
 		t.Error("table should contain version")
 	}
-	if !strings.Contains(table, "1.2k") {
-		t.Error("table should contain formatted stars (1.2k)")
+	if !strings.Contains(table, "12.4k/mo") {
+		t.Error("table should contain formatted npm downloads (12.4k/mo)")
 	}
 	if !strings.Contains(table, "None") {
 		t.Error("table should show 'None' for no findings")
@@ -295,17 +297,19 @@ func TestUpdateRegistry(t *testing.T) {
 
 func TestBuildDetailPage(t *testing.T) {
 	r := Report{
-		ToolID:      "test-tool",
-		Grade:       "B",
-		RiskScore:   15,
-		Version:     "1.0.0",
-		Vendor:      "example",
-		Stars:       100,
-		Language:    "Go",
-		SourceURL:   "https://example.com",
-		ScanDate:    time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
-		Scanner:     "tooltrust-scanner/0.1.2",
-		Description: "A test tool",
+		ToolID:              "test-tool",
+		Grade:               "B",
+		RiskScore:           15,
+		Version:             "1.0.0",
+		Vendor:              "example",
+		Stars:               100,
+		NPMPackage:          "test-tool",
+		NPMDownloadsMonthly: 12000,
+		Language:            "Go",
+		SourceURL:           "https://example.com",
+		ScanDate:            time.Date(2026, 3, 1, 0, 0, 0, 0, time.UTC),
+		Scanner:             "tooltrust-scanner/0.1.2",
+		Description:         "A test tool",
 		Findings: []Finding{
 			{ID: "AS-002", Severity: "Medium", Title: "Test Finding", Description: "A test", Recommendation: "Fix it"},
 		},
@@ -326,5 +330,8 @@ func TestBuildDetailPage(t *testing.T) {
 	}
 	if !strings.Contains(page, "⭐ 100") {
 		t.Error("detail page should show stars")
+	}
+	if !strings.Contains(page, "test-tool") || !strings.Contains(page, "12.0k") {
+		t.Error("detail page should show npm package and downloads")
 	}
 }
