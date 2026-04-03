@@ -1,0 +1,56 @@
+{
+  "tool_id": "dot-justin-poke-image-mcp",
+  "version": "1.0.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-03T22:54:46.383300363Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/dot-Justin/poke-image-mcp",
+  "category": "Developer Tools",
+  "vendor": "dot-Justin",
+  "npm_package": "image-mcp-server",
+  "npm_downloads_monthly": 15,
+  "license": "MIT",
+  "language": "TypeScript",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_image"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "generate_image"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "generate_image"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "generate_image",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

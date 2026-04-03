@@ -1,0 +1,592 @@
+{
+  "tool_id": "hyperplexity-production",
+  "version": "smithery",
+  "grade": "C",
+  "risk_score": 38,
+  "scan_date": "2026-04-03T22:55:39.37790193Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://smithery.ai/server/hyperplexity/production",
+  "vendor": "Smithery",
+  "description": "# Hyperplexity — AI Research Tables with Citations and Confidence Scores\n\n**Turn a prompt into a verified, cited research table. Or fact-check any table or document you already have.**\n\nHyperplexity gives Claude the ability to conduct deep, structured research across entire domains — not one question at a time, but hundreds of cells simultaneously, each with a sourced answer, a confidence rating, and links to the evidence.\n\n---\n\n## What it does\n\nYou describe what you want in plain English. Hyperplexity researches it, validates every fact, and returns a structured table where each cell has:\n\n- ✅ A verified answer\n- 📊 A confidence score (HIGH / MEDIUM / LOW)\n- 🔗 Citations to the actual sources\n\nThe output is an Excel file and a shareable interactive viewer. Claude drives the full workflow — you just review and approve.\n\n---\n\n## Three ways to start\n\nOnce installed, tell Claude what you want in plain English — it drives everything from there.\n\n| Goal | What to say to Claude |\n|------|----------------------|\n| **Generate a table from a prompt** | *\"Use Hyperplexity to create a table of the top 20 US biotech companies with columns: company, market cap, lead drug, and phase.\"* |\n| **Validate an existing Excel or CSV** | *\"Use Hyperplexity to validate `companies.xlsx`. Interview me about what each column means, then run the preview.\"* |\n| **Fact-check a document or passage** | *\"Use Hyperplexity to fact-check this analyst report.\"* *(paste text or share a file path)* |\n\nClaude handles the full workflow — upload, configure, preview, approve — pausing only when a decision genuinely needs you.\n\n---\n\n## What each workflow does\n\n### Generate a table from a prompt\nClaude starts a table-maker session, clarifies the structure if needed, builds the table, runs a free 3-row preview, and waits for your approval before billing.\n\n### Validate an existing Excel or CSV file\nUpload any table and Hyperplexity fact-checks every cell against live sources. It learns the meaning of your columns through a short interview (or you can skip the interview entirely with a one-line description), then runs the same preview-then-approve flow.\n\n### Fact-check a document or text passage\nPaste an analyst report, a research abstract, or any text with factual claims. Hyperplexity extracts each claim, verifies it independently, and returns support levels: **SUPPORTED / PARTIAL / UNSUPPORTED / UNVERIFIABLE** — with the source for every verdict.\n\n### Refresh a table you already ran\nRe-run validation on any prior job to pick up changes in source data. No re-upload or configuration needed.\n\n---\n\n## Why it's different\n\nMost AI tools answer one question at a time. Hyperplexity answers a whole research domain at once — running hundreds of targeted searches, applying QC passes, and reconciling conflicting sources — then packages the results into a structured, citable format.\n\nThe MCP integration means Claude can drive the entire workflow autonomously: upload, configure, preview, approve, and retrieve results — pausing only when a decision genuinely requires human input.\n\n---\n\n## Pricing\n\n| | Cost |\n|--|--|\n| Preview (first 3 rows) | Free |\n| Standard validation | ~$0.05 / cell |\n| Advanced validation | up to ~$0.25 / cell |\n| Minimum per run | $2.00 |\n\nNew accounts get **$20 in free credits** — enough for several full tables.\n\n---\n\n## Get started\n\n1. Get your API key at [hyperplexity.ai/account](https://hyperplexity.ai/account)\n2. Install the MCP server:\n\n**Option A — uvx (recommended):**\n```bash\nclaude mcp add hyperplexity uvx mcp-server-hyperplexity \\\n  -e HYPERPLEXITY_API_KEY=hpx_live_your_key_here\n```\n\n**Option B — Direct HTTP to Railway:**\n```bash\nclaude mcp add hyperplexity \\\n  --transport http \\\n  https://mcp-server-hyperplexity-production.up.railway.app/ \\\n  --header \"X-Api-Key: hpx_live_your_key_here\"\n```\n\n**Option C — Smithery** (for OpenClaw and other Smithery-compatible clients):\n```bash\nnpx -y @smithery/cli@latest login\nnpx -y @smithery/cli@latest mcp add hyperplexity/hyperplexity --client claude-code\n```\nThen open your client → `/mcp` → **hyperplexity → Authenticate** → enter your API key.\n\n3. Ask your agent: *\"Use Hyperplexity to generate a table of…\"*\n\nFull documentation: [eliyahu.ai/api-guide](https://eliyahu.ai/api-guide)",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_balance"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_usage"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "upload_file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "upload_file"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "upload_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "upload_file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "confirm_upload"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "confirm_upload"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_job"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_job"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_job"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_job"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_job"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_job_status"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_job_messages"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_job_messages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_job_messages"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "wait_for_job"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "wait_for_job"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "wait_for_job"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wait_for_job"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "approve_validation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_results"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_results"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_results"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_results"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_reference_results"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_reference_results"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_reference_results"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_table"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update_table"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "reference_check"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "reference_check"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "reference_check"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "reference_check"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "start_table_maker"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_conversation"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_conversation\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_conversation"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_conversation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_conversation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "send_conversation_reply"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "refine_config"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "refine_config"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "refine_config"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "wait_for_conversation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wait_for_conversation"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 12,
+    "medium": 7,
+    "low": 9,
+    "info": 18
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "approve_validation",
+    "confirm_upload",
+    "create_job",
+    "get_balance",
+    "get_conversation",
+    "get_job_messages",
+    "get_job_status",
+    "get_reference_results",
+    "get_results",
+    "get_usage",
+    "reference_check",
+    "refine_config",
+    "send_conversation_reply",
+    "start_table_maker",
+    "update_table",
+    "upload_file",
+    "wait_for_conversation",
+    "wait_for_job"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_balance",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_usage",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "upload_file",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "confirm_upload",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_job",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic webhook destination (webhook_url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_job_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_job_messages",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "wait_for_job",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "approve_validation",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_results",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: results.metadata.rows"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_reference_results",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_table",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "reference_check",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (auto_approve)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "start_table_maker",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (auto_start)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_conversation",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "send_conversation_reply",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "refine_config",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "wait_for_conversation",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

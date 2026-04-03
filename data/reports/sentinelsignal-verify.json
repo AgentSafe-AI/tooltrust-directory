@@ -1,0 +1,114 @@
+{
+  "tool_id": "sentinelsignal-verify",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-03T22:55:58.258158051Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://smithery.ai/server/sentinelsignal/verify",
+  "vendor": "Smithery",
+  "description": "Discover and evaluate technical resources by searching based on capabilities, security preferences, and risk levels. Compare multiple options side-by-side to determine which best fits specific workflows or security standards. Receive tailored recommendations for tasks to streamline integration and ensure reliability.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_servers"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_servers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_servers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "recommend_servers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_server_report"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compare_servers"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 4
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "compare_servers",
+    "get_server_report",
+    "recommend_servers",
+    "search_servers"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_servers",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (risk_tolerance)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "recommend_servers",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (risk_tolerance)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_server_report",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compare_servers",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "tool_id": "waldzellai-clear-thought",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-04-03T22:56:32.701926234Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://smithery.ai/server/waldzellai/clear-thought",
+  "vendor": "Smithery",
+  "description": "[FINAL UPDATE]\n\nfuture updates will be rolled out to Thoughtbox --\u003e https://smithery.ai/server/@Kastalien-Research/clear-thought-two ",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clear_thought"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clear_thought"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "reset_session"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "clear_thought",
+    "reset_session"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "clear_thought",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (totalThoughts)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "reset_session",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

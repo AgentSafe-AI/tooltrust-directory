@@ -1,0 +1,111 @@
+{
+  "tool_id": "wcsdproducer-employee-zero",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-03T22:55:30.795318259Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://smithery.ai/server/wcsdproducer/employee-zero",
+  "vendor": "Smithery",
+  "description": "Your first AI Employee. Not suggestions. Not chat. Real work.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_employee_zero_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "try_email_drafter"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_employee_zero_pricing"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "compare_employee_zero"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "compare_employee_zero"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compare_employee_zero"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 4
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "compare_employee_zero",
+    "get_employee_zero_info",
+    "get_employee_zero_pricing",
+    "try_email_drafter"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_employee_zero_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "try_email_drafter",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_employee_zero_pricing",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compare_employee_zero",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (compare_to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

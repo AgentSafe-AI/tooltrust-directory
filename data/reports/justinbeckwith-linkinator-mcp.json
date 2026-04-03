@@ -1,0 +1,72 @@
+{
+  "tool_id": "justinbeckwith-linkinator-mcp",
+  "version": "linkinator-mcp-v0.2.5",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-03T22:53:39.93900325Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/JustinBeckwith/linkinator-mcp",
+  "category": "Developer Tools",
+  "vendor": "JustinBeckwith",
+  "stars": 3,
+  "npm_package": "linkinator-mcp",
+  "npm_downloads_monthly": 252,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "MCP server for link checking using linkinator",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "scan_page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "scan_page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 18 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "scan_page"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "scan_page"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "scan_page",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (cleanUrls)",
+        "dynamic email recipient (directoryListing)",
+        "dynamic email recipient (linksToSkip)",
+        "hardcoded domain: about.html"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

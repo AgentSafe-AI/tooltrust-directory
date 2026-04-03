@@ -1,0 +1,133 @@
+{
+  "tool_id": "gamzadongza-danbooru-tags-mcp",
+  "version": "1.0.0",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-03T22:56:36.643881205Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/gamzadongza/danbooru-tags-mcp",
+  "category": "Developer Tools",
+  "vendor": "gamzadongza",
+  "npm_package": "danbooru-tags-mcp",
+  "language": "TypeScript",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_post_tags"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_post_tags"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_post_tags"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_post_tags"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_character_tags"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_character_tags"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_wiki_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_post_count"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 1,
+    "info": 4
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "get_character_tags",
+    "get_post_count",
+    "get_post_tags",
+    "get_wiki_info"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_post_tags",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (post_id_or_url)",
+        "hardcoded domain: danbooru.donmai.us"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_character_tags",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (top_n)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_wiki_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_post_count",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

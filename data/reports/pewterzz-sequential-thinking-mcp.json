@@ -1,0 +1,80 @@
+{
+  "tool_id": "pewterzz-sequential-thinking-mcp",
+  "version": "1.0.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-03T22:55:44.812930161Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/PewterZz/sequential-thinking-mcp",
+  "category": "Developer Tools",
+  "vendor": "PewterZz",
+  "npm_package": "sequential-thinking-mcp",
+  "npm_downloads_monthly": 746,
+  "language": "JavaScript",
+  "description": "MCP server generated from prompt: make a mcp server about sequential thinking for ai...",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "step_by_step_plan"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "step_by_step_plan"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "analyze_problem",
+    "problem_breakdown",
+    "sequential_thinking",
+    "step_by_step_plan"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "sequential_thinking",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "problem_breakdown",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "analyze_problem",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "step_by_step_plan",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

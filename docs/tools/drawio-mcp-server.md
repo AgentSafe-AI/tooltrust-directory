@@ -8,7 +8,7 @@
 | **Risk Score** | 8 |
 | **Version** | `2.0.3` |
 | **Vendor** | lgazo |
-| **Stars** | ⭐ 1113 |
+| **Stars** | ⭐ 1114 |
 | **npm Package** | `drawio-mcp` |
 | **npm Downloads (30d)** | 976 |
 | **Language** | TypeScript |

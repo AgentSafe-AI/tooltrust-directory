@@ -1,0 +1,183 @@
+{
+  "tool_id": "byronwade-memoria",
+  "version": "1.0.11",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-03T22:54:44.879097559Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/byronwade/memoria",
+  "category": "Developer Tools",
+  "vendor": "byronwade",
+  "stars": 1,
+  "npm_package": "@byronwade/memoria",
+  "npm_downloads_monthly": 75,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Prevents your AI from breaking code by revealing hidden file dependencies through git forensics.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "analyze_file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ask_history"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ask_history"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_context"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "save_lesson"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "extract_memories"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_memories"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_memories"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_memories"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 6,
+    "low": 2,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "analyze_file",
+    "ask_history",
+    "extract_memories",
+    "get_context",
+    "save_lesson",
+    "search_memories"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "analyze_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: file.ts"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "ask_history",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded email recipient: john@example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_context",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoSave)",
+        "dynamic email recipient (includeHistory)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "save_lesson",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "extract_memories",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoSave)",
+        "dynamic email recipient (autoSaveThreshold)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "search_memories",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

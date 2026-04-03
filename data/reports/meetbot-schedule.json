@@ -1,0 +1,118 @@
+{
+  "tool_id": "meetbot-schedule",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-04-03T22:55:55.675992371Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://smithery.ai/server/meetbot/schedule",
+  "vendor": "Smithery",
+  "description": "Manage scheduling pages and view real-time availability for meetings. Book new appointments effortlessly by selecting open time slots. Streamline calendar coordination through a direct connection to Meet.bot services.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_scheduling_pages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_page_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_available_slots"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "book_meeting"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "health_check"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 5
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "book_meeting",
+    "get_available_slots",
+    "get_page_info",
+    "get_scheduling_pages",
+    "health_check"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_scheduling_pages",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_page_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: meet.bot"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_available_slots",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: meet.bot"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "book_meeting",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (guest_email)",
+        "hardcoded domain: meet.bot"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "health_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: Meet.bot"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

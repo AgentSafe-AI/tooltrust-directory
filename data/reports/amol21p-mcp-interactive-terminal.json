@@ -1,0 +1,227 @@
+{
+  "tool_id": "amol21p-mcp-interactive-terminal",
+  "version": "1.0.9",
+  "grade": "C",
+  "risk_score": 41,
+  "scan_date": "2026-04-03T22:52:41.49272426Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/amol21p/mcp-interactive-terminal",
+  "category": "Developer Tools",
+  "vendor": "amol21p",
+  "stars": 12,
+  "npm_package": "mcp-interactive-terminal",
+  "npm_downloads_monthly": 253,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "MCP server that gives AI agents (Claude Code, Cursor, Windsurf) real interactive terminal sessions — REPLs, SSH, databases, Docker, and any interactive CLI with clean output and smart completion detection",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares env permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_session"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "read_output"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"read_output\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "read_output"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "read_output"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_sessions"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"list_sessions\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "list_sessions"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "list_sessions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "close_session"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "close_session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "confirm_dangerous_command"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "confirm_dangerous_command"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 7,
+    "medium": 3,
+    "low": 5,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "close_session",
+    "confirm_dangerous_command",
+    "create_session",
+    "list_sessions",
+    "read_output",
+    "send_command",
+    "send_control"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "create_session",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "reads_env",
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "send_command",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "read_output",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "list_sessions",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "close_session",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "send_control",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "confirm_dangerous_command",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

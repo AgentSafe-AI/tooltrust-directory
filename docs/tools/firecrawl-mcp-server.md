@@ -8,7 +8,7 @@
 | **Risk Score** | 32 |
 | **Version** | `3.2.1` |
 | **Vendor** | firecrawl |
-| **Stars** | ⭐ 5942 |
+| **Stars** | ⭐ 5941 |
 | **npm Package** | `firecrawl-mcp` |
 | **npm Downloads (30d)** | 200.5k |
 | **Language** | JavaScript |

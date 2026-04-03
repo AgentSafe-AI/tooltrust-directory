@@ -1,0 +1,101 @@
+{
+  "tool_id": "tkoba1974-mcp-kroki",
+  "version": "1.1.0",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-03T22:52:54.763994821Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/tkoba1974/mcp-kroki",
+  "category": "Developer Tools",
+  "vendor": "tkoba1974",
+  "stars": 7,
+  "npm_package": "@tkoba1974/mcp-kroki",
+  "npm_downloads_monthly": 124,
+  "license": "MIT",
+  "language": "JavaScript",
+  "description": "MCP server to convert a diagram to picture using kroki.io",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_diagram_url"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "generate_diagram_url"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "download_diagram"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "download_diagram"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "download_diagram"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 1,
+    "low": 2,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "download_diagram",
+    "generate_diagram_url"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "generate_diagram_url",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Kroki.io"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "download_diagram",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Kroki.io",
+        "hardcoded domain: diagram.svg"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

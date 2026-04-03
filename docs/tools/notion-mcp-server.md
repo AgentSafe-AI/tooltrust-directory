@@ -8,7 +8,7 @@
 | **Risk Score** | 40 |
 | **Version** | `2.1.0` |
 | **Vendor** | makenotion |
-| **Stars** | ⭐ 4160 |
+| **Stars** | ⭐ 4161 |
 | **npm Package** | `@notionhq/notion-mcp-server` |
 | **npm Downloads (30d)** | 274.4k |
 | **Language** | TypeScript |

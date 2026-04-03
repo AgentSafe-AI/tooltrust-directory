@@ -1,0 +1,1133 @@
+{
+  "tool_id": "agentpact-marketplace",
+  "version": "smithery",
+  "grade": "C",
+  "risk_score": 49,
+  "scan_date": "2026-04-03T22:56:09.984040188Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://smithery.ai/server/agentpact/marketplace",
+  "vendor": "Smithery",
+  "description": "Facilitate the discovery and exchange of services through a specialized marketplace for automated tasks. Manage end-to-end deal lifecycles including negotiations, secure milestone-based payments, and delivery verification. Build trust within the ecosystem through a transparent reputation and leaderboard system.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.register"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.create_agent"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.create_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.create_agent"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.get_agent"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.get_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.get_agent"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.create_offer"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.create_offer"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.create_offer"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.create_offer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.create_offer"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.update_offer"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.update_offer"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.update_offer"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.update_offer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.update_offer"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.archive_offer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.archive_offer"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.search_offers"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.search_offers"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.search_offers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.search_offers"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.create_need"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.create_need"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.create_need"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.create_need"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.create_need"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.update_need"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.update_need"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.update_need"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.update_need"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.update_need"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.archive_need"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.archive_need"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.search_needs"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.search_needs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.search_needs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.search_needs"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.subscribe_alerts"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.subscribe_alerts"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.subscribe_alerts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.subscribe_alerts"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.get_match_recommendations"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.get_match_recommendations"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.propose_deal"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.propose_deal"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.counter_deal"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.counter_deal"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.accept_deal"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.accept_deal"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.cancel_deal"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.cancel_deal"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.create_payment_intent"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.create_payment_intent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.create_payment_intent"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.confirm_funding"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.confirm_funding"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.get_payment_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.get_payment_status"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.release_payment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.release_payment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.request_refund"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.request_refund"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.request_refund"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.request_refund"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.submit_delivery"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.submit_delivery"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.verify_delivery"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.verify_delivery"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.open_dispute"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.open_dispute"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.leave_feedback"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.leave_feedback"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.get_reputation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.get_reputation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.register_webhook"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.register_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.register_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.register_webhook"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.register_webhook"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.register_webhook"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.list_webhooks"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.list_webhooks"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.list_webhooks"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.list_webhooks"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.delete_webhook"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "agentpact.delete_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.delete_webhook"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "agentpact.delete_webhook"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.delete_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "agentpact.get_leaderboard"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.get_leaderboard"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentpact.get_overview"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 40,
+    "medium": 8,
+    "low": 14,
+    "info": 32
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "agentpact.accept_deal",
+    "agentpact.archive_need",
+    "agentpact.archive_offer",
+    "agentpact.cancel_deal",
+    "agentpact.confirm_funding",
+    "agentpact.counter_deal",
+    "agentpact.create_agent",
+    "agentpact.create_need",
+    "agentpact.create_offer",
+    "agentpact.create_payment_intent",
+    "agentpact.delete_webhook",
+    "agentpact.get_agent",
+    "agentpact.get_leaderboard",
+    "agentpact.get_match_recommendations",
+    "agentpact.get_overview",
+    "agentpact.get_payment_status",
+    "agentpact.get_reputation",
+    "agentpact.leave_feedback",
+    "agentpact.list_webhooks",
+    "agentpact.open_dispute",
+    "agentpact.propose_deal",
+    "agentpact.register",
+    "agentpact.register_webhook",
+    "agentpact.release_payment",
+    "agentpact.request_refund",
+    "agentpact.search_needs",
+    "agentpact.search_offers",
+    "agentpact.submit_delivery",
+    "agentpact.subscribe_alerts",
+    "agentpact.update_need",
+    "agentpact.update_offer",
+    "agentpact.verify_delivery"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "agentpact.register",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: agentpact.register"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.create_agent",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoBuyEnabled)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.get_agent",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.create_offer",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.update_offer",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.archive_offer",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.search_offers",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.create_need",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (acceptanceCriteria)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.update_need",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.archive_need",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.search_needs",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.subscribe_alerts",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic webhook destination (webhookUrl)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.get_match_recommendations",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.propose_deal",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (milestones)",
+        "dynamic email recipient (negotiatedTotal)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.counter_deal",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (actorAgentId)",
+        "dynamic email recipient (milestones)",
+        "dynamic email recipient (negotiatedTotal)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.accept_deal",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (actorAgentId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.cancel_deal",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (actorAgentId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.create_payment_intent",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (milestoneId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.confirm_funding",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.get_payment_status",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (milestoneId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.release_payment",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (milestoneId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.request_refund",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.submit_delivery",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (milestoneId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.verify_delivery",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (accepted)",
+        "dynamic email recipient (milestoneId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.open_dispute",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (milestoneId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.leave_feedback",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (ratingAccuracy)",
+        "dynamic email recipient (toAgentId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.get_reputation",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.register_webhook",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: deal.proposed",
+        "hardcoded domain: payment.funded"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.list_webhooks",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.delete_webhook",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.get_leaderboard",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agentpact.get_overview",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

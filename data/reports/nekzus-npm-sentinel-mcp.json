@@ -1,0 +1,224 @@
+{
+  "tool_id": "nekzus-npm-sentinel-mcp",
+  "version": "1.18.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-03T22:52:25.286836605Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/Nekzus/npm-sentinel-mcp",
+  "category": "Developer Tools",
+  "vendor": "Nekzus",
+  "stars": 18,
+  "npm_package": "@nekzus/mcp-server",
+  "npm_downloads_monthly": 1064,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "A powerful Model Context Protocol (MCP) server that revolutionizes NPM package analysis through AI.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "npmTrends"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "npmTrends"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "npmSearch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "npmSearch"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 0,
+    "low": 2,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "npmAlternatives",
+    "npmChangelogAnalysis",
+    "npmCompare",
+    "npmDeprecated",
+    "npmDeps",
+    "npmLatest",
+    "npmLicenseCompatibility",
+    "npmMaintainers",
+    "npmMaintenance",
+    "npmPackageReadme",
+    "npmQuality",
+    "npmRepoStats",
+    "npmScore",
+    "npmSearch",
+    "npmSize",
+    "npmTrends",
+    "npmTypes",
+    "npmVersions",
+    "npmVulnerabilities"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "npmVersions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmLatest",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmDeps",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmTypes",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmSize",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmVulnerabilities",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmTrends",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmCompare",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmMaintainers",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmScore",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmPackageReadme",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmSearch",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmLicenseCompatibility",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmRepoStats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmDeprecated",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmChangelogAnalysis",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmAlternatives",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmQuality",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "npmMaintenance",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

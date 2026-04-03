@@ -1,9 +1,9 @@
 {
   "tool_id": "aws-mcp-server",
   "version": "1.7.0",
-  "grade": "C",
-  "risk_score": 41,
-  "scan_date": "2026-04-03T06:49:57.771112034Z",
+  "grade": "D",
+  "risk_score": 57,
+  "scan_date": "2026-04-03T22:50:04.298568014Z",
   "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/alexei-led/aws-mcp-server",
   "category": "Developer Tools",
@@ -14,60 +14,29 @@
   "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___get_regional_availability"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___get_regional_availability"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "aws___get_regional_availability"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "aws___get_regional_availability"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___list_regions"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "aws___list_regions"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "aws___list_regions"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.7.0: 6 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_aws_marketplace_related_solutions",
+          "get_aws_marketplace_report_guidelines",
+          "get_aws_marketplace_solution",
+          "research_aws_marketplace_solution",
+          "search_aws_marketplace_solutions",
+          "submit_aws_marketplace_feedback"
+        ],
+        "removed": [
+          "aws___get_regional_availability",
+          "aws___list_regions",
+          "aws___read_documentation",
+          "aws___recommend",
+          "aws___search_documentation"
+        ],
+        "version": "1.7.0"
+      }
     },
     {
       "id": "AS-002",
@@ -75,63 +44,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___read_documentation"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "aws___read_documentation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "aws___read_documentation"
+      "tool_name": "get_aws_marketplace_related_solutions"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___recommend"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "aws___recommend"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "aws___recommend"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___search_documentation"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___search_documentation"
+      "tool_name": "get_aws_marketplace_related_solutions"
     },
     {
       "id": "AS-002",
@@ -139,15 +60,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___search_documentation"
+      "tool_name": "get_aws_marketplace_related_solutions"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares env permission",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "aws___search_documentation"
+      "tool_name": "get_aws_marketplace_related_solutions"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_aws_marketplace_related_solutions\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_aws_marketplace_related_solutions"
     },
     {
       "id": "AS-011",
@@ -155,7 +84,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "aws___search_documentation"
+      "tool_name": "get_aws_marketplace_related_solutions"
     },
     {
       "id": "AS-014",
@@ -163,98 +92,294 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "aws___search_documentation"
+      "tool_name": "get_aws_marketplace_related_solutions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_aws_marketplace_report_guidelines"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_aws_marketplace_report_guidelines"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_aws_marketplace_report_guidelines\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_aws_marketplace_report_guidelines"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_aws_marketplace_report_guidelines"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_aws_marketplace_report_guidelines"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_aws_marketplace_solution\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "research_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "research_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "research_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "research_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "research_aws_marketplace_solution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_aws_marketplace_solutions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_aws_marketplace_solutions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_aws_marketplace_solutions"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"search_aws_marketplace_solutions\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "search_aws_marketplace_solutions"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_aws_marketplace_solutions"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_aws_marketplace_solutions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "submit_aws_marketplace_feedback"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "submit_aws_marketplace_feedback"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "submit_aws_marketplace_feedback"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 15,
     "medium": 4,
-    "low": 7,
-    "info": 5
+    "low": 9,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "aws___get_regional_availability",
-    "aws___list_regions",
-    "aws___read_documentation",
-    "aws___recommend",
-    "aws___search_documentation"
+    "get_aws_marketplace_related_solutions",
+    "get_aws_marketplace_report_guidelines",
+    "get_aws_marketplace_solution",
+    "research_aws_marketplace_solution",
+    "search_aws_marketplace_solutions",
+    "submit_aws_marketplace_feedback"
   ],
   "tool_contexts": [
     {
-      "tool_name": "aws___get_regional_availability",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (next_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "aws___list_regions",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "aws___read_documentation",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: aws.amazon.com",
-        "hardcoded domain: bucketnamingrules.html",
-        "hardcoded domain: constructs.dev",
-        "hardcoded domain: docs.amplify.aws",
-        "hardcoded domain: docs.aws.amazon.com",
-        "hardcoded domain: github.com",
-        "hardcoded domain: lambda-invocation.html",
-        "hardcoded domain: repost.aws",
-        "hardcoded domain: ui.docs.amplify.aws"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "aws___recommend",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "get_aws_marketplace_related_solutions",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
       "behavior": [
         "executes_commands",
         "uses_network"
       ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: docs.aws.amazon.com"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_aws_marketplace_report_guidelines",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "aws___search_documentation",
+      "tool_name": "get_aws_marketplace_solution",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "research_aws_marketplace_solution",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "executes_commands",
-        "reads_env",
-        "uses_network",
-        "writes_files"
+        "uses_network"
       ],
-      "destinations": [
-        "dynamic email recipient (topics)",
-        "hardcoded domain: Next.js"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_aws_marketplace_solutions",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "submit_aws_marketplace_feedback",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -263,6 +388,12 @@
   "scan_history": [
     {
       "scan_date": "2026-03-24T04:38:07Z",
+      "grade": "C",
+      "risk_score": 41,
+      "version": "1.7.0"
+    },
+    {
+      "scan_date": "2026-04-03T06:49:57Z",
       "grade": "C",
       "risk_score": 41,
       "version": "1.7.0"

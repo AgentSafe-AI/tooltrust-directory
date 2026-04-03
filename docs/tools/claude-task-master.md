@@ -8,7 +8,7 @@
 | **Risk Score** | 8 |
 | **Version** | `task-master-ai@0.43.1` |
 | **Vendor** | eyaltoledano |
-| **Stars** | ⭐ 26387 |
+| **Stars** | ⭐ 26389 |
 | **npm Package** | `task-master-ai` |
 | **npm Downloads (30d)** | 94.0k |
 | **Language** | JavaScript |

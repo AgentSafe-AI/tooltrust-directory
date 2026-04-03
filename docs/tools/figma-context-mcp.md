@@ -8,7 +8,7 @@
 | **Risk Score** | 40 |
 | **Version** | `0.8.0` |
 | **Vendor** | GLips |
-| **Stars** | ⭐ 14139 |
+| **Stars** | ⭐ 14138 |
 | **npm Package** | `figma-developer-mcp` |
 | **npm Downloads (30d)** | 379.8k |
 | **Language** | TypeScript |

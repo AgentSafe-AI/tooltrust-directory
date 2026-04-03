@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82909 |
+| **Stars** | ⭐ 82913 |
 | **npm Package** | `@modelcontextprotocol/server-github` |
 | **npm Downloads (30d)** | 448.2k |
 | **Language** | TypeScript |

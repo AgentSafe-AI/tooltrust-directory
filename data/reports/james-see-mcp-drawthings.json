@@ -1,0 +1,82 @@
+{
+  "tool_id": "james-see-mcp-drawthings",
+  "version": "1.1.1",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-04-03T22:53:16.006211826Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/james-see/mcp-drawthings",
+  "category": "Developer Tools",
+  "vendor": "james-see",
+  "stars": 5,
+  "npm_package": "mcp-drawthings",
+  "npm_downloads_monthly": 180,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "MCP server for Draw Things - local AI image generation on Mac",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_image"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "transform_image"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 2,
+    "low": 0,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "check_status",
+    "generate_image",
+    "get_config",
+    "transform_image"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "check_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_config",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "generate_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "transform_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

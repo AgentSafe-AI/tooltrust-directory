@@ -1,0 +1,77 @@
+{
+  "tool_id": "pinkpixel-dev-mindbridge-mcp",
+  "version": "1.2.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-03T22:52:03.843959514Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/pinkpixel-dev/mindbridge-mcp",
+  "category": "Developer Tools",
+  "vendor": "pinkpixel-dev",
+  "stars": 30,
+  "npm_package": "@pinkpixel/mindbridge",
+  "npm_downloads_monthly": 294,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "MindBridge is an AI orchestration MCP server that lets any app talk to any LLM — OpenAI, Anthropic, DeepSeek, Ollama, and more — through a single unified API. Route queries, compare models, get second opinions, and build smarter multi-LLM workflows.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "getSecondOpinion"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"maxTokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "getSecondOpinion"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "getSecondOpinion",
+    "listProviders",
+    "listReasoningModels"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "getSecondOpinion",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (maxTokens)",
+        "dynamic email recipient (stop_sequences)",
+        "dynamic email recipient (top_k)",
+        "dynamic email recipient (top_p)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "listProviders",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "listReasoningModels",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

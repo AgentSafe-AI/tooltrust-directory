@@ -8,7 +8,7 @@
 | **Risk Score** | 32 |
 | **Version** | `0.2.38` |
 | **Vendor** | wonderwhy-er |
-| **Stars** | ⭐ 5840 |
+| **Stars** | ⭐ 5841 |
 | **npm Package** | `@wonderwhy-er/desktop-commander` |
 | **npm Downloads (30d)** | 73.7k |
 | **Language** | TypeScript |

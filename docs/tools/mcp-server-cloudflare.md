@@ -6,7 +6,7 @@
 | **Risk Score** | 65 |
 | **Version** | `@repo/mcp-common@0.20.4` |
 | **Vendor** | cloudflare |
-| **Stars** | ⭐ 3587 |
+| **Stars** | ⭐ 3586 |
 | **npm Package** | `@cloudflare/mcp-server-cloudflare` |
 | **npm Downloads (30d)** | 14.2k |
 | **Language** | TypeScript |

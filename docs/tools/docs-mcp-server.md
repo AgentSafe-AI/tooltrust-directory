@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `2.2.1` |
 | **Vendor** | arabold |
-| **Stars** | ⭐ 1191 |
+| **Stars** | ⭐ 1192 |
 | **npm Package** | `@arabold/docs-mcp-server` |
 | **npm Downloads (30d)** | 4.1k |
 | **Language** | TypeScript |

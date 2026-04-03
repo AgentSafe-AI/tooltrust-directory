@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82909 |
+| **Stars** | ⭐ 82913 |
 | **npm Package** | `mcp-server-time` |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) |
