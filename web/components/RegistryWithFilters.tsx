@@ -38,6 +38,27 @@ const GRADE_BUTTON_INACTIVE_STYLES: Record<string, string> = {
 type SortKey = "name" | "stars" | "grade";
 type SortDir = "asc" | "desc";
 
+function popularityValue(report: Report): number {
+  return report.npm_downloads_monthly ?? report.stars ?? 0;
+}
+
+function popularityLabel(report: Report): string {
+  if (report.npm_downloads_monthly != null && report.npm_downloads_monthly > 0) {
+    const downloads = report.npm_downloads_monthly;
+    return downloads >= 1000 ? `${(downloads / 1000).toFixed(1)}k/mo` : `${downloads}/mo`;
+  }
+
+  if (report.stars != null && report.stars > 0) {
+    return report.stars >= 1000 ? `${(report.stars / 1000).toFixed(1)}k` : `${report.stars}`;
+  }
+
+  return "—";
+}
+
+function popularityIconLabel(report: Report): string {
+  return report.npm_downloads_monthly != null && report.npm_downloads_monthly > 0 ? "Downloads" : "Stars";
+}
+
 function sortReports(reports: Report[], key: SortKey, dir: SortDir) {
   const gradeRank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, F: 4 };
   return [...reports].sort((a, b) => {
@@ -45,7 +66,7 @@ function sortReports(reports: Report[], key: SortKey, dir: SortDir) {
     if (key === "name") {
       cmp = a.tool_id.localeCompare(b.tool_id);
     } else if (key === "stars") {
-      cmp = (b.stars ?? 0) - (a.stars ?? 0);
+      cmp = popularityValue(b) - popularityValue(a);
     } else {
       cmp = (gradeRank[displayGrade(a)] ?? 5) - (gradeRank[displayGrade(b)] ?? 5);
     }
@@ -207,7 +228,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                   className="px-4 py-3 font-medium text-zinc-400 cursor-pointer select-none hover:text-zinc-200 whitespace-nowrap"
                   onClick={() => toggleSort("stars")}
                 >
-                  Stars {sortKey === "stars" ? (sortDir === "desc" ? "↓" : "↑") : <span className="opacity-30">↕</span>}
+                  Popularity {sortKey === "stars" ? (sortDir === "desc" ? "↓" : "↑") : <span className="opacity-30">↕</span>}
                 </th>
                 <th
                   className="px-4 py-3 font-medium text-zinc-400 cursor-pointer select-none hover:text-zinc-200"
@@ -247,9 +268,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                     {r.version || "—"}
                   </td>
                   <td className="px-4 py-3 text-sm text-zinc-400">
-                    {r.stars != null && r.stars > 0
-                      ? r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars
-                      : "—"}
+                    {popularityLabel(r)}
                   </td>
                   <td className="px-4 py-3">
                     <Link href={`/tool/${r.tool_id}`}>
@@ -323,10 +342,10 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                 </div>
                 <div className="flex items-center justify-between text-xs text-zinc-500">
                   <span>
-                    {r.stars != null && r.stars > 0 ? (
-                      <span className="flex items-center gap-1">
+                    {popularityLabel(r) !== "—" ? (
+                      <span className="flex items-center gap-1" aria-label={popularityIconLabel(r)}>
                         <Star className="h-3 w-3 fill-zinc-500 text-zinc-500" />
-                        {r.stars >= 1000 ? `${(r.stars / 1000).toFixed(1)}k` : r.stars}
+                        {popularityLabel(r)}
                       </span>
                     ) : null}
                   </span>
