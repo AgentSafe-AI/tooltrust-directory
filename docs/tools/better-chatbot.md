@@ -9,10 +9,11 @@
 | **Version** | `1.26.0` |
 | **Vendor** | cgoinglove |
 | **Stars** | ⭐ 1047 |
+| **npm Package** | `better-chatbot` |
 | **Language** | TypeScript |
 | **Source** | [better-chatbot](https://github.com/cgoinglove/better-chatbot) |
-| **Scan Date** | 2026-04-01 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

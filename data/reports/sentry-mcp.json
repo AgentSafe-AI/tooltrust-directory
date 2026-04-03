@@ -3,12 +3,14 @@
   "version": "0.31.0",
   "grade": "D",
   "risk_score": 50,
-  "scan_date": "2026-04-01T20:13:37.52705387Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:48:31.553623877Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/getsentry/sentry-mcp",
   "category": "Developer Tools",
   "vendor": "getsentry",
-  "stars": 615,
+  "stars": 616,
+  "npm_package": "sentry-mcp",
+  "npm_downloads_monthly": 436,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "An MCP server for interacting with Sentry via LLMs.",
@@ -619,6 +621,294 @@
     "update_project",
     "whoami"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "whoami",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_organizations",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_teams",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_projects",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_releases",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_issue_details",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (issueUrl)",
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: my-organization.sentry.io",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: sentry.sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_trace_details",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_event_attachment",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_issue",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (issueUrl)",
+        "dynamic URL input (regionUrl)",
+        "dynamic email recipient (assignedTo)",
+        "hardcoded domain: my-organization.sentry.io",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_events",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_team",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_project",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_project",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_dsn",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_dsns",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "analyze_issue_with_seer",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (issueUrl)",
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: my-org.sentry.io",
+        "hardcoded domain: my-organization.sentry.io",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_docs",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Next.js"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_doc",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Next.js",
+        "hardcoded domain: nextjs.md"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_issues",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (regionUrl)",
+        "hardcoded domain: sentry.io",
+        "hardcoded domain: us.sentry.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-28T01:24:49Z",
@@ -628,6 +918,12 @@
     },
     {
       "scan_date": "2026-03-31T22:13:19Z",
+      "grade": "D",
+      "risk_score": 50,
+      "version": "0.31.0"
+    },
+    {
+      "scan_date": "2026-04-01T20:13:37Z",
       "grade": "D",
       "risk_score": 50,
       "version": "0.31.0"

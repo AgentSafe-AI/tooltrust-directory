@@ -8,11 +8,13 @@
 | **Risk Score** | 42 |
 | **Version** | `chrome-devtools-mcp-v0.21.0` |
 | **Vendor** | ChromeDevTools |
-| **Stars** | ⭐ 32748 |
+| **Stars** | ⭐ 32976 |
+| **npm Package** | `chrome-devtools-mcp` |
+| **npm Downloads (30d)** | 2.7M |
 | **Language** | TypeScript |
 | **Source** | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
-| **Scan Date** | 2026-04-01 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

@@ -10,8 +10,8 @@
 | **Vendor** | clay-inc |
 | **Stars** | ⭐ 30 |
 | **Source** | [clay-mcp](https://github.com/clay-inc/clay-mcp) |
-| **Scan Date** | 2026-04-01 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

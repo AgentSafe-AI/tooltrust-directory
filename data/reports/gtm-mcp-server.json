@@ -1,34 +1,25 @@
 {
-  "tool_id": "context7",
-  "version": "ctx7@0.3.9",
+  "tool_id": "gtm-mcp-server",
+  "version": "1.5.8",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-03T06:46:17.42534515Z",
+  "scan_date": "2026-04-03T06:51:00.737029491Z",
   "scanner": "tooltrust-scanner/v0.3.4",
-  "source_url": "https://github.com/upstash/context7",
+  "source_url": "https://github.com/paolobietolini/gtm-mcp-server",
   "category": "Developer Tools",
-  "vendor": "upstash",
-  "stars": 51489,
-  "npm_package": "@upstash/context7",
-  "license": "MIT",
-  "language": "TypeScript",
-  "description": "Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors",
+  "vendor": "paolobietolini",
+  "stars": 52,
+  "license": "BSD-3-Clause",
+  "language": "Go",
+  "description": "An MCP server for Google Tag Manager. Connect it to your LLM, authenticate once, and start managing GTM through natural language.",
   "findings": [
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "Resolve Context7 Library ID"
-    },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "Query Documentation"
+      "tool_name": "get_lgtm"
     },
     {
       "id": "AS-011",
@@ -36,7 +27,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "Query Documentation"
+      "tool_name": "get_lgtm"
     },
     {
       "id": "AS-014",
@@ -44,7 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "Query Documentation"
+      "tool_name": "get_lgtm"
     }
   ],
   "summary": {
@@ -52,23 +43,15 @@
     "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "Query Documentation",
-    "Resolve Context7 Library ID"
+    "get_lgtm"
   ],
   "tool_contexts": [
     {
-      "tool_name": "Resolve Context7 Library ID",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "Query Documentation",
+      "tool_name": "get_lgtm",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -76,26 +59,6 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "scan_history": [
-    {
-      "scan_date": "2026-03-28T01:24:05Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "ctx7@0.3.9"
-    },
-    {
-      "scan_date": "2026-03-31T22:11:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "ctx7@0.3.9"
-    },
-    {
-      "scan_date": "2026-04-01T20:11:26Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "ctx7@0.3.9"
     }
   ]
 }

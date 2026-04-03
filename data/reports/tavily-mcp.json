@@ -3,12 +3,14 @@
   "version": "0.2.18",
   "grade": "C",
   "risk_score": 34,
-  "scan_date": "2026-04-01T20:13:01.787867412Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:47:54.740551976Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/tavily-ai/tavily-mcp",
   "category": "Developer Tools",
   "vendor": "tavily-ai",
-  "stars": 1615,
+  "stars": 1627,
+  "npm_package": "tavily-mcp",
+  "npm_downloads_monthly": 306827,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Production ready MCP server with real-time search, extract, map \u0026 crawl.",
@@ -149,6 +151,74 @@
     "tavily_research",
     "tavily_search"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "tavily_search",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (topic)",
+        "hardcoded domain: docs.tavily.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "tavily_extract",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (urls)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "tavily_crawl",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "tavily_map",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "tavily_research",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:36:49Z",
@@ -158,6 +228,12 @@
     },
     {
       "scan_date": "2026-03-31T22:12:44Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.2.18"
+    },
+    {
+      "scan_date": "2026-04-01T20:13:01Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.2.18"

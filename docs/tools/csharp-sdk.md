@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `1.2.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 4162 |
+| **Stars** | ⭐ 4164 |
 | **Language** | C# |
 | **Source** | [csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) |
 | **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

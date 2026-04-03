@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [mcp-apache-spark-history-server](https://github.com/kubeflow/mcp-apache-spark-history-server) |
 | **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.11` |
 | **Vendor** | loonghao |
-| **Stars** | ⭐ 184 |
+| **Stars** | ⭐ 191 |
 | **Language** | Python |
 | **Source** | [photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) |
-| **Scan Date** | 2026-03-24 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 
@@ -24,7 +24,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -37,6 +37,18 @@ tool name or description implies arbitrary script/code execution (evaluate_scrip
 
 **Recommendation:**
 This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

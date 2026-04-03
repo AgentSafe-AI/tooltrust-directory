@@ -9,10 +9,12 @@
 | **Version** | `0.7.4` |
 | **Vendor** | g0t4 |
 | **Stars** | ⭐ 225 |
+| **npm Package** | `mcp-server-commands` |
+| **npm Downloads (30d)** | 2.3k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) |
-| **Scan Date** | 2026-04-01 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

@@ -3,12 +3,14 @@
   "version": "1.4.2",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-04-01T20:14:04.221426309Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:48:59.660020405Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/tuannvm/codex-mcp-server",
   "category": "Developer Tools",
   "vendor": "tuannvm",
-  "stars": 385,
+  "stars": 390,
+  "npm_package": "codex-mcp-server",
+  "npm_downloads_monthly": 8155,
   "language": "TypeScript",
   "description": "MCP server wrapper for OpenAI Codex CLI that enables Claude Code to leverage Codex's AI capabilities directly.",
   "findings": [
@@ -93,6 +95,65 @@
     "review",
     "websearch"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "codex",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic callback destination (callbackUri)",
+        "dynamic email recipient (fullAuto)",
+        "dynamic email recipient (workingDirectory)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "review",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (workingDirectory)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "ping",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "help",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "listSessions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "websearch",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:38:00Z",
@@ -102,6 +163,12 @@
     },
     {
       "scan_date": "2026-03-31T22:13:41Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "1.4.2"
+    },
+    {
+      "scan_date": "2026-04-01T20:14:04Z",
       "grade": "D",
       "risk_score": 65,
       "version": "1.4.2"

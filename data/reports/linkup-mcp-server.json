@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-01T20:15:59.02163504Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:51:03.371637912Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://smithery.ai/server/LinkupPlatform/linkup-mcp-server",
   "vendor": "Smithery",
   "description": "Linkup MCP server for real-time web search and content retrieval.",
@@ -70,6 +70,32 @@
     "linkup-fetch",
     "linkup-search"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "linkup-search",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "linkup-fetch",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-24T04:39:18Z",
@@ -79,6 +105,12 @@
     },
     {
       "scan_date": "2026-03-31T22:15:36Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-01T20:15:59Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

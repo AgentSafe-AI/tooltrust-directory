@@ -3,12 +3,14 @@
   "version": "3.1.0",
   "grade": "C",
   "risk_score": 35,
-  "scan_date": "2026-04-01T20:15:41.190938594Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:50:39.856424358Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/aashari/mcp-server-atlassian-bitbucket",
   "category": "Developer Tools",
   "vendor": "aashari",
   "stars": 140,
+  "npm_package": "@aashari/mcp-server-atlassian-bitbucket",
+  "npm_downloads_monthly": 9307,
   "language": "TypeScript",
   "description": "Node.js/TypeScript MCP server for Atlassian Bitbucket. Enables AI systems (LLMs) to interact with workspaces, repositories, and pull requests via tools (list, get, comment, search). Connects AI directly to version control workflows through the standard MCP interface.",
   "findings": [
@@ -221,6 +223,106 @@
     "bb_post",
     "bb_put"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "bb_get",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: source.branch.name",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "bb_post",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "bb_put",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "bb_patch",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "bb_delete",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "bb_clone",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:39:29Z",
@@ -230,6 +332,12 @@
     },
     {
       "scan_date": "2026-03-31T22:15:21Z",
+      "grade": "C",
+      "risk_score": 35,
+      "version": "3.1.0"
+    },
+    {
+      "scan_date": "2026-04-01T20:15:41Z",
       "grade": "C",
       "risk_score": 35,
       "version": "3.1.0"

@@ -3,41 +3,12 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-01T20:15:58.633627036Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:51:03.761687655Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://smithery.ai/server/browserbasehq/mcp-browserbase",
   "vendor": "Smithery",
   "description": "Browserbase MCP server (Smithery-hosted) for cloud browser automation and web scraping.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 6 tool(s) added, 9 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "act",
-          "end",
-          "extract",
-          "navigate",
-          "observe",
-          "start"
-        ],
-        "removed": [
-          "browserbase_screenshot",
-          "browserbase_session_close",
-          "browserbase_session_create",
-          "browserbase_stagehand_act",
-          "browserbase_stagehand_agent",
-          "browserbase_stagehand_extract",
-          "browserbase_stagehand_get_url",
-          "browserbase_stagehand_navigate",
-          "browserbase_stagehand_observe"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -105,7 +76,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 0,
     "low": 1,
     "info": 6
@@ -119,11 +90,67 @@
     "observe",
     "start"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "start",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "end",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "navigate",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "act",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "observe",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "extract",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:39:41Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-01T20:15:58Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]

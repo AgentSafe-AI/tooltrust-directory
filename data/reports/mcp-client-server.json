@@ -2,31 +2,35 @@
   "tool_id": "mcp-client-server",
   "version": "0.1.0",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-01T20:15:51.996592573Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "risk_score": 15,
+  "scan_date": "2026-04-03T06:50:51.711434534Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/willccbb/mcp-client-server",
   "category": "Developer Tools",
   "vendor": "willccbb",
   "stars": 124,
+  "npm_package": "mcp-test-client",
+  "npm_downloads_monthly": 5430,
   "language": "TypeScript",
   "description": "An MCP Server that's also an MCP Client. Useful for letting Claude develop and test MCPs without needing to reset the application.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "catalog_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "catalog_search"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.0: 3 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ask_question",
+          "read_wiki_contents",
+          "read_wiki_structure"
+        ],
+        "removed": [
+          "catalog_search"
+        ],
+        "version": "0.1.0"
+      }
     },
     {
       "id": "AS-014",
@@ -34,19 +38,60 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "catalog_search"
+      "tool_name": "read_wiki_structure"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "read_wiki_contents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ask_question"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 1
+    "low": 0,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "catalog_search"
+    "ask_question",
+    "read_wiki_contents",
+    "read_wiki_structure"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "read_wiki_structure",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "read_wiki_contents",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ask_question",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
   ],
   "scan_history": [
     {
@@ -57,6 +102,12 @@
     },
     {
       "scan_date": "2026-03-31T22:15:24Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-04-01T20:15:51Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.1.0"

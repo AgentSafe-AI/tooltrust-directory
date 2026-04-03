@@ -7,10 +7,12 @@
 | **Version** | `1.2.4` |
 | **Vendor** | suekou |
 | **Stars** | ⭐ 875 |
+| **npm Package** | `@suekou/mcp-notion-server` |
+| **npm Downloads (30d)** | 6.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) |
-| **Scan Date** | 2026-04-01 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 

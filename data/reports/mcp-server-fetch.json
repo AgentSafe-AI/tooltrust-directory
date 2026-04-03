@@ -3,12 +3,13 @@
   "version": "2026.1.26",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-01T20:11:28.304036953Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:46:23.287651995Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
   "category": "Developer Tools",
   "vendor": "modelcontextprotocol",
-  "stars": 82739,
+  "stars": 82854,
+  "npm_package": "mcp-server-fetch",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Model Context Protocol Servers",
@@ -99,6 +100,49 @@
     "fetch_url",
     "get_page_metadata"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "fetch_url",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "extract_elements",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "dynamic email recipient (selector)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_page_metadata",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:35:14Z",
@@ -108,6 +152,12 @@
     },
     {
       "scan_date": "2026-03-31T22:11:11Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2026.1.26"
+    },
+    {
+      "scan_date": "2026-04-01T20:11:28Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2026.1.26"

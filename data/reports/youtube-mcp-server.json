@@ -3,52 +3,17 @@
   "version": "1.0.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-01T20:13:54.008358541Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:48:50.806990018Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/ZubeidHendricks/youtube-mcp-server",
   "category": "Developer Tools",
   "vendor": "ZubeidHendricks",
-  "stars": 472,
+  "stars": 473,
+  "npm_package": "zubeid-youtube-mcp-server",
+  "npm_downloads_monthly": 1367,
   "language": "TypeScript",
   "description": "MCP Server for YouTube API, enabling video management, Shorts creation, and advanced analytics",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 16 tool(s) added, 7 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "YOUTUBE_GET_CHANNEL_ACTIVITIES",
-          "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
-          "YOUTUBE_GET_CHANNEL_STATISTICS",
-          "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
-          "YOUTUBE_LIST_CAPTION_TRACK",
-          "YOUTUBE_LIST_CHANNEL_VIDEOS",
-          "YOUTUBE_LIST_PLAYLIST_ITEMS",
-          "YOUTUBE_LIST_USER_PLAYLISTS",
-          "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
-          "YOUTUBE_LOAD_CAPTIONS",
-          "YOUTUBE_SEARCH_YOU_TUBE",
-          "YOUTUBE_SUBSCRIBE_CHANNEL",
-          "YOUTUBE_UPDATE_THUMBNAIL",
-          "YOUTUBE_UPDATE_VIDEO",
-          "YOUTUBE_UPLOAD_VIDEO",
-          "YOUTUBE_VIDEO_DETAILS"
-        ],
-        "removed": [
-          "channels_getChannel",
-          "channels_listVideos",
-          "playlists_getPlaylist",
-          "playlists_getPlaylistItems",
-          "transcripts_getTranscript",
-          "videos_getVideo",
-          "videos_searchVideos"
-        ],
-        "version": "1.0.0"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -300,7 +265,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 5,
     "medium": 4,
     "low": 6,
     "info": 16
@@ -324,6 +289,166 @@
     "YOUTUBE_UPLOAD_VIDEO",
     "YOUTUBE_VIDEO_DETAILS"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "YOUTUBE_GET_CHANNEL_ACTIVITIES",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_GET_CHANNEL_STATISTICS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: snippet.localized"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_CAPTION_TRACK",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_CHANNEL_VIDEOS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_PLAYLIST_ITEMS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (onBehalfOfContentOwner)",
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_USER_PLAYLISTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LOAD_CAPTIONS",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_SUBSCRIBE_CHANNEL",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (thumbnailUrl)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_UPDATE_VIDEO",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_UPLOAD_VIDEO",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_VIDEO_DETAILS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:37:44Z",
@@ -335,6 +460,12 @@
       "scan_date": "2026-03-31T22:13:40Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-01T20:13:54Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.0.0"
     }
   ]

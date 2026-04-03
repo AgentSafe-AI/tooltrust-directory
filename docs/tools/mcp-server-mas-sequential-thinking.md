@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.0` |
 | **Vendor** | FradSer |
-| **Stars** | ⭐ 296 |
+| **Stars** | ⭐ 295 |
 | **Language** | Python |
 | **Source** | [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) |
-| **Scan Date** | 2026-03-31 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-03 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---
 
@@ -24,8 +24,20 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 1 |
 
-No findings. ✅
+## Detailed Findings
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/mcp-server-mas-sequential-thinking.json)*

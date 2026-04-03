@@ -3,29 +3,56 @@
   "version": "0.8.0",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-03-31T22:14:06.98559303Z",
-  "scanner": "tooltrust-scanner/v0.2.1",
+  "scan_date": "2026-04-03T06:49:24.58040523Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/FradSer/mcp-server-mas-sequential-thinking",
   "category": "Developer Tools",
   "vendor": "FradSer",
-  "stars": 296,
+  "stars": 295,
   "language": "Python",
   "description": "An advanced sequential thinking process using a Multi-Agent System (MAS) built with the Agno framework and served via MCP.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "sequentialthinking"
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "sequentialthinking"
   ],
+  "tool_contexts": [
+    {
+      "tool_name": "sequentialthinking",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (totalThoughts)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:38:08Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.8.0"
+    },
+    {
+      "scan_date": "2026-03-31T22:14:06Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.8.0"
