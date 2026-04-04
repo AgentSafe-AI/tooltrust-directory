@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.1k |
 | **Language** | JavaScript |
 | **Source** | [f4ww4z-mcp-mysql-server](https://github.com/f4ww4z/mcp-mysql-server) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

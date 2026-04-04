@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 566 |
 | **Language** | TypeScript |
 | **Source** | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

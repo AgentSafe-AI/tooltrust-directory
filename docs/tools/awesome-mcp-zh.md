@@ -10,7 +10,7 @@
 | **Vendor** | yzfly |
 | **Stars** | ⭐ 6772 |
 | **Source** | [awesome-mcp-zh](https://github.com/yzfly/Awesome-MCP-ZH) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

@@ -1,16 +1,15 @@
 # 🟢 koreafintech-korean-crypto-mcp
 
-> Real-time Korean crypto market data MCP server. Kimchi premium tracking, Upbit/Bithumb price comparison for AI agents.
+> Access real-time price data, order books, and candle information from major Korean exchanges like Upbit and Bithumb. Track the Kimchi premium by comparing local market prices against global benchmarks. Identify top market movers and compare trading data across domestic platforms to optimize investment decisions.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 8 |
-| **Version** | `sha-384e34a38074` |
-| **Vendor** | koreafintech |
-| **Language** | Python |
-| **Source** | [koreafintech-korean-crypto-mcp](https://github.com/koreafintech/korean-crypto-mcp) |
-| **Scan Date** | 2026-04-03 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [koreafintech-korean-crypto-mcp](https://smithery.ai/server/koreafintech/korean-crypto-mcp) |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 48 |
 | **Language** | JavaScript |
 | **Source** | [laksh-star-mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

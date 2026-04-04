@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 149 |
 | **Language** | Python |
 | **Source** | [mcp-apache-spark-history-server](https://github.com/kubeflow/mcp-apache-spark-history-server) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

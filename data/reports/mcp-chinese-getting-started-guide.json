@@ -2,8 +2,8 @@
   "tool_id": "mcp-chinese-getting-started-guide",
   "version": "sha-a911d8ce250f",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-03T22:47:29.027987187Z",
+  "risk_score": 15,
+  "scan_date": "2026-04-04T01:34:42.60501794Z",
   "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide",
   "category": "Other",
@@ -15,18 +15,10 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-a911d8ce250f: 6 tool(s) added, 8 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-a911d8ce250f: 8 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get_card_by_set_and_number",
-          "get_set",
-          "get_set_cards",
-          "get_sets",
-          "hzls",
-          "search_cards"
-        ],
-        "removed": [
           "elevator_and_escalator_status",
           "find_station",
           "nearest_station",
@@ -35,6 +27,14 @@
           "service_status",
           "station_transfers",
           "subway_alerts"
+        ],
+        "removed": [
+          "get_card_by_set_and_number",
+          "get_set",
+          "get_set_cards",
+          "get_sets",
+          "hzls",
+          "search_cards"
         ],
         "version": "sha-a911d8ce250f"
       }
@@ -45,23 +45,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_card_by_set_and_number"
+      "tool_name": "find_station"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_cards"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_cards"
+      "tool_name": "next_trains"
     },
     {
       "id": "AS-014",
@@ -69,7 +61,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_cards"
+      "tool_name": "next_trains"
     },
     {
       "id": "AS-014",
@@ -77,7 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_sets"
+      "tool_name": "service_status"
     },
     {
       "id": "AS-014",
@@ -85,7 +77,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_set"
+      "tool_name": "subway_alerts"
     },
     {
       "id": "AS-014",
@@ -93,7 +85,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_set_cards"
+      "tool_name": "station_transfers"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "nearest_station"
     },
     {
       "id": "AS-014",
@@ -101,69 +101,101 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hzls"
+      "tool_name": "nearest_station"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "service_disruptions"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "elevator_and_escalator_status"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 1,
-    "info": 6
+    "high": 1,
+    "medium": 2,
+    "low": 0,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_card_by_set_and_number",
-    "get_set",
-    "get_set_cards",
-    "get_sets",
-    "hzls",
-    "search_cards"
+    "elevator_and_escalator_status",
+    "find_station",
+    "nearest_station",
+    "next_trains",
+    "service_disruptions",
+    "service_status",
+    "station_transfers",
+    "subway_alerts"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_card_by_set_and_number",
+      "tool_name": "find_station",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (collector_number)"
+        "dynamic email recipient (include_accessibility)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_cards",
+      "tool_name": "next_trains",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "service_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "subway_alerts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "station_transfers",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nearest_station",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (accessible_only)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_sets",
+      "tool_name": "service_disruptions",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_set",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_set_cards",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "hzls",
+      "tool_name": "elevator_and_escalator_status",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -175,6 +207,12 @@
       "scan_date": "2026-04-03T21:10:05Z",
       "grade": "A",
       "risk_score": 8,
+      "version": "sha-a911d8ce250f"
+    },
+    {
+      "scan_date": "2026-04-03T22:47:29Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "sha-a911d8ce250f"
     }
   ]

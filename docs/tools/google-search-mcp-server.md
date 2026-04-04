@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 185 |
 | **Language** | TypeScript |
 | **Source** | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

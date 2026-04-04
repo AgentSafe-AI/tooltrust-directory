@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 419 |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/nailuoGG/anki-mcp-server) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

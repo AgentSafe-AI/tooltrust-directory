@@ -1,16 +1,15 @@
 # 🔴 bahfahh-noteit-mcp
 
-> noteit-mcp
+> Create project notes, tasks, and issues enriched with Mermaid diagrams, interactive flows, and rich HTML explainers. Generate and organize reusable profiles and configuration components to guide behavior across roles and workflows. Search and manage notes by project to keep technical knowledge structured and easy to find.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 56 |
-| **Version** | `sha-2417adfae3d5` |
-| **Vendor** | bahfahh |
-| **Stars** | ⭐ 4 |
-| **Source** | [bahfahh-noteit-mcp](https://github.com/bahfahh/noteit-mcp) |
-| **Scan Date** | 2026-04-03 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [bahfahh-noteit-mcp](https://smithery.ai/server/bahfahh/noteit-mcp) |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

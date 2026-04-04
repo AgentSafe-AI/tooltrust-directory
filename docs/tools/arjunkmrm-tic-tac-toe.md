@@ -1,0 +1,53 @@
+# 🟢 arjunkmrm-tic-tac-toe
+
+> Play tic‑tac‑toe right from your chat and track turns effortlessly. Start a new game, make moves, and view the current board state anytime. Add a quick, strategic break to your workflow.
+
+| Field | Value |
+|-------|-------|
+| **Grade** | **A** |
+| **Risk Score** | 8 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [arjunkmrm-tic-tac-toe](https://smithery.ai/server/arjunkmrm/tic-tac-toe) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.4 |
+
+---
+
+## Findings Summary
+
+| Severity | Count |
+|----------|:-----:|
+| Critical | 0 |
+| High     | 0 |
+| Medium   | 1 |
+| Low      | 0 |
+| Info     | 1 |
+
+## Detailed Findings
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+*Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/arjunkmrm-tic-tac-toe.json)*

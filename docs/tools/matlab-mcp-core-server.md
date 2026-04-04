@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 318 |
 | **Language** | Go |
 | **Source** | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) |
-| **Scan Date** | 2026-04-03 |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

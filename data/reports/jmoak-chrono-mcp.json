@@ -1,0 +1,53 @@
+{
+  "tool_id": "jmoak-chrono-mcp",
+  "version": "0.4.2",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-04-04T01:42:23.858431615Z",
+  "scanner": "tooltrust-scanner/v0.3.4",
+  "source_url": "https://github.com/JMoak/chrono-mcp",
+  "category": "Developer Tools",
+  "vendor": "JMoak",
+  "npm_package": "@jmoak/chrono-mcp",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Time access and calculations mcp written in typescript available via npx.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TIME CALCULATOR"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "GET TIME",
+    "TIME CALCULATOR"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "GET TIME",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "TIME CALCULATOR",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}
