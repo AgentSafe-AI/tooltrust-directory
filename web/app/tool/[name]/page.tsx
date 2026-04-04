@@ -106,15 +106,6 @@ export default async function ToolPage({ params }: PageProps) {
 }`;
   const decisionLabel = getDecisionLabel(grade);
   const actionStyle = getActionCardStyle(grade);
-  const toolContexts =
-    report.tool_contexts?.filter((ctx) => {
-      const hasBehavior = Boolean(ctx.behavior && ctx.behavior.length > 0);
-      const hasDestinations = Boolean(ctx.destinations && ctx.destinations.length > 0);
-      const hasDependencyContext = Boolean(ctx.dependency_visibility);
-      const isNonAllow = ctx.action !== "ALLOW";
-      return hasBehavior || hasDestinations || (hasDependencyContext && isNonAllow);
-    }) ?? [];
-
   const severityChips = [
     { label: "Critical", n: summary.critical },
     { label: "High", n: summary.high },
@@ -374,49 +365,6 @@ export default async function ToolPage({ params }: PageProps) {
             </p>
           </div>
         </div>
-      )}
-
-      {toolContexts.length > 0 && (
-        <section className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden">
-          <h2 className="border-b border-zinc-800 px-5 py-4 text-lg font-semibold text-zinc-100">
-            Behavior &amp; Destinations
-          </h2>
-          <div className="divide-y divide-zinc-800">
-            {toolContexts.map((ctx) => (
-              <div key={ctx.tool_name} className="p-5">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="font-mono text-sm text-zinc-100">{ctx.tool_name}</h3>
-                  <span className="rounded border border-zinc-700 bg-zinc-800/80 px-2 py-0.5 text-[11px] uppercase tracking-wide text-zinc-400">
-                    {ctx.action === "REQUIRE_APPROVAL" ? "Needs approval" : ctx.action.toLowerCase()}
-                  </span>
-                  <span className="rounded border border-zinc-700 bg-zinc-800/80 px-2 py-0.5 text-[11px] uppercase tracking-wide text-zinc-400">
-                    Grade {ctx.grade}
-                  </span>
-                </div>
-                <div className="mt-3 space-y-2 text-sm text-zinc-400">
-                  {ctx.behavior && ctx.behavior.length > 0 && (
-                    <p>
-                      <span className="font-medium text-zinc-200">Behavior:</span>{" "}
-                      {ctx.behavior.join(", ")}
-                    </p>
-                  )}
-                  {ctx.destinations && ctx.destinations.length > 0 && (
-                    <p>
-                      <span className="font-medium text-zinc-200">Destination:</span>{" "}
-                      {ctx.destinations.join("; ")}
-                    </p>
-                  )}
-                  {ctx.dependency_visibility && (
-                    <p>
-                      <span className="font-medium text-zinc-200">Dependency visibility:</span>{" "}
-                      {ctx.dependency_visibility}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       )}
 
       <section className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden">
