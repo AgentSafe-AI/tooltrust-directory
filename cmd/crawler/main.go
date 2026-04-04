@@ -73,6 +73,46 @@ type PendingScan struct {
 // nonAlphanumHyphen matches characters that should be stripped / replaced.
 var nonAlphanumHyphen = regexp.MustCompile(`[^a-z0-9-]+`)
 
+// versionCache avoids redundant GitHub API calls when the same repo is
+// discovered via multiple paths (seed, Smithery, GitHub Search).
+var versionCache = make(map[string]cachedVersion)
+
+type cachedVersion struct {
+	version string
+	err     error
+}
+
+func cachedLatestVersion(ctx context.Context, client *github.Client, owner, repo string, allowBranchFallback bool) (string, error) {
+	key := owner + "/" + repo
+	if c, ok := versionCache[key]; ok {
+		return c.version, c.err
+	}
+	v, err := latestVersion(ctx, client, owner, repo, allowBranchFallback)
+	versionCache[key] = cachedVersion{v, err}
+	return v, err
+}
+
+// repoCache avoids redundant Repositories.Get calls.
+type cachedRepo struct {
+	repo *github.Repository
+	err  error
+}
+
+var repoCache = make(map[string]cachedRepo)
+
+func cachedRepoGet(ctx context.Context, client *github.Client, owner, repo string) (*github.Repository, error) {
+	key := owner + "/" + repo
+	if c, ok := repoCache[key]; ok {
+		return c.repo, c.err
+	}
+	r, _, err := client.Repositories.Get(ctx, owner, repo)
+	repoCache[key] = cachedRepo{r, err}
+	if err != nil {
+		return nil, err
+	}
+	return r, nil
+}
+
 func main() {
 	token := os.Getenv("GITHUB_TOKEN")
 	reportsDir := envOr("REPORTS_DIR", "data/reports")
@@ -103,11 +143,18 @@ func main() {
 	seedRepos, _ := loadSeed(seedPath)
 	log.Printf("Loaded %d seed repos from %s (mcpmarket/smithery popular)", len(seedRepos), seedPath)
 
-	pending, err := discoverTools(ctx, client, existing, seedRepos, forceRescan)
+	pending, err := discoverTools(ctx, client, existing, seedRepos, forceRescan, latestScannerVersion)
 	if err != nil {
 		log.Fatalf("tool discovery: %v", err)
 	}
 	log.Printf("Discovered %d tool(s) pending scan", len(pending))
+
+	rateLimit, _, _ := client.RateLimit.Get(ctx)
+	if rateLimit != nil && rateLimit.Core != nil {
+		log.Printf("GitHub API budget: %d/%d remaining (resets %s)",
+			rateLimit.Core.Remaining, rateLimit.Core.Limit,
+			rateLimit.Core.Reset.Time.Format(time.RFC3339))
+	}
 
 	if err := writePendingScans(outPath, pending); err != nil {
 		log.Fatalf("write pending scans: %v", err)
@@ -301,7 +348,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 		}
 		seen[toolID] = true
 
-		ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+		ghRepo, err := cachedRepoGet(ctx, client, owner, repo)
 		if err != nil {
 			log.Printf("seed %s: %v", spec, err)
 			continue
@@ -310,7 +357,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 			continue
 		}
 
-		version, err := latestVersion(ctx, client, owner, repo, true)
+		version, err := cachedLatestVersion(ctx, client, owner, repo, true)
 		if err != nil {
 			if forceRescan {
 				if cur, ok := existing[toolID]; ok {
@@ -376,13 +423,13 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 		}
 		owner, repo := parts[0], parts[1]
 
-		ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+		ghRepo, err := cachedRepoGet(ctx, client, owner, repo)
 		if err != nil {
 			log.Printf("seed override %s: %v", ov.ToolID, err)
 			continue
 		}
 
-		version, err := latestVersion(ctx, client, owner, repo, true)
+		version, err := cachedLatestVersion(ctx, client, owner, repo, true)
 		if err != nil {
 			if forceRescan {
 				if cur, ok := existing[ov.ToolID]; ok {
@@ -477,9 +524,9 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		}
 
 		if ghOwner != "" && ghRepo != "" {
-			ghRepoData, _, err := client.Repositories.Get(ctx, ghOwner, ghRepo)
+			ghRepoData, err := cachedRepoGet(ctx, client, ghOwner, ghRepo)
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
-				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo, false)
+				version, verErr := cachedLatestVersion(ctx, client, ghOwner, ghRepo, false)
 				if verErr == nil {
 					if cur, ok := existing[toolID]; ok && cur.Version == version {
 						if !forceRescan {
@@ -571,7 +618,7 @@ func discoverFromSmitherySeeds(seeds []SmitherySeed, existing map[string]*Existi
 
 // discoverTools queries GitHub Search and seed file, merges results, and returns
 // tools whose latest version is newer than (or absent from) existing.
-func discoverTools(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seedRepos []string, forceRescan bool) ([]PendingScan, error) {
+func discoverTools(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seedRepos []string, forceRescan bool, latestScannerVersion string) ([]PendingScan, error) {
 	seen := make(map[string]bool)
 
 	var pending []PendingScan
@@ -655,7 +702,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 			}
 			seen[toolID] = true
 
-			version, err := latestVersion(ctx, client, repo.GetOwner().GetLogin(), repo.GetName(), false)
+			version, err := cachedLatestVersion(ctx, client, repo.GetOwner().GetLogin(), repo.GetName(), false)
 			if err != nil {
 				if forceRescan {
 					if cur, ok := existing[toolID]; ok {
@@ -707,6 +754,9 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		backfilled := 0
 		for toolID, r := range existing {
 			if seen[toolID] {
+				continue
+			}
+			if latestScannerVersion != "" && normalizeScannerVersion(r.Scanner) == latestScannerVersion {
 				continue
 			}
 			seen[toolID] = true
@@ -763,17 +813,16 @@ func parseGitHubOwnerRepo(sourceURL string) (owner, repo string) {
 // default-branch HEAD commit SHA so important tools without formal releases can
 // still enter the scan pipeline.
 func latestVersion(ctx context.Context, client *github.Client, owner, repo string, allowBranchFallback bool) (string, error) {
-	release, _, err := client.Repositories.GetLatestRelease(ctx, owner, repo)
-	if err == nil {
-		return strings.TrimPrefix(release.GetTagName(), "v"), nil
+	// Try tags first. Most MCP repos publish tags without formal releases, so
+	// this avoids a wasted 404 from GetLatestRelease.
+	tags, _, tagErr := client.Repositories.ListTags(ctx, owner, repo, &github.ListOptions{PerPage: 1})
+	if tagErr == nil && len(tags) > 0 {
+		return strings.TrimPrefix(tags[0].GetName(), "v"), nil
 	}
 
-	tags, _, err := client.Repositories.ListTags(ctx, owner, repo, &github.ListOptions{PerPage: 1})
-	if err != nil {
-		return "", fmt.Errorf("ListTags: %w", err)
-	}
-	if len(tags) > 0 {
-		return strings.TrimPrefix(tags[0].GetName(), "v"), nil
+	release, _, releaseErr := client.Repositories.GetLatestRelease(ctx, owner, repo)
+	if releaseErr == nil {
+		return strings.TrimPrefix(release.GetTagName(), "v"), nil
 	}
 
 	// Last resort: read version from package.json on the default branch.
@@ -784,6 +833,9 @@ func latestVersion(ctx context.Context, client *github.Client, owner, repo strin
 	}
 
 	if !allowBranchFallback {
+		if tagErr != nil && releaseErr != nil {
+			return "", fmt.Errorf("ListTags: %v; GetLatestRelease: %v; package.json: %w", tagErr, releaseErr, err)
+		}
 		return "", err
 	}
 
@@ -796,7 +848,7 @@ func latestVersion(ctx context.Context, client *github.Client, owner, repo strin
 // packageJSONVersion fetches the root package.json from the repo's default
 // branch and returns the "version" field, or an error if unavailable.
 func packageJSONVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
-	ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+	ghRepo, err := cachedRepoGet(ctx, client, owner, repo)
 	if err != nil {
 		return "", fmt.Errorf("get repo: %w", err)
 	}
@@ -825,7 +877,7 @@ func packageJSONVersion(ctx context.Context, client *github.Client, owner, repo 
 }
 
 func defaultBranchVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
-	ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+	ghRepo, err := cachedRepoGet(ctx, client, owner, repo)
 	if err != nil {
 		return "", fmt.Errorf("get repo for default branch version: %w", err)
 	}
