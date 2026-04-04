@@ -117,6 +117,14 @@ export function formatScannedAgo(scanDate: string): string {
   }
 }
 
+export function formatVersionLabel(version?: string): string {
+  if (!version) return "";
+  if (version.startsWith("sha-") && version.length > 4) {
+    return `main@${version.slice(4)}`;
+  }
+  return version;
+}
+
 const FINDING_NARRATIVES: Record<string, FindingNarrative> = {
   "AS-001": {
     shortLabel: "Prompt Injection",

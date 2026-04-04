@@ -1,4 +1,5 @@
 import { getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
+import { formatVersionLabel } from "@/lib/report-utils";
 import { GradeProgressRing } from "@/lib/grades";
 import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
 import { notFound } from "next/navigation";
@@ -212,7 +213,7 @@ export default async function ToolPage({ params }: PageProps) {
             </span>
             {report.version && (
               <span className="rounded border border-zinc-700 bg-zinc-800/80 px-2 py-0.5 text-xs text-zinc-400">
-                {report.version}
+                {formatVersionLabel(report.version)}
               </span>
             )}
           </div>

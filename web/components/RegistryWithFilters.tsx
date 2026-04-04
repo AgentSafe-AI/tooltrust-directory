@@ -9,6 +9,7 @@ import {
   displayGrade,
   keyFindingsSummary,
   formatScannedAgo,
+  formatVersionLabel,
   getToolImpactLine,
 } from "@/lib/report-utils";
 import { GradeBadge } from "@/lib/grades";
@@ -319,7 +320,7 @@ export function RegistryWithFilters({ reports }: { reports: Report[] }) {
                       </span>
                       {r.version && (
                         <span className="rounded border border-zinc-700 bg-zinc-800/80 px-1.5 py-0.5 text-xs text-zinc-400">
-                          {r.version}
+                          {formatVersionLabel(r.version)}
                         </span>
                       )}
                     </div>
