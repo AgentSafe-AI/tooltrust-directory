@@ -6,14 +6,15 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `ctx7@0.3.9` |
+| **Version** | `1.0.30` |
 | **Vendor** | upstash |
-| **Stars** | ⭐ 51610 |
-| **npm Package** | `@upstash/context7` |
+| **Stars** | ⭐ 51626 |
+| **npm Package** | `@upstash/context7-mcp` |
+| **npm Downloads (30d)** | 2.7M |
 | **Language** | TypeScript |
 | **Source** | [upstash-context7-mcp](https://github.com/upstash/context7) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [kubefwd](https://github.com/txn2/kubefwd) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

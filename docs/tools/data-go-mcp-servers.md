@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

@@ -1,14 +1,14 @@
 {
   "tool_id": "n8n",
-  "version": "n8n@2.14.2",
+  "version": "1",
   "grade": "C",
-  "risk_score": 44,
-  "scan_date": "2026-04-04T16:40:37.786944927Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "risk_score": 32,
+  "scan_date": "2026-04-04T22:50:53.313700727Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/n8n-io/n8n",
   "category": "Developer Tools",
   "vendor": "n8n-io",
-  "stars": 182423,
+  "stars": 182459,
   "npm_package": "n8n-monorepo",
   "npm_downloads_monthly": 14,
   "license": "NOASSERTION",
@@ -181,14 +181,6 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "n8n_execute_workflow"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "n8n_execute_workflow"
     },
     {
@@ -537,7 +529,7 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 11,
     "medium": 15,
     "low": 11,
@@ -645,8 +637,8 @@
     },
     {
       "tool_name": "n8n_execute_workflow",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -884,6 +876,12 @@
     },
     {
       "scan_date": "2026-04-04T06:18:36Z",
+      "grade": "C",
+      "risk_score": 44,
+      "version": "n8n@2.14.2"
+    },
+    {
+      "scan_date": "2026-04-04T16:40:37Z",
       "grade": "C",
       "risk_score": 44,
       "version": "n8n@2.14.2"

@@ -1,10 +1,10 @@
 {
   "tool_id": "bgauryy-octocode-mcp",
-  "version": "9.1.1",
+  "version": "5.0.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-04T16:42:11.231109806Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "scan_date": "2026-04-04T22:52:45.240359538Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/bgauryy/octocode-mcp",
   "category": "Developer Tools",
   "vendor": "bgauryy",
@@ -124,6 +124,30 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "mcp_octocode_githubSearchCommits"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "mcp_octocode_githubSearchCommits"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mcp_octocode_githubSearchCommits"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubSearchPullRequests"
     },
     {
@@ -173,24 +197,59 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "mcp_octocode_githubViewRepoStructure"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "mcp_octocode_packageSearch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "mcp_octocode_packageSearch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mcp_octocode_packageSearch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mcp_octocode_npmViewPackage"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 8,
     "medium": 1,
-    "low": 6,
-    "info": 7
+    "low": 8,
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "mcp_octocode_apiStatusCheck",
     "mcp_octocode_githubGetFileContent",
     "mcp_octocode_githubSearchCode",
+    "mcp_octocode_githubSearchCommits",
     "mcp_octocode_githubSearchIssues",
     "mcp_octocode_githubSearchPullRequests",
     "mcp_octocode_githubSearchRepositories",
-    "mcp_octocode_githubViewRepoStructure"
+    "mcp_octocode_githubViewRepoStructure",
+    "mcp_octocode_npmViewPackage",
+    "mcp_octocode_packageSearch"
   ],
   "tool_contexts": [
     {
@@ -235,6 +294,16 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "mcp_octocode_githubSearchCommits",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "mcp_octocode_githubSearchPullRequests",
       "action": "ALLOW",
       "grade": "B",
@@ -260,6 +329,23 @@
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "mcp_octocode_packageSearch",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "mcp_octocode_npmViewPackage",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -277,6 +363,12 @@
     },
     {
       "scan_date": "2026-04-04T06:20:13Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "9.1.1"
+    },
+    {
+      "scan_date": "2026-04-04T16:42:11Z",
       "grade": "C",
       "risk_score": 25,
       "version": "9.1.1"

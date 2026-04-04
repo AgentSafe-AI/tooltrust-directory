@@ -1,0 +1,54 @@
+{
+  "tool_id": "buildwithclaude",
+  "version": "1.1.0",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-04T22:51:47.509362852Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
+  "source_url": "https://github.com/davepoon/buildwithclaude",
+  "category": "Developer Tools",
+  "vendor": "davepoon",
+  "stars": 2695,
+  "npm_package": "claude-code-subagents-collection",
+  "license": "MIT",
+  "language": "Python",
+  "description": "A single hub to find Claude Skills, Agents, Commands, Hooks, Plugins, and Marketplace collections to extend Claude Code, Claude Desktop, Agent SDK and OpenClaw",
+  "findings": [
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "run-code"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "run-code"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "run-code"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "run-code",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "tool_id": "symdex-100-symdex",
-  "version": "1.1.1",
+  "version": ".1.1.2",
   "grade": "C",
   "risk_score": 33,
-  "scan_date": "2026-04-04T16:47:15.841941942Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "scan_date": "2026-04-04T22:58:04.453399687Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/symdex-100/symdex",
   "category": "Developer Tools",
   "vendor": "symdex-100",
@@ -118,54 +118,6 @@
       "tool_name": "get_index_stats"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_callers"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_callers"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_callees"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_callees"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "trace_call_chain"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "trace_call_chain"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -177,20 +129,17 @@
   "summary": {
     "critical": 0,
     "high": 2,
-    "medium": 8,
+    "medium": 5,
     "low": 2,
-    "info": 8
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_callees",
-    "get_callers",
     "get_index_stats",
     "health",
     "index_directory",
     "search_by_cypher",
-    "search_codebase",
-    "trace_call_chain"
+    "search_codebase"
   ],
   "tool_contexts": [
     {
@@ -236,33 +185,6 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_callers",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_callees",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "trace_call_chain",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
       "tool_name": "health",
       "action": "ALLOW",
       "grade": "A",
@@ -285,6 +207,12 @@
     },
     {
       "scan_date": "2026-04-04T06:25:42Z",
+      "grade": "C",
+      "risk_score": 33,
+      "version": "1.1.1"
+    },
+    {
+      "scan_date": "2026-04-04T16:47:15Z",
       "grade": "C",
       "risk_score": 33,
       "version": "1.1.1"

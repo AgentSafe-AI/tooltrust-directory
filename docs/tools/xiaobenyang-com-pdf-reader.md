@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [xiaobenyang-com-pdf-reader](https://smithery.ai/server/xiaobenyang-com/pdf-reader) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

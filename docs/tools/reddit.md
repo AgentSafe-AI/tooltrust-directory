@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [reddit](https://smithery.ai/server/reddit) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

@@ -1,10 +1,10 @@
 {
   "tool_id": "portel-dev-ncp",
-  "version": "2.3.0",
-  "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-04-04T16:44:57.071047927Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "version": "1.6.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-04T22:56:03.76979476Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/portel-dev/ncp",
   "category": "Developer Tools",
   "vendor": "portel-dev",
@@ -16,52 +16,12 @@
   "description": "Natural Context Provider (NCP). Your MCPs, supercharged. Find any tool instantly, load on demand, run on schedule, ready for any   client. Smart loading saves tokens and energy.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "find"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "code"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "code"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "code"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "code"
     },
     {
       "id": "AS-002",
@@ -89,15 +49,14 @@
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 2,
-    "medium": 1,
-    "low": 2,
-    "info": 3
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "code",
     "find",
     "run"
   ],
@@ -107,25 +66,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: skills.find"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "code",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
         "executes_commands"
-      ],
-      "destinations": [
-        "hardcoded domain: schedule.create",
-        "hardcoded domain: skills.find"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -156,6 +97,12 @@
     },
     {
       "scan_date": "2026-04-04T06:23:11Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "2.3.0"
+    },
+    {
+      "scan_date": "2026-04-04T16:44:57Z",
       "grade": "C",
       "risk_score": 42,
       "version": "2.3.0"

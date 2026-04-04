@@ -2,9 +2,9 @@
   "tool_id": "cornelcroi-context-lens",
   "version": "0.1.8",
   "grade": "C",
-  "risk_score": 33,
-  "scan_date": "2026-04-04T16:45:54.840253608Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "risk_score": 25,
+  "scan_date": "2026-04-04T22:56:51.654493495Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/cornelcroi/context-lens",
   "category": "Developer Tools",
   "vendor": "cornelcroi",
@@ -19,14 +19,6 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "resolve-library-id"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "resolve-library-id"
     },
     {
@@ -71,7 +63,7 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 1,
     "medium": 2,
     "low": 1,
@@ -85,8 +77,8 @@
   "tool_contexts": [
     {
       "tool_name": "resolve-library-id",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -123,6 +115,12 @@
     },
     {
       "scan_date": "2026-04-04T06:24:04Z",
+      "grade": "C",
+      "risk_score": 33,
+      "version": "0.1.8"
+    },
+    {
+      "scan_date": "2026-04-04T16:45:54Z",
       "grade": "C",
       "risk_score": 33,
       "version": "0.1.8"

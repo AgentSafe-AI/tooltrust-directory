@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [pranaviate-statscan-mcp](https://smithery.ai/server/pranaviate/statscan-mcp) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

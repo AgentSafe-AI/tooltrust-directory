@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [demomagic-lucy-apro](https://smithery.ai/server/demomagic/lucy-apro) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

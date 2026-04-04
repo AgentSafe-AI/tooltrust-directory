@@ -14,7 +14,7 @@ This is a computational pipeline, not prompt engineering over data. You cannot r
 | **Vendor** | Smithery |
 | **Source** | [leap-laboratories-discovery-engine](https://smithery.ai/server/leap-laboratories/discovery-engine) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

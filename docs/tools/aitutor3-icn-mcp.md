@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [aitutor3-icn-mcp](https://smithery.ai/server/AITutor3/icn-mcp) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 
