@@ -10,7 +10,7 @@
 | **Vendor** | eyaltoledano |
 | **Stars** | ⭐ 26393 |
 | **npm Package** | `task-master-ai` |
-| **npm Downloads (30d)** | 94.0k |
+| **npm Downloads (30d)** | 99.3k |
 | **Language** | JavaScript |
 | **Source** | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) |
 | **Scan Date** | 2026-04-04 |

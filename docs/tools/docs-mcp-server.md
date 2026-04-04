@@ -10,7 +10,7 @@
 | **Vendor** | arabold |
 | **Stars** | ⭐ 1192 |
 | **npm Package** | `@arabold/docs-mcp-server` |
-| **npm Downloads (30d)** | 4.1k |
+| **npm Downloads (30d)** | 4.0k |
 | **Language** | TypeScript |
 | **Source** | [docs-mcp-server](https://github.com/arabold/docs-mcp-server) |
 | **Scan Date** | 2026-04-04 |

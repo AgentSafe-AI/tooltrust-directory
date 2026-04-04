@@ -10,7 +10,7 @@
 | **Vendor** | nailuoGG |
 | **Stars** | ⭐ 232 |
 | **npm Package** | `anki-mcp-server` |
-| **npm Downloads (30d)** | 419 |
+| **npm Downloads (30d)** | 453 |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/nailuoGG/anki-mcp-server) |
 | **Scan Date** | 2026-04-04 |

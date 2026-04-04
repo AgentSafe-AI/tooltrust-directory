@@ -10,7 +10,7 @@
 | **Vendor** | pinkpixel-dev |
 | **Stars** | ⭐ 126 |
 | **npm Package** | `@pinkpixel/web-scout-mcp` |
-| **npm Downloads (30d)** | 414 |
+| **npm Downloads (30d)** | 416 |
 | **Language** | JavaScript |
 | **Source** | [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) |
 | **Scan Date** | 2026-04-04 |

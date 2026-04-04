@@ -10,7 +10,7 @@
 | **Vendor** | cyanheads |
 | **Stars** | ⭐ 429 |
 | **npm Package** | `obsidian-mcp-server` |
-| **npm Downloads (30d)** | 4.4k |
+| **npm Downloads (30d)** | 4.5k |
 | **Language** | TypeScript |
 | **Source** | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) |
 | **Scan Date** | 2026-04-04 |

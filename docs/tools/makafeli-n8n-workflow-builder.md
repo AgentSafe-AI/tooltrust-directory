@@ -10,7 +10,7 @@
 | **Vendor** | makafeli |
 | **Stars** | ⭐ 506 |
 | **npm Package** | `@makafeli/n8n-workflow-builder` |
-| **npm Downloads (30d)** | 558 |
+| **npm Downloads (30d)** | 572 |
 | **Language** | JavaScript |
 | **Source** | [makafeli-n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) |
 | **Scan Date** | 2026-04-04 |

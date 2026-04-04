@@ -10,7 +10,7 @@
 | **Vendor** | Laksh-star |
 | **Stars** | ⭐ 64 |
 | **npm Package** | `mcp-server-tmdb` |
-| **npm Downloads (30d)** | 48 |
+| **npm Downloads (30d)** | 52 |
 | **Language** | JavaScript |
 | **Source** | [laksh-star-mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb) |
 | **Scan Date** | 2026-04-04 |

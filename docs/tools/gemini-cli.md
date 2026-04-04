@@ -8,9 +8,9 @@
 | **Risk Score** | 40 |
 | **Version** | `0.36.0` |
 | **Vendor** | google-gemini |
-| **Stars** | ⭐ 100138 |
+| **Stars** | ⭐ 100151 |
 | **npm Package** | `@google/gemini-cli` |
-| **npm Downloads (30d)** | 3.2M |
+| **npm Downloads (30d)** | 3.1M |
 | **Language** | TypeScript |
 | **Source** | [gemini-cli](https://github.com/google-gemini/gemini-cli) |
 | **Scan Date** | 2026-04-04 |

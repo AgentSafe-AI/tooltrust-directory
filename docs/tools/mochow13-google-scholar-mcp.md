@@ -1,19 +1,15 @@
 # 🟡 mochow13-google-scholar-mcp
 
-> An MCP server for Google Scholar written in TypeScript with Streamable HTTP
+> Provide academic paper search capabilities by querying Google Scholar through a standardized MCP interface. Enable real-time streaming of search results and support multi-session interactions for seamless integration with AI models. Enhance research workflows by delivering structured scholarly data on demand.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `sha-258b00a80f7f` |
-| **Vendor** | mochow13 |
-| **Stars** | ⭐ 20 |
-| **npm Package** | `server` |
-| **npm Downloads (30d)** | 31.7k |
-| **Language** | TypeScript |
-| **Source** | [mochow13-google-scholar-mcp](https://github.com/mochow13/google-scholar-mcp) |
-| **Scan Date** | 2026-04-03 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [mochow13-google-scholar-mcp](https://smithery.ai/server/mochow13/google-scholar-mcp) |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

@@ -10,7 +10,7 @@
 | **Vendor** | EthanHenrickson |
 | **Stars** | ⭐ 110 |
 | **npm Package** | `math-mcp` |
-| **npm Downloads (30d)** | 53 |
+| **npm Downloads (30d)** | 49 |
 | **Language** | JavaScript |
 | **Source** | [ethanhenrickson-math-mcp](https://github.com/EthanHenrickson/math-mcp) |
 | **Scan Date** | 2026-04-04 |

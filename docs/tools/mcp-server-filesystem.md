@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `2026.1.26` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82920 |
+| **Stars** | ⭐ 82934 |
 | **npm Package** | `@modelcontextprotocol/server-filesystem` |
 | **npm Downloads (30d)** | 1.8M |
 | **Language** | TypeScript |

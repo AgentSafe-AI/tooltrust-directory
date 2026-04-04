@@ -10,7 +10,7 @@
 | **Vendor** | caol64 |
 | **Stars** | ⭐ 1150 |
 | **npm Package** | `@wenyan-md/mcp` |
-| **npm Downloads (30d)** | 828 |
+| **npm Downloads (30d)** | 718 |
 | **Language** | JavaScript |
 | **Source** | [wenyan-mcp](https://github.com/caol64/wenyan-mcp) |
 | **Scan Date** | 2026-04-04 |

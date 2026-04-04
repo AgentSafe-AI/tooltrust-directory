@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.5.7` |
 | **Vendor** | DeusData |
-| **Stars** | ⭐ 1187 |
+| **Stars** | ⭐ 1189 |
 | **Language** | C |
 | **Source** | [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) |
 | **Scan Date** | 2026-04-04 |

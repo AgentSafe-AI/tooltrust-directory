@@ -10,7 +10,7 @@
 | **Vendor** | portel-dev |
 | **Stars** | ⭐ 79 |
 | **npm Package** | `@portel/ncp` |
-| **npm Downloads (30d)** | 464 |
+| **npm Downloads (30d)** | 465 |
 | **Language** | JavaScript |
 | **Source** | [portel-dev-ncp](https://github.com/portel-dev/ncp) |
 | **Scan Date** | 2026-04-04 |

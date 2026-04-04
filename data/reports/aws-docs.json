@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-04T01:42:57.574987159Z",
+  "scan_date": "2026-04-04T06:27:13.526056518Z",
   "scanner": "tooltrust-scanner/v0.3.4",
   "source_url": "https://smithery.ai/server/aws/docs",
   "vendor": "Smithery",
@@ -12,16 +12,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "search_astro_docs"
-        ],
-        "removed": [
           "aws___read_documentation",
           "aws___recommend",
           "aws___search_documentation"
+        ],
+        "removed": [
+          "search_astro_docs"
         ],
         "version": "smithery"
       }
@@ -32,7 +32,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_astro_docs"
+      "tool_name": "aws___read_documentation"
     },
     {
       "id": "AS-011",
@@ -40,7 +40,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_astro_docs"
+      "tool_name": "aws___read_documentation"
     },
     {
       "id": "AS-014",
@@ -48,26 +48,109 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_astro_docs"
+      "tool_name": "aws___read_documentation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "aws___recommend"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "aws___recommend"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "aws___recommend"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "aws___search_documentation"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "aws___search_documentation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "aws___search_documentation"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 4,
     "medium": 0,
-    "low": 1,
-    "info": 1
+    "low": 3,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "search_astro_docs"
+    "aws___read_documentation",
+    "aws___recommend",
+    "aws___search_documentation"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_astro_docs",
+      "tool_name": "aws___read_documentation",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: aws.amazon.com",
+        "hardcoded domain: bucketnamingrules.html",
+        "hardcoded domain: docs.aws.amazon.com",
+        "hardcoded domain: lambda-invocation.html"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "aws___recommend",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: docs.aws.amazon.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "aws___search_documentation",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -77,6 +160,12 @@
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:56:05Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-04T01:42:57Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

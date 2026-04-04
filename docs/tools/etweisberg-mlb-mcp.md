@@ -1,17 +1,15 @@
 # 🟠 etweisberg-mlb-mcp
 
-> MCP server for advanced baseball analytics (statcast, fangraphs, baseball reference, mlb stats API) with client demo 
+> Provide structured access to Major League Baseball statistics through an MCP server. Query and retrieve detailed baseball data including statcast, fangraphs, and baseball reference stats. Generate visualizations and integrate seamlessly with MCP-compatible clients for enhanced baseball analytics.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `sha-577f8382b5d2` |
-| **Vendor** | etweisberg |
-| **Stars** | ⭐ 21 |
-| **Language** | Python |
-| **Source** | [etweisberg-mlb-mcp](https://github.com/etweisberg/mlb-mcp) |
-| **Scan Date** | 2026-04-03 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [etweisberg-mlb-mcp](https://smithery.ai/server/etweisberg/mlb-mcp) |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

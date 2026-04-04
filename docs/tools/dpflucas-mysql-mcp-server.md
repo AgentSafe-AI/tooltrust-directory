@@ -10,7 +10,7 @@
 | **Vendor** | dpflucas |
 | **Stars** | ⭐ 62 |
 | **npm Package** | `mysql-mcp-server` |
-| **npm Downloads (30d)** | 3.4k |
+| **npm Downloads (30d)** | 3.5k |
 | **Language** | JavaScript |
 | **Source** | [dpflucas-mysql-mcp-server](https://github.com/dpflucas/mysql-mcp-server) |
 | **Scan Date** | 2026-04-04 |

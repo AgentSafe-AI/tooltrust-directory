@@ -1,14 +1,15 @@
 # 🟠 ymuberra-geo-news-mcp
 
+> Provide localized news content dynamically based on geographic data. Enable agents to access and retrieve news resources tailored to specific locations. Enhance context-aware information retrieval for applications requiring up-to-date regional news.
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `sha-aa48559c88b1` |
-| **Vendor** | Ymuberra |
-| **Language** | Python |
-| **Source** | [ymuberra-geo-news-mcp](https://github.com/Ymuberra/geo-news-mcp) |
-| **Scan Date** | 2026-04-03 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [ymuberra-geo-news-mcp](https://smithery.ai/server/Ymuberra/geo-news-mcp) |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

@@ -8,9 +8,9 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.9` |
 | **Vendor** | ForLoopCodes |
-| **Stars** | ⭐ 1718 |
+| **Stars** | ⭐ 1720 |
 | **npm Package** | `contextplus` |
-| **npm Downloads (30d)** | 2.2k |
+| **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/ForLoopCodes/contextplus) |
 | **Scan Date** | 2026-04-04 |

@@ -8,9 +8,9 @@
 | **Risk Score** | 27 |
 | **Version** | `2.46.1` |
 | **Vendor** | czlonkowski |
-| **Stars** | ⭐ 17421 |
+| **Stars** | ⭐ 17435 |
 | **npm Package** | `n8n-mcp` |
-| **npm Downloads (30d)** | 391.6k |
+| **npm Downloads (30d)** | 405.5k |
 | **Language** | TypeScript |
 | **Source** | [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) |
 | **Scan Date** | 2026-04-04 |

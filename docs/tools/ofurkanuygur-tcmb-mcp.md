@@ -1,17 +1,15 @@
 # 🟢 ofurkanuygur-tcmb-mcp
 
-> TCMB döviz kurları için MCP server
+> Fetch today's and historical exchange rates from the Turkish Central Bank dating back to 1996. Convert between currencies and compare trends with summary statistics. Rely on holiday-aware lookups to always return the latest available data.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `sha-df0d234a8f9e` |
-| **Vendor** | ofurkanuygur |
-| **Stars** | ⭐ 1 |
-| **Language** | Python |
-| **Source** | [ofurkanuygur-tcmb-mcp](https://github.com/ofurkanuygur/tcmb_mcp) |
-| **Scan Date** | 2026-04-03 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [ofurkanuygur-tcmb-mcp](https://smithery.ai/server/ofurkanuygur/tcmb_mcp) |
+| **Scan Date** | 2026-04-04 |
 | **Scanner** | tooltrust-scanner/v0.3.4 |
 
 ---

@@ -10,7 +10,7 @@
 | **Vendor** | williamzujkowski |
 | **Stars** | ⭐ 182 |
 | **npm Package** | `@williamzujkowski/strudel-mcp-server` |
-| **npm Downloads (30d)** | 372 |
+| **npm Downloads (30d)** | 374 |
 | **Language** | TypeScript |
 | **Source** | [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) |
 | **Scan Date** | 2026-04-04 |

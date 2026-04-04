@@ -10,7 +10,7 @@
 | **Vendor** | browserbase |
 | **Stars** | ⭐ 3224 |
 | **npm Package** | `@browserbasehq/mcp` |
-| **npm Downloads (30d)** | 11.1k |
+| **npm Downloads (30d)** | 11.2k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
 | **Scan Date** | 2026-04-04 |

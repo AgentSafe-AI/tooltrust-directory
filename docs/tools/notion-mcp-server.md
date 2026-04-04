@@ -10,7 +10,7 @@
 | **Vendor** | makenotion |
 | **Stars** | ⭐ 4161 |
 | **npm Package** | `@notionhq/notion-mcp-server` |
-| **npm Downloads (30d)** | 274.4k |
+| **npm Downloads (30d)** | 274.6k |
 | **Language** | TypeScript |
 | **Source** | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) |
 | **Scan Date** | 2026-04-04 |
