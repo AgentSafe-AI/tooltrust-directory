@@ -218,6 +218,19 @@ export const RULE_CATALOG: RuleInfo[] = [
     recommendation:
       "Remove the affected version, rotate exposed credentials, and inspect the dependency tree for the IOC package before reinstalling.",
   },
+  {
+    id: "AS-017",
+    emoji: "⚠️",
+    shortLabel: "Data Exfil",
+    title: "Suspicious Data Exfiltration Description",
+    severity: ["Medium"],
+    detects:
+      "Descriptions that explicitly suggest forwarding user data, content, or conversation history to external URLs, remote hosts, or equivalent off-box destinations.",
+    whyItMatters:
+      "Even when a tool is not using prompt-injection language, explicit external data-forwarding behavior can still create privacy and security risk.",
+    recommendation:
+      "Review the destination scope, document external forwarding clearly, and require approval when the tool can send user-derived content off-box.",
+  },
 ];
 
 const RULES_BY_ID = new Map(RULE_CATALOG.map((rule) => [rule.id, rule]));

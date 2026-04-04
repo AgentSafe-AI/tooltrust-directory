@@ -167,6 +167,19 @@ dependency tree for the IOC package before reinstalling.
 
 ---
 
+### AS-017 — Suspicious Data Exfiltration Description
+
+**Detects:** descriptions that explicitly suggest forwarding user data, content, or conversation
+history to external URLs, remote hosts, attacker-controlled sinks, or equivalent off-box destinations.
+
+**Why it matters:** This kind of language may not be prompt injection, but it still signals a tool
+that can move sensitive or user-derived content outside the local trust boundary.
+
+**Recommendation:** Review the destination scope, document external forwarding clearly, and keep
+the tool behind approval if it can send user-derived content off-box.
+
+---
+
 ### AS-010 — Insecure Secret Handling
 
 **Detects:** Input parameters whose names suggest they accept raw secrets or credentials —

@@ -118,6 +118,7 @@ All active scanner rules as of [ToolTrust Scanner v0.1.12](https://github.com/Ag
 | ℹ️ **AS&#8209;014** | **Info** | Dependency Inventory Unavailable | MCP tool exposed neither `metadata.dependencies` nor a `repo_url`, so supply-chain coverage is explicitly incomplete |
 | ⚠️ **AS&#8209;015** | Medium / High | Suspicious NPM Lifecycle Script | npm dependency publishes install-time lifecycle scripts; severity rises for remote-fetch or inline-execution patterns |
 | 🚨 **AS&#8209;016** | **Critical** | Suspicious NPM IOC Dependency | npm package metadata or install-time scripts reference a known malicious IOC dependency, domain, URL, or reviewed script pattern such as `plain-crypto-js`, helping catch compromised publishes beyond version blacklists |
+| ⚠️ **AS&#8209;017** | **Medium** | Suspicious Data Exfiltration Description | tool description explicitly suggests forwarding user data, content, or conversation history to external / remote endpoints, distinct from prompt-injection wording |
 | 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
@@ -126,7 +127,7 @@ All active scanner rules as of [ToolTrust Scanner v0.1.12](https://github.com/Ag
 
 **Tool Poisoning (Prompt Injection)** · Severity: Critical
 
-Detects adversarial instructions embedded in a tool's `description` field — e.g. `ignore previous instructions`, `system:` prefixes, `<INST>` tags, jailbreak language, or data-exfiltration directives pointing to external URLs.
+Detects adversarial instructions embedded in a tool's `description` field — e.g. `ignore previous instructions`, `system:` prefixes, `<INST>` tags, or jailbreak language intended to override the model's normal guardrails.
 
 MCP tool descriptions are read by the LLM at runtime. A malicious server can use this field to override the agent's system prompt, exfiltrate data, or escalate privileges without the user's knowledge.
 
@@ -304,6 +305,18 @@ Severity remains Medium for ordinary lifecycle scripts, but is raised to High wh
 **Suspicious NPM IOC Dependency** · Severity: Critical
 
 Flags npm dependency versions whose published registry metadata references known malicious IOC package names such as `plain-crypto-js`. This is narrower than full tarball signature scanning, but it still helps catch compromised publishes when the attacker introduces a recognizable IOC through dependency metadata.
+
+---
+
+### AS-017
+
+**Suspicious Data Exfiltration Description** · Severity: Medium
+
+Flags descriptions that explicitly suggest forwarding user data, content, or conversation history to external URLs, remote hosts, attacker-controlled sinks, or equivalent off-box destinations.
+
+This rule is intentionally separate from AS-001. Prompt injection focuses on instruction override language; AS-017 focuses on suspicious external data-forwarding language that may still warrant review even when it is not trying to hijack the model.
+
+**Fix:** Narrow the destination scope, document the external endpoint clearly, and keep the tool behind approval if it forwards sensitive or user-derived content.
 
 This rule is especially useful when combined with lockfile-derived transitive dependency evidence from `package-lock.json`, `pnpm-lock.yaml`, or `yarn.lock`, because many MCP servers will not depend on a compromised package directly.
 
