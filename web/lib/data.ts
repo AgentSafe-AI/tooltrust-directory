@@ -22,6 +22,7 @@ export const getToolImpactLine = getToolImpactLineUtil;
 export const getToolNarrative = getToolNarrativeUtil;
 
 const REPORTS_DIR = "data/reports";
+const MIN_PUBLIC_GITHUB_STARS = 50;
 
 function getReportsDir(): string {
   const cwd = process.cwd();
@@ -49,7 +50,7 @@ export function getAllReports(): Report[] {
     try {
       const raw = fs.readFileSync(path.join(dir, file), "utf-8");
       const report = JSON.parse(raw) as Report;
-      if (!report.scan_incomplete) {
+      if (isPublicReport(report)) {
         reports.push(report);
       }
     } catch {
@@ -70,8 +71,23 @@ export function getReportByToolName(name: string): Report | null {
   }
   try {
     const raw = fs.readFileSync(file, "utf-8");
-    return JSON.parse(raw) as Report;
+    const report = JSON.parse(raw) as Report;
+    return isPublicReport(report) ? report : null;
   } catch {
     return null;
   }
+}
+
+function isGithubBackedReport(report: Report): boolean {
+  return typeof report.source_url === "string" && report.source_url.includes("github.com");
+}
+
+export function isPublicReport(report: Report): boolean {
+  if (report.scan_incomplete) {
+    return false;
+  }
+  if (isGithubBackedReport(report) && (report.stars ?? 0) < MIN_PUBLIC_GITHUB_STARS) {
+    return false;
+  }
+  return true;
 }

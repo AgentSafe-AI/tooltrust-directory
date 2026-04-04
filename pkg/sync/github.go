@@ -23,6 +23,8 @@ import (
 	"time"
 )
 
+const MinPublicGitHubStars = 50
+
 // Report mirrors the fields we need from report.schema.json.
 type Report struct {
 	ToolID              string    `json:"tool_id"`
@@ -204,6 +206,9 @@ func loadReports(dir string) ([]Report, error) {
 			log.Printf("warning: skip %s (parse error): %v", e.Name(), err)
 			continue
 		}
+		if !isPublicReport(r) {
+			continue
+		}
 		reports = append(reports, r)
 	}
 
@@ -221,6 +226,13 @@ func loadReports(dir string) ([]Report, error) {
 		return reports[i].RiskScore < reports[j].RiskScore
 	})
 	return reports, nil
+}
+
+func isPublicReport(r Report) bool {
+	if strings.Contains(r.SourceURL, "github.com") && r.Stars < MinPublicGitHubStars {
+		return false
+	}
+	return true
 }
 
 func gradeRank(g string) int {
