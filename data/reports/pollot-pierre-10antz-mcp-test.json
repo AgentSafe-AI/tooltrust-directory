@@ -1,22 +1,33 @@
 {
   "tool_id": "pollot-pierre-10antz-mcp-test",
   "version": "sha-878000fc84e9",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-03T22:55:55.84960124Z",
-  "scanner": "tooltrust-scanner/v0.3.4",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-04T16:50:09.576491839Z",
+  "scanner": "tooltrust-scanner/v0.3.5",
   "source_url": "https://github.com/pollot-pierre-10antz/mcp_test",
   "category": "Developer Tools",
   "vendor": "pollot-pierre-10antz",
   "language": "Python",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_wiki_structure"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-878000fc84e9: 2 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "check_domain",
+          "list_tlds"
+        ],
+        "removed": [
+          "ask_question",
+          "read_wiki_contents",
+          "read_wiki_structure"
+        ],
+        "version": "sha-878000fc84e9"
+      }
     },
     {
       "id": "AS-014",
@@ -24,7 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_wiki_contents"
+      "tool_name": "check_domain"
     },
     {
       "id": "AS-014",
@@ -32,43 +43,43 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ask_question"
+      "tool_name": "list_tlds"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 3
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "ask_question",
-    "read_wiki_contents",
-    "read_wiki_structure"
+    "check_domain",
+    "list_tlds"
   ],
   "tool_contexts": [
     {
-      "tool_name": "read_wiki_structure",
+      "tool_name": "check_domain",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "read_wiki_contents",
+      "tool_name": "list_tlds",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
+    }
+  ],
+  "scan_history": [
     {
-      "tool_name": "ask_question",
-      "action": "ALLOW",
+      "scan_date": "2026-04-03T22:55:55Z",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 0,
+      "version": "sha-878000fc84e9"
     }
   ]
 }

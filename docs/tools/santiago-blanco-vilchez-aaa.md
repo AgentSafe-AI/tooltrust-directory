@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [santiago-blanco-vilchez-aaa](https://smithery.ai/server/santiago.blanco.vilchez/aaa) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

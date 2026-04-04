@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [inside-hair-mcp-google-meet-and-calendar](https://smithery.ai/server/INSIDE-HAIR/mcp-google-meet-and-calendar) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

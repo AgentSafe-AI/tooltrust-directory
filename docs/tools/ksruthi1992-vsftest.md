@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [ksruthi1992-vsftest](https://smithery.ai/server/ksruthi1992/vsftest) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

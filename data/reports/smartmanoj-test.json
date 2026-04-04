@@ -2,9 +2,9 @@
   "tool_id": "smartmanoj-test",
   "version": "sha-9678130ce408",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-04T06:28:56.49795841Z",
-  "scanner": "tooltrust-scanner/v0.3.4",
+  "risk_score": 15,
+  "scan_date": "2026-04-04T16:50:01.807232197Z",
+  "scanner": "tooltrust-scanner/v0.3.5",
   "source_url": "https://github.com/SmartManoj/Test",
   "category": "Other",
   "vendor": "SmartManoj",
@@ -13,34 +13,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-9678130ce408: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-9678130ce408: 2 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "catalog_search"
-        ],
-        "removed": [
           "check_domain",
           "list_tlds"
         ],
+        "removed": [
+          "catalog_search"
+        ],
         "version": "sha-9678130ce408"
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "catalog_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "catalog_search"
     },
     {
       "id": "AS-014",
@@ -48,28 +32,41 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "catalog_search"
+      "tool_name": "check_domain"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_tlds"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 1
+    "low": 0,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "catalog_search"
+    "check_domain",
+    "list_tlds"
   ],
   "tool_contexts": [
     {
-      "tool_name": "catalog_search",
+      "tool_name": "check_domain",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_tlds",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -79,6 +76,12 @@
       "scan_date": "2026-04-03T22:55:46Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "sha-9678130ce408"
+    },
+    {
+      "scan_date": "2026-04-04T06:28:56Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "sha-9678130ce408"
     }
   ]

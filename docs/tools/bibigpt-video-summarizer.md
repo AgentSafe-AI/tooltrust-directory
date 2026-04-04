@@ -31,8 +31,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bibigpt-video-summarizer](https://smithery.ai/server/bibigpt/video-summarizer) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

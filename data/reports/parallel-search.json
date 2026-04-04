@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-04T06:28:39.764466894Z",
-  "scanner": "tooltrust-scanner/v0.3.4",
+  "scan_date": "2026-04-04T16:50:02.183973364Z",
+  "scanner": "tooltrust-scanner/v0.3.5",
   "source_url": "https://smithery.ai/server/parallel/search",
   "vendor": "Smithery",
   "description": "Highest accuracy web search for AIs",
@@ -17,10 +17,10 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "web-search"
+          "web_search_preview"
         ],
         "removed": [
-          "web_search_preview"
+          "web-search"
         ],
         "version": "smithery"
       }
@@ -31,7 +31,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "web-search"
+      "tool_name": "web_search_preview"
     },
     {
       "id": "AS-011",
@@ -39,7 +39,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "web-search"
+      "tool_name": "web_search_preview"
     },
     {
       "id": "AS-014",
@@ -47,7 +47,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "web-search"
+      "tool_name": "web_search_preview"
     }
   ],
   "summary": {
@@ -59,19 +59,19 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "web-search"
+    "web_search_preview"
   ],
   "tool_contexts": [
     {
-      "tool_name": "web-search",
+      "tool_name": "web_search_preview",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (byo_urls)",
-        "dynamic email recipient (auto_scrape)"
+        "hardcoded domain: google.com",
+        "hardcoded domain: wikipedia.org"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -80,6 +80,12 @@
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:56:35Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-04T06:28:39Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

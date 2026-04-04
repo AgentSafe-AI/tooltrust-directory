@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [lochmueller-muell-io](https://smithery.ai/server/lochmueller/muell-io) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

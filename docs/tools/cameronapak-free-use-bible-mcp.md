@@ -14,7 +14,7 @@ Open source. Freely given.
 | **Vendor** | Smithery |
 | **Source** | [cameronapak-free-use-bible-mcp](https://smithery.ai/server/cameronapak/free-use-bible-mcp) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

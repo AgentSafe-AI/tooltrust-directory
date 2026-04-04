@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [rahular101-test-101](https://smithery.ai/server/rahular101/test-101) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

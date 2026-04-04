@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [microesim-instant-esim-data](https://smithery.ai/server/MicroEsim/instant-esim-data) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

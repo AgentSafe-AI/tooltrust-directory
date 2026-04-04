@@ -12,7 +12,7 @@ Get API KEY from: https://asksubquery.xyz/?referrer_code=SUBQUERY
 | **Vendor** | Smithery |
 | **Source** | [subquery-network-subquery-network](https://smithery.ai/server/SubQuery-Network/subquery-network) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

@@ -1,16 +1,16 @@
-# 🔴 bahfahh-noteit-mcp
+# 🟠 bahfahh-noteit-mcp
 
 > Create project notes, tasks, and issues enriched with Mermaid diagrams, interactive flows, and rich HTML explainers. Generate and organize reusable profiles and configuration components to guide behavior across roles and workflows. Search and manage notes by project to keep technical knowledge structured and easy to find.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 56 |
+| **Grade** | **C** |
+| **Risk Score** | 48 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bahfahh-noteit-mcp](https://smithery.ai/server/bahfahh/noteit-mcp) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 
@@ -20,7 +20,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 4 |
-| Medium   | 10 |
+| Medium   | 9 |
 | Low      | 3 |
 | Info     | 8 |
 
@@ -191,18 +191,6 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
-
----
-
-### 🟡 🛡️ `AS-001` — Tool Poisoning (Prompt Injection)
-
-**Severity:** Medium
-
-**Description:**
-possible prompt injection detected in tool description: pattern matched: (?i)send.*(history|data|conversation).*to.*(http|url)
-
-**Recommendation:**
-Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.
 
 ---
 

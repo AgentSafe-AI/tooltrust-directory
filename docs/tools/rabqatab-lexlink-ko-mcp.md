@@ -1,18 +1,16 @@
 # 🟠 rabqatab-lexlink-ko-mcp
 
-> MCP server integrating the Korean National Law Information Center Open API for structured access to laws, precedents, and legal interpretations.
+> Search and retrieve Korean statutes and administrative rules with precise filters. Access English translations and drill down to articles, paragraphs, and sub-items. Explore linkages with local ordinances and delegated authority to speed up legal research.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 35 |
-| **Version** | `sha-130b23ddc768` |
-| **Vendor** | rabqatab |
-| **Stars** | ⭐ 1 |
-| **Language** | Python |
-| **Source** | [rabqatab-lexlink-ko-mcp](https://github.com/rabqatab/LexLink-ko-mcp) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [rabqatab-lexlink-ko-mcp](https://smithery.ai/server/rabqatab/lexlink-ko-mcp) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

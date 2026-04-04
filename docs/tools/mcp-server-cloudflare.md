@@ -6,13 +6,13 @@
 | **Risk Score** | 65 |
 | **Version** | `@repo/mcp-common@0.20.4` |
 | **Vendor** | cloudflare |
-| **Stars** | ⭐ 3586 |
+| **Stars** | ⭐ 3585 |
 | **npm Package** | `@cloudflare/mcp-server-cloudflare` |
 | **npm Downloads (30d)** | 14.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

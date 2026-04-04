@@ -34,7 +34,7 @@
 | **Vendor** | Smithery |
 | **Source** | [node2flow-facebook-pages](https://smithery.ai/server/node2flow/facebook-pages) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

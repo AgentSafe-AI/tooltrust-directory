@@ -1,16 +1,30 @@
 {
   "tool_id": "do-droid-seoul-essentials",
-  "version": "sha-23fd3d66a738",
+  "version": "smithery",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-03T22:56:28.0763345Z",
-  "scanner": "tooltrust-scanner/v0.3.4",
-  "source_url": "https://github.com/do-droid/seoul-essentials",
-  "category": "Developer Tools",
-  "vendor": "do-droid",
-  "language": "Python",
-  "description": "Seoul Essentials — MCP Server providing essential public facility data for AI agents helping foreign tourists in Seoul",
+  "risk_score": 8,
+  "scan_date": "2026-04-04T16:49:40.175611155Z",
+  "scanner": "tooltrust-scanner/v0.3.5",
+  "source_url": "https://smithery.ai/server/do-droid/seoul-essentials",
+  "vendor": "Smithery",
+  "description": "Locate public facilities across Seoul including pharmacies, restrooms, WiFi hotspots, and tourist information centers. Identify nearby services using geographic coordinates or specific district filters to find help quickly. Access subway timetables to navigate the city's transit network with ease.",
   "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "find_places"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "find_places"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -36,11 +50,11 @@
       "tool_name": "find_nearby"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_subway_timetable"
     },
     {
@@ -49,29 +63,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "submit_feedback"
+      "tool_name": "get_subway_timetable"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 5
+    "medium": 1,
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "find_nearby",
     "find_places",
     "get_place_detail",
-    "get_subway_timetable",
-    "submit_feedback"
+    "get_subway_timetable"
   ],
   "tool_contexts": [
     {
       "tool_name": "find_places",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -93,15 +109,19 @@
       "tool_name": "get_subway_timetable",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
+    }
+  ],
+  "scan_history": [
     {
-      "tool_name": "submit_feedback",
-      "action": "ALLOW",
+      "scan_date": "2026-04-03T22:56:28Z",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 0,
+      "version": "sha-23fd3d66a738"
     }
   ]
 }

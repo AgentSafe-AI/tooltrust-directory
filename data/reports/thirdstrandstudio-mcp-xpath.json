@@ -3,8 +3,8 @@
   "version": "0.7.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-04T06:28:33.321956942Z",
-  "scanner": "tooltrust-scanner/v0.3.4",
+  "scan_date": "2026-04-04T16:49:53.714777038Z",
+  "scanner": "tooltrust-scanner/v0.3.5",
   "source_url": "https://github.com/thirdstrandstudio/mcp-xpath",
   "category": "Developer Tools",
   "vendor": "thirdstrandstudio",
@@ -20,14 +20,6 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xpath"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "xpath"
     },
     {
@@ -53,14 +45,6 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "xpathwithurl"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xpathwithurl"
     }
   ],
   "summary": {
@@ -68,7 +52,7 @@
     "high": 1,
     "medium": 2,
     "low": 1,
-    "info": 2
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -80,8 +64,8 @@
       "tool_name": "xpath",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "xpathwithurl",
@@ -93,8 +77,8 @@
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -106,6 +90,12 @@
     },
     {
       "scan_date": "2026-04-04T01:42:12Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.7.0"
+    },
+    {
+      "scan_date": "2026-04-04T06:28:33Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.7.0"

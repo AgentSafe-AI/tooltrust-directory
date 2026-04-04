@@ -1,17 +1,16 @@
 # 🟢 do-droid-seoul-essentials
 
-> Seoul Essentials — MCP Server providing essential public facility data for AI agents helping foreign tourists in Seoul
+> Locate public facilities across Seoul including pharmacies, restrooms, WiFi hotspots, and tourist information centers. Identify nearby services using geographic coordinates or specific district filters to find help quickly. Access subway timetables to navigate the city's transit network with ease.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 0 |
-| **Version** | `sha-23fd3d66a738` |
-| **Vendor** | do-droid |
-| **Language** | Python |
-| **Source** | [do-droid-seoul-essentials](https://github.com/do-droid/seoul-essentials) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Risk Score** | 8 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [do-droid-seoul-essentials](https://smithery.ai/server/do-droid/seoul-essentials) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 
@@ -21,21 +20,33 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
-| Low      | 0 |
-| Info     | 5 |
+| Medium   | 1 |
+| Low      | 2 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Info
+**Severity:** Low
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+tool declares http permission
 
 **Recommendation:**
-Review and remediate the identified issue.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
@@ -72,6 +83,18 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

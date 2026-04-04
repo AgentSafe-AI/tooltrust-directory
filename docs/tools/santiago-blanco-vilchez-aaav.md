@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [santiago-blanco-vilchez-aaav](https://smithery.ai/server/santiago.blanco.vilchez/aaav) |
 | **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

@@ -1,16 +1,16 @@
 # 🟠 shawnnygoh-arxiv-scout
 
+> Search and retrieve academic papers directly from arXiv with advanced query capabilities. Extract full text from PDFs to generate summaries, literature reviews, and side-by-side comparisons. Track citations and references to discover related research and map out academic trends.
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `sha-9c011df8684b` |
-| **Vendor** | shawnnygoh |
-| **Stars** | ⭐ 1 |
-| **Language** | Python |
-| **Source** | [shawnnygoh-arxiv-scout](https://github.com/shawnnygoh/arxiv-scout) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [shawnnygoh-arxiv-scout](https://smithery.ai/server/shawnnygoh/arxiv-scout) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

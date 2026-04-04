@@ -1,15 +1,16 @@
 # 🟡 halismertkir-game-trends-mcp
 
+> Provide real-time insights and analytics on gaming trends to help users stay updated with the latest developments in the gaming industry. Enable data-driven decisions by exposing relevant game trend data and metrics through a standardized interface. Facilitate integration with other tools and applications for enhanced gaming market analysis.
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `sha-d59917f3ce55` |
-| **Vendor** | halismertkir |
-| **Language** | Python |
-| **Source** | [halismertkir-game-trends-mcp](https://github.com/halismertkir/game-trends-mcp) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [halismertkir-game-trends-mcp](https://smithery.ai/server/halismertkir/game-trends-mcp) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

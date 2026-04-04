@@ -1,18 +1,16 @@
 # 🟠 glazyr-glazyr-viz
 
-> OpenClaw Skill: Cloud-isolated browser automation with Zero-Copy Vision.
+> Glazyr Viz bypasses fragile DOM scraping and Cloudflare blocks by feeding raw Chromium memory frames directly to your AI agent. Achieve 177 FPS zero-copy vision with built-in, agent-native USDC compute settlement. The Screenshot Tax is over.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 42 |
-| **Version** | `sha-ca5ab96890d8` |
-| **Vendor** | glazyr |
-| **Stars** | ⭐ 1 |
-| **Language** | JavaScript |
-| **Source** | [glazyr-glazyr-viz](https://github.com/glazyr/glazyr-viz) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [glazyr-glazyr-viz](https://smithery.ai/server/glazyr/glazyr-viz) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 

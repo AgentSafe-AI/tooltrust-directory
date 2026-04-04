@@ -1,16 +1,16 @@
 # 🟢 databr-api
 
+> Access comprehensive Brazilian public data across economic, judicial, environmental, and healthcare sectors. Conduct due diligence, market research, and compliance checks using official government records. Streamline analysis of Brazilian companies, legislation, and public spending to make data-driven decisions.
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `sha-bea4ea4fac60` |
-| **Vendor** | databr |
-| **Stars** | ⭐ 22 |
-| **Language** | Go |
-| **Source** | [databr-api](https://github.com/databr/api) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [databr-api](https://smithery.ai/server/databr/api) |
+| **Scan Date** | 2026-04-04 |
+| **Scanner** | tooltrust-scanner/v0.3.5 |
 
 ---
 
