@@ -310,7 +310,7 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 			continue
 		}
 
-		version, err := latestVersion(ctx, client, owner, repo)
+		version, err := latestVersion(ctx, client, owner, repo, true)
 		if err != nil {
 			if forceRescan {
 				if cur, ok := existing[toolID]; ok {
@@ -382,7 +382,7 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 			continue
 		}
 
-		version, err := latestVersion(ctx, client, owner, repo)
+		version, err := latestVersion(ctx, client, owner, repo, true)
 		if err != nil {
 			if forceRescan {
 				if cur, ok := existing[ov.ToolID]; ok {
@@ -479,7 +479,7 @@ func discoverFromSmithery(ctx context.Context, client *github.Client, existing m
 		if ghOwner != "" && ghRepo != "" {
 			ghRepoData, _, err := client.Repositories.Get(ctx, ghOwner, ghRepo)
 			if err == nil && !ghRepoData.GetArchived() && !ghRepoData.GetFork() {
-				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo)
+				version, verErr := latestVersion(ctx, client, ghOwner, ghRepo, false)
 				if verErr == nil {
 					if cur, ok := existing[toolID]; ok && cur.Version == version {
 						if !forceRescan {
@@ -655,7 +655,7 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 			}
 			seen[toolID] = true
 
-			version, err := latestVersion(ctx, client, repo.GetOwner().GetLogin(), repo.GetName())
+			version, err := latestVersion(ctx, client, repo.GetOwner().GetLogin(), repo.GetName(), false)
 			if err != nil {
 				if forceRescan {
 					if cur, ok := existing[toolID]; ok {
@@ -759,9 +759,10 @@ func parseGitHubOwnerRepo(sourceURL string) (owner, repo string) {
 // release or tag. For repos that publish to npm but don't cut git releases
 // (e.g. exa-mcp-server, mcp-server-browserbase), it falls back to the
 // "version" field in the root package.json fetched from the default branch.
-// As a final fallback, it uses the default-branch HEAD commit SHA so lower-star
-// repos without formal release metadata can still enter the scan pipeline.
-func latestVersion(ctx context.Context, client *github.Client, owner, repo string) (string, error) {
+// For curated seed/override repos we optionally allow a final fallback to the
+// default-branch HEAD commit SHA so important tools without formal releases can
+// still enter the scan pipeline.
+func latestVersion(ctx context.Context, client *github.Client, owner, repo string, allowBranchFallback bool) (string, error) {
 	release, _, err := client.Repositories.GetLatestRelease(ctx, owner, repo)
 	if err == nil {
 		return strings.TrimPrefix(release.GetTagName(), "v"), nil
@@ -782,8 +783,13 @@ func latestVersion(ctx context.Context, client *github.Client, owner, repo strin
 		return version, nil
 	}
 
+	if !allowBranchFallback {
+		return "", err
+	}
+
 	// Final fallback: use the default branch head SHA as a stable-ish version key
-	// so repos without releases/tags/package.json can still be scanned and tracked.
+	// so curated repos without releases/tags/package.json can still be scanned
+	// and tracked.
 	return defaultBranchVersion(ctx, client, owner, repo)
 }
 
