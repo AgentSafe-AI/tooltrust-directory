@@ -439,16 +439,33 @@ export default async function ToolPage({ params }: PageProps) {
                             {first.tool_name && <span className="font-mono text-zinc-300 mr-2">{first.tool_name}:</span>}
                             {first.description}
                           </p>
-                        ) : (
-                          <ul className="list-disc pl-5 text-sm text-zinc-500 space-y-1">
-                            {group.map((f, j) => (
-                              <li key={j}>
-                                {f.tool_name && <span className="font-mono text-zinc-300 mr-2">{f.tool_name}:</span>}
-                                {f.description}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                        ) : (() => {
+                          const byDesc = new Map<string, string[]>();
+                          for (const f of group) {
+                            const desc = f.description ?? "";
+                            const arr = byDesc.get(desc) || [];
+                            if (f.tool_name) arr.push(f.tool_name);
+                            byDesc.set(desc, arr);
+                          }
+                          return (
+                            <div className="space-y-3 text-sm">
+                              {Array.from(byDesc.entries()).map(([desc, tools]) => (
+                                <div key={desc}>
+                                  <p className="text-zinc-500">{desc}</p>
+                                  {tools.length > 0 && (
+                                    <div className="mt-1.5 flex flex-wrap gap-1.5">
+                                      {tools.map((t) => (
+                                        <span key={t} className="rounded border border-zinc-700 bg-zinc-800/80 px-2 py-0.5 font-mono text-xs text-zinc-300">
+                                          {t}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          );
+                        })()}
 
                         {first.id === "AS-012" && first.metadata && (() => {
                           const added = (first.metadata.added as string[]) ?? [];
