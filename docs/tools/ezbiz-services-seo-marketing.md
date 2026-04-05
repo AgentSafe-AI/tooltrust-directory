@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ezbiz-services-seo-marketing](https://smithery.ai/server/ezbiz-services/seo-marketing) |
-| **Scan Date** | 2026-04-04 |
+| **Scan Date** | 2026-04-05 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1226 |
 | **Language** | Python |
 | **Source** | [mcp-brasil](https://github.com/jxnxts/mcp-brasil) |
-| **Scan Date** | 2026-04-04 |
+| **Scan Date** | 2026-04-05 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

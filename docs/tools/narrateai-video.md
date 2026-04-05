@@ -21,8 +21,8 @@ Free tier: 5 minutes of video processing. Upgrade anytime at [narrateai.app](htt
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [narrateai-video](https://smithery.ai/server/narrateai/video) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-05 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

@@ -13,8 +13,8 @@
 | **npm Downloads (30d)** | 36.2k |
 | **Language** | TypeScript |
 | **Source** | [dive](https://github.com/OpenAgentPlatform/Dive) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-05 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

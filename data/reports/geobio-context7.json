@@ -3,42 +3,18 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-04-04T16:49:47.737671104Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "scan_date": "2026-04-05T01:20:51.605456079Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://smithery.ai/server/geobio/context7",
   "vendor": "Smithery",
   "description": "Provide up-to-date, version-specific code documentation and examples directly into your prompts to enhance coding accuracy and reduce hallucinated APIs. Seamlessly integrate with various MCP clients to fetch the latest library docs and improve your AI coding assistant's effectiveness. Simplify your development workflow by embedding real-time, reliable code context without switching tabs.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get-library-docs"
-        ],
-        "removed": [
-          "query-docs"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "resolve-library-id"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "resolve-library-id"
     },
     {
@@ -91,8 +67,8 @@
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 3,
+    "critical": 0,
+    "high": 2,
     "medium": 2,
     "low": 1,
     "info": 2
@@ -105,8 +81,8 @@
   "tool_contexts": [
     {
       "tool_name": "resolve-library-id",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -140,6 +116,12 @@
       "scan_date": "2026-04-04T06:28:36Z",
       "grade": "C",
       "risk_score": 33,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-04T16:49:47Z",
+      "grade": "C",
+      "risk_score": 40,
       "version": "smithery"
     }
   ]

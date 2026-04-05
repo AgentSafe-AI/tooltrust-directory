@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mod-vibes-mod-vibe-server](https://smithery.ai/server/MOD_Vibes/mod-vibe-server) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-05 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

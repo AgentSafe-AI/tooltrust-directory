@@ -2,61 +2,19 @@
   "tool_id": "n8n-mcp-server",
   "version": "0.1.8",
   "grade": "C",
-  "risk_score": 44,
-  "scan_date": "2026-04-04T06:19:46.668000046Z",
-  "scanner": "tooltrust-scanner/v0.3.4",
+  "risk_score": 32,
+  "scan_date": "2026-04-05T01:11:04.653090584Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/leonardsellem/n8n-mcp-server",
   "category": "Developer Tools",
   "vendor": "leonardsellem",
-  "stars": 1594,
+  "stars": 1592,
   "npm_package": "@leonardsellem/n8n-mcp-server",
   "npm_downloads_monthly": 2967,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server that provides tools and resources for interacting with n8n API",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.8: 27 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "n8n_activate_workflow",
-          "n8n_create_credential",
-          "n8n_create_tag",
-          "n8n_create_workflow",
-          "n8n_deactivate_workflow",
-          "n8n_delete_credential",
-          "n8n_delete_execution",
-          "n8n_delete_tag",
-          "n8n_delete_user",
-          "n8n_delete_workflow",
-          "n8n_execute_workflow",
-          "n8n_get_credential_schema",
-          "n8n_get_execution",
-          "n8n_get_tag",
-          "n8n_get_user",
-          "n8n_get_workflow",
-          "n8n_get_workflow_tags",
-          "n8n_list_executions",
-          "n8n_list_tags",
-          "n8n_list_users",
-          "n8n_list_workflows",
-          "n8n_retry_execution",
-          "n8n_update_credential",
-          "n8n_update_tag",
-          "n8n_update_user_role",
-          "n8n_update_workflow",
-          "n8n_update_workflow_tags"
-        ],
-        "removed": [
-          "create_workflow"
-        ],
-        "version": "0.1.8"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -223,14 +181,6 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "n8n_execute_workflow"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "n8n_execute_workflow"
     },
     {
@@ -579,8 +529,8 @@
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 12,
+    "critical": 0,
+    "high": 11,
     "medium": 15,
     "low": 11,
     "info": 27
@@ -687,8 +637,8 @@
     },
     {
       "tool_name": "n8n_execute_workflow",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -904,6 +854,12 @@
       "scan_date": "2026-04-04T01:35:14Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "0.1.8"
+    },
+    {
+      "scan_date": "2026-04-04T06:19:46Z",
+      "grade": "C",
+      "risk_score": 44,
       "version": "0.1.8"
     }
   ]

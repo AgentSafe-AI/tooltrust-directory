@@ -7,8 +7,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [exploreaisb-aivsf](https://smithery.ai/server/exploreaisb/aivsf) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-05 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 998 |
 | **Language** | TypeScript |
 | **Source** | [yuna0x0-anilist-mcp](https://github.com/yuna0x0/anilist-mcp) |
-| **Scan Date** | 2026-04-04 |
+| **Scan Date** | 2026-04-05 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

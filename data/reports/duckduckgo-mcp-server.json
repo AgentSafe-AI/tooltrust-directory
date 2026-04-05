@@ -1,9 +1,9 @@
 {
   "tool_id": "duckduckgo-mcp-server",
   "version": "sha-72140a7136a5",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-04T22:52:32.311869142Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-05T01:11:24.41208075Z",
   "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/nickclyde/duckduckgo-mcp-server",
   "category": "Developer Tools",
@@ -17,18 +17,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-72140a7136a5: 4 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-72140a7136a5: 2 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "fetch_content",
+          "search"
+        ],
+        "removed": [
           "felo-search",
           "fetch-url",
           "url-metadata",
           "web-search"
-        ],
-        "removed": [
-          "fetch_content",
-          "search"
         ],
         "version": "sha-72140a7136a5"
       }
@@ -39,7 +39,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "web-search"
+      "tool_name": "search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search"
     },
     {
       "id": "AS-011",
@@ -47,7 +55,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "web-search"
+      "tool_name": "search"
     },
     {
       "id": "AS-014",
@@ -55,7 +63,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "web-search"
+      "tool_name": "search"
     },
     {
       "id": "AS-002",
@@ -63,7 +71,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch-url"
+      "tool_name": "fetch_content"
     },
     {
       "id": "AS-011",
@@ -71,7 +79,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch-url"
+      "tool_name": "fetch_content"
     },
     {
       "id": "AS-014",
@@ -79,76 +87,26 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch-url"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "url-metadata"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "url-metadata"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "url-metadata"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "felo-search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "felo-search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "felo-search"
+      "tool_name": "fetch_content"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 0,
-    "low": 4,
-    "info": 4
+    "high": 3,
+    "medium": 1,
+    "low": 2,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "felo-search",
-    "fetch-url",
-    "url-metadata",
-    "web-search"
+    "fetch_content",
+    "search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "web-search",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "search",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -156,7 +114,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "fetch-url",
+      "tool_name": "fetch_content",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -164,30 +122,6 @@
       ],
       "destinations": [
         "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "url-metadata",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "felo-search",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -222,6 +156,12 @@
       "scan_date": "2026-04-04T16:41:51Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "sha-72140a7136a5"
+    },
+    {
+      "scan_date": "2026-04-04T22:52:32Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "sha-72140a7136a5"
     }
   ]

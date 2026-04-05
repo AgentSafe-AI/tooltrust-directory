@@ -2,8 +2,8 @@
   "tool_id": "yusufsenyer-augment-agent",
   "version": "1.0.0",
   "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-04-04T22:59:24.424526915Z",
+  "risk_score": 17,
+  "scan_date": "2026-04-05T01:19:19.174102145Z",
   "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/yusufsenyer/augment-agent",
   "category": "Developer Tools",
@@ -16,29 +16,22 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 6 tool(s) added, 11 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 5 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "find_weather_stations",
+          "get_current_weather",
+          "get_hourly_forecast",
+          "get_local_time",
+          "get_weather_alerts"
+        ],
+        "removed": [
           "get_locations",
           "get_seismic_data",
           "get_uv_forecast",
-          "get_weather_forecast",
           "get_weather_stations",
           "get_weather_warnings"
-        ],
-        "removed": [
-          "create_inbox",
-          "delete_inbox",
-          "forward_message",
-          "get_attachment",
-          "get_inbox",
-          "get_thread",
-          "list_inboxes",
-          "list_threads",
-          "reply_to_message",
-          "send_message",
-          "update_message"
         ],
         "version": "1.0.0"
       }
@@ -49,15 +42,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_current_weather"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_weather_forecast"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_weather_warnings"
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_hourly_forecast"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_hourly_forecast"
     },
     {
       "id": "AS-014",
@@ -65,7 +74,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_seismic_data"
+      "tool_name": "get_hourly_forecast"
     },
     {
       "id": "AS-014",
@@ -73,7 +82,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_locations"
+      "tool_name": "get_weather_alerts"
     },
     {
       "id": "AS-014",
@@ -81,7 +90,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_weather_stations"
+      "tool_name": "find_weather_stations"
     },
     {
       "id": "AS-014",
@@ -89,26 +98,33 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_uv_forecast"
+      "tool_name": "get_local_time"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
-    "low": 0,
+    "low": 1,
     "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_locations",
-    "get_seismic_data",
-    "get_uv_forecast",
-    "get_weather_forecast",
-    "get_weather_stations",
-    "get_weather_warnings"
+    "find_weather_stations",
+    "get_current_weather",
+    "get_hourly_forecast",
+    "get_local_time",
+    "get_weather_alerts",
+    "get_weather_forecast"
   ],
   "tool_contexts": [
+    {
+      "tool_name": "get_current_weather",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
     {
       "tool_name": "get_weather_forecast",
       "action": "ALLOW",
@@ -117,35 +133,31 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_weather_warnings",
+      "tool_name": "get_hourly_forecast",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_weather_alerts",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_seismic_data",
+      "tool_name": "find_weather_stations",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_locations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_weather_stations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_uv_forecast",
+      "tool_name": "get_local_time",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -175,6 +187,12 @@
       "scan_date": "2026-04-04T16:48:37Z",
       "grade": "A",
       "risk_score": 8,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-04T22:59:24Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

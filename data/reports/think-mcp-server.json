@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-04-04T22:55:46.630605144Z",
+  "scan_date": "2026-04-05T01:14:49.938085983Z",
   "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/PhillipRt/think-mcp-server",
   "category": "Developer Tools",
@@ -17,108 +17,49 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 4 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "sequentialthinking"
+        ],
+        "removed": [
           "diagnose",
           "get_technique",
           "get_thinking_toolkit",
           "list_techniques"
         ],
-        "removed": [
-          "sequentialthinking"
-        ],
         "version": "1.0.0"
       }
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "list_techniques"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_techniques"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "diagnose"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_technique"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_thinking_toolkit"
+      "tool_name": "sequentialthinking"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 1,
+    "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "diagnose",
-    "get_technique",
-    "get_thinking_toolkit",
-    "list_techniques"
+    "sequentialthinking"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list_techniques",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "diagnose",
+      "tool_name": "sequentialthinking",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (success_looks_like)"
+        "dynamic email recipient (totalThoughts)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_technique",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_thinking_toolkit",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -158,6 +99,12 @@
       "scan_date": "2026-04-04T16:44:34Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-04T22:55:46Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

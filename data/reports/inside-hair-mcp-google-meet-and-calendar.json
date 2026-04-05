@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-04-04T23:00:17.720321524Z",
+  "scan_date": "2026-04-05T01:20:13.810729021Z",
   "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://smithery.ai/server/INSIDE-HAIR/mcp-google-meet-and-calendar",
   "vendor": "Smithery",
@@ -13,10 +13,37 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 29 tool(s) added, 25 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 25 tool(s) added, 29 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "calendar_v3_create_event",
+          "calendar_v3_delete_event",
+          "calendar_v3_freebusy_query",
+          "calendar_v3_get_event",
+          "calendar_v3_list_calendars",
+          "calendar_v3_list_events",
+          "calendar_v3_quick_add",
+          "calendar_v3_update_event",
+          "get_current_time",
+          "health_check",
+          "meet_v2_create_space",
+          "meet_v2_end_active_conference",
+          "meet_v2_get_conference_record",
+          "meet_v2_get_participant",
+          "meet_v2_get_participant_session",
+          "meet_v2_get_recording",
+          "meet_v2_get_space",
+          "meet_v2_get_transcript",
+          "meet_v2_list_conference_records",
+          "meet_v2_list_participant_sessions",
+          "meet_v2_list_participants",
+          "meet_v2_list_recordings",
+          "meet_v2_list_transcript_entries",
+          "meet_v2_list_transcripts",
+          "meet_v2_update_space"
+        ],
+        "removed": [
           "GOOGLECALENDAR_ACL_PATCH",
           "GOOGLECALENDAR_CALENDARS_DELETE",
           "GOOGLECALENDAR_CALENDARS_UPDATE",
@@ -47,33 +74,6 @@
           "GOOGLECALENDAR_UPDATE_ACL_RULE",
           "GOOGLECALENDAR_UPDATE_EVENT"
         ],
-        "removed": [
-          "calendar_v3_create_event",
-          "calendar_v3_delete_event",
-          "calendar_v3_freebusy_query",
-          "calendar_v3_get_event",
-          "calendar_v3_list_calendars",
-          "calendar_v3_list_events",
-          "calendar_v3_quick_add",
-          "calendar_v3_update_event",
-          "get_current_time",
-          "health_check",
-          "meet_v2_create_space",
-          "meet_v2_end_active_conference",
-          "meet_v2_get_conference_record",
-          "meet_v2_get_participant",
-          "meet_v2_get_participant_session",
-          "meet_v2_get_recording",
-          "meet_v2_get_space",
-          "meet_v2_get_transcript",
-          "meet_v2_list_conference_records",
-          "meet_v2_list_participant_sessions",
-          "meet_v2_list_participants",
-          "meet_v2_list_recordings",
-          "meet_v2_list_transcript_entries",
-          "meet_v2_list_transcripts",
-          "meet_v2_update_space"
-        ],
         "version": "smithery"
       }
     },
@@ -83,7 +83,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_ACL_PATCH"
+      "tool_name": "health_check"
     },
     {
       "id": "AS-014",
@@ -91,15 +91,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_CALENDAR_LIST_INSERT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDAR_LIST_UPDATE"
+      "tool_name": "calendar_v3_list_calendars"
     },
     {
       "id": "AS-014",
@@ -107,15 +99,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_CALENDAR_LIST_UPDATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_DELETE"
+      "tool_name": "calendar_v3_list_events"
     },
     {
       "id": "AS-014",
@@ -123,7 +107,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_DELETE"
+      "tool_name": "calendar_v3_get_event"
     },
     {
       "id": "AS-002",
@@ -131,7 +115,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
+      "tool_name": "calendar_v3_create_event"
     },
     {
       "id": "AS-002",
@@ -139,7 +123,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
+      "tool_name": "calendar_v3_create_event"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "calendar_v3_create_event"
     },
     {
       "id": "AS-011",
@@ -147,7 +139,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
+      "tool_name": "calendar_v3_create_event"
     },
     {
       "id": "AS-014",
@@ -155,15 +147,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_CLEAR_CALENDAR"
+      "tool_name": "calendar_v3_create_event"
     },
     {
       "id": "AS-002",
@@ -171,7 +155,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
+      "tool_name": "calendar_v3_update_event"
     },
     {
       "id": "AS-002",
@@ -179,135 +163,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 23 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_DELETE_EVENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_DELETE_EVENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_DUPLICATE_CALENDAR"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_INSTANCES"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 19 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_LIST"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_LIST"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_LIST"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_MOVE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_FIND_EVENT"
+      "tool_name": "calendar_v3_update_event"
     },
     {
       "id": "AS-002",
@@ -315,7 +171,15 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_FIND_EVENT"
+      "tool_name": "calendar_v3_update_event"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "calendar_v3_update_event"
     },
     {
       "id": "AS-014",
@@ -323,7 +187,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_FIND_EVENT"
+      "tool_name": "calendar_v3_update_event"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "calendar_v3_delete_event"
     },
     {
       "id": "AS-014",
@@ -331,7 +203,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_FIND_FREE_SLOTS"
+      "tool_name": "calendar_v3_delete_event"
     },
     {
       "id": "AS-002",
@@ -339,7 +211,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_FREE_BUSY_QUERY"
+      "tool_name": "calendar_v3_freebusy_query"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "calendar_v3_freebusy_query"
     },
     {
       "id": "AS-011",
@@ -347,7 +227,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_FREE_BUSY_QUERY"
+      "tool_name": "calendar_v3_freebusy_query"
     },
     {
       "id": "AS-014",
@@ -355,7 +235,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_FREE_BUSY_QUERY"
+      "tool_name": "calendar_v3_freebusy_query"
     },
     {
       "id": "AS-014",
@@ -363,103 +243,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_GET_CALENDAR"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_GET_CURRENT_DATE_TIME"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_LIST_ACL_RULES"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_LIST_CALENDARS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_LIST_CALENDARS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_PATCH_CALENDAR"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_PATCH_CALENDAR"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_PATCH_CALENDAR"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_QUICK_ADD"
+      "tool_name": "calendar_v3_quick_add"
     },
     {
       "id": "AS-002",
@@ -467,79 +251,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_REMOVE_ATTENDEE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_REMOVE_ATTENDEE"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_SETTINGS_LIST"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_SETTINGS_LIST"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "GOOGLECALENDAR_SETTINGS_WATCH"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_SETTINGS_WATCH"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_SYNC_EVENTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_ACL_RULE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_ACL_RULE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "meet_v2_create_space"
     },
     {
       "id": "AS-002",
@@ -547,15 +259,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 23 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "meet_v2_create_space"
     },
     {
       "id": "AS-011",
@@ -563,7 +267,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "meet_v2_create_space"
     },
     {
       "id": "AS-014",
@@ -571,134 +275,283 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT"
+      "tool_name": "meet_v2_create_space"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_get_space"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "meet_v2_update_space"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_update_space"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_end_active_conference"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_list_conference_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_get_conference_record"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_list_recordings"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_get_recording"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_list_transcripts"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "meet_v2_get_transcript"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "meet_v2_get_transcript"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_get_transcript"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "meet_v2_list_transcript_entries"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "meet_v2_list_transcript_entries"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_list_transcript_entries"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_get_participant"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_list_participants"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_get_participant_session"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "meet_v2_list_participant_sessions"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_current_time"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 12,
-    "medium": 9,
-    "low": 13,
-    "info": 29
+    "high": 7,
+    "medium": 6,
+    "low": 8,
+    "info": 25
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "GOOGLECALENDAR_ACL_PATCH",
-    "GOOGLECALENDAR_CALENDARS_DELETE",
-    "GOOGLECALENDAR_CALENDARS_UPDATE",
-    "GOOGLECALENDAR_CALENDAR_LIST_INSERT",
-    "GOOGLECALENDAR_CALENDAR_LIST_UPDATE",
-    "GOOGLECALENDAR_CLEAR_CALENDAR",
-    "GOOGLECALENDAR_CREATE_EVENT",
-    "GOOGLECALENDAR_DELETE_EVENT",
-    "GOOGLECALENDAR_DUPLICATE_CALENDAR",
-    "GOOGLECALENDAR_EVENTS_INSTANCES",
-    "GOOGLECALENDAR_EVENTS_LIST",
-    "GOOGLECALENDAR_EVENTS_MOVE",
-    "GOOGLECALENDAR_EVENTS_WATCH",
-    "GOOGLECALENDAR_FIND_EVENT",
-    "GOOGLECALENDAR_FIND_FREE_SLOTS",
-    "GOOGLECALENDAR_FREE_BUSY_QUERY",
-    "GOOGLECALENDAR_GET_CALENDAR",
-    "GOOGLECALENDAR_GET_CURRENT_DATE_TIME",
-    "GOOGLECALENDAR_LIST_ACL_RULES",
-    "GOOGLECALENDAR_LIST_CALENDARS",
-    "GOOGLECALENDAR_PATCH_CALENDAR",
-    "GOOGLECALENDAR_PATCH_EVENT",
-    "GOOGLECALENDAR_QUICK_ADD",
-    "GOOGLECALENDAR_REMOVE_ATTENDEE",
-    "GOOGLECALENDAR_SETTINGS_LIST",
-    "GOOGLECALENDAR_SETTINGS_WATCH",
-    "GOOGLECALENDAR_SYNC_EVENTS",
-    "GOOGLECALENDAR_UPDATE_ACL_RULE",
-    "GOOGLECALENDAR_UPDATE_EVENT"
+    "calendar_v3_create_event",
+    "calendar_v3_delete_event",
+    "calendar_v3_freebusy_query",
+    "calendar_v3_get_event",
+    "calendar_v3_list_calendars",
+    "calendar_v3_list_events",
+    "calendar_v3_quick_add",
+    "calendar_v3_update_event",
+    "get_current_time",
+    "health_check",
+    "meet_v2_create_space",
+    "meet_v2_end_active_conference",
+    "meet_v2_get_conference_record",
+    "meet_v2_get_participant",
+    "meet_v2_get_participant_session",
+    "meet_v2_get_recording",
+    "meet_v2_get_space",
+    "meet_v2_get_transcript",
+    "meet_v2_list_conference_records",
+    "meet_v2_list_participant_sessions",
+    "meet_v2_list_participants",
+    "meet_v2_list_recordings",
+    "meet_v2_list_transcript_entries",
+    "meet_v2_list_transcripts",
+    "meet_v2_update_space"
   ],
   "tool_contexts": [
     {
-      "tool_name": "GOOGLECALENDAR_ACL_PATCH",
+      "tool_name": "health_check",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded domain: test.user",
-        "hardcoded email recipient: email@example.com",
-        "hardcoded email recipient: example@group.calendar.google.com",
-        "hardcoded email recipient: group@example.com",
-        "hardcoded email recipient: team@example.com",
-        "hardcoded email recipient: test.user@example.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_CALENDAR_LIST_INSERT",
+      "tool_name": "calendar_v3_list_calendars",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: examplecalendar@group.calendar.google.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_CALENDAR_LIST_UPDATE",
+      "tool_name": "calendar_v3_list_events",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "calendar_v3_get_event",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "calendar_v3_create_event",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "hardcoded domain: calendarList.update",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: examplecalendar@group.calendar.google.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_CALENDARS_DELETE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
+        "executes_commands",
         "writes_files"
       ],
-      "destinations": [
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: calendars.clear",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: example_calendar_id@group.calendar.google.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_CALENDARS_UPDATE",
+      "tool_name": "calendar_v3_update_event",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "executes_commands"
       ],
-      "destinations": [
-        "hardcoded domain: calendarList.list"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_CLEAR_CALENDAR",
+      "tool_name": "calendar_v3_delete_event",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: calendarList.list"
+      "behavior": [
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_CREATE_EVENT",
+      "tool_name": "calendar_v3_freebusy_query",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "calendar_v3_quick_add",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_create_space",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
@@ -706,304 +559,128 @@
         "writes_files"
       ],
       "destinations": [
-        "dynamic email recipient (outOfOfficeProperties)",
-        "hardcoded domain: end.timeZone",
-        "hardcoded domain: example.com",
-        "hardcoded domain: github.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded domain: start.timeZone",
-        "hardcoded email recipient: abcdefghijklmnopqrstuvwxyz@group.calendar.google.com",
-        "hardcoded email recipient: guest@example.com",
-        "hardcoded email recipient: user@example.com"
+        "dynamic email recipient (access_type)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_DELETE_EVENT",
+      "tool_name": "meet_v2_get_space",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_update_space",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (access_type)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_end_active_conference",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_list_conference_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: space.name"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_get_conference_record",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_list_recordings",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_get_recording",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "meet_v2_list_transcripts",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: abcsomecalendarid@group.calendar.google.com",
-        "hardcoded email recipient: user@example.com"
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_DUPLICATE_CALENDAR",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_EVENTS_INSTANCES",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (pageToken)",
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: example.calendar.id",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: example.calendar.id@group.calendar.google.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_EVENTS_LIST",
-      "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (alwaysIncludeEmail)",
-        "dynamic email recipient (pageToken)",
-        "dynamic email recipient (syncToken)",
-        "hardcoded domain: calendarList.list"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_EVENTS_MOVE",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: events.list"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_EVENTS_WATCH",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (token)",
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_FIND_EVENT",
-      "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (page_token)",
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: abc...@group.calendar.google.com",
-        "hardcoded email recipient: user@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_FIND_FREE_SLOTS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: unique_calendar_id@group.calendar.google.com",
-        "hardcoded email recipient: user@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_FREE_BUSY_QUERY",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_GET_CALENDAR",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: en.usa",
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.v.calendar.google.com",
-        "hardcoded email recipient: holiday@group.v.calendar.google.com",
-        "hardcoded email recipient: user@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_GET_CURRENT_DATE_TIME",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_LIST_ACL_RULES",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (page_token)",
-        "dynamic email recipient (sync_token)",
-        "hardcoded domain: calendarList.list"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_LIST_CALENDARS",
-      "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (minAccessRole)",
-        "dynamic email recipient (pageToken)",
-        "dynamic email recipient (syncToken)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_PATCH_CALENDAR",
+      "tool_name": "meet_v2_get_transcript",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "executes_commands"
       ],
-      "destinations": [
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: example@group.calendar.google.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_PATCH_EVENT",
+      "tool_name": "meet_v2_list_transcript_entries",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "executes_commands"
       ],
-      "destinations": [
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: example.com",
-        "hardcoded domain: hangouts.google.com",
-        "hardcoded email recipient: user1@example.com",
-        "hardcoded email recipient: user2@example.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_QUICK_ADD",
+      "tool_name": "meet_v2_get_participant",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded email recipient: user@example.com",
-        "hardcoded email recipient: xxxxxxxxxxxxxxxxx@group.calendar.google.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_REMOVE_ATTENDEE",
+      "tool_name": "meet_v2_list_participants",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (attendee_email)",
-        "hardcoded domain: gmail.com",
-        "hardcoded email recipient: john@gmail.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_SETTINGS_LIST",
-      "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (pageToken)",
-        "dynamic email recipient (syncToken)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_SETTINGS_WATCH",
-      "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (token)",
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLECALENDAR_SYNC_EVENTS",
+      "tool_name": "meet_v2_get_participant_session",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (pageToken)",
-        "dynamic email recipient (sync_token)",
-        "hardcoded domain: example.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded domain: your.email",
-        "hardcoded email recipient: xxxxxxxxxx@group.calendar.google.com",
-        "hardcoded email recipient: your.email@example.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_UPDATE_ACL_RULE",
+      "tool_name": "meet_v2_list_participant_sessions",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: calendarList.list",
-        "hardcoded domain: example.com",
-        "hardcoded domain: test.user",
-        "hardcoded email recipient: test.user@example.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLECALENDAR_UPDATE_EVENT",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (outOfOfficeProperties)",
-        "hardcoded domain: end.timeZone",
-        "hardcoded domain: example.com",
-        "hardcoded domain: github.com",
-        "hardcoded domain: group.calendar.google.com",
-        "hardcoded domain: start.timeZone",
-        "hardcoded email recipient: long_calendar_id@group.calendar.google.com",
-        "hardcoded email recipient: user@example.com"
-      ],
+      "tool_name": "get_current_time",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1017,6 +694,12 @@
     },
     {
       "scan_date": "2026-04-04T16:49:18Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-04T23:00:17Z",
       "grade": "C",
       "risk_score": 27,
       "version": "smithery"

@@ -1,10 +1,10 @@
 {
   "tool_id": "kevinlin-spec-coding-mcp",
   "version": "1.0.1",
-  "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-04-04T16:45:58.321701517Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-05T01:16:19.871561766Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/kevinlin/spec-coding-mcp",
   "category": "Developer Tools",
   "vendor": "kevinlin",
@@ -39,14 +39,6 @@
       "tool_name": "spec_coding_execute_start"
     },
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "spec_coding_execute_start"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -56,7 +48,7 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 2,
     "medium": 0,
     "low": 2,
@@ -136,13 +128,21 @@
     },
     {
       "tool_name": "spec_coding_execute_start",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-04T16:45:58Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "1.0.1"
     }
   ]
 }

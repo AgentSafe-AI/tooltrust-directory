@@ -1,10 +1,10 @@
 {
   "tool_id": "mcp-client-server",
   "version": "0.1.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-04T16:44:33.630740268Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-05T01:14:50.735631692Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/willccbb/mcp-client-server",
   "category": "Developer Tools",
   "vendor": "willccbb",
@@ -15,12 +15,37 @@
   "description": "An MCP Server that's also an MCP Client. Useful for letting Claude develop and test MCPs without needing to reset the application.",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_domain"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "catalog_search"
+        ],
+        "removed": [
+          "check_domain",
+          "list_tlds"
+        ],
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "catalog_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "catalog_search"
     },
     {
       "id": "AS-014",
@@ -28,33 +53,28 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_tlds"
+      "tool_name": "catalog_search"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
-    "low": 0,
-    "info": 2
+    "low": 1,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "check_domain",
-    "list_tlds"
+    "catalog_search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "check_domain",
+      "tool_name": "catalog_search",
       "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_tlds",
-      "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -98,6 +118,12 @@
     },
     {
       "scan_date": "2026-04-04T06:22:47Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-04-04T16:44:33Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.1.0"

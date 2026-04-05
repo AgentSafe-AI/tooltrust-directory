@@ -11,7 +11,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pingzen-uptime-monitoring](https://smithery.ai/server/pingzen/uptime-monitoring) |
-| **Scan Date** | 2026-04-04 |
+| **Scan Date** | 2026-04-05 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

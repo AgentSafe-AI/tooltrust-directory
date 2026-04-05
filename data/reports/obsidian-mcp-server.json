@@ -1,9 +1,9 @@
 {
   "tool_id": "obsidian-mcp-server",
   "version": "2.0.7",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-04T22:53:44.491031657Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-05T01:12:39.297643732Z",
   "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/cyanheads/obsidian-mcp-server",
   "category": "Developer Tools",
@@ -19,10 +19,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.0.7: 13 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.0.7: 4 tool(s) added, 13 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "getCommitHistory",
+          "getFileContents",
+          "searchFiles",
+          "searchIssues"
+        ],
+        "removed": [
           "obsidian_append_content",
           "obsidian_batch_get_file_contents",
           "obsidian_complex_search",
@@ -37,12 +43,6 @@
           "obsidian_put_content",
           "obsidian_simple_search"
         ],
-        "removed": [
-          "getCommitHistory",
-          "getFileContents",
-          "searchFiles",
-          "searchIssues"
-        ],
         "version": "2.0.7"
       }
     },
@@ -52,15 +52,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_list_files_in_dir"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_list_files_in_dir' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_list_files_in_dir"
+      "tool_name": "getFileContents"
     },
     {
       "id": "AS-014",
@@ -68,23 +60,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_list_files_in_dir"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_list_files_in_vault' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_list_files_in_vault"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_list_files_in_vault"
+      "tool_name": "getFileContents"
     },
     {
       "id": "AS-002",
@@ -92,23 +68,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_get_file_contents"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_get_file_contents' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_file_contents"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_file_contents"
+      "tool_name": "searchFiles"
     },
     {
       "id": "AS-002",
@@ -116,15 +76,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_simple_search"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_simple_search' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_simple_search"
+      "tool_name": "searchFiles"
     },
     {
       "id": "AS-011",
@@ -132,7 +84,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "obsidian_simple_search"
+      "tool_name": "searchFiles"
     },
     {
       "id": "AS-014",
@@ -140,103 +92,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_simple_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_patch_content"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_patch_content' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_patch_content"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_patch_content"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_append_content"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_append_content' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_append_content"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_append_content"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_put_content"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_put_content' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_put_content"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_put_content"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_delete_file"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_delete_file' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_delete_file"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_delete_file"
+      "tool_name": "searchFiles"
     },
     {
       "id": "AS-002",
@@ -244,15 +100,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_complex_search"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_complex_search' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_complex_search"
+      "tool_name": "searchIssues"
     },
     {
       "id": "AS-011",
@@ -260,7 +108,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "obsidian_complex_search"
+      "tool_name": "searchIssues"
     },
     {
       "id": "AS-014",
@@ -268,23 +116,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_complex_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "obsidian_batch_get_file_contents"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_batch_get_file_contents' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_batch_get_file_contents"
+      "tool_name": "searchIssues"
     },
     {
       "id": "AS-014",
@@ -292,83 +124,26 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_batch_get_file_contents"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_get_periodic_note' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_periodic_note"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_periodic_note"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_get_recent_periodic_notes' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_recent_periodic_notes"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_recent_periodic_notes"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'obsidian_get_recent_changes' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_recent_changes"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "obsidian_get_recent_changes"
+      "tool_name": "getCommitHistory"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 3,
-    "medium": 7,
+    "medium": 2,
     "low": 2,
-    "info": 26
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "obsidian_append_content",
-    "obsidian_batch_get_file_contents",
-    "obsidian_complex_search",
-    "obsidian_delete_file",
-    "obsidian_get_file_contents",
-    "obsidian_get_periodic_note",
-    "obsidian_get_recent_changes",
-    "obsidian_get_recent_periodic_notes",
-    "obsidian_list_files_in_dir",
-    "obsidian_list_files_in_vault",
-    "obsidian_patch_content",
-    "obsidian_put_content",
-    "obsidian_simple_search"
+    "getCommitHistory",
+    "getFileContents",
+    "searchFiles",
+    "searchIssues"
   ],
   "tool_contexts": [
     {
-      "tool_name": "obsidian_list_files_in_dir",
+      "tool_name": "getFileContents",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -378,24 +153,18 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "obsidian_list_files_in_vault",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_get_file_contents",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "searchFiles",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "reads_files"
+        "reads_files",
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "obsidian_simple_search",
+      "tool_name": "searchIssues",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -405,72 +174,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "obsidian_patch_content",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_append_content",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_put_content",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_delete_file",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_complex_search",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_batch_get_file_contents",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_get_periodic_note",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_get_recent_periodic_notes",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "obsidian_get_recent_changes",
+      "tool_name": "getCommitHistory",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -536,6 +240,12 @@
       "scan_date": "2026-04-04T16:43:08Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "2.0.7"
+    },
+    {
+      "scan_date": "2026-04-04T22:53:44Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "2.0.7"
     }
   ]

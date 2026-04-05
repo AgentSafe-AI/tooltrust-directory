@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 24 |
 | **Language** | JavaScript |
 | **Source** | [dazeb-markdown-downloader](https://github.com/dazeb/markdown-downloader) |
-| **Scan Date** | 2026-04-04 |
+| **Scan Date** | 2026-04-05 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
