@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `3.5.51` |
 | **Vendor** | ruvnet |
-| **Stars** | ⭐ 29778 |
+| **Stars** | ⭐ 29788 |
 | **npm Package** | `claude-flow` |
 | **npm Downloads (30d)** | 58.4k |
 | **Language** | TypeScript |

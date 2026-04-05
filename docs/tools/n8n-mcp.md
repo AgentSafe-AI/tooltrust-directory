@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `2.47.1` |
 | **Vendor** | czlonkowski |
-| **Stars** | ⭐ 17505 |
+| **Stars** | ⭐ 17506 |
 | **npm Package** | `n8n-mcp` |
 | **npm Downloads (30d)** | 405.5k |
 | **Language** | TypeScript |

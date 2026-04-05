@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.8.2` |
 | **Vendor** | punitarani |
-| **Stars** | ⭐ 1410 |
+| **Stars** | ⭐ 1413 |
 | **Language** | Python |
 | **Source** | [punitarani-fli](https://github.com/punitarani/fli) |
 | **Scan Date** | 2026-04-05 |

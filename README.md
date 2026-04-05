@@ -9,7 +9,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 ![ToolTrust Directory UI](./docs/tooltrust-ui.png)
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-493-brightgreen)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-496-brightgreen)](./data/reports/)
 [![Last Scan](https://img.shields.io/badge/last%20scan-2026--04--05-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
@@ -20,7 +20,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by popularity. View all 493 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by popularity. View all 496 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Popularity | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -48,8 +48,8 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [ruflo](https://github.com/ruvnet/ruflo) | `3.5.51` | 58.4k/mo | **[B](./docs/tools/ruflo.md)** | `AS-014` ×19, 🔑 `AS-002` ×3, ⚡ `AS-011` | Apr 5 |
 | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 58.3k/mo | **[B](./docs/tools/mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Apr 5 |
 | [marcopesani-mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 51.5k/mo | **[C](./docs/tools/marcopesani-mcp-server-serper.md)** | `AS-012`, 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×6 | Apr 5 |
-| [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 51.5k/mo | **[C](./docs/tools/mcp-server-serper.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×6, `AS-014` ×6 | Apr 5 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.62.0` | 50.6k/mo | **[C](./docs/tools/ms-365-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×22, ⚡ `AS-011` ×9, `AS-014` ×16 | Apr 5 |
+| [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 51.5k/mo | **[C](./docs/tools/mcp-server-serper.md)** | `AS-012`, 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×6 | Apr 5 |
+| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.62.0` | 50.6k/mo | **[C](./docs/tools/ms-365-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×9, `AS-014` ×16 | Apr 5 |
 | [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.9.16` | 49.2k/mo | **[D](./docs/tools/apify-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Apr 5 |
 | [aas-ee-open-websearch](https://github.com/Aas-ee/open-webSearch) | `2.1.5` | 41.6k/mo | **[C](./docs/tools/aas-ee-open-websearch.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×6 | Apr 5 |
 | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.4.0` | 41.0k/mo | **[B](./docs/tools/mcp-server-kubernetes.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Apr 5 |
@@ -68,7 +68,7 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.4.2` | 12.2k/mo | **[A](./docs/tools/line-bot-mcp-server.md)** | 🔑 `AS-002` ×4, `AS-014` ×10 | Apr 5 |
 | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | `3.0.0` | 11.2k/mo | **[B](./docs/tools/mcp-server-browserbase.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Apr 5 |
 | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.7` | 10.7k | **[C](./docs/tools/xhs-downloader.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5, `AS-014` ×5 | Apr 4 |
-| [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) | `1.0.0` | 10.0k/mo | **[C](./docs/tools/figma-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×3, `AS-014` ×2, ⚡ `AS-011` | Apr 5 |
+| [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) | `1.0.0` | 10.0k/mo | **[C](./docs/tools/figma-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×58, `AS-014` ×49, ⚡ `AS-011` ×15, 🗝️ `AS-010` ×2 | Apr 5 |
 | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 9.8k/mo | **[C](./docs/tools/openapi-mcp-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×2 | Apr 5 |
 | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | `2.8.7` | 9.7k/mo | **[C](./docs/tools/mcp-server-typescript.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×13 | Apr 5 |
 | [mcp-use](https://github.com/mcp-use/mcp-use) | `1.5.0` | 9.7k | **[B](./docs/tools/mcp-use.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Apr 5 |

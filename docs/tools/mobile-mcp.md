@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.0.31-beta` |
 | **Vendor** | mobile-next |
-| **Stars** | ⭐ 4338 |
+| **Stars** | ⭐ 4339 |
 | **npm Package** | `@mobilenext/mobile-mcp` |
 | **npm Downloads (30d)** | 60.6k |
 | **Language** | TypeScript |

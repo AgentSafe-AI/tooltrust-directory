@@ -21,8 +21,8 @@ Why use this MCP server? Generating questions takes seconds, but formatting them
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xjtlumedia-x23](https://smithery.ai/server/XJTLUmedia/x23) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-05 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 
@@ -31,24 +31,12 @@ Why use this MCP server? Generating questions takes seconds, but formatting them
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 27 |
 | Low      | 3 |
 | Info     | 33 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 19 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

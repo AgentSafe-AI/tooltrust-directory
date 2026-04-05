@@ -8,7 +8,7 @@
 | **Risk Score** | 40 |
 | **Version** | `0.37.0-preview.1` |
 | **Vendor** | google-gemini |
-| **Stars** | ⭐ 100230 |
+| **Stars** | ⭐ 100231 |
 | **npm Package** | `@google/gemini-cli` |
 | **npm Downloads (30d)** | 3.1M |
 | **Language** | TypeScript |

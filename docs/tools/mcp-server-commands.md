@@ -6,7 +6,7 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 15 |
-| **Version** | `0.7.4` |
+| **Version** | `0.8.0` |
 | **Vendor** | g0t4 |
 | **Stars** | ⭐ 225 |
 | **npm Package** | `mcp-server-commands` |

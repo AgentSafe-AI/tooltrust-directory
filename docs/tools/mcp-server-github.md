@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82976 |
+| **Stars** | ⭐ 82977 |
 | **npm Package** | `@modelcontextprotocol/server-github` |
 | **npm Downloads (30d)** | 454.4k |
 | **Language** | TypeScript |
