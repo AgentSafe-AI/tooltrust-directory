@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.6.0` |
 | **Vendor** | portel-dev |
-| **Stars** | ⭐ 79 |
+| **Stars** | ⭐ 80 |
 | **npm Package** | `@portel/ncp` |
-| **npm Downloads (30d)** | 465 |
+| **npm Downloads (30d)** | 452 |
 | **Language** | JavaScript |
 | **Source** | [portel-dev-ncp](https://github.com/portel-dev/ncp) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

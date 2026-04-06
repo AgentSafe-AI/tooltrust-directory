@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `2.0.1` |
 | **Vendor** | caol64 |
-| **Stars** | ⭐ 1150 |
+| **Stars** | ⭐ 1153 |
 | **npm Package** | `@wenyan-md/mcp` |
-| **npm Downloads (30d)** | 718 |
+| **npm Downloads (30d)** | 612 |
 | **Language** | JavaScript |
 | **Source** | [wenyan-mcp](https://github.com/caol64/wenyan-mcp) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

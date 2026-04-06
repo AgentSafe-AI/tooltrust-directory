@@ -8,12 +8,12 @@
 | **Risk Score** | 8 |
 | **Version** | `2.0.0` |
 | **Vendor** | Jpisnice |
-| **Stars** | ⭐ 2746 |
+| **Stars** | ⭐ 2745 |
 | **npm Package** | `@jpisnice/shadcn-ui-mcp-server` |
-| **npm Downloads (30d)** | 6.9k |
+| **npm Downloads (30d)** | 6.8k |
 | **Language** | TypeScript |
 | **Source** | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

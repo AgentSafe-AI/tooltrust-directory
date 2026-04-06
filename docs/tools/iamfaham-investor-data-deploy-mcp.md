@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [iamfaham-investor-data-deploy-mcp](https://smithery.ai/server/iamfaham/investor-data-deploy-mcp) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

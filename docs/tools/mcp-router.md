@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.2` |
 | **Vendor** | mcp-router |
-| **Stars** | ⭐ 1924 |
+| **Stars** | ⭐ 1927 |
 | **npm Package** | `mcp-router` |
 | **Language** | TypeScript |
 | **Source** | [mcp-router](https://github.com/mcp-router/mcp-router) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

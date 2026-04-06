@@ -1,19 +1,19 @@
-# 🟠 exa-mcp-server
+# 🟡 exa-mcp-server
 
 > Exa MCP for web search and web crawling!
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 25 |
+| **Grade** | **B** |
+| **Risk Score** | 23 |
 | **Version** | `3.2.0` |
 | **Vendor** | exa-labs |
-| **Stars** | ⭐ 4150 |
+| **Stars** | ⭐ 4156 |
 | **npm Package** | `exa-mcp-server` |
-| **npm Downloads (30d)** | 64.3k |
+| **npm Downloads (30d)** | 64.6k |
 | **Language** | TypeScript |
 | **Source** | [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
@@ -24,57 +24,21 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 3 |
-| Medium   | 2 |
-| Low      | 3 |
-| Info     | 3 |
+| Medium   | 1 |
+| Low      | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
 **Severity:** High
 
 **Description:**
-tool declares network permission
+Tool set changed silently at v3.2.0: 0 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
@@ -114,18 +78,6 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -138,15 +90,15 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** Low
+**Severity:** High
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+input parameter "tokensNum" appears to accept a secret or credential
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 

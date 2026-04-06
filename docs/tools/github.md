@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [github](https://smithery.ai/server/github) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 28 |
+| High     | 27 |
 | Medium   | 29 |
 | Low      | 57 |
 | Info     | 86 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 64 tool(s) added, 11 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🔵 🔑 `AS-002` — Excessive Permission Surface
 

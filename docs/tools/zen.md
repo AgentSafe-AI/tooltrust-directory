@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 1069 |
 | **Language** | JavaScript |
 | **Source** | [zen](https://github.com/sheshbabu/zen) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-06 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

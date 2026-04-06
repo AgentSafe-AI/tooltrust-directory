@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `sha-72140a7136a5` |
 | **Vendor** | nickclyde |
-| **Stars** | ⭐ 940 |
+| **Stars** | ⭐ 942 |
 | **Language** | Python |
 | **Source** | [duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

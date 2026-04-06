@@ -1,16 +1,16 @@
 {
   "tool_id": "brightdata-mcp",
-  "version": "2.9.3",
+  "version": "2.9.4",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-05T01:50:49.782060988Z",
+  "scan_date": "2026-04-06T01:53:39.611462515Z",
   "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/brightdata/brightdata-mcp",
   "category": "Developer Tools",
   "vendor": "brightdata",
-  "stars": 2264,
+  "stars": 2267,
   "npm_package": "@brightdata/mcp",
-  "npm_downloads_monthly": 18598,
+  "npm_downloads_monthly": 18227,
   "license": "MIT",
   "language": "JavaScript",
   "description": "A powerful Model Context Protocol (MCP) server that provides an all-in-one solution for public web access.",
@@ -142,6 +142,30 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "extract"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "discover"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "discover"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "discover"
     },
     {
       "id": "AS-014",
@@ -1514,13 +1538,14 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 57,
+    "high": 58,
     "medium": 8,
-    "low": 58,
-    "info": 64
+    "low": 59,
+    "info": 65
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "discover",
     "extract",
     "scrape_as_html",
     "scrape_as_markdown",
@@ -1642,6 +1667,17 @@
       "tool_name": "extract",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "discover",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -2302,6 +2338,12 @@
     },
     {
       "scan_date": "2026-04-05T01:10:41Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "2.9.3"
+    },
+    {
+      "scan_date": "2026-04-05T01:50:49Z",
       "grade": "C",
       "risk_score": 25,
       "version": "2.9.3"

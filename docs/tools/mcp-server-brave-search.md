@@ -8,12 +8,12 @@
 | **Risk Score** | 29 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 82977 |
+| **Stars** | ⭐ 83035 |
 | **npm Package** | `@modelcontextprotocol/server-brave-search` |
-| **npm Downloads (30d)** | 123.3k |
+| **npm Downloads (30d)** | 122.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

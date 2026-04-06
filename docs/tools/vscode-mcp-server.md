@@ -10,10 +10,10 @@
 | **Vendor** | juehang |
 | **Stars** | ⭐ 343 |
 | **npm Package** | `vscode-mcp-server` |
-| **npm Downloads (30d)** | 5.2k |
+| **npm Downloads (30d)** | 5.0k |
 | **Language** | TypeScript |
 | **Source** | [vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 17.4k |
 | **Language** | TypeScript |
 | **Source** | [git-mcp-server](https://github.com/cyanheads/git-mcp-server) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

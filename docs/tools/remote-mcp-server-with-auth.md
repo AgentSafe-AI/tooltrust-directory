@@ -12,7 +12,7 @@
 | **npm Package** | `remote-mcp-github-oauth` |
 | **Language** | TypeScript |
 | **Source** | [remote-mcp-server-with-auth](https://github.com/coleam00/remote-mcp-server-with-auth) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 17 |
+| High     | 16 |
 | Medium   | 18 |
 | Low      | 27 |
 | Info     | 33 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.0.1: 11 tool(s) added, 64 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 

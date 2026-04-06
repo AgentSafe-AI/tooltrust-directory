@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 153 |
 | **Language** | Python |
 | **Source** | [mcp-server-reddit](https://github.com/Hawstein/mcp-server-reddit) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-06 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
