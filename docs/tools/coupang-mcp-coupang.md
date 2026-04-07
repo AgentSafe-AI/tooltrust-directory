@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [coupang-mcp-coupang](https://smithery.ai/server/coupang-mcp/coupang) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-07 |
+| **Scanner** | tooltrust-scanner/v0.3.7 |
 
 ---
 

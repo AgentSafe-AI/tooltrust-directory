@@ -10,11 +10,11 @@
 | **Vendor** | augmnt |
 | **Stars** | ⭐ 120 |
 | **npm Package** | `@augmnt-sh/augments-mcp-server` |
-| **npm Downloads (30d)** | 449 |
+| **npm Downloads (30d)** | 454 |
 | **Language** | TypeScript |
 | **Source** | [augments-mcp-server](https://github.com/augmnt/augments-mcp-server) |
 | **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scanner** | tooltrust-scanner/v0.3.7 |
 
 ---
 

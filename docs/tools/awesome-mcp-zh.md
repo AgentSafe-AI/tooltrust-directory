@@ -8,10 +8,10 @@
 | **Risk Score** | 15 |
 | **Version** | `sha-3337f7452f5b` |
 | **Vendor** | yzfly |
-| **Stars** | ⭐ 6791 |
+| **Stars** | ⭐ 6796 |
 | **Source** | [awesome-mcp-zh](https://github.com/yzfly/Awesome-MCP-ZH) |
 | **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scanner** | tooltrust-scanner/v0.3.7 |
 
 ---
 

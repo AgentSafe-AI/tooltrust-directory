@@ -10,11 +10,11 @@
 | **Vendor** | jerhadf |
 | **Stars** | ⭐ 346 |
 | **npm Package** | `linear-mcp-server` |
-| **npm Downloads (30d)** | 4.0k |
+| **npm Downloads (30d)** | 4.1k |
 | **Language** | JavaScript |
 | **Source** | [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) |
 | **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scanner** | tooltrust-scanner/v0.3.7 |
 
 ---
 

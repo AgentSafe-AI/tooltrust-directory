@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [gsudheer123-vsf](https://smithery.ai/server/gsudheer123/vsf) |
 | **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scanner** | tooltrust-scanner/v0.3.7 |
 
 ---
 

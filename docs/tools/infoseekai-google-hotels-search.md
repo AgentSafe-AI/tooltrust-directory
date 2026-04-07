@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [infoseekai-google-hotels-search](https://smithery.ai/server/InfoseekAI/google-hotels-search) |
 | **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scanner** | tooltrust-scanner/v0.3.7 |
 
 ---
 
