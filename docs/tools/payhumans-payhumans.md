@@ -33,7 +33,7 @@ https://payhumans.co
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [payhumans-payhumans](https://smithery.ai/server/payhumans/payhumans) |
-| **Scan Date** | 2026-04-04 |
+| **Scan Date** | 2026-04-07 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

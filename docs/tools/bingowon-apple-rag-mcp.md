@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 33 |
-| **Version** | `4.18.5` |
+| **Version** | `4.18.6` |
 | **Vendor** | BingoWon |
 | **Stars** | ⭐ 127 |
 | **npm Package** | `apple-rag-mcp` |
 | **Language** | TypeScript |
 | **Source** | [bingowon-apple-rag-mcp](https://github.com/BingoWon/apple-rag-mcp) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-07 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

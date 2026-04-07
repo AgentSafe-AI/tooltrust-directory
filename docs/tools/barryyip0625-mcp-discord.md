@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 34 |
-| **Version** | `1.3.8` |
+| **Version** | `1.3.9` |
 | **Vendor** | barryyip0625 |
-| **Stars** | ⭐ 76 |
+| **Stars** | ⭐ 77 |
 | **npm Package** | `mcp-discord` |
-| **npm Downloads (30d)** | 5.3k |
+| **npm Downloads (30d)** | 5.0k |
 | **Language** | TypeScript |
 | **Source** | [barryyip0625-mcp-discord](https://github.com/barryyip0625/mcp-discord) |
-| **Scan Date** | 2026-04-05 |
+| **Scan Date** | 2026-04-07 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

@@ -1,10 +1,10 @@
 {
   "tool_id": "just-record-mcpserver-test",
   "version": "sha-b795ddb8bd97",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-04T16:50:13.586686131Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-07T01:48:49.363921571Z",
+  "scanner": "tooltrust-scanner/v0.3.6",
   "source_url": "https://github.com/just-record/mcpserver-test",
   "category": "Other",
   "vendor": "just-record",
@@ -12,12 +12,23 @@
   "description": "MCP Server Test - 공개코드인 Weather를 이용하여 MCP Server를 구성하고 GitHub에 등록한 후 Smithery에 등록 하기 Test",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_domain"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-b795ddb8bd97: 3 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ask_question",
+          "read_wiki_contents",
+          "read_wiki_structure"
+        ],
+        "removed": [
+          "check_domain",
+          "list_tlds"
+        ],
+        "version": "sha-b795ddb8bd97"
+      }
     },
     {
       "id": "AS-014",
@@ -25,31 +36,55 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_tlds"
+      "tool_name": "read_wiki_structure"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "read_wiki_contents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ask_question"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "check_domain",
-    "list_tlds"
+    "ask_question",
+    "read_wiki_contents",
+    "read_wiki_structure"
   ],
   "tool_contexts": [
     {
-      "tool_name": "check_domain",
+      "tool_name": "read_wiki_structure",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_tlds",
+      "tool_name": "read_wiki_contents",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ask_question",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -59,6 +94,12 @@
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:55:31Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "sha-b795ddb8bd97"
+    },
+    {
+      "scan_date": "2026-04-04T16:50:13Z",
       "grade": "A",
       "risk_score": 0,
       "version": "sha-b795ddb8bd97"

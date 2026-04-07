@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lecigarevolant-arxiv-mcp-server-gpt](https://smithery.ai/server/lecigarevolant/arxiv-mcp-server-gpt) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-07 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 

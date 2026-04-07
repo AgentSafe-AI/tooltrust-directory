@@ -6,12 +6,12 @@
 | **Risk Score** | 17 |
 | **Version** | `2.0.75` |
 | **Vendor** | brave |
-| **Stars** | ⭐ 869 |
+| **Stars** | ⭐ 874 |
 | **npm Package** | `@brave/brave-search-mcp-server` |
-| **npm Downloads (30d)** | 33.1k |
+| **npm Downloads (30d)** | 31.6k |
 | **Language** | TypeScript |
 | **Source** | [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) |
-| **Scan Date** | 2026-04-06 |
+| **Scan Date** | 2026-04-07 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
@@ -33,7 +33,7 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at v2.0.75: 1 tool(s) added, 6 tool(s) removed without a version bump.
+Tool set changed silently at v2.0.75: 1 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.

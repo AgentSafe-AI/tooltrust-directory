@@ -8,10 +8,10 @@
 | **Risk Score** | 40 |
 | **Version** | `0.1.0` |
 | **Vendor** | SigNoz |
-| **Stars** | ⭐ 80 |
+| **Stars** | ⭐ 81 |
 | **Language** | Go |
 | **Source** | [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) |
-| **Scan Date** | 2026-04-06 |
+| **Scan Date** | 2026-04-07 |
 | **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---

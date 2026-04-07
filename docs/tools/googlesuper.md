@@ -1,16 +1,16 @@
-# 🔴 googlesuper
+# 🟠 googlesuper
 
 > Google Super MCP server providing access to multiple Google Workspace services.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 52 |
+| **Grade** | **C** |
+| **Risk Score** | 40 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [googlesuper](https://smithery.ai/server/googlesuper) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-07 |
+| **Scanner** | tooltrust-scanner/v0.3.6 |
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 36 |
 | Medium   | 95 |
 | Low      | 56 |
@@ -2171,18 +2171,6 @@ tool declares http permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
-
-**Severity:** Critical
-
-**Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
-
-**Recommendation:**
-This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
 
 ---
 
