@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [actiongate-actiongate](https://smithery.ai/server/actiongate/actiongate) |
-| **Scan Date** | 2026-04-06 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

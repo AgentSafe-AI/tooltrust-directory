@@ -13,8 +13,8 @@
 | **npm Downloads (30d)** | 4.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.7 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

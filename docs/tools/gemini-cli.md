@@ -8,13 +8,13 @@
 | **Risk Score** | 40 |
 | **Version** | `0.37.0-preview.2` |
 | **Vendor** | google-gemini |
-| **Stars** | ⭐ 100526 |
+| **Stars** | ⭐ 100541 |
 | **npm Package** | `@google/gemini-cli` |
 | **npm Downloads (30d)** | 3.1M |
 | **Language** | TypeScript |
 | **Source** | [gemini-cli](https://github.com/google-gemini/gemini-cli) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.7 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

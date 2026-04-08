@@ -3,12 +3,13 @@
   "version": "0.7.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-07T01:48:40.228787463Z",
-  "scanner": "tooltrust-scanner/v0.3.6",
+  "scan_date": "2026-04-08T01:46:55.500223112Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/thirdstrandstudio/mcp-xpath",
   "category": "Developer Tools",
   "vendor": "thirdstrandstudio",
   "npm_package": "@thirdstrandstudio/mcp-xpath",
+  "npm_downloads_monthly": 236,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP for evaluating xpath",
@@ -19,6 +20,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "xpath"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "xpath"
     },
     {
@@ -44,6 +53,14 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "xpathwithurl"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xpathwithurl"
     }
   ],
   "summary": {
@@ -51,7 +68,7 @@
     "high": 1,
     "medium": 2,
     "low": 1,
-    "info": 0
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -63,8 +80,8 @@
       "tool_name": "xpath",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "xpathwithurl",
@@ -76,8 +93,8 @@
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -119,6 +136,12 @@
     },
     {
       "scan_date": "2026-04-06T02:02:29Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.7.0"
+    },
+    {
+      "scan_date": "2026-04-07T01:48:40Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.7.0"

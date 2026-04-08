@@ -10,11 +10,11 @@
 | **Vendor** | barryyip0625 |
 | **Stars** | ⭐ 77 |
 | **npm Package** | `mcp-discord` |
-| **npm Downloads (30d)** | 5.0k |
+| **npm Downloads (30d)** | 5.1k |
 | **Language** | TypeScript |
 | **Source** | [barryyip0625-mcp-discord](https://github.com/barryyip0625/mcp-discord) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

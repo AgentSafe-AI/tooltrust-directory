@@ -12,8 +12,8 @@
 | **npm Package** | `apple-rag-mcp` |
 | **Language** | TypeScript |
 | **Source** | [bingowon-apple-rag-mcp](https://github.com/BingoWon/apple-rag-mcp) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | HelloGGX |
 | **Stars** | ⭐ 109 |
 | **npm Package** | `mcp-server` |
-| **npm Downloads (30d)** | 13.5k |
+| **npm Downloads (30d)** | 12.1k |
 | **Language** | TypeScript |
 | **Source** | [helloggx-shadcn-vue-mcp](https://github.com/HelloGGX/shadcn-vue-mcp) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

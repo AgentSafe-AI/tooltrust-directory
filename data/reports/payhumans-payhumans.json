@@ -3,33 +3,12 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-07T22:04:37.603645579Z",
-  "scanner": "tooltrust-scanner/v0.3.7",
+  "scan_date": "2026-04-08T01:45:52.287420216Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/payhumans/payhumans",
   "vendor": "Smithery",
   "description": "The human API for AI agents. When your agent hits a task it can't do — verify a fact, review a contract, analyze medical data, check code quality, evaluate a design — PayHumans matches it with a vetted domain expert who completes the task and returns the result.\nZero setup required. Call register_agent to get an API key and $50 free credits instantly. No login, no credit card, no approval process. Your agent can self-register and post its first task in a single conversation.\nExpert domains available:\n\nHealthcare \u0026 Medical: physician review, clinical data analysis, drug interaction checks, medical literature review\nLegal \u0026 Compliance: contract review, regulatory analysis, IP assessment, legal research, NDA review\nFinance \u0026 Business: financial modeling review, due diligence, market analysis, valuation checks\nTechnology: code review, architecture feedback, security audit, technical writing review, QA testing\nResearch \u0026 Academia: literature review, data verification, peer review, fact-checking\nMarketing \u0026 Creative: copy review, UX evaluation, brand analysis, content strategy, design feedback\n\nHow it works:\n\nregister_agent — get API key + $50 free credits (no auth needed)\nsearch_experts — browse available experts by domain and rate\npost_job — describe the task, set budget, get matched in minutes\nget_job — retrieve the completed deliverable\ncomplete_job — approve and release payment\n\n9 tools: register_agent · search_experts · post_job · get_job · list_jobs · complete_job · confirm_payment · send_message · get_expert\nPayments: Stripe (fiat) and Solana USDC. Escrow-protected — payment released only on approval.\nIntegrations: Works with Claude Desktop, Cursor, Windsurf, LangChain, CrewAI, and AutoGen.\nPython SDK: pip install payhumans | npm: npm install @agent-network/mcp\nKeywords: human-in-the-loop, HITL, hire human, expert network, task marketplace, human API, human feedback, agent hire human, outsource to human, human review, expert review\nhttps://payhumans.co",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 8 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "agents.set_webhook",
-          "approve_match",
-          "get_pending_actions",
-          "get_task_status",
-          "messages.get",
-          "raise_dispute",
-          "release_payment",
-          "search_humans"
-        ],
-        "removed": null,
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -305,7 +284,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 5,
     "medium": 3,
     "low": 9,
     "info": 17
@@ -530,6 +509,12 @@
     },
     {
       "scan_date": "2026-04-07T01:48:33Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-07T22:04:37Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

@@ -14,8 +14,8 @@ Find the most affordable flights between any airports. View flight prices across
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gvzq-flight-mcp](https://smithery.ai/server/gvzq/flight-mcp) |
-| **Scan Date** | 2026-04-05 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

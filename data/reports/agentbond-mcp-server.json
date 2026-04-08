@@ -1,10 +1,10 @@
 {
   "tool_id": "agentbond-mcp-server",
   "version": "smithery",
-  "grade": "D",
-  "risk_score": 57,
-  "scan_date": "2026-04-04T16:49:24.373743261Z",
-  "scanner": "tooltrust-scanner/v0.3.5",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-04-08T01:45:48.173052979Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/agentbond/mcp-server",
   "vendor": "Smithery",
   "description": "Authorization and governance infrastructure for AI agents. 17 MCP tools for token authorization, intent proof, contract management, action evaluation, and audit logging.\n\n**Key Features:**\n- Token-based authorization with scope, budget, and expiry controls\n- Hierarchical delegation (parent → child token chains)\n- Intent proof layer — record and verify why agents act\n- Inter-agent contracts with lifecycle management\n- Built-in audit trail for all governance decisions\n\n**Use Cases:**\n- Multi-agent systems requiring fine-grained access control\n- Budget-constrained agent operations\n- Auditable AI agent governance\n- Inter-agent agreements and deliverable tracking",
@@ -31,14 +31,6 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "agentbond_evaluate_action"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "agentbond_evaluate_action"
     },
     {
@@ -226,14 +218,6 @@
       "tool_name": "agentbond_evaluate_intent_policy"
     },
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "agentbond_evaluate_intent_policy"
-    },
-    {
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
@@ -330,14 +314,6 @@
       "tool_name": "agentbond_evaluate_contract"
     },
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "agentbond_evaluate_contract"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -363,7 +339,7 @@
     }
   ],
   "summary": {
-    "critical": 3,
+    "critical": 0,
     "high": 16,
     "medium": 2,
     "low": 6,
@@ -404,7 +380,7 @@
     {
       "tool_name": "agentbond_evaluate_action",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "executes_commands"
       ],
@@ -497,7 +473,7 @@
     {
       "tool_name": "agentbond_evaluate_intent_policy",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "executes_commands"
       ],
@@ -547,8 +523,8 @@
     },
     {
       "tool_name": "agentbond_evaluate_contract",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -572,6 +548,12 @@
     },
     {
       "scan_date": "2026-04-04T06:28:02Z",
+      "grade": "D",
+      "risk_score": 57,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-04T16:49:24Z",
       "grade": "D",
       "risk_score": 57,
       "version": "smithery"

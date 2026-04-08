@@ -11,8 +11,8 @@ Get the API Key from: https://asksubquery.xyz/?referrer_code=UNISWAP
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [subquery-network-uniswap](https://smithery.ai/server/SubQuery-Network/uniswap) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-08 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

@@ -1,41 +1,14 @@
 {
   "tool_id": "trust-security-scanner",
   "version": "smithery",
-  "grade": "D",
-  "risk_score": 73,
-  "scan_date": "2026-04-05T01:57:56.530746986Z",
-  "scanner": "tooltrust-scanner/v0.3.6",
+  "grade": "C",
+  "risk_score": 48,
+  "scan_date": "2026-04-08T01:45:40.994887062Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/trust-security/scanner",
   "vendor": "Smithery",
   "description": "Detect live website vulnerabilities and security flaws in GitHub repositories using automated DAST and SAST scanning. Safeguard applications by identifying exposed secrets, insecure dependencies, and common code patterns prone to exploitation. Receive structured fix plans with precise code remediation steps to resolve identified risks and improve security posture.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 9 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "analyze_code_security",
-          "check_secrets",
-          "get_fix_plan",
-          "get_repo_scan_result",
-          "get_scan_result",
-          "scan_and_wait",
-          "scan_repo",
-          "scan_repo_and_wait",
-          "scan_url"
-        ],
-        "removed": [
-          "audit_site",
-          "compare_sites",
-          "fix_site",
-          "scan_site"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -245,14 +218,6 @@
       "tool_name": "analyze_code_security"
     },
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "analyze_code_security"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -310,8 +275,8 @@
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 10,
+    "critical": 0,
+    "high": 9,
     "medium": 8,
     "low": 7,
     "info": 9
@@ -421,7 +386,7 @@
     {
       "tool_name": "analyze_code_security",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "executes_commands",
         "reads_files",
@@ -453,6 +418,12 @@
       "scan_date": "2026-04-05T01:20:15Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-05T01:57:56Z",
+      "grade": "D",
+      "risk_score": 73,
       "version": "smithery"
     }
   ]
