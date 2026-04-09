@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `3.2.8` |
 | **Vendor** | call518 |
-| **Stars** | ⭐ 145 |
+| **Stars** | ⭐ 144 |
 | **Language** | Python |
 | **Source** | [call518-mcp-postgresql-ops](https://github.com/call518/MCP-PostgreSQL-Ops) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-09 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -1,0 +1,88 @@
+{
+  "tool_id": "zenrows-zenrows-mcp",
+  "version": "1.1.6",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-04-09T01:33:49.530309918Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/ZenRows/zenrows-mcp",
+  "category": "Developer Tools",
+  "vendor": "zenrows",
+  "stars": 15,
+  "npm_package": "@zenrows/mcp",
+  "npm_downloads_monthly": 1311,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Official ZenRows MCP integration",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "scrape"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "scrape"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "scrape"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scrape"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 2,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "scrape"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "scrape",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "dynamic email recipient (autoparse)",
+        "dynamic email recipient (css_extractor)",
+        "dynamic email recipient (screenshot_selector)",
+        "hardcoded domain: example.com",
+        "hardcoded domain: example.com\\",
+        "hardcoded domain: protected.com",
+        "hardcoded domain: protected.com\\",
+        "hardcoded domain: shop.com",
+        "hardcoded domain: shop.com\\",
+        "hardcoded domain: spa.com",
+        "hardcoded domain: spa.com\\"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

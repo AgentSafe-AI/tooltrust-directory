@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.0` |
 | **Vendor** | Laksh-star |
-| **Stars** | ⭐ 64 |
+| **Stars** | ⭐ 66 |
 | **npm Package** | `mcp-server-tmdb` |
-| **npm Downloads (30d)** | 66 |
+| **npm Downloads (30d)** | 65 |
 | **Language** | JavaScript |
 | **Source** | [laksh-star-mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-09 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

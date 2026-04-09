@@ -8,10 +8,10 @@
 | **Risk Score** | 65 |
 | **Version** | `2025-dec-31` |
 | **Vendor** | planexeorg |
-| **Stars** | ⭐ 366 |
+| **Stars** | ⭐ 365 |
 | **Language** | Python |
 | **Source** | [planexeorg-planexe](https://github.com/PlanExeOrg/PlanExe) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-09 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

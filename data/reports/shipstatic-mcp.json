@@ -1,18 +1,17 @@
 {
   "tool_id": "shipstatic-mcp",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-08T01:45:25.13783353Z",
+  "scan_date": "2026-04-09T01:35:28.714963112Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/shipstatic/mcp",
   "category": "Developer Tools",
   "vendor": "shipstatic",
   "npm_package": "@shipstatic/mcp",
-  "npm_downloads_monthly": 1206,
   "license": "MIT",
   "language": "TypeScript",
-  "description": "MCP server for deploying static sites from AI agents",
+  "description": "MCP server for instant static site deploys from AI agents — free, no account needed",
   "findings": [
     {
       "id": "AS-002",
@@ -40,10 +39,42 @@
     },
     {
       "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "deployments_list"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "deployments_list"
+    },
+    {
+      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "deployments_get"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "deployments_get"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "deployments_get"
     },
     {
@@ -56,6 +87,38 @@
     },
     {
       "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "domains_list"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "domains_list"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "domains_get"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "domains_get"
+    },
+    {
+      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
@@ -65,9 +128,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 5,
     "medium": 4,
-    "low": 1,
+    "low": 5,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -103,16 +166,20 @@
     {
       "tool_name": "deployments_list",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "deployments_get",
-      "action": "ALLOW",
-      "grade": "A",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "reads_files"
+        "reads_files",
+        "uses_network"
       ],
       "destinations": [
         "hardcoded domain: happy-cat-abc1234.shipstatic.com"
@@ -158,14 +225,20 @@
     {
       "tool_name": "domains_list",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "domains_get",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
         "hardcoded domain: www.example.com"
       ],
@@ -291,6 +364,12 @@
     },
     {
       "scan_date": "2026-04-07T22:05:06Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.4.1"
+    },
+    {
+      "scan_date": "2026-04-08T01:45:25Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.4.1"
