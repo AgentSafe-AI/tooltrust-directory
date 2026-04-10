@@ -1,15 +1,15 @@
-# 🟢 hubertroy-test
+# 🟡 hubertroy-test
 
 > Provide the product’s purpose, primary users, and the top three tasks it enables to receive a concise name and summary. List any key integrations, data sources, and unique value. Share tone or branding preferences (e.g., playful, professional) to shape the wording.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hubertroy-test](https://smithery.ai/server/HuberTRoy/test) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -19,22 +19,22 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 3 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+Tool set changed silently at vsmithery: 2 tool(s) added, 3 tool(s) removed without a version bump.
 
 **Recommendation:**
-Review and remediate the identified issue.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 

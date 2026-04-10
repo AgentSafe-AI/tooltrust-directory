@@ -1,15 +1,15 @@
-# 🟠 janwilmake-x-search-mcp
+# 🟡 janwilmake-x-search-mcp
 
 > Search Twitter using advanced operators to find relevant tweets, media, and links. Filter by users, hashtags, dates, sentiment, and more, then paginate through results to explore deeper. Discover timely conversations and gather insights fast.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 25 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [janwilmake-x-search-mcp](https://smithery.ai/server/janwilmake/x-search-mcp) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -19,12 +19,24 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
-| Medium   | 1 |
+| High     | 2 |
+| Medium   | 0 |
 | Low      | 1 |
 | Info     | 1 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
@@ -32,18 +44,6 @@
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

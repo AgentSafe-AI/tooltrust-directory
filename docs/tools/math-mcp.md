@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [math-mcp](https://smithery.ai/server/EthanHenrickson/math-mcp) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

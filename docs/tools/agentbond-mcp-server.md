@@ -22,7 +22,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agentbond-mcp-server](https://smithery.ai/server/agentbond/mcp-server) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

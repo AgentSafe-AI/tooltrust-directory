@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [regenique-elegance-commerce](https://smithery.ai/server/regenique/elegance-commerce) |
-| **Scan Date** | 2026-04-09 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [moltrust-moltrust-mcp-server](https://smithery.ai/server/moltrust/moltrust-mcp-server) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.7 |
+| **Scan Date** | 2026-04-10 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

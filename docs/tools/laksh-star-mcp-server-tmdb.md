@@ -10,10 +10,10 @@
 | **Vendor** | Laksh-star |
 | **Stars** | ⭐ 66 |
 | **npm Package** | `mcp-server-tmdb` |
-| **npm Downloads (30d)** | 65 |
+| **npm Downloads (30d)** | 62 |
 | **Language** | JavaScript |
 | **Source** | [laksh-star-mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb) |
-| **Scan Date** | 2026-04-09 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

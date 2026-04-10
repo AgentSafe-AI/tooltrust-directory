@@ -1,14 +1,14 @@
 {
   "tool_id": "signoz-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-04-09T01:33:10.47396867Z",
+  "scan_date": "2026-04-10T01:58:29.102398737Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/SigNoz/signoz-mcp-server",
   "category": "Developer Tools",
   "vendor": "SigNoz",
-  "stars": 81,
+  "stars": 82,
   "license": "Apache-2.0",
   "language": "Go",
   "description": "MCP Server for SigNoz",
@@ -110,6 +110,38 @@
       "tool_name": "signoz_get_dashboard"
     },
     {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "signoz_create_dashboard"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "signoz_create_dashboard"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "signoz_update_dashboard"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "signoz_update_dashboard"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -147,7 +179,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_get_error_logs"
+      "tool_name": "signoz_aggregate_logs"
     },
     {
       "id": "AS-002",
@@ -155,7 +187,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_search_logs_by_service"
+      "tool_name": "signoz_search_logs"
     },
     {
       "id": "AS-011",
@@ -163,7 +195,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "signoz_search_logs_by_service"
+      "tool_name": "signoz_search_logs"
     },
     {
       "id": "AS-014",
@@ -171,7 +203,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_search_logs_by_service"
+      "tool_name": "signoz_search_logs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "signoz_aggregate_traces"
     },
     {
       "id": "AS-002",
@@ -179,7 +219,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_search_traces_by_service"
+      "tool_name": "signoz_search_traces"
     },
     {
       "id": "AS-011",
@@ -187,7 +227,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "signoz_search_traces_by_service"
+      "tool_name": "signoz_search_traces"
     },
     {
       "id": "AS-014",
@@ -195,7 +235,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_search_traces_by_service"
+      "tool_name": "signoz_search_traces"
     },
     {
       "id": "AS-014",
@@ -204,22 +244,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "signoz_get_trace_details"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_get_trace_error_analysis"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_get_trace_span_hierarchy"
     },
     {
       "id": "AS-002",
@@ -260,86 +284,37 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "signoz_execute_builder_query"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_create_dashboard"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_create_dashboard"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_create_dashboard"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_update_dashboard"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "signoz_update_dashboard"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "signoz_update_dashboard"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 5,
-    "medium": 6,
+    "medium": 4,
     "low": 4,
-    "info": 22
+    "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "signoz_aggregate_logs",
+    "signoz_aggregate_traces",
     "signoz_create_dashboard",
     "signoz_execute_builder_query",
     "signoz_get_alert",
     "signoz_get_alert_history",
     "signoz_get_dashboard",
-    "signoz_get_error_logs",
     "signoz_get_field_keys",
     "signoz_get_field_values",
     "signoz_get_log_view",
     "signoz_get_service_top_operations",
     "signoz_get_trace_details",
-    "signoz_get_trace_error_analysis",
-    "signoz_get_trace_span_hierarchy",
     "signoz_list_alerts",
     "signoz_list_dashboards",
     "signoz_list_log_views",
     "signoz_list_metrics",
     "signoz_list_services",
     "signoz_query_metrics",
-    "signoz_search_logs_by_service",
-    "signoz_search_traces_by_service",
+    "signoz_search_logs",
+    "signoz_search_traces",
     "signoz_update_dashboard"
   ],
   "tool_contexts": [
@@ -410,6 +385,23 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "signoz_create_dashboard",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "signoz_update_dashboard",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "signoz_list_services",
       "action": "ALLOW",
       "grade": "A",
@@ -438,14 +430,14 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "signoz_get_error_logs",
+      "tool_name": "signoz_aggregate_logs",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "signoz_search_logs_by_service",
+      "tool_name": "signoz_search_logs",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -455,7 +447,14 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "signoz_search_traces_by_service",
+      "tool_name": "signoz_aggregate_traces",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "signoz_search_traces",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -472,46 +471,12 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "signoz_get_trace_error_analysis",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "signoz_get_trace_span_hierarchy",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
       "tool_name": "signoz_execute_builder_query",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "executes_commands",
         "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "signoz_create_dashboard",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "signoz_update_dashboard",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -616,6 +581,12 @@
     },
     {
       "scan_date": "2026-04-08T01:40:57Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-04-09T01:33:10Z",
       "grade": "C",
       "risk_score": 40,
       "version": "0.1.0"

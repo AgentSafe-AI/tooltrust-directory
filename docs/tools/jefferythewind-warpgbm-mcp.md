@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jefferythewind-warpgbm-mcp](https://smithery.ai/server/jefferythewind/warpgbm-mcp) |
-| **Scan Date** | 2026-04-05 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-10 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

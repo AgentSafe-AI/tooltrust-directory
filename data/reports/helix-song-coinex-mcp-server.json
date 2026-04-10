@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-04-04T23:00:41.085446911Z",
-  "scanner": "tooltrust-scanner/v0.3.6",
+  "scan_date": "2026-04-10T02:01:39.226774906Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/helix-song/coinex_mcp_server",
   "vendor": "Smithery",
   "description": "# CoinEx MCP Server\n\nA Model Context Protocol (MCP) server that enables AI agents to interact seamlessly with the CoinEx cryptocurrency exchange. This server provides comprehensive access to market data, trading operations, and account management through a standardized MCP interface.\n\n## Key Features\n\n- **Market Data Access**: Retrieve real-time tickers, order books, K-lines, and recent trades for both spot and futures markets\n- **Futures Analytics**: Access funding rates, premium indices, basis history, position tiers, and liquidation data\n- **Account Management**: Query account balances and manage trading positions\n- **Order Operations**: Place, cancel, and track orders with full history access\n- **Flexible Deployment**: Supports multiple transport protocols (stdio, HTTP, SSE) for various integration scenarios\n\n## Quick Start\n\n### Installation via http (Recommended)\njust add this url `https://mcp.coinex.com/mcp`  to your mcp configuration in agent. for example, use this command to add it to your claude code: \n```\nclaude mcp add --transport http coinex-mcp-server https://mcp.coinex.com/mcp\n```\n\n### Installation via uvx (Support get balance / place order by API key)\n\nConfigure your MCP client (e.g., Claude Desktop) with the following JSON:\n\n```json\n{\n  \"mcpServers\": {\n    \"coinex\": {\n      \"command\": \"uvx\",\n      \"args\": [\"coinex-mcp-server\"],\n      \"env\": {\n        \"COINEX_ACCESS_ID\": \"your_access_id_here\",\n        \"COINEX_SECRET_KEY\": \"your_secret_key_here\"\n      }\n    }\n  }\n}\n```\n\n### HTTP Mode Deployment by source code\n* install \n`pip install coinex-mcp-server`\n\n* start the server in HTTP mode:\n```bash\npython -m coinex_mcp_server.main --transport http --host 127.0.0.1 --port 8000 --path /mcp --enable-http-auth\n```\nPass credentials via HTTP headers:\n- `X-CoinEx-Access-Id: \u003cyour_access_id\u003e`\n- `X-CoinEx-Secret-Key: \u003cyour_secret_key\u003e`\n\n## Usage Examples\n\n- **Get Market Tickers**: `list_markets(market_type=\"spot\")` or `get_tickers(symbol=\"BTCUSDT\")`\n- **Query Order Book**: `get_orderbook(symbol=\"BTCUSDT\", limit=20)`\n- **Check Account Balance**: `get_account_balance()`\n- **Place Order**: `place_order(symbol=\"BTCUSDT\", side=\"buy\", type=\"limit\", amount=\"0.01\", price=\"50000\")`\n\n## Security Notes\n\n⚠️ **Important**: \n- Never expose HTTP authentication in public services\n- Deploy with HTTPS/TLS in production environments",
@@ -238,6 +238,12 @@
     },
     {
       "scan_date": "2026-04-04T16:49:39Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-04T23:00:41Z",
       "grade": "A",
       "risk_score": 0,
       "version": "smithery"

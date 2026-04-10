@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ragalgo-ragalgo-mcp-server-v1](https://smithery.ai/server/ragalgo/ragalgo-mcp-server-v1) |
-| **Scan Date** | 2026-04-06 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-10 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

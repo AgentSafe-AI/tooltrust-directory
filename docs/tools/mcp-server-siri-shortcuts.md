@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.1.0` |
 | **Vendor** | dvcrn |
-| **Stars** | ⭐ 184 |
+| **Stars** | ⭐ 183 |
 | **npm Package** | `mcp-server-siri-shortcuts` |
-| **npm Downloads (30d)** | 501 |
+| **npm Downloads (30d)** | 466 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-siri-shortcuts](https://github.com/dvcrn/mcp-server-siri-shortcuts) |
-| **Scan Date** | 2026-04-09 |
+| **Scan Date** | 2026-04-10 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
