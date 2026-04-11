@@ -1,0 +1,58 @@
+{
+  "tool_id": "lex-tools-codebase-context-dumper",
+  "version": "0.1.5",
+  "grade": "C",
+  "risk_score": 33,
+  "scan_date": "2026-04-11T01:46:36.964635924Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/lex-tools/codebase-context-dumper",
+  "category": "Developer Tools",
+  "vendor": "lex-tools",
+  "stars": 3,
+  "npm_package": "@lex-tools/codebase-context-dumper",
+  "npm_downloads_monthly": 62,
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "description": "A Model Context Protocol server to dump your codebase into your LLM model",
+  "findings": [
+    {
+      "id": "AS-001",
+      "severity": "Critical",
+      "title": "Tool Poisoning (Prompt Injection)",
+      "description": "possible prompt injection detected in tool description: pattern matched: (?i)(ignore|disregard|bypass)\\s+(?:\\w+\\s+){0,3}(instructions?|prompts?|context|rules?|guidelines?|restrictions?|filters?)",
+      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.",
+      "tool_name": "dump_codebase_context"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "dump_codebase_context"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "dump_codebase_context"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "dump_codebase_context",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

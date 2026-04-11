@@ -10,10 +10,10 @@
 | **Vendor** | burtthecoder |
 | **Stars** | ⭐ 121 |
 | **npm Package** | `@burtthecoder/mcp-shodan` |
-| **npm Downloads (30d)** | 6.3k |
+| **npm Downloads (30d)** | 6.4k |
 | **Language** | TypeScript |
 | **Source** | [burtthecoder-mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

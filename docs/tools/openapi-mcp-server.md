@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 10.0k |
 | **Language** | TypeScript |
 | **Source** | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

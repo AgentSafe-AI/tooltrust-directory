@@ -2,15 +2,15 @@
   "tool_id": "marcopesani-mcp-server-serper",
   "version": "0.2.0",
   "grade": "C",
-  "risk_score": 29,
-  "scan_date": "2026-04-08T01:40:13.797141106Z",
+  "risk_score": 27,
+  "scan_date": "2026-04-11T01:39:22.792466984Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/marcopesani/mcp-server-serper",
   "category": "Developer Tools",
   "vendor": "marcopesani",
   "stars": 150,
   "npm_package": "serper-search-scrape-mcp-server",
-  "npm_downloads_monthly": 50418,
+  "npm_downloads_monthly": 44059,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Serper MCP Server supporting search and webpage scraping",
@@ -19,10 +19,14 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.2.0: 6 tool(s) added, 6 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.2.0: 2 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "google_search",
+          "scrape"
+        ],
+        "removed": [
           "brave_image_search",
           "brave_local_search",
           "brave_news_search",
@@ -30,104 +34,16 @@
           "brave_video_search",
           "brave_web_search"
         ],
-        "removed": [
-          "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
-          "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
-          "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
-          "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
-          "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
-          "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
-        ],
         "version": "0.2.0"
       }
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_web_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_web_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 15 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_web_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_web_search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_web_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 15 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_local_search"
+      "tool_name": "google_search"
     },
     {
       "id": "AS-002",
@@ -135,15 +51,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_video_search"
+      "tool_name": "google_search"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "input schema exposes 19 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_video_search"
+      "tool_name": "google_search"
     },
     {
       "id": "AS-011",
@@ -151,7 +67,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_video_search"
+      "tool_name": "google_search"
     },
     {
       "id": "AS-014",
@@ -159,7 +75,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_video_search"
+      "tool_name": "google_search"
     },
     {
       "id": "AS-002",
@@ -167,7 +83,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_image_search"
+      "tool_name": "scrape"
     },
     {
       "id": "AS-011",
@@ -175,7 +91,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_image_search"
+      "tool_name": "scrape"
     },
     {
       "id": "AS-014",
@@ -183,167 +99,50 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_image_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_summarizer"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_summarizer"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_summarizer"
+      "tool_name": "scrape"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 3,
-    "low": 11,
-    "info": 6
+    "high": 3,
+    "medium": 1,
+    "low": 3,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "brave_image_search",
-    "brave_local_search",
-    "brave_news_search",
-    "brave_summarizer",
-    "brave_video_search",
-    "brave_web_search"
+    "google_search",
+    "scrape"
   ],
   "tool_contexts": [
     {
-      "tool_name": "brave_web_search",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: github.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_local_search",
+      "tool_name": "google_search",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: github.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_video_search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_image_search",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: image.properties.url",
-        "hardcoded domain: image.title"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_news_search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: ev-sales.html",
+        "dynamic URL input (inurl)",
+        "dynamic email recipient (autocorrect)",
+        "hardcoded domain: example.com",
         "hardcoded domain: github.com",
-        "hardcoded domain: www.bbc.com",
-        "hardcoded domain: www.nytimes.com",
-        "hardcoded domain: www.reuters.com"
+        "hardcoded domain: stackoverflow.com",
+        "hardcoded domain: wikipedia.org"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "brave_summarizer",
+      "tool_name": "scrape",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -378,6 +177,12 @@
       "scan_date": "2026-04-05T01:14:20Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "0.2.0"
+    },
+    {
+      "scan_date": "2026-04-08T01:40:13Z",
+      "grade": "C",
+      "risk_score": 29,
       "version": "0.2.0"
     }
   ]

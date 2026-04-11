@@ -1,18 +1,20 @@
-# 🟠 atlas-mcp-server
+# 🟡 atlas-mcp-server
 
 > A Model Context Protocol (MCP) server for ATLAS, a Neo4j-powered task management system for LLM Agents - implementing a three-tier architecture (Projects, Tasks, Knowledge) to manage complex workflows. Now with Deep Research.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 33 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `2.8.15` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 469 |
+| **Stars** | ⭐ 470 |
+| **npm Package** | `atlas-mcp-server` |
+| **npm Downloads (30d)** | 331 |
 | **Language** | TypeScript |
 | **Source** | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) |
-| **Scan Date** | 2026-03-31 |
-| **Scanner** | tooltrust-scanner/v0.2.1 |
+| **Scan Date** | 2026-04-11 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 
@@ -21,31 +23,67 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
-| Medium   | 6 |
+| High     | 3 |
+| Medium   | 0 |
 | Low      | 2 |
-| Info     | 0 |
+| Info     | 5 |
 
 ## Detailed Findings
 
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at v2.8.15: 5 tool(s) added, 15 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -64,39 +102,15 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+Review and remediate the identified issue.
 
 ---
 
@@ -106,18 +120,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -136,15 +138,15 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares db permission
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+Review and remediate the identified issue.
 
 ---
 

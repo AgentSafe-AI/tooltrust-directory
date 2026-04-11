@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 365 |
 | **Language** | Python |
 | **Source** | [planexeorg-planexe](https://github.com/PlanExeOrg/PlanExe) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

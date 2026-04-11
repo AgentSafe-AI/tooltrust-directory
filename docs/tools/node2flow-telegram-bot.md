@@ -29,8 +29,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-telegram-bot](https://smithery.ai/server/node2flow/telegram-bot) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-11 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

@@ -1,0 +1,69 @@
+{
+  "tool_id": "skrapeai-skrape-mcp",
+  "version": "1.0.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-11T01:43:57.486886295Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/skrapeai/skrape-mcp",
+  "category": "Developer Tools",
+  "vendor": "skrapeai",
+  "stars": 12,
+  "npm_package": "skrape",
+  "license": "MIT",
+  "language": "JavaScript",
+  "description": "MCP Server for skrape.ai, lets you input any URL and it returns clean markdown for the LLM",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_markdown"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_markdown"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_markdown"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "get_markdown"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_markdown",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: skrape.ai"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

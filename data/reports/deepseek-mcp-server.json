@@ -1,25 +1,60 @@
 {
   "tool_id": "deepseek-mcp-server",
   "version": "0.3.1",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-03-18T05:03:01.632694136Z",
-  "scanner": "tooltrust-scanner/v0.1.6",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-11T01:38:17.550910895Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/DMontgomery40/deepseek-mcp-server",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
-  "stars": 306,
+  "stars": 314,
+  "npm_package": "deepseek-mcp-server",
+  "npm_downloads_monthly": 629,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol server for DeepSeek's advanced language models",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "deepseek_chat"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "deepseek_chat"
+    }
+  ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true
+  "tool_names": [
+    "deepseek_chat"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "deepseek_chat",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (max_tokens)",
+        "dynamic email recipient (tool_choice)",
+        "dynamic email recipient (tools)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
 }

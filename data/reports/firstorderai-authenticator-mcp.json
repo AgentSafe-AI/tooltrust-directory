@@ -1,0 +1,94 @@
+{
+  "tool_id": "firstorderai-authenticator-mcp",
+  "version": "1.1.2",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-04-11T01:41:52.670192625Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/firstorderai/authenticator_mcp",
+  "category": "Developer Tools",
+  "vendor": "firstorderai",
+  "stars": 36,
+  "npm_package": "authenticator-mcp",
+  "npm_downloads_monthly": 33,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "A secure MCP (Model Context Protocol) server that enables AI agents to interact with the Authenticator App.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_2fa_code"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_password"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_account_list"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "get_2fa_code",
+    "get_account_list",
+    "get_password"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_2fa_code",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded domain: github.com",
+        "hardcoded domain: john.doe",
+        "hardcoded email recipient: john.doe@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_password",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded domain: github.com",
+        "hardcoded domain: john.doe",
+        "hardcoded email recipient: john.doe@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_account_list",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: github.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -1,17 +1,17 @@
-# 🟠 aws-mcp-server
+# 🟡 aws-mcp-server
 
 > A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 42 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `1.7.0` |
 | **Vendor** | alexei-led |
-| **Stars** | ⭐ 180 |
+| **Stars** | ⭐ 181 |
 | **Language** | Python |
 | **Source** | [aws-mcp-server](https://github.com/alexei-led/aws-mcp-server) |
-| **Scan Date** | 2026-04-09 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -21,82 +21,22 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 10 |
-| Medium   | 4 |
-| Low      | 9 |
-| Info     | 6 |
+| High     | 4 |
+| Medium   | 0 |
+| Low      | 3 |
+| Info     | 3 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
 **Severity:** High
 
 **Description:**
-tool declares network permission
+Tool set changed silently at v1.7.0: 3 tool(s) added, 6 tool(s) removed without a version bump.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-tool declares http permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
@@ -105,19 +45,7 @@ Review and remediate the identified issue.
 **Severity:** High
 
 **Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
+tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -160,42 +88,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-tool declares http permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -226,126 +118,6 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-tool declares http permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

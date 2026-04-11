@@ -2,32 +2,33 @@
   "tool_id": "call518-mcp-postgresql-ops",
   "version": "3.2.8",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-09T01:32:37.550686613Z",
+  "risk_score": 38,
+  "scan_date": "2026-04-11T01:39:22.360020667Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/call518/MCP-PostgreSQL-Ops",
   "category": "Developer Tools",
   "vendor": "call518",
-  "stars": 144,
+  "stars": 146,
   "license": "MIT",
   "language": "Python",
   "description": "🔍Professional MCP server for PostgreSQL operations \u0026 monitoring: 30+ extension-independent tools for performance analysis, table bloat detection, autovacuum monitoring, schema introspection, and database management. Supports PostgreSQL 12+.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "checkpoint"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "checkpoint"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.2.8: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "execute_custom_query"
+        ],
+        "removed": [
+          "checkpoint",
+          "query"
+        ],
+        "version": "3.2.8"
+      }
     },
     {
       "id": "AS-002",
@@ -35,7 +36,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query"
+      "tool_name": "execute_custom_query"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_custom_query"
     },
     {
       "id": "AS-002",
@@ -43,15 +52,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query"
+      "tool_name": "execute_custom_query"
     },
     {
       "id": "AS-014",
@@ -59,34 +60,27 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query"
+      "tool_name": "execute_custom_query"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 1,
-    "info": 2
+    "high": 3,
+    "medium": 1,
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "checkpoint",
-    "query"
+    "execute_custom_query"
   ],
   "tool_contexts": [
     {
-      "tool_name": "checkpoint",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query",
+      "tool_name": "execute_custom_query",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -126,6 +120,12 @@
     },
     {
       "scan_date": "2026-04-08T01:40:16Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "3.2.8"
+    },
+    {
+      "scan_date": "2026-04-09T01:32:37Z",
       "grade": "C",
       "risk_score": 25,
       "version": "3.2.8"

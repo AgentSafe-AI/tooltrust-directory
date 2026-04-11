@@ -1,0 +1,184 @@
+{
+  "tool_id": "googleslides",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-11T01:51:55.927228545Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/googleslides",
+  "vendor": "Smithery",
+  "description": "Google Slides is a cloud-based presentation editor with real-time collaboration, template gallery, and integration with other Google Workspace apps",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_CREATE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_CREATE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_GET"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 3,
+    "low": 1,
+    "info": 6
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
+    "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
+    "GOOGLESLIDES_PRESENTATIONS_CREATE",
+    "GOOGLESLIDES_PRESENTATIONS_GET",
+    "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
+    "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: GitHub-Mark.png",
+        "hardcoded domain: github.githubassets.com",
+        "hardcoded domain: images.unsplash.com",
+        "hardcoded domain: picsum.photos",
+        "hardcoded domain: placekitten.com",
+        "hardcoded domain: raw.githubusercontent.com",
+        "hardcoded domain: via.placeholder.com",
+        "hardcoded domain: www.google.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_CREATE",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_GET",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: thumbnailProperties.mimeType",
+        "hardcoded domain: thumbnailProperties.thumbnailSize"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

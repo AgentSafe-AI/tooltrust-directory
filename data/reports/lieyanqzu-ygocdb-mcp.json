@@ -1,0 +1,73 @@
+{
+  "tool_id": "lieyanqzu-ygocdb-mcp",
+  "version": "1.1.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-11T01:45:37.286671133Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/lieyanqzu/ygocdb-mcp",
+  "category": "Developer Tools",
+  "vendor": "lieyanqzu",
+  "stars": 5,
+  "npm_package": "ygocdb-mcp-server",
+  "license": "MIT",
+  "language": "JavaScript",
+  "description": "用于与游戏王中文卡查百鸽(ygocdb.com)API交互的MCP服务端",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_cards"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_cards"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "get_card_by_id",
+    "get_card_image",
+    "search_cards"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_cards",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_card_by_id",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_card_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

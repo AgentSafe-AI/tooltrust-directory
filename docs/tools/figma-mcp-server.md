@@ -8,12 +8,12 @@
 | **Risk Score** | 42 |
 | **Version** | `1.0.0` |
 | **Vendor** | TimHolden |
-| **Stars** | ⭐ 146 |
+| **Stars** | ⭐ 147 |
 | **npm Package** | `figma-mcp-server` |
-| **npm Downloads (30d)** | 9.8k |
+| **npm Downloads (30d)** | 9.6k |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 17 |
+| High     | 16 |
 | Medium   | 37 |
 | Low      | 22 |
 | Info     | 49 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.0.0: 49 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

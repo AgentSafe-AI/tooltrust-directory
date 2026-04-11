@@ -1,0 +1,85 @@
+{
+  "tool_id": "gorav22-terminusai",
+  "version": "0.1.0",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-04-11T01:49:10.793636952Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/Gorav22/TerminusAI",
+  "category": "Developer Tools",
+  "vendor": "Gorav22",
+  "npm_package": "terminusai",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Execute terminal commands locally or remotely via SSH with session persistence and environment variable support. Manage terminal sessions that maintain state for up to 20 minutes, enabling efficient command execution workflows. Connect using stdio or SSE for flexible integration with AI models and applications.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_command"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_command"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares env permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_command"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_command"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute_command"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 1,
+    "low": 1,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "execute_command"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "execute_command",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "reads_env",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

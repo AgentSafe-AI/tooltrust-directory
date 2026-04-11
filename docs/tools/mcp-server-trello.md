@@ -10,10 +10,10 @@
 | **Vendor** | delorenj |
 | **Stars** | ⭐ 296 |
 | **npm Package** | `@delorenj/mcp-server-trello` |
-| **npm Downloads (30d)** | 13.8k |
+| **npm Downloads (30d)** | 14.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

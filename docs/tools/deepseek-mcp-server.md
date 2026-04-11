@@ -1,18 +1,20 @@
-# 🟢 deepseek-mcp-server
+# 🟡 deepseek-mcp-server
 
 > Model Context Protocol server for DeepSeek's advanced language models
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `0.3.1` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 306 |
+| **Stars** | ⭐ 314 |
+| **npm Package** | `deepseek-mcp-server` |
+| **npm Downloads (30d)** | 629 |
 | **Language** | TypeScript |
 | **Source** | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) |
-| **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/v0.1.6 |
+| **Scan Date** | 2026-04-11 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 
@@ -21,11 +23,35 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 1 |
 
-No findings. ✅
+## Detailed Findings
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "max_tokens" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/deepseek-mcp-server.json)*

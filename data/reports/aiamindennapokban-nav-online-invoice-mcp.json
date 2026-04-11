@@ -1,29 +1,50 @@
 {
   "tool_id": "aiamindennapokban-nav-online-invoice-mcp",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 33,
-  "scan_date": "2026-04-05T01:58:23.494542941Z",
-  "scanner": "tooltrust-scanner/v0.3.6",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-04-11T01:49:11.203533547Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/aiamindennapokban/nav-online-invoice-mcp",
   "vendor": "Smithery",
   "description": "Manage and query Hungarian invoice data directly through the National Tax and Customs Administration (NAV) system. Retrieve taxpayer information, verify invoice validity, and track transaction statuses in real-time. Simplify compliance by submitting, modifying, or annulling invoice records with automated token handling. \n\n[HUN]\nKezelje és kérdezze le a magyar számlaadatokat közvetlenül a Nemzeti Adó- és Vámhivatal (NAV) rendszerén keresztül. Szerezzen be adófizetői információkat, ellenőrizze a számlák érvényességét, és kövesse nyomon a tranzakciók állapotát valós időben. Egyszerűsítse a szabályoknak való megfelelést az automatizált tokenkezeléssel történő számlák benyújtásával, módosításával vagy törlésével.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 6 tool(s) added, 9 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ZOHO_INVOICE_GET_ITEM",
+          "ZOHO_INVOICE_LIST_CONTACTS",
+          "ZOHO_INVOICE_LIST_EXPENSES",
+          "ZOHO_INVOICE_LIST_INVOICES",
+          "ZOHO_INVOICE_LIST_ITEMS",
+          "ZOHO_INVOICE_LIST_PAYMENTS"
+        ],
+        "removed": [
+          "manage_annulment",
+          "manage_invoice",
+          "query_invoice_chain_digest",
+          "query_invoice_check",
+          "query_invoice_data",
+          "query_invoice_digest",
+          "query_taxpayer",
+          "query_transaction_list",
+          "query_transaction_status"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_taxpayer"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_taxpayer"
+      "tool_name": "ZOHO_INVOICE_GET_ITEM"
     },
     {
       "id": "AS-011",
@@ -31,7 +52,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_taxpayer"
+      "tool_name": "ZOHO_INVOICE_GET_ITEM"
     },
     {
       "id": "AS-014",
@@ -39,23 +60,47 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_taxpayer"
+      "tool_name": "ZOHO_INVOICE_GET_ITEM"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "input schema exposes 29 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_data"
+      "tool_name": "ZOHO_INVOICE_LIST_CONTACTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ZOHO_INVOICE_LIST_CONTACTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ZOHO_INVOICE_LIST_EXPENSES"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_data"
+      "tool_name": "ZOHO_INVOICE_LIST_INVOICES"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 35 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ZOHO_INVOICE_LIST_INVOICES"
     },
     {
       "id": "AS-011",
@@ -63,7 +108,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_invoice_data"
+      "tool_name": "ZOHO_INVOICE_LIST_INVOICES"
     },
     {
       "id": "AS-014",
@@ -71,31 +116,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_invoice_data"
+      "tool_name": "ZOHO_INVOICE_LIST_INVOICES"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_digest"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_digest"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_digest"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ZOHO_INVOICE_LIST_ITEMS"
     },
     {
       "id": "AS-002",
@@ -103,15 +132,7 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_digest"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_invoice_digest"
+      "tool_name": "ZOHO_INVOICE_LIST_PAYMENTS"
     },
     {
       "id": "AS-014",
@@ -119,223 +140,28 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_invoice_digest"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_check"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_check"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_invoice_check"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_invoice_check"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_chain_digest"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_chain_digest"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_invoice_chain_digest"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_invoice_chain_digest"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_invoice_chain_digest"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_transaction_status"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_transaction_status"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_transaction_status"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_transaction_list"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_transaction_list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_transaction_list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "manage_invoice"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "manage_annulment"
+      "tool_name": "ZOHO_INVOICE_LIST_PAYMENTS"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 6,
-    "low": 9,
-    "info": 9
+    "high": 3,
+    "medium": 0,
+    "low": 5,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "manage_annulment",
-    "manage_invoice",
-    "query_invoice_chain_digest",
-    "query_invoice_check",
-    "query_invoice_data",
-    "query_invoice_digest",
-    "query_taxpayer",
-    "query_transaction_list",
-    "query_transaction_status"
+    "ZOHO_INVOICE_GET_ITEM",
+    "ZOHO_INVOICE_LIST_CONTACTS",
+    "ZOHO_INVOICE_LIST_EXPENSES",
+    "ZOHO_INVOICE_LIST_INVOICES",
+    "ZOHO_INVOICE_LIST_ITEMS",
+    "ZOHO_INVOICE_LIST_PAYMENTS"
   ],
   "tool_contexts": [
     {
-      "tool_name": "query_taxpayer",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query_invoice_data",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query_invoice_digest",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (dateTo)",
-        "dynamic email recipient (insDateTimeTo)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query_invoice_check",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query_invoice_chain_digest",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query_transaction_status",
+      "tool_name": "ZOHO_INVOICE_GET_ITEM",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -345,29 +171,58 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "query_transaction_list",
+      "tool_name": "ZOHO_INVOICE_LIST_CONTACTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (email)",
+        "dynamic email recipient (email_contains)",
+        "dynamic email recipient (email_startswith)",
+        "dynamic email recipient (zcrm_account_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ZOHO_INVOICE_LIST_EXPENSES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ZOHO_INVOICE_LIST_INVOICES",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "uses_network"
+        "executes_commands"
       ],
       "destinations": [
-        "dynamic email recipient (insDateTo)"
+        "dynamic email recipient (custom_field)",
+        "dynamic email recipient (custom_field_contains)",
+        "dynamic email recipient (custom_field_startswith)",
+        "dynamic email recipient (customer_id)",
+        "dynamic email recipient (customer_name)",
+        "dynamic email recipient (email)",
+        "dynamic email recipient (total)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "manage_invoice",
+      "tool_name": "ZOHO_INVOICE_LIST_ITEMS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "manage_annulment",
+      "tool_name": "ZOHO_INVOICE_LIST_PAYMENTS",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (customer_id)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -381,6 +236,12 @@
     },
     {
       "scan_date": "2026-04-05T01:20:21Z",
+      "grade": "C",
+      "risk_score": 33,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-05T01:58:23Z",
       "grade": "C",
       "risk_score": 33,
       "version": "smithery"

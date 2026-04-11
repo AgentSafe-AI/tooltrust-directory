@@ -1,93 +1,83 @@
 {
   "tool_id": "node2flow-google-sheets",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-09T01:35:38.621412675Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-11T01:49:05.379724884Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/google-sheets",
   "vendor": "Smithery",
   "description": "MCP server for Google Sheets : read, write, format, and manage spreadsheets through 23 tools.\n\n## Features\n\n- Read and write cell values with A1 notation\n- Batch read/write for multiple ranges at once\n- Full formatting: bold, italic, colors, fonts, alignment, number formats\n- Sheet management: add, delete, rename, copy, duplicate tabs\n- Data operations: sort, find \u0026 replace, filters, protected ranges\n- Add charts (bar, line, column, scatter, etc.)\n- Raw batchUpdate pass-through for any Sheets API operation\n\n## 23 Tools\n\n- **Spreadsheet**: create and get spreadsheet metadata\n- **Values**: read, batch read, write, append, clear, batch write\n- **Sheet Management**: add, delete, rename, copy, duplicate sheets\n- **Formatting**: format cells, merge/unmerge, auto-resize\n- **Data Operations**: sort, find \u0026 replace, basic filter, protected ranges\n- **Advanced**: add chart, raw batchUpdate\n\n## Configuration\n\n- `GOOGLE_CLIENT_ID` : OAuth 2.0 Client ID from Google Cloud Console\n- `GOOGLE_CLIENT_SECRET` : OAuth 2.0 Client Secret\n- `GOOGLE_REFRESH_TOKEN` : Refresh token with spreadsheets scope",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_COPY_DOCUMENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_COPY_DOCUMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_DOCUMENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_DOCUMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_FOOTER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_FOOTER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_FOOTNOTE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_FOOTNOTE"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 23 tool(s) added, 33 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "gs_add_chart",
+          "gs_add_protected_range",
+          "gs_add_sheet",
+          "gs_append_values",
+          "gs_auto_resize",
+          "gs_batch_read",
+          "gs_batch_update",
+          "gs_batch_write",
+          "gs_clear_values",
+          "gs_copy_sheet",
+          "gs_create_spreadsheet",
+          "gs_delete_sheet",
+          "gs_duplicate_sheet",
+          "gs_find_replace",
+          "gs_format_cells",
+          "gs_get_spreadsheet",
+          "gs_merge_cells",
+          "gs_read_values",
+          "gs_rename_sheet",
+          "gs_set_basic_filter",
+          "gs_sort_range",
+          "gs_unmerge_cells",
+          "gs_write_values"
+        ],
+        "removed": [
+          "GOOGLEDOCS_COPY_DOCUMENT",
+          "GOOGLEDOCS_CREATE_DOCUMENT",
+          "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN",
+          "GOOGLEDOCS_CREATE_FOOTER",
+          "GOOGLEDOCS_CREATE_FOOTNOTE",
+          "GOOGLEDOCS_CREATE_HEADER",
+          "GOOGLEDOCS_CREATE_NAMED_RANGE",
+          "GOOGLEDOCS_CREATE_PARAGRAPH_BULLETS",
+          "GOOGLEDOCS_DELETE_CONTENT_RANGE",
+          "GOOGLEDOCS_DELETE_FOOTER",
+          "GOOGLEDOCS_DELETE_HEADER",
+          "GOOGLEDOCS_DELETE_NAMED_RANGE",
+          "GOOGLEDOCS_DELETE_PARAGRAPH_BULLETS",
+          "GOOGLEDOCS_DELETE_TABLE",
+          "GOOGLEDOCS_DELETE_TABLE_COLUMN",
+          "GOOGLEDOCS_DELETE_TABLE_ROW",
+          "GOOGLEDOCS_GET_CHARTS_FROM_SPREADSHEET",
+          "GOOGLEDOCS_GET_DOCUMENT_BY_ID",
+          "GOOGLEDOCS_INSERT_INLINE_IMAGE",
+          "GOOGLEDOCS_INSERT_PAGE_BREAK",
+          "GOOGLEDOCS_INSERT_TABLE_ACTION",
+          "GOOGLEDOCS_INSERT_TABLE_COLUMN",
+          "GOOGLEDOCS_INSERT_TEXT_ACTION",
+          "GOOGLEDOCS_LIST_SPREADSHEET_CHARTS_ACTION",
+          "GOOGLEDOCS_REPLACE_ALL_TEXT",
+          "GOOGLEDOCS_REPLACE_IMAGE",
+          "GOOGLEDOCS_SEARCH_DOCUMENTS",
+          "GOOGLEDOCS_UNMERGE_TABLE_CELLS",
+          "GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN",
+          "GOOGLEDOCS_UPDATE_DOCUMENT_SECTION_MARKDOWN",
+          "GOOGLEDOCS_UPDATE_DOCUMENT_STYLE",
+          "GOOGLEDOCS_UPDATE_EXISTING_DOCUMENT",
+          "GOOGLEDOCS_UPDATE_TABLE_ROW_STYLE"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-002",
@@ -95,191 +85,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_HEADER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_HEADER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_NAMED_RANGE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_NAMED_RANGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_CREATE_PARAGRAPH_BULLETS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_CREATE_PARAGRAPH_BULLETS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_CONTENT_RANGE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_CONTENT_RANGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_FOOTER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_FOOTER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_HEADER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_HEADER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_NAMED_RANGE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_NAMED_RANGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_PARAGRAPH_BULLETS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_PARAGRAPH_BULLETS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE_COLUMN"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE_COLUMN"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE_ROW"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE_ROW"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_GET_CHARTS_FROM_SPREADSHEET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_GET_DOCUMENT_BY_ID"
+      "tool_name": "gs_create_spreadsheet"
     },
     {
       "id": "AS-002",
@@ -287,7 +93,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_INSERT_INLINE_IMAGE"
+      "tool_name": "gs_create_spreadsheet"
     },
     {
       "id": "AS-011",
@@ -295,7 +101,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLEDOCS_INSERT_INLINE_IMAGE"
+      "tool_name": "gs_create_spreadsheet"
     },
     {
       "id": "AS-014",
@@ -303,7 +109,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_INSERT_INLINE_IMAGE"
+      "tool_name": "gs_create_spreadsheet"
     },
     {
       "id": "AS-014",
@@ -311,7 +117,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_INSERT_PAGE_BREAK"
+      "tool_name": "gs_get_spreadsheet"
     },
     {
       "id": "AS-014",
@@ -319,7 +125,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_INSERT_TABLE_ACTION"
+      "tool_name": "gs_read_values"
     },
     {
       "id": "AS-014",
@@ -327,7 +133,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_INSERT_TABLE_COLUMN"
+      "tool_name": "gs_batch_read"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "gs_write_values"
     },
     {
       "id": "AS-014",
@@ -335,7 +149,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_INSERT_TEXT_ACTION"
+      "tool_name": "gs_write_values"
     },
     {
       "id": "AS-014",
@@ -343,7 +157,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_LIST_SPREADSHEET_CHARTS_ACTION"
+      "tool_name": "gs_append_values"
     },
     {
       "id": "AS-014",
@@ -351,7 +165,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_REPLACE_ALL_TEXT"
+      "tool_name": "gs_clear_values"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "gs_batch_write"
     },
     {
       "id": "AS-014",
@@ -359,15 +181,127 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_REPLACE_IMAGE"
+      "tool_name": "gs_batch_write"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_add_sheet"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "gs_delete_sheet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_delete_sheet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_rename_sheet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_copy_sheet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_duplicate_sheet"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 23 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "gs_format_cells"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_format_cells"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_merge_cells"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_unmerge_cells"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_auto_resize"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_sort_range"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_find_replace"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gs_set_basic_filter"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_SEARCH_DOCUMENTS"
+      "tool_name": "gs_add_protected_range"
     },
     {
       "id": "AS-011",
@@ -375,7 +309,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLEDOCS_SEARCH_DOCUMENTS"
+      "tool_name": "gs_add_protected_range"
     },
     {
       "id": "AS-014",
@@ -383,7 +317,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_SEARCH_DOCUMENTS"
+      "tool_name": "gs_add_protected_range"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "gs_add_chart"
     },
     {
       "id": "AS-014",
@@ -391,7 +333,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_UNMERGE_TABLE_CELLS"
+      "tool_name": "gs_add_chart"
     },
     {
       "id": "AS-002",
@@ -399,7 +341,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN"
+      "tool_name": "gs_batch_update"
     },
     {
       "id": "AS-014",
@@ -407,119 +349,81 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_SECTION_MARKDOWN"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_SECTION_MARKDOWN"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_STYLE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_STYLE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_UPDATE_EXISTING_DOCUMENT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_UPDATE_EXISTING_DOCUMENT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLEDOCS_UPDATE_TABLE_ROW_STYLE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLEDOCS_UPDATE_TABLE_ROW_STYLE"
+      "tool_name": "gs_batch_update"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 21,
-    "low": 2,
-    "info": 33
+    "high": 3,
+    "medium": 5,
+    "low": 4,
+    "info": 23
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "GOOGLEDOCS_COPY_DOCUMENT",
-    "GOOGLEDOCS_CREATE_DOCUMENT",
-    "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN",
-    "GOOGLEDOCS_CREATE_FOOTER",
-    "GOOGLEDOCS_CREATE_FOOTNOTE",
-    "GOOGLEDOCS_CREATE_HEADER",
-    "GOOGLEDOCS_CREATE_NAMED_RANGE",
-    "GOOGLEDOCS_CREATE_PARAGRAPH_BULLETS",
-    "GOOGLEDOCS_DELETE_CONTENT_RANGE",
-    "GOOGLEDOCS_DELETE_FOOTER",
-    "GOOGLEDOCS_DELETE_HEADER",
-    "GOOGLEDOCS_DELETE_NAMED_RANGE",
-    "GOOGLEDOCS_DELETE_PARAGRAPH_BULLETS",
-    "GOOGLEDOCS_DELETE_TABLE",
-    "GOOGLEDOCS_DELETE_TABLE_COLUMN",
-    "GOOGLEDOCS_DELETE_TABLE_ROW",
-    "GOOGLEDOCS_GET_CHARTS_FROM_SPREADSHEET",
-    "GOOGLEDOCS_GET_DOCUMENT_BY_ID",
-    "GOOGLEDOCS_INSERT_INLINE_IMAGE",
-    "GOOGLEDOCS_INSERT_PAGE_BREAK",
-    "GOOGLEDOCS_INSERT_TABLE_ACTION",
-    "GOOGLEDOCS_INSERT_TABLE_COLUMN",
-    "GOOGLEDOCS_INSERT_TEXT_ACTION",
-    "GOOGLEDOCS_LIST_SPREADSHEET_CHARTS_ACTION",
-    "GOOGLEDOCS_REPLACE_ALL_TEXT",
-    "GOOGLEDOCS_REPLACE_IMAGE",
-    "GOOGLEDOCS_SEARCH_DOCUMENTS",
-    "GOOGLEDOCS_UNMERGE_TABLE_CELLS",
-    "GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN",
-    "GOOGLEDOCS_UPDATE_DOCUMENT_SECTION_MARKDOWN",
-    "GOOGLEDOCS_UPDATE_DOCUMENT_STYLE",
-    "GOOGLEDOCS_UPDATE_EXISTING_DOCUMENT",
-    "GOOGLEDOCS_UPDATE_TABLE_ROW_STYLE"
+    "gs_add_chart",
+    "gs_add_protected_range",
+    "gs_add_sheet",
+    "gs_append_values",
+    "gs_auto_resize",
+    "gs_batch_read",
+    "gs_batch_update",
+    "gs_batch_write",
+    "gs_clear_values",
+    "gs_copy_sheet",
+    "gs_create_spreadsheet",
+    "gs_delete_sheet",
+    "gs_duplicate_sheet",
+    "gs_find_replace",
+    "gs_format_cells",
+    "gs_get_spreadsheet",
+    "gs_merge_cells",
+    "gs_read_values",
+    "gs_rename_sheet",
+    "gs_set_basic_filter",
+    "gs_sort_range",
+    "gs_unmerge_cells",
+    "gs_write_values"
   ],
   "tool_contexts": [
     {
-      "tool_name": "GOOGLEDOCS_COPY_DOCUMENT",
+      "tool_name": "gs_create_spreadsheet",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_get_spreadsheet",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: properties.title",
+        "hardcoded domain: sheets.properties"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_read_values",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_batch_read",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_write_values",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -529,7 +433,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_CREATE_DOCUMENT",
+      "tool_name": "gs_append_values",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_clear_values",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_batch_write",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -539,7 +457,14 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN",
+      "tool_name": "gs_add_sheet",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_delete_sheet",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -549,275 +474,109 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_CREATE_FOOTER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_CREATE_FOOTNOTE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_CREATE_HEADER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_CREATE_NAMED_RANGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_CREATE_PARAGRAPH_BULLETS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_CONTENT_RANGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_FOOTER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_HEADER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_NAMED_RANGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_PARAGRAPH_BULLETS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE_COLUMN",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_DELETE_TABLE_ROW",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_GET_CHARTS_FROM_SPREADSHEET",
+      "tool_name": "gs_rename_sheet",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_GET_DOCUMENT_BY_ID",
+      "tool_name": "gs_copy_sheet",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_INSERT_INLINE_IMAGE",
+      "tool_name": "gs_duplicate_sheet",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_format_cells",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_merge_cells",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_unmerge_cells",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_auto_resize",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_sort_range",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_find_replace",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_set_basic_filter",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gs_add_protected_range",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "uses_network"
+        "executes_commands"
       ],
       "destinations": [
-        "dynamic URL input (uri)"
+        "dynamic email recipient (editors)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_INSERT_PAGE_BREAK",
+      "tool_name": "gs_add_chart",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLEDOCS_INSERT_TABLE_ACTION",
+      "tool_name": "gs_batch_update",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
+    }
+  ],
+  "scan_history": [
     {
-      "tool_name": "GOOGLEDOCS_INSERT_TABLE_COLUMN",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_INSERT_TEXT_ACTION",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (text_to_insert)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_LIST_SPREADSHEET_CHARTS_ACTION",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_REPLACE_ALL_TEXT",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_REPLACE_IMAGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_SEARCH_DOCUMENTS",
-      "action": "ALLOW",
+      "scan_date": "2026-04-09T01:35:38Z",
       "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_UNMERGE_TABLE_CELLS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_SECTION_MARKDOWN",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_UPDATE_DOCUMENT_STYLE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_UPDATE_EXISTING_DOCUMENT",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: developers.google.com",
-        "hardcoded domain: developers.google.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLEDOCS_UPDATE_TABLE_ROW_STYLE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 17,
+      "version": "smithery"
     }
   ]
 }

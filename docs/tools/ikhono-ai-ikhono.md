@@ -12,8 +12,8 @@ Works across Claude Code, Cursor, Windsurf, Copilot, Codex, and Gemini CLI.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ikhono-ai-ikhono](https://smithery.ai/server/ikhono-ai/ikhono) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-11 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

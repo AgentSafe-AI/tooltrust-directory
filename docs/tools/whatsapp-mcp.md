@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 5494 |
 | **Language** | Go |
 | **Source** | [whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

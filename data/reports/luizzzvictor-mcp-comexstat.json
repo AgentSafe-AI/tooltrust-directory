@@ -1,0 +1,578 @@
+{
+  "tool_id": "luizzzvictor-mcp-comexstat",
+  "version": "0.0.1",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-11T01:48:35.186485596Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/luizzzvictor/mcp-comexstat",
+  "category": "Developer Tools",
+  "vendor": "luizzzvictor",
+  "stars": 1,
+  "npm_package": "mcp-comexstat-easy",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Servidor MCP para a API do ComexStat, ferramenta de acesso às estatísticas de comércio exterior do Brasil.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "getLastUpdate"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getLastUpdate' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getLastUpdate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getLastUpdate"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getAvailableYears' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableYears"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableYears"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getAvailableFilters' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableFilters"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableFilters"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getFilterValues' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getFilterValues"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getFilterValues"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getAvailableFields' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableFields"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableFields"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getAvailableMetrics' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableMetrics"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAvailableMetrics"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "queryData"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'queryData' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queryData"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "queryData"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queryData"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "queryMunicipalitiesData"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'queryMunicipalitiesData' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queryMunicipalitiesData"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "queryMunicipalitiesData"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queryMunicipalitiesData"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "queryHistoricalData"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'queryHistoricalData' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queryHistoricalData"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "queryHistoricalData"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queryHistoricalData"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getAuxiliaryTable' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAuxiliaryTable"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAuxiliaryTable"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getStates' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getStates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getStates"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getStateDetails' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getStateDetails"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getStateDetails"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getCities' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCities"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCities"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getCityDetails' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCityDetails"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCityDetails"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getCountries' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCountries"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCountries"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getCountryDetails' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCountryDetails"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getCountryDetails"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getEconomicBlocks' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getEconomicBlocks"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getEconomicBlocks"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getHarmonizedSystem' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getHarmonizedSystem"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getHarmonizedSystem"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getNBM' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getNBM"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getNBM"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'getNBMDetails' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getNBMDetails"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getNBMDetails"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 3,
+    "medium": 1,
+    "low": 3,
+    "info": 40
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "getAuxiliaryTable",
+    "getAvailableFields",
+    "getAvailableFilters",
+    "getAvailableMetrics",
+    "getAvailableYears",
+    "getCities",
+    "getCityDetails",
+    "getCountries",
+    "getCountryDetails",
+    "getEconomicBlocks",
+    "getFilterValues",
+    "getHarmonizedSystem",
+    "getLastUpdate",
+    "getNBM",
+    "getNBMDetails",
+    "getStateDetails",
+    "getStates",
+    "queryData",
+    "queryHistoricalData",
+    "queryMunicipalitiesData"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "getLastUpdate",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getAvailableYears",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getAvailableFilters",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getFilterValues",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getAvailableFields",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getAvailableMetrics",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "queryData",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "queryMunicipalitiesData",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "queryHistoricalData",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getAuxiliaryTable",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getStates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getStateDetails",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getCities",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getCityDetails",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getCountries",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getCountryDetails",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getEconomicBlocks",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getHarmonizedSystem",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getNBM",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getNBMDetails",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

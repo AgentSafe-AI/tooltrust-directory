@@ -1,0 +1,63 @@
+{
+  "tool_id": "jessebautista-mcp-openproject-smithery",
+  "version": "1.0.0",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-04-11T01:44:37.109193295Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/jessebautista/mcp-openproject-smithery",
+  "category": "Developer Tools",
+  "vendor": "jessebautista",
+  "stars": 8,
+  "npm_package": "@smithery/mcp-openproject-smithery",
+  "language": "TypeScript",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "start_game"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "play_turn"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "play_turn",
+    "start_game"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "start_game",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "play_turn",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: visibleState.resources"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

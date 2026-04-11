@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aws-docs](https://smithery.ai/server/aws/docs) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

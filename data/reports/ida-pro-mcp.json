@@ -1,14 +1,14 @@
 {
   "tool_id": "ida-pro-mcp",
   "version": "1.5.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-10T01:53:29.967552032Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-11T01:35:14.953487794Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/mrexodia/ida-pro-mcp",
   "category": "Developer Tools",
   "vendor": "mrexodia",
-  "stars": 7310,
+  "stars": 7346,
   "license": "MIT",
   "language": "Python",
   "description": "AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.",
@@ -21,17 +21,41 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "match_resume",
+          "optimize_resume",
+          "parse_resume"
+        ],
+        "removed": [
           "audit_website",
           "get_audit_page",
           "get_services"
         ],
-        "removed": [
-          "lookup_by_gtin",
-          "search_products",
-          "search_products_by_text"
-        ],
         "version": "1.5.0"
       }
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "match_resume"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "match_resume"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "match_resume"
     },
     {
       "id": "AS-002",
@@ -39,15 +63,31 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "audit_website"
+      "tool_name": "optimize_resume"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 27 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "optimize_resume"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "optimize_resume"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "audit_website"
+      "tool_name": "parse_resume"
     },
     {
       "id": "AS-011",
@@ -55,7 +95,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "audit_website"
+      "tool_name": "parse_resume"
     },
     {
       "id": "AS-014",
@@ -63,90 +103,56 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "audit_website"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_services"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_audit_page"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_audit_page"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_audit_page"
+      "tool_name": "parse_resume"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 3,
     "medium": 1,
-    "low": 2,
+    "low": 3,
     "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "audit_website",
-    "get_audit_page",
-    "get_services"
+    "match_resume",
+    "optimize_resume",
+    "parse_resume"
   ],
   "tool_contexts": [
     {
-      "tool_name": "audit_website",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "dynamic email recipient (email)",
-        "hardcoded domain: example.com",
-        "hardcoded domain: example.com)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_services",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: Northwest.net"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_audit_page",
+      "tool_name": "match_resume",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "uses_network"
+        "executes_commands"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "optimize_resume",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
-        "hardcoded domain: Northwest.net"
+        "dynamic email recipient (addMetricsToAccomplishments)",
+        "dynamic email recipient (addSkillsToWorkHistory)",
+        "dynamic email recipient (autoOptimize)",
+        "dynamic email recipient (highlightAccomplishments)",
+        "dynamic email recipient (motivators)",
+        "dynamic email recipient (numberOfSkillsToAddToWorkHistory)",
+        "dynamic email recipient (skillsToAdd)",
+        "hardcoded domain: resumeoptimizerpro.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "parse_resume",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -169,6 +175,12 @@
       "scan_date": "2026-04-08T01:35:42Z",
       "grade": "B",
       "risk_score": 19,
+      "version": "1.5.0"
+    },
+    {
+      "scan_date": "2026-04-10T01:53:29Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.5.0"
     }
   ]

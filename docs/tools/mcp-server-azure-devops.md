@@ -1,18 +1,20 @@
-# 🟢 mcp-server-azure-devops
+# 🟡 mcp-server-azure-devops
 
 > An MCP server for Azure DevOps
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `mcp-server-azure-devops-v0.1.45` |
 | **Vendor** | Tiberriver256 |
-| **Stars** | ⭐ 348 |
+| **Stars** | ⭐ 357 |
+| **npm Package** | `@tiberriver256/mcp-server-azure-devops` |
+| **npm Downloads (30d)** | 13.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) |
-| **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/v0.1.6 |
+| **Scan Date** | 2026-04-11 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 
@@ -21,11 +23,143 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
-| Low      | 0 |
-| Info     | 0 |
+| Low      | 1 |
+| Info     | 9 |
 
-No findings. ✅
+## Detailed Findings
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/mcp-server-azure-devops.json)*

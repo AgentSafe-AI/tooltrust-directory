@@ -1,0 +1,50 @@
+{
+  "tool_id": "qpd-v-mcp-delete",
+  "version": "0.1.0",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-04-11T01:48:32.029209127Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/qpd-v/mcp-delete",
+  "category": "Developer Tools",
+  "vendor": "qpd-v",
+  "stars": 1,
+  "npm_package": "@qpd-v/mcp-delete",
+  "npm_downloads_monthly": 212,
+  "license": "Apache-2.0",
+  "language": "JavaScript",
+  "description": "A Model Context Protocol (MCP) server that provides file deletion capabilities for AI assistants. Supports both relative and absolute paths with smart path resolution, making it easy for AI assistants to safely delete files when needed.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_file"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "delete_file"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "delete_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}

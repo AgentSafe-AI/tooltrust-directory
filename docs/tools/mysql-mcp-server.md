@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1210 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

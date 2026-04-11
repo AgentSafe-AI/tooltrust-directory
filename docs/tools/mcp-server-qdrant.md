@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.8.1` |
 | **Vendor** | qdrant |
-| **Stars** | ⭐ 1328 |
+| **Stars** | ⭐ 1330 |
 | **Language** | Python |
 | **Source** | [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

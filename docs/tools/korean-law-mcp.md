@@ -1,6 +1,6 @@
 # 🟠 korean-law-mcp
 
-> 국가법령정보MCP | 법제처 39개 API → 14개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 | 39 Korean legal APIs → 14 MCP tools
+> 국가법령정보MCP | 법제처 41개 API → 14개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 | 41 Korean legal APIs → 14 MCP tools
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 32 |
 | **Version** | `2.1.6` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 1309 |
+| **Stars** | ⭐ 1335 |
 | **npm Package** | `korean-law-mcp` |
-| **npm Downloads (30d)** | 4.4k |
+| **npm Downloads (30d)** | 5.0k |
 | **Language** | TypeScript |
 | **Source** | [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

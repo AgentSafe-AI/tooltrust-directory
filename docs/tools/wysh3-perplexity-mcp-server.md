@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `0.3.1` |
 | **Vendor** | wysh3 |
-| **Stars** | ⭐ 86 |
+| **Stars** | ⭐ 87 |
 | **npm Package** | `perplexity-mcp-zerver` |
 | **Language** | TypeScript |
 | **Source** | [wysh3-perplexity-mcp-server](https://github.com/wysh3/perplexity-mcp-zerver) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

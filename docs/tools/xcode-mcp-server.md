@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.3` |
 | **Vendor** | r-huijts |
-| **Stars** | ⭐ 370 |
+| **Stars** | ⭐ 371 |
 | **npm Package** | `xcode-mcp-server` |
-| **npm Downloads (30d)** | 395 |
+| **npm Downloads (30d)** | 398 |
 | **Language** | TypeScript |
 | **Source** | [xcode-mcp-server](https://github.com/r-huijts/xcode-mcp-server) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

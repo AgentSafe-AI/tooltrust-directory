@@ -10,10 +10,10 @@
 | **Vendor** | shinzo-labs |
 | **Stars** | ⭐ 50 |
 | **npm Package** | `@shinzolabs/gmail-mcp` |
-| **npm Downloads (30d)** | 5.8k |
+| **npm Downloads (30d)** | 6.0k |
 | **Language** | JavaScript |
 | **Source** | [shinzo-labs-gmail-mcp](https://github.com/shinzo-labs/gmail-mcp) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-11 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

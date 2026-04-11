@@ -1,0 +1,330 @@
+{
+  "tool_id": "praveencs87-trello-mcp",
+  "version": "0.0.4",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-11T01:51:51.366673649Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/praveencs87/trello-mcp",
+  "category": "Developer Tools",
+  "vendor": "praveencs87",
+  "npm_package": "trello-mcp-server",
+  "npm_downloads_monthly": 824,
+  "language": "TypeScript",
+  "description": "Trello MCP Server is a bridge between Trello and AI-powered editors or assistants. It exposes your Trello boards, lists, and cards through the Model Context Protocol (MCP), allowing tools like Cursor, Claude, and VS Code to automate and manage Trello workflows using natural language or programmatic commands.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-card"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-card"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'create-card' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-card"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create-card"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get-boards' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-boards"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get-lists' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-lists"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-cards"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'create-cards' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-cards"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'move-card' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "move-card"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'add-comment' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add-comment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-label"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'create-label' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-label"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'add-label' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add-label"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'move-cards' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "move-cards"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'add-comments' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add-comments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-labels"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'create-labels' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-labels"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'add-labels' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add-labels"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get-tickets-by-list' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-tickets-by-list"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'archive-card' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "archive-card"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'archive-cards' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "archive-cards"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 4,
+    "low": 1,
+    "info": 15
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "add-comment",
+    "add-comments",
+    "add-label",
+    "add-labels",
+    "archive-card",
+    "archive-cards",
+    "create-card",
+    "create-cards",
+    "create-label",
+    "create-labels",
+    "get-boards",
+    "get-lists",
+    "get-tickets-by-list",
+    "move-card",
+    "move-cards"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "create-card",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get-boards",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get-lists",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "create-cards",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "move-card",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "add-comment",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "create-label",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "add-label",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "move-cards",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "add-comments",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "create-labels",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "add-labels",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get-tickets-by-list",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "archive-card",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "archive-cards",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ]
+}
