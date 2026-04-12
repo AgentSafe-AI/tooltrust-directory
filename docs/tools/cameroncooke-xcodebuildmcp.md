@@ -8,12 +8,12 @@
 | **Risk Score** | 23 |
 | **Version** | `2.3.2` |
 | **Vendor** | cameroncooke |
-| **Stars** | ⭐ 5133 |
+| **Stars** | ⭐ 5156 |
 | **npm Package** | `xcodebuildmcp` |
-| **npm Downloads (30d)** | 89.7k |
+| **npm Downloads (30d)** | 94.1k |
 | **Language** | TypeScript |
 | **Source** | [cameroncooke-xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

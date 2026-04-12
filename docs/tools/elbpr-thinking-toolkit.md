@@ -156,7 +156,7 @@ The toolkit does not think for you. It thinks *about* your thinking. It identifi
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [elbpr-thinking-toolkit](https://smithery.ai/server/elbpr/thinking-toolkit) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

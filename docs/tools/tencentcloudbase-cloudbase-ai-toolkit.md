@@ -12,7 +12,7 @@
 | **npm Package** | `cloudbase-ai-toolkit` |
 | **Language** | TypeScript |
 | **Source** | [tencentcloudbase-cloudbase-ai-toolkit](https://github.com/TencentCloudBase/CloudBase-MCP) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

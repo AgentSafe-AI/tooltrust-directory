@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-11T01:52:25.123626078Z",
+  "scan_date": "2026-04-12T02:17:50.187399509Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/smithery-ai/fetch",
   "vendor": "Smithery",
@@ -13,18 +13,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 4 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "extract_elements",
+          "get_page_metadata"
+        ],
+        "removed": [
           "cache_stats",
           "check_domain",
           "clear_cache",
           "fetch_markdown"
-        ],
-        "removed": [
-          "extract_elements",
-          "get_page_metadata"
         ],
         "version": "smithery"
       }
@@ -59,7 +59,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_markdown"
+      "tool_name": "extract_elements"
     },
     {
       "id": "AS-011",
@@ -67,7 +67,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch_markdown"
+      "tool_name": "extract_elements"
     },
     {
       "id": "AS-014",
@@ -75,23 +75,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch_markdown"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_domain"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "cache_stats"
+      "tool_name": "extract_elements"
     },
     {
       "id": "AS-002",
@@ -99,7 +83,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "clear_cache"
+      "tool_name": "get_page_metadata"
     },
     {
       "id": "AS-011",
@@ -107,7 +91,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "clear_cache"
+      "tool_name": "get_page_metadata"
     },
     {
       "id": "AS-014",
@@ -115,7 +99,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "clear_cache"
+      "tool_name": "get_page_metadata"
     }
   ],
   "summary": {
@@ -123,15 +107,13 @@
     "high": 4,
     "medium": 0,
     "low": 3,
-    "info": 5
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "cache_stats",
-    "check_domain",
-    "clear_cache",
-    "fetch_markdown",
-    "fetch_url"
+    "extract_elements",
+    "fetch_url",
+    "get_page_metadata"
   ],
   "tool_contexts": [
     {
@@ -139,7 +121,6 @@
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -149,7 +130,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "fetch_markdown",
+      "tool_name": "extract_elements",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "dynamic email recipient (selector)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_page_metadata",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -158,33 +153,6 @@
       ],
       "destinations": [
         "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_domain",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "cache_stats",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "clear_cache",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -235,6 +203,12 @@
     },
     {
       "scan_date": "2026-04-10T02:01:47Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-11T01:52:25Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

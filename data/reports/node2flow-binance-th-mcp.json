@@ -1,117 +1,74 @@
 {
   "tool_id": "node2flow-binance-th-mcp",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-04-11T01:50:33.725889744Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-12T02:16:01.797882491Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/binance-th-mcp",
   "vendor": "Smithery",
   "description": "MCP server for Binance Thailand (Gulf Binance) API — trade crypto, monitor markets, and manage your account.\n\n  ## Features\n  - Real-time market data: prices, order books, candlesticks, 24hr stats (no API key needed)\n  - Place and manage orders: LIMIT, MARKET, STOP_LOSS, TAKE_PROFIT, and more\n  - Account management: balances, trade history, fee rates\n  - Wallet operations: deposits, withdrawals, address management\n  - Sub-account transfers and user data stream management\n  - HMAC SHA256 signed requests for secure trading\n\n  ## 27 Tools\n\n  **General (3)**: server time, exchange info, symbol types (GLOBAL vs SITE/Thailand)\n  **Market Data (7)**: order book, recent trades, aggregate trades, klines/candlesticks, 24hr ticker, price ticker, book\n   ticker\n  **Account (3)**: account info/balances, trade history, trade fees\n  **Orders (6)**: place order, query order, cancel order, open orders, all orders, cancel all orders\n  **Wallet (4)**: withdraw, deposit address, deposit history, withdraw history\n  **SubAccount (1)**: transfer between sub-accounts\n  **User Data Stream (3)**: create, keepalive, close listen key\n\n  ## Configuration\n  - BINANCE_TH_API_KEY — API key from https://www.binance.th (API Management)\n  - BINANCE_TH_SECRET_KEY — Secret key for HMAC signing\n\n  ⚠️ WARNING: No testnet. All trading and withdrawals use real money.",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_server_time"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_exchange_info"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_symbol_type"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_order_book"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_recent_trades"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_aggregate_trades"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_klines"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_ticker_24hr"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_ticker_price"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_book_ticker"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_account_info"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bth_trade_list"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 12 tool(s) added, 27 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_24hr_ticker",
+          "get_aggregate_trades",
+          "get_avg_price",
+          "get_book_ticker",
+          "get_historical_trades",
+          "get_klines",
+          "get_order_book",
+          "get_price",
+          "get_recent_trades",
+          "get_rolling_window_ticker",
+          "get_trading_day_ticker",
+          "get_ui_klines"
+        ],
+        "removed": [
+          "bth_account_info",
+          "bth_aggregate_trades",
+          "bth_all_orders",
+          "bth_book_ticker",
+          "bth_cancel_all_orders",
+          "bth_cancel_order",
+          "bth_close_listen_key",
+          "bth_create_listen_key",
+          "bth_deposit_address",
+          "bth_deposit_history",
+          "bth_exchange_info",
+          "bth_keepalive_listen_key",
+          "bth_klines",
+          "bth_new_order",
+          "bth_open_orders",
+          "bth_order_book",
+          "bth_query_order",
+          "bth_recent_trades",
+          "bth_server_time",
+          "bth_sub_account_transfer",
+          "bth_symbol_type",
+          "bth_ticker_24hr",
+          "bth_ticker_price",
+          "bth_trade_fee",
+          "bth_trade_list",
+          "bth_withdraw",
+          "bth_withdraw_history"
+        ],
+        "version": "smithery"
+      }
     },
     {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "bth_trade_list"
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_order_book' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_order_book"
     },
     {
       "id": "AS-014",
@@ -119,7 +76,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_trade_list"
+      "tool_name": "get_order_book"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_recent_trades' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_recent_trades"
     },
     {
       "id": "AS-014",
@@ -127,39 +92,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_trade_fee"
+      "tool_name": "get_recent_trades"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bth_query_order"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bth_query_order"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bth_query_order"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "bth_query_order"
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_historical_trades' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_historical_trades"
     },
     {
       "id": "AS-014",
@@ -167,7 +108,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_query_order"
+      "tool_name": "get_historical_trades"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_aggregate_trades' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_aggregate_trades"
     },
     {
       "id": "AS-014",
@@ -175,7 +124,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_new_order"
+      "tool_name": "get_aggregate_trades"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_klines' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_klines"
     },
     {
       "id": "AS-014",
@@ -183,7 +140,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_cancel_order"
+      "tool_name": "get_klines"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_ui_klines' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_ui_klines"
     },
     {
       "id": "AS-014",
@@ -191,7 +156,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_open_orders"
+      "tool_name": "get_ui_klines"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_avg_price' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_avg_price"
     },
     {
       "id": "AS-014",
@@ -199,7 +172,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_all_orders"
+      "tool_name": "get_avg_price"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_24hr_ticker' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_24hr_ticker"
     },
     {
       "id": "AS-014",
@@ -207,7 +188,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_cancel_all_orders"
+      "tool_name": "get_24hr_ticker"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_trading_day_ticker' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_trading_day_ticker"
     },
     {
       "id": "AS-014",
@@ -215,23 +204,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_withdraw"
+      "tool_name": "get_trading_day_ticker"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bth_deposit_address"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "bth_deposit_address"
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_price' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_price"
     },
     {
       "id": "AS-014",
@@ -239,7 +220,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_deposit_address"
+      "tool_name": "get_price"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_book_ticker' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_book_ticker"
     },
     {
       "id": "AS-014",
@@ -247,7 +236,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_deposit_history"
+      "tool_name": "get_book_ticker"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_rolling_window_ticker' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_rolling_window_ticker"
     },
     {
       "id": "AS-014",
@@ -255,302 +252,123 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_withdraw_history"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_sub_account_transfer"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bth_create_listen_key"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_create_listen_key"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_keepalive_listen_key"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bth_close_listen_key"
+      "tool_name": "get_rolling_window_ticker"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 2,
-    "low": 3,
-    "info": 27
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 24
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "bth_account_info",
-    "bth_aggregate_trades",
-    "bth_all_orders",
-    "bth_book_ticker",
-    "bth_cancel_all_orders",
-    "bth_cancel_order",
-    "bth_close_listen_key",
-    "bth_create_listen_key",
-    "bth_deposit_address",
-    "bth_deposit_history",
-    "bth_exchange_info",
-    "bth_keepalive_listen_key",
-    "bth_klines",
-    "bth_new_order",
-    "bth_open_orders",
-    "bth_order_book",
-    "bth_query_order",
-    "bth_recent_trades",
-    "bth_server_time",
-    "bth_sub_account_transfer",
-    "bth_symbol_type",
-    "bth_ticker_24hr",
-    "bth_ticker_price",
-    "bth_trade_fee",
-    "bth_trade_list",
-    "bth_withdraw",
-    "bth_withdraw_history"
+    "get_24hr_ticker",
+    "get_aggregate_trades",
+    "get_avg_price",
+    "get_book_ticker",
+    "get_historical_trades",
+    "get_klines",
+    "get_order_book",
+    "get_price",
+    "get_recent_trades",
+    "get_rolling_window_ticker",
+    "get_trading_day_ticker",
+    "get_ui_klines"
   ],
   "tool_contexts": [
     {
-      "tool_name": "bth_server_time",
+      "tool_name": "get_order_book",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_exchange_info",
+      "tool_name": "get_recent_trades",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_symbol_type",
+      "tool_name": "get_historical_trades",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_order_book",
+      "tool_name": "get_aggregate_trades",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_recent_trades",
+      "tool_name": "get_klines",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_aggregate_trades",
+      "tool_name": "get_ui_klines",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_klines",
+      "tool_name": "get_avg_price",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_ticker_24hr",
+      "tool_name": "get_24hr_ticker",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_ticker_price",
+      "tool_name": "get_trading_day_ticker",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_book_ticker",
+      "tool_name": "get_price",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_account_info",
+      "tool_name": "get_book_ticker",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bth_trade_list",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_trade_fee",
+      "tool_name": "get_rolling_window_ticker",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
+    }
+  ],
+  "scan_history": [
     {
-      "tool_name": "bth_query_order",
-      "action": "REQUIRE_APPROVAL",
+      "scan_date": "2026-04-11T01:50:33Z",
       "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (origClientOrderId)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_new_order",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (newClientOrderId)",
-        "dynamic email recipient (stopPrice)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_cancel_order",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (origClientOrderId)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_open_orders",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_all_orders",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_cancel_all_orders",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_withdraw",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_deposit_address",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_deposit_history",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_withdraw_history",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_sub_account_transfer",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (fromEmail)",
-        "dynamic email recipient (toEmail)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_create_listen_key",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_keepalive_listen_key",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bth_close_listen_key",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 40,
+      "version": "smithery"
     }
   ]
 }

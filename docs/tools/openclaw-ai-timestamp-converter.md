@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [openclaw-ai-timestamp-converter](https://smithery.ai/server/openclaw-ai/timestamp-converter) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.7 |
+| **Scan Date** | 2026-04-12 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

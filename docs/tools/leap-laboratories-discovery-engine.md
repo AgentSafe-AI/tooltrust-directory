@@ -1,8 +1,8 @@
 # 🔴 leap-laboratories-discovery-engine
 
-> Discovery Engine is not another AI data analyst that writes pandas or SQL for you. 
+> Disco is not another AI data analyst that writes pandas or SQL for you. 
 
-Discovery Engine finds complex patterns in your data - feature interactions, nonlinear thresholds, and meaningful subgroups - without requiring prior hypotheses about what matters. Each pattern is validated on hold-out data, corrected for multiple testing, and checked for novelty against academic literature with citations.
+Disco finds complex patterns in your data - feature interactions, nonlinear thresholds, and meaningful subgroups - without requiring prior hypotheses about what matters. Each pattern is validated on hold-out data, corrected for multiple testing, and (optionally) checked for novelty against academic literature with citations.
 
 This is a computational pipeline, not prompt engineering over data. You cannot replicate what it does by writing pandas code or asking an LLM to look at a CSV. It finds structure that hypothesis-driven analysis misses, because it doesn't start with hypotheses.
 
@@ -13,8 +13,8 @@ This is a computational pipeline, not prompt engineering over data. You cannot r
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [leap-laboratories-discovery-engine](https://smithery.ai/server/leap-laboratories/discovery-engine) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-12 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 
@@ -23,12 +23,24 @@ This is a computational pipeline, not prompt engineering over data. You cannot r
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 15 |
+| High     | 16 |
 | Medium   | 15 |
 | Low      | 7 |
-| Info     | 12 |
+| Info     | 14 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vsmithery: 2 tool(s) added, 0 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
@@ -227,7 +239,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 11 properties (threshold: 10)
+input schema exposes 12 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -411,6 +423,30 @@ input parameter "api_key" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

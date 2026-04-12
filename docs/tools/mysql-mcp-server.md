@@ -8,10 +8,10 @@
 | **Risk Score** | 40 |
 | **Version** | `0.2.2` |
 | **Vendor** | designcomputer |
-| **Stars** | ⭐ 1210 |
+| **Stars** | ⭐ 1211 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

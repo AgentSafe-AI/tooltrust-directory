@@ -8,11 +8,11 @@
 | **Risk Score** | 42 |
 | **Version** | `1.0.0` |
 | **Vendor** | buildkite |
-| **Stars** | ⭐ 49 |
+| **Stars** | ⭐ 50 |
 | **Language** | Go |
 | **Source** | [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-04-12 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

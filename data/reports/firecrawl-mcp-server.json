@@ -2,32 +2,39 @@
   "tool_id": "firecrawl-mcp-server",
   "version": "3.2.1",
   "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-04-05T01:50:28.095101356Z",
-  "scanner": "tooltrust-scanner/v0.3.6",
+  "risk_score": 27,
+  "scan_date": "2026-04-12T02:00:15.019692437Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/firecrawl/firecrawl-mcp-server",
   "category": "Developer Tools",
   "vendor": "firecrawl",
-  "stars": 5948,
+  "stars": 6013,
   "npm_package": "firecrawl-mcp",
-  "npm_downloads_monthly": 187726,
+  "npm_downloads_monthly": 168865,
   "license": "MIT",
   "language": "JavaScript",
   "description": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "firecrawl_scrape"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.2.1: 0 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "firecrawl_batch_scrape",
+          "firecrawl_check_batch_status"
+        ],
+        "version": "3.2.1"
+      }
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_scrape"
     },
@@ -91,14 +98,6 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "firecrawl_crawl"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
       "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_crawl"
@@ -125,7 +124,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "firecrawl_batch_scrape"
+      "tool_name": "firecrawl_check_crawl_status"
     },
     {
       "id": "AS-011",
@@ -133,7 +132,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "firecrawl_batch_scrape"
+      "tool_name": "firecrawl_check_crawl_status"
     },
     {
       "id": "AS-014",
@@ -141,7 +140,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "firecrawl_batch_scrape"
+      "tool_name": "firecrawl_check_crawl_status"
     },
     {
       "id": "AS-002",
@@ -149,53 +148,13 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "firecrawl_check_batch_status"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "firecrawl_check_batch_status"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "firecrawl_check_batch_status"
+      "tool_name": "firecrawl_search"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "firecrawl_check_crawl_status"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "firecrawl_check_crawl_status"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "firecrawl_check_crawl_status"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_search"
     },
@@ -306,15 +265,13 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 11,
-    "medium": 3,
-    "low": 12,
-    "info": 10
+    "high": 9,
+    "medium": 4,
+    "low": 9,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "firecrawl_batch_scrape",
-    "firecrawl_check_batch_status",
     "firecrawl_check_crawl_status",
     "firecrawl_crawl",
     "firecrawl_deep_research",
@@ -327,14 +284,16 @@
   "tool_contexts": [
     {
       "tool_name": "firecrawl_scrape",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: example.com",
+        "hardcoded domain: example.com.\\",
+        "hardcoded domain: example.com\\"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -348,6 +307,8 @@
       ],
       "destinations": [
         "dynamic URL input (url)",
+        "hardcoded domain: example.com",
+        "hardcoded domain: example.com\\",
         "hardcoded domain: sitemap.xml"
       ],
       "dependency_visibility": "No dependency data",
@@ -358,36 +319,15 @@
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (deduplicateSimilarURLs)",
         "dynamic URL input (url)",
         "dynamic webhook destination (webhook)",
+        "hardcoded domain: example.com",
         "hardcoded domain: sitemap.xml"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "firecrawl_batch_scrape",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (urls)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "firecrawl_check_batch_status",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -404,10 +344,9 @@
     },
     {
       "tool_name": "firecrawl_search",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -418,10 +357,12 @@
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (urls)"
+        "dynamic URL input (urls)",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -434,7 +375,8 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (maxUrls)"
+        "dynamic URL input (maxUrls)",
+        "hardcoded domain: data.finalAnalysis"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -444,13 +386,18 @@
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (maxUrls)",
         "dynamic URL input (url)",
         "hardcoded domain: LLMs-full.txt",
-        "hardcoded domain: LLMs.txt"
+        "hardcoded domain: LLMs.txt",
+        "hardcoded domain: example.com",
+        "hardcoded domain: example.com\\",
+        "hardcoded domain: llms-full.txt",
+        "hardcoded domain: llms.txt"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -507,6 +454,12 @@
     },
     {
       "scan_date": "2026-04-05T01:10:12Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "3.2.1"
+    },
+    {
+      "scan_date": "2026-04-05T01:50:28Z",
       "grade": "C",
       "risk_score": 32,
       "version": "3.2.1"

@@ -1,0 +1,115 @@
+{
+  "tool_id": "trendsmcp-trends-mcp",
+  "version": "1.0.1",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-04-12T02:12:30.450499418Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/trendsmcp/trends-mcp",
+  "category": "Other",
+  "vendor": "trendsmcp",
+  "stars": 2,
+  "license": "MIT",
+  "description": "MCP server for live trend data. Query Google Search, YouTube, TikTok, Reddit, Amazon, Wikipedia, News sentiment, Web Traffic, App Downloads, Steam, npm and more. Works with Claude, Cursor, VS Code, GitHub Copilot, ChatGPT, Windsurf, Cline, Raycast and any MCP-compatible.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "trendsMCP___get_growth"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 18 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "trendsMCP___get_ranked_trends"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "trendsMCP___get_ranked_trends"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "trendsMCP___get_top_trends"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "trendsMCP___get_trends"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 4
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "trendsMCP___get_growth",
+    "trendsMCP___get_ranked_trends",
+    "trendsMCP___get_top_trends",
+    "trendsMCP___get_trends"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "trendsMCP___get_growth",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: com.openai.chatgpt",
+        "hardcoded domain: com.whatsapp",
+        "hardcoded domain: npmjs.com",
+        "hardcoded domain: play.google.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "trendsMCP___get_ranked_trends",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (earnings_to)",
+        "dynamic email recipient (sector)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "trendsMCP___get_top_trends",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "trendsMCP___get_trends",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: com.openai.chatgpt",
+        "hardcoded domain: npmjs.com",
+        "hardcoded domain: play.google.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

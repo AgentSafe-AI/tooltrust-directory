@@ -8,12 +8,12 @@
 | **Risk Score** | 8 |
 | **Version** | `0.3.0` |
 | **Vendor** | mailtrap |
-| **Stars** | ⭐ 57 |
+| **Stars** | ⭐ 58 |
 | **npm Package** | `mcp-mailtrap` |
 | **npm Downloads (30d)** | 1.2k |
 | **Language** | TypeScript |
 | **Source** | [mailtrap-mailtrap-mcp](https://github.com/mailtrap/mailtrap-mcp) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

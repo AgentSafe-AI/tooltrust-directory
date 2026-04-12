@@ -1,33 +1,26 @@
 {
   "tool_id": "haomingkoo-japan-seasons-mcp",
-  "version": "0.3.5",
+  "version": "0.4.4",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-11T01:49:49.191702276Z",
+  "scan_date": "2026-04-12T02:15:12.800510956Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/haomingkoo/japan-seasons-mcp",
   "category": "Developer Tools",
   "vendor": "haomingkoo",
   "npm_package": "japan-seasons-mcp",
+  "npm_downloads_monthly": 529,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Cherry blossom \u0026 autumn leaves forecast for Japan. 1,700+ spots with real-time bloom data, weather, and trip planning",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_flowers"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_flowers"
+      "tool_name": "get_sakura_spots"
     },
     {
       "id": "AS-002",
@@ -35,7 +28,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_festivals"
+      "tool_name": "get_flower_spots"
     },
     {
       "id": "AS-011",
@@ -43,23 +36,39 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_festivals"
+      "tool_name": "get_flower_spots"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_japan_festivals"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_japan_festivals"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 2,
-    "medium": 0,
+    "medium": 1,
     "low": 2,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_festivals",
-    "get_flowers",
-    "get_fruit_farms",
-    "get_fruit_seasons",
-    "get_kawazu_cherry",
+    "get_flower_spots",
+    "get_fruit_picking_farms",
+    "get_fruit_season_calendar",
+    "get_japan_festivals",
+    "get_kawazu_cherry_forecast",
     "get_koyo_best_dates",
     "get_koyo_forecast",
     "get_koyo_spots",
@@ -80,6 +89,9 @@
       "tool_name": "get_sakura_spots",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -91,7 +103,7 @@
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "get_kawazu_cherry",
+      "tool_name": "get_kawazu_cherry_forecast",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "Verified from local lockfile",
@@ -126,7 +138,7 @@
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "get_flowers",
+      "tool_name": "get_flower_spots",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -136,14 +148,14 @@
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "get_fruit_seasons",
+      "tool_name": "get_fruit_season_calendar",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "get_festivals",
+      "tool_name": "get_japan_festivals",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -153,11 +165,19 @@
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "get_fruit_farms",
+      "tool_name": "get_fruit_picking_farms",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-11T01:49:49Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.3.5"
     }
   ]
 }

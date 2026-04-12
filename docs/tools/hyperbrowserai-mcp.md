@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.1.0` |
 | **Vendor** | hyperbrowserai |
-| **Stars** | ⭐ 756 |
+| **Stars** | ⭐ 755 |
 | **npm Package** | `hyperbrowser-mcp` |
-| **npm Downloads (30d)** | 3.2k |
+| **npm Downloads (30d)** | 2.7k |
 | **Language** | TypeScript |
 | **Source** | [hyperbrowserai-mcp](https://github.com/hyperbrowserai/mcp) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

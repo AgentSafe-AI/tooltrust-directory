@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-10T02:01:39.460988737Z",
+  "scan_date": "2026-04-12T02:17:36.019294238Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/youtube",
   "vendor": "Smithery",
@@ -13,10 +13,28 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 20 tool(s) added, 16 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 16 tool(s) added, 20 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "YOUTUBE_GET_CHANNEL_ACTIVITIES",
+          "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
+          "YOUTUBE_GET_CHANNEL_STATISTICS",
+          "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
+          "YOUTUBE_LIST_CAPTION_TRACK",
+          "YOUTUBE_LIST_CHANNEL_VIDEOS",
+          "YOUTUBE_LIST_PLAYLIST_ITEMS",
+          "YOUTUBE_LIST_USER_PLAYLISTS",
+          "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
+          "YOUTUBE_LOAD_CAPTIONS",
+          "YOUTUBE_SEARCH_YOU_TUBE",
+          "YOUTUBE_SUBSCRIBE_CHANNEL",
+          "YOUTUBE_UPDATE_THUMBNAIL",
+          "YOUTUBE_UPDATE_VIDEO",
+          "YOUTUBE_UPLOAD_VIDEO",
+          "YOUTUBE_VIDEO_DETAILS"
+        ],
+        "removed": [
           "youtube_add_playlist_item",
           "youtube_create_playlist",
           "youtube_delete_comment",
@@ -38,26 +56,80 @@
           "youtube_update_comment",
           "youtube_update_playlist"
         ],
-        "removed": [
-          "YOUTUBE_GET_CHANNEL_ACTIVITIES",
-          "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
-          "YOUTUBE_GET_CHANNEL_STATISTICS",
-          "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
-          "YOUTUBE_LIST_CAPTION_TRACK",
-          "YOUTUBE_LIST_CHANNEL_VIDEOS",
-          "YOUTUBE_LIST_PLAYLIST_ITEMS",
-          "YOUTUBE_LIST_USER_PLAYLISTS",
-          "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
-          "YOUTUBE_LOAD_CAPTIONS",
-          "YOUTUBE_SEARCH_YOU_TUBE",
-          "YOUTUBE_SUBSCRIBE_CHANNEL",
-          "YOUTUBE_UPDATE_THUMBNAIL",
-          "YOUTUBE_UPDATE_VIDEO",
-          "YOUTUBE_UPLOAD_VIDEO",
-          "YOUTUBE_VIDEO_DETAILS"
-        ],
         "version": "smithery"
       }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_GET_CHANNEL_ACTIVITIES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_GET_CHANNEL_STATISTICS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_GET_VIDEO_DETAILS_BATCH"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_LIST_CAPTION_TRACK"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_LIST_CHANNEL_VIDEOS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_LIST_PLAYLIST_ITEMS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_LIST_USER_PLAYLISTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "YOUTUBE_LIST_USER_SUBSCRIPTIONS"
     },
     {
       "id": "AS-002",
@@ -65,15 +137,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_search"
+      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
     },
     {
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 13 properties (threshold: 10)",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_search"
+      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
     },
     {
       "id": "AS-011",
@@ -81,7 +153,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "youtube_search"
+      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
     },
     {
       "id": "AS-014",
@@ -89,7 +161,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_search"
+      "tool_name": "YOUTUBE_LOAD_CAPTIONS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
     },
     {
       "id": "AS-014",
@@ -97,7 +193,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_get_video"
+      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE"
     },
     {
       "id": "AS-014",
@@ -105,79 +201,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_get_channel"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_list_playlists"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_list_playlist_items"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_list_comments"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_list_comment_replies"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_list_video_categories"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_list_subscriptions"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_get_popular_videos"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_post_comment"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_reply_comment"
+      "tool_name": "YOUTUBE_SUBSCRIBE_CHANNEL"
     },
     {
       "id": "AS-002",
@@ -185,7 +209,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_update_comment"
+      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
     },
     {
       "id": "AS-014",
@@ -193,7 +233,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_update_comment"
+      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL"
     },
     {
       "id": "AS-002",
@@ -201,23 +241,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_delete_comment"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_delete_comment"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_create_playlist"
+      "tool_name": "YOUTUBE_UPDATE_VIDEO"
     },
     {
       "id": "AS-002",
@@ -225,7 +249,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_create_playlist"
+      "tool_name": "YOUTUBE_UPDATE_VIDEO"
     },
     {
       "id": "AS-011",
@@ -233,7 +257,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "youtube_create_playlist"
+      "tool_name": "YOUTUBE_UPDATE_VIDEO"
     },
     {
       "id": "AS-014",
@@ -241,7 +265,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_create_playlist"
+      "tool_name": "YOUTUBE_UPDATE_VIDEO"
     },
     {
       "id": "AS-002",
@@ -249,7 +273,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_update_playlist"
+      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
     },
     {
       "id": "AS-002",
@@ -257,7 +281,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_update_playlist"
+      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
     },
     {
       "id": "AS-011",
@@ -265,7 +289,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "youtube_update_playlist"
+      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
     },
     {
       "id": "AS-014",
@@ -273,15 +297,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_update_playlist"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_delete_playlist"
+      "tool_name": "YOUTUBE_UPLOAD_VIDEO"
     },
     {
       "id": "AS-014",
@@ -289,217 +305,167 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_delete_playlist"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_add_playlist_item"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "youtube_remove_playlist_item"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_remove_playlist_item"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "youtube_rate_video"
+      "tool_name": "YOUTUBE_VIDEO_DETAILS"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 6,
-    "low": 4,
-    "info": 20
+    "high": 6,
+    "medium": 4,
+    "low": 6,
+    "info": 16
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "youtube_add_playlist_item",
-    "youtube_create_playlist",
-    "youtube_delete_comment",
-    "youtube_delete_playlist",
-    "youtube_get_channel",
-    "youtube_get_popular_videos",
-    "youtube_get_video",
-    "youtube_list_comment_replies",
-    "youtube_list_comments",
-    "youtube_list_playlist_items",
-    "youtube_list_playlists",
-    "youtube_list_subscriptions",
-    "youtube_list_video_categories",
-    "youtube_post_comment",
-    "youtube_rate_video",
-    "youtube_remove_playlist_item",
-    "youtube_reply_comment",
-    "youtube_search",
-    "youtube_update_comment",
-    "youtube_update_playlist"
+    "YOUTUBE_GET_CHANNEL_ACTIVITIES",
+    "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
+    "YOUTUBE_GET_CHANNEL_STATISTICS",
+    "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
+    "YOUTUBE_LIST_CAPTION_TRACK",
+    "YOUTUBE_LIST_CHANNEL_VIDEOS",
+    "YOUTUBE_LIST_PLAYLIST_ITEMS",
+    "YOUTUBE_LIST_USER_PLAYLISTS",
+    "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
+    "YOUTUBE_LOAD_CAPTIONS",
+    "YOUTUBE_SEARCH_YOU_TUBE",
+    "YOUTUBE_SUBSCRIBE_CHANNEL",
+    "YOUTUBE_UPDATE_THUMBNAIL",
+    "YOUTUBE_UPDATE_VIDEO",
+    "YOUTUBE_UPLOAD_VIDEO",
+    "YOUTUBE_VIDEO_DETAILS"
   ],
   "tool_contexts": [
     {
-      "tool_name": "youtube_search",
+      "tool_name": "YOUTUBE_GET_CHANNEL_ACTIVITIES",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_GET_CHANNEL_ID_BY_HANDLE",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_GET_CHANNEL_STATISTICS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_GET_VIDEO_DETAILS_BATCH",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: snippet.localized"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_CAPTION_TRACK",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_CHANNEL_VIDEOS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_PLAYLIST_ITEMS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (onBehalfOfContentOwner)",
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_USER_PLAYLISTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LIST_USER_SUBSCRIPTIONS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_LOAD_CAPTIONS",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "youtube_get_video",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "YOUTUBE_SEARCH_YOU_TUBE",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands"
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pageToken)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "youtube_get_channel",
+      "tool_name": "YOUTUBE_SUBSCRIBE_CHANNEL",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "YOUTUBE_UPDATE_THUMBNAIL",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_list_playlists",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_list_playlist_items",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_list_comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_list_comment_replies",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_list_video_categories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_list_subscriptions",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_get_popular_videos",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_post_comment",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_reply_comment",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_update_comment",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
+        "uses_network",
         "writes_files"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_delete_comment",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
+      "destinations": [
+        "dynamic URL input (thumbnailUrl)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "youtube_create_playlist",
+      "tool_name": "YOUTUBE_UPDATE_VIDEO",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
@@ -510,45 +476,18 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "youtube_update_playlist",
+      "tool_name": "YOUTUBE_UPLOAD_VIDEO",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "executes_commands",
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_delete_playlist",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
         "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "youtube_add_playlist_item",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_remove_playlist_item",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "youtube_rate_video",
+      "tool_name": "YOUTUBE_VIDEO_DETAILS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -570,6 +509,12 @@
     },
     {
       "scan_date": "2026-04-09T01:35:51Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-10T02:01:39Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

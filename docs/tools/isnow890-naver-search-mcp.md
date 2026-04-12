@@ -10,10 +10,10 @@
 | **Vendor** | isnow890 |
 | **Stars** | ⭐ 59 |
 | **npm Package** | `@isnow890/naver-search-mcp` |
-| **npm Downloads (30d)** | 651 |
+| **npm Downloads (30d)** | 607 |
 | **Language** | JavaScript |
 | **Source** | [isnow890-naver-search-mcp](https://github.com/isnow890/naver-search-mcp) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-12 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 7 |
+| High     | 6 |
 | Medium   | 3 |
 | Low      | 11 |
 | Info     | 6 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.0.47: 6 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
