@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [venturu-venturu-mcp](https://smithery.ai/server/venturu/venturu-mcp) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -3,60 +3,12 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-04-11T01:52:12.85360218Z",
+  "scan_date": "2026-04-13T02:21:20.584472253Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/google-calendar",
   "vendor": "Smithery",
   "description": "MCP server for Google Calendar : create events, manage calendars, check availability, and share calendars through 28 tools via the Model Context Protocol.\n\n## Features\n\n- Create, update, and delete calendar events (timed and all-day)\n- Quick add events from natural language\n- Manage recurring events with RRULE support\n- Share calendars with ACL (access control) management\n- Check availability with free/busy queries\n- Manage multiple calendars and subscriptions\n- Full OAuth 2.0 authentication with refresh tokens\n\n## 28 Tools\n\n**Events (10)**: List, get, create, update (PUT), patch (PATCH), delete, quick add, move, list instances, import\n\n**CalendarList (5)**: List subscribed calendars, get entry, add (subscribe), update display settings, remove (unsubscribe)\n\n**Calendars (5)**: Get metadata, create, update, delete, clear all events\n\n**ACL (5)**: List rules, get rule, create (share), update permission, delete (revoke)\n\n**Utility (3)**: Query free/busy, get color palette, list settings\n\n## Configuration\n\n- `GOOGLE_CLIENT_ID` : OAuth 2.0 Client ID from Google Cloud Console\n- `GOOGLE_CLIENT_SECRET` : OAuth 2.0 Client Secret\n- `GOOGLE_REFRESH_TOKEN` : Refresh token with Calendar scope",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 28 tool(s) added, 6 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "gcal_add_calendar",
-          "gcal_clear_calendar",
-          "gcal_create_acl",
-          "gcal_create_calendar",
-          "gcal_create_event",
-          "gcal_delete_acl",
-          "gcal_delete_calendar",
-          "gcal_delete_event",
-          "gcal_get_acl",
-          "gcal_get_calendar",
-          "gcal_get_calendar_entry",
-          "gcal_get_colors",
-          "gcal_get_event",
-          "gcal_import_event",
-          "gcal_list_acl",
-          "gcal_list_calendars",
-          "gcal_list_events",
-          "gcal_list_instances",
-          "gcal_list_settings",
-          "gcal_move_event",
-          "gcal_patch_event",
-          "gcal_query_freebusy",
-          "gcal_quick_add",
-          "gcal_remove_calendar",
-          "gcal_update_acl",
-          "gcal_update_calendar",
-          "gcal_update_calendar_entry",
-          "gcal_update_event"
-        ],
-        "removed": [
-          "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
-          "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
-          "GOOGLESLIDES_PRESENTATIONS_CREATE",
-          "GOOGLESLIDES_PRESENTATIONS_GET",
-          "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
-          "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -532,7 +484,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 8,
+    "high": 7,
     "medium": 13,
     "low": 11,
     "info": 28
@@ -860,6 +812,12 @@
       "scan_date": "2026-04-09T01:35:55Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-11T01:52:12Z",
+      "grade": "C",
+      "risk_score": 27,
       "version": "smithery"
     }
   ]

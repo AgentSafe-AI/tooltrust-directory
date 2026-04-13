@@ -29,7 +29,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-wordpress](https://smithery.ai/server/node2flow/wordpress) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

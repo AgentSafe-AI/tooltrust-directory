@@ -29,7 +29,7 @@ EU-hosted. GDPR-compliant. No black boxes.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [brunosan-global-ai-news](https://smithery.ai/server/brunosan/global-ai-news) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

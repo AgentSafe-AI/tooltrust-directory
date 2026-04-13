@@ -1,6 +1,6 @@
 # 🟠 aas-ee-open-websearch
 
-> WebSearchMCP using free multi-engine search (NO API KEYS REQUIRED) — Supports Bing, Baidu, DuckDuckGo, Brave, Exa, Github, Juejin and CSDN.
+> Multi-engine MCP server, CLI, and local daemon for agent web search and content retrieval — skill-guided workflows, no API keys.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `2.1.6` |
 | **Vendor** | Aas-ee |
-| **Stars** | ⭐ 961 |
+| **Stars** | ⭐ 968 |
 | **npm Package** | `open-websearch` |
-| **npm Downloads (30d)** | 44.7k |
+| **npm Downloads (30d)** | 44.6k |
 | **Language** | TypeScript |
 | **Source** | [aas-ee-open-websearch](https://github.com/Aas-ee/open-webSearch) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -1,15 +1,15 @@
-# 🟠 agentwings-exa-mcp-server
+# 🟡 agentwings-exa-mcp-server
 
 > Search the web and codebases to get precise, up-to-date context for programming and research. Find examples, API usage, and documentation from real repositories and sites to ship faster with fewer mistakes. Extend investigations with deep search, crawling, and business or profile lookups when needed.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 33 |
+| **Grade** | **B** |
+| **Risk Score** | 23 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agentwings-exa-mcp-server](https://smithery.ai/server/AgentWings/exa-mcp-server) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -20,8 +20,8 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 3 |
-| Medium   | 2 |
-| Low      | 2 |
+| Medium   | 1 |
+| Low      | 1 |
 | Info     | 2 |
 
 ## Detailed Findings
@@ -38,36 +38,12 @@ The set of tools exposed by this server changed between scans of the same versio
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -98,27 +74,27 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Medium
 
 **Description:**
-tool declares network permission
+tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** Low
+**Severity:** High
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+input parameter "tokensNum" appears to accept a secret or credential
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 

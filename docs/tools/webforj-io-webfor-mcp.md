@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [webforj-io-webfor-mcp](https://smithery.ai/server/webforj.io/webfor-mcp) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-04-13 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

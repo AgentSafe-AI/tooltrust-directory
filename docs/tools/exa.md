@@ -1,4 +1,4 @@
-# 🟡 exa
+# 🟠 exa
 
 > Fast, intelligent web search and web crawling.
 
@@ -6,12 +6,12 @@ New mcp tool: Exa-code is a context tool for coding agents. It provides agents w
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 23 |
+| **Grade** | **C** |
+| **Risk Score** | 33 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [exa](https://smithery.ai/server/exa) |
-| **Scan Date** | 2026-04-08 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -22,8 +22,8 @@ New mcp tool: Exa-code is a context tool for coding agents. It provides agents w
 |----------|:-----:|
 | Critical | 0 |
 | High     | 3 |
-| Medium   | 1 |
-| Low      | 1 |
+| Medium   | 2 |
+| Low      | 2 |
 | Info     | 2 |
 
 ## Detailed Findings
@@ -33,10 +33,22 @@ New mcp tool: Exa-code is a context tool for coding agents. It provides agents w
 **Severity:** High
 
 **Description:**
-Tool set changed silently at vsmithery: 2 tool(s) added, 16 tool(s) removed without a version bump.
+Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -46,6 +58,18 @@ The set of tools exposed by this server changed between scans of the same versio
 
 **Description:**
 tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -76,27 +100,27 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** High
 
 **Description:**
-tool declares db permission
+tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
-**Severity:** High
+**Severity:** Low
 
 **Description:**
-input parameter "tokensNum" appears to accept a secret or credential
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

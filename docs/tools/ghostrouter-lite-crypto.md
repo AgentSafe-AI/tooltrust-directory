@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ghostrouter-lite-crypto](https://smithery.ai/server/ghostrouter/lite-crypto) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

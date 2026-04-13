@@ -8,10 +8,10 @@
 | **Risk Score** | 8 |
 | **Version** | `sha-97e7585e212d` |
 | **Vendor** | Simon-Kansara |
-| **Stars** | ⭐ 373 |
+| **Stars** | ⭐ 374 |
 | **Language** | Python |
 | **Source** | [ableton-live-mcp-server](https://github.com/Simon-Kansara/ableton-live-mcp-server) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

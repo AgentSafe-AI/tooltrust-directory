@@ -10,10 +10,10 @@
 | **Vendor** | TimHolden |
 | **Stars** | ⭐ 147 |
 | **npm Package** | `figma-mcp-server` |
-| **npm Downloads (30d)** | 9.4k |
+| **npm Downloads (30d)** | 9.0k |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

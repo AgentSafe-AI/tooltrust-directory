@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.0` |
 | **Vendor** | Streen9 |
-| **Stars** | ⭐ 67 |
+| **Stars** | ⭐ 68 |
 | **npm Package** | `react-mcp` |
 | **npm Downloads (30d)** | 6 |
 | **Language** | JavaScript |
 | **Source** | [streen9-react-mcp](https://github.com/kalivaraprasad-gonapa/react-mcp) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

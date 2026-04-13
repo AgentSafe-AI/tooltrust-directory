@@ -10,10 +10,10 @@
 | **Vendor** | knowall-ai |
 | **Stars** | ⭐ 67 |
 | **npm Package** | `@knowall-ai/mcp-neo4j-agent-memory` |
-| **npm Downloads (30d)** | 60 |
+| **npm Downloads (30d)** | 57 |
 | **Language** | JavaScript |
 | **Source** | [knowall-ai-mcp-neo4j-agent-memory](https://github.com/knowall-ai/mcp-neo4j-agent-memory) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.18.0` |
 | **Vendor** | taylorwilsdon |
-| **Stars** | ⭐ 2089 |
+| **Stars** | ⭐ 2095 |
 | **Language** | Python |
 | **Source** | [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -11,7 +11,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [picoads-picoads](https://smithery.ai/server/picoads/picoads) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 146 |
 | **Language** | Python |
 | **Source** | [call518-mcp-postgresql-ops](https://github.com/call518/MCP-PostgreSQL-Ops) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -13,7 +13,7 @@ This is a computational pipeline, not prompt engineering over data. You cannot r
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [leap-laboratories-discovery-engine](https://smithery.ai/server/leap-laboratories/discovery-engine) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -23,24 +23,12 @@ This is a computational pipeline, not prompt engineering over data. You cannot r
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 16 |
+| High     | 15 |
 | Medium   | 15 |
 | Low      | 7 |
 | Info     | 14 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 2 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

@@ -2,8 +2,8 @@
   "tool_id": "raye-deng-open-code-review",
   "version": "2.1.5",
   "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-04-12T02:09:12.434278091Z",
+  "risk_score": 16,
+  "scan_date": "2026-04-13T02:12:59.011930621Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/raye-deng/open-code-review",
   "category": "Developer Tools",
@@ -15,44 +15,41 @@
   "description": "🤖 AI code quality gate for AI-generated code. Detects hallucinated packages, phantom dependencies, stale APIs, and more. MCP Server + CLI + CI/CD Action.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 17 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-erc20"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-erc20"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-erc721"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.1.5: 7 tool(s) added, 8 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "analyze_code",
+          "analyze_design_patterns",
+          "analyze_patterns",
+          "check_deceptive_patterns",
+          "check_placeholders",
+          "check_security",
+          "generate_report"
+        ],
+        "removed": [
+          "solidity-account",
+          "solidity-custom",
+          "solidity-erc1155",
+          "solidity-erc20",
+          "solidity-erc721",
+          "solidity-governor",
+          "solidity-rwa",
+          "solidity-stablecoin"
+        ],
+        "version": "2.1.5"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-erc721"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "solidity-erc721"
+      "tool_name": "analyze_code"
     },
     {
       "id": "AS-014",
@@ -60,23 +57,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-erc721"
+      "tool_name": "analyze_code"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-erc1155"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "solidity-erc1155"
+      "tool_name": "generate_report"
     },
     {
       "id": "AS-014",
@@ -84,31 +73,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-erc1155"
+      "tool_name": "generate_report"
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 18 properties (threshold: 10)",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-stablecoin"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-stablecoin"
+      "tool_name": "check_security"
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 18 properties (threshold: 10)",
+      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-rwa"
+      "tool_name": "check_security"
     },
     {
       "id": "AS-014",
@@ -116,23 +97,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-rwa"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-account"
+      "tool_name": "check_security"
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 16 properties (threshold: 10)",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "solidity-governor"
+      "tool_name": "check_deceptive_patterns"
     },
     {
       "id": "AS-014",
@@ -140,7 +113,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-governor"
+      "tool_name": "check_deceptive_patterns"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_placeholders"
     },
     {
       "id": "AS-014",
@@ -148,115 +129,114 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solidity-custom"
+      "tool_name": "check_placeholders"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "analyze_patterns"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "analyze_patterns"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "analyze_design_patterns"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "analyze_design_patterns"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 7,
-    "info": 8
+    "high": 1,
+    "medium": 8,
+    "low": 0,
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "solidity-account",
-    "solidity-custom",
-    "solidity-erc1155",
-    "solidity-erc20",
-    "solidity-erc721",
-    "solidity-governor",
-    "solidity-rwa",
-    "solidity-stablecoin"
+    "analyze_code",
+    "analyze_design_patterns",
+    "analyze_patterns",
+    "check_deceptive_patterns",
+    "check_placeholders",
+    "check_security",
+    "generate_report"
   ],
   "tool_contexts": [
     {
-      "tool_name": "solidity-erc20",
+      "tool_name": "analyze_code",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic callback destination (callback)",
-        "dynamic email recipient (access)"
+        "hardcoded domain: app.ts"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "solidity-erc721",
+      "tool_name": "generate_report",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: app.ts"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_security",
       "action": "ALLOW",
       "grade": "B",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_deceptive_patterns",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (baseUri)",
-        "dynamic email recipient (access)",
-        "dynamic email recipient (uriStorage)"
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "solidity-erc1155",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (updatableUri)",
-        "dynamic URL input (uri)",
-        "dynamic email recipient (access)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "solidity-stablecoin",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic callback destination (callback)",
-        "dynamic email recipient (access)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "solidity-rwa",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic callback destination (callback)",
-        "dynamic email recipient (access)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "solidity-account",
+      "tool_name": "check_placeholders",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "solidity-governor",
+      "tool_name": "analyze_patterns",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (storage)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "solidity-custom",
+      "tool_name": "analyze_design_patterns",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (access)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -264,6 +244,12 @@
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:44:11Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "2.1.5"
+    },
+    {
+      "scan_date": "2026-04-12T02:09:12Z",
       "grade": "B",
       "risk_score": 19,
       "version": "2.1.5"

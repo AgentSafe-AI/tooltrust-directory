@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [learnnaga-ai-103](https://smithery.ai/server/learnnaga/ai-103) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

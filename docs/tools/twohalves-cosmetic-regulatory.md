@@ -1,6 +1,12 @@
 # 🟠 twohalves-cosmetic-regulatory
 
-> The most comprehensive free MCP server for cosmetic regulatory intelligence. 124+ database tables. 795 MB of structured data. 30,000+ ingredients with safety ratings, 46,000+ NOAEL toxicology studies, 8,965 China IECIC entries, 2,534 jurisdiction-specific restrictions across 18 countries, 580 SCCS safety opinions, 267 IFRA fragrance standards, 253 ECHA SVHC substances, 114 endocrine disruptors, and 83 EU allergens. Check single ingredients or scan full formulas for multi-jurisdiction compliance including China market readiness (IECIC screening). Calculate Margin of Safety per SCCS methodology. Query by name, INCI, or CAS number. Free. Built by Two Halves — twohalves.ai
+> The most comprehensive cosmetic ingredient safety database available via MCP. Query 30,553 ingredients, 56,917 NOAEL toxicology studies, 68,540 pre-calculated Margin of Safety values across 20 SCCS product categories, and 8,898 sensitization assays.
+
+4 tools: • check_ingredient — Full safety profile by name, INCI, or CAS. Returns NOAEL, dermal absorption, MoS, sensitization, regulatory status across 55+ jurisdictions. • check_formula — Batch-check up to 50 ingredients for compliance. Flags restricted/banned substances with jurisdiction-specific rules. • search_ingredients — Search by keyword, function, or category. • calculate_mos — Compute Margin of Safety per SCCS Notes of Guidance methodology. Returns SED, MoS, and acceptability status with full traceability.
+
+Built on real SCCS opinion extractions, not QSAR predictions. Every value traceable to a primary source.
+
+rootsbybenda.com
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +15,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [twohalves-cosmetic-regulatory](https://smithery.ai/server/twohalves/cosmetic-regulatory) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

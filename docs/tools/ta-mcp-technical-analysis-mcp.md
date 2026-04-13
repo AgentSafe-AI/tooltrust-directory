@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ta-mcp-technical-analysis-mcp](https://smithery.ai/server/ta-mcp/technical-analysis-mcp) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.6 |
+| **Scan Date** | 2026-04-13 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

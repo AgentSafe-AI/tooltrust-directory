@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.0` |
 | **Vendor** | mnemox-ai |
-| **Stars** | ⭐ 593 |
+| **Stars** | ⭐ 597 |
 | **Language** | Python |
 | **Source** | [mnemox-ai-idea-reality-mcp](https://github.com/mnemox-ai/idea-reality-mcp) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

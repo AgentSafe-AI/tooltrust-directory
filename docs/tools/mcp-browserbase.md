@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mcp-browserbase](https://smithery.ai/server/browserbasehq/mcp-browserbase) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

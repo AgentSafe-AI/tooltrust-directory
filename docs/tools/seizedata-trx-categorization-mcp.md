@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [seizedata-trx-categorization-mcp](https://smithery.ai/server/seizedata/trx-categorization-mcp) |
-| **Scan Date** | 2026-04-09 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

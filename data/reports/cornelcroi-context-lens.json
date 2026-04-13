@@ -2,8 +2,8 @@
   "tool_id": "cornelcroi-context-lens",
   "version": "0.1.8",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-10T01:58:55.375208701Z",
+  "risk_score": 33,
+  "scan_date": "2026-04-13T02:11:44.012125518Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/cornelcroi/context-lens",
   "category": "Developer Tools",
@@ -14,44 +14,37 @@
   "description": "Semantic search knowledge base for MCP-enabled AI assistants. Index local files or GitHub repos, query with natural language. Built on LanceDB vector storage. Works with Claude Desktop, Cursor, and other MCP clients.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "resolve-library-id"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "resolve-library-id"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query-docs"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.8: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "dump_codebase_context"
+        ],
+        "removed": [
+          "query-docs",
+          "resolve-library-id"
+        ],
+        "version": "0.1.8"
+      }
+    },
+    {
+      "id": "AS-001",
+      "severity": "Critical",
+      "title": "Tool Poisoning (Prompt Injection)",
+      "description": "possible prompt injection detected in tool description: pattern matched: (?i)(ignore|disregard|bypass)\\s+(?:\\w+\\s+){0,3}(instructions?|prompts?|context|rules?|guidelines?|restrictions?|filters?)",
+      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.",
+      "tool_name": "dump_codebase_context"
     },
     {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query-docs"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query-docs"
+      "tool_name": "dump_codebase_context"
     },
     {
       "id": "AS-014",
@@ -59,42 +52,27 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query-docs"
+      "tool_name": "dump_codebase_context"
     }
   ],
   "summary": {
-    "critical": 0,
+    "critical": 1,
     "high": 1,
-    "medium": 2,
-    "low": 1,
-    "info": 2
+    "medium": 1,
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "query-docs",
-    "resolve-library-id"
+    "dump_codebase_context"
   ],
   "tool_contexts": [
     {
-      "tool_name": "resolve-library-id",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query-docs",
+      "tool_name": "dump_codebase_context",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Express.js",
-        "hardcoded domain: next.js"
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -157,6 +135,12 @@
     },
     {
       "scan_date": "2026-04-08T01:41:56Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.1.8"
+    },
+    {
+      "scan_date": "2026-04-10T01:58:55Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.1.8"

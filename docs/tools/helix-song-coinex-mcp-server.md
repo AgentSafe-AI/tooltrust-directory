@@ -71,7 +71,7 @@ Pass credentials via HTTP headers:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [helix-song-coinex-mcp-server](https://smithery.ai/server/helix-song/coinex_mcp_server) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

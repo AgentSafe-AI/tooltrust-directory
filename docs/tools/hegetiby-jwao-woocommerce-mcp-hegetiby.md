@@ -19,7 +19,7 @@ Tools included:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hegetiby-jwao-woocommerce-mcp-hegetiby](https://smithery.ai/server/hegetiby-jwao/woocommerce-mcp-hegetiby) |
-| **Scan Date** | 2026-04-10 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

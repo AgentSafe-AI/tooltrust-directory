@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [greetwell-travel](https://smithery.ai/server/greetwell/travel) |
-| **Scan Date** | 2026-04-04 |
-| **Scanner** | tooltrust-scanner/v0.3.5 |
+| **Scan Date** | 2026-04-13 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

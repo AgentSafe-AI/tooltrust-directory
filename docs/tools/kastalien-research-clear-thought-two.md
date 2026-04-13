@@ -10,10 +10,10 @@
 | **Vendor** | Kastalien-Research |
 | **Stars** | ⭐ 53 |
 | **npm Package** | `@kastalien-research/thoughtbox` |
-| **npm Downloads (30d)** | 123 |
+| **npm Downloads (30d)** | 122 |
 | **Language** | TypeScript |
 | **Source** | [kastalien-research-clear-thought-two](https://github.com/Kastalien-Research/thoughtbox) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-13 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

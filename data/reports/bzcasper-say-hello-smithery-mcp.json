@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-04-12T02:15:17.641697628Z",
+  "scan_date": "2026-04-13T02:19:21.666032513Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/Bzcasper/say-hello-smithery-mcp",
   "category": "Developer Tools",
@@ -16,31 +16,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 17 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "play_turn",
-          "start_game"
+          "hello"
         ],
         "removed": [
-          "add_issue_comment",
-          "create_branch",
-          "create_issue",
-          "create_or_update_file",
-          "create_pull_request",
-          "create_repository",
-          "fork_repository",
-          "get_file_contents",
-          "get_issue",
-          "list_commits",
-          "list_issues",
-          "push_files",
-          "search_code",
-          "search_issues",
-          "search_repositories",
-          "search_users",
-          "update_issue"
+          "play_turn",
+          "start_game"
         ],
         "version": "1.0.0"
       }
@@ -51,15 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "start_game"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "play_turn"
+      "tool_name": "hello"
     }
   ],
   "summary": {
@@ -67,28 +43,17 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "play_turn",
-    "start_game"
+    "hello"
   ],
   "tool_contexts": [
     {
-      "tool_name": "start_game",
+      "tool_name": "hello",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "play_turn",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: visibleState.resources"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -128,6 +93,12 @@
       "scan_date": "2026-04-10T02:00:46Z",
       "grade": "C",
       "risk_score": 27,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-12T02:15:17Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]
