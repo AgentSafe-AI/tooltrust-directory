@@ -10,10 +10,10 @@
 | **Vendor** | stape-io |
 | **Stars** | ⭐ 132 |
 | **npm Package** | `google-tag-manager-mcp-server` |
-| **npm Downloads (30d)** | 229 |
+| **npm Downloads (30d)** | 217 |
 | **Language** | TypeScript |
 | **Source** | [google-tag-manager-mcp-server](https://github.com/stape-io/google-tag-manager-mcp-server) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-14 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

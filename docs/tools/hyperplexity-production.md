@@ -108,7 +108,7 @@ Full documentation: [eliyahu.ai/api-guide](https://eliyahu.ai/api-guide)
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hyperplexity-production](https://smithery.ai/server/hyperplexity/production) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-14 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

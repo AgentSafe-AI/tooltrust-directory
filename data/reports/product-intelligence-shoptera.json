@@ -1,0 +1,144 @@
+{
+  "tool_id": "product-intelligence-shoptera",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-04-14T02:14:51.494036563Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/product_intelligence/shoptera",
+  "vendor": "Smithery",
+  "description": "Shoptera Product Intelligence\nSearch product catalogs across thousands of Central European e-shops. Semantic search, keyword matching, GTIN/EAN lookup — via REST API or MCP.\n\n~2,500 e-shops | ~8.5M products | 7 countries (CZ, SK, PL, HU, RO, DE, AT)\n\nLive stats: GET /stats/global\n\nQuickstart\nNo authentication required. Base URL: https://shoptera.ai/api\n\nSemantic search — natural language, understands intent:\n\ncurl \"https://shoptera.ai/api/v1/search?q=dárek+pro+zahradníka+do+500+Kč\u0026max_price=500\u0026currency=CZK\u0026origin_country=CZ\"\nKeyword search — exact title matching, fast:\n\ncurl \"https://shoptera.ai/api/v1/search/text?title=Nike+Air+Max+90\u0026brand=Nike\"\nGTIN/EAN lookup — find e-shops by barcode:\n\ncurl \"https://shoptera.ai/api/v1/search/gtin/5901234123457\"\nSaving tokens: Add fields to return only what you need (up to 70% smaller response):\n\ncurl \"https://shoptera.ai/api/v1/search?q=boty\u0026limit=5\u0026fields=title,price,product_url,cart_action\"\nQuick Install\nClaude Code (one command)\nclaude mcp add --transport http shoptera https://shoptera.ai/api/mcp\nCursor\nAdd to Cursor Settings → Features → MCP → Add New MCP Server, or edit ~/.cursor/mcp.json:\n\n{\n  \"mcpServers\": {\n    \"shoptera\": { \"url\": \"https://shoptera.ai/api/mcp\" }\n  }\n}\nWindsurf\nAdd via Cascade → MCP Servers → Add Server, or edit ~/.codeium/windsurf/mcp_config.json:\n\n{\n  \"mcpServers\": {\n    \"shoptera\": { \"url\": \"https://shoptera.ai/api/mcp\" }\n  }\n}\nVS Code (Copilot / Continue)\nEdit .vscode/mcp.json in your workspace:\n\n{\n  \"mcpServers\": {\n    \"shoptera\": { \"url\": \"https://shoptera.ai/api/mcp\" }\n  }\n}\nAny tool (universal installer)\nnpx add-mcp https://shoptera.ai/api/mcp -n shoptera -g -y\nAll Platforms\nPlatform\tSetup\tDetails\nClaude Code\tclaude mcp add --transport http shoptera https://shoptera.ai/api/mcp\tSkill guide\nCursor\tMCP config\tSettings → Features → MCP\nWindsurf\tMCP config\tCascade → MCP Servers\nVS Code\tMCP config\t.vscode/mcp.json\nOpenAI Codex\tAGENTS.md\tAgent config reference\nChatGPT\tOpenAPI spec\tCustom GPT actions. Instructions\nGemini\tGEMINI.md\tTool definitions and endpoints\nAny HTTP client\tExamples\tcurl, Python, JavaScript\nMCP Details\nEndpoint: https://shoptera.ai/api/mcp (streamable HTTP, stateless, no auth)\n\n3 tools: search_products, search_products_by_text, lookup_by_gtin\n\nCapabilities\nProduct Search — semantic vs keyword vs GTIN, when to use which, filters, scoring\nCart Actions — three action types, how to handle each\nData Coverage — countries, data freshness, live stats\nAPI Reference\nFull documentation: api/reference.md\n\nOpenAPI spec: api/openapi.yaml\n\nEndpoints\nMethod\tPath\tDescription\nGET\t/api/v1/search?q=...\tSemantic search (natural language)\nGET\t/api/v1/search/text?title=...\tKeyword search (exact title match)\nGET\t/api/v1/search/gtin/{gtin}\tGTIN/EAN barcode lookup\nGET\t/stats/global\tCatalog statistics\nCode Examples\nSemantic search — curl, Python, JavaScript\nKeyword search — curl, Python, JavaScript\nGTIN/EAN lookup — curl, Python, JavaScript\nCart actions — handling all three action types",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_products"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_products"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_products"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_products"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "lookup_by_gtin"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "lookup_by_gtin"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "lookup_by_gtin"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_products_by_text"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_products_by_text"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_products_by_text"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 3,
+    "medium": 0,
+    "low": 4,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "lookup_by_gtin",
+    "search_products",
+    "search_products_by_text"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_products",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: fantasyobchod.cz"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "lookup_by_gtin",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_products_by_text",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

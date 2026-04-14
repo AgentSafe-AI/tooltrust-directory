@@ -8,12 +8,12 @@
 | **Risk Score** | 65 |
 | **Version** | `1.0.75` |
 | **Vendor** | mksglu |
-| **Stars** | ⭐ 7085 |
+| **Stars** | ⭐ 7158 |
 | **npm Package** | `context-mode` |
-| **npm Downloads (30d)** | 49.4k |
+| **npm Downloads (30d)** | 47.8k |
 | **Language** | TypeScript |
 | **Source** | [context-mode](https://github.com/mksglu/context-mode) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-14 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -23,12 +23,24 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 2 |
-| High     | 9 |
+| High     | 10 |
 | Medium   | 5 |
 | Low      | 7 |
 | Info     | 0 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at v1.0.75: 1 tool(s) added, 0 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

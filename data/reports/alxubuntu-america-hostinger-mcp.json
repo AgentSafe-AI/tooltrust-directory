@@ -3,17 +3,34 @@
   "version": "0.1.23",
   "grade": "D",
   "risk_score": 63,
-  "scan_date": "2026-04-13T02:21:08.99191424Z",
+  "scan_date": "2026-04-14T02:17:25.200693819Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/alxubuntu/america-hostinger-mcp",
   "category": "Developer Tools",
   "vendor": "alxubuntu",
   "npm_package": "hostinger-api-mcp",
-  "npm_downloads_monthly": 9689,
+  "npm_downloads_monthly": 9852,
   "license": "MIT",
   "language": "JavaScript",
   "description": "This MCP server provides a reliable, scalable, and standards-compliant infrastructure for applications operating across the Americas",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.23: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "reach_createNewContactsV1"
+        ],
+        "removed": [
+          "billing_createServiceOrderV1",
+          "reach_createANewProfileContactV1"
+        ],
+        "version": "0.1.23"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -61,30 +78,6 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "hosting_deployStaticWebsite"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "billing_createServiceOrderV1"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "billing_createServiceOrderV1"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "billing_createServiceOrderV1"
     },
     {
       "id": "AS-002",
@@ -444,7 +437,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "reach_createANewProfileContactV1"
+      "tool_name": "reach_createNewContactsV1"
     },
     {
       "id": "AS-002",
@@ -1049,9 +1042,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 29,
-    "medium": 52,
-    "low": 48,
+    "high": 30,
+    "medium": 51,
+    "low": 46,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -1126,7 +1119,6 @@
     "VPS_updateFirewallRuleV1",
     "VPS_updatePostInstallScriptV1",
     "VPS_updateProjectV1",
-    "billing_createServiceOrderV1",
     "billing_deletePaymentMethodV1",
     "billing_disableAutoRenewalV1",
     "billing_enableAutoRenewalV1",
@@ -1166,7 +1158,7 @@
     "hosting_verifyDomainOwnershipV1",
     "reach_createANewContactSegmentV1",
     "reach_createANewContactV1",
-    "reach_createANewProfileContactV1",
+    "reach_createNewContactsV1",
     "reach_deleteAContactV1",
     "reach_getSegmentDetailsV1",
     "reach_listContactGroupsV1",
@@ -1279,17 +1271,6 @@
       "tool_name": "billing_getCatalogItemListV1",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "billing_createServiceOrderV1",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -1712,7 +1693,7 @@
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "reach_createANewProfileContactV1",
+      "tool_name": "reach_createNewContactsV1",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -1793,8 +1774,7 @@
       ],
       "destinations": [
         "hardcoded domain: docker-compose.yaml",
-        "hardcoded domain: github.com",
-        "hardcoded domain: ndocker-compose.yaml"
+        "hardcoded domain: github.com"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -2314,6 +2294,12 @@
     },
     {
       "scan_date": "2026-04-12T02:17:20Z",
+      "grade": "D",
+      "risk_score": 63,
+      "version": "0.1.23"
+    },
+    {
+      "scan_date": "2026-04-13T02:21:08Z",
       "grade": "D",
       "risk_score": 63,
       "version": "0.1.23"

@@ -3,18 +3,32 @@
   "version": "1.0.75",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-04-13T02:04:02.506417712Z",
+  "scan_date": "2026-04-14T01:59:34.870103532Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/mksglu/context-mode",
   "category": "Developer Tools",
   "vendor": "mksglu",
-  "stars": 7085,
+  "stars": 7158,
   "npm_package": "context-mode",
-  "npm_downloads_monthly": 49443,
+  "npm_downloads_monthly": 47793,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 12 platforms",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.75: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ctx_insight"
+        ],
+        "removed": null,
+        "version": "1.0.75"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -202,7 +216,7 @@
   ],
   "summary": {
     "critical": 2,
-    "high": 9,
+    "high": 10,
     "medium": 5,
     "low": 7,
     "info": 0
@@ -215,6 +229,7 @@
     "ctx_execute_file",
     "ctx_fetch_and_index",
     "ctx_index",
+    "ctx_insight",
     "ctx_purge",
     "ctx_search",
     "ctx_stats",
@@ -334,6 +349,13 @@
       "grade": "A",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "ctx_insight",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -375,6 +397,12 @@
     },
     {
       "scan_date": "2026-04-12T02:00:11Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "1.0.75"
+    },
+    {
+      "scan_date": "2026-04-13T02:04:02Z",
       "grade": "D",
       "risk_score": 65,
       "version": "1.0.75"

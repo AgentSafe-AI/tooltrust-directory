@@ -1,0 +1,52 @@
+{
+  "tool_id": "fortytwo-fortytwo-mcp",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-14T02:14:23.625228974Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/fortytwo/fortytwo-mcp",
+  "vendor": "Smithery",
+  "description": "Ask Fortytwo high-complexity questions where the best answer is required — coding, architecture, hard reasoning, and more. Request Fortytwo MCP `tools/call` for `ask_fortytwo_prime` through the payment-gated gateway, which uses the extended x402 payment protocol with on-chain escrow to enable usage-based, pay-per-token billing for AI services. This requires access to a web3 wallet with USDC on Base or Monad. The first call triggers a payment challenge; subsequent calls within the same session are free.",
+  "findings": [
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "ask_fortytwo_prime"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ask_fortytwo_prime"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "ask_fortytwo_prime"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "ask_fortytwo_prime",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (max_tokens)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

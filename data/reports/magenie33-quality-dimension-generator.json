@@ -1,9 +1,9 @@
 {
   "tool_id": "magenie33-quality-dimension-generator",
   "version": "1.0.0",
-  "grade": "D",
-  "risk_score": 57,
-  "scan_date": "2026-04-13T02:21:00.673208164Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-14T02:17:20.695271039Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/magenie33/quality-dimension-generator",
   "category": "Developer Tools",
@@ -16,15 +16,10 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 3 tool(s) added, 6 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 6 tool(s) added, 3 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "compare_models",
-          "optimize_prompt",
-          "score_prompt"
-        ],
-        "removed": [
           "create-collection",
           "generate-ai-video",
           "generate-blaze-image",
@@ -32,8 +27,21 @@
           "image-to-svg",
           "list-collections"
         ],
+        "removed": [
+          "compare_models",
+          "optimize_prompt",
+          "score_prompt"
+        ],
         "version": "1.0.0"
       }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-collection"
     },
     {
       "id": "AS-014",
@@ -41,31 +49,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "score_prompt"
+      "tool_name": "create-collection"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "optimize_prompt"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "optimize_prompt"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "optimize_prompt"
+      "tool_name": "generate-ai-video"
     },
     {
       "id": "AS-011",
@@ -73,7 +65,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "optimize_prompt"
+      "tool_name": "generate-ai-video"
     },
     {
       "id": "AS-014",
@@ -81,15 +73,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "optimize_prompt"
+      "tool_name": "generate-ai-video"
     },
     {
-      "id": "AS-010",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "generate-blaze-image"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "generate-spark-image"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "compare_models"
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "image-to-svg"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "image-to-svg"
     },
     {
       "id": "AS-014",
@@ -97,50 +113,88 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_models"
+      "tool_name": "image-to-svg"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list-collections"
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 4,
-    "medium": 0,
-    "low": 1,
-    "info": 3
+    "critical": 0,
+    "high": 3,
+    "medium": 1,
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compare_models",
-    "optimize_prompt",
-    "score_prompt"
+    "create-collection",
+    "generate-ai-video",
+    "generate-blaze-image",
+    "generate-spark-image",
+    "image-to-svg",
+    "list-collections"
   ],
   "tool_contexts": [
     {
-      "tool_name": "score_prompt",
+      "tool_name": "create-collection",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "generate-ai-video",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (imageUrl)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "generate-blaze-image",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "optimize_prompt",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "tool_name": "generate-spark-image",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "image-to-svg",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands"
+        "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: pqs.onchainintel.net"
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compare_models",
+      "tool_name": "list-collections",
       "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "hardcoded domain: pqs.onchainintel.net"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -156,6 +210,12 @@
       "scan_date": "2026-04-12T02:17:14Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-13T02:21:00Z",
+      "grade": "D",
+      "risk_score": 57,
       "version": "1.0.0"
     }
   ]
