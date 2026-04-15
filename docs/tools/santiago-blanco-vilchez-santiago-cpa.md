@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [santiago-blanco-vilchez-santiago-cpa](https://smithery.ai/server/santiago.blanco.vilchez/santiago-cpa) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

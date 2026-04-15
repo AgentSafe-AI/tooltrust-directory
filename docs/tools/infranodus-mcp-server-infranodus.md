@@ -8,12 +8,12 @@
 | **Risk Score** | 32 |
 | **Version** | `1.6.1` |
 | **Vendor** | infranodus |
-| **Stars** | ⭐ 80 |
+| **Stars** | ⭐ 81 |
 | **npm Package** | `infranodus-mcp-server` |
 | **npm Downloads (30d)** | 1.2k |
 | **Language** | TypeScript |
 | **Source** | [infranodus-mcp-server-infranodus](https://github.com/infranodus/mcp-server-infranodus) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

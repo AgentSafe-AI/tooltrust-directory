@@ -12,7 +12,7 @@ Kezelje és kérdezze le a magyar számlaadatokat közvetlenül a Nemzeti Adó- 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aiamindennapokban-nav-online-invoice-mcp](https://smithery.ai/server/aiamindennapokban/nav-online-invoice-mcp) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

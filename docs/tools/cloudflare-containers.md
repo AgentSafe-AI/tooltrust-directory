@@ -8,12 +8,12 @@
 | **Risk Score** | 8 |
 | **Version** | `0.3.0` |
 | **Vendor** | cloudflare |
-| **Stars** | ⭐ 245 |
+| **Stars** | ⭐ 246 |
 | **npm Package** | `@cloudflare/containers` |
-| **npm Downloads (30d)** | 769.3k |
+| **npm Downloads (30d)** | 791.0k |
 | **Language** | TypeScript |
 | **Source** | [cloudflare-containers](https://github.com/cloudflare/containers) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

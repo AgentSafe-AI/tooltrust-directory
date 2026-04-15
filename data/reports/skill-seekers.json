@@ -3,12 +3,12 @@
   "version": "3.3.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-14T01:59:02.353187517Z",
+  "scan_date": "2026-04-15T01:56:50.617182503Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/yusufkaraaslan/Skill_Seekers",
   "category": "Developer Tools",
   "vendor": "yusufkaraaslan",
-  "stars": 12747,
+  "stars": 12781,
   "license": "MIT",
   "language": "Python",
   "description": "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection",
@@ -17,18 +17,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.3.0: 2 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v3.3.0: 4 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get_skill_detail",
-          "list_installed_skills"
-        ],
-        "removed": [
           "get_publisher_info",
           "get_skill_details",
           "get_trending_skills",
           "list_categories"
+        ],
+        "removed": [
+          "get_skill_detail",
+          "list_installed_skills"
         ],
         "version": "3.3.0"
       }
@@ -63,7 +63,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_skill_detail"
+      "tool_name": "get_skill_details"
     },
     {
       "id": "AS-014",
@@ -71,7 +71,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_installed_skills"
+      "tool_name": "list_categories"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_trending_skills"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_publisher_info"
     }
   ],
   "summary": {
@@ -79,12 +95,14 @@
     "high": 2,
     "medium": 0,
     "low": 1,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_skill_detail",
-    "list_installed_skills",
+    "get_publisher_info",
+    "get_skill_details",
+    "get_trending_skills",
+    "list_categories",
     "search_skills"
   ],
   "tool_contexts": [
@@ -95,26 +113,34 @@
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "hardcoded domain: skills-hub.ai"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_skill_detail",
+      "tool_name": "get_skill_details",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_installed_skills",
+      "tool_name": "list_categories",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: skills-hub.ai"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_trending_skills",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_publisher_info",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -134,6 +160,12 @@
     },
     {
       "scan_date": "2026-04-13T02:03:31Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "3.3.0"
+    },
+    {
+      "scan_date": "2026-04-14T01:59:02Z",
       "grade": "B",
       "risk_score": 17,
       "version": "3.3.0"

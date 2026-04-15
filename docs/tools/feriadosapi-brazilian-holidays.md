@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [feriadosapi-brazilian-holidays](https://smithery.ai/server/feriadosapi/brazilian-holidays) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

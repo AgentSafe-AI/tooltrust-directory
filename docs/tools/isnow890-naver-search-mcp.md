@@ -8,12 +8,12 @@
 | **Risk Score** | 29 |
 | **Version** | `1.0.47` |
 | **Vendor** | isnow890 |
-| **Stars** | ⭐ 59 |
+| **Stars** | ⭐ 60 |
 | **npm Package** | `@isnow890/naver-search-mcp` |
-| **npm Downloads (30d)** | 577 |
+| **npm Downloads (30d)** | 572 |
 | **Language** | JavaScript |
 | **Source** | [isnow890-naver-search-mcp](https://github.com/isnow890/naver-search-mcp) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

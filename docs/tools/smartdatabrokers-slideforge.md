@@ -21,7 +21,7 @@ Free $3 trial on signup. No subscription. Pay per slide. OAuth 2.1 for zero-conf
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smartdatabrokers-slideforge](https://smithery.ai/server/smartdatabrokers/slideforge) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -31,24 +31,12 @@ Free $3 trial on signup. No subscription. Pay per slide. OAuth 2.1 for zero-conf
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 11 |
+| High     | 10 |
 | Medium   | 2 |
 | Low      | 9 |
 | Info     | 26 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 13 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 

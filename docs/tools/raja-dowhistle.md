@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [raja-dowhistle](https://smithery.ai/server/raja/dowhistle) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

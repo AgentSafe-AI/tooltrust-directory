@@ -3,18 +3,32 @@
   "version": "2.1.6",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-04-14T02:00:39.654998323Z",
+  "scan_date": "2026-04-15T01:58:27.45081648Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/chrisryugj/korean-law-mcp",
   "category": "Developer Tools",
   "vendor": "chrisryugj",
-  "stars": 1401,
+  "stars": 1415,
   "npm_package": "korean-law-mcp",
-  "npm_downloads_monthly": 6164,
+  "npm_downloads_monthly": 6487,
   "license": "MIT",
   "language": "TypeScript",
-  "description": "국가법령정보MCP | 법제처 41개 API → 14개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 | 41 Korean legal APIs → 14 MCP tools",
+  "description": "국가법령정보MCP | 법제처 41개 API → 15개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 | 41 Korean legal APIs → 15 MCP tools",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.1.6: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_annexes"
+        ],
+        "removed": null,
+        "version": "2.1.6"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -46,6 +60,14 @@
       "description": "input parameter \"apiKey\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_law_text"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_annexes"
     },
     {
       "id": "AS-010",
@@ -202,7 +224,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 17,
+    "high": 19,
     "medium": 1,
     "low": 5,
     "info": 0
@@ -219,6 +241,7 @@
     "chain_procedure_detail",
     "discover_tools",
     "execute_tool",
+    "get_annexes",
     "get_decision_text",
     "get_law_text",
     "search_decisions",
@@ -237,6 +260,13 @@
     },
     {
       "tool_name": "get_law_text",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_annexes",
       "action": "ALLOW",
       "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
@@ -381,6 +411,12 @@
     },
     {
       "scan_date": "2026-04-13T02:05:12Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "2.1.6"
+    },
+    {
+      "scan_date": "2026-04-14T02:00:39Z",
       "grade": "C",
       "risk_score": 32,
       "version": "2.1.6"

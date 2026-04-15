@@ -94,7 +94,7 @@ Cart actions — handling all three action types
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [product-intelligence-shoptera](https://smithery.ai/server/product_intelligence/shoptera) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

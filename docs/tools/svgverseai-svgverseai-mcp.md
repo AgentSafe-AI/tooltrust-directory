@@ -21,7 +21,7 @@ MCP (Model Context Protocol) integration makes it easy for developers and AI pla
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [svgverseai-svgverseai-mcp](https://smithery.ai/server/Svgverseai/svgverseai-mcp) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-15 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -1,14 +1,15 @@
 {
   "tool_id": "haomingkoo-japan-seasons-mcp",
-  "version": "0.4.11",
+  "version": "0.4.13",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-14T02:15:35.328427616Z",
+  "scan_date": "2026-04-15T02:11:51.013472439Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/haomingkoo/japan-seasons-mcp",
   "category": "Developer Tools",
   "vendor": "haomingkoo",
   "npm_package": "japan-seasons-mcp",
+  "npm_downloads_monthly": 1922,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Cherry blossom \u0026 autumn leaves forecast for Japan. 1,700+ spots with real-time bloom data, weather, and trip planning",
@@ -19,7 +20,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "sakura.spots"
+      "tool_name": "sakura_spots"
     },
     {
       "id": "AS-002",
@@ -27,7 +28,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "flowers.spots"
+      "tool_name": "flowers_spots"
     },
     {
       "id": "AS-011",
@@ -35,7 +36,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "flowers.spots"
+      "tool_name": "flowers_spots"
     },
     {
       "id": "AS-002",
@@ -43,7 +44,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "festivals.list"
+      "tool_name": "festivals_list"
     },
     {
       "id": "AS-011",
@@ -51,7 +52,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "festivals.list"
+      "tool_name": "festivals_list"
     }
   ],
   "summary": {
@@ -63,152 +64,110 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "festivals.list",
-    "flowers.spots",
-    "fruit.farms",
-    "fruit.seasons",
-    "kawazu.forecast",
-    "koyo.best_dates",
-    "koyo.forecast",
-    "koyo.spots",
-    "sakura.best_dates",
-    "sakura.forecast",
-    "sakura.spots",
-    "weather.forecast"
+    "festivals_list",
+    "flowers_spots",
+    "fruit_farms",
+    "fruit_seasons",
+    "kawazu_forecast",
+    "koyo_best_dates",
+    "koyo_forecast",
+    "koyo_spots",
+    "sakura_best_dates",
+    "sakura_forecast",
+    "sakura_spots",
+    "weather_forecast"
   ],
   "tool_contexts": [
     {
-      "tool_name": "sakura.forecast",
+      "tool_name": "sakura_forecast",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: sakura.forecast",
-        "hardcoded domain: sakura.spots"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "sakura.spots",
+      "tool_name": "sakura_spots",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "reads_files"
       ],
-      "destinations": [
-        "hardcoded domain: sakura.forecast",
-        "hardcoded domain: sakura.spots"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "sakura.best_dates",
+      "tool_name": "sakura_best_dates",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: kawazu.forecast"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "kawazu.forecast",
+      "tool_name": "kawazu_forecast",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: kawazu.forecast"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "koyo.forecast",
+      "tool_name": "koyo_forecast",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: koyo.forecast",
-        "hardcoded domain: koyo.spots"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "koyo.spots",
+      "tool_name": "koyo_spots",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: koyo.forecast",
-        "hardcoded domain: koyo.spots"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "koyo.best_dates",
+      "tool_name": "koyo_best_dates",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: koyo.spots"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "weather.forecast",
+      "tool_name": "weather_forecast",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: weather.forecast"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "flowers.spots",
+      "tool_name": "flowers_spots",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "hardcoded domain: flowers.spots"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "fruit.seasons",
+      "tool_name": "fruit_seasons",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: fruit.farms",
-        "hardcoded domain: fruit.seasons"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "festivals.list",
+      "tool_name": "festivals_list",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "hardcoded domain: festivals.list"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "fruit.farms",
+      "tool_name": "fruit_farms",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: fruit.farms",
-        "hardcoded domain: fruit.seasons"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -228,6 +187,12 @@
     },
     {
       "scan_date": "2026-04-13T02:19:18Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.4.11"
+    },
+    {
+      "scan_date": "2026-04-14T02:15:35Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.4.11"

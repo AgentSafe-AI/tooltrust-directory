@@ -3,65 +3,12 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-04-13T02:20:32.835837547Z",
+  "scan_date": "2026-04-15T02:13:10.556858769Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/binance-th-mcp",
   "vendor": "Smithery",
   "description": "MCP server for Binance Thailand (Gulf Binance) API — trade crypto, monitor markets, and manage your account.\n\n  ## Features\n  - Real-time market data: prices, order books, candlesticks, 24hr stats (no API key needed)\n  - Place and manage orders: LIMIT, MARKET, STOP_LOSS, TAKE_PROFIT, and more\n  - Account management: balances, trade history, fee rates\n  - Wallet operations: deposits, withdrawals, address management\n  - Sub-account transfers and user data stream management\n  - HMAC SHA256 signed requests for secure trading\n\n  ## 27 Tools\n\n  **General (3)**: server time, exchange info, symbol types (GLOBAL vs SITE/Thailand)\n  **Market Data (7)**: order book, recent trades, aggregate trades, klines/candlesticks, 24hr ticker, price ticker, book\n   ticker\n  **Account (3)**: account info/balances, trade history, trade fees\n  **Orders (6)**: place order, query order, cancel order, open orders, all orders, cancel all orders\n  **Wallet (4)**: withdraw, deposit address, deposit history, withdraw history\n  **SubAccount (1)**: transfer between sub-accounts\n  **User Data Stream (3)**: create, keepalive, close listen key\n\n  ## Configuration\n  - BINANCE_TH_API_KEY — API key from https://www.binance.th (API Management)\n  - BINANCE_TH_SECRET_KEY — Secret key for HMAC signing\n\n  ⚠️ WARNING: No testnet. All trading and withdrawals use real money.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 27 tool(s) added, 12 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "bth_account_info",
-          "bth_aggregate_trades",
-          "bth_all_orders",
-          "bth_book_ticker",
-          "bth_cancel_all_orders",
-          "bth_cancel_order",
-          "bth_close_listen_key",
-          "bth_create_listen_key",
-          "bth_deposit_address",
-          "bth_deposit_history",
-          "bth_exchange_info",
-          "bth_keepalive_listen_key",
-          "bth_klines",
-          "bth_new_order",
-          "bth_open_orders",
-          "bth_order_book",
-          "bth_query_order",
-          "bth_recent_trades",
-          "bth_server_time",
-          "bth_sub_account_transfer",
-          "bth_symbol_type",
-          "bth_ticker_24hr",
-          "bth_ticker_price",
-          "bth_trade_fee",
-          "bth_trade_list",
-          "bth_withdraw",
-          "bth_withdraw_history"
-        ],
-        "removed": [
-          "get_24hr_ticker",
-          "get_aggregate_trades",
-          "get_avg_price",
-          "get_book_ticker",
-          "get_historical_trades",
-          "get_klines",
-          "get_order_book",
-          "get_price",
-          "get_recent_trades",
-          "get_rolling_window_ticker",
-          "get_trading_day_ticker",
-          "get_ui_klines"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -353,7 +300,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 4,
     "medium": 2,
     "low": 3,
     "info": 27
@@ -617,6 +564,12 @@
       "scan_date": "2026-04-12T02:16:01Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-13T02:20:32Z",
+      "grade": "C",
+      "risk_score": 40,
       "version": "smithery"
     }
   ]
