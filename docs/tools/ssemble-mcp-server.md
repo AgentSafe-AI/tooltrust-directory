@@ -13,7 +13,7 @@ Works with Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, and any MCP-c
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ssemble-mcp-server](https://smithery.ai/server/ssemble/mcp-server) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

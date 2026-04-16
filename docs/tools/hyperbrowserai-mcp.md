@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 2.2k |
 | **Language** | TypeScript |
 | **Source** | [hyperbrowserai-mcp](https://github.com/hyperbrowserai/mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

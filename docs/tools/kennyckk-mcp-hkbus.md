@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kennyckk-mcp-hkbus](https://smithery.ai/server/kennyckk/mcp_hkbus) |
-| **Scan Date** | 2026-04-12 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

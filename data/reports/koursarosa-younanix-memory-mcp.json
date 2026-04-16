@@ -1,0 +1,68 @@
+{
+  "tool_id": "koursarosa-younanix-memory-mcp",
+  "version": "smithery",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-16T02:25:24.392527824Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/KoursarosA/younanix-memory-mcp",
+  "vendor": "Smithery",
+  "description": "Younanix Memory MCP gives autonomous AI agents access to real-world engineering memory from actual incidents (Slack threads + GitHub issues in Supabase, TRPC, Drizzle, Rails, Node.js etc).  \n\nNatural language tool: query_lessons (search for problems, root causes, solutions). Structured output: {problem, root_cause, lesson_learned, confidence (80-100%), category, tags}.  \n\nFree preview: 1 query/hour (degraded results). Full access: $0.10/query via x402/USDC micropayments (permissionless, no API keys needed).  \n\n1000+ lessons live, auto-growing from public repos. Connect once in Cursor/Claude Desktop/Windsurf → your agent auto-queries high-confidence fixes without hallucinations. Perfect for debugging, performance, security, reliability in real stacks.  \n\nSite: https://www.younanix.com",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "query_lessons"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "query_lessons"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "query_lessons"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "query_lessons"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 1,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "query_lessons"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "query_lessons",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -10,10 +10,10 @@
 | **Vendor** | mapbox |
 | **Stars** | ⭐ 331 |
 | **npm Package** | `@mapbox/mcp-server` |
-| **npm Downloads (30d)** | 18.5k |
+| **npm Downloads (30d)** | 18.4k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server](https://github.com/mapbox/mcp-server) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -3,23 +3,47 @@
   "version": "sha-51ebf3aa13d9",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-15T01:57:51.392634949Z",
+  "scan_date": "2026-04-16T02:12:10.418968111Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/blazickjp/arxiv-mcp-server",
   "category": "Developer Tools",
   "vendor": "blazickjp",
-  "stars": 2535,
+  "stars": 2539,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "A Model Context Protocol server for searching and analyzing arXiv papers",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-51ebf3aa13d9: 2 tool(s) added, 8 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_paper",
+          "search_papers"
+        ],
+        "removed": [
+          "arxiv_cache_stats",
+          "arxiv_download_and_extract",
+          "arxiv_get_citations",
+          "arxiv_get_paper",
+          "arxiv_get_papers_batch",
+          "arxiv_get_references",
+          "arxiv_list_categories",
+          "arxiv_search_papers"
+        ],
+        "version": "sha-51ebf3aa13d9"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "arxiv_search_papers"
+      "tool_name": "search_papers"
     },
     {
       "id": "AS-002",
@@ -27,7 +51,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "arxiv_search_papers"
+      "tool_name": "search_papers"
     },
     {
       "id": "AS-011",
@@ -35,7 +59,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "arxiv_search_papers"
+      "tool_name": "search_papers"
     },
     {
       "id": "AS-014",
@@ -43,23 +67,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_search_papers"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "arxiv_get_paper"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "arxiv_get_paper"
+      "tool_name": "search_papers"
     },
     {
       "id": "AS-014",
@@ -67,159 +75,37 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_get_paper"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_get_papers_batch"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "arxiv_download_and_extract"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "arxiv_download_and_extract"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_download_and_extract"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_get_references"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_get_citations"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_list_categories"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "arxiv_cache_stats"
+      "tool_name": "get_paper"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 2,
     "medium": 1,
-    "low": 3,
-    "info": 8
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "arxiv_cache_stats",
-    "arxiv_download_and_extract",
-    "arxiv_get_citations",
-    "arxiv_get_paper",
-    "arxiv_get_papers_batch",
-    "arxiv_get_references",
-    "arxiv_list_categories",
-    "arxiv_search_papers"
+    "get_paper",
+    "search_papers"
   ],
   "tool_contexts": [
     {
-      "tool_name": "arxiv_search_papers",
+      "tool_name": "search_papers",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (date_to)",
-        "hardcoded domain: cs.LG"
+        "hardcoded domain: cs.CL"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "arxiv_get_paper",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: arXiv.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "arxiv_get_papers_batch",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "arxiv_download_and_extract",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "arxiv_get_references",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "arxiv_get_citations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "arxiv_list_categories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "arxiv_cache_stats",
+      "tool_name": "get_paper",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -277,6 +163,12 @@
     },
     {
       "scan_date": "2026-04-13T02:04:33Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "sha-51ebf3aa13d9"
+    },
+    {
+      "scan_date": "2026-04-15T01:57:51Z",
       "grade": "C",
       "risk_score": 25,
       "version": "sha-51ebf3aa13d9"

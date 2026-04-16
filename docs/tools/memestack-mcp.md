@@ -23,7 +23,7 @@ Streamable HTTP at `https://mcp.memestack.ai/mcp`
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [memestack-mcp](https://smithery.ai/server/memestack/mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

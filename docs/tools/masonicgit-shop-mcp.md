@@ -17,7 +17,7 @@ This is, we believe, the most important development in AI since the GPU.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [masonicgit-shop-mcp](https://smithery.ai/server/masonicgit/shop-mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

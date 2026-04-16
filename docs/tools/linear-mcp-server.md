@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.1.0` |
 | **Vendor** | jerhadf |
-| **Stars** | ⭐ 345 |
+| **Stars** | ⭐ 344 |
 | **npm Package** | `linear-mcp-server` |
-| **npm Downloads (30d)** | 4.4k |
+| **npm Downloads (30d)** | 4.5k |
 | **Language** | JavaScript |
 | **Source** | [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

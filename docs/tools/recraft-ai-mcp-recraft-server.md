@@ -8,12 +8,12 @@
 | **Risk Score** | 8 |
 | **Version** | `1.6.5` |
 | **Vendor** | recraft-ai |
-| **Stars** | ⭐ 51 |
+| **Stars** | ⭐ 53 |
 | **npm Package** | `@recraft-ai/mcp-recraft-server` |
-| **npm Downloads (30d)** | 765 |
+| **npm Downloads (30d)** | 748 |
 | **Language** | TypeScript |
 | **Source** | [recraft-ai-mcp-recraft-server](https://github.com/recraft-ai/mcp-recraft-server) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

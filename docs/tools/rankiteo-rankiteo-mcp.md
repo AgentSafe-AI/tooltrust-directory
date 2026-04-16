@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rankiteo-rankiteo-mcp](https://smithery.ai/server/rankiteo/rankiteo-mcp) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | jason-tan-swe |
 | **Stars** | ⭐ 72 |
 | **npm Package** | `@jasontanswe/railway-mcp` |
-| **npm Downloads (30d)** | 791 |
+| **npm Downloads (30d)** | 743 |
 | **Language** | TypeScript |
 | **Source** | [jason-tan-swe-railway-mcp](https://github.com/jason-tan-swe/railway-mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

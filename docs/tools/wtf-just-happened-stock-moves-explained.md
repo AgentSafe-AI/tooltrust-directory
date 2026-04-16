@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [wtf-just-happened-stock-moves-explained](https://smithery.ai/server/wtf-just-happened/stock-moves-explained) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

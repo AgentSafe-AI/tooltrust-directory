@@ -1,0 +1,200 @@
+{
+  "tool_id": "letsfg",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-04-16T02:26:33.95672207Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/letsfg",
+  "vendor": "Smithery",
+  "description": "Agent-native flight search. 102 airline connectors fire in parallel — Ryanair, EasyJet, Wizz Air, Southwest, AirAsia, Qantas, and 96 more — plus enterprise GDS/NDC providers (Amadeus, Duffel, Sabre, Travelport) through the LetsFG backend. One tool call scans the entire world for flights, including airlines your agent didn't know existed.\n\nYour agent doesn't need to build a flight integration. It doesn't need to scrape. Just add this MCP server and it can search and book flights in seconds.\n\n### Why?\n\nFlight websites inflate prices with demand tracking, cookie-based pricing, and surge markup. The same flight is often **$20–$50 cheaper** through LetsFG — raw airline price, zero markup.\n\n### How it works\n\n`search_flights` fires all relevant connectors in parallel on your machine + queries enterprise GDS sources in the cloud. Results come back merged, deduplicated, sorted by price. ~5 seconds for a full global search.\n\n### Tools\n\n| Tool | What it does | Cost |\n|------|-------------|------|\n| `search_flights` | Search 400+ airlines | Free |\n| `search_hotels` | Search hotels worldwide | Free |\n| `resolve_location` | City/airport → IATA code | Free |\n| `get_agent_profile` | Your usage \u0026 profile | Free |\n| `unlock_flight_offer` | Confirm live price, reserve 30 min | Free |\n| `setup_payment` | Attach Stripe payment | Free |\n| `book_flight` | Book with real PNR + e-ticket | Ticket price only |\n\n**Search is free forever. Booking charges the raw airline ticket price via Stripe — we add zero margin.**\n\n`LETSFG_API_KEY` is optional. Without it, the server runs all 102 local connectors. With it, you also get 400+ airlines via enterprise GDS/NDC sources.\n\n### Pricing\n\n- **Personal use** — completely free. Search, unlock, book. No limits.\n- **Commercial use** — 1% fee (min $1 USD) per booking, collected via Stripe Connect. Search and unlock are still free.\n- **First 1,000 GitHub stars** — star the repo and link your GitHub username to get free unlimited access (personal \u0026 commercial). No trial, no catch.\n\n### Links\n\n- **GitHub:** [github.com/LetsFG/LetsFG](https://github.com/LetsFG/LetsFG) — full docs, 102 connector source code, architecture guide, agent integration tutorials\n- **API Docs:** [api.letsfg.co/docs](https://api.letsfg.co/docs)\n- **PyPI:** [pypi.org/project/letsfg](https://pypi.org/project/letsfg/)\n- **npm:** [npmjs.com/package/letsfg-mcp](https://www.npmjs.com/package/letsfg-mcp)",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "resolve_location"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "unlock_flight_offer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "book_flight"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "setup_payment"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "setup_payment"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "setup_payment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "setup_payment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_agent_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_agent_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "system_info"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 1,
+    "low": 3,
+    "info": 7
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "book_flight",
+    "get_agent_profile",
+    "resolve_location",
+    "search_flights",
+    "setup_payment",
+    "system_info",
+    "unlock_flight_offer"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_flights",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "resolve_location",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "unlock_flight_offer",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "book_flight",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (contact_email)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "setup_payment",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_agent_profile",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "system_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -10,10 +10,10 @@
 | **Vendor** | phuc-nt |
 | **Stars** | ⭐ 51 |
 | **npm Package** | `@phuc-nt/mcp-atlassian-server` |
-| **npm Downloads (30d)** | 342 |
+| **npm Downloads (30d)** | 339 |
 | **Language** | TypeScript |
 | **Source** | [phuc-nt-mcp-atlassian-server](https://github.com/phuc-nt/mcp-atlassian-server) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -3,74 +3,12 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-13T02:19:28.575181011Z",
+  "scan_date": "2026-04-16T02:28:36.276789803Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/gmail-mcp",
   "vendor": "Smithery",
   "description": "Manage your Gmail inbox � send and read emails, organize with labels, manage drafts and threads, handle attachments, and configure vacation auto-reply through 28 MCP tools.\n\n## Features\n\n- Send, read, and search emails with Gmail search syntax\n- Manage drafts (create, update, send)\n- Organize with labels (create, update, apply to messages)\n- Thread-based conversation management\n- Batch operations for bulk label changes and deletions\n- Attachment retrieval\n- Vacation auto-reply settings\n- Full OAuth 2.0 authentication with refresh tokens\n\n## 28 Tools\n\n**Messages (10)**: List, get, send, delete, trash, untrash, modify labels, batch delete, batch modify, get attachment\n\n**Drafts (6)**: List, get, create, update, delete, send\n\n**Labels (5)**: List, get, create, update, delete\n\n**Threads (5)**: List, get, modify labels, trash, untrash\n\n**Settings (2)**: Get profile, update vacation auto-reply\n\n## Configuration\n\n- `GOOGLE_CLIENT_ID` � OAuth 2.0 Client ID from Google Cloud Console\n- `GOOGLE_CLIENT_SECRET` � OAuth 2.0 Client Secret\n- `GOOGLE_REFRESH_TOKEN` � Refresh token with Gmail scope",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 28 tool(s) added, 20 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "gmail_batch_delete",
-          "gmail_batch_modify",
-          "gmail_create_draft",
-          "gmail_create_label",
-          "gmail_delete_draft",
-          "gmail_delete_label",
-          "gmail_delete_message",
-          "gmail_get_attachment",
-          "gmail_get_draft",
-          "gmail_get_label",
-          "gmail_get_message",
-          "gmail_get_profile",
-          "gmail_get_thread",
-          "gmail_list_drafts",
-          "gmail_list_labels",
-          "gmail_list_messages",
-          "gmail_list_threads",
-          "gmail_modify_message",
-          "gmail_modify_thread",
-          "gmail_send_draft",
-          "gmail_send_message",
-          "gmail_trash_message",
-          "gmail_trash_thread",
-          "gmail_untrash_message",
-          "gmail_untrash_thread",
-          "gmail_update_draft",
-          "gmail_update_label",
-          "gmail_update_vacation"
-        ],
-        "removed": [
-          "GMAIL_ADD_LABEL_TO_EMAIL",
-          "GMAIL_CREATE_EMAIL_DRAFT",
-          "GMAIL_CREATE_LABEL",
-          "GMAIL_DELETE_DRAFT",
-          "GMAIL_DELETE_MESSAGE",
-          "GMAIL_FETCH_EMAILS",
-          "GMAIL_FETCH_MESSAGE_BY_MESSAGE_ID",
-          "GMAIL_FETCH_MESSAGE_BY_THREAD_ID",
-          "GMAIL_GET_ATTACHMENT",
-          "GMAIL_GET_CONTACTS",
-          "GMAIL_GET_PEOPLE",
-          "GMAIL_GET_PROFILE",
-          "GMAIL_LIST_DRAFTS",
-          "GMAIL_LIST_LABELS",
-          "GMAIL_LIST_THREADS",
-          "GMAIL_MODIFY_THREAD_LABELS",
-          "GMAIL_MOVE_TO_TRASH",
-          "GMAIL_PATCH_LABEL",
-          "GMAIL_REMOVE_LABEL",
-          "GMAIL_REPLY_TO_THREAD"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -490,7 +428,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 10,
     "low": 13,
     "info": 28
@@ -816,6 +754,12 @@
       "scan_date": "2026-04-12T02:14:58Z",
       "grade": "C",
       "risk_score": 34,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-13T02:19:28Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]

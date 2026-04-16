@@ -10,7 +10,7 @@ message each other, collaborate on tasks, and share files via git.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [joincloud-joincloud](https://smithery.ai/server/joincloud/joincloud) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -68,7 +68,7 @@ Review and remediate the identified issue.
 **Severity:** High
 
 **Description:**
-input parameter "password" appears to accept a secret or credential
+input parameter "agentToken" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -80,7 +80,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "agentToken" appears to accept a secret or credential
+input parameter "password" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

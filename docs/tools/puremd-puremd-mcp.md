@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 192 |
 | **Language** | JavaScript |
 | **Source** | [puremd-puremd-mcp](https://github.com/puremd/puremd-mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

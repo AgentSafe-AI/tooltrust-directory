@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lucaperret-tidal](https://smithery.ai/server/lucaperret/tidal) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

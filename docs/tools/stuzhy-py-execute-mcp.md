@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [stuzhy-py-execute-mcp](https://smithery.ai/server/STUzhy/py_execute_mcp) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -11,7 +11,7 @@ Install command: `claude mcp add --transport stdio --scope user markview -- npx 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [markview-markview](https://smithery.ai/server/markview/markview) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

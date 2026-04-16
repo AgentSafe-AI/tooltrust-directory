@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jigsawstack-ai-web-scraper](https://smithery.ai/server/JigsawStack/ai-web-scraper) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

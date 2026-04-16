@@ -19,7 +19,7 @@ Enhance AI assistants with seamless PDF creation capabilities.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gen-pdf-mcp](https://smithery.ai/server/gen-pdf/mcp) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

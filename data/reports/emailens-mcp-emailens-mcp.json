@@ -1,0 +1,140 @@
+{
+  "tool_id": "emailens-mcp-emailens-mcp",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-04-16T02:26:35.007775461Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/emailens-mcp/emailens-mcp",
+  "vendor": "Smithery",
+  "description": "# @emailens/mcp\n\nMCP server for email compatibility analysis. Analyze, preview, diff, and fix HTML emails across 15 email clients — plus capture real screenshots and create shareable links with an optional API key.\n\nBuilt on [`@emailens/engine`](https://github.com/emailens/engine).\n\n## Install\n\n```bash\nnpx -y @emailens/mcp\n```\n\n## Setup\n\n### Claude Desktop\n\nAdd to `claude_desktop_config.json`:\n\n```json\n{\n  \"mcpServers\": {\n    \"emailens\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@emailens/mcp\"]\n    }\n  }\n}\n```\n\n### Claude Code\n\n```bash\nclaude mcp add emailens -- npx -y @emailens/mcp\n```\n\n### With API Key (optional — unlocks screenshots + sharing)\n\n```json\n{\n  \"mcpServers\": {\n    \"emailens\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@emailens/mcp\"],\n      \"env\": {\n        \"EMAILENS_API_KEY\": \"ek_live_...\"\n      }\n    }\n  }\n}\n```\n\nGet your free API key at [emailens.dev/settings/api-keys](https://emailens.dev/settings/api-keys).\n\n## Tools\n\n### Local Tools (no account needed)\n\n#### `preview_email`\n\nFull email compatibility preview — transforms HTML for 15 clients, analyzes CSS, generates scores, simulates dark mode, checks inbox preview and email size.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `html` | string | Yes | Email HTML source |\n| `clients` | string[] | No | Filter to specific client IDs |\n| `format` | enum | No | `\"html\"`, `\"jsx\"`, `\"mjml\"`, `\"maizzle\"` |\n\n#### `analyze_email`\n\nQuick CSS compatibility analysis — returns per-client scores and warnings. Faster than `audit_email` when you only need CSS compatibility.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `html` | string | Yes | Email HTML source |\n| `format` | enum | No | Input format |\n\n#### `audit_email`\n\nComprehensive quality audit — CSS compatibility, spam scoring, link validation, accessibility, images, inbox preview, size (Gmail clipping), and template variables.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `html` | string | Yes | Email HTML source |\n| `format` | enum | No | Input format |\n| `skip` | string[] | No | Checks to skip (e.g. `[\"spam\", \"images\"]`) |\n\n#### `fix_email`\n\nGenerate a structured fix prompt for compatibility issues. Returns markdown with fix instructions that the AI can apply directly.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `html` | string | Yes | Email HTML to fix |\n| `format` | enum | No | Controls fix syntax |\n| `scope` | enum | No | `\"all\"` or `\"current\"` |\n| `selectedClientId` | string | No | Client ID for scoped fixes |\n\n#### `list_clients`\n\nList all 15 supported email clients with IDs, names, engines, and dark mode support.\n\n#### `diff_emails`\n\nCompare two email HTML versions — shows score changes, fixed issues, and introduced issues per client.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `before` | string | Yes | Original email HTML |\n| `after` | string | Yes | Modified email HTML |\n| `format` | enum | No | Input format |\n\n#### `check_deliverability`\n\nCheck email deliverability for a domain — SPF, DKIM, DMARC, MX, BIMI records with a score and actionable issues.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `domain` | string | Yes | Domain to check (e.g. `\"company.com\"`) |\n\n### Hosted Tools (require `EMAILENS_API_KEY`)\n\n#### `capture_screenshots`\n\nCapture real email screenshots across 15 clients in real browsers. Screenshots are hosted on CDN.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `html` | string | Yes | Email HTML source |\n| `format` | enum | No | Input format |\n| `clients` | string[] | No | Filter clients |\n| `modes` | string[] | No | `[\"light\"]`, `[\"dark\"]`, or `[\"light\", \"dark\"]` |\n| `title` | string | No | Name for the preview |\n\nFree plan: 30 previews/day. [Sign up](https://emailens.dev?ref=mcp)\n\n#### `share_preview`\n\nCreate a shareable link. Recipients see the full analysis without an account.\n\n| Parameter | Type | Required | Description |\n|---|---|---|---|\n| `html` | string | Yes | Email HTML source |\n| `title` | string | No | Display title |\n| `format` | enum | No | Input format |\n\nRequires Dev plan ($9/mo). Share links expire after 7 days (Dev) or never (Pro).\n\n## Supported Email Clients (15)\n\n| Client | ID | Dark Mode | Notes |\n|---|---|---|---|\n| Gmail | `gmail-web` | Yes | |\n| Gmail Android | `gmail-android` | Yes | |\n| Gmail iOS | `gmail-ios` | Yes | |\n| Outlook 365 | `outlook-web` | Yes | |\n| Outlook Windows | `outlook-windows` | No | |\n| Outlook Windows Legacy | `outlook-windows-legacy` | No | Deprecated Oct 2026 |\n| Outlook iOS | `outlook-ios` | Yes | New in v0.4.0 |\n| Outlook Android | `outlook-android` | Yes | New in v0.4.0 |\n| Apple Mail | `apple-mail-macos` | Yes | |\n| Apple Mail iOS | `apple-mail-ios` | Yes | |\n| Yahoo Mail | `yahoo-mail` | Yes | |\n| Samsung Mail | `samsung-mail` | Yes | |\n| Thunderbird | `thunderbird` | No | |\n| HEY Mail | `hey-mail` | Yes | |\n| Superhuman | `superhuman` | Yes | |\n\n## Development\n\n```bash\nbun install\nbun run build\nbun test\nbun run typecheck\n```",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "preview_email"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "analyze_email"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "audit_email"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fix_email"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_clients"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "diff_emails"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_deliverability"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 7
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "analyze_email",
+    "audit_email",
+    "check_deliverability",
+    "diff_emails",
+    "fix_email",
+    "list_clients",
+    "preview_email"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "preview_email",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "analyze_email",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "audit_email",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fix_email",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_clients",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "diff_emails",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_deliverability",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: company.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

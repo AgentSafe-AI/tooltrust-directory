@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [canva](https://smithery.ai/server/canva) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -931,7 +931,7 @@ Review and remediate the identified issue.
 **Severity:** High
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "client_secret" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -943,7 +943,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "client_secret" appears to accept a secret or credential
+input parameter "token" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -1015,7 +1015,7 @@ Review and remediate the identified issue.
 **Severity:** High
 
 **Description:**
-input parameter "client_secret" appears to accept a secret or credential
+input parameter "token" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -1027,7 +1027,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "client_secret" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

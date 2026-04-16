@@ -8,11 +8,11 @@
 | **Risk Score** | 78 |
 | **Version** | `0.0.1` |
 | **Vendor** | jfrog |
-| **Stars** | ⭐ 114 |
+| **Stars** | ⭐ 115 |
 | **npm Package** | `mcp-jfrog` |
 | **Language** | TypeScript |
 | **Source** | [jfrog-mcp-jfrog](https://github.com/jfrog/mcp-jfrog) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -13,7 +13,7 @@ Por Fala, Zuki! — assistente financeiro pessoal no WhatsApp.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [falazuki-finance-br](https://smithery.ai/server/falazuki/finance-br) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

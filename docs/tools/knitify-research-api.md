@@ -14,7 +14,7 @@ All tools return typed JSON via outputSchema — not raw abstracts. 7 output lan
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [knitify-research-api](https://smithery.ai/server/knitify/research-api) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

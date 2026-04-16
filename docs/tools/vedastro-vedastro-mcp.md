@@ -23,7 +23,7 @@ All calculations use the **Raman Ayanamsa** system.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vedastro-vedastro-mcp](https://smithery.ai/server/vedastro/vedastro-mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

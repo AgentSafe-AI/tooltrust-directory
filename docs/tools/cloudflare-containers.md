@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 8 |
-| **Version** | `0.3.0` |
+| **Version** | `0.3.2` |
 | **Vendor** | cloudflare |
 | **Stars** | ⭐ 246 |
 | **npm Package** | `@cloudflare/containers` |
-| **npm Downloads (30d)** | 791.0k |
+| **npm Downloads (30d)** | 820.0k |
 | **Language** | TypeScript |
 | **Source** | [cloudflare-containers](https://github.com/cloudflare/containers) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-16 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
