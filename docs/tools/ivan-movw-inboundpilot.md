@@ -21,7 +21,7 @@ Pricing: from $39/month. 14-day free trial, no credit card required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ivan-movw-inboundpilot](https://smithery.ai/server/ivan-movw/inboundpilot) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

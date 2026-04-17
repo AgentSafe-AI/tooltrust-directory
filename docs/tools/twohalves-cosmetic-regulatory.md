@@ -1,21 +1,15 @@
 # 🟠 twohalves-cosmetic-regulatory
 
-> The most comprehensive cosmetic ingredient safety database available via MCP. Query 30,553 ingredients, 56,917 NOAEL toxicology studies, 68,540 pre-calculated Margin of Safety values across 20 SCCS product categories, and 8,898 sensitization assays.
-
-4 tools: • check_ingredient — Full safety profile by name, INCI, or CAS. Returns NOAEL, dermal absorption, MoS, sensitization, regulatory status across 55+ jurisdictions. • check_formula — Batch-check up to 50 ingredients for compliance. Flags restricted/banned substances with jurisdiction-specific rules. • search_ingredients — Search by keyword, function, or category. • calculate_mos — Compute Margin of Safety per SCCS Notes of Guidance methodology. Returns SED, MoS, and acceptability status with full traceability.
-
-Built on real SCCS opinion extractions, not QSAR predictions. Every value traceable to a primary source.
-
-rootsbybenda.com
+> Structured Safety Intelligence for cosmetic formulation. Query 38,411 NOAEL records, 68,540 pre-calculated Margin of Safety values, and 25,157 jurisdictional regulatory opinions across 12 markets (EU, US FDA, Korea MFDS, Japan MHLW, ASEAN, Saudi SFDA, Canada, Australia, ECHA SVHC, CA Prop 65, CA TFCA, WA TFCA). Tools: check_ingredient, check_formula, search_ingredients, calculate_mos. v1.1.0: every ingredient response includes full jurisdictional_profile across all 12 jurisdictions.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 25 |
+| **Risk Score** | 27 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [twohalves-cosmetic-regulatory](https://smithery.ai/server/twohalves/cosmetic-regulatory) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -25,12 +19,72 @@ rootsbybenda.com
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
-| Medium   | 1 |
-| Low      | 3 |
-| Info     | 3 |
+| High     | 4 |
+| Medium   | 2 |
+| Low      | 7 |
+| Info     | 4 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Low
+
+**Description:**
+tool declares http permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
@@ -110,6 +164,42 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 **Description:**
 tool declares db permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Low
+
+**Description:**
+tool declares http permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

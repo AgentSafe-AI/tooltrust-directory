@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [postman](https://smithery.ai/server/postman) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

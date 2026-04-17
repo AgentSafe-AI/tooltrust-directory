@@ -25,7 +25,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [andysalvo-agentic-platform](https://smithery.ai/server/andysalvo/agentic-platform) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

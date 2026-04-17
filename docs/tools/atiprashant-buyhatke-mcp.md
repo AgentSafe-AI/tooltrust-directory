@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [atiprashant-buyhatke-mcp](https://smithery.ai/server/atiprashant/buyhatke-mcp) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

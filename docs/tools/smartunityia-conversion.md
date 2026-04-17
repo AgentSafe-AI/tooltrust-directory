@@ -14,7 +14,7 @@ Un servidor MCP nativo para agentes que permite optimizar imágenes con un alto 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smartunityia-conversion](https://smithery.ai/server/smartunityia/conversion) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

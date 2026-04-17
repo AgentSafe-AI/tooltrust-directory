@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [saty-prasad-vsfclub](https://smithery.ai/server/saty.prasad/vsfclub) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

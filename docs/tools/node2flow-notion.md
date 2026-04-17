@@ -29,7 +29,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-notion](https://smithery.ai/server/node2flow/notion) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

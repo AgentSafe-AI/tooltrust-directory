@@ -13,7 +13,7 @@ Powered by x402 protocol on Base.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [easynode-x402](https://smithery.ai/server/easynode/x402) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

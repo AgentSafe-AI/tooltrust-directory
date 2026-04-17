@@ -19,7 +19,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xtomd-x-to-markdown](https://smithery.ai/server/xtomd/x-to-markdown) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

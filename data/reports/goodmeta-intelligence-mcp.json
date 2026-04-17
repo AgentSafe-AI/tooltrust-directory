@@ -3,17 +3,25 @@
   "version": "0.1.1",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-16T02:27:15.621562778Z",
+  "scan_date": "2026-04-17T02:14:54.091273453Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/goodmeta/intelligence-mcp",
   "category": "Developer Tools",
   "vendor": "goodmeta",
   "npm_package": "@goodmeta/intelligence-mcp",
-  "npm_downloads_monthly": 66,
+  "npm_downloads_monthly": 396,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server for agent payments ecosystem intelligence. Scan, classify, and score opportunities.",
   "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scan_opportunities"
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -29,6 +37,22 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "get_protocol_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_protocol_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compare_protocols"
     }
   ],
   "summary": {
@@ -36,7 +60,7 @@
     "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 0
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -49,8 +73,8 @@
       "tool_name": "scan_opportunities",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "get_protocol_info",
@@ -63,15 +87,23 @@
       "destinations": [
         "dynamic email recipient (protocol)"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "compare_protocols",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-16T02:27:15Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.1.1"
     }
   ]
 }

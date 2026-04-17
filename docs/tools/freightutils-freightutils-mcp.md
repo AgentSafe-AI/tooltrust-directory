@@ -1,6 +1,6 @@
 # 🟢 freightutils-freightutils-mcp
 
-> 16 free freight tools for AI agents — LDM/CBM/chargeable weight calculators (road, air, sea modes), multi-item consignment calculator, pallet fitting, container capacity, air cargo ULD reference (15+ types), vehicle & trailer types, ADR dangerous goods (2,939 entries), HS code lookup (6,940 codes), UK import duty & VAT estimator (live GOV.UK data), INCOTERMS 2020, airline codes (6,352), UN/LOCODE (116,129 locations), unit converter, plus composite shipment summary endpoint. Free REST APIs + MCP server.
+> 17 free freight tools for AI agents — LDM/CBM/chargeable weight calculators (road, air, sea modes), multi-item consignment calculator, pallet fitting, container capacity, air cargo ULD reference (15+ types), vehicle & trailer types, ADR dangerous goods (2,939 entries), ADR 1.1.3.6 exemption calculator, ADR LQ/EQ checker, HS code lookup (6,940 codes), UK import duty & VAT estimator (live GOV.UK data), INCOTERMS 2020, airline codes (6,352), UN/LOCODE (116,129 locations), unit converter, plus composite shipment summary endpoint. Free REST APIs + MCP server.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [freightutils-freightutils-mcp](https://smithery.ai/server/freightutils/freightutils-mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

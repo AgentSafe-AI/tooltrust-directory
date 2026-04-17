@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.9.10` |
 | **Vendor** | antvis |
-| **Stars** | ⭐ 3964 |
+| **Stars** | ⭐ 3970 |
 | **npm Package** | `@antv/mcp-server-chart` |
-| **npm Downloads (30d)** | 41.9k |
+| **npm Downloads (30d)** | 40.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-chart](https://github.com/antvis/mcp-server-chart) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

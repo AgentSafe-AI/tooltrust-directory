@@ -48,7 +48,7 @@ Flight websites inflate prices with demand tracking, cookie-based pricing, and s
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [letsfg](https://smithery.ai/server/letsfg) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

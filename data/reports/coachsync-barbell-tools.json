@@ -1,0 +1,109 @@
+{
+  "tool_id": "coachsync-barbell-tools",
+  "version": "smithery",
+  "grade": "B",
+  "risk_score": 12,
+  "scan_date": "2026-04-17T02:16:59.236849861Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/coachsync/barbell-tools",
+  "vendor": "Smithery",
+  "description": "**CoachSync MCP** provides barbell strength training tools for AI assistants. Built for coaches, lifters, and fitness apps that want to add structured programming to their AI workflows.\n\nNo API key required — connect and start using.\n\n## Tools\n\n### Warmup Calculator\nGenerate a Starting Strength-style warmup ramp for any barbell lift. Produces structured warmup sets with decreasing reps as weight increases, starting from the empty bar. Supports custom bar weights (women's bar, training bar) and rounding increments. Works for squat, bench, press, deadlift, and power clean.\n\n### Plate Loader\nCalculate which plates to load on each side of the barbell to hit a target weight. Uses a greedy algorithm with standard plate denominations, or supply your own inventory for home gym setups. Supports both lb and kg.\n\n### Novice LP Generator\nBuild a complete 4-week novice linear progression program based on the Starting Strength model. Takes a lifter profile (sex, bodyweight, age, training frequency) and returns a week-by-week program with squat every session, alternating press/bench, deadlift progressing to power cleans, and session-by-session weight increases. Includes coaching notes tailored to the lifter (age-adjusted recovery tips, microplate recommendations).\n\n## Connect\n\n```\nhttps://mcp.coachsync.io/mcp\n```\n\nTransport: Streamable HTTP. Compatible with Claude Desktop, Cursor, Windsurf, and any MCP client.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "warmup_calculator"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "plate_loader"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "novice_lp_generator"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "novice_lp_generator"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "novice_lp_generator"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "novice_lp_generator"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 2,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "novice_lp_generator",
+    "plate_loader",
+    "warmup_calculator"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "warmup_calculator",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: CoachSync.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "plate_loader",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: CoachSync.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "novice_lp_generator",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: CoachSync.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

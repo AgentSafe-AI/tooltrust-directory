@@ -21,7 +21,7 @@ Free $3 trial on signup. No subscription. Pay per slide. OAuth 2.1 for zero-conf
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smartdatabrokers-slideforge](https://smithery.ai/server/smartdatabrokers/slideforge) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

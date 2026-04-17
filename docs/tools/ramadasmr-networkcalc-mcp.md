@@ -16,7 +16,7 @@ Utilities Include
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ramadasmr-networkcalc-mcp](https://smithery.ai/server/ramadasmr/networkcalc-mcp) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

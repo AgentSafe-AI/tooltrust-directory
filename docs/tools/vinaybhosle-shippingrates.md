@@ -19,7 +19,7 @@ Payments via x402 USDC micropayments (Base/Solana). 4 free tools included.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vinaybhosle-shippingrates](https://smithery.ai/server/vinaybhosle/shippingrates) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

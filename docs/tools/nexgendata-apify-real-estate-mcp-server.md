@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-real-estate-mcp-server](https://smithery.ai/server/nexgendata-apify/real-estate-mcp-server) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

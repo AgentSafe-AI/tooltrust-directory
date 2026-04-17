@@ -21,7 +21,7 @@ Built by Silent Northwest LLC -- Great  Pacific Northwest.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [silentnw-website-auditor](https://smithery.ai/server/silentnw/website-auditor) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

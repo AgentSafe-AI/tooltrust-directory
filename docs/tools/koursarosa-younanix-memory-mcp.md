@@ -17,7 +17,7 @@ Site: https://www.younanix.com
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [koursarosa-younanix-memory-mcp](https://smithery.ai/server/KoursarosA/younanix-memory-mcp) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

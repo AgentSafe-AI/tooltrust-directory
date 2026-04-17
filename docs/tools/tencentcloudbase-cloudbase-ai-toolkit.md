@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `2.18.0` |
 | **Vendor** | TencentCloudBase |
-| **Stars** | ⭐ 991 |
+| **Stars** | ⭐ 992 |
 | **npm Package** | `cloudbase-ai-toolkit` |
 | **Language** | TypeScript |
 | **Source** | [tencentcloudbase-cloudbase-ai-toolkit](https://github.com/TencentCloudBase/CloudBase-MCP) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

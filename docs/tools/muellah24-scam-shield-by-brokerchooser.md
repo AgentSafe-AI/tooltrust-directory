@@ -17,7 +17,7 @@ In short: it’s a plug-and-play financial scam check API that helps prevent fra
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [muellah24-scam-shield-by-brokerchooser](https://smithery.ai/server/muellah24/scam-shield-by-brokerchooser) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -27,24 +27,12 @@ In short: it’s a plug-and-play financial scam check API that helps prevent fra
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 1 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 8 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 

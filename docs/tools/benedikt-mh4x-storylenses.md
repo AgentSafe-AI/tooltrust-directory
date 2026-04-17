@@ -16,7 +16,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [benedikt-mh4x-storylenses](https://smithery.ai/server/benedikt-mh4x/storylenses) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

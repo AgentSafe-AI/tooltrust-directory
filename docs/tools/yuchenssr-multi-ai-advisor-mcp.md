@@ -12,7 +12,7 @@
 | **npm Package** | `multi-model-advisor` |
 | **Language** | TypeScript |
 | **Source** | [yuchenssr-multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

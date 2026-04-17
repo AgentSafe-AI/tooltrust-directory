@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `3.0.3` |
 | **Vendor** | ref-tools |
-| **Stars** | ⭐ 1079 |
+| **Stars** | ⭐ 1082 |
 | **npm Package** | `ref-tools-mcp` |
 | **npm Downloads (30d)** | 2.2k |
 | **Language** | TypeScript |
 | **Source** | [ref-tools-ref-tools-mcp](https://github.com/ref-tools/ref-tools-mcp) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

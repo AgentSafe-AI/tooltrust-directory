@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sidearmdrm-sidearm](https://smithery.ai/server/sidearmdrm/sidearm) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

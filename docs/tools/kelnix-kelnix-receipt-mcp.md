@@ -12,7 +12,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kelnix-kelnix-receipt-mcp](https://smithery.ai/server/kelnix/kelnix-receipt-mcp) |
-| **Scan Date** | 2026-04-13 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

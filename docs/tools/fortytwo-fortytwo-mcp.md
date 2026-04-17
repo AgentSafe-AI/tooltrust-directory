@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fortytwo-fortytwo-mcp](https://smithery.ai/server/fortytwo/fortytwo-mcp) |
-| **Scan Date** | 2026-04-14 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -1,15 +1,15 @@
-# 🟠 mcp-server-deep-research
+# 🟡 mcp-server-deep-research
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 34 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `sha-640129a84d09` |
 | **Vendor** | reading-plus-ai |
 | **Stars** | ⭐ 209 |
 | **Language** | Python |
 | **Source** | [mcp-server-deep-research](https://github.com/reading-plus-ai/mcp-server-deep-research) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -19,9 +19,9 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
+| High     | 2 |
 | Medium   | 0 |
-| Low      | 2 |
+| Low      | 1 |
 | Info     | 1 |
 
 ## Detailed Findings
@@ -44,30 +44,6 @@ The set of tools exposed by this server changed between scans of the same versio
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-tool declares http permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

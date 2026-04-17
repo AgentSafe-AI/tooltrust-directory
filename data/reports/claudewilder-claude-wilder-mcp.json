@@ -1,9 +1,9 @@
 {
   "tool_id": "claudewilder-claude-wilder-mcp",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-16T02:29:14.726616841Z",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-04-17T02:17:34.904039326Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/claudewilder/claude-wilder-mcp",
   "category": "Developer Tools",
@@ -17,10 +17,21 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 10 tool(s) added, 9 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 9 tool(s) added, 10 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "analyze_dataset",
+          "fact_check_claim",
+          "get_page_context",
+          "read_interview",
+          "read_investigations",
+          "read_signals",
+          "read_transmissions",
+          "research_book",
+          "send_signal"
+        ],
+        "removed": [
           "accounts_list",
           "migrate_pages_to_workers_guide",
           "observability_keys",
@@ -32,17 +43,6 @@
           "workers_get_worker_code",
           "workers_list"
         ],
-        "removed": [
-          "analyze_dataset",
-          "fact_check_claim",
-          "get_page_context",
-          "read_interview",
-          "read_investigations",
-          "read_signals",
-          "read_transmissions",
-          "research_book",
-          "send_signal"
-        ],
         "version": "1.0.0"
       }
     },
@@ -52,7 +52,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "accounts_list"
+      "tool_name": "read_transmissions"
     },
     {
       "id": "AS-014",
@@ -60,7 +60,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "set_active_account"
+      "tool_name": "read_investigations"
     },
     {
       "id": "AS-014",
@@ -68,15 +68,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "workers_list"
+      "tool_name": "read_signals"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "workers_get_worker"
+      "tool_name": "send_signal"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"trusted_token\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "send_signal"
     },
     {
       "id": "AS-011",
@@ -84,7 +92,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "workers_get_worker"
+      "tool_name": "send_signal"
     },
     {
       "id": "AS-014",
@@ -92,23 +100,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "workers_get_worker"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "workers_get_worker_code"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "workers_get_worker_code"
+      "tool_name": "send_signal"
     },
     {
       "id": "AS-014",
@@ -116,7 +108,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "workers_get_worker_code"
+      "tool_name": "read_interview"
     },
     {
       "id": "AS-002",
@@ -124,15 +116,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_worker_observability"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_worker_observability"
+      "tool_name": "research_book"
     },
     {
       "id": "AS-011",
@@ -140,7 +124,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "query_worker_observability"
+      "tool_name": "research_book"
     },
     {
       "id": "AS-014",
@@ -148,23 +132,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "query_worker_observability"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "observability_keys"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "observability_values"
+      "tool_name": "research_book"
     },
     {
       "id": "AS-002",
@@ -172,15 +140,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_cloudflare_documentation"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_cloudflare_documentation"
+      "tool_name": "get_page_context"
     },
     {
       "id": "AS-011",
@@ -188,7 +148,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_cloudflare_documentation"
+      "tool_name": "get_page_context"
     },
     {
       "id": "AS-014",
@@ -196,7 +156,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_cloudflare_documentation"
+      "tool_name": "get_page_context"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "analyze_dataset"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "analyze_dataset"
     },
     {
       "id": "AS-014",
@@ -204,113 +180,83 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "migrate_pages_to_workers_guide"
+      "tool_name": "analyze_dataset"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fact_check_claim"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 5,
-    "medium": 2,
-    "low": 4,
-    "info": 10
+    "medium": 0,
+    "low": 5,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "accounts_list",
-    "migrate_pages_to_workers_guide",
-    "observability_keys",
-    "observability_values",
-    "query_worker_observability",
-    "search_cloudflare_documentation",
-    "set_active_account",
-    "workers_get_worker",
-    "workers_get_worker_code",
-    "workers_list"
+    "analyze_dataset",
+    "fact_check_claim",
+    "get_page_context",
+    "read_interview",
+    "read_investigations",
+    "read_signals",
+    "read_transmissions",
+    "research_book",
+    "send_signal"
   ],
   "tool_contexts": [
     {
-      "tool_name": "accounts_list",
+      "tool_name": "read_transmissions",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "set_active_account",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (activeAccountIdParam)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "workers_list",
+      "tool_name": "read_investigations",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "workers_get_worker",
+      "tool_name": "read_signals",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "send_signal",
       "action": "ALLOW",
       "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "workers_get_worker_code",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query_worker_observability",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: metadata.level",
-        "hardcoded domain: metadata.message",
-        "hardcoded domain: metadata.requestId",
-        "hardcoded domain: metadata.service",
-        "hardcoded domain: metadata.trigger",
-        "hardcoded domain: statistics.elapsed"
+        "dynamic email recipient (trusted_token)",
+        "hardcoded domain: claudereviews.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "observability_keys",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: metadata.service"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "observability_values",
+      "tool_name": "read_interview",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_cloudflare_documentation",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "tool_name": "research_book",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -318,7 +264,31 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "migrate_pages_to_workers_guide",
+      "tool_name": "get_page_context",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: claudereviews.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "analyze_dataset",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fact_check_claim",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -342,6 +312,12 @@
       "scan_date": "2026-04-15T02:12:23Z",
       "grade": "B",
       "risk_score": 19,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-16T02:29:14Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.0.0"
     }
   ]

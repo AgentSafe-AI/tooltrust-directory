@@ -1,6 +1,19 @@
 # 🟡 johnanleitner1-last-minute-deals-hq
 
-> Real-time last-minute tour and activity inventory. Search available slots across Iceland, Italy, Morocco, Portugal, Japan, Tanzania, Finland, Montenegro, Romania, and more � then book instantly via Stripe. Powered by the OCTO open booking standard via Bokun. Suppliers: Arctic Adventures (Iceland glacier hikes, ice caves, snowmobiling, aurora, diving, whale watching), Arctic Sea Tours (North Iceland whale watching), Bicycle Roma (Rome e-bike tours, food tours, day trips), Pure Morocco Experience (Sahara desert tours, Marrakech experiences), Ramen Factory Kyoto (cooking classes, workshops), O Turista Tours (Lisbon, Porto, Sintra day trips and transfers), Hillborn Experiences (ultra-luxury Tanzania safaris, Kilimanjaro climbs, Zanzibar retreats).
+> Search and book real-world tours and activities via API — with confirmed execution and status tracking.
+
+Real last-minute inventory from 11 suppliers (Arctic Adventures, Bicycle Roma, Ramen Factory Kyoto, Hillborn Experiences Tanzania, O Turista Tours, Pure Morocco, and more). 1,400+ slots within 168h, updated every 4h via OCTO open standard.
+
+v2.1.0 (2026-04-15): reliability upgrade — fixed booking execution bug (previous versions silently failed), moved to async I/O to eliminate timeouts under concurrent agent usage. Load-tested: 100% success under burst (100/100 /slots, 60/60 MCP).
+
+Tools:
+
+search_slots — find available experiences by city, category, price
+book_slot — initiate booking (returns approval URL or completes autonomously if wallet provided)
+get_booking_status — track booking state (pending → confirmed / failed)
+Use get_supplier_info first to understand coverage.
+
+Designed for AI agents: consistent success tracking, idempotent booking, and real-world confirmation numbers.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +22,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [johnanleitner1-last-minute-deals-hq](https://smithery.ai/server/johnanleitner1/Last_Minute_Deals_HQ) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

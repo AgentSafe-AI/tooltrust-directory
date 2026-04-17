@@ -28,7 +28,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [a-kabe-1qio-suguvisa-mcp](https://smithery.ai/server/a-kabe-1qio/suguvisa-mcp) |
-| **Scan Date** | 2026-04-16 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [brandomica-brandomica-mcp-server](https://smithery.ai/server/brandomica/brandomica-mcp-server) |
-| **Scan Date** | 2026-04-07 |
-| **Scanner** | tooltrust-scanner/v0.3.7 |
+| **Scan Date** | 2026-04-17 |
+| **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
 

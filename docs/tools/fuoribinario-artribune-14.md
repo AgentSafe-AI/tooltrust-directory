@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fuoribinario-artribune-14](https://smithery.ai/server/fuoribinario/artribune-14) |
-| **Scan Date** | 2026-04-11 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

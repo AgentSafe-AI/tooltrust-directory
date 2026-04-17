@@ -29,7 +29,7 @@ Each optimization costs 3 credits (+1 for SEO tags). See https://tinify.ai/prici
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tinify-ai-mcp-server](https://smithery.ai/server/tinify-ai/mcp-server) |
-| **Scan Date** | 2026-04-15 |
+| **Scan Date** | 2026-04-17 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
