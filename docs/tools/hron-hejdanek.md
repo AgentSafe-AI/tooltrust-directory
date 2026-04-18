@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hron-hejdanek](https://smithery.ai/server/hron/hejdanek) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -1,0 +1,108 @@
+{
+  "tool_id": "dante-r-g36u-onehq-comissions-calculator",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-04-18T01:58:59.687111323Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/dante-r-g36u/onehq-comissions-calculator",
+  "vendor": "Smithery",
+  "description": "OneHQ Commission Calculator MCP is a MCP server that gives AI assistants direct access to insurance commission calculation and compliance tools. It lets you model distribution hierarchies, calculate exact earnings per agent tier, validate structures against real carrier rules, and look up benchmark contract ranges — all without leaving your AI workflow.\n\nThe OneHQ Commission Calculator MCP exposes 5 tools:\n\n1. calculate_commission — Computes exact earnings per agent given an annual premium and a hierarchy of contract percentages. Returns direct commissions and override spreads at every tier.\n   Preferred input: annual_premium (number) + agents array with name and contract_pct per tier.\n   Example output: IMO override $1,200 / BGA override $1,200 / Agent direct $10,800 / Total distributed $13,200.\n\n2. build_hierarchy — Takes named tiers and returns a validated, sorted hierarchy ready to feed into calculate_commission. Also provides 4 pre-built templates: Standard BGA, BGA with MGA, Direct Agent, and Multi-Level.\n   Preferred input: tiers array with name and contract_pct per level.\n   Example output: sorted tier list with validation status and 4 template options.\n\n3. validate_hierarchy — Checks a hierarchy against a specific carrier's allowed contract ranges before submission. Returns a pass/fail result with tier-by-tier errors and warnings.\n   Preferred input: carrier name (e.g. \"protective\", \"mutual-of-omaha\") + hierarchy array with name and pct per tier.\n   Example output: overall PASS/FAIL, per-tier range check results, and a warning count.\n\n4. get_carrier_info — Returns typical contract percentage ranges per tier (Agent, MGA, BGA, IMO) and maximum hierarchy totals for 6 supported carriers. Call with no argument to list all available carriers.\n   Preferred input: carrier name (optional). Omit to get the full carrier list.\n   Example output: Agent range 85–100%, BGA range 105–120%, IMO range 115–130%, max hierarchy 145%.\n\n5. onehq_info — Returns a structured overview of the OneHQ platform (ICM, CRM, DMS, Agent Portal, Data Visualization) with relevant links. Optionally filter by topic to narrow results.\n   Preferred input: topic string (optional) — e.g. \"commissions\", \"crm\", \"agent portal\".\n   Example output: matching module name, description, and documentation link.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "calculate_commission"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "build_hierarchy"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "validate_hierarchy"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_carrier_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "onehq_info"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 5
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "build_hierarchy",
+    "calculate_commission",
+    "get_carrier_info",
+    "onehq_info",
+    "validate_hierarchy"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "calculate_commission",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "build_hierarchy",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "validate_hierarchy",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_carrier_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "onehq_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

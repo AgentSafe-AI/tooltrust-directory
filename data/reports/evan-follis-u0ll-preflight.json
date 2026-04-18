@@ -1,0 +1,60 @@
+{
+  "tool_id": "evan-follis-u0ll-preflight",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-04-18T01:56:07.501934953Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/evan-follis-u0ll/preflight",
+  "vendor": "Smithery",
+  "description": "Check if your MCP server is ready to publish on the MCP Registry, Smithery, or npm.\n\nPreflight validates your server's actual artifacts — `server.json`, `package.json`, `smithery.yaml` — against the documented requirements of each directory. Every finding includes the evidence found, the directory rule it maps to, and the exact fix.\n\n## What it checks\n\n- **MCP Registry** — server.json schema, name format, packages/remotes config, transport type, npm mcpName ownership, PyPI README marker\n- **Smithery** — Streamable HTTP transport, public HTTPS endpoint, server-card presence\n- **npm** — name, version, entry point (bin/main)\n\nEach finding is tagged with evidence level (`verified_from_artifact` or `inferred`), rule type (`hard_requirement`, `directory_convention`, or `heuristic`), and a source URL linking to the directory documentation.\n\n## How to use\n\nCall `check_publish_readiness` with raw artifact contents (all fields optional):\n\n- `manifest` — your server.json\n- `package_json` — your package.json\n- `smithery_yaml` — your smithery.yaml\n- `pyproject_toml` — your pyproject.toml\n- `readme` — your README\n- `target_directories` — optional array of `mcp_registry`, `smithery`, `npm`\n\nReturns a verdict (`checks_pass`, `fixable`, or `not_ready`), per-directory readiness, and evidence-backed findings with concrete fixes.\n\nZero dependencies. No LLM calls. No authentication. No PII collection.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_publish_readiness"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_publish_readiness"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "check_publish_readiness"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "check_publish_readiness",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (pyproject_toml)",
+        "dynamic email recipient (target_directories)",
+        "hardcoded domain: package.json",
+        "hardcoded domain: pyproject.toml",
+        "hardcoded domain: server.json",
+        "hardcoded domain: smithery.yaml"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

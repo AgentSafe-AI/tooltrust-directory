@@ -14,7 +14,7 @@ As a customer, you can configure your AI agent once and then book appointments s
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hello-3ubk-booboooking](https://smithery.ai/server/hello-3ubk/booboooking) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.8` |
 | **Vendor** | railwayapp |
-| **Stars** | ⭐ 182 |
+| **Stars** | ⭐ 183 |
 | **npm Package** | `@railway/mcp-server` |
-| **npm Downloads (30d)** | 30.8k |
+| **npm Downloads (30d)** | 31.1k |
 | **Language** | TypeScript |
 | **Source** | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

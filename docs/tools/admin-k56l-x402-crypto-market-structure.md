@@ -15,7 +15,7 @@ Same server, no proxy, no OAuth. (Smithery's proxy URL requires OAuth that Claud
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [admin-k56l-x402-crypto-market-structure](https://smithery.ai/server/admin-k56l/x402-crypto-market-structure) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

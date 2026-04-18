@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.2.5` |
 | **Vendor** | knowall-ai |
-| **Stars** | ⭐ 67 |
+| **Stars** | ⭐ 68 |
 | **npm Package** | `@knowall-ai/mcp-neo4j-agent-memory` |
-| **npm Downloads (30d)** | 60 |
+| **npm Downloads (30d)** | 62 |
 | **Language** | JavaScript |
 | **Source** | [knowall-ai-mcp-neo4j-agent-memory](https://github.com/knowall-ai/mcp-neo4j-agent-memory) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

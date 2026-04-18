@@ -18,7 +18,7 @@ Cheaper than one bad inference call.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [onchaintel-pqs](https://smithery.ai/server/onchaintel/pqs) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

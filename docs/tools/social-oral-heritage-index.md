@@ -39,7 +39,7 @@ Try it in Claude Desktop:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [social-oral-heritage-index](https://smithery.ai/server/social/oral-heritage-index) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

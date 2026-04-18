@@ -10,10 +10,10 @@
 | **Vendor** | cloudflare |
 | **Stars** | ⭐ 246 |
 | **npm Package** | `@cloudflare/containers` |
-| **npm Downloads (30d)** | 823.4k |
+| **npm Downloads (30d)** | 829.2k |
 | **Language** | TypeScript |
 | **Source** | [cloudflare-containers](https://github.com/cloudflare/containers) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-18 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

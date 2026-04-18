@@ -1,9 +1,9 @@
 {
   "tool_id": "zwldarren-akshare-one-mcp",
   "version": "0.3.9",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-17T02:03:49.250423529Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-18T01:45:59.68246437Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/zwldarren/akshare-one-mcp",
   "category": "Developer Tools",
@@ -14,12 +14,54 @@
   "description": "MCP server that provides access to Chinese stock market data using akshare-one",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_hist_data"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.3.9: 11 tool(s) added, 9 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "about_onesocial",
+          "ai_career_assistant",
+          "calendar_scheduling",
+          "check_availability",
+          "digital_contracts",
+          "event_management",
+          "get_onescore",
+          "get_reviews",
+          "lead_generation",
+          "search_professionals",
+          "the_arena"
+        ],
+        "removed": [
+          "get_balance_sheet",
+          "get_cash_flow",
+          "get_financial_metrics",
+          "get_hist_data",
+          "get_income_statement",
+          "get_inner_trade_data",
+          "get_news_data",
+          "get_realtime_data",
+          "get_time_info"
+        ],
+        "version": "0.3.9"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_professionals"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_professionals"
     },
     {
       "id": "AS-014",
@@ -27,7 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_realtime_data"
+      "tool_name": "search_professionals"
     },
     {
       "id": "AS-014",
@@ -35,7 +77,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_news_data"
+      "tool_name": "get_onescore"
     },
     {
       "id": "AS-014",
@@ -43,7 +85,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_balance_sheet"
+      "tool_name": "get_reviews"
     },
     {
       "id": "AS-014",
@@ -51,7 +93,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_income_statement"
+      "tool_name": "check_availability"
     },
     {
       "id": "AS-014",
@@ -59,7 +101,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_cash_flow"
+      "tool_name": "event_management"
     },
     {
       "id": "AS-014",
@@ -67,7 +109,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_inner_trade_data"
+      "tool_name": "digital_contracts"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ai_career_assistant"
     },
     {
       "id": "AS-014",
@@ -75,7 +125,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_financial_metrics"
+      "tool_name": "ai_career_assistant"
     },
     {
       "id": "AS-014",
@@ -83,90 +133,167 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_time_info"
+      "tool_name": "lead_generation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "the_arena"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "about_onesocial"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "about_onesocial"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "about_onesocial"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "calendar_scheduling"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 9
+    "high": 3,
+    "medium": 1,
+    "low": 2,
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_balance_sheet",
-    "get_cash_flow",
-    "get_financial_metrics",
-    "get_hist_data",
-    "get_income_statement",
-    "get_inner_trade_data",
-    "get_news_data",
-    "get_realtime_data",
-    "get_time_info"
+    "about_onesocial",
+    "ai_career_assistant",
+    "calendar_scheduling",
+    "check_availability",
+    "digital_contracts",
+    "event_management",
+    "get_onescore",
+    "get_reviews",
+    "lead_generation",
+    "search_professionals",
+    "the_arena"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_hist_data",
+      "tool_name": "search_professionals",
       "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (indicators_list)"
+      "grade": "B",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_realtime_data",
+      "tool_name": "get_onescore",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_news_data",
+      "tool_name": "get_reviews",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_balance_sheet",
+      "tool_name": "check_availability",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_income_statement",
+      "tool_name": "event_management",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_cash_flow",
+      "tool_name": "digital_contracts",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_inner_trade_data",
+      "tool_name": "ai_career_assistant",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_financial_metrics",
+      "tool_name": "lead_generation",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_time_info",
+      "tool_name": "the_arena",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "about_onesocial",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "calendar_scheduling",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -284,6 +411,12 @@
     },
     {
       "scan_date": "2026-04-16T02:15:27Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.3.9"
+    },
+    {
+      "scan_date": "2026-04-17T02:03:49Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.3.9"

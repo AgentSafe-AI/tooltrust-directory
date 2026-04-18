@@ -1,0 +1,148 @@
+{
+  "tool_id": "solenrich-se01",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-04-18T01:55:46.410053007Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/solenrich/SE01",
+  "vendor": "Smithery",
+  "description": "Solana onchain data enrichment for AI agents and LLMs. 15 tools covering wallet profiling, token analysis, risk scoring, whale tracking, and DeFi protocol analytics.\n\nWhat it does\n\nSolEnrich cross-references 5 data sources (Helius, DexScreener, Jupiter, DeFi Llama, Solana RPC) in parallel and returns enriched intelligence, not raw blockchain data. All scoring is deterministic with no LLM inference in the pipeline.\n\nKey tools\n\n  - enrich_wallet — SOL balance, token holdings, DeFi positions, behavioral labels,\n  risk score\n  - enrich_token — Price (median of 3 sources), market cap, liquidity, holder\n  concentration, risk flags\n  - due_diligence — Composite risk report with SAFE / CAUTION / RISKY verdict\n  - whale_watch — Top holders with accumulation vs distribution tracking\n  - compare_tokens — Side-by-side analysis of 2-3 tokens with rankings\n  - new_tokens — Recently launched tokens filtered by liquidity and risk\n  - protocol_profile — DeFi protocol TVL, yields, activity, health signals\n  - query — Plain English questions — \"Is JUP safe?\" routes to the right enricher\n\nPlus: parse_transaction, wallet_graph, copy_trade_signals, batch_enrich, compare_wallets, token_trend, wallet_history\n\nPayment\n\nPay-per-request via USDC on Solana (x402). No API keys, no subscriptions. Costs range from $0.001 to $0.020 per call. Tools return pricing details if payment is required.\n\nLinks\n\n  - https://api.solenrich.com/docs\n  - https://www.x402scan.com/server/d9814c54-6fa6-4fa7-8b01-43a0ffbc7641\n  - https://github.com/0xSardius/solenrich\n  - https://solenrich.com",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "enrich_wallet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "enrich_wallet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "enrich_token"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "parse_transaction"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "whale_watch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "due_diligence"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wallet_graph"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "copy_trade_signals"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 7
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "copy_trade_signals",
+    "due_diligence",
+    "enrich_token",
+    "enrich_wallet",
+    "parse_transaction",
+    "wallet_graph",
+    "whale_watch"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "enrich_wallet",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "enrich_token",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "parse_transaction",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "whale_watch",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "due_diligence",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "wallet_graph",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "copy_trade_signals",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

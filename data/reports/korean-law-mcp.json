@@ -3,18 +3,32 @@
   "version": "2.1.6",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-04-17T02:01:00.969302528Z",
+  "scan_date": "2026-04-18T01:43:26.305277575Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/chrisryugj/korean-law-mcp",
   "category": "Developer Tools",
   "vendor": "chrisryugj",
-  "stars": 1457,
+  "stars": 1473,
   "npm_package": "korean-law-mcp",
-  "npm_downloads_monthly": 7030,
+  "npm_downloads_monthly": 7332,
   "license": "MIT",
   "language": "TypeScript",
-  "description": "국가법령정보MCP | 법제처 41개 API → 15개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 | 41 Korean legal APIs → 15 MCP tools",
+  "description": "국가법령정보MCP | 법제처 41개 API → 16개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 + LLM 환각 방지 인용 검증 | 41 Korean legal APIs → 16 MCP tools with AI citation hallucination guard",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.1.6: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "verify_citations"
+        ],
+        "removed": null,
+        "version": "2.1.6"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -136,6 +150,14 @@
       "tool_name": "chain_document_review"
     },
     {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "verify_citations"
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -170,7 +192,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 16,
+    "high": 18,
     "medium": 0,
     "low": 3,
     "info": 0
@@ -191,7 +213,8 @@
     "get_decision_text",
     "get_law_text",
     "search_decisions",
-    "search_law"
+    "search_law",
+    "verify_citations"
   ],
   "tool_contexts": [
     {
@@ -272,6 +295,13 @@
     },
     {
       "tool_name": "chain_document_review",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "verify_citations",
       "action": "ALLOW",
       "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
@@ -372,6 +402,12 @@
     },
     {
       "scan_date": "2026-04-16T02:12:48Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "2.1.6"
+    },
+    {
+      "scan_date": "2026-04-17T02:01:00Z",
       "grade": "C",
       "risk_score": 32,
       "version": "2.1.6"
