@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1544 |
 | **Language** | Go |
 | **Source** | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

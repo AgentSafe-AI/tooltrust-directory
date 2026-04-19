@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alexandria-shai-eden-coverage](https://smithery.ai/server/alexandria-shai-eden/coverage) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

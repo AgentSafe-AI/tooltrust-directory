@@ -37,7 +37,7 @@ $19.99/mo - 120 credits (~40 images or 20 videos). Free sample on new accounts.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [klamdo-klamdo-mcp](https://smithery.ai/server/klamdo/klamdo-mcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

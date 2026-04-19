@@ -27,7 +27,7 @@ Best for consumer-facing assistants, concierge agents, property workflows, reloc
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [taskman-london-home-services](https://smithery.ai/server/taskman-london/home-services) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

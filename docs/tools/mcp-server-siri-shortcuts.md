@@ -10,10 +10,10 @@
 | **Vendor** | dvcrn |
 | **Stars** | ⭐ 184 |
 | **npm Package** | `mcp-server-siri-shortcuts` |
-| **npm Downloads (30d)** | 359 |
+| **npm Downloads (30d)** | 346 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-siri-shortcuts](https://github.com/dvcrn/mcp-server-siri-shortcuts) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

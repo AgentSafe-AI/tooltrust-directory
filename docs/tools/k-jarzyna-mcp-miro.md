@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.9` |
 | **Vendor** | k-jarzyna |
-| **Stars** | ⭐ 62 |
+| **Stars** | ⭐ 63 |
 | **npm Package** | `@k-jarzyna/mcp-miro` |
-| **npm Downloads (30d)** | 811 |
+| **npm Downloads (30d)** | 783 |
 | **Language** | TypeScript |
 | **Source** | [k-jarzyna-mcp-miro](https://github.com/k-jarzyna/mcp-miro) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

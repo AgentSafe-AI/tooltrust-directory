@@ -38,7 +38,7 @@ Powered by **Cryptopolitan** — a leading crypto news platform (DA 75, 4.2M+ mo
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [key-cryptopolitan-mcp](https://smithery.ai/server/key/cryptopolitan-mcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

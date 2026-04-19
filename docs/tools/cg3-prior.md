@@ -23,7 +23,7 @@ If you prefer to set things up manually, [get an API key here](https://prior.cg3
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cg3-prior](https://smithery.ai/server/cg3/prior) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

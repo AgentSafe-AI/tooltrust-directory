@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.3` |
 | **Vendor** | greirson |
-| **Stars** | ⭐ 212 |
+| **Stars** | ⭐ 215 |
 | **npm Package** | `@greirson/mcp-todoist` |
-| **npm Downloads (30d)** | 2.1k |
+| **npm Downloads (30d)** | 2.0k |
 | **Language** | TypeScript |
 | **Source** | [greirson-mcp-todoist](https://github.com/greirson/mcp-todoist) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

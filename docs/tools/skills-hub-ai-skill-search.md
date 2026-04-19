@@ -19,7 +19,7 @@ Built by [skills-hub.ai](https://skills-hub.ai) — the open skill registry for 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [skills-hub-ai-skill-search](https://smithery.ai/server/skills-hub-ai/skill-search) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

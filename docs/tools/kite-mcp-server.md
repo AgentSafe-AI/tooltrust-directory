@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 251 |
 | **Language** | Go |
 | **Source** | [kite-mcp-server](https://github.com/zerodha/kite-mcp-server) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

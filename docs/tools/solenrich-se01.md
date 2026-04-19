@@ -39,7 +39,7 @@ Links
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [solenrich-se01](https://smithery.ai/server/solenrich/SE01) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

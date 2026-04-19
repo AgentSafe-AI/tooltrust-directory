@@ -162,7 +162,7 @@ Stop prompting — start delegating.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [maxbeech-athenic](https://smithery.ai/server/maxbeech/athenic) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

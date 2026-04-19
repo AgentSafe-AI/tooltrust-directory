@@ -2,8 +2,8 @@
   "tool_id": "metavolve-labs-intelligence-aeternum",
   "version": "smithery",
   "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-04-17T02:18:25.372867731Z",
+  "risk_score": 17,
+  "scan_date": "2026-04-19T02:22:27.254158347Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/metavolve-labs/intelligence-aeternum",
   "vendor": "Smithery",
@@ -13,10 +13,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 11 tool(s) added, 18 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 11 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "compare_protocols",
+          "get_protocol_info",
+          "scan_opportunities"
+        ],
+        "removed": [
           "check_health",
           "get_arbitrage_scanner",
           "get_available_symbols",
@@ -29,26 +34,6 @@
           "get_market_read",
           "get_stablecoin_premium"
         ],
-        "removed": [
-          "ad_creative_brief",
-          "audience_segment",
-          "blend",
-          "brand_position",
-          "compare",
-          "compound_query",
-          "construct",
-          "creator_deploy",
-          "creator_match",
-          "decode",
-          "emerging",
-          "expand",
-          "media_pyramid",
-          "neighbors",
-          "opportunities",
-          "pulse",
-          "resolve",
-          "simulate"
-        ],
         "version": "smithery"
       }
     },
@@ -58,95 +43,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_kimchi_premium"
+      "tool_name": "scan_opportunities"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_kr_prices"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_kr_prices"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_fx_rate"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_available_symbols"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_available_symbols"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_stablecoin_premium"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_health"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_arbitrage_scanner"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_exchange_alerts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_market_movers"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_market_read"
+      "tool_name": "get_protocol_info"
     },
     {
       "id": "AS-011",
@@ -154,7 +59,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_market_read"
+      "tool_name": "get_protocol_info"
     },
     {
       "id": "AS-014",
@@ -162,7 +67,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_market_read"
+      "tool_name": "get_protocol_info"
     },
     {
       "id": "AS-014",
@@ -170,106 +75,46 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_kr_sentiment"
+      "tool_name": "compare_protocols"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 2,
-    "info": 11
+    "high": 2,
+    "medium": 0,
+    "low": 1,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "check_health",
-    "get_arbitrage_scanner",
-    "get_available_symbols",
-    "get_exchange_alerts",
-    "get_fx_rate",
-    "get_kimchi_premium",
-    "get_kr_prices",
-    "get_kr_sentiment",
-    "get_market_movers",
-    "get_market_read",
-    "get_stablecoin_premium"
+    "compare_protocols",
+    "get_protocol_info",
+    "scan_opportunities"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_kimchi_premium",
+      "tool_name": "scan_opportunities",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_kr_prices",
+      "tool_name": "get_protocol_info",
       "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_fx_rate",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_available_symbols",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_stablecoin_premium",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_health",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_arbitrage_scanner",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_exchange_alerts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_market_movers",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_market_read",
-      "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
+        "executes_commands",
         "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (protocol)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_kr_sentiment",
+      "tool_name": "compare_protocols",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -299,6 +144,12 @@
       "scan_date": "2026-04-15T02:15:06Z",
       "grade": "C",
       "risk_score": 29,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-17T02:18:25Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

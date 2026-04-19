@@ -11,7 +11,7 @@ Post real-world tasks such as deliveries, photography, errands, inspections, pos
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jamesmorgs14-meatlayer](https://smithery.ai/server/jamesmorgs14/meatlayer) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

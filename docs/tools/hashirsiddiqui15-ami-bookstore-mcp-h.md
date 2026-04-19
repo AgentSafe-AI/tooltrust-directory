@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hashirsiddiqui15-ami-bookstore-mcp-h](https://smithery.ai/server/hashirsiddiqui15/ami-bookstore-mcp-h) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

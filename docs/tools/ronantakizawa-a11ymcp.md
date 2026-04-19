@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.1.0` |
 | **Vendor** | ronantakizawa |
-| **Stars** | ⭐ 82 |
+| **Stars** | ⭐ 83 |
 | **npm Package** | `a11y-mcp-server` |
-| **npm Downloads (30d)** | 841 |
+| **npm Downloads (30d)** | 815 |
 | **Language** | JavaScript |
 | **Source** | [ronantakizawa-a11ymcp](https://github.com/ronantakizawa/a11ymcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

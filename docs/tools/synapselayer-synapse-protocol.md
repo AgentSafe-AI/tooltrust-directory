@@ -25,7 +25,7 @@ Synapse Layer is a secure, autonomous memory infrastructure designed for high-pe
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [synapselayer-synapse-protocol](https://smithery.ai/server/synapselayer/synapse-protocol) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

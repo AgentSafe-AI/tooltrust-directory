@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 193 |
 | **Language** | Python |
 | **Source** | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

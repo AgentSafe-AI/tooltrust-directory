@@ -2,6 +2,8 @@
 
 > Correkt is an online marketplace offering 10M+ physical products from verified sellers, with support for crypto, card, and CashApp payments. Enables AI agents to search and discover real products on behalf of users — with agentic purchasing and checkout in active development, making Correkt the marketplace built for the future of autonomous commerce.
 
+Want to collaborate on a project? Email us at info@correkt.com
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
@@ -9,7 +11,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [correkt-marketplace](https://smithery.ai/server/correkt/marketplace) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

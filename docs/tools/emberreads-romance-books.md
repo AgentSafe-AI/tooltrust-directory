@@ -18,7 +18,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [emberreads-romance-books](https://smithery.ai/server/emberreads/romance-books) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

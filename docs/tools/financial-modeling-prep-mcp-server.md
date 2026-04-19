@@ -10,10 +10,10 @@
 | **Vendor** | imbenrabi |
 | **Stars** | ⭐ 128 |
 | **npm Package** | `financial-modeling-prep-mcp-server` |
-| **npm Downloads (30d)** | 829 |
+| **npm Downloads (30d)** | 810 |
 | **Language** | TypeScript |
 | **Source** | [financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

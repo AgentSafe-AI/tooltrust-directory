@@ -10,10 +10,10 @@
 | **Vendor** | stanislavlysenko0912 |
 | **Stars** | ⭐ 61 |
 | **npm Package** | `todoist-mcp` |
-| **npm Downloads (30d)** | 7.5k |
+| **npm Downloads (30d)** | 7.3k |
 | **Language** | TypeScript |
 | **Source** | [stanislavlysenko0912-todoist-mcp-server](https://github.com/stanislavlysenko0912/todoist-mcp-server) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

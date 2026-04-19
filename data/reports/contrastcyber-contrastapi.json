@@ -3,12 +3,26 @@
   "version": "smithery",
   "grade": "D",
   "risk_score": 58,
-  "scan_date": "2026-04-18T01:55:19.749960261Z",
+  "scan_date": "2026-04-19T02:20:15.448880546Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/contrastcyber/contrastapi",
   "vendor": "Smithery",
-  "description": "Security intelligence MCP server for AI agents. 29 tools covering domain recon, CVE lookup (340K+ with EPSS+KEV), IP threat reports, bulk CVE/IOC lookups, full domain audit, IOC enrichment, code security scanning. Free tier: 100 credits/hour, no API key required.",
+  "description": "Security intelligence MCP server for AI agents. 31 tools covering domain recon, CVE lookup (340K+ with EPSS+KEV), IP threat reports, bulk CVE/IOC lookups, full domain audit, IOC enrichment, dependency audit, code security scanning. Free tier: 100 credits/hour, no API key required.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "check_dependencies"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -671,6 +685,30 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_dependencies"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_dependencies"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_dependencies"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "username_lookup"
     },
     {
@@ -740,10 +778,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 17,
-    "medium": 22,
+    "high": 18,
+    "medium": 24,
     "low": 21,
-    "info": 30
+    "info": 31
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -751,6 +789,7 @@
     "audit_domain",
     "bulk_cve_lookup",
     "bulk_ioc_lookup",
+    "check_dependencies",
     "check_headers",
     "check_injection",
     "check_secrets",
@@ -1110,6 +1149,23 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "check_dependencies",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Gemfile.lock",
+        "hardcoded domain: package.json",
+        "hardcoded domain: pom.xml",
+        "hardcoded domain: requirements.txt"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "username_lookup",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
@@ -1146,6 +1202,12 @@
     },
     {
       "scan_date": "2026-04-17T02:15:57Z",
+      "grade": "D",
+      "risk_score": 58,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-18T01:55:19Z",
       "grade": "D",
       "risk_score": 58,
       "version": "smithery"

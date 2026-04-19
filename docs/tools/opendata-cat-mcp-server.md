@@ -11,7 +11,7 @@ Un projecte de [xaviviro](https://xaviviro.com) i d'**[opendata.cat](https://ope
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [opendata-cat-mcp-server](https://smithery.ai/server/opendata-cat/mcp-server) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

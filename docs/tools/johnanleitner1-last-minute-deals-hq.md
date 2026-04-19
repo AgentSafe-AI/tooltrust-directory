@@ -1,13 +1,8 @@
-# 🟡 johnanleitner1-last-minute-deals-hq
+# 🟠 johnanleitner1-last-minute-deals-hq
 
-> Search and book real-world tours and activities via API — with confirmed execution and status tracking.
-
-Real last-minute inventory from 11 suppliers (Arctic Adventures, Bicycle Roma, Ramen Factory Kyoto, Hillborn Experiences Tanzania, O Turista Tours, Pure Morocco, and more). 1,400+ slots within 168h, updated every 4h via OCTO open standard.
-
-v2.1.0 (2026-04-15): reliability upgrade — fixed booking execution bug (previous versions silently failed), moved to async I/O to eliminate timeouts under concurrent agent usage. Load-tested: 100% success under burst (100/100 /slots, 60/60 MCP).
+> Real-time last-minute tour and activity inventory from 14 Bokun suppliers across Iceland, Italy, Morocco, Portugal, Japan, Tanzania, Finland, Montenegro, Romania, Egypt, and Turkey. Search available slots and create Stripe checkout sessions — customers pay on our page, suppliers confirmed automatically. Inventory refreshed every 4 hours.
 
 Tools:
-
 search_slots — find available experiences by city, category, price
 book_slot — initiate booking (returns approval URL or completes autonomously if wallet provided)
 get_booking_status — track booking state (pending → confirmed / failed)
@@ -17,12 +12,12 @@ Designed for AI agents: consistent success tracking, idempotent booking, and rea
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **C** |
+| **Risk Score** | 32 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [johnanleitner1-last-minute-deals-hq](https://smithery.ai/server/johnanleitner1/Last_Minute_Deals_HQ) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -32,9 +27,9 @@ Designed for AI agents: consistent success tracking, idempotent booking, and rea
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 4 |
 | Medium   | 0 |
-| Low      | 2 |
+| Low      | 4 |
 | Info     | 4 |
 
 ## Detailed Findings
@@ -51,6 +46,18 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Low
+
+**Description:**
+tool declares http permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -81,6 +88,18 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -120,6 +139,30 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

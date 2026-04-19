@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `1.4.7` |
 | **Vendor** | omega-memory |
-| **Stars** | ⭐ 99 |
+| **Stars** | ⭐ 100 |
 | **Language** | Python |
 | **Source** | [omega-memory-core](https://github.com/omega-memory/omega-memory) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

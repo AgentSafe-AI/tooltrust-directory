@@ -11,7 +11,7 @@ New features are live - check out what’s new: https://brightdata.com/ai/mcp-se
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [brightdata](https://smithery.ai/server/brightdata) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

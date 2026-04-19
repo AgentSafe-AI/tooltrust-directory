@@ -10,10 +10,10 @@
 | **Vendor** | ref-tools |
 | **Stars** | ⭐ 1084 |
 | **npm Package** | `ref-tools-mcp` |
-| **npm Downloads (30d)** | 2.2k |
+| **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |
 | **Source** | [ref-tools-ref-tools-mcp](https://github.com/ref-tools/ref-tools-mcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -11,7 +11,7 @@ It could also make web search, browser automation and markdownification
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [scrapegraphai-scrapegraph-mcp](https://smithery.ai/server/ScrapeGraphAI/scrapegraph-mcp) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

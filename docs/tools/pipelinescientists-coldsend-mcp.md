@@ -26,7 +26,7 @@ Pass your ColdSend API key via the `X-API-Key` header. Get your key from [cloud.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pipelinescientists-coldsend-mcp](https://smithery.ai/server/pipelinescientists/coldsend-mcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

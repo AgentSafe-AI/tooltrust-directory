@@ -17,7 +17,7 @@ In short: it’s a plug-and-play financial scam check API that helps prevent fra
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [muellah24-scam-shield-by-brokerchooser](https://smithery.ai/server/muellah24/scam-shield-by-brokerchooser) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -1,0 +1,105 @@
+{
+  "tool_id": "rowhint-ntm5-rowhint",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-04-19T02:18:18.602021147Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://smithery.ai/server/rowhint-ntm5/RowHint",
+  "vendor": "Smithery",
+  "description": "# RowHint MCP Server\n\nAirline seat quality intelligence via MCP. Per-seat quality scores (1-10) with plain-English notes for **66+ aircraft configurations** across 10 US airlines. Every score is hand-verified against live airline seat maps.\n\n## Setup\n\nAdd to your Claude Desktop config:\n\n```json\n{\n  \"mcpServers\": {\n    \"rowhint\": {\n      \"url\": \"https://mcp.rowhint.com/mcp\"\n    }\n  }\n}\n```\n\nNo API key required. All 5 tools are free.\n\n## Key Features\n\n- Per-seat quality scores (1-10) with transparent methodology\n- Plain-English notes explaining why each seat scores the way it does\n- Best seat finder filtered by cabin class\n- Side-by-side seat comparison with score differences and summary\n- Windowless window seat detection\n- 66+ hand-verified configs across AA, DL, UA, WN, B6, AS, HA, F9, NK, G4\n\n## Available Tools\n\n1. **`rowhint_get_seat_score`** — Get quality score and notes for a specific seat\n2. **`rowhint_get_best_seats`** — Find the highest-rated seats by cabin class\n3. **`rowhint_compare_seats`** — Compare two seats side by side\n4. **`rowhint_get_config_overview`** — Get full seat map overview for an aircraft\n5. **`rowhint_get_windowless_seats`** — Find window seats that actually have no window\n\n## Use Cases\n\n- Travelers asking AI assistants \"What's the best seat on my Delta A321neo flight?\"\n- Travel app developers adding seat quality data to booking tools\n- AI travel agents making personalized seat recommendations\n- Corporate travel tools optimizing seat assignments\n\n## FAQ\n\n**Does it cover international airlines?**\nNot yet — currently covers 10 US airlines. International carriers are on the roadmap.\n\n**How are scores calculated?**\nEach seat is scored 1-10 based on legroom, recline, proximity to galley/lavatory, window alignment, and hardware. Full methodology at [rowhint.com](https://rowhint.com).\n\n**Is an API key required?**\nNo. All tools are free with no authentication required.\n\n**How often is the data updated?**\nConfigurations are hand-verified against live airline booking sites and updated when airlines change their layouts.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rowhint_get_seat_score"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rowhint_get_best_seats"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rowhint_compare_seats"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rowhint_get_config_overview"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rowhint_get_windowless_seats"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 5
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "rowhint_compare_seats",
+    "rowhint_get_best_seats",
+    "rowhint_get_config_overview",
+    "rowhint_get_seat_score",
+    "rowhint_get_windowless_seats"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "rowhint_get_seat_score",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rowhint_get_best_seats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rowhint_compare_seats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rowhint_get_config_overview",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rowhint_get_windowless_seats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

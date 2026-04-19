@@ -11,7 +11,7 @@ Contact us for an API key. Learn more at https://Infoseek.ai
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [infoseekai-alltrails](https://smithery.ai/server/InfoseekAI/AllTrails) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

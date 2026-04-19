@@ -3,64 +3,12 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-17T02:15:37.083294694Z",
+  "scan_date": "2026-04-19T02:19:31.231429495Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/node2flow/instagram",
   "vendor": "Smithery",
   "description": "MCP server for Instagram Graph API — publish photos, reels, carousels, and stories, manage comments, view insights, and search hashtags through 25 tools.\n\n## Features\n\n- Publish photos, carousels (2-10 items), reels, and stories\n- 2-step publishing handled automatically (create container then publish)\n- Comment management and moderation (reply, hide, delete, list replies)\n- Account and media insights analytics\n- Hashtag research (search, recent media, top media)\n- Business Discovery — look up other Business/Creator accounts\n- Content publishing rate limit check (50 posts/day)\n- Tagged and mentioned media tracking\n\n## 25 Tools\n\n**Account (3)**: Get account info, account insights (impressions/reach/followers), list media posts\n**Publishing (4)**: Publish photo, carousel (2-10 items), reel (video), story (24h)\n**Media (3)**: Get media details, media insights, carousel children\n**Comments (6)**: List comments, get comment, reply, delete, hide/unhide, list replies\n**Discovery (1)**: Look up other Business/Creator accounts by username\n**Limit (1)**: Check content publishing rate limit (50/day quota)\n**Stories (2)**: List active stories, story insights\n**Hashtags (3)**: Search hashtag, recent media, top media\n**Mentions (2)**: List tagged media, get mentioned media\n\n## Configuration\n\n- `INSTAGRAM_ACCESS_TOKEN` (required) — Facebook/Instagram User Access Token with instagram_basic, instagram_content_publish, instagram_manage_comments, instagram_manage_insights permissions\n- `INSTAGRAM_ACCOUNT_ID` (optional) — Instagram Business Account ID (find via Facebook Page settings)",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 22 tool(s) added, 16 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "ig_delete_comment",
-          "ig_get_account",
-          "ig_get_account_insights",
-          "ig_get_children",
-          "ig_get_comment",
-          "ig_get_hashtag_recent",
-          "ig_get_hashtag_top",
-          "ig_get_media",
-          "ig_get_media_insights",
-          "ig_get_mentioned_media",
-          "ig_get_story_insights",
-          "ig_hide_comment",
-          "ig_list_comments",
-          "ig_list_media",
-          "ig_list_stories",
-          "ig_list_tags",
-          "ig_publish_carousel",
-          "ig_publish_photo",
-          "ig_publish_reel",
-          "ig_publish_story",
-          "ig_reply_comment",
-          "ig_search_hashtag"
-        ],
-        "removed": [
-          "INSTAGRAM_CREATE_CAROUSEL_CONTAINER",
-          "INSTAGRAM_CREATE_MEDIA_CONTAINER",
-          "INSTAGRAM_CREATE_POST",
-          "INSTAGRAM_GET_CONVERSATION",
-          "INSTAGRAM_GET_POST_COMMENTS",
-          "INSTAGRAM_GET_POST_INSIGHTS",
-          "INSTAGRAM_GET_POST_STATUS",
-          "INSTAGRAM_GET_USER_INFO",
-          "INSTAGRAM_GET_USER_INSIGHTS",
-          "INSTAGRAM_GET_USER_MEDIA",
-          "INSTAGRAM_LIST_ALL_CONVERSATIONS",
-          "INSTAGRAM_LIST_ALL_MESSAGES",
-          "INSTAGRAM_MARK_SEEN",
-          "INSTAGRAM_REPLY_TO_COMMENT",
-          "INSTAGRAM_SEND_IMAGE",
-          "INSTAGRAM_SEND_TEXT_MESSAGE"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -408,7 +356,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 9,
+    "high": 8,
     "medium": 3,
     "low": 10,
     "info": 22
@@ -713,6 +661,12 @@
       "scan_date": "2026-04-16T02:27:10Z",
       "grade": "C",
       "risk_score": 27,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-17T02:15:37Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]

@@ -183,7 +183,7 @@ bun run typecheck
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [emailens-mcp-emailens-mcp](https://smithery.ai/server/emailens-mcp/emailens-mcp) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

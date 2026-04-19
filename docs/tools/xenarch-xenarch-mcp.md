@@ -11,7 +11,7 @@ No API keys, no signup, fully non-custodial. Auto-generates a wallet on first ru
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xenarch-xenarch-mcp](https://smithery.ai/server/xenarch/xenarch-mcp) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

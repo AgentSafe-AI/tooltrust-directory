@@ -29,7 +29,7 @@ The GTH Intelligence MCP server gives AI agents real-time access to substance ab
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cbeggroup-gettreatmenthelp](https://smithery.ai/server/cbeggroup/gettreatmenthelp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

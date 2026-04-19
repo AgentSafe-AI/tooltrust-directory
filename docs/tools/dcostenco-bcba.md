@@ -1,19 +1,19 @@
 # 🟠 dcostenco-bcba
 
-> The Mind Palace for AI Agents — Autonomous Cognitive OS with affect-tagged memory (valence engine), token-economic RL (surprisal gate + UBI), Hebbian learning, ACT-R spreading activation, Synapse Engine (GraphRAG), adversarial evaluation (anti-sycophancy), fail-closed Dark Factory pipelines. Zero-config local mode.
+> The Mind Palace for AI Agents - HIPAA-hardened Cognitive Architecture with on-device LLM (prism-coder:7b), Hebbian learning, ACT-R spreading activation, adversarial evaluation, persistent memory, multi-agent Hivemind and visual dashboard. Zero API keys required.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `9.13.3` |
+| **Version** | `10.0.0` |
 | **Vendor** | dcostenco |
-| **Stars** | ⭐ 122 |
+| **Stars** | ⭐ 124 |
 | **npm Package** | `prism-mcp-server` |
-| **npm Downloads (30d)** | 10.9k |
+| **npm Downloads (30d)** | 11.2k |
 | **Language** | TypeScript |
 | **Source** | [dcostenco-bcba](https://github.com/dcostenco/prism-mcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

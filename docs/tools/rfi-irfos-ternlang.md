@@ -1,18 +1,19 @@
 # 🟠 rfi-irfos-ternlang
 
-> Turns any binary AI agent into a ternary decision engine.
-
-19 tools — ALL FREE, no API key required:
-• trit_decide · trit_vector · trit_consensus · trit_eval · trit_action_gate
-• ternlang_run · trit_translate
-• moe_orchestrate · moe_deliberate · trit_debate · trit_calibrate · trit_uncertainty_map
-• trit_eco_check · trit_audit · audit_ternary_logic
-• quantize_weights · sparse_benchmark · tsql_join · get_industrial_standards
-
-The hold state (trit=0) is not indecision — it is a first-class routing instruction: gather more evidence before committing. Every AI system that forces yes/no when evidence is ambiguous is making a structural error.
-
-Built by RFI-IRFOS (ZVR: 1015608684) · Graz, Austria.
-EU AI Act Articles 13/14/15 compliant. v0.3.3
+> Your AI agent has two states. Ternlang gives it three.                                                 
+                                                            
+30 tools —  FREE, no key needed.                                                                     
+   
+The third state isn't null. It isn't "maybe". It's hold (trit=0) — a first-class routing instruction   
+that tells your agent: evidence insufficient, gather more before committing. Every binary system that
+forces yes/no on ambiguous data is making a structural error. We fixed that.                           
+                                                            
+  ⚡ trit_decide · trit_consensus · trit_vector · moe_orchestrate · ternlang_run · trit_audit            
+  ⚡ MoE-13 deliberation engine · EU AI Act Art.13/14/15 · BET VM (real compiler, not a sim)
+                                                                                                         
+  affirm = proceed. hold = wait. reject = block.                                                         
+                                                                                                         
+  Built in Graz, Austria by RFI-IRFOS. v1.0.0              
 
 | Field | Value |
 |-------|-------|
@@ -21,7 +22,7 @@ EU AI Act Articles 13/14/15 compliant. v0.3.3
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rfi-irfos-ternlang](https://smithery.ai/server/rfi-irfos/ternlang) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

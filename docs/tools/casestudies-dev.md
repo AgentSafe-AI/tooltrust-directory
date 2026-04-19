@@ -13,7 +13,7 @@ Use cases: sales research, competitor analysis, procurement vendor evaluation, V
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [casestudies-dev](https://smithery.ai/server/casestudies/dev) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

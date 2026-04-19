@@ -57,7 +57,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [duna-spice-skay-proof](https://smithery.ai/server/duna-spice-skay/proof) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -10,7 +10,7 @@ AI applications pay per request. MCP server providers earn per response. MCP Hiv
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mcp-hive-hive-servers](https://smithery.ai/server/mcp-hive/hive-servers) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

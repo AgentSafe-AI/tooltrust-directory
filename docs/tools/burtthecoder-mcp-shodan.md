@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.27` |
 | **Vendor** | burtthecoder |
-| **Stars** | ⭐ 122 |
+| **Stars** | ⭐ 123 |
 | **npm Package** | `@burtthecoder/mcp-shodan` |
 | **npm Downloads (30d)** | 6.6k |
 | **Language** | TypeScript |
 | **Source** | [burtthecoder-mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

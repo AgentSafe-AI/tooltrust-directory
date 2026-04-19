@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.4.0` |
 | **Vendor** | yuna0x0 |
-| **Stars** | ⭐ 73 |
+| **Stars** | ⭐ 74 |
 | **npm Package** | `anilist-mcp` |
-| **npm Downloads (30d)** | 572 |
+| **npm Downloads (30d)** | 541 |
 | **Language** | TypeScript |
 | **Source** | [yuna0x0-anilist-mcp](https://github.com/yuna0x0/anilist-mcp) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-19 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
