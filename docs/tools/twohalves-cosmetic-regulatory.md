@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [twohalves-cosmetic-regulatory](https://smithery.ai/server/twohalves/cosmetic-regulatory) |
-| **Scan Date** | 2026-04-18 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | marcopesani |
 | **Stars** | ⭐ 151 |
 | **npm Package** | `serper-search-scrape-mcp-server` |
-| **npm Downloads (30d)** | 42.8k |
+| **npm Downloads (30d)** | 38.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 11 |
+| High     | 10 |
 | Medium   | 4 |
 | Low      | 7 |
 | Info     | 8 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.2.0: 7 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 

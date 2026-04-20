@@ -10,10 +10,10 @@
 | **Vendor** | bradleygolden |
 | **Stars** | ⭐ 66 |
 | **npm Package** | `hexdocs-mcp` |
-| **npm Downloads (30d)** | 689 |
+| **npm Downloads (30d)** | 635 |
 | **Language** | Elixir |
 | **Source** | [bradleygolden-hexdocs-mcp](https://github.com/bradleygolden/hexdocs-mcp) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

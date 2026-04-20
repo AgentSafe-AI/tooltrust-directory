@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sincetomorrow-cultural-intelligence](https://smithery.ai/server/sincetomorrow/cultural-intelligence) |
-| **Scan Date** | 2026-04-17 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 6.3k |
 | **Language** | TypeScript |
 | **Source** | [barryyip0625-mcp-discord](https://github.com/barryyip0625/mcp-discord) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

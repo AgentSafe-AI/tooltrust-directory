@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.2.8` |
 | **Vendor** | makeplane |
-| **Stars** | ⭐ 193 |
+| **Stars** | ⭐ 194 |
 | **Language** | Python |
 | **Source** | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | tacticlaunch |
 | **Stars** | ⭐ 133 |
 | **npm Package** | `@tacticlaunch/mcp-linear` |
-| **npm Downloads (30d)** | 11.0k |
+| **npm Downloads (30d)** | 10.7k |
 | **Language** | TypeScript |
 | **Source** | [tacticlaunch-mcp-linear](https://github.com/tacticlaunch/mcp-linear) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

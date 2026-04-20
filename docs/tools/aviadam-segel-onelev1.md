@@ -34,7 +34,7 @@ Give your AI agent the ability to:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aviadam-segel-onelev1](https://smithery.ai/server/aviadam-segel/onelev1) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

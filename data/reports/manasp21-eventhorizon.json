@@ -1,0 +1,96 @@
+{
+  "tool_id": "manasp21-eventhorizon",
+  "version": "1.0.0",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-20T02:25:34.462682313Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
+  "source_url": "https://github.com/manasp21/EventHorizon",
+  "category": "Developer Tools",
+  "vendor": "manasp21",
+  "npm_package": "mcp-server-event-horizon",
+  "license": "MIT",
+  "language": "JavaScript",
+  "description": "An MCP server implementation that provides evolutionary solution generation and optimization capabilities for LLMs. Event Horizon enables LLMs to evolve solutions across multiple generations using consistency check evaluations and genetic algorithm principles.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "EVENTBRITE_GET_EVENT_CATEGORIES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "EVENTBRITE_GET_EVENT_FORMATS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "EVENTBRITE_GET_EVENT_CATEGORIES",
+    "EVENTBRITE_GET_EVENT_FORMATS",
+    "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "EVENTBRITE_GET_EVENT_CATEGORIES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "EVENTBRITE_GET_EVENT_FORMATS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

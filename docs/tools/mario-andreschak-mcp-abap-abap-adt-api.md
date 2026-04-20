@@ -8,11 +8,11 @@
 | **Risk Score** | 40 |
 | **Version** | `0.1.1` |
 | **Vendor** | mario-andreschak |
-| **Stars** | ⭐ 121 |
+| **Stars** | ⭐ 122 |
 | **npm Package** | `mcp-abap-abap-adt-api` |
 | **Language** | TypeScript |
 | **Source** | [mario-andreschak-mcp-abap-abap-adt-api](https://github.com/mario-andreschak/mcp-abap-abap-adt-api) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

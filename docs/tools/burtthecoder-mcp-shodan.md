@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 6.6k |
 | **Language** | TypeScript |
 | **Source** | [burtthecoder-mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-20 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
