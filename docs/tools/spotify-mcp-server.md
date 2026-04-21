@@ -8,11 +8,11 @@
 | **Risk Score** | 40 |
 | **Version** | `1.0.0` |
 | **Vendor** | marcelmarais |
-| **Stars** | ⭐ 302 |
+| **Stars** | ⭐ 303 |
 | **npm Package** | `spotify-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

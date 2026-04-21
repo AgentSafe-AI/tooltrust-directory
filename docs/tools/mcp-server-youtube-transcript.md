@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.1` |
 | **Vendor** | kimtaeyoon83 |
-| **Stars** | ⭐ 525 |
+| **Stars** | ⭐ 527 |
 | **npm Package** | `@kimtaeyoon83/mcp-server-youtube-transcript` |
 | **npm Downloads (30d)** | 6.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

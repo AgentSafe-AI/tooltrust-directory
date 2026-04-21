@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `0.10.1` |
+| **Version** | `0.11.0` |
 | **Vendor** | GLips |
-| **Stars** | ⭐ 14431 |
+| **Stars** | ⭐ 14442 |
 | **npm Package** | `figma-developer-mcp` |
-| **npm Downloads (30d)** | 499.1k |
+| **npm Downloads (30d)** | 462.5k |
 | **Language** | TypeScript |
 | **Source** | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-20T02:26:15.893153478Z",
+  "scan_date": "2026-04-21T02:17:57.955903054Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/vdineshk/ai-compliance-monitor",
   "category": "Developer Tools",
@@ -16,10 +16,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 9 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 4 tool(s) added, 9 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "check_deadline",
+          "check_obligations",
+          "compare_jurisdictions",
+          "get_regulation_articles"
+        ],
+        "removed": [
           "euaiact_annex_iv_checklist",
           "euaiact_answer_question",
           "euaiact_assess_art6_3_exception",
@@ -30,12 +36,6 @@
           "euaiact_get_article",
           "euaiact_get_obligations"
         ],
-        "removed": [
-          "check_deadline",
-          "check_obligations",
-          "compare_jurisdictions",
-          "get_regulation_articles"
-        ],
         "version": "1.0.0"
       }
     },
@@ -43,9 +43,9 @@
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "euaiact_classify_system"
+      "tool_name": "check_obligations"
     },
     {
       "id": "AS-011",
@@ -53,7 +53,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "euaiact_classify_system"
+      "tool_name": "check_obligations"
     },
     {
       "id": "AS-014",
@@ -61,7 +61,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_classify_system"
+      "tool_name": "check_obligations"
     },
     {
       "id": "AS-014",
@@ -69,31 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_check_deadlines"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_get_obligations"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_answer_question"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_calculate_penalty"
+      "tool_name": "get_regulation_articles"
     },
     {
       "id": "AS-002",
@@ -101,7 +77,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "euaiact_get_article"
+      "tool_name": "check_deadline"
     },
     {
       "id": "AS-011",
@@ -109,7 +85,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "euaiact_get_article"
+      "tool_name": "check_deadline"
     },
     {
       "id": "AS-014",
@@ -117,23 +93,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_get_article"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_check_gpai_systemic_risk"
+      "tool_name": "check_deadline"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "euaiact_assess_art6_3_exception"
+      "tool_name": "compare_jurisdictions"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "compare_jurisdictions"
     },
     {
       "id": "AS-014",
@@ -141,108 +117,66 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_assess_art6_3_exception"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "euaiact_annex_iv_checklist"
+      "tool_name": "compare_jurisdictions"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
-    "low": 2,
-    "info": 9
+    "high": 4,
+    "medium": 0,
+    "low": 3,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "euaiact_annex_iv_checklist",
-    "euaiact_answer_question",
-    "euaiact_assess_art6_3_exception",
-    "euaiact_calculate_penalty",
-    "euaiact_check_deadlines",
-    "euaiact_check_gpai_systemic_risk",
-    "euaiact_classify_system",
-    "euaiact_get_article",
-    "euaiact_get_obligations"
+    "check_deadline",
+    "check_obligations",
+    "compare_jurisdictions",
+    "get_regulation_articles"
   ],
   "tool_contexts": [
     {
-      "tool_name": "euaiact_classify_system",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_check_deadlines",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_get_obligations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_answer_question",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_calculate_penalty",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_get_article",
+      "tool_name": "check_obligations",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_check_gpai_systemic_risk",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "euaiact_assess_art6_3_exception",
-      "action": "ALLOW",
-      "grade": "A",
       "destinations": [
-        "dynamic email recipient (preparatory_task)"
+        "dynamic URL input (jurisdiction_code)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "euaiact_annex_iv_checklist",
+      "tool_name": "get_regulation_articles",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_deadline",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands"
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (jurisdiction_code)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compare_jurisdictions",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (jurisdictions)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -287,6 +221,12 @@
     },
     {
       "scan_date": "2026-04-19T02:22:43Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-20T02:26:15Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.0"

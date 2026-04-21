@@ -1,6 +1,6 @@
 # 🟠 apideck-mcp-server
 
-> Model Context Protocol server for the Apideck Unified API. Connect any MCP-compatible agent framework to 20+ accounting systems, HRIS platforms, file storage providers, and more through one integration.
+> Model Context Protocol server for the Apideck Unified API. Connect any MCP-compatible agent framework to 100+ accounting systems, HRIS platforms, file storage providers, and more through one integration.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [apideck-mcp-server](https://smithery.ai/server/apideck/mcp-server) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

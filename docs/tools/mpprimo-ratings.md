@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mpprimo-ratings](https://smithery.ai/server/mpprimo/ratings) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

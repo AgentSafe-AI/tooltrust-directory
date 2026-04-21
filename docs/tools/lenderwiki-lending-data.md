@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lenderwiki-lending-data](https://smithery.ai/server/lenderwiki/lending-data) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

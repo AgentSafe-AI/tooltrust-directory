@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-04-20T02:21:40.031194573Z",
+  "scan_date": "2026-04-21T02:13:34.770453316Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/leandrogavidia/marinade-finance-mcp-server",
   "category": "Developer Tools",
@@ -14,72 +14,6 @@
   "language": "TypeScript",
   "description": "Marinade Finance MCP Server is an MCP server specifically designed for the Marinade Finance.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 14 tool(s) added, 38 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "accept_swap",
-          "assess_credit",
-          "borrow",
-          "borrow_capability",
-          "concierge_chat",
-          "create_job",
-          "create_swap",
-          "get_balance",
-          "get_transaction_history",
-          "manage_webhooks",
-          "negotiate_job",
-          "register_agent",
-          "transfer",
-          "update_settings"
-        ],
-        "removed": [
-          "dev.send",
-          "read.account.history",
-          "read.account.info",
-          "read.account.pnl",
-          "read.asset.list",
-          "read.asset.prices",
-          "read.asset_manager.intents",
-          "read.guides",
-          "read.point_leaderboard",
-          "read.pool.info",
-          "read.pool.list",
-          "read.strategy.info",
-          "read.strategy.list",
-          "read.strategy.recommendation",
-          "read.wallet.accounts",
-          "read.wallet.allowances",
-          "read.wallet.balances",
-          "read.wallet.points",
-          "write.account.add_liquidity",
-          "write.account.borrow",
-          "write.account.close",
-          "write.account.create",
-          "write.account.deleverage",
-          "write.account.deposit",
-          "write.account.remove_liquidity",
-          "write.account.repay",
-          "write.account.set_asset_managers",
-          "write.account.stake",
-          "write.account.swap",
-          "write.account.withdraw",
-          "write.asset_manager.compounder",
-          "write.asset_manager.compounder_staked",
-          "write.asset_manager.cow_swapper",
-          "write.asset_manager.merkl_operator",
-          "write.asset_manager.rebalancer",
-          "write.asset_manager.yield_claimer",
-          "write.asset_manager.yield_claimer_cowswap",
-          "write.wallet.approve"
-        ],
-        "version": "1.0.0"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -220,7 +154,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"offer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"request_token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_swap"
     },
@@ -228,7 +162,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"request_token\" appears to accept a secret or credential",
+      "description": "input parameter \"offer_token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_swap"
     },
@@ -315,7 +249,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 10,
+    "high": 9,
     "medium": 3,
     "low": 3,
     "info": 14
@@ -513,6 +447,12 @@
       "scan_date": "2026-04-08T01:44:23Z",
       "grade": "C",
       "risk_score": 38,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-20T02:21:40Z",
+      "grade": "C",
+      "risk_score": 40,
       "version": "1.0.0"
     }
   ]

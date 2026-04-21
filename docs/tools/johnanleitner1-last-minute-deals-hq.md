@@ -1,14 +1,14 @@
 # 🟠 johnanleitner1-last-minute-deals-hq
 
-> Real-time last-minute tour and activity inventory from 14 Bokun suppliers across Iceland, Italy, Morocco, Portugal, Japan, Tanzania, Finland, Montenegro, Romania, Egypt, and Turkey. Search available slots and create Stripe checkout sessions — customers pay on our page, suppliers confirmed automatically. Inventory refreshed every 4 hours.
+> 7,000+ live bookable slots across 20 suppliers in 28 cities and 15 countries — Iceland, Italy, Mexico, Morocco, Portugal, Japan, Tanzania, Finland, Montenegro, Romania, Egypt, Turkey, United States, United Kingdom, and China. Tours, activities, photography experiences, and more sourced live from production booking systems via the OCTO open standard.
 
 Tools:
-search_slots — find available experiences by city, category, price
-book_slot — initiate booking (returns approval URL or completes autonomously if wallet provided)
-get_booking_status — track booking state (pending → confirmed / failed)
-Use get_supplier_info first to understand coverage.
+search_slots — find available experiences by city, category, price, or urgency (soonest first)
+book_slot — two modes: "approval" returns a Stripe checkout URL for the customer; "autonomous" charges a pre-funded wallet and confirms instantly
+get_booking_status — track booking state and recover checkout URLs if lost
+get_supplier_info — see all destinations and experience types before searching
 
-Designed for AI agents: consistent success tracking, idempotent booking, and real-world confirmation numbers.
+End-to-end booking: agent searches → customer pays (or wallet debits) → supplier confirmed automatically via OCTO. Real confirmation numbers, authorization-then-capture payments (customer never charged for a failed booking), inventory refreshed every 4 hours.
 
 | Field | Value |
 |-------|-------|
@@ -17,7 +17,7 @@ Designed for AI agents: consistent success tracking, idempotent booking, and rea
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [johnanleitner1-last-minute-deals-hq](https://smithery.ai/server/johnanleitner1/Last_Minute_Deals_HQ) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.66.0` |
 | **Vendor** | IvanMurzak |
-| **Stars** | ⭐ 2222 |
+| **Stars** | ⭐ 2243 |
 | **Language** | C# |
 | **Source** | [ivanmurzak-unity-mcp](https://github.com/IvanMurzak/Unity-MCP) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

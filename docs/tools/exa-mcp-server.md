@@ -8,12 +8,12 @@
 | **Risk Score** | 33 |
 | **Version** | `3.2.0` |
 | **Vendor** | exa-labs |
-| **Stars** | ⭐ 4277 |
+| **Stars** | ⭐ 4279 |
 | **npm Package** | `exa-mcp-server` |
 | **npm Downloads (30d)** | 58.9k |
 | **Language** | TypeScript |
 | **Source** | [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

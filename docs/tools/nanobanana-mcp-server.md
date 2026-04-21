@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.2` |
 | **Vendor** | zhongweili |
-| **Stars** | ⭐ 316 |
+| **Stars** | ⭐ 319 |
 | **Language** | Python |
 | **Source** | [nanobanana-mcp-server](https://github.com/zhongweili/nanobanana-mcp-server) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -2,8 +2,8 @@
   "tool_id": "metavolve-labs-intelligence-aeternum",
   "version": "smithery",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-19T02:22:27.254158347Z",
+  "risk_score": 15,
+  "scan_date": "2026-04-21T02:17:47.093828981Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/metavolve-labs/intelligence-aeternum",
   "vendor": "Smithery",
@@ -13,26 +13,21 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 11 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 6 tool(s) added, 3 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "defi_opportunities",
+          "legal_compliance_check",
+          "oracle_reading",
+          "smart_contract_audit",
+          "threat_intelligence",
+          "vulnerability_scan"
+        ],
+        "removed": [
           "compare_protocols",
           "get_protocol_info",
           "scan_opportunities"
-        ],
-        "removed": [
-          "check_health",
-          "get_arbitrage_scanner",
-          "get_available_symbols",
-          "get_exchange_alerts",
-          "get_fx_rate",
-          "get_kimchi_premium",
-          "get_kr_prices",
-          "get_kr_sentiment",
-          "get_market_movers",
-          "get_market_read",
-          "get_stablecoin_premium"
         ],
         "version": "smithery"
       }
@@ -43,23 +38,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_opportunities"
+      "tool_name": "threat_intelligence"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "smart_contract_audit"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "oracle_reading"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_protocol_info"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_protocol_info"
+      "tool_name": "legal_compliance_check"
     },
     {
       "id": "AS-014",
@@ -67,7 +70,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_protocol_info"
+      "tool_name": "legal_compliance_check"
     },
     {
       "id": "AS-014",
@@ -75,46 +78,71 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_protocols"
+      "tool_name": "vulnerability_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "defi_opportunities"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 1,
-    "info": 3
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compare_protocols",
-    "get_protocol_info",
-    "scan_opportunities"
+    "defi_opportunities",
+    "legal_compliance_check",
+    "oracle_reading",
+    "smart_contract_audit",
+    "threat_intelligence",
+    "vulnerability_scan"
   ],
   "tool_contexts": [
     {
-      "tool_name": "scan_opportunities",
+      "tool_name": "threat_intelligence",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_protocol_info",
+      "tool_name": "smart_contract_audit",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (protocol)"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compare_protocols",
+      "tool_name": "oracle_reading",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "legal_compliance_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "vulnerability_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "defi_opportunities",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -150,6 +178,12 @@
       "scan_date": "2026-04-17T02:18:25Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:22:27Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]

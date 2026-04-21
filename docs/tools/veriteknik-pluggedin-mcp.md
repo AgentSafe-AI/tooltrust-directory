@@ -10,10 +10,10 @@
 | **Vendor** | VeriTeknik |
 | **Stars** | ⭐ 50 |
 | **npm Package** | `@pluggedin/pluggedin-mcp-proxy` |
-| **npm Downloads (30d)** | 137 |
+| **npm Downloads (30d)** | 130 |
 | **Language** | TypeScript |
 | **Source** | [veriteknik-pluggedin-mcp](https://github.com/VeriTeknik/pluggedin-mcp) |
-| **Scan Date** | 2026-04-20 |
+| **Scan Date** | 2026-04-21 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
