@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 6.8k |
 | **Language** | TypeScript |
 | **Source** | [stanislavlysenko0912-todoist-mcp-server](https://github.com/stanislavlysenko0912/todoist-mcp-server) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

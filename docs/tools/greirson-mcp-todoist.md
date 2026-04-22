@@ -10,10 +10,10 @@
 | **Vendor** | greirson |
 | **Stars** | ⭐ 217 |
 | **npm Package** | `@greirson/mcp-todoist` |
-| **npm Downloads (30d)** | 2.0k |
+| **npm Downloads (30d)** | 1.9k |
 | **Language** | TypeScript |
 | **Source** | [greirson-mcp-todoist](https://github.com/greirson/mcp-todoist) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

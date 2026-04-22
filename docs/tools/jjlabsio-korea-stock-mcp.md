@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.4.0` |
 | **Vendor** | jjlabsio |
-| **Stars** | ⭐ 119 |
+| **Stars** | ⭐ 120 |
 | **npm Package** | `korea-stock-mcp` |
-| **npm Downloads (30d)** | 1.1k |
+| **npm Downloads (30d)** | 867 |
 | **Language** | TypeScript |
 | **Source** | [jjlabsio-korea-stock-mcp](https://github.com/jjlabsio/korea-stock-mcp) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

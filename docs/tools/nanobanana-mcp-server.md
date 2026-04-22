@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 319 |
 | **Language** | Python |
 | **Source** | [nanobanana-mcp-server](https://github.com/zhongweili/nanobanana-mcp-server) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

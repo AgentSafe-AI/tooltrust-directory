@@ -15,7 +15,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rdassignies-openlegi](https://smithery.ai/server/rdassignies/openlegi) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 40 |
 | **Version** | `1.2.3` |
 | **Vendor** | korotovsky |
-| **Stars** | ⭐ 1549 |
+| **Stars** | ⭐ 1550 |
 | **Language** | Go |
 | **Source** | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

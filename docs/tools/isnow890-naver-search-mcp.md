@@ -10,10 +10,10 @@
 | **Vendor** | isnow890 |
 | **Stars** | ⭐ 63 |
 | **npm Package** | `@isnow890/naver-search-mcp` |
-| **npm Downloads (30d)** | 488 |
+| **npm Downloads (30d)** | 487 |
 | **Language** | JavaScript |
 | **Source** | [isnow890-naver-search-mcp](https://github.com/isnow890/naver-search-mcp) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

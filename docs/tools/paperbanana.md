@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.2` |
 | **Vendor** | llmsresearch |
-| **Stars** | ⭐ 1332 |
+| **Stars** | ⭐ 1335 |
 | **Language** | Python |
 | **Source** | [paperbanana](https://github.com/llmsresearch/paperbanana) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-22 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
