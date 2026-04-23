@@ -180,6 +180,19 @@ the tool behind approval if it can send user-derived content off-box.
 
 ---
 
+### AS-018 — Embedded MCP Server Detected
+
+**Detects:** MCP SDK imports plus server initialization in source code when ToolTrust cannot
+enumerate tools from a manifest or a live server handshake.
+
+**Why it matters:** This means the repository likely contains an embedded MCP implementation, but
+the scanner could only confirm presence, not fully assess auth, scope, or tool definitions.
+
+**Recommendation:** Run a sandboxed live scan when possible or add a static tools manifest so the
+implementation can be reviewed without executing the server.
+
+---
+
 ### AS-010 — Insecure Secret Handling
 
 **Detects:** Input parameters whose names suggest they accept raw secrets or credentials —

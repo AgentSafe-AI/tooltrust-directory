@@ -46,7 +46,8 @@
         "B",
         "C",
         "D",
-        "F"
+        "F",
+        "I"
       ]
     },
     "risk_score": {
@@ -124,6 +125,29 @@
       "description": "URL pointing to the methodology document used for this scan.",
       "format": "uri"
     },
+    "scan_incomplete": {
+      "type": "boolean",
+      "description": "True when the scanner could not enumerate tool definitions and the grade therefore reflects an incomplete scan."
+    },
+    "has_embedded_mcp": {
+      "type": "boolean",
+      "description": "True when source-level MCP SDK usage was detected even though tool enumeration was not possible."
+    },
+    "embedded_mcp_evidence": {
+      "type": "array",
+      "description": "Source-level evidence for embedded MCP detection.",
+      "items": {
+        "$ref": "#/$defs/EmbeddedMCPEvidence"
+      }
+    },
+    "tool_names": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tool_contexts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ToolContext" }
+    },
     "scan_history": {
       "type": "array",
       "description": "Lightweight snapshots of previous scans, oldest first. Appended automatically by transform on each new scan.",
@@ -185,6 +209,30 @@
           "description": "Actionable guidance for the tool maintainer to remediate the finding.",
           "minLength": 20
         }
+      }
+    },
+    "EmbeddedMCPEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string" },
+        "line": { "type": "integer", "minimum": 1 },
+        "snippet": { "type": "string" },
+        "file": { "type": "string" },
+        "language": { "type": "string" }
+      }
+    },
+    "ToolContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tool_name": { "type": "string" },
+        "action": { "type": "string" },
+        "grade": { "type": "string" },
+        "behavior": { "type": "array", "items": { "type": "string" } },
+        "destinations": { "type": "array", "items": { "type": "string" } },
+        "dependency_visibility": { "type": "string" },
+        "dependency_note": { "type": "string" }
       }
     },
     "ScanSnapshot": {

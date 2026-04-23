@@ -183,8 +183,10 @@ jobs:
             CLONE_DIR="/tmp/${TOOL_ID}"
             RAW_OUT="/tmp/${TOOL_ID}-scan.json"
             OSV_OUT="/tmp/${TOOL_ID}-osv.json"
+            EMBED_OUT="/tmp/${TOOL_ID}-embed.json"
             NPM_PKG=""
             NPM_DOWNLOADS_MONTHLY=0
+            EMBED_DETECTED=false
 
             echo "════════════════════════════════════════"
             echo "Tool    : $TOOL_ID @ $VERSION  ($OWNER/$REPO)"
@@ -274,6 +276,26 @@ jobs:
                   -not -name 'package*.json' \
                   -not -name 'tsconfig*.json' \
                   -name '*.json' 2>/dev/null | sort)
+              fi
+            fi
+
+            # ── Tier 1.5: embedded MCP source detection ─────────────────────
+            # When no manifest is available, look for MCP SDK imports plus
+            # server initialization calls in source. This is presence-only:
+            # it does not enumerate tools, but it prevents embedded MCP
+            # servers from being silently dropped as "no tools found".
+            if [ -z "$TOOL_DEF" ] && [ -d "$CLONE_DIR" ]; then
+              if tooltrust-scanner scan-repo \
+                  --repo "$CLONE_DIR" \
+                  --output json \
+                  --file "$EMBED_OUT"; then
+                HAS_EMBED=$(jq -r '.has_embedded_mcp // false' "$EMBED_OUT" 2>/dev/null || echo false)
+                if [ "$HAS_EMBED" = "true" ]; then
+                  echo "EMBED   : embedded MCP detected in $TOOL_ID"
+                  EMBED_DETECTED=true
+                fi
+              else
+                echo "EMBED   : source detection failed for $TOOL_ID"
               fi
             fi
 
@@ -415,7 +437,7 @@ jobs:
             # Also remove any stale report that may have been produced by a previous
             # run before this guard existed; without this, an old Grade A report
             # would persist in the registry indefinitely.
-            if [ "$SCAN_OK" = "false" ]; then
+            if [ "$SCAN_OK" = "false" ] && [ "$EMBED_DETECTED" != "true" ]; then
               echo "SKIP    : $TOOL_ID marked unscannable — no report generated"
               if [ -f "$OUT" ] && [ "$CONFIRMED_ZERO" = "true" ]; then
                 # Remove the stale report regardless of grade: a confirmed zero-tool
@@ -428,8 +450,22 @@ jobs:
               elif [ -f "$OUT" ]; then
                 echo "PRESERVE: keeping existing report — scan tiers crashed/timed-out (not confirmed zero)"
               fi
-              rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
+              rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT" "$EMBED_OUT"
               exit 0
+            fi
+
+            EMBED_FLAGS=()
+            if [ "$SCAN_OK" = "false" ] && [ "$EMBED_DETECTED" = "true" ]; then
+              echo "EMBED   : generating incomplete embedded-MCP report"
+              jq -n --arg scanned_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+                '{schema_version:"1.0",policies:[],summary:{total:0,allowed:0,require_approval:0,blocked:0,scanned_at:$scanned_at}}' \
+                > "$RAW_OUT"
+            fi
+            if [ "$EMBED_DETECTED" = "true" ]; then
+              EMBED_FLAGS+=(--has-embedded-mcp)
+              if [ -f "$EMBED_OUT" ]; then
+                EMBED_FLAGS+=(--embed-evidence "$EMBED_OUT")
+              fi
             fi
 
             # ── Transform: merge Scanner + OSV → ToolTrust report ──────────────
@@ -452,6 +488,7 @@ jobs:
               --description      "$DESC"                \
               --osv-findings     "$OSV_OUT"             \
               --scanner-version  "$SCANNER_VERSION"     \
+              "${EMBED_FLAGS[@]}"                       \
               ${EXISTING_FLAG}                          \
               --output           "$OUT"; then
               echo "SKIP: transform failed for $TOOL_ID"
@@ -459,7 +496,7 @@ jobs:
               echo "OK      : $OUT"
             fi
 
-            rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT"
+            rm -rf "$CLONE_DIR" "$RAW_OUT" "$OSV_OUT" "$EMBED_OUT"
           ) &
           RUNNING=$((RUNNING + 1))
           if [ "$RUNNING" -ge "$CONCURRENCY" ]; then

@@ -102,7 +102,7 @@ func TestTransformEmptyInput(t *testing.T) {
 		Summary:  ASSummary{},
 	}
 	report := transform(as, nil, nil, "test", "1.0.0", "https://example.com",
-		"vendor", 100, "@example/test-tool", 12000, "MIT", "Go", "Dev", "A test tool", "tooltrust-scanner/v0.2.0")
+		"vendor", 100, "@example/test-tool", 12000, "MIT", "Go", "Dev", "A test tool", "tooltrust-scanner/v0.2.0", false, nil)
 
 	// Empty scan with no tools → scan_incomplete → grade I
 	if report.Grade != "I" {
@@ -120,7 +120,7 @@ func TestTransformMergesOSVFindings(t *testing.T) {
 		{ID: "AS-004", Severity: "Low", Title: "CVE-2", Description: "a minor vuln in dep2@2.0", Recommendation: "upgrade dep2"},
 	}
 	report := transform(as, osv, nil, "test", "1.0.0", "https://example.com",
-		"", 0, "", 0, "", "", "", "", "")
+		"", 0, "", 0, "", "", "", "", "", false, nil)
 
 	// Even with 0 policies, OSV findings means the scan did something.
 	// But scanIncomplete is true (no tool definitions found), so grade is I.
@@ -193,7 +193,7 @@ func TestTransform_CarriesToolContexts(t *testing.T) {
 	}
 
 	report := transform(as, nil, nil, "demo", "1.0.0", "https://example.com",
-		"vendor", 0, "", 0, "", "", "", "", "tooltrust-scanner/v0.3.3")
+		"vendor", 0, "", 0, "", "", "", "", "tooltrust-scanner/v0.3.3", false, nil)
 
 	if len(report.ToolContexts) != 1 {
 		t.Fatalf("expected 1 tool context, got %d", len(report.ToolContexts))
@@ -210,5 +210,41 @@ func TestTransform_CarriesToolContexts(t *testing.T) {
 	}
 	if len(ctx.Destinations) != 1 || ctx.Destinations[0] != "dynamic URL input (url)" {
 		t.Fatalf("unexpected destinations: %#v", ctx.Destinations)
+	}
+}
+
+func TestTransform_EmbeddedMCPReplacesAS007(t *testing.T) {
+	as := ScannerOutput{Policies: nil, Summary: ASSummary{}}
+	report := transform(as, nil, nil, "nginx-ui", "1.0.0", "https://example.com",
+		"vendor", 0, "", 0, "", "Go", "", "", "tooltrust-scanner/v0.3.5", true, []EmbedEvidence{
+			{Kind: "import", File: "internal/mcp/server.go", Line: 14, Language: "go"},
+			{Kind: "init", File: "internal/mcp/server.go", Line: 38, Language: "go"},
+		})
+
+	if report.Grade != "I" {
+		t.Fatalf("embedded MCP scan should stay incomplete grade I, got %q", report.Grade)
+	}
+	if !report.ScanIncomplete || !report.HasEmbeddedMCP {
+		t.Fatalf("expected scan_incomplete and has_embedded_mcp to be true")
+	}
+	if len(report.EmbeddedMCPEvidence) != 2 {
+		t.Fatalf("expected 2 embedded MCP evidence entries, got %d", len(report.EmbeddedMCPEvidence))
+	}
+
+	hasAS018 := false
+	hasAS007 := false
+	for _, f := range report.Findings {
+		if f.ID == "AS-018" {
+			hasAS018 = true
+		}
+		if f.ID == "AS-007" {
+			hasAS007 = true
+		}
+	}
+	if !hasAS018 {
+		t.Fatal("expected AS-018 finding")
+	}
+	if hasAS007 {
+		t.Fatal("AS-007 should be replaced by AS-018 when embedded MCP is detected")
 	}
 }

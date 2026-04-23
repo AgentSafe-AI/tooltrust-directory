@@ -67,25 +67,27 @@ type ASFinding struct {
 // ── ToolTrust report schema ───────────────────────────────────────────────────
 
 type TrustReport struct {
-	ToolID              string      `json:"tool_id"`
-	Version             string      `json:"version"`
-	Grade               string      `json:"grade"`
-	RiskScore           int         `json:"risk_score"`
-	ScanDate            time.Time   `json:"scan_date"`
-	Scanner             string      `json:"scanner"`
-	SourceURL           string      `json:"source_url"`
-	Category            string      `json:"category,omitempty"`
-	Vendor              string      `json:"vendor,omitempty"`
-	Stars               int         `json:"stars,omitempty"`
-	NPMPackage          string      `json:"npm_package,omitempty"`
-	NPMDownloadsMonthly int         `json:"npm_downloads_monthly,omitempty"`
-	License             string      `json:"license,omitempty"`
-	Language            string      `json:"language,omitempty"`
-	Description         string      `json:"description,omitempty"`
-	Findings            []TTFinding `json:"findings"`
-	Summary             TTSummary   `json:"summary"`
-	Methodology         string      `json:"methodology"`
-	ScanIncomplete      bool        `json:"scan_incomplete,omitempty"`
+	ToolID              string          `json:"tool_id"`
+	Version             string          `json:"version"`
+	Grade               string          `json:"grade"`
+	RiskScore           int             `json:"risk_score"`
+	ScanDate            time.Time       `json:"scan_date"`
+	Scanner             string          `json:"scanner"`
+	SourceURL           string          `json:"source_url"`
+	Category            string          `json:"category,omitempty"`
+	Vendor              string          `json:"vendor,omitempty"`
+	Stars               int             `json:"stars,omitempty"`
+	NPMPackage          string          `json:"npm_package,omitempty"`
+	NPMDownloadsMonthly int             `json:"npm_downloads_monthly,omitempty"`
+	License             string          `json:"license,omitempty"`
+	Language            string          `json:"language,omitempty"`
+	Description         string          `json:"description,omitempty"`
+	Findings            []TTFinding     `json:"findings"`
+	Summary             TTSummary       `json:"summary"`
+	Methodology         string          `json:"methodology"`
+	ScanIncomplete      bool            `json:"scan_incomplete,omitempty"`
+	HasEmbeddedMCP      bool            `json:"has_embedded_mcp,omitempty"`
+	EmbeddedMCPEvidence []EmbedEvidence `json:"embedded_mcp_evidence,omitempty"`
 	// ToolNames lists every MCP tool (function) name exposed by this server.
 	// Stored to enable rug-pull detection (AS-012): if the set changes between
 	// scans of the same version, the server description was silently altered.
@@ -134,6 +136,25 @@ type ScanSnapshot struct {
 	Grade     string `json:"grade"`
 	RiskScore int    `json:"risk_score"`
 	Version   string `json:"version"`
+}
+
+type EmbedDetectionOutput struct {
+	HasEmbeddedMCP bool `json:"has_embedded_mcp"`
+	Detection      struct {
+		Matches []struct {
+			Language string          `json:"language"`
+			File     string          `json:"file"`
+			Evidence []EmbedEvidence `json:"evidence"`
+		} `json:"matches"`
+	} `json:"detection"`
+}
+
+type EmbedEvidence struct {
+	Kind     string `json:"kind"`
+	Line     int    `json:"line"`
+	Snippet  string `json:"snippet,omitempty"`
+	File     string `json:"file,omitempty"`
+	Language string `json:"language,omitempty"`
 }
 
 // ── Rule metadata (canonical titles + recommendations per AS-XXX) ────────────
@@ -192,6 +213,10 @@ var rules = map[string]ruleMeta{
 		title:          "Tool Shadowing",
 		recommendation: "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
 	},
+	"AS-018": {
+		title:          "Embedded MCP Server Detected",
+		recommendation: "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+	},
 }
 
 const (
@@ -215,6 +240,8 @@ func main() {
 	osvFindings := flag.String("osv-findings", "", "path to AS-004 OSV findings JSON from cmd/analyze")
 	scannerVer := flag.String("scanner-version", "", "tooltrust-scanner version string (e.g. v1.0.6)")
 	existingPath := flag.String("existing", "", "path to previous TrustReport JSON for rug-pull (AS-012) detection")
+	hasEmbeddedMCP := flag.Bool("has-embedded-mcp", false, "report embedded MCP detection when source-level MCP SDK usage was found")
+	embedEvidence := flag.String("embed-evidence", "", "path to scan-repo JSON output containing embedded MCP evidence")
 	flag.Parse()
 
 	if *inputPath == "" || *toolID == "" || *version == "" || *sourceURL == "" || *outputPath == "" {
@@ -247,6 +274,27 @@ func main() {
 		}
 	}
 
+	var embeddedEvidence []EmbedEvidence
+	if *hasEmbeddedMCP && *embedEvidence != "" {
+		rawEmbed, err := os.ReadFile(*embedEvidence)
+		if err != nil {
+			log.Printf("warning: cannot read embed-evidence %s: %v", *embedEvidence, err)
+		} else {
+			var embedOut EmbedDetectionOutput
+			if err := json.Unmarshal(rawEmbed, &embedOut); err != nil {
+				log.Printf("warning: parse embed-evidence: %v", err)
+			} else if embedOut.HasEmbeddedMCP {
+				for _, match := range embedOut.Detection.Matches {
+					for _, ev := range match.Evidence {
+						ev.File = match.File
+						ev.Language = match.Language
+						embeddedEvidence = append(embeddedEvidence, ev)
+					}
+				}
+			}
+		}
+	}
+
 	sv := *scannerVer
 	if sv == "" {
 		sv = "tooltrust-scanner/unknown"
@@ -266,7 +314,7 @@ func main() {
 	}
 
 	report := transform(as, extraFindings, prevReport, *toolID, *version, *sourceURL,
-		*vendor, *stars, *npmPackage, *npmDownloadsMonthly, *license, *language, *category, *description, sv)
+		*vendor, *stars, *npmPackage, *npmDownloadsMonthly, *license, *language, *category, *description, sv, *hasEmbeddedMCP, embeddedEvidence)
 
 	out, err := json.MarshalIndent(report, "", "  ")
 	if err != nil {
@@ -284,7 +332,7 @@ func main() {
 // ToolTrust report. When a scan covers multiple tool definitions (e.g. a
 // server exposing several tools), we take the worst-case risk score and
 // aggregate all findings.
-func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, version, sourceURL, vendor string, stars int, npmPackage string, npmDownloadsMonthly int, license, language, category, description, scannerVersion string) TrustReport {
+func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, version, sourceURL, vendor string, stars int, npmPackage string, npmDownloadsMonthly int, license, language, category, description, scannerVersion string, hasEmbeddedMCP bool, embeddedEvidence []EmbedEvidence) TrustReport {
 	allFindings := make([]TTFinding, 0)
 	maxScore := 0
 	summary := TTSummary{}
@@ -304,13 +352,30 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 	// misleading — the tool was not analyzed, not confirmed safe.
 	scanIncomplete := len(toolNames) == 0 && len(as.Policies) == 0
 	if scanIncomplete {
-		allFindings = append(allFindings, TTFinding{
-			ID:             "AS-007",
-			Severity:       "Info",
-			Title:          rules["AS-007"].title,
-			Description:    "No tool definitions were found in this repository. The scanner could not enumerate this server's tools — this grade reflects an incomplete scan, not a clean bill of health.",
-			Recommendation: "Verify the repository contains a valid MCP tool manifest (tools.json, mcp.json, or TypeScript/Python source with tool definitions). Re-scan after adding tool definitions.",
-		})
+		if hasEmbeddedMCP {
+			desc := "Embedded MCP SDK usage was detected in source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation."
+			if len(embeddedEvidence) > 0 && embeddedEvidence[0].Language != "" {
+				desc = fmt.Sprintf("Embedded MCP server detected in %s source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.", embeddedEvidence[0].Language)
+			}
+			allFindings = append(allFindings, TTFinding{
+				ID:             "AS-018",
+				Severity:       "Info",
+				Title:          rules["AS-018"].title,
+				Description:    desc,
+				Recommendation: rules["AS-018"].recommendation,
+				Metadata: map[string]any{
+					"evidence": embeddedEvidence,
+				},
+			})
+		} else {
+			allFindings = append(allFindings, TTFinding{
+				ID:             "AS-007",
+				Severity:       "Info",
+				Title:          rules["AS-007"].title,
+				Description:    "No tool definitions were found in this repository. The scanner could not enumerate this server's tools — this grade reflects an incomplete scan, not a clean bill of health.",
+				Recommendation: "Verify the repository contains a valid MCP tool manifest (tools.json, mcp.json, or TypeScript/Python source with tool definitions). Re-scan after adding tool definitions.",
+			})
+		}
 		summary.Info++
 	}
 
@@ -442,6 +507,8 @@ func transform(as ScannerOutput, extra []TTFinding, prev *TrustReport, toolID, v
 		Summary:             summary,
 		Methodology:         methodologyURL,
 		ScanIncomplete:      scanIncomplete,
+		HasEmbeddedMCP:      hasEmbeddedMCP,
+		EmbeddedMCPEvidence: embeddedEvidence,
 		ToolNames:           toolNames,
 		ToolContexts:        toolContexts,
 		ScanHistory:         scanHistory,

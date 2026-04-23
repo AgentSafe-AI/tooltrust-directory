@@ -119,6 +119,7 @@ All active scanner rules as of [ToolTrust Scanner v0.1.12](https://github.com/Ag
 | ⚠️ **AS&#8209;015** | Medium / High | Suspicious NPM Lifecycle Script | npm dependency publishes install-time lifecycle scripts; severity rises for remote-fetch or inline-execution patterns |
 | 🚨 **AS&#8209;016** | **Critical** | Suspicious NPM IOC Dependency | npm package metadata or install-time scripts reference a known malicious IOC dependency, domain, URL, or reviewed script pattern such as `plain-crypto-js`, helping catch compromised publishes beyond version blacklists |
 | ⚠️ **AS&#8209;017** | **Medium** | Suspicious Data Exfiltration Description | tool description explicitly suggests forwarding user data, content, or conversation history to external / remote endpoints, distinct from prompt-injection wording |
+| ℹ️ **AS&#8209;018** | **Info** | Embedded MCP Server Detected | source-level MCP SDK imports and server initialization were found, but tool enumeration was not possible without running the server |
 | 👥 **AS&#8209;013** | High / Medium | Tool Shadowing | Duplicate or near-duplicate tool name registered across servers hijacks calls intended for a trusted tool |
 
 ---
@@ -317,6 +318,18 @@ Flags descriptions that explicitly suggest forwarding user data, content, or con
 This rule is intentionally separate from AS-001. Prompt injection focuses on instruction override language; AS-017 focuses on suspicious external data-forwarding language that may still warrant review even when it is not trying to hijack the model.
 
 **Fix:** Narrow the destination scope, document the external endpoint clearly, and keep the tool behind approval if it forwards sensitive or user-derived content.
+
+---
+
+### AS-018
+
+**Embedded MCP Server Detected** · Severity: Info
+
+Flags repositories where ToolTrust can see MCP SDK imports and server initialization in source code, but cannot enumerate tools from a manifest or a live server handshake.
+
+This is not a clean bill of health. It means the repo appears to contain an embedded MCP implementation, so manual review or a sandboxed live scan is still required to evaluate auth, scope, and input validation.
+
+**Fix:** Run the server in a sandbox with a live `tooltrust-scanner scan --server ...` command when possible, or add a static tools manifest to make the implementation reviewable without executing the server.
 
 This rule is especially useful when combined with lockfile-derived transitive dependency evidence from `package-lock.json`, `pnpm-lock.yaml`, or `yarn.lock`, because many MCP servers will not depend on a compromised package directly.
 

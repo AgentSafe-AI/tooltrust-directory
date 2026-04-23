@@ -231,6 +231,19 @@ export const RULE_CATALOG: RuleInfo[] = [
     recommendation:
       "Review the destination scope, document external forwarding clearly, and require approval when the tool can send user-derived content off-box.",
   },
+  {
+    id: "AS-018",
+    emoji: "ℹ️",
+    shortLabel: "Embedded MCP",
+    title: "Embedded MCP Server Detected",
+    severity: ["Info"],
+    detects:
+      "Source-level MCP SDK imports and server initialization in a repo where tools could not be enumerated from a manifest or live handshake.",
+    whyItMatters:
+      "An embedded MCP implementation can still expose risky tools, but the scanner could only confirm presence, not complete behavior or auth posture.",
+    recommendation:
+      "Run a sandboxed live scan when possible or add a static tools manifest so the implementation can be reviewed without executing the server.",
+  },
 ];
 
 const RULES_BY_ID = new Map(RULE_CATALOG.map((rule) => [rule.id, rule]));
