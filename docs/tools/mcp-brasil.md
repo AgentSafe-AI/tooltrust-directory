@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.0` |
 | **Vendor** | jxnxts |
-| **Stars** | ⭐ 1443 |
+| **Stars** | ⭐ 1454 |
 | **Language** | Python |
 | **Source** | [mcp-brasil](https://github.com/jxnxts/mcp-brasil) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

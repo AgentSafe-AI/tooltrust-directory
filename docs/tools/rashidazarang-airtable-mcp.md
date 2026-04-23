@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 446 |
 | **Language** | TypeScript |
 | **Source** | [rashidazarang-airtable-mcp](https://github.com/rashidazarang/airtable-mcp) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

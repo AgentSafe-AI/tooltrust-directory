@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nicks-brn-promptscan](https://smithery.ai/server/nicks-brn/promptscan) |
-| **Scan Date** | 2026-04-21 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

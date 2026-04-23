@@ -10,10 +10,10 @@
 | **Vendor** | executeautomation |
 | **Stars** | ⭐ 341 |
 | **npm Package** | `@executeautomation/database-server` |
-| **npm Downloads (30d)** | 2.9k |
+| **npm Downloads (30d)** | 3.0k |
 | **Language** | TypeScript |
 | **Source** | [mcp-database-server](https://github.com/executeautomation/mcp-database-server) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

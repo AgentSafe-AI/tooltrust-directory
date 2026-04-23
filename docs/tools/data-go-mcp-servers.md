@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-dd27f9949040` |
 | **Vendor** | Koomook |
-| **Stars** | ⭐ 250 |
+| **Stars** | ⭐ 251 |
 | **Language** | Python |
 | **Source** | [data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

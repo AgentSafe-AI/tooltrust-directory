@@ -12,7 +12,7 @@
 | **npm Package** | `@qboapi/qbo-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

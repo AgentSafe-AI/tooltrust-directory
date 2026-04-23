@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.0` |
 | **Vendor** | cantian-ai |
-| **Stars** | ⭐ 361 |
+| **Stars** | ⭐ 363 |
 | **npm Package** | `bazi-mcp` |
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |
 | **Source** | [cantian-ai-bazi-mcp](https://github.com/cantian-ai/bazi-mcp) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

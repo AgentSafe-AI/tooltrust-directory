@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 565 |
 | **Language** | Java |
 | **Source** | [erudika-para](https://github.com/Erudika/para) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

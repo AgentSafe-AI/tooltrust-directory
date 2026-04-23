@@ -8,10 +8,10 @@
 | **Risk Score** | 40 |
 | **Version** | `1.7.0` |
 | **Vendor** | wenb1n-dev |
-| **Stars** | ⭐ 250 |
+| **Stars** | ⭐ 244 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 47 |
 | **Version** | `1.2.2` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 180 |
+| **Stars** | ⭐ 181 |
 | **npm Package** | `mcp-3d-printer-server` |
-| **npm Downloads (30d)** | 411 |
+| **npm Downloads (30d)** | 406 |
 | **Language** | TypeScript |
 | **Source** | [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

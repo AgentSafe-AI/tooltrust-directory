@@ -18,7 +18,7 @@ MCP Foundry는 다양한 AI Tool을 손쉽게 관리하고 확장할 수 있는 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mcp-foundry-real-estate](https://smithery.ai/server/MCP-Foundry/real-estate) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-23 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
