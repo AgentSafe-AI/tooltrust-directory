@@ -10,7 +10,7 @@ Source code: https://github.com/conetgr/eoa-mcp-server
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [christos-eoa-intermediaries](https://smithery.ai/server/christos/eoa-intermediaries) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

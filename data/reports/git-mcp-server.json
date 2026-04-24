@@ -3,14 +3,14 @@
   "version": "2.10.5",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-04-23T02:07:26.529305503Z",
+  "scan_date": "2026-04-24T02:07:37.889314562Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/cyanheads/git-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
-  "stars": 209,
+  "stars": 210,
   "npm_package": "@cyanheads/git-mcp-server",
-  "npm_downloads_monthly": 15578,
+  "npm_downloads_monthly": 15950,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "An MCP (Model Context Protocol) server enabling LLMs and AI agents to interact with Git repositories. Provides tools for comprehensive Git operations including clone, commit, branch, diff, log, status, push, pull, merge, rebase, worktree, tag management, and more, via the MCP standard. STDIO \u0026 HTTP.",
@@ -36,6 +36,14 @@
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "git_branch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "git_branch"
     },
@@ -321,6 +329,22 @@
     },
     {
       "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "git_set_working_dir"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "git_set_working_dir"
+    },
+    {
+      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
@@ -374,21 +398,13 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "git_worktree"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "git_wrapup_instructions"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 28,
-    "low": 13,
+    "high": 6,
+    "medium": 27,
+    "low": 15,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -440,7 +456,7 @@
     {
       "tool_name": "git_branch",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -637,10 +653,10 @@
     },
     {
       "tool_name": "git_set_working_dir",
-      "action": "ALLOW",
-      "grade": "A",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands"
+        "uses_network"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -881,6 +897,12 @@
     },
     {
       "scan_date": "2026-04-22T02:04:12Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "2.10.5"
+    },
+    {
+      "scan_date": "2026-04-23T02:07:26Z",
       "grade": "C",
       "risk_score": 27,
       "version": "2.10.5"

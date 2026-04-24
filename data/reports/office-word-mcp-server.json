@@ -1,10 +1,10 @@
 {
   "tool_id": "office-word-mcp-server",
   "version": "1.1.11",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-03-02T17:12:29.594679483Z",
-  "scanner": "ToolTrust Scanner/0.1.2",
+  "scan_date": "2026-04-24T02:05:06.129215158Z",
+  "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/GongRzhe/Office-Word-MCP-Server",
   "category": "Developer Tools",
   "vendor": "GongRzhe",
@@ -12,14 +12,34 @@
   "license": "MIT",
   "language": "Python",
   "description": "A Model Context Protocol (MCP) server for creating, reading, and manipulating Microsoft Word documents. This server enables AI assistants to work with Word documents through a standardized interface, providing rich document editing capabilities.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "text_count_words"
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true
+  "tool_names": [
+    "text_count_words"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "text_count_words",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
 }

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 32 |
 | **Language** | JavaScript |
 | **Source** | [samihalawa-visual-ui-debug-agent-mcp](https://github.com/samihalawa/visual-ui-debug-agent-mcp) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

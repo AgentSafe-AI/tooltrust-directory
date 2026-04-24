@@ -18,7 +18,7 @@ No API keys. No auth. Just connect.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [underground-district-ucd-mcp](https://smithery.ai/server/underground-district/ucd-mcp) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

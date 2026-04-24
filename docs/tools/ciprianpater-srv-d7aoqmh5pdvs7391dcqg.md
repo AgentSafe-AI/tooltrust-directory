@@ -180,7 +180,7 @@ Validate ECG biometric data from smartwatches to authenticate human identities, 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ciprianpater-srv-d7aoqmh5pdvs7391dcqg](https://smithery.ai/server/ciprianpater/srv-d7aoqmh5pdvs7391dcqg) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

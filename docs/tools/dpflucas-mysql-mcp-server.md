@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `0.1.3` |
 | **Vendor** | dpflucas |
-| **Stars** | ⭐ 64 |
+| **Stars** | ⭐ 66 |
 | **npm Package** | `mysql-mcp-server` |
 | **npm Downloads (30d)** | 3.7k |
 | **Language** | JavaScript |
 | **Source** | [dpflucas-mysql-mcp-server](https://github.com/dpflucas/mysql-mcp-server) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `0.1.0` |
 | **Vendor** | f4ww4z |
-| **Stars** | ⭐ 158 |
+| **Stars** | ⭐ 157 |
 | **npm Package** | `@f4ww4z/mcp-mysql-server` |
 | **npm Downloads (30d)** | 2.9k |
 | **Language** | JavaScript |
 | **Source** | [f4ww4z-mcp-mysql-server](https://github.com/f4ww4z/mcp-mysql-server) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

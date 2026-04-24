@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.7.0` |
 | **Vendor** | alexei-led |
-| **Stars** | ⭐ 181 |
+| **Stars** | ⭐ 182 |
 | **Language** | Python |
 | **Source** | [aws-mcp-server](https://github.com/alexei-led/aws-mcp-server) |
-| **Scan Date** | 2026-04-23 |
+| **Scan Date** | 2026-04-24 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
