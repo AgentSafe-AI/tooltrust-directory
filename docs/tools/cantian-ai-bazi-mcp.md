@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.5k |
 | **Language** | TypeScript |
 | **Source** | [cantian-ai-bazi-mcp](https://github.com/cantian-ai/bazi-mcp) |
-| **Scan Date** | 2026-04-24 |
+| **Scan Date** | 2026-04-25 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

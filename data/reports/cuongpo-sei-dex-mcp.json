@@ -1,9 +1,9 @@
 {
   "tool_id": "cuongpo-sei-dex-mcp",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 30,
-  "scan_date": "2026-04-24T02:17:31.186428803Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-25T02:10:56.061288596Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/cuongpo/sei-dex-mcp",
   "category": "Developer Tools",
@@ -15,52 +15,17 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 20 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "dex_get_swap_quote"
+          "solana_scan_pool_liquidity"
         ],
         "removed": [
-          "accounts_list",
-          "dex_analyze_warp_diag",
-          "dex_create_remote_pcap",
-          "dex_create_remote_warp_diag",
-          "dex_explore_remote_warp_diag_output",
-          "dex_fleet_status_live",
-          "dex_fleet_status_logs",
-          "dex_fleet_status_over_time",
-          "dex_http_test_details",
-          "dex_list_colos",
-          "dex_list_remote_capture_eligible_devices",
-          "dex_list_remote_captures",
-          "dex_list_remote_warp_diag_contents",
-          "dex_list_tests",
-          "dex_list_warp_change_events",
-          "dex_test_statistics",
-          "dex_traceroute_test_details",
-          "dex_traceroute_test_network_path",
-          "dex_traceroute_test_result_network_path",
-          "set_active_account"
+          "dex_get_swap_quote"
         ],
         "version": "1.0.0"
       }
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenIn\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "dex_get_swap_quote"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenOut\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "dex_get_swap_quote"
     },
     {
       "id": "AS-014",
@@ -68,29 +33,25 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dex_get_swap_quote"
+      "tool_name": "solana_scan_pool_liquidity"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 1,
     "medium": 0,
     "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "dex_get_swap_quote"
+    "solana_scan_pool_liquidity"
   ],
   "tool_contexts": [
     {
-      "tool_name": "dex_get_swap_quote",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "destinations": [
-        "dynamic email recipient (tokenIn)",
-        "dynamic email recipient (tokenOut)"
-      ],
+      "tool_name": "solana_scan_pool_liquidity",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -118,6 +79,12 @@
       "scan_date": "2026-04-23T02:17:51Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-24T02:17:31Z",
+      "grade": "C",
+      "risk_score": 30,
       "version": "1.0.0"
     }
   ]

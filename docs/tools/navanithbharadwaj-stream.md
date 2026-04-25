@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [navanithbharadwaj-stream](https://smithery.ai/server/navanithbharadwaj/stream) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-25 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

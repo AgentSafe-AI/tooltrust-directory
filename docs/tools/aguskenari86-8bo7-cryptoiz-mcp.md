@@ -1,6 +1,14 @@
 # 🟢 aguskenari86-8bo7-cryptoiz-mcp
 
-> AI-powered Solana DEX smart money signals. Detects whale/dolphin accumulation, divergence patterns, and market phase across 170+ tokens. Pay-per-call via x402 USDC micropayments. 6 paid tools ($0.01-$0.05) + 2 free tools.
+> CryptoIZ MCP v4.16.0 — AI-powered Solana DEX whale intelligence for Claude Desktop. 9 tools (7 paid + 2 free): whale alpha scanner, price-volume-whale divergence (3 types), 4-dimension accumulation/neutral/distribution phase scoring, BTC macro regime monitor, and NEW BTC Futures Signal (MTF 4H+5m scalping).
+
+PRICING: Pay per call via x402 USDC on Solana ($0.01–$0.05). Gas sponsored by Dexter facilitator.
+
+IMPORTANT: This MCP requires SVM_PRIVATE_KEY environment variable (your Solana wallet base58 private key) for x402 payments. Smithery Remote mode WILL NOT WORK without your key. RECOMMENDED: install locally via `npm install -g cryptoiz-mcp` + `npx cryptoiz-mcp-setup YOUR_PRIVATE_KEY` for proper x402 payment flow in Claude Desktop.
+
+Tools: get_whale_alpha ($0.05), get_whale_divergence ($0.02), get_whale_accumulation ($0.02), get_whale_neutral ($0.02), get_whale_distribution ($0.02), get_btc_regime ($0.01), get_btc_futures_signal ($0.03), get_token_ca (FREE), get_status (FREE).
+
+Links: https://cryptoiz.org/McpLanding · npm cryptoiz-mcp · @cryptoiz_IDN
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +17,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aguskenari86-8bo7-cryptoiz-mcp](https://smithery.ai/server/aguskenari86-8bo7/cryptoiz-mcp) |
-| **Scan Date** | 2026-04-24 |
+| **Scan Date** | 2026-04-25 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

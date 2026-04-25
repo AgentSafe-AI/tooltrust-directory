@@ -8,11 +8,11 @@
 | **Risk Score** | 12 |
 | **Version** | `1.1.0` |
 | **Vendor** | iolufemi |
-| **Stars** | ⭐ 149 |
+| **Stars** | ⭐ 148 |
 | **npm Package** | `Express-REST-API-and-MCP-Server-Framework` |
 | **Language** | TypeScript |
 | **Source** | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) |
-| **Scan Date** | 2026-04-24 |
+| **Scan Date** | 2026-04-25 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

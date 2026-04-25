@@ -22,7 +22,7 @@ Dados atualizados diariamente. LGPD-compliant (sem exposição de PII).
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [eliekfouri-g8h8-studio76](https://smithery.ai/server/eliekfouri-g8h8/studio76) |
-| **Scan Date** | 2026-04-24 |
+| **Scan Date** | 2026-04-25 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

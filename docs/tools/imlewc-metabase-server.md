@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `0.1.0` |
 | **Vendor** | imlewc |
-| **Stars** | ⭐ 144 |
+| **Stars** | ⭐ 145 |
 | **npm Package** | `@imlewc/metabase-server` |
-| **npm Downloads (30d)** | 439 |
+| **npm Downloads (30d)** | 416 |
 | **Language** | JavaScript |
 | **Source** | [imlewc-metabase-server](https://github.com/imlewc/metabase-server) |
-| **Scan Date** | 2026-04-19 |
+| **Scan Date** | 2026-04-25 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
