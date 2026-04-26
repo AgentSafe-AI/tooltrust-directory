@@ -1,0 +1,69 @@
+{
+  "tool_id": "conorluddy-xc-mcp",
+  "version": "3.2.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-04-26T07:28:22Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/conorluddy/xc-mcp",
+  "category": "Developer Tools",
+  "vendor": "conorluddy",
+  "stars": 82,
+  "npm_package": "xc-mcp",
+  "npm_downloads_monthly": 402,
+  "language": "TypeScript",
+  "description": "XCode CLI MCP: Convenience wrapper for Xcode CLI tools \u0026 iOS Simulator. Progressive disclosure of tool responses to reduce context usage.  Use --mini param for build-only with tiny context footprint.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 14,
+            "snippet": "new McpServer(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 14,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ]
+}

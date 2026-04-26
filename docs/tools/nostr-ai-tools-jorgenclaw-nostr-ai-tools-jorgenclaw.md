@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [nostr-ai-tools-jorgenclaw-nostr-ai-tools-jorgenclaw](https://smithery.ai/server/Nostr_AI_Tools_Jorgenclaw/Nostr_AI_Tools_Jorgenclaw) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

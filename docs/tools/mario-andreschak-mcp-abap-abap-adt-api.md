@@ -13,7 +13,7 @@
 | **Language** | TypeScript |
 | **Source** | [mario-andreschak-mcp-abap-abap-adt-api](https://github.com/mario-andreschak/mcp-abap-abap-adt-api) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

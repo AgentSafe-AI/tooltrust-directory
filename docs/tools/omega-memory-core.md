@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 100 |
 | **Language** | Python |
 | **Source** | [omega-memory-core](https://github.com/omega-memory/omega-memory) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-26 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

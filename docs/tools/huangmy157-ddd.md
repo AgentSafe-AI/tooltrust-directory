@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [huangmy157-ddd](https://smithery.ai/server/huangmy157/ddd) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | dazeb |
 | **Stars** | ⭐ 52 |
 | **npm Package** | `markdown-downloader` |
-| **npm Downloads (30d)** | 24 |
+| **npm Downloads (30d)** | 13 |
 | **Language** | JavaScript |
 | **Source** | [dazeb-markdown-downloader](https://github.com/dazeb/markdown-downloader) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-26 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

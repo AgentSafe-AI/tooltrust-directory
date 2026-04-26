@@ -3,8 +3,8 @@
   "version": "sha-d53b566a3326",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-08T01:44:36.859870502Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:40:23.462898672Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/alan5543/Flight-Search-MCP",
   "category": "Developer Tools",
   "vendor": "alan5543",
@@ -12,12 +12,31 @@
   "language": "Python",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-d53b566a3326: 4 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "discover_flights",
+          "get_reference_data",
+          "search_calendar",
+          "search_flights"
+        ],
+        "removed": [
+          "web_search_preview"
+        ],
+        "version": "sha-d53b566a3326"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "web_search_preview"
+      "tool_name": "search_flights"
     },
     {
       "id": "AS-011",
@@ -25,7 +44,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "web_search_preview"
+      "tool_name": "search_flights"
     },
     {
       "id": "AS-014",
@@ -33,32 +52,127 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "web_search_preview"
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_calendar"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_calendar"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_calendar"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_reference_data"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_reference_data"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "discover_flights"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 1,
-    "info": 1
+    "high": 3,
+    "medium": 1,
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 4,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "main.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 14,
+      "snippet": "FastMCP(",
+      "file": "main.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 16,
+      "snippet": "@mcp.tool(",
+      "file": "main.py",
+      "language": "python"
+    }
+  ],
   "tool_names": [
-    "web_search_preview"
+    "discover_flights",
+    "get_reference_data",
+    "search_calendar",
+    "search_flights"
   ],
   "tool_contexts": [
     {
-      "tool_name": "web_search_preview",
+      "tool_name": "search_flights",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "hardcoded domain: google.com",
-        "hardcoded domain: wikipedia.org"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_calendar",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_reference_data",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "discover_flights",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -78,6 +192,12 @@
     },
     {
       "scan_date": "2026-04-05T01:18:52Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "sha-d53b566a3326"
+    },
+    {
+      "scan_date": "2026-04-08T01:44:36Z",
       "grade": "B",
       "risk_score": 17,
       "version": "sha-d53b566a3326"

@@ -14,7 +14,7 @@ Surface channel and playlist insights quickly by listing items and details.
 | **Vendor** | Smithery |
 | **Source** | [sfiorini-youtube-mcp](https://smithery.ai/server/sfiorini/youtube-mcp) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

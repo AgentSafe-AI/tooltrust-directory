@@ -10,11 +10,11 @@
 | **Vendor** | horizondatawave |
 | **Stars** | ⭐ 60 |
 | **npm Package** | `@anysiteio/mcp` |
-| **npm Downloads (30d)** | 73 |
+| **npm Downloads (30d)** | 77 |
 | **Language** | JavaScript |
 | **Source** | [horizondatawave-hdw-mcp-server](https://github.com/anysiteio/anysite-mcp-server) |
-| **Scan Date** | 2026-04-24 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-26 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

@@ -20,7 +20,7 @@ Tools included:
 | **Vendor** | Smithery |
 | **Source** | [hegetiby-jwao-anaf-efactura-mcp](https://smithery.ai/server/hegetiby-jwao/anaf-efactura-mcp) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

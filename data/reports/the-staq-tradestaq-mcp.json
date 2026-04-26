@@ -3,16 +3,31 @@
   "version": "0.1.1",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-04-19T02:18:45.456916332Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:46:05.690130475Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/the-staq/tradestaq-mcp",
   "category": "Developer Tools",
   "vendor": "the-staq",
   "npm_package": "@the-staq/tradestaq-mcp",
-  "npm_downloads_monthly": 236,
+  "npm_downloads_monthly": 374,
   "language": "TypeScript",
   "description": "TradeStaq MCP Server — trading intelligence for AI agents",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.1: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "export_backtest",
+          "export_bot_trades"
+        ],
+        "removed": null,
+        "version": "0.1.1"
+      }
+    },
     {
       "id": "AS-010",
       "severity": "High",
@@ -121,6 +136,22 @@
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "export_backtest"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "export_backtest"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "close_position"
@@ -144,12 +175,29 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
+    "high": 9,
     "medium": 4,
-    "low": 5,
+    "low": 6,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 8,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 30,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "authenticate",
     "check_auth",
@@ -159,6 +207,8 @@
     "create_strategy",
     "deploy_bot",
     "explain_strategy",
+    "export_backtest",
+    "export_bot_trades",
     "follow_trader",
     "generate_strategy",
     "get_backtest_results",
@@ -350,6 +400,16 @@
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
+      "tool_name": "export_backtest",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
       "tool_name": "list_bots",
       "action": "ALLOW",
       "grade": "A",
@@ -375,6 +435,13 @@
     },
     {
       "tool_name": "stop_bot",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "export_bot_trades",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "Verified from local lockfile",
@@ -481,6 +548,12 @@
     },
     {
       "scan_date": "2026-04-18T01:56:20Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-04-19T02:18:45Z",
       "grade": "C",
       "risk_score": 40,
       "version": "0.1.1"

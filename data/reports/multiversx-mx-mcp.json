@@ -3,14 +3,13 @@
   "version": "1.0.3",
   "grade": "C",
   "risk_score": 30,
-  "scan_date": "2026-04-26T02:17:00.069588759Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:38:06.979018643Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/multiversx/mx-mcp",
   "category": "Developer Tools",
   "vendor": "multiversx",
   "stars": 2,
   "npm_package": "@multiversx/mcp",
-  "npm_downloads_monthly": 32,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "MCP Server for MultiversX",
@@ -59,7 +58,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenTicker\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenName\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "issue-semi-fungible-collection"
     },
@@ -67,7 +66,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenName\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenTicker\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "issue-semi-fungible-collection"
     },
@@ -144,6 +143,23 @@
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/setupServer.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 84,
+      "snippet": "new McpServer(",
+      "file": "src/setupServer.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "create-sft-nft-mesdt-tokens",
     "create-wallet",
@@ -381,6 +397,12 @@
     },
     {
       "scan_date": "2026-04-25T02:07:21Z",
+      "grade": "C",
+      "risk_score": 30,
+      "version": "1.0.3"
+    },
+    {
+      "scan_date": "2026-04-26T02:17:00Z",
       "grade": "C",
       "risk_score": 30,
       "version": "1.0.3"

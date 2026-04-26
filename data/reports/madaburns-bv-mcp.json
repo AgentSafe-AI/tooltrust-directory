@@ -3,18 +3,38 @@
   "version": "2.9.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-19T02:14:32.095896018Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:35:46.276693945Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/MadaBurns/bv-mcp",
   "category": "Developer Tools",
   "vendor": "MadaBurns",
   "stars": 5,
   "npm_package": "blackveil-dns",
-  "npm_downloads_monthly": 2004,
+  "npm_downloads_monthly": 1821,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Open-source DNS \u0026 email security scanner. One MCP endpoint, 57 checks, zero install. Cloudflare Workers.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.9.0: 7 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "check_dbl",
+          "check_dnssec_chain",
+          "check_fast_flux",
+          "check_nsec_walkability",
+          "check_rbl",
+          "cymru_asn",
+          "rdap_lookup"
+        ],
+        "removed": null,
+        "version": "2.9.0"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -126,13 +146,29 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_provider_insights"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "rdap_lookup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "rdap_lookup"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 7,
     "medium": 4,
-    "low": 5,
+    "low": 6,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -144,15 +180,20 @@
     "check_caa",
     "check_dane",
     "check_dane_https",
+    "check_dbl",
     "check_dkim",
     "check_dmarc",
     "check_dnssec",
+    "check_dnssec_chain",
+    "check_fast_flux",
     "check_http_security",
     "check_lookalikes",
     "check_mta_sts",
     "check_mx",
     "check_mx_reputation",
     "check_ns",
+    "check_nsec_walkability",
+    "check_rbl",
     "check_resolver_consistency",
     "check_shadow_domains",
     "check_spf",
@@ -165,6 +206,7 @@
     "check_zone_hygiene",
     "compare_baseline",
     "compare_domains",
+    "cymru_asn",
     "discover_subdomains",
     "explain_finding",
     "generate_dkim_config",
@@ -177,6 +219,7 @@
     "get_provider_insights",
     "map_compliance",
     "map_supply_chain",
+    "rdap_lookup",
     "resolve_spf_chain",
     "scan_domain",
     "simulate_attack_paths",
@@ -622,6 +665,79 @@
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "check_dbl",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "check_rbl",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "cymru_asn",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "rdap_lookup",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "check_nsec_walkability",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "check_dnssec_chain",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "check_fast_flux",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -672,6 +788,12 @@
       "grade": "C",
       "risk_score": 25,
       "version": "2.7.1"
+    },
+    {
+      "scan_date": "2026-04-19T02:14:32Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "2.9.0"
     }
   ]
 }

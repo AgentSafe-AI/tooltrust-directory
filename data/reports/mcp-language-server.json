@@ -1,64 +1,76 @@
 {
   "tool_id": "mcp-language-server",
   "version": "0.1.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-24T02:05:11.702750682Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-04-26T07:23:36Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/isaacphi/mcp-language-server",
   "category": "Developer Tools",
   "vendor": "isaacphi",
-  "stars": 1515,
+  "stars": 1519,
   "license": "BSD-3-Clause",
   "language": "Go",
   "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "utility_generate_crontab"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "utility_generate_crontab"
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "utility_generate_crontab"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 111,
+            "snippet": "server.NewMCPServer(",
+            "file": "main.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "tool_names": [
-    "utility_generate_crontab"
-  ],
-  "tool_contexts": [
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
     {
-      "tool_name": "utility_generate_crontab",
-      "action": "ALLOW",
+      "kind": "import",
+      "line": 17,
+      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+      "file": "main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 111,
+      "snippet": "server.NewMCPServer(",
+      "file": "main.go",
+      "language": "go"
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-24T02:05:11Z",
       "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 17,
+      "version": "0.1.1"
     }
   ]
 }

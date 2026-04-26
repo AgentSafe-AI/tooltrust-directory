@@ -3,8 +3,8 @@
   "version": "sha-2ec6901957c0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-08T01:44:40.317803284Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:38:29.887955724Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/banjtheman/vibe_tide_mcp",
   "category": "Developer Tools",
   "vendor": "banjtheman",
@@ -14,20 +14,36 @@
   "description": "MCP Server to build and play VibeTide",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find-hooks"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "find-hooks"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-2ec6901957c0: 8 tool(s) added, 10 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "quantum_attest",
+          "xqbusd_batch_prices",
+          "xqbusd_get_price",
+          "xqbusd_get_quote",
+          "xqbusd_iso20022_message",
+          "xqbusd_oracle_status",
+          "xqbusd_protocol25_proof",
+          "xqbusd_xrpl_gateway"
+        ],
+        "removed": [
+          "find-hooks",
+          "flag-problematic-phrases",
+          "get-archetype",
+          "get-copywriting-framework",
+          "get-network-categories-for-hooks",
+          "get-text-before-fold",
+          "get-trending-content",
+          "list-archetypes",
+          "list-copywriting-frameworks",
+          "validate-content-before-fold"
+        ],
+        "version": "sha-2ec6901957c0"
+      }
     },
     {
       "id": "AS-014",
@@ -35,23 +51,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find-hooks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-network-categories-for-hooks"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get-network-categories-for-hooks"
+      "tool_name": "quantum_attest"
     },
     {
       "id": "AS-014",
@@ -59,23 +59,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-network-categories-for-hooks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "list-copywriting-frameworks"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "list-copywriting-frameworks"
+      "tool_name": "xqbusd_get_price"
     },
     {
       "id": "AS-014",
@@ -83,7 +67,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list-copywriting-frameworks"
+      "tool_name": "xqbusd_batch_prices"
     },
     {
       "id": "AS-002",
@@ -91,7 +75,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-copywriting-framework"
+      "tool_name": "xqbusd_get_quote"
     },
     {
       "id": "AS-011",
@@ -99,7 +83,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get-copywriting-framework"
+      "tool_name": "xqbusd_get_quote"
     },
     {
       "id": "AS-014",
@@ -107,7 +91,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-copywriting-framework"
+      "tool_name": "xqbusd_get_quote"
     },
     {
       "id": "AS-014",
@@ -115,7 +99,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list-archetypes"
+      "tool_name": "xqbusd_iso20022_message"
     },
     {
       "id": "AS-014",
@@ -123,7 +107,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-archetype"
+      "tool_name": "xqbusd_oracle_status"
     },
     {
       "id": "AS-014",
@@ -131,7 +115,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "flag-problematic-phrases"
+      "tool_name": "xqbusd_xrpl_gateway"
     },
     {
       "id": "AS-014",
@@ -139,148 +123,125 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate-content-before-fold"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-text-before-fold"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-trending-content"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get-trending-content"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-trending-content"
+      "tool_name": "xqbusd_protocol25_proof"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 2,
     "medium": 0,
-    "low": 5,
-    "info": 10
+    "low": 1,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "vibe_tide_mcp_app/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 283,
+      "snippet": "new McpServer(",
+      "file": "vibe_tide_mcp_app/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 25,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "vibe_tide_mcp_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 34,
+      "snippet": "FastMCP(",
+      "file": "vibe_tide_mcp_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 570,
+      "snippet": "@mcp.tool(",
+      "file": "vibe_tide_mcp_server.py",
+      "language": "python"
+    }
+  ],
   "tool_names": [
-    "find-hooks",
-    "flag-problematic-phrases",
-    "get-archetype",
-    "get-copywriting-framework",
-    "get-network-categories-for-hooks",
-    "get-text-before-fold",
-    "get-trending-content",
-    "list-archetypes",
-    "list-copywriting-frameworks",
-    "validate-content-before-fold"
+    "quantum_attest",
+    "xqbusd_batch_prices",
+    "xqbusd_get_price",
+    "xqbusd_get_quote",
+    "xqbusd_iso20022_message",
+    "xqbusd_oracle_status",
+    "xqbusd_protocol25_proof",
+    "xqbusd_xrpl_gateway"
   ],
   "tool_contexts": [
     {
-      "tool_name": "find-hooks",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-network-categories-for-hooks",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list-copywriting-frameworks",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-copywriting-framework",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list-archetypes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-archetype",
+      "tool_name": "quantum_attest",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "flag-problematic-phrases",
+      "tool_name": "xqbusd_get_price",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "validate-content-before-fold",
+      "tool_name": "xqbusd_batch_prices",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get-text-before-fold",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-trending-content",
+      "tool_name": "xqbusd_get_quote",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
       ],
+      "destinations": [
+        "dynamic email recipient (to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_iso20022_message",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_oracle_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_xrpl_gateway",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_protocol25_proof",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -306,6 +267,12 @@
     },
     {
       "scan_date": "2026-04-05T01:56:56Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "sha-2ec6901957c0"
+    },
+    {
+      "scan_date": "2026-04-08T01:44:40Z",
       "grade": "B",
       "risk_score": 17,
       "version": "sha-2ec6901957c0"

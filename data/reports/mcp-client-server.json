@@ -1,26 +1,52 @@
 {
   "tool_id": "mcp-client-server",
   "version": "0.1.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-10T01:58:17.771937348Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-26T07:27:38.42349069Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/willccbb/mcp-client-server",
   "category": "Developer Tools",
   "vendor": "willccbb",
   "stars": 124,
   "npm_package": "mcp-test-client",
-  "npm_downloads_monthly": 5134,
+  "npm_downloads_monthly": 4822,
   "language": "TypeScript",
   "description": "An MCP Server that's also an MCP Client. Useful for letting Claude develop and test MCPs without needing to reset the application.",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_wiki_structure"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.0: 1 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "api_test_webhook"
+        ],
+        "removed": [
+          "ask_question",
+          "read_wiki_contents",
+          "read_wiki_structure"
+        ],
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "api_test_webhook"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "api_test_webhook"
     },
     {
       "id": "AS-014",
@@ -28,49 +54,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_wiki_contents"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ask_question"
+      "tool_name": "api_test_webhook"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
-    "low": 0,
-    "info": 3
+    "low": 1,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "ask_question",
-    "read_wiki_contents",
-    "read_wiki_structure"
+    "api_test_webhook"
   ],
   "tool_contexts": [
     {
-      "tool_name": "read_wiki_structure",
+      "tool_name": "api_test_webhook",
       "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "read_wiki_contents",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ask_question",
-      "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -146,6 +154,12 @@
       "scan_date": "2026-04-08T01:40:41Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-04-10T01:58:17Z",
+      "grade": "A",
+      "risk_score": 0,
       "version": "0.1.0"
     }
   ]

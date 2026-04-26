@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3469 |
 | **Source** | [mcp-chinese-getting-started-guide](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

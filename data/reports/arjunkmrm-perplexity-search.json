@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-25T02:04:28.594815997Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:33:31.998557166Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/arjunkmrm/perplexity-search",
   "category": "Developer Tools",
   "vendor": "arjunkmrm",
@@ -13,6 +13,47 @@
   "language": "TypeScript",
   "description": "A simple Model Context Protocol server for Perplexity's web search with sonar or sonar-pro",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.1: 4 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "accounts_list",
+          "ai_search",
+          "list_rags",
+          "set_active_account"
+        ],
+        "removed": null,
+        "version": "1.0.1"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "accounts_list"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_active_account"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_rags"
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -36,22 +77,108 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ai_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ai_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ai_search"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 3,
     "medium": 0,
-    "low": 1,
-    "info": 1
+    "low": 2,
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 27,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 35,
+      "snippet": ".registerTool(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
-    "search"
+    "accounts_list",
+    "ai_search",
+    "list_rags",
+    "search",
+    "set_active_account"
   ],
   "tool_contexts": [
     {
+      "tool_name": "accounts_list",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "set_active_account",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (activeAccountIdParam)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_rags",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "search",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ai_search",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -112,6 +239,12 @@
     },
     {
       "scan_date": "2026-04-19T02:12:35Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.1"
+    },
+    {
+      "scan_date": "2026-04-25T02:04:28Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.1"

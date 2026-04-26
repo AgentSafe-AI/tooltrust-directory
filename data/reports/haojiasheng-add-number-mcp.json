@@ -1,10 +1,10 @@
 {
   "tool_id": "haojiasheng-add-number-mcp",
   "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-24T02:19:32.410374039Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-26T07:46:47.034725208Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/haojiasheng/add-number-mcp",
   "category": "Developer Tools",
   "vendor": "haojiasheng",
@@ -13,12 +13,26 @@
   "description": "简单的mcp",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_balance"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 6 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "play_turn",
+          "start_game"
+        ],
+        "removed": [
+          "cancel_activation",
+          "check_price",
+          "check_sms",
+          "get_balance",
+          "order_number",
+          "retry_activation"
+        ],
+        "version": "1.0.0"
+      }
     },
     {
       "id": "AS-014",
@@ -26,7 +40,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_price"
+      "tool_name": "start_game"
     },
     {
       "id": "AS-014",
@@ -34,92 +48,53 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "order_number"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_sms"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "cancel_activation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "retry_activation"
+      "tool_name": "play_turn"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 6
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 17,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 33,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
-    "cancel_activation",
-    "check_price",
-    "check_sms",
-    "get_balance",
-    "order_number",
-    "retry_activation"
+    "play_turn",
+    "start_game"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_balance",
+      "tool_name": "start_game",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "check_price",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "order_number",
+      "tool_name": "play_turn",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (quality_factor)"
+        "hardcoded domain: visibleState.resources"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_sms",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "cancel_activation",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "retry_activation",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -145,6 +120,12 @@
     },
     {
       "scan_date": "2026-04-23T02:19:57Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-24T02:19:32Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.0.0"

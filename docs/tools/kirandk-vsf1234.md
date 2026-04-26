@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [kirandk-vsf1234](https://smithery.ai/server/kirandk/vsf1234) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

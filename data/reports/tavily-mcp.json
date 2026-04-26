@@ -3,14 +3,14 @@
   "version": "0.2.19",
   "grade": "C",
   "risk_score": 34,
-  "scan_date": "2026-04-26T02:06:46.46443154Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:23:29.642953888Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/tavily-ai/tavily-mcp",
   "category": "Developer Tools",
   "vendor": "tavily-ai",
-  "stars": 1837,
+  "stars": 1840,
   "npm_package": "tavily-mcp",
-  "npm_downloads_monthly": 341750,
+  "npm_downloads_monthly": 356155,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Production ready MCP server with real-time search, extract, map \u0026 crawl.",
@@ -19,13 +19,13 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.2.19: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.2.19: 0 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
-        "added": [
+        "added": null,
+        "removed": [
           "tavily_skill"
         ],
-        "removed": null,
         "version": "0.2.19"
       }
     },
@@ -49,7 +49,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "input schema exposes 15 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "tavily_search"
     },
@@ -59,14 +59,6 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tavily_search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "tavily_search"
     },
     {
@@ -83,14 +75,6 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tavily_extract"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "tavily_extract"
     },
     {
@@ -126,14 +110,6 @@
       "tool_name": "tavily_crawl"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily_crawl"
-    },
-    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
@@ -158,14 +134,6 @@
       "tool_name": "tavily_map"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily_map"
-    },
-    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -180,46 +148,14 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "tavily_research"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily_research"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily_skill"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "tavily_skill"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily_skill"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 8,
-    "medium": 3,
+    "high": 7,
+    "medium": 2,
     "low": 7,
-    "info": 6
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -227,8 +163,7 @@
     "tavily_extract",
     "tavily_map",
     "tavily_research",
-    "tavily_search",
-    "tavily_skill"
+    "tavily_search"
   ],
   "tool_contexts": [
     {
@@ -243,8 +178,8 @@
         "dynamic email recipient (topic)",
         "hardcoded domain: docs.tavily.com"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "tavily_extract",
@@ -256,8 +191,8 @@
       "destinations": [
         "dynamic URL input (urls)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "tavily_crawl",
@@ -270,8 +205,8 @@
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "tavily_map",
@@ -284,8 +219,8 @@
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "tavily_research",
@@ -294,18 +229,8 @@
       "behavior": [
         "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "tavily_skill",
-      "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (max_tokens)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -509,6 +434,12 @@
     },
     {
       "scan_date": "2026-04-25T01:56:56Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.2.19"
+    },
+    {
+      "scan_date": "2026-04-26T02:06:46Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.2.19"

@@ -11,7 +11,7 @@
 | **Vendor** | Smithery |
 | **Source** | [mavengence-ustidnr-mcp](https://smithery.ai/server/mavengence/ustidnr-mcp) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

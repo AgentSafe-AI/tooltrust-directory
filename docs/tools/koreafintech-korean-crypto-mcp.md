@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [koreafintech-korean-crypto-mcp](https://smithery.ai/server/koreafintech/korean-crypto-mcp) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

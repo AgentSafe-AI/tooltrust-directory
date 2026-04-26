@@ -3,13 +3,13 @@
   "version": "0.0.4",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-26T02:20:47.837097567Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:40:56.020186484Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/praveencs87/trello-mcp",
   "category": "Developer Tools",
   "vendor": "praveencs87",
   "npm_package": "trello-mcp-server",
-  "npm_downloads_monthly": 612,
+  "npm_downloads_monthly": 542,
   "language": "TypeScript",
   "description": "Trello MCP Server is a bridge between Trello and AI-powered editors or assistants. It exposes your Trello boards, lists, and cards through the Model Context Protocol (MCP), allowing tools like Cursor, Claude, and VS Code to automate and manage Trello workflows using natural language or programmatic commands.",
   "findings": [
@@ -190,6 +190,23 @@
     "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 19,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "add-comment",
     "add-comments",
@@ -414,6 +431,12 @@
     },
     {
       "scan_date": "2026-04-25T02:10:25Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.0.4"
+    },
+    {
+      "scan_date": "2026-04-26T02:20:47Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.0.4"

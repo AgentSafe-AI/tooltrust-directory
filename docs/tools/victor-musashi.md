@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [victor-musashi](https://smithery.ai/server/victor/musashi) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

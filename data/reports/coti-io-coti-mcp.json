@@ -3,8 +3,8 @@
   "version": "0.0.18",
   "grade": "D",
   "risk_score": 62,
-  "scan_date": "2026-04-26T02:18:37.268011984Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:44:59.535539426Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/coti-io/coti-mcp",
   "category": "Developer Tools",
   "vendor": "coti-io",
@@ -528,14 +528,6 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_id\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "get_private_erc721_token_uri"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"private_key\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_private_erc721_token_uri"
@@ -545,6 +537,14 @@
       "severity": "High",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"token_address\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_private_erc721_token_uri"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_id\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_private_erc721_token_uri"
     },
@@ -584,14 +584,6 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "mint_private_erc721_token"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"token_uri\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mint_private_erc721_token"
@@ -601,6 +593,14 @@
       "severity": "High",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"private_key\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "mint_private_erc721_token"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_address\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mint_private_erc721_token"
     },
@@ -877,6 +877,30 @@
     "info": 44
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 69,
+      "snippet": "new McpServer(",
+      "file": "index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 75,
+      "snippet": ".registerTool(",
+      "file": "index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "approve_erc20_spender",
     "approve_private_erc721",
@@ -1447,6 +1471,12 @@
     },
     {
       "scan_date": "2026-04-25T02:09:17Z",
+      "grade": "D",
+      "risk_score": 62,
+      "version": "0.0.18"
+    },
+    {
+      "scan_date": "2026-04-26T02:18:37Z",
       "grade": "D",
       "risk_score": 62,
       "version": "0.0.18"

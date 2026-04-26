@@ -1,10 +1,10 @@
 {
   "tool_id": "rigour-labs-rigour",
   "version": "5.2.9",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-04-19T02:11:28.432307065Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "C",
+  "risk_score": 48,
+  "scan_date": "2026-04-26T07:31:57.824568112Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/rigour-labs/rigour",
   "category": "Developer Tools",
   "vendor": "rigour-labs",
@@ -15,68 +15,61 @@
   "description": "The immune system for AI coding agents",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_check"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_explain"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_status"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_get_fix_packet"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_record_failure"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_clear_failure"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_remember"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v5.2.9: 2 tool(s) added, 9 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_learning_pathway",
+          "get_vulnerable_practice_labs"
+        ],
+        "removed": [
+          "rigour_check",
+          "rigour_clear_failure",
+          "rigour_explain",
+          "rigour_forget",
+          "rigour_get_fix_packet",
+          "rigour_recall",
+          "rigour_record_failure",
+          "rigour_remember",
+          "rigour_status"
+        ],
+        "version": "5.2.9"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "rigour_recall"
+      "tool_name": "get_learning_pathway"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_learning_pathway"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_learning_pathway"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"github_token\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_learning_pathway"
     },
     {
       "id": "AS-011",
@@ -84,7 +77,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "rigour_recall"
+      "tool_name": "get_learning_pathway"
     },
     {
       "id": "AS-014",
@@ -92,7 +85,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_recall"
+      "tool_name": "get_learning_pathway"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_vulnerable_practice_labs"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_vulnerable_practice_labs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_vulnerable_practice_labs"
     },
     {
       "id": "AS-014",
@@ -100,98 +117,48 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rigour_forget"
+      "tool_name": "get_vulnerable_practice_labs"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
+    "high": 4,
+    "medium": 3,
     "low": 2,
-    "info": 9
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "rigour_check",
-    "rigour_clear_failure",
-    "rigour_explain",
-    "rigour_forget",
-    "rigour_get_fix_packet",
-    "rigour_recall",
-    "rigour_record_failure",
-    "rigour_remember",
-    "rigour_status"
+    "get_learning_pathway",
+    "get_vulnerable_practice_labs"
   ],
   "tool_contexts": [
     {
-      "tool_name": "rigour_check",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "get_learning_pathway",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (github_token)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "rigour_explain",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "get_vulnerable_practice_labs",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_get_fix_packet",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_record_failure",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_clear_failure",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_remember",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_recall",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
+        "executes_commands",
         "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rigour_forget",
-      "action": "ALLOW",
-      "grade": "A",
+      "destinations": [
+        "hardcoded domain: play.secdim.com"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -241,6 +208,12 @@
     },
     {
       "scan_date": "2026-04-18T01:49:43Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "5.2.9"
+    },
+    {
+      "scan_date": "2026-04-19T02:11:28Z",
       "grade": "A",
       "risk_score": 4,
       "version": "5.2.9"

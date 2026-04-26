@@ -1,0 +1,70 @@
+{
+  "tool_id": "hustcc-mcp-mermaid",
+  "version": "0.4.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-04-26T07:24:57Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/hustcc/mcp-mermaid",
+  "category": "Developer Tools",
+  "vendor": "hustcc",
+  "stars": 534,
+  "npm_package": "mcp-mermaid",
+  "npm_downloads_monthly": 20047,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "❤️ Generate mermaid diagram and chart with AI MCP dynamically.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 22,
+            "snippet": "new McpServer(",
+            "file": "src/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 22,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ]
+}

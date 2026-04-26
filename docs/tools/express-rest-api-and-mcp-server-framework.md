@@ -13,7 +13,7 @@
 | **Language** | TypeScript |
 | **Source** | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

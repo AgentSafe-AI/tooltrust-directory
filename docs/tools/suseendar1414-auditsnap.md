@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [suseendar1414-auditsnap](https://smithery.ai/server/suseendar1414/auditsnap) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

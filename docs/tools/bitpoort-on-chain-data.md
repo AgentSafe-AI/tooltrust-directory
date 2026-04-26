@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [bitpoort-on-chain-data](https://smithery.ai/server/bitpoort/on-chain-data) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

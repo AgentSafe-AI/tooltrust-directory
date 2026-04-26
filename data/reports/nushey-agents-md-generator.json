@@ -3,8 +3,8 @@
   "version": "0.5.3",
   "grade": "C",
   "risk_score": 34,
-  "scan_date": "2026-04-26T02:15:10.784684764Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:35:49.407748144Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/nushey/agents-md-generator",
   "category": "Developer Tools",
   "vendor": "nushey",
@@ -305,7 +305,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"access_token\" appears to accept a secret or credential",
+      "description": "input parameter \"verify_token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "kopern_connect_whatsapp"
     },
@@ -313,7 +313,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"verify_token\" appears to accept a secret or credential",
+      "description": "input parameter \"access_token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "kopern_connect_whatsapp"
     },
@@ -566,6 +566,29 @@
     "info": 31
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 22,
+      "file": "src/agents_md_mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 75,
+      "snippet": "FastMCP(",
+      "file": "src/agents_md_mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 82,
+      "snippet": "@mcp.tool(",
+      "file": "src/agents_md_mcp/server.py",
+      "language": "python"
+    }
+  ],
   "tool_names": [
     "kopern_compliance_report",
     "kopern_connect_calendar",
@@ -1003,6 +1026,12 @@
     },
     {
       "scan_date": "2026-04-25T02:05:54Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.5.3"
+    },
+    {
+      "scan_date": "2026-04-26T02:15:10Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.5.3"

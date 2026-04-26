@@ -3,23 +3,122 @@
   "version": "ent-v1.3.10-base",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-03-18T05:02:30.853427189Z",
-  "scanner": "tooltrust-scanner/v0.1.6",
+  "scan_date": "2026-04-26T07:22:59Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/maximhq/bifrost",
   "category": "Developer Tools",
   "vendor": "maximhq",
-  "stars": 2993,
+  "stars": 4306,
   "license": "Apache-2.0",
   "language": "Go",
-  "description": "Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support & <100 \u00b5s overhead at 5k RPS.",
-  "findings": [],
+  "description": "Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support \u0026 \u003c100 µs overhead at 5k RPS.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 13,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "core/mcp/clientmanager.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 965,
+            "snippet": "server.NewMCPServer(",
+            "file": "core/mcp/clientmanager.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 510,
+            "snippet": "AddTool (",
+            "file": "core/mcp/clientmanager.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 14,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "transports/bifrost-http/handlers/mcpserver.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 51,
+            "snippet": "server.NewMCPServer(",
+            "file": "transports/bifrost-http/handlers/mcpserver.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 358,
+            "snippet": "server.AddTool(",
+            "file": "transports/bifrost-http/handlers/mcpserver.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "core/mcp/clientmanager.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 965,
+      "snippet": "server.NewMCPServer(",
+      "file": "core/mcp/clientmanager.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 510,
+      "snippet": "AddTool (",
+      "file": "core/mcp/clientmanager.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 14,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "transports/bifrost-http/handlers/mcpserver.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 51,
+      "snippet": "server.NewMCPServer(",
+      "file": "transports/bifrost-http/handlers/mcpserver.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 358,
+      "snippet": "server.AddTool(",
+      "file": "transports/bifrost-http/handlers/mcpserver.go",
+      "language": "go"
+    }
+  ]
 }

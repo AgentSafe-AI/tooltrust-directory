@@ -10,11 +10,11 @@
 | **Vendor** | shinpr |
 | **Stars** | ⭐ 237 |
 | **npm Package** | `mcp-local-rag` |
-| **npm Downloads (30d)** | 5.9k |
+| **npm Downloads (30d)** | 5.8k |
 | **Language** | TypeScript |
 | **Source** | [shinpr-mcp-local-rag](https://github.com/shinpr/mcp-local-rag) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

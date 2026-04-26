@@ -10,11 +10,11 @@
 | **Vendor** | DMontgomery40 |
 | **Stars** | ⭐ 318 |
 | **npm Package** | `deepseek-mcp-server` |
-| **npm Downloads (30d)** | 572 |
+| **npm Downloads (30d)** | 816 |
 | **Language** | TypeScript |
 | **Source** | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

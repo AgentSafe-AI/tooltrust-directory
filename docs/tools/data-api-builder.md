@@ -12,7 +12,7 @@
 | **Language** | C# |
 | **Source** | [data-api-builder](https://github.com/Azure/data-api-builder) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

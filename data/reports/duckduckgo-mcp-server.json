@@ -3,12 +3,12 @@
   "version": "sha-72140a7136a5",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-26T02:06:58.962934974Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:23:47.943336307Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/nickclyde/duckduckgo-mcp-server",
   "category": "Developer Tools",
   "vendor": "nickclyde",
-  "stars": 1030,
+  "stars": 1031,
   "license": "MIT",
   "language": "Python",
   "description": "A Model Context Protocol (MCP) server that provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing.",
@@ -78,6 +78,30 @@
     "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "src/duckduckgo_mcp_server/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 366,
+      "snippet": "FastMCP(",
+      "file": "src/duckduckgo_mcp_server/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 387,
+      "snippet": "@mcp.tool(",
+      "file": "src/duckduckgo_mcp_server/server.py",
+      "language": "python"
+    }
+  ],
   "tool_names": [
     "fetch_content",
     "search"
@@ -272,6 +296,12 @@
     },
     {
       "scan_date": "2026-04-25T01:57:11Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "sha-72140a7136a5"
+    },
+    {
+      "scan_date": "2026-04-26T02:06:58Z",
       "grade": "C",
       "risk_score": 25,
       "version": "sha-72140a7136a5"

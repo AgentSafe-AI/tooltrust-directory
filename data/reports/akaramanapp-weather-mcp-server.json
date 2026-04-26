@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-04-19T02:16:46.999410008Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:39:20.231132502Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/akaramanapp/weather-mcp-server",
   "category": "Developer Tools",
   "vendor": "akaramanapp",
   "stars": 1,
   "npm_package": "weather",
-  "npm_downloads_monthly": 525,
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server that provides weather information and alerts using the National Weather Service (NWS) API",
   "findings": [
@@ -18,84 +17,26 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 59 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get-alerts",
-          "get-forecast"
+          "WEATHERMAP_WEATHER"
         ],
         "removed": [
-          "alerts_active",
-          "alerts_active_area",
-          "alerts_active_count",
-          "alerts_active_region",
-          "alerts_active_zone",
-          "alerts_query",
-          "alerts_single",
-          "alerts_types",
-          "cwa",
-          "cwas",
-          "cwsu",
-          "glossary",
-          "gridpoint",
-          "gridpoint_forecast",
-          "gridpoint_forecast_hourly",
-          "gridpoint_stations",
-          "icons",
-          "iconsDualCondition",
-          "icons_summary",
-          "latest_product_type_location",
-          "location_products",
-          "obs_station",
-          "obs_stations",
-          "office",
-          "office_headline",
-          "office_headlines",
-          "point",
-          "point_radio",
-          "point_stations",
-          "product",
-          "product_locations",
-          "product_types",
-          "products_query",
-          "products_type",
-          "products_type_location",
-          "products_type_locations",
-          "radar_profiler",
-          "radar_queue",
-          "radar_server",
-          "radar_servers",
-          "radar_station",
-          "radar_station_alarms",
-          "radar_stations",
-          "satellite_thumbnails",
-          "sigmet",
-          "sigmetQuery",
-          "sigmetsByATSU",
-          "sigmetsByATSUByDate",
-          "station_observation_latest",
-          "station_observation_list",
-          "station_observation_time",
-          "taf",
-          "tafs",
-          "zone",
-          "zone_forecast",
-          "zone_list",
-          "zone_list_type",
-          "zone_obs",
-          "zone_stations"
+          "get-alerts",
+          "get-forecast"
         ],
         "version": "1.0.0"
       }
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-alerts"
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "WEATHERMAP_WEATHER"
     },
     {
       "id": "AS-014",
@@ -103,31 +44,40 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-forecast"
+      "tool_name": "WEATHERMAP_WEATHER"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 0,
+    "medium": 1,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 10,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
-    "get-alerts",
-    "get-forecast"
+    "WEATHERMAP_WEATHER"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get-alerts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-forecast",
+      "tool_name": "WEATHERMAP_WEATHER",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -181,6 +131,12 @@
       "scan_date": "2026-04-18T01:54:57Z",
       "grade": "C",
       "risk_score": 27,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-19T02:16:46Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

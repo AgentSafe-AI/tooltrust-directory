@@ -3,23 +3,66 @@
   "version": "0.4.0",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-03-18T05:02:36.518597396Z",
-  "scanner": "tooltrust-scanner/v0.1.6",
+  "scan_date": "2026-04-26T07:23:40Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/hashicorp/terraform-mcp-server",
   "category": "Developer Tools",
   "vendor": "hashicorp",
-  "stars": 1278,
+  "stars": 1339,
   "license": "MPL-2.0",
   "language": "Go",
   "description": "The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 20,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "cmd/terraform-mcp-server/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 76,
+            "snippet": "server.NewMCPServer(",
+            "file": "cmd/terraform-mcp-server/main.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+      "file": "cmd/terraform-mcp-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 76,
+      "snippet": "server.NewMCPServer(",
+      "file": "cmd/terraform-mcp-server/main.go",
+      "language": "go"
+    }
+  ]
 }

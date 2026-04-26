@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [kishvisamadd-vsf-club](https://smithery.ai/server/kishvisamadd/vsf-club) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

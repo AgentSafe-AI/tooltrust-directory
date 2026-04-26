@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [cuthongthai-vimo-financial-intelligence](https://smithery.ai/server/cuthongthai/vimo-financial-intelligence) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

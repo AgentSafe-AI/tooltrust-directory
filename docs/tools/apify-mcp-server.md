@@ -10,11 +10,11 @@
 | **Vendor** | apify |
 | **Stars** | ⭐ 1151 |
 | **npm Package** | `@apify/actors-mcp-server` |
-| **npm Downloads (30d)** | 50.6k |
+| **npm Downloads (30d)** | 46.3k |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

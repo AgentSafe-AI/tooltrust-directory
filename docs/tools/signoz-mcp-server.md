@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

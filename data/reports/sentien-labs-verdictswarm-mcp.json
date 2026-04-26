@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "grade": "C",
   "risk_score": 30,
-  "scan_date": "2026-04-19T02:18:43.36332489Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:46:37.334775222Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/sentien-labs/verdictswarm-mcp",
   "category": "Developer Tools",
   "vendor": "sentien-labs",
@@ -16,7 +16,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"token_address\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "scan_token"
     },
@@ -24,7 +24,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" appears to accept a secret or credential",
+      "description": "input parameter \"api_key\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "scan_token"
     },
@@ -64,7 +64,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"token_address\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "check_rug_risk"
     },
@@ -72,7 +72,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" appears to accept a secret or credential",
+      "description": "input parameter \"api_key\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "check_rug_risk"
     },
@@ -133,6 +133,29 @@
     "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "file": "src/verdictswarm_mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 11,
+      "snippet": "FastMCP(",
+      "file": "src/verdictswarm_mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 15,
+      "snippet": "@mcp.tool(",
+      "file": "src/verdictswarm_mcp/server.py",
+      "language": "python"
+    }
+  ],
   "tool_names": [
     "check_rug_risk",
     "get_pricing",
@@ -227,6 +250,12 @@
     },
     {
       "scan_date": "2026-04-17T02:15:06Z",
+      "grade": "C",
+      "risk_score": 30,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-04-19T02:18:43Z",
       "grade": "C",
       "risk_score": 30,
       "version": "0.1.0"

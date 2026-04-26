@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [glmarket2007-m1qh-gyotak-fish-market](https://smithery.ai/server/glmarket2007-m1qh/gyotak-fish-market) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

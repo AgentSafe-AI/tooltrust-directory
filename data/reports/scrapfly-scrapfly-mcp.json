@@ -1,0 +1,69 @@
+{
+  "tool_id": "scrapfly-scrapfly-mcp",
+  "version": "1.2.3",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-04-26T07:34:42Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/scrapfly/scrapfly-mcp",
+  "category": "Developer Tools",
+  "vendor": "scrapfly",
+  "stars": 7,
+  "npm_package": "scrapfly-mcp",
+  "npm_downloads_monthly": 677,
+  "language": "Go",
+  "description": "Official Scrapfly MCP server for Cursor, Claude Desktop, and any MCP-compatible client. Enterprise-grade web scraping, AI extraction, and anti-bot–aware data access as first-class tools.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 11,
+            "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+            "file": "pkg/server/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 138,
+            "snippet": "mcp.NewServer(",
+            "file": "pkg/server/server.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 11,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "pkg/server/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 138,
+      "snippet": "mcp.NewServer(",
+      "file": "pkg/server/server.go",
+      "language": "go"
+    }
+  ]
+}

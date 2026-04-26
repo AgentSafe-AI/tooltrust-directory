@@ -3,44 +3,17 @@
   "version": "1.1.5",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-26T02:12:22.778485261Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:31:02.303188468Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/sylweriusz/mcp-neo4j-memory-server",
   "category": "Developer Tools",
   "vendor": "sylweriusz",
   "stars": 33,
   "npm_package": "@sylweriusz/mcp-neo4j-memory-server",
-  "npm_downloads_monthly": 1762,
+  "npm_downloads_monthly": 1355,
   "license": "MIT",
   "language": "TypeScript",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.1.5: 9 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "add_memory",
-          "delete_all_memories",
-          "delete_entities",
-          "delete_memory",
-          "get_memories",
-          "get_memory",
-          "list_entities",
-          "search_memories",
-          "update_memory"
-        ],
-        "removed": [
-          "database_switch",
-          "memory_find",
-          "memory_modify",
-          "memory_store"
-        ],
-        "version": "1.1.5"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -180,12 +153,29 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 2,
     "medium": 4,
     "low": 2,
     "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 15,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "add_memory",
     "delete_all_memories",
@@ -315,6 +305,12 @@
       "scan_date": "2026-04-25T02:02:45Z",
       "grade": "C",
       "risk_score": 35,
+      "version": "1.1.5"
+    },
+    {
+      "scan_date": "2026-04-26T02:12:22Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "1.1.5"
     }
   ]

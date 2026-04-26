@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [polymarket-polymarket-mcp](https://smithery.ai/server/polymarket/polymarket-mcp) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

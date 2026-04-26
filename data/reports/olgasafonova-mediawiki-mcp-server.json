@@ -3,8 +3,8 @@
   "version": "1.29.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-04-26T02:14:01.686388766Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-04-26T07:33:38.622340023Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/olgasafonova/mediawiki-mcp-server",
   "category": "Developer Tools",
   "vendor": "olgasafonova",
@@ -13,28 +13,6 @@
   "language": "Go",
   "description": "MCP server for MediaWiki wikis - search, read, and edit wiki content from AI assistants",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.29.0: 0 tool(s) added, 9 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": null,
-        "removed": [
-          "add-wiki",
-          "delete-page",
-          "get-category-members",
-          "get-revision",
-          "remove-wiki",
-          "search-page-by-prefix",
-          "undelete-page",
-          "upload-file",
-          "upload-file-from-url"
-        ],
-        "version": "1.29.0"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -166,12 +144,36 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 3,
     "medium": 3,
     "low": 3,
     "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 25,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 501,
+      "snippet": "mcp.NewServer(",
+      "file": "main.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 971,
+      "snippet": "AddTool(",
+      "file": "main.go",
+      "language": "go"
+    }
+  ],
   "tool_names": [
     "create-page",
     "get-file",
@@ -336,6 +338,12 @@
     },
     {
       "scan_date": "2026-04-25T02:04:32Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.29.0"
+    },
+    {
+      "scan_date": "2026-04-26T02:14:01Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.29.0"

@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [info-kk33-askmia-app](https://smithery.ai/server/info-kk33/AskMia_app) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

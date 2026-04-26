@@ -8,13 +8,13 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.30` |
 | **Vendor** | upstash |
-| **Stars** | ⭐ 53724 |
+| **Stars** | ⭐ 53734 |
 | **npm Package** | `@upstash/context7-mcp` |
-| **npm Downloads (30d)** | 3.5M |
+| **npm Downloads (30d)** | 3.7M |
 | **Language** | TypeScript |
 | **Source** | [upstash-context7-mcp](https://github.com/upstash/context7) |
 | **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

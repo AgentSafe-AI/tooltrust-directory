@@ -3,8 +3,8 @@
   "version": "2.0.7",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-03-02T17:12:31.528683764Z",
-  "scanner": "ToolTrust Scanner/0.1.2",
+  "scan_date": "2026-04-26T07:23:35Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/GongRzhe/Office-PowerPoint-MCP-Server",
   "category": "Developer Tools",
   "vendor": "GongRzhe",
@@ -12,14 +12,71 @@
   "license": "MIT",
   "language": "Python",
   "description": "A MCP (Model Context Protocol) server for PowerPoint manipulation using python-pptx. This server provides tools for creating, editing, and manipulating PowerPoint presentations through the MCP protocol.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 9,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "ppt_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 26,
+            "snippet": "FastMCP(",
+            "file": "ppt_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 330,
+            "snippet": "@app.tool(",
+            "file": "ppt_mcp_server.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 9,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "ppt_mcp_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 26,
+      "snippet": "FastMCP(",
+      "file": "ppt_mcp_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 330,
+      "snippet": "@app.tool(",
+      "file": "ppt_mcp_server.py",
+      "language": "python"
+    }
+  ]
 }

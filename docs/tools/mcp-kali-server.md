@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `security` |
 | **Vendor** | Wh0am123 |
-| **Stars** | ⭐ 577 |
+| **Stars** | ⭐ 650 |
 | **Language** | Python |
 | **Source** | [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) |
-| **Scan Date** | 2026-03-18 |
-| **Scanner** | tooltrust-scanner/v0.1.6 |
+| **Scan Date** | 2026-04-26 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 
@@ -24,8 +24,20 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 1 |
 
-No findings. ✅
+## Detailed Findings
+
+### ⚪ `AS-018` — Embedded MCP Server Detected
+
+**Severity:** Info
+
+**Description:**
+Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+
+**Recommendation:**
+Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+
+---
 
 *Scored using [ToolTrust methodology](../methodology.md) · [Raw JSON report](../../data/reports/mcp-kali-server.json)*

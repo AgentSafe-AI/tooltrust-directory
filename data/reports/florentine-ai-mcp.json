@@ -1,0 +1,84 @@
+{
+  "tool_id": "florentine-ai-mcp",
+  "version": "1.0.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-04-26T07:35:23Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/florentine-ai/mcp",
+  "category": "Developer Tools",
+  "vendor": "florentine-ai",
+  "stars": 6,
+  "npm_package": "@florentine-ai/mcp",
+  "npm_downloads_monthly": 21683,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "MCP server for Florentine.ai - Natural language to MongoDB aggregations",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/lib/FlorentineServer.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 52,
+            "snippet": "new McpServer(",
+            "file": "src/lib/FlorentineServer.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 150,
+            "snippet": ".registerTool(",
+            "file": "src/lib/FlorentineServer.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 17,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/lib/FlorentineServer.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 52,
+      "snippet": "new McpServer(",
+      "file": "src/lib/FlorentineServer.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 150,
+      "snippet": ".registerTool(",
+      "file": "src/lib/FlorentineServer.ts",
+      "language": "typescript"
+    }
+  ]
+}
