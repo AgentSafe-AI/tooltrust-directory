@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.3.0` |
 | **Vendor** | render-oss |
-| **Stars** | ⭐ 124 |
+| **Stars** | ⭐ 126 |
 | **Language** | Go |
 | **Source** | [render-mcp-server](https://github.com/render-oss/render-mcp-server) |
-| **Scan Date** | 2026-04-25 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

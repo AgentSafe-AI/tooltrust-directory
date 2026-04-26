@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [wcsdproducer-employee-zero](https://smithery.ai/server/wcsdproducer/employee-zero) |
-| **Scan Date** | 2026-04-24 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

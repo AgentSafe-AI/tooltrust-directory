@@ -3,19 +3,29 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-04-24T02:19:36.651804145Z",
+  "scan_date": "2026-04-26T02:21:55.13344218Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/compress-new/compress-tokens",
   "vendor": "Smithery",
   "description": "Convert any webpage to clean markdown and feed it directly into AI agent workflows.\n\nWhy This Matters?\n\nAdding webpages to LLM conversations usually means dumping raw HTML, bloated with ads, scripts, and formatting noise. This MCP integrates compress.new into MCP-compatible AI agents to extract only the content you need:\n\nLower token costs — Clean markdown vs. bloated HTML means fewer tokens per page\nBetter context — Markdown is optimized for LLM comprehension; raw HTML introduces noise\nPrecise extraction — Remove ads, sidebars, and cruft automatically\nOne command — Just pass a URL; get ready-to-use content instantly\nUse it to research topics, analyze articles, gather documentation, or extract any webpage content without the overhead.",
   "findings": [
     {
-      "id": "AS-010",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "finance_get_token_price"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "hyperliquid_get_spot_balances",
+          "hyperliquid_get_spot_markets",
+          "hyperliquid_list_spot_tokens"
+        ],
+        "removed": [
+          "finance_get_token_price"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-014",
@@ -23,7 +33,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "finance_get_token_price"
+      "tool_name": "hyperliquid_list_spot_tokens"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "hyperliquid_get_spot_markets"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "hyperliquid_get_spot_balances"
     }
   ],
   "summary": {
@@ -31,22 +57,43 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "finance_get_token_price"
+    "hyperliquid_get_spot_balances",
+    "hyperliquid_get_spot_markets",
+    "hyperliquid_list_spot_tokens"
   ],
   "tool_contexts": [
     {
-      "tool_name": "finance_get_token_price",
+      "tool_name": "hyperliquid_list_spot_tokens",
       "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (token)"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "hyperliquid_get_spot_markets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "hyperliquid_get_spot_balances",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-24T02:19:36Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "smithery"
     }
   ]
 }

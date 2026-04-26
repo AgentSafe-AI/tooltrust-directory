@@ -1,14 +1,28 @@
 {
   "tool_id": "aguskenari86-8bo7-cryptoiz-mcp",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-04-25T02:12:55.119204176Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-04-26T02:22:15.118952767Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://smithery.ai/server/aguskenari86-8bo7/cryptoiz-mcp",
   "vendor": "Smithery",
-  "description": "CryptoIZ MCP v4.16.0 — AI-powered Solana DEX whale intelligence for Claude Desktop. 9 tools (7 paid + 2 free): whale alpha scanner, price-volume-whale divergence (3 types), 4-dimension accumulation/neutral/distribution phase scoring, BTC macro regime monitor, and NEW BTC Futures Signal (MTF 4H+5m scalping).\n\nPRICING: Pay per call via x402 USDC on Solana ($0.01–$0.05). Gas sponsored by Dexter facilitator.\n\nIMPORTANT: This MCP requires SVM_PRIVATE_KEY environment variable (your Solana wallet base58 private key) for x402 payments. Smithery Remote mode WILL NOT WORK without your key. RECOMMENDED: install locally via `npm install -g cryptoiz-mcp` + `npx cryptoiz-mcp-setup YOUR_PRIVATE_KEY` for proper x402 payment flow in Claude Desktop.\n\nTools: get_whale_alpha ($0.05), get_whale_divergence ($0.02), get_whale_accumulation ($0.02), get_whale_neutral ($0.02), get_whale_distribution ($0.02), get_btc_regime ($0.01), get_btc_futures_signal ($0.03), get_token_ca (FREE), get_status (FREE).\n\nLinks: https://cryptoiz.org/McpLanding · npm cryptoiz-mcp · @cryptoiz_IDN",
+  "description": "CryptoIZ MCP v4.16.3 — AI-powered Solana DEX whale intelligence for Claude Desktop. 9 tools (7 paid + 2 free): whale alpha scanner, whale-price divergence (3 types: hidden/breakout/classic accumulation), 4-dimension accumulation/neutral/distribution phase scoring, BTC macro regime monitor, BTC Futures Signal (MTF 4H+5m scalping). Pay per call with USDC via x402 Dexter — gas sponsored, no SOL needed. Auto-update notifications \u0026 full audit logging.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_btc_futures_signal"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -50,19 +64,11 @@
       "tool_name": "get_whale_distribution"
     },
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_btc_regime"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_btc_regime"
     },
     {
@@ -71,7 +77,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_btc_regime"
+      "tool_name": "get_btc_futures_signal"
     },
     {
       "id": "AS-014",
@@ -92,13 +98,14 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 8
+    "low": 0,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "get_btc_futures_signal",
     "get_btc_regime",
     "get_status",
     "get_token_ca",
@@ -148,9 +155,13 @@
       "tool_name": "get_btc_regime",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_btc_futures_signal",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -232,6 +243,12 @@
     },
     {
       "scan_date": "2026-04-24T02:19:57Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-25T02:12:55Z",
       "grade": "A",
       "risk_score": 4,
       "version": "smithery"

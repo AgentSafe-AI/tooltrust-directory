@@ -1,6 +1,6 @@
 # 🔴 context-mode
 
-> Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 12 platforms
+> Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 14 platforms
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 65 |
 | **Version** | `1.0.75` |
 | **Vendor** | mksglu |
-| **Stars** | ⭐ 9837 |
+| **Stars** | ⭐ 10105 |
 | **npm Package** | `context-mode` |
 | **npm Downloads (30d)** | 40.1k |
 | **Language** | TypeScript |
 | **Source** | [context-mode](https://github.com/mksglu/context-mode) |
-| **Scan Date** | 2026-04-25 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -24,7 +24,7 @@
 |----------|:-----:|
 | Critical | 2 |
 | High     | 9 |
-| Medium   | 5 |
+| Medium   | 6 |
 | Low      | 7 |
 | Info     | 0 |
 
@@ -147,6 +147,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

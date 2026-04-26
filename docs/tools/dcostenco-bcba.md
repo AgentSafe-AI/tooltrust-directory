@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `12.0.1` |
 | **Vendor** | dcostenco |
-| **Stars** | ⭐ 129 |
+| **Stars** | ⭐ 130 |
 | **npm Package** | `prism-mcp-server` |
 | **npm Downloads (30d)** | 9.9k |
 | **Language** | TypeScript |
 | **Source** | [dcostenco-bcba](https://github.com/dcostenco/prism-mcp) |
-| **Scan Date** | 2026-04-25 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

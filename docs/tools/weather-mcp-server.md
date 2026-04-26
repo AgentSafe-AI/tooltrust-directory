@@ -8,10 +8,10 @@
 | **Risk Score** | 8 |
 | **Version** | `1.3.0` |
 | **Vendor** | ezh0v |
-| **Stars** | ⭐ 243 |
+| **Stars** | ⭐ 244 |
 | **Language** | Go |
 | **Source** | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) |
-| **Scan Date** | 2026-04-25 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

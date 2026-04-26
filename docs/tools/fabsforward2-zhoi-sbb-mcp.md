@@ -1,6 +1,6 @@
 # 🟡 fabsforward2-zhoi-sbb-mcp
 
-> Swiss Federal Railways (SBB/CFF/FFS) MCP server — real-time train schedules, ticket prices with Half-Fare/GA support, and direct purchase links. Built on official SBB SMAPI.
+> Independent MCP server by swisstrip for Swiss Federal Railways (SBB/CFF/FFS) — all schedules, prices, ticket links via SBB's official SMAPI. 
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fabsforward2-zhoi-sbb-mcp](https://smithery.ai/server/fabsforward2-zhoi/sbb-mcp) |
-| **Scan Date** | 2026-04-25 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---

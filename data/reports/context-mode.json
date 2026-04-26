@@ -3,17 +3,17 @@
   "version": "1.0.75",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-04-25T01:55:58.411653987Z",
+  "scan_date": "2026-04-26T02:05:47.72950773Z",
   "scanner": "tooltrust-scanner/v0.3.8",
   "source_url": "https://github.com/mksglu/context-mode",
   "category": "Developer Tools",
   "vendor": "mksglu",
-  "stars": 9837,
+  "stars": 10105,
   "npm_package": "context-mode",
   "npm_downloads_monthly": 40091,
   "license": "NOASSERTION",
   "language": "TypeScript",
-  "description": "Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 12 platforms",
+  "description": "Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 14 platforms",
   "findings": [
     {
       "id": "AS-002",
@@ -94,6 +94,14 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "ctx_index"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_search"
     },
     {
       "id": "AS-002",
@@ -203,7 +211,7 @@
   "summary": {
     "critical": 2,
     "high": 9,
-    "medium": 5,
+    "medium": 6,
     "low": 7,
     "info": 0
   },
@@ -273,6 +281,7 @@
       "grade": "C",
       "behavior": [
         "executes_commands",
+        "reads_files",
         "uses_network"
       ],
       "dependency_visibility": "Verified from local lockfile",
@@ -455,6 +464,12 @@
     },
     {
       "scan_date": "2026-04-24T02:04:13Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "1.0.75"
+    },
+    {
+      "scan_date": "2026-04-25T01:55:58Z",
       "grade": "D",
       "risk_score": 65,
       "version": "1.0.75"

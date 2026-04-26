@@ -19,7 +19,7 @@ Use it to research topics, analyze articles, gather documentation, or extract an
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [compress-new-compress-tokens](https://smithery.ai/server/compress-new/compress-tokens) |
-| **Scan Date** | 2026-04-24 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -32,19 +32,43 @@ Use it to research topics, analyze articles, gather documentation, or extract an
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 1 |
+| Info     | 3 |
 
 ## Detailed Findings
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
 **Severity:** High
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+Tool set changed silently at vsmithery: 3 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

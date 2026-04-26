@@ -19,7 +19,7 @@ Perfect for financial advisors, fintech developers, and anyone comparing financi
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [securelend-financial-services](https://smithery.ai/server/securelend/financial-services) |
-| **Scan Date** | 2026-04-25 |
+| **Scan Date** | 2026-04-26 |
 | **Scanner** | tooltrust-scanner/v0.3.8 |
 
 ---
@@ -29,24 +29,12 @@ Perfect for financial advisors, fintech developers, and anyone comparing financi
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 43 |
+| High     | 42 |
 | Medium   | 10 |
 | Low      | 50 |
 | Info     | 253 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 240 tool(s) added, 67 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
