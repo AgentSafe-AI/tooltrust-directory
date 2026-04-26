@@ -1,5 +1,5 @@
 import {
-  getAllReports,
+  getAllRegistryReports,
   displayGrade,
 } from "@/lib/data";
 import { RegistryWithFilters } from "@/components/RegistryWithFilters";
@@ -7,7 +7,7 @@ import { getMethodologyHref, getRuleInfo } from "@/lib/rules";
 import { Terminal } from "lucide-react";
 import { Suspense } from "react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default function HomePage() {
   const sectionLinks = [
@@ -16,7 +16,7 @@ export default function HomePage() {
     { href: "#scan-your-mcp", label: "Scan your MCP servers" },
     { href: "#decision-guide", label: "What the decisions mean" },
   ];
-  const reports = getAllReports();
+  const reports = getAllRegistryReports();
   const featuredRules = ["AS-001", "AS-002", "AS-006", "AS-008", "AS-009", "AS-013"]
     .map((id) => getRuleInfo(id))
     .filter((rule) => rule != null);

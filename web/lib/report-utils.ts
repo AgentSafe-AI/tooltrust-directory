@@ -54,6 +54,28 @@ export interface Report {
   tool_contexts?: ToolContext[];
 }
 
+export interface RegistryReport {
+  tool_id: string;
+  version: string;
+  grade: string;
+  risk_score: number;
+  scan_date: string;
+  scanner: string;
+  source_url: string;
+  category?: string;
+  vendor?: string;
+  stars?: number;
+  npm_package?: string;
+  npm_downloads_monthly?: number;
+  license?: string;
+  language?: string;
+  description?: string;
+  findings: Array<Pick<Finding, "id">>;
+  summary: Summary;
+  methodology: string;
+  scan_incomplete?: boolean;
+}
+
 export interface FindingNarrative {
   shortLabel: string;
   impact: string;
@@ -68,7 +90,14 @@ export interface ToolNarrative {
   saferConfig: string;
 }
 
-export function displayGrade(r: Report): string {
+type ReportForListing = {
+  grade: string;
+  risk_score: number;
+  scan_incomplete?: boolean;
+  findings: Array<Pick<Finding, "id">>;
+};
+
+export function displayGrade(r: ReportForListing): string {
   if (r.scan_incomplete || r.grade === "I") return "?";
   if (r.risk_score === 0 && r.findings.length === 0) return "A";
   return r.grade;
@@ -78,7 +107,7 @@ export function findingEmoji(id: string): string {
   return getRuleInfo(id)?.emoji ?? "";
 }
 
-export function keyFindingsSummary(r: Report): string {
+export function keyFindingsSummary(r: ReportForListing): string {
   if (!r.findings || r.findings.length === 0) {
     return "✅ None";
   }
@@ -208,7 +237,7 @@ export function getFindingNarrative(findingId: string): FindingNarrative {
   );
 }
 
-function countFindingIds(report: Report): Record<string, number> {
+function countFindingIds(report: ReportForListing): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const finding of report.findings ?? []) {
     counts[finding.id] = (counts[finding.id] ?? 0) + 1;
@@ -216,7 +245,7 @@ function countFindingIds(report: Report): Record<string, number> {
   return counts;
 }
 
-function topFindingIds(report: Report, limit = 2): string[] {
+function topFindingIds(report: ReportForListing, limit = 2): string[] {
   const counts = countFindingIds(report);
   return Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
@@ -224,7 +253,7 @@ function topFindingIds(report: Report, limit = 2): string[] {
     .map(([id]) => id);
 }
 
-export function getToolNarrative(report: Report): ToolNarrative {
+export function getToolNarrative(report: ReportForListing): ToolNarrative {
   const grade = displayGrade(report);
   const topIds = topFindingIds(report, 2);
   const primary = topIds[0] ? getFindingNarrative(topIds[0]) : null;
@@ -282,7 +311,7 @@ export function getToolNarrative(report: Report): ToolNarrative {
   };
 }
 
-export function getToolImpactLine(report: Report): string {
+export function getToolImpactLine(report: ReportForListing): string {
   return getToolNarrative(report).impactLine;
 }
 

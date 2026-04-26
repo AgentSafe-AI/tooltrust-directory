@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import type { Report } from "./report-utils";
+import type { RegistryReport, Report } from "./report-utils";
 import {
   displayGrade as displayGradeUtil,
   keyFindingsSummary as keyFindingsSummaryUtil,
@@ -12,6 +12,7 @@ import {
 } from "./report-utils";
 
 export type { Report };
+export type { RegistryReport };
 export type { Finding, Summary } from "./report-utils";
 export const displayGrade = displayGradeUtil;
 export const keyFindingsSummary = keyFindingsSummaryUtil;
@@ -58,6 +59,34 @@ export function getAllReports(): Report[] {
     }
   }
   return reports;
+}
+
+function toRegistryReport(report: Report): RegistryReport {
+  return {
+    tool_id: report.tool_id,
+    version: report.version,
+    grade: report.grade,
+    risk_score: report.risk_score,
+    scan_date: report.scan_date,
+    scanner: report.scanner,
+    source_url: report.source_url,
+    category: report.category,
+    vendor: report.vendor,
+    stars: report.stars,
+    npm_package: report.npm_package,
+    npm_downloads_monthly: report.npm_downloads_monthly,
+    license: report.license,
+    language: report.language,
+    description: report.description,
+    findings: (report.findings ?? []).map((finding) => ({ id: finding.id })),
+    summary: report.summary,
+    methodology: report.methodology,
+    scan_incomplete: report.scan_incomplete,
+  };
+}
+
+export function getAllRegistryReports(): RegistryReport[] {
+  return getAllReports().map(toRegistryReport);
 }
 
 /**

@@ -4,7 +4,7 @@ import { useMemo, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Search, LayoutGrid, List, Star } from "lucide-react";
-import type { Report } from "@/lib/report-utils";
+import type { RegistryReport } from "@/lib/data";
 import {
   displayGrade,
   keyFindingsSummary,
@@ -38,11 +38,11 @@ const GRADE_BUTTON_INACTIVE_STYLES: Record<string, string> = {
 type SortKey = "name" | "stars" | "grade";
 type SortDir = "asc" | "desc";
 
-function popularityValue(report: Report): number {
+function popularityValue(report: RegistryReport): number {
   return report.npm_downloads_monthly ?? report.stars ?? 0;
 }
 
-function popularityLabel(report: Report): string {
+function popularityLabel(report: RegistryReport): string {
   if (report.npm_downloads_monthly != null && report.npm_downloads_monthly > 0) {
     const downloads = report.npm_downloads_monthly;
     return downloads >= 1000 ? `${(downloads / 1000).toFixed(1)}k/mo` : `${downloads}/mo`;
@@ -55,11 +55,11 @@ function popularityLabel(report: Report): string {
   return "—";
 }
 
-function popularityIconLabel(report: Report): string {
+function popularityIconLabel(report: RegistryReport): string {
   return report.npm_downloads_monthly != null && report.npm_downloads_monthly > 0 ? "Downloads" : "Stars";
 }
 
-function sortReports(reports: Report[], key: SortKey, dir: SortDir) {
+function sortReports(reports: RegistryReport[], key: SortKey, dir: SortDir) {
   const gradeRank: Record<string, number> = { A: 0, B: 1, C: 2, D: 3, F: 4 };
   return [...reports].sort((a, b) => {
     let cmp = 0;
@@ -76,7 +76,7 @@ function sortReports(reports: Report[], key: SortKey, dir: SortDir) {
 }
 
 function filterReports(
-  reports: Report[],
+  reports: RegistryReport[],
   query: string,
   gradeFilter: string,
   categoryFilter: string
@@ -96,7 +96,7 @@ function filterReports(
   });
 }
 
-export function RegistryWithFilters({ reports }: { reports: Report[] }) {
+export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
 

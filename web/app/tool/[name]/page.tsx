@@ -1,4 +1,4 @@
-import { getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
+import { getAllReports, getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
 import { formatVersionLabel } from "@/lib/report-utils";
 import { GradeProgressRing } from "@/lib/grades";
 import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
@@ -10,6 +10,12 @@ import { ScanSnippets } from "./ScanSnippets";
 
 interface PageProps {
   params: Promise<{ name: string }>;
+}
+
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+  return getAllReports().map((report) => ({ name: report.tool_id }));
 }
 
 function formatScanDate(scanDate: string): string {
