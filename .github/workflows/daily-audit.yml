@@ -99,10 +99,18 @@ jobs:
       # https://github.com/AgentSafe-AI/tooltrust-scanner
       - name: Build ToolTrust Scanner from source
         run: |
-          # Resolve the latest semver tag; fall back to main HEAD if no tags exist.
-          LATEST_TAG=$(git ls-remote --tags --sort=-version:refname \
-            https://github.com/AgentSafe-AI/tooltrust-scanner \
-            'refs/tags/v*' | head -1 | sed 's|.*refs/tags/||')
+          # Resolve the latest release tag via GitHub's Releases API first.
+          # This is more reliable right after a fresh release than tag listing
+          # alone, which can briefly lag and return the previous version.
+          LATEST_TAG=$(curl -fsSL \
+            https://api.github.com/repos/AgentSafe-AI/tooltrust-scanner/releases/latest \
+            | jq -r '.tag_name // empty')
+          if [ -z "$LATEST_TAG" ] || [ "$LATEST_TAG" = "null" ]; then
+            echo "Latest release tag unavailable from API — falling back to git ls-remote"
+            LATEST_TAG=$(git ls-remote --tags --sort=-version:refname \
+              https://github.com/AgentSafe-AI/tooltrust-scanner \
+              'refs/tags/v*' | head -1 | sed 's|.*refs/tags/||')
+          fi
           if [ -n "$LATEST_TAG" ]; then
             echo "Cloning tooltrust-scanner at tag ${LATEST_TAG}"
             git clone --depth 1 --branch "$LATEST_TAG" \
