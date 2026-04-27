@@ -1,6 +1,6 @@
 # 🟡 nexgendata-apify-finance-mcp-server
 
-> Track stocks, screen equities, monitor crypto prices, and check forex rates. Real-time market data from Yahoo Finance and crypto exchanges.
+> Quick market data for AI workflows: real-time quotes, crypto prices, foreign exchange rates, portfolio P&L calculations. Wraps Yahoo Finance, CoinGecko, and FinViz behind a single tool surface. Use for trading copilots, financial planning chats, or end-of-day reporting agents.
 
 | Field | Value |
 |-------|-------|
@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-finance-mcp-server](https://smithery.ai/server/nexgendata-apify/finance-mcp-server) |
-| **Scan Date** | 2026-04-22 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-27 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

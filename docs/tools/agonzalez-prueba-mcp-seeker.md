@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agonzalez-prueba-mcp-seeker](https://smithery.ai/server/agonzalez/prueba-mcp-seeker) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

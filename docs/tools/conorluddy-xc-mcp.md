@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 402 |
 | **Language** | TypeScript |
 | **Source** | [conorluddy-xc-mcp](https://github.com/conorluddy/xc-mcp) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

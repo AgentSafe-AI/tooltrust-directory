@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `1.1.0` |
 | **Vendor** | executeautomation |
-| **Stars** | ⭐ 342 |
+| **Stars** | ⭐ 343 |
 | **npm Package** | `@executeautomation/database-server` |
 | **npm Downloads (30d)** | 3.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-database-server](https://github.com/executeautomation/mcp-database-server) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

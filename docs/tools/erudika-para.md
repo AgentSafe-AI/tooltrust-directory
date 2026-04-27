@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.52.3` |
 | **Vendor** | Erudika |
-| **Stars** | ⭐ 565 |
+| **Stars** | ⭐ 566 |
 | **Language** | Java |
 | **Source** | [erudika-para](https://github.com/Erudika/para) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

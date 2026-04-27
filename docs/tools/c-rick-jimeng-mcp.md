@@ -11,7 +11,7 @@
 | **npm Downloads (30d)** | 36 |
 | **Language** | TypeScript |
 | **Source** | [c-rick-jimeng-mcp](https://github.com/c-rick/jimeng-mcp) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

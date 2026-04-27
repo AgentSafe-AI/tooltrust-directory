@@ -1,6 +1,6 @@
 # 🔴 nexgendata-apify-developer-tools-mcp-server
 
-> Access GitHub trending repositories, search npm packages, query PyPI, browse Stack Overflow Q&A, and search arXiv and Google Scholar.
+> Lookup tool for AI coding agents: 'find me a Rust crate that does X', 'show top StackOverflow answers for this error', 'is there an npm package newer than Y for parsing Z'. Combines five developer-data sources behind one MCP server so coding agents don't need five separate integrations.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-developer-tools-mcp-server](https://smithery.ai/server/nexgendata-apify/developer-tools-mcp-server) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

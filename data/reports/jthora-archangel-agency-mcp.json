@@ -1,9 +1,9 @@
 {
   "tool_id": "jthora-archangel-agency-mcp",
   "version": "1.2.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-04-26T07:44:13.925324943Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-27T01:39:27.58851915Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/Jthora/archangel-agency-mcp",
   "category": "Developer Tools",
@@ -16,22 +16,22 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.2.0: 6 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.2.0: 4 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "get_agent_info",
+          "get_context_jsons",
+          "get_service_catalog",
+          "get_universal_language_briefing"
+        ],
+        "removed": [
           "capture_lead",
           "get_case_studies",
           "get_faq",
           "get_lead_leakage",
           "get_pricing",
           "get_services"
-        ],
-        "removed": [
-          "get_agent_info",
-          "get_context_jsons",
-          "get_service_catalog",
-          "get_universal_language_briefing"
         ],
         "version": "1.2.0"
       }
@@ -42,7 +42,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_services"
+      "tool_name": "get_service_catalog"
     },
     {
       "id": "AS-014",
@@ -50,39 +50,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_case_studies"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_pricing"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_faq"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_lead_leakage"
+      "tool_name": "get_universal_language_briefing"
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "capture_lead"
+      "tool_name": "get_context_jsons"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_context_jsons"
     },
     {
       "id": "AS-011",
@@ -90,7 +74,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "capture_lead"
+      "tool_name": "get_context_jsons"
     },
     {
       "id": "AS-014",
@@ -98,74 +82,65 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "capture_lead"
+      "tool_name": "get_context_jsons"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_agent_info"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 2,
-    "info": 6
+    "high": 2,
+    "medium": 1,
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "capture_lead",
-    "get_case_studies",
-    "get_faq",
-    "get_lead_leakage",
-    "get_pricing",
-    "get_services"
+    "get_agent_info",
+    "get_context_jsons",
+    "get_service_catalog",
+    "get_universal_language_briefing"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_services",
+      "tool_name": "get_service_catalog",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_case_studies",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_pricing",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_faq",
+      "tool_name": "get_universal_language_briefing",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (topic)"
+        "hardcoded domain: llms-full.txt",
+        "hardcoded domain: llms.txt"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_lead_leakage",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "capture_lead",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "get_context_jsons",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
-      "destinations": [
-        "dynamic email recipient (email)"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_agent_info",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -235,6 +210,12 @@
       "scan_date": "2026-04-24T02:19:51Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "1.2.0"
+    },
+    {
+      "scan_date": "2026-04-26T07:44:13Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.2.0"
     }
   ]

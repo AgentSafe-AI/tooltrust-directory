@@ -1,6 +1,6 @@
 # 🟠 nexgendata-apify-github-mcp-server
 
-> Get GitHub repo stats, search repositories, analyze languages, and compare projects side-by-side. Comprehensive GitHub data and metrics.
+> Repo statistics, trending lookups, code-search queries, and dev-trend aggregation. For AI agents that need to evaluate libraries, monitor competitor projects, or surface emerging open-source tools. Distinct from the Developer Tools MCP — this one is GitHub-specific and goes deeper on repo analytics.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-github-mcp-server](https://smithery.ai/server/nexgendata-apify/github-mcp-server) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

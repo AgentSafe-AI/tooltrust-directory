@@ -1,6 +1,6 @@
 # 🟡 nexgendata-apify-sports-mcp-server
 
-> Get live scores from NBA, NFL, and NHL. Track game results, team standings, and player statistics across major US sports leagues.
+> Bring sports data into an AI workflow without writing four ESPN scrapers. Useful for fantasy-sports copilots, sports-betting research agents, content sites that auto-summarize game results, or hobby projects where you want Claude to talk to you about last night's game.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-sports-mcp-server](https://smithery.ai/server/nexgendata-apify/sports-mcp-server) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -1,6 +1,6 @@
 # 🟢 mcp-brasil
 
-> MCP Server para 41 APIs públicas brasileiras
+> MCP Server para 70 APIs públicas brasileiras
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.0` |
 | **Vendor** | Mcp-Brasil |
-| **Stars** | ⭐ 1487 |
+| **Stars** | ⭐ 1494 |
 | **Language** | Python |
 | **Source** | [mcp-brasil](https://github.com/Mcp-Brasil/mcp-brasil) |
-| **Scan Date** | 2026-04-26 |
+| **Scan Date** | 2026-04-27 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

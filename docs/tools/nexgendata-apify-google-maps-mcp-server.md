@@ -1,6 +1,6 @@
 # 🟠 nexgendata-apify-google-maps-mcp-server
 
-> Search Google Maps businesses, generate B2B lead lists, and validate emails. Local search with ratings, contact info, and business intelligence.
+> B2B lead generation tool: search Google Maps by 'plumbers in Austin', get back business profiles with emails, phone numbers, ratings, websites. The differentiator over plain Google Maps API is the contact-enrichment layer (scraped from each business's site). Built for agency prospecting workflows.
 
 | Field | Value |
 |-------|-------|
@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-google-maps-mcp-server](https://smithery.ai/server/nexgendata-apify/google-maps-mcp-server) |
-| **Scan Date** | 2026-04-22 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-27 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

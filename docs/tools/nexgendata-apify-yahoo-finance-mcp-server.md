@@ -1,6 +1,6 @@
 # 🟡 nexgendata-apify-yahoo-finance-mcp-server
 
-> Fetch real-time stock quotes, compare securities, and analyze financial metrics from Yahoo Finance. Portfolio monitoring and stock screening.
+> When you need company fundamentals (earnings, P/E, analyst targets, peer comparisons) rather than just price quotes. Feeds straight from Yahoo Finance. Best paired with the broader Finance MCP for portfolio math, or used standalone for equity-research workflows.
 
 | Field | Value |
 |-------|-------|
@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-yahoo-finance-mcp-server](https://smithery.ai/server/nexgendata-apify/yahoo-finance-mcp-server) |
-| **Scan Date** | 2026-04-22 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-27 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 
