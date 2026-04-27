@@ -35,10 +35,10 @@ function getReportsDir(): string {
 
 /**
  * Read and parse all JSON reports from data/reports/.
- * Incomplete scans (no tool definitions found) are excluded from the public
- * listing — they would show a misleading Grade A with zero findings.
- * They remain accessible via direct URL (/tool/[name]) where a warning banner
- * explains the scan was incomplete.
+ * Incomplete scans with zero findings are excluded from the public listing,
+ * since they mostly reflect missing tool enumeration rather than a meaningful
+ * clean result. Incomplete scans that still surface findings remain public so
+ * owners and users can see those warnings in the directory UI.
  */
 export function getAllReports(): Report[] {
   const dir = getReportsDir();
@@ -112,7 +112,7 @@ function isGithubBackedReport(report: Report): boolean {
 }
 
 export function isPublicReport(report: Report): boolean {
-  if (report.scan_incomplete) {
+  if (report.scan_incomplete && (report.findings?.length ?? 0) === 0) {
     return false;
   }
   if (isGithubBackedReport(report) && (report.stars ?? 0) < MIN_PUBLIC_GITHUB_STARS) {
