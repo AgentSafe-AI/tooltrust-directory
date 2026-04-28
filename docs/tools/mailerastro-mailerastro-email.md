@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mailerastro-mailerastro-email](https://smithery.ai/server/mailerastro/mailerastro-email) |
-| **Scan Date** | 2026-04-21 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-28 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

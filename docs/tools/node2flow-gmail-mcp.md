@@ -38,8 +38,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-gmail-mcp](https://smithery.ai/server/node2flow/gmail-mcp) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-28 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

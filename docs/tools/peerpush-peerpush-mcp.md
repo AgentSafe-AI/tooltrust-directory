@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [peerpush-peerpush-mcp](https://smithery.ai/server/peerpush/peerpush_mcp) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-28 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

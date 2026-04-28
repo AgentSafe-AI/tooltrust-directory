@@ -1,16 +1,16 @@
 {
   "tool_id": "jjlabsio-korea-stock-mcp",
   "version": "1.4.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-27T01:27:31.337846255Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-28T02:27:04.136205043Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/jjlabsio/korea-stock-mcp",
   "category": "Developer Tools",
   "vendor": "jjlabsio",
   "stars": 120,
   "npm_package": "korea-stock-mcp",
-  "npm_downloads_monthly": 547,
+  "npm_downloads_monthly": 549,
   "license": "ISC",
   "language": "TypeScript",
   "description": "MCP Server for Korean stock analysis. 한국 주식 분석을 위한 MCP 서버입니다.  ",
@@ -19,37 +19,23 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.4.0: 5 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.4.0: 3 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "Meetup_Webinar_Conference_Schedule",
+          "News_Article",
+          "Tech_Blog"
+        ],
+        "removed": [
           "get_crypto_prices",
           "get_exchange_rates",
           "get_stock_data",
           "screen_stocks",
           "track_crypto_portfolio"
         ],
-        "removed": [
-          "finance_get_stock_price"
-        ],
         "version": "1.4.0"
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_stock_data"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "screen_stocks"
     },
     {
       "id": "AS-002",
@@ -57,7 +43,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_crypto_prices"
+      "tool_name": "Tech_Blog"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "Tech_Blog"
     },
     {
       "id": "AS-011",
@@ -65,7 +59,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_crypto_prices"
+      "tool_name": "Tech_Blog"
     },
     {
       "id": "AS-014",
@@ -73,7 +67,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_crypto_prices"
+      "tool_name": "Tech_Blog"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "News_Article"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "News_Article"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "News_Article"
     },
     {
       "id": "AS-014",
@@ -81,7 +99,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_exchange_rates"
+      "tool_name": "News_Article"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "Meetup_Webinar_Conference_Schedule"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "Meetup_Webinar_Conference_Schedule"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "Meetup_Webinar_Conference_Schedule"
     },
     {
       "id": "AS-014",
@@ -89,15 +131,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "track_crypto_portfolio"
+      "tool_name": "Meetup_Webinar_Conference_Schedule"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 1,
-    "info": 5
+    "high": 4,
+    "medium": 3,
+    "low": 3,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -118,31 +160,15 @@
     }
   ],
   "tool_names": [
-    "get_crypto_prices",
-    "get_exchange_rates",
-    "get_stock_data",
-    "screen_stocks",
-    "track_crypto_portfolio"
+    "Meetup_Webinar_Conference_Schedule",
+    "News_Article",
+    "Tech_Blog"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_stock_data",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "screen_stocks",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_crypto_prices",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "Tech_Blog",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -150,16 +176,22 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_exchange_rates",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "News_Article",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "track_crypto_portfolio",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "Meetup_Webinar_Conference_Schedule",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -325,6 +357,12 @@
       "scan_date": "2026-04-26T07:28:13Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.4.0"
+    },
+    {
+      "scan_date": "2026-04-27T01:27:31Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "1.4.0"
     }
   ]

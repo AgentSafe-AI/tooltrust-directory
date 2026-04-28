@@ -7,8 +7,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [orthosie-fungenerators](https://smithery.ai/server/orthosie/fungenerators) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-28 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

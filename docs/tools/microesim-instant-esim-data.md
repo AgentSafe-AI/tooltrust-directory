@@ -1,16 +1,16 @@
-# 🟡 microesim-instant-esim-data
+# 🟠 microesim-instant-esim-data
 
 > MicroEsim MCP connects your AI agent to global eSIM networks. Instead of manually browsing data plans, just tell your agent where you're going and when — it'll recommend the best 5G plan across 200+ countries based on your itinerary, dates, and budget. Instant, secure, and hassle-free. Travel smarter, not harder.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [microesim-instant-esim-data](https://smithery.ai/server/MicroEsim/instant-esim-data) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-28 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 
@@ -19,12 +19,24 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
-| Medium   | 1 |
+| High     | 4 |
+| Medium   | 2 |
 | Low      | 4 |
 | Info     | 5 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
@@ -32,6 +44,18 @@
 
 **Description:**
 tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

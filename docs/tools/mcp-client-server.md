@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 4.8k |
 | **Language** | TypeScript |
 | **Source** | [mcp-client-server](https://github.com/willccbb/mcp-client-server) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

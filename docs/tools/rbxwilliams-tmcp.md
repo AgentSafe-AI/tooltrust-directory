@@ -17,7 +17,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rbxwilliams-tmcp](https://smithery.ai/server/rbxwilliams/tmcp) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

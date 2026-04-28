@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-04-27T01:36:34.13194361Z",
+  "scan_date": "2026-04-28T02:36:29.3539773Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/Liam8/free-coin-price-mcp",
   "category": "Developer Tools",
@@ -13,12 +13,26 @@
   "description": "MCP server provide crypto coin price",
   "findings": [
     {
-      "id": "AS-010",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "finance_get_token_price"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 7 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get-crypto-price",
+          "get-exchanges",
+          "get-historical-analysis",
+          "get-market-analysis",
+          "get-rates",
+          "get-technical-analysis",
+          "get-top-assets"
+        ],
+        "removed": [
+          "finance_get_token_price"
+        ],
+        "version": "1.0.0"
+      }
     },
     {
       "id": "AS-014",
@@ -26,7 +40,55 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "finance_get_token_price"
+      "tool_name": "get-crypto-price"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-market-analysis"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-historical-analysis"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-top-assets"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-technical-analysis"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-rates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-exchanges"
     }
   ],
   "summary": {
@@ -34,7 +96,7 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -55,16 +117,61 @@
     }
   ],
   "tool_names": [
-    "finance_get_token_price"
+    "get-crypto-price",
+    "get-exchanges",
+    "get-historical-analysis",
+    "get-market-analysis",
+    "get-rates",
+    "get-technical-analysis",
+    "get-top-assets"
   ],
   "tool_contexts": [
     {
-      "tool_name": "finance_get_token_price",
+      "tool_name": "get-crypto-price",
       "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "dynamic email recipient (token)"
-      ],
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-market-analysis",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-historical-analysis",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-top-assets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-technical-analysis",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-rates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-exchanges",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -156,6 +263,12 @@
     },
     {
       "scan_date": "2026-04-26T07:44:33Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-04-27T01:36:34Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.0"

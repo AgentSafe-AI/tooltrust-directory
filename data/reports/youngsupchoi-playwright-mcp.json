@@ -3,7 +3,7 @@
   "version": "0.0.34",
   "grade": "D",
   "risk_score": 50,
-  "scan_date": "2026-04-27T01:38:34.9460442Z",
+  "scan_date": "2026-04-28T02:38:18.667669419Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/youngsupchoi/playwright-mcp",
   "category": "Developer Tools",
@@ -12,6 +12,20 @@
   "license": "Apache-2.0",
   "language": "TypeScript",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.0.34: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "browser_drop"
+        ],
+        "removed": null,
+        "version": "0.0.34"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -59,6 +73,14 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "browser_file_upload"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "browser_drop"
     },
     {
       "id": "AS-002",
@@ -139,13 +161,29 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "browser_snapshot"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "browser_tabs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "browser_tabs"
     }
   ],
   "summary": {
     "critical": 2,
-    "high": 3,
-    "medium": 7,
-    "low": 4,
+    "high": 5,
+    "medium": 8,
+    "low": 5,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -154,6 +192,7 @@
     "browser_close",
     "browser_console_messages",
     "browser_drag",
+    "browser_drop",
     "browser_evaluate",
     "browser_file_upload",
     "browser_fill_form",
@@ -220,6 +259,17 @@
       "grade": "A",
       "behavior": [
         "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "browser_drop",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded domain: example.com\\"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -334,7 +384,13 @@
     {
       "tool_name": "browser_tabs",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -391,6 +447,12 @@
     },
     {
       "scan_date": "2026-04-26T07:40:51Z",
+      "grade": "D",
+      "risk_score": 50,
+      "version": "0.0.34"
+    },
+    {
+      "scan_date": "2026-04-27T01:38:34Z",
       "grade": "D",
       "risk_score": 50,
       "version": "0.0.34"

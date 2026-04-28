@@ -3,25 +3,48 @@
   "version": "0.2.19",
   "grade": "C",
   "risk_score": 34,
-  "scan_date": "2026-04-27T01:23:21.156905191Z",
+  "scan_date": "2026-04-28T02:22:51.562166419Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/tavily-ai/tavily-mcp",
   "category": "Developer Tools",
   "vendor": "tavily-ai",
-  "stars": 1843,
+  "stars": 1850,
   "npm_package": "tavily-mcp",
-  "npm_downloads_monthly": 356155,
+  "npm_downloads_monthly": 356342,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Production ready MCP server with real-time search, extract, map \u0026 crawl.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.2.19: 5 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "tavily_crawl",
+          "tavily_extract",
+          "tavily_map",
+          "tavily_research",
+          "tavily_search"
+        ],
+        "removed": [
+          "tavily-crawl",
+          "tavily-extract",
+          "tavily-map",
+          "tavily-search"
+        ],
+        "version": "0.2.19"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-search"
+      "tool_name": "tavily_search"
     },
     {
       "id": "AS-002",
@@ -29,7 +52,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-search"
+      "tool_name": "tavily_search"
     },
     {
       "id": "AS-002",
@@ -37,7 +60,7 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 15 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-search"
+      "tool_name": "tavily_search"
     },
     {
       "id": "AS-011",
@@ -45,15 +68,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tavily-search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily-search"
+      "tool_name": "tavily_search"
     },
     {
       "id": "AS-002",
@@ -61,7 +76,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-extract"
+      "tool_name": "tavily_extract"
     },
     {
       "id": "AS-011",
@@ -69,15 +84,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tavily-extract"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily-extract"
+      "tool_name": "tavily_extract"
     },
     {
       "id": "AS-002",
@@ -85,7 +92,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-crawl"
+      "tool_name": "tavily_crawl"
     },
     {
       "id": "AS-002",
@@ -93,7 +100,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-crawl"
+      "tool_name": "tavily_crawl"
     },
     {
       "id": "AS-002",
@@ -101,7 +108,7 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-crawl"
+      "tool_name": "tavily_crawl"
     },
     {
       "id": "AS-011",
@@ -109,15 +116,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tavily-crawl"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily-crawl"
+      "tool_name": "tavily_crawl"
     },
     {
       "id": "AS-002",
@@ -125,7 +124,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-map"
+      "tool_name": "tavily_map"
     },
     {
       "id": "AS-002",
@@ -133,7 +132,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tavily-map"
+      "tool_name": "tavily_map"
     },
     {
       "id": "AS-011",
@@ -141,34 +140,43 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tavily-map"
+      "tool_name": "tavily_map"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tavily-map"
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "tavily_research"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "tavily_research"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 7,
     "medium": 2,
-    "low": 6,
-    "info": 4
+    "low": 7,
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "tavily-crawl",
-    "tavily-extract",
-    "tavily-map",
-    "tavily-search"
+    "tavily_crawl",
+    "tavily_extract",
+    "tavily_map",
+    "tavily_research",
+    "tavily_search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "tavily-search",
+      "tool_name": "tavily_search",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
@@ -176,13 +184,14 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (topic)"
+        "dynamic email recipient (topic)",
+        "hardcoded domain: docs.tavily.com"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "tavily-extract",
+      "tool_name": "tavily_extract",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -191,35 +200,46 @@
       "destinations": [
         "dynamic URL input (urls)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "tavily-crawl",
+      "tool_name": "tavily_crawl",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "tavily-map",
+      "tool_name": "tavily_map",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
-        "uses_network",
-        "writes_files"
+        "reads_files",
+        "uses_network"
       ],
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "tavily_research",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -327,6 +347,12 @@
     },
     {
       "scan_date": "2026-04-26T07:23:48Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.2.19"
+    },
+    {
+      "scan_date": "2026-04-27T01:23:21Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.2.19"

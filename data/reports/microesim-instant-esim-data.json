@@ -1,21 +1,45 @@
 {
   "tool_id": "microesim-instant-esim-data",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-19T02:21:13.477758734Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-04-28T02:38:54.040762461Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://smithery.ai/server/MicroEsim/instant-esim-data",
   "vendor": "Smithery",
   "description": "MicroEsim MCP connects your AI agent to global eSIM networks. Instead of manually browsing data plans, just tell your agent where you're going and when — it'll recommend the best 5G plan across 200+ countries based on your itinerary, dates, and budget. Instant, secure, and hassle-free. Travel smarter, not harder.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "search_catalog"
+        ],
+        "removed": [
+          "search_shop_catalog"
+        ],
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_shop_catalog"
+      "tool_name": "search_catalog"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_catalog"
     },
     {
       "id": "AS-011",
@@ -23,7 +47,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_shop_catalog"
+      "tool_name": "search_catalog"
     },
     {
       "id": "AS-014",
@@ -31,7 +55,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_shop_catalog"
+      "tool_name": "search_catalog"
     },
     {
       "id": "AS-002",
@@ -116,8 +140,8 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
+    "high": 4,
+    "medium": 2,
     "low": 4,
     "info": 5
   },
@@ -125,17 +149,21 @@
   "tool_names": [
     "get_cart",
     "get_product_details",
-    "search_shop_catalog",
+    "search_catalog",
     "search_shop_policies_and_faqs",
     "update_cart"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_shop_catalog",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "search_catalog",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: dev.ucp.shopping.catalog.search",
+        "hardcoded domain: pagination.cursor"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -242,6 +270,12 @@
     },
     {
       "scan_date": "2026-04-17T02:17:53Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:21:13Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

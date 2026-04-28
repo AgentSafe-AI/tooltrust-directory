@@ -10,10 +10,10 @@
 | **Vendor** | samihalawa |
 | **Stars** | ⭐ 78 |
 | **npm Package** | `visual-ui-debug-agent-mcp` |
-| **npm Downloads (30d)** | 34 |
+| **npm Downloads (30d)** | 33 |
 | **Language** | JavaScript |
 | **Source** | [samihalawa-visual-ui-debug-agent-mcp](https://github.com/samihalawa/visual-ui-debug-agent-mcp) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

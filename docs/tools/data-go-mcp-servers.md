@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 253 |
 | **Language** | Python |
 | **Source** | [data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

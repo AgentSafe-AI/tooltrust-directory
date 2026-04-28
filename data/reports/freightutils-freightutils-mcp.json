@@ -1,14 +1,34 @@
 {
   "tool_id": "freightutils-freightutils-mcp",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-04-19T02:20:04.546422326Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-04-28T02:38:35.784733693Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://smithery.ai/server/freightutils/freightutils-mcp",
   "vendor": "Smithery",
-  "description": "17 free freight tools for AI agents — LDM/CBM/chargeable weight calculators (road, air, sea modes), multi-item consignment calculator, pallet fitting, container capacity, air cargo ULD reference (15+ types), vehicle \u0026 trailer types, ADR dangerous goods (2,939 entries), ADR 1.1.3.6 exemption calculator, ADR LQ/EQ checker, HS code lookup (6,940 codes), UK import duty \u0026 VAT estimator (live GOV.UK data), INCOTERMS 2020, airline codes (6,352), UN/LOCODE (116,129 locations), unit converter, plus composite shipment summary endpoint. Free REST APIs + MCP server.",
+  "description": "18 free freight tools for AI agents — LDM/CBM/chargeable weight calculators (road, air, sea modes), multi-item consignment calculator, pallet fitting, container capacity, air cargo ULD reference, vehicle lookup, shipment summary, ADR 2025 dangerous goods lookup + LQ/EQ exemption check, UN/LOCODE (116k locations), Harmonised System commodity codes (7k entries), airline IATA/ICAO/AWB prefix lookup, Incoterms 2020, UK import duty \u0026 VAT estimator, unit converter. ",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 7 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "adr_lq_eq_check",
+          "consignment_calculator",
+          "shipment_summary",
+          "uk_duty_calculator",
+          "uld_lookup",
+          "unlocode_lookup",
+          "vehicle_lookup"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -120,28 +140,123 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "unit_converter"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "consignment_calculator"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "unlocode_lookup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "unlocode_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "unlocode_lookup"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "uk_duty_calculator"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "uk_duty_calculator"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "uk_duty_calculator"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "shipment_summary"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "uld_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vehicle_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "adr_lq_eq_check"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 1,
-    "low": 2,
-    "info": 11
+    "low": 5,
+    "info": 18
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "adr_exemption_calculator",
     "adr_lookup",
+    "adr_lq_eq_check",
     "airline_lookup",
     "cbm_calculator",
     "chargeable_weight_calculator",
+    "consignment_calculator",
     "container_lookup",
     "hs_code_lookup",
     "incoterms_lookup",
     "ldm_calculator",
     "pallet_fitting_calculator",
-    "unit_converter"
+    "shipment_summary",
+    "uk_duty_calculator",
+    "uld_lookup",
+    "unit_converter",
+    "unlocode_lookup",
+    "vehicle_lookup"
   ],
   "tool_contexts": [
     {
@@ -229,6 +344,65 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "consignment_calculator",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "unlocode_lookup",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "uk_duty_calculator",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (customsValue)",
+        "hardcoded domain: GOV.UK"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "shipment_summary",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "uld_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "vehicle_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "adr_lq_eq_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -240,6 +414,12 @@
     },
     {
       "scan_date": "2026-04-17T02:16:28Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:20:04Z",
       "grade": "A",
       "risk_score": 8,
       "version": "smithery"

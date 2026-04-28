@@ -10,10 +10,10 @@
 | **Vendor** | cyanheads |
 | **Stars** | ⭐ 471 |
 | **npm Package** | `atlas-mcp-server` |
-| **npm Downloads (30d)** | 197 |
+| **npm Downloads (30d)** | 198 |
 | **Language** | TypeScript |
 | **Source** | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

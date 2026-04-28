@@ -10,10 +10,10 @@
 | **Vendor** | mcpdotdirect |
 | **Stars** | ⭐ 374 |
 | **npm Package** | `@mcpdotdirect/evm-mcp-server` |
-| **npm Downloads (30d)** | 299 |
+| **npm Downloads (30d)** | 301 |
 | **Language** | TypeScript |
 | **Source** | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

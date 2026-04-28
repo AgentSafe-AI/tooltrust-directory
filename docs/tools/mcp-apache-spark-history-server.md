@@ -1,6 +1,6 @@
 # 🟠 mcp-apache-spark-history-server
 
-> MCP Server for Apache Spark History Server. The bridge between Agentic AI and Apache Spark.
+> MCP Server and CLI for Apache Spark History Server. Debug Spark applications from AI agents, scripts, or the terminal.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.5` |
 | **Vendor** | kubeflow |
-| **Stars** | ⭐ 152 |
+| **Stars** | ⭐ 153 |
 | **Language** | Python |
 | **Source** | [mcp-apache-spark-history-server](https://github.com/kubeflow/mcp-apache-spark-history-server) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

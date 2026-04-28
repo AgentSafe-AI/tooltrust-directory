@@ -1,19 +1,19 @@
-# 🟡 jjlabsio-korea-stock-mcp
+# 🟠 jjlabsio-korea-stock-mcp
 
 > MCP Server for Korean stock analysis. 한국 주식 분석을 위한 MCP 서버입니다.  
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `1.4.0` |
 | **Vendor** | jjlabsio |
 | **Stars** | ⭐ 120 |
 | **npm Package** | `korea-stock-mcp` |
-| **npm Downloads (30d)** | 547 |
+| **npm Downloads (30d)** | 549 |
 | **Language** | TypeScript |
 | **Source** | [jjlabsio-korea-stock-mcp](https://github.com/jjlabsio/korea-stock-mcp) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-28 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
-| Medium   | 0 |
-| Low      | 1 |
-| Info     | 5 |
+| High     | 4 |
+| Medium   | 3 |
+| Low      | 3 |
+| Info     | 3 |
 
 ## Detailed Findings
 
@@ -35,34 +35,10 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at v1.4.0: 5 tool(s) added, 1 tool(s) removed without a version bump.
+Tool set changed silently at v1.4.0: 3 tool(s) added, 5 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
 
 ---
 
@@ -72,6 +48,18 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -102,6 +90,42 @@ Review and remediate the identified issue.
 
 ---
 
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares db permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
@@ -111,6 +135,42 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares db permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

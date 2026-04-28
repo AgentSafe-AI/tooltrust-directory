@@ -30,8 +30,8 @@ Free to use. Remote MCP server. No API key needed. Connect in 2 minutes.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [shibui-finance](https://smithery.ai/server/shibui/finance) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-28 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 
