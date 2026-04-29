@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [namewhisper-ens-tools](https://smithery.ai/server/namewhisper/ens-tools) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

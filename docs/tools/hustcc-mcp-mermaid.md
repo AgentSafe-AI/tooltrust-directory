@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.1` |
 | **Vendor** | hustcc |
-| **Stars** | ⭐ 538 |
+| **Stars** | ⭐ 539 |
 | **npm Package** | `mcp-mermaid` |
 | **npm Downloads (30d)** | 20.0k |
 | **Language** | TypeScript |
 | **Source** | [hustcc-mcp-mermaid](https://github.com/hustcc/mcp-mermaid) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

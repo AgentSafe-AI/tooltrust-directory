@@ -1,17 +1,17 @@
 # 🟠 call518-mcp-postgresql-ops
 
-> 🔍Professional MCP server for PostgreSQL operations & monitoring: 30+ extension-independent tools for performance analysis, table bloat detection, autovacuum monitoring, schema introspection, and database management. Supports PostgreSQL 12+.
+> 🐘 Give AI assistants full PostgreSQL DBA superpowers — 30+ tools for performance analysis, bloat detection, lock/deadlock monitoring, autovacuum & schema inspection. No extensions required. PG 12-18.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 38 |
-| **Version** | `3.3.5` |
+| **Version** | `3.3.6` |
 | **Vendor** | call518 |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 148 |
 | **Language** | Python |
 | **Source** | [call518-mcp-postgresql-ops](https://github.com/call518/MCP-PostgreSQL-Ops) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -20,7 +20,7 @@ Built on [AiEGIS](https://aiegis.ie), the EU-sovereign AI governance platform. E
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [travisanthonygerber-grid](https://smithery.ai/server/travisanthonygerber/GRID) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

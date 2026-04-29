@@ -3,12 +3,68 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 19,
-  "scan_date": "2026-04-28T02:39:12.102864814Z",
+  "scan_date": "2026-04-29T02:38:06.384851598Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://smithery.ai/server/fabsforward2-zhoi/sbb-mcp",
   "vendor": "Smithery",
   "description": "Independent MCP server by swisstrip for Swiss Federal Railways (SBB/CFF/FFS) — all schedules, prices, ticket links via SBB's official SMAPI. ",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_profile",
+          "list_travelers",
+          "save_profile"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "save_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "save_profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_travelers"
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -108,21 +164,54 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 3,
+    "medium": 3,
     "low": 3,
-    "info": 6
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "get_more_connections",
     "get_prices",
+    "get_profile",
     "get_ticket_link",
     "get_trip_details",
+    "list_travelers",
+    "save_profile",
     "search_connections",
     "search_stations"
   ],
   "tool_contexts": [
+    {
+      "tool_name": "save_profile",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: profile.json"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_profile",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_travelers",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
     {
       "tool_name": "search_stations",
       "action": "ALLOW",
@@ -175,6 +264,8 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
+        "dynamic email recipient (to_id)",
+        "dynamic email recipient (to_name)",
         "hardcoded domain: SBB.ch"
       ],
       "dependency_visibility": "No dependency data",
@@ -250,6 +341,12 @@
     },
     {
       "scan_date": "2026-04-27T01:39:34Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-28T02:39:12Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

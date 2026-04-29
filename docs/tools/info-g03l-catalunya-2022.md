@@ -31,7 +31,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-g03l-catalunya-2022](https://smithery.ai/server/info-g03l/catalunya-2022) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

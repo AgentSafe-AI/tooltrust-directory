@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.0` |
 | **Vendor** | kopfrechner |
-| **Stars** | ⭐ 88 |
+| **Stars** | ⭐ 89 |
 | **npm Package** | `gitlab-mr-mcp` |
 | **npm Downloads (30d)** | 62 |
 | **Language** | JavaScript |
 | **Source** | [kopfrechner-gitlab-mr-mcp](https://github.com/kopfrechner/gitlab-mr-mcp) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

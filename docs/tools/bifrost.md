@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `ent-v1.3.10-base` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 4383 |
+| **Stars** | ⭐ 4417 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

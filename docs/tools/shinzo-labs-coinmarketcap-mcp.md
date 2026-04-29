@@ -10,10 +10,10 @@
 | **Vendor** | shinzo-labs |
 | **Stars** | ⭐ 51 |
 | **npm Package** | `@shinzolabs/coinmarketcap-mcp` |
-| **npm Downloads (30d)** | 146 |
+| **npm Downloads (30d)** | 157 |
 | **Language** | JavaScript |
 | **Source** | [shinzo-labs-coinmarketcap-mcp](https://github.com/shinzo-labs/coinmarketcap-mcp) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

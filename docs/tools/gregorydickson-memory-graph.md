@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.12.4` |
 | **Vendor** | gregorydickson |
-| **Stars** | ⭐ 193 |
+| **Stars** | ⭐ 194 |
 | **Language** | Python |
 | **Source** | [gregorydickson-memory-graph](https://github.com/memory-graph/memory-graph) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-29 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
