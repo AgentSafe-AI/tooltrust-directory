@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-developer-tools-mcp-server](https://smithery.ai/server/nexgendata-apify/developer-tools-mcp-server) |
-| **Scan Date** | 2026-04-29 |
+| **Scan Date** | 2026-04-30 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

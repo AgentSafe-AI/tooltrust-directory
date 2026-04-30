@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axiora-japan-financials](https://smithery.ai/server/axiora/japan-financials) |
-| **Scan Date** | 2026-04-29 |
+| **Scan Date** | 2026-04-30 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jina](https://smithery.ai/server/jina) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-04-30 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

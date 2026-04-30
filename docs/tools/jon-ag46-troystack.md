@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jon-ag46-troystack](https://smithery.ai/server/jon-ag46/troystack) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-30 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

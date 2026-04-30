@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `2.0.0` |
 | **Vendor** | VeriTeknik |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **npm Package** | `@pluggedin/pluggedin-mcp-proxy` |
-| **npm Downloads (30d)** | 191 |
+| **npm Downloads (30d)** | 201 |
 | **Language** | TypeScript |
 | **Source** | [veriteknik-pluggedin-mcp](https://github.com/VeriTeknik/pluggedin-mcp) |
-| **Scan Date** | 2026-04-29 |
+| **Scan Date** | 2026-04-30 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

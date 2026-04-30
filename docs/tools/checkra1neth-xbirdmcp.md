@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [checkra1neth-xbirdmcp](https://smithery.ai/server/checkra1neth/xbirdmcp) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-30 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

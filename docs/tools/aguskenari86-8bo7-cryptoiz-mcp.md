@@ -1,6 +1,6 @@
 # 🟢 aguskenari86-8bo7-cryptoiz-mcp
 
-> CryptoIZ MCP v4.16.3 — AI-powered Solana DEX whale intelligence for Claude Desktop. 9 tools (7 paid + 2 free): whale alpha scanner, whale-price divergence (3 types: hidden/breakout/classic accumulation), 4-dimension accumulation/neutral/distribution phase scoring, BTC macro regime monitor, BTC Futures Signal (MTF 4H+5m scalping). Pay per call with USDC via x402 Dexter — gas sponsored, no SOL needed. Auto-update notifications & full audit logging.
+> CryptoIZ MCP v4.16.17 — AI-powered Solana DEX whale intelligence. 9 tools (7 paid + 2 free): whale alpha scanner, divergence (hidden/breakout/classic), accumulation/neutral/distribution phase scoring, BTC macro regime, BTC Futures signal. Pay per call with USDC via x402 Dexter — gas sponsored, no SOL needed. Pricing: get_whale_alpha $0.10, get_whale_divergence $0.04, get_whale_accumulation $0.03, get_whale_neutral $0.03, get_whale_distribution $0.04, get_btc_regime $0.02, get_btc_futures_signal $0.06. Recommended: npx agentcash add https://mcp.cryptoiz.org
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aguskenari86-8bo7-cryptoiz-mcp](https://smithery.ai/server/aguskenari86-8bo7/cryptoiz-mcp) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-04-30 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
