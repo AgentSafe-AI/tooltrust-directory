@@ -1,4 +1,4 @@
-# 🟡 securelend-financial-services
+# 🟢 securelend-financial-services
 
 > AI-powered financial services marketplace connecting borrowers with 200+ lenders across loans, mortgages, credit cards, and banking products.
 
@@ -14,12 +14,12 @@ Perfect for financial advisors, fintech developers, and anyone comparing financi
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [securelend-financial-services](https://smithery.ai/server/securelend/financial-services) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
@@ -29,24 +29,12 @@ Perfect for financial advisors, fintech developers, and anyone comparing financi
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 2 |
 | Low      | 0 |
 | Info     | 8 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 8 tool(s) added, 253 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

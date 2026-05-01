@@ -10,10 +10,10 @@
 | **Vendor** | qianniuspace |
 | **Stars** | ⭐ 52 |
 | **npm Package** | `mcp-security-audit` |
-| **npm Downloads (30d)** | 544 |
+| **npm Downloads (30d)** | 552 |
 | **Language** | TypeScript |
 | **Source** | [qianniuspace-mcp-security-audit](https://github.com/qianniuspace/mcp-security-audit) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

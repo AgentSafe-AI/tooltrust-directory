@@ -12,7 +12,7 @@
 | **npm Package** | `octocode-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [bgauryy-octocode-mcp](https://github.com/bgauryy/octocode-mcp) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

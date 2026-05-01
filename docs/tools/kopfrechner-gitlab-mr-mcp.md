@@ -10,10 +10,10 @@
 | **Vendor** | kopfrechner |
 | **Stars** | ⭐ 89 |
 | **npm Package** | `gitlab-mr-mcp` |
-| **npm Downloads (30d)** | 65 |
+| **npm Downloads (30d)** | 70 |
 | **Language** | JavaScript |
 | **Source** | [kopfrechner-gitlab-mr-mcp](https://github.com/kopfrechner/gitlab-mr-mcp) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

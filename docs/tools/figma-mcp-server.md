@@ -1,19 +1,15 @@
 # 🟠 figma-mcp-server
 
-> Model Context Protocol server implementation for Figma API
-
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 42 |
 | **Version** | `1.0.0` |
-| **Vendor** | TimHolden |
-| **Stars** | ⭐ 148 |
-| **npm Package** | `figma-mcp-server` |
-| **npm Downloads (30d)** | 7.6k |
+| **Vendor** | Antonytm |
+| **Stars** | ⭐ 149 |
 | **Language** | TypeScript |
-| **Source** | [figma-mcp-server](https://github.com/TimHolden/figma-mcp-server) |
-| **Scan Date** | 2026-04-30 |
+| **Source** | [figma-mcp-server](https://github.com/Antonytm/figma-mcp-server) |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

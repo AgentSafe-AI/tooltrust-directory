@@ -8,10 +8,10 @@
 | **Risk Score** | 47 |
 | **Version** | `0.1.0` |
 | **Vendor** | the-momentum |
-| **Stars** | ⭐ 177 |
+| **Stars** | ⭐ 178 |
 | **Language** | Python |
 | **Source** | [apple-health-mcp-server](https://github.com/the-momentum/apple-health-mcp-server) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

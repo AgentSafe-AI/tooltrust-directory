@@ -10,10 +10,10 @@
 | **Vendor** | marcopesani |
 | **Stars** | ⭐ 153 |
 | **npm Package** | `serper-search-scrape-mcp-server` |
-| **npm Downloads (30d)** | 22.7k |
+| **npm Downloads (30d)** | 22.6k |
 | **Language** | TypeScript |
 | **Source** | [marcopesani-mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

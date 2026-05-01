@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.6.0` |
 | **Vendor** | PuroDelphi |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **npm Package** | `mcp-firebird` |
-| **npm Downloads (30d)** | 2.2k |
+| **npm Downloads (30d)** | 2.3k |
 | **Language** | TypeScript |
 | **Source** | [purodelphi-mcpfirebird](https://github.com/PuroDelphi/mcpFirebird) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

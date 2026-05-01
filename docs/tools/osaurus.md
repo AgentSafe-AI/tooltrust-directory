@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.16.9` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 5166 |
+| **Stars** | ⭐ 5169 |
 | **Language** | C |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

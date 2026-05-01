@@ -8,12 +8,12 @@
 | **Risk Score** | 15 |
 | **Version** | `0.3.1` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 320 |
+| **Stars** | ⭐ 321 |
 | **npm Package** | `deepseek-mcp-server` |
-| **npm Downloads (30d)** | 1.0k |
+| **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |
 | **Source** | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | antarikshc |
-| **Stars** | ⭐ 169 |
+| **Stars** | ⭐ 171 |
 | **Language** | Python |
 | **Source** | [antarikshc-perfetto-mcp](https://github.com/antarikshc/perfetto-mcp) |
-| **Scan Date** | 2026-04-30 |
+| **Scan Date** | 2026-05-01 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
