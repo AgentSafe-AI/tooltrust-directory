@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ebenova-vigil-fraud-alert](https://smithery.ai/server/ebenova/vigil-fraud-alert) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

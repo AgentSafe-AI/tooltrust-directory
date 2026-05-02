@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 54 |
 | **Language** | Go |
 | **Source** | [tomohiro-owada-devrag](https://github.com/tomohiro-owada/devrag) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

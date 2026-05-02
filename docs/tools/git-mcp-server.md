@@ -10,10 +10,10 @@
 | **Vendor** | cyanheads |
 | **Stars** | ⭐ 213 |
 | **npm Package** | `@cyanheads/git-mcp-server` |
-| **npm Downloads (30d)** | 19.3k |
+| **npm Downloads (30d)** | 19.7k |
 | **Language** | TypeScript |
 | **Source** | [git-mcp-server](https://github.com/cyanheads/git-mcp-server) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | henryhawke |
 | **Stars** | ⭐ 90 |
 | **npm Package** | `@henryhawke/mcp-titan` |
-| **npm Downloads (30d)** | 70 |
+| **npm Downloads (30d)** | 63 |
 | **Language** | TypeScript |
 | **Source** | [henryhawke-mcp-titan](https://github.com/henryhawke/mcp-titan) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

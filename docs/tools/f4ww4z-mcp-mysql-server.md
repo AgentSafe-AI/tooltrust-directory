@@ -10,10 +10,10 @@
 | **Vendor** | f4ww4z |
 | **Stars** | ⭐ 158 |
 | **npm Package** | `@f4ww4z/mcp-mysql-server` |
-| **npm Downloads (30d)** | 3.0k |
+| **npm Downloads (30d)** | 2.9k |
 | **Language** | JavaScript |
 | **Source** | [f4ww4z-mcp-mysql-server](https://github.com/f4ww4z/mcp-mysql-server) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.23.3` |
 | **Vendor** | chrisdoc |
-| **Stars** | ⭐ 213 |
+| **Stars** | ⭐ 214 |
 | **npm Package** | `hevy-mcp` |
-| **npm Downloads (30d)** | 7.5k |
+| **npm Downloads (30d)** | 7.4k |
 | **Language** | TypeScript |
 | **Source** | [chrisdoc-hevy-mcp](https://github.com/chrisdoc/hevy-mcp) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

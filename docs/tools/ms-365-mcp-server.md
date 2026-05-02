@@ -8,12 +8,12 @@
 | **Risk Score** | 37 |
 | **Version** | `0.73.1` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 668 |
+| **Stars** | ⭐ 669 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
-| **npm Downloads (30d)** | 94.9k |
+| **npm Downloads (30d)** | 92.6k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 36 |
+| High     | 35 |
 | Medium   | 105 |
 | Low      | 332 |
 | Info     | 0 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.73.1: 153 tool(s) added, 21 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

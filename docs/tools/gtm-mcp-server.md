@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 76 |
 | **Language** | Go |
 | **Source** | [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

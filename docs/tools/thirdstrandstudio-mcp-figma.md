@@ -8,12 +8,12 @@
 | **Risk Score** | 42 |
 | **Version** | `0.7.0` |
 | **Vendor** | thirdstrandstudio |
-| **Stars** | ⭐ 69 |
+| **Stars** | ⭐ 70 |
 | **npm Package** | `@thirdstrandstudio/mcp-figma` |
 | **npm Downloads (30d)** | 2.0k |
 | **Language** | TypeScript |
 | **Source** | [thirdstrandstudio-mcp-figma](https://github.com/thirdstrandstudio/mcp-figma) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

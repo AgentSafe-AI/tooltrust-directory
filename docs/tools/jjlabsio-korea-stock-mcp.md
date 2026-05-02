@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.2k |
 | **Language** | TypeScript |
 | **Source** | [jjlabsio-korea-stock-mcp](https://github.com/jjlabsio/korea-stock-mcp) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

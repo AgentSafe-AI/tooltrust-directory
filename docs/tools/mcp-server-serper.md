@@ -8,12 +8,12 @@
 | **Risk Score** | 38 |
 | **Version** | `0.2.0` |
 | **Vendor** | marcopesani |
-| **Stars** | ⭐ 153 |
+| **Stars** | ⭐ 154 |
 | **npm Package** | `serper-search-scrape-mcp-server` |
-| **npm Downloads (30d)** | 22.6k |
+| **npm Downloads (30d)** | 22.2k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

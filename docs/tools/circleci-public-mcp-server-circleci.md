@@ -10,10 +10,10 @@
 | **Vendor** | CircleCI-Public |
 | **Stars** | ⭐ 84 |
 | **npm Package** | `@circleci/mcp-server-circleci` |
-| **npm Downloads (30d)** | 120.6k |
+| **npm Downloads (30d)** | 122.5k |
 | **Language** | TypeScript |
 | **Source** | [circleci-public-mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

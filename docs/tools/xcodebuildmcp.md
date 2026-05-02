@@ -8,12 +8,12 @@
 | **Risk Score** | 23 |
 | **Version** | `2.3.2` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 5372 |
+| **Stars** | ⭐ 5384 |
 | **npm Package** | `xcodebuildmcp` |
-| **npm Downloads (30d)** | 145.0k |
+| **npm Downloads (30d)** | 143.8k |
 | **Language** | TypeScript |
 | **Source** | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

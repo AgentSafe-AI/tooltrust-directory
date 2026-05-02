@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 20.0k |
 | **Language** | TypeScript |
 | **Source** | [hustcc-mcp-mermaid](https://github.com/hustcc/mcp-mermaid) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

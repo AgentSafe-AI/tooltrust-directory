@@ -10,10 +10,10 @@
 | **Vendor** | its-dart |
 | **Stars** | ⭐ 126 |
 | **npm Package** | `dart-mcp-server` |
-| **npm Downloads (30d)** | 451 |
+| **npm Downloads (30d)** | 461 |
 | **Language** | TypeScript |
 | **Source** | [dart-mcp-server](https://github.com/its-dart/dart-mcp-server) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

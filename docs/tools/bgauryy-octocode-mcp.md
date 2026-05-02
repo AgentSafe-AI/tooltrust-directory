@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `5.0.0` |
 | **Vendor** | bgauryy |
-| **Stars** | ⭐ 802 |
+| **Stars** | ⭐ 803 |
 | **npm Package** | `octocode-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [bgauryy-octocode-mcp](https://github.com/bgauryy/octocode-mcp) |
-| **Scan Date** | 2026-05-01 |
+| **Scan Date** | 2026-05-02 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
