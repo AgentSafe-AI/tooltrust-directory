@@ -10,10 +10,10 @@
 | **Vendor** | conorluddy |
 | **Stars** | ⭐ 82 |
 | **npm Package** | `xc-mcp` |
-| **npm Downloads (30d)** | 307 |
+| **npm Downloads (30d)** | 297 |
 | **Language** | TypeScript |
 | **Source** | [conorluddy-xc-mcp](https://github.com/conorluddy/xc-mcp) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

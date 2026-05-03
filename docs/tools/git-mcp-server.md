@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `2.10.5` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 213 |
+| **Stars** | ⭐ 214 |
 | **npm Package** | `@cyanheads/git-mcp-server` |
-| **npm Downloads (30d)** | 19.7k |
+| **npm Downloads (30d)** | 20.0k |
 | **Language** | TypeScript |
 | **Source** | [git-mcp-server](https://github.com/cyanheads/git-mcp-server) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

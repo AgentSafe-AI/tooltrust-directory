@@ -8,11 +8,11 @@
 | **Risk Score** | 32 |
 | **Version** | `2.1.0` |
 | **Vendor** | mikechao |
-| **Stars** | ⭐ 115 |
+| **Stars** | ⭐ 116 |
 | **npm Package** | `brave-search-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mikechao-brave-search-mcp](https://github.com/mikechao/brave-search-mcp) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

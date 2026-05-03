@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.2.0` |
 | **Vendor** | Kastalien-Research |
-| **Stars** | ⭐ 56 |
+| **Stars** | ⭐ 57 |
 | **npm Package** | `@kastalien-research/thoughtbox` |
-| **npm Downloads (30d)** | 304 |
+| **npm Downloads (30d)** | 289 |
 | **Language** | TypeScript |
 | **Source** | [kastalien-research-clear-thought-two](https://github.com/Kastalien-Research/thoughtbox) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

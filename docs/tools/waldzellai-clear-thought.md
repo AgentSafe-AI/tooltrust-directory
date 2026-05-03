@@ -11,7 +11,7 @@ future updates will be rolled out to Thoughtbox --> https://smithery.ai/server/@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [waldzellai-clear-thought](https://smithery.ai/server/waldzellai/clear-thought) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

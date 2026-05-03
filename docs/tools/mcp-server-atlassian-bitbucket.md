@@ -10,10 +10,10 @@
 | **Vendor** | aashari |
 | **Stars** | ⭐ 146 |
 | **npm Package** | `@aashari/mcp-server-atlassian-bitbucket` |
-| **npm Downloads (30d)** | 9.3k |
+| **npm Downloads (30d)** | 9.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

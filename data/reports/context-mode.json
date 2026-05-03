@@ -3,14 +3,14 @@
   "version": "1.0.75",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-05-02T02:11:09.315764589Z",
+  "scan_date": "2026-05-03T02:20:33.705699507Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/mksglu/context-mode",
   "category": "Developer Tools",
   "vendor": "mksglu",
-  "stars": 11768,
+  "stars": 12027,
   "npm_package": "context-mode",
-  "npm_downloads_monthly": 50223,
+  "npm_downloads_monthly": 50863,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 14 platforms",
@@ -137,9 +137,33 @@
     },
     {
       "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_fetch_and_index"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_fetch_and_index"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_fetch_and_index"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ctx_fetch_and_index"
     },
@@ -153,9 +177,33 @@
     },
     {
       "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_batch_execute"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_batch_execute"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ctx_batch_execute"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ctx_batch_execute"
     },
@@ -210,9 +258,9 @@
   ],
   "summary": {
     "critical": 2,
-    "high": 9,
-    "medium": 6,
-    "low": 7,
+    "high": 11,
+    "medium": 9,
+    "low": 8,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -313,13 +361,18 @@
     },
     {
       "tool_name": "ctx_fetch_and_index",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "uses_network"
+        "executes_commands",
+        "uses_network",
+        "writes_files"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: os.cpus",
+        "hardcoded domain: react.dev",
+        "hardcoded domain: vuejs.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -327,9 +380,15 @@
     {
       "tool_name": "ctx_batch_execute",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Node.js",
+        "hardcoded domain: console.log"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -536,6 +595,12 @@
     },
     {
       "scan_date": "2026-05-01T02:23:11Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "1.0.75"
+    },
+    {
+      "scan_date": "2026-05-02T02:11:09Z",
       "grade": "D",
       "risk_score": 65,
       "version": "1.0.75"

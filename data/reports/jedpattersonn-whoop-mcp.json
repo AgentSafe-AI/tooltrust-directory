@@ -1,9 +1,9 @@
 {
   "tool_id": "jedpattersonn-whoop-mcp",
   "version": "1.0.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-02T02:19:27Z",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-05-03T02:28:22.654235613Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/JedPattersonn/whoop-mcp",
   "category": "Developer Tools",
@@ -16,40 +16,54 @@
   "description": "MCP server for WHOOP - integrate your fitness and biometric data with Claude and other LLMs",
   "findings": [
     {
-      "id": "AS-018",
-      "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 15,
-            "snippet": "new McpServer(",
-            "file": "src/server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-recovery-collection"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get-recovery-collection"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-recovery"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get-recovery"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "medium": 1,
+    "low": 4,
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,120 +81,109 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "get-body-measurement",
+    "get-cycle",
+    "get-cycles",
+    "get-profile",
+    "get-recovery",
+    "get-recovery-collection",
+    "get-sleep",
+    "get-sleep-collection",
+    "get-workout",
+    "get-workouts"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-03T22:52:38Z",
+      "tool_name": "get-body-measurement",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T01:39:43Z",
+      "tool_name": "get-cycle",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T06:24:42Z",
+      "tool_name": "get-cycles",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "destinations": [
+        "dynamic email recipient (nextToken)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T16:46:31Z",
+      "tool_name": "get-profile",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-05T01:16:47Z",
+      "tool_name": "get-recovery-collection",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (nextToken)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-06T01:58:53Z",
+      "tool_name": "get-recovery",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-07T01:46:01Z",
+      "tool_name": "get-sleep-collection",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "destinations": [
+        "dynamic email recipient (nextToken)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-08T01:42:45Z",
+      "tool_name": "get-sleep",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-20T02:18:08Z",
+      "tool_name": "get-workout",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-21T02:10:15Z",
+      "tool_name": "get-workouts",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:12:16Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-25T02:04:35Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:14:04Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:33:19Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:30:56Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:30:28Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:29:15Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:27:51Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:31:16Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "destinations": [
+        "dynamic email recipient (nextToken)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ]
 }

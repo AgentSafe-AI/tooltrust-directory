@@ -8,10 +8,10 @@
 | **Vendor** | c-rick |
 | **Stars** | ⭐ 51 |
 | **npm Package** | `jimeng-mcp` |
-| **npm Downloads (30d)** | 29 |
+| **npm Downloads (30d)** | 30 |
 | **Language** | TypeScript |
 | **Source** | [c-rick-jimeng-mcp](https://github.com/c-rick/jimeng-mcp) |
-| **Scan Date** | 2026-05-02 |
+| **Scan Date** | 2026-05-03 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
