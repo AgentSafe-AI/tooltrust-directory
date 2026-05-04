@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [howard-eridani-spark](https://smithery.ai/server/howard-eridani/spark) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

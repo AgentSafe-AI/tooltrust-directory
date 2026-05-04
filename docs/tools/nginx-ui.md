@@ -10,10 +10,10 @@
 | **Vendor** | 0xJacky |
 | **Stars** | ⭐ 11106 |
 | **npm Package** | `nginx-ui` |
-| **npm Downloads (30d)** | 23 |
+| **npm Downloads (30d)** | 22 |
 | **Language** | Go |
 | **Source** | [nginx-ui](https://github.com/0xJacky/nginx-ui) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

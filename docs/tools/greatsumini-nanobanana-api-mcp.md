@@ -10,10 +10,10 @@
 | **Vendor** | greatSumini |
 | **Stars** | ⭐ 52 |
 | **npm Package** | `nanobanana-api-mcp` |
-| **npm Downloads (30d)** | 652 |
+| **npm Downloads (30d)** | 647 |
 | **Language** | TypeScript |
 | **Source** | [greatsumini-nanobanana-api-mcp](https://github.com/greatSumini/nanobanana-api-mcp) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

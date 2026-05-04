@@ -12,7 +12,7 @@
 | **npm Package** | `perplexity-mcp-zerver` |
 | **Language** | TypeScript |
 | **Source** | [wysh3-perplexity-mcp-server](https://github.com/wysh3/perplexity-mcp-zerver) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

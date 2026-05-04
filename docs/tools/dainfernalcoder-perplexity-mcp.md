@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `Feature` |
 | **Vendor** | DaInfernalCoder |
-| **Stars** | ⭐ 289 |
+| **Stars** | ⭐ 290 |
 | **npm Package** | `perplexity-mcp` |
-| **npm Downloads (30d)** | 12.8k |
+| **npm Downloads (30d)** | 13.0k |
 | **Language** | JavaScript |
 | **Source** | [dainfernalcoder-perplexity-mcp](https://github.com/DaInfernalCoder/perplexity-mcp) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

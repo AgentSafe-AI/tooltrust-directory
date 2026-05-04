@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.8` |
 | **Vendor** | ankimcp |
-| **Stars** | ⭐ 248 |
+| **Stars** | ⭐ 250 |
 | **npm Package** | `@ankimcp/anki-mcp-server` |
-| **npm Downloads (30d)** | 4.0k |
+| **npm Downloads (30d)** | 3.9k |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

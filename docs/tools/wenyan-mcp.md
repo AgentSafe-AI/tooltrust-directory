@@ -10,11 +10,11 @@
 | **Vendor** | caol64 |
 | **Stars** | ⭐ 1153 |
 | **npm Package** | `@wenyan-md/mcp` |
-| **npm Downloads (30d)** | 594 |
+| **npm Downloads (30d)** | 722 |
 | **Language** | JavaScript |
 | **Source** | [wenyan-mcp](https://github.com/caol64/wenyan-mcp) |
-| **Scan Date** | 2026-04-08 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-04 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

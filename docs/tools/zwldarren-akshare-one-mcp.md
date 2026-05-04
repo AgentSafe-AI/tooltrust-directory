@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.9` |
 | **Vendor** | zwldarren |
-| **Stars** | ⭐ 159 |
+| **Stars** | ⭐ 160 |
 | **Language** | Python |
 | **Source** | [zwldarren-akshare-one-mcp](https://github.com/zwldarren/akshare-one-mcp) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

