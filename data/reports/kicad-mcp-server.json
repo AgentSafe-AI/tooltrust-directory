@@ -1,0 +1,69 @@
+{
+  "tool_id": "kicad-mcp-server",
+  "version": "2.1.0-alpha",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-05-05T02:08:15Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/mixelpixx/KiCAD-MCP-Server",
+  "category": "Developer Tools",
+  "vendor": "mixelpixx",
+  "stars": 923,
+  "npm_package": "kicad-mcp",
+  "license": "MIT",
+  "language": "Python",
+  "description": "KiCAD MCP is a Model Context Protocol (MCP) implementation that enables Large Language Models (LLMs) like Claude to directly interact with KiCAD for printed circuit board design.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 5,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 196,
+            "snippet": "new McpServer(",
+            "file": "src/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 196,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ]
+}

@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.3.5` |
+| **Version** | `0.3.11` |
 | **Vendor** | huggingface |
 | **Stars** | ⭐ 229 |
 | **npm Package** | `hf-mcp` |
 | **Language** | TypeScript |
 | **Source** | [hf-mcp-server](https://github.com/huggingface/hf-mcp-server) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-05 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

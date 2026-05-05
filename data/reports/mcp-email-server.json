@@ -1,0 +1,87 @@
+{
+  "tool_id": "mcp-email-server",
+  "version": "0.6.4",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-05-05T02:09:56.238839351Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/ai-zerolab/mcp-email-server",
+  "category": "Developer Tools",
+  "vendor": "ai-zerolab",
+  "stars": 229,
+  "license": "BSD-3-Clause",
+  "language": "Python",
+  "description": "IMAP and SMTP via MCP Server",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_email"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_credits"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "file": "mcp_email_server/app.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 20,
+      "snippet": "FastMCP(",
+      "file": "mcp_email_server/app.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 29,
+      "snippet": "@mcp.tool(",
+      "file": "mcp_email_server/app.py",
+      "language": "python"
+    }
+  ],
+  "tool_names": [
+    "check_credits",
+    "verify_email"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "verify_email",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (email)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_credits",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

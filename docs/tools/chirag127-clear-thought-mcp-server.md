@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [chirag127-clear-thought-mcp-server](https://smithery.ai/server/chirag127/clear-thought-mcp-server) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-05 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

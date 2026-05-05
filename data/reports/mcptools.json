@@ -1,0 +1,96 @@
+{
+  "tool_id": "mcptools",
+  "version": "0.7.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-05-05T02:07:59Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/f/mcptools",
+  "category": "Developer Tools",
+  "vendor": "f",
+  "stars": 1574,
+  "license": "MIT",
+  "language": "Go",
+  "description": "A command-line interface for interacting with MCP (Model Context Protocol) servers using both stdio and HTTP transport.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "templates/ts/server_sse.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 7,
+            "snippet": "new McpServer(",
+            "file": "templates/ts/server_sse.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "templates/ts/server_stdio.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 6,
+            "snippet": "new McpServer(",
+            "file": "templates/ts/server_stdio.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "templates/ts/server_sse.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 7,
+      "snippet": "new McpServer(",
+      "file": "templates/ts/server_sse.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "templates/ts/server_stdio.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 6,
+      "snippet": "new McpServer(",
+      "file": "templates/ts/server_stdio.ts",
+      "language": "typescript"
+    }
+  ]
+}

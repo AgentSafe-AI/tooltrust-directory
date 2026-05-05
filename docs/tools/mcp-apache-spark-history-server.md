@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.1.5` |
+| **Version** | `0.2.0` |
 | **Vendor** | kubeflow |
-| **Stars** | ⭐ 163 |
+| **Stars** | ⭐ 164 |
 | **Language** | Python |
 | **Source** | [mcp-apache-spark-history-server](https://github.com/kubeflow/mcp-apache-spark-history-server) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-05 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

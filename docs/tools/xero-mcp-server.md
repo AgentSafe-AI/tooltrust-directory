@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 10 |
-| **Version** | `0.0.14` |
+| **Version** | `0.0.16` |
 | **Vendor** | XeroAPI |
-| **Stars** | ⭐ 268 |
+| **Stars** | ⭐ 270 |
 | **npm Package** | `@xeroapi/xero-mcp-server` |
 | **npm Downloads (30d)** | 10.0k |
 | **Language** | TypeScript |
 | **Source** | [xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-05 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

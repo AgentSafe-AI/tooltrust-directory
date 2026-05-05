@@ -1,0 +1,69 @@
+{
+  "tool_id": "mcp-server-langfuse",
+  "version": "0.0.2-rc.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-05-05T02:10:30Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/langfuse/mcp-server-langfuse",
+  "category": "Developer Tools",
+  "vendor": "langfuse",
+  "stars": 166,
+  "npm_package": "mcp-server-langfuse",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows you to access and manage your Langfuse prompts through the Model Context Protocol.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 20,
+            "snippet": "new McpServer(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 20,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ]
+}

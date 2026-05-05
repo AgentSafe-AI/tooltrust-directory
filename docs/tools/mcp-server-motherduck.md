@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 40 |
-| **Version** | `1.0.4` |
+| **Version** | `1.0.6` |
 | **Vendor** | motherduckdb |
 | **Stars** | ⭐ 476 |
 | **Language** | Python |
 | **Source** | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-05 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -1,17 +1,19 @@
 # 🔴 mcp-notion-server
 
+> A Model Context Protocol server for connecting Notion to MCP-compatible clients
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 50 |
-| **Version** | `1.2.4` |
+| **Version** | `2.0.0` |
 | **Vendor** | suekou |
 | **Stars** | ⭐ 884 |
 | **npm Package** | `@suekou/mcp-notion-server` |
 | **npm Downloads (30d)** | 3.3k |
 | **Language** | TypeScript |
 | **Source** | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-05 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

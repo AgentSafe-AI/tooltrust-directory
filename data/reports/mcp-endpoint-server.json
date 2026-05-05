@@ -1,0 +1,67 @@
+{
+  "tool_id": "mcp-endpoint-server",
+  "version": "0.0.6",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-05-05T02:10:41.671609429Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/xinnan-tech/mcp-endpoint-server",
+  "category": "Developer Tools",
+  "vendor": "xinnan-tech",
+  "stars": 142,
+  "license": "MIT",
+  "language": "Python",
+  "description": "xiaozhi mcp接入点服务器，用于自定义mcp服务注册，方便拓展小智服务端工具调用",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "api_test_webhook"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "api_test_webhook"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "api_test_webhook"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "api_test_webhook"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "api_test_webhook",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

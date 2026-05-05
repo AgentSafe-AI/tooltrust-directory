@@ -8,10 +8,10 @@
 | **Risk Score** | 8 |
 | **Version** | `0.8.0` |
 | **Vendor** | FradSer |
-| **Stars** | ⭐ 298 |
+| **Stars** | ⭐ 299 |
 | **Language** | Python |
 | **Source** | [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-05 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
