@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1355 |
 | **Language** | Go |
 | **Source** | [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

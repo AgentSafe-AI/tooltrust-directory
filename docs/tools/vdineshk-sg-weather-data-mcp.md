@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vdineshk-sg-weather-data-mcp](https://smithery.ai/server/vdineshk/sg-weather-data-mcp) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

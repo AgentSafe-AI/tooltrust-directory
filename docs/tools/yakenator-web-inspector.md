@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [yakenator-web-inspector](https://smithery.ai/server/yakenator/web-inspector) |
-| **Scan Date** | 2026-04-27 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2026.04.17.0444-c63748f` |
 | **Vendor** | xpzouying |
-| **Stars** | ⭐ 13213 |
+| **Stars** | ⭐ 13282 |
 | **Language** | Go |
 | **Source** | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

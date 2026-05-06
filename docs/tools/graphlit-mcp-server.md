@@ -10,10 +10,10 @@
 | **Vendor** | graphlit |
 | **Stars** | ⭐ 375 |
 | **npm Package** | `graphlit-mcp-server` |
-| **npm Downloads (30d)** | 1.5k |
+| **npm Downloads (30d)** | 1.3k |
 | **Language** | TypeScript |
 | **Source** | [graphlit-mcp-server](https://github.com/graphlit/graphlit-mcp-server) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

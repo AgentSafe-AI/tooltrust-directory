@@ -35,8 +35,8 @@ JobGPT is a complete job search automation platform. It connects your AI assista
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xfigr-com-jobgpt](https://smithery.ai/server/xfigr-com/jobgpt) |
-| **Scan Date** | 2026-04-22 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-06 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smhussainm-rzp1-brcupaqtde2pisrtwto1kwscop4lwc7lngagj6v](https://smithery.ai/server/smhussainm-rzp1/brcuPAqTdE2pIsrTwto1kwsCoP4lwc7lNGagJ6V) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

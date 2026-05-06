@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [govbase-govbase](https://smithery.ai/server/govbase/govbase) |
-| **Scan Date** | 2026-04-22 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-06 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

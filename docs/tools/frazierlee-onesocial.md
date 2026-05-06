@@ -25,8 +25,8 @@ Fiverr • Upwork • LinkedIn search • DocuSign • Eventbrite • Google Cal
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [frazierlee-onesocial](https://smithery.ai/server/frazierlee/onesocial) |
-| **Scan Date** | 2026-04-23 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-06 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

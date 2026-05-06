@@ -11,7 +11,7 @@ No authentication required. After publishing, connect your form to Google Sheets
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [florian-weavely](https://smithery.ai/server/florian/weavely) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

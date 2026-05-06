@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `0.5.0` |
 | **Vendor** | blazickjp |
-| **Stars** | ⭐ 2653 |
+| **Stars** | ⭐ 2659 |
 | **Language** | Python |
 | **Source** | [arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 33 |
 | **Version** | `sha-f658c5a4011c` |
 | **Vendor** | jerry-ai-dev |
-| **Stars** | ⭐ 859 |
+| **Stars** | ⭐ 861 |
 | **Language** | Python |
 | **Source** | [modular-rag-mcp-server](https://github.com/jerry-ai-dev/MODULAR-RAG-MCP-SERVER) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

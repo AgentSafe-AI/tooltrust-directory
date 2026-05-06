@@ -10,10 +10,10 @@
 | **Vendor** | OpenAgentPlatform |
 | **Stars** | ⭐ 1785 |
 | **npm Package** | `dive` |
-| **npm Downloads (30d)** | 30.7k |
+| **npm Downloads (30d)** | 31.9k |
 | **Language** | TypeScript |
 | **Source** | [dive](https://github.com/OpenAgentPlatform/Dive) |
-| **Scan Date** | 2026-05-05 |
+| **Scan Date** | 2026-05-06 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
