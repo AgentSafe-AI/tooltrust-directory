@@ -10,10 +10,10 @@
 | **Vendor** | railwayapp |
 | **Stars** | ⭐ 189 |
 | **npm Package** | `@railway/mcp-server` |
-| **npm Downloads (30d)** | 24.6k |
+| **npm Downloads (30d)** | 24.4k |
 | **Language** | TypeScript |
 | **Source** | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) |
-| **Scan Date** | 2026-05-06 |
+| **Scan Date** | 2026-05-07 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

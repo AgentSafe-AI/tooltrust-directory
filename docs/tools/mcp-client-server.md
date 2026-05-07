@@ -10,10 +10,10 @@
 | **Vendor** | willccbb |
 | **Stars** | ⭐ 124 |
 | **npm Package** | `mcp-test-client` |
-| **npm Downloads (30d)** | 5.3k |
+| **npm Downloads (30d)** | 5.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-client-server](https://github.com/willccbb/mcp-client-server) |
-| **Scan Date** | 2026-05-06 |
+| **Scan Date** | 2026-05-07 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

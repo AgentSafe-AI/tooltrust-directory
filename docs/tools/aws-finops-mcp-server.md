@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 175 |
 | **Language** | Python |
 | **Source** | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) |
-| **Scan Date** | 2026-05-06 |
+| **Scan Date** | 2026-05-07 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

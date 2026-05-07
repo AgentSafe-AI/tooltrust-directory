@@ -10,7 +10,7 @@ The only AI tool that connects directly to a proprietary Reddit outreach network
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [signal-found-reddit-outreach](https://smithery.ai/server/signal-found/reddit-outreach) |
-| **Scan Date** | 2026-05-06 |
+| **Scan Date** | 2026-05-07 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

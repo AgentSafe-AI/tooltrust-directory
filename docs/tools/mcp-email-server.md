@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.4` |
 | **Vendor** | ai-zerolab |
-| **Stars** | ⭐ 229 |
+| **Stars** | ⭐ 230 |
 | **Language** | Python |
 | **Source** | [mcp-email-server](https://github.com/ai-zerolab/mcp-email-server) |
-| **Scan Date** | 2026-05-06 |
+| **Scan Date** | 2026-05-07 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
