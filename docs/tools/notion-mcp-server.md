@@ -10,10 +10,10 @@
 | **Vendor** | makenotion |
 | **Stars** | ⭐ 4302 |
 | **npm Package** | `@notionhq/notion-mcp-server` |
-| **npm Downloads (30d)** | 270.5k |
+| **npm Downloads (30d)** | 272.7k |
 | **Language** | TypeScript |
 | **Source** | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) |
-| **Scan Date** | 2026-05-07 |
+| **Scan Date** | 2026-05-08 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

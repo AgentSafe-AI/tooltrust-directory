@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `2.7` |
 | **Vendor** | JoeanAmier |
-| **Stars** | ⭐ 11070 |
+| **Stars** | ⭐ 11084 |
 | **Language** | Python |
 | **Source** | [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) |
-| **Scan Date** | 2026-05-07 |
+| **Scan Date** | 2026-05-08 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

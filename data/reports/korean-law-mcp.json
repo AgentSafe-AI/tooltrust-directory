@@ -3,18 +3,32 @@
   "version": "2.1.6",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-05-07T02:10:01.155732108Z",
+  "scan_date": "2026-05-08T02:16:36.248948054Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/chrisryugj/korean-law-mcp",
   "category": "Developer Tools",
   "vendor": "chrisryugj",
-  "stars": 1667,
+  "stars": 1677,
   "npm_package": "korean-law-mcp",
-  "npm_downloads_monthly": 7494,
+  "npm_downloads_monthly": 7700,
   "license": "MIT",
   "language": "TypeScript",
-  "description": "국가법령정보MCP | 법제처 41개 API → 16개 MCP 도구. 법령·판례·조례·조약을 AI로 검색·조회·분석 + LLM 환각 방지 인용 검증 | 41 Korean legal APIs → 16 MCP tools with AI citation hallucination guard",
+  "description": "국가법령정보MCP v4.0 | 법제처 41개 API → 17개 MCP 도구. 법령·판례·조례 검색 + LLM 환각 방지 인용검증 + 조문 영향 그래프(impact_map) + 시점 비교 자동 diff(time_travel) + 시민 5단계 실행 가이드(action_plan) | 41 Korean legal APIs → 17 MCP tools",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.1.6: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "impact_map"
+        ],
+        "removed": null,
+        "version": "2.1.6"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -145,6 +159,22 @@
     },
     {
       "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "impact_map"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "impact_map"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
@@ -178,8 +208,8 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 17,
-    "medium": 0,
+    "high": 19,
+    "medium": 1,
     "low": 3,
     "info": 0
   },
@@ -198,6 +228,7 @@
     "get_annexes",
     "get_decision_text",
     "get_law_text",
+    "impact_map",
     "search_decisions",
     "search_law",
     "verify_citations"
@@ -252,6 +283,9 @@
       "tool_name": "chain_amendment_track",
       "action": "ALLOW",
       "grade": "B",
+      "destinations": [
+        "dynamic email recipient (toDate)"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -288,6 +322,13 @@
     },
     {
       "tool_name": "verify_citations",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "impact_map",
       "action": "ALLOW",
       "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
@@ -514,6 +555,12 @@
     },
     {
       "scan_date": "2026-05-06T02:07:27Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "2.1.6"
+    },
+    {
+      "scan_date": "2026-05-07T02:10:01Z",
       "grade": "C",
       "risk_score": 32,
       "version": "2.1.6"

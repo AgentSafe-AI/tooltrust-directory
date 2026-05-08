@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.0.6` |
 | **Vendor** | xinnan-tech |
-| **Stars** | ⭐ 143 |
+| **Stars** | ⭐ 142 |
 | **Language** | Python |
 | **Source** | [mcp-endpoint-server](https://github.com/xinnan-tech/mcp-endpoint-server) |
-| **Scan Date** | 2026-05-07 |
+| **Scan Date** | 2026-05-08 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

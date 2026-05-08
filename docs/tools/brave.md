@@ -1,6 +1,6 @@
 # 🟠 brave
 
-> Visit https://brave.com/search/api/ for a free API key. Search the web, local businesses, images, videos, and news with rich, structured results. Refine results by country, language, freshness, and SafeSearch to pinpoint what you need. Generate concise summaries of findings to grasp key points faster.
+> Search the web, local businesses, images, videos, and news with rich, structured results. Refine results by country, language, freshness, and SafeSearch to pinpoint what you need. Generate concise summaries of findings to grasp key points faster.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [brave](https://smithery.ai/server/brave) |
-| **Scan Date** | 2026-05-07 |
+| **Scan Date** | 2026-05-08 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
