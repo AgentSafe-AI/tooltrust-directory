@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [labelhead-artist-momentum](https://smithery.ai/server/labelhead/artist-momentum) |
-| **Scan Date** | 2026-05-08 |
+| **Scan Date** | 2026-05-09 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `5.0.0` |
 | **Vendor** | BlackSnufkin |
-| **Stars** | ⭐ 1412 |
+| **Stars** | ⭐ 1413 |
 | **Language** | YARA |
 | **Source** | [litterbox](https://github.com/BlackSnufkin/LitterBox) |
-| **Scan Date** | 2026-05-08 |
+| **Scan Date** | 2026-05-09 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

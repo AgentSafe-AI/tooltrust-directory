@@ -1,6 +1,6 @@
 # 🟡 bh-rat-context-awesome
 
-> awesome-lists now available as MCP server for you agent.
+> awesome-lists now available as CLI & MCP server for your agent.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,13 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.0` |
 | **Vendor** | bh-rat |
-| **Stars** | ⭐ 45 |
+| **Stars** | ⭐ 50 |
 | **npm Package** | `context-awesome` |
-| **Language** | JavaScript |
+| **npm Downloads (30d)** | 186 |
+| **Language** | TypeScript |
 | **Source** | [bh-rat-context-awesome](https://github.com/bh-rat/context-awesome) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-05-09 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

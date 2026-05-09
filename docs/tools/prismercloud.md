@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `1.9.0` |
 | **Vendor** | Prismer-AI |
-| **Stars** | ⭐ 1420 |
+| **Stars** | ⭐ 1457 |
 | **npm Package** | `prismer-cloud-next` |
 | **Language** | TypeScript |
 | **Source** | [prismercloud](https://github.com/Prismer-AI/PrismerCloud) |
-| **Scan Date** | 2026-05-08 |
+| **Scan Date** | 2026-05-09 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -6,10 +6,10 @@
 | **Risk Score** | 0 |
 | **Version** | `push` |
 | **Vendor** | yangkyeongmo |
-| **Stars** | ⭐ 162 |
+| **Stars** | ⭐ 164 |
 | **Language** | Python |
 | **Source** | [mcp-server-apache-airflow](https://github.com/yangkyeongmo/mcp-server-apache-airflow) |
-| **Scan Date** | 2026-05-08 |
+| **Scan Date** | 2026-05-09 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
