@@ -21,7 +21,7 @@ Free to use. No account required. 10 scans/day per IP.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pol-l3ch-url-scanner-online-aprensec](https://smithery.ai/server/pol-l3ch/url-scanner-online-aprensec) |
-| **Scan Date** | 2026-05-08 |
+| **Scan Date** | 2026-05-10 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

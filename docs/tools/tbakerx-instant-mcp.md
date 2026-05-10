@@ -19,7 +19,7 @@ Perfect for developers naming projects, entrepreneurs launching products, or any
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tbakerx-instant-mcp](https://smithery.ai/server/tbakerx/instant-mcp) |
-| **Scan Date** | 2026-05-09 |
+| **Scan Date** | 2026-05-10 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

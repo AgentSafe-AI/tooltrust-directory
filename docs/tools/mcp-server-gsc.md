@@ -10,10 +10,10 @@
 | **Vendor** | ahonn |
 | **Stars** | ⭐ 217 |
 | **npm Package** | `mcp-server-gsc` |
-| **npm Downloads (30d)** | 7.6k |
+| **npm Downloads (30d)** | 7.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-gsc](https://github.com/ahonn/mcp-server-gsc) |
-| **Scan Date** | 2026-05-09 |
+| **Scan Date** | 2026-05-10 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
