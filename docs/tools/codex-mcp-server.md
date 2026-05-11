@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 10.5k |
 | **Language** | TypeScript |
 | **Source** | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) |
-| **Scan Date** | 2026-05-10 |
+| **Scan Date** | 2026-05-11 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

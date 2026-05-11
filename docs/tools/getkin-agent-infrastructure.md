@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [getkin-agent-infrastructure](https://smithery.ai/server/getkin/agent-infrastructure) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-11 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

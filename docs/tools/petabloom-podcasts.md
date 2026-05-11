@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [petabloom-podcasts](https://smithery.ai/server/petabloom/podcasts) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-11 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

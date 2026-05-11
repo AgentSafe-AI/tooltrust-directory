@@ -1,19 +1,19 @@
 # 🔴 context-mode
 
-> Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 14 platforms
+> Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 15 platforms
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 65 |
-| **Version** | `1.0.111` |
+| **Version** | `1.0.118` |
 | **Vendor** | mksglu |
-| **Stars** | ⭐ 14178 |
+| **Stars** | ⭐ 14263 |
 | **npm Package** | `context-mode` |
 | **npm Downloads (30d)** | 57.8k |
 | **Language** | TypeScript |
 | **Source** | [context-mode](https://github.com/mksglu/context-mode) |
-| **Scan Date** | 2026-05-10 |
+| **Scan Date** | 2026-05-11 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

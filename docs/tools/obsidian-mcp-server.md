@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `3.1.6` |
+| **Version** | `3.1.7` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 499 |
+| **Stars** | ⭐ 504 |
 | **npm Package** | `obsidian-mcp-server` |
 | **npm Downloads (30d)** | 22.1k |
 | **Language** | TypeScript |
 | **Source** | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) |
-| **Scan Date** | 2026-05-10 |
+| **Scan Date** | 2026-05-11 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -1,14 +1,14 @@
 {
   "tool_id": "linkedin-mcp-server",
-  "version": "4.12.0",
+  "version": "4.13.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-05-10T02:11:14.338261251Z",
+  "scan_date": "2026-05-11T02:20:02.06568408Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/stickerdaniel/linkedin-mcp-server",
   "category": "Developer Tools",
   "vendor": "stickerdaniel",
-  "stars": 1829,
+  "stars": 1839,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Open-source MCP server for LinkedIn. Give Claude and any MCP-compatible AI assistant access to profiles, companies, jobs, and messages.",
@@ -28,6 +28,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_person_profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_my_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_my_profile"
     },
     {
       "id": "AS-014",
@@ -100,6 +116,38 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_company_posts"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_companies"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_companies"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_companies"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_company_employees"
     },
     {
       "id": "AS-014",
@@ -232,23 +280,26 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 3,
-    "low": 5,
-    "info": 14
+    "high": 6,
+    "medium": 4,
+    "low": 6,
+    "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "close_session",
     "connect_with_person",
+    "get_company_employees",
     "get_company_posts",
     "get_company_profile",
     "get_conversation",
     "get_feed",
     "get_inbox",
     "get_job_details",
+    "get_my_profile",
     "get_person_profile",
     "get_sidebar_profiles",
+    "search_companies",
     "search_conversations",
     "search_jobs",
     "search_people",
@@ -257,6 +308,16 @@
   "tool_contexts": [
     {
       "tool_name": "get_person_profile",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_my_profile",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -295,6 +356,23 @@
     },
     {
       "tool_name": "get_company_posts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_companies",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_company_employees",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -682,6 +760,12 @@
     },
     {
       "scan_date": "2026-05-09T02:12:01Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "4.12.0"
+    },
+    {
+      "scan_date": "2026-05-10T02:11:14Z",
       "grade": "C",
       "risk_score": 25,
       "version": "4.12.0"
