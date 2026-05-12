@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [stackdump-pflow-pilot](https://smithery.ai/server/stackdump/pflow-pilot) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-12 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

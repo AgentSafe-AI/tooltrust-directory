@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `10.4.0` |
 | **Vendor** | lemonade-sdk |
-| **Stars** | ⭐ 3892 |
+| **Stars** | ⭐ 3904 |
 | **Language** | C++ |
 | **Source** | [lemonade](https://github.com/lemonade-sdk/lemonade) |
-| **Scan Date** | 2026-05-11 |
+| **Scan Date** | 2026-05-12 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

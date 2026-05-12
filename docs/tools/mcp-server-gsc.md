@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.3.0` |
 | **Vendor** | ahonn |
-| **Stars** | ⭐ 217 |
+| **Stars** | ⭐ 218 |
 | **npm Package** | `mcp-server-gsc` |
-| **npm Downloads (30d)** | 7.5k |
+| **npm Downloads (30d)** | 7.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-gsc](https://github.com/ahonn/mcp-server-gsc) |
-| **Scan Date** | 2026-05-11 |
+| **Scan Date** | 2026-05-12 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

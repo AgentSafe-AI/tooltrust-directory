@@ -27,8 +27,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [refetch-web](https://smithery.ai/server/refetch/web) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-12 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

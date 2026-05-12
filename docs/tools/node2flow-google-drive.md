@@ -32,7 +32,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-google-drive](https://smithery.ai/server/node2flow/google-drive) |
-| **Scan Date** | 2026-05-11 |
+| **Scan Date** | 2026-05-12 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

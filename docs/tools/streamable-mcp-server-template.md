@@ -10,10 +10,10 @@
 | **Vendor** | iceener |
 | **Stars** | ⭐ 129 |
 | **npm Package** | `mcp-server-template` |
-| **npm Downloads (30d)** | 34 |
+| **npm Downloads (30d)** | 42 |
 | **Language** | TypeScript |
 | **Source** | [streamable-mcp-server-template](https://github.com/iceener/streamable-mcp-server-template) |
-| **Scan Date** | 2026-05-11 |
+| **Scan Date** | 2026-05-12 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

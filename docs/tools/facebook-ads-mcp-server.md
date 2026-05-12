@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 322 |
 | **Language** | Python |
 | **Source** | [facebook-ads-mcp-server](https://github.com/gomarble-ai/facebook-ads-mcp-server) |
-| **Scan Date** | 2026-05-11 |
+| **Scan Date** | 2026-05-12 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

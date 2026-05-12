@@ -3,16 +3,34 @@
   "version": "0.9.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-05-11T02:20:53.392203097Z",
+  "scan_date": "2026-05-12T02:16:21.65431495Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/matlab/matlab-mcp-core-server",
   "category": "Developer Tools",
   "vendor": "matlab",
-  "stars": 547,
+  "stars": 566,
   "license": "NOASSERTION",
   "language": "Go",
   "description": "Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®. This MCP server for MATLAB supports a wide range of coding agents like Claude Code® and Visual Studio® Code.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.9.0: 2 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "compliance.exposure.forecast",
+          "compliance.queue.optimize"
+        ],
+        "removed": [
+          "simulation.montecarlo.decision",
+          "simulation.montecarlo.report"
+        ],
+        "version": "0.9.0"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -75,23 +93,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "simulation.montecarlo.report"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "simulation.montecarlo.decision"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "simulation.montecarlo.decision"
+      "tool_name": "compliance.exposure.forecast"
     },
     {
       "id": "AS-014",
@@ -99,7 +101,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "simulation.montecarlo.decision"
+      "tool_name": "compliance.queue.optimize"
     },
     {
       "id": "AS-014",
@@ -122,17 +124,17 @@
     "critical": 0,
     "high": 2,
     "medium": 0,
-    "low": 2,
+    "low": 1,
     "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "compliance.edd.report",
+    "compliance.exposure.forecast",
+    "compliance.queue.optimize",
     "report.docx.generate",
     "report.pdf.generate",
     "server.capabilities",
-    "simulation.montecarlo.decision",
-    "simulation.montecarlo.report",
     "wallet.ofac.batch",
     "wallet.ofac.report",
     "wallet.ofac.screen"
@@ -193,24 +195,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "simulation.montecarlo.report",
+      "tool_name": "compliance.exposure.forecast",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: simulation.montecarlo.report"
+        "hardcoded domain: compliance.exposure.forecast"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "simulation.montecarlo.decision",
+      "tool_name": "compliance.queue.optimize",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "destinations": [
-        "hardcoded domain: simulation.montecarlo.decision"
+        "hardcoded domain: compliance.queue.optimize"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -293,6 +292,12 @@
     },
     {
       "scan_date": "2026-05-10T02:12:06Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.9.0"
+    },
+    {
+      "scan_date": "2026-05-11T02:20:53Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.9.0"
