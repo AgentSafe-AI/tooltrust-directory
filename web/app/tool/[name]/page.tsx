@@ -12,7 +12,8 @@ interface PageProps {
   params: Promise<{ name: string }>;
 }
 
-export const revalidate = 3600;
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getAllReports().map((report) => ({ name: report.tool_id }));

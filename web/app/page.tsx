@@ -7,7 +7,7 @@ import { getMethodologyHref, getRuleInfo } from "@/lib/rules";
 import { Terminal } from "lucide-react";
 import { Suspense } from "react";
 
-export const revalidate = 3600;
+export const dynamic = "force-static";
 
 export default function HomePage() {
   const sectionLinks = [
