@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [parsley-mcp-server](https://smithery.ai/server/parsley/mcp-server) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

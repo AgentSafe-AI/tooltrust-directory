@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 5.5k |
 | **Language** | TypeScript |
 | **Source** | [markmap-mcp-server](https://github.com/jinzcdev/markmap-mcp-server) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

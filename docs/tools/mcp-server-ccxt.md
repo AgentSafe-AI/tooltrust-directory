@@ -1,19 +1,19 @@
-# 🟢 mcp-server-ccxt
+# 🟠 mcp-server-ccxt
 
 > High-performance CCXT MCP server for cryptocurrency exchange integration
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
-| **Risk Score** | 0 |
+| **Grade** | **C** |
+| **Risk Score** | 32 |
 | **Version** | `1.2.1` |
 | **Vendor** | doggybee |
 | **Stars** | ⭐ 137 |
 | **npm Package** | `@mcpfun/mcp-server-ccxt` |
-| **npm Downloads (30d)** | 849 |
+| **npm Downloads (30d)** | 727 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-ccxt](https://github.com/doggybee/mcp-server-ccxt) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
@@ -23,22 +23,166 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 12 |
 | Medium   | 0 |
-| Low      | 0 |
-| Info     | 1 |
+| Low      | 1 |
+| Info     | 0 |
 
 ## Detailed Findings
 
-### ⚪ `AS-018` — Embedded MCP Server Detected
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+input parameter "apiKey" appears to accept a secret or credential
 
 **Recommendation:**
-Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "secret" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "secret" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "apiKey" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "secret" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "apiKey" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "secret" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "apiKey" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "apiKey" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "secret" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
+input parameter "password" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

@@ -23,7 +23,7 @@ Built for teams who plan through conversation, not spreadsheets.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-ybpr-gantta-mcp](https://smithery.ai/server/info-ybpr/gantta-mcp) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -3,11 +3,27 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 30,
-  "scan_date": "2026-05-12T02:20:26.200348915Z",
+  "scan_date": "2026-05-13T02:35:19.629617492Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://smithery.ai/server/imviky-zzzr/tickerr-live-status",
   "vendor": "Smithery",
+  "description": "Real-time status, pricing, and inference latency for 90+ AI tools. Agent-reported failure signals with live fallback routing. No auth required. ",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_model_performance",
+          "report_incident"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -95,14 +111,46 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_free_tier"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_model_performance"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_model_performance"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_model_performance"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "report_incident"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 4,
     "medium": 0,
-    "low": 1,
-    "info": 7
+    "low": 3,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -110,9 +158,11 @@
     "get_api_pricing",
     "get_free_tier",
     "get_incidents",
+    "get_model_performance",
     "get_rate_limits",
     "get_tool_status",
-    "list_tools"
+    "list_tools",
+    "report_incident"
   ],
   "tool_contexts": [
     {
@@ -146,9 +196,6 @@
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "hardcoded domain: tickerr.ai"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -175,6 +222,26 @@
       "tool_name": "get_free_tier",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_model_performance",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "report_incident",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: tickerr.ai"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -320,6 +387,12 @@
     },
     {
       "scan_date": "2026-05-11T02:24:57Z",
+      "grade": "C",
+      "risk_score": 30,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-12T02:20:26Z",
       "grade": "C",
       "risk_score": 30,
       "version": "smithery"

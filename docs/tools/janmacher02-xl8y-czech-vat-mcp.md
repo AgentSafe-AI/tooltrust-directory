@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [janmacher02-xl8y-czech-vat-mcp](https://smithery.ai/server/janmacher02-xl8y/czech-vat-mcp) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

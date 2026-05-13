@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smithery-ai-national-weather-service](https://smithery.ai/server/smithery-ai/national-weather-service) |
-| **Scan Date** | 2026-05-07 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

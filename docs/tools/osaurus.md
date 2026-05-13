@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.18.13` |
+| **Version** | `0.18.14` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 5220 |
+| **Stars** | ⭐ 5230 |
 | **Language** | C |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

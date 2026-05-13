@@ -1,6 +1,6 @@
 # 🟠 nexgendata-apify-real-estate-mcp-server
 
-> Search Redfin property listings and get comprehensive property details. Filter by price, location, and property type for investment analysis.
+> Pull Redfin listings, sale-comps, and neighborhood market trends through your AI assistant. Ask 'What's selling under $400K in Austin within 10 min of downtown?' and get structured property data back. Built for investor research and buyer-agent workflows.
 
 | Field | Value |
 |-------|-------|
@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-real-estate-mcp-server](https://smithery.ai/server/nexgendata-apify/real-estate-mcp-server) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-13 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

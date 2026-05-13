@@ -8,10 +8,10 @@
 | **Vendor** | PhillipRt |
 | **Stars** | ⭐ 125 |
 | **npm Package** | `think-mcp-server` |
-| **npm Downloads (30d)** | 629 |
+| **npm Downloads (30d)** | 634 |
 | **Language** | TypeScript |
 | **Source** | [think-mcp-server](https://github.com/PhillipRt/think-mcp-server) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

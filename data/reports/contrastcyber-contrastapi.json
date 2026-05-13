@@ -3,12 +3,28 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-05-12T02:20:27.913455082Z",
+  "scan_date": "2026-05-13T02:35:20.059050691Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://smithery.ai/server/contrastcyber/contrastapi",
   "vendor": "Smithery",
   "description": "Security intelligence MCP server for AI agents. 33 tools covering domain recon, CVE lookup (340K+ with EPSS+KEV+CWE), IP threat reports, bulk CVE/IOC lookups, full domain audit, IOC enrichment, dependency audit, code security scanning. Free tier: 100 credits/hour, no API key required.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "bulk_sigma_rule_lookup",
+          "email_security_posture",
+          "sigma_rule_lookup"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -216,6 +232,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "email_mx"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "email_security_posture"
     },
     {
       "id": "AS-014",
@@ -831,6 +855,46 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "sigma_rule_lookup"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "sigma_rule_lookup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "sigma_rule_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "sigma_rule_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "bulk_sigma_rule_lookup"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ioc_lookup"
     },
     {
@@ -1124,10 +1188,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 33,
+    "high": 35,
     "medium": 21,
-    "low": 36,
-    "info": 49
+    "low": 38,
+    "info": 52
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1141,6 +1205,7 @@
     "bulk_atlas_technique_lookup",
     "bulk_cve_lookup",
     "bulk_ioc_lookup",
+    "bulk_sigma_rule_lookup",
     "calculate_risk_score",
     "check_dependencies",
     "check_headers",
@@ -1158,6 +1223,7 @@
     "domain_report",
     "email_disposable",
     "email_mx",
+    "email_security_posture",
     "email_verify",
     "exploit_lookup",
     "get_cvss_details",
@@ -1172,6 +1238,7 @@
     "robots_txt",
     "scan_headers",
     "seo_audit",
+    "sigma_rule_lookup",
     "ssl_check",
     "subdomain_enum",
     "tech_fingerprint",
@@ -1333,6 +1400,17 @@
       "destinations": [
         "hardcoded domain: example.com",
         "hardcoded domain: google.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "email_security_posture",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (selectors)",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1669,6 +1747,27 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "sigma_rule_lookup",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: cve.YYYY"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "bulk_sigma_rule_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "ioc_lookup",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
@@ -1823,6 +1922,12 @@
     },
     {
       "scan_date": "2026-05-11T02:25:00Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-12T02:20:27Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

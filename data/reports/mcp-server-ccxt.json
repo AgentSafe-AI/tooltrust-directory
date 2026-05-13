@@ -1,55 +1,133 @@
 {
   "tool_id": "mcp-server-ccxt",
   "version": "1.2.1",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-12T02:19:02Z",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-13T02:34:01.866922665Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/doggybee/mcp-server-ccxt",
   "category": "Developer Tools",
   "vendor": "doggybee",
   "stars": 137,
   "npm_package": "@mcpfun/mcp-server-ccxt",
-  "npm_downloads_monthly": 849,
+  "npm_downloads_monthly": 727,
   "license": "MIT",
   "language": "TypeScript",
   "description": "High-performance CCXT MCP server for cryptocurrency exchange integration",
   "findings": [
     {
-      "id": "AS-018",
-      "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 25,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 43,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "account-balance"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "account-balance"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "place-market-order"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "place-market-order"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "set-leverage"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "set-leverage"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "set-margin-mode"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "set-margin-mode"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"apiKey\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "place-futures-market-order"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"secret\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "place-futures-market-order"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "set-proxy-config"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "set-proxy-config"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "set-proxy-config"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 12,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 1,
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,312 +145,207 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "account-balance",
+    "batch-get-tickers",
+    "cache-stats",
+    "clear-cache",
+    "clear-exchange-cache",
+    "get-exchange-info",
+    "get-funding-rates",
+    "get-leverage-tiers",
+    "get-market-types",
+    "get-markets",
+    "get-ohlcv",
+    "get-orderbook",
+    "get-proxy-config",
+    "get-ticker",
+    "get-trades",
+    "list-exchanges",
+    "place-futures-market-order",
+    "place-market-order",
+    "set-leverage",
+    "set-log-level",
+    "set-margin-mode",
+    "set-market-type",
+    "set-proxy-config",
+    "test-proxy-connection"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-03-25T05:39:38Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "cache-stats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-03-31T22:15:37Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "clear-cache",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-01T20:15:53Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "set-log-level",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-03T06:50:56Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "list-exchanges",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-03T20:34:41Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-ticker",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-03T21:13:50Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "batch-get-tickers",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-03T22:50:50Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-orderbook",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T01:37:58Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-ohlcv",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T06:22:51Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-trades",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T16:44:34Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-markets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T22:55:43Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-exchange-info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-05T01:14:50Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-leverage-tiers",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-05T01:53:56Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-funding-rates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-06T01:57:22Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-market-types",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-07T01:44:29Z",
+      "tool_name": "account-balance",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-07T22:01:23Z",
+      "tool_name": "place-market-order",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-08T01:40:38Z",
+      "tool_name": "set-leverage",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-09T01:32:57Z",
+      "tool_name": "set-margin-mode",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-10T01:58:13Z",
+      "tool_name": "place-futures-market-order",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-11T01:39:45Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "get-proxy-config",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-12T02:04:31Z",
+      "tool_name": "set-proxy-config",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: proxy-server:port)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-13T02:08:26Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "test-proxy-connection",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-14T02:03:58Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "clear-exchange-cache",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-15T02:01:36Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-16T02:15:58Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-17T02:04:21Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-18T01:46:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-19T02:08:01Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-20T02:14:09Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-21T02:06:47Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-22T02:05:10Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-23T02:08:21Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-24T02:08:35Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-25T02:00:23Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-26T02:10:08Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-26T07:27:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-27T01:26:55Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-28T02:26:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-29T02:25:15Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-30T02:23:49Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-01T02:27:20Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-02T02:15:24Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-03T02:24:46Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-04T02:22:07Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-05T02:11:03Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-06T02:10:35Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-07T02:12:58Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-08T02:19:30Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-09T02:15:30Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-10T02:14:34Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-11T02:23:28Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
+      "tool_name": "set-market-type",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ]
 }

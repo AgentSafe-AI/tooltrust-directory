@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1580 |
 | **Language** | Go |
 | **Source** | [mcptools](https://github.com/f/mcptools) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

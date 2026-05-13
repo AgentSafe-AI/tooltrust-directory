@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 309 |
 | **Language** | Python |
 | **Source** | [comfyui-mcp-server](https://github.com/joenorton/comfyui-mcp-server) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

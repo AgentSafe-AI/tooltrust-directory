@@ -6,12 +6,12 @@
 | **Risk Score** | 49 |
 | **Version** | `2.0.80` |
 | **Vendor** | brave |
-| **Stars** | ⭐ 1002 |
+| **Stars** | ⭐ 1009 |
 | **npm Package** | `@brave/brave-search-mcp-server` |
-| **npm Downloads (30d)** | 62.9k |
+| **npm Downloads (30d)** | 64.1k |
 | **Language** | TypeScript |
 | **Source** | [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) |
-| **Scan Date** | 2026-05-12 |
+| **Scan Date** | 2026-05-13 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
@@ -261,7 +261,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** High
 
 **Description:**
-input parameter "maximum_number_of_tokens" appears to accept a secret or credential
+input parameter "maximum_number_of_tokens_per_url" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -273,7 +273,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** High
 
 **Description:**
-input parameter "maximum_number_of_tokens_per_url" appears to accept a secret or credential
+input parameter "maximum_number_of_tokens" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
