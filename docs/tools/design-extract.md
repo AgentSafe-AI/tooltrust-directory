@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `12.9.0` |
+| **Version** | `12.10.0` |
 | **Vendor** | Manavarya09 |
-| **Stars** | ⭐ 2512 |
+| **Stars** | ⭐ 2551 |
 | **npm Package** | `designlang` |
-| **npm Downloads (30d)** | 10.1k |
+| **npm Downloads (30d)** | 10.6k |
 | **Language** | JavaScript |
 | **Source** | [design-extract](https://github.com/Manavarya09/design-extract) |
-| **Scan Date** | 2026-05-13 |
+| **Scan Date** | 2026-05-14 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

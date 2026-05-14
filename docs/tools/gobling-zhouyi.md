@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gobling-zhouyi](https://smithery.ai/server/gobling/zhouyi) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-05-14 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

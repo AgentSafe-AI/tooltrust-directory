@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [arizeai-docs](https://smithery.ai/server/ArizeAI/docs) |
-| **Scan Date** | 2026-05-13 |
+| **Scan Date** | 2026-05-14 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

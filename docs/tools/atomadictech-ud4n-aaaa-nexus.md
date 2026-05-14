@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [atomadictech-ud4n-aaaa-nexus](https://smithery.ai/server/atomadictech-ud4n/aaaa-nexus) |
-| **Scan Date** | 2026-05-04 |
+| **Scan Date** | 2026-05-14 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

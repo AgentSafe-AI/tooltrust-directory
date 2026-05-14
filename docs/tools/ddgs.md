@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `9.14.2` |
 | **Vendor** | deedy5 |
-| **Stars** | ⭐ 2621 |
+| **Stars** | ⭐ 2628 |
 | **Language** | Python |
 | **Source** | [ddgs](https://github.com/deedy5/ddgs) |
-| **Scan Date** | 2026-05-13 |
+| **Scan Date** | 2026-05-14 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

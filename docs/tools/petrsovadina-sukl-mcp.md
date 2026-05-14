@@ -24,7 +24,7 @@ Automatická aktualizace dat — CI workflow (měsíční cron)
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [petrsovadina-sukl-mcp](https://smithery.ai/server/petrsovadina/sukl-mcp) |
-| **Scan Date** | 2026-05-13 |
+| **Scan Date** | 2026-05-14 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
