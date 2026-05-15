@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [songjiangzhou-cpp-guidelines](https://smithery.ai/server/SongJiangzhou/cpp_guidelines) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

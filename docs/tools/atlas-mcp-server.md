@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 147 |
 | **Language** | TypeScript |
 | **Source** | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) |
-| **Scan Date** | 2026-05-14 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

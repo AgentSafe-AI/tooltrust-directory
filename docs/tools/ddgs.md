@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `9.14.2` |
+| **Version** | `9.14.3` |
 | **Vendor** | deedy5 |
-| **Stars** | ⭐ 2628 |
+| **Stars** | ⭐ 2633 |
 | **Language** | Python |
 | **Source** | [ddgs](https://github.com/deedy5/ddgs) |
-| **Scan Date** | 2026-05-14 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

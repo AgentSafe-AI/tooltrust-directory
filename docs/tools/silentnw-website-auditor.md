@@ -10,8 +10,6 @@ Submit any URL and get a scored analysis of:
 - Google Business Profile signals (address, phone, schema, map)
 - Social media presence
 
-**Tiers:** Free snapshot · $49 Standard PDF report · $149 Full audit with 30-day roadmap and strategy call
-
 Built by Silent Northwest LLC -- Great  Pacific Northwest.
 
 | Field | Value |
@@ -21,8 +19,8 @@ Built by Silent Northwest LLC -- Great  Pacific Northwest.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [silentnw-website-auditor](https://smithery.ai/server/silentnw/website-auditor) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-15 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

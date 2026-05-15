@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [reitsmasieto-wq-overcome-stress](https://smithery.ai/server/reitsmasieto-wq/overcome-stress) |
-| **Scan Date** | 2026-04-20 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-15 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

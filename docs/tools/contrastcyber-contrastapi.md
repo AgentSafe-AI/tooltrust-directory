@@ -1,6 +1,6 @@
 # 🟠 contrastcyber-contrastapi
 
-> Security intelligence MCP server for AI agents. 33 tools covering domain recon, CVE lookup (340K+ with EPSS+KEV+CWE), IP threat reports, bulk CVE/IOC lookups, full domain audit, IOC enrichment, dependency audit, code security scanning. Free tier: 100 credits/hour, no API key required.
+> MCP server with 52 security intelligence tools — CVE/KEV, MITRE ATLAS+D3FEND, Sigma detection rules, email security posture (SPF/DMARC), domain & web intel, threat intel. 
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [contrastcyber-contrastapi](https://smithery.ai/server/contrastcyber/contrastapi) |
-| **Scan Date** | 2026-05-14 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

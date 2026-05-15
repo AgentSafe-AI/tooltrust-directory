@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [oilandgas-basinvault](https://smithery.ai/server/oilandgas/basinvault) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

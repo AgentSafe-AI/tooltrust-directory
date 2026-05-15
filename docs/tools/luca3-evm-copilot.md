@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [luca3-evm-copilot](https://smithery.ai/server/luca3/evm-copilot) |
-| **Scan Date** | 2026-05-13 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

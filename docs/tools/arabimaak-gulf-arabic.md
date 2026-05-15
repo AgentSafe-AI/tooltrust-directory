@@ -12,8 +12,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [arabimaak-gulf-arabic](https://smithery.ai/server/arabimaak/gulf-arabic) |
-| **Scan Date** | 2026-04-24 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-15 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

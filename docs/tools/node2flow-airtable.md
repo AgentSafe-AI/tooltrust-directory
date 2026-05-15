@@ -24,7 +24,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-airtable](https://smithery.ai/server/node2flow/airtable) |
-| **Scan Date** | 2026-04-28 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

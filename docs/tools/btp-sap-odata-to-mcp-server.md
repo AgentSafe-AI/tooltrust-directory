@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 39 |
 | **Language** | TypeScript |
 | **Source** | [btp-sap-odata-to-mcp-server](https://github.com/lemaiwo/btp-sap-odata-to-mcp-server) |
-| **Scan Date** | 2026-05-14 |
+| **Scan Date** | 2026-05-15 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [local-mcp-local-mcp](https://smithery.ai/server/local-mcp/local-mcp) |
-| **Scan Date** | 2026-04-22 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-15 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 
