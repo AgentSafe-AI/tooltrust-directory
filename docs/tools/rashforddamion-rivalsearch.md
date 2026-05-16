@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rashforddamion-rivalsearch](https://smithery.ai/server/rashforddamion/rivalsearch) |
-| **Scan Date** | 2026-05-15 |
+| **Scan Date** | 2026-05-16 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

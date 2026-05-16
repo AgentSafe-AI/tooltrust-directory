@@ -13,8 +13,8 @@ The software streamlines multi-page resumes for better clarity while maintaining
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [resumeoptimizerpro-resume-optimizer-pro](https://smithery.ai/server/resumeoptimizerpro/resume-optimizer-pro) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-16 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

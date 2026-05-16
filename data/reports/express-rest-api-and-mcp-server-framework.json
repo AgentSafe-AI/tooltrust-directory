@@ -1,9 +1,9 @@
 {
   "tool_id": "express-rest-api-and-mcp-server-framework",
   "version": "1.1.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-15T02:34:05Z",
+  "grade": "B",
+  "risk_score": 12,
+  "scan_date": "2026-05-16T02:15:58.66827921Z",
   "scanner": "tooltrust-scanner/v0.3.9",
   "source_url": "https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework",
   "category": "Developer Tools",
@@ -15,68 +15,182 @@
   "description": "Express REST API and MCP Server Framework is a comprehensive development framework for building RESTful APIs and MCP servers with Express.js. It provides a complete template for creating production-ready APIs using Node.js, Express, Mongoose (MongoDB), and Sequelize (SQL databases).",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_get_schema"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_get_schema"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "pg_get_schema"
+    },
+    {
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 7,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/mcp/servers/controllers/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 16,
-            "snippet": "new McpServer(",
-            "file": "src/mcp/servers/controllers/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 7,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/mcp/servers/models/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 17,
-            "snippet": "new McpServer(",
-            "file": "src/mcp/servers/models/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 7,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/mcp/servers/services/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 15,
-            "snippet": "new McpServer(",
-            "file": "src/mcp/servers/services/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_get_schema"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_describe_table"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_list_records"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "pg_list_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_list_records"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_count_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_count_records"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_call_function"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_call_function"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "pg_call_function"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_call_function"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_insert_records"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_update_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_update_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_upsert_records"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pg_delete_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_delete_records"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pg_replace_record"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "medium": 5,
+    "low": 6,
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -122,216 +236,117 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "pg_call_function",
+    "pg_count_records",
+    "pg_delete_records",
+    "pg_describe_table",
+    "pg_get_schema",
+    "pg_insert_records",
+    "pg_list_records",
+    "pg_replace_record",
+    "pg_update_records",
+    "pg_upsert_records"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-03-24T04:38:41Z",
+      "tool_name": "pg_get_schema",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-11T01:39:23Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_describe_table",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-13T02:08:02Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_list_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: age.gt",
+        "hardcoded domain: age.lt",
+        "hardcoded domain: eq.active",
+        "hardcoded domain: is.null",
+        "hardcoded domain: name.desc",
+        "hardcoded domain: status.asc"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-14T02:03:37Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_count_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: eq.active"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-15T02:01:16Z",
+      "tool_name": "pg_call_function",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-16T02:15:36Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_insert_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-17T02:03:57Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_update_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: eq.inactive"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-18T01:46:09Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_upsert_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-19T02:07:41Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_delete_records",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: eq.inactive"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-20T02:13:52Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-21T02:06:26Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-22T02:04:45Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-23T02:07:57Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:08:14Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-25T02:00:00Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:09:46Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:27:11Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:26:30Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:26:04Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:24:53Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:23:23Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:27:02Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-02T02:15:05Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-03T02:24:26Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-04T02:21:47Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-05T02:10:39Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-06T02:10:05Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-07T02:12:33Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-08T02:19:07Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-09T02:15:03Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-10T02:14:10Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-11T02:23:02Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-12T02:18:31Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-13T02:33:24Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-05-14T02:36:00Z",
-      "grade": "B",
-      "risk_score": 12,
-      "version": "1.1.0"
+      "tool_name": "pg_replace_record",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

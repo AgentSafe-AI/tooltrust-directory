@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xiaobenyang-com-rfc-server](https://smithery.ai/server/xiaobenyang-com/rfc-server) |
-| **Scan Date** | 2026-05-14 |
+| **Scan Date** | 2026-05-16 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

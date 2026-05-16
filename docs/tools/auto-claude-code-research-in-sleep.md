@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.4.6` |
 | **Vendor** | wanshuiyin |
-| **Stars** | ⭐ 9358 |
+| **Stars** | ⭐ 9439 |
 | **Language** | Python |
 | **Source** | [auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) |
-| **Scan Date** | 2026-05-15 |
+| **Scan Date** | 2026-05-16 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

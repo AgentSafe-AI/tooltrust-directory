@@ -29,7 +29,7 @@ Add this server to your agent and ask: *"What is the current pest risk in centra
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pestsentinel-pest-intelligence](https://smithery.ai/server/pestsentinel/pest-intelligence) |
-| **Scan Date** | 2026-05-15 |
+| **Scan Date** | 2026-05-16 |
 | **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---

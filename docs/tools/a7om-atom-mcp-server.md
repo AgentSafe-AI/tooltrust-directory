@@ -1,6 +1,6 @@
 # 🔴 a7om-atom-mcp-server
 
-> ATOM — The Global Price Benchmark for AI Inference, delivered as a native tool for AI agents. Query the world's most comprehensive inference price database: 1,600+ SKUs, 40+ vendors, 6 modalities, 25 AIPI indexes. Search models, compare cross-vendor pricing, access market benchmarks and KPIs. Independent. Transparent. Free tier included — no API key needed.
+> ATOM is the Global Price Benchmark for AI Inference, delivered as a native tool for AI agents. Query live pricing across the inference market through the AIPI (ATOM Inference Price Index) family of benchmarks. Search models, compare cross-vendor pricing, and access market intelligence. Independent and transparent. Free tier included, no API key needed.
 
 | Field | Value |
 |-------|-------|
@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [a7om-atom-mcp-server](https://smithery.ai/server/a7om/atom-mcp-server) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-16 |
+| **Scanner** | tooltrust-scanner/v0.3.9 |
 
 ---
 

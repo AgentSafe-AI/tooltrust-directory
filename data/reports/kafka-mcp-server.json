@@ -1,0 +1,67 @@
+{
+  "tool_id": "kafka-mcp-server",
+  "version": "2.0.2",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-05-16T02:16:47Z",
+  "scanner": "tooltrust-scanner/v0.3.9",
+  "source_url": "https://github.com/tuannvm/kafka-mcp-server",
+  "category": "Developer Tools",
+  "vendor": "tuannvm",
+  "stars": 50,
+  "language": "Go",
+  "description": "A Model Context Protocol (MCP) server for Apache Kafka implemented in Go, leveraging franz-go and mcp-go.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 13,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "internal/mcp/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 23,
+            "snippet": "server.NewMCPServer(",
+            "file": "internal/mcp/server.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+      "file": "internal/mcp/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 23,
+      "snippet": "server.NewMCPServer(",
+      "file": "internal/mcp/server.go",
+      "language": "go"
+    }
+  ]
+}
