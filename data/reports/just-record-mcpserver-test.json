@@ -2,9 +2,9 @@
   "tool_id": "just-record-mcpserver-test",
   "version": "sha-b795ddb8bd97",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-26T07:44:00.091962681Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "risk_score": 15,
+  "scan_date": "2026-05-17T02:38:20.850066971Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/just-record/mcpserver-test",
   "category": "Other",
   "vendor": "just-record",
@@ -15,40 +15,17 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-b795ddb8bd97: 1 tool(s) added, 8 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-b795ddb8bd97: 1 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "api_test_webhook"
+          "text_test_regex"
         ],
         "removed": [
-          "turbopentest_download_report",
-          "turbopentest_get_credits",
-          "turbopentest_get_findings",
-          "turbopentest_get_scan",
-          "turbopentest_list_domains",
-          "turbopentest_list_scans",
-          "turbopentest_start_scan",
-          "turbopentest_verify_attestation"
+          "api_test_webhook"
         ],
         "version": "sha-b795ddb8bd97"
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api_test_webhook"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api_test_webhook"
     },
     {
       "id": "AS-014",
@@ -56,31 +33,25 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "api_test_webhook"
+      "tool_name": "text_test_regex"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "api_test_webhook"
+    "text_test_regex"
   ],
   "tool_contexts": [
     {
-      "tool_name": "api_test_webhook",
+      "tool_name": "text_test_regex",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -106,6 +77,12 @@
     },
     {
       "scan_date": "2026-04-12T02:18:03Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "sha-b795ddb8bd97"
+    },
+    {
+      "scan_date": "2026-04-26T07:44:00Z",
       "grade": "B",
       "risk_score": 17,
       "version": "sha-b795ddb8bd97"

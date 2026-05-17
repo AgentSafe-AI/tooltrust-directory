@@ -1,27 +1,114 @@
 {
   "tool_id": "stanislavlysenko0912-todoist-mcp-server",
   "version": "1.3.4",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-05-04T02:23:05.7649609Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-05-17T02:25:11.91381823Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/stanislavlysenko0912/todoist-mcp-server",
   "category": "Developer Tools",
   "vendor": "stanislavlysenko0912",
   "stars": 61,
   "npm_package": "todoist-mcp",
-  "npm_downloads_monthly": 6555,
+  "npm_downloads_monthly": 3108,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Full implementation of Todoist Rest API \u0026 support Todoist Sync API for MCP server",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.3.4: 30 tool(s) added, 35 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "TODOIST_ADD_WORKSPACE",
+          "TODOIST_CLOSE_TASK",
+          "TODOIST_CREATE_COMMENT",
+          "TODOIST_CREATE_LABEL",
+          "TODOIST_CREATE_PROJECT",
+          "TODOIST_CREATE_SECTION",
+          "TODOIST_CREATE_TASK",
+          "TODOIST_DELETE_LABEL",
+          "TODOIST_DELETE_PROJECT",
+          "TODOIST_DELETE_SECTION",
+          "TODOIST_DELETE_TASK",
+          "TODOIST_GET_ALL_COMMENTS",
+          "TODOIST_GET_ALL_PROJECTS",
+          "TODOIST_GET_ALL_SECTIONS",
+          "TODOIST_GET_ALL_TASKS",
+          "TODOIST_GET_BACKUPS",
+          "TODOIST_GET_COMMENT",
+          "TODOIST_GET_LABEL",
+          "TODOIST_GET_PROJECT",
+          "TODOIST_GET_SECTION",
+          "TODOIST_GET_SPECIAL_BACKUPS",
+          "TODOIST_GET_TASK",
+          "TODOIST_LIST_ARCHIVED_WORKSPACE_PROJECTS",
+          "TODOIST_LIST_FILTERS",
+          "TODOIST_LIST_PENDING_WORKSPACE_INVITATIONS",
+          "TODOIST_REOPEN_TASK",
+          "TODOIST_UPDATE_COMMENT",
+          "TODOIST_UPDATE_PROJECT",
+          "TODOIST_UPDATE_SECTION",
+          "TODOIST_UPDATE_TASK"
+        ],
+        "removed": [
+          "close_tasks",
+          "create_comments",
+          "create_labels",
+          "create_projects",
+          "create_sections",
+          "create_tasks",
+          "delete_comments",
+          "delete_labels",
+          "delete_projects",
+          "delete_sections",
+          "delete_tasks",
+          "get_collaborators",
+          "get_comments",
+          "get_comments_list",
+          "get_completed_tasks",
+          "get_labels",
+          "get_labels_list",
+          "get_projects",
+          "get_projects_list",
+          "get_sections",
+          "get_sections_list",
+          "get_shared_labels",
+          "get_tasks",
+          "get_tasks_list",
+          "move_projects",
+          "move_tasks",
+          "remove_shared_labels",
+          "rename_shared_labels",
+          "reopen_tasks",
+          "update_comments",
+          "update_labels",
+          "update_projects",
+          "update_sections",
+          "update_tasks",
+          "utils_get_colors"
+        ],
+        "version": "1.3.4"
+      }
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_comments_list"
+      "tool_name": "TODOIST_ADD_WORKSPACE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_CLOSE_TASK"
     },
     {
       "id": "AS-002",
@@ -29,7 +116,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_comments"
+      "tool_name": "TODOIST_CREATE_COMMENT"
     },
     {
       "id": "AS-014",
@@ -37,15 +124,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_comments"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_comments"
+      "tool_name": "TODOIST_CREATE_COMMENT"
     },
     {
       "id": "AS-002",
@@ -53,7 +132,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_comments"
+      "tool_name": "TODOIST_CREATE_LABEL"
     },
     {
       "id": "AS-014",
@@ -61,7 +140,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_comments"
+      "tool_name": "TODOIST_CREATE_LABEL"
     },
     {
       "id": "AS-002",
@@ -69,7 +148,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete_comments"
+      "tool_name": "TODOIST_CREATE_PROJECT"
     },
     {
       "id": "AS-014",
@@ -77,15 +156,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete_comments"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_labels_list"
+      "tool_name": "TODOIST_CREATE_PROJECT"
     },
     {
       "id": "AS-002",
@@ -93,7 +164,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_labels"
+      "tool_name": "TODOIST_CREATE_SECTION"
     },
     {
       "id": "AS-014",
@@ -101,15 +172,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_labels"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_labels"
+      "tool_name": "TODOIST_CREATE_SECTION"
     },
     {
       "id": "AS-002",
@@ -117,7 +180,31 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_labels"
+      "tool_name": "TODOIST_CREATE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TODOIST_CREATE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 15 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TODOIST_CREATE_TASK"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TODOIST_CREATE_TASK"
     },
     {
       "id": "AS-014",
@@ -125,7 +212,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_labels"
+      "tool_name": "TODOIST_CREATE_TASK"
     },
     {
       "id": "AS-002",
@@ -133,7 +220,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete_labels"
+      "tool_name": "TODOIST_DELETE_LABEL"
     },
     {
       "id": "AS-014",
@@ -141,23 +228,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete_labels"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_shared_labels"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "rename_shared_labels"
+      "tool_name": "TODOIST_DELETE_LABEL"
     },
     {
       "id": "AS-002",
@@ -165,7 +236,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "remove_shared_labels"
+      "tool_name": "TODOIST_DELETE_PROJECT"
     },
     {
       "id": "AS-014",
@@ -173,15 +244,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "remove_shared_labels"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_projects_list"
+      "tool_name": "TODOIST_DELETE_PROJECT"
     },
     {
       "id": "AS-002",
@@ -189,7 +252,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_projects"
+      "tool_name": "TODOIST_DELETE_SECTION"
     },
     {
       "id": "AS-014",
@@ -197,15 +260,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_projects"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_projects"
+      "tool_name": "TODOIST_DELETE_SECTION"
     },
     {
       "id": "AS-002",
@@ -213,7 +268,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_projects"
+      "tool_name": "TODOIST_DELETE_TASK"
     },
     {
       "id": "AS-014",
@@ -221,7 +276,175 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_projects"
+      "tool_name": "TODOIST_DELETE_TASK"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TODOIST_GET_ALL_COMMENTS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TODOIST_GET_ALL_COMMENTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_ALL_COMMENTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_ALL_PROJECTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_ALL_SECTIONS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TODOIST_GET_ALL_TASKS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TODOIST_GET_ALL_TASKS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_ALL_TASKS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_BACKUPS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_COMMENT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_LABEL"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_PROJECT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_SECTION"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_SPECIAL_BACKUPS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "TODOIST_GET_TASK"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TODOIST_GET_TASK"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_GET_TASK"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_LIST_ARCHIVED_WORKSPACE_PROJECTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_LIST_FILTERS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_LIST_PENDING_WORKSPACE_INVITATIONS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "TODOIST_REOPEN_TASK"
     },
     {
       "id": "AS-002",
@@ -229,7 +452,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete_projects"
+      "tool_name": "TODOIST_UPDATE_COMMENT"
     },
     {
       "id": "AS-014",
@@ -237,31 +460,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete_projects"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_collaborators"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "move_projects"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_sections_list"
+      "tool_name": "TODOIST_UPDATE_COMMENT"
     },
     {
       "id": "AS-002",
@@ -269,7 +468,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_sections"
+      "tool_name": "TODOIST_UPDATE_PROJECT"
     },
     {
       "id": "AS-014",
@@ -277,15 +476,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_sections"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_sections"
+      "tool_name": "TODOIST_UPDATE_PROJECT"
     },
     {
       "id": "AS-002",
@@ -293,7 +484,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_sections"
+      "tool_name": "TODOIST_UPDATE_SECTION"
     },
     {
       "id": "AS-014",
@@ -301,7 +492,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_sections"
+      "tool_name": "TODOIST_UPDATE_SECTION"
     },
     {
       "id": "AS-002",
@@ -309,31 +500,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete_sections"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete_sections"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_tasks_list"
+      "tool_name": "TODOIST_UPDATE_TASK"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_tasks"
+      "tool_name": "TODOIST_UPDATE_TASK"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "TODOIST_UPDATE_TASK"
     },
     {
       "id": "AS-014",
@@ -341,95 +524,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_tasks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "close_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reopen_tasks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "move_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_completed_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "utils_get_colors"
+      "tool_name": "TODOIST_UPDATE_TASK"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 16,
-    "low": 0,
-    "info": 35
+    "high": 6,
+    "medium": 13,
+    "low": 6,
+    "info": 30
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -450,52 +553,54 @@
     }
   ],
   "tool_names": [
-    "close_tasks",
-    "create_comments",
-    "create_labels",
-    "create_projects",
-    "create_sections",
-    "create_tasks",
-    "delete_comments",
-    "delete_labels",
-    "delete_projects",
-    "delete_sections",
-    "delete_tasks",
-    "get_collaborators",
-    "get_comments",
-    "get_comments_list",
-    "get_completed_tasks",
-    "get_labels",
-    "get_labels_list",
-    "get_projects",
-    "get_projects_list",
-    "get_sections",
-    "get_sections_list",
-    "get_shared_labels",
-    "get_tasks",
-    "get_tasks_list",
-    "move_projects",
-    "move_tasks",
-    "remove_shared_labels",
-    "rename_shared_labels",
-    "reopen_tasks",
-    "update_comments",
-    "update_labels",
-    "update_projects",
-    "update_sections",
-    "update_tasks",
-    "utils_get_colors"
+    "TODOIST_ADD_WORKSPACE",
+    "TODOIST_CLOSE_TASK",
+    "TODOIST_CREATE_COMMENT",
+    "TODOIST_CREATE_LABEL",
+    "TODOIST_CREATE_PROJECT",
+    "TODOIST_CREATE_SECTION",
+    "TODOIST_CREATE_TASK",
+    "TODOIST_DELETE_LABEL",
+    "TODOIST_DELETE_PROJECT",
+    "TODOIST_DELETE_SECTION",
+    "TODOIST_DELETE_TASK",
+    "TODOIST_GET_ALL_COMMENTS",
+    "TODOIST_GET_ALL_PROJECTS",
+    "TODOIST_GET_ALL_SECTIONS",
+    "TODOIST_GET_ALL_TASKS",
+    "TODOIST_GET_BACKUPS",
+    "TODOIST_GET_COMMENT",
+    "TODOIST_GET_LABEL",
+    "TODOIST_GET_PROJECT",
+    "TODOIST_GET_SECTION",
+    "TODOIST_GET_SPECIAL_BACKUPS",
+    "TODOIST_GET_TASK",
+    "TODOIST_LIST_ARCHIVED_WORKSPACE_PROJECTS",
+    "TODOIST_LIST_FILTERS",
+    "TODOIST_LIST_PENDING_WORKSPACE_INVITATIONS",
+    "TODOIST_REOPEN_TASK",
+    "TODOIST_UPDATE_COMMENT",
+    "TODOIST_UPDATE_PROJECT",
+    "TODOIST_UPDATE_SECTION",
+    "TODOIST_UPDATE_TASK"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_comments_list",
+      "tool_name": "TODOIST_ADD_WORKSPACE",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "create_comments",
+      "tool_name": "TODOIST_CLOSE_TASK",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_CREATE_COMMENT",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -505,21 +610,20 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_comments",
+      "tool_name": "TODOIST_CREATE_LABEL",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.todoist.com"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "update_comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "delete_comments",
+      "tool_name": "TODOIST_CREATE_PROJECT",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -529,14 +633,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_labels_list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_labels",
+      "tool_name": "TODOIST_CREATE_SECTION",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -546,21 +643,18 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_labels",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "TODOIST_CREATE_TASK",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "update_labels",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "delete_labels",
+      "tool_name": "TODOIST_DELETE_LABEL",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -570,21 +664,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_shared_labels",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "rename_shared_labels",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "remove_shared_labels",
+      "tool_name": "TODOIST_DELETE_PROJECT",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -594,14 +674,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_projects_list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_projects",
+      "tool_name": "TODOIST_DELETE_SECTION",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -611,24 +684,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_projects",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "update_projects",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "delete_projects",
+      "tool_name": "TODOIST_DELETE_TASK",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -638,136 +694,150 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_collaborators",
+      "tool_name": "TODOIST_GET_ALL_COMMENTS",
       "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "move_projects",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_sections_list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_sections",
-      "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
-        "writes_files"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_sections",
+      "tool_name": "TODOIST_GET_ALL_PROJECTS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "update_sections",
+      "tool_name": "TODOIST_GET_ALL_SECTIONS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "delete_sections",
+      "tool_name": "TODOIST_GET_ALL_TASKS",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
-        "writes_files"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_tasks_list",
+      "tool_name": "TODOIST_GET_BACKUPS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "create_tasks",
+      "tool_name": "TODOIST_GET_COMMENT",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_GET_LABEL",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_GET_PROJECT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_GET_SECTION",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_GET_SPECIAL_BACKUPS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_GET_TASK",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "writes_files"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_tasks",
+      "tool_name": "TODOIST_LIST_ARCHIVED_WORKSPACE_PROJECTS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "update_tasks",
+      "tool_name": "TODOIST_LIST_FILTERS",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "reads_files"
+      "destinations": [
+        "dynamic email recipient (sync_token)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "close_tasks",
+      "tool_name": "TODOIST_LIST_PENDING_WORKSPACE_INVITATIONS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "reopen_tasks",
+      "tool_name": "TODOIST_REOPEN_TASK",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "delete_tasks",
+      "tool_name": "TODOIST_UPDATE_COMMENT",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_UPDATE_PROJECT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_UPDATE_SECTION",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "TODOIST_UPDATE_TASK",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "writes_files"
+        "executes_commands"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "move_tasks",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_completed_tasks",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "utils_get_colors",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -901,6 +971,12 @@
     },
     {
       "scan_date": "2026-05-03T02:25:46Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "1.3.4"
+    },
+    {
+      "scan_date": "2026-05-04T02:23:05Z",
       "grade": "A",
       "risk_score": 8,
       "version": "1.3.4"

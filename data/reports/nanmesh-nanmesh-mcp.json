@@ -3,16 +3,35 @@
   "version": "4.0.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-26T07:38:49.664940314Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "scan_date": "2026-05-17T02:36:08.008171834Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/NaNMesh/nanmesh-mcp",
   "category": "Developer Tools",
   "vendor": "nanmesh",
   "stars": 1,
   "npm_package": "nanmesh-mcp",
-  "npm_downloads_monthly": 816,
+  "npm_downloads_monthly": 457,
   "language": "JavaScript",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v4.0.0: 3 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "nanmesh.entity.reviews",
+          "nanmesh.trust.favor",
+          "nanmesh.trust.review"
+        ],
+        "removed": [
+          "nanmesh.entity.votes",
+          "nanmesh.trust.vote"
+        ],
+        "version": "4.0.0"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -91,7 +110,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "nanmesh.trust.vote"
+      "tool_name": "nanmesh.trust.review"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nanmesh.trust.favor"
     },
     {
       "id": "AS-014",
@@ -283,7 +310,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "nanmesh.entity.votes"
+      "tool_name": "nanmesh.entity.reviews"
     },
     {
       "id": "AS-014",
@@ -296,10 +323,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 3,
     "medium": 2,
     "low": 2,
-    "info": 29
+    "info": 30
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -316,9 +343,9 @@
     "nanmesh.entity.get",
     "nanmesh.entity.list",
     "nanmesh.entity.recommend",
+    "nanmesh.entity.reviews",
     "nanmesh.entity.search",
     "nanmesh.entity.verify",
-    "nanmesh.entity.votes",
     "nanmesh.listing.continue",
     "nanmesh.listing.start",
     "nanmesh.listing.submit",
@@ -326,12 +353,13 @@
     "nanmesh.post.create",
     "nanmesh.post.get",
     "nanmesh.post.list",
+    "nanmesh.trust.favor",
     "nanmesh.trust.graph",
     "nanmesh.trust.rank",
     "nanmesh.trust.report_outcome",
+    "nanmesh.trust.review",
     "nanmesh.trust.summary",
-    "nanmesh.trust.trends",
-    "nanmesh.trust.vote"
+    "nanmesh.trust.trends"
   ],
   "tool_contexts": [
     {
@@ -408,11 +436,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "nanmesh.trust.vote",
+      "tool_name": "nanmesh.trust.review",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: nanmesh.trust.vote"
+        "hardcoded domain: nanmesh.trust.review"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nanmesh.trust.favor",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: nanmesh.trust.favor"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -617,11 +655,11 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "nanmesh.entity.votes",
+      "tool_name": "nanmesh.entity.reviews",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: nanmesh.entity.votes"
+        "hardcoded domain: nanmesh.entity.reviews"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -688,6 +726,12 @@
     },
     {
       "scan_date": "2026-04-19T02:17:31Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "4.0.0"
+    },
+    {
+      "scan_date": "2026-04-26T07:38:49Z",
       "grade": "B",
       "risk_score": 17,
       "version": "4.0.0"

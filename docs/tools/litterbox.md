@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 1413 |
 | **Language** | YARA |
 | **Source** | [litterbox](https://github.com/BlackSnufkin/LitterBox) |
-| **Scan Date** | 2026-05-09 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

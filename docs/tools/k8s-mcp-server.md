@@ -8,11 +8,11 @@
 | **Risk Score** | 32 |
 | **Version** | `1.4.2` |
 | **Vendor** | alexei-led |
-| **Stars** | ⭐ 208 |
+| **Stars** | ⭐ 209 |
 | **Language** | Python |
 | **Source** | [k8s-mcp-server](https://github.com/alexei-led/k8s-mcp-server) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | dcostenco |
 | **Stars** | ⭐ 132 |
 | **npm Package** | `prism-mcp-server` |
-| **npm Downloads (30d)** | 8.5k |
+| **npm Downloads (30d)** | 4.4k |
 | **Language** | TypeScript |
 | **Source** | [dcostenco-bcba](https://github.com/dcostenco/prism-coder) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

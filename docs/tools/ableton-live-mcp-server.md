@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 385 |
 | **Language** | Python |
 | **Source** | [ableton-live-mcp-server](https://github.com/Simon-Kansara/ableton-live-mcp-server) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

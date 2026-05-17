@@ -10,11 +10,11 @@
 | **Vendor** | infranodus |
 | **Stars** | ⭐ 83 |
 | **npm Package** | `infranodus-mcp-server` |
-| **npm Downloads (30d)** | 528 |
+| **npm Downloads (30d)** | 275 |
 | **Language** | TypeScript |
 | **Source** | [infranodus-mcp-server-infranodus](https://github.com/infranodus/mcp-server-infranodus) |
-| **Scan Date** | 2026-04-26 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

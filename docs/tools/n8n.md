@@ -8,13 +8,13 @@
 | **Risk Score** | 32 |
 | **Version** | `1` |
 | **Vendor** | n8n-io |
-| **Stars** | ⭐ 188020 |
+| **Stars** | ⭐ 188218 |
 | **npm Package** | `n8n-monorepo` |
-| **npm Downloads (30d)** | 17 |
+| **npm Downloads (30d)** | 16 |
 | **Language** | TypeScript |
 | **Source** | [n8n](https://github.com/n8n-io/n8n) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

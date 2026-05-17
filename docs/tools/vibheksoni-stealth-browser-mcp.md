@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 617 |
 | **Language** | Python |
 | **Source** | [vibheksoni-stealth-browser-mcp](https://github.com/vibheksoni/stealth-browser-mcp) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

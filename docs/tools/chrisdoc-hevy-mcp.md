@@ -10,11 +10,11 @@
 | **Vendor** | chrisdoc |
 | **Stars** | ⭐ 218 |
 | **npm Package** | `hevy-mcp` |
-| **npm Downloads (30d)** | 7.4k |
+| **npm Downloads (30d)** | 6.9k |
 | **Language** | TypeScript |
 | **Source** | [chrisdoc-hevy-mcp](https://github.com/chrisdoc/hevy-mcp) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

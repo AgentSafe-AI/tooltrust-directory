@@ -3,18 +3,38 @@
   "version": "typescript-servers-0.6.2",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-05-16T02:10:55.908559504Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "scan_date": "2026-05-17T02:16:06.102421953Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
   "category": "Developer Tools",
   "vendor": "modelcontextprotocol",
-  "stars": 85718,
+  "stars": 85769,
   "npm_package": "mcp-server-fetch",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Model Context Protocol Servers",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vtypescript-servers-0.6.2: 4 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "cache_stats",
+          "check_domain",
+          "clear_cache",
+          "fetch_markdown"
+        ],
+        "removed": [
+          "extract_elements",
+          "get_page_metadata"
+        ],
+        "version": "typescript-servers-0.6.2"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -44,7 +64,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "extract_elements"
+      "tool_name": "fetch_markdown"
     },
     {
       "id": "AS-011",
@@ -52,7 +72,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "extract_elements"
+      "tool_name": "fetch_markdown"
     },
     {
       "id": "AS-014",
@@ -60,7 +80,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "extract_elements"
+      "tool_name": "fetch_markdown"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_domain"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cache_stats"
     },
     {
       "id": "AS-002",
@@ -68,7 +104,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_page_metadata"
+      "tool_name": "clear_cache"
     },
     {
       "id": "AS-011",
@@ -76,7 +112,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_page_metadata"
+      "tool_name": "clear_cache"
     },
     {
       "id": "AS-014",
@@ -84,15 +120,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_page_metadata"
+      "tool_name": "clear_cache"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 4,
     "medium": 0,
     "low": 3,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -155,40 +191,15 @@
     }
   ],
   "tool_names": [
-    "extract_elements",
-    "fetch_url",
-    "get_page_metadata"
+    "cache_stats",
+    "check_domain",
+    "clear_cache",
+    "fetch_markdown",
+    "fetch_url"
   ],
   "tool_contexts": [
     {
       "tool_name": "fetch_url",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "extract_elements",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "dynamic email recipient (selector)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_page_metadata",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -197,6 +208,47 @@
       ],
       "destinations": [
         "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fetch_markdown",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_domain",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "cache_stats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "clear_cache",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -523,6 +575,12 @@
     },
     {
       "scan_date": "2026-05-15T02:28:51Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "typescript-servers-0.6.2"
+    },
+    {
+      "scan_date": "2026-05-16T02:10:55Z",
       "grade": "B",
       "risk_score": 17,
       "version": "typescript-servers-0.6.2"

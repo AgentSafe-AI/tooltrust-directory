@@ -3,33 +3,18 @@
   "version": "0.3.5",
   "grade": "C",
   "risk_score": 38,
-  "scan_date": "2026-04-26T07:36:49.080833493Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "scan_date": "2026-05-17T02:32:45.105613748Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/arcadia-finance/mcp-server",
   "category": "Developer Tools",
   "vendor": "arcadia-finance",
   "stars": 4,
   "npm_package": "@arcadia-finance/mcp-server",
-  "npm_downloads_monthly": 1219,
+  "npm_downloads_monthly": 1679,
   "license": "AGPL-3.0",
   "language": "TypeScript",
   "description": "MCP server for Arcadia Finance. Manage concentrated liquidity positions with built-in leverage, automated rebalancing, and yield optimization on Base, Optimism, and Unichain.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.3.5: 2 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "write.pool.deposit",
-          "write.pool.redeem"
-        ],
-        "removed": null,
-        "version": "0.3.5"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Low",
@@ -394,7 +379,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"buy_token\" appears to accept a secret or credential",
+      "description": "input parameter \"sell_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.yield_claimer_cowswap"
     },
@@ -402,7 +387,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"sell_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"buy_token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.yield_claimer_cowswap"
     },
@@ -441,7 +426,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 15,
+    "high": 14,
     "medium": 23,
     "low": 14,
     "info": 0
@@ -1138,6 +1123,12 @@
     },
     {
       "scan_date": "2026-04-19T02:15:26Z",
+      "grade": "C",
+      "risk_score": 38,
+      "version": "0.3.5"
+    },
+    {
+      "scan_date": "2026-04-26T07:36:49Z",
       "grade": "C",
       "risk_score": 38,
       "version": "0.3.5"

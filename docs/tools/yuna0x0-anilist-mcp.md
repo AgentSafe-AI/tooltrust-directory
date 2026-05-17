@@ -10,11 +10,11 @@
 | **Vendor** | yuna0x0 |
 | **Stars** | ⭐ 75 |
 | **npm Package** | `anilist-mcp` |
-| **npm Downloads (30d)** | 549 |
+| **npm Downloads (30d)** | 615 |
 | **Language** | TypeScript |
 | **Source** | [yuna0x0-anilist-mcp](https://github.com/yuna0x0/anilist-mcp) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

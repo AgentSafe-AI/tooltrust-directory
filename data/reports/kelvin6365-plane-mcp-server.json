@@ -1,10 +1,10 @@
 {
   "tool_id": "kelvin6365-plane-mcp-server",
   "version": "0.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-04T02:23:45.218814487Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-05-17T02:26:31.569308532Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/kelvin6365/plane-mcp-server",
   "category": "Developer Tools",
   "vendor": "kelvin6365",
@@ -14,12 +14,32 @@
   "language": "JavaScript",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list-projects"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.0: 8 tool(s) added, 6 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "thinkneo_check_policy",
+          "thinkneo_check_spend",
+          "thinkneo_evaluate_guardrail",
+          "thinkneo_get_budget_status",
+          "thinkneo_get_compliance_status",
+          "thinkneo_list_alerts",
+          "thinkneo_provider_status",
+          "thinkneo_schedule_demo"
+        ],
+        "removed": [
+          "create-issue",
+          "get-issue",
+          "get-project",
+          "list-issues",
+          "list-projects",
+          "update-issue"
+        ],
+        "version": "0.1.0"
+      }
     },
     {
       "id": "AS-014",
@@ -27,15 +47,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-project"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create-issue"
+      "tool_name": "thinkneo_check_spend"
     },
     {
       "id": "AS-002",
@@ -43,7 +55,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create-issue"
+      "tool_name": "thinkneo_evaluate_guardrail"
     },
     {
       "id": "AS-011",
@@ -51,7 +63,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "create-issue"
+      "tool_name": "thinkneo_evaluate_guardrail"
     },
     {
       "id": "AS-014",
@@ -59,7 +71,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create-issue"
+      "tool_name": "thinkneo_evaluate_guardrail"
     },
     {
       "id": "AS-014",
@@ -67,7 +79,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list-issues"
+      "tool_name": "thinkneo_check_policy"
     },
     {
       "id": "AS-014",
@@ -75,31 +87,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-issue"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update-issue"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update-issue"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "update-issue"
+      "tool_name": "thinkneo_get_budget_status"
     },
     {
       "id": "AS-014",
@@ -107,72 +95,110 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update-issue"
+      "tool_name": "thinkneo_list_alerts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "thinkneo_get_compliance_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "thinkneo_provider_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "thinkneo_schedule_demo"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 2,
-    "medium": 2,
-    "low": 2,
-    "info": 6
+    "medium": 0,
+    "low": 1,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "create-issue",
-    "get-issue",
-    "get-project",
-    "list-issues",
-    "list-projects",
-    "update-issue"
+    "thinkneo_check_policy",
+    "thinkneo_check_spend",
+    "thinkneo_evaluate_guardrail",
+    "thinkneo_get_budget_status",
+    "thinkneo_get_compliance_status",
+    "thinkneo_list_alerts",
+    "thinkneo_provider_status",
+    "thinkneo_schedule_demo"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list-projects",
+      "tool_name": "thinkneo_check_spend",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get-project",
+      "tool_name": "thinkneo_evaluate_guardrail",
       "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create-issue",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
-        "writes_files"
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list-issues",
+      "tool_name": "thinkneo_check_policy",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get-issue",
+      "tool_name": "thinkneo_get_budget_status",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "update-issue",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
+      "tool_name": "thinkneo_list_alerts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "thinkneo_get_compliance_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "thinkneo_provider_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "thinkneo_schedule_demo",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (email)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -289,6 +315,12 @@
     },
     {
       "scan_date": "2026-05-03T02:26:13Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-04T02:23:45Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.1.0"

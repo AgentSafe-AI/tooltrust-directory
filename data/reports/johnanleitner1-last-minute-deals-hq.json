@@ -3,36 +3,12 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-05-16T02:18:12.544924485Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "scan_date": "2026-05-17T02:43:16.170696788Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://smithery.ai/server/johnanleitner1/Last_Minute_Deals_HQ",
   "vendor": "Smithery",
   "description": "7,000+ live bookable slots across 20 suppliers in 28 cities and 15 countries — Iceland, Italy, Mexico, Morocco, Portugal, Japan, Tanzania, Finland, Montenegro, Romania, Egypt, Turkey, United States, United Kingdom, and China. Tours, activities, photography experiences, and more sourced live from production booking systems via the OCTO open standard.\n\nTools:\nsearch_slots — find available experiences by city, category, price, or urgency (soonest first)\nbook_slot — two modes: \"approval\" returns a Stripe checkout URL for the customer; \"autonomous\" charges a pre-funded wallet and confirms instantly\nget_booking_status — track booking state and recover checkout URLs if lost\nget_supplier_info — see all destinations and experience types before searching\n\nEnd-to-end booking: agent searches → customer pays (or wallet debits) → supplier confirmed automatically via OCTO. Real confirmation numbers, authorization-then-capture payments (customer never charged for a failed booking), inventory refreshed every 4 hours.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 6 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "book_from_itinerary",
-          "book_slot",
-          "get_booking_status",
-          "get_supplier_info",
-          "preview_slot",
-          "search_slots"
-        ],
-        "removed": [
-          "get_deal_changes",
-          "get_offer_details",
-          "list_categories",
-          "search_offers"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -172,7 +148,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
+    "high": 6,
     "medium": 0,
     "low": 5,
     "info": 6
@@ -328,6 +304,12 @@
       "scan_date": "2026-05-15T02:36:13Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-16T02:18:12Z",
+      "grade": "C",
+      "risk_score": 32,
       "version": "smithery"
     }
   ]

@@ -12,8 +12,8 @@
 | **npm Package** | `atom-of-thoughts` |
 | **Language** | JavaScript |
 | **Source** | [kbsooo-mcp-atom-of-thoughts](https://github.com/kbsooo/MCP_Atom_of_Thoughts) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

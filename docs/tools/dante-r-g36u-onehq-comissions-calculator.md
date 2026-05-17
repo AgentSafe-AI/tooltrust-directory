@@ -31,8 +31,8 @@ The OneHQ Commission Calculator MCP exposes 5 tools:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [dante-r-g36u-onehq-comissions-calculator](https://smithery.ai/server/dante-r-g36u/onehq-comissions-calculator) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

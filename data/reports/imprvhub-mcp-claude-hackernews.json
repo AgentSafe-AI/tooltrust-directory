@@ -1,10 +1,10 @@
 {
   "tool_id": "imprvhub-mcp-claude-hackernews",
   "version": "0.1.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-05-04T02:25:58.125506822Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-05-17T02:29:37.359457621Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/imprvhub/mcp-claude-hackernews",
   "category": "Developer Tools",
   "vendor": "imprvhub",
@@ -15,12 +15,29 @@
   "description": "An integration that allows Claude Desktop to interact with Hacker News using the Model Context Protocol (MCP).",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hn_latest"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.0: 6 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "HACKERNEWS_GET_FRONTPAGE",
+          "HACKERNEWS_GET_ITEM_WITH_ID",
+          "HACKERNEWS_GET_LATEST_POSTS",
+          "HACKERNEWS_GET_TODAYS_POSTS",
+          "HACKERNEWS_GET_USER",
+          "HACKERNEWS_SEARCH_POSTS"
+        ],
+        "removed": [
+          "hn_best",
+          "hn_comments",
+          "hn_latest",
+          "hn_story",
+          "hn_top"
+        ],
+        "version": "0.1.0"
+      }
     },
     {
       "id": "AS-014",
@@ -28,7 +45,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hn_top"
+      "tool_name": "HACKERNEWS_GET_FRONTPAGE"
     },
     {
       "id": "AS-014",
@@ -36,7 +53,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hn_best"
+      "tool_name": "HACKERNEWS_GET_ITEM_WITH_ID"
     },
     {
       "id": "AS-014",
@@ -44,7 +61,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hn_story"
+      "tool_name": "HACKERNEWS_GET_LATEST_POSTS"
     },
     {
       "id": "AS-014",
@@ -52,63 +69,107 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hn_comments"
+      "tool_name": "HACKERNEWS_GET_TODAYS_POSTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "HACKERNEWS_GET_USER"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "HACKERNEWS_SEARCH_POSTS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "HACKERNEWS_SEARCH_POSTS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "HACKERNEWS_SEARCH_POSTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "HACKERNEWS_SEARCH_POSTS"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 5
+    "high": 2,
+    "medium": 1,
+    "low": 1,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "hn_best",
-    "hn_comments",
-    "hn_latest",
-    "hn_story",
-    "hn_top"
+    "HACKERNEWS_GET_FRONTPAGE",
+    "HACKERNEWS_GET_ITEM_WITH_ID",
+    "HACKERNEWS_GET_LATEST_POSTS",
+    "HACKERNEWS_GET_TODAYS_POSTS",
+    "HACKERNEWS_GET_USER",
+    "HACKERNEWS_SEARCH_POSTS"
   ],
   "tool_contexts": [
     {
-      "tool_name": "hn_latest",
+      "tool_name": "HACKERNEWS_GET_FRONTPAGE",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hn_top",
+      "tool_name": "HACKERNEWS_GET_ITEM_WITH_ID",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hn_best",
+      "tool_name": "HACKERNEWS_GET_LATEST_POSTS",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hn_story",
+      "tool_name": "HACKERNEWS_GET_TODAYS_POSTS",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (story_id)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hn_comments",
+      "tool_name": "HACKERNEWS_GET_USER",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (story_id)",
-        "dynamic email recipient (story_index)"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "HACKERNEWS_SEARCH_POSTS",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -255,6 +316,12 @@
     },
     {
       "scan_date": "2026-05-03T02:28:18Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-04T02:25:58Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.1.0"

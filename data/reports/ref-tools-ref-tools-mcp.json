@@ -3,14 +3,14 @@
   "version": "3.0.3",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-04-26T07:24:12.592943776Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "scan_date": "2026-05-17T02:19:34.149674813Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/ref-tools/ref-tools-mcp",
   "category": "Developer Tools",
   "vendor": "ref-tools",
   "stars": 1084,
   "npm_package": "ref-tools-mcp",
-  "npm_downloads_monthly": 2402,
+  "npm_downloads_monthly": 3024,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Helping coding agents never make mistakes working with public or private libraries without wasting the context window.",
@@ -32,6 +32,14 @@
       "tool_name": "ref_search_documentation"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ref_search_documentation"
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -46,6 +54,14 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "ref_read_url"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ref_read_url"
     }
   ],
   "summary": {
@@ -53,7 +69,7 @@
     "high": 2,
     "medium": 0,
     "low": 2,
-    "info": 0
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -68,8 +84,8 @@
       "behavior": [
         "uses_network"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "ref_read_url",
@@ -81,8 +97,8 @@
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -136,6 +152,12 @@
     },
     {
       "scan_date": "2026-04-19T02:05:12Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "3.0.3"
+    },
+    {
+      "scan_date": "2026-04-26T07:24:12Z",
       "grade": "B",
       "risk_score": 17,
       "version": "3.0.3"

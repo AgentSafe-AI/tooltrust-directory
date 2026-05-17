@@ -1,19 +1,34 @@
 {
   "tool_id": "ojaskord-vat-validator-mcp",
   "version": "1.4.6",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-28T02:37:18.46564229Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-17T02:41:20.304759652Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/OjasKord/vat-validator-mcp",
   "category": "Developer Tools",
   "vendor": "OjasKord",
   "npm_package": "vat-validator-mcp",
-  "npm_downloads_monthly": 611,
+  "npm_downloads_monthly": 2220,
   "license": "MIT",
   "language": "JavaScript",
   "description": "VAT number validation for AI agents. EU VIES, UK HMRC, Australian ABN",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.4.6: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "analyse_vat_risk",
+          "compare_invoice_details"
+        ],
+        "removed": null,
+        "version": "1.4.6"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -45,18 +60,36 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "batch_validate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "analyse_vat_risk"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compare_invoice_details"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "analyse_vat_risk",
     "batch_validate",
+    "compare_invoice_details",
     "get_vat_rates",
     "validate_uk_vat",
     "validate_vat"
@@ -85,6 +118,20 @@
     },
     {
       "tool_name": "batch_validate",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "analyse_vat_risk",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compare_invoice_details",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -193,6 +240,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "1.4.5"
+    },
+    {
+      "scan_date": "2026-04-28T02:37:18Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.4.6"
     }
   ]
 }

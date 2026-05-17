@@ -1,28 +1,20 @@
 {
   "tool_id": "shrike-security-shrike-mcp",
   "version": "2.0.0",
-  "grade": "F",
-  "risk_score": 80,
-  "scan_date": "2026-04-26T07:39:19.44937253Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-05-17T02:36:11.720672798Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/Shrike-Security/shrike-mcp",
   "category": "Developer Tools",
   "vendor": "shrike-security",
   "stars": 1,
   "npm_package": "shrike-mcp",
-  "npm_downloads_monthly": 159,
+  "npm_downloads_monthly": 306,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "MCP server for AI agent security scanning — prompt injection, jailbreak, SQL injection, PII protection",
   "findings": [
-    {
-      "id": "AS-001",
-      "severity": "Critical",
-      "title": "Tool Poisoning (Prompt Injection)",
-      "description": "possible prompt injection detected in tool description: pattern matched: (?i)jailbreak",
-      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.",
-      "tool_name": "scan_prompt"
-    },
     {
       "id": "AS-002",
       "severity": "Low",
@@ -104,22 +96,6 @@
       "tool_name": "scan_command"
     },
     {
-      "id": "AS-005",
-      "severity": "High",
-      "title": "Privilege Escalation",
-      "description": "tool description suggests privilege escalation: \"sudo\"",
-      "recommendation": "Restrict OAuth/token scopes to the minimum necessary. Remove admin, :write wildcards, and any description-level escalation signals (sudo, impersonate).",
-      "tool_name": "scan_command"
-    },
-    {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "scan_command"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -214,14 +190,6 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "get_threat_intel"
-    },
-    {
-      "id": "AS-001",
-      "severity": "Critical",
-      "title": "Tool Poisoning (Prompt Injection)",
-      "description": "possible prompt injection detected in tool description: pattern matched: (?i)jailbreak",
-      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.",
-      "tool_name": "scan_a2a_message"
     },
     {
       "id": "AS-002",
@@ -241,8 +209,8 @@
     }
   ],
   "summary": {
-    "critical": 3,
-    "high": 11,
+    "critical": 0,
+    "high": 10,
     "medium": 6,
     "low": 8,
     "info": 0
@@ -265,8 +233,8 @@
   "tool_contexts": [
     {
       "tool_name": "scan_prompt",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -296,11 +264,10 @@
     },
     {
       "tool_name": "scan_command",
-      "action": "BLOCK",
-      "grade": "F",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands",
-        "reads_files",
         "uses_network"
       ],
       "destinations": [
@@ -370,8 +337,8 @@
     },
     {
       "tool_name": "scan_a2a_message",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -441,6 +408,12 @@
     },
     {
       "scan_date": "2026-04-19T02:17:47Z",
+      "grade": "F",
+      "risk_score": 80,
+      "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-04-26T07:39:19Z",
       "grade": "F",
       "risk_score": 80,
       "version": "2.0.0"

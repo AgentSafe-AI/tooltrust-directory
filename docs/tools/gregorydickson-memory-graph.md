@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 195 |
 | **Language** | Python |
 | **Source** | [gregorydickson-memory-graph](https://github.com/memory-graph/memory-graph) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

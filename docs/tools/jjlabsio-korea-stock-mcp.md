@@ -10,11 +10,11 @@
 | **Vendor** | jjlabsio |
 | **Stars** | ⭐ 123 |
 | **npm Package** | `korea-stock-mcp` |
-| **npm Downloads (30d)** | 1.2k |
+| **npm Downloads (30d)** | 1.5k |
 | **Language** | TypeScript |
 | **Source** | [jjlabsio-korea-stock-mcp](https://github.com/jjlabsio/korea-stock-mcp) |
-| **Scan Date** | 2026-05-04 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

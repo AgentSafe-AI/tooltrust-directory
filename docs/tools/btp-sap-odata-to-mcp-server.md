@@ -10,11 +10,11 @@
 | **Vendor** | lemaiwo |
 | **Stars** | ⭐ 127 |
 | **npm Package** | `btp-sap-odata-to-mcp-server` |
-| **npm Downloads (30d)** | 45 |
+| **npm Downloads (30d)** | 50 |
 | **Language** | TypeScript |
 | **Source** | [btp-sap-odata-to-mcp-server](https://github.com/lemaiwo/btp-sap-odata-to-mcp-server) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

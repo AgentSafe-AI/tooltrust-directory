@@ -10,8 +10,8 @@ Structured data on product, pricing, use cases, security, and B2B positioning.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nponette-sucesio-mcp](https://smithery.ai/server/nponette/sucesio-mcp) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

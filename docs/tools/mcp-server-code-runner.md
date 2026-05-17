@@ -10,11 +10,11 @@
 | **Vendor** | formulahendry |
 | **Stars** | ⭐ 241 |
 | **npm Package** | `mcp-server-code-runner` |
-| **npm Downloads (30d)** | 9.8k |
+| **npm Downloads (30d)** | 9.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-code-runner](https://github.com/formulahendry/mcp-server-code-runner) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

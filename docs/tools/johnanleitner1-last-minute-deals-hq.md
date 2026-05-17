@@ -17,8 +17,8 @@ End-to-end booking: agent searches → customer pays (or wallet debits) → supp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [johnanleitner1-last-minute-deals-hq](https://smithery.ai/server/johnanleitner1/Last_Minute_Deals_HQ) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 
@@ -27,24 +27,12 @@ End-to-end booking: agent searches → customer pays (or wallet debits) → supp
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 7 |
+| High     | 6 |
 | Medium   | 0 |
 | Low      | 5 |
 | Info     | 6 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 6 tool(s) added, 4 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 

@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `2026.05.20260514231351` |
 | **Vendor** | awslabs |
-| **Stars** | ⭐ 9062 |
+| **Stars** | ⭐ 9069 |
 | **Language** | Python |
 | **Source** | [mcp](https://github.com/awslabs/mcp) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

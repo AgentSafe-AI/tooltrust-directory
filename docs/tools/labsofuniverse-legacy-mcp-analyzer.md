@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [labsofuniverse-legacy-mcp-analyzer](https://smithery.ai/server/labsofuniverse/legacy-mcp-analyzer) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-17 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 
