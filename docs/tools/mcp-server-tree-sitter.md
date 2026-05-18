@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.7.0` |
 | **Vendor** | wrale |
-| **Stars** | ⭐ 303 |
+| **Stars** | ⭐ 304 |
 | **Language** | Python |
 | **Source** | [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) |
-| **Scan Date** | 2026-05-17 |
+| **Scan Date** | 2026-05-18 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

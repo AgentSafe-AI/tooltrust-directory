@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [flashalpha-options-analytics](https://smithery.ai/server/FlashAlpha/options-analytics) |
-| **Scan Date** | 2026-05-17 |
+| **Scan Date** | 2026-05-18 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

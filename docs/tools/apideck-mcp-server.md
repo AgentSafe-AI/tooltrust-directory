@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [apideck-mcp-server](https://smithery.ai/server/apideck/mcp-server) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-18 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

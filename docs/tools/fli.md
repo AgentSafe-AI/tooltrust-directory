@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `0.8.5` |
 | **Vendor** | punitarani |
-| **Stars** | ⭐ 2504 |
+| **Stars** | ⭐ 2551 |
 | **Language** | Python |
 | **Source** | [fli](https://github.com/punitarani/fli) |
-| **Scan Date** | 2026-05-17 |
+| **Scan Date** | 2026-05-18 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

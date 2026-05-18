@@ -1,6 +1,6 @@
 # 🟠 docfork-mcp
 
-> Docfork - Up-to-date Docs for AI Agents.
+> Docfork - Context for AI Coding Agents.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `2.1.0` |
 | **Vendor** | docfork |
-| **Stars** | ⭐ 463 |
+| **Stars** | ⭐ 478 |
 | **npm Package** | `docfork` |
-| **npm Downloads (30d)** | 1.8k |
+| **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [docfork-mcp](https://github.com/docfork/docfork) |
-| **Scan Date** | 2026-05-17 |
+| **Scan Date** | 2026-05-18 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

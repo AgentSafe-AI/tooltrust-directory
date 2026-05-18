@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [phantom-connect-sdk](https://smithery.ai/server/Phantom/connect-sdk) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-18 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

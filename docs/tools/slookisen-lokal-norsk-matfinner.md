@@ -1,6 +1,6 @@
 # 🟡 slookisen-lokal-norsk-matfinner
 
-> Search 1,000+ local food producers across Norway — farms, bakeries, fisheries, and farm shops in 100+ cities. Find organic honey near Oslo, fresh seafood in Bergen, or artisan cheese from Trondheim. Supports natural language search, structured discovery, and A2A agent-to-agent communication.
+> Search 1,433+ Norwegian local-food producers — farms, shops, REKO rings, farm shops, dairies, fishers, bakeries — across 368+ cities. Now includes 13 Bondens marked lokallag + 58 market venues + umbrellas like Hanen, Debio, Norsk Gardsmat, and Mathallen Oslo. Returns ranked producers with contact info, season data, A2A endpoints, and direct profile links. Supports natural-language search (Norwegian + English) and structured filters by category, location, certification.
 
 | Field | Value |
 |-------|-------|
@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [slookisen-lokal-norsk-matfinner](https://smithery.ai/server/slookisen/lokal-norsk-matfinner) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-18 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 
