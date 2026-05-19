@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.11` |
 | **Vendor** | loonghao |
-| **Stars** | ⭐ 223 |
+| **Stars** | ⭐ 224 |
 | **Language** | Python |
 | **Source** | [photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

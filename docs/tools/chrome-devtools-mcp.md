@@ -1,19 +1,19 @@
-# 🟠 chrome-devtools-mcp
+# 🔴 chrome-devtools-mcp
 
 > Chrome DevTools for coding agents
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 42 |
-| **Version** | `chrome-devtools-mcp-v0.26.0` |
+| **Grade** | **D** |
+| **Risk Score** | 50 |
+| **Version** | `chrome-devtools-mcp-v1.0.1` |
 | **Vendor** | ChromeDevTools |
-| **Stars** | ⭐ 39853 |
+| **Stars** | ⭐ 39953 |
 | **npm Package** | `chrome-devtools-mcp` |
 | **npm Downloads (30d)** | 6.8M |
 | **Language** | TypeScript |
 | **Source** | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
@@ -24,11 +24,23 @@
 |----------|:-----:|
 | Critical | 1 |
 | High     | 6 |
-| Medium   | 8 |
+| Medium   | 9 |
 | Low      | 3 |
 | Info     | 0 |
 
 ## Detailed Findings
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 

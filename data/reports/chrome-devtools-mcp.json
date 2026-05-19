@@ -1,20 +1,28 @@
 {
   "tool_id": "chrome-devtools-mcp",
-  "version": "chrome-devtools-mcp-v0.26.0",
-  "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-05-18T02:37:02.252376034Z",
+  "version": "chrome-devtools-mcp-v1.0.1",
+  "grade": "D",
+  "risk_score": 50,
+  "scan_date": "2026-05-19T02:35:09.088322788Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
   "category": "Developer Tools",
   "vendor": "ChromeDevTools",
-  "stars": 39853,
+  "stars": 39953,
   "npm_package": "chrome-devtools-mcp",
-  "npm_downloads_monthly": 6753291,
+  "npm_downloads_monthly": 6771098,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Chrome DevTools for coding agents",
   "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "evaluate_script"
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -163,7 +171,7 @@
   "summary": {
     "critical": 1,
     "high": 6,
-    "medium": 8,
+    "medium": 9,
     "low": 3,
     "info": 0
   },
@@ -234,7 +242,7 @@
     {
       "tool_name": "evaluate_script",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
       "behavior": [
         "executes_commands"
       ],
@@ -802,6 +810,12 @@
     },
     {
       "scan_date": "2026-05-17T02:16:14Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "chrome-devtools-mcp-v0.26.0"
+    },
+    {
+      "scan_date": "2026-05-18T02:37:02Z",
       "grade": "C",
       "risk_score": 42,
       "version": "chrome-devtools-mcp-v0.26.0"

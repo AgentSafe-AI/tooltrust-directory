@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.2` |
 | **Vendor** | tuannvm |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **Language** | Go |
 | **Source** | [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

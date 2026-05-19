@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [convrgent-aeo-scanner](https://smithery.ai/server/convrgent/aeo-scanner) |
-| **Scan Date** | 2026-05-17 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

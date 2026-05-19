@@ -11,7 +11,7 @@ New mcp tool: Exa-code is a context tool for coding agents. It provides agents w
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [exa](https://smithery.ai/server/exa) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

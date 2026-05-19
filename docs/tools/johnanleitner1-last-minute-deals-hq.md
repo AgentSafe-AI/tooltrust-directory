@@ -17,7 +17,7 @@ End-to-end booking: agent searches → customer pays (or wallet debits) → supp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [johnanleitner1-last-minute-deals-hq](https://smithery.ai/server/johnanleitner1/Last_Minute_Deals_HQ) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

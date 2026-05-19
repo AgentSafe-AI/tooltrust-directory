@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 817 |
 | **Language** | TypeScript |
 | **Source** | [scrapeless-mcp-server](https://github.com/scrapeless-ai/scrapeless-mcp-server) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

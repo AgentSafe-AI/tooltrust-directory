@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `4.13.0` |
 | **Vendor** | stickerdaniel |
-| **Stars** | ⭐ 1910 |
+| **Stars** | ⭐ 1920 |
 | **Language** | Python |
 | **Source** | [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-05-18T02:44:39.512676759Z",
+  "scan_date": "2026-05-19T02:42:29.446201175Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://smithery.ai/server/contrastcyber/contrastapi",
   "vendor": "Smithery",
@@ -898,6 +898,22 @@
       "tool_name": "sigma_rule_lookup"
     },
     {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "bulk_sigma_rule_lookup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "bulk_sigma_rule_lookup"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -1204,9 +1220,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 34,
+    "high": 35,
     "medium": 22,
-    "low": 40,
+    "low": 41,
     "info": 53
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -1793,7 +1809,10 @@
     {
       "tool_name": "bulk_sigma_rule_lookup",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1988,6 +2007,12 @@
     },
     {
       "scan_date": "2026-05-17T02:43:15Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-18T02:44:39Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

@@ -12,7 +12,7 @@
 | **npm Package** | `mcp-router` |
 | **Language** | TypeScript |
 | **Source** | [mcp-router](https://github.com/mcp-router/mcp-router) |
-| **Scan Date** | 2026-05-18 |
+| **Scan Date** | 2026-05-19 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
