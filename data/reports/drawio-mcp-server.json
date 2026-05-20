@@ -1,27 +1,40 @@
 {
   "tool_id": "drawio-mcp-server",
   "version": "2.1.0",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-05-19T02:37:40.044560836Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-20T02:39:21.52697617Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/lgazo/drawio-mcp-server",
   "category": "Developer Tools",
   "vendor": "lgazo",
-  "stars": 1230,
+  "stars": 1233,
   "npm_package": "drawio-mcp",
-  "npm_downloads_monthly": 573,
+  "npm_downloads_monthly": 593,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Draw.io Model Context Protocol (MCP) Server",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "new_diagram"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.1.0: 1 tool(s) added, 6 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "create_diagram"
+        ],
+        "removed": [
+          "add_nodes",
+          "edit_nodes",
+          "get_diagram_info",
+          "link_nodes",
+          "new_diagram",
+          "remove_nodes"
+        ],
+        "version": "2.1.0"
+      }
     },
     {
       "id": "AS-002",
@@ -29,47 +42,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "add_nodes"
+      "tool_name": "create_diagram"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "link_nodes"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_diagram_info"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "edit_nodes"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "remove_nodes"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_diagram"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 6,
+    "high": 1,
+    "medium": 1,
     "low": 0,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -90,73 +79,21 @@
     }
   ],
   "tool_names": [
-    "add_nodes",
-    "edit_nodes",
-    "get_diagram_info",
-    "link_nodes",
-    "new_diagram",
-    "remove_nodes"
+    "create_diagram"
   ],
   "tool_contexts": [
     {
-      "tool_name": "new_diagram",
+      "tool_name": "create_diagram",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "writes_files"
       ],
       "destinations": [
-        "hardcoded domain: drawio.svg"
+        "hardcoded domain: draw.io"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "add_nodes",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "link_nodes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "get_diagram_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "edit_nodes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "remove_nodes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -504,6 +441,12 @@
     },
     {
       "scan_date": "2026-05-18T02:39:39Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "2.1.0"
+    },
+    {
+      "scan_date": "2026-05-19T02:37:40Z",
       "grade": "A",
       "risk_score": 8,
       "version": "2.1.0"

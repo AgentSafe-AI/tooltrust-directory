@@ -1,27 +1,59 @@
 {
   "tool_id": "cyanheads-clinicaltrialsgov-mcp-server",
   "version": "2.4.8",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-18T02:43:29.380618558Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-05-20T02:43:01.374904111Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
-  "stars": 71,
+  "stars": 73,
   "npm_package": "clinicaltrialsgov-mcp-server",
-  "npm_downloads_monthly": 11264,
+  "npm_downloads_monthly": 7062,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "MCP server for the ClinicalTrials.gov v2 API. Search trials, retrieve study details and results, and match patients to eligible trials.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.4.8: 6 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "clinicaltrials_find_eligible",
+          "clinicaltrials_get_field_definitions",
+          "clinicaltrials_get_field_values",
+          "clinicaltrials_get_study_count",
+          "clinicaltrials_get_study_record",
+          "clinicaltrials_get_study_results"
+        ],
+        "removed": [
+          "clinicaltrials_analyze_trends",
+          "clinicaltrials_compare_studies",
+          "clinicaltrials_find_eligible_studies",
+          "clinicaltrials_get_study"
+        ],
+        "version": "2.4.8"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "clinicaltrials_analyze_trends"
+      "tool_name": "clinicaltrials_search_studies"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 18 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clinicaltrials_search_studies"
     },
     {
       "id": "AS-011",
@@ -29,7 +61,47 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "clinicaltrials_analyze_trends"
+      "tool_name": "clinicaltrials_search_studies"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clinicaltrials_get_study_record"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "clinicaltrials_get_study_record"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clinicaltrials_get_study_count"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clinicaltrials_get_study_count"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "clinicaltrials_get_study_count"
     },
     {
       "id": "AS-002",
@@ -37,7 +109,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "clinicaltrials_find_eligible_studies"
+      "tool_name": "clinicaltrials_get_field_definitions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clinicaltrials_get_field_definitions"
     },
     {
       "id": "AS-002",
@@ -45,7 +125,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "clinicaltrials_get_study"
+      "tool_name": "clinicaltrials_get_study_results"
     },
     {
       "id": "AS-011",
@@ -53,84 +133,27 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "clinicaltrials_get_study"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "clinicaltrials_search_studies"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "clinicaltrials_search_studies"
+      "tool_name": "clinicaltrials_get_study_results"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
-    "low": 3,
+    "high": 5,
+    "medium": 3,
+    "low": 5,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "clinicaltrials_analyze_trends",
-    "clinicaltrials_compare_studies",
-    "clinicaltrials_find_eligible_studies",
-    "clinicaltrials_get_study",
+    "clinicaltrials_find_eligible",
+    "clinicaltrials_get_field_definitions",
+    "clinicaltrials_get_field_values",
+    "clinicaltrials_get_study_count",
+    "clinicaltrials_get_study_record",
+    "clinicaltrials_get_study_results",
     "clinicaltrials_search_studies"
   ],
   "tool_contexts": [
-    {
-      "tool_name": "clinicaltrials_analyze_trends",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: ClinicalTrials.gov"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "clinicaltrials_compare_studies",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "clinicaltrials_find_eligible_studies",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "clinicaltrials_get_study",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: ClinicalTrials.gov"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
     {
       "tool_name": "clinicaltrials_search_studies",
       "action": "ALLOW",
@@ -139,11 +162,91 @@
         "uses_network"
       ],
       "destinations": [
+        "dynamic email recipient (countTotal)",
         "dynamic email recipient (pageToken)",
         "hardcoded domain: ClinicalTrials.gov"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "clinicaltrials_get_study_record",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: ClinicalTrials.gov"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "clinicaltrials_get_study_count",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: ClinicalTrials.gov"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "clinicaltrials_get_field_values",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ClinicalTrials.gov"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "clinicaltrials_get_field_definitions",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: ClinicalTrials.gov",
+        "hardcoded domain: protocolSection.designModule",
+        "hardcoded domain: protocolSection.eligibilityModule"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "clinicaltrials_get_study_results",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: ClinicalTrials.gov"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "clinicaltrials_find_eligible",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-05-18T02:43:29Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.4.8"
     }
   ]
 }

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pranaviate-statscan-mcp](https://smithery.ai/server/pranaviate/statscan-mcp) |
-| **Scan Date** | 2026-05-07 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-20 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

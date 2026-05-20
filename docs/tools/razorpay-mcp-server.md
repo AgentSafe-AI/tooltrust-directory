@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.2.1` |
 | **Vendor** | razorpay |
-| **Stars** | ⭐ 220 |
+| **Stars** | ⭐ 221 |
 | **Language** | Go |
 | **Source** | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) |
-| **Scan Date** | 2026-05-19 |
+| **Scan Date** | 2026-05-20 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -62,8 +62,8 @@ Requires a TopYappers API key passed as a Bearer token in the `Authorization` he
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [top-yappers](https://smithery.ai/server/top/yappers) |
-| **Scan Date** | 2026-05-13 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-20 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

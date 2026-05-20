@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-05-19T02:38:09.408240837Z",
+  "scan_date": "2026-05-20T02:41:51.379236296Z",
   "scanner": "tooltrust-scanner/v0.3.12",
-  "source_url": "https://github.com/caiovicentino/polymarket-mcp-server",
+  "source_url": "https://github.com/japp-fi/polymarket-mcp-server",
   "category": "Developer Tools",
-  "vendor": "caiovicentino",
-  "stars": 507,
-  "license": "MIT",
-  "language": "Python",
-  "description": "🤖 AI-Powered MCP Server for Polymarket - Enable Claude to trade prediction markets with 45 tools, real-time monitoring, and enterprise-grade safety features",
+  "vendor": "japp-fi",
+  "stars": 156,
+  "npm_package": "polymarket-mcp-server",
+  "language": "TypeScript",
+  "description": "polymarket mcp server market discovery and analysis via public APIs; optional authenticated trading and portfolio tools when your wallet derives (or supplies) CLOB L2 credentials polymarket mcp server market discovery and analysis via public APIs; optional authenticated trading and portfolio tools when your wallet derives (or supplies) CLOB L2",
   "findings": [
     {
       "id": "AS-002",
@@ -110,6 +110,30 @@
     "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 4,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 32,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 153,
+      "snippet": ".registerTool(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "analyze_market",
     "get_event",
@@ -503,6 +527,12 @@
     },
     {
       "scan_date": "2026-05-18T02:40:07Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-19T02:38:09Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.1.0"

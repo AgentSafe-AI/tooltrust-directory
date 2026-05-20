@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vercel-grep](https://smithery.ai/server/vercel/grep) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-20 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

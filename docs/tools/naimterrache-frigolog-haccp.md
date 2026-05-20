@@ -40,7 +40,7 @@ from each editor's website. Pull requests welcome to correct any inaccuracy.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [naimterrache-frigolog-haccp](https://smithery.ai/server/naimterrache/frigolog-haccp) |
-| **Scan Date** | 2026-05-19 |
+| **Scan Date** | 2026-05-20 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
