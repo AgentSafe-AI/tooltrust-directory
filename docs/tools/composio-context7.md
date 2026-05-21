@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [composio-context7](https://smithery.ai/server/Composio/context7) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

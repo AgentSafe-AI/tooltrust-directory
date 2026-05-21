@@ -8,10 +8,10 @@
 | **Risk Score** | 57 |
 | **Version** | `1.4.1` |
 | **Vendor** | rhel-lightspeed |
-| **Stars** | ⭐ 230 |
+| **Stars** | ⭐ 232 |
 | **Language** | Python |
 | **Source** | [linux-mcp-server](https://github.com/rhel-lightspeed/linux-mcp-server) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

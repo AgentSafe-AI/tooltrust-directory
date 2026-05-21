@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 304 |
 | **Language** | Python |
 | **Source** | [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

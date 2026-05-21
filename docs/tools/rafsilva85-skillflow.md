@@ -22,7 +22,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rafsilva85-skillflow](https://smithery.ai/server/rafsilva85/skillflow) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

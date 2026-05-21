@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `transports/v1.5.2` |
+| **Version** | `transports/v1.5.3` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 5067 |
+| **Stars** | ⭐ 5093 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

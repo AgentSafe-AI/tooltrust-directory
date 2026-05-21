@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.11.0` |
 | **Vendor** | GLips |
-| **Stars** | ⭐ 14805 |
+| **Stars** | ⭐ 14817 |
 | **npm Package** | `figma-developer-mcp` |
-| **npm Downloads (30d)** | 266.9k |
+| **npm Downloads (30d)** | 272.5k |
 | **Language** | TypeScript |
 | **Source** | [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

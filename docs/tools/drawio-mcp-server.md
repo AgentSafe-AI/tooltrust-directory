@@ -1,19 +1,19 @@
-# 🟡 drawio-mcp-server
+# 🟢 drawio-mcp-server
 
 > Draw.io Model Context Protocol (MCP) Server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `2.1.0` |
 | **Vendor** | lgazo |
-| **Stars** | ⭐ 1233 |
+| **Stars** | ⭐ 1238 |
 | **npm Package** | `drawio-mcp` |
-| **npm Downloads (30d)** | 593 |
+| **npm Downloads (30d)** | 622 |
 | **Language** | TypeScript |
 | **Source** | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 1 |
 | Low      | 0 |
 | Info     | 1 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v2.1.0: 1 tool(s) added, 6 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

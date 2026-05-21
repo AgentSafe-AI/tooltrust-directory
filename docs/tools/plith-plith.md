@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [plith-plith](https://smithery.ai/server/plith/plith) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
@@ -139,6 +139,18 @@ Review and remediate the identified issue.
 **Severity:** High
 
 **Description:**
+input parameter "cache_read_tokens" appears to accept a secret or credential
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** High
+
+**Description:**
 input parameter "input_tokens" appears to accept a secret or credential
 
 **Recommendation:**
@@ -152,18 +164,6 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 
 **Description:**
 input parameter "output_tokens" appears to accept a secret or credential
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** High
-
-**Description:**
-input parameter "cache_read_tokens" appears to accept a secret or credential
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

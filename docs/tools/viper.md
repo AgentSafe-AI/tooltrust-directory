@@ -8,9 +8,9 @@
 | **Risk Score** | 33 |
 | **Version** | `3.1.11` |
 | **Vendor** | FunnyWolf |
-| **Stars** | ⭐ 5043 |
+| **Stars** | ⭐ 5044 |
 | **Source** | [viper](https://github.com/FunnyWolf/Viper) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-21 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
