@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 165 |
 | **Language** | Python |
 | **Source** | [mcp-server-apache-airflow](https://github.com/yangkyeongmo/mcp-server-apache-airflow) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-22 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

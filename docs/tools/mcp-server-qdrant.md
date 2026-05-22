@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1404 |
 | **Language** | Python |
 | **Source** | [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-22 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

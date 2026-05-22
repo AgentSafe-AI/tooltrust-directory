@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [seb-8pd6-vistoya](https://smithery.ai/server/seb-8pd6/vistoya) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-22 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

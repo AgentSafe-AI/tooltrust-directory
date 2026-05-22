@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agentclear-ai-mcp-server](https://smithery.ai/server/agentclear-ai/mcp-server) |
-| **Scan Date** | 2026-05-20 |
+| **Scan Date** | 2026-05-22 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

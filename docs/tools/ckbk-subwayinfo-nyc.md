@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ckbk-subwayinfo-nyc](https://smithery.ai/server/ckbk/subwayinfo-nyc) |
-| **Scan Date** | 2026-05-10 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-22 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

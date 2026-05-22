@@ -10,7 +10,7 @@ Discover relevant tech blog posts, IT/cloud news, and upcoming meetups, webinars
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cloud101-kr-cloud101kr](https://smithery.ai/server/cloud101.kr/cloud101kr) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-22 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

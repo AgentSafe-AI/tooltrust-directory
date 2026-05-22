@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `sha-fb0816aa75a4` |
 | **Vendor** | Hawstein |
-| **Stars** | ⭐ 176 |
+| **Stars** | ⭐ 177 |
 | **Language** | Python |
 | **Source** | [mcp-server-reddit](https://github.com/Hawstein/mcp-server-reddit) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-22 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

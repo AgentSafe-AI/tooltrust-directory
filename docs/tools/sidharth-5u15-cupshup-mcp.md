@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sidharth-5u15-cupshup-mcp](https://smithery.ai/server/sidharth-5u15/cupshup-mcp) |
-| **Scan Date** | 2026-05-14 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-22 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

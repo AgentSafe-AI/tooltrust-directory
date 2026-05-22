@@ -10,7 +10,7 @@
 | **Vendor** | FunnyWolf |
 | **Stars** | ⭐ 5044 |
 | **Source** | [viper](https://github.com/FunnyWolf/Viper) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-22 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

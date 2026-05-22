@@ -1,21 +1,38 @@
 {
   "tool_id": "picoads-picoads",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-04-19T02:22:21.359733944Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-22T02:44:46.772057453Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://smithery.ai/server/picoads/picoads",
   "vendor": "Smithery",
   "description": "Earn from your audience or buy ad distribution — the only agent ad network with independent delivery verification. Publishers receive 100% of the agreed price with zero deductions. Verified deliveries settle immediately in USDC on Base, no waiting for advertiser review.\n\n14 tools: discover hubs and market pricing, post bids (advertiser) or asks (publisher), browse open demand, deliver with verified proof for faster payment, track trust tier progression and earning potential, manage settlements.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "check_publisher_stats",
+          "get_recommendations"
+        ],
+        "removed": [
+          "get_sponsored"
+        ],
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_sponsored"
+      "tool_name": "get_recommendations"
     },
     {
       "id": "AS-014",
@@ -45,7 +62,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "post_bid"
     },
@@ -82,6 +99,14 @@
       "tool_name": "register_agent"
     },
     {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"bootstrap_token\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "register_agent"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -103,6 +128,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "complete_registration"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"bootstrap_token\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "complete_registration"
     },
     {
@@ -152,14 +185,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "check_roas"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_publisher_stats"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 6,
     "medium": 0,
     "low": 4,
-    "info": 11
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -167,17 +208,18 @@
     "browse_bids",
     "check_matches",
     "check_opportunity",
+    "check_publisher_stats",
     "check_roas",
     "complete_registration",
     "discover_hubs",
     "get_hub_stats",
-    "get_sponsored",
+    "get_recommendations",
     "post_bid",
     "register_agent"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_sponsored",
+      "tool_name": "get_recommendations",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
@@ -223,20 +265,26 @@
     },
     {
       "tool_name": "register_agent",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (bootstrap_token)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "complete_registration",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (bootstrap_token)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -264,6 +312,13 @@
     },
     {
       "tool_name": "check_roas",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_publisher_stats",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -309,6 +364,12 @@
     },
     {
       "scan_date": "2026-04-17T02:18:24Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:22:21Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

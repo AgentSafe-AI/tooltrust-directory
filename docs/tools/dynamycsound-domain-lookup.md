@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [dynamycsound-domain-lookup](https://smithery.ai/server/dynamycsound/domain-lookup) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-22 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 
