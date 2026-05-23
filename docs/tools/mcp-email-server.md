@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 236 |
 | **Language** | Python |
 | **Source** | [mcp-email-server](https://github.com/ai-zerolab/mcp-email-server) |
-| **Scan Date** | 2026-05-22 |
+| **Scan Date** | 2026-05-23 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

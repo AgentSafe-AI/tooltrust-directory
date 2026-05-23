@@ -2,19 +2,43 @@
   "tool_id": "mcp-server-siri-shortcuts",
   "version": "1.1.0",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-22T02:42:29.834104977Z",
+  "risk_score": 40,
+  "scan_date": "2026-05-23T02:19:59.303834022Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/dvcrn/mcp-server-siri-shortcuts",
   "category": "Developer Tools",
   "vendor": "dvcrn",
   "stars": 189,
   "npm_package": "mcp-server-siri-shortcuts",
-  "npm_downloads_monthly": 203,
+  "npm_downloads_monthly": 209,
   "license": "GPL-3.0",
   "language": "TypeScript",
   "description": "MCP for calling Siri Shorcuts from LLMs",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "list_shortcuts"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "open_shortcut"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "run_shortcut"
+    },
     {
       "id": "AS-006",
       "severity": "Critical",
@@ -26,7 +50,7 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 0,
+    "high": 3,
     "medium": 0,
     "low": 0,
     "info": 0
@@ -41,14 +65,14 @@
     {
       "tool_name": "list_shortcuts",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "open_shortcut",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -423,6 +447,12 @@
     },
     {
       "scan_date": "2026-05-21T02:39:59Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-05-22T02:42:29Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.1.0"

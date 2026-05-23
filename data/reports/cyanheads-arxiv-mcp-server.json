@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-arxiv-mcp-server",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-22T02:44:35.347846162Z",
+  "risk_score": 40,
+  "scan_date": "2026-05-23T02:21:57.411940939Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/cyanheads/arxiv-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 1,
   "npm_package": "@cyanheads/arxiv-mcp-server",
-  "npm_downloads_monthly": 2510,
+  "npm_downloads_monthly": 2392,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Search arXiv, fetch paper metadata, and read full-text content via MCP. STDIO \u0026 Streamable HTTP.",
@@ -32,12 +32,28 @@
       "tool_name": "arxiv_search"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "arxiv_search"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "arxiv_search"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "arxiv_get_metadata"
     },
     {
       "id": "AS-002",
@@ -48,17 +64,33 @@
       "tool_name": "arxiv_read_paper"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "arxiv_read_paper"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "arxiv_read_paper"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "arxiv_list_categories"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 6,
     "medium": 1,
     "low": 2,
     "info": 0
@@ -88,14 +120,14 @@
     {
       "tool_name": "arxiv_get_metadata",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "arxiv_read_paper",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -109,7 +141,7 @@
     {
       "tool_name": "arxiv_list_categories",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -162,6 +194,12 @@
       "grade": "C",
       "risk_score": 25,
       "version": "0.1.19"
+    },
+    {
+      "scan_date": "2026-05-22T02:44:35Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.2.3"
     }
   ]
 }

@@ -2,15 +2,15 @@
   "tool_id": "tavily-mcp",
   "version": "0.2.19",
   "grade": "C",
-  "risk_score": 34,
-  "scan_date": "2026-05-22T02:39:48.322091007Z",
+  "risk_score": 49,
+  "scan_date": "2026-05-23T02:17:25.336292065Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/tavily-ai/tavily-mcp",
   "category": "Developer Tools",
   "vendor": "tavily-ai",
-  "stars": 1998,
+  "stars": 2001,
   "npm_package": "tavily-mcp",
-  "npm_downloads_monthly": 250648,
+  "npm_downloads_monthly": 238597,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Production ready MCP server with real-time search, extract, map \u0026 crawl.",
@@ -40,6 +40,14 @@
       "tool_name": "tavily_search"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_search"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -53,6 +61,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "tavily_extract"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "tavily_extract"
     },
     {
@@ -88,6 +104,14 @@
       "tool_name": "tavily_crawl"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_crawl"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -112,6 +136,14 @@
       "tool_name": "tavily_map"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_map"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -128,6 +160,14 @@
       "tool_name": "tavily_research"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_research"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -138,7 +178,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 11,
     "medium": 2,
     "low": 7,
     "info": 0
@@ -169,8 +209,8 @@
     },
     {
       "tool_name": "tavily_extract",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -210,8 +250,8 @@
     },
     {
       "tool_name": "tavily_research",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -582,6 +622,12 @@
     },
     {
       "scan_date": "2026-05-21T02:37:25Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.2.19"
+    },
+    {
+      "scan_date": "2026-05-22T02:39:48Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.2.19"

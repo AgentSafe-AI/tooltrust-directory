@@ -1,16 +1,16 @@
 {
   "tool_id": "codex-mcp-server",
   "version": "1.4.10",
-  "grade": "D",
-  "risk_score": 65,
-  "scan_date": "2026-05-22T02:41:11.663468832Z",
+  "grade": "F",
+  "risk_score": 80,
+  "scan_date": "2026-05-23T02:18:43.914228218Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/tuannvm/codex-mcp-server",
   "category": "Developer Tools",
   "vendor": "tuannvm",
-  "stars": 462,
+  "stars": 461,
   "npm_package": "codex-mcp-server",
-  "npm_downloads_monthly": 7702,
+  "npm_downloads_monthly": 7698,
   "language": "TypeScript",
   "description": "MCP server wrapper for OpenAI Codex CLI that enables Claude Code to leverage Codex's AI capabilities directly.",
   "findings": [
@@ -39,6 +39,14 @@
       "tool_name": "codex"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "codex"
+    },
+    {
       "id": "AS-006",
       "severity": "Critical",
       "title": "Arbitrary Code Execution",
@@ -63,11 +71,51 @@
       "tool_name": "review"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "review"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "ping"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "help"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "listSessions"
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "websearch"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "websearch"
     },
     {
@@ -81,7 +129,7 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 3,
+    "high": 9,
     "medium": 2,
     "low": 2,
     "info": 0
@@ -98,8 +146,8 @@
   "tool_contexts": [
     {
       "tool_name": "codex",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "BLOCK",
+      "grade": "F",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -115,7 +163,7 @@
     {
       "tool_name": "review",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (workingDirectory)"
       ],
@@ -125,28 +173,28 @@
     {
       "tool_name": "ping",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "help",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "listSessions",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "websearch",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -517,6 +565,12 @@
     },
     {
       "scan_date": "2026-05-21T02:38:35Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "1.4.10"
+    },
+    {
+      "scan_date": "2026-05-22T02:41:11Z",
       "grade": "D",
       "risk_score": 65,
       "version": "1.4.10"

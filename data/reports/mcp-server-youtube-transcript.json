@@ -1,16 +1,16 @@
 {
   "tool_id": "mcp-server-youtube-transcript",
   "version": "0.1.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-22T02:40:43.806274405Z",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-23T02:18:21.411563295Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/kimtaeyoon83/mcp-server-youtube-transcript",
   "category": "Developer Tools",
   "vendor": "kimtaeyoon83",
   "stars": 542,
   "npm_package": "@kimtaeyoon83/mcp-server-youtube-transcript",
-  "npm_downloads_monthly": 6707,
+  "npm_downloads_monthly": 6676,
   "license": "MIT",
   "language": "TypeScript",
   "description": "This is an MCP server that allows you to directly download transcripts of YouTube videos.",
@@ -24,6 +24,14 @@
       "tool_name": "get_transcript"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_transcript"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -34,7 +42,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -46,8 +54,8 @@
   "tool_contexts": [
     {
       "tool_name": "get_transcript",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -422,6 +430,12 @@
     },
     {
       "scan_date": "2026-05-21T02:38:16Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-05-22T02:40:43Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.1.1"

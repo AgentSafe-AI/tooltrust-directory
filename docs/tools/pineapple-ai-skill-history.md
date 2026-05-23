@@ -15,7 +15,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pineapple-ai-skill-history](https://smithery.ai/server/pineapple-ai/skill-history) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-23 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

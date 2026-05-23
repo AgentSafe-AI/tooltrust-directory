@@ -1,8 +1,6 @@
 # 🟠 exa
 
-> Fast, intelligent web search and web crawling.
-
-New mcp tool: Exa-code is a context tool for coding agents. It provides agents with fresh information about libraries, APIs, and SDKs with the purpose of reducing hallucinations.
+> Fast, intelligent web search and web crawling. Get fresh information about libraries, APIs, and SDKs.
 
 | Field | Value |
 |-------|-------|
@@ -11,7 +9,7 @@ New mcp tool: Exa-code is a context tool for coding agents. It provides agents w
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [exa](https://smithery.ai/server/exa) |
-| **Scan Date** | 2026-05-22 |
+| **Scan Date** | 2026-05-23 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [janmacher02-xl8y-ares-mcp](https://smithery.ai/server/janmacher02-xl8y/ares-mcp) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-23 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 
