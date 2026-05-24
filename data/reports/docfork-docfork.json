@@ -1,27 +1,37 @@
 {
   "tool_id": "docfork-docfork",
   "version": "2.1.0",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-05-23T02:18:50.525355036Z",
+  "grade": "D",
+  "risk_score": 55,
+  "scan_date": "2026-05-24T02:38:01.64912824Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/docfork/docfork",
   "category": "Developer Tools",
   "vendor": "docfork",
-  "stars": 479,
+  "stars": 478,
   "npm_package": "docfork",
-  "npm_downloads_monthly": 1837,
+  "npm_downloads_monthly": 1835,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Docfork - Context for AI Coding Agents.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "docfork_search_docs"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.1.0: 2 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "fetch_doc",
+          "search_docs"
+        ],
+        "removed": [
+          "docfork_read_url",
+          "docfork_search_docs"
+        ],
+        "version": "2.1.0"
+      }
     },
     {
       "id": "AS-002",
@@ -29,7 +39,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "docfork_search_docs"
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "search_docs"
     },
     {
       "id": "AS-010",
@@ -37,7 +63,7 @@
       "title": "Insecure Secret Handling",
       "description": "input parameter \"tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "docfork_search_docs"
+      "tool_name": "search_docs"
     },
     {
       "id": "AS-011",
@@ -45,15 +71,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "docfork_search_docs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "docfork_search_docs"
+      "tool_name": "search_docs"
     },
     {
       "id": "AS-002",
@@ -61,7 +79,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "docfork_read_url"
+      "tool_name": "fetch_doc"
     },
     {
       "id": "AS-002",
@@ -69,7 +87,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "docfork_read_url"
+      "tool_name": "fetch_doc"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetch_doc"
     },
     {
       "id": "AS-011",
@@ -77,23 +103,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "docfork_read_url"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "docfork_read_url"
+      "tool_name": "fetch_doc"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 6,
     "medium": 2,
     "low": 2,
-    "info": 2
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -121,28 +139,27 @@
     }
   ],
   "tool_names": [
-    "docfork_read_url",
-    "docfork_search_docs"
+    "fetch_doc",
+    "search_docs"
   ],
   "tool_contexts": [
     {
-      "tool_name": "docfork_search_docs",
+      "tool_name": "search_docs",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
       "behavior": [
-        "reads_files",
         "uses_network"
       ],
       "destinations": [
         "dynamic email recipient (tokens)",
-        "hardcoded domain: github.com",
+        "hardcoded domain: Next.js",
         "hardcoded domain: next.js"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "tool_name": "docfork_read_url",
+      "tool_name": "fetch_doc",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
@@ -150,10 +167,11 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: github.com"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -315,6 +333,12 @@
     },
     {
       "scan_date": "2026-05-22T02:41:15Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "2.1.0"
+    },
+    {
+      "scan_date": "2026-05-23T02:18:50Z",
       "grade": "C",
       "risk_score": 40,
       "version": "2.1.0"

@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.13.0` |
 | **Vendor** | domdomegg |
-| **Stars** | ⭐ 443 |
+| **Stars** | ⭐ 444 |
 | **npm Package** | `airtable-mcp-server` |
 | **npm Downloads (30d)** | 8.1k |
 | **Language** | TypeScript |
 | **Source** | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

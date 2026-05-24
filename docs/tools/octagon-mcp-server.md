@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.1.0` |
 | **Vendor** | OctagonAI |
-| **Stars** | ⭐ 126 |
+| **Stars** | ⭐ 127 |
 | **npm Package** | `octagon-mcp` |
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [octagon-mcp-server](https://github.com/OctagonAI/octagon-mcp-server) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -36,7 +36,7 @@ Backed by Postgres + pgvector with semantic search, deployed on Cloudflare Worke
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [urantiahub-urantia-papers](https://smithery.ai/server/urantiahub/urantia-papers) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

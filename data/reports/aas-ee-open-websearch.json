@@ -2,15 +2,15 @@
   "tool_id": "aas-ee-open-websearch",
   "version": "2.1.11",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-19T02:37:54.196815771Z",
+  "risk_score": 40,
+  "scan_date": "2026-05-24T02:37:16.238114381Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/Aas-ee/open-webSearch",
   "category": "Developer Tools",
   "vendor": "Aas-ee",
-  "stars": 1245,
+  "stars": 1287,
   "npm_package": "open-websearch",
-  "npm_downloads_monthly": 39508,
+  "npm_downloads_monthly": 38543,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Multi-engine MCP server, CLI, and local daemon for agent web search and content retrieval — skill-guided workflows, no API keys.",
@@ -24,6 +24,14 @@
       "tool_name": "search"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "search"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -40,6 +48,14 @@
       "tool_name": "fetchLinuxDoArticle"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetchLinuxDoArticle"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -56,6 +72,14 @@
       "tool_name": "fetchCsdnArticle"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetchCsdnArticle"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -69,6 +93,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fetchGithubReadme"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "fetchGithubReadme"
     },
     {
@@ -96,6 +128,14 @@
       "tool_name": "fetchWebContent"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetchWebContent"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -112,6 +152,14 @@
       "tool_name": "fetchJuejinArticle"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetchJuejinArticle"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -122,7 +170,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 12,
     "medium": 1,
     "low": 6,
     "info": 0
@@ -170,8 +218,8 @@
   "tool_contexts": [
     {
       "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -180,8 +228,8 @@
     },
     {
       "tool_name": "fetchLinuxDoArticle",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -194,8 +242,8 @@
     },
     {
       "tool_name": "fetchCsdnArticle",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -207,8 +255,8 @@
     },
     {
       "tool_name": "fetchGithubReadme",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -233,8 +281,8 @@
     },
     {
       "tool_name": "fetchJuejinArticle",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -374,6 +422,12 @@
     },
     {
       "scan_date": "2026-05-18T02:39:50Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "2.1.11"
+    },
+    {
+      "scan_date": "2026-05-19T02:37:54Z",
       "grade": "C",
       "risk_score": 25,
       "version": "2.1.11"

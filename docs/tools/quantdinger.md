@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.0.12` |
 | **Vendor** | brokermr810 |
-| **Stars** | ⭐ 6247 |
+| **Stars** | ⭐ 6342 |
 | **Language** | Python |
 | **Source** | [quantdinger](https://github.com/brokermr810/QuantDinger) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -1,25 +1,42 @@
 {
   "tool_id": "mcp-language-server",
   "version": "0.1.1",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-05-23T02:17:33.125814208Z",
+  "scan_date": "2026-05-24T02:36:44Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/isaacphi/mcp-language-server",
   "category": "Developer Tools",
   "vendor": "isaacphi",
-  "stars": 1533,
+  "stars": 1536,
   "license": "BSD-3-Clause",
   "language": "Go",
   "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "media_text_to_speech"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 111,
+            "snippet": "server.NewMCPServer(",
+            "file": "main.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -30,6 +47,7 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -45,18 +63,6 @@
       "snippet": "server.NewMCPServer(",
       "file": "main.go",
       "language": "go"
-    }
-  ],
-  "tool_names": [
-    "media_text_to_speech"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "media_text_to_speech",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -152,6 +158,12 @@
     },
     {
       "scan_date": "2026-05-22T02:39:59Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-05-23T02:17:33Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.1.1"

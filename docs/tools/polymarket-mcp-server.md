@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.0` |
 | **Vendor** | japp-fi |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 148 |
 | **npm Package** | `polymarket-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [polymarket-mcp-server](https://github.com/japp-fi/polymarket-mcp-server) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

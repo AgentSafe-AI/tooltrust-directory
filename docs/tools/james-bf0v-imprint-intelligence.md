@@ -15,7 +15,7 @@ Open-source client: github.com/byimprint/mcp-server (MIT). npm: @byimprint/mcp-s
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [james-bf0v-imprint-intelligence](https://smithery.ai/server/james-bf0v/imprint-intelligence) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

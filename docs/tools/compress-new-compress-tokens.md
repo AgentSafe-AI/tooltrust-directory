@@ -19,7 +19,7 @@ Use it to research topics, analyze articles, gather documentation, or extract an
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [compress-new-compress-tokens](https://smithery.ai/server/compress-new/compress-tokens) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
@@ -29,24 +29,12 @@ Use it to research topics, analyze articles, gather documentation, or extract an
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 1 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 3 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🗝️ `AS-010` — Insecure Secret Handling
 

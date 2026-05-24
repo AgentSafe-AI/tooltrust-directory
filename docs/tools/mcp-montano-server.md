@@ -12,7 +12,7 @@
 | **npm Package** | `mcp-montano-server` |
 | **Language** | TypeScript |
 | **Source** | [mcp-montano-server](https://github.com/lucasmontano/mcp-montano-server) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-24 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

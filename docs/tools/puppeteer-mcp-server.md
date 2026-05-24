@@ -1,20 +1,20 @@
-# 🟠 puppeteer-mcp-server
+# 🔴 puppeteer-mcp-server
 
 > This MCP server provides browser automation capabilities through Puppeteer, allowing interaction with both new browser instances and existing Chrome windows.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 42 |
+| **Grade** | **D** |
+| **Risk Score** | 57 |
 | **Version** | `0.7.2` |
 | **Vendor** | merajmehrabi |
-| **Stars** | ⭐ 445 |
+| **Stars** | ⭐ 455 |
 | **npm Package** | `puppeteer-mcp-server` |
-| **npm Downloads (30d)** | 6.4k |
+| **npm Downloads (30d)** | 4.5k |
 | **Language** | TypeScript |
 | **Source** | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) |
-| **Scan Date** | 2026-05-02 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-24 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 
@@ -23,7 +23,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 1 |
-| High     | 3 |
+| High     | 11 |
 | Medium   | 0 |
 | Low      | 3 |
 | Info     | 0 |
@@ -42,6 +42,18 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -66,6 +78,18 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -78,6 +102,66 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
@@ -87,6 +171,18 @@ tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
 
 ---
 
