@@ -15,6 +15,8 @@ import {
 import { GradeBadge } from "@/lib/grades";
 
 const GRADES = ["All", "A", "B", "C", "D", "F"] as const;
+const INITIAL_VISIBLE_COUNT = 120;
+const VISIBLE_INCREMENT = 120;
 
 const GRADE_BUTTON_STYLES: Record<string, string> = {
   All: "bg-zinc-800 text-zinc-200 border-zinc-700",
@@ -113,6 +115,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
   });
   const [sortKey, setSortKey] = useState<SortKey>("stars");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
 
   const toggleSort = (key: SortKey) => {
     if (sortKey === key) {
@@ -136,16 +139,19 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
     [router]
   );
 
-  const setQuery = (v: string) => { setQueryState(v); pushURL(v, gradeFilter, categoryFilter, viewMode); };
-  const setGradeFilter = (v: string) => { setGradeFilterState(v); pushURL(query, v, categoryFilter, viewMode); };
-  const setCategoryFilter = (v: string) => { setCategoryFilterState(v); pushURL(query, gradeFilter, v, viewMode); };
-  const setViewMode = (v: "table" | "cards") => { setViewModeState(v); pushURL(query, gradeFilter, categoryFilter, v); };
+  const resetVisibleCount = () => setVisibleCount(INITIAL_VISIBLE_COUNT);
+  const setQuery = (v: string) => { setQueryState(v); resetVisibleCount(); pushURL(v, gradeFilter, categoryFilter, viewMode); };
+  const setGradeFilter = (v: string) => { setGradeFilterState(v); resetVisibleCount(); pushURL(query, v, categoryFilter, viewMode); };
+  const setCategoryFilter = (v: string) => { setCategoryFilterState(v); resetVisibleCount(); pushURL(query, gradeFilter, v, viewMode); };
+  const setViewMode = (v: "table" | "cards") => { setViewModeState(v); resetVisibleCount(); pushURL(query, gradeFilter, categoryFilter, v); };
 
   const sorted = useMemo(() => sortReports(reports, sortKey, sortDir), [reports, sortKey, sortDir]);
   const filtered = useMemo(
     () => filterReports(sorted, query, gradeFilter, categoryFilter),
     [sorted, query, gradeFilter, categoryFilter]
   );
+  const visibleReports = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
 
   return (
     <section className="space-y-5">
@@ -241,7 +247,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
               </tr>
             </thead>
             <tbody>
-              {filtered.map((r) => (
+              {visibleReports.map((r) => (
                 <tr
                   key={r.tool_id}
                   className="border-b border-zinc-800/80 transition hover:bg-zinc-800/30 last:border-0"
@@ -292,7 +298,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-          {filtered.map((r) => (
+          {visibleReports.map((r) => (
             <Link
               key={r.tool_id}
               href={`/tool/${r.tool_id}`}
@@ -372,6 +378,23 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
           >
             Clear filters
           </button>
+        </div>
+      )}
+
+      {filtered.length > 0 && (
+        <div className="flex flex-col items-center gap-3 pt-2 text-sm text-zinc-500">
+          <p>
+            Showing {Math.min(visibleCount, filtered.length)} of {filtered.length} tools
+          </p>
+          {hasMore && (
+            <button
+              type="button"
+              onClick={() => setVisibleCount((count) => count + VISIBLE_INCREMENT)}
+              className="rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-300 transition hover:border-zinc-600 hover:text-zinc-100"
+            >
+              Show more
+            </button>
+          )}
         </div>
       )}
     </section>

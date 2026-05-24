@@ -68,7 +68,7 @@ export default function HomePage() {
     "@type": "Organization",
     name: "AgentSafe-AI",
     url: "https://www.tooltrust.dev",
-    logo: "https://www.tooltrust.dev/icon",
+    logo: "https://www.tooltrust.dev/tooltrust-icon.png",
     sameAs: [
       "https://github.com/AgentSafe-AI/tooltrust-scanner",
       "https://github.com/AgentSafe-AI/tooltrust-directory",

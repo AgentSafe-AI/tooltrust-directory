@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "ToolTrust",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/tooltrust-og.png",
         width: 1200,
         height: 630,
         alt: "ToolTrust MCP Security Directory",
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
     title: "ToolTrust Scanner for MCP Servers and AI Agents",
     description:
       "Scan MCP servers for prompt injection, excessive permissions, and supply-chain risk before your agent trusts them.",
-    images: ["/opengraph-image"],
+    images: ["/tooltrust-og.png"],
   },
   alternates: {
     canonical: "https://www.tooltrust.dev",
   },
   icons: {
-    icon: "/icon",
-    shortcut: "/icon",
-    apple: "/icon",
+    icon: "/tooltrust-icon.png",
+    shortcut: "/tooltrust-icon.png",
+    apple: "/tooltrust-icon.png",
   },
 };
 

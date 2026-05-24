@@ -60,19 +60,12 @@ export interface RegistryReport {
   grade: string;
   risk_score: number;
   scan_date: string;
-  scanner: string;
-  source_url: string;
   category?: string;
   vendor?: string;
   stars?: number;
-  npm_package?: string;
   npm_downloads_monthly?: number;
-  license?: string;
-  language?: string;
   description?: string;
   findings: Array<Pick<Finding, "id">>;
-  summary: Summary;
-  methodology: string;
   scan_incomplete?: boolean;
 }
 
