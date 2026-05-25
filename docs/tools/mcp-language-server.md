@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1536 |
 | **Language** | Go |
 | **Source** | [mcp-language-server](https://github.com/isaacphi/mcp-language-server) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

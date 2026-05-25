@@ -12,7 +12,7 @@
 | **npm Package** | `hf-mcp` |
 | **Language** | TypeScript |
 | **Source** | [hf-mcp-server](https://github.com/huggingface/hf-mcp-server) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

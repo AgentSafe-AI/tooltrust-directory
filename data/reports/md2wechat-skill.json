@@ -2,34 +2,40 @@
   "tool_id": "md2wechat-skill",
   "version": "2.2.0",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-24T02:36:20.082222957Z",
+  "risk_score": 15,
+  "scan_date": "2026-05-25T02:43:42.259988548Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/geekjourneyx/md2wechat-skill",
   "category": "Developer Tools",
   "vendor": "geekjourneyx",
-  "stars": 2308,
+  "stars": 2315,
   "npm_package": "@geekjourneyx/md2wechat",
-  "npm_downloads_monthly": 1093,
+  "npm_downloads_monthly": 1095,
   "license": "NOASSERTION",
   "language": "Go",
   "description": "Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scan_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "scan_url"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.2.0: 4 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_skill",
+          "get_skill_content",
+          "get_skill_file",
+          "list_library"
+        ],
+        "removed": [
+          "gate_check",
+          "reputation_check",
+          "scan_github",
+          "scan_url"
+        ],
+        "version": "2.2.0"
+      }
     },
     {
       "id": "AS-014",
@@ -37,7 +43,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_url"
+      "tool_name": "get_skill"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_skill_content"
     },
     {
       "id": "AS-002",
@@ -45,7 +59,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scan_github"
+      "tool_name": "get_skill_file"
     },
     {
       "id": "AS-014",
@@ -53,23 +67,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_github"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "gate_check"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "gate_check"
+      "tool_name": "get_skill_file"
     },
     {
       "id": "AS-014",
@@ -77,71 +75,64 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gate_check"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reputation_check"
+      "tool_name": "list_library"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 1,
-    "low": 2,
+    "low": 0,
     "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "gate_check",
-    "reputation_check",
-    "scan_github",
-    "scan_url"
+    "get_skill",
+    "get_skill_content",
+    "get_skill_file",
+    "list_library"
   ],
   "tool_contexts": [
     {
-      "tool_name": "scan_url",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scan_github",
+      "tool_name": "get_skill",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "gate_check",
+      "tool_name": "get_skill_content",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
+      "grade": "A",
       "destinations": [
-        "dynamic URL input (url)"
+        "hardcoded domain: SKILL.md"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "reputation_check",
+      "tool_name": "get_skill_file",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files"
+      ],
       "destinations": [
-        "hardcoded domain: example.com"
+        "hardcoded domain: REFERENCE.md",
+        "hardcoded domain: SKILL.md",
+        "hardcoded domain: agentskills.io",
+        "hardcoded domain: extract.py"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_library",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -228,6 +219,12 @@
     },
     {
       "scan_date": "2026-05-23T02:17:15Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.2.0"
+    },
+    {
+      "scan_date": "2026-05-24T02:36:20Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2.2.0"

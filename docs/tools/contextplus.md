@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.2k |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/forloopcodes/contextplus) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

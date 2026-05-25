@@ -1,6 +1,6 @@
 # 🟢 inspector
 
-> Development platform to debug, chat, inspect, and evaluate MCP servers, MCP apps, and ChatGPT apps.
+> Testing and evaluation platform to chat, inspect, and debug MCP servers, MCP apps, and ChatGPT apps.
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `2.5.0` |
 | **Vendor** | MCPJam |
-| **Stars** | ⭐ 1964 |
+| **Stars** | ⭐ 1966 |
 | **npm Package** | `mcpjam-workspace` |
 | **Language** | TypeScript |
 | **Source** | [inspector](https://github.com/MCPJam/inspector) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -13,7 +13,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [o1labs-sterdan](https://smithery.ai/server/o1labs/sterdan) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

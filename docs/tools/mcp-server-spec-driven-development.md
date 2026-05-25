@@ -10,10 +10,10 @@
 | **Vendor** | formulahendry |
 | **Stars** | ⭐ 431 |
 | **npm Package** | `mcp-server-spec-driven-development` |
-| **npm Downloads (30d)** | 119 |
+| **npm Downloads (30d)** | 115 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-spec-driven-development](https://github.com/formulahendry/mcp-server-spec-driven-development) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

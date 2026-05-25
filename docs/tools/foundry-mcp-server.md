@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.5` |
 | **Vendor** | PraneshASP |
-| **Stars** | ⭐ 248 |
+| **Stars** | ⭐ 249 |
 | **npm Package** | `@pranesh.asp/foundry-mcp-server` |
-| **npm Downloads (30d)** | 239 |
+| **npm Downloads (30d)** | 242 |
 | **Language** | TypeScript |
 | **Source** | [foundry-mcp-server](https://github.com/PraneshASP/foundry-mcp-server) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

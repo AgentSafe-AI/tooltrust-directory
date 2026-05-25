@@ -10,10 +10,10 @@
 | **Vendor** | andrea9293 |
 | **Stars** | ⭐ 315 |
 | **npm Package** | `@andrea9293/mcp-documentation-server` |
-| **npm Downloads (30d)** | 325 |
+| **npm Downloads (30d)** | 331 |
 | **Language** | TypeScript |
 | **Source** | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

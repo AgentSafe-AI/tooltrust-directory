@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 511 |
 | **Language** | Python |
 | **Source** | [mcp-redis](https://github.com/redis/mcp-redis) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

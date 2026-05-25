@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 333 |
 | **Language** | Python |
 | **Source** | [google-scholar-mcp-server](https://github.com/JackKuo666/Google-Scholar-MCP-Server) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

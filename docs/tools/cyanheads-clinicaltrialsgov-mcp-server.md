@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 5.5k |
 | **Language** | TypeScript |
 | **Source** | [cyanheads-clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-25 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
