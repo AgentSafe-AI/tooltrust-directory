@@ -10,10 +10,10 @@
 | **Vendor** | docfork |
 | **Stars** | ⭐ 478 |
 | **npm Package** | `docfork` |
-| **npm Downloads (30d)** | 1.8k |
+| **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |
 | **Source** | [docfork-docfork](https://github.com/docfork/docfork) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 4 |
+| High     | 3 |
 | Medium   | 2 |
 | Low      | 2 |
 | Info     | 2 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v2.1.0: 2 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

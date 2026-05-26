@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [artvepa80-hefestoai](https://smithery.ai/server/artvepa80/hefestoai) |
-| **Scan Date** | 2026-05-19 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

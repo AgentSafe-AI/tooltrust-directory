@@ -11,7 +11,7 @@ compliance risk score. Free, no auth required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bartek-ywte-gaproll](https://smithery.ai/server/bartek-ywte/gaproll) |
-| **Scan Date** | 2026-05-21 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

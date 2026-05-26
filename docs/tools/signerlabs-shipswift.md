@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.0` |
 | **Vendor** | signerlabs |
-| **Stars** | ⭐ 1699 |
+| **Stars** | ⭐ 1769 |
 | **Language** | Swift |
 | **Source** | [signerlabs-shipswift](https://github.com/signerlabs/ShipSwift) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

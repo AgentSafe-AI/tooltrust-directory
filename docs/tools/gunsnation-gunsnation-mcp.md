@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gunsnation-gunsnation-mcp](https://smithery.ai/server/gunsnation/gunsnation-mcp) |
-| **Scan Date** | 2026-04-28 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-26 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

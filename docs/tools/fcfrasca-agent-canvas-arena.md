@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fcfrasca-agent-canvas-arena](https://smithery.ai/server/fcfrasca/agent-canvas-arena) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 48 |
 | **Version** | `1.4.0` |
 | **Vendor** | DaxianLee |
-| **Stars** | ⭐ 976 |
+| **Stars** | ⭐ 978 |
 | **npm Package** | `cocos-mcp-server` |
-| **npm Downloads (30d)** | 322 |
+| **npm Downloads (30d)** | 324 |
 | **Language** | TypeScript |
 | **Source** | [cocos-mcp-server](https://github.com/DaxianLee/cocos-mcp-server) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

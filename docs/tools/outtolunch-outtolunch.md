@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [outtolunch-outtolunch](https://smithery.ai/server/outtolunch/outtolunch) |
-| **Scan Date** | 2026-05-22 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

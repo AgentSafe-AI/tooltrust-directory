@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 4411 |
 | **Language** | Go |
 | **Source** | [enscan-go](https://github.com/wgpsec/ENScan_GO) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-26 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
