@@ -1,21 +1,64 @@
 {
   "tool_id": "waldzellai-clear-thought",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-05-26T02:38:38.467432699Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-05-27T02:48:13.00361502Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://smithery.ai/server/waldzellai/clear-thought",
   "vendor": "Smithery",
   "description": "[FINAL UPDATE]\n\nfuture updates will be rolled out to Thoughtbox --\u003e https://smithery.ai/server/@Kastalien-Research/clear-thought-two ",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "observability_gateway",
+          "thoughtbox_gateway",
+          "thoughtbox_hub"
+        ],
+        "removed": [
+          "clear_thought",
+          "reset_session"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "thoughtbox_gateway"
+    },
+    {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "clear_thought"
+      "tool_name": "observability_gateway"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "observability_gateway"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "observability_gateway"
     },
     {
       "id": "AS-014",
@@ -23,7 +66,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "clear_thought"
+      "tool_name": "observability_gateway"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "thoughtbox_hub"
     },
     {
       "id": "AS-014",
@@ -31,36 +82,48 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reset_session"
+      "tool_name": "thoughtbox_hub"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
+    "high": 2,
+    "medium": 2,
     "low": 1,
-    "info": 2
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "clear_thought",
-    "reset_session"
+    "observability_gateway",
+    "thoughtbox_gateway",
+    "thoughtbox_hub"
   ],
   "tool_contexts": [
     {
-      "tool_name": "clear_thought",
+      "tool_name": "thoughtbox_gateway",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (totalThoughts)"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "observability_gateway",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "reset_session",
+      "tool_name": "thoughtbox_hub",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -332,6 +395,12 @@
     },
     {
       "scan_date": "2026-05-25T02:48:53Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-26T02:38:38Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

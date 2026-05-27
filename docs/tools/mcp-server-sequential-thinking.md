@@ -8,12 +8,12 @@
 | **Risk Score** | 15 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 86226 |
+| **Stars** | ⭐ 86288 |
 | **npm Package** | `@modelcontextprotocol/server-sequential-thinking` |
-| **npm Downloads (30d)** | 421.7k |
+| **npm Downloads (30d)** | 425.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) |
-| **Scan Date** | 2026-05-26 |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

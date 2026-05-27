@@ -1,17 +1,15 @@
 # 🟡 signerlabs-shipswift
 
-> AI-native SwiftUI component library with full-stack recipes — connect via MCP for instant access.
+> Provides access to a library of iOS development recipes, including SwiftUI code, animations, and infrastructure components. Simplifies the implementation of complex features like authentication, paywalls, and onboarding flows. Enables developers to build high-quality mobile applications faster using proven best practices and ready-to-use templates.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `1.0.0` |
-| **Vendor** | signerlabs |
-| **Stars** | ⭐ 1769 |
-| **Language** | Swift |
-| **Source** | [signerlabs-shipswift](https://github.com/signerlabs/ShipSwift) |
-| **Scan Date** | 2026-05-26 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [signerlabs-shipswift](https://smithery.ai/server/signerlabs/shipswift) |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

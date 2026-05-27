@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bopmarket-marketplace](https://smithery.ai/server/bopmarket/marketplace) |
-| **Scan Date** | 2026-05-24 |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

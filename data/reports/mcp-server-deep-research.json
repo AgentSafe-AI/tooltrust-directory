@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-server-deep-research",
   "version": "sha-640129a84d09",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-26T02:36:09.839649511Z",
+  "grade": "C",
+  "risk_score": 34,
+  "scan_date": "2026-05-27T02:45:57.262433593Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://github.com/reading-plus-ai/mcp-server-deep-research",
   "category": "Developer Tools",
@@ -13,12 +13,44 @@
   "language": "Python",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-640129a84d09: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "research_agent"
+        ],
+        "removed": [
+          "deep-research"
+        ],
+        "version": "sha-640129a84d09"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "deep-research"
+      "tool_name": "research_agent"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "research_agent"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "research_agent"
     },
     {
       "id": "AS-011",
@@ -26,7 +58,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "deep-research"
+      "tool_name": "research_agent"
     },
     {
       "id": "AS-014",
@@ -34,30 +66,28 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "deep-research"
+      "tool_name": "research_agent"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 3,
     "medium": 0,
-    "low": 1,
+    "low": 2,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "deep-research"
+    "research_agent"
   ],
   "tool_contexts": [
     {
-      "tool_name": "deep-research",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "research_agent",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
+        "executes_commands",
         "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (topic)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -402,6 +432,12 @@
     },
     {
       "scan_date": "2026-05-25T02:46:23Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "sha-640129a84d09"
+    },
+    {
+      "scan_date": "2026-05-26T02:36:09Z",
       "grade": "B",
       "risk_score": 17,
       "version": "sha-640129a84d09"

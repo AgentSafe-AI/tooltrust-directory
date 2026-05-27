@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 96 |
 | **Language** | Go |
 | **Source** | [monsterxx03-gospy](https://github.com/monsterxx03/gospy) |
-| **Scan Date** | 2026-05-26 |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

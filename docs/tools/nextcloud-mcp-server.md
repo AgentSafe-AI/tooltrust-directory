@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `0.89.0` |
 | **Vendor** | cbcoutinho |
-| **Stars** | ⭐ 239 |
+| **Stars** | ⭐ 242 |
 | **Language** | Python |
 | **Source** | [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) |
-| **Scan Date** | 2026-05-26 |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

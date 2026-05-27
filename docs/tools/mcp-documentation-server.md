@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `1.13.0` |
 | **Vendor** | andrea9293 |
-| **Stars** | ⭐ 315 |
+| **Stars** | ⭐ 316 |
 | **npm Package** | `@andrea9293/mcp-documentation-server` |
-| **npm Downloads (30d)** | 331 |
+| **npm Downloads (30d)** | 350 |
 | **Language** | TypeScript |
 | **Source** | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

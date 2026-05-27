@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hexiaochun-xskill-ai](https://smithery.ai/server/hexiaochun/xskill-ai) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

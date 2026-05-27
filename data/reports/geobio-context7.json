@@ -2,13 +2,29 @@
   "tool_id": "geobio-context7",
   "version": "smithery",
   "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-05-26T02:38:32.402104405Z",
+  "risk_score": 25,
+  "scan_date": "2026-05-27T02:48:06.362264192Z",
   "scanner": "tooltrust-scanner/v0.3.12",
   "source_url": "https://smithery.ai/server/geobio/context7",
   "vendor": "Smithery",
   "description": "Provide up-to-date, version-specific code documentation and examples directly into your prompts to enhance coding accuracy and reduce hallucinated APIs. Seamlessly integrate with various MCP clients to fetch the latest library docs and improve your AI coding assistant's effectiveness. Simplify your development workflow by embedding real-time, reliable code context without switching tabs.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "query-docs"
+        ],
+        "removed": [
+          "get-library-docs"
+        ],
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -31,7 +47,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-library-docs"
+      "tool_name": "query-docs"
     },
     {
       "id": "AS-002",
@@ -39,15 +55,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-library-docs"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokens\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "get-library-docs"
+      "tool_name": "query-docs"
     },
     {
       "id": "AS-011",
@@ -55,7 +63,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get-library-docs"
+      "tool_name": "query-docs"
     },
     {
       "id": "AS-014",
@@ -63,7 +71,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-library-docs"
+      "tool_name": "query-docs"
     }
   ],
   "summary": {
@@ -75,7 +83,7 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get-library-docs",
+    "query-docs",
     "resolve-library-id"
   ],
   "tool_contexts": [
@@ -90,15 +98,14 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get-library-docs",
+      "tool_name": "query-docs",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (tokens)",
-        "dynamic email recipient (topic)",
+        "hardcoded domain: Express.js",
         "hardcoded domain: next.js"
       ],
       "dependency_visibility": "No dependency data",
@@ -276,6 +283,12 @@
     },
     {
       "scan_date": "2026-05-25T02:48:45Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-26T02:38:32Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

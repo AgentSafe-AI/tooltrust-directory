@@ -1,18 +1,17 @@
 # 🟡 polymarket-mcp-server
 
-> polymarket mcp server market discovery and analysis via public APIs; optional authenticated trading and portfolio tools when your wallet derives (or supplies) CLOB L2 credentials polymarket mcp server market discovery and analysis via public APIs; optional authenticated trading and portfolio tools when your wallet derives (or supplies) CLOB L2
+> 🤖 AI-Powered MCP Server for Polymarket - Enable Claude to trade prediction markets with 45 tools, real-time monitoring, and enterprise-grade safety features
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
 | **Version** | `0.1.0` |
-| **Vendor** | japp-fi |
-| **Stars** | ⭐ 142 |
-| **npm Package** | `polymarket-mcp-server` |
-| **Language** | TypeScript |
-| **Source** | [polymarket-mcp-server](https://github.com/japp-fi/polymarket-mcp-server) |
-| **Scan Date** | 2026-05-26 |
+| **Vendor** | caiovicentino |
+| **Stars** | ⭐ 519 |
+| **Language** | Python |
+| **Source** | [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) |
+| **Scan Date** | 2026-05-27 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
