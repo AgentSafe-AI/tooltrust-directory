@@ -575,7 +575,6 @@ All 1181 audited tools. [← Back to README](../README.md#-security-registry)
 | [key-cryptopolitan-mcp](https://smithery.ai/server/key/cryptopolitan-mcp) | `smithery` | — | **[B](tools/key-cryptopolitan-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×5 | Apr 19 |
 | [agonzalez-prueba-mcp-seeker](https://smithery.ai/server/agonzalez/prueba-mcp-seeker) | `smithery` | — | **[B](tools/agonzalez-prueba-mcp-seeker.md)** | `AS-014` ×9, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | May 28 |
 | [web3signals-agent-seo](https://smithery.ai/server/web3signals/agent-seo) | `smithery` | — | **[B](tools/web3signals-agent-seo.md)** | `AS-012`, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Apr 28 |
-| [james-bf0v-imprint-intelligence](https://smithery.ai/server/james-bf0v/imprint-intelligence) | `smithery` | — | **[B](tools/james-bf0v-imprint-intelligence.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` ×7 | May 25 |
 | [wcsdproducer-employee-zero](https://smithery.ai/server/wcsdproducer/employee-zero) | `smithery` | — | **[B](tools/wcsdproducer-employee-zero.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | May 28 |
 | [wander8jackson-avocado-ai](https://smithery.ai/server/wander8jackson/avocado-ai) | `smithery` | — | **[B](tools/wander8jackson-avocado-ai.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Apr 19 |
 | [jackmmaher-sic-codes](https://smithery.ai/server/jackmmaher/sic-codes) | `smithery` | — | **[B](tools/jackmmaher-sic-codes.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | May 28 |
@@ -1262,4 +1261,3 @@ All 1181 audited tools. [← Back to README](../README.md#-security-registry)
 | [ta-mcp-technical-analysis-mcp](https://smithery.ai/server/ta-mcp/technical-analysis-mcp) | `smithery` | — | **[F](tools/ta-mcp-technical-analysis-mcp.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×8, `AS-014` ×11, ⚡ `AS-006` ×2 | May 19 |
 | [composio-rube](https://smithery.ai/server/Composio/Rube) | `smithery` | — | **[F](tools/composio-rube.md)** | 🔑 `AS-002` ×26, ⚡ `AS-011` ×9, `AS-014` ×11, ⚡ `AS-006` ×3 | Apr 3 |
 | [powerly-powerly](https://smithery.ai/server/powerly/powerly) | `smithery` | — | **[F](tools/powerly-powerly.md)** | `AS-014` ×7, 🔑 `AS-002` ×5, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×3 | Apr 19 |
-
