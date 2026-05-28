@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [astein91-stacksherpa-remote](https://smithery.ai/server/astein91/stacksherpa-remote) |
-| **Scan Date** | 2026-05-25 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fouldomain-phish-analytics](https://smithery.ai/server/fouldomain/phish-analytics) |
-| **Scan Date** | 2026-05-27 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

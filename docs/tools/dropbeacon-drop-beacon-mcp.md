@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [dropbeacon-drop-beacon-mcp](https://smithery.ai/server/dropbeacon/drop-beacon-mcp) |
-| **Scan Date** | 2026-05-22 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

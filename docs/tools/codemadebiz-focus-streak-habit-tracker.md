@@ -17,8 +17,8 @@ Install in Claude Desktop: npx mcp-remote https://focusstreak.codemadebiz.com/mc
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [codemadebiz-focus-streak-habit-tracker](https://smithery.ai/server/codemadebiz/focus-streak-habit-tracker) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-05-28 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

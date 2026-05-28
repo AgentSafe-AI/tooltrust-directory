@@ -15,7 +15,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nakranimeet2005-codeforces-mcp-tools](https://smithery.ai/server/nakranimeet2005/codeforces-mcp-tools) |
-| **Scan Date** | 2026-05-22 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

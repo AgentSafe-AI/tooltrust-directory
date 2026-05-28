@@ -10,10 +10,10 @@
 | **Vendor** | ericzakariasson |
 | **Stars** | ⭐ 176 |
 | **npm Package** | `pg-mcp-server` |
-| **npm Downloads (30d)** | 680 |
+| **npm Downloads (30d)** | 690 |
 | **Language** | TypeScript |
 | **Source** | [pg-mcp-server](https://github.com/ericzakariasson/pg-mcp-server) |
-| **Scan Date** | 2026-05-27 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

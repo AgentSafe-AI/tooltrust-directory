@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [curly-mole-labs-supericons](https://smithery.ai/server/curly-mole-labs/supericons) |
-| **Scan Date** | 2026-05-26 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

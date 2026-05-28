@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.2.1` |
 | **Vendor** | its-dart |
-| **Stars** | ⭐ 127 |
+| **Stars** | ⭐ 128 |
 | **npm Package** | `dart-mcp-server` |
 | **npm Downloads (30d)** | 553 |
 | **Language** | TypeScript |
 | **Source** | [dart-mcp-server](https://github.com/its-dart/dart-mcp-server) |
-| **Scan Date** | 2026-05-27 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

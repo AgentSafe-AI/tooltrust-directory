@@ -29,7 +29,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [easyreg-private-number-plates](https://smithery.ai/server/easyreg/private-number-plates) |
-| **Scan Date** | 2026-05-17 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

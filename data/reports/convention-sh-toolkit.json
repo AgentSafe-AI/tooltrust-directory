@@ -1,0 +1,55 @@
+{
+  "tool_id": "convention-sh-toolkit",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-05-28T02:25:51.953498425Z",
+  "scanner": "tooltrust-scanner/v0.3.12",
+  "source_url": "https://smithery.ai/server/convention-sh/toolkit",
+  "vendor": "Smithery",
+  "description": "Stop your AI agents from writing sloppy TypeScript. A toolkit that teaches coding agents like Claude Code, Codex, Cursor, Amp, and more to ship production-ready code in half the time, at half the cost.\n\nSame task. Half the cost. Less than half the time.\n\nMeasured on Claude Opus 4.7.\n\n  | Metric        | convention.sh | Baseline | Delta         |                                                          \n  | ------------- | ------------: | -------: | ------------- |\n  | Turns         |            32 |       52 | **38% fewer** |                                                          \n  | Time          |       1m 56s |  4m 46s | **59% faster** |                                                           \n  | Output tokens |         12.6K |    22.1K | **43% fewer** |                                                          \n  | Input tokens  |          382K |   2,399K | **84% fewer** |                                                          \n  | Cost          |         $1.27 |    $2.26 | **44% cheaper** |",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "read_convention"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "read_convention"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "read_convention"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "read_convention",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: convention.sh"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -18,8 +18,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [scott-noa4-pricepilot](https://smithery.ai/server/scott-noa4/PricePilot) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-05-28 |
+| **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
 

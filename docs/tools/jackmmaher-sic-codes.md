@@ -24,7 +24,7 @@ Covers all 731 SIC 2007 codes, 273 GICS entries, 249 ICB entries, and 1,235 cros
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jackmmaher-sic-codes](https://smithery.ai/server/jackmmaher/sic-codes) |
-| **Scan Date** | 2026-05-23 |
+| **Scan Date** | 2026-05-28 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
