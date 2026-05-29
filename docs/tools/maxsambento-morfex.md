@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [maxsambento-morfex](https://smithery.ai/server/maxsambento/morfex) |
-| **Scan Date** | 2026-05-22 |
+| **Scan Date** | 2026-05-29 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

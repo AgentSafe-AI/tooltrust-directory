@@ -34,7 +34,7 @@ Provider revenue split: 80% to providers, 20% platform fee.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [orbisapi-marketplaceupdated](https://smithery.ai/server/orbisapi/marketplaceupdated) |
-| **Scan Date** | 2026-05-28 |
+| **Scan Date** | 2026-05-29 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

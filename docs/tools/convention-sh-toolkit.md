@@ -21,7 +21,7 @@ Measured on Claude Opus 4.7.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [convention-sh-toolkit](https://smithery.ai/server/convention-sh/toolkit) |
-| **Scan Date** | 2026-05-28 |
+| **Scan Date** | 2026-05-29 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---

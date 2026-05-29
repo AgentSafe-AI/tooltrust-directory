@@ -30,7 +30,7 @@ Transport: Streamable HTTP. Compatible with Claude Desktop, Cursor, Windsurf, an
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [coachsync-barbell-tools](https://smithery.ai/server/coachsync/barbell-tools) |
-| **Scan Date** | 2026-05-28 |
+| **Scan Date** | 2026-05-29 |
 | **Scanner** | tooltrust-scanner/v0.3.12 |
 
 ---
