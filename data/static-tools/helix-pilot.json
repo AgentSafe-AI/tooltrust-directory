@@ -1,0 +1,254 @@
+{
+  "tools": [
+    {
+      "name": "screenshot",
+      "description": "Capture a screenshot of the screen or a specific window.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "window": { "type": "string", "description": "Target window title. Empty captures the full screen." },
+          "name": { "type": "string", "description": "Filename stem for the saved screenshot." }
+        }
+      }
+    },
+    {
+      "name": "click",
+      "description": "Click at screen coordinates.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": { "type": "integer", "description": "X coordinate in pixels." },
+          "y": { "type": "integer", "description": "Y coordinate in pixels." },
+          "window": { "type": "string", "description": "Target window title to activate first." },
+          "button": { "type": "string", "description": "Mouse button: left, right, or middle." },
+          "double": { "type": "boolean", "description": "Perform a double-click when true." }
+        },
+        "required": ["x", "y"]
+      }
+    },
+    {
+      "name": "type_text",
+      "description": "Type text into the focused window or a specific window.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "description": "Text to type. Supports Unicode." },
+          "window": { "type": "string", "description": "Target window title to activate first." }
+        },
+        "required": ["text"]
+      }
+    },
+    {
+      "name": "hotkey",
+      "description": "Send a keyboard shortcut.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "keys": { "type": "string", "description": "Key combination, e.g. ctrl+c, alt+tab, ctrl+shift+s." },
+          "window": { "type": "string", "description": "Target window title to activate first." }
+        },
+        "required": ["keys"]
+      }
+    },
+    {
+      "name": "scroll",
+      "description": "Scroll the mouse wheel.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "amount": { "type": "integer", "description": "Scroll amount. Positive is up, negative is down." },
+          "window": { "type": "string", "description": "Target window title to activate first." }
+        },
+        "required": ["amount"]
+      }
+    },
+    {
+      "name": "describe",
+      "description": "Describe current screen content using a local Ollama Vision LLM.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "window": { "type": "string", "description": "Target window title. Empty captures the full screen." }
+        }
+      }
+    },
+    {
+      "name": "find",
+      "description": "Find a UI element on screen by description using a local Vision LLM and return pixel coordinates.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "description": { "type": "string", "description": "Natural-language description of the element to find." },
+          "window": { "type": "string", "description": "Target window title. Empty captures the full screen." },
+          "refine": { "type": "boolean", "description": "Perform a second pass for higher accuracy." }
+        },
+        "required": ["description"]
+      }
+    },
+    {
+      "name": "verify",
+      "description": "Verify that the screen matches an expected state using a local Vision LLM.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "expected": { "type": "string", "description": "Description of the expected screen state." },
+          "window": { "type": "string", "description": "Target window title. Empty captures the full screen." }
+        },
+        "required": ["expected"]
+      }
+    },
+    {
+      "name": "status",
+      "description": "Check helix-pilot system status, including Ollama connection, available Vision models, screen resolution, and visible windows.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "list_windows",
+      "description": "List all visible windows on the desktop with titles, positions, and sizes.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "wait_stable",
+      "description": "Wait until the screen content stabilizes by repeatedly capturing screenshots.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "timeout": { "type": "integer", "description": "Maximum wait time in seconds." },
+          "window": { "type": "string", "description": "Target window title. Empty captures the full screen." }
+        }
+      }
+    },
+    {
+      "name": "auto",
+      "description": "Execute an autonomous GUI task using Vision LLM. The model analyzes the screen and performs a sequence of GUI operations.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "instruction": { "type": "string", "description": "Task to perform, such as opening an app and typing text." },
+          "window": { "type": "string", "description": "Target window title." },
+          "dry_run": { "type": "boolean", "description": "Plan actions without executing them." }
+        },
+        "required": ["instruction"]
+      }
+    },
+    {
+      "name": "browse",
+      "description": "Execute a browser automation task using Vision LLM, including navigation, clicks, forms, and information extraction.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "instruction": { "type": "string", "description": "Task to perform in the browser." },
+          "window": { "type": "string", "description": "Browser window title." },
+          "dry_run": { "type": "boolean", "description": "Plan actions without executing them." }
+        },
+        "required": ["instruction"]
+      }
+    },
+    {
+      "name": "click_screenshot",
+      "description": "Click at coordinates and immediately take a screenshot.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": { "type": "integer", "description": "X coordinate in pixels." },
+          "y": { "type": "integer", "description": "Y coordinate in pixels." },
+          "window": { "type": "string", "description": "Target window title." },
+          "button": { "type": "string", "description": "Mouse button: left, right, or middle." },
+          "double": { "type": "boolean", "description": "Perform a double-click when true." },
+          "name": { "type": "string", "description": "Filename stem for the screenshot." },
+          "delay": { "type": "number", "description": "Seconds to wait between click and screenshot." }
+        },
+        "required": ["x", "y"]
+      }
+    },
+    {
+      "name": "resize_image",
+      "description": "Resize an image to fit within a maximum dimension.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Source image file path." },
+          "max_dim": { "type": "integer", "description": "Maximum dimension in pixels." },
+          "output": { "type": "string", "description": "Output path. Empty appends a preview suffix." }
+        },
+        "required": ["path"]
+      }
+    },
+    {
+      "name": "spawn_pilot_agent",
+      "description": "Start a background helix-pilot agent for auto or browse GUI workflows.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "instruction": { "type": "string", "description": "Initial GUI task instruction." },
+          "description": { "type": "string", "description": "Human-readable agent description." },
+          "agent_type": { "type": "string", "description": "Agent role: default, explorer, or worker." },
+          "task_mode": { "type": "string", "description": "Task mode: auto or browse." },
+          "window": { "type": "string", "description": "Target window title." },
+          "dry_run": { "type": "boolean", "description": "Plan actions without executing them." }
+        },
+        "required": ["instruction"]
+      }
+    },
+    {
+      "name": "send_pilot_agent_input",
+      "description": "Continue an existing helix-pilot GUI agent with a follow-up instruction.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent_id": { "type": "string", "description": "Tracked agent identifier." },
+          "instruction": { "type": "string", "description": "Follow-up GUI task instruction." }
+        },
+        "required": ["agent_id", "instruction"]
+      }
+    },
+    {
+      "name": "wait_pilot_agent",
+      "description": "Wait for a background helix-pilot agent to finish its current turn.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent_id": { "type": "string", "description": "Tracked agent identifier." },
+          "timeout": { "type": "integer", "description": "Maximum wait time in seconds." }
+        },
+        "required": ["agent_id"]
+      }
+    },
+    {
+      "name": "list_pilot_agents",
+      "description": "List all tracked helix-pilot background GUI agents.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "close_pilot_agent",
+      "description": "Close an idle helix-pilot GUI agent and keep its last known result.",
+      "metadata": {"repo_url": "https://github.com/tsunamayo7/helix-pilot", "dependencies": [{"name": "fastmcp", "version": ">=2.0.0", "ecosystem": "PyPI"}, {"name": "httpx", "version": ">=0.27.0", "ecosystem": "PyPI"}, {"name": "numpy", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pillow", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pyautogui", "version": "unknown", "ecosystem": "PyPI"}, {"name": "pygetwindow", "version": "unknown", "ecosystem": "PyPI"}]},
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent_id": { "type": "string", "description": "Tracked agent identifier." }
+        },
+        "required": ["agent_id"]
+      }
+    }
+  ]
+}

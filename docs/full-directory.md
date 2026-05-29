@@ -380,6 +380,7 @@ All 1234 audited tools. [← Back to README](../README.md#-security-registry)
 | [dazeb-markdown-downloader](https://github.com/dazeb/markdown-downloader) | `1.0.0` | 16/mo | **[C](tools/dazeb-markdown-downloader.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5, `AS-014` ×5 | May 30 |
 | [n8n](https://github.com/n8n-io/n8n) | `1` | 15/mo | **[C](tools/n8n.md)** | `AS-014` ×27, 🔑 `AS-002` ×27, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Jun 6 |
 | [streen9-react-mcp](https://github.com/kalivaraprasad-gonapa/react-mcp) | `0.1.0` | 10/mo | **[C](tools/streen9-react-mcp.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×16, 📐 `AS-003` | May 30 |
+| [helix-pilot](https://github.com/tsunamayo7/helix-pilot) | `2.0.0` | 4 | **[B](tools/helix-pilot.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | May 29 |
 | [ghostrouter-lite-crypto](https://smithery.ai/server/ghostrouter/lite-crypto) | `smithery` | — | **[A](tools/ghostrouter-lite-crypto.md)** | `AS-014` ×2 | Apr 19 |
 | [kiennd-reference-servers](https://smithery.ai/server/kiennd/reference-servers) | `smithery` | — | **[A](tools/kiennd-reference-servers.md)** | `AS-014` | Apr 5 |
 | [deniselewis200081-rail](https://smithery.ai/server/DeniseLewis200081/rail) | `smithery` | — | **[A](tools/deniselewis200081-rail.md)** | `AS-014` ×8 | Jun 6 |
@@ -575,7 +576,6 @@ All 1234 audited tools. [← Back to README](../README.md#-security-registry)
 | [xtomd-x-to-markdown](https://smithery.ai/server/xtomd/x-to-markdown) | `smithery` | — | **[B](tools/xtomd-x-to-markdown.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | May 30 |
 | [james-h-millett-drug-landscape](https://smithery.ai/server/james-h-millett/drug-landscape) | `smithery` | — | **[B](tools/james-h-millett-drug-landscape.md)** | 🔑 `AS-002` ×4, `AS-014` ×11, ⚡ `AS-011` | Jun 6 |
 | [xqb-vibe-pay](https://smithery.ai/server/xqb/vibe-pay) | `smithery` | — | **[B](tools/xqb-vibe-pay.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Apr 19 |
-| [james-bf0v-imprint-intelligence](https://smithery.ai/server/james-bf0v/imprint-intelligence) | `smithery` | — | **[B](tools/james-bf0v-imprint-intelligence.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` ×7 | May 25 |
 | [jl-3044-agentndx](https://smithery.ai/server/jl-3044/agentndx) | `smithery` | — | **[B](tools/jl-3044-agentndx.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | May 16 |
 | [actiongate-actiongate](https://smithery.ai/server/actiongate/actiongate) | `smithery` | — | **[B](tools/actiongate-actiongate.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Jun 6 |
 | [xiaobenyang-com-rfc-server](https://smithery.ai/server/xiaobenyang-com/rfc-server) | `smithery` | — | **[B](tools/xiaobenyang-com-rfc-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | May 28 |
@@ -1320,4 +1320,3 @@ All 1234 audited tools. [← Back to README](../README.md#-security-registry)
 | [composio-rube](https://smithery.ai/server/Composio/Rube) | `smithery` | — | **[F](tools/composio-rube.md)** | 🔑 `AS-002` ×26, ⚡ `AS-011` ×9, `AS-014` ×11, ⚡ `AS-006` ×3 | Apr 3 |
 | [ta-mcp-technical-analysis-mcp](https://smithery.ai/server/ta-mcp/technical-analysis-mcp) | `smithery` | — | **[F](tools/ta-mcp-technical-analysis-mcp.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×8, `AS-014` ×11, ⚡ `AS-006` ×2 | May 19 |
 | [powerly-powerly](https://smithery.ai/server/powerly/powerly) | `smithery` | — | **[F](tools/powerly-powerly.md)** | `AS-014` ×7, 🔑 `AS-002` ×5, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×3 | Apr 19 |
-
