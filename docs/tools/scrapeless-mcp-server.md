@@ -10,11 +10,11 @@
 | **Vendor** | scrapeless-ai |
 | **Stars** | ⭐ 161 |
 | **npm Package** | `scrapeless-mcp-server` |
-| **npm Downloads (30d)** | 591 |
+| **npm Downloads (30d)** | 615 |
 | **Language** | TypeScript |
 | **Source** | [scrapeless-mcp-server](https://github.com/scrapeless-ai/scrapeless-mcp-server) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

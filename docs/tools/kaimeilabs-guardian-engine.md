@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kaimeilabs-guardian-engine](https://smithery.ai/server/kaimeilabs/guardian-engine) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

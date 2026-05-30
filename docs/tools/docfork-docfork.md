@@ -10,11 +10,11 @@
 | **Vendor** | docfork |
 | **Stars** | ⭐ 479 |
 | **npm Package** | `docfork` |
-| **npm Downloads (30d)** | 2.6k |
+| **npm Downloads (30d)** | 2.8k |
 | **Language** | TypeScript |
 | **Source** | [docfork-docfork](https://github.com/docfork/docfork) |
-| **Scan Date** | 2026-05-28 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

@@ -2,15 +2,15 @@
   "tool_id": "hint-services-obsidian-github-mcp",
   "version": "0.5.0",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-17T02:30:17.078655879Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 40,
+  "scan_date": "2026-05-30T02:31:01.945408294Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Hint-Services/obsidian-github-mcp",
   "category": "Developer Tools",
   "vendor": "Hint-Services",
   "stars": 8,
   "npm_package": "obsidian-github-mcp",
-  "npm_downloads_monthly": 41,
+  "npm_downloads_monthly": 66,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP Server to search individual private Github Repositories",
@@ -21,6 +21,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "getFileContents"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "getFileContents"
     },
     {
@@ -40,6 +48,14 @@
       "tool_name": "searchFiles"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "searchFiles"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -56,6 +72,14 @@
       "tool_name": "searchIssues"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "searchIssues"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -64,11 +88,27 @@
       "tool_name": "searchIssues"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "getCommitHistory"
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "diagnoseSearch"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "diagnoseSearch"
     },
     {
@@ -82,7 +122,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 8,
     "medium": 2,
     "low": 3,
     "info": 0
@@ -116,7 +156,7 @@
     {
       "tool_name": "getFileContents",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "reads_files"
       ],
@@ -136,8 +176,8 @@
     },
     {
       "tool_name": "searchIssues",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -147,14 +187,14 @@
     {
       "tool_name": "getCommitHistory",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "diagnoseSearch",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -255,6 +295,12 @@
     },
     {
       "scan_date": "2026-04-26T07:34:22Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.5.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:30:17Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.5.0"

@@ -1,15 +1,15 @@
 {
   "tool_id": "nexusforge-tools-mcp-eu-finance",
   "version": "1.3.0",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-05-17T02:41:58.728386715Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 34,
+  "scan_date": "2026-05-30T02:38:16.400089804Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/nexusforge-tools/mcp-eu-finance",
   "category": "Developer Tools",
   "vendor": "nexusforge-tools",
   "npm_package": "@nexusforgetools/eu-finance",
-  "npm_downloads_monthly": 2135,
+  "npm_downloads_monthly": 396,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server for European financial data — ECB rates, Eurostat inflation, GDP, unemployment. Works with Claude, Cursor, Windsurf.",
@@ -31,6 +31,14 @@
       "tool_name": "get_ecb_rates"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_ecb_rates"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -47,6 +55,14 @@
       "tool_name": "get_euro_exchange"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_euro_exchange"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -63,6 +79,14 @@
       "tool_name": "get_eu_inflation"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_eu_inflation"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -79,6 +103,14 @@
       "tool_name": "get_eu_gdp"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_eu_gdp"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -92,6 +124,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_eu_unemployment"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "get_eu_unemployment"
     },
     {
@@ -119,6 +159,14 @@
       "tool_name": "compare_eu_economies"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "compare_eu_economies"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -129,7 +177,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 12,
     "medium": 0,
     "low": 8,
     "info": 0
@@ -191,8 +239,8 @@
   "tool_contexts": [
     {
       "tool_name": "get_ecb_rates",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -201,8 +249,8 @@
     },
     {
       "tool_name": "get_euro_exchange",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -211,8 +259,8 @@
     },
     {
       "tool_name": "get_eu_inflation",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -221,8 +269,8 @@
     },
     {
       "tool_name": "get_eu_gdp",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -231,8 +279,8 @@
     },
     {
       "tool_name": "get_eu_unemployment",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -241,8 +289,8 @@
     },
     {
       "tool_name": "compare_eu_economies",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -268,6 +316,12 @@
     },
     {
       "scan_date": "2026-04-26T07:43:22Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "1.3.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:41:58Z",
       "grade": "B",
       "risk_score": 19,
       "version": "1.3.0"

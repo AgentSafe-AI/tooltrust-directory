@@ -1,10 +1,10 @@
 {
   "tool_id": "benbonn-utapimcp",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:38:36.595748571Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-05-30T02:44:06Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/benbonn/utapimcp",
   "category": "Other",
   "vendor": "benbonn",
@@ -14,38 +14,40 @@
   "description": "An MCP (Model Context Protocol) server that integrates with the DHL Tracking API. Provides a track‑shipment tool for Microsoft Copilot Studio, GitHub Copilot Agents, and other MCP clients. Built from the official Microsoft MCP template.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api_test_webhook"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api_test_webhook"
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "api_test_webhook"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 2,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 6,
+            "snippet": "new McpServer(",
+            "file": "src/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -61,24 +63,6 @@
       "snippet": "new McpServer(",
       "file": "src/server.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "api_test_webhook"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "api_test_webhook",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -150,6 +134,12 @@
     },
     {
       "scan_date": "2026-05-04T02:33:41Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:38:36Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.0"

@@ -10,11 +10,11 @@
 | **Vendor** | mailtrap |
 | **Stars** | ⭐ 59 |
 | **npm Package** | `mcp-mailtrap` |
-| **npm Downloads (30d)** | 740 |
+| **npm Downloads (30d)** | 802 |
 | **Language** | TypeScript |
 | **Source** | [mailtrap-mailtrap-mcp](https://github.com/mailtrap/mailtrap-mcp) |
-| **Scan Date** | 2026-05-17 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

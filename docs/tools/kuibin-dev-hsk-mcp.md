@@ -11,8 +11,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kuibin-dev-hsk-mcp](https://smithery.ai/server/kuibin-dev/hsk-mcp) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

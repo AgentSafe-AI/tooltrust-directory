@@ -1,10 +1,10 @@
 {
   "tool_id": "antunes-pp-say-hello",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-05-17T02:44:09.946318474Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-05-30T02:39:58Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/antunes-pp/say-hello",
   "category": "Developer Tools",
   "vendor": "antunes-pp",
@@ -12,47 +12,47 @@
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "play_turn",
-          "start_game"
-        ],
-        "removed": [
-          "hello"
-        ],
-        "version": "1.0.0"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 31,
+            "snippet": "new McpServer(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 37,
+            "snippet": ".registerTool(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "start_game"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "play_turn"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -75,29 +75,6 @@
       "snippet": ".registerTool(",
       "file": "src/index.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "play_turn",
-    "start_game"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "start_game",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "play_turn",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: visibleState.resources"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -237,6 +214,12 @@
       "scan_date": "2026-05-04T02:32:32Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:44:09Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

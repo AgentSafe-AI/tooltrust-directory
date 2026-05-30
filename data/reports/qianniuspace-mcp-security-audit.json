@@ -1,23 +1,32 @@
 {
   "tool_id": "qianniuspace-mcp-security-audit",
   "version": "1.0.4",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-05-17T02:25:32.970681283Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-30T02:26:27.908195224Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/qianniuspace/mcp-security-audit",
   "category": "Developer Tools",
   "vendor": "qianniuspace",
   "stars": 52,
   "npm_package": "mcp-security-audit",
-  "npm_downloads_monthly": 315,
+  "npm_downloads_monthly": 267,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A powerful MCP (Model Context Protocol) Server that audits npm package dependencies for security vulnerabilities. Built with remote npm registry integration for real-time security checks.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "audit_nodejs_dependencies"
+    }
+  ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
     "info": 0
@@ -30,7 +39,7 @@
     {
       "tool_name": "audit_nodejs_dependencies",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "hardcoded domain: package.json"
       ],
@@ -185,6 +194,12 @@
     },
     {
       "scan_date": "2026-05-04T02:23:22Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.0.4"
+    },
+    {
+      "scan_date": "2026-05-17T02:25:32Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.0.4"

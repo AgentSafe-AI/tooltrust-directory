@@ -1,26 +1,50 @@
 {
   "tool_id": "atilioa-tesouro-direto-mcp",
   "version": "0.2.3",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:32:16.338822305Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:33:28.939302565Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/AtilioA/tesouro-direto-mcp",
   "category": "Developer Tools",
   "vendor": "AtilioA",
   "stars": 4,
   "npm_package": "tesouro-direto-mcp",
-  "npm_downloads_monthly": 575,
+  "npm_downloads_monthly": 597,
   "license": "AGPL-3.0",
   "language": "TypeScript",
   "description": "🗣️ Query Brazilian treasury bond data with natural language",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "market_data"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "bond_data"
+    },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_bonds"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "search_bonds"
     },
     {
@@ -34,7 +58,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 4,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -49,21 +73,21 @@
     {
       "tool_name": "market_data",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "bond_data",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "search_bonds",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -192,6 +216,12 @@
     },
     {
       "scan_date": "2026-05-04T02:27:49Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.2.3"
+    },
+    {
+      "scan_date": "2026-05-17T02:32:16Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.2.3"

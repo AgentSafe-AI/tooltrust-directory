@@ -34,8 +34,8 @@ Zero dependencies. No LLM calls. No authentication. No PII collection.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [evan-follis-u0ll-preflight](https://smithery.ai/server/evan-follis-u0ll/preflight) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

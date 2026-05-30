@@ -1,16 +1,16 @@
 {
   "tool_id": "agentops-ai-agentops-mcp",
   "version": "0.3.5",
-  "grade": "B",
-  "risk_score": 23,
-  "scan_date": "2026-05-17T02:29:17.107120025Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 38,
+  "scan_date": "2026-05-30T02:30:02.895062797Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/AgentOps-AI/agentops-mcp",
   "category": "Developer Tools",
   "vendor": "AgentOps-AI",
   "stars": 13,
   "npm_package": "agentops-mcp",
-  "npm_downloads_monthly": 304,
+  "npm_downloads_monthly": 255,
   "language": "JavaScript",
   "description": "agentops mcp",
   "findings": [
@@ -23,17 +23,49 @@
       "tool_name": "auth"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "auth"
+    },
+    {
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"api_key\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "auth"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_trace"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_span"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_complete_trace"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 5,
     "medium": 1,
     "low": 0,
     "info": 0
@@ -48,29 +80,29 @@
   "tool_contexts": [
     {
       "tool_name": "auth",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get_trace",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get_span",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get_complete_trace",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -132,6 +164,12 @@
     },
     {
       "scan_date": "2026-04-26T07:33:05Z",
+      "grade": "B",
+      "risk_score": 23,
+      "version": "0.3.5"
+    },
+    {
+      "scan_date": "2026-05-17T02:29:17Z",
       "grade": "B",
       "risk_score": 23,
       "version": "0.3.5"

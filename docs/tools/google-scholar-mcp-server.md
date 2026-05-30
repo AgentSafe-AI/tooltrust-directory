@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `sha-738d60a4d694` |
 | **Vendor** | JackKuo666 |
-| **Stars** | ⭐ 337 |
+| **Stars** | ⭐ 338 |
 | **Language** | Python |
 | **Source** | [google-scholar-mcp-server](https://github.com/JackKuo666/Google-Scholar-MCP-Server) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

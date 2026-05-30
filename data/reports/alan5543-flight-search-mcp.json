@@ -3,8 +3,8 @@
   "version": "sha-d53b566a3326",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-05-17T02:34:37.801089245Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:36:51.815639164Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/alan5543/Flight-Search-MCP",
   "category": "Developer Tools",
   "vendor": "alan5543",
@@ -12,12 +12,37 @@
   "language": "Python",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-d53b566a3326: 7 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "afd_check_transfer_partners",
+          "afd_find_sweet_spots",
+          "afd_get_market_stats",
+          "afd_get_program_details",
+          "afd_get_route_availability",
+          "afd_list_programs",
+          "afd_search_award_flights"
+        ],
+        "removed": [
+          "discover_flights",
+          "get_reference_data",
+          "search_calendar",
+          "search_flights"
+        ],
+        "version": "sha-d53b566a3326"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_flights"
+      "tool_name": "afd_search_award_flights"
     },
     {
       "id": "AS-011",
@@ -25,7 +50,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_flights"
+      "tool_name": "afd_search_award_flights"
     },
     {
       "id": "AS-014",
@@ -33,15 +58,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_flights"
+      "tool_name": "afd_search_award_flights"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_calendar"
+      "tool_name": "afd_list_programs"
     },
     {
       "id": "AS-011",
@@ -49,7 +74,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_calendar"
+      "tool_name": "afd_list_programs"
     },
     {
       "id": "AS-014",
@@ -57,15 +82,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_calendar"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_reference_data"
+      "tool_name": "afd_list_programs"
     },
     {
       "id": "AS-014",
@@ -73,7 +90,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_reference_data"
+      "tool_name": "afd_get_program_details"
     },
     {
       "id": "AS-014",
@@ -81,15 +98,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "discover_flights"
+      "tool_name": "afd_get_route_availability"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "afd_find_sweet_spots"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "afd_check_transfer_partners"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "afd_get_market_stats"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 3,
+    "medium": 0,
     "low": 2,
-    "info": 4
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -117,14 +158,17 @@
     }
   ],
   "tool_names": [
-    "discover_flights",
-    "get_reference_data",
-    "search_calendar",
-    "search_flights"
+    "afd_check_transfer_partners",
+    "afd_find_sweet_spots",
+    "afd_get_market_stats",
+    "afd_get_program_details",
+    "afd_get_route_availability",
+    "afd_list_programs",
+    "afd_search_award_flights"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_flights",
+      "tool_name": "afd_search_award_flights",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
@@ -134,24 +178,45 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_calendar",
+      "tool_name": "afd_list_programs",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "uses_network"
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_reference_data",
+      "tool_name": "afd_get_program_details",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "discover_flights",
+      "tool_name": "afd_get_route_availability",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "afd_find_sweet_spots",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "afd_check_transfer_partners",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "afd_get_market_stats",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -185,6 +250,12 @@
     },
     {
       "scan_date": "2026-04-26T07:40:23Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "sha-d53b566a3326"
+    },
+    {
+      "scan_date": "2026-05-17T02:34:37Z",
       "grade": "B",
       "risk_score": 17,
       "version": "sha-d53b566a3326"

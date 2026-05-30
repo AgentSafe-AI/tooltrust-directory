@@ -1,16 +1,16 @@
 {
   "tool_id": "baranwang-mcp-deep-research",
   "version": "1.1.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:32:10.830153869Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:33:10.743447749Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/baranwang/mcp-deep-research",
   "category": "Developer Tools",
   "vendor": "baranwang",
   "stars": 5,
   "npm_package": "mcp-deep-research",
-  "npm_downloads_monthly": 68,
+  "npm_downloads_monthly": 64,
   "language": "JavaScript",
   "description": "MCP Deep Research is a tool that allows you to search the web for information. It is built with the Model Context Protocol and the Tavily API.",
   "findings": [
@@ -20,6 +20,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "deep-research"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "deep-research"
     },
     {
@@ -33,7 +41,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -62,8 +70,8 @@
   "tool_contexts": [
     {
       "tool_name": "deep-research",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -221,6 +229,12 @@
     },
     {
       "scan_date": "2026-05-04T02:27:26Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:32:10Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.1.0"

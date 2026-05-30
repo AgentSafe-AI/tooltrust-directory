@@ -1,19 +1,27 @@
 {
   "tool_id": "wlu03-alpaca-mcp",
   "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-05-17T02:33:14.051864125Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-30T02:34:01.900877898Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/wlu03/alpaca-mcp-server",
   "category": "Developer Tools",
   "vendor": "wlu03",
   "stars": 3,
   "npm_package": "alpaca-mcp",
-  "npm_downloads_monthly": 296,
+  "npm_downloads_monthly": 342,
   "language": "TypeScript",
   "description": "TypeScript MCP server that exposes Alpaca’s REST API via stdio/stdout for real‑time market data, order management, portfolio insights, and more.",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-assets"
+    },
     {
       "id": "AS-007",
       "severity": "Info",
@@ -21,6 +29,14 @@
       "description": "Tool 'get-assets' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get-assets"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-stock-bars"
     },
     {
       "id": "AS-007",
@@ -31,12 +47,28 @@
       "tool_name": "get-stock-bars"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-market-days"
+    },
+    {
       "id": "AS-007",
       "severity": "Info",
       "title": "INSUFFICIENT_TOOL_DATA",
       "description": "Tool 'get-market-days' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get-market-days"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-news"
     },
     {
       "id": "AS-007",
@@ -49,7 +81,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 4,
     "medium": 0,
     "low": 0,
     "info": 4
@@ -82,28 +114,28 @@
     {
       "tool_name": "get-assets",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-stock-bars",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-market-days",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-news",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -333,6 +365,12 @@
     },
     {
       "scan_date": "2026-05-04T02:28:02Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:33:14Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.0.0"

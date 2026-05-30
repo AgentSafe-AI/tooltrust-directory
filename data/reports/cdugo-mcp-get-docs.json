@@ -1,16 +1,16 @@
 {
   "tool_id": "cdugo-mcp-get-docs",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:28:47.996143399Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:29:33.3575018Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/cdugo/package-documentation-mcp",
   "category": "Developer Tools",
   "vendor": "cdugo",
   "stars": 16,
   "npm_package": "@cdugo/docs-fetcher-mcp",
-  "npm_downloads_monthly": 243,
+  "npm_downloads_monthly": 208,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP Server to retrieve documentation for a package",
@@ -21,6 +21,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fetch-url-docs"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "fetch-url-docs"
     },
     {
@@ -48,6 +56,14 @@
       "tool_name": "fetch-package-docs"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetch-package-docs"
+    },
+    {
       "id": "AS-007",
       "severity": "Info",
       "title": "INSUFFICIENT_TOOL_DATA",
@@ -69,6 +85,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fetch-library-docs"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "fetch-library-docs"
     },
     {
@@ -96,6 +120,14 @@
       "tool_name": "fetch-multilingual-docs"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetch-multilingual-docs"
+    },
+    {
       "id": "AS-007",
       "severity": "Info",
       "title": "INSUFFICIENT_TOOL_DATA",
@@ -114,7 +146,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 8,
     "medium": 0,
     "low": 4,
     "info": 4
@@ -146,8 +178,8 @@
   "tool_contexts": [
     {
       "tool_name": "fetch-url-docs",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -159,8 +191,8 @@
     },
     {
       "tool_name": "fetch-package-docs",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -169,8 +201,8 @@
     },
     {
       "tool_name": "fetch-library-docs",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -179,8 +211,8 @@
     },
     {
       "tool_name": "fetch-multilingual-docs",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -275,6 +307,12 @@
     },
     {
       "scan_date": "2026-05-02T02:18:48Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:28:47Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.0"

@@ -1,16 +1,16 @@
 {
   "tool_id": "yassinetk-mcp-docs-provider",
   "version": "1.0.2",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:31:39.352922714Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:33:05.795869814Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/YassineTk/mcp-docs-provider",
   "category": "Developer Tools",
   "vendor": "YassineTk",
   "stars": 5,
   "npm_package": "mcp-docs-provider",
-  "npm_downloads_monthly": 39,
+  "npm_downloads_monthly": 48,
   "language": "JavaScript",
   "description": "Documentation context provider for LLMs via MCP",
   "findings": [
@@ -20,6 +20,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "query-docs"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "query-docs"
     },
     {
@@ -41,7 +49,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 1
@@ -70,8 +78,8 @@
   "tool_contexts": [
     {
       "tool_name": "query-docs",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -184,6 +192,12 @@
     },
     {
       "scan_date": "2026-04-26T07:35:59Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-05-17T02:31:39Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.2"

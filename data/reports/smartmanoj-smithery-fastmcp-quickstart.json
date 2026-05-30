@@ -1,30 +1,46 @@
 {
   "tool_id": "smartmanoj-smithery-fastmcp-quickstart",
   "version": "sha-65941becaa64",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-05-17T02:38:43.844399335Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:42:43Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/SmartManoj/Smithery-FastMCP-Quickstart",
   "category": "Developer Tools",
   "vendor": "SmartManoj",
   "language": "Python",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "start_game"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "play_turn"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "main.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 6,
+            "snippet": "FastMCP(",
+            "file": "main.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 8,
+            "snippet": "@mcp.tool(",
+            "file": "main.py",
+            "language": "python"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -32,9 +48,10 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -59,29 +76,6 @@
       "language": "python"
     }
   ],
-  "tool_names": [
-    "play_turn",
-    "start_game"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "start_game",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "play_turn",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: visibleState.resources"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:56:06Z",
@@ -103,6 +97,12 @@
     },
     {
       "scan_date": "2026-04-26T07:46:30Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "sha-65941becaa64"
+    },
+    {
+      "scan_date": "2026-05-17T02:38:43Z",
       "grade": "A",
       "risk_score": 0,
       "version": "sha-65941becaa64"

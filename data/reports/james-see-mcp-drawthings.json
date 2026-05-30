@@ -1,20 +1,36 @@
 {
   "tool_id": "james-see-mcp-drawthings",
   "version": "1.1.1",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-05-17T02:29:57.937184663Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 23,
+  "scan_date": "2026-05-30T02:30:40.884222523Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/james-see/mcp-drawthings",
   "category": "Developer Tools",
   "vendor": "james-see",
   "stars": 9,
   "npm_package": "mcp-drawthings",
-  "npm_downloads_monthly": 249,
+  "npm_downloads_monthly": 281,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server for Draw Things - local AI image generation on Mac",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "check_status"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_config"
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -24,17 +40,33 @@
       "tool_name": "generate_image"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "generate_image"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "transform_image"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "transform_image"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 4,
     "medium": 2,
     "low": 0,
     "info": 0
@@ -67,21 +99,21 @@
     {
       "tool_name": "check_status",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get_config",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "generate_image",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -91,7 +123,7 @@
     {
       "tool_name": "transform_image",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -261,6 +293,12 @@
     },
     {
       "scan_date": "2026-05-04T02:26:17Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "1.1.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:29:57Z",
       "grade": "A",
       "risk_score": 8,
       "version": "1.1.1"

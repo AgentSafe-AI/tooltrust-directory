@@ -2,15 +2,15 @@
   "tool_id": "infobip-plantuml-mcp-server",
   "version": "0.2.4",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-17T02:26:18.606307009Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 40,
+  "scan_date": "2026-05-30T02:27:13.801957121Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/infobip/plantuml-mcp-server",
   "category": "Developer Tools",
   "vendor": "infobip",
   "stars": 42,
   "npm_package": "plantuml-mcp-server",
-  "npm_downloads_monthly": 836,
+  "npm_downloads_monthly": 744,
   "license": "MIT",
   "language": "JavaScript",
   "findings": [
@@ -31,6 +31,14 @@
       "tool_name": "generate_plantuml_diagram"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "generate_plantuml_diagram"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -47,17 +55,33 @@
       "tool_name": "encode_plantuml"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "encode_plantuml"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "encode_plantuml"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "decode_plantuml"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 5,
     "medium": 1,
     "low": 2,
     "info": 0
@@ -82,8 +106,8 @@
     },
     {
       "tool_name": "encode_plantuml",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -93,7 +117,7 @@
     {
       "tool_name": "decode_plantuml",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -197,6 +221,12 @@
     },
     {
       "scan_date": "2026-05-15T02:35:02Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.2.4"
+    },
+    {
+      "scan_date": "2026-05-17T02:26:18Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.2.4"

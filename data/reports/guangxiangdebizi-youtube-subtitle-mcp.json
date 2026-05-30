@@ -1,15 +1,14 @@
 {
   "tool_id": "guangxiangdebizi-youtube-subtitle-mcp",
   "version": "1.1.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:42:07.104087288Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:42:09.612585775Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/guangxiangdebizi/youtube-subtitle-mcp",
   "category": "Developer Tools",
   "vendor": "guangxiangdebizi",
   "npm_package": "youtube-subtitle-mcp",
-  "npm_downloads_monthly": 77,
   "license": "NOASSERTION",
   "language": "JavaScript",
   "description": "A Model Context Protocol (MCP) server for fetching YouTube video subtitles/transcripts with support for multiple output formats (SRT, VTT, TXT, JSON).",
@@ -23,6 +22,14 @@
       "tool_name": "fetch_youtube_subtitles"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetch_youtube_subtitles"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -33,7 +40,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -90,8 +97,8 @@
   "tool_contexts": [
     {
       "tool_name": "fetch_youtube_subtitles",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -306,6 +313,12 @@
     },
     {
       "scan_date": "2026-05-04T02:33:39Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.1.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:42:07Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.1.1"

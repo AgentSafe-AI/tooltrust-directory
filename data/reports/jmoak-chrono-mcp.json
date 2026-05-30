@@ -1,10 +1,10 @@
 {
   "tool_id": "jmoak-chrono-mcp",
   "version": "0.4.2",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-05-17T02:44:02.215602885Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-05-30T02:42:42.090599879Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/JMoak/chrono-mcp",
   "category": "Developer Tools",
   "vendor": "JMoak",
@@ -14,17 +14,33 @@
   "description": "Time access and calculations mcp written in typescript available via npx.",
   "findings": [
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "GET TIME"
+    },
+    {
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TIME CALCULATOR"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "TIME CALCULATOR"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -38,14 +54,14 @@
     {
       "tool_name": "GET TIME",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "TIME CALCULATOR",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -191,6 +207,12 @@
     },
     {
       "scan_date": "2026-05-04T02:32:14Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.4.2"
+    },
+    {
+      "scan_date": "2026-05-17T02:44:02Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.4.2"

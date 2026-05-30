@@ -1,20 +1,28 @@
 {
   "tool_id": "doggybee-mcp-server-leetcode",
   "version": "1.0.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:26:25.657490429Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:27:17.385853185Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/doggybee/mcp-server-leetcode",
   "category": "Developer Tools",
   "vendor": "doggybee",
   "stars": 41,
   "npm_package": "@mcpfun/mcp-server-leetcode",
-  "npm_downloads_monthly": 60,
+  "npm_downloads_monthly": 79,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for LeetCode that provides access to problems, user data, and contest information through GraphQL",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-daily-challenge"
+    },
     {
       "id": "AS-007",
       "severity": "Info",
@@ -22,6 +30,14 @@
       "description": "Tool 'get-daily-challenge' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get-daily-challenge"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-problem"
     },
     {
       "id": "AS-007",
@@ -37,6 +53,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search-problems"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "search-problems"
     },
     {
@@ -56,12 +80,28 @@
       "tool_name": "search-problems"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-user-profile"
+    },
+    {
       "id": "AS-007",
       "severity": "Info",
       "title": "INSUFFICIENT_TOOL_DATA",
       "description": "Tool 'get-user-profile' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get-user-profile"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-user-submissions"
     },
     {
       "id": "AS-007",
@@ -72,12 +112,28 @@
       "tool_name": "get-user-submissions"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-contest-details"
+    },
+    {
       "id": "AS-007",
       "severity": "Info",
       "title": "INSUFFICIENT_TOOL_DATA",
       "description": "Tool 'get-contest-details' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get-contest-details"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-user-contest-ranking"
     },
     {
       "id": "AS-007",
@@ -90,7 +146,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 8,
     "medium": 0,
     "low": 1,
     "info": 7
@@ -126,21 +182,21 @@
     {
       "tool_name": "get-daily-challenge",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-problem",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "search-problems",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -150,28 +206,28 @@
     {
       "tool_name": "get-user-profile",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-user-submissions",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-contest-details",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get-user-contest-ranking",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -233,6 +289,12 @@
     },
     {
       "scan_date": "2026-04-26T07:30:08Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:26:25Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.1"

@@ -1,26 +1,50 @@
 {
   "tool_id": "remoprinz-swiss-health-mcp",
   "version": "1.0.9",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-05-17T02:35:49.597890166Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 23,
+  "scan_date": "2026-05-30T02:36:02.198158787Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/remoprinz/swiss-health-mcp",
   "category": "Developer Tools",
   "vendor": "remoprinz",
   "stars": 1,
   "npm_package": "@prinz_esox/swiss-health-mcp",
-  "npm_downloads_monthly": 262,
+  "npm_downloads_monthly": 170,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP Server for Swiss Health Insurance Premiums - 1.6M records from BAG Priminfo (2016-2026)",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "lookup_region"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_premium_quote"
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_cheapest_premiums"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "get_cheapest_premiums"
     },
     {
@@ -32,11 +56,35 @@
       "tool_name": "get_premium_timeline"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_premium_timeline"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_premium_inflation"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "compare_years"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "compare_years"
     },
     {
@@ -46,11 +94,19 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_premium_ranking"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_premium_ranking"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 7,
     "medium": 4,
     "low": 0,
     "info": 0
@@ -69,14 +125,14 @@
     {
       "tool_name": "lookup_region",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "get_premium_quote",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (accident_covered)",
         "dynamic email recipient (canton)"
@@ -87,7 +143,7 @@
     {
       "tool_name": "get_cheapest_premiums",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "reads_files"
       ],
@@ -100,7 +156,7 @@
     {
       "tool_name": "get_premium_timeline",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "reads_files"
       ],
@@ -113,7 +169,7 @@
     {
       "tool_name": "get_premium_inflation",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (canton)"
       ],
@@ -123,7 +179,7 @@
     {
       "tool_name": "compare_years",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (canton)"
       ],
@@ -133,7 +189,7 @@
     {
       "tool_name": "get_premium_ranking",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "reads_files"
       ],
@@ -292,6 +348,12 @@
     },
     {
       "scan_date": "2026-05-04T02:30:29Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "1.0.9"
+    },
+    {
+      "scan_date": "2026-05-17T02:35:49Z",
       "grade": "A",
       "risk_score": 8,
       "version": "1.0.9"

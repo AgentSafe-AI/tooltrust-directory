@@ -2,42 +2,19 @@
   "tool_id": "tavily-ai-tavily-mcp",
   "version": "0.2.19",
   "grade": "C",
-  "risk_score": 34,
-  "scan_date": "2026-05-17T02:18:29.768420475Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 49,
+  "scan_date": "2026-05-30T02:19:16.231788249Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/tavily-ai/tavily-mcp",
   "category": "Developer Tools",
   "vendor": "tavily-ai",
   "stars": 1899,
   "npm_package": "tavily-mcp",
-  "npm_downloads_monthly": 308661,
+  "npm_downloads_monthly": 155719,
   "license": "MIT",
   "language": "JavaScript",
   "description": "Production ready MCP server with real-time search, extract, map \u0026 crawl.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.2.19: 5 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "tavily_crawl",
-          "tavily_extract",
-          "tavily_map",
-          "tavily_research",
-          "tavily_search"
-        ],
-        "removed": [
-          "tavily-crawl",
-          "tavily-extract",
-          "tavily-map",
-          "tavily-search"
-        ],
-        "version": "0.2.19"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -63,6 +40,14 @@
       "tool_name": "tavily_search"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_search"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -76,6 +61,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "tavily_extract"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "tavily_extract"
     },
     {
@@ -111,6 +104,14 @@
       "tool_name": "tavily_crawl"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_crawl"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -135,6 +136,14 @@
       "tool_name": "tavily_map"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_map"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -151,6 +160,14 @@
       "tool_name": "tavily_research"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "tavily_research"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -161,7 +178,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
+    "high": 11,
     "medium": 2,
     "low": 7,
     "info": 0
@@ -192,8 +209,8 @@
     },
     {
       "tool_name": "tavily_extract",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -233,8 +250,8 @@
     },
     {
       "tool_name": "tavily_research",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -395,6 +412,12 @@
     },
     {
       "scan_date": "2026-05-04T02:18:58Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.2.19"
+    },
+    {
+      "scan_date": "2026-05-17T02:18:29Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.2.19"

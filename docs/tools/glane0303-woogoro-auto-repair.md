@@ -21,8 +21,8 @@ Backed by Woogoro's `/api/auto-repair-estimate` endpoint (Claude Haiku-powered) 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [glane0303-woogoro-auto-repair](https://smithery.ai/server/glane0303/woogoro-auto-repair) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

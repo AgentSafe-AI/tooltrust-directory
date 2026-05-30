@@ -1,16 +1,16 @@
 {
   "tool_id": "junhan2-gemini-nanobanana-mcp",
   "version": "0.1.6",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-05-17T02:29:38.288588942Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 23,
+  "scan_date": "2026-05-30T02:30:19.878598794Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Junhan2/gemini-nanobanana-mcp",
   "category": "Developer Tools",
   "vendor": "Junhan2",
   "stars": 11,
   "npm_package": "gemini-nanobanana-mcp",
-  "npm_downloads_monthly": 182,
+  "npm_downloads_monthly": 175,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server for Google Gemini 2.5 Flash Image preview (text-to-image, editing, composition)",
@@ -24,11 +24,27 @@
       "tool_name": "generate_image"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "generate_image"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "edit_image"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "edit_image"
     },
     {
@@ -40,17 +56,33 @@
       "tool_name": "compose_images"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "compose_images"
+    },
+    {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "style_transfer"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "style_transfer"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 4,
     "medium": 4,
     "low": 0,
     "info": 0
@@ -83,7 +115,7 @@
     {
       "tool_name": "generate_image",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (saveToFilePath)"
       ],
@@ -93,7 +125,7 @@
     {
       "tool_name": "edit_image",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -106,7 +138,7 @@
     {
       "tool_name": "compose_images",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (saveToFilePath)"
       ],
@@ -116,7 +148,7 @@
     {
       "tool_name": "style_transfer",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (saveToFilePath)"
       ],
@@ -217,6 +249,12 @@
     },
     {
       "scan_date": "2026-05-04T02:26:03Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "0.1.6"
+    },
+    {
+      "scan_date": "2026-05-17T02:29:38Z",
       "grade": "A",
       "risk_score": 8,
       "version": "0.1.6"

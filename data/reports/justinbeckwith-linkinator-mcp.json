@@ -2,15 +2,15 @@
   "tool_id": "justinbeckwith-linkinator-mcp",
   "version": "linkinator-mcp-v0.2.5",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-17T02:32:41.596886051Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 40,
+  "scan_date": "2026-05-30T02:34:05.964525931Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/JustinBeckwith/linkinator-mcp",
   "category": "Developer Tools",
   "vendor": "JustinBeckwith",
   "stars": 3,
   "npm_package": "linkinator-mcp",
-  "npm_downloads_monthly": 136,
+  "npm_downloads_monthly": 189,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server for link checking using linkinator",
@@ -38,11 +38,19 @@
       "description": "input schema exposes 18 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_page"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "scan_page"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 1,
     "low": 1,
     "info": 0
@@ -264,6 +272,12 @@
     },
     {
       "scan_date": "2026-05-04T02:28:06Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "linkinator-mcp-v0.2.5"
+    },
+    {
+      "scan_date": "2026-05-17T02:32:41Z",
       "grade": "C",
       "risk_score": 25,
       "version": "linkinator-mcp-v0.2.5"

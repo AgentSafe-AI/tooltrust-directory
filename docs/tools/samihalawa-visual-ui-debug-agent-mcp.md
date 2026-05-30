@@ -10,11 +10,11 @@
 | **Vendor** | samihalawa |
 | **Stars** | ⭐ 78 |
 | **npm Package** | `visual-ui-debug-agent-mcp` |
-| **npm Downloads (30d)** | 30 |
+| **npm Downloads (30d)** | 50 |
 | **Language** | JavaScript |
 | **Source** | [samihalawa-visual-ui-debug-agent-mcp](https://github.com/samihalawa/visual-ui-debug-agent-mcp) |
-| **Scan Date** | 2026-05-17 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 39 |
+| High     | 38 |
 | Medium   | 33 |
 | Low      | 40 |
 | Info     | 35 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.0.1: 35 tool(s) added, 4 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

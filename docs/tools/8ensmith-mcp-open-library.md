@@ -10,11 +10,11 @@
 | **Vendor** | 8enSmith |
 | **Stars** | ⭐ 68 |
 | **npm Package** | `mcp-open-library` |
-| **npm Downloads (30d)** | 67 |
+| **npm Downloads (30d)** | 92 |
 | **Language** | TypeScript |
 | **Source** | [8ensmith-mcp-open-library](https://github.com/8enSmith/mcp-open-library) |
-| **Scan Date** | 2026-05-17 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

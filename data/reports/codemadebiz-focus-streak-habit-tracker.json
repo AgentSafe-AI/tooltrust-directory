@@ -1,37 +1,41 @@
 {
   "tool_id": "codemadebiz-focus-streak-habit-tracker",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-05-29T02:39:15.304238708Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-30T02:41:06.997128Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/codemadebiz/focus-streak-habit-tracker",
   "vendor": "Smithery",
   "description": "I built a free MCP server for habit tracking — connects to Claude/Cursor\n\nIt generates complete habit blueprints you can import directly into Focus Streak (Android). 3 prompts that work great:\n\n\"Help me build a morning routine\" → returns 5 importable habits\n\"Why do I keep failing at exercise?\" → science-backed strategy\n\"I missed 3 days of my streak\" → comeback plan\n\nInstall in Claude Desktop: npx mcp-remote https://focusstreak.codemadebiz.com/mcp",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "build_habit_blueprint"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "build_habit_blueprint"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "record"
+        ],
+        "removed": [
+          "analyze_habit_success",
+          "build_habit_blueprint",
+          "create_habit_pack",
+          "motivate_consistency",
+          "suggest_streak_plan"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "build_habit_blueprint"
+      "tool_name": "record"
     },
     {
       "id": "AS-011",
@@ -39,7 +43,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "build_habit_blueprint"
+      "tool_name": "record"
     },
     {
       "id": "AS-014",
@@ -47,107 +51,28 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "build_habit_blueprint"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_habit_pack"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_habit_pack"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "suggest_streak_plan"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_habit_success"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "motivate_consistency"
+      "tool_name": "record"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 2,
+    "medium": 0,
     "low": 2,
-    "info": 5
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "analyze_habit_success",
-    "build_habit_blueprint",
-    "create_habit_pack",
-    "motivate_consistency",
-    "suggest_streak_plan"
+    "record"
   ],
   "tool_contexts": [
     {
-      "tool_name": "build_habit_blueprint",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_habit_pack",
+      "tool_name": "record",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "writes_files"
+        "uses_network"
       ],
-      "destinations": [
-        "dynamic email recipient (custom_habits)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "suggest_streak_plan",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "analyze_habit_success",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "motivate_consistency",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -191,6 +116,12 @@
     },
     {
       "scan_date": "2026-05-28T02:26:01Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-29T02:39:15Z",
       "grade": "C",
       "risk_score": 27,
       "version": "smithery"

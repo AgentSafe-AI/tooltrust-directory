@@ -2,9 +2,9 @@
   "tool_id": "erudika-para",
   "version": "1.52.3",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:19:47.598469296Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 15,
+  "scan_date": "2026-05-30T02:20:33.261258757Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Erudika/para",
   "category": "Other",
   "vendor": "Erudika",
@@ -14,12 +14,35 @@
   "description": "Multitenant backend server for building web and mobile apps rapidly. The backend for busy developers. (self-hosted or hosted)",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_about"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.52.3: 6 tool(s) added, 11 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "assess_weather_risk",
+          "bind_policy",
+          "check_trigger",
+          "get_parametric_quote",
+          "get_policy_status",
+          "list_carriers"
+        ],
+        "removed": [
+          "zanly_about",
+          "zanly_cases",
+          "zanly_ebooks",
+          "zanly_erp_loja",
+          "zanly_free_tools",
+          "zanly_maturity_evaluator",
+          "zanly_pricing",
+          "zanly_qualify",
+          "zanly_roi_calculator",
+          "zanly_sistema_delivery",
+          "zanly_sistema_gestao"
+        ],
+        "version": "1.52.3"
+      }
     },
     {
       "id": "AS-014",
@@ -27,7 +50,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_cases"
+      "tool_name": "assess_weather_risk"
     },
     {
       "id": "AS-014",
@@ -35,31 +58,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_qualify"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_pricing"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_roi_calculator"
+      "tool_name": "get_parametric_quote"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "zanly_maturity_evaluator"
+      "tool_name": "bind_policy"
     },
     {
       "id": "AS-011",
@@ -67,7 +74,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "zanly_maturity_evaluator"
+      "tool_name": "bind_policy"
     },
     {
       "id": "AS-014",
@@ -75,7 +82,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_maturity_evaluator"
+      "tool_name": "bind_policy"
     },
     {
       "id": "AS-014",
@@ -83,7 +90,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_free_tools"
+      "tool_name": "check_trigger"
     },
     {
       "id": "AS-014",
@@ -91,7 +98,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_ebooks"
+      "tool_name": "get_policy_status"
     },
     {
       "id": "AS-014",
@@ -99,128 +106,70 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_erp_loja"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_sistema_gestao"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zanly_sistema_delivery"
+      "tool_name": "list_carriers"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 11
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "zanly_about",
-    "zanly_cases",
-    "zanly_ebooks",
-    "zanly_erp_loja",
-    "zanly_free_tools",
-    "zanly_maturity_evaluator",
-    "zanly_pricing",
-    "zanly_qualify",
-    "zanly_roi_calculator",
-    "zanly_sistema_delivery",
-    "zanly_sistema_gestao"
+    "assess_weather_risk",
+    "bind_policy",
+    "check_trigger",
+    "get_parametric_quote",
+    "get_policy_status",
+    "list_carriers"
   ],
   "tool_contexts": [
     {
-      "tool_name": "zanly_about",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: Next.js"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "zanly_cases",
+      "tool_name": "assess_weather_risk",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zanly_qualify",
+      "tool_name": "get_parametric_quote",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zanly_pricing",
+      "tool_name": "bind_policy",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "zanly_roi_calculator",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (custo_hora)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "zanly_maturity_evaluator",
-      "action": "ALLOW",
-      "grade": "B",
       "behavior": [
-        "executes_commands"
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (broker_email)",
+        "dynamic email recipient (client_contact_email)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zanly_free_tools",
+      "tool_name": "check_trigger",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zanly_ebooks",
+      "tool_name": "get_policy_status",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zanly_erp_loja",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "zanly_sistema_gestao",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "zanly_sistema_delivery",
+      "tool_name": "list_carriers",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -362,6 +311,12 @@
     },
     {
       "scan_date": "2026-05-04T02:19:23Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.52.3"
+    },
+    {
+      "scan_date": "2026-05-17T02:19:47Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.52.3"

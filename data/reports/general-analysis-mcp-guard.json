@@ -3,14 +3,14 @@
   "version": "1.0.3",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-05-17T02:25:28.363867911Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:26:24.397314795Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/General-Analysis/mcp-guard",
   "category": "Developer Tools",
   "vendor": "General-Analysis",
   "stars": 53,
   "npm_package": "@general-analysis/mcp-guard",
-  "npm_downloads_monthly": 74,
+  "npm_downloads_monthly": 85,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP Guard secures your MCP client from prompt injection attacks and more.",
@@ -19,15 +19,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.3: 2 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.3: 1 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "scan_mcp_config",
-          "scan_text"
+          "check_permission"
         ],
         "removed": [
-          "check_permission"
+          "scan_mcp_config",
+          "scan_text"
         ],
         "version": "1.0.3"
       }
@@ -38,15 +38,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_text"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_mcp_config"
+      "tool_name": "check_permission"
     }
   ],
   "summary": {
@@ -54,7 +46,7 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -82,24 +74,13 @@
     }
   ],
   "tool_names": [
-    "scan_mcp_config",
-    "scan_text"
+    "check_permission"
   ],
   "tool_contexts": [
     {
-      "tool_name": "scan_text",
+      "tool_name": "check_permission",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scan_mcp_config",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -115,6 +96,12 @@
       "scan_date": "2026-04-26T07:29:13Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.0.3"
+    },
+    {
+      "scan_date": "2026-05-17T02:25:28Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.3"
     }
   ]

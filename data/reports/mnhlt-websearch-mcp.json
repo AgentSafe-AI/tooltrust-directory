@@ -1,16 +1,16 @@
 {
   "tool_id": "mnhlt-websearch-mcp",
   "version": "1.0.3",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:26:57.30667963Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:27:53.786755747Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/mnhlt/WebSearch-MCP",
   "category": "Developer Tools",
   "vendor": "mnhlt",
   "stars": 33,
   "npm_package": "websearch-mcp",
-  "npm_downloads_monthly": 472,
+  "npm_downloads_monthly": 457,
   "language": "JavaScript",
   "description": "[Self-hosted] A Model Context Protocol (MCP) server implementation that provides a web search capability over stdio transport. This server integrates with a WebSearch Crawler API to retrieve search results.",
   "findings": [
@@ -20,6 +20,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "web_search"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "web_search"
     },
     {
@@ -33,7 +41,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -62,8 +70,8 @@
   "tool_contexts": [
     {
       "tool_name": "web_search",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -188,6 +196,12 @@
     },
     {
       "scan_date": "2026-05-04T02:24:17Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.3"
+    },
+    {
+      "scan_date": "2026-05-17T02:26:57Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.3"

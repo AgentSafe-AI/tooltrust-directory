@@ -65,8 +65,8 @@ Configurations are hand-verified against live airline booking sites and updated 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rowhint-ntm5-rowhint](https://smithery.ai/server/rowhint-ntm5/RowHint) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

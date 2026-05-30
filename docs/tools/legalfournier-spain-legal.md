@@ -11,8 +11,8 @@ Helps screen visa and residence routes, explain NIE and TIE processes, check Bec
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [legalfournier-spain-legal](https://smithery.ai/server/legalfournier/spain-legal) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

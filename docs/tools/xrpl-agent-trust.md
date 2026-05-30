@@ -14,8 +14,8 @@ Key features: 0.1 XRP flat fee (no % commission), XRP native agentic currency + 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xrpl-agent-trust](https://smithery.ai/server/xrpl/agent-trust) |
-| **Scan Date** | 2026-05-28 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

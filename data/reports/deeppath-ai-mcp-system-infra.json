@@ -1,16 +1,16 @@
 {
   "tool_id": "deeppath-ai-mcp-system-infra",
   "version": "0.0.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:34:47.413451389Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:35:29.509118515Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/deeppath-ai/mcp-system-infra",
   "category": "Developer Tools",
   "vendor": "deeppath-ai",
   "stars": 2,
   "npm_package": "mcp-system-infra",
-  "npm_downloads_monthly": 36,
+  "npm_downloads_monthly": 41,
   "license": "MIT",
   "language": "TypeScript",
   "description": "架构师-系统架构",
@@ -24,6 +24,14 @@
       "tool_name": "assess-system-infra"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "assess-system-infra"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -34,7 +42,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -63,8 +71,8 @@
   "tool_contexts": [
     {
       "tool_name": "assess-system-infra",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands"
       ],
@@ -243,6 +251,12 @@
     },
     {
       "scan_date": "2026-05-04T02:29:12Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.0.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:34:47Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.0.1"

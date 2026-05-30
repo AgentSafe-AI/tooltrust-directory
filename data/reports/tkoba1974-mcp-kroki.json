@@ -2,15 +2,15 @@
   "tool_id": "tkoba1974-mcp-kroki",
   "version": "1.1.0",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-17T02:30:19.315676779Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 40,
+  "scan_date": "2026-05-30T02:30:55.635435097Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/tkoba1974/mcp-kroki",
   "category": "Developer Tools",
   "vendor": "tkoba1974",
   "stars": 8,
   "npm_package": "@tkoba1974/mcp-kroki",
-  "npm_downloads_monthly": 1098,
+  "npm_downloads_monthly": 1111,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server to convert a diagram to picture using kroki.io",
@@ -21,6 +21,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_diagram_url"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "generate_diagram_url"
     },
     {
@@ -48,6 +56,14 @@
       "tool_name": "download_diagram"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "download_diagram"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -58,7 +74,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 4,
     "medium": 1,
     "low": 2,
     "info": 0
@@ -71,8 +87,8 @@
   "tool_contexts": [
     {
       "tool_name": "generate_diagram_url",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -203,6 +219,12 @@
     },
     {
       "scan_date": "2026-04-26T07:33:58Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:30:19Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.1.0"

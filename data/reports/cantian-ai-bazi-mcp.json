@@ -1,23 +1,48 @@
 {
   "tool_id": "cantian-ai-bazi-mcp",
   "version": "0.1.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-05-17T02:21:11.290881311Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-30T02:21:44.025698903Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/cantian-ai/bazi-mcp",
   "category": "Developer Tools",
   "vendor": "cantian-ai",
   "stars": 368,
   "npm_package": "bazi-mcp",
-  "npm_downloads_monthly": 1196,
+  "npm_downloads_monthly": 1165,
   "license": "ISC",
   "language": "TypeScript",
   "description": "MCP server for Bazi (八字) information",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "getBaziDetail"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "getSolarTimes"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "getChineseCalendar"
+    }
+  ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 3,
     "medium": 0,
     "low": 0,
     "info": 0
@@ -49,21 +74,21 @@
     {
       "tool_name": "getBaziDetail",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "getSolarTimes",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "getChineseCalendar",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -221,6 +246,12 @@
     },
     {
       "scan_date": "2026-05-04T02:20:22Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:21:11Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.1.0"

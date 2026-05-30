@@ -1,24 +1,40 @@
 {
   "tool_id": "samihalawa-email-smtp-imap-mcp",
   "version": "2.0.3",
-  "grade": "B",
-  "risk_score": 12,
-  "scan_date": "2026-05-17T02:40:39.292197468Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-05-30T02:43:58.457040346Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/samihalawa/email-smtp-imap-mcp",
   "category": "Developer Tools",
   "vendor": "samihalawa",
   "npm_package": "email-smtp-imap-mcp",
-  "npm_downloads_monthly": 108,
+  "npm_downloads_monthly": 319,
   "license": "MIT",
   "language": "TypeScript",
   "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "emails_find"
+    },
     {
       "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "emails_modify"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "emails_modify"
     },
     {
@@ -38,6 +54,14 @@
       "tool_name": "email_send"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "email_send"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -51,6 +75,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "email_respond"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "email_respond"
     },
     {
@@ -68,11 +100,19 @@
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "folders_list"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "folders_list"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 5,
     "medium": 3,
     "low": 4,
     "info": 0
@@ -89,7 +129,7 @@
     {
       "tool_name": "emails_find",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (account_name)"
       ],
@@ -99,7 +139,7 @@
     {
       "tool_name": "emails_modify",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -113,8 +153,8 @@
     },
     {
       "tool_name": "email_send",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -130,7 +170,7 @@
     {
       "tool_name": "email_respond",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -145,7 +185,7 @@
     {
       "tool_name": "folders_list",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "reads_files"
       ],
@@ -303,6 +343,12 @@
     },
     {
       "scan_date": "2026-05-04T02:30:54Z",
+      "grade": "B",
+      "risk_score": 12,
+      "version": "2.0.3"
+    },
+    {
+      "scan_date": "2026-05-17T02:40:39Z",
       "grade": "B",
       "risk_score": 12,
       "version": "2.0.3"

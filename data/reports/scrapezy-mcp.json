@@ -1,16 +1,16 @@
 {
   "tool_id": "scrapezy-mcp",
   "version": "0.1.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:29:09.778948336Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:29:55.072920441Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Scrapezy/mcp",
   "category": "Developer Tools",
   "vendor": "Scrapezy",
   "stars": 14,
   "npm_package": "@scrapezy/mcp",
-  "npm_downloads_monthly": 245,
+  "npm_downloads_monthly": 203,
   "license": "MIT",
   "language": "JavaScript",
   "findings": [
@@ -20,6 +20,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "extract-structured-data"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "extract-structured-data"
     },
     {
@@ -33,7 +41,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 2,
     "medium": 0,
     "low": 1,
     "info": 0
@@ -62,8 +70,8 @@
   "tool_contexts": [
     {
       "tool_name": "extract-structured-data",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -143,6 +151,12 @@
     },
     {
       "scan_date": "2026-05-04T02:25:38Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:29:09Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.1.1"

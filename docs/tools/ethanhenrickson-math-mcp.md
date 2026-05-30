@@ -10,11 +10,11 @@
 | **Vendor** | EthanHenrickson |
 | **Stars** | ⭐ 138 |
 | **npm Package** | `math-mcp` |
-| **npm Downloads (30d)** | 137 |
+| **npm Downloads (30d)** | 135 |
 | **Language** | JavaScript |
 | **Source** | [ethanhenrickson-math-mcp](https://github.com/EthanHenrickson/math-mcp) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

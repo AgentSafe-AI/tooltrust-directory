@@ -3,70 +3,18 @@
   "version": "1.1.3",
   "grade": "C",
   "risk_score": 45,
-  "scan_date": "2026-05-17T02:26:56.784457592Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:27:50.783825654Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/mabeldata/pocketbase-mcp",
   "category": "Developer Tools",
   "vendor": "mabeldata",
   "stars": 34,
   "npm_package": "pocketbase-mcp",
-  "npm_downloads_monthly": 115,
+  "npm_downloads_monthly": 84,
   "license": "MIT",
   "language": "TypeScript",
   "description": "This is an MCP server that interacts with a PocketBase instance. It allows you to fetch, list, create, update, and manage records and files in your PocketBase collections.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.1.3: 20 tool(s) added, 18 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "auth_refresh",
-          "authenticate_user",
-          "authenticate_with_oauth2",
-          "authenticate_with_otp",
-          "backup_database",
-          "confirm_email_change",
-          "confirm_password_reset",
-          "confirm_verification",
-          "create_collection",
-          "create_user",
-          "delete_record",
-          "impersonate_user",
-          "import_data",
-          "list_auth_methods",
-          "manage_indexes",
-          "migrate_collection",
-          "query_collection",
-          "request_email_change",
-          "request_password_reset",
-          "request_verification"
-        ],
-        "removed": [
-          "add_field_migration",
-          "apply_all_migrations",
-          "apply_migration",
-          "create_collection_migration",
-          "create_migration",
-          "download_file",
-          "fetch_record",
-          "get_log",
-          "get_logs_stats",
-          "list_collections",
-          "list_cron_jobs",
-          "list_logs",
-          "list_migrations",
-          "revert_migration",
-          "revert_to_migration",
-          "run_cron_job",
-          "set_migrations_directory",
-          "upload_file"
-        ],
-        "version": "1.1.3"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -279,14 +227,6 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "confirm_password_reset"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"password\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_password_reset"
@@ -296,6 +236,14 @@
       "severity": "High",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"passwordConfirm\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "confirm_password_reset"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_password_reset"
     },
@@ -486,7 +434,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 16,
+    "high": 15,
     "medium": 8,
     "low": 5,
     "info": 24
@@ -894,6 +842,12 @@
       "scan_date": "2026-05-04T02:24:04Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "1.1.3"
+    },
+    {
+      "scan_date": "2026-05-17T02:26:56Z",
+      "grade": "C",
+      "risk_score": 45,
       "version": "1.1.3"
     }
   ]

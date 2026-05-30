@@ -1,10 +1,10 @@
 {
   "tool_id": "chughtapan-praga-core",
   "version": "sha-03f821c35b62",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:34:42.379171585Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-05-30T02:37:27.275042843Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/chughtapan/praga_core",
   "category": "Developer Tools",
   "vendor": "chughtapan",
@@ -15,26 +15,14 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-03f821c35b62: 9 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-03f821c35b62: 2 tool(s) added, 0 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "compliance.edd.report",
-          "compliance.exposure.forecast",
-          "compliance.queue.optimize",
-          "report.docx.generate",
-          "report.pdf.generate",
-          "server.capabilities",
-          "wallet.ofac.batch",
-          "wallet.ofac.report",
-          "wallet.ofac.screen"
+          "queue.saved.list",
+          "report.saved.retrieve"
         ],
-        "removed": [
-          "add_subtask",
-          "create_task",
-          "list_tasks",
-          "update_task"
-        ],
+        "removed": null,
         "version": "sha-03f821c35b62"
       }
     },
@@ -45,6 +33,46 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "server.capabilities"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "queue.saved.list"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "report.saved.retrieve"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "report.saved.retrieve"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "report.saved.retrieve"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "report.saved.retrieve"
     },
     {
       "id": "AS-014",
@@ -111,12 +139,28 @@
       "tool_name": "compliance.queue.optimize"
     },
     {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "report.pdf.generate"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "report.pdf.generate"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "report.docx.generate"
     },
     {
       "id": "AS-014",
@@ -129,18 +173,20 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 1,
-    "info": 9
+    "high": 3,
+    "medium": 3,
+    "low": 2,
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "compliance.edd.report",
     "compliance.exposure.forecast",
     "compliance.queue.optimize",
+    "queue.saved.list",
     "report.docx.generate",
     "report.pdf.generate",
+    "report.saved.retrieve",
     "server.capabilities",
     "wallet.ofac.batch",
     "wallet.ofac.report",
@@ -158,11 +204,38 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "queue.saved.list",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: compliance.queue.optimize",
+        "hardcoded domain: queue.saved.list"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "report.saved.retrieve",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: report.saved.retrieve"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "wallet.ofac.report",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: wallet.ofac.report"
+        "hardcoded domain: wallet.ofac.batch",
+        "hardcoded domain: wallet.ofac.report",
+        "hardcoded domain: wallet.ofac.screen"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -172,6 +245,8 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
+        "hardcoded domain: wallet.ofac.batch",
+        "hardcoded domain: wallet.ofac.report",
         "hardcoded domain: wallet.ofac.screen"
       ],
       "dependency_visibility": "No dependency data",
@@ -182,7 +257,9 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: wallet.ofac.batch"
+        "hardcoded domain: compliance.edd.report",
+        "hardcoded domain: wallet.ofac.batch",
+        "hardcoded domain: wallet.ofac.screen"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -196,7 +273,10 @@
       ],
       "destinations": [
         "dynamic URL input (jurisdiction)",
-        "hardcoded domain: compliance.edd.report"
+        "hardcoded domain: compliance.edd.report",
+        "hardcoded domain: report.docx.generate",
+        "hardcoded domain: report.pdf.generate",
+        "hardcoded domain: wallet.ofac.batch"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -206,7 +286,8 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: compliance.exposure.forecast"
+        "hardcoded domain: compliance.exposure.forecast",
+        "hardcoded domain: wallet.ofac.batch"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -216,6 +297,8 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
+        "hardcoded domain: compliance.edd.report",
+        "hardcoded domain: compliance.exposure.forecast",
         "hardcoded domain: compliance.queue.optimize"
       ],
       "dependency_visibility": "No dependency data",
@@ -225,7 +308,12 @@
       "tool_name": "report.pdf.generate",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "destinations": [
+        "hardcoded domain: compliance.edd.report",
+        "hardcoded domain: report.docx.generate",
         "hardcoded domain: report.pdf.generate"
       ],
       "dependency_visibility": "No dependency data",
@@ -235,8 +323,13 @@
       "tool_name": "report.docx.generate",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "destinations": [
-        "hardcoded domain: report.docx.generate"
+        "hardcoded domain: compliance.edd.report",
+        "hardcoded domain: report.docx.generate",
+        "hardcoded domain: report.pdf.generate"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -271,6 +364,12 @@
       "scan_date": "2026-04-26T07:39:10Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "sha-03f821c35b62"
+    },
+    {
+      "scan_date": "2026-05-17T02:34:42Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "sha-03f821c35b62"
     }
   ]

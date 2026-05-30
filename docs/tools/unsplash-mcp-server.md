@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `sha-856b89e2ac29` |
 | **Vendor** | hellokaton |
-| **Stars** | ⭐ 219 |
+| **Stars** | ⭐ 220 |
 | **Language** | Python |
 | **Source** | [unsplash-mcp-server](https://github.com/hellokaton/unsplash-mcp-server) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

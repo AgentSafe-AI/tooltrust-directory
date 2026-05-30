@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-05-17T02:35:01.844181091Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:37:08.6859784Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/xiaobenyang-com/mcp_tools_3",
   "category": "Developer Tools",
   "vendor": "xiaobenyang-com",
@@ -16,18 +16,26 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "check_local_viability"
-        ],
-        "removed": [
           "glob",
           "grep"
         ],
+        "removed": [
+          "check_local_viability"
+        ],
         "version": "1.0.0"
       }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "glob"
     },
     {
       "id": "AS-014",
@@ -35,15 +43,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_local_viability"
+      "tool_name": "glob"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "grep"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "grep"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 0,
+    "medium": 2,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -71,16 +95,23 @@
     }
   ],
   "tool_names": [
-    "check_local_viability"
+    "glob",
+    "grep"
   ],
   "tool_contexts": [
     {
-      "tool_name": "check_local_viability",
+      "tool_name": "glob",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: kordagencies.com",
-        "hardcoded domain: terms.html"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "grep",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -235,6 +266,12 @@
       "scan_date": "2026-05-04T02:30:04Z",
       "grade": "A",
       "risk_score": 8,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:35:01Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 54 |
 | **Language** | Python |
 | **Source** | [airmang-hwpx-mcp-server](https://github.com/airmang/hwpx-mcp-server) |
-| **Scan Date** | 2026-05-17 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

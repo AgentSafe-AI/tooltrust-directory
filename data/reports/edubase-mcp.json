@@ -3,14 +3,14 @@
   "version": "1.1.5",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-05-17T02:27:31.319730697Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:28:23.515710392Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/EduBase/MCP",
   "category": "Developer Tools",
   "vendor": "EduBase",
   "stars": 25,
   "npm_package": "@edubase/mcp",
-  "npm_downloads_monthly": 415,
+  "npm_downloads_monthly": 973,
   "license": "MIT",
   "language": "TypeScript",
   "description": "The EduBase MCP server enables Claude and other LLMs to interact with EduBase's comprehensive e-learning platform through the Model Context Protocol (MCP).",
@@ -115,7 +115,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 70 properties (threshold: 10)",
+      "description": "input schema exposes 76 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "edubase_post_question"
     },
@@ -483,7 +483,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"must_change_password\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "edubase_post_user"
     },
@@ -491,7 +491,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"must_change_password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "edubase_post_user"
     },
@@ -3498,6 +3498,12 @@
     },
     {
       "scan_date": "2026-04-26T07:31:23Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.1.5"
+    },
+    {
+      "scan_date": "2026-05-17T02:27:31Z",
       "grade": "C",
       "risk_score": 32,
       "version": "1.1.5"

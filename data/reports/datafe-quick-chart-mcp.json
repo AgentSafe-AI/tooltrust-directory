@@ -1,23 +1,32 @@
 {
   "tool_id": "datafe-quick-chart-mcp",
   "version": "1.0.14",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-05-17T02:32:25.762508773Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-05-30T02:33:29.211906915Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/datafe/quick-chart-mcp",
   "category": "Developer Tools",
   "vendor": "datafe",
   "stars": 4,
   "npm_package": "quick-chart-mcp",
-  "npm_downloads_monthly": 119,
+  "npm_downloads_monthly": 138,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server that provides chart tools, allowing it to interact with the quick chart through a standardized interface. This implementation is based on the chart definition and enables users can open quick chart pages seamlessly.",
-  "findings": [],
+  "findings": [
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "GetChartImgLink"
+    }
+  ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
     "info": 0
@@ -47,7 +56,7 @@
     {
       "tool_name": "GetChartImgLink",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "destinations": [
         "hardcoded domain: quickchart.io"
       ],
@@ -208,6 +217,12 @@
     },
     {
       "scan_date": "2026-05-04T02:27:33Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.0.14"
+    },
+    {
+      "scan_date": "2026-05-17T02:32:25Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.0.14"

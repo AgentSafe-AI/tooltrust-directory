@@ -1,16 +1,16 @@
 {
   "tool_id": "kwp-lab-rss-reader-mcp",
   "version": "1.0.8",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-21T02:41:41.711329133Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:32:51.804647594Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/kwp-lab/rss-reader-mcp",
   "category": "Developer Tools",
   "vendor": "kwp-lab",
   "stars": 5,
   "npm_package": "rss-reader-mcp",
-  "npm_downloads_monthly": 782,
+  "npm_downloads_monthly": 785,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server for RSS feed aggregation and article content extraction",
@@ -24,6 +24,14 @@
       "tool_name": "fetch_feed_entries"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetch_feed_entries"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -40,6 +48,14 @@
       "tool_name": "fetch_article_content"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "fetch_article_content"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -50,7 +66,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 4,
     "medium": 0,
     "low": 2,
     "info": 0
@@ -63,8 +79,8 @@
   "tool_contexts": [
     {
       "tool_name": "fetch_feed_entries",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -76,8 +92,8 @@
     },
     {
       "tool_name": "fetch_article_content",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -289,6 +305,12 @@
     },
     {
       "scan_date": "2026-05-20T02:43:34Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.8"
+    },
+    {
+      "scan_date": "2026-05-21T02:41:41Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.8"

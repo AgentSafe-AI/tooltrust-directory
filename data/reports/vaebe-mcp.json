@@ -1,34 +1,43 @@
 {
   "tool_id": "vaebe-mcp",
   "version": "0.3.0",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-05-17T02:38:57.71190828Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "scan_date": "2026-05-30T02:43:40Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/vaebe/mcp",
   "category": "Developer Tools",
   "vendor": "vaebe",
   "npm_package": "@vaebe/mcp",
-  "npm_downloads_monthly": 16,
+  "npm_downloads_monthly": 25,
   "license": "Apache-2.0",
   "language": "JavaScript",
   "description": "mcp 示例",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_current_time"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "convert_time"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 2,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "packages/time/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 13,
+            "snippet": "new McpServer(",
+            "file": "packages/time/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -36,9 +45,10 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -54,26 +64,6 @@
       "snippet": "new McpServer(",
       "file": "packages/time/index.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "convert_time",
-    "get_current_time"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get_current_time",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "convert_time",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -229,6 +219,12 @@
     },
     {
       "scan_date": "2026-05-04T02:31:31Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.3.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:38:57Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.3.0"

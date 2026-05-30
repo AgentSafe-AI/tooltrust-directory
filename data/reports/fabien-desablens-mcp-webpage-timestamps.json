@@ -1,16 +1,16 @@
 {
   "tool_id": "fabien-desablens-mcp-webpage-timestamps",
   "version": "1.0.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:36:57.843314308Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-05-30T02:37:22.05500501Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Fabien-desablens/mcp-webpage-timestamps",
   "category": "Developer Tools",
   "vendor": "Fabien-desablens",
   "stars": 1,
   "npm_package": "mcp-webpage-timestamps",
-  "npm_downloads_monthly": 15,
+  "npm_downloads_monthly": 23,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server for extracting webpage creation, modification, and publication timestamps",
@@ -24,19 +24,19 @@
       "tool_name": "extract_timestamps"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "extract_timestamps"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "extract_timestamps"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "extract_timestamps"
     },
     {
@@ -48,28 +48,28 @@
       "tool_name": "batch_extract_timestamps"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "batch_extract_timestamps"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "batch_extract_timestamps"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "batch_extract_timestamps"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 4,
     "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -79,29 +79,29 @@
   "tool_contexts": [
     {
       "tool_name": "extract_timestamps",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
       "tool_name": "batch_extract_timestamps",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (urls)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -161,6 +161,12 @@
     },
     {
       "scan_date": "2026-04-26T07:38:56Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:36:57Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.1"

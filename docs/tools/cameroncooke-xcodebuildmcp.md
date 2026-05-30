@@ -10,11 +10,11 @@
 | **Vendor** | cameroncooke |
 | **Stars** | ⭐ 5247 |
 | **npm Package** | `xcodebuildmcp` |
-| **npm Downloads (30d)** | 313.1k |
+| **npm Downloads (30d)** | 329.3k |
 | **Language** | TypeScript |
 | **Source** | [cameroncooke-xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) |
-| **Scan Date** | 2026-05-17 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-30 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

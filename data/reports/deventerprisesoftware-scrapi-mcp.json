@@ -1,16 +1,16 @@
 {
   "tool_id": "deventerprisesoftware-scrapi-mcp",
   "version": "0.2.8",
-  "grade": "D",
-  "risk_score": 67,
-  "scan_date": "2026-05-17T02:28:32.457996492Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "F",
+  "risk_score": 82,
+  "scan_date": "2026-05-30T02:29:25.209125751Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/DevEnterpriseSoftware/scrapi-mcp",
   "category": "Developer Tools",
   "vendor": "DevEnterpriseSoftware",
   "stars": 18,
   "npm_package": "@deventerprisesoftware/scrapi-mcp",
-  "npm_downloads_monthly": 535,
+  "npm_downloads_monthly": 1089,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server for using ScrAPI to scrape web pages.",
@@ -48,6 +48,14 @@
       "tool_name": "scrape_url_html"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "scrape_url_html"
+    },
+    {
       "id": "AS-006",
       "severity": "Critical",
       "title": "Arbitrary Code Execution",
@@ -96,6 +104,14 @@
       "tool_name": "scrape_url_markdown"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "scrape_url_markdown"
+    },
+    {
       "id": "AS-006",
       "severity": "Critical",
       "title": "Arbitrary Code Execution",
@@ -114,7 +130,7 @@
   ],
   "summary": {
     "critical": 2,
-    "high": 4,
+    "high": 6,
     "medium": 2,
     "low": 4,
     "info": 0
@@ -131,14 +147,14 @@
     },
     {
       "kind": "init",
-      "line": 55,
+      "line": 106,
       "snippet": "new McpServer(",
       "file": "index.ts",
       "language": "typescript"
     },
     {
       "kind": "tool_definition",
-      "line": 60,
+      "line": 111,
       "snippet": ".registerTool(",
       "file": "index.ts",
       "language": "typescript"
@@ -151,8 +167,8 @@
   "tool_contexts": [
     {
       "tool_name": "scrape_url_html",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "BLOCK",
+      "grade": "F",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -166,8 +182,8 @@
     },
     {
       "tool_name": "scrape_url_markdown",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "BLOCK",
+      "grade": "F",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -327,6 +343,12 @@
     },
     {
       "scan_date": "2026-05-04T02:25:13Z",
+      "grade": "D",
+      "risk_score": 67,
+      "version": "0.2.8"
+    },
+    {
+      "scan_date": "2026-05-17T02:28:32Z",
       "grade": "D",
       "risk_score": 67,
       "version": "0.2.8"

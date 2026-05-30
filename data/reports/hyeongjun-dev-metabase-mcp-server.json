@@ -2,15 +2,15 @@
   "tool_id": "hyeongjun-dev-metabase-mcp-server",
   "version": "0.1.0",
   "grade": "D",
-  "risk_score": 50,
-  "scan_date": "2026-05-17T02:26:40.678421366Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "risk_score": 65,
+  "scan_date": "2026-05-30T02:27:36.71765981Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/hyeongjun-dev/metabase-mcp-server",
   "category": "Developer Tools",
   "vendor": "hyeongjun-dev",
   "stars": 36,
   "npm_package": "metabase-mcp-server",
-  "npm_downloads_monthly": 268,
+  "npm_downloads_monthly": 271,
   "language": "JavaScript",
   "description": "A Model Context Protocol server that integrates AI assistants with Metabase analytics platform",
   "findings": [
@@ -28,6 +28,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_api_spec"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "list_api_spec"
     },
     {
@@ -63,6 +71,14 @@
       "tool_name": "get_api_spec"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_api_spec"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -84,6 +100,14 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_api_spec"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "search_api_spec"
     },
     {
@@ -135,6 +159,14 @@
       "tool_name": "api_call"
     },
     {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "api_call"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -145,7 +177,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 9,
     "medium": 3,
     "low": 8,
     "info": 0
@@ -160,8 +192,8 @@
   "tool_contexts": [
     {
       "tool_name": "list_api_spec",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -181,8 +213,8 @@
     },
     {
       "tool_name": "search_api_spec",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -264,6 +296,12 @@
     },
     {
       "scan_date": "2026-04-26T07:30:24Z",
+      "grade": "D",
+      "risk_score": 50,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:26:40Z",
       "grade": "D",
       "risk_score": 50,
       "version": "0.1.0"
