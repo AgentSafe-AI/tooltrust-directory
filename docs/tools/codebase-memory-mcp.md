@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `0.6.1` |
+| **Version** | `0.7.0` |
 | **Vendor** | DeusData |
-| **Stars** | ⭐ 2776 |
+| **Stars** | ⭐ 2818 |
 | **Language** | C |
 | **Source** | [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-31 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

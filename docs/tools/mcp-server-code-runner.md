@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.4k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-code-runner](https://github.com/formulahendry/mcp-server-code-runner) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

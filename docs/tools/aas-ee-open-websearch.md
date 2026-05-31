@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `2.1.11` |
 | **Vendor** | Aas-ee |
-| **Stars** | ⭐ 1328 |
+| **Stars** | ⭐ 1330 |
 | **npm Package** | `open-websearch` |
-| **npm Downloads (30d)** | 31.6k |
+| **npm Downloads (30d)** | 31.2k |
 | **Language** | TypeScript |
 | **Source** | [aas-ee-open-websearch](https://github.com/Aas-ee/open-webSearch) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-e4cebff4c43b` |
 | **Vendor** | HagaiHen |
-| **Stars** | ⭐ 161 |
+| **Stars** | ⭐ 162 |
 | **Language** | Python |
 | **Source** | [facebook-mcp-server](https://github.com/HagaiHen/facebook-mcp-server) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

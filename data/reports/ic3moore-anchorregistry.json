@@ -1,0 +1,73 @@
+{
+  "tool_id": "ic3moore-anchorregistry",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-05-31T02:48:17.827555961Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
+  "source_url": "https://smithery.ai/server/ic3moore/anchorregistry",
+  "vendor": "Smithery",
+  "description": "AnchorRegistry is the open provenance layer for the agentic economy. Every digital artifact — code, research, data, models, media, agents, transactions — can be anchored to Base L2 with a permanent, machine-resolvable identifier (an AR-ID). When an AI assistant encounters an SPDX-Anchor or DAPX-Anchor tag in a README, paper, model card, or website, this MCP server lets it resolve the artifact's full provenance record in one call: who anchored it, when, what type it is, manifest hash, and whether the tree has been sealed, retracted, voided, or affirmed.\n\nThis is the verify-only edition (v0.1). Three read-only, authless tools wrap the public AnchorRegistry verify endpoints. Free, no API key, no account, no rate limit beyond defaults.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ar_verify_arid"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ar_verify_by_hash"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ar_resolve_tree"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "ar_resolve_tree",
+    "ar_verify_arid",
+    "ar_verify_by_hash"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "ar_verify_arid",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ar_verify_by_hash",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ar_resolve_tree",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -4,16 +4,16 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
-| **Risk Score** | 0 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `2.1.0` |
 | **Vendor** | lgazo |
-| **Stars** | ⭐ 1251 |
+| **Stars** | ⭐ 1255 |
 | **npm Package** | `drawio-mcp` |
-| **npm Downloads (30d)** | 631 |
+| **npm Downloads (30d)** | 647 |
 | **Language** | TypeScript |
 | **Source** | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -24,21 +24,33 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 0 |
+| Medium   | 1 |
 | Low      | 0 |
 | Info     | 1 |
 
 ## Detailed Findings
 
-### ⚪ `AS-018` — Embedded MCP Server Detected
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+Review and remediate the identified issue.
 
 ---
 

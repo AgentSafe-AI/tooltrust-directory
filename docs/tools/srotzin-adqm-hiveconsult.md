@@ -20,7 +20,7 @@ First DID is always free. No vendor lock-in.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [srotzin-adqm-hiveconsult](https://smithery.ai/server/srotzin-adqm/hiveconsult) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

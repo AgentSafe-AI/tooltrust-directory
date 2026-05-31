@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.1` |
 | **Vendor** | joenorton |
-| **Stars** | ⭐ 326 |
+| **Stars** | ⭐ 328 |
 | **Language** | Python |
 | **Source** | [comfyui-mcp-server](https://github.com/joenorton/comfyui-mcp-server) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

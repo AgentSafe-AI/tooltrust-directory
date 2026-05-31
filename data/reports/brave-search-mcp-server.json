@@ -1,54 +1,260 @@
 {
   "tool_id": "brave-search-mcp-server",
   "version": "2.0.82",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-30T02:19:58Z",
+  "grade": "C",
+  "risk_score": 49,
+  "scan_date": "2026-05-31T02:44:27.972661282Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/brave/brave-search-mcp-server",
   "category": "Developer Tools",
   "vendor": "brave",
-  "stars": 1103,
+  "stars": 1108,
   "npm_package": "@brave/brave-search-mcp-server",
-  "npm_downloads_monthly": 63096,
+  "npm_downloads_monthly": 62573,
   "license": "MIT",
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_web_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 15 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_web_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_web_search"
+    },
+    {
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 7,
-            "snippet": "new McpServer(",
-            "file": "src/server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_web_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_news_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_news_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_news_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_image_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_image_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_image_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_video_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_video_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_video_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_local_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_local_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_local_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_local_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_llm_context"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_llm_context"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"maximum_number_of_tokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "brave_llm_context"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"maximum_number_of_tokens_per_url\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "brave_llm_context"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_llm_context"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_llm_context"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_place_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_place_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "brave_place_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "brave_place_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_place_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "brave_summarizer"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "high": 9,
+    "medium": 2,
+    "low": 10,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -66,414 +272,111 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "brave_image_search",
+    "brave_llm_context",
+    "brave_local_search",
+    "brave_news_search",
+    "brave_place_search",
+    "brave_summarizer",
+    "brave_video_search",
+    "brave_web_search"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-03-24T04:36:30Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-03-31T22:13:14Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-01T20:13:32Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-03T06:48:25Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-03T21:11:14Z",
+      "tool_name": "brave_web_search",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 17,
-      "version": "2.0.75"
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: locations.results",
+        "hardcoded domain: search.brave.com",
+        "hardcoded domain: summarizer.key"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-03T22:48:19Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-04T01:35:37Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-04T06:20:10Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-04T16:42:07Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-04T22:52:49Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-05T01:11:42Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-05T01:51:31Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-06T01:54:31Z",
+      "tool_name": "brave_news_search",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 17,
-      "version": "2.0.75"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-07T01:41:26Z",
+      "tool_name": "brave_image_search",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 17,
-      "version": "2.0.75"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-07T21:58:27Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-08T01:37:29Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-09T01:30:10Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-10T01:55:07Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-11T01:36:51Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-12T02:01:35Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-13T02:05:25Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-14T02:00:52Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-15T01:58:43Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-16T02:13:02Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-17T02:01:17Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-18T01:43:36Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-19T02:05:04Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-20T02:11:11Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-21T02:04:01Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-22T02:02:10Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-23T02:05:26Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-24T02:05:33Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-25T01:57:25Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-26T02:07:12Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-26T07:24:05Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-27T01:23:48Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-28T02:23:20Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-29T02:22:11Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-04-30T02:20:43Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-05-01T02:24:30Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-05-02T02:12:31Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-05-03T02:21:55Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-05-04T02:19:02Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.75"
-    },
-    {
-      "scan_date": "2026-05-05T02:08:24Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-06T02:07:46Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-07T02:10:20Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-08T02:16:56Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-09T02:12:46Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-10T02:11:57Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-11T02:20:45Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-12T02:16:13Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-13T02:30:54Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-14T02:33:37Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.80"
-    },
-    {
-      "scan_date": "2026-05-15T02:31:40Z",
+      "tool_name": "brave_video_search",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 17,
-      "version": "2.0.82"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-05-16T02:13:36Z",
+      "tool_name": "brave_local_search",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: locations.results"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-05-17T02:19:24Z",
+      "tool_name": "brave_llm_context",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (maximum_number_of_snippets_per_url)",
+        "dynamic URL input (maximum_number_of_urls)",
+        "dynamic email recipient (maximum_number_of_tokens)",
+        "dynamic email recipient (maximum_number_of_tokens_per_url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-05-18T02:39:44Z",
+      "tool_name": "brave_place_search",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-05-19T02:37:44Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-20T02:39:25Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-21T02:37:59Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-22T02:40:23Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-23T02:17:54Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-24T02:37:05Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-25T02:44:27Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-26T02:34:13Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-27T02:44:06Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-28T02:21:55Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
-    },
-    {
-      "scan_date": "2026-05-29T02:35:15Z",
-      "grade": "C",
-      "risk_score": 49,
-      "version": "2.0.82"
+      "tool_name": "brave_summarizer",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: summarizer.key"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

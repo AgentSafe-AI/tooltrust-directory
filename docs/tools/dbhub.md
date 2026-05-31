@@ -10,10 +10,10 @@
 | **Vendor** | bytebase |
 | **Stars** | ⭐ 2858 |
 | **npm Package** | `dbhub` |
-| **npm Downloads (30d)** | 120 |
+| **npm Downloads (30d)** | 105 |
 | **Language** | TypeScript |
 | **Source** | [dbhub](https://github.com/bytebase/dbhub) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

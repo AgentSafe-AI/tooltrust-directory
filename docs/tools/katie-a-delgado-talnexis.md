@@ -13,8 +13,8 @@ Connect via the hosted SSE endpoint — no local setup required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [katie-a-delgado-talnexis](https://smithery.ai/server/katie-a-delgado/talnexis) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-31 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

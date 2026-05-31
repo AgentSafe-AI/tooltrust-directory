@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.11` |
 | **Vendor** | Tiberriver256 |
-| **Stars** | ⭐ 371 |
+| **Stars** | ⭐ 370 |
 | **npm Package** | `@tiberriver256/mcp-server-azure-devops` |
-| **npm Downloads (30d)** | 11.0k |
+| **npm Downloads (30d)** | 10.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

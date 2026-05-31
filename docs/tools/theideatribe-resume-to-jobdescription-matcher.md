@@ -20,7 +20,7 @@ Returns a score from 0 to 100, where higher scores indicate better alignment.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [theideatribe-resume-to-jobdescription-matcher](https://smithery.ai/server/theideatribe/resume-to-jobdescription-matcher) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-05-31 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

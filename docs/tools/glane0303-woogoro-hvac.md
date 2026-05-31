@@ -21,8 +21,8 @@ Backed by Woogoro's `/api/hvac-estimate` endpoint (Claude Haiku-powered) and bun
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [glane0303-woogoro-hvac](https://smithery.ai/server/glane0303/woogoro-hvac) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-05-31 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 
