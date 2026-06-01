@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 137 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/sentry-mcp) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

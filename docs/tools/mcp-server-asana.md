@@ -11,7 +11,7 @@
 | **npm Downloads (30d)** | 19.2k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-asana](https://github.com/roychri/mcp-server-asana) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -1,9 +1,9 @@
 {
   "tool_id": "btp-sap-odata-to-mcp-server",
   "version": "1.0.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-05-31T02:47:37Z",
+  "scan_date": "2026-06-01T02:58:01.200020559Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/lemaiwo/btp-sap-odata-to-mcp-server",
   "category": "Developer Tools",
@@ -16,29 +16,12 @@
   "description": "BTP CloudFoundry Node.js MCP server for SAP OData services integration",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 3,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 30,
-            "snippet": "new McpServer(",
-            "file": "src/mcp-server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SAP_SUCCESSFACTORS_GET_CURRENT_USER"
     }
   ],
   "summary": {
@@ -49,7 +32,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,162 +49,16 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "SAP_SUCCESSFACTORS_GET_CURRENT_USER"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-05-05T02:11:41Z",
+      "tool_name": "SAP_SUCCESSFACTORS_GET_CURRENT_USER",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-06T02:11:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-07T02:13:38Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-08T02:20:03Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-09T02:16:03Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-10T02:15:16Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-11T02:24:01Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-12T02:19:25Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-13T02:34:21Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-14T02:37:01Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-15T02:35:05Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-16T02:16:57Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:24:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-18T02:43:11Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-19T02:41:15Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-20T02:42:51Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-21T02:41:16Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-22T02:43:47Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-23T02:21:13Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-24T02:40:22Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-25T02:47:57Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-26T02:37:39Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-27T02:47:23Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-28T02:25:21Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-29T02:38:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:25:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [heather-macavelia-ai-agent-index](https://smithery.ai/server/heather-macavelia/ai-agent-index) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-01 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

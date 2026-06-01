@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 186 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-siri-shortcuts](https://github.com/dvcrn/mcp-server-siri-shortcuts) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bouch-whatdotheyknow](https://smithery.ai/server/bouch/whatdotheyknow) |
-| **Scan Date** | 2026-05-21 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-01 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

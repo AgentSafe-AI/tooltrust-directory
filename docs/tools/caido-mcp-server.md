@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.0.0` |
 | **Vendor** | c0tton-fluff |
-| **Stars** | ⭐ 57 |
+| **Stars** | ⭐ 58 |
 | **Language** | Go |
 | **Source** | [caido-mcp-server](https://github.com/c0tton-fluff/caido-mcp-server) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

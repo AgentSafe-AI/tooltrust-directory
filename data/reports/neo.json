@@ -1,0 +1,126 @@
+{
+  "tool_id": "neo",
+  "version": "11.19.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-01T02:53:42Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
+  "source_url": "https://github.com/neomjs/neo",
+  "category": "Developer Tools",
+  "vendor": "neomjs",
+  "stars": 3190,
+  "npm_package": "neo.mjs",
+  "npm_downloads_monthly": 23341,
+  "license": "MIT",
+  "language": "JavaScript",
+  "description": "Neo.mjs is a self-evolving software organism: a professional end-to-end AI engineering team whose cross-model swarm inhabits live apps via Neural Link, Active Hybrid GraphRAG, DreamService, and self-healing loops.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "ai/mcp/server/github-workflow/Server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 68,
+            "snippet": "new McpServer(",
+            "file": "ai/mcp/server/github-workflow/Server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "ai/mcp/server/knowledge-base/Server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 66,
+            "snippet": "new McpServer(",
+            "file": "ai/mcp/server/knowledge-base/Server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "ai/mcp/server/memory-core/Server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 64,
+            "snippet": "new McpServer(",
+            "file": "ai/mcp/server/memory-core/Server.mjs",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "ai/mcp/server/github-workflow/Server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 68,
+      "snippet": "new McpServer(",
+      "file": "ai/mcp/server/github-workflow/Server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "ai/mcp/server/knowledge-base/Server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 66,
+      "snippet": "new McpServer(",
+      "file": "ai/mcp/server/knowledge-base/Server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "ai/mcp/server/memory-core/Server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 64,
+      "snippet": "new McpServer(",
+      "file": "ai/mcp/server/memory-core/Server.mjs",
+      "language": "typescript"
+    }
+  ]
+}

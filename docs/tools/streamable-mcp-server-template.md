@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 79 |
 | **Language** | TypeScript |
 | **Source** | [streamable-mcp-server-template](https://github.com/iceener/streamable-mcp-server-template) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

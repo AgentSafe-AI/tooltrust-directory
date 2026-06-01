@@ -10,8 +10,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [admin-8nvf-cerebrochain](https://smithery.ai/server/admin-8nvf/cerebrochain) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-01 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

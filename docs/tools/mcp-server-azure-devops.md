@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 10.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 559 |
 | **Language** | TypeScript |
 | **Source** | [xcode-mcp-server](https://github.com/r-huijts/xcode-mcp-server) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

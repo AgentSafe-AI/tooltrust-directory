@@ -19,7 +19,7 @@ Backed by Woogoro's `/api/parse-quote` endpoint (Claude Haiku-powered) and bundl
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [glane0303-woogoro-roofing](https://smithery.ai/server/glane0303/woogoro-roofing) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

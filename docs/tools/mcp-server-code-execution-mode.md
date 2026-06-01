@@ -8,10 +8,10 @@
 | **Risk Score** | 63 |
 | **Version** | `sha-27d23b8e2c76` |
 | **Vendor** | elusznik |
-| **Stars** | ⭐ 332 |
+| **Stars** | ⭐ 333 |
 | **Language** | Python |
 | **Source** | [mcp-server-code-execution-mode](https://github.com/elusznik/mcp-server-code-execution-mode) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

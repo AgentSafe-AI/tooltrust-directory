@@ -8,12 +8,12 @@
 | **Risk Score** | 32 |
 | **Version** | `0.0.6` |
 | **Vendor** | tsmztech |
-| **Stars** | ⭐ 156 |
+| **Stars** | ⭐ 157 |
 | **npm Package** | `@tsmztech/mcp-server-salesforce` |
 | **npm Downloads (30d)** | 5.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

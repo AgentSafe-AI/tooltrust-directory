@@ -32,8 +32,8 @@ More info: https://icons8.com/mcp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [icons8community-icons8mpc](https://smithery.ai/server/icons8community/icons8mpc) |
-| **Scan Date** | 2026-05-28 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-01 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

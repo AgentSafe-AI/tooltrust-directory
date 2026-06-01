@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-05-30T02:39:51.723617213Z",
+  "scan_date": "2026-06-01T02:58:31.761822072Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/janmacher02-xl8y/czech-vat-mcp",
   "vendor": "Smithery",
@@ -13,18 +13,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 4 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get_vat_rates",
-          "validate_vat"
-        ],
-        "removed": [
           "check_bank_accounts",
           "check_unreliable_vat_payer",
           "lookup_company",
           "validate_vat_eu"
+        ],
+        "removed": [
+          "get_vat_rates",
+          "validate_vat"
         ],
         "version": "smithery"
       }
@@ -35,7 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_vat"
+      "tool_name": "lookup_company"
     },
     {
       "id": "AS-014",
@@ -43,7 +43,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_vat_rates"
+      "tool_name": "check_unreliable_vat_payer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_bank_accounts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "validate_vat_eu"
     }
   ],
   "summary": {
@@ -51,23 +67,39 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_vat_rates",
-    "validate_vat"
+    "check_bank_accounts",
+    "check_unreliable_vat_payer",
+    "lookup_company",
+    "validate_vat_eu"
   ],
   "tool_contexts": [
     {
-      "tool_name": "validate_vat",
+      "tool_name": "lookup_company",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_vat_rates",
+      "tool_name": "check_unreliable_vat_payer",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_bank_accounts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "validate_vat_eu",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -307,6 +339,12 @@
       "scan_date": "2026-05-29T02:39:03Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-30T02:39:51Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

@@ -8,10 +8,10 @@
 | **Risk Score** | 32 |
 | **Version** | `1.2.0` |
 | **Vendor** | AgentDeskAI |
-| **Stars** | ⭐ 7217 |
+| **Stars** | ⭐ 7218 |
 | **Language** | JavaScript |
 | **Source** | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

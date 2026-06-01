@@ -1,10 +1,10 @@
 {
   "tool_id": "nero-pc-dev-ideas",
   "version": "5.0.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-17T02:38:14.043876083Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-01T03:00:06.398660761Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Nero-PC/dev-ideas",
   "category": "Developer Tools",
   "vendor": "Nero-PC",
@@ -16,53 +16,30 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v5.0.0: 4 tool(s) added, 10 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v5.0.0: 3 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "find_candidates",
+          "find_similar_projects",
+          "get_profile"
+        ],
+        "removed": [
           "get_steam_games",
           "search_devto",
           "search_events",
           "search_podcasts"
-        ],
-        "removed": [
-          "devpilot_attach",
-          "devpilot_changed",
-          "devpilot_cleanup",
-          "devpilot_health_check",
-          "devpilot_init",
-          "devpilot_log",
-          "devpilot_run",
-          "devpilot_status",
-          "devpilot_stop",
-          "devpilot_up"
         ],
         "version": "5.0.0"
       }
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_devto"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_devto"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_devto"
+      "tool_name": "find_candidates"
     },
     {
       "id": "AS-002",
@@ -70,7 +47,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_steam_games"
+      "tool_name": "find_candidates"
     },
     {
       "id": "AS-011",
@@ -78,7 +55,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_steam_games"
+      "tool_name": "find_candidates"
     },
     {
       "id": "AS-014",
@@ -86,7 +63,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_steam_games"
+      "tool_name": "find_candidates"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_profile"
     },
     {
       "id": "AS-002",
@@ -94,7 +79,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_podcasts"
+      "tool_name": "get_profile"
     },
     {
       "id": "AS-011",
@@ -102,7 +87,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_podcasts"
+      "tool_name": "get_profile"
     },
     {
       "id": "AS-014",
@@ -110,23 +95,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_podcasts"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_events"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_events"
+      "tool_name": "get_profile"
     },
     {
       "id": "AS-014",
@@ -134,65 +103,58 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_events"
+      "tool_name": "find_similar_projects"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 0,
-    "low": 4,
-    "info": 4
+    "high": 3,
+    "medium": 2,
+    "low": 2,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_steam_games",
-    "search_devto",
-    "search_events",
-    "search_podcasts"
+    "find_candidates",
+    "find_similar_projects",
+    "get_profile"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_devto",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "find_candidates",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
+        "executes_commands",
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: dev.to"
+        "hardcoded domain: github.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_steam_games",
-      "action": "ALLOW",
-      "grade": "B",
+      "tool_name": "get_profile",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_podcasts",
+      "tool_name": "find_similar_projects",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
-        "executes_commands",
-        "uses_network"
+        "executes_commands"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search_events",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
+      "destinations": [
+        "hardcoded domain: github.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -221,6 +183,12 @@
       "scan_date": "2026-04-26T07:44:25Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "5.0.0"
+    },
+    {
+      "scan_date": "2026-05-17T02:38:14Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "5.0.0"
     }
   ]

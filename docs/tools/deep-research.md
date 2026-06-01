@@ -5,15 +5,15 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Risk Score** | 17 |
 | **Version** | `0.11.0` |
 | **Vendor** | u14app |
-| **Stars** | ⭐ 4592 |
+| **Stars** | ⭐ 4594 |
 | **npm Package** | `deep-research` |
 | **npm Downloads (30d)** | 202 |
 | **Language** | JavaScript |
 | **Source** | [deep-research](https://github.com/u14app/deep-research) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -25,7 +25,7 @@
 | Critical | 0 |
 | High     | 2 |
 | Medium   | 0 |
-| Low      | 0 |
+| Low      | 1 |
 | Info     | 1 |
 
 ## Detailed Findings
@@ -42,15 +42,27 @@ The set of tools exposed by this server changed between scans of the same versio
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
 
 **Description:**
-input parameter "max_tokens" appears to accept a secret or credential
+tool declares network permission
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

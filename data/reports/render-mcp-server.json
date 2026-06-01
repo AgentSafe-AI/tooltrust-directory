@@ -1,9 +1,9 @@
 {
   "tool_id": "render-mcp-server",
   "version": "0.3.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-31T02:46:56Z",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-06-01T02:57:19.490915265Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/render-oss/render-mcp-server",
   "category": "Developer Tools",
@@ -14,40 +14,78 @@
   "description": "The Official Render MCP Server",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "take_screenshot"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "take_screenshot"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "take_screenshot"
+    },
+    {
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 7,
-            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
-            "file": "cmd/server.go",
-            "language": "go"
-          },
-          {
-            "kind": "init",
-            "line": 24,
-            "snippet": "server.NewMCPServer(",
-            "file": "cmd/server.go",
-            "language": "go"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "take_screenshot"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_screenshot_cache"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "check_screenshot_cache"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_screenshot_cache"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_usage"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 3,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -65,318 +103,48 @@
       "language": "go"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "check_screenshot_cache",
+    "get_usage",
+    "take_screenshot"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-03-24T04:39:12Z",
+      "tool_name": "take_screenshot",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 19,
-      "version": "0.3.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "dynamic email recipient (click_selector)",
+        "dynamic email recipient (hide_selectors)",
+        "hardcoded domain: )"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-11T01:39:50Z",
+      "tool_name": "check_screenshot_cache",
+      "action": "ALLOW",
       "grade": "B",
-      "risk_score": 19,
-      "version": "0.3.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: )"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-12T02:04:38Z",
-      "grade": "B",
-      "risk_score": 19,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-13T02:08:32Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-14T02:04:07Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-15T02:01:46Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-16T02:16:07Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-17T02:04:32Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-18T01:46:38Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-19T02:08:11Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-20T02:14:16Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-21T02:06:43Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-22T02:05:03Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-23T02:08:18Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:08:30Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-25T02:00:25Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:10:04Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:27:32Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:26:55Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:26:28Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:25:15Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:23:47Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:27:19Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-02T02:15:23Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-03T02:24:44Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-04T02:22:07Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-05T02:11:07Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-06T02:10:21Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-07T02:12:49Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-08T02:19:25Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-09T02:15:26Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-10T02:14:33Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-11T02:23:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-12T02:18:51Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-13T02:33:44Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-14T02:36:21Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-15T02:34:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-16T02:16:18Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:23:21Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-18T02:42:36Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-19T02:40:40Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-20T02:42:11Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-21T02:40:35Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-22T02:43:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-23T02:20:36Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-24T02:39:40Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-25T02:47:09Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-26T02:36:57Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-27T02:46:42Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-28T02:24:40Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-29T02:37:58Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:24:13Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.3.0"
+      "tool_name": "get_usage",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

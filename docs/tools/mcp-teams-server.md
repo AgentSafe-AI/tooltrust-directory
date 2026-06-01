@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 376 |
 | **Language** | Python |
 | **Source** | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-06-01 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
