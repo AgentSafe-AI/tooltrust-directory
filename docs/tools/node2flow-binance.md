@@ -24,7 +24,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [node2flow-binance](https://smithery.ai/server/node2flow/binance) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

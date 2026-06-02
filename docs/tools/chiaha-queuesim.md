@@ -13,7 +13,7 @@ Free, no auth, no API key. By ChiAha — 35 years of discrete event simulation. 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [chiaha-queuesim](https://smithery.ai/server/chiaha/QueueSim) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

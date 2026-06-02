@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 92 |
 | **Language** | Go |
 | **Source** | [memory-mcp-server-go](https://github.com/okooo5km/memory-mcp-server-go) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

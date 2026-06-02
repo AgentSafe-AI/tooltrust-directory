@@ -8,12 +8,12 @@
 | **Risk Score** | 80 |
 | **Version** | `1.4.10` |
 | **Vendor** | tuannvm |
-| **Stars** | ⭐ 475 |
+| **Stars** | ⭐ 476 |
 | **npm Package** | `codex-mcp-server` |
-| **npm Downloads (30d)** | 7.4k |
+| **npm Downloads (30d)** | 6.9k |
 | **Language** | TypeScript |
 | **Source** | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

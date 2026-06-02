@@ -11,7 +11,7 @@ This is the verify-only edition (v0.1). Three read-only, authless tools wrap the
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ic3moore-anchorregistry](https://smithery.ai/server/ic3moore/anchorregistry) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

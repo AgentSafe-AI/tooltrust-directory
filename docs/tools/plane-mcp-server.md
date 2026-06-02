@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `2.5.0-phoenix-b5ad5360` |
 | **Vendor** | makeplane |
-| **Stars** | ⭐ 233 |
+| **Stars** | ⭐ 236 |
 | **Language** | Python |
 | **Source** | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

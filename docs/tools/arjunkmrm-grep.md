@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [arjunkmrm-grep](https://smithery.ai/server/arjunkmrm/grep) |
-| **Scan Date** | 2026-05-25 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-02 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

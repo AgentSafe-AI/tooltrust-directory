@@ -1,15 +1,15 @@
-# 🟡 songjiangzhou-cpp-guidelines
+# 🟢 songjiangzhou-cpp-guidelines
 
 > Enforce consistent C++ style and best practices across your codebase. Analyze naming, memory safety, and const correctness, and get actionable modernization suggestions up to C++23. Accelerate reviews with ready-made prompts and quick access to curated guidelines.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [songjiangzhou-cpp-guidelines](https://smithery.ai/server/SongJiangzhou/cpp_guidelines) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 2 |
 | Low      | 0 |
 | Info     | 5 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 13 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

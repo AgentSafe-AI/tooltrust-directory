@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kiwi](https://smithery.ai/server/kiwi) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-06-02 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

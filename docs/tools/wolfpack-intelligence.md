@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [wolfpack-intelligence](https://smithery.ai/server/wolfpack/intelligence) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

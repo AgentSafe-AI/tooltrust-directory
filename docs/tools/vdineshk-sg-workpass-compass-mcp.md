@@ -7,8 +7,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vdineshk-sg-workpass-compass-mcp](https://smithery.ai/server/vdineshk/sg-workpass-compass-mcp) |
-| **Scan Date** | 2026-05-21 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-02 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 223 |
 | **Language** | Go |
 | **Source** | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -17,7 +17,7 @@ Install in Claude Desktop: npx mcp-remote https://focusstreak.codemadebiz.com/mc
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [codemadebiz-focus-streak-habit-tracker](https://smithery.ai/server/codemadebiz/focus-streak-habit-tracker) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -27,24 +27,12 @@ Install in Claude Desktop: npx mcp-remote https://focusstreak.codemadebiz.com/mc
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 2 |
 | Low      | 2 |
 | Info     | 5 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 

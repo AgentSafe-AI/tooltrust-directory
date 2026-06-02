@@ -1,6 +1,6 @@
 # 🟡 ruflo
 
-> 🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration
+> 🌊 The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `3.10.31` |
 | **Vendor** | ruvnet |
-| **Stars** | ⭐ 56985 |
+| **Stars** | ⭐ 57329 |
 | **npm Package** | `claude-flow` |
-| **npm Downloads (30d)** | 126.9k |
+| **npm Downloads (30d)** | 138.0k |
 | **Language** | TypeScript |
 | **Source** | [ruflo](https://github.com/ruvnet/ruflo) |
-| **Scan Date** | 2026-06-01 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

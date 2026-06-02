@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fuddyduddy-kyrgyz-news-mcp](https://smithery.ai/server/fuddyduddy/kyrgyz-news-mcp) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-02 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

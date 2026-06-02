@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-language-server",
   "version": "0.1.1",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-01T02:54:14Z",
+  "scan_date": "2026-06-02T02:51:18.366864251Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/isaacphi/mcp-language-server",
   "category": "Developer Tools",
@@ -14,29 +14,12 @@
   "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 17,
-            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
-            "file": "main.go",
-            "language": "go"
-          },
-          {
-            "kind": "init",
-            "line": 111,
-            "snippet": "server.NewMCPServer(",
-            "file": "main.go",
-            "language": "go"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "text_detect_language"
     }
   ],
   "summary": {
@@ -47,7 +30,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -63,6 +45,21 @@
       "snippet": "server.NewMCPServer(",
       "file": "main.go",
       "language": "go"
+    }
+  ],
+  "tool_names": [
+    "text_detect_language"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "text_detect_language",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }
