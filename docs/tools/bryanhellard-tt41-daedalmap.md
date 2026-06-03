@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bryanhellard-tt41-daedalmap](https://smithery.ai/server/bryanhellard-tt41/daedalmap) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-03 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

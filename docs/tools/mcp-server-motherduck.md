@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 486 |
 | **Language** | Python |
 | **Source** | [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) |
-| **Scan Date** | 2026-06-02 |
+| **Scan Date** | 2026-06-03 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

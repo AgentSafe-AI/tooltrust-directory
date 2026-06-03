@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alperenkocyigit-authorprofilemcp](https://smithery.ai/server/alperenkocyigit/authorprofilemcp) |
-| **Scan Date** | 2026-05-28 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-03 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

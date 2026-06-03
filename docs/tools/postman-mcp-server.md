@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 18.5k |
 | **Language** | TypeScript |
 | **Source** | [postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) |
-| **Scan Date** | 2026-06-02 |
+| **Scan Date** | 2026-06-03 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

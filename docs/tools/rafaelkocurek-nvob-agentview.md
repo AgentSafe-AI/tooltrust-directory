@@ -28,8 +28,8 @@ Connect with **OAuth 2.1 + PKCE** (with Dynamic Client Registration). No API key
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rafaelkocurek-nvob-agentview](https://smithery.ai/server/rafaelkocurek-nvob/agentview) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-06-03 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

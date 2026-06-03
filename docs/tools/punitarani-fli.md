@@ -1,17 +1,17 @@
 # 🟡 punitarani-fli
 
-> Google Flights MCP and Python Library
+> Google Flights MCP, CLI and Python Library
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `0.8.4` |
+| **Version** | `0.9.0` |
 | **Vendor** | punitarani |
-| **Stars** | ⭐ 2073 |
+| **Stars** | ⭐ 2809 |
 | **Language** | Python |
 | **Source** | [punitarani-fli](https://github.com/punitarani/fli) |
-| **Scan Date** | 2026-05-30 |
+| **Scan Date** | 2026-06-03 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

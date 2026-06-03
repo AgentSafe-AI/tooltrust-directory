@@ -8,11 +8,11 @@
 | **Risk Score** | 32 |
 | **Version** | `0.0.1` |
 | **Vendor** | coleam00 |
-| **Stars** | ⭐ 293 |
+| **Stars** | ⭐ 291 |
 | **npm Package** | `remote-mcp-github-oauth` |
 | **Language** | TypeScript |
 | **Source** | [remote-mcp-server-with-auth](https://github.com/coleam00/remote-mcp-server-with-auth) |
-| **Scan Date** | 2026-06-02 |
+| **Scan Date** | 2026-06-03 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

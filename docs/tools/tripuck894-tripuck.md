@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tripuck894-tripuck](https://smithery.ai/server/tripuck894/tripuck) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-03 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

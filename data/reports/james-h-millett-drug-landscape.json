@@ -3,72 +3,12 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-05-31T02:48:16.666338436Z",
+  "scan_date": "2026-06-03T03:04:08.769052221Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/james-h-millett/drug-landscape",
   "vendor": "Smithery",
   "description": "**Pharma intelligence as a Claude / Cursor / Continue / Zed / Cline / Windsurf tool.**\n\nDrug Landscape exposes 11 MCP tools over `https://druglandscape.com/api/mcp` covering:\n\n- **156,000+ drugs** — FDA + EMA + MHRA + PMDA approved, plus pipeline candidates\n- **480,000+ clinical trials** — from ClinicalTrials.gov\n- **915 pharmaceutical companies** — with SEC ticker + pipeline\n- **61 disease areas** — treatment landscape + guidelines\n\n### Tools\n\n- `lookup_drug` — full profile by brand, generic, or slug\n- `lookup_disease` — treatment landscape for any disease\n- `lookup_company` — company + pipeline + ticker\n- `lookup_trial` — trial by NCT ID\n- `search` — global semantic search\n- `compare_drugs` — side-by-side drug comparison\n- `browse_drugs` — filter by phase, area, class, target\n- `get_pipeline` — full company pipeline\n- `get_drugs_in_class` — pharmacologic class lookup (PD-1, GLP-1, JAK…)\n- `get_drugs_for_target` — molecular target lookup (EGFR, HER2, PCSK9…)\n- `define` — pharma glossary (NDA, PDUFA, ORR, QALY, ADC…)\n\n### Why use it\n\nEvery response includes the canonical URL of the entity (e.g. `https://druglandscape.com/drug/keytruda`). Cite that URL and the LLM has already linked to underlying primary sources — FDA label, EPAR, NICE TA, ClinicalTrials.gov, SEC filing, USPTO patent, PubMed paper.\n\nFree with no API key. Reasonable rate limits via Vercel edge cache.\n\n### Example prompts\n\n- \"What's Keytruda's mechanism and approved indications?\"\n- \"Compare Ozempic and Mounjaro side-by-side.\"\n- \"List every Phase 3 PD-1 inhibitor in oncology.\"\n- \"What's in Eli Lilly's pipeline for obesity?\"\n\n### Resources\n\n- Website: [druglandscape.com](https://druglandscape.com)\n- API docs: [druglandscape.com/api-docs](https://druglandscape.com/api-docs)\n- Source: [github.com/JamesMildog/drugs-landscape](https://github.com/JamesMildog/drugs-landscape)",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 11 tool(s) added, 35 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "browse_drugs",
-          "compare_drugs",
-          "define",
-          "get_drugs_for_target",
-          "get_drugs_in_class",
-          "get_pipeline",
-          "lookup_company",
-          "lookup_disease",
-          "lookup_drug",
-          "lookup_trial",
-          "search"
-        ],
-        "removed": [
-          "get_compound",
-          "get_coverage",
-          "get_finding_provenance",
-          "get_model_card",
-          "get_target_landscape",
-          "list_models",
-          "list_top_targets",
-          "search_adc_linker_failures",
-          "search_admet_failures",
-          "search_admet_failures_all_modalities",
-          "search_ancestry_specific_failures",
-          "search_bispecific_format_failures",
-          "search_developability_failures",
-          "search_drug_drug_interaction_failures",
-          "search_failed_adcs",
-          "search_failed_bispecifics",
-          "search_failed_clinical_antibodies",
-          "search_failed_essentiality_screens",
-          "search_failed_guides",
-          "search_failed_oligonucleotides",
-          "search_failed_peptide_therapeutics",
-          "search_failed_protacs",
-          "search_failed_replications",
-          "search_failed_selectivity",
-          "search_failed_vaccines",
-          "search_inactive_compounds",
-          "search_indication_history",
-          "search_mechanism_failures",
-          "search_oligo_delivery_failures",
-          "search_pathogen_history",
-          "search_peptide_stability_issues",
-          "search_protac_e3_issues",
-          "search_safety_failures",
-          "search_target_history",
-          "search_vaccine_immunogenicity_failures"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -200,7 +140,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 3,
     "low": 1,
     "info": 11
@@ -315,6 +255,12 @@
       "scan_date": "2026-05-30T02:40:09Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-31T02:48:16Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]

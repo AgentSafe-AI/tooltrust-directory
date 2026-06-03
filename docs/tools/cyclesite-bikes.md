@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cyclesite-bikes](https://smithery.ai/server/cyclesite/bikes) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-03 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

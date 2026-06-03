@@ -49,7 +49,7 @@ Free with no API key. Reasonable rate limits via Vercel edge cache.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [james-h-millett-drug-landscape](https://smithery.ai/server/james-h-millett/drug-landscape) |
-| **Scan Date** | 2026-05-31 |
+| **Scan Date** | 2026-06-03 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -59,24 +59,12 @@ Free with no API key. Reasonable rate limits via Vercel edge cache.
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 3 |
 | Low      | 1 |
 | Info     | 11 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 11 tool(s) added, 35 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
