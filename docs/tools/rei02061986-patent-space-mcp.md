@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rei02061986-patent-space-mcp](https://smithery.ai/server/Rei02061986/patent-space-mcp) |
-| **Scan Date** | 2026-05-26 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-04 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

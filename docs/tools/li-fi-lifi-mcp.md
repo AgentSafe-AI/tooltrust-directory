@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [li-fi-lifi-mcp](https://smithery.ai/server/li-fi/lifi-mcp) |
-| **Scan Date** | 2026-06-02 |
+| **Scan Date** | 2026-06-04 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

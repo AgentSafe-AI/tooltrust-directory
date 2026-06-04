@@ -1,0 +1,125 @@
+{
+  "tool_id": "skybridge",
+  "version": "1.0.4",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-04T02:55:04Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
+  "source_url": "https://github.com/alpic-ai/skybridge",
+  "category": "Developer Tools",
+  "vendor": "alpic-ai",
+  "stars": 1644,
+  "npm_package": "@skybridge/monorepo",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Skybridge is a full-stack TypeScript framework for MCP Apps and ChatGPT Apps. Type-safe. React-powered. Platform-agnostic.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 12,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/core/src/server/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 421,
+            "snippet": "new McpServer(",
+            "file": "packages/core/src/server/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 422,
+            "snippet": ".registerTool(",
+            "file": "packages/core/src/server/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/core/src/test/utils.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 11,
+            "snippet": "new McpServer(",
+            "file": "packages/core/src/test/utils.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 31,
+            "snippet": ".registerTool(",
+            "file": "packages/core/src/test/utils.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 12,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "packages/core/src/server/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 421,
+      "snippet": "new McpServer(",
+      "file": "packages/core/src/server/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 422,
+      "snippet": ".registerTool(",
+      "file": "packages/core/src/server/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "packages/core/src/test/utils.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 11,
+      "snippet": "new McpServer(",
+      "file": "packages/core/src/test/utils.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 31,
+      "snippet": ".registerTool(",
+      "file": "packages/core/src/test/utils.ts",
+      "language": "typescript"
+    }
+  ]
+}

@@ -52,8 +52,8 @@ Documentation · Privacy Policy · senzing.com
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [senzing-entity-resolution](https://smithery.ai/server/senzing/entity-resolution) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-04 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

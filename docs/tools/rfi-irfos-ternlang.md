@@ -22,7 +22,7 @@ forces yes/no on ambiguous data is making a structural error. We fixed that.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rfi-irfos-ternlang](https://smithery.ai/server/rfi-irfos/ternlang) |
-| **Scan Date** | 2026-06-03 |
+| **Scan Date** | 2026-06-04 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

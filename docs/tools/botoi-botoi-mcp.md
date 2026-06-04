@@ -11,8 +11,8 @@ Free tier: 5 req/min, 100 req/day. No API key required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [botoi-botoi-mcp](https://smithery.ai/server/botoi/botoi-mcp) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-04 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 
