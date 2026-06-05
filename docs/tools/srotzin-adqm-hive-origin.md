@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [srotzin-adqm-hive-origin](https://smithery.ai/server/srotzin-adqm/hive-origin) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

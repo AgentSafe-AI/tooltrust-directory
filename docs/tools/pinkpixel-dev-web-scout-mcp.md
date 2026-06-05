@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 501 |
 | **Language** | JavaScript |
 | **Source** | [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

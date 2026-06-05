@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [iclickfreedownloads-mcp-server-airbnb](https://smithery.ai/server/iclickfreedownloads/mcp-server-airbnb) |
-| **Scan Date** | 2026-05-16 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-06-05 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

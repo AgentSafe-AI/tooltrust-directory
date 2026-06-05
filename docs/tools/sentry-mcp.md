@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.35.0` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 713 |
+| **Stars** | ⭐ 714 |
 | **npm Package** | `sentry-mcp` |
 | **npm Downloads (30d)** | 147 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/sentry-mcp) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

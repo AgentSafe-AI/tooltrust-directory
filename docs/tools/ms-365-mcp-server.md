@@ -8,12 +8,12 @@
 | **Risk Score** | 52 |
 | **Version** | `0.114.0` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 757 |
+| **Stars** | ⭐ 759 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
 | **npm Downloads (30d)** | 97.9k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

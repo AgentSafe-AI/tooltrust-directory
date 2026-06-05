@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `3.7.0` |
 | **Vendor** | yusufkaraaslan |
-| **Stars** | ⭐ 13925 |
+| **Stars** | ⭐ 13948 |
 | **Language** | Python |
 | **Source** | [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

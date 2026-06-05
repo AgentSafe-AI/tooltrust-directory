@@ -12,7 +12,7 @@
 | **npm Package** | `spotify-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

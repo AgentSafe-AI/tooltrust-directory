@@ -1,25 +1,21 @@
 {
   "tool_id": "benzsevern-goldenflow",
-  "version": "1.2.0",
+  "version": "smithery",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-05-30T02:35:44.347352868Z",
+  "risk_score": 8,
+  "scan_date": "2026-06-05T02:47:45.031619983Z",
   "scanner": "tooltrust-scanner/v0.3.13",
-  "source_url": "https://github.com/benzsevern/goldenflow",
-  "category": "Developer Tools",
-  "vendor": "benzsevern",
-  "stars": 1,
-  "license": "MIT",
-  "language": "Python",
-  "description": "Data transformation toolkit — standardize, reshape, and normalize messy data. Python \u0026 TypeScript. 83 transforms, zero-config mode, MCP server, edge-safe. DQBench 100/100.",
+  "source_url": "https://smithery.ai/server/benzsevern/goldenflow",
+  "vendor": "Smithery",
+  "description": "Clean and standardize messy CSV data � fix phone numbers, normalize dates, proper-case names, standardize addresses, strip whitespace, fix Unicode. 76 built-in transforms. Zero config: auto-detects what needs fixing. 10 tools: transform files, map schemas between different column names, profile data, generate configs, compare before/after. Use from Claude to clean any dataset before analysis.",
   "findings": [
     {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'GoldenCheck' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenCheck"
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "transform"
     },
     {
       "id": "AS-014",
@@ -27,31 +23,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenCheck"
+      "tool_name": "transform"
     },
     {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'GoldenFlow' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenFlow"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenFlow"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'GoldenMatch' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenMatch"
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "map"
     },
     {
       "id": "AS-014",
@@ -59,31 +39,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenMatch"
+      "tool_name": "map"
     },
     {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'GoldenPipe' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenPipe"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GoldenPipe"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'goldenmatch-extensions' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "goldenmatch-extensions"
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "profile"
     },
     {
       "id": "AS-014",
@@ -91,55 +55,181 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "goldenmatch-extensions"
+      "tool_name": "profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "learn"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "learn"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "diff"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "diff"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "validate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "validate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_transforms"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "explain_transform"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_domains"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "select_from_findings"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
+    "medium": 6,
     "low": 0,
     "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "GoldenCheck",
-    "GoldenFlow",
-    "GoldenMatch",
-    "GoldenPipe",
-    "goldenmatch-extensions"
+    "diff",
+    "explain_transform",
+    "learn",
+    "list_domains",
+    "list_transforms",
+    "map",
+    "profile",
+    "select_from_findings",
+    "transform",
+    "validate"
   ],
   "tool_contexts": [
     {
-      "tool_name": "GoldenCheck",
+      "tool_name": "transform",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GoldenFlow",
+      "tool_name": "map",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "profile",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GoldenMatch",
+      "tool_name": "learn",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GoldenPipe",
+      "tool_name": "diff",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "validate",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "goldenmatch-extensions",
+      "tool_name": "list_transforms",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "explain_transform",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_domains",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "select_from_findings",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -209,6 +299,12 @@
     },
     {
       "scan_date": "2026-05-17T02:36:53Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.2.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:35:44Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.2.0"

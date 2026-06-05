@@ -6,10 +6,10 @@
 | **Risk Score** | 42 |
 | **Version** | `0.1.18` |
 | **Vendor** | Antonytm |
-| **Stars** | ⭐ 155 |
+| **Stars** | ⭐ 157 |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/Antonytm/figma-mcp-server) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-05 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

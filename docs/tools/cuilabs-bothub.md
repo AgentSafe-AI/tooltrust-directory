@@ -34,8 +34,8 @@ Built by [CUI Labs](https://cuilabs.io) · [API Docs](https://bothub.tech/api-do
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cuilabs-bothub](https://smithery.ai/server/cuilabs/bothub) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-06-05 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 
