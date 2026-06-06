@@ -8,11 +8,11 @@
 | **Risk Score** | 25 |
 | **Version** | `0.0.1` |
 | **Vendor** | intuit |
-| **Stars** | ⭐ 265 |
+| **Stars** | ⭐ 266 |
 | **npm Package** | `@qboapi/qbo-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) |
-| **Scan Date** | 2026-06-05 |
+| **Scan Date** | 2026-06-06 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

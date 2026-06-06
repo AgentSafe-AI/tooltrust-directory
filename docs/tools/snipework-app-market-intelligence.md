@@ -23,7 +23,7 @@ Built by SnipeWork — AI-powered Upwork job scanner for freelancers.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [snipework-app-market-intelligence](https://smithery.ai/server/snipework-app/market-intelligence) |
-| **Scan Date** | 2026-06-05 |
+| **Scan Date** | 2026-06-06 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -30,7 +30,7 @@ Browse the full catalog at [mcppedia.org](https://mcppedia.org).
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bbeksh-mcppedia](https://smithery.ai/server/bbeksh/mcppedia) |
-| **Scan Date** | 2026-06-05 |
+| **Scan Date** | 2026-06-06 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

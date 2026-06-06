@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 157 |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/Antonytm/figma-mcp-server) |
-| **Scan Date** | 2026-06-05 |
+| **Scan Date** | 2026-06-06 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

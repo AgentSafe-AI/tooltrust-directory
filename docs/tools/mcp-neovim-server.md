@@ -8,12 +8,12 @@
 | **Risk Score** | 32 |
 | **Version** | `0.5.5` |
 | **Vendor** | bigcodegen |
-| **Stars** | ⭐ 315 |
+| **Stars** | ⭐ 317 |
 | **npm Package** | `mcp-neovim-server` |
 | **npm Downloads (30d)** | 274 |
 | **Language** | TypeScript |
 | **Source** | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) |
-| **Scan Date** | 2026-06-05 |
+| **Scan Date** | 2026-06-06 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

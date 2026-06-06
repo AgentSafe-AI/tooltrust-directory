@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [boar-network-blockchain-basic](https://smithery.ai/server/boar-network/blockchain-basic) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-06-06 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 
