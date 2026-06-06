@@ -230,6 +230,9 @@ func loadReports(dir string) ([]Report, error) {
 
 func isPublicReport(r Report) bool {
 	if strings.Contains(r.SourceURL, "github.com") && r.Stars < MinPublicGitHubStars {
+		if r.Category == "Scan Request" {
+			return true
+		}
 		return false
 	}
 	return true

@@ -222,6 +222,35 @@ func TestLoadReports(t *testing.T) {
 	}
 }
 
+func TestLoadReportsIncludesScanRequestBelowStarFloor(t *testing.T) {
+	dir := t.TempDir()
+
+	scanRequest := `{"tool_id":"requested","version":"1.0.0","grade":"B","risk_score":17,
+	"scan_date":"2026-01-01T00:00:00Z","scanner":"tooltrust-scanner/0.1.2",
+	"source_url":"https://github.com/example/requested","stars":4,"category":"Scan Request",
+	"findings":[],"summary":{"critical":0,"high":0,"medium":0,"low":0,"info":0},
+	"methodology":"https://example.com/methodology"}`
+	os.WriteFile(filepath.Join(dir, "requested.json"), []byte(scanRequest), 0o644)
+
+	lowStarDiscovery := `{"tool_id":"low-star","version":"1.0.0","grade":"A","risk_score":0,
+	"scan_date":"2026-01-01T00:00:00Z","scanner":"tooltrust-scanner/0.1.2",
+	"source_url":"https://github.com/example/low-star","stars":4,
+	"findings":[],"summary":{"critical":0,"high":0,"medium":0,"low":0,"info":0},
+	"methodology":"https://example.com/methodology"}`
+	os.WriteFile(filepath.Join(dir, "low-star.json"), []byte(lowStarDiscovery), 0o644)
+
+	reports, err := loadReports(dir)
+	if err != nil {
+		t.Fatalf("loadReports: %v", err)
+	}
+	if len(reports) != 1 {
+		t.Fatalf("expected 1 public report, got %d", len(reports))
+	}
+	if reports[0].ToolID != "requested" {
+		t.Fatalf("expected requested scan to be public, got %q", reports[0].ToolID)
+	}
+}
+
 func TestUpdateRegistryDollarInDescription(t *testing.T) {
 	dir := t.TempDir()
 	reportsDir := filepath.Join(dir, "data", "reports")
