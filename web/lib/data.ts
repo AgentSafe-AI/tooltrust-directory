@@ -116,6 +116,9 @@ export function isPublicReport(report: Report): boolean {
     return false;
   }
   if (isGithubBackedReport(report) && (report.stars ?? 0) < MIN_PUBLIC_GITHUB_STARS) {
+    if (report.category === "Scan Request") {
+      return true;
+    }
     return false;
   }
   return true;
