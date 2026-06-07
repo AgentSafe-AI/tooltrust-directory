@@ -1,9 +1,9 @@
 {
   "tool_id": "photoshop-python-api-mcp-server",
   "version": "0.1.11",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-06T02:33:55.193362703Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-07T02:50:01Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/loonghao/photoshop-python-api-mcp-server",
   "category": "Developer Tools",
@@ -14,30 +14,39 @@
   "description": "A Model Context Protocol (MCP) server that interfaces with Adobe Photoshop's Python API. Enables LLMs to execute image editing operations, automate workflows, and manage Photoshop tasks through structured commands and context-aware interactions.",
   "findings": [
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "python_execute"
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "python_execute"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 7,
+            "file": "photoshop_mcp_server/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 49,
+            "snippet": "FastMCP(",
+            "file": "photoshop_mcp_server/server.py",
+            "language": "python"
+          }
+        ]
+      }
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -52,21 +61,6 @@
       "snippet": "FastMCP(",
       "file": "photoshop_mcp_server/server.py",
       "language": "python"
-    }
-  ],
-  "tool_names": [
-    "python_execute"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "python_execute",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -90,6 +84,12 @@
     },
     {
       "scan_date": "2026-06-05T02:45:08Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.1.11"
+    },
+    {
+      "scan_date": "2026-06-06T02:33:55Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.1.11"

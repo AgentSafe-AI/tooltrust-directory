@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 5.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-07 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

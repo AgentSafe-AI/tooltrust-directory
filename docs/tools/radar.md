@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `1.7.5` |
 | **Vendor** | skyhook-io |
-| **Stars** | ⭐ 2282 |
+| **Stars** | ⭐ 2288 |
 | **Language** | Go |
 | **Source** | [radar](https://github.com/skyhook-io/radar) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-07 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

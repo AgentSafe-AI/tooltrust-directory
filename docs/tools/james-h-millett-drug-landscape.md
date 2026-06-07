@@ -49,7 +49,7 @@ Free with no API key. Reasonable rate limits via Vercel edge cache.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [james-h-millett-drug-landscape](https://smithery.ai/server/james-h-millett/drug-landscape) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-07 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

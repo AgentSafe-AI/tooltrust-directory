@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [dev-bd37-clicks-protocol](https://smithery.ai/server/dev-bd37/clicks-protocol) |
-| **Scan Date** | 2026-04-21 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-06-07 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

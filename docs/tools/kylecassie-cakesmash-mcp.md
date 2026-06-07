@@ -24,7 +24,7 @@ Built by [Cakesmash Media](https://cakesmashmedia.com) — Revenue Architecture 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kylecassie-cakesmash-mcp](https://smithery.ai/server/kylecassie/cakesmash-mcp) |
-| **Scan Date** | 2026-06-02 |
+| **Scan Date** | 2026-06-07 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

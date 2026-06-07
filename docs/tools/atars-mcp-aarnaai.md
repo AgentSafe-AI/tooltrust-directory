@@ -28,7 +28,7 @@ Instead of building data pipelines for indicators or sentiment analysis, develop
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [atars-mcp-aarnaai](https://smithery.ai/server/atars-MCP/aarnaai) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-07 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

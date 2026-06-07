@@ -8,12 +8,12 @@
 | **Risk Score** | 40 |
 | **Version** | `1.5.2` |
 | **Vendor** | pinkpixel-dev |
-| **Stars** | ⭐ 131 |
+| **Stars** | ⭐ 130 |
 | **npm Package** | `@pinkpixel/web-scout-mcp` |
 | **npm Downloads (30d)** | 501 |
 | **Language** | JavaScript |
 | **Source** | [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-07 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
