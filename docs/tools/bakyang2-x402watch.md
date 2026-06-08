@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bakyang2-x402watch](https://smithery.ai/server/bakyang2/x402watch) |
-| **Scan Date** | 2026-06-03 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

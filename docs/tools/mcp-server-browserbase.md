@@ -8,12 +8,12 @@
 | **Risk Score** | 32 |
 | **Version** | `3.0.0` |
 | **Vendor** | browserbase |
-| **Stars** | ⭐ 3365 |
+| **Stars** | ⭐ 3367 |
 | **npm Package** | `@browserbasehq/mcp` |
 | **npm Downloads (30d)** | 6.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
-| **Scan Date** | 2026-06-07 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

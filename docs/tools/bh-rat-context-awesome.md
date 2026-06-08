@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 64 |
 | **Language** | TypeScript |
 | **Source** | [bh-rat-context-awesome](https://github.com/bh-rat/context-awesome) |
-| **Scan Date** | 2026-06-07 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

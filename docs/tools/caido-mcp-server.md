@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 61 |
 | **Language** | Go |
 | **Source** | [caido-mcp-server](https://github.com/c0tton-fluff/caido-mcp-server) |
-| **Scan Date** | 2026-06-07 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

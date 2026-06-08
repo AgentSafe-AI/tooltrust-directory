@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bouch-uk-legal](https://smithery.ai/server/bouch/uk-legal) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

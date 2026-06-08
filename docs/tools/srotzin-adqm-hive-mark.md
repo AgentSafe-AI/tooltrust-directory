@@ -1,5 +1,7 @@
 # 🟡 srotzin-adqm-hive-mark
 
+> Attest trademark first-use with a dual-signed cryptographic receipt. Ed25519 + ML-DSA-65 (FIPS 204) envelope records mark_text + brand_owner_did + first-use timestamp on Base 8453. Reveals priority winner on any mark conflict. Part of Hive Civilization (thehiveryiq.com).
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
@@ -7,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [srotzin-adqm-hive-mark](https://smithery.ai/server/srotzin-adqm/hive-mark) |
-| **Scan Date** | 2026-06-07 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -3,12 +3,27 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-06-06T02:36:59.841312207Z",
+  "scan_date": "2026-06-08T02:56:59.312222499Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/QuantOracle/quantoracle",
   "vendor": "Smithery",
   "description": "63 deterministic quant computation tools for AI agents. Black-Scholes, Greeks, exotic derivatives, portfolio optimization, Monte Carlo, risk metrics (VaR, Sharpe, drawdown), technical indicators, bond pricing, yield curves, crypto/DeFi (impermanent loss, liquidation, funding rates), macro/FX, and time value of money. Pure math — same inputs always produce same outputs. 1,000 free calls/day, no API key required.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "live_funding-rates",
+          "live_volatility"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -853,6 +868,38 @@
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "live_volatility"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "live_volatility"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "live_volatility"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "live_funding-rates"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
       "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "batch"
@@ -908,10 +955,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 7,
+    "high": 9,
     "medium": 6,
-    "low": 24,
-    "info": 74
+    "low": 25,
+    "info": 76
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -947,6 +994,8 @@
     "indicators_regime",
     "indicators_regime-classify",
     "indicators_technical",
+    "live_funding-rates",
+    "live_volatility",
     "macro_inflation-adjusted",
     "macro_real-yield",
     "macro_taylor-rule",
@@ -1546,6 +1595,23 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "live_volatility",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "live_funding-rates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "batch",
       "action": "ALLOW",
       "grade": "B",
@@ -1827,6 +1893,12 @@
     },
     {
       "scan_date": "2026-06-05T02:47:54Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-06T02:36:59Z",
       "grade": "C",
       "risk_score": 42,
       "version": "smithery"

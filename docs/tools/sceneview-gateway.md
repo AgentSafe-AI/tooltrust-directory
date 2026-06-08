@@ -18,7 +18,7 @@ Free tier covers all read-only docs/samples/validation tools. Pro tier (€19/mo
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sceneview-gateway](https://smithery.ai/server/sceneview/gateway) |
-| **Scan Date** | 2026-06-06 |
+| **Scan Date** | 2026-06-08 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

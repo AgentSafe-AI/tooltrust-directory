@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [justus-bushdrum-events](https://smithery.ai/server/justus/bushdrum-events) |
-| **Scan Date** | 2026-05-29 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-08 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 
