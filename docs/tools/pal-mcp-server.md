@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `9.8.2` |
 | **Vendor** | BeehiveInnovations |
-| **Stars** | ⭐ 11589 |
+| **Stars** | ⭐ 11591 |
 | **Language** | Python |
 | **Source** | [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) |
-| **Scan Date** | 2026-06-08 |
+| **Scan Date** | 2026-06-09 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

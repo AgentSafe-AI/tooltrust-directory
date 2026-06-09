@@ -33,7 +33,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sidneybissoli-medical-terminologies](https://smithery.ai/server/sidneybissoli/medical-terminologies) |
-| **Scan Date** | 2026-06-08 |
+| **Scan Date** | 2026-06-09 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

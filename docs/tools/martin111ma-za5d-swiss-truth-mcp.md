@@ -25,8 +25,8 @@ No API key required. Fully public. Connect in 30 seconds.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [martin111ma-za5d-swiss-truth-mcp](https://smithery.ai/server/martin111ma-za5d/swiss-truth-mcp) |
-| **Scan Date** | 2026-05-21 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-09 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

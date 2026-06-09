@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [licium-licium](https://smithery.ai/server/licium/licium) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-06-09 |
+| **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
 

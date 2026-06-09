@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.4` |
 | **Vendor** | alpic-ai |
-| **Stars** | ⭐ 1698 |
+| **Stars** | ⭐ 1703 |
 | **npm Package** | `@skybridge/monorepo` |
 | **Language** | TypeScript |
 | **Source** | [skybridge](https://github.com/alpic-ai/skybridge) |
-| **Scan Date** | 2026-06-08 |
+| **Scan Date** | 2026-06-09 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

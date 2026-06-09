@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [joeroy2027-tqp-site](https://smithery.ai/server/joeroy2027/tqp-site) |
-| **Scan Date** | 2026-06-02 |
+| **Scan Date** | 2026-06-09 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
