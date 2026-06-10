@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 104.2k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

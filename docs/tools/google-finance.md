@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [google-finance](https://smithery.ai/server/google/finance) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

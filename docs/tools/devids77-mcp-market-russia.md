@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [devids77-mcp-market-russia](https://smithery.ai/server/devids77/mcp-market-russia) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

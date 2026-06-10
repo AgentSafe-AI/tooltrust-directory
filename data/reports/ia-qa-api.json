@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-06-08T02:57:00.267067723Z",
+  "scan_date": "2026-06-10T02:48:06.378499402Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/ia-qa/api",
   "vendor": "Smithery",
@@ -2581,6 +2581,14 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
+      "description": "input parameter \"jira_token\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "jira_to_test_suite"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
       "description": "input parameter \"api_key\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "jira_to_test_suite"
@@ -2589,7 +2597,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"jira_token\" appears to accept a secret or credential",
+      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "jira_to_test_suite"
     },
@@ -2660,7 +2668,7 @@
   ],
   "summary": {
     "critical": 10,
-    "high": 84,
+    "high": 85,
     "medium": 29,
     "low": 62,
     "info": 146
@@ -4239,14 +4247,15 @@
     {
       "tool_name": "jira_to_test_suite",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (jira_base_url)",
         "dynamic email recipient (jira_email)",
-        "dynamic email recipient (jira_token)"
+        "dynamic email recipient (jira_token)",
+        "dynamic email recipient (max_tokens)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -4316,6 +4325,12 @@
     },
     {
       "scan_date": "2026-06-07T02:52:52Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-08T02:57:00Z",
       "grade": "D",
       "risk_score": 65,
       "version": "smithery"

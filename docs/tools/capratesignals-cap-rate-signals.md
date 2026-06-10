@@ -15,7 +15,7 @@ Use it to ask: Where should I invest right now? What's happening in Indianapolis
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [capratesignals-cap-rate-signals](https://smithery.ai/server/capratesignals/cap-rate-signals) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

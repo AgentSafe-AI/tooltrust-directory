@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 48,
-  "scan_date": "2026-06-07T02:52:47.831292619Z",
+  "scan_date": "2026-06-10T02:48:06.84027266Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/dev-7bd0/mcp-server",
   "vendor": "Smithery",
@@ -54,14 +54,6 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "report_mcpize_link"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "report_mcpize_link"
     },
@@ -450,22 +442,6 @@
       "tool_name": "security_fetch_cve_epss"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "security_fetch_cve_epss"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "security_fetch_cve_epss"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -754,22 +730,6 @@
       "tool_name": "domain_fetch_subdomains"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "domain_check_email_security"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "domain_check_email_security"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -942,14 +902,6 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "govcon_search_contract_awards"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "govcon_search_contract_awards"
     },
@@ -1748,8 +1700,8 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 51,
-    "medium": 60,
+    "high": 50,
+    "medium": 55,
     "low": 51,
     "info": 55
   },
@@ -1828,15 +1780,14 @@
     },
     {
       "tool_name": "report_mcpize_link",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (tool_id)",
-        "hardcoded domain: mcpize.com"
+        "dynamic email recipient (tool_id)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1980,10 +1931,9 @@
     },
     {
       "tool_name": "security_fetch_cve_epss",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -2115,11 +2065,7 @@
     {
       "tool_name": "domain_check_email_security",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "reads_files"
-      ],
+      "grade": "A",
       "destinations": [
         "hardcoded domain: google.com"
       ],
@@ -2198,10 +2144,9 @@
     },
     {
       "tool_name": "govcon_search_contract_awards",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -2548,6 +2493,12 @@
     },
     {
       "scan_date": "2026-06-06T02:36:50Z",
+      "grade": "C",
+      "risk_score": 48,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-07T02:52:47Z",
       "grade": "C",
       "risk_score": 48,
       "version": "smithery"

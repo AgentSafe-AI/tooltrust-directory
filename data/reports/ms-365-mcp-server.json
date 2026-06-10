@@ -1,14 +1,14 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.114.5",
+  "version": "0.118.1",
   "grade": "D",
   "risk_score": 52,
-  "scan_date": "2026-06-09T02:20:39.295673303Z",
+  "scan_date": "2026-06-10T02:43:42.027993247Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 769,
+  "stars": 771,
   "npm_package": "@softeria/ms-365-mcp-server",
   "npm_downloads_monthly": 97906,
   "license": "MIT",
@@ -3505,6 +3505,14 @@
     },
     {
       "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list-mail-messages"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
@@ -5827,7 +5835,7 @@
   "summary": {
     "critical": 0,
     "high": 216,
-    "medium": 123,
+    "medium": 124,
     "low": 387,
     "info": 0
   },
@@ -5843,7 +5851,7 @@
     },
     {
       "kind": "init",
-      "line": 91,
+      "line": 93,
       "snippet": "new McpServer(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -7366,8 +7374,9 @@
     {
       "tool_name": "list-mail-messages",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
@@ -8749,6 +8758,12 @@
       "grade": "D",
       "risk_score": 52,
       "version": "0.114.4"
+    },
+    {
+      "scan_date": "2026-06-09T02:20:39Z",
+      "grade": "D",
+      "risk_score": 52,
+      "version": "0.114.5"
     }
   ]
 }

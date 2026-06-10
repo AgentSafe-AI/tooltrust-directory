@@ -8,12 +8,12 @@
 | **Risk Score** | 44 |
 | **Version** | `2.9.0` |
 | **Vendor** | postmanlabs |
-| **Stars** | ⭐ 255 |
+| **Stars** | ⭐ 256 |
 | **npm Package** | `@postman/postman-mcp-server` |
 | **npm Downloads (30d)** | 19.1k |
 | **Language** | TypeScript |
 | **Source** | [postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

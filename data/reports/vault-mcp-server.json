@@ -1,0 +1,61 @@
+{
+  "tool_id": "vault-mcp-server",
+  "version": "0.2.0",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-10T02:46:38.48448718Z",
+  "scanner": "tooltrust-scanner/v0.3.13",
+  "source_url": "https://github.com/hashicorp/vault-mcp-server",
+  "category": "Developer Tools",
+  "vendor": "hashicorp",
+  "stars": 50,
+  "license": "MPL-2.0",
+  "language": "Go",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "hyperliquid_get_vault_data"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 24,
+      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+      "file": "cmd/vault-mcp-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 266,
+      "snippet": "server.NewMCPServer(",
+      "file": "cmd/vault-mcp-server/main.go",
+      "language": "go"
+    }
+  ],
+  "tool_names": [
+    "hyperliquid_get_vault_data"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "hyperliquid_get_vault_data",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

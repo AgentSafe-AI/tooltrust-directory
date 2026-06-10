@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 52 |
-| **Version** | `0.114.5` |
+| **Version** | `0.118.1` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 769 |
+| **Stars** | ⭐ 771 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
 | **npm Downloads (30d)** | 97.9k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -24,7 +24,7 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 216 |
-| Medium   | 123 |
+| Medium   | 124 |
 | Low      | 387 |
 | Info     | 0 |
 
@@ -5259,6 +5259,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

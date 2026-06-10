@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 245 |
 | **Language** | Go |
 | **Source** | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) |
-| **Scan Date** | 2026-06-09 |
+| **Scan Date** | 2026-06-10 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
