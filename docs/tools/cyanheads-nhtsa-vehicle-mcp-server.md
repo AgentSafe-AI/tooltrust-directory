@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cyanheads-nhtsa-vehicle-mcp-server](https://smithery.ai/server/cyanheads/nhtsa-vehicle-mcp-server) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

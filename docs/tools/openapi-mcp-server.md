@@ -8,12 +8,12 @@
 | **Risk Score** | 50 |
 | **Version** | `1.2.0-beta04` |
 | **Vendor** | janwilmake |
-| **Stars** | ⭐ 893 |
+| **Stars** | ⭐ 894 |
 | **npm Package** | `openapi-mcp-server` |
 | **npm Downloads (30d)** | 4.2k |
 | **Language** | TypeScript |
 | **Source** | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

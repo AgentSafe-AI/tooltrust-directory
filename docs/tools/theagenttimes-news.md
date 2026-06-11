@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [theagenttimes-news](https://smithery.ai/server/theagenttimes/news) |
-| **Scan Date** | 2026-06-04 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

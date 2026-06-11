@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 50 |
 | **Language** | Go |
 | **Source** | [vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 32 |
 | **Version** | `1.2.0` |
 | **Vendor** | github |
-| **Stars** | ⭐ 30544 |
+| **Stars** | ⭐ 30564 |
 | **Language** | Go |
 | **Source** | [github-mcp-server](https://github.com/github/github-mcp-server) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

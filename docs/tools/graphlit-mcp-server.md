@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 816 |
 | **Language** | TypeScript |
 | **Source** | [graphlit-mcp-server](https://github.com/graphlit/graphlit-mcp-server) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

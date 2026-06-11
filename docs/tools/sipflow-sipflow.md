@@ -20,7 +20,7 @@ All tools are read-only. Every result carries a verbatim `source_url` so the age
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sipflow-sipflow](https://smithery.ai/server/sipflow/sipflow) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

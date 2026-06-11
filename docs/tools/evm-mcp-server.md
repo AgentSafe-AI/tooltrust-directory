@@ -8,12 +8,12 @@
 | **Risk Score** | 55 |
 | **Version** | `2.0.4` |
 | **Vendor** | mcpdotdirect |
-| **Stars** | ⭐ 378 |
+| **Stars** | ⭐ 379 |
 | **npm Package** | `@mcpdotdirect/evm-mcp-server` |
 | **npm Downloads (30d)** | 401 |
 | **Language** | TypeScript |
 | **Source** | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) |
-| **Scan Date** | 2026-06-10 |
+| **Scan Date** | 2026-06-11 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
