@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |
 | **Source** | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) |
-| **Scan Date** | 2026-06-11 |
+| **Scan Date** | 2026-06-12 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

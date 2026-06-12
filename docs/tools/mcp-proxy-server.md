@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 121 |
 | **Language** | TypeScript |
 | **Source** | [mcp-proxy-server](https://github.com/adamwattis/mcp-proxy-server) |
-| **Scan Date** | 2026-06-11 |
+| **Scan Date** | 2026-06-12 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

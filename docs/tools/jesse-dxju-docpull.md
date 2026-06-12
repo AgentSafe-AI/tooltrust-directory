@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jesse-dxju-docpull](https://smithery.ai/server/jesse-dxju/docpull) |
-| **Scan Date** | 2026-06-07 |
+| **Scan Date** | 2026-06-12 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

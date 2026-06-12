@@ -1,46 +1,19 @@
 {
   "tool_id": "inspector",
-  "version": "2.10.1",
+  "version": "2.11.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-06-11T02:53:41.692860448Z",
+  "scan_date": "2026-06-12T02:48:31.710036211Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/MCPJam/inspector",
   "category": "Developer Tools",
   "vendor": "MCPJam",
-  "stars": 2009,
+  "stars": 2012,
   "npm_package": "mcpjam-workspace",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Testing and evaluation platform to chat, inspect, and debug MCP servers, MCP apps, and ChatGPT apps.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.10.1: 9 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "channels_list_on_slack",
-          "get_channel_history_on_slack",
-          "get_channel_messages_on_slack",
-          "get_mentions_on_slack",
-          "get_thread_replies_on_slack",
-          "get_user_profile_on_slack",
-          "get_users_on_slack",
-          "reply_to_thread_on_slack",
-          "send_message_on_slack"
-        ],
-        "removed": [
-          "gomemstats",
-          "goroutines",
-          "goruntime",
-          "pgrep"
-        ],
-        "version": "2.10.1"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -164,7 +137,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 2,
     "medium": 2,
     "low": 2,
     "info": 9
@@ -181,9 +154,23 @@
     },
     {
       "kind": "init",
-      "line": 20,
+      "line": 21,
       "snippet": "new McpServer(",
       "file": "mcp/src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 8,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "mcpjam-inspector/scripts/dev-echo-mcp.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 15,
+      "snippet": "new McpServer(",
+      "file": "mcpjam-inspector/scripts/dev-echo-mcp.mjs",
       "language": "typescript"
     }
   ],
@@ -340,6 +327,12 @@
       "scan_date": "2026-06-10T02:42:36Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "2.10.1"
+    },
+    {
+      "scan_date": "2026-06-11T02:53:41Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "2.10.1"
     }
   ]

@@ -1,14 +1,14 @@
 {
   "tool_id": "anki-mcp-server",
-  "version": "0.19.2",
+  "version": "0.20.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-06-11T02:55:35.092880081Z",
+  "scan_date": "2026-06-12T02:50:25.85049933Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/ankimcp/anki-mcp-server",
   "category": "Developer Tools",
   "vendor": "ankimcp",
-  "stars": 320,
+  "stars": 323,
   "npm_package": "@ankimcp/anki-mcp-server",
   "npm_downloads_monthly": 1771,
   "license": "MIT",
@@ -190,6 +190,70 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "updateModelStyling"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "modelTemplates"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "updateModelTemplates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "updateModelTemplates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "addModelField"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "removeModelField"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "removeModelField"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "renameModelField"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "repositionModelField"
     },
     {
       "id": "AS-014",
@@ -475,12 +539,13 @@
   "summary": {
     "critical": 0,
     "high": 2,
-    "medium": 11,
+    "medium": 13,
     "low": 2,
-    "info": 42
+    "info": 48
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "addModelField",
     "addNote",
     "addNotes",
     "addTags",
@@ -512,16 +577,21 @@
     "modelFieldNames",
     "modelNames",
     "modelStyling",
+    "modelTemplates",
     "notesInfo",
     "present_card",
     "rate_card",
+    "removeModelField",
     "removeTags",
+    "renameModelField",
     "replaceTags",
+    "repositionModelField",
     "retrieveMediaFile",
     "review_stats",
     "storeMediaFile",
     "sync",
     "updateModelStyling",
+    "updateModelTemplates",
     "updateNoteFields"
   ],
   "tool_contexts": [
@@ -645,6 +715,51 @@
     },
     {
       "tool_name": "updateModelStyling",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "modelTemplates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "updateModelTemplates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "addModelField",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "removeModelField",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "renameModelField",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "repositionModelField",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -1289,6 +1404,12 @@
     },
     {
       "scan_date": "2026-06-10T02:44:39Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.19.2"
+    },
+    {
+      "scan_date": "2026-06-11T02:55:35Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.19.2"

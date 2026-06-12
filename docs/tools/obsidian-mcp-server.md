@@ -1,19 +1,19 @@
 # 🟡 obsidian-mcp-server
 
-> Obsidian vaults MCP server - read, write, search, and surgically edit notes, tags, and frontmatter via the Local REST API plugin.
+> MCP server for Obsidian vaults — read, write, search, and surgically edit notes, tags, and frontmatter via the Local REST API plugin. STDIO or Streamable HTTP.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `3.2.4` |
+| **Version** | `3.2.7` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 582 |
+| **Stars** | ⭐ 583 |
 | **npm Package** | `obsidian-mcp-server` |
 | **npm Downloads (30d)** | 42.3k |
 | **Language** | TypeScript |
 | **Source** | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) |
-| **Scan Date** | 2026-06-11 |
+| **Scan Date** | 2026-06-12 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
