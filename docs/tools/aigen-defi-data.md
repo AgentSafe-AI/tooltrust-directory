@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aigen-defi-data](https://smithery.ai/server/aigen/defi-data) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

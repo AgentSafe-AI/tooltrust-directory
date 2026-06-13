@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.9` |
 | **Vendor** | D4Vinci |
-| **Stars** | ⭐ 63110 |
+| **Stars** | ⭐ 63314 |
 | **Language** | Python |
 | **Source** | [scrapling](https://github.com/D4Vinci/Scrapling) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

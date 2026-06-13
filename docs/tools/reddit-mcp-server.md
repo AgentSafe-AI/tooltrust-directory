@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.4.8` |
 | **Vendor** | jordanburke |
-| **Stars** | ⭐ 132 |
+| **Stars** | ⭐ 135 |
 | **npm Package** | `reddit-mcp-server` |
-| **npm Downloads (30d)** | 3.9k |
+| **npm Downloads (30d)** | 4.3k |
 | **Language** | TypeScript |
 | **Source** | [reddit-mcp-server](https://github.com/jordanburke/reddit-mcp-server) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

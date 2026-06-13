@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pmort2222-stratproof](https://smithery.ai/server/pmort2222/stratproof) |
-| **Scan Date** | 2026-06-11 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

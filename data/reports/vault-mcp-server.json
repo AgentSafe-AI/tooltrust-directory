@@ -1,9 +1,9 @@
 {
   "tool_id": "vault-mcp-server",
   "version": "0.2.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-12T02:52:28Z",
+  "scan_date": "2026-06-13T02:44:54.477189401Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/hashicorp/vault-mcp-server",
   "category": "Developer Tools",
@@ -13,29 +13,12 @@
   "language": "Go",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 24,
-            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
-            "file": "cmd/vault-mcp-server/main.go",
-            "language": "go"
-          },
-          {
-            "kind": "init",
-            "line": 266,
-            "snippet": "server.NewMCPServer(",
-            "file": "cmd/vault-mcp-server/main.go",
-            "language": "go"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "hyperliquid_get_vault_data"
     }
   ],
   "summary": {
@@ -46,7 +29,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -64,18 +46,16 @@
       "language": "go"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "hyperliquid_get_vault_data"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-10T02:46:38Z",
+      "tool_name": "hyperliquid_get_vault_data",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.2.0"
-    },
-    {
-      "scan_date": "2026-06-11T02:57:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.2.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

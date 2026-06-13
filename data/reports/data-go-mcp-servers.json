@@ -1,9 +1,9 @@
 {
   "tool_id": "data-go-mcp-servers",
   "version": "sha-dd27f9949040",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-12T02:50:43Z",
+  "scan_date": "2026-06-13T02:43:05.133370739Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://github.com/Koomook/data-go-mcp-servers",
   "category": "Developer Tools",
@@ -14,78 +14,20 @@
   "description": "Korea public data portal (data.go.kr) API MCP servers",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 6,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "src/msds-chemical-info/data_go_mcp/msds_chemical_info/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 15,
-            "snippet": "FastMCP(",
-            "file": "src/msds-chemical-info/data_go_mcp/msds_chemical_info/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 18,
-            "snippet": "@mcp.tool(",
-            "file": "src/msds-chemical-info/data_go_mcp/msds_chemical_info/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "import",
-            "line": 6,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "src/nps-business-enrollment/data_go_mcp/nps_business_enrollment/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 14,
-            "snippet": "FastMCP(",
-            "file": "src/nps-business-enrollment/data_go_mcp/nps_business_enrollment/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 17,
-            "snippet": "@mcp.tool(",
-            "file": "src/nps-business-enrollment/data_go_mcp/nps_business_enrollment/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "import",
-            "line": 6,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "src/nts-business-verification/data_go_mcp/nts_business_verification/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 15,
-            "snippet": "FastMCP(",
-            "file": "src/nts-business-verification/data_go_mcp/nts_business_verification/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 18,
-            "snippet": "@mcp.tool(",
-            "file": "src/nts-business-verification/data_go_mcp/nts_business_verification/server.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "discoverServers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "callServer"
     }
   ],
   "summary": {
@@ -93,10 +35,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -163,66 +104,27 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "callServer",
+    "discoverServers"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-02T02:53:15Z",
+      "tool_name": "discoverServers",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-03T03:01:34Z",
+      "tool_name": "callServer",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-04T02:56:55Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-05T02:44:50Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-06T02:33:39Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-07T02:49:45Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-08T02:53:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-09T02:22:00Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-10T02:44:50Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
-    },
-    {
-      "scan_date": "2026-06-11T02:55:48Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "sha-dd27f9949040"
+      "destinations": [
+        "dynamic email recipient (tool)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

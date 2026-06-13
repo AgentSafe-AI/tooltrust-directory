@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.2-rc.0` |
 | **Vendor** | langfuse |
-| **Stars** | ⭐ 167 |
+| **Stars** | ⭐ 166 |
 | **npm Package** | `mcp-server-langfuse` |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-langfuse](https://github.com/langfuse/mcp-server-langfuse) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

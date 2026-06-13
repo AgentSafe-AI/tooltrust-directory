@@ -8,12 +8,12 @@
 | **Risk Score** | 8 |
 | **Version** | `2.1.1` |
 | **Vendor** | lgazo |
-| **Stars** | ⭐ 1277 |
+| **Stars** | ⭐ 1278 |
 | **npm Package** | `drawio-mcp` |
-| **npm Downloads (30d)** | 689 |
+| **npm Downloads (30d)** | 675 |
 | **Language** | TypeScript |
 | **Source** | [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

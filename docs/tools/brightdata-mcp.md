@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `2.10.0` |
 | **Vendor** | brightdata |
-| **Stars** | ⭐ 2446 |
+| **Stars** | ⭐ 2447 |
 | **npm Package** | `@brightdata/mcp` |
-| **npm Downloads (30d)** | 30.5k |
+| **npm Downloads (30d)** | 31.6k |
 | **Language** | JavaScript |
 | **Source** | [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-13 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
