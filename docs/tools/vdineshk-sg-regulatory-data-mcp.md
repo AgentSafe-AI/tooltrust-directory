@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vdineshk-sg-regulatory-data-mcp](https://smithery.ai/server/vdineshk/sg-regulatory-data-mcp) |
-| **Scan Date** | 2026-06-13 |
+| **Scan Date** | 2026-06-14 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

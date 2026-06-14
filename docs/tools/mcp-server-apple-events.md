@@ -8,12 +8,12 @@
 | **Risk Score** | 34 |
 | **Version** | `1.4.0` |
 | **Vendor** | FradSer |
-| **Stars** | ⭐ 136 |
+| **Stars** | ⭐ 137 |
 | **npm Package** | `mcp-server-apple-events` |
-| **npm Downloads (30d)** | 966 |
+| **npm Downloads (30d)** | 974 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) |
-| **Scan Date** | 2026-06-13 |
+| **Scan Date** | 2026-06-14 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

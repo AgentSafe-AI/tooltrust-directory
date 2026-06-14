@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 4.3k |
 | **Language** | TypeScript |
 | **Source** | [reddit-mcp-server](https://github.com/jordanburke/reddit-mcp-server) |
-| **Scan Date** | 2026-06-13 |
+| **Scan Date** | 2026-06-14 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

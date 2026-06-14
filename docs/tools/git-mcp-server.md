@@ -1,6 +1,6 @@
 # 🟠 git-mcp-server
 
-> An MCP (Model Context Protocol) server enabling LLMs and AI agents to interact with Git repositories. Provides tools for comprehensive Git operations including clone, commit, branch, diff, log, status, push, pull, merge, rebase, worktree, tag management, and more, via the MCP standard. STDIO & HTTP.
+> A Git MCP server for AI agents. STDIO & Streamable HTTP. 
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 42 |
 | **Version** | `2.15.1` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 222 |
+| **Stars** | ⭐ 223 |
 | **npm Package** | `@cyanheads/git-mcp-server` |
-| **npm Downloads (30d)** | 15.1k |
+| **npm Downloads (30d)** | 15.2k |
 | **Language** | TypeScript |
 | **Source** | [git-mcp-server](https://github.com/cyanheads/git-mcp-server) |
-| **Scan Date** | 2026-06-13 |
+| **Scan Date** | 2026-06-14 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
