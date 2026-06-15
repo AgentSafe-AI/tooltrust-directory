@@ -8,12 +8,12 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.1` |
 | **Vendor** | jinzcdev |
-| **Stars** | ⭐ 209 |
+| **Stars** | ⭐ 211 |
 | **npm Package** | `@jinzcdev/markmap-mcp-server` |
-| **npm Downloads (30d)** | 5.1k |
+| **npm Downloads (30d)** | 5.0k |
 | **Language** | TypeScript |
 | **Source** | [markmap-mcp-server](https://github.com/jinzcdev/markmap-mcp-server) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

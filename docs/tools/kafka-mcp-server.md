@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 51 |
 | **Language** | Go |
 | **Source** | [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

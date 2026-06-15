@@ -37,7 +37,7 @@ dates when `status != "bookable"`.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [philippvoss2212-huettentouren](https://smithery.ai/server/philippvoss2212/huettentouren) |
-| **Scan Date** | 2026-06-13 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

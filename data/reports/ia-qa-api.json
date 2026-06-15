@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "D",
   "risk_score": 65,
-  "scan_date": "2026-06-11T02:58:57.214038487Z",
+  "scan_date": "2026-06-15T03:02:45.26061073Z",
   "scanner": "tooltrust-scanner/v0.3.13",
   "source_url": "https://smithery.ai/server/ia-qa/api",
   "vendor": "Smithery",
@@ -365,7 +365,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"output_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"input_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_llm_cost"
     },
@@ -373,7 +373,7 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"input_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"output_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_llm_cost"
     },
@@ -885,22 +885,6 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"expected_output_tokens\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "token_budget_calculator"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"context_tokens\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "token_budget_calculator"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"user_input_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_budget_calculator"
@@ -910,6 +894,22 @@
       "severity": "High",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"system_prompt_tokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "token_budget_calculator"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"expected_output_tokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "token_budget_calculator"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"context_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_budget_calculator"
     },
@@ -1842,6 +1842,14 @@
       "tool_name": "web_security_audit"
     },
     {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "web_security_audit"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -2581,6 +2589,14 @@
       "id": "AS-010",
       "severity": "High",
       "title": "Insecure Secret Handling",
+      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "jira_to_test_suite"
+    },
+    {
+      "id": "AS-010",
+      "severity": "High",
+      "title": "Insecure Secret Handling",
       "description": "input parameter \"jira_token\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "jira_to_test_suite"
@@ -2590,14 +2606,6 @@
       "severity": "High",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"api_key\" appears to accept a secret or credential",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "jira_to_test_suite"
-    },
-    {
-      "id": "AS-010",
-      "severity": "High",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "jira_to_test_suite"
     },
@@ -2668,7 +2676,7 @@
   ],
   "summary": {
     "critical": 10,
-    "high": 85,
+    "high": 86,
     "medium": 29,
     "low": 62,
     "info": 146
@@ -3915,7 +3923,7 @@
     {
       "tool_name": "web_security_audit",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
       "behavior": [
         "uses_network"
       ],
@@ -4337,6 +4345,12 @@
     },
     {
       "scan_date": "2026-06-10T02:48:06Z",
+      "grade": "D",
+      "risk_score": 65,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:58:57Z",
       "grade": "D",
       "risk_score": 65,
       "version": "smithery"

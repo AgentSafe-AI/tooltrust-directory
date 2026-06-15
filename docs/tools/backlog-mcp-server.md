@@ -6,12 +6,12 @@
 | **Risk Score** | 0 |
 | **Version** | `v0.3.1` |
 | **Vendor** | nulab |
-| **Stars** | ⭐ 204 |
+| **Stars** | ⭐ 205 |
 | **npm Package** | `backlog-mcp-server` |
-| **npm Downloads (30d)** | 23.5k |
+| **npm Downloads (30d)** | 23.2k |
 | **Language** | TypeScript |
 | **Source** | [backlog-mcp-server](https://github.com/nulab/backlog-mcp-server) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

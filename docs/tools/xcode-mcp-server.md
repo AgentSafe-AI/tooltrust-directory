@@ -10,10 +10,10 @@
 | **Vendor** | r-huijts |
 | **Stars** | ⭐ 380 |
 | **npm Package** | `xcode-mcp-server` |
-| **npm Downloads (30d)** | 726 |
+| **npm Downloads (30d)** | 721 |
 | **Language** | TypeScript |
 | **Source** | [xcode-mcp-server](https://github.com/r-huijts/xcode-mcp-server) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

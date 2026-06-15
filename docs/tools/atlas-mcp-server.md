@@ -8,12 +8,12 @@
 | **Risk Score** | 33 |
 | **Version** | `2.8.15` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 475 |
+| **Stars** | ⭐ 477 |
 | **npm Package** | `atlas-mcp-server` |
-| **npm Downloads (30d)** | 190 |
+| **npm Downloads (30d)** | 210 |
 | **Language** | TypeScript |
 | **Source** | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 32 |
 | **Version** | `0.0.59` |
 | **Vendor** | mobile-next |
-| **Stars** | ⭐ 5195 |
+| **Stars** | ⭐ 5200 |
 | **npm Package** | `@mobilenext/mobile-mcp` |
-| **npm Downloads (30d)** | 77.7k |
+| **npm Downloads (30d)** | 77.0k |
 | **Language** | TypeScript |
 | **Source** | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

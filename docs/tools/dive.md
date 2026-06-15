@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `0.14.2` |
 | **Vendor** | OpenAgentPlatform |
-| **Stars** | ⭐ 1792 |
+| **Stars** | ⭐ 1791 |
 | **npm Package** | `dive` |
-| **npm Downloads (30d)** | 38.7k |
+| **npm Downloads (30d)** | 34.5k |
 | **Language** | TypeScript |
 | **Source** | [dive](https://github.com/OpenAgentPlatform/Dive) |
-| **Scan Date** | 2026-06-12 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---

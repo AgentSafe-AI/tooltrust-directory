@@ -8,12 +8,12 @@
 | **Risk Score** | 35 |
 | **Version** | `4.4.0` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 1952 |
+| **Stars** | ⭐ 1958 |
 | **npm Package** | `korean-law-mcp` |
-| **npm Downloads (30d)** | 9.8k |
+| **npm Downloads (30d)** | 9.7k |
 | **Language** | TypeScript |
 | **Source** | [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) |
-| **Scan Date** | 2026-06-14 |
+| **Scan Date** | 2026-06-15 |
 | **Scanner** | tooltrust-scanner/v0.3.13 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 31 |
+| High     | 30 |
 | Medium   | 70 |
 | Low      | 38 |
 | Info     | 54 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v4.4.0: 54 tool(s) added, 17 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
