@@ -274,15 +274,21 @@ type SmitherySeed struct {
 }
 
 // SeedOverride is an explicit tool entry for tools that cannot be reliably
-// discovered by GitHub search — typically individual servers inside a monorepo.
-// All fields except Repo are required.
+// discovered by GitHub search — typically individual servers inside a monorepo,
+// or a server whose toToolID(repo) collides with a different already-indexed
+// tool. Repo and ToolID are required.
 type SeedOverride struct {
 	// Repo is the GitHub owner/repo that contains the tool (e.g. "modelcontextprotocol/servers").
 	Repo string `json:"repo"`
 	// ToolID is the canonical kebab-case identifier for the tool (e.g. "mcp-server-filesystem").
 	ToolID string `json:"tool_id"`
-	// NPMPackage is the exact npm package name used for live scanning (e.g. "@modelcontextprotocol/server-filesystem").
-	NPMPackage string `json:"npm_package"`
+	// NPMPackage is the exact npm package name used for live scanning (e.g.
+	// "@modelcontextprotocol/server-filesystem"). Optional: leave empty for
+	// non-npm servers (Python/uvx, C#, etc.). Such entries fall through to the
+	// scan pipeline's static-tools manifest (data/static-tools/<tool_id>.json)
+	// or Smithery fallback, exactly like a GitHub-discovered repo with no npm
+	// package.
+	NPMPackage string `json:"npm_package,omitempty"`
 	// SourceURL is the canonical URL for this specific tool within the repo.
 	SourceURL string `json:"source_url"`
 }
@@ -408,8 +414,8 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) ([]PendingScan, error) {
 	var pending []PendingScan
 	for _, ov := range overrides {
-		if ov.ToolID == "" || ov.Repo == "" || ov.NPMPackage == "" {
-			log.Printf("seed override: skipping incomplete entry %+v", ov)
+		if ov.ToolID == "" || ov.Repo == "" {
+			log.Printf("seed override: skipping incomplete entry (repo and tool_id required) %+v", ov)
 			continue
 		}
 		if seen[ov.ToolID] {
