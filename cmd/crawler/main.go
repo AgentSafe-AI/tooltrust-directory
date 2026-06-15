@@ -23,6 +23,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/AgentSafe-AI/tooltrust-directory/pkg/ossinsight"
 	"github.com/AgentSafe-AI/tooltrust-directory/pkg/smithery"
 	"github.com/google/go-github/v68/github"
 	"golang.org/x/oauth2"
@@ -273,15 +274,21 @@ type SmitherySeed struct {
 }
 
 // SeedOverride is an explicit tool entry for tools that cannot be reliably
-// discovered by GitHub search — typically individual servers inside a monorepo.
-// All fields except Repo are required.
+// discovered by GitHub search — typically individual servers inside a monorepo,
+// or a server whose toToolID(repo) collides with a different already-indexed
+// tool. Repo and ToolID are required.
 type SeedOverride struct {
 	// Repo is the GitHub owner/repo that contains the tool (e.g. "modelcontextprotocol/servers").
 	Repo string `json:"repo"`
 	// ToolID is the canonical kebab-case identifier for the tool (e.g. "mcp-server-filesystem").
 	ToolID string `json:"tool_id"`
-	// NPMPackage is the exact npm package name used for live scanning (e.g. "@modelcontextprotocol/server-filesystem").
-	NPMPackage string `json:"npm_package"`
+	// NPMPackage is the exact npm package name used for live scanning (e.g.
+	// "@modelcontextprotocol/server-filesystem"). Optional: leave empty for
+	// non-npm servers (Python/uvx, C#, etc.). Such entries fall through to the
+	// scan pipeline's static-tools manifest (data/static-tools/<tool_id>.json)
+	// or Smithery fallback, exactly like a GitHub-discovered repo with no npm
+	// package.
+	NPMPackage string `json:"npm_package,omitempty"`
 	// SourceURL is the canonical URL for this specific tool within the repo.
 	SourceURL string `json:"source_url"`
 }
@@ -407,8 +414,8 @@ func discoverFromSeed(ctx context.Context, client *github.Client, seed []string,
 func discoverFromOverrides(ctx context.Context, client *github.Client, overrides []SeedOverride, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) ([]PendingScan, error) {
 	var pending []PendingScan
 	for _, ov := range overrides {
-		if ov.ToolID == "" || ov.Repo == "" || ov.NPMPackage == "" {
-			log.Printf("seed override: skipping incomplete entry %+v", ov)
+		if ov.ToolID == "" || ov.Repo == "" {
+			log.Printf("seed override: skipping incomplete entry (repo and tool_id required) %+v", ov)
 			continue
 		}
 		if seen[ov.ToolID] {
@@ -475,6 +482,88 @@ func discoverFromOverrides(ctx context.Context, client *github.Client, overrides
 			DiscoveredAt: time.Now().UTC(),
 		})
 		log.Printf("queued override %s @ %s (npm: %s)", ov.ToolID, version, ov.NPMPackage)
+	}
+	return pending, nil
+}
+
+// discoverFromOSSInsight fetches the OSSInsight curated "MCP Servers" collection
+// (id 10105) and returns PendingScans for repos not already covered by earlier
+// discovery passes. Mirrors discoverFromSeed's structure and collision handling.
+// Non-fatal: errors and empty results are logged and silently skipped.
+func discoverFromOSSInsight(ctx context.Context, client *github.Client, existing map[string]*ExistingReport, seen map[string]bool, forceRescan bool) ([]PendingScan, error) {
+	mcpRepos, err := ossinsight.ListMCPServers()
+	if err != nil {
+		log.Printf("OSSInsight discovery: %v (skipping)", err)
+		return nil, nil // non-fatal
+	}
+	if len(mcpRepos) == 0 {
+		log.Printf("OSSInsight discovery: no repos returned (skipping)")
+		return nil, nil
+	}
+
+	var pending []PendingScan
+	for _, mcpRepo := range mcpRepos {
+		parts := strings.SplitN(mcpRepo.RepoName, "/", 2)
+		if len(parts) != 2 {
+			log.Printf("OSSInsight: skip malformed repo name %q", mcpRepo.RepoName)
+			continue
+		}
+		owner, repo := parts[0], parts[1]
+		toolID := toToolID(repo)
+		if seen[toolID] {
+			continue
+		}
+		seen[toolID] = true
+
+		ghRepo, err := cachedRepoGet(ctx, client, owner, repo)
+		if err != nil {
+			log.Printf("OSSInsight %s: %v", mcpRepo.RepoName, err)
+			continue
+		}
+		if ghRepo.GetArchived() || ghRepo.GetFork() {
+			continue
+		}
+
+		version, err := cachedLatestVersion(ctx, client, owner, repo, true)
+		if err != nil {
+			if forceRescan {
+				if cur, ok := existing[toolID]; ok {
+					version = cur.Version // rescan with last-known version
+				} else {
+					log.Printf("OSSInsight %s: no release/tag, skip (%v)", toolID, err)
+					continue
+				}
+			} else {
+				log.Printf("OSSInsight %s: no release/tag (%v)", toolID, err)
+				continue
+			}
+		}
+
+		if cur, ok := existing[toolID]; ok && cur.Version == version {
+			if !forceRescan {
+				log.Printf("up-to-date %s @ %s (ossinsight)", toolID, version)
+				continue
+			}
+		}
+
+		license := ""
+		if ghRepo.GetLicense() != nil {
+			license = ghRepo.GetLicense().GetSPDXID()
+		}
+		pending = append(pending, PendingScan{
+			ToolID:       toolID,
+			RepoOwner:    owner,
+			RepoName:     repo,
+			Version:      version,
+			SourceURL:    ghRepo.GetHTMLURL(),
+			Vendor:       owner,
+			Stars:        ghRepo.GetStargazersCount(),
+			Language:     ghRepo.GetLanguage(),
+			Category:     languageToCategory(ghRepo.GetLanguage()),
+			Description:  ghRepo.GetDescription(),
+			License:      license,
+			DiscoveredAt: time.Now().UTC(),
+		})
 	}
 	return pending, nil
 }
@@ -649,6 +738,16 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 		pending = append(pending, fromSeed...)
 	}
 
+	// OSSInsight discovery: curated "MCP Servers" collection (id 10105) ranked
+	// by monthly star growth — a high-signal set of canonical MCP server repos.
+	fromOSSInsight, err := discoverFromOSSInsight(ctx, client, existing, seen, forceRescan)
+	if err != nil {
+		log.Printf("OSSInsight discovery error: %v", err)
+	} else {
+		pending = append(pending, fromOSSInsight...)
+		log.Printf("OSSInsight discovery: %d tool(s) queued", len(fromOSSInsight))
+	}
+
 	// Smithery discovery: all tools by usage — covers the full Smithery catalog
 	// (~4k tools) including those with few GitHub stars or no standalone repo.
 	fromSmithery, err := discoverFromSmithery(ctx, client, existing, seen, forceRescan)
@@ -658,16 +757,25 @@ func discoverTools(ctx context.Context, client *github.Client, existing map[stri
 	pending = append(pending, fromSmithery...)
 	log.Printf("Smithery discovery: %d new tool(s) queued", len(fromSmithery))
 
-	// GitHub Search: topic-based and name-based.
-	// PerPage:100 (API max) sorted by stars captures the top ~400 repos across
-	// 4 queries. A minimum-star threshold filters out stub/test repos that
-	// crowd out genuine tools with lower star counts.
+	// GitHub Search: broader coverage across topic variants and naming conventions.
+	// PerPage:100 (API max) sorted by stars; the seen map dedups across queries.
+	// A minimum-star threshold filters out stub/test repos. Coverage expanded
+	// beyond mcp-server topic/name because the dominant convention is X-mcp /
+	// mcp-X (suffix/prefix), and many high-star repos (blender-mcp, mcp-chrome)
+	// have empty topics.
 	const minStars = 50
 	queries := []string{
+		// topic variants (maintainers tag inconsistently)
+		"topic:mcp",
 		"topic:mcp-server",
-		"mcp-server in:name language:TypeScript",
-		"mcp-server in:name language:Python",
-		"mcp-server in:name language:Go",
+		"topic:mcp-servers",
+		"topic:model-context-protocol",
+		"topic:modelcontextprotocol",
+		// naming conventions: prefix + suffix both caught by in:name
+		"mcp-server in:name",
+		"mcp in:name stars:>100",
+		// description fallback: catches empty-topic, oddly-named servers
+		"\"mcp server\" in:description stars:>200",
 	}
 
 	for _, q := range queries {
