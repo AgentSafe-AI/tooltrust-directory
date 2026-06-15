@@ -5,16 +5,16 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 42 |
+| **Risk Score** | 34 |
 | **Version** | `1.6.1` |
 | **Vendor** | delorenj |
 | **Stars** | ⭐ 388 |
 | **npm Package** | `@delorenj/mcp-server-trello` |
-| **npm Downloads (30d)** | 8.8k |
+| **npm Downloads (30d)** | 8.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 51 |
+| High     | 49 |
 | Medium   | 43 |
 | Low      | 86 |
-| Info     | 200 |
+| Info     | 201 |
 
 ## Detailed Findings
 
@@ -1818,18 +1818,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -3474,12 +3462,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokens" appears to accept a secret or credential
+input parameter "tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

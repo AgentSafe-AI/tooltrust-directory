@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-06-12T02:54:00.50095228Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:55:02.656949361Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/googlesuper",
   "vendor": "Smithery",
   "description": "Google Super MCP server providing access to multiple Google Workspace services.",
@@ -1363,9 +1363,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
+      "description": "input parameter \"syncToken\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "GOOGLESUPER_EVENTS_LIST"
     },
@@ -1395,9 +1395,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "GOOGLESUPER_EVENTS_WATCH"
     },
@@ -1462,14 +1462,6 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLESUPER_FETCH_EMAILS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLESUPER_FETCH_EMAILS"
     },
@@ -2395,9 +2387,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"syncToken\" appears to accept a secret or credential",
+      "description": "input parameter \"syncToken\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "GOOGLESUPER_LIST_CALENDARS"
     },
@@ -3108,10 +3100,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 36,
+    "high": 32,
     "medium": 95,
     "low": 56,
-    "info": 200
+    "info": 203
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -4193,7 +4185,7 @@
     {
       "tool_name": "GOOGLESUPER_EVENTS_LIST",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (alwaysIncludeEmail)",
         "dynamic email recipient (pageToken)",
@@ -4217,7 +4209,7 @@
     {
       "tool_name": "GOOGLESUPER_EVENTS_WATCH",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -4241,10 +4233,9 @@
     },
     {
       "tool_name": "GOOGLESUPER_FETCH_EMAILS",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -4874,7 +4865,7 @@
     {
       "tool_name": "GOOGLESUPER_LIST_CALENDARS",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (minAccessRole)",
         "dynamic email recipient (pageToken)",
@@ -5738,6 +5729,12 @@
     },
     {
       "scan_date": "2026-06-11T02:59:02Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-12T02:54:00Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

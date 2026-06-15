@@ -1,17 +1,17 @@
-# 🟠 erik-7clt-local-intel
+# 🟡 erik-7clt-local-intel
 
 > text
 Agentic local business intelligence for Florida — 983 ZIPs, OSM POI layer, IRS income data, sector gap analysis, and 500 oracle prompts. 20 MCP tools. LLMs pay $0.01–$0.05/call. Free discovery tier available. Built for autonomous agents and LLM pipelines. thelocalintel.com
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [erik-7clt-local-intel](https://smithery.ai/server/erik-7clt/local-intel) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -20,7 +20,7 @@ Agentic local business intelligence for Florida — 983 ZIPs, OSM POI layer, IRS
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
+| High     | 2 |
 | Medium   | 3 |
 | Low      | 6 |
 | Info     | 20 |
@@ -369,18 +369,6 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -8,11 +8,11 @@
 | **Risk Score** | 42 |
 | **Version** | `0.4.0-dev3` |
 | **Vendor** | zerodha |
-| **Stars** | ⭐ 267 |
+| **Stars** | ⭐ 271 |
 | **Language** | Go |
 | **Source** | [kite-mcp-server](https://github.com/zerodha/kite-mcp-server) |
-| **Scan Date** | 2026-06-13 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

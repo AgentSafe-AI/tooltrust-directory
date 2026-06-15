@@ -10,11 +10,11 @@
 | **Vendor** | bigcodegen |
 | **Stars** | ⭐ 320 |
 | **npm Package** | `mcp-neovim-server` |
-| **npm Downloads (30d)** | 258 |
+| **npm Downloads (30d)** | 280 |
 | **Language** | TypeScript |
 | **Source** | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

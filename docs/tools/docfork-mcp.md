@@ -5,16 +5,16 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Risk Score** | 25 |
 | **Version** | `2.1.0` |
 | **Vendor** | docfork |
 | **Stars** | ⭐ 487 |
 | **npm Package** | `docfork` |
-| **npm Downloads (30d)** | 2.9k |
+| **npm Downloads (30d)** | 3.0k |
 | **Language** | TypeScript |
 | **Source** | [docfork-mcp](https://github.com/docfork/docfork) |
-| **Scan Date** | 2026-06-10 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
+| High     | 2 |
 | Medium   | 2 |
 | Low      | 2 |
-| Info     | 2 |
+| Info     | 3 |
 
 ## Detailed Findings
 
@@ -54,12 +54,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokens" appears to accept a secret or credential
+input parameter "tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

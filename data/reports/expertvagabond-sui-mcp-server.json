@@ -3,13 +3,13 @@
   "version": "archive/master-rust-rewrite",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-05-30T02:43:21.43248513Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:52:50.953980782Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/ExpertVagabond/sui-mcp-server",
   "category": "Developer Tools",
   "vendor": "ExpertVagabond",
   "npm_package": "sui-mcp-server",
-  "npm_downloads_monthly": 83,
+  "npm_downloads_monthly": 120,
   "license": "MIT",
   "language": "JavaScript",
   "description": "53-tool MCP server for Sui blockchain — wallets, DeFi, Move contracts, staking, SuiNS, analytics. Built on @mysten/sui SDK.",
@@ -632,9 +632,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_token_price"
     },
@@ -689,10 +689,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 67,
+    "high": 66,
     "medium": 4,
     "low": 13,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1146,8 +1146,8 @@
     },
     {
       "tool_name": "get_token_price",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -1347,6 +1347,12 @@
       "scan_date": "2026-05-17T02:39:58Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "archive/master-rust-rewrite"
+    },
+    {
+      "scan_date": "2026-05-30T02:43:21Z",
+      "grade": "C",
+      "risk_score": 40,
       "version": "archive/master-rust-rewrite"
     }
   ]

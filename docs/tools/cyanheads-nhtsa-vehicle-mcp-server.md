@@ -5,12 +5,12 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Risk Score** | 25 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cyanheads-nhtsa-vehicle-mcp-server](https://smithery.ai/server/cyanheads/nhtsa-vehicle-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -19,7 +19,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 4 |
+| High     | 3 |
 | Medium   | 4 |
 | Low      | 3 |
 | Info     | 7 |
@@ -164,18 +164,6 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

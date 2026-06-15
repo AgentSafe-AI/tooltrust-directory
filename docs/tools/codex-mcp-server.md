@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

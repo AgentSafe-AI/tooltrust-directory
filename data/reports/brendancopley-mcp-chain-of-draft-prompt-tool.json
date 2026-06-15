@@ -1,33 +1,19 @@
 {
   "tool_id": "brendancopley-mcp-chain-of-draft-prompt-tool",
   "version": "1.1.1",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-05-30T02:29:21.732999424Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T18:39:08.434916626Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/brendancopley/mcp-chain-of-draft-prompt-tool",
   "category": "Developer Tools",
   "vendor": "brendancopley",
   "stars": 19,
   "npm_package": "mcp-chain-of-draft-prompt-tool",
-  "npm_downloads_monthly": 47,
+  "npm_downloads_monthly": 59,
   "language": "Python",
   "description": "MCP prompt tool applying Chain-of-Draft (CoD) reasoning - BYOLLM",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.1.1: 0 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": null,
-        "removed": [
-          "compare_models"
-        ],
-        "version": "1.1.1"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -62,9 +48,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "optimize_prompt"
     },
@@ -87,10 +73,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 2,
     "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -134,8 +120,8 @@
     },
     {
       "tool_name": "optimize_prompt",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -302,6 +288,12 @@
       "scan_date": "2026-05-17T02:28:30Z",
       "grade": "D",
       "risk_score": 57,
+      "version": "1.1.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:29:21Z",
+      "grade": "C",
+      "risk_score": 32,
       "version": "1.1.1"
     }
   ]

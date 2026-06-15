@@ -8,11 +8,11 @@
 | **Risk Score** | 19 |
 | **Version** | `1.25.15` |
 | **Vendor** | txn2 |
-| **Stars** | ⭐ 4120 |
+| **Stars** | ⭐ 4121 |
 | **Language** | Go |
 | **Source** | [kubefwd](https://github.com/txn2/kubefwd) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

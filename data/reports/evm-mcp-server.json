@@ -3,14 +3,14 @@
   "version": "2.0.4",
   "grade": "D",
   "risk_score": 55,
-  "scan_date": "2026-06-15T02:59:17.589079485Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:31:24.059356824Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/mcpdotdirect/evm-mcp-server",
   "category": "Developer Tools",
   "vendor": "mcpdotdirect",
   "stars": 380,
   "npm_package": "@mcpdotdirect/evm-mcp-server",
-  "npm_downloads_monthly": 426,
+  "npm_downloads_monthly": 422,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server that provides LLMs with tools for interacting with EVM networks",
@@ -161,9 +161,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenAddress\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_token_balance"
     },
@@ -177,9 +177,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenAddress\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_allowance"
     },
@@ -369,9 +369,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenAddress\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "transfer_erc20"
     },
@@ -385,9 +385,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenAddress\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "approve_token_spending"
     },
@@ -401,9 +401,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_nft_info"
     },
@@ -417,9 +417,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_erc1155_balance"
     },
@@ -442,10 +442,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 41,
+    "high": 35,
     "medium": 3,
     "low": 9,
-    "info": 0
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -573,8 +573,8 @@
     },
     {
       "tool_name": "get_token_balance",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenAddress)"
       ],
@@ -583,8 +583,8 @@
     },
     {
       "tool_name": "get_allowance",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenAddress)"
       ],
@@ -669,8 +669,8 @@
     },
     {
       "tool_name": "transfer_erc20",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (to)",
         "dynamic email recipient (tokenAddress)"
@@ -680,8 +680,8 @@
     },
     {
       "tool_name": "approve_token_spending",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenAddress)"
       ],
@@ -690,8 +690,8 @@
     },
     {
       "tool_name": "get_nft_info",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -700,8 +700,8 @@
     },
     {
       "tool_name": "get_erc1155_balance",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -1206,6 +1206,12 @@
     },
     {
       "scan_date": "2026-06-14T02:55:08Z",
+      "grade": "D",
+      "risk_score": 55,
+      "version": "2.0.4"
+    },
+    {
+      "scan_date": "2026-06-15T02:59:17Z",
       "grade": "D",
       "risk_score": 55,
       "version": "2.0.4"

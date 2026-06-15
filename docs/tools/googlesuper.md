@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [googlesuper](https://smithery.ai/server/googlesuper) |
-| **Scan Date** | 2026-06-12 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 36 |
+| High     | 32 |
 | Medium   | 95 |
 | Low      | 56 |
-| Info     | 200 |
+| Info     | 203 |
 
 ## Detailed Findings
 
@@ -2054,12 +2054,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "syncToken" appears to accept a secret or credential
+input parameter "syncToken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -2102,12 +2102,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -2204,18 +2204,6 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -3602,12 +3590,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "syncToken" appears to accept a secret or credential
+input parameter "syncToken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

@@ -3,12 +3,12 @@
   "version": "3.0.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-06-12T02:52:44.368037177Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:39:39.055861323Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/j4th/mtg-mcp-server",
   "category": "Developer Tools",
   "vendor": "j4th",
-  "stars": 11,
+  "stars": 12,
   "license": "MIT",
   "language": "Python",
   "description": "Unified MCP server composing Scryfall, Commander Spellbook, 17Lands, EDHREC, Moxfield, Spicerack, and MTGGoldfish into one interface for AI assistants. 69 tools for Commander analytics, draft evaluation, competitive metagame, sideboard strategy, and more.",
@@ -766,22 +766,6 @@
       "tool_name": "color_identity_staples"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "sealed_pool_build"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "sealed_pool_build"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -952,9 +936,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 22,
+    "high": 21,
     "medium": 2,
-    "low": 24,
+    "low": 23,
     "info": 69
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -1470,10 +1454,7 @@
     {
       "tool_name": "sealed_pool_build",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1745,6 +1726,12 @@
     },
     {
       "scan_date": "2026-06-11T02:57:48Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "3.0.0"
+    },
+    {
+      "scan_date": "2026-06-12T02:52:44Z",
       "grade": "C",
       "risk_score": 25,
       "version": "3.0.0"

@@ -2,18 +2,42 @@
   "tool_id": "indigoprotocol-indigo-mcp",
   "version": "0.2.15",
   "grade": "C",
-  "risk_score": 45,
-  "scan_date": "2026-05-30T02:34:44.285738767Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 47,
+  "scan_date": "2026-06-15T18:45:03.772921526Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/IndigoProtocol/indigo-mcp",
   "category": "Developer Tools",
   "vendor": "indigoprotocol",
   "stars": 2,
   "npm_package": "@indigoprotocol/indigo-mcp",
+  "npm_downloads_monthly": 380,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP for connecting LLMs to Indigo Protocol data ",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.2.15: 10 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "cancel_stableswap_order",
+          "collect_interest",
+          "create_stableswap_order",
+          "distribute_interest",
+          "feed_interest_oracle",
+          "feed_price_oracle",
+          "get_interest_oracle",
+          "get_oracle_price",
+          "get_pyth_price",
+          "get_stableswap_pool"
+        ],
+        "removed": null,
+        "version": "0.2.15"
+      }
+    },
     {
       "id": "AS-004",
       "severity": "High",
@@ -55,27 +79,11 @@
       "tool_name": "get_protocol_stats"
     },
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_assets"
-    },
-    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "get_assets"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "get_assets"
     },
     {
@@ -135,11 +143,27 @@
       "tool_name": "get_cdps_by_address"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "analyze_cdp_health"
+    },
+    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "analyze_cdp_health"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "analyze_cdp_health"
     },
     {
@@ -264,17 +288,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenIn\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenIn\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_steelswap_estimate"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenOut\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenOut\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_steelswap_estimate"
     },
@@ -288,17 +312,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenB\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenA\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_iris_liquidity_pools"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenA\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenB\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_iris_liquidity_pools"
     },
@@ -391,11 +415,35 @@
       "tool_name": "get_order_book"
     },
     {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_redemption_orders"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_redemption_orders\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_redemption_orders"
+    },
+    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_redemption_orders"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "get_redemption_orders"
     },
     {
@@ -573,14 +621,190 @@
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "close_staking_position"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "collect_interest"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "collect_interest"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "collect_interest"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "distribute_interest"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "distribute_interest"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "distribute_interest"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "feed_interest_oracle"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "feed_interest_oracle"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "feed_interest_oracle"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_interest_oracle"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_interest_oracle"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_interest_oracle"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_oracle_price"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_pyth_price"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_pyth_price"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_pyth_price"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_pyth_price"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "feed_price_oracle"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_stableswap_pool"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_stableswap_order"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "create_stableswap_order"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "cancel_stableswap_order"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 65,
-    "medium": 1,
-    "low": 4,
-    "info": 0
+    "high": 75,
+    "medium": 3,
+    "low": 14,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -608,13 +832,19 @@
     "annul_sp_request",
     "burn_cdp",
     "cancel_rob",
+    "cancel_stableswap_order",
     "claim_rob",
     "close_cdp",
     "close_sp_account",
     "close_staking_position",
+    "collect_interest",
     "create_sp_account",
+    "create_stableswap_order",
     "deposit_cdp",
+    "distribute_interest",
     "distribute_staking_rewards",
+    "feed_interest_oracle",
+    "feed_price_oracle",
     "freeze_cdp",
     "get_ada_price",
     "get_all_cdps",
@@ -629,16 +859,20 @@
     "get_collector_utxos",
     "get_dex_yields",
     "get_indy_price",
+    "get_interest_oracle",
     "get_iris_liquidity_pools",
+    "get_oracle_price",
     "get_order_book",
     "get_polls",
     "get_protocol_params",
     "get_protocol_stats",
+    "get_pyth_price",
     "get_redemption_orders",
     "get_redemption_queue",
     "get_sp_account_by_owner",
     "get_stability_pool_accounts",
     "get_stability_pools",
+    "get_stableswap_pool",
     "get_staking_info",
     "get_staking_position_by_address",
     "get_staking_positions",
@@ -701,9 +935,6 @@
       "tool_name": "get_assets",
       "action": "ALLOW",
       "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -760,6 +991,9 @@
       "tool_name": "analyze_cdp_health",
       "action": "ALLOW",
       "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -863,8 +1097,8 @@
     },
     {
       "tool_name": "get_steelswap_estimate",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenIn)",
         "dynamic email recipient (tokenOut)"
@@ -874,8 +1108,8 @@
     },
     {
       "tool_name": "get_iris_liquidity_pools",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenA)",
         "dynamic email recipient (tokenB)"
@@ -922,6 +1156,10 @@
       "tool_name": "open_rob",
       "action": "ALLOW",
       "grade": "B",
+      "destinations": [
+        "dynamic email recipient (maxPriceDenominator)",
+        "dynamic email recipient (maxPriceNumerator)"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -936,6 +1174,10 @@
       "tool_name": "adjust_rob",
       "action": "ALLOW",
       "grade": "B",
+      "destinations": [
+        "dynamic email recipient (newMaxPriceDenominator)",
+        "dynamic email recipient (newMaxPriceNumerator)"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -950,9 +1192,6 @@
       "tool_name": "redeem_rob",
       "action": "ALLOW",
       "grade": "B",
-      "destinations": [
-        "dynamic email recipient (iassetOutputIndex)"
-      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -965,8 +1204,11 @@
     },
     {
       "tool_name": "get_redemption_orders",
-      "action": "ALLOW",
-      "grade": "B",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -1116,6 +1358,102 @@
       "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "collect_interest",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "distribute_interest",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (collectorOutputIndices)",
+        "dynamic email recipient (collectorTxHashes)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "feed_interest_oracle",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_interest_oracle",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_oracle_price",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_pyth_price",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "feed_price_oracle",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (priceDenominator)",
+        "dynamic email recipient (priceNumerator)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get_stableswap_pool",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "create_stableswap_order",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "cancel_stableswap_order",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -1195,6 +1533,12 @@
       "scan_date": "2026-05-17T02:34:16Z",
       "grade": "C",
       "risk_score": 30,
+      "version": "0.2.15"
+    },
+    {
+      "scan_date": "2026-05-30T02:34:44Z",
+      "grade": "C",
+      "risk_score": 45,
       "version": "0.2.15"
     }
   ]

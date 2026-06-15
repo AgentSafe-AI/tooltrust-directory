@@ -6,15 +6,15 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 52 |
-| **Version** | `0.119.0` |
+| **Version** | `0.122.0` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 781 |
+| **Stars** | ⭐ 783 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
-| **npm Downloads (30d)** | 99.2k |
+| **npm Downloads (30d)** | 97.3k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,9 +23,9 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 216 |
-| Medium   | 124 |
-| Low      | 387 |
+| High     | 218 |
+| Medium   | 126 |
+| Low      | 388 |
 | Info     | 0 |
 
 ## Detailed Findings
@@ -8724,6 +8724,66 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 **Description:**
 tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+
+**Severity:** High
+
+**Description:**
+GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+
+**Recommendation:**
+Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares fs permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟡 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Medium
+
+**Description:**
+tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

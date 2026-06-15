@@ -5,14 +5,14 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Risk Score** | 33 |
 | **Version** | `1.3.0` |
 | **Vendor** | korotovsky |
-| **Stars** | ⭐ 1663 |
+| **Stars** | ⭐ 1664 |
 | **Language** | Go |
 | **Source** | [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -21,10 +21,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 51 |
+| High     | 42 |
 | Medium   | 50 |
 | Low      | 51 |
-| Info     | 142 |
+| Info     | 151 |
 
 ## Detailed Findings
 
@@ -52,12 +52,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -88,12 +88,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -136,12 +136,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -220,12 +220,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -784,12 +784,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -2068,12 +2068,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -2212,12 +2212,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -3388,12 +3388,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -3532,12 +3532,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

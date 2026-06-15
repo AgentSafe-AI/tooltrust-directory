@@ -1,52 +1,115 @@
 {
   "tool_id": "catwhisperingninja-cat-dexscreener",
   "version": "0.1.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-30T02:40:04Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-06-15T18:53:57.03343766Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/catwhisperingninja/cat-dexscreener",
   "category": "Developer Tools",
   "vendor": "catwhisperingninja",
   "npm_package": "dexscreener-mcp",
+  "npm_downloads_monthly": 341,
   "license": "Unlicense",
   "language": "JavaScript",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_pairs"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "search_pairs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_pairs"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_token_pools"
+    },
+    {
+      "id": "AS-010",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 146,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_token_pools"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_tokens"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenAddresses\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_tokens"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get_pair"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "latest_token_profiles"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "latest_token_profiles"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "top_boosted_tokens"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "high": 7,
+    "medium": 1,
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -64,102 +127,68 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "get_pair",
+    "get_token_pools",
+    "get_tokens",
+    "latest_token_profiles",
+    "search_pairs",
+    "top_boosted_tokens"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-04T06:28:53Z",
+      "tool_name": "search_pairs",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-04T16:49:19Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
+      "tool_name": "get_token_pools",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (tokenAddress)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-05T01:20:18Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
+      "tool_name": "get_tokens",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "dynamic email recipient (tokenAddresses)"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-05T01:57:58Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
+      "tool_name": "get_pair",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-06T02:01:57Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
+      "tool_name": "latest_token_profiles",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
     {
-      "scan_date": "2026-04-07T01:48:18Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-08T01:46:57Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-11T01:51:08Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-12T02:16:33Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-13T02:18:17Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-14T02:14:01Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-16T02:25:51Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-17T02:14:46Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-19T02:18:51Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:44:48Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:37:57Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "0.1.0"
+      "tool_name": "top_boosted_tokens",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ]
 }

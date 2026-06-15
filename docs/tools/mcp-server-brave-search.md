@@ -5,16 +5,16 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 49 |
+| **Risk Score** | 27 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 87229 |
+| **Stars** | ⭐ 87270 |
 | **npm Package** | `@modelcontextprotocol/server-brave-search` |
-| **npm Downloads (30d)** | 92.7k |
+| **npm Downloads (30d)** | 92.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 9 |
+| High     | 7 |
 | Medium   | 2 |
 | Low      | 10 |
-| Info     | 8 |
+| Info     | 10 |
 
 ## Detailed Findings
 
@@ -258,24 +258,24 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "maximum_number_of_tokens_per_url" appears to accept a secret or credential
+input parameter "maximum_number_of_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "maximum_number_of_tokens" appears to accept a secret or credential
+input parameter "maximum_number_of_tokens_per_url" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

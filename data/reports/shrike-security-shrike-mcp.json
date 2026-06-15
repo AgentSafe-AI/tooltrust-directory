@@ -3,14 +3,14 @@
   "version": "2.0.0",
   "grade": "D",
   "risk_score": 55,
-  "scan_date": "2026-05-30T02:36:25.312335817Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:47:41.562818325Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/Shrike-Security/shrike-mcp",
   "category": "Developer Tools",
   "vendor": "shrike-security",
   "stars": 1,
   "npm_package": "shrike-mcp",
-  "npm_downloads_monthly": 347,
+  "npm_downloads_monthly": 257,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "MCP server for AI agent security scanning — prompt injection, jailbreak, SQL injection, PII protection",
@@ -41,9 +41,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"pii_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"pii_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "scan_response"
     },
@@ -306,10 +306,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 22,
+    "high": 21,
     "medium": 6,
     "low": 8,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -336,8 +336,8 @@
     },
     {
       "tool_name": "scan_response",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -518,6 +518,12 @@
       "scan_date": "2026-05-17T02:36:11Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:36:25Z",
+      "grade": "D",
+      "risk_score": 55,
       "version": "2.0.0"
     }
   ]

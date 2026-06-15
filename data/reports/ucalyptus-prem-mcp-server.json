@@ -1,10 +1,10 @@
 {
   "tool_id": "ucalyptus-prem-mcp-server",
   "version": "0.1.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-05-30T02:37:11.471885838Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 8,
+  "scan_date": "2026-06-15T18:46:51.864201877Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/ucalyptus/prem-mcp-server",
   "category": "Developer Tools",
   "vendor": "ucalyptus",
@@ -15,9 +15,9 @@
   "findings": [
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "chat"
     },
@@ -47,9 +47,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "prem_chat_with_template"
     },
@@ -64,10 +64,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 1,
     "low": 0,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -96,7 +96,7 @@
     {
       "tool_name": "chat",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (max_tokens)",
         "dynamic email recipient (repository_ids)"
@@ -120,7 +120,7 @@
     {
       "tool_name": "prem_chat_with_template",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (max_tokens)"
       ],
@@ -251,6 +251,12 @@
     },
     {
       "scan_date": "2026-05-17T02:36:57Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:37:11Z",
       "grade": "B",
       "risk_score": 15,
       "version": "0.1.0"

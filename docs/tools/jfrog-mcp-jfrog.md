@@ -1,19 +1,19 @@
-# ⛔ jfrog-mcp-jfrog
+# 🟠 jfrog-mcp-jfrog
 
 > Model Context Protocol (MCP) Server for the JFrog Platform API, enabling repository management, build tracking, release lifecycle management, and more.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **F** |
-| **Risk Score** | 78 |
+| **Grade** | **C** |
+| **Risk Score** | 48 |
 | **Version** | `0.0.1` |
 | **Vendor** | jfrog |
 | **Stars** | ⭐ 115 |
 | **npm Package** | `mcp-jfrog` |
 | **Language** | TypeScript |
 | **Source** | [jfrog-mcp-jfrog](https://github.com/jfrog/mcp-jfrog) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -22,10 +22,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 10 |
+| High     | 8 |
 | Medium   | 15 |
 | Low      | 7 |
-| Info     | 31 |
+| Info     | 33 |
 
 ## Detailed Findings
 
@@ -161,24 +161,24 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "enableTokenAuthentication" appears to accept a secret or credential
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "password" appears to accept a secret or credential
+input parameter "enableTokenAuthentication" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

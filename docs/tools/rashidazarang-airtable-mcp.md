@@ -10,11 +10,11 @@
 | **Vendor** | rashidazarang |
 | **Stars** | ⭐ 78 |
 | **npm Package** | `@rashidazarang/airtable-mcp` |
-| **npm Downloads (30d)** | 362 |
+| **npm Downloads (30d)** | 848 |
 | **Language** | TypeScript |
 | **Source** | [rashidazarang-airtable-mcp](https://github.com/rashidazarang/airtable-mcp) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

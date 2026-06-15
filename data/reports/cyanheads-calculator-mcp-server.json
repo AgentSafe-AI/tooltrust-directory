@@ -1,28 +1,20 @@
 {
   "tool_id": "cyanheads-calculator-mcp-server",
   "version": "0.3.2",
-  "grade": "D",
-  "risk_score": 57,
-  "scan_date": "2026-06-15T03:02:26.083139441Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-06-15T18:45:42.977954957Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/cyanheads/calculator-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 1,
   "npm_package": "@cyanheads/calculator-mcp-server",
-  "npm_downloads_monthly": 1899,
+  "npm_downloads_monthly": 1897,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A calculator MCP server that lets any LLM verify mathematical computations. Evaluate, simplify, and differentiate expressions via a single tool. Powered by math.js v15.",
   "findings": [
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "calculate"
-    },
     {
       "id": "AS-004",
       "severity": "High",
@@ -38,21 +30,13 @@
       "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
       "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "calculate"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "calculate"
     }
   ],
   "summary": {
     "critical": 1,
-    "high": 2,
+    "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -63,10 +47,7 @@
     {
       "tool_name": "calculate",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "C",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -206,6 +187,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:21Z",
+      "grade": "D",
+      "risk_score": 57,
+      "version": "0.3.2"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:26Z",
       "grade": "D",
       "risk_score": 57,
       "version": "0.3.2"

@@ -1,10 +1,10 @@
 {
   "tool_id": "deeppath-ai-mcp-system-infra",
   "version": "0.0.1",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-05-30T02:35:29.509118515Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-15T18:44:30.076487856Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/deeppath-ai/mcp-system-infra",
   "category": "Developer Tools",
   "vendor": "deeppath-ai",
@@ -16,35 +16,19 @@
   "description": "架构师-系统架构",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "assess-system-infra"
-    },
-    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "assess-system-infra"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "assess-system-infra"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -71,11 +55,8 @@
   "tool_contexts": [
     {
       "tool_name": "assess-system-infra",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
+      "action": "ALLOW",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
@@ -259,6 +240,12 @@
       "scan_date": "2026-05-17T02:34:47Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "0.0.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:35:29Z",
+      "grade": "C",
+      "risk_score": 32,
       "version": "0.0.1"
     }
   ]

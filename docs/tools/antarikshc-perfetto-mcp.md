@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 173 |
 | **Language** | Python |
 | **Source** | [antarikshc-perfetto-mcp](https://github.com/antarikshc/perfetto-mcp) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

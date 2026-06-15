@@ -12,8 +12,8 @@
 | **npm Package** | `@skybridge/monorepo` |
 | **Language** | TypeScript |
 | **Source** | [skybridge](https://github.com/alpic-ai/skybridge) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

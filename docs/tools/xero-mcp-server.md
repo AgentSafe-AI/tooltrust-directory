@@ -10,11 +10,11 @@
 | **Vendor** | XeroAPI |
 | **Stars** | ⭐ 307 |
 | **npm Package** | `@xeroapi/xero-mcp-server` |
-| **npm Downloads (30d)** | 9.8k |
+| **npm Downloads (30d)** | 9.9k |
 | **Language** | TypeScript |
 | **Source** | [xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

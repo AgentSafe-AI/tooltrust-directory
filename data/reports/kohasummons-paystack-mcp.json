@@ -2,15 +2,15 @@
   "tool_id": "kohasummons-paystack-mcp",
   "version": "0.1.0",
   "grade": "C",
-  "risk_score": 34,
-  "scan_date": "2026-05-30T02:30:53.586195629Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T18:40:37.260730411Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/kohasummons/paystack-mcp",
   "category": "Developer Tools",
   "vendor": "kohasummons",
   "stars": 8,
   "npm_package": "@kohasummons/paystack-mcp",
-  "npm_downloads_monthly": 68,
+  "npm_downloads_monthly": 103,
   "license": "MIT",
   "language": "TypeScript",
   "description": "The Paystack MCP for your AI Agents",
@@ -185,9 +185,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "initialize_transaction"
     },
@@ -386,10 +386,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 5,
     "medium": 4,
     "low": 8,
-    "info": 28
+    "info": 29
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -547,8 +547,8 @@
     },
     {
       "tool_name": "initialize_transaction",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -762,6 +762,12 @@
     },
     {
       "scan_date": "2026-05-17T02:30:32Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:30:53Z",
       "grade": "C",
       "risk_score": 34,
       "version": "0.1.0"

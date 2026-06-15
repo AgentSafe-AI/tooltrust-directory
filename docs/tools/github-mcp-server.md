@@ -8,11 +8,11 @@
 | **Risk Score** | 32 |
 | **Version** | `1.3.0` |
 | **Vendor** | github |
-| **Stars** | ⭐ 30675 |
+| **Stars** | ⭐ 30697 |
 | **Language** | Go |
 | **Source** | [github-mcp-server](https://github.com/github/github-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -21,10 +21,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 27 |
+| High     | 26 |
 | Medium   | 29 |
 | Low      | 57 |
-| Info     | 86 |
+| Info     | 87 |
 
 ## Detailed Findings
 
@@ -1480,12 +1480,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "secret_type" appears to accept a secret or credential
+input parameter "secret_type" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

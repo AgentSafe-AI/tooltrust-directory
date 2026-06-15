@@ -3,14 +3,14 @@
   "version": "5.5.7",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-05-30T02:28:28.92584709Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:38:02.755276862Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/sgroy10/speclock",
   "category": "Developer Tools",
   "vendor": "sgroy10",
   "stars": 25,
   "npm_package": "speclock",
-  "npm_downloads_monthly": 651,
+  "npm_downloads_monthly": 1146,
   "license": "MIT",
   "language": "JavaScript",
   "description": "AI Constraint Engine — enforces CLAUDE.md, .cursorrules, AGENTS.md rules as laws. 51 MCP tools, 991 tests. Official MCP Registry. npx speclock protect",
@@ -304,22 +304,6 @@
       "tool_name": "speclock_policy_evaluate"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "speclock_policy_evaluate"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "speclock_policy_evaluate"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -546,9 +530,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 4,
     "medium": 12,
-    "low": 5,
+    "low": 4,
     "info": 44
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -844,11 +828,8 @@
     },
     {
       "tool_name": "speclock_policy_evaluate",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1321,6 +1302,12 @@
     },
     {
       "scan_date": "2026-05-25T02:47:55Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "5.5.7"
+    },
+    {
+      "scan_date": "2026-05-30T02:28:28Z",
       "grade": "C",
       "risk_score": 25,
       "version": "5.5.7"

@@ -10,11 +10,11 @@
 | **Vendor** | hyperbrowserai |
 | **Stars** | ⭐ 760 |
 | **npm Package** | `hyperbrowser-mcp` |
-| **npm Downloads (30d)** | 2.9k |
+| **npm Downloads (30d)** | 3.3k |
 | **Language** | TypeScript |
 | **Source** | [hyperbrowserai-mcp](https://github.com/hyperbrowserai/mcp) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

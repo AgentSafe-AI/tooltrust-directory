@@ -1,20 +1,20 @@
-# 🟠 mcp-server-siri-shortcuts
+# 🟡 mcp-server-siri-shortcuts
 
 > MCP for calling Siri Shorcuts from LLMs
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `1.1.0` |
 | **Vendor** | dvcrn |
 | **Stars** | ⭐ 189 |
 | **npm Package** | `mcp-server-siri-shortcuts` |
-| **npm Downloads (30d)** | 246 |
+| **npm Downloads (30d)** | 295 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-siri-shortcuts](https://github.com/dvcrn/mcp-server-siri-shortcuts) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
+| Critical | 0 |
 | High     | 3 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -66,12 +66,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+### ⚪ ⚡ `AS-006` — Arbitrary Code Execution
 
-**Severity:** Critical
+**Severity:** Info
 
 **Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+tool name or description implies arbitrary script/code execution — capability unconfirmed (no exec permission or code/script/eval input property found)
 
 **Recommendation:**
 This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.

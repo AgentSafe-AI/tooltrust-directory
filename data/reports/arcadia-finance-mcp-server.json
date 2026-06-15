@@ -1,16 +1,16 @@
 {
   "tool_id": "arcadia-finance-mcp-server",
   "version": "0.4.6",
-  "grade": "D",
-  "risk_score": 53,
-  "scan_date": "2026-06-15T03:02:04.464394537Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-06-15T18:43:31.402807593Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/arcadia-finance/mcp-server",
   "category": "Developer Tools",
   "vendor": "arcadia-finance",
   "stars": 4,
   "npm_package": "@arcadia-finance/mcp-server",
-  "npm_downloads_monthly": 504,
+  "npm_downloads_monthly": 512,
   "license": "AGPL-3.0",
   "language": "TypeScript",
   "description": "MCP server for Arcadia Finance. Manage concentrated liquidity positions with built-in leverage, automated rebalancing, and yield optimization on Base, Optimism, and Unichain.",
@@ -120,27 +120,11 @@
       "tool_name": "read.point_leaderboard"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "read.guides"
-    },
-    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "read.guides"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "read.guides"
     },
     {
@@ -153,9 +137,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_addresses\" appears to accept a secret or credential",
+      "description": "input parameter \"token_addresses\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "read.wallet.balances"
     },
@@ -169,9 +153,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_addresses\" appears to accept a secret or credential",
+      "description": "input parameter \"token_addresses\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "read.wallet.allowances"
     },
@@ -473,9 +457,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" appears to accept a secret or credential",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.wallet.approve"
     },
@@ -561,9 +545,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"optimal_token0_ratio\" appears to accept a secret or credential",
+      "description": "input parameter \"optimal_token0_ratio\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.rebalancer"
     },
@@ -617,17 +601,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"sell_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"sell_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.compounder_staked"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"buy_token\" appears to accept a secret or credential",
+      "description": "input parameter \"buy_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.compounder_staked"
     },
@@ -665,17 +649,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"sell_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"sell_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.yield_claimer_cowswap"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"buy_token\" appears to accept a secret or credential",
+      "description": "input parameter \"buy_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "write.asset_manager.yield_claimer_cowswap"
     },
@@ -746,10 +730,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 54,
+    "high": 45,
     "medium": 23,
-    "low": 14,
-    "info": 0
+    "low": 13,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -938,11 +922,8 @@
     },
     {
       "tool_name": "read.guides",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (topic)",
         "hardcoded domain: read.guides"
@@ -952,8 +933,8 @@
     },
     {
       "tool_name": "read.wallet.balances",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (token_addresses)",
         "hardcoded domain: read.wallet.balances",
@@ -965,8 +946,8 @@
     },
     {
       "tool_name": "read.wallet.allowances",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (token_addresses)",
         "hardcoded domain: read.wallet.allowances",
@@ -1199,8 +1180,8 @@
     },
     {
       "tool_name": "write.wallet.approve",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -1248,8 +1229,8 @@
     },
     {
       "tool_name": "write.asset_manager.rebalancer",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -1279,8 +1260,8 @@
     },
     {
       "tool_name": "write.asset_manager.compounder_staked",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -1309,8 +1290,8 @@
     },
     {
       "tool_name": "write.asset_manager.yield_claimer_cowswap",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "writes_files"
       ],
@@ -1515,6 +1496,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:04Z",
+      "grade": "D",
+      "risk_score": 53,
+      "version": "0.4.6"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:04Z",
       "grade": "D",
       "risk_score": 53,
       "version": "0.4.6"

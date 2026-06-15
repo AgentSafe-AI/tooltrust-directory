@@ -2,28 +2,32 @@
   "tool_id": "pineapple-ai-skill-history",
   "version": "smithery",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T03:02:29.831207977Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 15,
+  "scan_date": "2026-06-15T18:52:48.271324828Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/pineapple-ai/skill-history",
   "vendor": "Smithery",
   "description": "Track download history for 70,000+ agent skills across ClawHub and skills.sh. Like star-history.com, but for agent skills.\n\n  **Tools:**\n  - `get_skill_downloads(handle, slug)` — Get full download history with daily snapshots\n  - `search_skills(query, limit)` — Search skills by name, author, or keyword\n\n  Free, no auth required. Data updated every 2 hours.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_skill_downloads"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_skill_downloads"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 4 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_skill",
+          "get_skill_content",
+          "get_skill_file",
+          "list_library"
+        ],
+        "removed": [
+          "get_skill_downloads",
+          "search_skills"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-014",
@@ -31,23 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_skill_downloads"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_skills"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_skills"
+      "tool_name": "get_skill"
     },
     {
       "id": "AS-014",
@@ -55,38 +43,88 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_skills"
+      "tool_name": "get_skill_content"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_skill_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_skill_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_library"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 2,
-    "info": 2
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_skill_downloads",
-    "search_skills"
+    "get_skill",
+    "get_skill_content",
+    "get_skill_file",
+    "list_library"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_skill_downloads",
+      "tool_name": "get_skill",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_skill_content",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: SKILL.md"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_skills",
+      "tool_name": "get_skill_file",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
-        "uses_network"
+        "executes_commands",
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: REFERENCE.md",
+        "hardcoded domain: SKILL.md",
+        "hardcoded domain: agentskills.io",
+        "hardcoded domain: extract.py"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_library",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -221,6 +259,12 @@
     },
     {
       "scan_date": "2026-06-13T02:46:07Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:29Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

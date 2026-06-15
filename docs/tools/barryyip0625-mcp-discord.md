@@ -5,16 +5,16 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 49 |
+| **Risk Score** | 34 |
 | **Version** | `1.3.9` |
 | **Vendor** | barryyip0625 |
 | **Stars** | ⭐ 80 |
 | **npm Package** | `mcp-discord` |
-| **npm Downloads (30d)** | 2.4k |
+| **npm Downloads (30d)** | 2.5k |
 | **Language** | TypeScript |
 | **Source** | [barryyip0625-mcp-discord](https://github.com/barryyip0625/mcp-discord) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 27 |
+| High     | 23 |
 | Medium   | 10 |
 | Low      | 8 |
-| Info     | 0 |
+| Info     | 4 |
 
 ## Detailed Findings
 
@@ -102,12 +102,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -438,12 +438,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "webhookToken" appears to accept a secret or credential
+input parameter "webhookToken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -486,12 +486,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "webhookToken" appears to accept a secret or credential
+input parameter "webhookToken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -546,12 +546,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "webhookToken" appears to accept a secret or credential
+input parameter "webhookToken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

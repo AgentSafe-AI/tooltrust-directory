@@ -3,13 +3,13 @@
   "version": "2.0.0",
   "grade": "D",
   "risk_score": 55,
-  "scan_date": "2026-05-30T02:42:45.229040742Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:48:31.082382364Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/PaulieB14/graph-polymarket-mcp",
   "category": "Developer Tools",
   "vendor": "paulieb14",
   "npm_package": "graph-polymarket-mcp",
-  "npm_downloads_monthly": 314,
+  "npm_downloads_monthly": 290,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server for Polymarket prediction markets — 31 tools combining The Graph subgraphs + Polymarket REST APIs (Gamma + CLOB) for market search, live prices, order books, trader P\u0026L, open interest, and resolution data",
@@ -152,9 +152,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_market_positions"
     },
@@ -416,9 +416,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenIds\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenIds\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_live_prices"
     },
@@ -432,9 +432,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_live_spread"
     },
@@ -456,9 +456,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_live_orderbook"
     },
@@ -480,9 +480,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_price_history"
     },
@@ -496,9 +496,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" appears to accept a secret or credential",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_last_trade"
     },
@@ -537,10 +537,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 42,
+    "high": 36,
     "medium": 9,
     "low": 14,
-    "info": 0
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -699,8 +699,8 @@
     },
     {
       "tool_name": "get_market_positions",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -820,8 +820,8 @@
     },
     {
       "tool_name": "get_live_prices",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenIds)"
       ],
@@ -830,8 +830,8 @@
     },
     {
       "tool_name": "get_live_spread",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -840,8 +840,8 @@
     },
     {
       "tool_name": "get_live_orderbook",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -853,8 +853,8 @@
     },
     {
       "tool_name": "get_price_history",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -863,8 +863,8 @@
     },
     {
       "tool_name": "get_last_trade",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -1056,6 +1056,12 @@
       "scan_date": "2026-05-17T02:37:35Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:42:45Z",
+      "grade": "D",
+      "risk_score": 55,
       "version": "2.0.0"
     }
   ]

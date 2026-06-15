@@ -2,9 +2,9 @@
   "tool_id": "jalpp-chessagine",
   "version": "smithery",
   "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-15T03:02:26.530669626Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T18:52:26.144693087Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/jalpp/chessagine",
   "vendor": "Smithery",
   "description": "Analyze chess positions using powerful engines like Stockfish, Leela, and Maia. Retrieve games, puzzles, and opening statistics directly from Lichess and specialized databases. Visualize moves and games through interactive board renders and PGN viewers.",
@@ -586,14 +586,6 @@
       "tool_name": "get-maia2-analysis"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-maia2-analysis"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -618,14 +610,6 @@
       "tool_name": "get-leela-analysis"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-leela-analysis"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -646,14 +630,6 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get-elite-leela-analysis"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get-elite-leela-analysis"
     },
@@ -684,7 +660,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 23,
+    "high": 20,
     "medium": 4,
     "low": 20,
     "info": 37
@@ -1036,10 +1012,9 @@
     },
     {
       "tool_name": "get-maia2-analysis",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1047,10 +1022,9 @@
     },
     {
       "tool_name": "get-leela-analysis",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1061,7 +1035,6 @@
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1305,6 +1278,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:25Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:26Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

@@ -1,10 +1,10 @@
 {
   "tool_id": "agenciabakucl-usagewall",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 45,
-  "scan_date": "2026-06-15T03:02:16.40139646Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T18:51:38.540590099Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/agenciabakucl/usagewall",
   "vendor": "Smithery",
   "findings": [
@@ -34,25 +34,25 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"input_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_cost"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"output_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"cached_input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_cost"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"cached_input_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_cost"
     },
@@ -83,10 +83,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 6
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -121,8 +121,8 @@
     },
     {
       "tool_name": "estimate_cost",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (cached_input_tokens)",
         "dynamic email recipient (input_tokens)",
@@ -227,6 +227,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:10Z",
+      "grade": "C",
+      "risk_score": 45,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:16Z",
       "grade": "C",
       "risk_score": 45,
       "version": "smithery"

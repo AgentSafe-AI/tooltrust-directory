@@ -6,15 +6,15 @@
 |-------|-------|
 | **Grade** | **D** |
 | **Risk Score** | 65 |
-| **Version** | `0.11.0` |
+| **Version** | `0.11.2` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 1338 |
+| **Stars** | ⭐ 1343 |
 | **npm Package** | `@apify/actors-mcp-server` |
-| **npm Downloads (30d)** | 73.8k |
+| **npm Downloads (30d)** | 73.2k |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 2 |
+| Critical | 1 |
 | High     | 10 |
 | Medium   | 15 |
 | Low      | 9 |
-| Info     | 16 |
+| Info     | 17 |
 
 ## Detailed Findings
 
@@ -198,12 +198,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+### ⚪ ⚡ `AS-006` — Arbitrary Code Execution
 
-**Severity:** Critical
+**Severity:** Info
 
 **Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+tool name or description implies arbitrary script/code execution — capability unconfirmed (no exec permission or code/script/eval input property found)
 
 **Recommendation:**
 This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.

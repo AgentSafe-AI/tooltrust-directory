@@ -1,10 +1,10 @@
 {
   "tool_id": "heojay-test-mcp",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-05-30T02:40:31.704783233Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T18:50:45Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/heojay/test-mcp",
   "category": "Developer Tools",
   "vendor": "heojay",
@@ -13,39 +13,40 @@
   "description": "Test Smithery MCP",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "text_test_regex"
-        ],
-        "removed": [
-          "play_turn",
-          "start_game"
-        ],
-        "version": "1.0.0"
-      }
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_test_regex"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 15,
+            "snippet": "new McpServer(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -61,18 +62,6 @@
       "snippet": "new McpServer(",
       "file": "src/index.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "text_test_regex"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "text_test_regex",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -210,6 +199,12 @@
     },
     {
       "scan_date": "2026-05-17T02:38:04Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:40:31Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.0"

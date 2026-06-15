@@ -10,11 +10,11 @@
 | **Vendor** | williamzujkowski |
 | **Stars** | ⭐ 192 |
 | **npm Package** | `@williamzujkowski/strudel-mcp-server` |
-| **npm Downloads (30d)** | 89 |
+| **npm Downloads (30d)** | 92 |
 | **Language** | TypeScript |
 | **Source** | [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

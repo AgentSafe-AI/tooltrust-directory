@@ -73,12 +73,12 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 47 |
+| **Risk Score** | 32 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [segellfosc-dev-ayfx-menjometre](https://smithery.ai/server/segellfosc-dev-ayfx/menjometre) |
-| **Scan Date** | 2026-06-12 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -87,7 +87,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 9 |
+| High     | 7 |
 | Medium   | 5 |
 | Low      | 10 |
 | Info     | 48 |
@@ -907,30 +907,6 @@ tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "fetch_source_document" implies read-only operation but declares exec permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
 
 ---
 

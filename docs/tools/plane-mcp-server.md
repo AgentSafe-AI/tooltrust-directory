@@ -1,18 +1,18 @@
-# 🟡 plane-mcp-server
+# 🟢 plane-mcp-server
 
 > Plane's Official Model Context Protocol Server 🔌 ⌨️ 🔥
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `2.5.0-phoenix-b5ad5360` |
 | **Vendor** | makeplane |
-| **Stars** | ⭐ 240 |
+| **Stars** | ⭐ 242 |
 | **Language** | Python |
 | **Source** | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -21,9 +21,9 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
-| Low      | 1 |
+| Low      | 0 |
 | Info     | 8 |
 
 ## Detailed Findings
@@ -37,30 +37,6 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

@@ -1,10 +1,10 @@
 {
   "tool_id": "blooper20-fingerstyle-tab-mcp",
   "version": "1.0.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-30T02:36:43Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T18:45:34.032251298Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/blooper20/fingerstyle-tab-mcp",
   "category": "Developer Tools",
   "vendor": "blooper20",
@@ -14,47 +14,78 @@
   "description": "🎸 AI-powered MCP server for Claude Desktop that converts  guitar audio into fingerstyle tablature using Spotify's Basic Pitch",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 12,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "mcp_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 36,
-            "snippet": "FastMCP(",
-            "file": "mcp_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 45,
-            "snippet": "@mcp.tool(",
-            "file": "mcp_server.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_tasks"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_task"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_task"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_task"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_task"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add_subtask"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_task"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update_task"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "high": 1,
+    "medium": 2,
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -79,156 +110,44 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "add_subtask",
+    "create_task",
+    "list_tasks",
+    "update_task"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-11T01:47:39Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
+      "tool_name": "list_tasks",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-12T02:13:01Z",
+      "tool_name": "create_task",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-13T02:17:38Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
+      "tool_name": "add_subtask",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-14T02:13:17Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-15T02:09:50Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-16T02:24:26Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-17T02:13:56Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-18T01:54:20Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-19T02:16:58Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-21T02:13:57Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-22T02:12:43Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-23T02:15:10Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:16:01Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-25T02:08:31Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:17:15Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:39:14Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:34:20Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:34:23Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:33:01Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:31:58Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:34:12Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-02T02:22:25Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-03T02:31:36Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-04T02:29:33Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:36:00Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
+      "tool_name": "update_task",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

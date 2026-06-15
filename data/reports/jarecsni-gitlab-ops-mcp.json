@@ -2,25 +2,107 @@
   "tool_id": "jarecsni-gitlab-ops-mcp",
   "version": "1.1.0",
   "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-05-30T02:42:32.521099755Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 29,
+  "scan_date": "2026-06-15T18:53:26.207681178Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/jarecsni/gitlab-ops-mcp",
   "category": "Developer Tools",
   "vendor": "jarecsni",
   "npm_package": "gitlab-ops-mcp",
-  "npm_downloads_monthly": 41,
+  "npm_downloads_monthly": 46,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Supplementary MCP server for GitLab — operational and orchestration layer (webhooks, CI variables, branch protection, project settings, groups, access tokens)",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_ARCHIVE_PROJECT"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.1.0: 22 tool(s) added, 54 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "create_ci_variable",
+          "create_group",
+          "create_pipeline_trigger",
+          "create_project_access_token",
+          "create_webhook",
+          "delete_ci_variable",
+          "delete_group",
+          "delete_pipeline_trigger",
+          "delete_webhook",
+          "list_ci_variables",
+          "list_groups",
+          "list_pipeline_triggers",
+          "list_project_access_tokens",
+          "list_protected_branches",
+          "list_webhooks",
+          "protect_branch",
+          "revoke_project_access_token",
+          "test_webhook",
+          "unprotect_branch",
+          "update_ci_variable",
+          "update_project_settings",
+          "update_webhook"
+        ],
+        "removed": [
+          "GITLAB_ARCHIVE_PROJECT",
+          "GITLAB_CREATE_GROUP",
+          "GITLAB_CREATE_PROJECT",
+          "GITLAB_CREATE_PROJECT_ISSUE",
+          "GITLAB_CREATE_REPOSITORY_BRANCH",
+          "GITLAB_DELETE_PROJECT",
+          "GITLAB_DOWNLOAD_PROJECT_AVATAR",
+          "GITLAB_ERASE_JOB",
+          "GITLAB_GET_COMMIT_REFS",
+          "GITLAB_GET_COMMIT_SEQUENCE",
+          "GITLAB_GET_GROUP",
+          "GITLAB_GET_GROUPS",
+          "GITLAB_GET_GROUP_MEMBER",
+          "GITLAB_GET_JOB_DETAILS",
+          "GITLAB_GET_MERGE_REQUEST_NOTES",
+          "GITLAB_GET_PROJECT",
+          "GITLAB_GET_PROJECTS",
+          "GITLAB_GET_PROJECTS_ID_MERGE_REQUESTS_IID_DIFFS",
+          "GITLAB_GET_PROJECT_LANGUAGES",
+          "GITLAB_GET_PROJECT_MEMBER",
+          "GITLAB_GET_PROJECT_MEMBER_ALL",
+          "GITLAB_GET_PROJECT_MERGE_REQUESTS",
+          "GITLAB_GET_PROJECT_MERGE_REQUEST_COMMITS",
+          "GITLAB_GET_REPOSITORY_BRANCH",
+          "GITLAB_GET_REPOSITORY_BRANCHES",
+          "GITLAB_GET_SINGLE_COMMIT",
+          "GITLAB_GET_SINGLE_PIPELINE",
+          "GITLAB_GET_USER",
+          "GITLAB_GET_USERS",
+          "GITLAB_GET_USERS_ID_STATUS",
+          "GITLAB_GET_USER_PREFERENCES",
+          "GITLAB_GET_USER_STATUS",
+          "GITLAB_GET_USER_SUPPORT_PIN",
+          "GITLAB_IMPORT_PROJECT_MEMBERS",
+          "GITLAB_LIST_ALL_GROUP_MEMBERS",
+          "GITLAB_LIST_ALL_PROJECT_MEMBERS",
+          "GITLAB_LIST_BILLABLE_GROUP_MEMBERS",
+          "GITLAB_LIST_GROUP_MEMBERS",
+          "GITLAB_LIST_PENDING_GROUP_MEMBERS",
+          "GITLAB_LIST_PIPELINE_JOBS",
+          "GITLAB_LIST_PROJECT_GROUPS",
+          "GITLAB_LIST_PROJECT_INVITED_GROUPS",
+          "GITLAB_LIST_PROJECT_PIPELINES",
+          "GITLAB_LIST_PROJECT_SHAREABLE_GROUPS",
+          "GITLAB_LIST_PROJECT_TAGS",
+          "GITLAB_LIST_PROJECT_TRANSFER_LOCATIONS",
+          "GITLAB_LIST_PROJECT_USERS",
+          "GITLAB_LIST_REPOSITORY_COMMITS",
+          "GITLAB_LIST_USER_PROJECTS",
+          "GITLAB_POST_USER_SUPPORT_PIN",
+          "GITLAB_PUT_USER_PREFERENCES",
+          "GITLAB_SET_USER_STATUS",
+          "GITLAB_SHARE_PROJECT_WITH_GROUP",
+          "GITLAB_START_PROJECT_HOUSEKEEPING"
+        ],
+        "version": "1.1.0"
+      }
     },
     {
       "id": "AS-002",
@@ -28,55 +110,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_GROUP"
+      "tool_name": "create_webhook"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_GROUP"
+      "tool_name": "create_webhook"
     },
     {
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 26 properties (threshold: 10)",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_GROUP"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_CREATE_GROUP"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_CREATE_GROUP"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_PROJECT"
+      "tool_name": "create_webhook"
     },
     {
       "id": "AS-002",
@@ -84,7 +134,15 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_PROJECT"
+      "tool_name": "create_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "create_webhook"
     },
     {
       "id": "AS-011",
@@ -92,7 +150,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_CREATE_PROJECT"
+      "tool_name": "create_webhook"
     },
     {
       "id": "AS-014",
@@ -100,79 +158,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_CREATE_PROJECT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_PROJECT_ISSUE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_PROJECT_ISSUE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 17 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_PROJECT_ISSUE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_CREATE_PROJECT_ISSUE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_CREATE_PROJECT_ISSUE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_CREATE_REPOSITORY_BRANCH"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_CREATE_REPOSITORY_BRANCH"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_DELETE_PROJECT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_DELETE_PROJECT"
+      "tool_name": "create_webhook"
     },
     {
       "id": "AS-002",
@@ -180,7 +166,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_DOWNLOAD_PROJECT_AVATAR"
+      "tool_name": "list_webhooks"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_webhooks"
     },
     {
       "id": "AS-011",
@@ -188,7 +182,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_DOWNLOAD_PROJECT_AVATAR"
+      "tool_name": "list_webhooks"
     },
     {
       "id": "AS-014",
@@ -196,39 +190,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_DOWNLOAD_PROJECT_AVATAR"
+      "tool_name": "list_webhooks"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_ERASE_JOB"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_COMMIT_REFS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_COMMIT_SEQUENCE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_GROUP"
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_webhook"
     },
     {
       "id": "AS-002",
@@ -236,23 +206,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_GROUP_MEMBER"
+      "tool_name": "update_webhook"
     },
     {
-      "id": "AS-011",
+      "id": "AS-002",
       "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_GROUP_MEMBER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_GROUP_MEMBER"
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_webhook"
     },
     {
       "id": "AS-002",
@@ -260,23 +222,15 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_GROUPS"
+      "tool_name": "update_webhook"
     },
     {
-      "id": "AS-014",
+      "id": "AS-010",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_GROUPS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_JOB_DETAILS"
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "update_webhook"
     },
     {
       "id": "AS-011",
@@ -284,7 +238,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_JOB_DETAILS"
+      "tool_name": "update_webhook"
     },
     {
       "id": "AS-014",
@@ -292,15 +246,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_JOB_DETAILS"
+      "tool_name": "update_webhook"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_MERGE_REQUEST_NOTES"
+      "tool_name": "delete_webhook"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_webhook"
     },
     {
       "id": "AS-011",
@@ -308,7 +270,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_MERGE_REQUEST_NOTES"
+      "tool_name": "delete_webhook"
     },
     {
       "id": "AS-014",
@@ -316,15 +278,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_MERGE_REQUEST_NOTES"
+      "tool_name": "delete_webhook"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares http permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECT"
+      "tool_name": "test_webhook"
     },
     {
       "id": "AS-011",
@@ -332,7 +294,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_PROJECT"
+      "tool_name": "test_webhook"
     },
     {
       "id": "AS-014",
@@ -340,79 +302,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECT_LANGUAGES"
+      "tool_name": "test_webhook"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECT_MEMBER"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_PROJECT_MEMBER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECT_MEMBER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECT_MEMBER_ALL"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUEST_COMMITS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUEST_COMMITS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUEST_COMMITS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUESTS"
+      "tool_name": "create_ci_variable"
     },
     {
       "id": "AS-002",
@@ -420,23 +318,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares env permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUESTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 36 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUESTS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUESTS"
+      "tool_name": "create_ci_variable"
     },
     {
       "id": "AS-014",
@@ -444,15 +326,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUESTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 19 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECTS"
+      "tool_name": "create_ci_variable"
     },
     {
       "id": "AS-014",
@@ -460,271 +334,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_PROJECTS_ID_MERGE_REQUESTS_IID_DIFFS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_PROJECTS_ID_MERGE_REQUESTS_IID_DIFFS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_PROJECTS_ID_MERGE_REQUESTS_IID_DIFFS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_REPOSITORY_BRANCH"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_REPOSITORY_BRANCHES"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_SINGLE_COMMIT"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_SINGLE_PIPELINE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_USER"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_GET_USER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_USER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_USER_PREFERENCES"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 24 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_GET_USERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_USERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_USERS_ID_STATUS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_USER_STATUS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_GET_USER_SUPPORT_PIN"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_IMPORT_PROJECT_MEMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_ALL_GROUP_MEMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_ALL_PROJECT_MEMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_BILLABLE_GROUP_MEMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_GROUP_MEMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PENDING_GROUP_MEMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PIPELINE_JOBS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_GROUPS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_INVITED_GROUPS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 17 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_LIST_PROJECT_PIPELINES"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_PIPELINES"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_LIST_PROJECT_SHAREABLE_GROUPS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_LIST_PROJECT_SHAREABLE_GROUPS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_SHAREABLE_GROUPS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_TAGS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_TRANSFER_LOCATIONS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_PROJECT_USERS"
+      "tool_name": "list_ci_variables"
     },
     {
       "id": "AS-002",
@@ -732,15 +342,15 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_LIST_REPOSITORY_COMMITS"
+      "tool_name": "update_ci_variable"
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Medium",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "tool declares env permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_LIST_REPOSITORY_COMMITS"
+      "tool_name": "update_ci_variable"
     },
     {
       "id": "AS-014",
@@ -748,47 +358,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_REPOSITORY_COMMITS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_LIST_USER_PROJECTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 22 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_LIST_USER_PROJECTS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GITLAB_LIST_USER_PROJECTS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_LIST_USER_PROJECTS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_POST_USER_SUPPORT_PIN"
+      "tool_name": "update_ci_variable"
     },
     {
       "id": "AS-002",
@@ -796,7 +366,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GITLAB_PUT_USER_PREFERENCES"
+      "tool_name": "delete_ci_variable"
     },
     {
       "id": "AS-014",
@@ -804,7 +374,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_PUT_USER_PREFERENCES"
+      "tool_name": "delete_ci_variable"
     },
     {
       "id": "AS-014",
@@ -812,7 +382,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_SET_USER_STATUS"
+      "tool_name": "protect_branch"
     },
     {
       "id": "AS-014",
@@ -820,7 +390,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_SHARE_PROJECT_WITH_GROUP"
+      "tool_name": "list_protected_branches"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "unprotect_branch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "unprotect_branch"
     },
     {
       "id": "AS-014",
@@ -828,15 +414,199 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GITLAB_START_PROJECT_HOUSEKEEPING"
+      "tool_name": "unprotect_branch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_project_settings"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_project_settings"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "update_project_settings"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update_project_settings"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_group"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_group"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_group"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_group"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_groups"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_group"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete_group"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_project_access_token"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_project_access_token"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_project_access_tokens"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "revoke_project_access_token"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "revoke_project_access_token"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_pipeline_trigger"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_pipeline_trigger"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_pipeline_trigger"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_pipeline_trigger"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_pipeline_triggers"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_pipeline_trigger"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete_pipeline_trigger"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 15,
-    "medium": 8,
-    "low": 25,
-    "info": 54
+    "high": 6,
+    "medium": 14,
+    "low": 18,
+    "info": 25
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -871,91 +641,175 @@
     }
   ],
   "tool_names": [
-    "GITLAB_ARCHIVE_PROJECT",
-    "GITLAB_CREATE_GROUP",
-    "GITLAB_CREATE_PROJECT",
-    "GITLAB_CREATE_PROJECT_ISSUE",
-    "GITLAB_CREATE_REPOSITORY_BRANCH",
-    "GITLAB_DELETE_PROJECT",
-    "GITLAB_DOWNLOAD_PROJECT_AVATAR",
-    "GITLAB_ERASE_JOB",
-    "GITLAB_GET_COMMIT_REFS",
-    "GITLAB_GET_COMMIT_SEQUENCE",
-    "GITLAB_GET_GROUP",
-    "GITLAB_GET_GROUPS",
-    "GITLAB_GET_GROUP_MEMBER",
-    "GITLAB_GET_JOB_DETAILS",
-    "GITLAB_GET_MERGE_REQUEST_NOTES",
-    "GITLAB_GET_PROJECT",
-    "GITLAB_GET_PROJECTS",
-    "GITLAB_GET_PROJECTS_ID_MERGE_REQUESTS_IID_DIFFS",
-    "GITLAB_GET_PROJECT_LANGUAGES",
-    "GITLAB_GET_PROJECT_MEMBER",
-    "GITLAB_GET_PROJECT_MEMBER_ALL",
-    "GITLAB_GET_PROJECT_MERGE_REQUESTS",
-    "GITLAB_GET_PROJECT_MERGE_REQUEST_COMMITS",
-    "GITLAB_GET_REPOSITORY_BRANCH",
-    "GITLAB_GET_REPOSITORY_BRANCHES",
-    "GITLAB_GET_SINGLE_COMMIT",
-    "GITLAB_GET_SINGLE_PIPELINE",
-    "GITLAB_GET_USER",
-    "GITLAB_GET_USERS",
-    "GITLAB_GET_USERS_ID_STATUS",
-    "GITLAB_GET_USER_PREFERENCES",
-    "GITLAB_GET_USER_STATUS",
-    "GITLAB_GET_USER_SUPPORT_PIN",
-    "GITLAB_IMPORT_PROJECT_MEMBERS",
-    "GITLAB_LIST_ALL_GROUP_MEMBERS",
-    "GITLAB_LIST_ALL_PROJECT_MEMBERS",
-    "GITLAB_LIST_BILLABLE_GROUP_MEMBERS",
-    "GITLAB_LIST_GROUP_MEMBERS",
-    "GITLAB_LIST_PENDING_GROUP_MEMBERS",
-    "GITLAB_LIST_PIPELINE_JOBS",
-    "GITLAB_LIST_PROJECT_GROUPS",
-    "GITLAB_LIST_PROJECT_INVITED_GROUPS",
-    "GITLAB_LIST_PROJECT_PIPELINES",
-    "GITLAB_LIST_PROJECT_SHAREABLE_GROUPS",
-    "GITLAB_LIST_PROJECT_TAGS",
-    "GITLAB_LIST_PROJECT_TRANSFER_LOCATIONS",
-    "GITLAB_LIST_PROJECT_USERS",
-    "GITLAB_LIST_REPOSITORY_COMMITS",
-    "GITLAB_LIST_USER_PROJECTS",
-    "GITLAB_POST_USER_SUPPORT_PIN",
-    "GITLAB_PUT_USER_PREFERENCES",
-    "GITLAB_SET_USER_STATUS",
-    "GITLAB_SHARE_PROJECT_WITH_GROUP",
-    "GITLAB_START_PROJECT_HOUSEKEEPING"
+    "create_ci_variable",
+    "create_group",
+    "create_pipeline_trigger",
+    "create_project_access_token",
+    "create_webhook",
+    "delete_ci_variable",
+    "delete_group",
+    "delete_pipeline_trigger",
+    "delete_webhook",
+    "list_ci_variables",
+    "list_groups",
+    "list_pipeline_triggers",
+    "list_project_access_tokens",
+    "list_protected_branches",
+    "list_webhooks",
+    "protect_branch",
+    "revoke_project_access_token",
+    "test_webhook",
+    "unprotect_branch",
+    "update_ci_variable",
+    "update_project_settings",
+    "update_webhook"
   ],
   "tool_contexts": [
     {
-      "tool_name": "GITLAB_ARCHIVE_PROJECT",
+      "tool_name": "create_webhook",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "dynamic email recipient (token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_webhooks",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_webhook",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "dynamic email recipient (token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "delete_webhook",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "test_webhook",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_ci_variable",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_env",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_ci_variables",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GITLAB_CREATE_GROUP",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "tool_name": "update_ci_variable",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
+        "reads_env"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "delete_ci_variable",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "protect_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (merge_access_level)",
+        "dynamic email recipient (push_access_level)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_protected_branches",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "unprotect_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_project_settings",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
       ],
       "destinations": [
         "dynamic email recipient (auto_devops_enabled)",
-        "dynamic email recipient (emails_enabled)",
-        "dynamic email recipient (enabled_git_access_protocol)",
-        "dynamic email recipient (request_access_enabled)",
-        "dynamic email recipient (require_two_factor_authentication)",
-        "dynamic email recipient (two_factor_grace_period)",
-        "dynamic email recipient (wiki_access_level)"
+        "dynamic email recipient (only_allow_merge_if_pipeline_succeeds)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GITLAB_CREATE_PROJECT",
+      "tool_name": "create_group",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
@@ -966,449 +820,83 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GITLAB_CREATE_PROJECT_ISSUE",
+      "tool_name": "list_groups",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (min_access_level)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "delete_group",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_project_access_token",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (access_level)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_project_access_tokens",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "revoke_project_access_token",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_pipeline_trigger",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
       "behavior": [
         "executes_commands",
         "writes_files"
       ],
-      "destinations": [
-        "dynamic email recipient (discussion_to_resolve)",
-        "dynamic email recipient (merge_request_to_resolve_discussions_of)",
-        "dynamic email recipient (milestone_id)"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_pipeline_triggers",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GITLAB_CREATE_REPOSITORY_BRANCH",
+      "tool_name": "delete_pipeline_trigger",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "writes_files"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_DELETE_PROJECT",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_DOWNLOAD_PROJECT_AVATAR",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_ERASE_JOB",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_COMMIT_REFS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_COMMIT_SEQUENCE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_GROUP",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (with_custom_attributes)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_GROUP_MEMBER",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_GROUPS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (min_access_level)",
-        "dynamic email recipient (with_custom_attributes)",
-        "dynamic email recipient (with_two_factor)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_JOB_DETAILS",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_MERGE_REQUEST_NOTES",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECT",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECT_LANGUAGES",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECT_MEMBER",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECT_MEMBER_ALL",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUEST_COMMITS",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECT_MERGE_REQUESTS",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "reads_env",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (milestone)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECTS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (min_access_level)",
-        "dynamic email recipient (with_custom_attributes)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_PROJECTS_ID_MERGE_REQUESTS_IID_DIFFS",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_REPOSITORY_BRANCH",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_REPOSITORY_BRANCHES",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_SINGLE_COMMIT",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_SINGLE_PIPELINE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_USER",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_USER_PREFERENCES",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_USERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (auditors)",
-        "dynamic email recipient (two_factor)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_USERS_ID_STATUS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_USER_STATUS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_GET_USER_SUPPORT_PIN",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_IMPORT_PROJECT_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_ALL_GROUP_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_ALL_PROJECT_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_BILLABLE_GROUP_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_GROUP_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (two_factor)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PENDING_GROUP_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PIPELINE_JOBS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_GROUPS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (shared_min_access_level)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_INVITED_GROUPS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_PIPELINES",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_SHAREABLE_GROUPS",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_TAGS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_TRANSFER_LOCATIONS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_PROJECT_USERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_REPOSITORY_COMMITS",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_LIST_USER_PROJECTS",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (min_access_level)",
-        "dynamic email recipient (with_custom_attributes)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_POST_USER_SUPPORT_PIN",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_PUT_USER_PREFERENCES",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (pass_user_identities_to_ci_jwt)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_SET_USER_STATUS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_SHARE_PROJECT_WITH_GROUP",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (group_access)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GITLAB_START_PROJECT_HOUSEKEEPING",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1554,6 +1042,12 @@
     },
     {
       "scan_date": "2026-05-17T02:39:02Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:42:32Z",
       "grade": "C",
       "risk_score": 27,
       "version": "1.1.0"

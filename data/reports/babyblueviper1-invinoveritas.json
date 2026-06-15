@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-05-30T02:42:23.909614862Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:54:49.321303664Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/babyblueviper1/invinoveritas",
   "category": "Developer Tools",
   "vendor": "babyblueviper1",
@@ -12,6 +12,25 @@
   "language": "Python",
   "description": "Lightning-powered AI reasoning and structured decision intelligence for autonomous agents and trading bots. Official Python SDK + native MCP support. Bearer Token + L402 Lightning payments. Pay per insight — no subscriptions.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ledger",
+          "verify_proof"
+        ],
+        "removed": [
+          "agent_economy_brief",
+          "orchestrate",
+          "sovereign_earner_execute"
+        ],
+        "version": "1.0.0"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -21,12 +40,44 @@
       "tool_name": "review"
     },
     {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "prove"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "prove"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "agent_economy_brief"
+      "tool_name": "prove"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_proof"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ledger"
     },
     {
       "id": "AS-014",
@@ -43,14 +94,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "decision"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "orchestrate"
     },
     {
       "id": "AS-002",
@@ -125,22 +168,6 @@
       "tool_name": "message_post"
     },
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "sovereign_earner_execute"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "sovereign_earner_execute"
-    },
-    {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
@@ -203,56 +230,31 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "execute"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "prove"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "prove"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "prove"
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 4,
+    "critical": 0,
+    "high": 5,
     "medium": 1,
     "low": 6,
-    "info": 15
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "agent_economy_brief",
     "browse",
     "decision",
     "execute",
+    "ledger",
     "marketplace_buy",
     "memory_delete",
     "memory_get",
     "memory_list",
     "memory_store",
     "message_post",
-    "orchestrate",
     "prove",
     "reason",
     "review",
-    "sovereign_earner_execute"
+    "verify_proof"
   ],
   "tool_contexts": [
     {
@@ -266,17 +268,26 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "agent_economy_brief",
+      "tool_name": "prove",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
-      "destinations": [
-        "hardcoded domain: cs.AI",
-        "hardcoded domain: cs.CL",
-        "hardcoded domain: cs.LG"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "verify_proof",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ledger",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -289,13 +300,6 @@
     },
     {
       "tool_name": "decision",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "orchestrate",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -350,16 +354,6 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "sovereign_earner_execute",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
       "tool_name": "browse",
       "action": "ALLOW",
       "grade": "B",
@@ -376,16 +370,6 @@
       "behavior": [
         "executes_commands",
         "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "prove",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -472,6 +456,12 @@
     },
     {
       "scan_date": "2026-05-27T02:48:47Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:42:23Z",
       "grade": "C",
       "risk_score": 32,
       "version": "1.0.0"

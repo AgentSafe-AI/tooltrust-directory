@@ -1,16 +1,16 @@
-# 🟠 crabbitmq-crabbit-mq
+# 🟡 crabbitmq-crabbit-mq
 
 > Async message queue for AI agents. Self-provision queues via MCP or REST — no human signup required. Push messages to other agents, poll your own queue, and coordinate across sessions. Free tier: 5 queues, 1000 messages/day, 24h TTL.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 27 |
+| **Grade** | **B** |
+| **Risk Score** | 12 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [crabbitmq-crabbit-mq](https://smithery.ai/server/crabbitmq/crabbit-mq) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 4 |
+| High     | 0 |
 | Medium   | 3 |
 | Low      | 2 |
-| Info     | 5 |
+| Info     | 9 |
 
 ## Detailed Findings
 
@@ -74,12 +74,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "push_token" appears to accept a secret or credential
+input parameter "push_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -110,12 +110,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "poll_token" appears to accept a secret or credential
+input parameter "poll_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -146,12 +146,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "poll_token" appears to accept a secret or credential
+input parameter "poll_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -170,12 +170,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "push_token" appears to accept a secret or credential
+input parameter "push_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

@@ -1,10 +1,10 @@
 {
   "tool_id": "devbrother2024-mcp-server-test-251209",
   "version": "1.0.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-05-30T02:43:21Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:51:35.885976663Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/devbrother2024/mcp-server-test-251209",
   "category": "Developer Tools",
   "vendor": "devbrother2024",
@@ -12,29 +12,12 @@
   "language": "JavaScript",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 20,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "text_test_regex"
     }
   ],
   "summary": {
@@ -45,7 +28,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -63,102 +45,16 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "text_test_regex"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-20T02:24:14Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-21T02:16:02Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-22T02:15:05Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-23T02:17:59Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:17:36Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:20:21Z",
+      "tool_name": "text_test_regex",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:42:42Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:37:46Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:37:34Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:35:38Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:34:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:36:56Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-02T02:25:26Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-03T02:34:06Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-04T02:32:16Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:39:33Z",
-      "grade": "D",
-      "risk_score": 60,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

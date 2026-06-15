@@ -3,14 +3,14 @@
   "version": "1.2.1",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-05-30T02:29:36.513929416Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:39:13.899854312Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/Wolfe-Jam/grok-faf-mcp",
   "category": "Developer Tools",
   "vendor": "wolfe-jam",
   "stars": 16,
   "npm_package": "grok-faf-mcp",
-  "npm_downloads_monthly": 1093,
+  "npm_downloads_monthly": 2360,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server for xAI Grok — read and serve .faf project context. npm: grok-faf-mcp",
@@ -19,15 +19,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.2.1: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.2.1: 4 tool(s) added, 0 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "refresh_faf"
+          "faf_get_orchestration_policy",
+          "faf_orchestrate_recommendation",
+          "refresh_blend",
+          "refresh_fafm"
         ],
-        "removed": [
-          "faf_chat"
-        ],
+        "removed": null,
         "version": "1.2.1"
       }
     },
@@ -78,6 +79,54 @@
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "refresh_faf"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "refresh_fafm"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "faf_orchestrate_recommendation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "faf_get_orchestration_policy"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "faf_get_orchestration_policy"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "refresh_blend"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "refresh_blend"
     },
     {
       "id": "AS-002",
@@ -266,8 +315,8 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 22,
-    "medium": 7,
+    "high": 26,
+    "medium": 9,
     "low": 1,
     "info": 0
   },
@@ -279,9 +328,11 @@
     "faf_debug",
     "faf_enhance",
     "faf_friday",
+    "faf_get_orchestration_policy",
     "faf_guide",
     "faf_init",
     "faf_list",
+    "faf_orchestrate_recommendation",
     "faf_read",
     "faf_score",
     "faf_status",
@@ -292,7 +343,9 @@
     "rag_cache_clear",
     "rag_cache_stats",
     "rag_query",
-    "refresh_faf"
+    "refresh_blend",
+    "refresh_faf",
+    "refresh_fafm"
   ],
   "tool_contexts": [
     {
@@ -333,6 +386,40 @@
       "behavior": [
         "reads_files"
       ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "refresh_fafm",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "faf_orchestrate_recommendation",
+      "action": "ALLOW",
+      "grade": "B",
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "faf_get_orchestration_policy",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: project.faf"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "refresh_blend",
+      "action": "ALLOW",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -545,6 +632,12 @@
       "scan_date": "2026-05-17T02:28:51Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:29:36Z",
+      "grade": "C",
+      "risk_score": 32,
       "version": "1.2.1"
     }
   ]

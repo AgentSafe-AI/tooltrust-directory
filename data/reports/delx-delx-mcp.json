@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 32,
-  "scan_date": "2026-06-15T03:02:33.652341494Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:53:12.904480962Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/delx/delx-mcp",
   "vendor": "Smithery",
   "description": "Agent operations platform with 20+ tools for AI agents. Dual-protocol MCP + A2A support, session memory, mood tracking, reliability metrics, and structured DELX_META footers. Built for production agent workflows.",
@@ -474,22 +474,6 @@
       "tool_name": "recommend_delx"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "emotional_safety_check"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "emotional_safety_check"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -771,9 +755,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "util_jwt_inspect"
     },
@@ -1082,14 +1066,6 @@
       "tool_name": "util_api_integration_readiness"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "util_api_integration_readiness"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -1132,10 +1108,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 36,
+    "high": 33,
     "medium": 2,
-    "low": 8,
-    "info": 94
+    "low": 7,
+    "info": 95
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1595,10 +1571,7 @@
     {
       "tool_name": "emotional_safety_check",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1836,7 +1809,7 @@
     {
       "tool_name": "util_jwt_inspect",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -2079,10 +2052,9 @@
     },
     {
       "tool_name": "util_api_integration_readiness",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -2403,6 +2375,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:30Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:33Z",
       "grade": "C",
       "risk_score": 32,
       "version": "smithery"

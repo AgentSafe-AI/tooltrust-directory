@@ -3,8 +3,8 @@
   "version": "3.4.0",
   "grade": "D",
   "risk_score": 57,
-  "scan_date": "2026-05-30T02:27:25.372864458Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:36:58.69359257Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/nihalxkumar/arch-mcp",
   "category": "Developer Tools",
   "vendor": "nihalxkumar",
@@ -156,22 +156,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "analyze_pkgbuild_safety"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "analyze_package_metadata_risk"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "analyze_package_metadata_risk"
     },
     {
       "id": "AS-014",
@@ -656,9 +640,9 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 15,
+    "high": 14,
     "medium": 13,
-    "low": 10,
+    "low": 9,
     "info": 41
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -770,10 +754,7 @@
     {
       "tool_name": "analyze_package_metadata_risk",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1131,6 +1112,12 @@
     },
     {
       "scan_date": "2026-05-17T02:26:29Z",
+      "grade": "D",
+      "risk_score": 57,
+      "version": "3.4.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:27:25Z",
       "grade": "D",
       "risk_score": 57,
       "version": "3.4.0"

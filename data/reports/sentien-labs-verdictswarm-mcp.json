@@ -1,10 +1,10 @@
 {
   "tool_id": "sentien-labs-verdictswarm-mcp",
   "version": "0.1.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-05-30T02:38:55Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:50:20.123264019Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/sentien-labs/verdictswarm-mcp",
   "category": "Developer Tools",
   "vendor": "sentien-labs",
@@ -13,35 +13,116 @@
   "description": "Fight AI with AI. The security layer for AI agents that touch money — 6 adversarial AI agents debate crypto token risk. MCP server for Claude, Cursor, OpenClaw, Codex.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-010",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "file": "src/verdictswarm_mcp/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 11,
-            "snippet": "FastMCP(",
-            "file": "src/verdictswarm_mcp/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 15,
-            "snippet": "@mcp.tool(",
-            "file": "src/verdictswarm_mcp/server.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "scan_token"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "scan_token"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scan_token"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_quick_score"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_quick_score"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_quick_score"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "check_rug_risk"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "check_rug_risk"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_rug_risk"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_token_report"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_token_report"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_token_report"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_pricing"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_payment"
     }
   ],
   "summary": {
@@ -49,10 +130,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -76,54 +156,71 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "check_rug_risk",
+    "get_pricing",
+    "get_quick_score",
+    "get_token_report",
+    "scan_token",
+    "verify_payment"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-12T02:15:13Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
+      "tool_name": "scan_token",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token_address)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-13T02:18:29Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
+      "tool_name": "get_quick_score",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token_address)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-14T02:14:10Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
+      "tool_name": "check_rug_risk",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token_address)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-15T02:11:05Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
+      "tool_name": "get_token_report",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token_address)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-17T02:15:06Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
+      "tool_name": "get_pricing",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-19T02:18:43Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:46:37Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:38:48Z",
-      "grade": "C",
-      "risk_score": 30,
-      "version": "0.1.0"
+      "tool_name": "verify_payment",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

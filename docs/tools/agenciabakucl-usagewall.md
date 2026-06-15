@@ -1,14 +1,14 @@
-# 🟠 agenciabakucl-usagewall
+# 🟢 agenciabakucl-usagewall
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 45 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agenciabakucl-usagewall](https://smithery.ai/server/agenciabakucl/usagewall) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -17,10 +17,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 6 |
+| Info     | 9 |
 
 ## Detailed Findings
 
@@ -60,36 +60,36 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "input_tokens" appears to accept a secret or credential
+input parameter "output_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "output_tokens" appears to accept a secret or credential
+input parameter "cached_input_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "cached_input_tokens" appears to accept a secret or credential
+input parameter "input_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

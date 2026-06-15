@@ -10,11 +10,11 @@
 | **Vendor** | k-jarzyna |
 | **Stars** | ⭐ 64 |
 | **npm Package** | `@k-jarzyna/mcp-miro` |
-| **npm Downloads (30d)** | 550 |
+| **npm Downloads (30d)** | 507 |
 | **Language** | TypeScript |
 | **Source** | [k-jarzyna-mcp-miro](https://github.com/k-jarzyna/mcp-miro) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

@@ -1,10 +1,10 @@
 {
   "tool_id": "weather-mcp-server",
   "version": "1.3.0",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-06-15T02:59:51.794737239Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T18:32:14Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/ezh0v/weather-mcp-server",
   "category": "Developer Tools",
   "vendor": "ezh0v",
@@ -14,30 +14,47 @@
   "description": "A lightweight Model Context Protocol (MCP) server that enables AI assistants like Claude to retrieve and interpret real-time weather data. Discuss on Hacker News:",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WEATHERMAP_WEATHER"
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WEATHERMAP_WEATHER"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 11,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "internal/server/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 31,
+            "snippet": "server.NewMCPServer(",
+            "file": "internal/server/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 42,
+            "snippet": "AddTool(",
+            "file": "internal/server/server.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 1,
+    "medium": 0,
     "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -62,16 +79,12 @@
       "language": "go"
     }
   ],
-  "tool_names": [
-    "WEATHERMAP_WEATHER"
-  ],
-  "tool_contexts": [
+  "scan_history": [
     {
-      "tool_name": "WEATHERMAP_WEATHER",
-      "action": "ALLOW",
+      "scan_date": "2026-06-15T02:59:51Z",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 8,
+      "version": "1.3.0"
     }
   ]
 }

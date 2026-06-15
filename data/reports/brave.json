@@ -2,9 +2,9 @@
   "tool_id": "brave",
   "version": "smithery",
   "grade": "C",
-  "risk_score": 49,
-  "scan_date": "2026-06-11T02:59:01.531182129Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 27,
+  "scan_date": "2026-06-15T18:54:57.54623214Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/brave",
   "vendor": "Smithery",
   "description": "Search the web with Brave's independent index — web, news, images, and videos. Bring your own subscription token from the [Brave Search API dashboard](https://api-dashboard.search.brave.com).",
@@ -163,17 +163,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens_per_url\" appears to accept a secret or credential",
+      "description": "input parameter \"maximum_number_of_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "brave_llm_context"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"maximum_number_of_tokens_per_url\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "brave_llm_context"
     },
@@ -244,10 +244,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 9,
+    "high": 7,
     "medium": 2,
     "low": 10,
-    "info": 8
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -321,8 +321,8 @@
     },
     {
       "tool_name": "brave_llm_context",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -702,6 +702,12 @@
     },
     {
       "scan_date": "2026-06-10T02:48:10Z",
+      "grade": "C",
+      "risk_score": 49,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:59:01Z",
       "grade": "C",
       "risk_score": 49,
       "version": "smithery"

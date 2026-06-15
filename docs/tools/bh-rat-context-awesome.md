@@ -1,20 +1,20 @@
-# 🟡 bh-rat-context-awesome
+# 🟢 bh-rat-context-awesome
 
 > awesome-lists now available as CLI & MCP server for your agent.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `0.1.0` |
 | **Vendor** | bh-rat |
 | **Stars** | ⭐ 53 |
 | **npm Package** | `context-awesome` |
-| **npm Downloads (30d)** | 64 |
+| **npm Downloads (30d)** | 284 |
 | **Language** | TypeScript |
 | **Source** | [bh-rat-context-awesome](https://github.com/bh-rat/context-awesome) |
-| **Scan Date** | 2026-06-10 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 1 |
 | Low      | 0 |
-| Info     | 2 |
+| Info     | 3 |
 
 ## Detailed Findings
 
@@ -54,12 +54,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokens" appears to accept a secret or credential
+input parameter "tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

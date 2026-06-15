@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-05-30T02:41:41.742336703Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:52:35.27378504Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/RobotFleet-HQ/security-orchestra",
   "category": "Developer Tools",
   "vendor": "robotfleet-hq",
@@ -228,22 +228,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "tco_analyzer"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fiber_connectivity"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fiber_connectivity"
     },
     {
       "id": "AS-014",
@@ -574,22 +558,6 @@
       "tool_name": "tier_certification_checker"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tier_certification_checker"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tier_certification_checker"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -660,22 +628,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "chain_full_power_analysis"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "chain_site_readiness"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "chain_site_readiness"
     },
     {
       "id": "AS-014",
@@ -760,9 +712,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 12,
+    "high": 9,
     "medium": 2,
-    "low": 12,
+    "low": 9,
     "info": 67
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -1035,10 +987,7 @@
     {
       "tool_name": "fiber_connectivity",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1282,10 +1231,9 @@
     },
     {
       "tool_name": "tier_certification_checker",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
-        "executes_commands",
         "reads_files"
       ],
       "destinations": [
@@ -1333,10 +1281,7 @@
     {
       "tool_name": "chain_site_readiness",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1456,6 +1401,12 @@
     },
     {
       "scan_date": "2026-05-17T02:39:18Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:41:41Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

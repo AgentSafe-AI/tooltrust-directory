@@ -12,7 +12,7 @@ Allows users to access a wide range of financial and economic data published by 
 | **Vendor** | Smithery |
 | **Source** | [seahbk1006-seahboonkeong-chat-bnmapi](https://smithery.ai/server/seahbk1006/seahboonkeong-chat-bnmapi) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

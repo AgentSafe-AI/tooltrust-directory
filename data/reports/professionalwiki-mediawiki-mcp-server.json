@@ -3,14 +3,14 @@
   "version": "0.6.5",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-05-30T02:25:35.586066898Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:35:09.669899621Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
   "category": "Developer Tools",
   "vendor": "ProfessionalWiki",
   "stars": 76,
   "npm_package": "@professional-wiki/mediawiki-mcp-server",
-  "npm_downloads_monthly": 8331,
+  "npm_downloads_monthly": 11157,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol (MCP) Server to connect your AI with any MediaWiki",
@@ -19,14 +19,20 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.6.5: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.6.5: 6 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "oauth-logout",
-          "oauth-status"
+          "get-file-data",
+          "get-links-here",
+          "get-site-info",
+          "list-wikis",
+          "move-page",
+          "whoami"
         ],
-        "removed": null,
+        "removed": [
+          "set-wiki"
+        ],
         "version": "0.6.5"
       }
     },
@@ -106,7 +112,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "input schema exposes 15 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get-recent-changes"
     },
@@ -263,12 +269,60 @@
       "tool_name": "get-file"
     },
     {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-file-data"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-file-data"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares http permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-file-data"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-file-data"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get-file-data"
+    },
+    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "get-revision"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-site-info"
     },
     {
       "id": "AS-002",
@@ -285,6 +339,62 @@
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "get-category-members"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-links-here"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "get-links-here"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list-wikis"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list-wikis"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "list-wikis"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "list-wikis"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "whoami"
     },
     {
       "id": "AS-002",
@@ -333,6 +443,22 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "update-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "move-page"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "move-page"
     },
     {
       "id": "AS-002",
@@ -621,45 +747,13 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "remove-wiki"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "set-wiki"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "set-wiki"
-    },
-    {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "set-wiki"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "set-wiki"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 40,
-    "medium": 16,
-    "low": 23,
+    "high": 46,
+    "medium": 19,
+    "low": 25,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -687,24 +781,29 @@
     "delete-page",
     "get-category-members",
     "get-file",
+    "get-file-data",
+    "get-links-here",
     "get-page",
     "get-page-history",
     "get-pages",
     "get-recent-changes",
     "get-revision",
+    "get-site-info",
+    "list-wikis",
+    "move-page",
     "oauth-logout",
     "oauth-status",
     "parse-wikitext",
     "remove-wiki",
     "search-page",
     "search-page-by-prefix",
-    "set-wiki",
     "undelete-page",
     "update-file",
     "update-file-from-url",
     "update-page",
     "upload-file",
-    "upload-file-from-url"
+    "upload-file-from-url",
+    "whoami"
   ],
   "tool_contexts": [
     {
@@ -713,6 +812,9 @@
       "grade": "C",
       "behavior": [
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -725,6 +827,9 @@
         "reads_files",
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -732,6 +837,9 @@
       "tool_name": "get-page-history",
       "action": "ALLOW",
       "grade": "B",
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -741,6 +849,9 @@
       "grade": "C",
       "behavior": [
         "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -752,6 +863,9 @@
       "behavior": [
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -762,6 +876,9 @@
       "behavior": [
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -771,6 +888,9 @@
       "grade": "C",
       "behavior": [
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -785,7 +905,8 @@
       "destinations": [
         "dynamic email recipient (toRevision)",
         "dynamic email recipient (toText)",
-        "dynamic email recipient (toTitle)"
+        "dynamic email recipient (toTitle)",
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -798,6 +919,23 @@
         "uses_network",
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get-file-data",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -805,6 +943,19 @@
       "tool_name": "get-revision",
       "action": "ALLOW",
       "grade": "B",
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get-site-info",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -814,6 +965,42 @@
       "grade": "B",
       "behavior": [
         "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "get-links-here",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "list-wikis",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "whoami",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -826,6 +1013,9 @@
         "executes_commands",
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -836,6 +1026,23 @@
       "behavior": [
         "uses_network",
         "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "move-page",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (toTitle)",
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -848,6 +1055,9 @@
         "uses_network",
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -859,6 +1069,9 @@
         "uses_network",
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -869,6 +1082,9 @@
       "behavior": [
         "uses_network",
         "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -882,7 +1098,8 @@
         "writes_files"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -895,6 +1112,9 @@
         "executes_commands",
         "uses_network",
         "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -909,7 +1129,8 @@
         "writes_files"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: en.wikipedia.org"
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
@@ -949,21 +1170,6 @@
       "behavior": [
         "uses_network",
         "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (uri)",
-        "hardcoded domain: en.wikipedia.org"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "set-wiki",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "reads_files",
-        "uses_network"
       ],
       "destinations": [
         "dynamic URL input (uri)",
@@ -1098,6 +1304,12 @@
       "scan_date": "2026-05-17T02:24:41Z",
       "grade": "C",
       "risk_score": 27,
+      "version": "0.6.5"
+    },
+    {
+      "scan_date": "2026-05-30T02:25:35Z",
+      "grade": "C",
+      "risk_score": 42,
       "version": "0.6.5"
     }
   ]

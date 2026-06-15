@@ -3,47 +3,14 @@
   "version": "sha-9163d4572f07",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-05-30T02:43:39.920362369Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:52:20.27631659Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/polaralias/personal-context-mcp",
   "category": "Developer Tools",
   "vendor": "Polaralias",
   "npm_package": "personal-context-mcp",
   "language": "Python",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-9163d4572f07: 8 tool(s) added, 11 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "book_create_or_update",
-          "book_get",
-          "book_list",
-          "page_delete",
-          "page_insert",
-          "page_search",
-          "page_update",
-          "readme"
-        ],
-        "removed": [
-          "holidays_list",
-          "status_get",
-          "status_get_location",
-          "status_get_location_history",
-          "status_get_work",
-          "status_schedule_delete",
-          "status_schedule_list",
-          "status_schedule_set",
-          "status_set_location",
-          "status_set_override",
-          "status_set_work"
-        ],
-        "version": "sha-9163d4572f07"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Medium",
@@ -91,22 +58,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "page_delete"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "page_insert"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "page_insert"
     },
     {
       "id": "AS-014",
@@ -175,9 +126,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 1,
     "medium": 4,
-    "low": 2,
+    "low": 1,
     "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -229,10 +180,7 @@
     {
       "tool_name": "page_insert",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -308,6 +256,12 @@
       "scan_date": "2026-05-17T02:41:03Z",
       "grade": "A",
       "risk_score": 8,
+      "version": "sha-9163d4572f07"
+    },
+    {
+      "scan_date": "2026-05-30T02:43:39Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "sha-9163d4572f07"
     }
   ]

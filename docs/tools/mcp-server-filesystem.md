@@ -8,13 +8,13 @@
 | **Risk Score** | 40 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 87229 |
+| **Stars** | ⭐ 87270 |
 | **npm Package** | `@modelcontextprotocol/server-filesystem` |
 | **npm Downloads (30d)** | 1.1M |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

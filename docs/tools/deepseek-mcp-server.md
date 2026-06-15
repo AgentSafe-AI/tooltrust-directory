@@ -1,20 +1,20 @@
-# 🟡 deepseek-mcp-server
+# 🟢 deepseek-mcp-server
 
 > Model Context Protocol server for DeepSeek's advanced language models
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `0.5.0` |
 | **Vendor** | DMontgomery40 |
 | **Stars** | ⭐ 342 |
 | **npm Package** | `deepseek-mcp-server` |
-| **npm Downloads (30d)** | 2.0k |
+| **npm Downloads (30d)** | 2.3k |
 | **Language** | TypeScript |
 | **Source** | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,19 +23,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "max_tokens" appears to accept a secret or credential
+input parameter "max_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

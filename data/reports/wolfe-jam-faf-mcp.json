@@ -3,18 +3,32 @@
   "version": "2.0.1",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-05-30T02:34:20.244028167Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:43:58.235203288Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/Wolfe-Jam/faf-mcp",
   "category": "Developer Tools",
   "vendor": "wolfe-jam",
   "stars": 3,
   "npm_package": "faf-mcp",
-  "npm_downloads_monthly": 727,
+  "npm_downloads_monthly": 1353,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Persistent Project Context for Cursor, IDEs and VS Code — IANA-registered .faf format · 25 tools",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.0.1: 0 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "faf_chat"
+        ],
+        "version": "2.0.1"
+      }
+    },
     {
       "id": "AS-004",
       "severity": "High",
@@ -214,14 +228,6 @@
       "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
       "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
       "tool_name": "faf_list"
-    },
-    {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "faf_chat"
     },
     {
       "id": "AS-004",
@@ -509,7 +515,6 @@
     "faf_agents",
     "faf_auto",
     "faf_bi_sync",
-    "faf_chat",
     "faf_check",
     "faf_clear",
     "faf_conductor",
@@ -681,16 +686,6 @@
       "behavior": [
         "reads_files"
       ],
-      "destinations": [
-        "hardcoded domain: project.faf"
-      ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
-    },
-    {
-      "tool_name": "faf_chat",
-      "action": "ALLOW",
-      "grade": "B",
       "destinations": [
         "hardcoded domain: project.faf"
       ],
@@ -959,6 +954,12 @@
       "scan_date": "2026-05-17T02:33:25Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "2.0.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:34:20Z",
+      "grade": "C",
+      "risk_score": 40,
       "version": "2.0.1"
     }
   ]

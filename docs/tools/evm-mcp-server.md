@@ -10,11 +10,11 @@
 | **Vendor** | mcpdotdirect |
 | **Stars** | ⭐ 380 |
 | **npm Package** | `@mcpdotdirect/evm-mcp-server` |
-| **npm Downloads (30d)** | 426 |
+| **npm Downloads (30d)** | 422 |
 | **Language** | TypeScript |
 | **Source** | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 41 |
+| High     | 35 |
 | Medium   | 3 |
 | Low      | 9 |
-| Info     | 0 |
+| Info     | 6 |
 
 ## Detailed Findings
 
@@ -246,12 +246,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokenAddress" appears to accept a secret or credential
+input parameter "tokenAddress" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -270,12 +270,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokenAddress" appears to accept a secret or credential
+input parameter "tokenAddress" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -558,12 +558,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokenAddress" appears to accept a secret or credential
+input parameter "tokenAddress" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -582,12 +582,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokenAddress" appears to accept a secret or credential
+input parameter "tokenAddress" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -606,12 +606,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokenId" appears to accept a secret or credential
+input parameter "tokenId" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -630,12 +630,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "tokenId" appears to accept a secret or credential
+input parameter "tokenId" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

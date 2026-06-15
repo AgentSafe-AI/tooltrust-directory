@@ -8,11 +8,11 @@
 | **Vendor** | runpod |
 | **Stars** | ⭐ 55 |
 | **npm Package** | `@runpod/mcp-server` |
-| **npm Downloads (30d)** | 1.3k |
+| **npm Downloads (30d)** | 2.7k |
 | **Language** | TypeScript |
 | **Source** | [runpod-runpod-mcp-ts](https://github.com/runpod/runpod-mcp) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -21,10 +21,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 5 |
+| High     | 4 |
 | Medium   | 18 |
 | Low      | 5 |
-| Info     | 52 |
+| Info     | 53 |
 
 ## Detailed Findings
 
@@ -928,12 +928,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "password" appears to accept a secret or credential
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

@@ -1,10 +1,10 @@
 {
   "tool_id": "imhiroki-toolrank",
   "version": "2.0.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-02T02:55:31.585840921Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T18:45:56.765613462Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/imhiroki/toolrank",
   "category": "Other",
   "vendor": "imhiroki",
@@ -12,22 +12,6 @@
   "language": "Astro",
   "description": "The first ATO (Agent Tool Optimization) platform. Score and optimize MCP tools so AI agents choose yours.",
   "findings": [
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "toolrank_score"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "toolrank_score"
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -47,9 +31,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -61,10 +45,7 @@
     {
       "tool_name": "toolrank_score",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (tools)"
       ],
@@ -316,6 +297,12 @@
     },
     {
       "scan_date": "2026-06-01T02:58:22Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-06-02T02:55:31Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2.0.0"

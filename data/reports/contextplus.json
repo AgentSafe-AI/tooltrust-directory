@@ -3,14 +3,14 @@
   "version": "1.0.9",
   "grade": "C",
   "risk_score": 40,
-  "scan_date": "2026-06-15T02:57:37.158368966Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:28:59.940612542Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/forloopcodes/contextplus",
   "category": "Developer Tools",
   "vendor": "forloopcodes",
   "stars": 1920,
   "npm_package": "contextplus",
-  "npm_downloads_monthly": 720,
+  "npm_downloads_monthly": 709,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Semantic Intelligence for Large-Scale Engineering. Context+ is an MCP server designed for developers who demand 99% accuracy. By combining RAG, Tree-sitter AST, Spectral Clustering, and Obsidian-style linking, Context+ turns a massive codebase into a searchable, hierarchical feature graph.",
@@ -33,9 +33,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_context_tree"
     },
@@ -362,10 +362,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 21,
+    "high": 20,
     "medium": 13,
     "low": 9,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -407,8 +407,8 @@
   "tool_contexts": [
     {
       "tool_name": "get_context_tree",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "reads_files"
       ],
@@ -1100,6 +1100,12 @@
     },
     {
       "scan_date": "2026-06-14T02:53:29Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "1.0.9"
+    },
+    {
+      "scan_date": "2026-06-15T02:57:37Z",
       "grade": "C",
       "risk_score": 40,
       "version": "1.0.9"

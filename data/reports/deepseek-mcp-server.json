@@ -1,25 +1,25 @@
 {
   "tool_id": "deepseek-mcp-server",
   "version": "0.5.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-06-15T02:59:28.110330114Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T18:31:46.006266209Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/DMontgomery40/deepseek-mcp-server",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
   "stars": 342,
   "npm_package": "deepseek-mcp-server",
-  "npm_downloads_monthly": 2031,
+  "npm_downloads_monthly": 2318,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol server for DeepSeek's advanced language models",
   "findings": [
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "deepseek_chat"
     },
@@ -34,10 +34,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -71,7 +71,7 @@
     {
       "tool_name": "deepseek_chat",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (max_tokens)",
         "dynamic email recipient (tool_choice)",
@@ -474,6 +474,12 @@
     },
     {
       "scan_date": "2026-06-14T02:55:20Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.5.0"
+    },
+    {
+      "scan_date": "2026-06-15T02:59:28Z",
       "grade": "B",
       "risk_score": 15,
       "version": "0.5.0"

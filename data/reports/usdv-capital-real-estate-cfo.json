@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-06-11T02:58:51.351561536Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:53:46.34396724Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/usdv-capital/real-estate-cfo",
   "vendor": "Smithery",
   "description": "Real estate market intelligence, financial calculators, and capital advisory tools covering all 50 US states plus DC and Puerto Rico. Access CFO-level market data for 86,000+ locations, calculate DSCR and flip ROI with professional assessments, check financing eligibility, and screen investment opportunities — powered by Census ACS and Zillow data.\n\n**23 tools** across 5 categories:\n\n- **Market Intelligence** — Search 86K+ locations, compare markets side-by-side, find nearby opportunities, screen pre-scored investment cities\n- **Financial Calculators** — DSCR, flip ROI, rental cash flow, BRRRR, STR revenue, cash-to-close, construction budget — each with CFO-level assessment\n- **Eligibility \u0026 Products** — Check financing availability by state, browse capital solutions (Fix \u0026 Flip, DSCR, Bridge, Construction, Multifamily up to $50M, Build-to-Rent up to $50M)\n- **Deal Analysis** — Full deal underwriting combining market data, calculator output, and eligibility in one call\n- **Utility** — Property tax lookup, insurance estimates, rent estimates, neighborhood analysis, 1031 exchange calculator, entity structure guidance\n\nUSDV Capital is Your Real Estate CFO — a capital advisory platform helping real estate investors structure, source, and optimize financing from $150K to $50M.",
@@ -179,26 +179,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "deal-analyze"
-    },
-    {
-      "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 14 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "deal-analyze"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "deal-analyze"
     },
     {
@@ -292,9 +276,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 2,
     "medium": 1,
-    "low": 8,
+    "low": 7,
     "info": 23
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -444,10 +428,7 @@
     {
       "tool_name": "deal-analyze",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (sendReportTo)"
       ],
@@ -610,6 +591,12 @@
     },
     {
       "scan_date": "2026-06-10T02:48:00Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:58:51Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.3` |
 | **Vendor** | ariadng |
-| **Stars** | ⭐ 519 |
+| **Stars** | ⭐ 520 |
 | **Language** | Python |
 | **Source** | [metatrader-mcp-server](https://github.com/ariadng/metatrader-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

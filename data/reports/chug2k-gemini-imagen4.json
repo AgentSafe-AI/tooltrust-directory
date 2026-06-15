@@ -1,10 +1,10 @@
 {
   "tool_id": "chug2k-gemini-imagen4",
   "version": "1.0.0",
-  "grade": "D",
-  "risk_score": 55,
-  "scan_date": "2026-05-30T02:33:44.187131723Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-06-15T18:43:29.768518012Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/chug2k/gemini-imagen4",
   "category": "Developer Tools",
   "vendor": "chug2k",
@@ -47,9 +47,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_output_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"max_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "GEMINI_GENERATE_CONTENT"
     },
@@ -87,9 +87,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_output_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"max_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "GEMINI_GENERATE_IMAGE"
     },
@@ -200,10 +200,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
+    "high": 5,
     "medium": 2,
     "low": 6,
-    "info": 8
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -261,7 +261,7 @@
     {
       "tool_name": "GEMINI_GENERATE_CONTENT",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (max_output_tokens)",
         "dynamic email recipient (stop_sequences)",
@@ -274,7 +274,7 @@
     {
       "tool_name": "GEMINI_GENERATE_IMAGE",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "executes_commands",
         "uses_network",
@@ -467,6 +467,12 @@
     },
     {
       "scan_date": "2026-05-17T02:33:42Z",
+      "grade": "D",
+      "risk_score": 55,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:33:44Z",
       "grade": "D",
       "risk_score": 55,
       "version": "1.0.0"

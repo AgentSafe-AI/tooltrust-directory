@@ -8,13 +8,13 @@
 | **Risk Score** | 32 |
 | **Version** | `1` |
 | **Vendor** | n8n-io |
-| **Stars** | ⭐ 192540 |
+| **Stars** | ⭐ 192644 |
 | **npm Package** | `n8n-monorepo` |
 | **npm Downloads (30d)** | 18 |
 | **Language** | TypeScript |
 | **Source** | [n8n](https://github.com/n8n-io/n8n) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 11 |
+| High     | 10 |
 | Medium   | 15 |
 | Low      | 11 |
-| Info     | 27 |
+| Info     | 28 |
 
 ## Detailed Findings
 
@@ -594,12 +594,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "credentialType" appears to accept a secret or credential
+input parameter "credentialType" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

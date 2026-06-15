@@ -1,10 +1,10 @@
 {
   "tool_id": "lizthedeveloper-pdf-indexer-mcp",
   "version": "sha-09595bd85585",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-30T02:36:16.024750469Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-15T18:46:41.164806312Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/lizTheDeveloper/pdf-indexer-mcp",
   "category": "Developer Tools",
   "vendor": "lizTheDeveloper",
@@ -17,15 +17,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-09595bd85585: 2 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-09595bd85585: 1 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "detect_form_fields",
-          "fill_form_fields"
+          "TEXT_TO_PDF_CONVERT_TEXT_TO_PDF"
         ],
         "removed": [
-          "TEXT_TO_PDF_CONVERT_TEXT_TO_PDF"
+          "detect_form_fields",
+          "fill_form_fields"
         ],
         "version": "sha-09595bd85585"
       }
@@ -36,23 +36,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "detect_form_fields"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "detect_form_fields"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "detect_form_fields"
+      "tool_name": "TEXT_TO_PDF_CONVERT_TEXT_TO_PDF"
     },
     {
       "id": "AS-014",
@@ -60,73 +44,25 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "detect_form_fields"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fill_form_fields"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fill_form_fields"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fill_form_fields"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fill_form_fields"
+      "tool_name": "TEXT_TO_PDF_CONVERT_TEXT_TO_PDF"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 2,
-    "low": 2,
-    "info": 2
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "detect_form_fields",
-    "fill_form_fields"
+    "TEXT_TO_PDF_CONVERT_TEXT_TO_PDF"
   ],
   "tool_contexts": [
     {
-      "tool_name": "detect_form_fields",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "fill_form_fields",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
+      "tool_name": "TEXT_TO_PDF_CONVERT_TEXT_TO_PDF",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -166,6 +102,12 @@
       "scan_date": "2026-05-17T02:35:11Z",
       "grade": "A",
       "risk_score": 8,
+      "version": "sha-09595bd85585"
+    },
+    {
+      "scan_date": "2026-05-30T02:36:16Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "sha-09595bd85585"
     }
   ]

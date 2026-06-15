@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [ren89752-aidroid](https://smithery.ai/server/ren89752/aidroid) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -19,7 +19,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 5 |
+| High     | 4 |
 | Medium   | 2 |
 | Low      | 3 |
 | Info     | 3 |
@@ -32,18 +32,6 @@
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

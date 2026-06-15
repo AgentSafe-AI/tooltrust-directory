@@ -3,8 +3,8 @@
   "version": "1.2.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-05-30T02:44:14.449655097Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:54:01.020457992Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/s3cr1z/jina-ai-mcp",
   "category": "Developer Tools",
   "vendor": "s3cr1z",
@@ -383,26 +383,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "sort_by_relevance"
-    },
-    {
-      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "sort_by_relevance"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "sort_by_relevance"
     },
     {
@@ -496,9 +480,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 19,
+    "high": 18,
     "medium": 5,
-    "low": 15,
+    "low": 14,
     "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -725,11 +709,8 @@
     },
     {
       "tool_name": "sort_by_relevance",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (top_n)"
       ],
@@ -924,6 +905,12 @@
     },
     {
       "scan_date": "2026-05-17T02:39:13Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.2.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:44:14Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.2.0"

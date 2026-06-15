@@ -8,13 +8,13 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.1` |
 | **Vendor** | graphlit |
-| **Stars** | ⭐ 376 |
+| **Stars** | ⭐ 375 |
 | **npm Package** | `graphlit-mcp-server` |
-| **npm Downloads (30d)** | 530 |
+| **npm Downloads (30d)** | 526 |
 | **Language** | TypeScript |
 | **Source** | [graphlit-mcp-server](https://github.com/graphlit/graphlit-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

@@ -3,14 +3,14 @@
   "version": "0.10.1",
   "grade": "C",
   "risk_score": 47,
-  "scan_date": "2026-05-30T02:20:52.289331814Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:30:40.989333256Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/makafeli/n8n-workflow-builder",
   "category": "Developer Tools",
   "vendor": "makafeli",
   "stars": 507,
   "npm_package": "@makafeli/n8n-workflow-builder",
-  "npm_downloads_monthly": 629,
+  "npm_downloads_monthly": 532,
   "license": "MIT",
   "language": "JavaScript",
   "description": "AI assistant integration for n8n workflow automation through Model Context Protocol (MCP). Connect Claude Desktop, ChatGPT, and other AI assistants to n8n for natural language workflow management.",
@@ -345,9 +345,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"credentialType\" appears to accept a secret or credential",
+      "description": "input parameter \"credentialType\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_credential_schema"
     },
@@ -378,10 +378,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 30,
+    "high": 29,
     "medium": 11,
     "low": 4,
-    "info": 0
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -603,8 +603,8 @@
     },
     {
       "tool_name": "get_credential_schema",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -691,6 +691,12 @@
       "scan_date": "2026-05-17T02:20:12Z",
       "grade": "C",
       "risk_score": 32,
+      "version": "0.10.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:20:52Z",
+      "grade": "C",
+      "risk_score": 47,
       "version": "0.10.1"
     }
   ]

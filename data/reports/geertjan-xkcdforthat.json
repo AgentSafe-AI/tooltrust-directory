@@ -1,10 +1,10 @@
 {
   "tool_id": "geertjan-xkcdforthat",
   "version": "smithery",
-  "grade": "D",
-  "risk_score": 55,
-  "scan_date": "2026-06-15T03:02:42.34943166Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T18:54:18.876809824Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/geertjan/xkcdforthat",
   "vendor": "Smithery",
   "description": "Find the obligatory xkcd for whatever you're working on. Article, slide deck, memo, PDF, blog post. Plug it into your AI tool.  Your model searches our index of all xkcd comics annotated with applicability, humor type, and themes, picks the right one, and drops it inline. ",
@@ -14,14 +14,6 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "pick_xkcd_for"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pick_xkcd_for"
     },
@@ -51,26 +43,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_comics"
-    },
-    {
-      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_comics"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"search_comics\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
       "tool_name": "search_comics"
     },
     {
@@ -124,7 +100,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 3,
     "medium": 1,
     "low": 3,
     "info": 4
@@ -139,10 +115,9 @@
   "tool_contexts": [
     {
       "tool_name": "pick_xkcd_for",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -154,7 +129,7 @@
     {
       "tool_name": "search_comics",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -292,6 +267,12 @@
     },
     {
       "scan_date": "2026-06-11T02:58:54Z",
+      "grade": "D",
+      "risk_score": 55,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:42Z",
       "grade": "D",
       "risk_score": 55,
       "version": "smithery"

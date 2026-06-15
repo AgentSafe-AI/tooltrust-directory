@@ -1,10 +1,10 @@
 {
   "tool_id": "jackdark425-aigroup-econ-mcp",
   "version": "2.0.9",
-  "grade": "C",
-  "risk_score": 47,
-  "scan_date": "2026-05-30T02:30:37.806064483Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T18:40:14.467128642Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/jackdark425/aigroup-econ-mcp",
   "category": "Developer Tools",
   "vendor": "jackdark425",
@@ -13,6 +13,23 @@
   "language": "Python",
   "description": "Econometrics MCP server for regression, causal inference, time series, panel data, and statistical analysis workflows.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.0.9: 4 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "describe_dataset",
+          "get_latest_observations",
+          "get_top_observations",
+          "list_release_events"
+        ],
+        "removed": null,
+        "version": "2.0.9"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -62,30 +79,6 @@
       "tool_name": "get_abs_dataset_structure"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_abs_data"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_abs_data\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "get_abs_data"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_abs_data"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -100,30 +93,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "list_rba_tables"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_rba_table"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_rba_table\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "get_rba_table"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_rba_table"
     },
     {
       "id": "AS-014",
@@ -142,22 +111,6 @@
       "tool_name": "get_apra_data"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_apra_data"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_apra_data\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "get_apra_data"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -174,30 +127,6 @@
       "tool_name": "get_apra_data"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_economic_series"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_economic_series\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "get_economic_series"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_economic_series"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -206,27 +135,11 @@
       "tool_name": "get_economic_series"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_derived_series"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_derived_series\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "get_derived_series"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_derived_series"
     },
     {
@@ -235,15 +148,55 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_derived_series"
+      "tool_name": "get_latest_observations"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_top_observations"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_top_observations"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_top_observations"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "describe_dataset"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_release_events"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 12,
-    "medium": 0,
-    "low": 6,
-    "info": 10
+    "high": 3,
+    "medium": 1,
+    "low": 3,
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -263,15 +216,19 @@
     }
   ],
   "tool_names": [
+    "describe_dataset",
     "get_abs_data",
     "get_abs_dataset_structure",
     "get_apra_data",
     "get_derived_series",
     "get_economic_series",
+    "get_latest_observations",
     "get_rba_table",
+    "get_top_observations",
     "list_catalogue",
     "list_economic_concepts",
     "list_rba_tables",
+    "list_release_events",
     "search_datasets"
   ],
   "tool_contexts": [
@@ -308,10 +265,10 @@
     },
     {
       "tool_name": "get_abs_data",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: metadata.truncated"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -325,42 +282,78 @@
     },
     {
       "tool_name": "get_rba_table",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: metadata.truncated"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "get_apra_data",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: metadata.truncated"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "get_economic_series",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: metadata.truncated"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "get_derived_series",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands"
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: metadata.truncated"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_latest_observations",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: metadata.truncated"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_top_observations",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "describe_dataset",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_release_events",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -368,6 +361,12 @@
   "scan_history": [
     {
       "scan_date": "2026-05-17T02:29:49Z",
+      "grade": "C",
+      "risk_score": 47,
+      "version": "2.0.9"
+    },
+    {
+      "scan_date": "2026-05-30T02:30:37Z",
       "grade": "C",
       "risk_score": 47,
       "version": "2.0.9"

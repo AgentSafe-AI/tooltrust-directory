@@ -2,15 +2,15 @@
   "tool_id": "mcp-server-trello",
   "version": "1.6.1",
   "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-06-15T02:59:10.37310588Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 34,
+  "scan_date": "2026-06-15T18:31:20.634854236Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/delorenj/mcp-server-trello",
   "category": "Developer Tools",
   "vendor": "delorenj",
   "stars": 388,
   "npm_package": "@delorenj/mcp-server-trello",
-  "npm_downloads_monthly": 8786,
+  "npm_downloads_monthly": 8461,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server that provides tools for interacting with Trello boards.",
@@ -1208,14 +1208,6 @@
       "tool_name": "TRELLO_GET_ACTIONS_MEMBER_BY_ID_ACTION_BY_FIELD"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "TRELLO_GET_ACTIONS_MEMBER_BY_ID_ACTION_BY_FIELD"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -2313,9 +2305,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "TRELLO_GET_MEMBERS_BY_ID_MEMBER"
     },
@@ -3058,10 +3050,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 51,
+    "high": 49,
     "medium": 43,
     "low": 86,
-    "info": 200
+    "info": 201
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -4000,10 +3992,9 @@
     },
     {
       "tool_name": "TRELLO_GET_ACTIONS_MEMBER_BY_ID_ACTION_BY_FIELD",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -5538,6 +5529,12 @@
     },
     {
       "scan_date": "2026-06-14T02:55:03Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-06-15T02:59:10Z",
       "grade": "C",
       "risk_score": 42,
       "version": "1.6.1"

@@ -2,15 +2,15 @@
   "tool_id": "mabeldata-pocketbase-mcp",
   "version": "1.1.3",
   "grade": "C",
-  "risk_score": 45,
-  "scan_date": "2026-05-30T02:27:50.783825654Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T18:37:21.533657566Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/mabeldata/pocketbase-mcp",
   "category": "Developer Tools",
   "vendor": "mabeldata",
   "stars": 34,
   "npm_package": "pocketbase-mcp",
-  "npm_downloads_monthly": 84,
+  "npm_downloads_monthly": 83,
   "license": "MIT",
   "language": "TypeScript",
   "description": "This is an MCP server that interacts with a PocketBase instance. It allows you to fetch, list, create, update, and manage records and files in your PocketBase collections.",
@@ -97,9 +97,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "authenticate_user"
     },
@@ -185,9 +185,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_verification"
     },
@@ -225,25 +225,25 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"passwordConfirm\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_password_reset"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"passwordConfirm\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_password_reset"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_password_reset"
     },
@@ -281,17 +281,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_email_change"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "confirm_email_change"
     },
@@ -329,17 +329,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"passwordConfirm\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_user"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"passwordConfirm\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_user"
     },
@@ -434,10 +434,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 15,
+    "high": 6,
     "medium": 8,
     "low": 5,
-    "info": 24
+    "info": 33
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -521,7 +521,7 @@
     {
       "tool_name": "authenticate_user",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (email)"
       ],
@@ -574,7 +574,7 @@
     {
       "tool_name": "confirm_verification",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -596,8 +596,8 @@
     },
     {
       "tool_name": "confirm_password_reset",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -619,8 +619,8 @@
     },
     {
       "tool_name": "confirm_email_change",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -636,8 +636,8 @@
     },
     {
       "tool_name": "create_user",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -846,6 +846,12 @@
     },
     {
       "scan_date": "2026-05-17T02:26:56Z",
+      "grade": "C",
+      "risk_score": 45,
+      "version": "1.1.3"
+    },
+    {
+      "scan_date": "2026-05-30T02:27:50Z",
       "grade": "C",
       "risk_score": 45,
       "version": "1.1.3"

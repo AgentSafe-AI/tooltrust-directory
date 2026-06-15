@@ -1,10 +1,10 @@
 {
   "tool_id": "mcp-server-code-execution-mode",
   "version": "sha-27d23b8e2c76",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T02:59:19.69682123Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "D",
+  "risk_score": 63,
+  "scan_date": "2026-06-15T18:31:39.897609667Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/elusznik/mcp-server-code-execution-mode",
   "category": "Developer Tools",
   "vendor": "elusznik",
@@ -17,21 +17,37 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-27d23b8e2c76: 1 tool(s) added, 5 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-27d23b8e2c76: 5 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "run-code"
-        ],
-        "removed": [
           "CODEINTERPRETER_CREATE_SANDBOX",
           "CODEINTERPRETER_EXECUTE_CODE",
           "CODEINTERPRETER_GET_FILE_CMD",
           "CODEINTERPRETER_RUN_TERMINAL_CMD",
           "CODEINTERPRETER_UPLOAD_FILE_CMD"
         ],
+        "removed": [
+          "run-code"
+        ],
         "version": "sha-27d23b8e2c76"
       }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_CREATE_SANDBOX"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_CREATE_SANDBOX"
     },
     {
       "id": "AS-006",
@@ -39,7 +55,15 @@
       "title": "Arbitrary Code Execution",
       "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
       "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "run-code"
+      "tool_name": "CODEINTERPRETER_CREATE_SANDBOX"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "CODEINTERPRETER_CREATE_SANDBOX"
     },
     {
       "id": "AS-014",
@@ -47,25 +71,176 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "run-code"
+      "tool_name": "CODEINTERPRETER_CREATE_SANDBOX"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_EXECUTE_CODE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_EXECUTE_CODE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_EXECUTE_CODE"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "CODEINTERPRETER_EXECUTE_CODE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CODEINTERPRETER_EXECUTE_CODE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_GET_FILE_CMD"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CODEINTERPRETER_GET_FILE_CMD"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_RUN_TERMINAL_CMD"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_RUN_TERMINAL_CMD"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CODEINTERPRETER_RUN_TERMINAL_CMD"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CODEINTERPRETER_UPLOAD_FILE_CMD"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CODEINTERPRETER_UPLOAD_FILE_CMD"
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 1,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "critical": 2,
+    "high": 5,
+    "medium": 5,
+    "low": 1,
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "run-code"
+    "CODEINTERPRETER_CREATE_SANDBOX",
+    "CODEINTERPRETER_EXECUTE_CODE",
+    "CODEINTERPRETER_GET_FILE_CMD",
+    "CODEINTERPRETER_RUN_TERMINAL_CMD",
+    "CODEINTERPRETER_UPLOAD_FILE_CMD"
   ],
   "tool_contexts": [
     {
-      "tool_name": "run-code",
+      "tool_name": "CODEINTERPRETER_CREATE_SANDBOX",
       "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CODEINTERPRETER_EXECUTE_CODE",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "D",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (code_to_execute)",
+        "hardcoded domain: plt.show"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CODEINTERPRETER_GET_FILE_CMD",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CODEINTERPRETER_RUN_TERMINAL_CMD",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CODEINTERPRETER_UPLOAD_FILE_CMD",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -543,6 +718,12 @@
       "scan_date": "2026-06-14T02:55:15Z",
       "grade": "D",
       "risk_score": 63,
+      "version": "sha-27d23b8e2c76"
+    },
+    {
+      "scan_date": "2026-06-15T02:59:19Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "sha-27d23b8e2c76"
     }
   ]

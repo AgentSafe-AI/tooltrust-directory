@@ -13,8 +13,8 @@ Use it when you want an AI assistant to generate or review MetaMask Embedded Wal
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [web3auth-integrate](https://smithery.ai/server/web3auth/integrate) |
-| **Scan Date** | 2026-06-13 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

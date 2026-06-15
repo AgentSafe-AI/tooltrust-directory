@@ -19,8 +19,8 @@ USDV Capital is Your Real Estate CFO — a capital advisory platform helping rea
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [usdv-capital-real-estate-cfo](https://smithery.ai/server/usdv-capital/real-estate-cfo) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -29,9 +29,9 @@ USDV Capital is Your Real Estate CFO — a capital advisory platform helping rea
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
+| High     | 2 |
 | Medium   | 1 |
-| Low      | 8 |
+| Low      | 7 |
 | Info     | 23 |
 
 ## Detailed Findings
@@ -288,18 +288,6 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🔵 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Low
@@ -309,18 +297,6 @@ input schema exposes 14 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

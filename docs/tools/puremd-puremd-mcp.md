@@ -10,11 +10,11 @@
 | **Vendor** | puremd |
 | **Stars** | ⭐ 60 |
 | **npm Package** | `puremd-mcp` |
-| **npm Downloads (30d)** | 143 |
+| **npm Downloads (30d)** | 156 |
 | **Language** | JavaScript |
 | **Source** | [puremd-puremd-mcp](https://github.com/puremd/puremd-mcp) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [delx-witness-protocol](https://smithery.ai/server/delx/witness-protocol) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -17,9 +17,9 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 7 |
+| High     | 6 |
 | Medium   | 2 |
-| Low      | 7 |
+| Low      | 6 |
 | Info     | 54 |
 
 ## Detailed Findings
@@ -717,30 +717,6 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

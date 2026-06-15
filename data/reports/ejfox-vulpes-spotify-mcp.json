@@ -1,10 +1,10 @@
 {
   "tool_id": "ejfox-vulpes-spotify-mcp",
   "version": "1.0.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-05-30T02:36:43Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T18:47:14.790757132Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/ejfox/vulpes-spotify-mcp",
   "category": "Developer Tools",
   "vendor": "ejfox",
@@ -13,40 +13,30 @@
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 17 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "velveteen_spotify_pitch_generator"
+    },
+    {
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 3,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 18,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "velveteen_spotify_pitch_generator"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
+    "low": 1,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -64,72 +54,23 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "velveteen_spotify_pitch_generator"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-11T01:48:24Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-12T02:13:49Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-13T02:17:09Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-14T02:12:45Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-15T02:10:17Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-16T02:25:20Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-17T02:13:56Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-18T01:54:09Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-19T02:17:07Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:39:30Z",
-      "grade": "C",
-      "risk_score": 40,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:36:41Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
+      "tool_name": "velveteen_spotify_pitch_generator",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (story)",
+        "dynamic email recipient (tone)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

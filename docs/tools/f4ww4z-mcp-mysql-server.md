@@ -10,11 +10,11 @@
 | **Vendor** | f4ww4z |
 | **Stars** | ⭐ 157 |
 | **npm Package** | `@f4ww4z/mcp-mysql-server` |
-| **npm Downloads (30d)** | 2.8k |
+| **npm Downloads (30d)** | 2.5k |
 | **Language** | JavaScript |
 | **Source** | [f4ww4z-mcp-mysql-server](https://github.com/f4ww4z/mcp-mysql-server) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 10 |
+| High     | 9 |
 | Medium   | 4 |
 | Low      | 3 |
-| Info     | 0 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -66,12 +66,12 @@ Upgrade or replace the vulnerable dependency. Pin all dependency versions and en
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "password" appears to accept a secret or credential
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

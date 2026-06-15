@@ -5,14 +5,14 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Risk Score** | 25 |
 | **Version** | `0.5.1` |
 | **Vendor** | mnemox-ai |
 | **Stars** | ⭐ 1039 |
 | **Language** | Python |
 | **Source** | [mnemox-ai-tradememory-protocol](https://github.com/mnemox-ai/tradememory-protocol) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -21,9 +21,9 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 4 |
+| High     | 2 |
 | Medium   | 4 |
-| Low      | 6 |
+| Low      | 5 |
 | Info     | 15 |
 
 ## Detailed Findings
@@ -85,42 +85,6 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "get_strategy_performance" implies read-only operation but declares exec permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

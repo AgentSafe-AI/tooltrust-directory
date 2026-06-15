@@ -1,16 +1,16 @@
 {
   "tool_id": "hatif03-algorand-mcp",
   "version": "3.0.0",
-  "grade": "D",
-  "risk_score": 55,
-  "scan_date": "2026-05-30T02:36:27.342600592Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 42,
+  "scan_date": "2026-06-15T18:45:56.175642515Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/Algodev-Studio/algorand-mcp",
   "category": "Developer Tools",
   "vendor": "hatif03",
   "stars": 1,
   "npm_package": "algorand-mcp",
-  "npm_downloads_monthly": 191,
+  "npm_downloads_monthly": 212,
   "language": "TypeScript",
   "findings": [
     {
@@ -63,9 +63,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secretKey\" appears to accept a secret or credential",
+      "description": "input parameter \"secretKey\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "secret_key_to_mnemonic"
     },
@@ -1711,9 +1711,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"poolTokenAmount\" appears to accept a secret or credential",
+      "description": "input parameter \"poolTokenAmount\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "api_tinyman_get_remove_liquidity_quote"
     },
@@ -1840,10 +1840,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 158,
+    "high": 156,
     "medium": 8,
     "low": 62,
-    "info": 0
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1987,8 +1987,8 @@
     },
     {
       "tool_name": "secret_key_to_mnemonic",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -2876,7 +2876,7 @@
     {
       "tool_name": "api_tinyman_get_remove_liquidity_quote",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -3110,6 +3110,12 @@
       "scan_date": "2026-05-17T02:36:26Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "3.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:36:27Z",
+      "grade": "D",
+      "risk_score": 55,
       "version": "3.0.0"
     }
   ]

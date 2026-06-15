@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.119.0",
+  "version": "0.122.0",
   "grade": "D",
   "risk_score": 52,
-  "scan_date": "2026-06-15T02:58:35.434133118Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:30:26.658830444Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 781,
+  "stars": 783,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 99216,
+  "npm_downloads_monthly": 97284,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Office services through the Graph API",
@@ -5830,13 +5830,53 @@
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "download-bytes"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "copilot-retrieve"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "copilot-retrieve"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "copilot-retrieve"
+    },
+    {
+      "id": "AS-004",
+      "severity": "High",
+      "title": "Supply Chain Vulnerability (CVE)",
+      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
+      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "tool_name": "copilot-retrieve"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "copilot-retrieve"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 216,
-    "medium": 124,
-    "low": 387,
+    "high": 218,
+    "medium": 126,
+    "low": 388,
     "info": 0
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -5863,6 +5903,7 @@
     "add-mail-attachment",
     "cancel-calendar-event",
     "clear-excel-range",
+    "copilot-retrieve",
     "copy-drive-item",
     "copy-mail-message",
     "create-calendar",
@@ -8288,6 +8329,23 @@
       ],
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+    },
+    {
+      "tool_name": "copilot-retrieve",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: ExternalItem.Read.All",
+        "hardcoded domain: Files.Read.All",
+        "hardcoded domain: Sites.Read.All",
+        "hardcoded domain: contoso.sharepoint.com"
+      ],
+      "dependency_visibility": "Verified from local lockfile",
+      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     }
   ],
   "scan_history": [
@@ -8791,6 +8849,12 @@
     },
     {
       "scan_date": "2026-06-14T02:54:23Z",
+      "grade": "D",
+      "risk_score": 52,
+      "version": "0.119.0"
+    },
+    {
+      "scan_date": "2026-06-15T02:58:35Z",
       "grade": "D",
       "risk_score": 52,
       "version": "0.119.0"

@@ -1,15 +1,15 @@
 {
   "tool_id": "the-staq-tradestaq-mcp",
   "version": "0.1.1",
-  "grade": "D",
-  "risk_score": 55,
-  "scan_date": "2026-05-30T02:44:22.499882444Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 40,
+  "scan_date": "2026-06-15T18:54:33.103008488Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/the-staq/tradestaq-mcp",
   "category": "Developer Tools",
   "vendor": "the-staq",
   "npm_package": "@the-staq/tradestaq-mcp",
-  "npm_downloads_monthly": 87,
+  "npm_downloads_monthly": 102,
   "language": "TypeScript",
   "description": "TradeStaq MCP Server — trading intelligence for AI agents",
   "findings": [
@@ -23,9 +23,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "login"
     },
@@ -71,9 +71,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "set_token"
     },
@@ -424,10 +424,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 41,
+    "high": 39,
     "medium": 4,
     "low": 6,
-    "info": 0
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -485,8 +485,8 @@
   "tool_contexts": [
     {
       "tool_name": "login",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "dynamic email recipient (email)"
       ],
@@ -510,7 +510,7 @@
     {
       "tool_name": "set_token",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -817,6 +817,12 @@
       "scan_date": "2026-05-17T02:43:42Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:44:22Z",
+      "grade": "D",
+      "risk_score": 55,
       "version": "0.1.1"
     }
   ]

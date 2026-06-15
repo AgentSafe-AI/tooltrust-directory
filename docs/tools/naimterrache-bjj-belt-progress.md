@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [naimterrache-bjj-belt-progress](https://smithery.ai/server/naimterrache/bjj-belt-progress) |
-| **Scan Date** | 2026-06-13 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

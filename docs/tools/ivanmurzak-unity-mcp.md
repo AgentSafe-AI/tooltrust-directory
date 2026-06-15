@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 2525 |
 | **Language** | C# |
 | **Source** | [ivanmurzak-unity-mcp](https://github.com/IvanMurzak/Unity-MCP) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

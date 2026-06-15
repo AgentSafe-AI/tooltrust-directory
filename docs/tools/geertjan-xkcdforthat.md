@@ -1,16 +1,16 @@
-# 🔴 geertjan-xkcdforthat
+# 🟠 geertjan-xkcdforthat
 
 > Find the obligatory xkcd for whatever you're working on. Article, slide deck, memo, PDF, blog post. Plug it into your AI tool.  Your model searches our index of all xkcd comics annotated with applicability, humor type, and themes, picks the right one, and drops it inline. 
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 55 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [geertjan-xkcdforthat](https://smithery.ai/server/geertjan/xkcdforthat) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -19,7 +19,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 6 |
+| High     | 3 |
 | Medium   | 1 |
 | Low      | 3 |
 | Info     | 4 |
@@ -32,18 +32,6 @@
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -86,18 +74,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -107,18 +83,6 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "search_comics" implies read-only operation but declares exec permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
 
 ---
 

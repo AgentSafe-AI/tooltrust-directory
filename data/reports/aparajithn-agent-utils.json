@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-06-11T02:58:53.566645116Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:54:06.784328259Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://smithery.ai/server/aparajithn/agent-utils",
   "vendor": "Smithery",
   "description": "Streamline technical workflows with a comprehensive suite of data transformation and validation utilities. Convert between diverse formats like JSON, CSV, and Markdown while managing encodings and identifiers efficiently. Enhance productivity by performing complex text analysis, regex testing, and timestamp conversions instantly.",
@@ -179,9 +179,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "tool_jwt_decode"
     },
@@ -196,10 +196,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 2,
     "medium": 0,
     "low": 2,
-    "info": 18
+    "info": 19
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -364,7 +364,7 @@
     {
       "tool_name": "tool_jwt_decode",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -723,6 +723,12 @@
     },
     {
       "scan_date": "2026-06-10T02:48:02Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:58:53Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

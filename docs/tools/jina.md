@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jina](https://smithery.ai/server/jina) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -19,9 +19,9 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 19 |
+| High     | 18 |
 | Medium   | 5 |
-| Low      | 15 |
+| Low      | 14 |
 | Info     | 21 |
 
 ## Detailed Findings
@@ -578,18 +578,6 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -599,18 +587,6 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

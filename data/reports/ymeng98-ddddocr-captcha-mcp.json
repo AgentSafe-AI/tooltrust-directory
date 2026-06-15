@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-05-30T02:33:44.346428253Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:43:46.988979715Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/ymeng98/ddddocr-captcha-mcp",
   "category": "Developer Tools",
   "vendor": "ymeng98",
@@ -17,36 +17,28 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 3 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "image_captcha",
-          "voice_captcha"
-        ],
-        "removed": [
           "challenge",
           "status",
           "verify"
+        ],
+        "removed": [
+          "image_captcha",
+          "voice_captcha"
         ],
         "version": "1.0.0"
       }
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "image_captcha"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "image_captcha"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "challenge"
     },
     {
       "id": "AS-014",
@@ -54,7 +46,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "image_captcha"
+      "tool_name": "verify"
     },
     {
       "id": "AS-002",
@@ -62,7 +54,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "voice_captcha"
+      "tool_name": "status"
     },
     {
       "id": "AS-011",
@@ -70,7 +62,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "voice_captcha"
+      "tool_name": "status"
     },
     {
       "id": "AS-014",
@@ -78,15 +70,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "voice_captcha"
+      "tool_name": "status"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 2,
     "medium": 0,
-    "low": 2,
-    "info": 2
+    "low": 1,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -107,35 +99,31 @@
     }
   ],
   "tool_names": [
-    "image_captcha",
-    "voice_captcha"
+    "challenge",
+    "status",
+    "verify"
   ],
   "tool_contexts": [
     {
-      "tool_name": "image_captcha",
+      "tool_name": "challenge",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: openapi.naver.com",
-        "hardcoded domain: ncaptcha.bin"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "voice_captcha",
+      "tool_name": "verify",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "status",
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
         "uses_network"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: openapi.naver.com",
-        "hardcoded domain: scaptcha.bin"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -144,6 +132,12 @@
   "scan_history": [
     {
       "scan_date": "2026-05-17T02:32:50Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:33:44Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.0"

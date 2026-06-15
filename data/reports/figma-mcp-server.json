@@ -3,12 +3,12 @@
   "version": "0.1.18",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-06-15T03:00:28.563340596Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:33:14.821588686Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/Antonytm/figma-mcp-server",
   "category": "Developer Tools",
   "vendor": "Antonytm",
-  "stars": 158,
+  "stars": 159,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "findings": [
@@ -133,22 +133,6 @@
       "tool_name": "FIGMA_CREATE_MODIFY_DELETE_VARIABLES"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "FIGMA_CREATE_MODIFY_DELETE_VARIABLES"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "FIGMA_CREATE_MODIFY_DELETE_VARIABLES"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -238,9 +222,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "FIGMA_DESIGN_TOKENS_TO_TAILWIND"
     },
@@ -726,9 +710,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"plugin_payment_token\" appears to accept a secret or credential",
+      "description": "input parameter \"plugin_payment_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "FIGMA_GET_PAYMENTS"
     },
@@ -1007,10 +991,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 16,
+    "high": 13,
     "medium": 37,
-    "low": 22,
-    "info": 49
+    "low": 21,
+    "info": 51
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -1128,10 +1112,9 @@
     },
     {
       "tool_name": "FIGMA_CREATE_MODIFY_DELETE_VARIABLES",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
-        "executes_commands",
         "writes_files"
       ],
       "dependency_visibility": "No dependency data",
@@ -1184,7 +1167,7 @@
     {
       "tool_name": "FIGMA_DESIGN_TOKENS_TO_TAILWIND",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (tokens)",
         "hardcoded domain: globals.css",
@@ -1446,7 +1429,7 @@
     {
       "tool_name": "FIGMA_GET_PAYMENTS",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "reads_files"
       ],
@@ -1591,6 +1574,12 @@
   "scan_history": [
     {
       "scan_date": "2026-06-14T02:56:20Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "0.1.18"
+    },
+    {
+      "scan_date": "2026-06-15T03:00:28Z",
       "grade": "C",
       "risk_score": 42,
       "version": "0.1.18"

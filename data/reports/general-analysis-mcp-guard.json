@@ -3,14 +3,14 @@
   "version": "1.0.3",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-05-30T02:26:24.397314795Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T18:35:58.71170827Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/General-Analysis/mcp-guard",
   "category": "Developer Tools",
   "vendor": "General-Analysis",
   "stars": 53,
   "npm_package": "@general-analysis/mcp-guard",
-  "npm_downloads_monthly": 85,
+  "npm_downloads_monthly": 70,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP Guard secures your MCP client from prompt injection attacks and more.",
@@ -19,15 +19,17 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.3: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.3: 4 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "check_permission"
+          "check_token_safety",
+          "check_token_safety_lite",
+          "check_wallet",
+          "check_wallet_quick"
         ],
         "removed": [
-          "scan_mcp_config",
-          "scan_text"
+          "check_permission"
         ],
         "version": "1.0.3"
       }
@@ -38,15 +40,47 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_permission"
+      "tool_name": "check_token_safety"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_token_safety_lite"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_wallet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_wallet"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_wallet_quick"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 0,
+    "medium": 1,
     "low": 0,
-    "info": 1
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -74,11 +108,35 @@
     }
   ],
   "tool_names": [
-    "check_permission"
+    "check_token_safety",
+    "check_token_safety_lite",
+    "check_wallet",
+    "check_wallet_quick"
   ],
   "tool_contexts": [
     {
-      "tool_name": "check_permission",
+      "tool_name": "check_token_safety",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_token_safety_lite",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_wallet",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_wallet_quick",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -100,6 +158,12 @@
     },
     {
       "scan_date": "2026-05-17T02:25:28Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.3"
+    },
+    {
+      "scan_date": "2026-05-30T02:26:24Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.3"

@@ -7,8 +7,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cuttalosrl-depscope](https://smithery.ai/server/cuttalosrl/depscope) |
-| **Scan Date** | 2026-06-14 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 

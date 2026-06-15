@@ -1,16 +1,16 @@
 {
   "tool_id": "kindrat86-mcp-deal-flow-signal",
   "version": "1.5.2",
-  "grade": "F",
-  "risk_score": 78,
-  "scan_date": "2026-06-15T03:01:58.140435811Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 48,
+  "scan_date": "2026-06-15T18:43:00.169314863Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/kindrat86/mcp-deal-flow-signal",
   "category": "Developer Tools",
   "vendor": "kindrat86",
   "stars": 4,
   "npm_package": "@gitdealflow/mcp-signal",
-  "npm_downloads_monthly": 823,
+  "npm_downloads_monthly": 820,
   "license": "MIT",
   "language": "JavaScript",
   "description": "MCP server for VC Deal Flow Signal — startup engineering acceleration data for investors",
@@ -169,26 +169,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_scout_receipts"
-    },
-    {
-      "id": "AS-002",
       "severity": "Medium",
       "title": "Excessive Permission Surface",
       "description": "tool declares db permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_scout_receipts"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_scout_receipts\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
       "tool_name": "get_scout_receipts"
     },
     {
@@ -386,7 +370,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 26,
+    "high": 24,
     "medium": 8,
     "low": 12,
     "info": 0
@@ -466,10 +450,9 @@
     },
     {
       "tool_name": "get_scout_receipts",
-      "action": "BLOCK",
-      "grade": "F",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands",
         "reads_files",
         "uses_network"
       ],
@@ -639,6 +622,12 @@
     },
     {
       "scan_date": "2026-06-14T02:57:42Z",
+      "grade": "F",
+      "risk_score": 78,
+      "version": "1.5.2"
+    },
+    {
+      "scan_date": "2026-06-15T03:01:58Z",
       "grade": "F",
       "risk_score": 78,
       "version": "1.5.2"

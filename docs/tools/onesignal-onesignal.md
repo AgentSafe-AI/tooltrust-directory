@@ -7,12 +7,12 @@ With the OneSignal MCP, manage your messaging directly from your AI assistant. S
 | Field | Value |
 |-------|-------|
 | **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Risk Score** | 36 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [onesignal-onesignal](https://smithery.ai/server/onesignal/onesignal) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -21,10 +21,10 @@ With the OneSignal MCP, manage your messaging directly from your AI assistant. S
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 13 |
+| High     | 11 |
 | Medium   | 12 |
 | Low      | 20 |
-| Info     | 31 |
+| Info     | 33 |
 
 ## Detailed Findings
 
@@ -640,12 +640,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -796,12 +796,12 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "token" appears to accept a secret or credential
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

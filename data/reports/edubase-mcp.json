@@ -2,15 +2,15 @@
   "tool_id": "edubase-mcp",
   "version": "1.1.5",
   "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-05-30T02:28:23.515710392Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T18:38:02.578631932Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/EduBase/MCP",
   "category": "Developer Tools",
   "vendor": "EduBase",
   "stars": 25,
   "npm_package": "@edubase/mcp",
-  "npm_downloads_monthly": 973,
+  "npm_downloads_monthly": 808,
   "license": "MIT",
   "language": "TypeScript",
   "description": "The EduBase MCP server enables Claude and other LLMs to interact with EduBase's comprehensive e-learning platform through the Model Context Protocol (MCP).",
@@ -481,17 +481,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"must_change_password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "edubase_post_user"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"must_change_password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "edubase_post_user"
     },
@@ -641,9 +641,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "edubase_post_user_assume"
     },
@@ -665,9 +665,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "edubase_delete_user_assume"
     },
@@ -1914,10 +1914,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 13,
+    "high": 9,
     "medium": 40,
     "low": 20,
-    "info": 164
+    "info": 168
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -2419,8 +2419,8 @@
     },
     {
       "tool_name": "edubase_post_user",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (email)"
       ],
@@ -2516,14 +2516,14 @@
     {
       "tool_name": "edubase_post_user_assume",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "edubase_delete_user_assume",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -3504,6 +3504,12 @@
     },
     {
       "scan_date": "2026-05-17T02:27:31Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.1.5"
+    },
+    {
+      "scan_date": "2026-05-30T02:28:23Z",
       "grade": "C",
       "risk_score": 32,
       "version": "1.1.5"

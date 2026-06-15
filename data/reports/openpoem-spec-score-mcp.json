@@ -1,10 +1,10 @@
 {
   "tool_id": "openpoem-spec-score-mcp",
   "version": "2.0.2",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-05-30T02:35:19.866137903Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T18:44:25.795100308Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/openpoem/spec-score-mcp",
   "category": "Developer Tools",
   "vendor": "openpoem",
@@ -14,20 +14,6 @@
   "language": "JavaScript",
   "description": "Score your specs before feeding them to an LLM. MCP server that measures spec quality on 4 axes.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.0.2: 0 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": null,
-        "removed": [
-          "compare_models"
-        ],
-        "version": "2.0.2"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "High",
@@ -62,9 +48,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "optimize_prompt"
     },
@@ -87,10 +73,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 2,
     "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -110,8 +96,8 @@
     },
     {
       "tool_name": "optimize_prompt",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -224,6 +210,12 @@
       "scan_date": "2026-05-17T02:34:33Z",
       "grade": "D",
       "risk_score": 57,
+      "version": "2.0.2"
+    },
+    {
+      "scan_date": "2026-05-30T02:35:19Z",
+      "grade": "C",
+      "risk_score": 32,
       "version": "2.0.2"
     }
   ]

@@ -1,16 +1,16 @@
 {
   "tool_id": "karayaman-lichess-mcp",
   "version": "0.2.0",
-  "grade": "D",
-  "risk_score": 57,
-  "scan_date": "2026-05-30T02:29:50.57987682Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "C",
+  "risk_score": 32,
+  "scan_date": "2026-06-15T18:39:31.418838845Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/karayaman/lichess-mcp",
   "category": "Developer Tools",
   "vendor": "karayaman",
   "stars": 14,
   "npm_package": "lichess-mcp",
-  "npm_downloads_monthly": 104,
+  "npm_downloads_monthly": 92,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server that enables Claude Desktop to interact with Lichess chess platform through natural language. Play games, analyze positions, manage your account, and participate in tournaments—all by simply talking to Claude.",
@@ -144,14 +144,6 @@
       "tool_name": "lichess_offer_draw"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "lichess_cloud_eval"
-    },
-    {
       "id": "AS-004",
       "severity": "High",
       "title": "Supply Chain Vulnerability (CVE)",
@@ -161,18 +153,10 @@
     },
     {
       "id": "AS-006",
-      "severity": "Critical",
+      "severity": "Info",
       "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "description": "tool name or description implies arbitrary script/code execution — capability unconfirmed (no exec permission or code/script/eval input property found)",
       "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "lichess_cloud_eval"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "lichess_cloud_eval"
     },
     {
@@ -305,11 +289,11 @@
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 30,
+    "critical": 0,
+    "high": 29,
     "medium": 3,
-    "low": 2,
-    "info": 0
+    "low": 1,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -461,11 +445,8 @@
     },
     {
       "tool_name": "lichess_cloud_eval",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
-      "behavior": [
-        "executes_commands"
-      ],
+      "action": "ALLOW",
+      "grade": "B",
       "dependency_visibility": "Verified from local lockfile",
       "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
     },
@@ -674,6 +655,12 @@
       "scan_date": "2026-05-17T02:29:04Z",
       "grade": "C",
       "risk_score": 42,
+      "version": "0.2.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:29:50Z",
+      "grade": "D",
+      "risk_score": 57,
       "version": "0.2.0"
     }
   ]

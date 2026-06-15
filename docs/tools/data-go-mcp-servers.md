@@ -4,15 +4,15 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `sha-dd27f9949040` |
 | **Vendor** | Koomook |
-| **Stars** | ⭐ 282 |
+| **Stars** | ⭐ 283 |
 | **Language** | Python |
 | **Source** | [data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.15 |
 
 ---
 
@@ -24,19 +24,31 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### ⚪ `AS-018` — Embedded MCP Server Detected
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

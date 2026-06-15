@@ -2,15 +2,15 @@
   "tool_id": "mcp-server-brave-search",
   "version": "typescript-servers-0.6.2",
   "grade": "C",
-  "risk_score": 49,
-  "scan_date": "2026-06-15T02:55:17.375602223Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 27,
+  "scan_date": "2026-06-15T18:26:34.463078726Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
   "category": "Developer Tools",
   "vendor": "modelcontextprotocol",
-  "stars": 87229,
+  "stars": 87270,
   "npm_package": "@modelcontextprotocol/server-brave-search",
-  "npm_downloads_monthly": 92735,
+  "npm_downloads_monthly": 92877,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Model Context Protocol Servers",
@@ -169,17 +169,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens_per_url\" appears to accept a secret or credential",
+      "description": "input parameter \"maximum_number_of_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "brave_llm_context"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens\" appears to accept a secret or credential",
+      "description": "input parameter \"maximum_number_of_tokens_per_url\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "brave_llm_context"
     },
@@ -250,10 +250,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 9,
+    "high": 7,
     "medium": 2,
     "low": 10,
-    "info": 8
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -386,8 +386,8 @@
     },
     {
       "tool_name": "brave_llm_context",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -929,6 +929,12 @@
     },
     {
       "scan_date": "2026-06-14T02:51:12Z",
+      "grade": "C",
+      "risk_score": 49,
+      "version": "typescript-servers-0.6.2"
+    },
+    {
+      "scan_date": "2026-06-15T02:55:17Z",
       "grade": "C",
       "risk_score": 49,
       "version": "typescript-servers-0.6.2"

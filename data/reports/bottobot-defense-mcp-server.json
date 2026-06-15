@@ -2,15 +2,15 @@
   "tool_id": "bottobot-defense-mcp-server",
   "version": "0.9.5",
   "grade": "D",
-  "risk_score": 74,
-  "scan_date": "2026-06-06T02:36:21.362219777Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 59,
+  "scan_date": "2026-06-15T18:44:32.76817428Z",
+  "scanner": "tooltrust-scanner/v0.3.15",
   "source_url": "https://github.com/bottobot/defense-mcp-server",
   "category": "Developer Tools",
   "vendor": "bottobot",
   "stars": 2,
   "npm_package": "defense-mcp-server",
-  "npm_downloads_monthly": 152,
+  "npm_downloads_monthly": 159,
   "license": "MIT",
   "language": "TypeScript",
   "description": "🛡️ Defensive Security \u0026 System Hardening MCP Server for Linux — 31 tools with 250+ actions for blue team ops, compliance, hardening \u0026 incident response. DEFENSIVE USE ONLY.",
@@ -33,9 +33,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "sudo_session"
     },
@@ -81,9 +81,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"grub_password\" appears to accept a secret or credential",
+      "description": "input parameter \"grub_password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "harden_kernel"
     },
@@ -377,9 +377,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"check_nopasswd\" appears to accept a secret or credential",
+      "description": "input parameter \"check_nopasswd\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "access_control"
     },
@@ -834,10 +834,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 49,
+    "high": 46,
     "medium": 22,
     "low": 31,
-    "info": 0
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -929,8 +929,8 @@
     },
     {
       "tool_name": "harden_kernel",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "destinations": [
         "hardcoded domain: 99-defense-mcp.conf"
       ],
@@ -1319,6 +1319,12 @@
     },
     {
       "scan_date": "2026-06-05T02:47:16Z",
+      "grade": "D",
+      "risk_score": 74,
+      "version": "0.9.5"
+    },
+    {
+      "scan_date": "2026-06-06T02:36:21Z",
       "grade": "D",
       "risk_score": 74,
       "version": "0.9.5"
