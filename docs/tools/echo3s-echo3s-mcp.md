@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [echo3s-echo3s-mcp](https://smithery.ai/server/echo3s/echo3s-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 148 |
 | **Language** | Python |
 | **Source** | [mcp-endpoint-server](https://github.com/xinnan-tech/mcp-endpoint-server) |
-| **Scan Date** | 2026-06-08 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [8ensmith-mcp-open-library](https://github.com/8enSmith/mcp-open-library) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

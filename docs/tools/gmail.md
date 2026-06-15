@@ -1,16 +1,16 @@
-# 🟠 gmail
+# 🟡 gmail
 
 > Gmail MCP server for sending, reading, and managing email.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 34 |
+| **Grade** | **B** |
+| **Risk Score** | 19 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gmail](https://smithery.ai/server/gmail) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -19,7 +19,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 5 |
+| High     | 4 |
 | Medium   | 7 |
 | Low      | 9 |
 | Info     | 20 |
@@ -164,18 +164,6 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

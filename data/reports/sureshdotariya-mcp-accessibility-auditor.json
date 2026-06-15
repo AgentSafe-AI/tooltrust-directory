@@ -1,10 +1,10 @@
 {
   "tool_id": "sureshdotariya-mcp-accessibility-auditor",
   "version": "1.0.1",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-15T18:48:22.041390039Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T20:32:35.502151075Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/sureshdotariya/mcp-accessibility-auditor",
   "category": "Developer Tools",
   "vendor": "sureshdotariya",
@@ -23,14 +23,6 @@
       "tool_name": "scan_accessibility"
     },
     {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "scan_accessibility"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -39,20 +31,28 @@
       "tool_name": "scan_accessibility"
     },
     {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scan_accessibility"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_scan_statistics"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 0
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -62,8 +62,8 @@
   "tool_contexts": [
     {
       "tool_name": "scan_accessibility",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -73,15 +73,15 @@
         "hardcoded domain: example.com",
         "hardcoded domain: example.com)"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "get_scan_statistics",
       "action": "ALLOW",
-      "grade": "B",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -189,6 +189,12 @@
     },
     {
       "scan_date": "2026-05-30T02:38:31Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.0.1"
+    },
+    {
+      "scan_date": "2026-06-15T18:48:22Z",
       "grade": "C",
       "risk_score": 32,
       "version": "1.0.1"

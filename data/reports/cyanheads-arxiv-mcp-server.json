@@ -2,9 +2,9 @@
   "tool_id": "cyanheads-arxiv-mcp-server",
   "version": "1.2.13",
   "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-15T18:45:44.578774208Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T20:27:09.088095764Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/cyanheads/arxiv-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
@@ -32,14 +32,6 @@
       "tool_name": "arxiv_search"
     },
     {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "arxiv_search"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -48,11 +40,19 @@
       "tool_name": "arxiv_search"
     },
     {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "arxiv_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "arxiv_get_metadata"
     },
     {
@@ -64,14 +64,6 @@
       "tool_name": "arxiv_read_paper"
     },
     {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
-      "tool_name": "arxiv_read_paper"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -80,20 +72,28 @@
       "tool_name": "arxiv_read_paper"
     },
     {
-      "id": "AS-004",
-      "severity": "High",
-      "title": "Supply Chain Vulnerability (CVE)",
-      "description": "GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)",
-      "recommendation": "Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "arxiv_read_paper"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "arxiv_list_categories"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 2,
     "medium": 1,
     "low": 2,
-    "info": 0
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -114,20 +114,20 @@
         "hardcoded domain: cs.CL",
         "hardcoded domain: math.AG"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "arxiv_get_metadata",
       "action": "ALLOW",
-      "grade": "B",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "arxiv_read_paper",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -135,15 +135,15 @@
         "hardcoded domain: ar5iv.labs.arxiv.org",
         "hardcoded domain: arxiv.org"
       ],
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "arxiv_list_categories",
       "action": "ALLOW",
-      "grade": "B",
-      "dependency_visibility": "Verified from local lockfile",
-      "dependency_note": "Local dependency artifacts scanned from /home/runner/work/tooltrust-directory/tooltrust-directory/go.sum."
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -323,6 +323,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:24Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "1.2.13"
+    },
+    {
+      "scan_date": "2026-06-15T18:45:44Z",
       "grade": "C",
       "risk_score": 40,
       "version": "1.2.13"

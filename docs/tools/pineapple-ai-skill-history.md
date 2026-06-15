@@ -11,12 +11,12 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Risk Score** | 17 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pineapple-ai-skill-history](https://smithery.ai/server/pineapple-ai/skill-history) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -25,10 +25,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
-| Medium   | 1 |
-| Low      | 0 |
-| Info     | 4 |
+| High     | 3 |
+| Medium   | 0 |
+| Low      | 2 |
+| Info     | 2 |
 
 ## Detailed Findings
 
@@ -37,49 +37,37 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at vsmithery: 4 tool(s) added, 2 tool(s) removed without a version bump.
+Tool set changed silently at vsmithery: 2 tool(s) added, 4 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
+tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
@@ -89,6 +77,30 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

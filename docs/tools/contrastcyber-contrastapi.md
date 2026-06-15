@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [contrastcyber-contrastapi](https://smithery.ai/server/contrastcyber/contrastapi) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -19,7 +19,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 36 |
+| High     | 35 |
 | Medium   | 22 |
 | Low      | 42 |
 | Info     | 54 |
@@ -932,18 +932,6 @@ Review and remediate the identified issue.
 
 **Description:**
 tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

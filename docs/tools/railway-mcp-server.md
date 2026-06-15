@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

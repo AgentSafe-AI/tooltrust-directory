@@ -1,10 +1,10 @@
 {
   "tool_id": "henryhawke-wolfram-llm-mcp",
   "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-06-15T18:42:20.870039228Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-15T20:24:43.889408832Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/henryhawke/wolfram-llm-mcp",
   "category": "Developer Tools",
   "vendor": "henryhawke",
@@ -13,12 +13,22 @@
   "language": "JavaScript",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WolframContext"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "invoke"
+        ],
+        "removed": [
+          "WolframAlpha",
+          "WolframContext",
+          "WolframLanguageEvaluator"
+        ],
+        "version": "1.0.0"
+      }
     },
     {
       "id": "AS-014",
@@ -26,63 +36,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WolframContext"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WolframLanguageEvaluator"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WolframLanguageEvaluator"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WolframAlpha"
+      "tool_name": "invoke"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 2,
+    "high": 1,
+    "medium": 0,
     "low": 0,
-    "info": 3
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "WolframAlpha",
-    "WolframContext",
-    "WolframLanguageEvaluator"
+    "invoke"
   ],
   "tool_contexts": [
     {
-      "tool_name": "WolframContext",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WolframLanguageEvaluator",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WolframAlpha",
+      "tool_name": "invoke",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -160,6 +130,12 @@
       "scan_date": "2026-05-30T02:32:25Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T18:42:20Z",
+      "grade": "A",
+      "risk_score": 8,
       "version": "1.0.0"
     }
   ]

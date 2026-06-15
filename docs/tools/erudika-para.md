@@ -1,18 +1,18 @@
-# 🟡 erudika-para
+# 🟢 erudika-para
 
 > Multitenant backend server for building web and mobile apps rapidly. The backend for busy developers. (self-hosted or hosted)
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `1.52.3` |
 | **Vendor** | Erudika |
 | **Stars** | ⭐ 568 |
 | **Language** | Java |
 | **Source** | [erudika-para](https://github.com/Erudika/para) |
-| **Scan Date** | 2026-05-30 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 6 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.52.3: 6 tool(s) added, 11 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

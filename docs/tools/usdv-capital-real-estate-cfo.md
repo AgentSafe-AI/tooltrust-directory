@@ -20,7 +20,7 @@ USDV Capital is Your Real Estate CFO — a capital advisory platform helping rea
 | **Vendor** | Smithery |
 | **Source** | [usdv-capital-real-estate-cfo](https://smithery.ai/server/usdv-capital/real-estate-cfo) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

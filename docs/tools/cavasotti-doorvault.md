@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [cavasotti-doorvault](https://smithery.ai/server/cavasotti/doorvault) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [microsoft-learn-mcp](https://smithery.ai/server/microsoft/learn_mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

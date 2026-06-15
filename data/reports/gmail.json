@@ -1,10 +1,10 @@
 {
   "tool_id": "gmail",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 34,
-  "scan_date": "2026-06-15T03:03:40.156855874Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 19,
+  "scan_date": "2026-06-15T20:33:36.58824414Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://smithery.ai/server/gmail",
   "vendor": "Smithery",
   "description": "Gmail MCP server for sending, reading, and managing email.",
@@ -102,14 +102,6 @@
       "severity": "High",
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GMAIL_FETCH_EMAILS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GMAIL_FETCH_EMAILS"
     },
@@ -340,7 +332,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
+    "high": 4,
     "medium": 7,
     "low": 9,
     "info": 20
@@ -425,10 +417,9 @@
     },
     {
       "tool_name": "GMAIL_FETCH_EMAILS",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -1040,6 +1031,12 @@
     },
     {
       "scan_date": "2026-06-14T02:59:29Z",
+      "grade": "C",
+      "risk_score": 34,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:03:40Z",
       "grade": "C",
       "risk_score": 34,
       "version": "smithery"

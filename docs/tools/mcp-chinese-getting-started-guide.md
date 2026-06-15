@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `sha-a911d8ce250f` |
 | **Vendor** | liaokongVFX |
-| **Stars** | ⭐ 3517 |
+| **Stars** | ⭐ 3520 |
 | **Source** | [mcp-chinese-getting-started-guide](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

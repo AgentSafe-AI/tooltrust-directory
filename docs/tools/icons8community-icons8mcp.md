@@ -8,7 +8,7 @@
 | **Vendor** | Smithery |
 | **Source** | [icons8community-icons8mcp](https://smithery.ai/server/icons8community/icons8mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

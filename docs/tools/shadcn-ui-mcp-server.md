@@ -1,11 +1,11 @@
-# 🟡 shadcn-ui-mcp-server
+# 🟢 shadcn-ui-mcp-server
 
 > A mcp server to allow LLMS gain context about shadcn ui component structure,usage and installation,compaitable with react,svelte 5,vue & React Native
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 23 |
+| **Grade** | **A** |
+| **Risk Score** | 8 |
 | **Version** | `2.0.0` |
 | **Vendor** | Jpisnice |
 | **Stars** | ⭐ 2799 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -23,58 +23,58 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 10 |
+| High     | 0 |
 | Medium   | 1 |
 | Low      | 0 |
-| Info     | 0 |
+| Info     | 10 |
 
 ## Detailed Findings
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
@@ -90,75 +90,75 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
+Review and remediate the identified issue.
 
 ---
 

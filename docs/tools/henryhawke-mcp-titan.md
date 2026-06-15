@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [henryhawke-mcp-titan](https://github.com/henryhawke/mcp-titan) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

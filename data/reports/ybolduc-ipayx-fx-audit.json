@@ -1,21 +1,35 @@
 {
   "tool_id": "ybolduc-ipayx-fx-audit",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-15T03:02:19.970981841Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T20:28:43.752333298Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://smithery.ai/server/ybolduc/ipayx-fx-audit",
   "vendor": "Smithery",
   "description": "Detect hidden FX fees on international bank transfers in 30 seconds. \nScore 1-10 forensic audit. Proves exactly what your bank is hiding. \nFINTRAC MSB certified (C10001283). \n\"10 free audits / 7-day trial. No signup required.\"",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_fx_rate"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 5 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "check_audit_gaps",
+          "explain_xero_gap",
+          "get_engagement_clause",
+          "get_year_end_checklist",
+          "recommend_auditsnap"
+        ],
+        "removed": [
+          "audit_transaction",
+          "check_fx_rate",
+          "full_forensic_report"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-014",
@@ -23,7 +37,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "audit_transaction"
+      "tool_name": "check_audit_gaps"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_year_end_checklist"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_year_end_checklist"
     },
     {
       "id": "AS-014",
@@ -31,50 +61,109 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "full_forensic_report"
+      "tool_name": "get_year_end_checklist"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_engagement_clause"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_engagement_clause"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_engagement_clause"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "explain_xero_gap"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "recommend_auditsnap"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 3,
     "medium": 0,
-    "low": 0,
-    "info": 3
+    "low": 2,
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "audit_transaction",
-    "check_fx_rate",
-    "full_forensic_report"
+    "check_audit_gaps",
+    "explain_xero_gap",
+    "get_engagement_clause",
+    "get_year_end_checklist",
+    "recommend_auditsnap"
   ],
   "tool_contexts": [
     {
-      "tool_name": "check_fx_rate",
+      "tool_name": "check_audit_gaps",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_year_end_checklist",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
-        "dynamic email recipient (currency_to)"
+        "dynamic URL input (jurisdiction)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "audit_transaction",
+      "tool_name": "get_engagement_clause",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
-        "dynamic email recipient (currency_to)"
+        "dynamic URL input (jurisdiction)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "full_forensic_report",
+      "tool_name": "explain_xero_gap",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (currency_to)"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "recommend_auditsnap",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -142,6 +231,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:14Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:19Z",
       "grade": "A",
       "risk_score": 0,
       "version": "smithery"

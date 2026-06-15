@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [yuna0x0-anilist-mcp](https://github.com/yuna0x0/anilist-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

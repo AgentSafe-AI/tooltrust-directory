@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-06-15T18:52:38.83719817Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "scan_date": "2026-06-15T20:29:56.132733812Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://smithery.ai/server/philippvoss2212/huettentouren",
   "vendor": "Smithery",
   "description": "Plan multi-day hut-to-hut hiking tours in the European Alps, powered by\nlive availability data from the Alpine Club booking systems (DAV, ÖAV, AVS).\n\n## What it does\n\n- Recommends curated multi-day routes filtered by difficulty, duration,\n  number of hikers, and travel window\n- Returns bookable start dates only when hut availability is fresh (≤8h old)\n- Flags off-season requests, stale data, and no-match cases explicitly\n  (no hallucinated suggestions)\n- Exposes full route detail: stages, elevation, overnight huts, booking URLs\n\n## Tools\n\n- `recommend_tours` — rank routes by hard filters + soft preferences (months,\n  transport, difficulty), return top matches with sample start dates\n- `search_tours` — fuzzy text search across route names and regions\n- `get_tour` — fetch full stage-by-stage detail for a single route\n\n## Data notes\n\nRoute content, stage descriptions, and hut names are in **German**\n(the primary audience is DACH hikers). Numeric fields, enums, and IDs\nare locale-neutral. Best used by agents that can either speak German\nor translate German strings downstream.\n\nAvailability is aggregated server-side across multiple booking providers\nand exposed with a clear freshness contract — agents should not guess\ndates when `status != \"bookable\"`.",
@@ -234,6 +234,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:29Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:52:38Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

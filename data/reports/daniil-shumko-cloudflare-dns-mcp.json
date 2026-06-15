@@ -1,10 +1,10 @@
 {
   "tool_id": "daniil-shumko-cloudflare-dns-mcp",
   "version": "1.0.2",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T18:49:45.066030733Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T20:33:18.011851442Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/daniil-shumko/cloudflare-dns-mcp",
   "category": "Developer Tools",
   "vendor": "daniil-shumko",
@@ -18,10 +18,21 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.2: 7 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.2: 9 tool(s) added, 7 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "assess_domain",
+          "create_task",
+          "get_agent",
+          "get_leaderboard",
+          "register_agent",
+          "resolve_domain_dns",
+          "submit_result",
+          "verify_domain",
+          "verify_task"
+        ],
+        "removed": [
           "accounts_list",
           "dns_report",
           "set_active_account",
@@ -29,10 +40,6 @@
           "show_zone_dns_settings",
           "zone_details",
           "zones_list"
-        ],
-        "removed": [
-          "execute",
-          "search"
         ],
         "version": "1.0.2"
       }
@@ -43,7 +50,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "accounts_list"
+      "tool_name": "verify_domain"
     },
     {
       "id": "AS-014",
@@ -51,23 +58,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "set_active_account"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dns_report"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dns_report"
+      "tool_name": "resolve_domain_dns"
     },
     {
       "id": "AS-014",
@@ -75,23 +66,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dns_report"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "show_account_dns_settings"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "show_zone_dns_settings"
+      "tool_name": "register_agent"
     },
     {
       "id": "AS-002",
@@ -99,7 +74,23 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares fs permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "zones_list"
+      "tool_name": "create_task"
+    },
+    {
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares exec permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_task"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_task"
     },
     {
       "id": "AS-014",
@@ -107,7 +98,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zones_list"
+      "tool_name": "create_task"
     },
     {
       "id": "AS-014",
@@ -115,70 +106,123 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "zone_details"
+      "tool_name": "submit_result"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_task"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares fs permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "assess_domain"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_leaderboard"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 2,
-    "medium": 1,
+    "medium": 2,
     "low": 1,
-    "info": 7
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "accounts_list",
-    "dns_report",
-    "set_active_account",
-    "show_account_dns_settings",
-    "show_zone_dns_settings",
-    "zone_details",
-    "zones_list"
+    "assess_domain",
+    "create_task",
+    "get_agent",
+    "get_leaderboard",
+    "register_agent",
+    "resolve_domain_dns",
+    "submit_result",
+    "verify_domain",
+    "verify_task"
   ],
   "tool_contexts": [
     {
-      "tool_name": "accounts_list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "set_active_account",
+      "tool_name": "verify_domain",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (activeAccountIdParam)"
+        "hardcoded domain: stripe.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dns_report",
+      "tool_name": "resolve_domain_dns",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: stripe.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "register_agent",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_task",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "uses_network"
+        "executes_commands",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "show_account_dns_settings",
+      "tool_name": "submit_result",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "show_zone_dns_settings",
+      "tool_name": "verify_task",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zones_list",
+      "tool_name": "get_agent",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -188,7 +232,17 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "zone_details",
+      "tool_name": "assess_domain",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: stripe.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_leaderboard",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -344,6 +398,12 @@
       "scan_date": "2026-06-02T02:56:33Z",
       "grade": "D",
       "risk_score": 65,
+      "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-06-15T18:49:45Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "1.0.2"
     }
   ]

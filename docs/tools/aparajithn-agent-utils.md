@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [aparajithn-agent-utils](https://smithery.ai/server/aparajithn/agent-utils) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

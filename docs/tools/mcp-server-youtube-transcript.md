@@ -1,11 +1,11 @@
-# 🟠 mcp-server-youtube-transcript
+# 🟡 mcp-server-youtube-transcript
 
 > This is an MCP server that allows you to directly download transcripts of YouTube videos.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `0.1.1` |
 | **Vendor** | kimtaeyoon83 |
 | **Stars** | ⭐ 562 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 0 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -42,18 +42,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
-
-**Severity:** High
-
-**Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
-
-**Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
-
----
-
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -63,6 +51,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

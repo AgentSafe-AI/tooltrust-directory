@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [deniselewis200081-rail](https://smithery.ai/server/DeniseLewis200081/rail) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

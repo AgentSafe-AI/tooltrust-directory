@@ -14,7 +14,7 @@
 | **Language** | JavaScript |
 | **Source** | [portel-dev-ncp](https://github.com/portel-dev/ncp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

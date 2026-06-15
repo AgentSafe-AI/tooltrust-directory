@@ -1,10 +1,10 @@
 {
   "tool_id": "jgordini-rcmcp",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T18:50:37.012081972Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T20:33:34Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/jgordini/rcmcp",
   "category": "Developer Tools",
   "vendor": "jgordini",
@@ -13,38 +13,103 @@
   "language": "Python",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_astro_docs"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_astro_docs"
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_astro_docs"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 21,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "Bak/uab_docs_server_http.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 31,
+            "snippet": "FastMCP(",
+            "file": "Bak/uab_docs_server_http.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 89,
+            "snippet": "@mcp.tool(",
+            "file": "Bak/uab_docs_server_http.py",
+            "language": "python"
+          },
+          {
+            "kind": "import",
+            "line": 12,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "Bak/uab_docs_server_smithery.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 38,
+            "snippet": "FastMCP(",
+            "file": "Bak/uab_docs_server_smithery.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 102,
+            "snippet": "@mcp_base.tool(",
+            "file": "Bak/uab_docs_server_smithery.py",
+            "language": "python"
+          },
+          {
+            "kind": "import",
+            "line": 2,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "cloudflare/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 112,
+            "snippet": "new McpServer(",
+            "file": "cloudflare/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 19,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "uab_docs_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 30,
+            "snippet": "FastMCP(",
+            "file": "uab_docs_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 201,
+            "snippet": "@mcp.tool(",
+            "file": "uab_docs_server.py",
+            "language": "python"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -123,21 +188,6 @@
       "snippet": "@mcp.tool(",
       "file": "uab_docs_server.py",
       "language": "python"
-    }
-  ],
-  "tool_names": [
-    "search_astro_docs"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "search_astro_docs",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -287,6 +337,12 @@
     },
     {
       "scan_date": "2026-05-30T02:39:49Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T18:50:37Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.0"

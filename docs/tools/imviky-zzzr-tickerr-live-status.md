@@ -1,16 +1,16 @@
-# 🟠 imviky-zzzr-tickerr-live-status
+# 🟡 imviky-zzzr-tickerr-live-status
 
 > Real-time status, pricing, and inference latency for 90+ AI tools. Agent-reported failure signals with live fallback routing. No auth required. 
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 30 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [imviky-zzzr-tickerr-live-status](https://smithery.ai/server/imviky-zzzr/tickerr-live-status) |
-| **Scan Date** | 2026-06-13 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 3 |
-| Info     | 9 |
+| Info     | 11 |
 
 ## Detailed Findings
 
@@ -110,24 +110,24 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "input_tokens" appears to accept a secret or credential
+input parameter "input_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
-### 🟠 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-input parameter "output_tokens" appears to accept a secret or credential
+input parameter "output_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

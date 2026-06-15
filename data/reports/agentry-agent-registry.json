@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-06-15T03:02:28.670164417Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T20:29:40.192516118Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://smithery.ai/server/agentry/agent-registry",
   "vendor": "Smithery",
   "description": "The Registry for the Agent Economy\nDiscover, verify, and connect with AI agents. The first protocol-aware directory built on the A2A standard.",
@@ -499,9 +499,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "send_ecash_api_payments_ecash_send_post"
     },
@@ -531,9 +531,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "receive_ecash_api_payments_ecash_receive_post"
     },
@@ -563,9 +563,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "verify_token_api_payments_ecash_verify_post"
     },
@@ -988,10 +988,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 40,
+    "high": 37,
     "medium": 9,
     "low": 37,
-    "info": 36
+    "info": 39
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1249,8 +1249,8 @@
     },
     {
       "tool_name": "send_ecash_api_payments_ecash_send_post",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -1263,8 +1263,8 @@
     },
     {
       "tool_name": "receive_ecash_api_payments_ecash_receive_post",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -1276,8 +1276,8 @@
     },
     {
       "tool_name": "verify_token_api_payments_ecash_verify_post",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -1522,6 +1522,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:22Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:28Z",
       "grade": "C",
       "risk_score": 42,
       "version": "smithery"

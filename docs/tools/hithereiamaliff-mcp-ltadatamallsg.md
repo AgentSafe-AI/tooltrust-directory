@@ -12,7 +12,7 @@ This MCP is an enhanced fork of arjunkmrm/lta-mcp, rebuilt for self-hosted VPS d
 | **Vendor** | Smithery |
 | **Source** | [hithereiamaliff-mcp-ltadatamallsg](https://smithery.ai/server/hithereiamaliff/mcp-ltadatamallsg) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

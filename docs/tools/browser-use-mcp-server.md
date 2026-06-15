@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [browser-use-mcp-server](https://github.com/kontext-security/browser-use-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

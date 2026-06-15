@@ -10,7 +10,7 @@
 | **Language** | Haskell |
 | **Source** | [analytics-analytics](https://github.com/analytics/analytics) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-06-05T02:47:42.80444863Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "scan_date": "2026-06-15T20:32:20.070024853Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/blackboxfoundry/livedatalink",
   "category": "Other",
   "vendor": "blackboxfoundry",
@@ -116,22 +116,6 @@
       "tool_name": "fmcsa_carrier_search"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fmcsa_safety_scores"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fmcsa_safety_scores"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -146,22 +130,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "fmcsa_carrier_authority"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fmcsa_carrier_compare"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fmcsa_carrier_compare"
     },
     {
       "id": "AS-014",
@@ -846,9 +814,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 15,
+    "high": 13,
     "medium": 7,
-    "low": 20,
+    "low": 18,
     "info": 62
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -977,10 +945,7 @@
     {
       "tool_name": "fmcsa_safety_scores",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -994,10 +959,7 @@
     {
       "tool_name": "fmcsa_carrier_compare",
       "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1435,6 +1397,12 @@
   "scan_history": [
     {
       "scan_date": "2026-06-04T02:59:40Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-05T02:47:42Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

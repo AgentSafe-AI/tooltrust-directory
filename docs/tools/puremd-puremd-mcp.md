@@ -1,11 +1,11 @@
-# 🟠 puremd-puremd-mcp
+# 🟡 puremd-puremd-mcp
 
 > Unblock, scrape, and search tools for MCP clients
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 32 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `1.0.3` |
 | **Vendor** | puremd |
 | **Stars** | ⭐ 60 |
@@ -14,7 +14,7 @@
 | **Language** | JavaScript |
 | **Source** | [puremd-puremd-mcp](https://github.com/puremd/puremd-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 4 |
+| High     | 2 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 2 |
+| Info     | 4 |
 
 ## Detailed Findings
 
@@ -39,18 +39,6 @@ tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
-
-**Severity:** High
-
-**Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
-
-**Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
 
 ---
 
@@ -78,6 +66,18 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 
 ---
 
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### 🟠 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** High
@@ -87,18 +87,6 @@ tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📦 `AS-004` — Supply Chain Vulnerability (CVE)
-
-**Severity:** High
-
-**Description:**
-GO-2026-5024 in golang.org/x/sys@v0.41.0: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows (upgrade to 0.44.0)
-
-**Recommendation:**
-Upgrade or replace the vulnerable dependency. Pin all dependency versions and enable automated CVE scanning (Dependabot or OSV Scanner).
 
 ---
 
@@ -123,6 +111,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

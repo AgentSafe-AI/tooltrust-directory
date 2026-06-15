@@ -24,7 +24,7 @@ All transactions use JOOBs (sandbox currency). Free to use.
 | **Vendor** | Smithery |
 | **Source** | [jobly-jobly-mcp](https://smithery.ai/server/jobly/jobly-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

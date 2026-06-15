@@ -2,78 +2,17 @@
   "tool_id": "apple-health-mcp-server",
   "version": "0.1.0",
   "grade": "C",
-  "risk_score": 47,
-  "scan_date": "2026-06-13T02:43:54.462584726Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T20:17:16.760389922Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/the-momentum/apple-health-mcp-server",
   "category": "Developer Tools",
   "vendor": "the-momentum",
-  "stars": 211,
+  "stars": 213,
   "license": "MIT",
   "language": "Python",
   "description": "MCP server for querying Apple Health data with natural language using DuckDB under the hood.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.0: 30 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "checkout.cancel",
-          "checkout.complete",
-          "checkout.create",
-          "checkout.status",
-          "checkout.update",
-          "consent.list",
-          "consent.status",
-          "consent.submit",
-          "consent.text",
-          "eligibility.check",
-          "intake.questions",
-          "intake.status",
-          "intake.submit",
-          "medications.availability",
-          "medications.categories",
-          "medications.details",
-          "medications.list",
-          "medications.pricing",
-          "order.create",
-          "order.documents",
-          "order.status",
-          "order.upload",
-          "portal.care_plan",
-          "portal.log_side_effects",
-          "portal.log_weight",
-          "portal.message",
-          "portal.refill",
-          "portal.support",
-          "provider.questions",
-          "provider.respond"
-        ],
-        "removed": [
-          "mac_fleet_readiness_assessment"
-        ],
-        "version": "0.1.0"
-      }
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "medications.list"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "medications.list"
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -139,22 +78,6 @@
       "tool_name": "eligibility.check"
     },
     {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "intake.questions"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "intake.questions"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -164,9 +87,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "intake.submit"
     },
@@ -180,9 +103,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "intake.status"
     },
@@ -204,9 +127,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "consent.list"
     },
@@ -236,9 +159,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "consent.text"
     },
@@ -268,9 +191,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "consent.submit"
     },
@@ -292,9 +215,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "consent.status"
     },
@@ -316,9 +239,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "order.create"
     },
@@ -332,9 +255,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "order.status"
     },
@@ -356,9 +279,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "order.documents"
     },
@@ -380,9 +303,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "order.upload"
     },
@@ -412,9 +335,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "checkout.create"
     },
@@ -444,9 +367,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "checkout.update"
     },
@@ -468,17 +391,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"shared_payment_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "checkout.complete"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"shared_payment_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "checkout.complete"
     },
@@ -508,9 +431,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "checkout.status"
     },
@@ -532,9 +455,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "checkout.cancel"
     },
@@ -548,9 +471,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "portal.log_weight"
     },
@@ -564,9 +487,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "portal.log_side_effects"
     },
@@ -580,9 +503,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "portal.message"
     },
@@ -596,9 +519,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "portal.care_plan"
     },
@@ -612,9 +535,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "portal.refill"
     },
@@ -628,9 +551,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "portal.support"
     },
@@ -644,9 +567,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "provider.questions"
     },
@@ -660,9 +583,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bearer_token\" appears to accept a secret or credential",
+      "description": "input parameter \"bearer_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "provider.respond"
     },
@@ -677,10 +600,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 32,
+    "high": 5,
     "medium": 5,
-    "low": 11,
-    "info": 30
+    "low": 9,
+    "info": 54
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -719,7 +642,7 @@
     {
       "tool_name": "medications.list",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -792,7 +715,7 @@
     {
       "tool_name": "intake.questions",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -805,7 +728,7 @@
     {
       "tool_name": "intake.submit",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "dynamic email recipient (patient_email)",
@@ -818,7 +741,7 @@
     {
       "tool_name": "intake.status",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: intake.status"
@@ -828,8 +751,8 @@
     },
     {
       "tool_name": "consent.list",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -843,8 +766,8 @@
     },
     {
       "tool_name": "consent.text",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -859,7 +782,7 @@
     {
       "tool_name": "consent.submit",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -873,7 +796,7 @@
     {
       "tool_name": "consent.status",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: consent.status",
@@ -885,7 +808,7 @@
     {
       "tool_name": "order.create",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -900,7 +823,7 @@
     {
       "tool_name": "order.status",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: order.status"
@@ -911,7 +834,7 @@
     {
       "tool_name": "order.documents",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -925,7 +848,7 @@
     {
       "tool_name": "order.upload",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -957,7 +880,7 @@
     {
       "tool_name": "checkout.update",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: checkout.update"
@@ -967,8 +890,8 @@
     },
     {
       "tool_name": "checkout.complete",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -984,8 +907,8 @@
     },
     {
       "tool_name": "checkout.status",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -1000,7 +923,7 @@
     {
       "tool_name": "checkout.cancel",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: checkout.cancel"
@@ -1011,7 +934,7 @@
     {
       "tool_name": "portal.log_weight",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)"
       ],
@@ -1021,7 +944,7 @@
     {
       "tool_name": "portal.log_side_effects",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)"
       ],
@@ -1031,7 +954,7 @@
     {
       "tool_name": "portal.message",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: portal.message"
@@ -1042,7 +965,7 @@
     {
       "tool_name": "portal.care_plan",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)"
       ],
@@ -1052,7 +975,7 @@
     {
       "tool_name": "portal.refill",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1066,7 +989,7 @@
     {
       "tool_name": "portal.support",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: portal.support"
@@ -1077,7 +1000,7 @@
     {
       "tool_name": "provider.questions",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: provider.questions"
@@ -1088,7 +1011,7 @@
     {
       "tool_name": "provider.respond",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (bearer_token)",
         "hardcoded domain: provider.respond"
@@ -1492,6 +1415,12 @@
       "scan_date": "2026-06-11T02:56:11Z",
       "grade": "B",
       "risk_score": 19,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-06-13T02:43:54Z",
+      "grade": "C",
+      "risk_score": 47,
       "version": "0.1.0"
     }
   ]

@@ -1,10 +1,10 @@
 {
   "tool_id": "haojiasheng-add-number-mcp",
   "version": "1.0.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-15T18:52:41Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-15T20:28:56.277535558Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/haojiasheng/add-number-mcp",
   "category": "Developer Tools",
   "vendor": "haojiasheng",
@@ -13,40 +13,70 @@
   "description": "简单的mcp",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "High",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares network permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_plates"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Medium",
+      "title": "Excessive Permission Surface",
+      "description": "tool declares db permission",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_plates"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_plates"
+    },
+    {
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 17,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 33,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_plates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "browse_category"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_plate_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_faqs"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
+    "high": 1,
+    "medium": 1,
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -64,54 +94,46 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "browse_category",
+    "get_faqs",
+    "get_plate_info",
+    "search_plates"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-09T01:35:07Z",
+      "tool_name": "search_plates",
+      "action": "REQUIRE_APPROVAL",
       "grade": "C",
-      "risk_score": 34,
-      "version": "1.0.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-21T02:17:37Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-22T02:16:40Z",
+      "tool_name": "browse_category",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-23T02:19:57Z",
+      "tool_name": "get_plate_info",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-24T02:19:32Z",
+      "tool_name": "get_faqs",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:46:47Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:38:15Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:39:05Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

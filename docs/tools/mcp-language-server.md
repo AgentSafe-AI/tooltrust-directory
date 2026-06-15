@@ -1,18 +1,18 @@
-# 🟢 mcp-language-server
+# 🟡 mcp-language-server
 
 > mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `0.1.1` |
 | **Vendor** | isaacphi |
 | **Stars** | ⭐ 1546 |
 | **Language** | Go |
 | **Source** | [mcp-language-server](https://github.com/isaacphi/mcp-language-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -21,12 +21,48 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 2 |
 | Medium   | 0 |
-| Low      | 0 |
+| Low      | 1 |
 | Info     | 1 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at v0.1.1: 1 tool(s) added, 1 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### 🟠 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** High
+
+**Description:**
+tool declares network permission
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

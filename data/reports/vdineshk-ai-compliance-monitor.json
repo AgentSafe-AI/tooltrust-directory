@@ -1,10 +1,10 @@
 {
   "tool_id": "vdineshk-ai-compliance-monitor",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-05-30T02:37:53.309517094Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T20:33:35.209297975Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/vdineshk/ai-compliance-monitor",
   "category": "Developer Tools",
   "vendor": "vdineshk",
@@ -16,19 +16,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 3 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 4 tool(s) added, 3 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get_safety_report",
-          "validate_data_safety",
-          "validate_data_safety_lite"
-        ],
-        "removed": [
           "check_deadline",
           "check_obligations",
           "compare_jurisdictions",
           "get_regulation_articles"
+        ],
+        "removed": [
+          "get_safety_report",
+          "validate_data_safety",
+          "validate_data_safety_lite"
         ],
         "version": "1.0.0"
       }
@@ -39,23 +39,7 @@
       "title": "Excessive Permission Surface",
       "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "validate_data_safety"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "validate_data_safety"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "validate_data_safety"
+      "tool_name": "check_obligations"
     },
     {
       "id": "AS-011",
@@ -63,7 +47,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "validate_data_safety"
+      "tool_name": "check_obligations"
     },
     {
       "id": "AS-014",
@@ -71,63 +55,47 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_data_safety"
+      "tool_name": "check_obligations"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_regulation_articles"
     },
     {
       "id": "AS-002",
       "severity": "High",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_safety_report"
+      "tool_name": "check_deadline"
     },
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_safety_report"
-    },
-    {
-      "id": "AS-002",
+      "id": "AS-011",
       "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_safety_report"
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "check_deadline"
     },
     {
-      "id": "AS-003",
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_deadline"
+    },
+    {
+      "id": "AS-002",
       "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_safety_report\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "get_safety_report"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_safety_report"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_safety_report"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "tool declares network permission",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "validate_data_safety_lite"
+      "tool_name": "compare_jurisdictions"
     },
     {
       "id": "AS-011",
@@ -135,7 +103,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "validate_data_safety_lite"
+      "tool_name": "compare_jurisdictions"
     },
     {
       "id": "AS-014",
@@ -143,64 +111,66 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_data_safety_lite"
+      "tool_name": "compare_jurisdictions"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 4,
-    "medium": 2,
-    "low": 6,
-    "info": 3
+    "medium": 0,
+    "low": 3,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_safety_report",
-    "validate_data_safety",
-    "validate_data_safety_lite"
+    "check_deadline",
+    "check_obligations",
+    "compare_jurisdictions",
+    "get_regulation_articles"
   ],
   "tool_contexts": [
     {
-      "tool_name": "validate_data_safety",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "tool_name": "check_obligations",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (jurisdiction)",
-        "hardcoded domain: kordagencies.com",
-        "hardcoded domain: terms.html"
+        "dynamic URL input (jurisdiction_code)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_safety_report",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: abuseipdb.com",
-        "hardcoded domain: kordagencies.com",
-        "hardcoded domain: terms.html"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "validate_data_safety_lite",
+      "tool_name": "get_regulation_articles",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_deadline",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: kordagencies.com",
-        "hardcoded domain: terms.html"
+        "dynamic URL input (jurisdiction_code)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compare_jurisdictions",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (jurisdictions)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -487,6 +457,12 @@
       "scan_date": "2026-05-28T02:25:54Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-05-30T02:37:53Z",
+      "grade": "C",
+      "risk_score": 42,
       "version": "1.0.0"
     }
   ]

@@ -1,16 +1,16 @@
-# 🔴 petabloom-podcasts
+# 🟠 petabloom-podcasts
 
 > Access high quality transcripts for podcasts. Updated in real-time as new episodes are published. This MCP server also accepts feedback for feature requests and bug reports.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 55 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [petabloom-podcasts](https://smithery.ai/server/petabloom/podcasts) |
-| **Scan Date** | 2026-06-11 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -19,7 +19,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 7 |
+| High     | 3 |
 | Medium   | 1 |
 | Low      | 3 |
 | Info     | 5 |
@@ -35,30 +35,6 @@ tool declares network permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "search_episodes" implies read-only operation but declares exec permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
 
 ---
 
@@ -110,18 +86,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
-
-**Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### 🟡 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Medium
@@ -131,18 +95,6 @@ tool declares db permission
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 📐 `AS-003` — Scope Mismatch
-
-**Severity:** High
-
-**Description:**
-tool name "search_episodes_by_topic" implies read-only operation but declares exec permission
-
-**Recommendation:**
-Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
 
 ---
 

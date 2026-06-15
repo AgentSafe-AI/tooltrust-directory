@@ -13,7 +13,7 @@
 | **Language** | TypeScript |
 | **Source** | [remote-mcp-server-with-auth](https://github.com/coleam00/remote-mcp-server-with-auth) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

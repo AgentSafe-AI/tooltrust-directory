@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [kastalien-research-thoughtbox](https://github.com/Kastalien-Research/thoughtbox) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

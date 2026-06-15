@@ -1,10 +1,10 @@
 {
   "tool_id": "leonskenidy-omi-mcp",
   "version": "0.1.0",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-06-15T18:47:24.07927599Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T20:27:52Z",
+  "scanner": "tooltrust-scanner/v0.3.16",
   "source_url": "https://github.com/leonskenidy/omi-mcp",
   "category": "Developer Tools",
   "vendor": "leonskenidy",
@@ -13,62 +13,40 @@
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_omi_conversations"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "read_omi_memories"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_omi_conversation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_omi_conversation"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_omi_memories"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_omi_memories"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 58,
+            "snippet": "new McpServer(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 2,
+    "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -84,48 +62,6 @@
       "snippet": "new McpServer(",
       "file": "src/index.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "create_omi_conversation",
-    "create_omi_memories",
-    "read_omi_conversations",
-    "read_omi_memories"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "read_omi_conversations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "read_omi_memories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_omi_conversation",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_omi_memories",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -191,6 +127,12 @@
     },
     {
       "scan_date": "2026-05-30T02:36:16Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T18:47:24Z",
       "grade": "A",
       "risk_score": 8,
       "version": "0.1.0"

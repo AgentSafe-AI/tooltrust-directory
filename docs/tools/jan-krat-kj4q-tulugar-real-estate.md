@@ -10,7 +10,7 @@
 | **Vendor** | Smithery |
 | **Source** | [jan-krat-kj4q-tulugar-real-estate](https://smithery.ai/server/jan-krat-kj4q/tulugar-real-estate) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

@@ -10,11 +10,10 @@
 | **Vendor** | recraft-ai |
 | **Stars** | ⭐ 53 |
 | **npm Package** | `@recraft-ai/mcp-recraft-server` |
-| **npm Downloads (30d)** | 984 |
 | **Language** | TypeScript |
 | **Source** | [recraft-ai-mcp-recraft-server](https://github.com/recraft-ai/mcp-recraft-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 

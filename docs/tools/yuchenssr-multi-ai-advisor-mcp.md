@@ -13,7 +13,7 @@
 | **Language** | TypeScript |
 | **Source** | [yuchenssr-multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scanner** | tooltrust-scanner/v0.3.16 |
 
 ---
 
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 2 |
 | Low      | 2 |
 | Info     | 15 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.0.0: 15 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
