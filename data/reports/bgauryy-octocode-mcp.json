@@ -1,10 +1,10 @@
 {
   "tool_id": "bgauryy-octocode-mcp",
   "version": "5.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:15:12.487151456Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:49:43.388629666Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/bgauryy/octocode-mcp",
   "category": "Developer Tools",
   "vendor": "bgauryy",
@@ -16,9 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_apiStatusCheck"
     },
@@ -40,9 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubSearchCode"
     },
@@ -64,17 +64,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "mcp_octocode_githubGetFileContent"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubGetFileContent"
     },
@@ -96,9 +88,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubSearchRepositories"
     },
@@ -120,9 +112,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubSearchCommits"
     },
@@ -144,9 +136,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubSearchPullRequests"
     },
@@ -168,9 +160,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_githubSearchIssues"
     },
@@ -200,9 +192,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mcp_octocode_packageSearch"
     },
@@ -233,10 +225,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 8,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 8,
-    "info": 10
+    "info": 18
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -255,7 +247,7 @@
     {
       "tool_name": "mcp_octocode_apiStatusCheck",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -265,7 +257,7 @@
     {
       "tool_name": "mcp_octocode_githubSearchCode",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -274,8 +266,8 @@
     },
     {
       "tool_name": "mcp_octocode_githubGetFileContent",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -286,7 +278,7 @@
     {
       "tool_name": "mcp_octocode_githubSearchRepositories",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -296,7 +288,7 @@
     {
       "tool_name": "mcp_octocode_githubSearchCommits",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -306,7 +298,7 @@
     {
       "tool_name": "mcp_octocode_githubSearchPullRequests",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -316,7 +308,7 @@
     {
       "tool_name": "mcp_octocode_githubSearchIssues",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -333,7 +325,7 @@
     {
       "tool_name": "mcp_octocode_packageSearch",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -591,6 +583,12 @@
     },
     {
       "scan_date": "2026-06-15T18:30:02Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "5.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:15:12Z",
       "grade": "C",
       "risk_score": 25,
       "version": "5.0.0"

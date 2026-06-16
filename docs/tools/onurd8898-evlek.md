@@ -1,16 +1,16 @@
-# 🟡 onurd8898-evlek
+# 🟢 onurd8898-evlek
 
 > AI-native property MCP server for Northern Cyprus (KKTC). Nine read-only tools — search active listings, get the live price index, compare cities, estimate rental yield, look up KKTC legal procedures, profile districts, and more — pulled live from evlek.app, where every listing is KYC-verified. Compatible with Claude Desktop, ChatGPT Apps, Perplexity, Cursor, and any MCP client. Multilingual (TR, EN, RU, DE, AR), 6 cities (Girne, Lefkoşa, Gazimağusa, İskele, Güzelyurt, Lefke), GBP-primary pricing. First proptech in the region built MCP-first — making KKTC property data discoverable through AI assistants instead of fragmented websites.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [onurd8898-evlek](https://smithery.ai/server/onurd8898/evlek) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -19,19 +19,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
-| Medium   | 1 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 1 |
-| Info     | 9 |
+| Info     | 11 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -146,12 +146,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

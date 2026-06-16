@@ -1,4 +1,4 @@
-# 🔴 openclaw-hal9000-romulus-31780
+# 🟠 openclaw-hal9000-romulus-31780
 
 > ROMulus is a retro gaming ROM search engine that aggregates results from four major sites. Search by game title and console to get download page URLs, cover images, and file sizes... all in one all.
 
@@ -13,13 +13,13 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **D** |
-| **Risk Score** | 50 |
+| **Grade** | **C** |
+| **Risk Score** | 27 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [openclaw-hal9000-romulus-31780](https://smithery.ai/server/openclaw-hal9000/romulus-31780) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -28,10 +28,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 1 |
-| High     | 2 |
-| Medium   | 1 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 2 |
-| Info     | 3 |
+| Info     | 5 |
 
 ## Detailed Findings
 
@@ -47,24 +47,12 @@ Remove adversarial instructions from tool descriptions. Validate all tool-defini
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares db permission
+declared capabilities: network access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -95,12 +83,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

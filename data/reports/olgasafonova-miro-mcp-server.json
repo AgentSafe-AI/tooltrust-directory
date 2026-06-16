@@ -1,10 +1,10 @@
 {
   "tool_id": "olgasafonova-miro-mcp-server",
   "version": "1.20.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:21:50.489872732Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:58:48.079568946Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/olgasafonova/miro-mcp-server",
   "category": "Developer Tools",
   "vendor": "olgasafonova",
@@ -15,9 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_CREATE_APP_CARD_ITEM"
     },
@@ -31,17 +31,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "MIRO_CREATE_BOARD"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_CREATE_BOARD"
     },
@@ -63,9 +55,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_DELETE_APP_CARD_ITEM"
     },
@@ -79,9 +71,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_DELETE_DOCUMENT_ITEM"
     },
@@ -95,9 +87,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_DELETE_ITEM"
     },
@@ -119,9 +111,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_GET_BOARD"
     },
@@ -191,9 +183,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_UPDATE_APP_CARD_ITEM"
     },
@@ -207,17 +199,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "MIRO_UPDATE_BOARD"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "MIRO_UPDATE_BOARD"
     },
@@ -240,10 +224,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 7,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 15
+    "info": 23
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -293,8 +277,8 @@
     },
     {
       "tool_name": "MIRO_CREATE_BOARD",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -342,7 +326,7 @@
     {
       "tool_name": "MIRO_GET_BOARD",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -400,8 +384,8 @@
     },
     {
       "tool_name": "MIRO_UPDATE_BOARD",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -532,6 +516,12 @@
     },
     {
       "scan_date": "2026-06-15T18:38:24Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.20.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:21:50Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.20.0"

@@ -1,10 +1,10 @@
 {
   "tool_id": "mcp-server-asana",
   "version": "1.6.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:18:20.087439386Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-15T23:54:07.340778381Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/roychri/mcp-server-asana",
   "category": "Developer Tools",
   "vendor": "roychri",
@@ -16,17 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_attachments"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_attachments"
     },
@@ -88,17 +80,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_project_status_update"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_project_status_update"
     },
@@ -120,9 +104,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_project"
     },
@@ -152,9 +136,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_tasks"
     },
@@ -185,10 +169,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 3,
+    "high": 0,
+    "medium": 0,
     "low": 5,
-    "info": 10
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -206,8 +190,8 @@
   "tool_contexts": [
     {
       "tool_name": "get_attachments",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -255,8 +239,8 @@
     },
     {
       "tool_name": "create_project_status_update",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -270,7 +254,7 @@
     {
       "tool_name": "create_project",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -292,7 +276,7 @@
     {
       "tool_name": "search_tasks",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -811,6 +795,12 @@
     },
     {
       "scan_date": "2026-06-15T18:33:52Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.6.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:18:20Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.6.0"

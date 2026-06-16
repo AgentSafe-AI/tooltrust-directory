@@ -1,18 +1,18 @@
-# 🟡 zen
+# 🟢 zen
 
 > Selfhosted notes app. Single golang binary, notes stored as markdown within SQLite, full-text search, very low resource usage
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 19 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `1.5.0` |
 | **Vendor** | sheshbabu |
 | **Stars** | ⭐ 1069 |
 | **Language** | JavaScript |
 | **Source** | [zen](https://github.com/sheshbabu/zen) |
-| **Scan Date** | 2026-06-02 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-15 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -21,19 +21,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

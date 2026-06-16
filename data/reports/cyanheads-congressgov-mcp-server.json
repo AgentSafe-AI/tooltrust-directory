@@ -1,10 +1,10 @@
 {
   "tool_id": "cyanheads-congressgov-mcp-server",
   "version": "0.3.30",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:27:22.503268086Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:05:23.664888689Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/cyanheads/congressgov-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
@@ -33,9 +33,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "congressgov_member_lookup"
     },
@@ -81,9 +81,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "congressgov_crs_reports"
     },
@@ -105,9 +105,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "congressgov_committee_reports"
     },
@@ -138,10 +138,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 10
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -225,7 +225,7 @@
     {
       "tool_name": "congressgov_crs_reports",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -235,7 +235,7 @@
     {
       "tool_name": "congressgov_committee_reports",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -406,6 +406,12 @@
     },
     {
       "scan_date": "2026-06-15T18:45:47Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.3.30"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:22Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.3.30"

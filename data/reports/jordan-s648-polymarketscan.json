@@ -1,10 +1,10 @@
 {
   "tool_id": "jordan-s648-polymarketscan",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:29:40.050964299Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:33.084844951Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/jordan-s648/PolymarketScan",
   "vendor": "Smithery",
   "description": "Real-time Polymarket analytics for AI agents. Query live prediction market data including whale trades, market odds, trader profiles, and leaderboards.\n\n**Available tools:**\n- `get_whale_trades` — large trades above a size threshold\n- `get_market_odds` — current prices and implied probability for any market\n- `get_trader_profile` — PnL, win rate, ROI for any wallet\n- `get_leaderboard` — top traders ranked by PnL, ROI, or win rate\n- `get_market_summary` — AI-citable summary paragraph for any market\n- `search_markets` — full-text search across all active markets\n- `get_market_movers` — biggest price movements in the last 24 hours\n- `get_site_stats` — aggregate platform statistics\n\nNo API key required. Data provided by PolymarketScan (polymarketscan.org).",
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_markets"
     },
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_market_movers"
     },
@@ -91,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_site_stats"
     },
@@ -108,10 +108,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 8
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -163,7 +163,7 @@
     {
       "tool_name": "search_markets",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -245,6 +245,12 @@
     },
     {
       "scan_date": "2026-06-15T18:52:25Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:40Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

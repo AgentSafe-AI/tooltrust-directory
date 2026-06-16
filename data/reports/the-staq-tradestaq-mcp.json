@@ -1,14 +1,15 @@
 {
   "tool_id": "the-staq-tradestaq-mcp",
   "version": "0.1.1",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:32:52.67409794Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 10,
+  "scan_date": "2026-06-16T00:10:22.524968205Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/the-staq/tradestaq-mcp",
   "category": "Developer Tools",
   "vendor": "the-staq",
   "npm_package": "@the-staq/tradestaq-mcp",
+  "npm_downloads_monthly": 102,
   "language": "TypeScript",
   "description": "TradeStaq MCP Server — trading intelligence for AI agents",
   "findings": [
@@ -46,9 +47,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "set_token"
     },
@@ -126,9 +127,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_markets"
     },
@@ -182,9 +183,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "explain_strategy"
     },
@@ -206,17 +207,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_strategy"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_strategy"
     },
@@ -238,9 +231,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_strategy"
     },
@@ -278,9 +271,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "export_backtest"
     },
@@ -342,9 +335,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "close_position"
     },
@@ -398,9 +391,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "suggest_strategies"
     },
@@ -423,10 +416,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 4,
+    "high": 0,
+    "medium": 1,
     "low": 6,
-    "info": 35
+    "info": 43
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -508,8 +501,8 @@
     },
     {
       "tool_name": "set_token",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -560,7 +553,7 @@
     {
       "tool_name": "search_markets",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -614,8 +607,8 @@
     },
     {
       "tool_name": "create_strategy",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -626,7 +619,7 @@
     {
       "tool_name": "generate_strategy",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -650,7 +643,7 @@
     {
       "tool_name": "export_backtest",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -698,7 +691,7 @@
     {
       "tool_name": "close_position",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -828,6 +821,12 @@
       "scan_date": "2026-06-15T18:54:33Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:52Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "0.1.1"
     }
   ]

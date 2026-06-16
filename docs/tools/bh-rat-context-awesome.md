@@ -5,7 +5,7 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 8 |
+| **Risk Score** | 0 |
 | **Version** | `0.1.0` |
 | **Vendor** | bh-rat |
 | **Stars** | ⭐ 53 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [bh-rat-context-awesome](https://github.com/bh-rat/context-awesome) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -24,18 +24,18 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 1 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares db permission
+declared capabilities: database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -1,4 +1,4 @@
-# 🟡 daniel-szerszen-redstone-finance
+# 🟢 daniel-szerszen-redstone-finance
 
 > Real-time and historical cryptocurrency price data from RedStone oracle infrastructure. 
 1,300+ assets, 110+ chains, no API key required. Powered by 50+ DEX and 30+ CEX sources 
@@ -6,13 +6,13 @@ with $4.943B Total Value Secured.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [daniel-szerszen-redstone-finance](https://smithery.ai/server/daniel-szerszen/redstone-finance) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -21,19 +21,19 @@ with $4.943B Total Value Secured.
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 6 |
+| Info     | 8 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -76,12 +76,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -1,19 +1,19 @@
 {
   "tool_id": "rafsilva85-skillflow",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T18:54:07.13174298Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:39.588806212Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/rafsilva85/skillflow",
   "vendor": "Smithery",
   "description": "The curated marketplace for AI agent skills. Search, discover, and install verified skills for Claude, GPT, Cursor, and other AI platforms via MCP. Features 50+ skills across 12 categories with trust scores, compatibility info, and one-click install instructions.\n\n## Key Features\n- **Search Skills**: Find skills by keyword, category, or tag\n- **Trust Scores**: Every skill rated 0-100 for reliability\n- **Multi-Platform**: Works with Claude Desktop, Cursor, Windsurf, n8n, and more\n- **12 Categories**: Development, Productivity, DevOps, Data, Marketing, and more\n\n## Tools Available\n- `search_skills` - Search the marketplace\n- `get_skill_details` - Get full skill info with install instructions\n- `list_categories` - Browse all categories\n- `get_trending_skills` - See what's popular\n- `get_publisher_info` - Verify publishers",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_skills"
     },
@@ -68,10 +68,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 5
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -85,7 +85,7 @@
     {
       "tool_name": "search_skills",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -418,6 +418,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:41Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:54:07Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

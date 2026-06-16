@@ -1,10 +1,10 @@
 {
   "tool_id": "sparkvibe-io-memorymesh",
   "version": "4.3.0",
-  "grade": "B",
-  "risk_score": 20,
-  "scan_date": "2026-06-15T20:27:47.155223455Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:05:22.712156461Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/sparkvibe-io/memorymesh",
   "category": "Developer Tools",
   "vendor": "sparkvibe-io",
@@ -55,9 +55,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "update_memory"
     },
@@ -79,9 +79,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "session_start"
     },
@@ -111,25 +111,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "configure_project"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "configure_project"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "configure_project"
     },
@@ -153,9 +137,9 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 4,
-    "low": 2,
-    "info": 11
+    "medium": 0,
+    "low": 1,
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -240,7 +224,7 @@
     {
       "tool_name": "configure_project",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -327,6 +311,12 @@
     },
     {
       "scan_date": "2026-06-15T18:47:32Z",
+      "grade": "B",
+      "risk_score": 20,
+      "version": "4.3.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:47Z",
       "grade": "B",
       "risk_score": 20,
       "version": "4.3.0"

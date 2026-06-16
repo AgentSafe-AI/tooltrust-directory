@@ -1,11 +1,11 @@
-# 🟡 visactor-vchart-mcp-server
+# 🟢 visactor-vchart-mcp-server
 
 > A Model Context Protocol (MCP) server for the @visactor/vchart that enables AI assistants to generate interactive charts and visualizations.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 19 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `0.1.4` |
 | **Vendor** | VisActor |
 | **Stars** | ⭐ 50 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [visactor-vchart-mcp-server](https://github.com/VisActor/vchart-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 11 |
-| Info     | 10 |
+| Info     | 11 |
 
 ## Detailed Findings
 
@@ -174,12 +174,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

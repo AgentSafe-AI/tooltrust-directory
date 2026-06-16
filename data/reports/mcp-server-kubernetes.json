@@ -1,10 +1,10 @@
 {
   "tool_id": "mcp-server-kubernetes",
   "version": "3.9.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:14:35.938010335Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:48:25.815884522Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/Flux159/mcp-server-kubernetes",
   "category": "Developer Tools",
   "vendor": "Flux159",
@@ -49,9 +49,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "kubectl_apply"
     },
@@ -65,9 +65,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "kubectl_delete"
     },
@@ -81,9 +81,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "kubectl_create"
     },
@@ -137,9 +137,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "kubectl_generic"
     },
@@ -193,9 +193,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_api_resources"
     },
@@ -225,9 +225,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "exec_in_pod"
     },
@@ -266,10 +266,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 3,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 22
+    "info": 28
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -391,7 +391,7 @@
     {
       "tool_name": "kubectl_generic",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -429,7 +429,7 @@
     {
       "tool_name": "list_api_resources",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -446,7 +446,7 @@
     {
       "tool_name": "exec_in_pod",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -987,6 +987,12 @@
     },
     {
       "scan_date": "2026-06-15T18:29:17Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "3.9.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:14:35Z",
       "grade": "B",
       "risk_score": 17,
       "version": "3.9.1"

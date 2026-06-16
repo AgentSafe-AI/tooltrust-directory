@@ -1,11 +1,11 @@
-# 🟠 yuchenssr-multi-ai-advisor-mcp
+# 🟢 yuchenssr-multi-ai-advisor-mcp
 
 > council of models for decision
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 27 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | YuChenSSR |
 | **Stars** | ⭐ 78 |
@@ -13,7 +13,7 @@
 | **Language** | TypeScript |
 | **Source** | [yuchenssr-multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -22,10 +22,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
-| Medium   | 2 |
-| Low      | 2 |
-| Info     | 15 |
+| High     | 0 |
+| Medium   | 0 |
+| Low      | 1 |
+| Info     | 17 |
 
 ## Detailed Findings
 
@@ -125,36 +125,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-tool declares http permission
+declared capabilities: network access, filesystem access, HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -209,12 +185,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

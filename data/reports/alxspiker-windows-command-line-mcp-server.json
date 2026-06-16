@@ -1,10 +1,10 @@
 {
   "tool_id": "alxspiker-windows-command-line-mcp-server",
   "version": "0.3.0",
-  "grade": "D",
-  "risk_score": 73,
-  "scan_date": "2026-06-15T20:23:42.429396869Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-16T00:00:44.320067394Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/alxspiker/Windows-Command-Line-MCP-Server",
   "category": "Developer Tools",
   "vendor": "alxspiker",
@@ -24,41 +24,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "remote_exec"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "remote_exec"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "remote_exec"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "remote_exec"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "remote_exec"
     },
@@ -72,9 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "session_status"
     },
@@ -96,9 +64,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "remote_screenshot"
     },
@@ -121,10 +89,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 4,
-    "medium": 2,
-    "low": 3,
-    "info": 3
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -153,7 +121,7 @@
     {
       "tool_name": "remote_exec",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "executes_commands",
         "uses_network",
@@ -165,7 +133,7 @@
     {
       "tool_name": "session_status",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -176,7 +144,7 @@
     {
       "tool_name": "remote_screenshot",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -368,6 +336,12 @@
     },
     {
       "scan_date": "2026-06-15T18:40:52Z",
+      "grade": "D",
+      "risk_score": 73,
+      "version": "0.3.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:23:42Z",
       "grade": "D",
       "risk_score": 73,
       "version": "0.3.0"

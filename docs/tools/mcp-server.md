@@ -1,20 +1,18 @@
 # 🟢 mcp-server
 
-> Mapbox Model Context Protocol (MCP) server
+> An MCP server for interacting with the Financial Datasets stock market API.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `99.0.0-dev` |
-| **Vendor** | mapbox |
-| **Stars** | ⭐ 347 |
-| **npm Package** | `@mapbox/mcp-server` |
-| **npm Downloads (30d)** | 7.8k |
-| **Language** | TypeScript |
-| **Source** | [mcp-server](https://github.com/mapbox/mcp-server) |
+| **Vendor** | financial-datasets |
+| **Stars** | ⭐ 2193 |
+| **Language** | Python |
+| **Source** | [mcp-server](https://github.com/financial-datasets/mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -35,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
 Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.

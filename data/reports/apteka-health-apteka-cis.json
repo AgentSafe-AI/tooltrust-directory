@@ -1,27 +1,19 @@
 {
   "tool_id": "apteka-health-apteka-cis",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:29:50.460100295Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:35.360859523Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/apteka-health/apteka-cis",
   "vendor": "Smithery",
   "description": "CIS pharmacy aggregator — search medicines, compare prices, and find pharmacies across Kazakhstan, Belarus, Kyrgyzstan, Russia, Ukraine, Georgia, Armenia, and Azerbaijan.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_by_symptom"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_by_symptom"
     },
@@ -43,17 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_by_product_name"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_by_product_name"
     },
@@ -92,10 +76,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 4
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -107,8 +91,8 @@
   "tool_contexts": [
     {
       "tool_name": "search_by_symptom",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -117,8 +101,8 @@
     },
     {
       "tool_name": "search_by_product_name",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -551,6 +535,12 @@
     },
     {
       "scan_date": "2026-06-15T18:52:29Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:50Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

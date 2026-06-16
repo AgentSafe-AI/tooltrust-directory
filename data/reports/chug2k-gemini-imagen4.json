@@ -1,10 +1,10 @@
 {
   "tool_id": "chug2k-gemini-imagen4",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-15T20:26:00.216792165Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:03:27.205862708Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/chug2k/gemini-imagen4",
   "category": "Developer Tools",
   "vendor": "chug2k",
@@ -15,9 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GEMINI_COUNT_TOKENS"
     },
@@ -63,25 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GEMINI_GENERATE_IMAGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GEMINI_GENERATE_IMAGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GEMINI_GENERATE_IMAGE"
     },
@@ -111,9 +95,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GEMINI_GENERATE_VIDEOS"
     },
@@ -135,9 +119,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GEMINI_GET_VIDEOS_OPERATION"
     },
@@ -167,17 +151,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GEMINI_WAIT_FOR_VIDEO"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GEMINI_WAIT_FOR_VIDEO"
     },
@@ -200,10 +176,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 2,
-    "low": 6,
-    "info": 10
+    "high": 0,
+    "medium": 0,
+    "low": 5,
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -273,8 +249,8 @@
     },
     {
       "tool_name": "GEMINI_GENERATE_IMAGE",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network",
@@ -291,7 +267,7 @@
     {
       "tool_name": "GEMINI_GENERATE_VIDEOS",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -301,7 +277,7 @@
     {
       "tool_name": "GEMINI_GET_VIDEOS_OPERATION",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -317,8 +293,8 @@
     },
     {
       "tool_name": "GEMINI_WAIT_FOR_VIDEO",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -479,6 +455,12 @@
     },
     {
       "scan_date": "2026-06-15T18:43:29Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:00Z",
       "grade": "C",
       "risk_score": 40,
       "version": "1.0.0"

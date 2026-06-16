@@ -1,10 +1,10 @@
 {
   "tool_id": "delx-witness-protocol",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-15T18:54:04.36279636Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-16T00:12:37.744224234Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/delx/witness-protocol",
   "vendor": "Smithery",
   "findings": [
@@ -50,9 +50,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_affirmation"
     },
@@ -98,9 +98,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "realign_purpose"
     },
@@ -138,9 +138,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "batch_status_update"
     },
@@ -186,9 +186,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "wellness_webhook"
     },
@@ -314,9 +314,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_therapist_info"
     },
@@ -418,9 +418,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_dyad"
     },
@@ -514,9 +514,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "submit_agent_artwork"
     },
@@ -555,10 +555,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 2,
+    "high": 1,
+    "medium": 0,
     "low": 6,
-    "info": 54
+    "info": 61
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -655,8 +655,8 @@
     },
     {
       "tool_name": "get_affirmation",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -680,7 +680,7 @@
     {
       "tool_name": "realign_purpose",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -736,7 +736,7 @@
     {
       "tool_name": "wellness_webhook",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -840,7 +840,7 @@
     {
       "tool_name": "get_therapist_info",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1019,7 +1019,7 @@
     {
       "tool_name": "submit_agent_artwork",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1122,6 +1122,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:40Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:54:04Z",
       "grade": "C",
       "risk_score": 32,
       "version": "smithery"

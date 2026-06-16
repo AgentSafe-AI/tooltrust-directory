@@ -1,11 +1,11 @@
-# 🟡 kbsooo-mcp-atom-of-thoughts
+# 🟢 kbsooo-mcp-atom-of-thoughts
 
 > Atom of Thoughts (AoT) MCP is a server that decomposes complex problems into independent atomic units of thought, using the dependencies between these units to deliver more robust reasoning and validated insights.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | kbsooo |
 | **Stars** | ⭐ 56 |
@@ -13,7 +13,7 @@
 | **Language** | JavaScript |
 | **Source** | [kbsooo-mcp-atom-of-thoughts](https://github.com/kbsooo/MCP_Atom_of_Thoughts) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -22,10 +22,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
@@ -53,12 +53,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares exec permission
+declared capabilities: code/command execution
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

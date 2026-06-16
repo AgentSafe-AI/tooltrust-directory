@@ -1,10 +1,10 @@
 {
   "tool_id": "tponscr-debug-oracle-h",
   "version": "0.1.0",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-15T20:32:01.320555371Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-16T00:08:59.638446683Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/tponscr-debug/oracle-h",
   "category": "Developer Tools",
   "vendor": "tponscr-debug",
@@ -13,31 +13,10 @@
   "description": "Human-on-the-Loop validation service for autonomous AI agents — MCP + Telegram + Next.js dashboard",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.0: 5 tool(s) added, 2 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get_market_schedule",
-          "get_market_status",
-          "get_payment_options",
-          "list_exchanges",
-          "verify_receipt"
-        ],
-        "removed": [
-          "oracle_poll_status",
-          "oracle_validate"
-        ],
-        "version": "0.1.0"
-      }
-    },
-    {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_market_status"
     },
@@ -67,9 +46,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_market_schedule"
     },
@@ -99,9 +78,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_exchanges"
     },
@@ -115,9 +94,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "verify_receipt"
     },
@@ -148,10 +127,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 1,
+    "high": 2,
+    "medium": 0,
     "low": 3,
-    "info": 5
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -181,8 +160,8 @@
   "tool_contexts": [
     {
       "tool_name": "get_market_status",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -194,8 +173,8 @@
     },
     {
       "tool_name": "get_market_schedule",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -215,7 +194,7 @@
     {
       "tool_name": "verify_receipt",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -238,6 +217,12 @@
       "scan_date": "2026-06-15T18:54:11Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:01Z",
+      "grade": "C",
+      "risk_score": 32,
       "version": "0.1.0"
     }
   ]

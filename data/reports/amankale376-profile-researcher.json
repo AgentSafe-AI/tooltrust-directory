@@ -1,10 +1,10 @@
 {
   "tool_id": "amankale376-profile-researcher",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:26:02.578222177Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:03:14.421372353Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/amankale376/profile-researcher",
   "category": "Developer Tools",
   "vendor": "amankale376",
@@ -14,17 +14,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "social_lookup_profile"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "social_lookup_profile"
     },
@@ -47,10 +39,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -76,8 +68,8 @@
   "tool_contexts": [
     {
       "tool_name": "social_lookup_profile",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -266,6 +258,12 @@
     },
     {
       "scan_date": "2026-06-15T18:43:45Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:02Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

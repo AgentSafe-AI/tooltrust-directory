@@ -1,16 +1,16 @@
-# 🟡 info-rpjo-tvr-mcp
+# 🟢 info-rpjo-tvr-mcp
 
 > Cryptocurrency fundamental analysis tools via MCP. Provides educational scoring and valuation data to help users conduct their own research. TVR's scoring model evaluates cryptocurrencies across 8 fundamental metrics rooted in Sound Value principles, producing TVR Scores (0-100), TVR Estimated Values, and Valuation Categories. 6 free tools and 5 premium tools are available. Coverage is expanding regularly. All outputs are model-derived assessments for informational purposes only.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-rpjo-tvr-mcp](https://smithery.ai/server/info-rpjo/tvr-mcp) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
-| Medium   | 1 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 1 |
-| Info     | 11 |
+| Info     | 13 |
 
 ## Detailed Findings
 
@@ -122,12 +122,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -158,12 +158,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

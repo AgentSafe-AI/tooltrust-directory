@@ -1,10 +1,10 @@
 {
   "tool_id": "imviky-zzzr-tickerr-live-status",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:32:20.027741951Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:47.304320204Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/imviky-zzzr/tickerr-live-status",
   "vendor": "Smithery",
   "description": "Real-time status, pricing, and inference latency for 90+ AI tools. Agent-reported failure signals with live fallback routing. No auth required. ",
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_api_pricing"
     },
@@ -99,9 +99,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_model_performance"
     },
@@ -132,10 +132,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 11
+    "low": 2,
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -177,7 +177,7 @@
     {
       "tool_name": "get_api_pricing",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -512,6 +512,12 @@
       "scan_date": "2026-06-13T02:46:26Z",
       "grade": "C",
       "risk_score": 30,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:20Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]

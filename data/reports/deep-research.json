@@ -1,10 +1,10 @@
 {
   "tool_id": "deep-research",
   "version": "0.11.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:13:30.893516489Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:46:23.754428632Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/u14app/deep-research",
   "category": "Developer Tools",
   "vendor": "u14app",
@@ -16,28 +16,10 @@
   "description": "Use any LLMs (Large Language Models) for Deep Research. Support SSE API and MCP server.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.11.0: 1 tool(s) added, 3 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "deep-research"
-        ],
-        "removed": [
-          "deep_research",
-          "reason",
-          "search"
-        ],
-        "version": "0.11.0"
-      }
-    },
-    {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "deep-research"
     },
@@ -60,10 +42,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -73,7 +55,7 @@
     {
       "tool_name": "deep-research",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -567,6 +549,12 @@
     },
     {
       "scan_date": "2026-06-15T02:56:25Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.11.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:13:30Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.11.0"

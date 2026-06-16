@@ -5,7 +5,7 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 8 |
+| **Risk Score** | 0 |
 | **Version** | `2.0.0` |
 | **Vendor** | Jpisnice |
 | **Stars** | ⭐ 2799 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -24,9 +24,9 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 1 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 10 |
+| Info     | 11 |
 
 ## Detailed Findings
 
@@ -78,12 +78,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

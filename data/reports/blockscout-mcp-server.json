@@ -1,10 +1,10 @@
 {
   "tool_id": "blockscout-mcp-server",
   "version": "0.15.0",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-15T20:20:26.676990934Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-15T23:57:22.377097872Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/blockscout/mcp-server",
   "category": "Developer Tools",
   "vendor": "blockscout",
@@ -55,9 +55,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "inspect_contract_code"
     },
@@ -135,9 +135,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "read_contract"
     },
@@ -167,9 +167,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "direct_api_call"
     },
@@ -192,10 +192,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
+    "high": 1,
+    "medium": 0,
     "low": 2,
-    "info": 16
+    "info": 19
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -317,8 +317,8 @@
     },
     {
       "tool_name": "read_contract",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -328,7 +328,7 @@
     {
       "tool_name": "direct_api_call",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -795,6 +795,12 @@
     },
     {
       "scan_date": "2026-06-15T18:36:43Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "0.15.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:20:26Z",
       "grade": "C",
       "risk_score": 32,
       "version": "0.15.0"

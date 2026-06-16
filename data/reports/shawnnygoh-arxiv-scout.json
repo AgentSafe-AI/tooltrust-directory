@@ -1,27 +1,19 @@
 {
   "tool_id": "shawnnygoh-arxiv-scout",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:32:19.273970164Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:51.953573735Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/shawnnygoh/arxiv-scout",
   "vendor": "Smithery",
   "description": "Search and retrieve academic papers directly from arXiv with advanced query capabilities. Extract full text from PDFs to generate summaries, literature reviews, and side-by-side comparisons. Track citations and references to discover related research and map out academic trends.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "arxiv_search_papers"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "arxiv_search_papers"
     },
@@ -43,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "arxiv_get_paper"
     },
@@ -75,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "arxiv_download_and_extract"
     },
@@ -132,10 +124,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 8
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -151,8 +143,8 @@
   "tool_contexts": [
     {
       "tool_name": "arxiv_search_papers",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -166,7 +158,7 @@
     {
       "tool_name": "arxiv_get_paper",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -186,7 +178,7 @@
     {
       "tool_name": "arxiv_download_and_extract",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -375,6 +367,12 @@
     },
     {
       "scan_date": "2026-06-15T18:54:28Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:19Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

@@ -5,12 +5,12 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 8 |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [astein91-stacksherpa-remote](https://smithery.ai/server/astein91/stacksherpa-remote) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -20,18 +20,18 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 1 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

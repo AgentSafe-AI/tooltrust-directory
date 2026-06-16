@@ -1,10 +1,10 @@
 {
   "tool_id": "cyanheads-nws-weather-mcp-server",
   "version": "0.6.2",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:27:08.013076385Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:05:36.456254899Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/cyanheads/nws-weather-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
@@ -17,9 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "nws_get_forecast"
     },
@@ -41,9 +41,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "nws_search_alerts"
     },
@@ -65,9 +65,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "nws_get_observations"
     },
@@ -106,10 +106,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
-    "low": 4,
-    "info": 5
+    "low": 3,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -123,7 +123,7 @@
     {
       "tool_name": "nws_get_forecast",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -136,7 +136,7 @@
     {
       "tool_name": "nws_search_alerts",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -227,6 +227,12 @@
       "scan_date": "2026-06-15T18:47:44Z",
       "grade": "C",
       "risk_score": 32,
+      "version": "0.6.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:08Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "0.6.2"
     }
   ]

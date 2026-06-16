@@ -1,10 +1,10 @@
 {
   "tool_id": "jojo699-google-extractor",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:27:03.556339714Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:04:48.434403458Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/jojo699/google-extractor",
   "category": "Developer Tools",
   "vendor": "jojo699",
@@ -15,17 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
     },
@@ -47,9 +39,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
     },
@@ -71,9 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
     },
@@ -95,9 +87,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
     },
@@ -119,9 +111,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
     },
@@ -143,17 +135,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     },
@@ -176,10 +160,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 6,
-    "info": 6
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -193,8 +177,8 @@
   "tool_contexts": [
     {
       "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -210,7 +194,7 @@
     {
       "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -226,7 +210,7 @@
     {
       "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -240,7 +224,7 @@
     {
       "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -250,7 +234,7 @@
     {
       "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -263,8 +247,8 @@
     },
     {
       "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -449,6 +433,12 @@
     },
     {
       "scan_date": "2026-06-15T18:45:59Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:03Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

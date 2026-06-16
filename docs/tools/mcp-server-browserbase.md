@@ -1,11 +1,11 @@
-# 🟡 mcp-server-browserbase
+# 🟢 mcp-server-browserbase
 
 > Allow LLMs to control a browser with Browserbase and Stagehand
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | browserbase |
 | **Stars** | ⭐ 3373 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 6 |
+| Info     | 7 |
 
 ## Detailed Findings
 
@@ -35,7 +35,7 @@
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -47,19 +47,19 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -83,7 +83,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -95,7 +95,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -107,7 +107,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -119,7 +119,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.

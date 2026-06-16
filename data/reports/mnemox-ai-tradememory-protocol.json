@@ -1,10 +1,10 @@
 {
   "tool_id": "mnemox-ai-tradememory-protocol",
   "version": "0.5.1",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:15:00.421595738Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:49:07.981523529Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/mnemox-ai/tradememory-protocol",
   "category": "Developer Tools",
   "vendor": "mnemox-ai",
@@ -15,17 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "store_trade_memory"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "store_trade_memory"
     },
@@ -71,9 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "remember_trade"
     },
@@ -95,9 +87,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "recall_memories"
     },
@@ -127,9 +119,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_trading_plan"
     },
@@ -151,9 +143,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "evolution_fetch_market_data"
     },
@@ -199,9 +191,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "evolution_get_log"
     },
@@ -224,10 +216,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 4,
-    "low": 5,
-    "info": 15
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -250,8 +242,8 @@
   "tool_contexts": [
     {
       "tool_name": "store_trade_memory",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -282,7 +274,7 @@
     {
       "tool_name": "remember_trade",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -331,7 +323,7 @@
     {
       "tool_name": "evolution_fetch_market_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -529,6 +521,12 @@
     },
     {
       "scan_date": "2026-06-15T18:29:44Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.5.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:15:00Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.5.1"

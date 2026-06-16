@@ -1,10 +1,10 @@
 {
   "tool_id": "docfork-mcp",
   "version": "2.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:16:11.825216698Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:51:33.482584023Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/docfork/docfork",
   "category": "Developer Tools",
   "vendor": "docfork",
@@ -17,17 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "docfork_search_docs"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "docfork_search_docs"
     },
@@ -57,17 +49,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "docfork_read_url"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "docfork_read_url"
     },
@@ -90,10 +74,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -127,8 +111,8 @@
   "tool_contexts": [
     {
       "tool_name": "docfork_search_docs",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -143,8 +127,8 @@
     },
     {
       "tool_name": "docfork_read_url",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -315,6 +299,12 @@
     },
     {
       "scan_date": "2026-06-15T18:30:57Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "2.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:16:11Z",
       "grade": "C",
       "risk_score": 25,
       "version": "2.1.0"

@@ -1,0 +1,153 @@
+{
+  "tool_id": "servers",
+  "version": "typescript-servers-0.6.2",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:43:40Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/modelcontextprotocol/servers",
+  "category": "Developer Tools",
+  "vendor": "modelcontextprotocol",
+  "stars": 87277,
+  "npm_package": "@modelcontextprotocol/servers",
+  "license": "NOASSERTION",
+  "language": "TypeScript",
+  "description": "Model Context Protocol Servers",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/everything/server/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 46,
+            "snippet": "new McpServer(",
+            "file": "src/everything/server/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/filesystem/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 163,
+            "snippet": "new McpServer(",
+            "file": "src/filesystem/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 213,
+            "snippet": ".registerTool(",
+            "file": "src/filesystem/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/memory/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 256,
+            "snippet": "new McpServer(",
+            "file": "src/memory/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 262,
+            "snippet": ".registerTool(",
+            "file": "src/memory/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/everything/server/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 46,
+      "snippet": "new McpServer(",
+      "file": "src/everything/server/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/filesystem/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 163,
+      "snippet": "new McpServer(",
+      "file": "src/filesystem/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 213,
+      "snippet": ".registerTool(",
+      "file": "src/filesystem/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/memory/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 256,
+      "snippet": "new McpServer(",
+      "file": "src/memory/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 262,
+      "snippet": ".registerTool(",
+      "file": "src/memory/index.ts",
+      "language": "typescript"
+    }
+  ]
+}

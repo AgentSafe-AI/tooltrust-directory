@@ -5,15 +5,16 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 8 |
+| **Risk Score** | 0 |
 | **Version** | `1.6.5` |
 | **Vendor** | recraft-ai |
 | **Stars** | ⭐ 53 |
 | **npm Package** | `@recraft-ai/mcp-recraft-server` |
+| **npm Downloads (30d)** | 984 |
 | **Language** | TypeScript |
 | **Source** | [recraft-ai-mcp-recraft-server](https://github.com/recraft-ai/mcp-recraft-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -23,9 +24,9 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 2 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 9 |
+| Info     | 11 |
 
 ## Detailed Findings
 
@@ -41,12 +42,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -89,12 +90,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

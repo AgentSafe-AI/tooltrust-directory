@@ -1,11 +1,11 @@
-# 🟡 linxule-mcp-music-studio
+# 🟢 linxule-mcp-music-studio
 
 > Two-mode MCP music studio: scored composition (ABC notation) and live performance (Strudel). Interactive ext-apps UI with sheet music rendering, 30+ instruments, style presets, and live coding REPL.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | linxule |
 | **Stars** | ⭐ 54 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [linxule-mcp-music-studio](https://github.com/linxule/mcp-music-studio) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 5 |
+| Info     | 6 |
 
 ## Detailed Findings
 
@@ -78,12 +78,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

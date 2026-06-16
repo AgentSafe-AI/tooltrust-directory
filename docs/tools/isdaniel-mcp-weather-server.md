@@ -12,7 +12,7 @@
 | **Language** | Python |
 | **Source** | [isdaniel-mcp-weather-server](https://github.com/isdaniel/mcp_weather_server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 

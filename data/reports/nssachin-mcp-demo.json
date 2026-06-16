@@ -1,10 +1,10 @@
 {
   "tool_id": "nssachin-mcp-demo",
   "version": "1.0.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-15T20:33:19Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:43.525213372Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/nssachin/mcp-demo",
   "category": "Developer Tools",
   "vendor": "nssachin",
@@ -13,40 +13,38 @@
   "description": "Hello world on mcp server ",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 14,
-            "snippet": "new McpServer(",
-            "file": "index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "getAnalysisMarkdown"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "getAnalysisMarkdown"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getAnalysisMarkdown"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -64,12 +62,22 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "getAnalysisMarkdown"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-15T18:52:39Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
+      "tool_name": "getAnalysisMarkdown",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (hostname)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

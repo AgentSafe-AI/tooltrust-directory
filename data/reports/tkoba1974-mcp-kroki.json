@@ -1,10 +1,10 @@
 {
   "tool_id": "tkoba1974-mcp-kroki",
   "version": "1.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:23:36.892417677Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:00:57.104360306Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/tkoba1974/mcp-kroki",
   "category": "Developer Tools",
   "vendor": "tkoba1974",
@@ -17,9 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_diagram_url"
     },
@@ -41,17 +41,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "download_diagram"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "download_diagram"
     },
@@ -74,10 +66,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -88,7 +80,7 @@
     {
       "tool_name": "generate_diagram_url",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -100,8 +92,8 @@
     },
     {
       "tool_name": "download_diagram",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -239,6 +231,12 @@
       "scan_date": "2026-06-15T18:40:34Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:23:36Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.1.0"
     }
   ]

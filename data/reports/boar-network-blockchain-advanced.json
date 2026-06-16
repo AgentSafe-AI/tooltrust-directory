@@ -1,19 +1,19 @@
 {
   "tool_id": "boar-network-blockchain-advanced",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:31:29.181394652Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:17.114187851Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/boar-network/blockchain-advanced",
   "vendor": "Smithery",
   "description": "Free, keyless MCP server with 50 read-only blockchain tools for Bitcoin, Ethereum, and Mezo. No installation, no API key required - just add the URL to your MCP client and start querying balances, transactions, blocks, ENS names, ERC-20 tokens, smart contracts, and more. Runs on Cloudflare's global edge network via Streamable HTTP. All tools are strictly read-only and stateless.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "eth_call"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mezo_call"
     },
@@ -148,10 +148,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 13
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -173,7 +173,7 @@
     {
       "tool_name": "eth_call",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -186,7 +186,7 @@
     {
       "tool_name": "mezo_call",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -421,6 +421,12 @@
     },
     {
       "scan_date": "2026-06-15T18:53:39Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:31:29Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

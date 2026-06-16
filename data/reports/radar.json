@@ -1,10 +1,10 @@
 {
   "tool_id": "radar",
   "version": "1.7.8",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:14:16.510789539Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-15T23:47:29.508551943Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/skyhook-io/radar",
   "category": "Developer Tools",
   "vendor": "skyhook-io",
@@ -13,246 +13,6 @@
   "language": "Go",
   "description": "The missing open source Kubernetes UI. Topology, event timeline, and service traffic — plus resource browsing and Helm management.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.7.8: 68 tool(s) added, 158 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "accounts_list",
-          "create_url_scan",
-          "get_ai_data",
-          "get_annotations",
-          "get_as112_data",
-          "get_as_details",
-          "get_as_relationships",
-          "get_as_set",
-          "get_bgp_hijacks",
-          "get_bgp_ip_space_timeseries",
-          "get_bgp_leaks",
-          "get_bgp_moas",
-          "get_bgp_pfx2as",
-          "get_bgp_route_stats",
-          "get_bgp_routes_realtime",
-          "get_bgp_routing_table_ases",
-          "get_bgp_rpki_aspa_changes",
-          "get_bgp_rpki_aspa_snapshot",
-          "get_bgp_rpki_aspa_timeseries",
-          "get_bgp_timeseries",
-          "get_bgp_top_ases",
-          "get_bgp_top_ases_by_prefixes",
-          "get_bgp_top_prefixes",
-          "get_bot_details",
-          "get_bots_crawlers_data",
-          "get_bots_data",
-          "get_certificate_transparency_data",
-          "get_ct_authority_details",
-          "get_ct_log_details",
-          "get_dns_queries_data",
-          "get_domain_rank_details",
-          "get_domains_ranking",
-          "get_domains_ranking_timeseries",
-          "get_email_routing_data",
-          "get_email_security_data",
-          "get_geolocation_details",
-          "get_http_data",
-          "get_internet_quality_data",
-          "get_internet_services_ranking",
-          "get_internet_services_timeseries",
-          "get_internet_speed_data",
-          "get_ip_details",
-          "get_l3_attack_data",
-          "get_l7_attack_data",
-          "get_leaked_credentials_data",
-          "get_netflows_data",
-          "get_origin_details",
-          "get_origins_data",
-          "get_outages",
-          "get_outages_by_location",
-          "get_robots_txt_data",
-          "get_speed_histogram",
-          "get_tcp_resets_timeouts_data",
-          "get_tld_details",
-          "get_traffic_anomalies",
-          "get_traffic_anomalies_by_location",
-          "get_url_scan",
-          "get_url_scan_har",
-          "get_url_scan_screenshot",
-          "list_autonomous_systems",
-          "list_bots",
-          "list_ct_authorities",
-          "list_ct_logs",
-          "list_geolocations",
-          "list_origins",
-          "list_tlds",
-          "search_url_scans",
-          "set_active_account"
-        ],
-        "removed": [
-          "account_get_digest",
-          "account_get_usage",
-          "account_set_preferences",
-          "admin_add_feed",
-          "admin_add_webhook",
-          "admin_answer_question",
-          "admin_approve_brief_draft",
-          "admin_clear_cache",
-          "admin_close_question",
-          "admin_complete_agent_session",
-          "admin_db_stats",
-          "admin_discover_sources",
-          "admin_export_snapshot",
-          "admin_get_admin_link",
-          "admin_get_budget_stats",
-          "admin_ingest_bulk",
-          "admin_ingest_text",
-          "admin_ingest_youtube_video",
-          "admin_list_pending_questions",
-          "admin_list_webhooks",
-          "admin_manage_lead",
-          "admin_publish_vdtv_capsule",
-          "admin_rebuild_vdtv",
-          "admin_remove_webhook",
-          "admin_send_alert",
-          "admin_send_daily_digest",
-          "admin_send_hunter_alert",
-          "admin_send_weekly_brief",
-          "admin_trigger",
-          "africa_compare_countries",
-          "africa_get_companies",
-          "africa_get_countries",
-          "africa_get_country_brief",
-          "africa_get_datapoints",
-          "africa_get_sources",
-          "africa_open_company_file",
-          "analytics_top_queries",
-          "analytics_usage_stats",
-          "ce_compare_countries",
-          "ce_get_companies",
-          "ce_get_countries",
-          "ce_get_datapoints",
-          "ce_get_sources",
-          "ce_open_company_file",
-          "get_asri_score",
-          "get_cac_benchmarks",
-          "get_chart_data",
-          "get_competitive_landscape",
-          "get_confidence_audit",
-          "get_country_profile",
-          "get_data_provenance",
-          "get_datapoint",
-          "get_datapoint_history",
-          "get_dcf_valuation",
-          "get_domain_intel",
-          "get_emerging_market_data",
-          "get_hit_autopsy",
-          "get_infographic",
-          "get_lead_pipeline",
-          "get_market_scenarios",
-          "get_pnl_model",
-          "get_report_digest",
-          "get_report_figure",
-          "get_report_figures",
-          "get_schema_info",
-          "get_sensitivity_analysis",
-          "get_site_analytics",
-          "get_unit_economics",
-          "intel_audit_domain_scores",
-          "intel_company_brief",
-          "intel_country_brief",
-          "intel_cross_report_compare",
-          "intel_detect_trends",
-          "list_infographics",
-          "piracy_compare_countries",
-          "piracy_get_companies",
-          "piracy_get_countries",
-          "piracy_get_datapoints",
-          "piracy_get_sources",
-          "piracy_open_company_file",
-          "proposals_list",
-          "proposals_submit",
-          "qa_answer",
-          "qa_ask",
-          "qa_list_questions",
-          "qa_respond",
-          "search_tools",
-          "signal_add",
-          "signal_bulk_promote",
-          "signal_get_for_harvester",
-          "signal_get_results",
-          "signal_health_audit",
-          "signal_list",
-          "signal_promote_result",
-          "signal_reject_result",
-          "signal_remove",
-          "signal_run",
-          "signal_update",
-          "sources_candidates_batch_reject",
-          "sources_candidates_list",
-          "sources_candidates_list_grouped",
-          "sources_candidates_reject",
-          "sources_candidates_validate",
-          "sources_update",
-          "sports_compare_countries",
-          "sports_get_companies",
-          "sports_get_countries",
-          "sports_get_datapoints",
-          "sports_get_sources",
-          "sports_open_company_file",
-          "sr_add_editorial_source",
-          "sr_add_note",
-          "sr_clear_notes",
-          "sr_deactivate_source",
-          "sr_extract_pdf",
-          "sr_get_article",
-          "sr_get_article_with_context",
-          "sr_get_articles",
-          "sr_get_cluster",
-          "sr_get_expert",
-          "sr_get_experts",
-          "sr_get_new_datapoints",
-          "sr_get_new_since",
-          "sr_get_note",
-          "sr_get_note_history",
-          "sr_get_radar_edition_sources",
-          "sr_get_rejection_context",
-          "sr_get_stats",
-          "sr_get_tags",
-          "sr_list_editorial_sources",
-          "sr_list_notes",
-          "sr_mark_source_used",
-          "sr_prepare_brief",
-          "sr_reject_note",
-          "sr_search_articles",
-          "sr_update_note",
-          "story_generate_bible",
-          "story_list_genres",
-          "story_list_markets",
-          "vi_compare_countries",
-          "vi_get_companies",
-          "vi_get_countries",
-          "vi_get_datapoints",
-          "vi_get_sources",
-          "vi_open_company_file",
-          "watch_add_source",
-          "watch_approve",
-          "watch_batch_approve",
-          "watch_batch_reject",
-          "watch_list_recent",
-          "watch_purge_rejected",
-          "watch_reject",
-          "watch_review_pending",
-          "watch_review_pending_grouped",
-          "yt_get_processed_ids",
-          "yt_keywords_manage",
-          "yt_mark_video_processed",
-          "yt_search_videos"
-        ],
-        "version": "1.7.8"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -327,9 +87,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_http_data"
     },
@@ -367,9 +127,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_l3_attack_data"
     },
@@ -495,9 +255,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_netflows_data"
     },
@@ -551,9 +311,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_robots_txt_data"
     },
@@ -575,17 +335,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_bots_crawlers_data"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_bots_crawlers_data"
     },
@@ -623,9 +375,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_leaked_credentials_data"
     },
@@ -655,9 +407,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_geolocations"
     },
@@ -687,9 +439,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_tcp_resets_timeouts_data"
     },
@@ -895,9 +647,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_bgp_top_ases_by_prefixes"
     },
@@ -951,17 +703,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_url_scans"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_url_scans"
     },
@@ -983,17 +727,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_url_scan"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_url_scan"
     },
@@ -1015,9 +751,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_url_scan"
     },
@@ -1039,9 +775,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_url_scan_screenshot"
     },
@@ -1063,9 +799,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_url_scan_har"
     },
@@ -1088,10 +824,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 14,
-    "medium": 3,
-    "low": 20,
-    "info": 68
+    "high": 0,
+    "medium": 0,
+    "low": 19,
+    "info": 82
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1238,7 +974,7 @@
     {
       "tool_name": "get_http_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1271,7 +1007,7 @@
     {
       "tool_name": "get_l3_attack_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1369,7 +1105,7 @@
     {
       "tool_name": "get_netflows_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1407,7 +1143,7 @@
     {
       "tool_name": "get_robots_txt_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "reads_files"
       ],
@@ -1421,7 +1157,7 @@
     {
       "tool_name": "get_bots_crawlers_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1451,7 +1187,7 @@
     {
       "tool_name": "get_leaked_credentials_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1471,7 +1207,7 @@
     {
       "tool_name": "list_geolocations",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1488,7 +1224,7 @@
     {
       "tool_name": "get_tcp_resets_timeouts_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1662,7 +1398,7 @@
     {
       "tool_name": "get_bgp_top_ases_by_prefixes",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1700,8 +1436,8 @@
     },
     {
       "tool_name": "search_url_scans",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1716,8 +1452,8 @@
     },
     {
       "tool_name": "create_url_scan",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -1733,7 +1469,7 @@
     {
       "tool_name": "get_url_scan",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1743,7 +1479,7 @@
     {
       "tool_name": "get_url_scan_screenshot",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1753,7 +1489,7 @@
     {
       "tool_name": "get_url_scan_har",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1868,6 +1604,12 @@
       "scan_date": "2026-06-14T02:53:16Z",
       "grade": "C",
       "risk_score": 48,
+      "version": "1.7.8"
+    },
+    {
+      "scan_date": "2026-06-15T20:14:16Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.7.8"
     }
   ]

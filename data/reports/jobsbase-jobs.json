@@ -1,19 +1,19 @@
 {
   "tool_id": "jobsbase-jobs",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T20:32:25.423452577Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-16T00:12:50.183576167Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/jobsbase/jobs",
   "vendor": "Smithery",
   "description": "Builder roles like founding engineers, solo builders, and \"0 to 1\" positions are scattered across dozens of job boards with no way to filter for them specifically. [jobsbase.io](https://jobsbase.io) is a curated job board that only surfaces these roles. Search by location, salary, seniority, workplace model, visa sponsorship, and 15+ other filters. No API key needed.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_jobs"
     },
@@ -60,10 +60,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 3
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -75,7 +75,7 @@
     {
       "tool_name": "search_jobs",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -220,6 +220,12 @@
     },
     {
       "scan_date": "2026-06-15T18:54:40Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:25Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

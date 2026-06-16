@@ -1,10 +1,10 @@
 {
   "tool_id": "shin902-mcp-video-understanding",
   "version": "1.1.2",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:27:38.815521607Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:04:47.15322885Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/shin902/mcp-video-understanding",
   "category": "Developer Tools",
   "vendor": "shin902",
@@ -15,9 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "summarize_video"
     },
@@ -39,9 +39,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "summarize_video_with_config"
     },
@@ -63,9 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "summarize_by_chapter"
     },
@@ -87,17 +87,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_summary_task"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_summary_task"
     },
@@ -127,9 +119,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_subtitle"
     },
@@ -152,10 +144,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 5,
-    "info": 6
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -170,7 +162,7 @@
     {
       "tool_name": "summarize_video",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -184,7 +176,7 @@
     {
       "tool_name": "summarize_video_with_config",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -198,7 +190,7 @@
     {
       "tool_name": "summarize_by_chapter",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -211,8 +203,8 @@
     },
     {
       "tool_name": "create_summary_task",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -234,7 +226,7 @@
     {
       "tool_name": "get_subtitle",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -400,6 +392,12 @@
     },
     {
       "scan_date": "2026-06-15T18:45:19Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.1.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:38Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.1.2"

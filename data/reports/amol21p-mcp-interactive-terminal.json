@@ -1,10 +1,10 @@
 {
   "tool_id": "amol21p-mcp-interactive-terminal",
   "version": "1.0.9",
-  "grade": "C",
-  "risk_score": 41,
-  "scan_date": "2026-06-15T20:23:04.44979018Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-16T00:00:08.925059372Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/amol21p/mcp-interactive-terminal",
   "category": "Developer Tools",
   "vendor": "amol21p",
@@ -17,33 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_session"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_session"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_session"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares env permission",
+      "description": "declared capabilities: code/command execution, filesystem access, database access, environment variables",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_session"
     },
@@ -73,9 +49,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "read_output"
     },
@@ -105,9 +81,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_sessions"
     },
@@ -137,9 +113,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "close_session"
     },
@@ -169,9 +145,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "confirm_dangerous_command"
     },
@@ -194,10 +170,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 3,
+    "high": 2,
+    "medium": 0,
     "low": 5,
-    "info": 7
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -229,8 +205,8 @@
   "tool_contexts": [
     {
       "tool_name": "create_session",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "reads_env",
@@ -251,8 +227,8 @@
     },
     {
       "tool_name": "read_output",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -261,8 +237,8 @@
     },
     {
       "tool_name": "list_sessions",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -272,7 +248,7 @@
     {
       "tool_name": "close_session",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -289,7 +265,7 @@
     {
       "tool_name": "confirm_dangerous_command",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -392,6 +368,12 @@
       "scan_date": "2026-06-15T18:39:53Z",
       "grade": "D",
       "risk_score": 56,
+      "version": "1.0.9"
+    },
+    {
+      "scan_date": "2026-06-15T20:23:04Z",
+      "grade": "C",
+      "risk_score": 41,
       "version": "1.0.9"
     }
   ]

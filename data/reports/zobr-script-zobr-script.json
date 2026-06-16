@@ -2,18 +2,18 @@
   "tool_id": "zobr-script-zobr-script",
   "version": "smithery",
   "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-06-15T18:52:28.267725032Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "risk_score": 27,
+  "scan_date": "2026-06-16T00:11:36.016250481Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/zobr-script/zobr-script",
   "vendor": "Smithery",
   "description": "ZS (Zobr Script) — cognitive scripting language for structured reasoning with LLMs. Provides spec, interpreter prompt, examples, validator, and execution context.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "zs_execute"
     },
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "zs_validate"
     },
@@ -100,10 +100,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 6
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -125,7 +125,7 @@
     {
       "tool_name": "zs_validate",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -491,6 +491,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:27Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:52:28Z",
       "grade": "C",
       "risk_score": 42,
       "version": "smithery"

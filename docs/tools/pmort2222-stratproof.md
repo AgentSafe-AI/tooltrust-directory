@@ -1,16 +1,16 @@
-# 🟡 pmort2222-stratproof
+# 🟢 pmort2222-stratproof
 
 > StratProof runs honest backtests: real fees, real slippage, walk-forward validation. Six public tools, no OAuth. Call prove_strategy to test any strategy description ("Buy ETH when RSI(7) below 25, exit on 1.5% gain") and get a CONFIRMED / MIXED / DEBUNKED verdict with diagnosis. Call get_live_proof to see how our adaptive engine is actually performing in paper trading right now. Data sources: Binance spot (3 years), aggregated research output from 7,000+ tested candidates.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [pmort2222-stratproof](https://smithery.ai/server/pmort2222/stratproof) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 6 |
+| Info     | 7 |
 
 ## Detailed Findings
 
@@ -50,12 +50,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

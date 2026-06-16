@@ -1,10 +1,10 @@
 {
   "tool_id": "mikechao-artic-mcp",
   "version": "0.9.5",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:26:21.373067571Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:03:37.085494161Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/mikechao/artic-mcp",
   "category": "Developer Tools",
   "vendor": "mikechao",
@@ -17,9 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search-by-title"
     },
@@ -49,17 +49,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "full-text-search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "full-text-search"
     },
@@ -81,9 +73,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search-for-artist"
     },
@@ -114,10 +106,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 5
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -131,7 +123,7 @@
     {
       "tool_name": "search-by-title",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -147,8 +139,8 @@
     },
     {
       "tool_name": "full-text-search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -158,7 +150,7 @@
     {
       "tool_name": "search-for-artist",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -308,6 +300,12 @@
     },
     {
       "scan_date": "2026-06-15T18:44:28Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.9.5"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:21Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.9.5"

@@ -1,81 +1,14 @@
 {
   "tool_id": "aigen-defi-data",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-15T20:29:52.576496593Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:37.51036165Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/aigen/defi-data",
   "vendor": "Smithery",
   "description": "DeFi data for AI agents. Real-time yields, gas prices, token prices, TVL. 6 EVM chains.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 37 tool(s) added, 16 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "agent_register",
-          "agent_reputation",
-          "aigen_manifesto",
-          "aigen_rewards",
-          "build_guide",
-          "chat_post",
-          "chat_read",
-          "check_approval_safety",
-          "check_before_buy",
-          "check_token_safety",
-          "check_wallet_risk",
-          "create_agent_token",
-          "discover_services",
-          "explore",
-          "free_build",
-          "get_chain_info",
-          "get_defi_tvl",
-          "get_defi_yields",
-          "get_eth_balance",
-          "get_gas_prices",
-          "get_market_overview",
-          "get_new_tokens",
-          "get_portfolio",
-          "get_token_price",
-          "get_trending_tokens",
-          "leaderboard",
-          "ping",
-          "propose_task",
-          "register_service",
-          "resolve_ens",
-          "search_token",
-          "shield",
-          "simulate_swap",
-          "submit_contribution",
-          "task_board",
-          "test_honeypot",
-          "verify_agent"
-        ],
-        "removed": [
-          "get-latest-graduated-tokens",
-          "get-mcp-config",
-          "get-token-ath",
-          "get-token-by-pool",
-          "get-token-history",
-          "get-token-history-range",
-          "get-token-holders",
-          "get-token-marketdata",
-          "get-token-metadata",
-          "get-token-performance",
-          "get-token-price",
-          "get-tokens-by-deployer",
-          "get-trending-tokens",
-          "get-wallet-holdings",
-          "get-wallet-token-pnl",
-          "search-tokens"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-010",
       "severity": "Info",
@@ -198,17 +131,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_token"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_token"
     },
@@ -246,9 +171,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_agent_token"
     },
@@ -270,9 +195,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "simulate_swap"
     },
@@ -280,7 +205,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_in\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_out\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "simulate_swap"
     },
@@ -288,7 +213,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_out\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_in\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "simulate_swap"
     },
@@ -342,25 +267,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "submit_contribution"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "submit_contribution"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "submit_contribution"
     },
@@ -398,17 +307,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "agent_register"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "agent_register"
     },
@@ -478,17 +379,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "register_service"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "register_service"
     },
@@ -526,9 +419,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "propose_task"
     },
@@ -559,10 +452,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 9,
-    "medium": 4,
+    "high": 0,
+    "medium": 0,
     "low": 6,
-    "info": 42
+    "info": 49
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -710,8 +603,8 @@
     },
     {
       "tool_name": "search_token",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -748,7 +641,7 @@
     {
       "tool_name": "simulate_swap",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -789,8 +682,8 @@
     },
     {
       "tool_name": "submit_contribution",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network",
@@ -818,8 +711,8 @@
     },
     {
       "tool_name": "agent_register",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -874,8 +767,8 @@
     },
     {
       "tool_name": "register_service",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -906,7 +799,7 @@
     {
       "tool_name": "propose_task",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1196,6 +1089,12 @@
       "scan_date": "2026-06-15T18:52:33Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:52Z",
+      "grade": "C",
+      "risk_score": 40,
       "version": "smithery"
     }
   ]

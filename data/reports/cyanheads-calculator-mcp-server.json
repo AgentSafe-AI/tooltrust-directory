@@ -1,24 +1,25 @@
 {
   "tool_id": "cyanheads-calculator-mcp-server",
-  "version": "0.3.2",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:27:33.994991141Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "version": "0.3.4",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-16T00:05:07.022720174Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/cyanheads/calculator-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 1,
   "npm_package": "@cyanheads/calculator-mcp-server",
+  "npm_downloads_monthly": 1897,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A calculator MCP server that lets any LLM verify mathematical computations. Evaluate, simplify, and differentiate expressions via a single tool. Powered by math.js v15.",
   "findings": [
     {
       "id": "AS-006",
-      "severity": "Critical",
+      "severity": "Info",
       "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "description": "tool name or description implies arbitrary script/code execution — capability unconfirmed (no exec permission or code/script/eval input property found)",
       "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "calculate"
     },
@@ -32,11 +33,11 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -45,8 +46,8 @@
   "tool_contexts": [
     {
       "tool_name": "calculate",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
@@ -200,6 +201,12 @@
       "scan_date": "2026-06-15T18:45:42Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "0.3.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:33Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "0.3.2"
     }
   ]

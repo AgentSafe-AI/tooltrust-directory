@@ -1,10 +1,10 @@
 {
   "tool_id": "yrannkv-mcp-edit-math",
   "version": "sha-c8f124f7d3da",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:28:33.029840944Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:09:19.964032167Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/yrannkv/mcp-edit-math",
   "category": "Developer Tools",
   "vendor": "yrannkv",
@@ -12,46 +12,10 @@
   "language": "Python",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-c8f124f7d3da: 17 tool(s) added, 5 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "calculate",
-          "compound_interest",
-          "convert_units",
-          "create_histogram",
-          "load_variable",
-          "matrix_determinant",
-          "matrix_eigenvalues",
-          "matrix_inverse",
-          "matrix_multiply",
-          "matrix_transpose",
-          "plot_box_plot",
-          "plot_financial_line",
-          "plot_function",
-          "plot_line_chart",
-          "plot_scatter_chart",
-          "save_calculation",
-          "statistics"
-        ],
-        "removed": [
-          "edit_image",
-          "get_balance",
-          "get_pricing",
-          "make_qr_silhouette",
-          "optimize_prompt"
-        ],
-        "version": "sha-c8f124f7d3da"
-      }
-    },
-    {
       "id": "AS-006",
-      "severity": "Critical",
+      "severity": "Info",
       "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "description": "tool name or description implies arbitrary script/code execution — capability unconfirmed (no exec permission or code/script/eval input property found)",
       "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "calculate"
     },
@@ -73,9 +37,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "compound_interest"
     },
@@ -145,9 +109,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "save_calculation"
     },
@@ -185,9 +149,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_histogram"
     },
@@ -233,11 +197,11 @@
     }
   ],
   "summary": {
-    "critical": 1,
-    "high": 1,
-    "medium": 1,
-    "low": 4,
-    "info": 17
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -285,8 +249,8 @@
   "tool_contexts": [
     {
       "tool_name": "calculate",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -462,6 +426,12 @@
       "scan_date": "2026-06-15T18:47:54Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "sha-c8f124f7d3da"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:33Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "sha-c8f124f7d3da"
     }
   ]

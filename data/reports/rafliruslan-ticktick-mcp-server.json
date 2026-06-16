@@ -1,10 +1,10 @@
 {
   "tool_id": "rafliruslan-ticktick-mcp-server",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-15T20:24:46.109070421Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-16T00:02:11.383438711Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/rafliruslan/ticktick-mcp-server",
   "category": "Developer Tools",
   "vendor": "rafliruslan",
@@ -24,9 +24,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_CREATE_PROJECT"
     },
@@ -40,9 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_CREATE_TASK"
     },
@@ -64,9 +64,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_DELETE_PROJECT"
     },
@@ -80,9 +80,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_DELETE_TASK"
     },
@@ -112,17 +112,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP1"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP1"
     },
@@ -144,17 +136,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1"
     },
@@ -184,9 +168,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_UPDATE_PROJECT"
     },
@@ -200,9 +184,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "TICKTICK_UPDATE_TASK"
     },
@@ -225,10 +209,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 8,
+    "high": 1,
+    "medium": 0,
     "low": 4,
-    "info": 11
+    "info": 19
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -268,7 +252,7 @@
     {
       "tool_name": "TICKTICK_CREATE_TASK",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -314,8 +298,8 @@
     },
     {
       "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP1",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -327,8 +311,8 @@
     },
     {
       "tool_name": "TICKTICK_OAUTH2_AUTHORIZATION_STEP_1",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -351,7 +335,7 @@
     {
       "tool_name": "TICKTICK_UPDATE_TASK",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (sortOrder)"
       ],
@@ -560,6 +544,12 @@
     },
     {
       "scan_date": "2026-06-15T18:42:15Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:24:46Z",
       "grade": "C",
       "risk_score": 40,
       "version": "1.0.0"

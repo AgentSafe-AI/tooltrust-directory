@@ -2,18 +2,18 @@
   "tool_id": "do-droid-seoul-essentials",
   "version": "smithery",
   "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-06-15T20:30:45.340241156Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:59.361026595Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/do-droid/seoul-essentials",
   "vendor": "Smithery",
   "description": "Locate public facilities across Seoul including pharmacies, restrooms, WiFi hotspots, and tourist information centers. Identify nearby services using geographic coordinates or specific district filters to find help quickly. Access subway timetables to navigate the city's transit network with ease.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_places"
     },
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_subway_timetable"
     },
@@ -69,9 +69,9 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 1,
-    "low": 2,
-    "info": 4
+    "medium": 0,
+    "low": 1,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -485,6 +485,12 @@
     },
     {
       "scan_date": "2026-06-15T18:53:11Z",
+      "grade": "A",
+      "risk_score": 8,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:30:45Z",
       "grade": "A",
       "risk_score": 8,
       "version": "smithery"

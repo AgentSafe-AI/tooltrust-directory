@@ -1,10 +1,10 @@
 {
   "tool_id": "mcp-server-tree-sitter",
   "version": "0.7.0",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-06-15T20:16:45.038298427Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "scan_date": "2026-06-15T23:52:11Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/wrale/mcp-server-tree-sitter",
   "category": "Developer Tools",
   "vendor": "wrale",
@@ -14,12 +14,28 @@
   "description": "MCP Server for Tree-sitter",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_falling_tree_risk"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 5,
+            "file": "src/mcp_server_tree_sitter/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 13,
+            "snippet": "FastMCP(",
+            "file": "src/mcp_server_tree_sitter/server.py",
+            "language": "python"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -30,6 +46,7 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -44,18 +61,6 @@
       "snippet": "FastMCP(",
       "file": "src/mcp_server_tree_sitter/server.py",
       "language": "python"
-    }
-  ],
-  "tool_names": [
-    "get_falling_tree_risk"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get_falling_tree_risk",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -133,6 +138,12 @@
     },
     {
       "scan_date": "2026-06-15T18:31:47Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.7.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:16:45Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.7.0"

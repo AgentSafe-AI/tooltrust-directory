@@ -1,11 +1,11 @@
-# 🟢 deepseek-mcp-server
+# 🟡 deepseek-mcp-server
 
 > Model Context Protocol server for DeepSeek's advanced language models
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `0.5.0` |
 | **Vendor** | DMontgomery40 |
 | **Stars** | ⭐ 342 |
@@ -14,7 +14,7 @@
 | **Language** | TypeScript |
 | **Source** | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -23,22 +23,22 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 2 |
+| Info     | 1 |
 
 ## Detailed Findings
 
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-input parameter "max_tokens" accepts a credential (informational; not evidence of insecure handling)
+Tool set changed silently at v0.5.0: 1 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 

@@ -1,19 +1,19 @@
 {
   "tool_id": "geertjan-xkcdforthat",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T18:54:18.876809824Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:41.244940608Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/geertjan/xkcdforthat",
   "vendor": "Smithery",
   "description": "Find the obligatory xkcd for whatever you're working on. Article, slide deck, memo, PDF, blog post. Plug it into your AI tool.  Your model searches our index of all xkcd comics annotated with applicability, humor type, and themes, picks the right one, and drops it inline. ",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pick_xkcd_for"
     },
@@ -35,17 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_comics"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_comics"
     },
@@ -67,9 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_comic"
     },
@@ -100,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 4
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -116,7 +108,7 @@
     {
       "tool_name": "pick_xkcd_for",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -128,8 +120,8 @@
     },
     {
       "tool_name": "search_comics",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -140,7 +132,7 @@
     {
       "tool_name": "get_comic",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -275,6 +267,12 @@
       "scan_date": "2026-06-15T03:02:42Z",
       "grade": "D",
       "risk_score": 55,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:54:18Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "smithery"
     }
   ]

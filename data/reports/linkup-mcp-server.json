@@ -1,19 +1,19 @@
 {
   "tool_id": "linkup-mcp-server",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T18:55:02.039620298Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:13:11.018423922Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/LinkupPlatform/linkup-mcp-server",
   "vendor": "Smithery",
   "description": "Linkup MCP server for real-time web search and content retrieval.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "linkup-search"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "linkup-fetch"
     },
@@ -60,10 +60,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -74,7 +74,7 @@
     {
       "tool_name": "linkup-search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -84,7 +84,7 @@
     {
       "tool_name": "linkup-fetch",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -477,6 +477,12 @@
     },
     {
       "scan_date": "2026-06-11T02:59:05Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:55:02Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

@@ -1,19 +1,19 @@
 {
   "tool_id": "glassnode-glassnode-mcp",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T20:32:27.85310997Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:50.618169257Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/glassnode/glassnode-mcp",
   "vendor": "Smithery",
   "description": "Access institutional-grade on-chain cryptocurrency metrics and market data for Bitcoin, Ethereum, and DeFi. Compare multiple assets efficiently through bulk data fetching and comprehensive market analysis. Stay informed with professional research articles and detailed market intelligence directly from Glassnode Insights.\n\nTo get beyond 30-days of data, contact sales@glassnode.com",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch"
     },
@@ -59,17 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_metric"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch_metric"
     },
@@ -91,17 +83,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_bulk_metrics"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch_bulk_metrics"
     },
@@ -171,9 +155,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "path_to_metric_code"
     },
@@ -188,10 +172,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 1,
-    "low": 6,
-    "info": 11
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 16
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -211,7 +195,7 @@
     {
       "tool_name": "search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -221,7 +205,7 @@
     {
       "tool_name": "fetch",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -231,7 +215,7 @@
     {
       "tool_name": "fetch_metric",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -244,7 +228,7 @@
     {
       "tool_name": "fetch_bulk_metrics",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -542,6 +526,12 @@
     },
     {
       "scan_date": "2026-06-15T18:54:42Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:27Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

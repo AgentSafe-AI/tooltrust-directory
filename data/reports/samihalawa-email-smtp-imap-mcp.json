@@ -1,10 +1,10 @@
 {
   "tool_id": "samihalawa-email-smtp-imap-mcp",
   "version": "2.0.3",
-  "grade": "B",
-  "risk_score": 12,
-  "scan_date": "2026-06-15T20:32:13.300747267Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:06.331692875Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/samihalawa/email-smtp-imap-mcp",
   "category": "Developer Tools",
   "vendor": "samihalawa",
@@ -23,9 +23,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "emails_modify"
     },
@@ -39,17 +39,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "email_send"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "email_send"
     },
@@ -71,9 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "email_respond"
     },
@@ -95,9 +87,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "folders_list"
     },
@@ -113,9 +105,9 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 3,
-    "low": 4,
-    "info": 5
+    "medium": 0,
+    "low": 2,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -154,7 +146,7 @@
     {
       "tool_name": "email_send",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -363,6 +355,12 @@
       "scan_date": "2026-06-15T18:51:07Z",
       "grade": "C",
       "risk_score": 27,
+      "version": "2.0.3"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:13Z",
+      "grade": "B",
+      "risk_score": 12,
       "version": "2.0.3"
     }
   ]

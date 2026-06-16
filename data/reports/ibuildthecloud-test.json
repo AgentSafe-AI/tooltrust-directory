@@ -3,8 +3,8 @@
   "version": "sha-3fd9922aee31",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-15T20:30:08.09070261Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "scan_date": "2026-06-16T00:11:03.543562957Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/ibuildthecloud/test",
   "category": "Other",
   "vendor": "ibuildthecloud",
@@ -13,16 +13,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-3fd9922aee31: 1 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-3fd9922aee31: 3 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "text_test_regex"
-        ],
-        "removed": [
           "ask_question",
           "read_wiki_contents",
           "read_wiki_structure"
+        ],
+        "removed": [
+          "text_test_regex"
         ],
         "version": "sha-3fd9922aee31"
       }
@@ -33,7 +33,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_test_regex"
+      "tool_name": "read_wiki_structure"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "read_wiki_contents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ask_question"
     }
   ],
   "summary": {
@@ -41,15 +57,31 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "text_test_regex"
+    "ask_question",
+    "read_wiki_contents",
+    "read_wiki_structure"
   ],
   "tool_contexts": [
     {
-      "tool_name": "text_test_regex",
+      "tool_name": "read_wiki_structure",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "read_wiki_contents",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ask_question",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -109,6 +141,12 @@
       "scan_date": "2026-06-15T18:54:03Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "sha-3fd9922aee31"
+    },
+    {
+      "scan_date": "2026-06-15T20:30:08Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "sha-3fd9922aee31"
     }
   ]

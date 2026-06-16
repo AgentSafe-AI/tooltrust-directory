@@ -1,27 +1,19 @@
 {
   "tool_id": "instagram",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-06-15T20:33:37.373472193Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-16T00:13:13.90477958Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/instagram",
   "vendor": "Smithery",
   "description": "Instagram Business API MCP server for managing posts, media, and account insights.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "INSTAGRAM_CREATE_CAROUSEL_CONTAINER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "INSTAGRAM_CREATE_CAROUSEL_CONTAINER"
     },
@@ -43,17 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "INSTAGRAM_CREATE_MEDIA_CONTAINER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "INSTAGRAM_CREATE_MEDIA_CONTAINER"
     },
@@ -83,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "INSTAGRAM_CREATE_POST"
     },
@@ -131,9 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "INSTAGRAM_GET_USER_INFO"
     },
@@ -147,9 +131,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "INSTAGRAM_GET_USER_INSIGHTS"
     },
@@ -203,9 +187,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "INSTAGRAM_SEND_IMAGE"
     },
@@ -236,10 +220,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 5,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 16
+    "info": 22
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -263,8 +247,8 @@
   "tool_contexts": [
     {
       "tool_name": "INSTAGRAM_CREATE_CAROUSEL_CONTAINER",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -278,8 +262,8 @@
     },
     {
       "tool_name": "INSTAGRAM_CREATE_MEDIA_CONTAINER",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -391,7 +375,7 @@
     {
       "tool_name": "INSTAGRAM_SEND_IMAGE",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -855,6 +839,12 @@
     },
     {
       "scan_date": "2026-06-15T18:55:12Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:33:37Z",
       "grade": "C",
       "risk_score": 27,
       "version": "smithery"

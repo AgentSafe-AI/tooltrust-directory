@@ -2,9 +2,9 @@
   "tool_id": "jupyter-mcp-server",
   "version": "1.0.2",
   "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-06-15T20:14:49.21441118Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "risk_score": 27,
+  "scan_date": "2026-06-15T23:48:47.939176438Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/datalayer/jupyter-mcp-server",
   "category": "Developer Tools",
   "vendor": "datalayer",
@@ -15,9 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_files"
     },
@@ -55,9 +55,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "restart_notebook"
     },
@@ -111,9 +111,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "delete_cell"
     },
@@ -127,9 +127,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "overwrite_cell_source"
     },
@@ -143,9 +143,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_cell"
     },
@@ -167,9 +167,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "insert_execute_code_cell"
     },
@@ -199,9 +199,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_code"
     },
@@ -232,10 +232,10 @@
   ],
   "summary": {
     "critical": 2,
-    "high": 3,
-    "medium": 3,
-    "low": 5,
-    "info": 14
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -347,7 +347,7 @@
     {
       "tool_name": "execute_cell",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -882,6 +882,12 @@
     },
     {
       "scan_date": "2026-06-15T18:29:30Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:14:49Z",
       "grade": "C",
       "risk_score": 42,
       "version": "1.0.2"

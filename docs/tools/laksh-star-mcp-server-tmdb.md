@@ -1,11 +1,11 @@
-# 🟡 laksh-star-mcp-server-tmdb
+# 🟢 laksh-star-mcp-server-tmdb
 
 > MCP Server with TMDB
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | Laksh-star |
 | **Stars** | ⭐ 67 |
@@ -14,7 +14,7 @@
 | **Language** | JavaScript |
 | **Source** | [laksh-star-mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -23,19 +23,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

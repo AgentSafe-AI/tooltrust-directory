@@ -1,10 +1,10 @@
 {
   "tool_id": "kohasummons-chaingpt-mcp",
   "version": "0.1.2",
-  "grade": "C",
-  "risk_score": 35,
-  "scan_date": "2026-06-15T20:24:51.788432243Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:02:22.901745278Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/kohasummons/chaingpt-mcp",
   "category": "Developer Tools",
   "vendor": "kohasummons",
@@ -16,9 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "chaingpt_invoke_chat"
     },
@@ -48,33 +48,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "chaingpt_get_ai_crypto_news"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "chaingpt_get_ai_crypto_news"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "chaingpt_get_ai_crypto_news"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "chaingpt_get_ai_crypto_news"
     },
@@ -105,10 +81,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 4,
-    "info": 4
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -159,8 +135,8 @@
     },
     {
       "tool_name": "chaingpt_get_ai_crypto_news",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network",
@@ -326,6 +302,12 @@
     },
     {
       "scan_date": "2026-06-15T18:42:08Z",
+      "grade": "C",
+      "risk_score": 35,
+      "version": "0.1.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:24:51Z",
       "grade": "C",
       "risk_score": 35,
       "version": "0.1.2"

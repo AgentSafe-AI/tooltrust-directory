@@ -1,10 +1,10 @@
 {
   "tool_id": "atars-mcp-aarnaai",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-11T02:58:48.456196966Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:10.572488496Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/atars-MCP/aarnaai",
   "vendor": "Smithery",
   "description": "aTars MCP by aarna provides AI agents with structured access to crypto market signals, technical indicators, and sentiment analysis.\n\nThe server exposes 18 tools across technical and sentiment categories, enabling agents to query market intelligence directly through MCP-compatible workflows.\n\nCapabilities include:\n\n- Technical indicator data (40+ features)\n- Bullish / bearish signal summaries\n- Historical indicator datasets\n- News sentiment analysis\n- Multi-symbol market queries\n- ML-ready feature exports for model training\n\nExample use cases:\n\nAI trading agents analyzing market signals\ncrypto research assistants\nquantitative model development\nautomated trading bots and alert systems\nInstead of building data pipelines for indicators or sentiment analysis, developers can integrate the MCP server and query structured market intelligence directly.",
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_category_features"
     },
@@ -99,9 +99,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_feature_stats"
     },
@@ -115,9 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_signal_history"
     },
@@ -147,17 +147,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "export_data"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "export_data"
     },
@@ -187,9 +179,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_latest_sentiment"
     },
@@ -228,10 +220,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 3,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 18
+    "info": 23
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -296,7 +288,7 @@
     {
       "tool_name": "get_category_features",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -337,7 +329,7 @@
     {
       "tool_name": "get_signal_history",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -356,8 +348,8 @@
     },
     {
       "tool_name": "export_data",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -632,6 +624,12 @@
     },
     {
       "scan_date": "2026-06-10T02:47:56Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:58:48Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

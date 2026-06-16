@@ -2,9 +2,9 @@
   "tool_id": "ankitdigitalsherpa-weather-mcp",
   "version": "1.0.0",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:28:57.065071012Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "risk_score": 15,
+  "scan_date": "2026-06-16T00:10:24.751570731Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/AnkitDigitalsherpa/weather_mcp",
   "category": "Developer Tools",
   "vendor": "AnkitDigitalsherpa",
@@ -16,10 +16,13 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 6 tool(s) added, 59 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "WEATHERMAP_WEATHER"
+        ],
+        "removed": [
           "find_weather_stations",
           "get_current_weather",
           "get_hourly_forecast",
@@ -27,101 +30,16 @@
           "get_weather_alerts",
           "get_weather_forecast"
         ],
-        "removed": [
-          "alerts_active",
-          "alerts_active_area",
-          "alerts_active_count",
-          "alerts_active_region",
-          "alerts_active_zone",
-          "alerts_query",
-          "alerts_single",
-          "alerts_types",
-          "cwa",
-          "cwas",
-          "cwsu",
-          "glossary",
-          "gridpoint",
-          "gridpoint_forecast",
-          "gridpoint_forecast_hourly",
-          "gridpoint_stations",
-          "icons",
-          "iconsDualCondition",
-          "icons_summary",
-          "latest_product_type_location",
-          "location_products",
-          "obs_station",
-          "obs_stations",
-          "office",
-          "office_headline",
-          "office_headlines",
-          "point",
-          "point_radio",
-          "point_stations",
-          "product",
-          "product_locations",
-          "product_types",
-          "products_query",
-          "products_type",
-          "products_type_location",
-          "products_type_locations",
-          "radar_profiler",
-          "radar_queue",
-          "radar_server",
-          "radar_servers",
-          "radar_station",
-          "radar_station_alarms",
-          "radar_stations",
-          "satellite_thumbnails",
-          "sigmet",
-          "sigmetQuery",
-          "sigmetsByATSU",
-          "sigmetsByATSUByDate",
-          "station_observation_latest",
-          "station_observation_list",
-          "station_observation_time",
-          "taf",
-          "tafs",
-          "zone",
-          "zone_forecast",
-          "zone_list",
-          "zone_list_type",
-          "zone_obs",
-          "zone_stations"
-        ],
         "version": "1.0.0"
       }
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_current_weather"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_weather_forecast"
-    },
-    {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_hourly_forecast"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_hourly_forecast"
+      "tool_name": "WEATHERMAP_WEATHER"
     },
     {
       "id": "AS-014",
@@ -129,39 +47,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_hourly_forecast"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_weather_alerts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find_weather_stations"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_local_time"
+      "tool_name": "WEATHERMAP_WEATHER"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 6
+    "low": 0,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -189,54 +83,11 @@
     }
   ],
   "tool_names": [
-    "find_weather_stations",
-    "get_current_weather",
-    "get_hourly_forecast",
-    "get_local_time",
-    "get_weather_alerts",
-    "get_weather_forecast"
+    "WEATHERMAP_WEATHER"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_current_weather",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_weather_forecast",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_hourly_forecast",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_weather_alerts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "find_weather_stations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_local_time",
+      "tool_name": "WEATHERMAP_WEATHER",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -458,6 +309,12 @@
       "scan_date": "2026-06-15T18:53:50Z",
       "grade": "C",
       "risk_score": 27,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:57Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "1.0.0"
     }
   ]

@@ -1,14 +1,14 @@
 {
   "tool_id": "buildwithclaude",
   "version": "1.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:13:56.28171319Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:46:58.757416889Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/davepoon/buildwithclaude",
   "category": "Developer Tools",
   "vendor": "davepoon",
-  "stars": 3070,
+  "stars": 3071,
   "npm_package": "claude-code-subagents-collection",
   "license": "MIT",
   "language": "TypeScript",
@@ -56,9 +56,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "update_feedback_status"
     },
@@ -72,17 +72,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_loop"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_loop"
     },
@@ -137,10 +129,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 11
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -204,8 +196,8 @@
     },
     {
       "tool_name": "create_loop",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -671,6 +663,12 @@
     },
     {
       "scan_date": "2026-06-15T18:28:22Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:13:56Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.1.0"

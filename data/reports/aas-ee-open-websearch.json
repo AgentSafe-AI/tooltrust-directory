@@ -1,10 +1,10 @@
 {
   "tool_id": "aas-ee-open-websearch",
   "version": "2.1.11",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:15:06.095439101Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:48:56.415534686Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/Aas-ee/open-webSearch",
   "category": "Developer Tools",
   "vendor": "Aas-ee",
@@ -17,9 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search"
     },
@@ -41,9 +41,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetchLinuxDoArticle"
     },
@@ -65,9 +65,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetchCsdnArticle"
     },
@@ -89,9 +89,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetchGithubReadme"
     },
@@ -113,17 +113,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetchWebContent"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetchWebContent"
     },
@@ -145,9 +137,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetchJuejinArticle"
     },
@@ -170,10 +162,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 6,
-    "info": 6
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -219,7 +211,7 @@
     {
       "tool_name": "search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -229,7 +221,7 @@
     {
       "tool_name": "fetchLinuxDoArticle",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -243,7 +235,7 @@
     {
       "tool_name": "fetchCsdnArticle",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -256,7 +248,7 @@
     {
       "tool_name": "fetchGithubReadme",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -268,8 +260,8 @@
     },
     {
       "tool_name": "fetchWebContent",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -282,7 +274,7 @@
     {
       "tool_name": "fetchJuejinArticle",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -574,6 +566,12 @@
       "scan_date": "2026-06-15T18:29:48Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "2.1.11"
+    },
+    {
+      "scan_date": "2026-06-15T20:15:06Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "2.1.11"
     }
   ]

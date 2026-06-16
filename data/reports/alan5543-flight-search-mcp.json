@@ -3,8 +3,8 @@
   "version": "sha-d53b566a3326",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-15T20:28:16.078321013Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "scan_date": "2026-06-16T00:06:18.246226844Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/alan5543/Flight-Search-MCP",
   "category": "Developer Tools",
   "vendor": "alan5543",
@@ -15,34 +15,34 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-d53b566a3326: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-d53b566a3326: 2 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "compare_flights_all_providers"
-        ],
-        "removed": [
           "search_cheap_flights",
           "search_flights"
+        ],
+        "removed": [
+          "compare_flights_all_providers"
         ],
         "version": "sha-d53b566a3326"
       }
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "compare_flights_all_providers"
+      "tool_name": "search_flights"
     },
     {
-      "id": "AS-002",
+      "id": "AS-011",
       "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "compare_flights_all_providers"
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_flights"
     },
     {
       "id": "AS-014",
@@ -50,15 +50,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_flights_all_providers"
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_cheap_flights"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_cheap_flights"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_cheap_flights"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
-    "medium": 1,
-    "low": 1,
-    "info": 1
+    "medium": 0,
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -86,21 +110,26 @@
     }
   ],
   "tool_names": [
-    "compare_flights_all_providers"
+    "search_cheap_flights",
+    "search_flights"
   ],
   "tool_contexts": [
     {
-      "tool_name": "compare_flights_all_providers",
+      "tool_name": "search_flights",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
-        "reads_files"
+        "uses_network"
       ],
-      "destinations": [
-        "dynamic email recipient (max_stops_allowed)",
-        "dynamic email recipient (max_total_duration_hours)",
-        "dynamic email recipient (to_airports)",
-        "hardcoded domain: Booking.com"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_cheap_flights",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -153,6 +182,12 @@
       "scan_date": "2026-06-15T18:46:00Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "sha-d53b566a3326"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:16Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "sha-d53b566a3326"
     }
   ]

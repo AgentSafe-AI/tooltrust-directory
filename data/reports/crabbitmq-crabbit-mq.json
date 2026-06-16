@@ -1,19 +1,19 @@
 {
   "tool_id": "crabbitmq-crabbit-mq",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 12,
-  "scan_date": "2026-06-15T20:28:28.633968962Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:00.268014728Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/crabbitmq/crabbit-mq",
   "vendor": "Smithery",
   "description": "Async message queue for AI agents. Self-provision queues via MCP or REST — no human signup required. Push messages to other agents, poll your own queue, and coordinate across sessions. Free tier: 5 queues, 1000 messages/day, 24h TTL.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_queue"
     },
@@ -27,17 +27,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "push_message"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "push_message"
     },
@@ -83,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "delete_message"
     },
@@ -125,9 +117,9 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 3,
-    "low": 2,
-    "info": 9
+    "medium": 0,
+    "low": 1,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -151,7 +143,7 @@
     {
       "tool_name": "push_message",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -318,6 +310,12 @@
     },
     {
       "scan_date": "2026-06-15T18:51:48Z",
+      "grade": "B",
+      "risk_score": 12,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:28Z",
       "grade": "B",
       "risk_score": 12,
       "version": "smithery"

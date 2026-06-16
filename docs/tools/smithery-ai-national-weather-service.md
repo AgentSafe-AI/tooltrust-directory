@@ -1,16 +1,16 @@
-# 🟡 smithery-ai-national-weather-service
+# 🟢 smithery-ai-national-weather-service
 
 > Provide real-time and forecast weather information for locations in the United States using natural language queries. Access current conditions, multi-day and hourly forecasts, weather alerts, and nearby weather stations without requiring an API key. Enable users to get official, government-sourced weather data easily through intuitive tools.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smithery-ai-national-weather-service](https://smithery.ai/server/smithery-ai/national-weather-service) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 6 |
+| Info     | 7 |
 
 ## Detailed Findings
 
@@ -50,12 +50,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

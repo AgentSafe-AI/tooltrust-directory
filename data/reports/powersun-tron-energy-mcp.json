@@ -1,10 +1,10 @@
 {
   "tool_id": "powersun-tron-energy-mcp",
   "version": "smithery",
-  "grade": "D",
-  "risk_score": 62,
-  "scan_date": "2026-06-15T03:02:24.610337538Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-16T00:11:22.482889348Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/powersun/tron-energy-mcp",
   "vendor": "Smithery",
   "description": "Optimize TRON transaction costs by purchasing and managing Energy or Bandwidth at market rates. Monetize idle resources through automated pool management, delegation, and reward claiming. Simplify blockchain operations with automatic energy delegation for token swaps and transaction broadcasting.",
@@ -91,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_swap_quote"
     },
@@ -107,17 +107,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"toToken\" appears to accept a secret or credential",
+      "description": "input parameter \"fromToken\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_swap_quote"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"fromToken\" appears to accept a secret or credential",
+      "description": "input parameter \"toToken\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_swap_quote"
     },
@@ -139,9 +139,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_swap"
     },
@@ -219,9 +219,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_onchain_status"
     },
@@ -259,9 +259,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_auto_action_history"
     },
@@ -324,10 +324,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 8,
+    "high": 2,
     "medium": 0,
     "low": 4,
-    "info": 27
+    "info": 33
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -432,8 +432,8 @@
     },
     {
       "tool_name": "get_swap_quote",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -447,7 +447,7 @@
     {
       "tool_name": "execute_swap",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -509,7 +509,7 @@
     {
       "tool_name": "get_onchain_status",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -532,8 +532,8 @@
     },
     {
       "tool_name": "get_auto_action_history",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -695,6 +695,12 @@
     },
     {
       "scan_date": "2026-06-14T02:58:21Z",
+      "grade": "D",
+      "risk_score": 62,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T03:02:24Z",
       "grade": "D",
       "risk_score": 62,
       "version": "smithery"

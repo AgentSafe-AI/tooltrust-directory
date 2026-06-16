@@ -1,10 +1,10 @@
 {
   "tool_id": "ns-personal-echo-map",
   "version": "1.0.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-15T20:33:10Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "scan_date": "2026-06-16T00:07:43.287589125Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/ns-personal/echo-map",
   "category": "Developer Tools",
   "vendor": "ns-personal",
@@ -12,29 +12,20 @@
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-007",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 6,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'echo' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "echo"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "echo"
     }
   ],
   "summary": {
@@ -42,10 +33,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -63,204 +53,16 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "echo"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-03T22:55:01Z",
+      "tool_name": "echo",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-04T06:28:52Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-04T16:48:57Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-04T23:00:04Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-05T01:20:05Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-05T01:57:11Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-06T02:01:44Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-07T01:48:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-07T22:04:10Z",
-      "grade": "C",
-      "risk_score": 27,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-08T01:45:25Z",
-      "grade": "C",
-      "risk_score": 27,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-09T01:35:25Z",
-      "grade": "C",
-      "risk_score": 27,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-10T02:01:10Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-11T01:48:57Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-12T02:17:07Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-13T02:18:13Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-14T02:14:20Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-15T02:11:42Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-16T02:26:03Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-17T02:14:59Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-18T01:56:38Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-19T02:19:04Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:19:35Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-25T02:10:37Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:20:48Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:41:25Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:37:28Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:36:49Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:36:51Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:33:49Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:37:18Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:40:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:39:49Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T18:53:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

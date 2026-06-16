@@ -1,10 +1,10 @@
 {
   "tool_id": "coti-io-coti-mcp",
   "version": "0.0.18",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-15T20:28:53.449262617Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-16T00:09:42.864868412Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/coti-io/coti-mcp",
   "category": "Developer Tools",
   "vendor": "coti-io",
@@ -14,9 +14,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_account"
     },
@@ -54,9 +54,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_current_network"
     },
@@ -78,9 +78,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_current_rpc"
     },
@@ -174,9 +174,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "switch_network"
     },
@@ -272,7 +272,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"private_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_private_erc20_allowance"
     },
@@ -280,7 +280,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"private_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_private_erc20_allowance"
     },
@@ -352,7 +352,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"private_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mint_private_erc20_token"
     },
@@ -360,7 +360,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"private_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mint_private_erc20_token"
     },
@@ -574,18 +574,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "mint_private_erc721_token"
-    },
-    {
-      "id": "AS-010",
       "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_uri\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mint_private_erc721_token"
     },
     {
@@ -601,6 +593,14 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "mint_private_erc721_token"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token_uri\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mint_private_erc721_token"
     },
@@ -648,7 +648,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "transfer_private_erc721"
     },
@@ -664,7 +664,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_address\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "transfer_private_erc721"
     },
@@ -726,9 +726,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_transaction_logs"
     },
@@ -871,10 +871,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 1,
+    "high": 1,
+    "medium": 0,
     "low": 5,
-    "info": 95
+    "info": 101
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -975,7 +975,7 @@
     {
       "tool_name": "get_current_network",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -985,7 +985,7 @@
     {
       "tool_name": "get_current_rpc",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1033,7 +1033,7 @@
     {
       "tool_name": "switch_network",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1231,7 +1231,7 @@
     {
       "tool_name": "mint_private_erc721_token",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1293,8 +1293,8 @@
     },
     {
       "tool_name": "get_transaction_logs",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -1549,6 +1549,12 @@
     },
     {
       "scan_date": "2026-06-15T18:54:44Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "0.0.18"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:53Z",
       "grade": "C",
       "risk_score": 32,
       "version": "0.0.18"

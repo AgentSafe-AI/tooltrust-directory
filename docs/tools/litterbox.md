@@ -12,7 +12,7 @@
 | **Language** | YARA |
 | **Source** | [litterbox](https://github.com/BlackSnufkin/LitterBox) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 

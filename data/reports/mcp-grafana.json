@@ -1,0 +1,68 @@
+{
+  "tool_id": "mcp-grafana",
+  "version": "0.15.2",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:46:52Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/grafana/mcp-grafana",
+  "category": "Developer Tools",
+  "vendor": "grafana",
+  "stars": 3152,
+  "license": "Apache-2.0",
+  "language": "Go",
+  "description": "MCP server for Grafana",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "cmd/mcp-grafana/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 315,
+            "snippet": "server.NewMCPServer(",
+            "file": "cmd/mcp-grafana/main.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 17,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "cmd/mcp-grafana/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 315,
+      "snippet": "server.NewMCPServer(",
+      "file": "cmd/mcp-grafana/main.go",
+      "language": "go"
+    }
+  ]
+}

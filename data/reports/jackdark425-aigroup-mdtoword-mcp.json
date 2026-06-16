@@ -1,10 +1,10 @@
 {
   "tool_id": "jackdark425-aigroup-mdtoword-mcp",
   "version": "4.0.2",
-  "grade": "A",
-  "risk_score": 8,
-  "scan_date": "2026-06-15T20:23:28.389301027Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-16T00:00:37Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/jackdark425/aigroup-mdtoword-mcp",
   "category": "Developer Tools",
   "vendor": "jackdark425",
@@ -16,70 +16,68 @@
   "description": "Markdown-to-Word MCP server with advanced styling, formulas, tables, Mermaid rendering, and HTTP deployment support.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "markdown_to_docx"
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "markdown_to_docx"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_table_from_csv"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_table_from_csv"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_table_from_json"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_table_from_json"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_table_styles"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 4,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/http-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 170,
+            "snippet": "new McpServer(",
+            "file": "src/http-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 185,
+            "snippet": ".registerTool(",
+            "file": "src/http-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 2,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 190,
+            "snippet": "new McpServer(",
+            "file": "src/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 206,
+            "snippet": ".registerTool(",
+            "file": "src/mcp-server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 3,
+    "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -125,48 +123,6 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "create_table_from_csv",
-    "create_table_from_json",
-    "list_table_styles",
-    "markdown_to_docx"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "markdown_to_docx",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "create_table_from_csv",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "create_table_from_json",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_table_styles",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-05-17T02:29:53Z",
@@ -184,6 +140,12 @@
       "scan_date": "2026-06-15T18:40:18Z",
       "grade": "B",
       "risk_score": 23,
+      "version": "4.0.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:23:28Z",
+      "grade": "A",
+      "risk_score": 8,
       "version": "4.0.2"
     }
   ]

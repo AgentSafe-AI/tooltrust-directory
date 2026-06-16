@@ -1,10 +1,10 @@
 {
   "tool_id": "saptadey-research-blueprint",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:26:13.245942684Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:04:20.830530952Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/SaptaDey/Research-Blueprint",
   "category": "Developer Tools",
   "vendor": "SaptaDey",
@@ -15,17 +15,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute_asr_got_analysis"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_asr_got_analysis"
     },
@@ -71,9 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_research_insights"
     },
@@ -96,10 +88,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 5
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -112,8 +104,8 @@
   "tool_contexts": [
     {
       "tool_name": "execute_asr_got_analysis",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -144,7 +136,7 @@
     {
       "tool_name": "get_research_insights",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -227,6 +219,12 @@
     },
     {
       "scan_date": "2026-06-15T18:45:18Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:13Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

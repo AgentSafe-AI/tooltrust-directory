@@ -1,10 +1,10 @@
 {
   "tool_id": "vooster-ai-github-fetcher-mcp",
   "version": "1.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:22:59.234226193Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:59:59.222575811Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/Vooster-AI/github-fetcher-mcp",
   "category": "Developer Tools",
   "vendor": "Vooster-AI",
@@ -16,17 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch-file"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch-file"
     },
@@ -48,17 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch-subdir-tree"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch-subdir-tree"
     },
@@ -80,17 +64,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch-sub-tree"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch-sub-tree"
     },
@@ -113,10 +89,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 3,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 3
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -172,8 +148,8 @@
   "tool_contexts": [
     {
       "tool_name": "fetch-file",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -182,8 +158,8 @@
     },
     {
       "tool_name": "fetch-subdir-tree",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -192,8 +168,8 @@
     },
     {
       "tool_name": "fetch-sub-tree",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -368,6 +344,12 @@
       "scan_date": "2026-06-15T18:39:54Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:22:59Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.1.0"
     }
   ]

@@ -1,10 +1,10 @@
 {
   "tool_id": "kazokus-mcp-server",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T20:28:41.550138163Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:05.276743509Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/kazokus/mcp-server",
   "vendor": "Smithery",
   "description": "Discover and compare Kazokus — the community platform with zero transaction fees, built-in AI, courses, events, marketplace, and multi-tenancy. Search real communities, compare pricing vs Circle/Skool/Mighty Networks, and get personalized onboarding guidance.",
@@ -19,9 +19,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "kazokus_compare"
     },
@@ -59,17 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "kazokus_search_communities"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "kazokus_search_communities"
     },
@@ -100,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 6
+    "low": 2,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -125,7 +117,7 @@
     {
       "tool_name": "kazokus_compare",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -152,7 +144,7 @@
     {
       "tool_name": "kazokus_search_communities",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -254,6 +246,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:19Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:41Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

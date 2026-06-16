@@ -1,52 +1,16 @@
 {
   "tool_id": "chughtapan-praga-core",
   "version": "sha-03f821c35b62",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:27:12.221595367Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:04:21.465713261Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/chughtapan/praga_core",
   "category": "Developer Tools",
   "vendor": "chughtapan",
   "stars": 1,
   "language": "Python",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-03f821c35b62: 11 tool(s) added, 11 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "compliance_edd_report",
-          "compliance_exposure_forecast",
-          "compliance_queue_optimize",
-          "queue_saved_list",
-          "report_docx_generate",
-          "report_pdf_generate",
-          "report_saved_retrieve",
-          "server_capabilities",
-          "wallet_ofac_batch",
-          "wallet_ofac_report",
-          "wallet_ofac_screen"
-        ],
-        "removed": [
-          "compliance.edd.report",
-          "compliance.exposure.forecast",
-          "compliance.queue.optimize",
-          "queue.saved.list",
-          "report.docx.generate",
-          "report.pdf.generate",
-          "report.saved.retrieve",
-          "server.capabilities",
-          "wallet.ofac.batch",
-          "wallet.ofac.report",
-          "wallet.ofac.screen"
-        ],
-        "version": "sha-03f821c35b62"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -65,9 +29,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "report_saved_retrieve"
     },
@@ -105,9 +69,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "compliance_edd_report"
     },
@@ -145,9 +109,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "report_pdf_generate"
     },
@@ -161,9 +125,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "report_docx_generate"
     },
@@ -178,10 +142,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 3,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 11
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -246,7 +210,7 @@
     {
       "tool_name": "compliance_edd_report",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -332,6 +296,12 @@
       "scan_date": "2026-05-30T02:37:27Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "sha-03f821c35b62"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:12Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "sha-03f821c35b62"
     }
   ]

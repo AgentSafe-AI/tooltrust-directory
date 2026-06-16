@@ -1,10 +1,10 @@
 {
   "tool_id": "marcopesani-mcp-server-serper",
   "version": "0.2.0",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-06-15T20:17:59.801400567Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-15T23:53:45.067264046Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/marcopesani/mcp-server-serper",
   "category": "Developer Tools",
   "vendor": "marcopesani",
@@ -16,18 +16,24 @@
   "description": "Serper MCP Server supporting search and webpage scraping",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "google_search"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.2.0: 0 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "_health"
+        ],
+        "version": "0.2.0"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "google_search"
     },
@@ -57,9 +63,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scrape"
     },
@@ -78,34 +84,25 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "scrape"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "_health"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 1,
+    "medium": 0,
     "low": 3,
-    "info": 3
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "_health",
     "google_search",
     "scrape"
   ],
   "tool_contexts": [
     {
       "tool_name": "google_search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -124,20 +121,13 @@
     {
       "tool_name": "scrape",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (url)"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "_health",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -313,6 +303,12 @@
     },
     {
       "scan_date": "2026-06-15T18:33:25Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "0.2.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:17:59Z",
       "grade": "C",
       "risk_score": 27,
       "version": "0.2.0"

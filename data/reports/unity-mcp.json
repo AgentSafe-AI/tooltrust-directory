@@ -1,641 +1,41 @@
 {
   "tool_id": "unity-mcp",
-  "version": "0.81.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:13:57.680418382Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
-  "source_url": "https://github.com/IvanMurzak/Unity-MCP",
+  "version": "9.7.3",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-06-15T23:45:19.34215664Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/CoplayDev/unity-mcp",
   "category": "Other",
-  "vendor": "IvanMurzak",
-  "stars": 3168,
-  "license": "Apache-2.0",
+  "vendor": "CoplayDev",
+  "stars": 10689,
+  "license": "MIT",
   "language": "C#",
-  "description": "AI Skills, MCP Tools, and CLI for Unity Engine. Full AI develop and test loop. Use cli for quick setup. Efficient token usage, advanced tools. Any C# method may be turned into a tool by a single line. Works with Claude Code, Gemini, Copilot, Cursor and any other absolutely for free.",
+  "description": "Unity MCP acts as a bridge between AI assistants and your Unity Editor. Give your LLM tools to manage assets, control scenes, edit scripts, and automate tasks within Unity.",
   "findings": [
     {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-copy' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-copy"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-copy"
+      "tool_name": "apply_text_edits"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "assets-create-folder"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-create-folder' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-create-folder"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-create-folder"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "assets-delete"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-delete' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-delete"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-delete"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-find' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-find"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-find"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-find-built-in' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-find-built-in"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-find-built-in"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-get-data' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-get-data"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-get-data"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "assets-material-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-material-create' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-material-create"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-material-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-modify' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-modify"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-modify"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-move' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-move"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-move"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-refresh' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-refresh"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-refresh"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-prefab-close' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-close"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-close"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "assets-prefab-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-prefab-create' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-create"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-prefab-instantiate' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-instantiate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-instantiate"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-prefab-open' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-open"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-open"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-prefab-save' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-save"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-prefab-save"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'assets-shader-list-all' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-shader-list-all"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "assets-shader-list-all"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'component-list' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "component-list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "component-list"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'console-get-logs' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "console-get-logs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "console-get-logs"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'editor-application-get-state' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-application-get-state"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-application-get-state"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'editor-application-set-state' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-application-set-state"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-application-set-state"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'editor-selection-get' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-selection-get"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-selection-get"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'editor-selection-set' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-selection-set"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "editor-selection-set"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-component-add' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-add"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-add"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-component-destroy' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-destroy"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-destroy"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-component-get' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-get"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-get"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-component-modify' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-modify"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-component-modify"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "gameobject-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-create' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-create"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-destroy' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-destroy"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-destroy"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-duplicate' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-duplicate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-duplicate"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-find' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-find"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-find"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-modify' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-modify"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-modify"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'gameobject-set-parent' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-set-parent"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gameobject-set-parent"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'package-add' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-add"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-add"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'package-list' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-list"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "package-remove"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'package-remove' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-remove"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-remove"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "package-search"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'package-search' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-search"
+      "tool_name": "batch_execute"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "batch_execute"
     },
     {
       "id": "AS-011",
@@ -643,7 +43,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "package-search"
+      "tool_name": "batch_execute"
     },
     {
       "id": "AS-014",
@@ -651,55 +51,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "package-search"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'reflection-method-call' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reflection-method-call"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reflection-method-call"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'reflection-method-find' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reflection-method-find"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reflection-method-find"
+      "tool_name": "batch_execute"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scene-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-create' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-create"
+      "tool_name": "create_script"
     },
     {
       "id": "AS-014",
@@ -707,135 +67,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-get-data' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-get-data"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-get-data"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-list-opened' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-list-opened"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-list-opened"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-open' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-open"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-open"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-save' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-save"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-save"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-set-active' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-set-active"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-set-active"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'scene-unload' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-unload"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scene-unload"
+      "tool_name": "create_script"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "script-delete"
+      "tool_name": "debug_request_context"
     },
     {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'script-delete' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-delete"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-delete"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'script-execute' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-execute"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "debug_request_context"
     },
     {
       "id": "AS-014",
@@ -843,39 +91,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-execute"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'script-read' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-read"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-read"
+      "tool_name": "debug_request_context"
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "script-update-or-create"
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'script-update-or-create' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-update-or-create"
+      "tool_name": "delete_script"
     },
     {
       "id": "AS-014",
@@ -883,15 +107,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "script-update-or-create"
+      "tool_name": "delete_script"
     },
     {
-      "id": "AS-007",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool 'tests-run' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tests-run"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_custom_tool"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_custom_tool"
     },
     {
       "id": "AS-014",
@@ -899,337 +131,490 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tests-run"
+      "tool_name": "execute_custom_tool"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_code"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "execute_code"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_code"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute_code"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_menu_item"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_menu_item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute_menu_item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "find_gameobjects"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "find_in_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "find_in_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_sha"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_test_job"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_animation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_asset"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_build"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_components"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_editor"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_gameobject"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_camera"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_graphics"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_material"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_packages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_physics"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_prefabs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_probuilder"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "manage_profiler"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_profiler"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "manage_scene"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_scene"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_script"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "manage_script_capabilities"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_script_capabilities"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_scriptable_object"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_shader"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_texture"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_tools"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_ui"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "manage_vfx"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "read_console"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "refresh_unity"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "refresh_unity"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "run_tests"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "script_apply_edits"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_active_instance"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "unity_docs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "unity_docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "unity_docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "unity_reflect"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "validate_script"
     }
   ],
   "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 9,
-    "low": 1,
-    "info": 100
+    "critical": 2,
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 56
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "assets-copy",
-    "assets-create-folder",
-    "assets-delete",
-    "assets-find",
-    "assets-find-built-in",
-    "assets-get-data",
-    "assets-material-create",
-    "assets-modify",
-    "assets-move",
-    "assets-prefab-close",
-    "assets-prefab-create",
-    "assets-prefab-instantiate",
-    "assets-prefab-open",
-    "assets-prefab-save",
-    "assets-refresh",
-    "assets-shader-list-all",
-    "component-list",
-    "console-get-logs",
-    "editor-application-get-state",
-    "editor-application-set-state",
-    "editor-selection-get",
-    "editor-selection-set",
-    "gameobject-component-add",
-    "gameobject-component-destroy",
-    "gameobject-component-get",
-    "gameobject-component-modify",
-    "gameobject-create",
-    "gameobject-destroy",
-    "gameobject-duplicate",
-    "gameobject-find",
-    "gameobject-modify",
-    "gameobject-set-parent",
-    "package-add",
-    "package-list",
-    "package-remove",
-    "package-search",
-    "reflection-method-call",
-    "reflection-method-find",
-    "scene-create",
-    "scene-get-data",
-    "scene-list-opened",
-    "scene-open",
-    "scene-save",
-    "scene-set-active",
-    "scene-unload",
-    "script-delete",
-    "script-execute",
-    "script-read",
-    "script-update-or-create",
-    "tests-run"
+    "apply_text_edits",
+    "batch_execute",
+    "create_script",
+    "debug_request_context",
+    "delete_script",
+    "execute_code",
+    "execute_custom_tool",
+    "execute_menu_item",
+    "find_gameobjects",
+    "find_in_file",
+    "get_sha",
+    "get_test_job",
+    "manage_animation",
+    "manage_asset",
+    "manage_build",
+    "manage_camera",
+    "manage_components",
+    "manage_editor",
+    "manage_gameobject",
+    "manage_graphics",
+    "manage_material",
+    "manage_packages",
+    "manage_physics",
+    "manage_prefabs",
+    "manage_probuilder",
+    "manage_profiler",
+    "manage_scene",
+    "manage_script",
+    "manage_script_capabilities",
+    "manage_scriptable_object",
+    "manage_shader",
+    "manage_texture",
+    "manage_tools",
+    "manage_ui",
+    "manage_vfx",
+    "read_console",
+    "refresh_unity",
+    "run_tests",
+    "script_apply_edits",
+    "set_active_instance",
+    "unity_docs",
+    "unity_reflect",
+    "validate_script"
   ],
   "tool_contexts": [
     {
-      "tool_name": "assets-copy",
+      "tool_name": "apply_text_edits",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "assets-create-folder",
+      "tool_name": "batch_execute",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_script",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "assets-delete",
+      "tool_name": "debug_request_context",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-find",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-find-built-in",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-get-data",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-material-create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-modify",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-move",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-refresh",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-prefab-close",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-prefab-create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-prefab-instantiate",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-prefab-open",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-prefab-save",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "assets-shader-list-all",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "component-list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "console-get-logs",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "editor-application-get-state",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "editor-application-set-state",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "editor-selection-get",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "editor-selection-set",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-component-add",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-component-destroy",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-component-get",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-component-modify",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-destroy",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-duplicate",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-find",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-modify",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gameobject-set-parent",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "package-add",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "package-list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "package-remove",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "package-search",
-      "action": "ALLOW",
-      "grade": "B",
       "behavior": [
         "uses_network"
       ],
@@ -1237,73 +622,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "reflection-method-call",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "reflection-method-find",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-get-data",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-list-opened",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-open",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-save",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-set-active",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scene-unload",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "script-delete",
+      "tool_name": "delete_script",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -1314,7 +633,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "script-execute",
+      "tool_name": "execute_custom_tool",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -1324,7 +643,17 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "script-read",
+      "tool_name": "execute_code",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "execute_menu_item",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -1334,20 +663,275 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "script-update-or-create",
+      "tool_name": "find_gameobjects",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_in_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_sha",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_test_job",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_animation",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_asset",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_build",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_components",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_editor",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_gameobject",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_camera",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_graphics",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_material",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_packages",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_physics",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_prefabs",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_probuilder",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_profiler",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_scene",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_script",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_script_capabilities",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_scriptable_object",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_shader",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_texture",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_tools",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_ui",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_vfx",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "read_console",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "refresh_unity",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "run_tests",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "script_apply_edits",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "set_active_instance",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "unity_docs",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "executes_commands",
-        "writes_files"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "tests-run",
+      "tool_name": "unity_reflect",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "validate_script",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1883,6 +1467,12 @@
     },
     {
       "scan_date": "2026-06-15T18:28:23Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.81.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:13:57Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.81.0"

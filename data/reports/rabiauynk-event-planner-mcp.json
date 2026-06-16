@@ -1,10 +1,10 @@
 {
   "tool_id": "rabiauynk-event-planner-mcp",
   "version": "sha-5dd0c4f72031",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-05-30T02:38:52.500232345Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-16T00:12:34.875918432Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/rabiauynk/event-planner-mcp",
   "category": "Developer Tools",
   "vendor": "rabiauynk",
@@ -14,17 +14,17 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-5dd0c4f72031: 2 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-5dd0c4f72031: 3 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "list_cities",
-          "search_events"
-        ],
-        "removed": [
           "EVENTBRITE_GET_EVENT_CATEGORIES",
           "EVENTBRITE_GET_EVENT_FORMATS",
           "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+        ],
+        "removed": [
+          "list_cities",
+          "search_events"
         ],
         "version": "sha-5dd0c4f72031"
       }
@@ -35,39 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_cities"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_events"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_events"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 18 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_events"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_events"
+      "tool_name": "EVENTBRITE_GET_EVENT_CATEGORIES"
     },
     {
       "id": "AS-014",
@@ -75,39 +43,67 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_events"
+      "tool_name": "EVENTBRITE_GET_EVENT_FORMATS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
-    "low": 2,
-    "info": 2
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "list_cities",
-    "search_events"
+    "EVENTBRITE_GET_EVENT_CATEGORIES",
+    "EVENTBRITE_GET_EVENT_FORMATS",
+    "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list_cities",
+      "tool_name": "EVENTBRITE_GET_EVENT_CATEGORIES",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_events",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "tool_name": "EVENTBRITE_GET_EVENT_FORMATS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (date_to)",
-        "dynamic email recipient (time_to)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -148,6 +144,12 @@
       "scan_date": "2026-05-17T02:40:00Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "sha-5dd0c4f72031"
+    },
+    {
+      "scan_date": "2026-05-30T02:38:52Z",
+      "grade": "C",
+      "risk_score": 27,
       "version": "sha-5dd0c4f72031"
     }
   ]

@@ -1,0 +1,70 @@
+{
+  "tool_id": "lobehub",
+  "version": "2.2.6-canary.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:44:07Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/lobehub/lobehub",
+  "category": "Developer Tools",
+  "vendor": "lobehub",
+  "stars": 78705,
+  "npm_package": "@lobehub/lobehub",
+  "npm_downloads_monthly": 3381,
+  "license": "NOASSERTION",
+  "language": "TypeScript",
+  "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 6,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "packages/heterogeneous-agents/src/askUser/AskUserMcpServer.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 330,
+            "snippet": "new McpServer(",
+            "file": "packages/heterogeneous-agents/src/askUser/AskUserMcpServer.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 6,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "packages/heterogeneous-agents/src/askUser/AskUserMcpServer.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 330,
+      "snippet": "new McpServer(",
+      "file": "packages/heterogeneous-agents/src/askUser/AskUserMcpServer.ts",
+      "language": "typescript"
+    }
+  ]
+}

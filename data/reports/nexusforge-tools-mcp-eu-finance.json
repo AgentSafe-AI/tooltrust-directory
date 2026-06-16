@@ -1,31 +1,24 @@
 {
   "tool_id": "nexusforge-tools-mcp-eu-finance",
   "version": "1.3.0",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T20:31:25.080439961Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:30.933366421Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/nexusforge-tools/mcp-eu-finance",
   "category": "Developer Tools",
   "vendor": "nexusforge-tools",
   "npm_package": "@nexusforgetools/eu-finance",
+  "npm_downloads_monthly": 367,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP server for European financial data — ECB rates, Eurostat inflation, GDP, unemployment. Works with Claude, Cursor, Windsurf.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_ecb_rates"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_ecb_rates"
     },
@@ -47,9 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_euro_exchange"
     },
@@ -71,9 +64,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_eu_inflation"
     },
@@ -95,9 +88,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_eu_gdp"
     },
@@ -119,9 +112,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_eu_unemployment"
     },
@@ -143,17 +136,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "compare_eu_economies"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "compare_eu_economies"
     },
@@ -176,10 +161,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
+    "high": 0,
     "medium": 0,
-    "low": 8,
-    "info": 6
+    "low": 6,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -239,7 +224,7 @@
     {
       "tool_name": "get_ecb_rates",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -249,7 +234,7 @@
     {
       "tool_name": "get_euro_exchange",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -259,7 +244,7 @@
     {
       "tool_name": "get_eu_inflation",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -269,7 +254,7 @@
     {
       "tool_name": "get_eu_gdp",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -279,7 +264,7 @@
     {
       "tool_name": "get_eu_unemployment",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -289,7 +274,7 @@
     {
       "tool_name": "compare_eu_economies",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -335,6 +320,12 @@
       "scan_date": "2026-06-15T18:49:38Z",
       "grade": "C",
       "risk_score": 34,
+      "version": "1.3.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:31:25Z",
+      "grade": "B",
+      "risk_score": 19,
       "version": "1.3.0"
     }
   ]

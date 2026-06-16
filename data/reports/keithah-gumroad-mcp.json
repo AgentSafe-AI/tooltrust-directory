@@ -1,10 +1,10 @@
 {
   "tool_id": "keithah-gumroad-mcp",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T20:26:13.339741985Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:03:45.902650496Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/keithah/gumroad-mcp",
   "category": "Developer Tools",
   "vendor": "keithah",
@@ -16,9 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GUMROAD_GET_RESOURCE_SUBSCRIPTIONS"
     },
@@ -48,9 +48,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GUMROAD_GET_USER"
     },
@@ -64,17 +64,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GUMROAD_SUBSCRIBE_TO_RESOURCE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GUMROAD_SUBSCRIBE_TO_RESOURCE"
     },
@@ -96,17 +88,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GUMROAD_UNSUBSCRIBE_FROM_RESOURCE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: code/command execution, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "GUMROAD_UNSUBSCRIBE_FROM_RESOURCE"
     },
@@ -129,10 +113,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
-    "low": 6,
-    "info": 5
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -194,7 +178,7 @@
     {
       "tool_name": "GUMROAD_SUBSCRIBE_TO_RESOURCE",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -207,7 +191,7 @@
     {
       "tool_name": "GUMROAD_UNSUBSCRIBE_FROM_RESOURCE",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -327,6 +311,12 @@
     },
     {
       "scan_date": "2026-06-15T18:44:25Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:13Z",
       "grade": "B",
       "risk_score": 19,
       "version": "1.0.0"

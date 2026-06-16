@@ -1,18 +1,18 @@
-# 🟡 ida-pro-mcp
+# 🟢 ida-pro-mcp
 
 > AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 10 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.5.0` |
 | **Vendor** | mrexodia |
 | **Stars** | ⭐ 9394 |
 | **Language** | Python |
 | **Source** | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -22,9 +22,9 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 1 |
+| Medium   | 0 |
 | Low      | 1 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
@@ -40,12 +40,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -1,16 +1,16 @@
-# 🟡 jobsbase-jobs
+# 🟢 jobsbase-jobs
 
 > Builder roles like founding engineers, solo builders, and "0 to 1" positions are scattered across dozens of job boards with no way to filter for them specifically. [jobsbase.io](https://jobsbase.io) is a curated job board that only surfaces these roles. Search by location, salary, seniority, workplace model, visa sponsorship, and 15+ other filters. No API key needed.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 19 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jobsbase-jobs](https://smithery.ai/server/jobsbase/jobs) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -19,19 +19,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

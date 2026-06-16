@@ -1,10 +1,10 @@
 {
   "tool_id": "aias-barnsworthburning-mcp",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:26:13.497137622Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:03:45.780070225Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/Aias/barnsworthburning-mcp",
   "category": "Developer Tools",
   "vendor": "Aias",
@@ -16,17 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search"
     },
@@ -49,10 +41,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -78,8 +70,8 @@
   "tool_contexts": [
     {
       "tool_name": "search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -225,6 +217,12 @@
     },
     {
       "scan_date": "2026-06-15T18:45:03Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:13Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

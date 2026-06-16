@@ -1,10 +1,10 @@
 {
   "tool_id": "txn2-kubefwd",
   "version": "1.25.14",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T20:13:41.761977698Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:46:35.153637616Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/txn2/kubefwd",
   "category": "Developer Tools",
   "vendor": "txn2",
@@ -47,9 +47,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "remove_namespace"
     },
@@ -71,9 +71,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "remove_service"
     },
@@ -199,17 +199,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_http_traffic"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_http_traffic"
     },
@@ -240,10 +232,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 2,
-    "info": 23
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 26
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -428,7 +420,7 @@
     {
       "tool_name": "get_http_traffic",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -674,6 +666,12 @@
     },
     {
       "scan_date": "2026-06-15T18:28:01Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "1.25.14"
+    },
+    {
+      "scan_date": "2026-06-15T20:13:41Z",
       "grade": "B",
       "risk_score": 19,
       "version": "1.25.14"

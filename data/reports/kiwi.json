@@ -1,27 +1,19 @@
 {
   "tool_id": "kiwi",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 21,
-  "scan_date": "2026-06-15T20:32:47.543156755Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-16T00:12:59.590177052Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/kiwi",
   "vendor": "Smithery",
   "description": "Search flights, compare prices, and manage travel bookings. Find the best routes, check availability, and track itineraries.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search-flight"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search-flight"
     },
@@ -60,10 +52,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 2
+    "low": 2,
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -74,7 +66,7 @@
     {
       "tool_name": "search-flight",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -182,6 +174,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:46Z",
+      "grade": "B",
+      "risk_score": 21,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:47Z",
       "grade": "B",
       "risk_score": 21,
       "version": "smithery"

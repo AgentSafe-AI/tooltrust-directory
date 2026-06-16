@@ -9,8 +9,8 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 ![ToolTrust Directory UI](./docs/tooltrust-ui.png)
 
-[![Tools Audited](https://img.shields.io/badge/tools%20audited-1247-brightgreen)](./data/reports/)
-[![Last Scan](https://img.shields.io/badge/last%20scan-2026--06--15-blue)](./data/reports/)
+[![Tools Audited](https://img.shields.io/badge/tools%20audited-1365-brightgreen)](./data/reports/)
+[![Last Scan](https://img.shields.io/badge/last%20scan-2026--06--16-blue)](./data/reports/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
 [![Schema](https://img.shields.io/badge/schema-v1.0-orange)](./report.schema.json)
 
@@ -20,60 +20,60 @@ A public registry of AI agent tools, continuously scanned for prompt injection, 
 
 <!-- TOOLTRUST:BEGIN -- Do not edit this section manually. -->
 
-*Top 50 by popularity. View all 1247 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
+*Top 50 by popularity. View all 1365 tools → [Full Directory](./docs/full-directory.md) · [data/reports/](./data/reports/) · [docs/tools/](./docs/tools/)*
 
 | Tool | Version | Popularity | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.76` | 19.2M/mo | **[D](./docs/tools/playwright-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×14, ⚡ `AS-006` ×2, ⚡ `AS-011` ×5 | Jun 15 |
-| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 10.0M/mo | **[D](./docs/tools/chrome-devtools-mcp.md)** | `AS-014` ×29, 🔑 `AS-002` ×16, ⚡ `AS-011` ×4, ⚡ `AS-006` | Jun 15 |
-| [context7](https://github.com/upstash/context7) | `1.0.30` | 4.6M/mo | **[B](./docs/tools/context7.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
-| [upstash-context7-mcp](https://github.com/upstash/context7) | `1.0.30` | 4.6M/mo | **[B](./docs/tools/upstash-context7-mcp.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.48.0-nig…` | 2.8M/mo | **[C](./docs/tools/gemini-cli.md)** | `AS-014` ×56, 🔑 `AS-002` ×35, ⚡ `AS-011` ×11 | Jun 15 |
+| [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.76` | 19.2M/mo | **[C](./docs/tools/playwright-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×11, ⚡ `AS-006` ×2, ⚡ `AS-011` ×5 | Jun 15 |
+| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 10.0M/mo | **[C](./docs/tools/chrome-devtools-mcp.md)** | `AS-014` ×29, 🔑 `AS-002` ×13, ⚡ `AS-011` ×4, ⚡ `AS-006` | Jun 15 |
+| [ext-apps](https://github.com/modelcontextprotocol/ext-apps) | `1.7.4` | 6.3M/mo | **[A](./docs/tools/ext-apps.md)** | 🔑 `AS-002`, `AS-014` ×3 | Jun 15 |
+| [context7](https://github.com/upstash/context7) | `1.0.30` | 4.6M/mo | **[A](./docs/tools/context7.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
+| [upstash-context7-mcp](https://github.com/upstash/context7) | `1.0.30` | 4.6M/mo | **[A](./docs/tools/upstash-context7-mcp.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.48.0-nig…` | 2.8M/mo | **[A](./docs/tools/gemini-cli.md)** | `AS-014` ×56, 🔑 `AS-002` ×23, ⚡ `AS-011` ×11 | Jun 15 |
 | [cloudflare-containers](https://github.com/cloudflare/containers) | `0.3.2` | 1.6M/mo | **[A](./docs/tools/cloudflare-containers.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011`, `AS-014` ×7 | Jun 15 |
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `typescript…` | 1.1M/mo | **[C](./docs/tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×15, `AS-014` ×14, ⚡ `AS-011` | Jun 15 |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `typescript…` | 576.8k/mo | **[C](./docs/tools/mcp-server-github.md)** | 🔑 `AS-002` ×35, `AS-014` ×26, ⚡ `AS-011` ×18 | Jun 15 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.57.4` | 506.0k/mo | **[C](./docs/tools/n8n-mcp.md)** | `AS-014` ×7, 🔑 `AS-002` ×7, ⚡ `AS-011` ×2 | Jun 15 |
-| [cameroncooke-xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.2` | 448.0k/mo | **[B](./docs/tools/cameroncooke-xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×35, ⚡ `AS-011` ×3 | Jun 15 |
-| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.6.2` | 448.0k/mo | **[B](./docs/tools/xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×35, ⚡ `AS-011` ×3 | Jun 15 |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `typescript…` | 1.1M/mo | **[A](./docs/tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×14, `AS-014` ×14, ⚡ `AS-011` | Jun 15 |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `typescript…` | 576.8k/mo | **[A](./docs/tools/mcp-server-github.md)** | 🔑 `AS-002` ×24, `AS-014` ×26, ⚡ `AS-011` ×18 | Jun 15 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.57.4` | 506.0k/mo | **[A](./docs/tools/n8n-mcp.md)** | `AS-014` ×7, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Jun 15 |
+| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.6.2` | 448.0k/mo | **[A](./docs/tools/xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×31, ⚡ `AS-011` ×3 | Jun 15 |
+| [cameroncooke-xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.2` | 448.0k/mo | **[A](./docs/tools/cameroncooke-xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×31, ⚡ `AS-011` ×3 | Jun 15 |
 | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `typescript…` | 415.8k/mo | **[A](./docs/tools/mcp-server-sequential-thinking.md)** | `AS-014` | Jun 15 |
-| [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 375.3k/mo | **[D](./docs/tools/firecrawl-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×45, ⚡ `AS-011` ×19, `AS-014` ×20, ⚡ `AS-006` | Jun 15 |
-| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 353.9k/mo | **[C](./docs/tools/notion-mcp-server.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×22, `AS-014` ×22 | Jun 15 |
-| [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.12.0` | 291.5k/mo | **[B](./docs/tools/figma-context-mcp.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
-| [tavily-ai-tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.19` | 187.5k/mo | **[C](./docs/tools/tavily-ai-tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5, `AS-014` ×5 | Jun 15 |
-| [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.20` | 187.5k/mo | **[C](./docs/tools/tavily-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×5, `AS-014` ×5 | Jun 15 |
-| [ruflo](https://github.com/ruvnet/ruflo) | `3.10.46` | 143.4k/mo | **[B](./docs/tools/ruflo.md)** | `AS-014` ×33, 🔑 `AS-002` ×25, ⚡ `AS-011` | Jun 15 |
-| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.9.1` | 128.6k/mo | **[B](./docs/tools/mcp-server-kubernetes.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Jun 15 |
-| [circleci-public-mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | `0.15.1` | 107.5k/mo | **[C](./docs/tools/circleci-public-mcp-server-circleci.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×12, `AS-014` ×17, 📐 `AS-003` ×2 | Jun 15 |
-| [context-mode](https://github.com/mksglu/context-mode) | `1.0.162` | 105.1k/mo | **[D](./docs/tools/context-mode.md)** | `AS-012`, 🔑 `AS-002` ×24, ⚡ `AS-006` ×3, `AS-014` ×11, ⚡ `AS-011` ×5 | Jun 15 |
-| [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) | `0.2.42` | 98.4k/mo | **[C](./docs/tools/desktopcommandermcp.md)** | 🔑 `AS-002` ×22, `AS-014` ×26, ⚡ `AS-011` ×8, 📐 `AS-003` | Jun 15 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.122.0` | 97.3k/mo | **[C](./docs/tools/ms-365-mcp-server.md)** | `AS-012`, `AS-014` ×178, 🔑 `AS-002` ×377, ⚡ `AS-011` ×172 | Jun 15 |
-| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `typescript…` | 92.9k/mo | **[C](./docs/tools/mcp-server-brave-search.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Jun 15 |
+| [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.2.1` | 375.3k/mo | **[C](./docs/tools/firecrawl-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×25, ⚡ `AS-011` ×20, `AS-014` ×21, ⚡ `AS-006` | Jun 15 |
+| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.1.0` | 353.9k/mo | **[A](./docs/tools/notion-mcp-server.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×22, `AS-014` ×22 | Jun 15 |
+| [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.12.0` | 291.5k/mo | **[A](./docs/tools/figma-context-mcp.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
+| [tavily-ai-tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.19` | 187.5k/mo | **[A](./docs/tools/tavily-ai-tavily-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×5 | Jun 15 |
+| [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.20` | 187.5k/mo | **[A](./docs/tools/tavily-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×5 | Jun 15 |
+| [mcpb](https://github.com/modelcontextprotocol/mcpb) | `2.1.2` | 186.2k/mo | **[C](./docs/tools/mcpb.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×10, ⚡ `AS-006` | Jun 15 |
+| [n8n-nodes-mcp](https://github.com/nerding-io/n8n-nodes-mcp) | `0.1.37` | 170.0k/mo | **[A](./docs/tools/n8n-nodes-mcp.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Jun 15 |
+| [ruflo](https://github.com/ruvnet/ruflo) | `3.10.46` | 143.4k/mo | **[A](./docs/tools/ruflo.md)** | `AS-014` ×33, 🔑 `AS-002` ×25, ⚡ `AS-011` | Jun 15 |
+| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `3.9.1` | 128.6k/mo | **[A](./docs/tools/mcp-server-kubernetes.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Jun 15 |
+| [mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | `0.16.1` | 107.5k/mo | **[B](./docs/tools/mcp-server-circleci.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×12, `AS-014` ×17, 📐 `AS-003` ×2 | Jun 15 |
+| [circleci-public-mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | `0.15.1` | 107.5k/mo | **[B](./docs/tools/circleci-public-mcp-server-circleci.md)** | `AS-012`, 🔑 `AS-002` ×15, ⚡ `AS-011` ×11, `AS-014` ×16, 📐 `AS-003` ×2 | Jun 15 |
+| [context-mode](https://github.com/mksglu/context-mode) | `1.0.162` | 105.1k/mo | **[B](./docs/tools/context-mode.md)** | `AS-012`, 🔑 `AS-002` ×7, `AS-014` ×7, ⚡ `AS-011` | Jun 15 |
+| [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) | `0.2.42` | 98.4k/mo | **[B](./docs/tools/desktopcommandermcp.md)** | 🔑 `AS-002` ×19, `AS-014` ×26, ⚡ `AS-011` ×8, 📐 `AS-003` | Jun 15 |
+| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.124.0` | 97.3k/mo | **[A](./docs/tools/ms-365-mcp-server.md)** | `AS-014` ×178, 🔑 `AS-002` ×218, ⚡ `AS-011` ×172 | Jun 15 |
+| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `typescript…` | 92.9k/mo | **[A](./docs/tools/mcp-server-brave-search.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Jun 15 |
 | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `typescript…` | 87.3k | **[A](./docs/tools/mcp-server-time.md)** | `AS-014` ×2 | Jun 15 |
-| [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) | `3.2.1` | 86.2k/mo | **[C](./docs/tools/exa-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×2 | Jun 15 |
-| [mobile-mcp](https://github.com/mobile-next/mobile-mcp) | `0.0.59` | 75.6k/mo | **[B](./docs/tools/mobile-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×5, ⚡ `AS-011` | Jun 15 |
-| [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.11.2` | 73.2k/mo | **[D](./docs/tools/apify-mcp-server.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Jun 15 |
-| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `0.20.0` | 63.9k/mo | **[B](./docs/tools/claude-task-master.md)** | `AS-014` ×14, 🔑 `AS-002` ×9, ⚡ `AS-011` | Jun 15 |
-| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.0.85` | 56.4k/mo | **[C](./docs/tools/brave-search-mcp-server.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Jun 15 |
-| [dive](https://github.com/OpenAgentPlatform/Dive) | `0.14.2` | 33.9k/mo | **[C](./docs/tools/dive.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×2 | Jun 15 |
-| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `3.2.7` | 32.8k/mo | **[B](./docs/tools/obsidian-mcp-server.md)** | 🔑 `AS-002` ×9, `AS-014` ×13, ⚡ `AS-011` ×2 | Jun 15 |
-| [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) | `2.11.0` | 32.3k/mo | **[C](./docs/tools/brightdata-mcp.md)** | 🔑 `AS-002` ×67, ⚡ `AS-011` ×58, `AS-014` ×65 | Jun 15 |
-| [github-mcp-server](https://github.com/github/github-mcp-server) | `1.3.0` | 30.7k | **[C](./docs/tools/github-mcp-server.md)** | 🔑 `AS-002` ×75, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Jun 15 |
-| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 27.7k/mo | **[B](./docs/tools/mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
-| [antvis-mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 27.7k/mo | **[B](./docs/tools/antvis-mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
-| [postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) | `2.9.1` | 24.5k/mo | **[C](./docs/tools/postman-mcp-server.md)** | 🔑 `AS-002` ×53, ⚡ `AS-011` ×15, `AS-014` ×41 | Jun 15 |
-| [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | `3.0.0` | 23.6k/mo | **[B](./docs/tools/mcp-server-browserbase.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
-| [kastalien-research-thoughtbox](https://github.com/Kastalien-Research/thoughtbox) | `1.2.0` | 21.7k/mo | **[C](./docs/tools/kastalien-research-thoughtbox.md)** | `AS-014` ×3, 🔑 `AS-002` ×3, ⚡ `AS-011` | Jun 15 |
-| [kastalien-research-clear-thought-two](https://github.com/Kastalien-Research/thoughtbox) | `1.2.0` | 21.7k/mo | **[C](./docs/tools/kastalien-research-clear-thought-two.md)** | `AS-014` ×3, 🔑 `AS-002` ×3, ⚡ `AS-011` | Jun 15 |
-| [mcp-server-asana](https://github.com/roychri/mcp-server-asana) | `1.6.0` | 20.4k/mo | **[C](./docs/tools/mcp-server-asana.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3, `AS-014` ×10 | Jun 15 |
-| [tacticlaunch-mcp-linear](https://github.com/tacticlaunch/mcp-linear) | `1.1.2` | 20.2k/mo | **[C](./docs/tools/tacticlaunch-mcp-linear.md)** | `AS-014` ×42, 🔑 `AS-002` ×21, ⚡ `AS-011` ×8 | Jun 15 |
-| [aas-ee-open-websearch](https://github.com/Aas-ee/open-webSearch) | `2.1.11` | 19.3k/mo | **[C](./docs/tools/aas-ee-open-websearch.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×6, `AS-014` ×6 | Jun 15 |
-| [dainfernalcoder-perplexity-mcp](https://github.com/DaInfernalCoder/perplexity-mcp) | `Feature` | 15.3k/mo | **[B](./docs/tools/dainfernalcoder-perplexity-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jun 15 |
-| [git-mcp-server](https://github.com/cyanheads/git-mcp-server) | `2.15.1` | 14.9k/mo | **[C](./docs/tools/git-mcp-server.md)** | 🔑 `AS-002` ×39, `AS-014` ×28, ⚡ `AS-011` ×9 | Jun 15 |
-| [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.2.1` | 14.2k | **[C](./docs/tools/openmetadata.md)** | `AS-012`, `AS-014` ×31, 🔑 `AS-002` ×11, ⚡ `AS-011` ×8 | Jun 15 |
-| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.06.12…` | 14.2k | **[C](./docs/tools/xiaohongshu-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×10 | Jun 15 |
-| [marcopesani-mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 14.2k/mo | **[C](./docs/tools/marcopesani-mcp-server-serper.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×3 | Jun 15 |
-| [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 14.2k/mo | **[C](./docs/tools/mcp-server-serper.md)** | `AS-012`, 🔑 `AS-002` ×14, ⚡ `AS-011` ×7, `AS-014` ×8 | Jun 15 |
-| [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | `3.7.0` | 14.1k | **[B](./docs/tools/skill-seekers.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Jun 15 |
+| [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) | `3.2.1` | 86.2k/mo | **[A](./docs/tools/exa-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jun 15 |
+| [mobile-mcp](https://github.com/mobile-next/mobile-mcp) | `0.0.60` | 75.6k/mo | **[A](./docs/tools/mobile-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×5, ⚡ `AS-011` | Jun 15 |
+| [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.11.2` | 73.2k/mo | **[C](./docs/tools/apify-mcp-server.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Jun 15 |
+| [mcp-searxng](https://github.com/ihor-sokoliuk/mcp-searxng) | `1.5.0` | 67.6k/mo | **[A](./docs/tools/mcp-searxng.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Jun 15 |
+| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `0.20.0` | 63.9k/mo | **[A](./docs/tools/claude-task-master.md)** | `AS-014` ×14, 🔑 `AS-002` ×9, ⚡ `AS-011` | Jun 15 |
+| [magic-mcp](https://github.com/21st-dev/magic-mcp) | `0.1.1-beta.1` | 60.2k/mo | **[A](./docs/tools/magic-mcp.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` ×2 | Jun 15 |
+| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.0.85` | 56.4k/mo | **[A](./docs/tools/brave-search-mcp-server.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Jun 15 |
+| [mempalace](https://github.com/MemPalace/mempalace) | `3.4.1` | 55.7k | **[A](./docs/tools/mempalace.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Jun 15 |
+| [kong](https://github.com/Kong/kong) | `3.9.2` | 43.6k | **[A](./docs/tools/kong.md)** | `AS-014` | Jun 15 |
+| [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | `0.1.11` | 43.3k/mo | **[A](./docs/tools/railway-mcp-server.md)** | 🔑 `AS-002` ×31, `AS-014` ×36, ⚡ `AS-011` ×13, 🗝️ `AS-010` | Jun 15 |
+| [mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) | `2.0.8` | 37.8k/mo | **[A](./docs/tools/mcp-server-mysql.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` | Jun 15 |
+| [browsermcp](https://github.com/browsermcp/mcp) | `0.1.3` | 35.4k/mo | **[A](./docs/tools/browsermcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×12 | Jun 15 |
+| [dive](https://github.com/OpenAgentPlatform/Dive) | `0.14.2` | 33.9k/mo | **[A](./docs/tools/dive.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jun 15 |
+| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `3.2.7` | 32.8k/mo | **[A](./docs/tools/obsidian-mcp-server.md)** | 🔑 `AS-002` ×9, `AS-014` ×13, ⚡ `AS-011` ×2 | Jun 15 |
+| [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) | `2.11.0` | 32.3k/mo | **[A](./docs/tools/brightdata-mcp.md)** | 🔑 `AS-002` ×60, ⚡ `AS-011` ×58, `AS-014` ×65 | Jun 15 |
+| [github-mcp-server](https://github.com/github/github-mcp-server) | `1.3.0` | 30.7k | **[B](./docs/tools/github-mcp-server.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Jun 15 |
+| [agent-reach](https://github.com/Panniantong/Agent-Reach) | `1.5.0` | 30.1k | **[A](./docs/tools/agent-reach.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jun 15 |
+| [headroom](https://github.com/chopratejas/headroom) | `0.25.0` | 28.8k | **[A](./docs/tools/headroom.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jun 15 |
+| [antvis-mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 27.7k/mo | **[A](./docs/tools/antvis-mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
+| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 27.7k/mo | **[A](./docs/tools/mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Jun 15 |
+| [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | `12.6.0` | 25.2k/mo | **[A](./docs/tools/antigravity-awesome-skills.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Jun 15 |
 
 <!-- TOOLTRUST:END -->
 

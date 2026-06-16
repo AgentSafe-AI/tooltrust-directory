@@ -1,19 +1,19 @@
 {
   "tool_id": "onurd8898-evlek",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:29:37.269069645Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:31.729842157Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/onurd8898/evlek",
   "vendor": "Smithery",
   "description": "AI-native property MCP server for Northern Cyprus (KKTC). Nine read-only tools — search active listings, get the live price index, compare cities, estimate rental yield, look up KKTC legal procedures, profile districts, and more — pulled live from evlek.app, where every listing is KYC-verified. Compatible with Claude Desktop, ChatGPT Apps, Perplexity, Cursor, and any MCP client. Multilingual (TR, EN, RU, DE, AR), 6 cities (Girne, Lefkoşa, Gazimağusa, İskele, Güzelyurt, Lefke), GBP-primary pricing. First proptech in the region built MCP-first — making KKTC property data discoverable through AI assistants instead of fragmented websites.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_listings"
     },
@@ -91,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_district_profile"
     },
@@ -108,10 +108,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 9
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -129,7 +129,7 @@
     {
       "tool_name": "search_listings",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -283,6 +283,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:26Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:37Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

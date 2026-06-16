@@ -1,10 +1,10 @@
 {
   "tool_id": "yuchenssr-multi-ai-advisor-mcp",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-06-15T20:19:09.571899861Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:55:30.708316921Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/YuChenSSR/multi-ai-advisor-mcp",
   "category": "Developer Tools",
   "vendor": "YuChenSSR",
@@ -80,25 +80,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "riskmodels_render_artifact"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "riskmodels_render_artifact"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "riskmodels_render_artifact"
     },
@@ -136,9 +120,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "riskmodels_get_schema"
     },
@@ -177,10 +161,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 2,
-    "info": 15
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -276,8 +260,8 @@
     },
     {
       "tool_name": "riskmodels_render_artifact",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -417,6 +401,12 @@
     },
     {
       "scan_date": "2026-06-15T18:34:57Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:19:09Z",
       "grade": "C",
       "risk_score": 27,
       "version": "1.0.0"

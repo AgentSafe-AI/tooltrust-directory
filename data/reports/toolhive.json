@@ -1,0 +1,152 @@
+{
+  "tool_id": "toolhive",
+  "version": "0.29.3",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:47:59Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/stacklok/toolhive",
+  "category": "Developer Tools",
+  "vendor": "stacklok",
+  "stars": 1882,
+  "license": "Apache-2.0",
+  "language": "Go",
+  "description": "ToolHive is an enterprise-grade platform for running and managing Model Context Protocol (MCP) servers.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 14,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "pkg/mcp/server/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 57,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/mcp/server/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 121,
+            "snippet": "AddTool(",
+            "file": "pkg/mcp/server/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 16,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "pkg/transport/bridge.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 84,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/transport/bridge.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 203,
+            "snippet": "AddTool(",
+            "file": "pkg/transport/bridge.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 13,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "pkg/vmcp/server/serve.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 192,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/vmcp/server/serve.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 14,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "pkg/mcp/server/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 57,
+      "snippet": "server.NewMCPServer(",
+      "file": "pkg/mcp/server/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 121,
+      "snippet": "AddTool(",
+      "file": "pkg/mcp/server/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 16,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "pkg/transport/bridge.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 84,
+      "snippet": "server.NewMCPServer(",
+      "file": "pkg/transport/bridge.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 203,
+      "snippet": "AddTool(",
+      "file": "pkg/transport/bridge.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "pkg/vmcp/server/serve.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 192,
+      "snippet": "server.NewMCPServer(",
+      "file": "pkg/vmcp/server/serve.go",
+      "language": "go"
+    }
+  ]
+}

@@ -1,23 +1,24 @@
 {
   "tool_id": "megamind-0x-skillaudit",
   "version": "1.1.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:25:26.296516966Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:02:46.124835064Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/megamind-0x/skillaudit",
   "category": "Developer Tools",
   "vendor": "megamind-0x",
   "stars": 4,
   "npm_package": "skillaudit",
+  "npm_downloads_monthly": 60,
   "language": "JavaScript",
   "description": "🛡️ Security scanner for AI agent skills — detect credential stealers, exfiltration, and malicious patterns before install",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_url"
     },
@@ -39,9 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_github"
     },
@@ -55,9 +56,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "gate_check"
     },
@@ -88,10 +89,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 4
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -104,7 +105,7 @@
     {
       "tool_name": "scan_url",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -124,7 +125,7 @@
     {
       "tool_name": "gate_check",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -292,6 +293,12 @@
     },
     {
       "scan_date": "2026-06-15T18:43:00Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:25:26Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.1.0"

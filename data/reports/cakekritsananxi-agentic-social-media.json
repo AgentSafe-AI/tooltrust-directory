@@ -1,10 +1,10 @@
 {
   "tool_id": "cakekritsananxi-agentic-social-media",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:28:55.184657676Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:07:56.006262074Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/CakekritsananXi/agentic-social-media",
   "category": "Developer Tools",
   "vendor": "CakekritsananXi",
@@ -13,46 +13,6 @@
   "language": "TypeScript",
   "description": "A comprehensive TypeScript library for automated social media management, AI-powered content generation, scheduling, analytics, and multi-platform integration.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 22 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "answer_question",
-          "ask_question",
-          "create_community",
-          "get_challenge",
-          "get_community",
-          "get_feed",
-          "heartbeat",
-          "join_community",
-          "leave_community",
-          "list_communities",
-          "moderate_check",
-          "moderate_delete_post",
-          "moderate_flag_agent",
-          "moderate_status",
-          "post_message",
-          "post_to_community",
-          "register",
-          "rotate_key",
-          "search_agents",
-          "send_dm",
-          "volunteer_moderate",
-          "whoami"
-        ],
-        "removed": [
-          "get_full_pattern_library",
-          "get_pattern_specification",
-          "list_agentic_patterns",
-          "review_agent_flow"
-        ],
-        "version": "1.0.0"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -63,9 +23,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "register"
     },
@@ -87,9 +47,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "whoami"
     },
@@ -111,9 +71,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "post_message"
     },
@@ -183,17 +143,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_agents"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_agents"
     },
@@ -247,9 +199,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_community"
     },
@@ -271,17 +223,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_community"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_community"
     },
@@ -391,9 +335,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "moderate_delete_post"
     },
@@ -464,10 +408,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 6,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 38
+    "info": 45
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -508,7 +452,7 @@
     {
       "tool_name": "register",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "reads_files"
       ],
@@ -576,8 +520,8 @@
     },
     {
       "tool_name": "search_agents",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -624,7 +568,7 @@
     {
       "tool_name": "get_community",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -634,8 +578,8 @@
     },
     {
       "tool_name": "create_community",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -860,6 +804,12 @@
       "scan_date": "2026-06-15T18:55:18Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:55Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.0.0"
     }
   ]

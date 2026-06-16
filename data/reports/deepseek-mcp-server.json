@@ -1,10 +1,10 @@
 {
   "tool_id": "deepseek-mcp-server",
   "version": "0.5.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-15T20:16:45.662199188Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-15T23:52:10.57176072Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/DMontgomery40/deepseek-mcp-server",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
@@ -16,12 +16,20 @@
   "description": "Model Context Protocol server for DeepSeek's advanced language models",
   "findings": [
     {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "deepseek_chat"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.5.0: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get-deepseek-thinker"
+        ],
+        "removed": [
+          "deepseek_chat"
+        ],
+        "version": "0.5.0"
+      }
     },
     {
       "id": "AS-014",
@@ -29,15 +37,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "deepseek_chat"
+      "tool_name": "get-deepseek-thinker"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -65,18 +73,13 @@
     }
   ],
   "tool_names": [
-    "deepseek_chat"
+    "get-deepseek-thinker"
   ],
   "tool_contexts": [
     {
-      "tool_name": "deepseek_chat",
+      "tool_name": "get-deepseek-thinker",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (max_tokens)",
-        "dynamic email recipient (tool_choice)",
-        "dynamic email recipient (tools)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -486,6 +489,12 @@
     },
     {
       "scan_date": "2026-06-15T18:31:46Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.5.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:16:45Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.5.0"

@@ -1,14 +1,14 @@
 {
   "tool_id": "exa-mcp-server",
   "version": "3.2.1",
-  "grade": "C",
-  "risk_score": 33,
-  "scan_date": "2026-06-15T20:13:43.719925289Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:46:36.459066902Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/exa-labs/exa-mcp-server",
   "category": "Developer Tools",
   "vendor": "exa-labs",
-  "stars": 4578,
+  "stars": 4579,
   "npm_package": "exa-mcp-server",
   "npm_downloads_monthly": 86161,
   "license": "MIT",
@@ -17,25 +17,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "web_search_exa"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "web_search_exa"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "web_search_exa"
     },
@@ -57,9 +41,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "web_fetch_exa"
     },
@@ -82,10 +66,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -112,8 +96,8 @@
   "tool_contexts": [
     {
       "tool_name": "web_search_exa",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -124,7 +108,7 @@
     {
       "tool_name": "web_fetch_exa",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -656,6 +640,12 @@
       "scan_date": "2026-06-15T18:28:02Z",
       "grade": "C",
       "risk_score": 48,
+      "version": "3.2.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:13:43Z",
+      "grade": "C",
+      "risk_score": 33,
       "version": "3.2.1"
     }
   ]

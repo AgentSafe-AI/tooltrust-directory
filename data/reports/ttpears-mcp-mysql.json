@@ -1,24 +1,23 @@
 {
   "tool_id": "ttpears-mcp-mysql",
   "version": "3.1.0",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-15T20:27:05.555590288Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:05:44.508978917Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/ttpears/mysql-mcp",
   "category": "Developer Tools",
   "vendor": "ttpears",
   "stars": 1,
   "npm_package": "@ttpears/mysql-mcp",
-  "npm_downloads_monthly": 37,
   "license": "MIT",
   "language": "JavaScript",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mysql_discover_analytics"
     },
@@ -32,25 +31,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "mysql_query"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "mysql_query"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "mysql_query"
     },
@@ -89,10 +72,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 4
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -111,8 +94,8 @@
     },
     {
       "tool_name": "mysql_query",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -348,6 +331,12 @@
     },
     {
       "scan_date": "2026-06-15T18:45:26Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "3.1.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:27:05Z",
       "grade": "C",
       "risk_score": 40,
       "version": "3.1.0"

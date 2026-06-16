@@ -1,10 +1,10 @@
 {
   "tool_id": "abdqum-supabase-mcp-selfhosted",
   "version": "3.7.0",
-  "grade": "C",
-  "risk_score": 33,
-  "scan_date": "2026-06-15T20:31:42.591569908Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:07:22.021925028Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/abdqum/Supabase-MCP-SelfHosted",
   "category": "Developer Tools",
   "vendor": "abdqum",
@@ -13,92 +13,10 @@
   "description": "An MCP Server for your Self Hosted Supabase",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.7.0: 29 tool(s) added, 31 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "apply_migration",
-          "confirm_cost",
-          "create_branch",
-          "create_project",
-          "delete_branch",
-          "deploy_edge_function",
-          "execute_sql",
-          "generate_typescript_types",
-          "get_advisors",
-          "get_cost",
-          "get_edge_function",
-          "get_logs",
-          "get_organization",
-          "get_project",
-          "get_project_url",
-          "get_publishable_keys",
-          "list_branches",
-          "list_edge_functions",
-          "list_extensions",
-          "list_migrations",
-          "list_organizations",
-          "list_projects",
-          "list_tables",
-          "merge_branch",
-          "pause_project",
-          "rebase_branch",
-          "reset_branch",
-          "restore_project",
-          "search_docs"
-        ],
-        "removed": [
-          "sb_call_function",
-          "sb_create_bucket",
-          "sb_create_project",
-          "sb_create_secrets",
-          "sb_create_signed_url",
-          "sb_create_user",
-          "sb_delete_bucket",
-          "sb_delete_objects",
-          "sb_delete_records",
-          "sb_delete_secrets",
-          "sb_delete_user",
-          "sb_get_function",
-          "sb_get_project",
-          "sb_get_typescript_types",
-          "sb_get_user",
-          "sb_insert_records",
-          "sb_list_api_keys",
-          "sb_list_buckets",
-          "sb_list_functions",
-          "sb_list_migrations",
-          "sb_list_objects",
-          "sb_list_projects",
-          "sb_list_records",
-          "sb_list_secrets",
-          "sb_list_users",
-          "sb_pause_project",
-          "sb_restore_project",
-          "sb_run_query",
-          "sb_update_records",
-          "sb_update_user",
-          "sb_upsert_records"
-        ],
-        "version": "3.7.0"
-      }
-    },
-    {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_docs"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_docs"
     },
@@ -168,9 +86,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_project"
     },
@@ -192,9 +110,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "restore_project"
     },
@@ -224,9 +142,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_extensions"
     },
@@ -240,9 +158,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_migrations"
     },
@@ -256,17 +174,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "apply_migration"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "apply_migration"
     },
@@ -288,17 +198,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute_sql"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_sql"
     },
@@ -328,17 +230,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_advisors"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_advisors"
     },
@@ -360,9 +254,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_project_url"
     },
@@ -408,9 +302,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_edge_function"
     },
@@ -424,9 +318,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "deploy_edge_function"
     },
@@ -440,25 +334,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_branch"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_branch"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_branch"
     },
@@ -488,9 +366,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "delete_branch"
     },
@@ -529,10 +407,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 12,
-    "low": 8,
-    "info": 29
+    "high": 0,
+    "medium": 0,
+    "low": 7,
+    "info": 42
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -586,8 +464,8 @@
   "tool_contexts": [
     {
       "tool_name": "search_docs",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -690,8 +568,8 @@
     },
     {
       "tool_name": "apply_migration",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -700,8 +578,8 @@
     },
     {
       "tool_name": "execute_sql",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -717,8 +595,8 @@
     },
     {
       "tool_name": "get_advisors",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -728,7 +606,7 @@
     {
       "tool_name": "get_project_url",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -789,8 +667,8 @@
     },
     {
       "tool_name": "create_branch",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -842,6 +720,12 @@
       "scan_date": "2026-06-15T18:49:51Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "3.7.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:31:42Z",
+      "grade": "C",
+      "risk_score": 33,
       "version": "3.7.0"
     }
   ]

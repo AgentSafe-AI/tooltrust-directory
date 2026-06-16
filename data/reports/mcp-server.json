@@ -3,39 +3,44 @@
   "version": "99.0.0-dev",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-06-15T20:17:05Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
-  "source_url": "https://github.com/mapbox/mcp-server",
+  "scan_date": "2026-06-15T23:47:30Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/financial-datasets/mcp-server",
   "category": "Developer Tools",
-  "vendor": "mapbox",
-  "stars": 347,
-  "npm_package": "@mapbox/mcp-server",
-  "npm_downloads_monthly": 7754,
+  "vendor": "financial-datasets",
+  "stars": 2193,
   "license": "MIT",
-  "language": "TypeScript",
-  "description": "Mapbox Model Context Protocol (MCP) server",
+  "language": "Python",
+  "description": "An MCP server for interacting with the Financial Datasets stock market API.",
   "findings": [
     {
       "id": "AS-018",
       "severity": "Info",
       "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
       "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
         "evidence": [
           {
             "kind": "import",
-            "line": 12,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
+            "line": 6,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "server.py",
+            "language": "python"
           },
           {
             "kind": "init",
-            "line": 80,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
+            "line": 18,
+            "snippet": "FastMCP(",
+            "file": "server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 43,
+            "snippet": "@mcp.tool(",
+            "file": "server.py",
+            "language": "python"
           }
         ]
       }
@@ -54,17 +59,24 @@
   "embedded_mcp_evidence": [
     {
       "kind": "import",
-      "line": 12,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
+      "line": 6,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "server.py",
+      "language": "python"
     },
     {
       "kind": "init",
-      "line": 80,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
+      "line": 18,
+      "snippet": "FastMCP(",
+      "file": "server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 43,
+      "snippet": "@mcp.tool(",
+      "file": "server.py",
+      "language": "python"
     }
   ]
 }

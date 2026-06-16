@@ -1,10 +1,10 @@
 {
   "tool_id": "achilles-safehavencalls-pentagonal",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:29:32.864031369Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:29.821427629Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/achilles-safehavencalls/pentagonal",
   "vendor": "Smithery",
   "description": "**AI-powered smart contract forge** with an 8-agent adversarial security audit system.\n\n### Tools\n| Tool | Cost |\n|---|---|\n| `pentagonal_audit` — 8-agent security pen test | $5 |\n| `pentagonal_generate` — contracts from natural language | $5 |\n| `pentagonal_fix` — fix vulnerabilities | Free |\n| `pentagonal_compile` — Solidity → ABI + bytecode | Free |\n| `pentagonal_lookup` — token intelligence + honeypot detection | Free |\n| `pentagonal_rules` — self-learning security rules | Free |\n| `pentagonal_chains` — supported blockchains | Free |\n\n### Chains\nEthereum · Polygon · Base · Arbitrum · Optimism · BSC · Avalanche · Solana\n\n### Payment\nAgents pay per-use via **x402 USDC on Base** — no account needed. Human users pay with crypto credits.",
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pentagonal_fix"
     },
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pentagonal_chains"
     },
@@ -100,10 +100,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 7
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -143,7 +143,7 @@
     {
       "tool_name": "pentagonal_fix",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -167,7 +167,7 @@
     {
       "tool_name": "pentagonal_chains",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -358,6 +358,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:26Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:32Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

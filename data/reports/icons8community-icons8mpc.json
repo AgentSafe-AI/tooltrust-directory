@@ -1,27 +1,19 @@
 {
   "tool_id": "icons8community-icons8mpc",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:32:45.220291229Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:53.495043221Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/icons8community/icons8mpc",
   "vendor": "Smithery",
   "description": "🚀 Access MCP server SVG and PNG icons\nfor your vibe-coding projects!\n\n🎨 Icon Packs\n* 40,000+ icons\n* Endless creative possibilities!\n\n🤖 Seamless Integration\n* Works with Windsurf, Claude Code, Cursor, and other AI coding tools\n\n🔄 Easy Customization\n* Replace all icons with trendy designs \n* Customize with any style you prefer!\n\n✨ Enhance Your UI\n* Add icons to:\n    * Bullet lists\n    * Feature blocks\n    * Process steps\n    * Navigation\n    * And more!\n\n\nMore info: https://icons8.com/mcp",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_icons"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_icons"
     },
@@ -59,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_icon_png_url"
     },
@@ -84,10 +76,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 4
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -99,8 +91,8 @@
   "tool_contexts": [
     {
       "tool_name": "search_icons",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -125,7 +117,7 @@
     {
       "tool_name": "get_icon_png_url",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -346,6 +338,12 @@
     },
     {
       "scan_date": "2026-06-11T02:58:58Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:45Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

@@ -1,24 +1,25 @@
 {
   "tool_id": "byronwade-memoria",
   "version": "1.0.11",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:28:05.098301959Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:06:19.220910832Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/byronwade/memoria",
   "category": "Developer Tools",
   "vendor": "byronwade",
   "stars": 1,
   "npm_package": "@byronwade/memoria",
+  "npm_downloads_monthly": 139,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Prevents your AI from breaking code by revealing hidden file dependencies through git forensics.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "analyze_file"
     },
@@ -32,9 +33,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ask_history"
     },
@@ -56,9 +57,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_context"
     },
@@ -72,9 +73,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "save_lesson"
     },
@@ -88,9 +89,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "extract_memories"
     },
@@ -104,17 +105,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_memories"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_memories"
     },
@@ -137,10 +130,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 6,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 6
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -165,7 +158,7 @@
     {
       "tool_name": "ask_history",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "reads_files"
@@ -217,8 +210,8 @@
     },
     {
       "tool_name": "search_memories",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -328,6 +321,12 @@
       "scan_date": "2026-06-15T18:47:14Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "1.0.11"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:05Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "1.0.11"
     }
   ]

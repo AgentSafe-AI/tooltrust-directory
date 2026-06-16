@@ -1,10 +1,10 @@
 {
   "tool_id": "ethanhenrickson-math-mcp",
   "version": "0.1.3",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:18:07.4632483Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:53:50.590131453Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/EthanHenrickson/math-mcp",
   "category": "Developer Tools",
   "vendor": "EthanHenrickson",
@@ -17,9 +17,9 @@
   "findings": [
     {
       "id": "AS-006",
-      "severity": "Critical",
+      "severity": "Info",
       "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "description": "tool name or description implies arbitrary script/code execution — capability unconfirmed (no exec permission or code/script/eval input property found)",
       "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "evaluate"
     },
@@ -73,11 +73,11 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 6
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -108,8 +108,8 @@
   "tool_contexts": [
     {
       "tool_name": "evaluate",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -634,6 +634,12 @@
       "scan_date": "2026-06-15T18:33:36Z",
       "grade": "C",
       "risk_score": 40,
+      "version": "0.1.3"
+    },
+    {
+      "scan_date": "2026-06-15T20:18:07Z",
+      "grade": "C",
+      "risk_score": 25,
       "version": "0.1.3"
     }
   ]

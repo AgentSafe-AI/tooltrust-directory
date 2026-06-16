@@ -1,20 +1,16 @@
 # 🟢 pg-mcp-server
 
-> MCP Server for Postgres
-
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
-| **Vendor** | ericzakariasson |
-| **Stars** | ⭐ 178 |
-| **npm Package** | `pg-mcp-server` |
-| **npm Downloads (30d)** | 840 |
-| **Language** | TypeScript |
-| **Source** | [pg-mcp-server](https://github.com/ericzakariasson/pg-mcp-server) |
+| **Vendor** | stuzero |
+| **Stars** | ⭐ 540 |
+| **Language** | Python |
+| **Source** | [pg-mcp-server](https://github.com/stuzero/pg-mcp-server) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 
@@ -35,7 +31,7 @@
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
 Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.

@@ -1,14 +1,14 @@
 {
   "tool_id": "brave-search-mcp-server",
   "version": "2.0.85",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-06-15T20:14:58.059279398Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-15T23:48:55.953077968Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/brave/brave-search-mcp-server",
   "category": "Developer Tools",
   "vendor": "brave",
-  "stars": 1189,
+  "stars": 1190,
   "npm_package": "@brave/brave-search-mcp-server",
   "npm_downloads_monthly": 56400,
   "license": "MIT",
@@ -16,9 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_web_search"
     },
@@ -48,9 +48,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_news_search"
     },
@@ -72,9 +72,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_image_search"
     },
@@ -96,9 +96,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_video_search"
     },
@@ -120,17 +120,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_local_search"
     },
@@ -152,9 +144,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_llm_context"
     },
@@ -170,7 +162,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens_per_url\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"maximum_number_of_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "brave_llm_context"
     },
@@ -178,7 +170,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"maximum_number_of_tokens_per_url\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "brave_llm_context"
     },
@@ -200,17 +192,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_place_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "brave_place_search"
     },
@@ -249,10 +233,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 7,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 10,
-    "info": 10
+    "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -286,7 +270,7 @@
     {
       "tool_name": "brave_web_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -301,7 +285,7 @@
     {
       "tool_name": "brave_news_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -311,7 +295,7 @@
     {
       "tool_name": "brave_image_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -321,7 +305,7 @@
     {
       "tool_name": "brave_video_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -330,8 +314,8 @@
     },
     {
       "tool_name": "brave_local_search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -344,7 +328,7 @@
     {
       "tool_name": "brave_llm_context",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -360,8 +344,8 @@
     },
     {
       "tool_name": "brave_place_search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -394,6 +378,12 @@
     },
     {
       "scan_date": "2026-06-15T18:29:40Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "2.0.85"
+    },
+    {
+      "scan_date": "2026-06-15T20:14:58Z",
       "grade": "C",
       "risk_score": 27,
       "version": "2.0.85"

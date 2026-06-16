@@ -1,19 +1,19 @@
 {
   "tool_id": "joshuaogabriel-anchor-compliance",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:29:30.444542794Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:11:29.465699787Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/joshuaogabriel/anchor-compliance",
   "vendor": "Smithery",
   "description": "Australian advertising \u0026 marketing compliance for AI assistants. Scan websites, check ad/social/email copy, and look up regulator guidelines (ACCC, TGA, ASIC, AHPRA, ACMA) directly from Claude, ChatGPT, or Cursor.\n\nTools:\n\n- `scan_website_compliance` — audit any public URL for AU advertising risk\n- `check_ad_copy` — analyse ad, social, or email copy for regulatory issues\n- `get_compliance_guidelines` — look up rules by industry \u0026 jurisdiction\n\nFree tier: 20 scans / 40 ad checks / 60 guideline lookups per IP per hour. Indicative results only — not legal advice.\n\nBuilt by [Anchor Compliance](https://anchorcompliance.io).",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_website_compliance"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "check_ad_copy"
     },
@@ -59,9 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_compliance_guidelines"
     },
@@ -83,17 +83,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "rewrite_content_compliant"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "rewrite_content_compliant"
     },
@@ -116,10 +108,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 4
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -132,7 +124,7 @@
     {
       "tool_name": "scan_website_compliance",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -147,7 +139,7 @@
     {
       "tool_name": "check_ad_copy",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -160,7 +152,7 @@
     {
       "tool_name": "get_compliance_guidelines",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -172,8 +164,8 @@
     },
     {
       "tool_name": "rewrite_content_compliant",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -272,6 +264,12 @@
     },
     {
       "scan_date": "2026-06-15T18:52:22Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:30Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

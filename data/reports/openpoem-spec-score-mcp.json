@@ -1,10 +1,10 @@
 {
   "tool_id": "openpoem-spec-score-mcp",
   "version": "2.0.2",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:26:36.067246123Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:04:16.309057552Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/openpoem/spec-score-mcp",
   "category": "Developer Tools",
   "vendor": "openpoem",
@@ -16,9 +16,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "score_prompt"
     },
@@ -40,9 +40,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "optimize_prompt"
     },
@@ -73,10 +73,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -87,7 +87,7 @@
     {
       "tool_name": "score_prompt",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -97,7 +97,7 @@
     {
       "tool_name": "optimize_prompt",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -220,6 +220,12 @@
     },
     {
       "scan_date": "2026-06-15T18:44:25Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.0.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:26:36Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2.0.2"

@@ -1,10 +1,10 @@
 {
   "tool_id": "mcp-server-ccxt",
   "version": "1.2.1",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:18:25.792877251Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-15T23:54:15.970870806Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/doggybee/mcp-server-ccxt",
   "category": "Developer Tools",
   "vendor": "doggybee",
@@ -131,7 +131,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"apiKey\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "account-balance"
     },
@@ -139,7 +139,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"apiKey\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "account-balance"
     },
@@ -257,9 +257,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "set-proxy-config"
     },
@@ -314,10 +314,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 35
+    "info": 36
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -507,7 +507,7 @@
     {
       "tool_name": "set-proxy-config",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -749,6 +749,12 @@
       "scan_date": "2026-06-15T18:34:00Z",
       "grade": "C",
       "risk_score": 32,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:18:25Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "1.2.1"
     }
   ]

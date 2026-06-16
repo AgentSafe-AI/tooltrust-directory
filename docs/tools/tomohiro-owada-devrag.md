@@ -12,7 +12,7 @@
 | **Language** | Go |
 | **Source** | [tomohiro-owada-devrag](https://github.com/tomohiro-owada/devrag) |
 | **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---
 

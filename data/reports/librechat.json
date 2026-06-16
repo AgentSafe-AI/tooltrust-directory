@@ -1,0 +1,83 @@
+{
+  "tool_id": "librechat",
+  "version": "0.8.7-rc1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:44:04Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/danny-avila/LibreChat",
+  "category": "Developer Tools",
+  "vendor": "danny-avila",
+  "stars": 39233,
+  "npm_package": "LibreChat",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "e2e/setup/fake-mcp-server.js",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 7,
+            "snippet": "new McpServer(",
+            "file": "e2e/setup/fake-mcp-server.js",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 12,
+            "snippet": ".registerTool(",
+            "file": "e2e/setup/fake-mcp-server.js",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "e2e/setup/fake-mcp-server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 7,
+      "snippet": "new McpServer(",
+      "file": "e2e/setup/fake-mcp-server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 12,
+      "snippet": ".registerTool(",
+      "file": "e2e/setup/fake-mcp-server.js",
+      "language": "typescript"
+    }
+  ]
+}

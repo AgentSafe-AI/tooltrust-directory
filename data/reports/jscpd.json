@@ -1,0 +1,83 @@
+{
+  "tool_id": "jscpd",
+  "version": "5.0.9",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:46:03Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/kucherenko/jscpd",
+  "category": "Developer Tools",
+  "vendor": "kucherenko",
+  "stars": 5775,
+  "npm_package": "jscpd-monorepo",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "Copy/paste detector for programming source code, supports 223 formats. AI-ready with token-efficient reporter, skill and MCP server.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "apps/jscpd-server/src/server/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 7,
+            "snippet": "new McpServer(",
+            "file": "apps/jscpd-server/src/server/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 20,
+            "snippet": ".registerTool(",
+            "file": "apps/jscpd-server/src/server/mcp-server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "apps/jscpd-server/src/server/mcp-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 7,
+      "snippet": "new McpServer(",
+      "file": "apps/jscpd-server/src/server/mcp-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 20,
+      "snippet": ".registerTool(",
+      "file": "apps/jscpd-server/src/server/mcp-server.ts",
+      "language": "typescript"
+    }
+  ]
+}

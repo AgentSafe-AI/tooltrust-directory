@@ -1,10 +1,10 @@
 {
   "tool_id": "strale-io-strale",
   "version": "0.1.4",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:25:56.499148369Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:02:55.882717146Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/strale-io/strale",
   "category": "Developer Tools",
   "vendor": "strale-io",
@@ -24,9 +24,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "strale_getting_started"
     },
@@ -48,9 +48,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "strale_execute"
     },
@@ -80,9 +80,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "strale_search"
     },
@@ -112,17 +112,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "strale_methodology"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "strale_methodology"
     },
@@ -144,9 +136,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "strale_trust_profile"
     },
@@ -168,9 +160,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "strale_transaction"
     },
@@ -193,10 +185,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 6,
-    "info": 9
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -251,7 +243,7 @@
     {
       "tool_name": "strale_getting_started",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -261,7 +253,7 @@
     {
       "tool_name": "strale_execute",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -272,7 +264,7 @@
     {
       "tool_name": "strale_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -288,8 +280,8 @@
     },
     {
       "tool_name": "strale_methodology",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "reads_files"
@@ -300,7 +292,7 @@
     {
       "tool_name": "strale_trust_profile",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -310,7 +302,7 @@
     {
       "tool_name": "strale_transaction",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -765,6 +757,12 @@
     },
     {
       "scan_date": "2026-06-15T18:43:34Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.1.4"
+    },
+    {
+      "scan_date": "2026-06-15T20:25:56Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.1.4"

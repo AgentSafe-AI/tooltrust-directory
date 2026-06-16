@@ -1,10 +1,10 @@
 {
   "tool_id": "jutalik-originforge-generate-nft-mcp",
   "version": "1.0.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-15T20:28:01Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "scan_date": "2026-06-16T00:04:28.995969102Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/jutalik/originforge-generate-nft-mcp",
   "category": "Developer Tools",
   "vendor": "jutalik",
@@ -13,29 +13,68 @@
   "language": "JavaScript",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 139,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-nft-data"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-nft-image"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-nft-attributes"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-color-palette"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-enhanced-nft-view"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "save-nft-files"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "save-nft-files"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-random-nfts"
     }
   ],
   "summary": {
@@ -43,10 +82,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -64,162 +102,67 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "get-color-palette",
+    "get-enhanced-nft-view",
+    "get-nft-attributes",
+    "get-nft-data",
+    "get-nft-image",
+    "get-random-nfts",
+    "save-nft-files"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-11T01:48:22Z",
+      "tool_name": "get-nft-data",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-13T02:17:09Z",
+      "tool_name": "get-nft-image",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-14T02:12:56Z",
+      "tool_name": "get-nft-attributes",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-15T02:10:43Z",
+      "tool_name": "get-color-palette",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-16T02:24:00Z",
+      "tool_name": "get-enhanced-nft-view",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-17T02:13:11Z",
+      "tool_name": "save-nft-files",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-19T02:17:42Z",
+      "tool_name": "get-random-nfts",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-20T02:22:08Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-21T02:14:17Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-22T02:13:10Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-23T02:16:06Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-24T02:15:10Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-25T02:08:36Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T02:18:07Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-26T07:39:54Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-27T01:34:03Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-28T02:34:06Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-29T02:33:44Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-04-30T02:31:55Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-01T02:34:32Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-02T02:22:15Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-03T02:31:22Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-04T02:30:34Z",
-      "grade": "A",
-      "risk_score": 8,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:36:28Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:35:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T18:47:19Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

@@ -1,0 +1,67 @@
+{
+  "tool_id": "unreal-mcp",
+  "version": "sha-4e5f00da5073",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:47:48Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/chongdashu/unreal-mcp",
+  "category": "Other",
+  "vendor": "chongdashu",
+  "stars": 1986,
+  "language": "C++",
+  "description": "Enable AI assistant clients like Cursor, Windsurf and Claude Desktop to control Unreal Engine through natural language using the Model Context Protocol (MCP).",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 13,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "Python/unreal_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 262,
+            "snippet": "FastMCP(",
+            "file": "Python/unreal_mcp_server.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "Python/unreal_mcp_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 262,
+      "snippet": "FastMCP(",
+      "file": "Python/unreal_mcp_server.py",
+      "language": "python"
+    }
+  ]
+}

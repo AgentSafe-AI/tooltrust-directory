@@ -1,0 +1,84 @@
+{
+  "tool_id": "ironcurtain",
+  "version": "0.11.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:51:20Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/provos/ironcurtain",
+  "category": "Developer Tools",
+  "vendor": "provos",
+  "stars": 503,
+  "npm_package": "@provos/ironcurtain",
+  "npm_downloads_monthly": 485,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
+  "description": "A secure* runtime for autonomous AI agents. Policy from plain-English constitutions. (*https://ironcurtain.dev)",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 6,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "packages/memory-mcp-server/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 18,
+            "snippet": "new McpServer(",
+            "file": "packages/memory-mcp-server/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 28,
+            "snippet": ".registerTool(",
+            "file": "packages/memory-mcp-server/src/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 6,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "packages/memory-mcp-server/src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 18,
+      "snippet": "new McpServer(",
+      "file": "packages/memory-mcp-server/src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 28,
+      "snippet": ".registerTool(",
+      "file": "packages/memory-mcp-server/src/server.ts",
+      "language": "typescript"
+    }
+  ]
+}

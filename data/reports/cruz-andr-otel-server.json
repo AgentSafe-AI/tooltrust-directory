@@ -1,10 +1,10 @@
 {
   "tool_id": "cruz-andr-otel-server",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:28:42.90479989Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T00:12:16.753689079Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/cruz-andr/otel-server",
   "category": "Developer Tools",
   "vendor": "cruz-andr",
@@ -23,9 +23,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_container_status"
     },
@@ -47,9 +47,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_container_stats"
     },
@@ -71,9 +71,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch_logs"
     },
@@ -95,9 +95,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_error_traces"
     },
@@ -128,10 +128,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 0,
     "medium": 0,
-    "low": 5,
-    "info": 6
+    "low": 4,
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -180,7 +180,7 @@
     {
       "tool_name": "get_container_stats",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -190,7 +190,7 @@
     {
       "tool_name": "fetch_logs",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -200,7 +200,7 @@
     {
       "tool_name": "search_error_traces",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -218,6 +218,12 @@
   "scan_history": [
     {
       "scan_date": "2026-06-15T18:50:08Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:28:42Z",
       "grade": "B",
       "risk_score": 17,
       "version": "1.0.0"

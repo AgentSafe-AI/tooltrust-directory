@@ -1,10 +1,10 @@
 {
   "tool_id": "revmischa-agentbase",
   "version": "0.1.1",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-15T20:33:27Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "scan_date": "2026-06-16T00:08:23.485809581Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/revmischa/agentbase",
   "category": "Developer Tools",
   "vendor": "revmischa",
@@ -14,36 +14,20 @@
   "description": "AgentBase - shared knowledge base for AI agents",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "packages/mcp/src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 129,
-            "snippet": "new McpServer(",
-            "file": "packages/mcp/src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 134,
-            "snippet": ".registerTool(",
-            "file": "packages/mcp/src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentbase_setup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agentbase_introspect"
     }
   ],
   "summary": {
@@ -51,10 +35,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -79,96 +62,24 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "agentbase_introspect",
+    "agentbase_setup"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-11T01:49:38Z",
+      "tool_name": "agentbase_setup",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-12T02:15:02Z",
+      "tool_name": "agentbase_introspect",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-13T02:19:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-14T02:15:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-15T02:12:49Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-16T02:27:14Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-17T02:14:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-18T01:55:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-19T02:18:04Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-20T02:25:29Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-21T02:16:10Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-04-26T07:44:25Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-05-17T02:40:55Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-05-30T02:38:00Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
-    },
-    {
-      "scan_date": "2026-06-15T18:48:37Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.1.1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

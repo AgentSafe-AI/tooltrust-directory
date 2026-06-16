@@ -1,10 +1,10 @@
 {
   "tool_id": "openclaw-hal9000-romulus-31780",
   "version": "smithery",
-  "grade": "D",
-  "risk_score": 50,
-  "scan_date": "2026-06-15T20:32:42.391995183Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-06-16T00:12:53.234457965Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/openclaw-hal9000/romulus-31780",
   "vendor": "Smithery",
   "description": "ROMulus is a retro gaming ROM search engine that aggregates results from four major sites. Search by game title and console to get download page URLs, cover images, and file sizes... all in one all.\n\n Tools:\n • search_roms — Find ROMs by title, optionally filtered by console (NES, SNES, N64, GameCube, PS1,\n   PS2, PSP, GBA, Genesis, Dreamcast, and 20+ more)\n • get_game_details — Fetch full metadata for a game: year, region, genre, languages, rating,\n  serial number, and description\n • list_systems — List all 28 supported consoles\n\n No API key required.",
@@ -19,17 +19,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_roms"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_roms"
     },
@@ -51,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_game_details"
     },
@@ -84,10 +76,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -99,7 +91,7 @@
     {
       "tool_name": "search_roms",
       "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "grade": "C",
       "behavior": [
         "uses_network"
       ],
@@ -109,7 +101,7 @@
     {
       "tool_name": "get_game_details",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -153,6 +145,12 @@
     },
     {
       "scan_date": "2026-06-15T18:54:44Z",
+      "grade": "D",
+      "risk_score": 50,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:32:42Z",
       "grade": "D",
       "risk_score": 50,
       "version": "smithery"

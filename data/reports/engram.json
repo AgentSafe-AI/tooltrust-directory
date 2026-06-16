@@ -1,0 +1,82 @@
+{
+  "tool_id": "engram",
+  "version": "1.16.3",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-15T23:46:31Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
+  "source_url": "https://github.com/Gentleman-Programming/engram",
+  "category": "Developer Tools",
+  "vendor": "Gentleman-Programming",
+  "stars": 4365,
+  "license": "MIT",
+  "language": "Go",
+  "description": "Persistent memory system for AI coding agents. Agent-agnostic Go binary with SQLite + FTS5, MCP server, HTTP API, CLI, and TUI.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 30,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "internal/mcp/mcp.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 237,
+            "snippet": "server.NewMCPServer(",
+            "file": "internal/mcp/mcp.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 262,
+            "snippet": "AddTool(",
+            "file": "internal/mcp/mcp.go",
+            "language": "go"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 30,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "internal/mcp/mcp.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 237,
+      "snippet": "server.NewMCPServer(",
+      "file": "internal/mcp/mcp.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 262,
+      "snippet": "AddTool(",
+      "file": "internal/mcp/mcp.go",
+      "language": "go"
+    }
+  ]
+}
