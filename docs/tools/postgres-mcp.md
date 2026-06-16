@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | crystaldba |
-| **Stars** | ⭐ 2906 |
+| **Stars** | ⭐ 2907 |
 | **Language** | Python |
 | **Source** | [postgres-mcp](https://github.com/crystaldba/postgres-mcp) |
-| **Scan Date** | 2026-06-15 |
+| **Scan Date** | 2026-06-16 |
 | **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---

@@ -2,26 +2,18 @@
   "tool_id": "coingecko-api",
   "version": "smithery",
   "grade": "C",
-  "risk_score": 44,
-  "scan_date": "2026-06-15T20:30:25.942683449Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "risk_score": 27,
+  "scan_date": "2026-06-16T03:08:02.098000631Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/coingecko/api",
   "vendor": "Smithery",
   "description": "Real-time and historical cryptocurrency market data such as price, market cap, volume, and more for over 38 million tokens across 1500 exchanges.\n\nFree to access and no key required.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute"
     },
@@ -51,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_docs"
     },
@@ -76,10 +68,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 2,
+    "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 2
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -105,7 +97,7 @@
     {
       "tool_name": "search_docs",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -128,6 +120,12 @@
     },
     {
       "scan_date": "2026-06-15T18:52:52Z",
+      "grade": "C",
+      "risk_score": 44,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:30:25Z",
       "grade": "C",
       "risk_score": 44,
       "version": "smithery"

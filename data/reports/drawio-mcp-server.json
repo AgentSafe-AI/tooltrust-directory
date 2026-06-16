@@ -1,9 +1,9 @@
 {
   "tool_id": "drawio-mcp-server",
   "version": "2.1.1",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-15T23:48:49Z",
+  "scan_date": "2026-06-16T03:02:49.989426508Z",
   "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/lgazo/drawio-mcp-server",
   "category": "Developer Tools",
@@ -16,29 +16,20 @@
   "description": "Draw.io Model Context Protocol (MCP) Server",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "packages/drawio-mcp-server/src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 687,
-            "snippet": "new McpServer(",
-            "file": "packages/drawio-mcp-server/src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_diagram"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_diagram"
     }
   ],
   "summary": {
@@ -46,10 +37,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,12 +57,22 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "create_diagram"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-15T20:15:00Z",
+      "tool_name": "create_diagram",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 8,
-      "version": "2.1.1"
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: draw.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

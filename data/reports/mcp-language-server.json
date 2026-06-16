@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-language-server",
   "version": "0.1.1",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-06-15T23:48:18.45276031Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-06-16T03:02:23Z",
   "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/isaacphi/mcp-language-server",
   "category": "Developer Tools",
@@ -14,38 +14,40 @@
   "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.1: 1 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "text_detect_language"
-        ],
-        "removed": [
-          "media_extract_text_from_image"
-        ],
-        "version": "0.1.1"
-      }
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_detect_language"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 111,
+            "snippet": "server.NewMCPServer(",
+            "file": "main.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -61,21 +63,6 @@
       "snippet": "server.NewMCPServer(",
       "file": "main.go",
       "language": "go"
-    }
-  ],
-  "tool_names": [
-    "text_detect_language"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "text_detect_language",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -95,6 +82,12 @@
       "scan_date": "2026-06-15T20:14:33Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-06-15T23:48:18Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.1.1"
     }
   ]

@@ -1,19 +1,19 @@
 {
   "tool_id": "capratesignals-cap-rate-signals",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:29:38.710512656Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T03:07:56.204614306Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/capratesignals/cap-rate-signals",
   "vendor": "Smithery",
   "description": "Cap Rate Signals — US Real Estate Investment Intelligence\n\nIdentifies US real estate markets that are about to reprice upward, before consensus catches up. Tracks confirmed corporate investment — semiconductor fabs, pharma plants, defense campuses, data centers — and scores markets based on where workers are arriving but housing demand hasn't yet been priced in.\n\n14 tools covering market discovery, investment briefs, head-to-head comparisons, regional comps, signal alerts, and map data. Data sourced live from a proprietary database monitoring 109 companies across 40+ US metros.\n\nUse it to ask: Where should I invest right now? What's happening in Indianapolis? Show me semiconductor markets under $300K. What moved this week?",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "assess_metro"
     },
@@ -67,17 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_top_picks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_top_picks"
     },
@@ -155,17 +147,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "log_missed_query"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "log_missed_query"
     },
@@ -188,10 +172,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
-    "low": 4,
-    "info": 14
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -214,7 +198,7 @@
     {
       "tool_name": "assess_metro",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -252,7 +236,7 @@
     {
       "tool_name": "get_top_picks",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -316,8 +300,8 @@
     },
     {
       "tool_name": "log_missed_query",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -406,6 +390,12 @@
     },
     {
       "scan_date": "2026-06-15T18:52:23Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:38Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

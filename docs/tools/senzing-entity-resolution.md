@@ -1,4 +1,4 @@
-# 🟡 senzing-entity-resolution
+# 🟢 senzing-entity-resolution
 
 > Identity Intelligence for Agentic AI Workflows
 Connect Data. Power Intelligence.™
@@ -47,8 +47,8 @@ Documentation · Privacy Policy · senzing.com
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [senzing-entity-resolution](https://smithery.ai/server/senzing/entity-resolution) |
@@ -62,24 +62,12 @@ Documentation · Privacy Policy · senzing.com
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 23 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 12 tool(s) added, 12 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

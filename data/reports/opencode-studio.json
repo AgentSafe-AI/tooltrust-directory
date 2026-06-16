@@ -1,9 +1,9 @@
 {
   "tool_id": "opencode-studio",
   "version": "2.3.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-15T23:50:09.984772688Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-16T03:03:59.453854773Z",
   "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/Microck/opencode-studio",
   "category": "Developer Tools",
@@ -15,12 +15,27 @@
   "description": "web GUI for securely managing local OpenCode configuration",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "play-sheet-music"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.3.0: 4 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "find_competitor",
+          "find_persona",
+          "find_use_case",
+          "get_competitive_arsenal"
+        ],
+        "removed": [
+          "get-music-guide",
+          "get-strudel-guide",
+          "play-live-pattern",
+          "play-sheet-music",
+          "search-music-docs"
+        ],
+        "version": "2.3.0"
+      }
     },
     {
       "id": "AS-014",
@@ -28,7 +43,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-music-guide"
+      "tool_name": "get_competitive_arsenal"
     },
     {
       "id": "AS-014",
@@ -36,7 +51,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "play-live-pattern"
+      "tool_name": "find_competitor"
     },
     {
       "id": "AS-014",
@@ -44,23 +59,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-strudel-guide"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search-music-docs"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search-music-docs"
+      "tool_name": "find_use_case"
     },
     {
       "id": "AS-014",
@@ -68,77 +67,59 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search-music-docs"
+      "tool_name": "find_persona"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 6
+    "low": 0,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get-music-guide",
-    "get-strudel-guide",
-    "play-live-pattern",
-    "play-sheet-music",
-    "search-music-docs"
+    "find_competitor",
+    "find_persona",
+    "find_use_case",
+    "get_competitive_arsenal"
   ],
   "tool_contexts": [
     {
-      "tool_name": "play-sheet-music",
+      "tool_name": "get_competitive_arsenal",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get-music-guide",
+      "tool_name": "find_competitor",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "play-live-pattern",
+      "tool_name": "find_use_case",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (autoplay)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get-strudel-guide",
+      "tool_name": "find_persona",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
+    }
+  ],
+  "scan_history": [
     {
-      "tool_name": "search-music-docs",
-      "action": "ALLOW",
+      "scan_date": "2026-06-15T23:50:09Z",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: strudel.cc"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 2,
+      "version": "2.3.0"
     }
   ]
 }

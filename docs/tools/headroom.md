@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.25.0` |
 | **Vendor** | chopratejas |
-| **Stars** | ⭐ 28800 |
+| **Stars** | ⭐ 28944 |
 | **Language** | Python |
 | **Source** | [headroom](https://github.com/chopratejas/headroom) |
-| **Scan Date** | 2026-06-15 |
+| **Scan Date** | 2026-06-16 |
 | **Scanner** | tooltrust-scanner/v0.3.17 |
 
 ---

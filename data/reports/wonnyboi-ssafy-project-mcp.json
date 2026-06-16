@@ -1,10 +1,10 @@
 {
   "tool_id": "wonnyboi-ssafy-project-mcp",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 16,
-  "scan_date": "2026-06-15T20:29:37.266723286Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-06-16T03:09:35.697502433Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://github.com/wonnyboi/ssafy_project_mcp",
   "category": "Developer Tools",
   "vendor": "wonnyboi",
@@ -12,34 +12,6 @@
   "language": "TypeScript",
   "description": "SSAFY 프로젝트 포트폴리오 정보 수집 가이드라인 mcp ",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 12 tool(s) added, 2 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "pm_context",
-          "pm_contribute",
-          "pm_delta",
-          "pm_find",
-          "pm_impact",
-          "pm_orphans",
-          "pm_path",
-          "pm_scan",
-          "pm_security",
-          "pm_security_triage",
-          "pm_stats",
-          "pm_visualize"
-        ],
-        "removed": [
-          "wallet_get_balance",
-          "wallet_get_portfolio"
-        ],
-        "version": "1.0.0"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -74,17 +46,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "pm_stats"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pm_stats"
     },
@@ -98,17 +62,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "pm_delta"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pm_delta"
     },
@@ -138,9 +94,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pm_visualize"
     },
@@ -154,9 +110,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pm_scan"
     },
@@ -170,17 +126,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "pm_security"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pm_security"
     },
@@ -194,9 +142,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "pm_security_triage"
     },
@@ -211,10 +159,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 9,
+    "high": 0,
+    "medium": 0,
     "low": 0,
-    "info": 12
+    "info": 18
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -269,7 +217,7 @@
     {
       "tool_name": "pm_stats",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "reads_files"
       ],
@@ -279,7 +227,7 @@
     {
       "tool_name": "pm_delta",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "writes_files"
       ],
@@ -323,7 +271,7 @@
     {
       "tool_name": "pm_security",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -365,6 +313,12 @@
       "scan_date": "2026-06-01T02:59:47Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-15T20:29:37Z",
+      "grade": "B",
+      "risk_score": 16,
       "version": "1.0.0"
     }
   ]

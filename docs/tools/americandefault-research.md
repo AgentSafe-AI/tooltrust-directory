@@ -1,11 +1,11 @@
-# 🟡 americandefault-research
+# 🟢 americandefault-research
 
 > Read-only MCP for U.S. household financial distress data. Query 96 economic indicators (mortgage delinquency, unemployment claims, savings rate, credit conditions, foreclosure activity, and more), the American Distress Index (ADI) composite score, and county-level distress scores across all 3,144 U.S. counties. Data sourced from FRED, BLS, NY Fed, ATTOM, MBA, and other primary government and industry sources. Updated daily. Built by American Default Research — americandefault.org.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [americandefault-research](https://smithery.ai/server/americandefault/research) |
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
 | Info     | 10 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 3 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

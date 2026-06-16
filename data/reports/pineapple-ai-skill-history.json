@@ -1,39 +1,19 @@
 {
   "tool_id": "pineapple-ai-skill-history",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:30:03.528915254Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-16T03:08:01.39564578Z",
+  "scanner": "tooltrust-scanner/v0.3.17",
   "source_url": "https://smithery.ai/server/pineapple-ai/skill-history",
   "vendor": "Smithery",
   "description": "Track download history for 70,000+ agent skills across ClawHub and skills.sh. Like star-history.com, but for agent skills.\n\n  **Tools:**\n  - `get_skill_downloads(handle, slug)` — Get full download history with daily snapshots\n  - `search_skills(query, limit)` — Search skills by name, author, or keyword\n\n  Free, no auth required. Data updated every 2 hours.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get_skill_downloads",
-          "search_skills"
-        ],
-        "removed": [
-          "get_skill",
-          "get_skill_content",
-          "get_skill_file",
-          "list_library"
-        ],
-        "version": "smithery"
-      }
-    },
-    {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_skill_downloads"
     },
@@ -55,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_skills"
     },
@@ -80,10 +60,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -94,7 +74,7 @@
     {
       "tool_name": "get_skill_downloads",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -104,7 +84,7 @@
     {
       "tool_name": "search_skills",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -255,6 +235,12 @@
       "scan_date": "2026-06-15T18:52:48Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:30:03Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "smithery"
     }
   ]
