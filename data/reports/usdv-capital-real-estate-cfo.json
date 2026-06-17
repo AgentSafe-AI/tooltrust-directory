@@ -1,27 +1,19 @@
 {
   "tool_id": "usdv-capital-real-estate-cfo",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:31:34.874160931Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-17T03:25:35.140751776Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/usdv-capital/real-estate-cfo",
   "vendor": "Smithery",
   "description": "Real estate market intelligence, financial calculators, and capital advisory tools covering all 50 US states plus DC and Puerto Rico. Access CFO-level market data for 86,000+ locations, calculate DSCR and flip ROI with professional assessments, check financing eligibility, and screen investment opportunities — powered by Census ACS and Zillow data.\n\n**23 tools** across 5 categories:\n\n- **Market Intelligence** — Search 86K+ locations, compare markets side-by-side, find nearby opportunities, screen pre-scored investment cities\n- **Financial Calculators** — DSCR, flip ROI, rental cash flow, BRRRR, STR revenue, cash-to-close, construction budget — each with CFO-level assessment\n- **Eligibility \u0026 Products** — Check financing availability by state, browse capital solutions (Fix \u0026 Flip, DSCR, Bridge, Construction, Multifamily up to $50M, Build-to-Rent up to $50M)\n- **Deal Analysis** — Full deal underwriting combining market data, calculator output, and eligibility in one call\n- **Utility** — Property tax lookup, insurance estimates, rent estimates, neighborhood analysis, 1031 exchange calculator, entity structure guidance\n\nUSDV Capital is Your Real Estate CFO — a capital advisory platform helping real estate investors structure, source, and optimize financing from $150K to $50M.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "markets-search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "markets-search"
     },
@@ -99,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "eligibility-check"
     },
@@ -276,10 +268,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 7,
-    "info": 23
+    "info": 25
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -310,8 +302,8 @@
   "tool_contexts": [
     {
       "tool_name": "markets-search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -371,7 +363,7 @@
     {
       "tool_name": "eligibility-check",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -603,6 +595,12 @@
     },
     {
       "scan_date": "2026-06-15T18:53:46Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:31:34Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

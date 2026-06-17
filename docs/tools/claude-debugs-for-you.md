@@ -10,11 +10,11 @@
 | **Vendor** | jasonjmcghee |
 | **Stars** | ⭐ 509 |
 | **npm Package** | `claude-debugs-for-you` |
-| **npm Downloads (30d)** | 15 |
+| **npm Downloads (30d)** | 14 |
 | **Language** | TypeScript |
 | **Source** | [claude-debugs-for-you](https://github.com/jasonjmcghee/claude-debugs-for-you) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

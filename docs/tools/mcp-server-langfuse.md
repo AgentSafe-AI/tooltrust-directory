@@ -12,8 +12,8 @@
 | **npm Package** | `mcp-server-langfuse` |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-langfuse](https://github.com/langfuse/mcp-server-langfuse) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

@@ -10,8 +10,8 @@ Discover, verify, and connect with AI agents. The first protocol-aware directory
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agentry-agent-registry](https://smithery.ai/server/agentry/agent-registry) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

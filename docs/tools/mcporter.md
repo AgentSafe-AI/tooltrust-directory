@@ -8,13 +8,13 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.0` |
 | **Vendor** | openclaw |
-| **Stars** | ⭐ 4655 |
+| **Stars** | ⭐ 4661 |
 | **npm Package** | `mcporter` |
-| **npm Downloads (30d)** | 493.0k |
+| **npm Downloads (30d)** | 571.3k |
 | **Language** | TypeScript |
 | **Source** | [mcporter](https://github.com/openclaw/mcporter) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

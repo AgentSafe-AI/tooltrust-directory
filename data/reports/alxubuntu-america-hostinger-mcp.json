@@ -1,19 +1,33 @@
 {
   "tool_id": "alxubuntu-america-hostinger-mcp",
   "version": "0.1.23",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-06-16T00:08:39.895781442Z",
-  "scanner": "tooltrust-scanner/v0.3.17",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-17T03:25:30.031367756Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/alxubuntu/america-hostinger-mcp",
   "category": "Developer Tools",
   "vendor": "alxubuntu",
   "npm_package": "hostinger-api-mcp",
-  "npm_downloads_monthly": 55663,
+  "npm_downloads_monthly": 55950,
   "license": "MIT",
   "language": "JavaScript",
   "description": "This MCP server provides a reliable, scalable, and standards-compliant infrastructure for applications operating across the Americas",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.23: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "reach_listProfileSegmentContactsV1"
+        ],
+        "removed": null,
+        "version": "0.1.23"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -1170,6 +1184,30 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "reach_listProfileSegmentContactsV1"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "reach_listProfileSegmentContactsV1"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "reach_listProfileSegmentContactsV1"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "reach_listSegmentContactsV1"
@@ -2225,10 +2263,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 38,
-    "info": 238
+    "low": 39,
+    "info": 240
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -2367,6 +2405,7 @@
     "reach_getSegmentDetailsV1",
     "reach_listContactGroupsV1",
     "reach_listContactsV1",
+    "reach_listProfileSegmentContactsV1",
     "reach_listProfilesV1",
     "reach_listSegmentContactsV1",
     "reach_listSegmentsV1",
@@ -3093,6 +3132,17 @@
       "behavior": [
         "executes_commands",
         "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "reach_listProfileSegmentContactsV1",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -3880,6 +3930,12 @@
       "scan_date": "2026-06-15T20:30:58Z",
       "grade": "C",
       "risk_score": 34,
+      "version": "0.1.23"
+    },
+    {
+      "scan_date": "2026-06-16T00:08:39Z",
+      "grade": "A",
+      "risk_score": 4,
       "version": "0.1.23"
     }
   ]

@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `5.13.1` |
 | **Vendor** | bethington |
-| **Stars** | ⭐ 2453 |
+| **Stars** | ⭐ 2481 |
 | **Language** | Java |
 | **Source** | [ghidra-mcp](https://github.com/bethington/ghidra-mcp) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

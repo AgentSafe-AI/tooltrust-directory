@@ -10,11 +10,11 @@
 | **Vendor** | VisActor |
 | **Stars** | ⭐ 50 |
 | **npm Package** | `@visactor/vchart-mcp-server` |
-| **npm Downloads (30d)** | 85 |
+| **npm Downloads (30d)** | 90 |
 | **Language** | TypeScript |
 | **Source** | [visactor-vchart-mcp-server](https://github.com/VisActor/vchart-mcp-server) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

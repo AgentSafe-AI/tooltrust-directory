@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-16T03:08:03.944837122Z",
-  "scanner": "tooltrust-scanner/v0.3.17",
+  "scan_date": "2026-06-17T03:24:34.186692485Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/seahbk1006/seahboonkeong-chat-opendosm",
   "vendor": "Smithery",
   "description": "MCP for public datasets OpenDOSM (Developed by Seah Boon Keong)\n\nWhat it delivers:\n- 163 curated datasets (Department of Statistics Malaysia + sources)\n- Programmatic tools: discover, query, get latest, correlation, ARIMA forecasts (with fallback)\n\nBenefits:\nAccessibility - Economists, analysts, and policymakers can interact without technical barriers.\nSpeed - Instant retrieval of complex datasets. Ability to support forecast and correlation features.\nIntegration -  Enable integration to dashboards that supports MCP.\n\nSample Queries\n1. What are the monthly CPI trends overall and by division (food, transport, housing)?\n2. Which items are driving food inflation vs core inflation?\n3. How sensitive is GDP growth to changes in key subcomponents (investment, consumption)?",
@@ -13,10 +13,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 8 tool(s) added, 7 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 7 tool(s) added, 8 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "correlation",
+          "forecast",
+          "get_dataset_info",
+          "get_latest_data",
+          "list_datasets",
+          "query_data",
+          "visualize"
+        ],
+        "removed": [
           "CHATWORK_DELETE_MESSAGE",
           "CHATWORK_GET_CHATWORK_CONTACTS",
           "CHATWORK_GET_FILE",
@@ -26,33 +35,16 @@
           "CHATWORK_GET_ROOM_MESSAGES",
           "CHATWORK_UPLOAD_FILE"
         ],
-        "removed": [
-          "correlation",
-          "forecast",
-          "get_dataset_info",
-          "get_latest_data",
-          "list_datasets",
-          "query_data",
-          "visualize"
-        ],
         "version": "smithery"
       }
     },
     {
-      "id": "AS-002",
+      "id": "AS-007",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_DELETE_MESSAGE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "CHATWORK_DELETE_MESSAGE"
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'list_datasets' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_datasets"
     },
     {
       "id": "AS-014",
@@ -60,23 +52,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_DELETE_MESSAGE"
+      "tool_name": "list_datasets"
     },
     {
-      "id": "AS-002",
+      "id": "AS-007",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_dataset_info' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_dataset_info"
     },
     {
       "id": "AS-014",
@@ -84,47 +68,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_GET_FILE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "CHATWORK_GET_FILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_GET_FILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_GET_MY_STATUS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_GET_ROOM_MEMBERS"
+      "tool_name": "get_dataset_info"
     },
     {
       "id": "AS-002",
@@ -132,7 +76,15 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
+      "tool_name": "query_data"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'query_data' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "query_data"
     },
     {
       "id": "AS-011",
@@ -140,7 +92,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
+      "tool_name": "query_data"
     },
     {
       "id": "AS-014",
@@ -148,7 +100,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
+      "tool_name": "query_data"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'get_latest_data' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_latest_data"
     },
     {
       "id": "AS-014",
@@ -156,15 +116,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_GET_ROOMS"
+      "tool_name": "get_latest_data"
     },
     {
-      "id": "AS-002",
+      "id": "AS-007",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_UPLOAD_FILE"
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'correlation' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "correlation"
     },
     {
       "id": "AS-014",
@@ -172,104 +132,108 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "CHATWORK_UPLOAD_FILE"
+      "tool_name": "correlation"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'forecast' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "forecast"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "forecast"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'visualize' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "visualize"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "visualize"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 4,
-    "info": 13
+    "low": 1,
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "CHATWORK_DELETE_MESSAGE",
-    "CHATWORK_GET_CHATWORK_CONTACTS",
-    "CHATWORK_GET_FILE",
-    "CHATWORK_GET_MY_STATUS",
-    "CHATWORK_GET_ROOMS",
-    "CHATWORK_GET_ROOM_MEMBERS",
-    "CHATWORK_GET_ROOM_MESSAGES",
-    "CHATWORK_UPLOAD_FILE"
+    "correlation",
+    "forecast",
+    "get_dataset_info",
+    "get_latest_data",
+    "list_datasets",
+    "query_data",
+    "visualize"
   ],
   "tool_contexts": [
     {
-      "tool_name": "CHATWORK_DELETE_MESSAGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: api.chatwork.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "CHATWORK_GET_FILE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "CHATWORK_GET_MY_STATUS",
+      "tool_name": "list_datasets",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "CHATWORK_GET_ROOM_MEMBERS",
+      "tool_name": "get_dataset_info",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "CHATWORK_GET_ROOM_MESSAGES",
+      "tool_name": "query_data",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "hardcoded API endpoint: api.chatwork.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "CHATWORK_GET_ROOMS",
+      "tool_name": "get_latest_data",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "CHATWORK_UPLOAD_FILE",
+      "tool_name": "correlation",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "forecast",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "visualize",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -621,6 +585,12 @@
       "scan_date": "2026-06-16T00:11:55Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-16T03:08:03Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

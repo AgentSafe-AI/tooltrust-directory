@@ -1,55 +1,19 @@
 {
   "tool_id": "mountainmystic-hederatoolbox",
   "version": "3.5.0-stable",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-06-16T00:11:49.156449202Z",
-  "scanner": "tooltrust-scanner/v0.3.17",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-17T03:26:24.983757727Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/mountainmystic/hederatoolbox",
   "category": "Developer Tools",
   "vendor": "mountainmystic",
   "npm_package": "@hederatoolbox/platform",
-  "npm_downloads_monthly": 173,
+  "npm_downloads_monthly": 180,
   "license": "NOASSERTION",
   "language": "JavaScript",
   "description": "MCP Server giving AI Agents metered access to the Hedera Network. 23 Tools. Pay per call in HBAR. No Registration",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.5.0-stable: 20 tool(s) added, 2 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "account_info",
-          "confirm_terms",
-          "contract_analyze",
-          "contract_call",
-          "contract_read",
-          "get_terms",
-          "governance_analyze",
-          "governance_monitor",
-          "hcs_audit_trail",
-          "hcs_monitor",
-          "hcs_query",
-          "hcs_understand",
-          "hcs_verify_record",
-          "hcs_write_record",
-          "identity_check_sanctions",
-          "identity_resolve",
-          "identity_verify_kyc",
-          "token_analyze",
-          "token_monitor",
-          "token_price"
-        ],
-        "removed": [
-          "linkup-fetch",
-          "linkup-search"
-        ],
-        "version": "3.5.0-stable"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -286,7 +250,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_price"
     },
@@ -294,7 +258,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_price"
     },
@@ -334,7 +298,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_monitor"
     },
@@ -342,7 +306,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_monitor"
     },
@@ -382,7 +346,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "identity_verify_kyc"
     },
@@ -390,7 +354,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_id\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "identity_verify_kyc"
     },
@@ -501,7 +465,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 5,
     "info": 51
@@ -803,6 +767,12 @@
       "scan_date": "2026-06-15T20:32:53Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "3.5.0-stable"
+    },
+    {
+      "scan_date": "2026-06-16T00:11:49Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "3.5.0-stable"
     }
   ]

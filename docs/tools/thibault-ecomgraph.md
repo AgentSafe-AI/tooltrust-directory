@@ -22,8 +22,8 @@ No auth required. Free to use. Learn more at https://ecomgraph.com/mcp.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [thibault-ecomgraph](https://smithery.ai/server/thibault/ecomgraph) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-17 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
