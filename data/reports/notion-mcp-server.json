@@ -1,16 +1,16 @@
 {
   "tool_id": "notion-mcp-server",
-  "version": "2.1.0",
+  "version": "2.4.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-06-17T02:57:43.399283109Z",
+  "scan_date": "2026-06-18T02:53:13.004390752Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/makenotion/notion-mcp-server",
   "category": "Developer Tools",
   "vendor": "makenotion",
-  "stars": 4426,
+  "stars": 4432,
   "npm_package": "@notionhq/notion-mcp-server",
-  "npm_downloads_monthly": 360608,
+  "npm_downloads_monthly": 370418,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Official Notion MCP Server",
@@ -542,14 +542,62 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "API-move-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "API-retrieve-page-markdown"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "API-retrieve-page-markdown"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "API-retrieve-page-markdown"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "API-update-page-markdown"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "API-update-page-markdown"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "API-update-page-markdown"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 22,
-    "info": 44
+    "low": 24,
+    "info": 48
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -573,8 +621,10 @@
     "API-retrieve-a-database",
     "API-retrieve-a-page",
     "API-retrieve-a-page-property",
+    "API-retrieve-page-markdown",
     "API-update-a-block",
-    "API-update-a-data-source"
+    "API-update-a-data-source",
+    "API-update-page-markdown"
   ],
   "tool_contexts": [
     {
@@ -687,9 +737,6 @@
       "grade": "A",
       "behavior": [
         "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: developers.notion.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -808,6 +855,28 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "API-retrieve-page-markdown",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "API-update-page-markdown",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1351,6 +1420,12 @@
     },
     {
       "scan_date": "2026-06-16T03:00:48Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.1.0"
+    },
+    {
+      "scan_date": "2026-06-17T02:57:43Z",
       "grade": "A",
       "risk_score": 2,
       "version": "2.1.0"

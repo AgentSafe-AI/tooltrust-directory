@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 421 |
 | **Language** | Python |
 | **Source** | [mcpadapt](https://github.com/grll/mcpadapt) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-18 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

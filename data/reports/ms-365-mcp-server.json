@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.124.1",
+  "version": "0.125.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-06-17T03:01:18.787688276Z",
+  "scan_date": "2026-06-18T02:56:16.631854373Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 784,
+  "stars": 785,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 106880,
+  "npm_downloads_monthly": 113968,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Office services through the Graph API",
@@ -4515,6 +4515,30 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-my-profile"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get-my-profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-my-profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "parse-teams-url"
@@ -4564,8 +4588,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 217,
-    "info": 351
+    "low": 218,
+    "info": 353
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -4667,6 +4691,7 @@
     "get-mail-message-mime",
     "get-mail-tips",
     "get-mailbox-settings",
+    "get-my-profile",
     "get-onenote-page-content",
     "get-outlook-contact",
     "get-planner-bucket",
@@ -6994,6 +7019,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "get-my-profile",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: odata.nextLink"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "parse-teams-url",
       "action": "ALLOW",
       "grade": "A",
@@ -7552,6 +7592,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.124.0"
+    },
+    {
+      "scan_date": "2026-06-17T03:01:18Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.124.1"
     }
   ]
 }

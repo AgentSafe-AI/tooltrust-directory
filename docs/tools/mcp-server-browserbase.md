@@ -10,10 +10,10 @@
 | **Vendor** | browserbase |
 | **Stars** | ⭐ 3377 |
 | **npm Package** | `@browserbasehq/mcp` |
-| **npm Downloads (30d)** | 25.8k |
+| **npm Downloads (30d)** | 33.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-18 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

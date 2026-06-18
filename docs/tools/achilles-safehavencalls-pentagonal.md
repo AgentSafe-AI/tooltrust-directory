@@ -26,8 +26,8 @@ Agents pay per-use via **x402 USDC on Base** — no account needed. Human users 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [achilles-safehavencalls-pentagonal](https://smithery.ai/server/achilles-safehavencalls/pentagonal) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-18 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

@@ -3,12 +3,26 @@
   "version": "sha-9678130ce408",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-06-16T00:09:15.179634854Z",
-  "scanner": "tooltrust-scanner/v0.3.17",
+  "scan_date": "2026-06-18T03:02:05.974420602Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/SmartManoj/Test",
   "category": "Other",
   "vendor": "SmartManoj",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsha-9678130ce408: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "rate_tool"
+        ],
+        "removed": null,
+        "version": "sha-9678130ce408"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -2344,14 +2358,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "fetch_confluence_page"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rate_tool"
     }
   ],
   "summary": {
     "critical": 7,
-    "high": 2,
+    "high": 3,
     "medium": 0,
     "low": 44,
-    "info": 239
+    "info": 240
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -2458,6 +2480,7 @@
     "prompt_template_fill",
     "prompt_test_suite",
     "rag_relevance_rank",
+    "rate_tool",
     "redact_pii",
     "regex_test",
     "rerank_evaluate",
@@ -3934,6 +3957,16 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rate_tool",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -3989,6 +4022,12 @@
       "scan_date": "2026-06-15T20:30:36Z",
       "grade": "D",
       "risk_score": 65,
+      "version": "sha-9678130ce408"
+    },
+    {
+      "scan_date": "2026-06-16T00:09:15Z",
+      "grade": "C",
+      "risk_score": 42,
       "version": "sha-9678130ce408"
     }
   ]

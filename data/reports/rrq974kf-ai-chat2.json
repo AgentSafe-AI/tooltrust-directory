@@ -1,10 +1,10 @@
 {
   "tool_id": "rrq974kf-ai-chat2",
   "version": "0.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-31T02:49:42.65507704Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-18T03:02:27.223708155Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/rrq974kf/ai-chat2",
   "category": "Developer Tools",
   "vendor": "rrq974kf",
@@ -13,17 +13,9 @@
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_DELETE_MESSAGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "CHATWORK_DELETE_MESSAGE"
     },
@@ -45,9 +37,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
     },
@@ -69,17 +61,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "CHATWORK_GET_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "CHATWORK_GET_FILE"
     },
@@ -117,9 +101,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
     },
@@ -149,9 +133,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "CHATWORK_UPLOAD_FILE"
     },
@@ -166,10 +150,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 3,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 8
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -185,8 +169,8 @@
   "tool_contexts": [
     {
       "tool_name": "CHATWORK_DELETE_MESSAGE",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -200,7 +184,7 @@
     {
       "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -209,8 +193,8 @@
     },
     {
       "tool_name": "CHATWORK_GET_FILE",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -235,7 +219,7 @@
     {
       "tool_name": "CHATWORK_GET_ROOM_MESSAGES",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -368,6 +352,12 @@
     },
     {
       "scan_date": "2026-05-17T02:43:28Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-05-31T02:49:42Z",
       "grade": "C",
       "risk_score": 25,
       "version": "0.1.0"

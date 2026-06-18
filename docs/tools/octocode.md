@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.16.1` |
+| **Version** | `0.17.1` |
 | **Vendor** | Muvon |
-| **Stars** | ⭐ 400 |
+| **Stars** | ⭐ 402 |
 | **Language** | Rust |
 | **Source** | [octocode](https://github.com/Muvon/octocode) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-18 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

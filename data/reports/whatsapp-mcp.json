@@ -1,25 +1,55 @@
 {
   "tool_id": "whatsapp-mcp",
   "version": "0.0.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-17T02:56:59.861802119Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-18T02:52:29.381112586Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/lharries/whatsapp-mcp",
   "category": "Developer Tools",
   "vendor": "lharries",
-  "stars": 5802,
+  "stars": 5807,
   "license": "MIT",
   "language": "Go",
   "description": "WhatsApp MCP server",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_CREATE_MESSAGE_TEMPLATE"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.0.1: 5 tool(s) added, 19 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "whatsapp_send_contact",
+          "whatsapp_send_image",
+          "whatsapp_send_link",
+          "whatsapp_send_location",
+          "whatsapp_send_text"
+        ],
+        "removed": [
+          "WHATSAPP_CREATE_MESSAGE_TEMPLATE",
+          "WHATSAPP_DELETE_MESSAGE_TEMPLATE",
+          "WHATSAPP_GET_BUSINESS_PROFILE",
+          "WHATSAPP_GET_MEDIA",
+          "WHATSAPP_GET_MEDIA_INFO",
+          "WHATSAPP_GET_MESSAGE_TEMPLATES",
+          "WHATSAPP_GET_PHONE_NUMBER",
+          "WHATSAPP_GET_PHONE_NUMBERS",
+          "WHATSAPP_GET_TEMPLATE_STATUS",
+          "WHATSAPP_SEND_CONTACTS",
+          "WHATSAPP_SEND_INTERACTIVE_BUTTONS",
+          "WHATSAPP_SEND_INTERACTIVE_LIST",
+          "WHATSAPP_SEND_LOCATION",
+          "WHATSAPP_SEND_MEDIA",
+          "WHATSAPP_SEND_MEDIA_BY_ID",
+          "WHATSAPP_SEND_MESSAGE",
+          "WHATSAPP_SEND_REPLY",
+          "WHATSAPP_SEND_TEMPLATE_MESSAGE",
+          "WHATSAPP_UPLOAD_MEDIA"
+        ],
+        "version": "0.0.1"
+      }
     },
     {
       "id": "AS-014",
@@ -27,215 +57,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_CREATE_MESSAGE_TEMPLATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_DELETE_MESSAGE_TEMPLATE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_DELETE_MESSAGE_TEMPLATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_GET_BUSINESS_PROFILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_BUSINESS_PROFILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_GET_MEDIA"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_GET_MEDIA"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_MEDIA"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_GET_MEDIA_INFO"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_GET_MEDIA_INFO"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_MEDIA_INFO"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_MESSAGE_TEMPLATES"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_PHONE_NUMBER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_PHONE_NUMBERS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_GET_TEMPLATE_STATUS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_CONTACTS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_BUTTONS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_BUTTONS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_BUTTONS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_LIST"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_LIST"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_LIST"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_LOCATION"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_MEDIA"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_SEND_MEDIA_BY_ID"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_SEND_MEDIA_BY_ID"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_MEDIA_BY_ID"
+      "tool_name": "whatsapp_send_contact"
     },
     {
       "id": "AS-002",
@@ -243,7 +65,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_SEND_MESSAGE"
+      "tool_name": "whatsapp_send_image"
     },
     {
       "id": "AS-011",
@@ -251,7 +73,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_SEND_MESSAGE"
+      "tool_name": "whatsapp_send_image"
     },
     {
       "id": "AS-014",
@@ -259,23 +81,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_MESSAGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_SEND_REPLY"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "WHATSAPP_SEND_REPLY"
+      "tool_name": "whatsapp_send_image"
     },
     {
       "id": "AS-014",
@@ -283,7 +89,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_REPLY"
+      "tool_name": "whatsapp_send_link"
     },
     {
       "id": "AS-014",
@@ -291,15 +97,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_SEND_TEMPLATE_MESSAGE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WHATSAPP_UPLOAD_MEDIA"
+      "tool_name": "whatsapp_send_location"
     },
     {
       "id": "AS-014",
@@ -307,15 +105,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WHATSAPP_UPLOAD_MEDIA"
+      "tool_name": "whatsapp_send_text"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 7,
-    "info": 30
+    "low": 1,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -343,232 +141,51 @@
     }
   ],
   "tool_names": [
-    "WHATSAPP_CREATE_MESSAGE_TEMPLATE",
-    "WHATSAPP_DELETE_MESSAGE_TEMPLATE",
-    "WHATSAPP_GET_BUSINESS_PROFILE",
-    "WHATSAPP_GET_MEDIA",
-    "WHATSAPP_GET_MEDIA_INFO",
-    "WHATSAPP_GET_MESSAGE_TEMPLATES",
-    "WHATSAPP_GET_PHONE_NUMBER",
-    "WHATSAPP_GET_PHONE_NUMBERS",
-    "WHATSAPP_GET_TEMPLATE_STATUS",
-    "WHATSAPP_SEND_CONTACTS",
-    "WHATSAPP_SEND_INTERACTIVE_BUTTONS",
-    "WHATSAPP_SEND_INTERACTIVE_LIST",
-    "WHATSAPP_SEND_LOCATION",
-    "WHATSAPP_SEND_MEDIA",
-    "WHATSAPP_SEND_MEDIA_BY_ID",
-    "WHATSAPP_SEND_MESSAGE",
-    "WHATSAPP_SEND_REPLY",
-    "WHATSAPP_SEND_TEMPLATE_MESSAGE",
-    "WHATSAPP_UPLOAD_MEDIA"
+    "whatsapp_send_contact",
+    "whatsapp_send_image",
+    "whatsapp_send_link",
+    "whatsapp_send_location",
+    "whatsapp_send_text"
   ],
   "tool_contexts": [
     {
-      "tool_name": "WHATSAPP_CREATE_MESSAGE_TEMPLATE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_DELETE_MESSAGE_TEMPLATE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_GET_BUSINESS_PROFILE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_GET_MEDIA",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_GET_MEDIA_INFO",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_GET_MESSAGE_TEMPLATES",
+      "tool_name": "whatsapp_send_contact",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "WHATSAPP_GET_PHONE_NUMBER",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_GET_PHONE_NUMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_GET_TEMPLATE_STATUS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_SEND_CONTACTS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to_number)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_BUTTONS",
+      "tool_name": "whatsapp_send_image",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (buttons)",
-        "dynamic email recipient (reply_to_message_id)",
-        "dynamic email recipient (to_number)"
+        "dynamic URL input (image_url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "WHATSAPP_SEND_INTERACTIVE_LIST",
+      "tool_name": "whatsapp_send_link",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (button_text)",
-        "dynamic email recipient (reply_to_message_id)",
-        "dynamic email recipient (to_number)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "WHATSAPP_SEND_LOCATION",
+      "tool_name": "whatsapp_send_location",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to_number)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "WHATSAPP_SEND_MEDIA",
+      "tool_name": "whatsapp_send_text",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to_number)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_SEND_MEDIA_BY_ID",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (reply_to_message_id)",
-        "dynamic email recipient (to_number)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_SEND_MESSAGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (preview_url)",
-        "dynamic email recipient (to_number)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_SEND_REPLY",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (preview_url)",
-        "dynamic email recipient (reply_to_message_id)",
-        "dynamic email recipient (to_number)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_SEND_TEMPLATE_MESSAGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to_number)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "WHATSAPP_UPLOAD_MEDIA",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (file_to_upload)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1110,6 +727,12 @@
     },
     {
       "scan_date": "2026-06-16T03:00:12Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.0.1"
+    },
+    {
+      "scan_date": "2026-06-17T02:56:59Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.0.1"
