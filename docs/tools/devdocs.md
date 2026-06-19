@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.0` |
 | **Vendor** | cyberagiinc |
-| **Stars** | ⭐ 2092 |
+| **Stars** | ⭐ 2094 |
 | **npm Package** | `devdocs-explorer` |
 | **Language** | TypeScript |
 | **Source** | [devdocs](https://github.com/cyberagiinc/DevDocs) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

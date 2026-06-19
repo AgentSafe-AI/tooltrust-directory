@@ -1,15 +1,17 @@
 # 🟢 blender-mcp
 
+> Open-source MCP to use Blender with any LLM
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `sha-6e99eb5a442b` |
 | **Vendor** | ahujasid |
-| **Stars** | ⭐ 22883 |
+| **Stars** | ⭐ 22922 |
 | **Language** | Python |
 | **Source** | [blender-mcp](https://github.com/ahujasid/blender-mcp) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

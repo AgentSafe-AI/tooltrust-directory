@@ -1,15 +1,15 @@
-# 🟡 lucaperret-tidal
+# 🟢 lucaperret-tidal
 
 > Search, browse, and manage your Tidal music library with AI. Discover artists, albums, and tracks. Create and curate playlists. Add favorites to your library. Get personalized recommendations. 32 tools powered by the official Tidal API with OAuth authentication.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lucaperret-tidal](https://smithery.ai/server/lucaperret/tidal) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 8 |
 | Info     | 55 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 8 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

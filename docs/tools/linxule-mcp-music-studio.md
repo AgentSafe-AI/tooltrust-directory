@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | linxule |
-| **Stars** | ⭐ 54 |
+| **Stars** | ⭐ 55 |
 | **npm Package** | `mcp-music-studio` |
-| **npm Downloads (30d)** | 185 |
+| **npm Downloads (30d)** | 188 |
 | **Language** | TypeScript |
 | **Source** | [linxule-mcp-music-studio](https://github.com/linxule/mcp-music-studio) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

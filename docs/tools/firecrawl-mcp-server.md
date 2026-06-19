@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `3.2.1` |
 | **Vendor** | firecrawl |
-| **Stars** | ⭐ 6613 |
+| **Stars** | ⭐ 6620 |
 | **npm Package** | `firecrawl-mcp` |
-| **npm Downloads (30d)** | 401.4k |
+| **npm Downloads (30d)** | 394.7k |
 | **Language** | JavaScript |
 | **Source** | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

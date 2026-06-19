@@ -1,52 +1,419 @@
 {
   "tool_id": "supabase-mcp-server",
   "version": "0.4",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-18T02:55:49Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-19T03:40:10.727093054Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/alexander-zuev/supabase-mcp-server",
   "category": "Developer Tools",
   "vendor": "alexander-zuev",
-  "stars": 826,
+  "stars": 827,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Query MCP enables end-to-end management of Supabase via chat interface: read \u0026 write query executions, management API support, automatic migration versioning, access to logs and much more.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 3,
-            "file": "supabase_mcp/main.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 36,
-            "snippet": "FastMCP(",
-            "file": "supabase_mcp/main.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_organizations"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_organization"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_projects"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_project"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_cost"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "confirm_cost"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_project"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_project"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pause_project"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "restore_project"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "restore_project"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "restore_project"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_tables"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_extensions"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_extensions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_migrations"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_migrations"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "apply_migration"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "apply_migration"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "apply_migration"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_sql"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_sql"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute_sql"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_logs"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_advisors"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_advisors"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_advisors"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_project_url"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_project_url"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_project_url"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_publishable_keys"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "generate_typescript_types"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_edge_functions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_edge_function"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_edge_function"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "deploy_edge_function"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "deploy_edge_function"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_branch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_branches"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "merge_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "reset_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rebase_branch"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 7,
+    "info": 42
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -63,510 +430,289 @@
       "language": "python"
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-03-25T05:37:04Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-03-31T22:13:07Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-01T20:13:22Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-03T06:48:16Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-03T20:31:58Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-03T21:11:07Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-03T22:48:13Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-04T01:35:37Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-04T06:20:09Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-04T16:42:08Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-04T22:52:41Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-05T01:11:33Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-05T01:51:31Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-06T01:54:23Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-07T01:41:19Z",
-      "grade": "C",
-      "risk_score": 40,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-07T21:58:25Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-08T01:37:29Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-10T01:55:05Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-11T01:36:52Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-12T02:01:38Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-13T02:05:28Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-15T01:58:45Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-16T02:13:04Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-17T02:01:19Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-18T01:43:38Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-19T02:05:07Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-20T02:11:14Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-21T02:04:02Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-22T02:02:14Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-23T02:05:28Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-24T02:05:36Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-25T01:57:25Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-26T02:07:12Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-26T07:24:12Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-27T01:23:51Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-28T02:23:22Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-29T02:22:13Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-04-30T02:20:44Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-01T02:24:32Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-02T02:12:33Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-03T02:21:58Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-09T02:12:49Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-10T02:11:59Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-11T02:20:44Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-12T02:16:12Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-13T02:30:53Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-14T02:33:35Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-15T02:31:37Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-16T02:13:36Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-17T02:19:35Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-18T02:39:48Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-19T02:37:48Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-20T02:39:31Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-21T02:37:58Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-22T02:40:23Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-23T02:17:57Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-24T02:37:07Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-25T02:44:26Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-26T02:34:15Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-27T02:44:10Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-28T02:21:54Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-29T02:35:20Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-30T02:20:18Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-05-31T02:44:32Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-01T02:54:43Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-02T02:51:48Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-03T03:00:08Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-04T02:55:29Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-05T02:43:24Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-06T02:32:09Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-07T02:48:20Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-08T02:52:11Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-09T02:20:20Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-10T02:43:16Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-11T02:54:18Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-12T02:49:13Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-13T02:41:37Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-14T02:54:01Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-15T02:58:09Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-15T18:29:59Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-15T20:15:11Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "0.4"
-    },
-    {
-      "scan_date": "2026-06-15T23:49:40Z",
+  "tool_names": [
+    "apply_migration",
+    "confirm_cost",
+    "create_branch",
+    "create_project",
+    "delete_branch",
+    "deploy_edge_function",
+    "execute_sql",
+    "generate_typescript_types",
+    "get_advisors",
+    "get_cost",
+    "get_edge_function",
+    "get_logs",
+    "get_organization",
+    "get_project",
+    "get_project_url",
+    "get_publishable_keys",
+    "list_branches",
+    "list_edge_functions",
+    "list_extensions",
+    "list_migrations",
+    "list_organizations",
+    "list_projects",
+    "list_tables",
+    "merge_branch",
+    "pause_project",
+    "rebase_branch",
+    "reset_branch",
+    "restore_project",
+    "search_docs"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_docs",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.4"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-16T03:03:32Z",
+      "tool_name": "list_organizations",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.4"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-17T03:00:51Z",
+      "tool_name": "get_organization",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.4"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_projects",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_project",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_cost",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "confirm_cost",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_project",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pause_project",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "restore_project",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_tables",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_extensions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_migrations",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "apply_migration",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "execute_sql",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_logs",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_advisors",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_project_url",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_publishable_keys",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "generate_typescript_types",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_edge_functions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_edge_function",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "deploy_edge_function",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Deno.serve",
+        "hardcoded domain: JSON.stringify",
+        "hardcoded domain: deno.json",
+        "hardcoded domain: deno.jsonc",
+        "hardcoded domain: edge-runtime.d.ts",
+        "hardcoded domain: nDeno.serve"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_branches",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "delete_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "merge_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "reset_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rebase_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

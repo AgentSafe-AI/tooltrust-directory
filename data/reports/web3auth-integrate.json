@@ -1,19 +1,19 @@
 {
   "tool_id": "web3auth-integrate",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-06-15T18:53:52.272485212Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-19T03:44:52.188037344Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/web3auth/integrate",
   "vendor": "Smithery",
   "description": "MetaMask Embedded Wallets MCP (formerly Web3Auth) gives AI coding assistants live access to Embedded Wallets documentation, SDK references, integration examples, and community troubleshooting. MetaMask Embedded Wallets is not a wallet app itself, but embedded wallet infrastructure that helps developers add non-custodial Web3 wallets to web, mobile, and gaming apps using familiar login methods like Google, GitHub, email, SMS, and other OAuth or passwordless flows.\n\nThis MCP server is built for real integration work. It lets agents search docs, fetch full documentation pages, retrieve complete example code, inspect SDK types and hooks, and surface real-world implementation issues. It is especially useful for tasks like choosing the right SDK, implementing social login, understanding key derivation behavior, avoiding wallet address changes caused by auth or configuration mistakes, and debugging framework-specific issues across React, Next.js, Flutter, React Native, and other platforms.\n\nUse it when you want an AI assistant to generate or review MetaMask Embedded Wallets integrations using current source material instead of stale model memory. Pair it with the MetaMask Embedded Wallets Skill for best results: the skill teaches the assistant how to reason about architecture, authentication, SDK selection, and common pitfalls, while this MCP server provides up-to-date docs, examples, SDK references, and implementation details.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_docs"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_doc"
     },
@@ -59,25 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_example"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_example"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_example"
     },
@@ -99,9 +83,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_sdk_reference"
     },
@@ -123,17 +107,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_community"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_community"
     },
@@ -156,10 +132,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 2,
-    "low": 6,
-    "info": 5
+    "high": 0,
+    "medium": 0,
+    "low": 5,
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -173,7 +149,7 @@
     {
       "tool_name": "search_docs",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -183,7 +159,7 @@
     {
       "tool_name": "get_doc",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -197,8 +173,8 @@
     },
     {
       "tool_name": "get_example",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -209,7 +185,7 @@
     {
       "tool_name": "get_sdk_reference",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -218,8 +194,8 @@
     },
     {
       "tool_name": "search_community",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -336,6 +312,12 @@
     },
     {
       "scan_date": "2026-06-13T02:46:20Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:53:52Z",
       "grade": "C",
       "risk_score": 27,
       "version": "smithery"

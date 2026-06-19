@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2742 |
 | **Language** | TypeScript |
 | **Source** | [supabase-mcp](https://github.com/supabase/mcp) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

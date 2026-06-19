@@ -11,7 +11,7 @@ To get beyond 30-days of data, contact sales@glassnode.com
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [glassnode-glassnode-mcp](https://smithery.ai/server/glassnode/glassnode-mcp) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

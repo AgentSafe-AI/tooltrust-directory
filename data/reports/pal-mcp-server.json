@@ -1,23 +1,23 @@
 {
   "tool_id": "pal-mcp-server",
   "version": "9.8.2",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-15T20:12:59.981738346Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-19T03:36:00.743348725Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/BeehiveInnovations/pal-mcp-server",
   "category": "Developer Tools",
   "vendor": "BeehiveInnovations",
-  "stars": 11597,
+  "stars": 11598,
   "license": "NOASSERTION",
   "language": "Python",
   "description": "The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_invoice"
     },
@@ -31,9 +31,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_transactions"
     },
@@ -55,17 +55,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_bulk_invoices"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_bulk_invoices"
     },
@@ -87,9 +79,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "send_bulk_invoices"
     },
@@ -112,10 +104,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 5,
-    "info": 4
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -141,7 +133,7 @@
     {
       "tool_name": "list_transactions",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -151,7 +143,7 @@
     {
       "tool_name": "create_bulk_invoices",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -575,6 +567,12 @@
     },
     {
       "scan_date": "2026-06-15T18:27:13Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "9.8.2"
+    },
+    {
+      "scan_date": "2026-06-15T20:12:59Z",
       "grade": "B",
       "risk_score": 17,
       "version": "9.8.2"

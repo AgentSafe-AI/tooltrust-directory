@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `5.0.0-rc.16` |
+| **Version** | `5.0.0-rc.23` |
 | **Vendor** | kreuzberg-dev |
-| **Stars** | ⭐ 8490 |
+| **Stars** | ⭐ 8505 |
 | **npm Package** | `kreuzberg-root` |
 | **Language** | Rust |
 | **Source** | [kreuzberg](https://github.com/kreuzberg-dev/kreuzberg) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

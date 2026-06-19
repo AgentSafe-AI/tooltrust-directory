@@ -1,17 +1,17 @@
-# 🟡 genai-toolbox
+# 🟢 genai-toolbox
 
 > MCP Toolbox for Databases is an open source MCP server for databases.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
-| **Version** | `1.4.0` |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
+| **Version** | `1.5.0` |
 | **Vendor** | googleapis |
-| **Stars** | ⭐ 15643 |
+| **Stars** | ⭐ 15655 |
 | **Language** | Go |
 | **Source** | [genai-toolbox](https://github.com/googleapis/mcp-toolbox) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
 | Info     | 51 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.4.0: 20 tool(s) added, 146 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
@@ -357,7 +345,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -369,7 +357,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -429,7 +417,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -441,7 +429,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

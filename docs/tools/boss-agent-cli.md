@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `1.13.1` |
 | **Vendor** | can4hou6joeng4 |
-| **Stars** | ⭐ 1243 |
+| **Stars** | ⭐ 1252 |
 | **Language** | Python |
 | **Source** | [boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 9 |
-| High     | 6 |
+| High     | 5 |
 | Medium   | 0 |
 | Low      | 461 |
 | Info     | 2158 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.13.1: 1515 tool(s) added, 8 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
@@ -3765,7 +3753,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "to_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "from_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -3777,7 +3765,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "from_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "to_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -3921,7 +3909,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "collateral_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -3933,7 +3921,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "collateral_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -13689,7 +13677,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "credential_type" accepts a credential (informational; not evidence of insecure handling)
+input parameter "credential_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -13701,7 +13689,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "credential_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "credential_type" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -21465,7 +21453,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "token_symbol" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token_name" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -21477,7 +21465,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token_name" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token_symbol" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -21561,7 +21549,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "token1_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token2_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -21573,7 +21561,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token2_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token1_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -21597,7 +21585,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "to_token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "from_token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -21609,7 +21597,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "from_token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "to_token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -23385,7 +23373,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "to_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "from_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -23397,7 +23385,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "from_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "to_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -24969,7 +24957,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "total_tokens" accepts a credential (informational; not evidence of insecure handling)
+input parameter "price_per_token_usdc" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -24981,7 +24969,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "price_per_token_usdc" accepts a credential (informational; not evidence of insecure handling)
+input parameter "total_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

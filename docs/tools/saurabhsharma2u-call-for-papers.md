@@ -1,16 +1,16 @@
-# 🟠 saurabhsharma2u-call-for-papers
+# 🟢 saurabhsharma2u-call-for-papers
 
 > The verified hub for conferences and journals. Powered by AI to match your scholarly ambitions with the world's most prestigious academic opportunities
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 25 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [saurabhsharma2u-call-for-papers](https://smithery.ai/server/saurabhsharma2u/Call-for-papers) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.16 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 3 |
-| Medium   | 1 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 3 |
-| Info     | 13 |
+| Info     | 16 |
 
 ## Detailed Findings
 
@@ -110,12 +110,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -146,12 +146,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -218,24 +218,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
-
-**Description:**
-tool declares fs permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access, filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

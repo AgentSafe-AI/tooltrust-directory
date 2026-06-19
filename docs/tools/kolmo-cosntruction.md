@@ -7,8 +7,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kolmo-cosntruction](https://smithery.ai/server/kolmo/cosntruction) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

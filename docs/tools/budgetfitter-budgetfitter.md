@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [budgetfitter-budgetfitter](https://smithery.ai/server/budgetfitter/budgetfitter) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

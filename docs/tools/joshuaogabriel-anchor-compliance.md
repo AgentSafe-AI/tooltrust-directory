@@ -19,7 +19,7 @@ Built by [Anchor Compliance](https://anchorcompliance.io).
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [joshuaogabriel-anchor-compliance](https://smithery.ai/server/joshuaogabriel/anchor-compliance) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

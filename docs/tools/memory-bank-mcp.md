@@ -10,10 +10,10 @@
 | **Vendor** | alioshr |
 | **Stars** | ⭐ 910 |
 | **npm Package** | `@allpepper/memory-bank-mcp` |
-| **npm Downloads (30d)** | 2.0k |
+| **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |
 | **Source** | [memory-bank-mcp](https://github.com/alioshr/memory-bank-mcp) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

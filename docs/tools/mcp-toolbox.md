@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.4.0` |
+| **Version** | `1.5.0` |
 | **Vendor** | googleapis |
-| **Stars** | ⭐ 15624 |
+| **Stars** | ⭐ 15655 |
 | **Language** | Go |
 | **Source** | [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) |
-| **Scan Date** | 2026-06-16 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
@@ -345,7 +345,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -357,7 +357,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -525,7 +525,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -537,7 +537,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

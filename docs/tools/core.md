@@ -12,7 +12,7 @@
 | **npm Package** | `@opensumi/core` |
 | **Language** | TypeScript |
 | **Source** | [core](https://github.com/opensumi/core) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

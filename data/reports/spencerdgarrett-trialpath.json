@@ -1,19 +1,19 @@
 {
   "tool_id": "spencerdgarrett-trialpath",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-13T02:46:10.687322076Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-19T03:44:43.768332116Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/spencerdgarrett/TRIALPATH",
   "vendor": "Smithery",
   "description": "Parkinson's Pathways MCP — Real-time access to ClinicalTrials.gov data with a focus on Parkinson's disease research. 9 tools: search trials, get AI-generated plain-language briefs, replay historical snapshots, query field-level changes, match patients to eligible studies, look up sponsor and investigator activity, and subscribe to changes via webhook or SSE. Pay per call in USDC on Base via the x402 protocol — most calls are $0.005–$0.02. Free tier available with an API key (25 calls/24h). Endpoint: https://parkinsonspathways.com/mcp · Manifest: https://parkinsonspathways.com/mcp.json",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_trials"
     },
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "match_patient"
     },
@@ -123,17 +123,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "subscribe_to_changes"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "subscribe_to_changes"
     },
@@ -204,10 +196,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
-    "low": 7,
-    "info": 14
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -230,7 +222,7 @@
     {
       "tool_name": "search_trials",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -270,7 +262,7 @@
     {
       "tool_name": "match_patient",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "reads_files"
       ],
@@ -309,7 +301,7 @@
     {
       "tool_name": "subscribe_to_changes",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -387,6 +379,12 @@
     },
     {
       "scan_date": "2026-06-12T02:53:42Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-13T02:46:10Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.4` |
 | **Vendor** | yuniko-software |
-| **Stars** | ⭐ 620 |
+| **Stars** | ⭐ 623 |
 | **npm Package** | `minecraft-mcp-server` |
-| **npm Downloads (30d)** | 116 |
+| **npm Downloads (30d)** | 117 |
 | **Language** | TypeScript |
 | **Source** | [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

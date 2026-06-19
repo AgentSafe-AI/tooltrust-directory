@@ -12,7 +12,7 @@ No API key. No signup. Free.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ia-qa-api](https://smithery.ai/server/ia-qa/api) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -22,24 +22,12 @@ No API key. No signup. Free.
 | Severity | Count |
 |----------|:-----:|
 | Critical | 7 |
-| High     | 3 |
+| High     | 2 |
 | Medium   | 0 |
 | Low      | 44 |
 | Info     | 240 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
@@ -3418,18 +3406,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** Info
-
-**Description:**
 input parameter "jira_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
@@ -3443,6 +3419,18 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 
 **Description:**
 input parameter "max_tokens" accepts a credential (informational; not evidence of insecure handling)
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** Info
+
+**Description:**
+input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

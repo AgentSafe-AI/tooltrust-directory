@@ -1,15 +1,15 @@
-# 🟡 alex-kenny-lee-vfjv-panko-food-safety
+# 🟢 alex-kenny-lee-vfjv-panko-food-safety
 
 > Search live food safety data from FDA, FSIS, CDC, and city health departments (NYC, Chicago, SF, Seattle, Boston). 5 tools: search recalls, outbreaks, alerts, restaurant inspection articles, and food safety guides. Data aggregated from 25+ public government sources via Panko Alerts (alerts.getpanko.app).
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alex-kenny-lee-vfjv-panko-food-safety](https://smithery.ai/server/alex-kenny-lee-vfjv/panko-food-safety) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 4 |
 | Info     | 9 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

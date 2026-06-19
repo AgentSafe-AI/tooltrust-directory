@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.0` |
 | **Vendor** | perplexityai |
-| **Stars** | ⭐ 2316 |
+| **Stars** | ⭐ 2322 |
 | **npm Package** | `@perplexity-ai/mcp-server` |
-| **npm Downloads (30d)** | 77.9k |
+| **npm Downloads (30d)** | 78.5k |
 | **Language** | TypeScript |
 | **Source** | [modelcontextprotocol](https://github.com/perplexityai/modelcontextprotocol) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

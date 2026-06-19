@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `3.4.1` |
 | **Vendor** | MemPalace |
-| **Stars** | ⭐ 55848 |
+| **Stars** | ⭐ 55960 |
 | **Language** | Python |
 | **Source** | [mempalace](https://github.com/MemPalace/mempalace) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

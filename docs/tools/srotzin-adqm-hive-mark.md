@@ -1,16 +1,16 @@
-# 🟡 srotzin-adqm-hive-mark
+# 🟢 srotzin-adqm-hive-mark
 
 > Attest trademark first-use with a dual-signed cryptographic receipt. Ed25519 + ML-DSA-65 (FIPS 204) envelope records mark_text + brand_owner_did + first-use timestamp on Base 8453. Reveals priority winner on any mark conflict. Part of Hive Civilization (thehiveryiq.com).
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [srotzin-adqm-hive-mark](https://smithery.ai/server/srotzin-adqm/hive-mark) |
-| **Scan Date** | 2026-06-09 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
@@ -19,19 +19,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 5 |
+| Info     | 6 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

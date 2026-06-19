@@ -1,18 +1,18 @@
-# 🟡 easy-vibe
+# 🟢 easy-vibe
 
 > 💻 vibe coding 2026 | Your First Modern Coding course beginners to master step by step.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | datawhalechina |
-| **Stars** | ⭐ 17070 |
+| **Stars** | ⭐ 17100 |
 | **npm Package** | `easy-vibe` |
 | **Language** | JavaScript |
 | **Source** | [easy-vibe](https://github.com/datawhalechina/easy-vibe) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 26 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.3.0: 22 tool(s) added, 16 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

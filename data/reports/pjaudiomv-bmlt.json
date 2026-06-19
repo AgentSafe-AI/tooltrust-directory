@@ -1,27 +1,19 @@
 {
   "tool_id": "pjaudiomv-bmlt",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-05T02:47:32.092962031Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-19T03:44:27.600564591Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/pjaudiomv/bmlt",
   "vendor": "Smithery",
   "description": "Search Narcotics Anonymous meetings worldwide via the BMLT directory.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_meetings"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_meetings"
     },
@@ -51,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_meeting"
     },
@@ -75,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_formats"
     },
@@ -99,17 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "list_service_bodies"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_service_bodies"
     },
@@ -131,9 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_server_info"
     },
@@ -155,17 +139,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "list_root_servers"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_root_servers"
     },
@@ -188,10 +164,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 6,
-    "medium": 1,
-    "low": 9,
-    "info": 6
+    "high": 0,
+    "medium": 0,
+    "low": 7,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -206,7 +182,7 @@
     {
       "tool_name": "search_meetings",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -219,7 +195,7 @@
     {
       "tool_name": "get_meeting",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -232,7 +208,7 @@
     {
       "tool_name": "list_formats",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -245,7 +221,7 @@
     {
       "tool_name": "list_service_bodies",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -258,7 +234,7 @@
     {
       "tool_name": "get_server_info",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -270,8 +246,8 @@
     },
     {
       "tool_name": "list_root_servers",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -282,6 +258,12 @@
   "scan_history": [
     {
       "scan_date": "2026-06-04T02:59:28Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-05T02:47:32Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

@@ -1,16 +1,16 @@
 # 🟢 benzsevern-goldenflow
 
-> Clean and standardize messy CSV data � fix phone numbers, normalize dates, proper-case names, standardize addresses, strip whitespace, fix Unicode. 76 built-in transforms. Zero config: auto-detects what needs fixing. 10 tools: transform files, map schemas between different column names, profile data, generate configs, compare before/after. Use from Claude to clean any dataset before analysis.
+> Standardize, reshape, and normalize messy data — CSV, Excel, Parquet, S3, databases.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 8 |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [benzsevern-goldenflow](https://smithery.ai/server/benzsevern/goldenflow) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.15 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
@@ -20,18 +20,18 @@
 |----------|:-----:|
 | Critical | 0 |
 | High     | 0 |
-| Medium   | 6 |
+| Medium   | 0 |
 | Low      | 0 |
-| Info     | 10 |
+| Info     | 16 |
 
 ## Detailed Findings
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -50,12 +50,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -74,12 +74,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -98,12 +98,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -122,12 +122,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -146,12 +146,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

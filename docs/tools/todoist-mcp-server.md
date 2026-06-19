@@ -10,10 +10,10 @@
 | **Vendor** | abhiz123 |
 | **Stars** | ⭐ 393 |
 | **npm Package** | `@abhiz123/todoist-mcp-server` |
-| **npm Downloads (30d)** | 1.8k |
+| **npm Downloads (30d)** | 1.7k |
 | **Language** | JavaScript |
 | **Source** | [todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

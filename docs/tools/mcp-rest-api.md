@@ -10,10 +10,10 @@
 | **Vendor** | dkmaker |
 | **Stars** | ⭐ 97 |
 | **npm Package** | `dkmaker-mcp-rest-api` |
-| **npm Downloads (30d)** | 670 |
+| **npm Downloads (30d)** | 687 |
 | **Language** | JavaScript |
 | **Source** | [mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

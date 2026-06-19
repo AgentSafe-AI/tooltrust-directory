@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-18T02:51:46.934845826Z",
+  "scan_date": "2026-06-19T03:35:58.376859309Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/superset-sh/superset",
   "category": "Developer Tools",
   "vendor": "superset-sh",
-  "stars": 11912,
+  "stars": 11930,
   "npm_package": "@superset/repo",
   "license": "NOASSERTION",
   "language": "TypeScript",
@@ -18,18 +18,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.0.1: 1 tool(s) added, 5 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.0.1: 5 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "process"
-        ],
-        "removed": [
           "tokrepo_detail",
           "tokrepo_discover",
           "tokrepo_install_plan",
           "tokrepo_search",
           "tokrepo_verify"
+        ],
+        "removed": [
+          "process"
         ],
         "version": "0.0.1"
       }
@@ -38,17 +38,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: environment variables",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "process"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "process"
+      "tool_name": "tokrepo_discover"
     },
     {
       "id": "AS-014",
@@ -56,7 +48,63 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "process"
+      "tool_name": "tokrepo_discover"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "tokrepo_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "tokrepo_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "tokrepo_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "tokrepo_detail"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "tokrepo_verify"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "tokrepo_install_plan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "tokrepo_install_plan"
     }
   ],
   "summary": {
@@ -64,19 +112,58 @@
     "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 2
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "process"
+    "tokrepo_detail",
+    "tokrepo_discover",
+    "tokrepo_install_plan",
+    "tokrepo_search",
+    "tokrepo_verify"
   ],
   "tool_contexts": [
     {
-      "tool_name": "process",
+      "tool_name": "tokrepo_discover",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_env"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "tokrepo_search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "tokrepo_detail",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "tokrepo_verify",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "tokrepo_install_plan",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -93,6 +180,12 @@
       "scan_date": "2026-06-16T02:59:31Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.0.1"
+    },
+    {
+      "scan_date": "2026-06-18T02:51:46Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.0.1"
     }
   ]

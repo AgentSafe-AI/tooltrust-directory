@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `0.125.0` |
+| **Version** | `0.125.1` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 785 |
+| **Stars** | ⭐ 787 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
-| **npm Downloads (30d)** | 114.0k |
+| **npm Downloads (30d)** | 114.6k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -2291,7 +2291,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 13 properties (threshold: 10)
+input schema exposes 12 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -3347,7 +3347,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 13 properties (threshold: 10)
+input schema exposes 12 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

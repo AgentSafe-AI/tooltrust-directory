@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `0.14.0` |
 | **Vendor** | Mcp-Brasil |
-| **Stars** | ⭐ 1630 |
+| **Stars** | ⭐ 1632 |
 | **Language** | Python |
 | **Source** | [mcp-brasil](https://github.com/Mcp-Brasil/mcp-brasil) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

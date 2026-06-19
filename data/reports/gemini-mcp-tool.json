@@ -1,20 +1,34 @@
 {
   "tool_id": "gemini-mcp-tool",
   "version": "1.2.0-beta.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-18T02:54:07.33744515Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-19T03:38:22.361226165Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/jamubc/gemini-mcp-tool",
   "category": "Developer Tools",
   "vendor": "jamubc",
-  "stars": 2242,
+  "stars": 2244,
   "npm_package": "gemini-mcp-tool",
-  "npm_downloads_monthly": 12748,
+  "npm_downloads_monthly": 12790,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "MCP server that enables AI assistants to interact with Google Gemini CLI, leveraging Gemini's massive token window for large file analysis and codebase understanding",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.2.0-beta.1: 0 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "timeout-test"
+        ],
+        "version": "1.2.0-beta.1"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -86,22 +100,14 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "fetch-chunk"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "timeout-test"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 8
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -109,8 +115,7 @@
     "ask-gemini",
     "brainstorm",
     "fetch-chunk",
-    "ping",
-    "timeout-test"
+    "ping"
   ],
   "tool_contexts": [
     {
@@ -156,13 +161,6 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "timeout-test",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -180,6 +178,12 @@
     },
     {
       "scan_date": "2026-06-17T02:58:50Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.2.0-beta.1"
+    },
+    {
+      "scan_date": "2026-06-18T02:54:07Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.2.0-beta.1"

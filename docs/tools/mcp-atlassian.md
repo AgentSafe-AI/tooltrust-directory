@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.21.1` |
 | **Vendor** | sooperset |
-| **Stars** | ⭐ 5396 |
+| **Stars** | ⭐ 5420 |
 | **Language** | Python |
 | **Source** | [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) |
-| **Scan Date** | 2026-06-15 |
-| **Scanner** | tooltrust-scanner/v0.3.17 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 

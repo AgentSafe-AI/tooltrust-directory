@@ -1,10 +1,10 @@
 {
   "tool_id": "saurabhsharma2u-call-for-papers",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-15T20:30:35.172037296Z",
-  "scanner": "tooltrust-scanner/v0.3.16",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-19T03:44:45.253193776Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/saurabhsharma2u/Call-for-papers",
   "vendor": "Smithery",
   "description": "The verified hub for conferences and journals. Powered by AI to match your scholarly ambitions with the world's most prestigious academic opportunities",
@@ -67,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search.fulltext"
     },
@@ -91,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search.semantic"
     },
@@ -139,17 +139,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "audio.get"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "audio.get"
     },
@@ -172,10 +164,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 3,
-    "info": 13
+    "info": 16
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -268,7 +260,7 @@
     {
       "tool_name": "search.fulltext",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -281,7 +273,7 @@
     {
       "tool_name": "search.semantic",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -326,8 +318,8 @@
     },
     {
       "tool_name": "audio.get",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -576,6 +568,12 @@
     },
     {
       "scan_date": "2026-06-15T18:53:04Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T20:30:35Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

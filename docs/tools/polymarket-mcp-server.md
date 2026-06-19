@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.0` |
 | **Vendor** | caiovicentino |
-| **Stars** | ⭐ 562 |
+| **Stars** | ⭐ 566 |
 | **Language** | Python |
 | **Source** | [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) |
-| **Scan Date** | 2026-06-17 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

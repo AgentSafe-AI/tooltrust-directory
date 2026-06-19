@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-16T03:09:10.055040289Z",
-  "scanner": "tooltrust-scanner/v0.3.17",
+  "scan_date": "2026-06-19T03:46:30.025882498Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/ciel240/class_study",
   "category": "Developer Tools",
   "vendor": "ciel240",
@@ -16,30 +16,38 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 5 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.0: 2 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "hs_classify_product",
+          "hs_validate_code"
+        ],
+        "removed": [
           "check_answer",
           "get_exam_readiness",
           "get_practice_question",
           "get_study_stats",
           "get_weak_areas"
         ],
-        "removed": [
-          "hs_classify_product",
-          "hs_validate_code"
-        ],
         "version": "1.0.0"
       }
     },
     {
-      "id": "AS-014",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_practice_question"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "hs_classify_product"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "hs_classify_product"
     },
     {
       "id": "AS-014",
@@ -47,31 +55,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_answer"
+      "tool_name": "hs_classify_product"
     },
     {
-      "id": "AS-010",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "get_study_stats"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "hs_validate_code"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_study_stats"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "get_weak_areas"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "hs_validate_code"
     },
     {
       "id": "AS-014",
@@ -79,88 +79,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_weak_areas"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "get_exam_readiness"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_exam_readiness"
+      "tool_name": "hs_validate_code"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 8
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "check_answer",
-    "get_exam_readiness",
-    "get_practice_question",
-    "get_study_stats",
-    "get_weak_areas"
+    "hs_classify_product",
+    "hs_validate_code"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_practice_question",
+      "tool_name": "hs_classify_product",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: CISSPStudyGroup.com"
+      "behavior": [
+        "executes_commands",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "check_answer",
+      "tool_name": "hs_validate_code",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: CISSPStudyGroup.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_study_stats",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: cissp.app"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_weak_areas",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: CISSPStudyGroup.com",
-        "hardcoded domain: cissp.app"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_exam_readiness",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: cissp.app"
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -273,6 +224,12 @@
       "scan_date": "2026-05-30T02:42:50Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-16T03:09:10Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

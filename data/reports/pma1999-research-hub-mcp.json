@@ -1,10 +1,10 @@
 {
   "tool_id": "pma1999-research-hub-mcp",
   "version": "1.0.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-01T02:59:55.658292765Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-19T03:45:26.026858065Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/pma1999/research_hub_mcp",
   "category": "Other",
   "vendor": "pma1999",
@@ -23,17 +23,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "observability_gateway"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "observability_gateway"
     },
@@ -55,9 +47,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "thoughtbox_hub"
     },
@@ -72,10 +64,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -93,8 +85,8 @@
     },
     {
       "tool_name": "observability_gateway",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -128,6 +120,12 @@
     },
     {
       "scan_date": "2026-05-17T02:43:35Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-01T02:59:55Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

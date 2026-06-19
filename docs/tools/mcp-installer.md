@@ -10,10 +10,10 @@
 | **Vendor** | anaisbetts |
 | **Stars** | ⭐ 1530 |
 | **npm Package** | `@anaisbetts/mcp-installer` |
-| **npm Downloads (30d)** | 922 |
+| **npm Downloads (30d)** | 918 |
 | **Language** | JavaScript |
 | **Source** | [mcp-installer](https://github.com/anaisbetts/mcp-installer) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

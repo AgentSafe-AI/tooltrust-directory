@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.9.3` |
 | **Vendor** | Kong |
-| **Stars** | ⭐ 43605 |
+| **Stars** | ⭐ 43617 |
 | **Language** | Lua |
 | **Source** | [kong](https://github.com/Kong/kong) |
-| **Scan Date** | 2026-06-18 |
+| **Scan Date** | 2026-06-19 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

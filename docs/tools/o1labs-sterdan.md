@@ -1,4 +1,4 @@
-# 🟡 o1labs-sterdan
+# 🟢 o1labs-sterdan
 
 > 斯特丹STERDAN天猫旗舰店产品咨询MCP Server — 洛阳高端钢制办公家具，1374个SKU，涵盖保密柜、更衣柜、公寓床、货架、快递柜等产品线。
 #e-commerce 
@@ -8,13 +8,13 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [o1labs-sterdan](https://smithery.ai/server/o1labs/sterdan) |
-| **Scan Date** | 2026-06-14 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-19 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
@@ -23,10 +23,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 8 |
+| Info     | 10 |
 
 ## Detailed Findings
 
@@ -66,12 +66,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -102,12 +102,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
