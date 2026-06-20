@@ -10,10 +10,10 @@
 | **Vendor** | ProfessionalWiki |
 | **Stars** | ⭐ 97 |
 | **npm Package** | `@professional-wiki/mediawiki-mcp-server` |
-| **npm Downloads (30d)** | 11.6k |
+| **npm Downloads (30d)** | 11.8k |
 | **Language** | TypeScript |
 | **Source** | [mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

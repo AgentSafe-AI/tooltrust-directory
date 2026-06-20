@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ravi8585-zgts-derma-roller](https://smithery.ai/server/ravi8585/zgts-derma-roller) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

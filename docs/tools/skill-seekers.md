@@ -1,17 +1,17 @@
-# 🟡 skill-seekers
+# 🟢 skill-seekers
 
 > Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `3.8.0` |
 | **Vendor** | yusufkaraaslan |
-| **Stars** | ⭐ 14175 |
+| **Stars** | ⭐ 14197 |
 | **Language** | Python |
 | **Source** | [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 4 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v3.8.0: 1 tool(s) added, 9 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

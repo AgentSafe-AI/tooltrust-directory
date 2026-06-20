@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `99.0.0-dev` |
 | **Vendor** | financial-datasets |
-| **Stars** | ⭐ 2197 |
+| **Stars** | ⭐ 2198 |
 | **Language** | Python |
 | **Source** | [mcp-server](https://github.com/financial-datasets/mcp-server) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

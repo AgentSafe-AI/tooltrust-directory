@@ -1,18 +1,18 @@
-# 🟡 open-codex-computer-use
+# 🟢 open-codex-computer-use
 
 > 👾 Open Computer Use – Open-Source Alternative to Codex Computer Use
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `0.1.53` |
 | **Vendor** | iFurySt |
-| **Stars** | ⭐ 1130 |
+| **Stars** | ⭐ 1137 |
 | **npm Package** | `open-computer-use-repo-tools` |
 | **Language** | Swift |
 | **Source** | [open-codex-computer-use](https://github.com/iFurySt/open-codex-computer-use) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 7 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.1.53: 4 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

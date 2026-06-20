@@ -3,12 +3,12 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 4 |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vdineshk-sg-finance-data-mcp](https://smithery.ai/server/vdineshk/sg-finance-data-mcp) |
-| **Scan Date** | 2026-05-26 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-20 |
+| **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
 
@@ -19,8 +19,8 @@
 | Critical | 0 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 2 |
-| Info     | 4 |
+| Low      | 1 |
+| Info     | 5 |
 
 ## Detailed Findings
 
@@ -48,12 +48,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool declares http permission
+declared capabilities: HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

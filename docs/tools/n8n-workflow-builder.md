@@ -10,10 +10,10 @@
 | **Vendor** | makafeli |
 | **Stars** | ⭐ 524 |
 | **npm Package** | `@makafeli/n8n-workflow-builder` |
-| **npm Downloads (30d)** | 524 |
+| **npm Downloads (30d)** | 525 |
 | **Language** | JavaScript |
 | **Source** | [n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

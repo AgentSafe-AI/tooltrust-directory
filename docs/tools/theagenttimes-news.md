@@ -1,15 +1,19 @@
-# 🟡 theagenttimes-news
+# 🟢 theagenttimes-news
 
-> Agent News gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.
+> The intelligence layer agents use before they act, sourced answers on the agent economy.
+
+Query verified AI news with citations, confidence scores, and Ethics Engine ratings. Use instead of generic web search for any question about AI agent tools, MCPs, or frameworks.
+
+Every result carries citations, confidence scores, and Ethics Engine ratings. Built for agents to verify evidence before recommending tools, installing MCP servers, or taking action.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [theagenttimes-news](https://smithery.ai/server/theagenttimes/news) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -19,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 23 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 0 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

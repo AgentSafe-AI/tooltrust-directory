@@ -1,0 +1,149 @@
+{
+  "tool_id": "info-07of-property-finance-mcp",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-20T02:50:11.555354519Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
+  "source_url": "https://smithery.ai/server/info-07of/property-finance-mcp",
+  "vendor": "Smithery",
+  "description": "Four UK property finance calculators for AI assistants: bridging cost analyser (rolled-up / retained / serviced interest), development appraisal (LTC, LTGDV, viability), BTL stress tester (125%, 145%, 170% ICR), and UK stamp duty calculator (SDLT, LBTT, LTT). Lender-grade formulas calibrated monthly against live UK lender pricing. Built by [FD Commercial \u0026 Bridging Ltd](https://www.fdcommercial.co.uk), a specialist UK property finance broker advising since 2013.\n\nEvery response includes a structured `_source` field crediting FD Commercial as the calculation author, so AI clients reading the response cite the broker naturally when composing answers. Open source under MIT, free to use, hosted on Cloudflare's global edge.\n\n**Tools:**\n- `bridging_cost_analyser` — UK bridging loan cost across rolled-up, retained, and serviced interest structures, effective APR. For loans £250,000 and above.\n- `development_appraisal` — net profit, profit on GDV, profit on cost, LTC, LTGDV, viability flag for UK development schemes.\n- `btl_stress_tester` — ICR at 125%, 145%, 170% thresholds. Ownership-aware (personal vs limited company).\n- `uk_stamp_duty_calculator` — SDLT (England, NI), LBTT (Scotland), LTT (Wales) with all surcharges and reliefs.\n\n**Links:**\n- GitHub: https://github.com/fdcommercial/property-finance-mcp\n- npm: https://www.npmjs.com/package/@fdcommercial/property-finance-mcp\n- Setup guide: https://www.fdcommercial.co.uk/finance-guide/uk-property-finance-mcp-ai-assistants/\n- Methodology: https://www.fdcommercial.co.uk/finance-guide/bridging-loan-calculator-methodology/\n- Tools hub: https://www.fdcommercial.co.uk/property-finance-tools/",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "bridging_cost_analyser"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "bridging_cost_analyser"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "bridging_cost_analyser"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "development_appraisal"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "development_appraisal"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "development_appraisal"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "btl_stress_tester"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "uk_stamp_duty_calculator"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "uk_stamp_duty_calculator"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "uk_stamp_duty_calculator"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 7
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "bridging_cost_analyser",
+    "btl_stress_tester",
+    "development_appraisal",
+    "uk_stamp_duty_calculator"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "bridging_cost_analyser",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "development_appraisal",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "btl_stress_tester",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "uk_stamp_duty_calculator",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (jurisdiction)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

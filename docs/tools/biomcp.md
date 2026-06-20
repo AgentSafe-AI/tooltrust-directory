@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.23` |
 | **Vendor** | genomoncology |
-| **Stars** | ⭐ 527 |
+| **Stars** | ⭐ 528 |
 | **Language** | Rust |
 | **Source** | [biomcp](https://github.com/genomoncology/biomcp) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

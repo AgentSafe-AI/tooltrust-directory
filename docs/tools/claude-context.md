@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.11` |
 | **Vendor** | zilliztech |
-| **Stars** | ⭐ 11890 |
+| **Stars** | ⭐ 11897 |
 | **npm Package** | `claude-context` |
-| **npm Downloads (30d)** | 121 |
+| **npm Downloads (30d)** | 116 |
 | **Language** | TypeScript |
 | **Source** | [claude-context](https://github.com/zilliztech/claude-context) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

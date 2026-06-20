@@ -17,7 +17,7 @@ https://docs.base44.com/developers/references/sdk/getting-started/overview
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [leonid-rise-base44-sdk-docs](https://smithery.ai/server/leonid-rise/base44-sdk-docs) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

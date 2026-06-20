@@ -10,10 +10,10 @@
 | **Vendor** | joshuayoes |
 | **Stars** | ⭐ 2058 |
 | **npm Package** | `ios-simulator-mcp` |
-| **npm Downloads (30d)** | 17.0k |
+| **npm Downloads (30d)** | 17.1k |
 | **Language** | JavaScript |
 | **Source** | [ios-simulator-mcp](https://github.com/joshuayoes/ios-simulator-mcp) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

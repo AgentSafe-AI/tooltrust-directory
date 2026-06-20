@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.8.0` |
 | **Vendor** | sbhooley |
-| **Stars** | ⭐ 834 |
+| **Stars** | ⭐ 832 |
 | **Language** | Python |
 | **Source** | [ainativelang](https://github.com/sbhooley/ainativelang) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

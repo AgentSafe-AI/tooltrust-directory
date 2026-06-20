@@ -10,10 +10,10 @@
 | **Vendor** | ChanMeng666 |
 | **Stars** | ⭐ 124 |
 | **npm Package** | `@chanmeng666/google-news-server` |
-| **npm Downloads (30d)** | 130 |
+| **npm Downloads (30d)** | 121 |
 | **Language** | TypeScript |
 | **Source** | [server-google-news](https://github.com/ChanMeng666/server-google-news) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-20 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

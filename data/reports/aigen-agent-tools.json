@@ -1,69 +1,14 @@
 {
   "tool_id": "aigen-agent-tools",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-06-19T03:44:46.334283329Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-20T02:50:26.738683987Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/aigen/agent-tools",
   "vendor": "Smithery",
   "description": "Agent collaboration toolkit. Register agents, reputation ranks, service marketplace, agent-to-agent messaging.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 37 tool(s) added, 4 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "agent_register",
-          "agent_reputation",
-          "aigen_manifesto",
-          "aigen_rewards",
-          "build_guide",
-          "chat_post",
-          "chat_read",
-          "check_approval_safety",
-          "check_before_buy",
-          "check_token_safety",
-          "check_wallet_risk",
-          "create_agent_token",
-          "discover_services",
-          "explore",
-          "free_build",
-          "get_chain_info",
-          "get_defi_tvl",
-          "get_defi_yields",
-          "get_eth_balance",
-          "get_gas_prices",
-          "get_market_overview",
-          "get_new_tokens",
-          "get_portfolio",
-          "get_token_price",
-          "get_trending_tokens",
-          "leaderboard",
-          "ping",
-          "propose_task",
-          "register_service",
-          "resolve_ens",
-          "search_token",
-          "shield",
-          "simulate_swap",
-          "submit_contribution",
-          "task_board",
-          "test_honeypot",
-          "verify_agent"
-        ],
-        "removed": [
-          "AgentPMT-Report-Tool-Issue",
-          "AgentPMT-Send-Human-Request",
-          "AgentPMT-Tool-Search-and-Execution",
-          "AgentPMT-Workflow-Skills"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-010",
       "severity": "Info",
@@ -260,7 +205,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_in\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_out\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "simulate_swap"
     },
@@ -268,7 +213,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token_out\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token_in\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "simulate_swap"
     },
@@ -507,7 +452,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 6,
     "info": 49
@@ -1082,6 +1027,12 @@
     },
     {
       "scan_date": "2026-06-18T03:00:58Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-19T03:44:46Z",
       "grade": "B",
       "risk_score": 15,
       "version": "smithery"
