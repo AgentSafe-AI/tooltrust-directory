@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 321 |
 | **Language** | Go |
 | **Source** | [emcee](https://github.com/mattt/emcee) |
-| **Scan Date** | 2026-06-20 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

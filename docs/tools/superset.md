@@ -1,18 +1,18 @@
-# 🟡 superset
+# 🟢 superset
 
 > Code Editor for the AI Agents Era - Run an army of Claude Code, Codex, etc. on your machine
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `0.0.1` |
 | **Vendor** | superset-sh |
-| **Stars** | ⭐ 11930 |
+| **Stars** | ⭐ 11967 |
 | **npm Package** | `@superset/repo` |
 | **Language** | TypeScript |
 | **Source** | [superset](https://github.com/superset-sh/superset) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 8 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.0.1: 5 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

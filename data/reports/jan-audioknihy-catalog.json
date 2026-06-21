@@ -1,27 +1,19 @@
 {
   "tool_id": "jan-audioknihy-catalog",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-13T02:46:16.13993297Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-21T03:05:09.388549584Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/jan/audioknihy-catalog",
   "vendor": "Smithery",
   "description": "First Czech audiobook catalog MCP server with cross-partner price comparison.\n\n  Aggregates Knihy Dobrovský, Martinus, Kosmas, Dobré-knihy, and Radiotéka.\n  Read-only discovery for AI agents — search, browse genres, compare prices,\n  find cheapest offers, lookup author/narrator profiles.\n\n  9 tools: search_audiobooks, get_audiobook, find_cheapest_offer,\n  compare_all_offers, browse_genres, search_by_filters, get_author,\n  get_narrator, list_partners.\n  \n  Endpoint: https://audioknihy.cz/api/mcp\n  Discovery: https://audioknihy.cz/.well-known/mcp/server-card.json\n  Docs: https://audioknihy.cz/mcp\n  Transport: JSON-RPC 2.0 over Streamable HTTP, stateless, anonymous.\n  Rate limit: 60 req/min/IP.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_audiobooks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_audiobooks"
     },
@@ -75,17 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_by_filters"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_by_filters"
     },
@@ -107,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_author"
     },
@@ -123,9 +107,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_narrator"
     },
@@ -148,10 +132,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 4,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 9
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -168,8 +152,8 @@
   "tool_contexts": [
     {
       "tool_name": "search_audiobooks",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -209,8 +193,8 @@
     },
     {
       "tool_name": "search_by_filters",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -341,6 +325,12 @@
     },
     {
       "scan_date": "2026-06-11T02:58:48Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-13T02:46:16Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.1` |
 | **Vendor** | clawplays |
-| **Stars** | ⭐ 550 |
+| **Stars** | ⭐ 551 |
 | **npm Package** | `@clawplays/ospec-cli` |
-| **npm Downloads (30d)** | 926 |
+| **npm Downloads (30d)** | 1.3k |
 | **Language** | JavaScript |
 | **Source** | [ospec](https://github.com/clawplays/ospec) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

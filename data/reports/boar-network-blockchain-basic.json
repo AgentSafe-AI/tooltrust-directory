@@ -1,10 +1,10 @@
 {
   "tool_id": "boar-network-blockchain-basic",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-11T02:58:48.551582101Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-21T03:05:02.688408431Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/boar-network/blockchain-basic",
   "vendor": "Smithery",
   "description": "Free, keyless MCP server with 50 read-only blockchain tools for Bitcoin, Ethereum, and Mezo. No installation, no API key required - just add the URL to your MCP client and start querying balances, transactions, blocks, ENS names, ERC-20 tokens, smart contracts, and more. Runs on Cloudflare's global edge network via Streamable HTTP. All tools are strictly read-only and stateless.",
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "eth_get_token_balance"
     },
@@ -91,9 +91,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "eth_get_token_info"
     },
@@ -163,9 +163,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mezo_get_token_balance"
     },
@@ -179,9 +179,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" appears to accept a secret or credential",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "mezo_get_token_info"
     },
@@ -307,9 +307,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "eth_lookup_selector"
     },
@@ -323,9 +323,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "eth_get_abi"
     },
@@ -364,10 +364,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 37
+    "info": 43
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -476,7 +476,7 @@
     {
       "tool_name": "eth_get_token_balance",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -486,7 +486,7 @@
     {
       "tool_name": "eth_get_token_info",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -549,7 +549,7 @@
     {
       "tool_name": "mezo_get_token_balance",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -559,7 +559,7 @@
     {
       "tool_name": "mezo_get_token_info",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (token)"
       ],
@@ -678,7 +678,7 @@
     {
       "tool_name": "eth_get_abi",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -736,6 +736,12 @@
     },
     {
       "scan_date": "2026-06-10T02:47:59Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:58:48Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [king-of-the-grackles-discourse-forum-mcp](https://smithery.ai/server/king-of-the-grackles/discourse-forum-mcp) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

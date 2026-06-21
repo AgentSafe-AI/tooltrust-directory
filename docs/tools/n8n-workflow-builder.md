@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.10.1` |
 | **Vendor** | makafeli |
-| **Stars** | ⭐ 524 |
+| **Stars** | ⭐ 525 |
 | **npm Package** | `@makafeli/n8n-workflow-builder` |
-| **npm Downloads (30d)** | 525 |
+| **npm Downloads (30d)** | 518 |
 | **Language** | JavaScript |
 | **Source** | [n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) |
-| **Scan Date** | 2026-06-20 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

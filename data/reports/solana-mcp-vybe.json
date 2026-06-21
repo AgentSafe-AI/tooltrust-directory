@@ -3,45 +3,30 @@
   "version": "1.1.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-20T02:48:15.187573247Z",
+  "scan_date": "2026-06-21T03:02:53.267101169Z",
   "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://github.com/vybenetwork/solana-mcp-vybe",
   "category": "Other",
   "vendor": "vybenetwork",
-  "stars": 187,
+  "stars": 204,
   "description": "Public Solana MCP registry metadata for Vybe Solana API",
   "findings": [
     {
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.1.2: 5 tool(s) added, 16 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.1.2: 1 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "solana_scan_pool_liquidity"
+        ],
+        "removed": [
           "madeonsol_deployer_alerts",
           "madeonsol_discovery",
           "madeonsol_kol_coordination",
           "madeonsol_kol_feed",
           "madeonsol_kol_leaderboard"
-        ],
-        "removed": [
-          "get-latest-graduated-tokens",
-          "get-mcp-config",
-          "get-token-ath",
-          "get-token-by-pool",
-          "get-token-history",
-          "get-token-history-range",
-          "get-token-holders",
-          "get-token-marketdata",
-          "get-token-metadata",
-          "get-token-performance",
-          "get-token-price",
-          "get-tokens-by-deployer",
-          "get-trending-tokens",
-          "get-wallet-holdings",
-          "get-wallet-token-pnl",
-          "search-tokens"
         ],
         "version": "1.1.2"
       }
@@ -52,39 +37,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "madeonsol_kol_feed"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "madeonsol_kol_coordination"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "madeonsol_kol_leaderboard"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "madeonsol_deployer_alerts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "madeonsol_discovery"
+      "tool_name": "solana_scan_pool_liquidity"
     }
   ],
   "summary": {
@@ -92,50 +45,15 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 5
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "madeonsol_deployer_alerts",
-    "madeonsol_discovery",
-    "madeonsol_kol_coordination",
-    "madeonsol_kol_feed",
-    "madeonsol_kol_leaderboard"
+    "solana_scan_pool_liquidity"
   ],
   "tool_contexts": [
     {
-      "tool_name": "madeonsol_kol_feed",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "madeonsol_kol_coordination",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "madeonsol_kol_leaderboard",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "madeonsol_deployer_alerts",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: Pump.fun"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "madeonsol_discovery",
+      "tool_name": "solana_scan_pool_liquidity",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -151,6 +69,12 @@
     },
     {
       "scan_date": "2026-06-19T03:42:31Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.1.2"
+    },
+    {
+      "scan_date": "2026-06-20T02:48:15Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.1.2"

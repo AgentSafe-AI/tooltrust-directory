@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `2.6.0` |
 | **Vendor** | SylphxAI |
-| **Stars** | ⭐ 789 |
+| **Stars** | ⭐ 790 |
 | **npm Package** | `@sylphx/pdf-reader-mcp` |
-| **npm Downloads (30d)** | 22.2k |
+| **npm Downloads (30d)** | 21.7k |
 | **Language** | TypeScript |
 | **Source** | [pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) |
-| **Scan Date** | 2026-06-20 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

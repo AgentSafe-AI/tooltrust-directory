@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [github-6f8c-agentdm](https://smithery.ai/server/github-6f8c/agentDM) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

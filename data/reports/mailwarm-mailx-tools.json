@@ -1,10 +1,10 @@
 {
   "tool_id": "mailwarm-mailx-tools",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-10T02:47:57.709531119Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-21T03:05:02.872157685Z",
+  "scanner": "tooltrust-scanner/v0.3.18",
   "source_url": "https://smithery.ai/server/mailwarm/mailx-tools",
   "vendor": "Smithery",
   "description": "Mailx Tools is an MCP server that gives AI agents a complete email-deliverability diagnostics toolkit. Verify your domain's\n  ▎ SPF, DKIM, DMARC, and BIMI configuration, look up any DNS record type (MX, CNAME, TXT, PTR), check blacklists, test SMTP and\n  ▎  IMAP servers, and auto-generate SPF and DMARC policies. Designed for marketers, deliverability engineers, and anyone\n  ▎ troubleshooting why emails aren't landing in the inbox.",
@@ -59,17 +59,17 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "smtp_check"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "smtp_check"
     },
@@ -91,17 +91,17 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "imap_check"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" appears to accept a secret or credential",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "imap_check"
     },
@@ -179,9 +179,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "dns_lookup"
     },
@@ -196,10 +196,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 16
+    "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -286,8 +286,8 @@
     },
     {
       "tool_name": "smtp_check",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -302,8 +302,8 @@
     },
     {
       "tool_name": "imap_check",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -431,6 +431,12 @@
     },
     {
       "scan_date": "2026-06-08T02:56:51Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-10T02:47:57Z",
       "grade": "C",
       "risk_score": 32,
       "version": "smithery"

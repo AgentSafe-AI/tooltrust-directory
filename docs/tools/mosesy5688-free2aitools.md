@@ -20,7 +20,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mosesy5688-free2aitools](https://smithery.ai/server/mosesy5688/free2aitools) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

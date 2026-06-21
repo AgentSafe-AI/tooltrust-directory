@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 41 |
 | **Language** | TypeScript |
 | **Source** | [conductor-tasks](https://github.com/hridaya423/conductor-tasks) |
-| **Scan Date** | 2026-06-20 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---

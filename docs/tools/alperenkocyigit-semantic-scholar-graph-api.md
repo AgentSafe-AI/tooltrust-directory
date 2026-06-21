@@ -1,15 +1,15 @@
-# 🟡 alperenkocyigit-semantic-scholar-graph-api
+# 🟢 alperenkocyigit-semantic-scholar-graph-api
 
 > Provide AI assistants with seamless access to Semantic Scholar's extensive academic database for advanced paper discovery, author research, citation analysis, and content exploration. Enable natural language search, bulk data processing, and detailed academic insights to enhance research workflows. Empower users to efficiently explore millions of research papers and citation networks.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alperenkocyigit-semantic-scholar-graph-api](https://smithery.ai/server/alperenkocyigit/semantic-scholar-graph-api) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 3 |
 | Info     | 17 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 12 tool(s) added, 28 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

@@ -1,11 +1,11 @@
-# 🟡 mcp-hub
+# 🟢 mcp-hub
 
 > A centralized manager for Model Context Protocol (MCP) servers with dynamic server management and monitoring
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `4.2.1` |
 | **Vendor** | ravitemer |
 | **Stars** | ⭐ 496 |
@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 2.1k |
 | **Language** | JavaScript |
 | **Source** | [mcp-hub](https://github.com/ravitemer/mcp-hub) |
-| **Scan Date** | 2026-06-19 |
+| **Scan Date** | 2026-06-21 |
 | **Scanner** | tooltrust-scanner/v0.3.18 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 14 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v4.2.1: 7 tool(s) added, 618 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
