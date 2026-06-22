@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [eren-solutions-report-needs](https://smithery.ai/server/eren-solutions/report-needs) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

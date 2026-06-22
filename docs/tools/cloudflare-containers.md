@@ -13,8 +13,8 @@
 | **npm Downloads (30d)** | 1.6M |
 | **Language** | TypeScript |
 | **Source** | [cloudflare-containers](https://github.com/cloudflare/containers) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

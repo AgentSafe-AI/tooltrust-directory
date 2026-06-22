@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 163 |
 | **npm Package** | `glean-remote-mcp-server` |
 | **Source** | [remote-mcp-server](https://github.com/gleanwork/remote-mcp-server) |
-| **Scan Date** | 2026-06-20 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

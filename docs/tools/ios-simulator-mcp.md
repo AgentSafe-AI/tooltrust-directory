@@ -8,13 +8,13 @@
 | **Risk Score** | 0 |
 | **Version** | `1.5.2` |
 | **Vendor** | joshuayoes |
-| **Stars** | ⭐ 2059 |
+| **Stars** | ⭐ 2060 |
 | **npm Package** | `ios-simulator-mcp` |
-| **npm Downloads (30d)** | 17.3k |
+| **npm Downloads (30d)** | 17.1k |
 | **Language** | JavaScript |
 | **Source** | [ios-simulator-mcp](https://github.com/joshuayoes/ios-simulator-mcp) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

@@ -1,20 +1,20 @@
 # 🟢 context-mode
 
-> Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 15 platforms
+> Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.0.162` |
+| **Version** | `1.0.163` |
 | **Vendor** | mksglu |
-| **Stars** | ⭐ 17849 |
+| **Stars** | ⭐ 17901 |
 | **npm Package** | `context-mode` |
-| **npm Downloads (30d)** | 96.1k |
+| **npm Downloads (30d)** | 94.1k |
 | **Language** | TypeScript |
 | **Source** | [context-mode](https://github.com/mksglu/context-mode) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

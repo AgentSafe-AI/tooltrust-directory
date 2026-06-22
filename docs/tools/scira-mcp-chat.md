@@ -10,11 +10,11 @@
 | **Vendor** | zaidmukaddam |
 | **Stars** | ⭐ 830 |
 | **npm Package** | `mcp-chat` |
-| **npm Downloads (30d)** | 105 |
+| **npm Downloads (30d)** | 104 |
 | **Language** | TypeScript |
 | **Source** | [scira-mcp-chat](https://github.com/zaidmukaddam/scira-mcp-chat) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | FradSer |
 | **Stars** | ⭐ 141 |
 | **npm Package** | `mcp-server-apple-events` |
-| **npm Downloads (30d)** | 978 |
+| **npm Downloads (30d)** | 970 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

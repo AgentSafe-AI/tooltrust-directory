@@ -1,55 +1,477 @@
 {
   "tool_id": "xero-mcp-server",
   "version": "0.0.16",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-17T03:03:46Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:07:35.848325227Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/XeroAPI/xero-mcp-server",
   "category": "Developer Tools",
   "vendor": "XeroAPI",
   "stars": 307,
   "npm_package": "@xeroapi/xero-mcp-server",
-  "npm_downloads_monthly": 10242,
+  "npm_downloads_monthly": 10806,
   "license": "MIT",
   "language": "TypeScript",
   "description": "An MCP server that integrates with the MCP protocol. https://modelcontextprotocol.io/introduction",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/server/xero-mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 10,
-            "snippet": "new McpServer(",
-            "file": "src/server/xero-mcp-server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_BANK_TRANSACTION"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_CREATE_BANK_TRANSACTION"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_CONTACT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_CONTACT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_CREATE_CONTACT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_INVOICE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_CREATE_INVOICE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_ITEM"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_CREATE_ITEM"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_PAYMENT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_CREATE_PAYMENT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_CREATE_PURCHASE_ORDER"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_CREATE_PURCHASE_ORDER"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_ACCOUNT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_ASSET"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_BALANCE_SHEET_REPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_BUDGET"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_CONNECTIONS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_CONTACT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_CONTACTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_INVOICE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_ITEM"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_MANUAL_JOURNAL"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_ORGANISATION"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_GET_PROFIT_LOSS_REPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_PROFIT_LOSS_REPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_PROJECT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_PURCHASE_ORDER"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_GET_QUOTES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_GET_QUOTES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_ACCOUNTS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_LIST_ASSETS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_ASSETS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_ATTACHMENTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_BANK_TRANSACTIONS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_CREDIT_NOTES"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_LIST_FILES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_FILES"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_LIST_FOLDERS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_FOLDERS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_INVOICES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_ITEMS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_JOURNALS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_MANUAL_JOURNALS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_PAYMENTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_PROJECTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_PURCHASE_ORDERS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_TAX_RATES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_LIST_TRACKING_CATEGORIES"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_POST_INVOICE_UPDATE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_POST_INVOICE_UPDATE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_UPDATE_CONTACT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_UPDATE_CONTACT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_UPDATE_CONTACT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "XERO_UPLOAD_ATTACHMENT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "XERO_UPLOAD_ATTACHMENT"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 4,
+    "info": 52
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,534 +489,405 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-03-24T04:38:14Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-03-31T22:14:41Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-01T20:15:03Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-03T06:50:01Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-03T20:33:45Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-03T21:12:53Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-03T22:50:06Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-04T01:37:24Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-04T06:22:05Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-04T16:43:51Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-04T22:54:46Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-05T01:13:39Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-06T01:56:23Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-07T01:43:23Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-07T22:00:24Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-08T01:39:36Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-09T01:32:01Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-10T01:57:02Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-11T01:38:45Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-12T02:03:29Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-13T02:07:21Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-14T02:02:54Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-15T02:00:37Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-16T02:14:56Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-17T02:03:15Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-18T01:45:30Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-19T02:06:56Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-20T02:13:01Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-21T02:05:42Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-22T02:03:59Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-23T02:07:11Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-24T02:07:24Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-25T01:59:13Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-26T02:08:56Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-26T07:26:15Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-27T01:25:47Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-28T02:25:18Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-29T02:24:05Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-04-30T02:22:37Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-05-01T02:26:17Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-05-02T02:14:20Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-05-03T02:23:43Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-05-04T02:20:56Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.14"
-    },
-    {
-      "scan_date": "2026-05-05T02:09:57Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-06T02:09:24Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-07T02:11:55Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-08T02:18:24Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-09T02:14:25Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-10T02:13:30Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-11T02:22:20Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-12T02:17:49Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-13T02:32:39Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-14T02:35:15Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-15T02:33:21Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-16T02:15:16Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-17T02:21:49Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-18T02:41:30Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-19T02:39:35Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-20T02:41:11Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-21T02:39:36Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-22T02:42:08Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-23T02:19:39Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-24T02:38:42Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-25T02:46:11Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-26T02:36:00Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-27T02:45:45Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-28T02:23:41Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-29T02:36:59Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-30T02:22:24Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-05-31T02:45:57Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-01T02:56:16Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-02T02:53:26Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-03T03:01:45Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-04T02:57:05Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-05T02:45:00Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-06T02:33:49Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-07T02:49:53Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-08T02:53:51Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-09T02:22:01Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-10T02:44:58Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-11T02:55:53Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-12T02:50:48Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-13T02:43:05Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-14T02:55:35Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-15T02:59:41Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-15T18:32:00Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-15T20:16:58Z",
-      "grade": "B",
-      "risk_score": 10,
-      "version": "0.0.16"
-    },
-    {
-      "scan_date": "2026-06-15T23:52:25Z",
+  "tool_names": [
+    "XERO_CREATE_BANK_TRANSACTION",
+    "XERO_CREATE_CONTACT",
+    "XERO_CREATE_INVOICE",
+    "XERO_CREATE_ITEM",
+    "XERO_CREATE_PAYMENT",
+    "XERO_CREATE_PURCHASE_ORDER",
+    "XERO_GET_ACCOUNT",
+    "XERO_GET_ASSET",
+    "XERO_GET_BALANCE_SHEET_REPORT",
+    "XERO_GET_BUDGET",
+    "XERO_GET_CONNECTIONS",
+    "XERO_GET_CONTACT",
+    "XERO_GET_CONTACTS",
+    "XERO_GET_INVOICE",
+    "XERO_GET_ITEM",
+    "XERO_GET_MANUAL_JOURNAL",
+    "XERO_GET_ORGANISATION",
+    "XERO_GET_PROFIT_LOSS_REPORT",
+    "XERO_GET_PROJECT",
+    "XERO_GET_PURCHASE_ORDER",
+    "XERO_GET_QUOTES",
+    "XERO_LIST_ACCOUNTS",
+    "XERO_LIST_ASSETS",
+    "XERO_LIST_ATTACHMENTS",
+    "XERO_LIST_BANK_TRANSACTIONS",
+    "XERO_LIST_CREDIT_NOTES",
+    "XERO_LIST_FILES",
+    "XERO_LIST_FOLDERS",
+    "XERO_LIST_INVOICES",
+    "XERO_LIST_ITEMS",
+    "XERO_LIST_JOURNALS",
+    "XERO_LIST_MANUAL_JOURNALS",
+    "XERO_LIST_PAYMENTS",
+    "XERO_LIST_PROJECTS",
+    "XERO_LIST_PURCHASE_ORDERS",
+    "XERO_LIST_TAX_RATES",
+    "XERO_LIST_TRACKING_CATEGORIES",
+    "XERO_POST_INVOICE_UPDATE",
+    "XERO_UPDATE_CONTACT",
+    "XERO_UPLOAD_ATTACHMENT"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "XERO_CREATE_BANK_TRANSACTION",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.0.16"
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (BankAccountCode)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_CREATE_CONTACT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (AccountNumber)",
+        "dynamic email recipient (BankAccountDetails)",
+        "dynamic email recipient (EmailAddress)",
+        "dynamic email recipient (IsCustomer)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_CREATE_INVOICE",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_CREATE_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (PurchaseDetails.AccountCode)",
+        "dynamic email recipient (SalesDetails.AccountCode)",
+        "hardcoded domain: PurchaseDetails.AccountCode",
+        "hardcoded domain: PurchaseDetails.UnitPrice",
+        "hardcoded domain: SalesDetails.AccountCode",
+        "hardcoded domain: SalesDetails.UnitPrice"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_CREATE_PAYMENT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (AccountID)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_CREATE_PURCHASE_ORDER",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_ACCOUNT",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (account_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_ASSET",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_BALANCE_SHEET_REPORT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_BUDGET",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (DateTo)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_CONNECTIONS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_CONTACT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_CONTACTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_INVOICE",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_MANUAL_JOURNAL",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_ORGANISATION",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_PROFIT_LOSS_REPORT",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (toDate)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_PROJECT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_PURCHASE_ORDER",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_GET_QUOTES",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (DateTo)",
+        "dynamic email recipient (ExpiryDateTo)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_ACCOUNTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_ASSETS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_ATTACHMENTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_BANK_TRANSACTIONS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_CREDIT_NOTES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_FILES",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_FOLDERS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_INVOICES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_ITEMS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_JOURNALS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_MANUAL_JOURNALS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_PAYMENTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_PROJECTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_PURCHASE_ORDERS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (DateTo)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_TAX_RATES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_LIST_TRACKING_CATEGORIES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_POST_INVOICE_UPDATE",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_UPDATE_CONTACT",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (AccountNumber)",
+        "dynamic email recipient (BankAccountDetails)",
+        "dynamic email recipient (EmailAddress)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "XERO_UPLOAD_ATTACHMENT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (file_to_upload)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

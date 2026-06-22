@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-18T03:00:20.843239786Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:21:36.367896013Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/msathiyakeerthi/google-cloud-healthcare-api-mcp",
   "category": "Other",
   "vendor": "msathiyakeerthi",
@@ -17,10 +17,20 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.0: 12 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.1.0: 8 tool(s) added, 12 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "agent_company_diagnostic",
+          "create_formation_request",
+          "get_compliance_calendar",
+          "get_documents",
+          "get_formation_requirements",
+          "get_formation_status",
+          "recommend_structure",
+          "request_amendment"
+        ],
+        "removed": [
           "get_ucp_profile",
           "register_ucp_profile",
           "shopping_cart_cancel",
@@ -34,12 +44,6 @@
           "shopping_product_get",
           "shopping_product_search"
         ],
-        "removed": [
-          "add_buying_request",
-          "add_product",
-          "search_buying_requests",
-          "search_products"
-        ],
         "version": "0.1.0"
       }
     },
@@ -47,57 +51,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "register_ucp_profile"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "register_ucp_profile"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "register_ucp_profile"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_ucp_profile"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_ucp_profile"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_ucp_profile"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "shopping_product_search"
+      "tool_name": "get_formation_requirements"
     },
     {
       "id": "AS-011",
@@ -105,7 +61,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "shopping_product_search"
+      "tool_name": "get_formation_requirements"
     },
     {
       "id": "AS-014",
@@ -113,7 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_product_search"
+      "tool_name": "get_formation_requirements"
     },
     {
       "id": "AS-014",
@@ -121,55 +77,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_product_get"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "shopping_cart_create"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_cart_create"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_cart_get"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "shopping_cart_update"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_cart_update"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_cart_cancel"
+      "tool_name": "recommend_structure"
     },
     {
       "id": "AS-002",
@@ -177,7 +85,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "shopping_checkout_create"
+      "tool_name": "create_formation_request"
     },
     {
       "id": "AS-011",
@@ -185,7 +93,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "shopping_checkout_create"
+      "tool_name": "create_formation_request"
     },
     {
       "id": "AS-014",
@@ -193,7 +101,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_checkout_create"
+      "tool_name": "create_formation_request"
     },
     {
       "id": "AS-014",
@@ -201,15 +109,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_checkout_get"
+      "tool_name": "get_formation_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_documents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_compliance_calendar"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "shopping_checkout_update"
+      "tool_name": "request_amendment"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "request_amendment"
     },
     {
       "id": "AS-014",
@@ -217,7 +149,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_checkout_update"
+      "tool_name": "request_amendment"
     },
     {
       "id": "AS-014",
@@ -225,69 +157,30 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "shopping_checkout_cancel"
+      "tool_name": "agent_company_diagnostic"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 4,
-    "info": 19
+    "low": 3,
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_ucp_profile",
-    "register_ucp_profile",
-    "shopping_cart_cancel",
-    "shopping_cart_create",
-    "shopping_cart_get",
-    "shopping_cart_update",
-    "shopping_checkout_cancel",
-    "shopping_checkout_create",
-    "shopping_checkout_get",
-    "shopping_checkout_update",
-    "shopping_product_get",
-    "shopping_product_search"
+    "agent_company_diagnostic",
+    "create_formation_request",
+    "get_compliance_calendar",
+    "get_documents",
+    "get_formation_requirements",
+    "get_formation_status",
+    "recommend_structure",
+    "request_amendment"
   ],
   "tool_contexts": [
     {
-      "tool_name": "register_ucp_profile",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: SKILL.md",
-        "hardcoded domain: agent.json",
-        "hardcoded domain: dev.ucp.shopping",
-        "hardcoded domain: dev.ucp.shopping.cart",
-        "hardcoded domain: dev.ucp.shopping.catalog",
-        "hardcoded domain: dev.ucp.shopping.catalog.lookup",
-        "hardcoded domain: dev.ucp.shopping.catalog.search",
-        "hardcoded domain: dev.ucp.shopping.checkout",
-        "hardcoded domain: ucp.capabilities",
-        "hardcoded domain: ucp.version"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_ucp_profile",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_product_search",
+      "tool_name": "get_formation_requirements",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -297,108 +190,62 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "shopping_product_get",
+      "tool_name": "recommend_structure",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "shopping_cart_create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_cart_get",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_cart_update",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_cart_cancel",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_checkout_create",
+      "tool_name": "create_formation_request",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
       ],
-      "destinations": [
-        "dynamic email recipient (operator_confirmed)",
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_formation_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_documents",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_compliance_calendar",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "request_amendment",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "shopping_checkout_get",
+      "tool_name": "agent_company_diagnostic",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_checkout_update",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "shopping_checkout_cancel",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.myshopify.com",
-        "hardcoded domain: outboundpower.com"
+        "dynamic email recipient (autonomy)",
+        "dynamic email recipient (custodies_funds)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -581,6 +428,12 @@
     },
     {
       "scan_date": "2026-06-16T00:05:18Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-06-18T03:00:20Z",
       "grade": "B",
       "risk_score": 15,
       "version": "0.1.0"

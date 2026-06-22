@@ -1,17 +1,17 @@
-# 🟠 christos-eoa-intermediaries
+# 🟢 christos-eoa-intermediaries
 
 > Locate and verify insurance intermediaries registered in Greece using various search parameters. Retrieve detailed professional information through VAT numbers, registration codes, or geographic locations. Streamline compliance and due diligence by accessing up-to-date legal status and certification data for insurance professionals.
 Source code: https://github.com/conetgr/eoa-mcp-server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 27 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [christos-eoa-intermediaries](https://smithery.ai/server/christos/eoa-intermediaries) |
-| **Scan Date** | 2026-05-21 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -20,31 +20,19 @@ Source code: https://github.com/conetgr/eoa-mcp-server
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
-| Medium   | 1 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 4 |
-| Info     | 5 |
+| Info     | 7 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares db permission
+declared capabilities: network access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -111,12 +99,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

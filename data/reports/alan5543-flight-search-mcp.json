@@ -1,10 +1,10 @@
 {
   "tool_id": "alan5543-flight-search-mcp",
   "version": "sha-d53b566a3326",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-17T03:18:28Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:23:12.188135487Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/alan5543/Flight-Search-MCP",
   "category": "Developer Tools",
   "vendor": "alan5543",
@@ -12,47 +12,62 @@
   "language": "Python",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 4,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "main.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 14,
-            "snippet": "FastMCP(",
-            "file": "main.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 16,
-            "snippet": "@mcp.tool(",
-            "file": "main.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_cheap_flights"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_cheap_flights"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_cheap_flights"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -77,66 +92,30 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "search_cheap_flights",
+    "search_flights"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-03T22:54:12Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
+      "tool_name": "search_flights",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-04T16:48:03Z",
-      "grade": "C",
-      "risk_score": 29,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-04-05T01:18:52Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-04-08T01:44:36Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-04-26T07:40:23Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-05-17T02:34:37Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-05-30T02:36:51Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-06-15T18:46:00Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-06-15T20:28:16Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "sha-d53b566a3326"
-    },
-    {
-      "scan_date": "2026-06-16T00:06:18Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "sha-d53b566a3326"
+      "tool_name": "search_cheap_flights",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

@@ -10,11 +10,11 @@
 | **Vendor** | Microck |
 | **Stars** | ⭐ 661 |
 | **npm Package** | `opencode-studio` |
-| **npm Downloads (30d)** | 70 |
+| **npm Downloads (30d)** | 68 |
 | **Language** | TypeScript |
 | **Source** | [opencode-studio](https://github.com/Microck/opencode-studio) |
-| **Scan Date** | 2026-06-20 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

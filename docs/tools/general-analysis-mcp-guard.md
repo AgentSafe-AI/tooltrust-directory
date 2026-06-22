@@ -10,11 +10,11 @@
 | **Vendor** | General-Analysis |
 | **Stars** | ⭐ 53 |
 | **npm Package** | `@general-analysis/mcp-guard` |
-| **npm Downloads (30d)** | 73 |
+| **npm Downloads (30d)** | 97 |
 | **Language** | TypeScript |
 | **Source** | [general-analysis-mcp-guard](https://github.com/General-Analysis/mcp-guard) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

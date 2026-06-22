@@ -1,10 +1,10 @@
 {
   "tool_id": "spotify-mcp-server",
   "version": "1.0.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-17T03:03:07Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:06:55.403753814Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/marcelmarais/spotify-mcp-server",
   "category": "Developer Tools",
   "vendor": "marcelmarais",
@@ -14,40 +14,30 @@
   "description": "Lightweight MCP server for Spotify",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 17 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "velveteen_spotify_pitch_generator"
+    },
+    {
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 9,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "velveteen_spotify_pitch_generator"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
+    "low": 1,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -65,192 +55,23 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "velveteen_spotify_pitch_generator"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-05-19T02:38:59Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-20T02:40:43Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-21T02:39:08Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-22T02:41:29Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-23T02:19:04Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-24T02:38:14Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-25T02:45:36Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-26T02:35:20Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-27T02:45:14Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-28T02:23:04Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-29T02:36:23Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:21:58Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-05-31T02:45:29Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-01T02:55:45Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-02T02:52:48Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-03T03:01:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-04T02:56:28Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-05T02:44:24Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-06T02:33:09Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-07T02:49:23Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-08T02:53:12Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-09T02:21:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-10T02:44:22Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-11T02:55:20Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-12T02:50:14Z",
+      "tool_name": "velveteen_spotify_pitch_generator",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-13T02:42:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-14T02:55:02Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T02:59:06Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T18:31:31Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T20:16:30Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T23:51:54Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.0"
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (story)",
+        "dynamic email recipient (tone)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

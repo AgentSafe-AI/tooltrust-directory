@@ -1,17 +1,18 @@
 {
   "tool_id": "benzsevern-goldenmatch",
-  "version": "1.5.0",
+  "version": "2.2.0",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-17T03:09:29.671849409Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
-  "source_url": "https://github.com/benzsevern/goldenmatch",
+  "scan_date": "2026-06-22T03:09:55.283509774Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/benseverndev-oss/goldenmatch",
   "category": "Developer Tools",
   "vendor": "benzsevern",
-  "stars": 32,
+  "stars": 117,
+  "npm_package": "goldenmatch-monorepo",
   "license": "MIT",
   "language": "Python",
-  "description": "🟡 Zero-config entity resolution for Python \u0026 TypeScript. Dedupe, match, and build golden records — self-verifying auto-config, MCP/REST/A2A servers, edge-safe core, 97% F1 out of the box.",
+  "description": "Zero-config entity resolution. The zero-tuning Fellegi-Sunter path beats hand-rolled Splink head-to-head; scales from a CSV to a verified 100M-row dedupe in 9.2 min on Ray. Fuzzy/exact/probabilistic + PPRL + LLM, identity graph. Python + edge-safe TypeScript (optional WASM), SQL-native in Postgres \u0026 DuckDB, MCP/REST + dbt/Airflow.",
   "findings": [
     {
       "id": "AS-007",
@@ -81,6 +82,22 @@
       "id": "AS-007",
       "severity": "Info",
       "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'GoldenAnalysis' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoldenAnalysis"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoldenAnalysis"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
       "description": "Tool 'goldenmatch-extensions' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "goldenmatch-extensions"
@@ -99,10 +116,11 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 10
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "GoldenAnalysis",
     "GoldenCheck",
     "GoldenFlow",
     "GoldenMatch",
@@ -133,6 +151,13 @@
     },
     {
       "tool_name": "GoldenPipe",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoldenAnalysis",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -233,6 +258,12 @@
     },
     {
       "scan_date": "2026-06-15T23:57:50Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.5.0"
+    },
+    {
+      "scan_date": "2026-06-17T03:09:29Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.5.0"

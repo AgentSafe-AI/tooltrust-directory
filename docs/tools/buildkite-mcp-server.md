@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 50 |
 | **Language** | Go |
 | **Source** | [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

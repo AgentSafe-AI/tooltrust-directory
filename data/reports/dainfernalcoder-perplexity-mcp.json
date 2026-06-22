@@ -1,21 +1,36 @@
 {
   "tool_id": "dainfernalcoder-perplexity-mcp",
   "version": "Feature",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-17T03:03:42.403015238Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-22T03:07:33.603871623Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/DaInfernalCoder/perplexity-mcp",
   "category": "Developer Tools",
   "vendor": "DaInfernalCoder",
   "stars": 290,
   "npm_package": "perplexity-mcp",
-  "npm_downloads_monthly": 14939,
+  "npm_downloads_monthly": 12493,
   "license": "MIT",
   "language": "JavaScript",
   "description": "A Model Context Protocol (MCP) server for research and documentation assistance using Perplexity AI. Won 1st @ Cline Hackathon",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vFeature: 0 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "deep_research",
+          "reason"
+        ],
+        "version": "Feature"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -38,73 +53,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reason"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "deep_research"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "deep_research"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "deep_research"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 5
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "deep_research",
-    "reason",
     "search"
   ],
   "tool_contexts": [
     {
       "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "reason",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "deep_research",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -353,6 +317,12 @@
       "scan_date": "2026-06-15T23:52:27Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "Feature"
+    },
+    {
+      "scan_date": "2026-06-17T03:03:42Z",
+      "grade": "A",
+      "risk_score": 2,
       "version": "Feature"
     }
   ]

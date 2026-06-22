@@ -1,19 +1,19 @@
 {
   "tool_id": "iclickfreedownloads-mcp-server-airbnb",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-06-15T18:52:53.854373071Z",
-  "scanner": "tooltrust-scanner/v0.3.15",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-22T03:26:16.633215571Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/iclickfreedownloads/mcp-server-airbnb",
   "vendor": "Smithery",
   "description": "Find Airbnb stays by location, dates, guests, and price with precise filters. Get rich listing details, amenities, photos, and direct links to streamline booking decisions. Analyze listing photos and paginate through results to compare options quickly.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "airbnb_search"
     },
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "getListingPhotos"
     },
@@ -84,10 +84,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 3,
-    "info": 4
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -100,7 +100,7 @@
     {
       "tool_name": "airbnb_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -123,7 +123,7 @@
     {
       "tool_name": "getListingPhotos",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -237,6 +237,12 @@
     },
     {
       "scan_date": "2026-06-15T03:02:30Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-15T18:52:53Z",
       "grade": "B",
       "risk_score": 19,
       "version": "smithery"

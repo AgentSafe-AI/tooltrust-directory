@@ -8,13 +8,13 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.10` |
 | **Vendor** | AVIDS2 |
-| **Stars** | ⭐ 510 |
+| **Stars** | ⭐ 512 |
 | **npm Package** | `memorix` |
-| **npm Downloads (30d)** | 1.6k |
+| **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [memorix](https://github.com/AVIDS2/memorix) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

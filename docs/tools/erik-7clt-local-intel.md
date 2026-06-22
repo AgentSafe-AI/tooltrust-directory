@@ -10,8 +10,8 @@ Agentic local business intelligence for Florida — 983 ZIPs, OSM POI layer, IRS
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [erik-7clt-local-intel](https://smithery.ai/server/erik-7clt/local-intel) |
-| **Scan Date** | 2026-06-20 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

@@ -1,44 +1,27 @@
 {
   "tool_id": "btp-sap-odata-to-mcp-server",
   "version": "1.0.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-17T03:06:13Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:10:09.970719018Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/lemaiwo/btp-sap-odata-to-mcp-server",
   "category": "Developer Tools",
   "vendor": "lemaiwo",
   "stars": 127,
   "npm_package": "btp-sap-odata-to-mcp-server",
-  "npm_downloads_monthly": 100,
+  "npm_downloads_monthly": 90,
   "license": "MIT",
   "language": "TypeScript",
   "description": "BTP CloudFoundry Node.js MCP server for SAP OData services integration",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 3,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 30,
-            "snippet": "new McpServer(",
-            "file": "src/mcp-server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SAP_SUCCESSFACTORS_GET_CURRENT_USER"
     }
   ],
   "summary": {
@@ -49,7 +32,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,84 +49,16 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "SAP_SUCCESSFACTORS_GET_CURRENT_USER"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-01T02:58:01Z",
+      "tool_name": "SAP_SUCCESSFACTORS_GET_CURRENT_USER",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-02T02:55:22Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-03T03:03:32Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-04T02:58:54Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-05T02:46:52Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-06T02:35:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-07T02:51:43Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-08T02:55:46Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-09T02:23:56Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-10T02:46:48Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T18:34:46Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T20:19:05Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T23:54:54Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-06-17T03:15:47.147827786Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:20:14.647842768Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Shentia/MCP-Generate-Unit-Testing-Server",
   "category": "Developer Tools",
   "vendor": "Shentia",
@@ -13,6 +13,20 @@
   "license": "MIT",
   "language": "TypeScript",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "rate_tool"
+        ],
+        "removed": null,
+        "version": "1.0.0"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -793,14 +807,6 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"expected_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "token_budget_calculator"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"context_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_budget_calculator"
@@ -818,6 +824,14 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"system_prompt_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "token_budget_calculator"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"expected_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_budget_calculator"
     },
@@ -2348,14 +2362,30 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "fetch_confluence_page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "rate_tool"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rate_tool"
     }
   ],
   "summary": {
     "critical": 7,
-    "high": 2,
+    "high": 3,
     "medium": 0,
     "low": 44,
-    "info": 239
+    "info": 241
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -2462,6 +2492,7 @@
     "prompt_template_fill",
     "prompt_test_suite",
     "rag_relevance_rank",
+    "rate_tool",
     "redact_pii",
     "regex_test",
     "rerank_evaluate",
@@ -3938,6 +3969,16 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rate_tool",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -4171,6 +4212,12 @@
     },
     {
       "scan_date": "2026-06-16T00:03:29Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-17T03:15:47Z",
       "grade": "C",
       "risk_score": 42,
       "version": "1.0.0"

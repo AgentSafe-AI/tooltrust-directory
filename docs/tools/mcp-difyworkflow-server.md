@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 58 |
 | **Language** | Go |
 | **Source** | [mcp-difyworkflow-server](https://github.com/gotoolkits/mcp-difyworkflow-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

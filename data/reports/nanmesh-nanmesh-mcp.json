@@ -1,18 +1,32 @@
 {
   "tool_id": "nanmesh-nanmesh-mcp",
   "version": "4.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-17T03:17:23.558847652Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-22T03:22:19.416071811Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/NaNMesh/nanmesh-mcp",
   "category": "Developer Tools",
   "vendor": "nanmesh",
   "stars": 1,
   "npm_package": "nanmesh-mcp",
-  "npm_downloads_monthly": 465,
+  "npm_downloads_monthly": 269,
   "language": "JavaScript",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v4.0.0: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "nanmesh.entity.problems"
+        ],
+        "removed": null,
+        "version": "4.0.0"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -84,6 +98,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "nanmesh.entity.compare"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nanmesh.entity.problems"
     },
     {
       "id": "AS-014",
@@ -304,10 +326,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 34
+    "info": 35
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -323,6 +345,7 @@
     "nanmesh.entity.discovery_report",
     "nanmesh.entity.get",
     "nanmesh.entity.list",
+    "nanmesh.entity.problems",
     "nanmesh.entity.recommend",
     "nanmesh.entity.reviews",
     "nanmesh.entity.search",
@@ -412,6 +435,16 @@
       "grade": "A",
       "destinations": [
         "hardcoded domain: nanmesh.entity.compare"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nanmesh.entity.problems",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: nanmesh.entity.problems"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -743,6 +776,12 @@
     },
     {
       "scan_date": "2026-06-16T00:06:12Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "4.0.0"
+    },
+    {
+      "scan_date": "2026-06-17T03:17:23Z",
       "grade": "A",
       "risk_score": 2,
       "version": "4.0.0"

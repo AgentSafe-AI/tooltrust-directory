@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.6` |
 | **Vendor** | lastmile-ai |
-| **Stars** | ⭐ 8377 |
+| **Stars** | ⭐ 8379 |
 | **Language** | Python |
 | **Source** | [mcp-agent](https://github.com/lastmile-ai/mcp-agent) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

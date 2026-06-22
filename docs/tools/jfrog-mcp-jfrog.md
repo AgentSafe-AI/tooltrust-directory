@@ -12,8 +12,8 @@
 | **npm Package** | `mcp-jfrog` |
 | **Language** | TypeScript |
 | **Source** | [jfrog-mcp-jfrog](https://github.com/jfrog/mcp-jfrog) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

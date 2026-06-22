@@ -1,10 +1,10 @@
 {
   "tool_id": "huuthangntk-claude-vision-mcp-server",
   "version": "1.0.1",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-17T03:24:32Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:31:05.524008792Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/huuthangntk/claude-vision-mcp-server",
   "category": "Developer Tools",
   "vendor": "huuthangntk",
@@ -13,36 +13,20 @@
   "description": "MCP Server with Claude Vision and multi-perspective image analysis capabilities",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-010",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 12,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 26,
-            "snippet": ".registerTool(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "deepseek_chat"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "deepseek_chat"
     }
   ],
   "summary": {
@@ -50,10 +34,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -78,12 +61,21 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "deepseek_chat"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-16T00:08:37Z",
+      "tool_name": "deepseek_chat",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.1"
+      "destinations": [
+        "dynamic email recipient (max_tokens)",
+        "dynamic email recipient (tool_choice)",
+        "dynamic email recipient (tools)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

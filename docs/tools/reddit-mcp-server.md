@@ -10,11 +10,11 @@
 | **Vendor** | jordanburke |
 | **Stars** | ⭐ 138 |
 | **npm Package** | `reddit-mcp-server` |
-| **npm Downloads (30d)** | 4.3k |
+| **npm Downloads (30d)** | 4.6k |
 | **Language** | TypeScript |
 | **Source** | [reddit-mcp-server](https://github.com/jordanburke/reddit-mcp-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

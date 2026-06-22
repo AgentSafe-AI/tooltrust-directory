@@ -10,11 +10,11 @@
 | **Vendor** | adamwattis |
 | **Stars** | ⭐ 198 |
 | **npm Package** | `mcp-proxy-server` |
-| **npm Downloads (30d)** | 92 |
+| **npm Downloads (30d)** | 73 |
 | **Language** | TypeScript |
 | **Source** | [mcp-proxy-server](https://github.com/adamwattis/mcp-proxy-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

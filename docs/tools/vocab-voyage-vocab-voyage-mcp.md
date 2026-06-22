@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vocab-voyage-vocab-voyage-mcp](https://smithery.ai/server/vocab-voyage/vocab-voyage-mcp) |
-| **Scan Date** | 2026-06-05 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

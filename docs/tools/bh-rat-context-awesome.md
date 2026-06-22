@@ -10,11 +10,11 @@
 | **Vendor** | bh-rat |
 | **Stars** | ⭐ 53 |
 | **npm Package** | `context-awesome` |
-| **npm Downloads (30d)** | 294 |
+| **npm Downloads (30d)** | 327 |
 | **Language** | TypeScript |
 | **Source** | [bh-rat-context-awesome](https://github.com/bh-rat/context-awesome) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | imlewc |
 | **Stars** | ⭐ 145 |
 | **npm Package** | `@imlewc/metabase-server` |
-| **npm Downloads (30d)** | 402 |
+| **npm Downloads (30d)** | 437 |
 | **Language** | JavaScript |
 | **Source** | [imlewc-metabase-server](https://github.com/imlewc/metabase-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

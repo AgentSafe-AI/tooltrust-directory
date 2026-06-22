@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 1745 |
 | **Language** | Python |
 | **Source** | [stickerdaniel-linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

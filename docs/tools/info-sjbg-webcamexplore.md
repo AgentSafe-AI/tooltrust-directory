@@ -10,8 +10,8 @@ Explore the World in Real-Time: 10,000+ Live 4K webcams from stunning locations 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-sjbg-webcamexplore](https://smithery.ai/server/info-sjbg/webcamexplore) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

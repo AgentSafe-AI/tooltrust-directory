@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.17.1` |
 | **Vendor** | Muvon |
-| **Stars** | ⭐ 404 |
+| **Stars** | ⭐ 406 |
 | **Language** | Rust |
 | **Source** | [octocode](https://github.com/Muvon/octocode) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

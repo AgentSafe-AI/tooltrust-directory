@@ -1,10 +1,10 @@
 {
   "tool_id": "alxspiker-windows-command-line-mcp-server",
   "version": "0.3.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-17T03:12:54.657328044Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-06-22T03:17:05.899568975Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/alxspiker/Windows-Command-Line-MCP-Server",
   "category": "Developer Tools",
   "vendor": "alxspiker",
@@ -18,10 +18,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.3.0: 8 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.3.0: 3 tool(s) added, 8 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "remote_exec",
+          "remote_screenshot",
+          "session_status"
+        ],
+        "removed": [
           "execute_command",
           "execute_powershell",
           "get_network_info",
@@ -31,21 +36,24 @@
           "list_allowed_commands",
           "list_running_processes"
         ],
-        "removed": [
-          "remote_exec",
-          "remote_screenshot",
-          "session_status"
-        ],
         "version": "0.3.0"
       }
     },
     {
-      "id": "AS-014",
+      "id": "AS-001",
+      "severity": "Critical",
+      "title": "Tool Poisoning (Prompt Injection)",
+      "description": "possible prompt injection detected in tool description: pattern matched: (?i)exfiltrate\\s+(?:\\w+\\s+){0,2}(?:data|info|credentials?|secrets?|content|results?)",
+      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.",
+      "tool_name": "remote_exec"
+    },
+    {
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_running_processes"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "remote_exec"
     },
     {
       "id": "AS-014",
@@ -53,7 +61,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_system_info"
+      "tool_name": "remote_exec"
     },
     {
       "id": "AS-002",
@@ -61,7 +69,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_network_info"
+      "tool_name": "session_status"
     },
     {
       "id": "AS-011",
@@ -69,7 +77,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_network_info"
+      "tool_name": "session_status"
     },
     {
       "id": "AS-014",
@@ -77,55 +85,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_network_info"
+      "tool_name": "session_status"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_scheduled_tasks"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_scheduled_tasks"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_service_info"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_service_info"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "list_allowed_commands"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"list_allowed_commands\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
-      "tool_name": "list_allowed_commands"
+      "tool_name": "remote_screenshot"
     },
     {
       "id": "AS-011",
@@ -133,7 +101,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "list_allowed_commands"
+      "tool_name": "remote_screenshot"
     },
     {
       "id": "AS-014",
@@ -141,47 +109,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_allowed_commands"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute_command"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "execute_command"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute_powershell"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "execute_powershell"
+      "tool_name": "remote_screenshot"
     }
   ],
   "summary": {
-    "critical": 0,
-    "high": 2,
+    "critical": 1,
+    "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 14
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -202,82 +138,41 @@
     }
   ],
   "tool_names": [
-    "execute_command",
-    "execute_powershell",
-    "get_network_info",
-    "get_scheduled_tasks",
-    "get_service_info",
-    "get_system_info",
-    "list_allowed_commands",
-    "list_running_processes"
+    "remote_exec",
+    "remote_screenshot",
+    "session_status"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list_running_processes",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "remote_exec",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_system_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_network_info",
+      "tool_name": "session_status",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_scheduled_tasks",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_service_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_allowed_commands",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "execute_command",
+      "tool_name": "remote_screenshot",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "executes_commands",
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "execute_powershell",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -480,6 +375,12 @@
       "scan_date": "2026-06-16T00:00:44Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "0.3.0"
+    },
+    {
+      "scan_date": "2026-06-17T03:12:54Z",
+      "grade": "B",
+      "risk_score": 17,
       "version": "0.3.0"
     }
   ]

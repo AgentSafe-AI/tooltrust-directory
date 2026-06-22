@@ -10,11 +10,11 @@
 | **Vendor** | KeyID-AI |
 | **Stars** | ⭐ 688 |
 | **npm Package** | `@keyid/agent-kit` |
-| **npm Downloads (30d)** | 193 |
+| **npm Downloads (30d)** | 216 |
 | **Language** | JavaScript |
 | **Source** | [agent-kit](https://github.com/KeyID-AI/agent-kit) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

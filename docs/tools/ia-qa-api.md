@@ -12,8 +12,8 @@ No API key. No signup. Free.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ia-qa-api](https://smithery.ai/server/ia-qa/api) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -25,7 +25,7 @@ No API key. No signup. Free.
 | High     | 2 |
 | Medium   | 0 |
 | Low      | 44 |
-| Info     | 240 |
+| Info     | 241 |
 
 ## Detailed Findings
 
@@ -3530,6 +3530,18 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

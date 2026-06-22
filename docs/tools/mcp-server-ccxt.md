@@ -10,11 +10,11 @@
 | **Vendor** | doggybee |
 | **Stars** | ⭐ 139 |
 | **npm Package** | `@mcpfun/mcp-server-ccxt` |
-| **npm Downloads (30d)** | 809 |
+| **npm Downloads (30d)** | 734 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-ccxt](https://github.com/doggybee/mcp-server-ccxt) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

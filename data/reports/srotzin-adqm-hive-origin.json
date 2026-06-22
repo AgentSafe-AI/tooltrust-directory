@@ -1,18 +1,19 @@
 {
   "tool_id": "srotzin-adqm-hive-origin",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-05T02:47:39.380354245Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:24:57.963467618Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/srotzin-adqm/hive-origin",
   "vendor": "Smithery",
+  "description": "Stamp creative works, code, and content with post-quantum copyright provenance. Dual-signed Ed25519 + ML-DSA-65 (FIPS 204) receipt binds work_hash + creator_did + timestamp on Base 8453. Immutable first-creator record. Part of Hive Civilization (thehiveryiq.com).",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "origin_create"
     },
@@ -42,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "origin_git"
     },
@@ -75,10 +76,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 5
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -119,7 +120,7 @@
     {
       "tool_name": "origin_git",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -153,6 +154,12 @@
     },
     {
       "scan_date": "2026-06-04T02:59:35Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-05T02:47:39Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

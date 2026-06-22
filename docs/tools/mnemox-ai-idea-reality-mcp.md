@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 610 |
 | **Language** | Python |
 | **Source** | [mnemox-ai-idea-reality-mcp](https://github.com/mnemox-ai/idea-reality-mcp) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

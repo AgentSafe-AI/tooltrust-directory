@@ -10,11 +10,11 @@
 | **Vendor** | OctagonAI |
 | **Stars** | ⭐ 131 |
 | **npm Package** | `octagon-mcp` |
-| **npm Downloads (30d)** | 950 |
+| **npm Downloads (30d)** | 895 |
 | **Language** | TypeScript |
 | **Source** | [octagon-mcp-server](https://github.com/OctagonAI/octagon-mcp-server) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

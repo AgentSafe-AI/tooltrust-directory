@@ -1,10 +1,10 @@
 {
   "tool_id": "mfukushim-reversi-mcp-ui",
   "version": "0.0.2",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-06-17T03:25:15Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:25:13.243795422Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mfukushim/reversi-mcp-ui",
   "category": "Developer Tools",
   "vendor": "mfukushim",
@@ -14,29 +14,36 @@
   "description": "Simple Reversi Game For MCP-UI",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 16,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "new-game"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-board"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "select-user"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "select-assistant"
     }
   ],
   "summary": {
@@ -44,10 +51,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -65,108 +71,40 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "get-board",
+    "new-game",
+    "select-assistant",
+    "select-user"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-06T02:02:07Z",
+      "tool_name": "new-game",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-08T01:45:55Z",
+      "tool_name": "get-board",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-11T01:50:05Z",
+      "tool_name": "select-user",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-04-12T02:15:16Z",
+      "tool_name": "select-assistant",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-13T02:19:45Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-14T02:15:51Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-15T02:12:07Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-16T02:26:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-17T02:14:24Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-18T01:55:33Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-19T02:17:57Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-04-26T07:44:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-05-17T02:43:33Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-05-30T02:39:15Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-06-15T18:52:50Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-06-15T20:32:01Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
-    },
-    {
-      "scan_date": "2026-06-16T00:12:44Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "0.0.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

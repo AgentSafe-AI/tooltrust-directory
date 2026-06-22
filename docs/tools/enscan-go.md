@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.5` |
 | **Vendor** | wgpsec |
-| **Stars** | ⭐ 4461 |
+| **Stars** | ⭐ 4465 |
 | **Language** | Go |
 | **Source** | [enscan-go](https://github.com/wgpsec/ENScan_GO) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

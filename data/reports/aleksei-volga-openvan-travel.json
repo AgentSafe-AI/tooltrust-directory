@@ -1,10 +1,10 @@
 {
   "tool_id": "aleksei-volga-openvan-travel",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-08T02:56:57.296191083Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:27:56.95728916Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/aleksei-volga/openvan-travel",
   "vendor": "Smithery",
   "description": "OpenVan MCP Server exposes OpenVan.camp public APIs over the Model Context Protocol: fuel prices across 125+ countries, VanSky weather suitability scores (0–100), VanBasket food price index, currency exchange rates, vanlife events (expos, festivals, meetups) and aggregated news stories in 7 languages. 11 read-only tools, no authentication, 120 req/min rate limit, CC BY 4.0 license. Remote Streamable HTTP at mcp.openvan.camp/mcp; local via npx -y @openvan/mcp-server.",
@@ -67,17 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_stories"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_stories"
     },
@@ -124,10 +116,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 11
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -195,8 +187,8 @@
     },
     {
       "tool_name": "search_stories",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -306,6 +298,12 @@
     },
     {
       "scan_date": "2026-06-07T02:52:50Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-08T02:56:57Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

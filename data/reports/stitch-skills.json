@@ -3,12 +3,12 @@
   "version": "1.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-21T02:57:34.533628863Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:00:42.000743147Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/google-labs-code/stitch-skills",
   "category": "Developer Tools",
   "vendor": "google-labs-code",
-  "stars": 6099,
+  "stars": 6107,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
@@ -17,40 +17,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0: 1 tool(s) added, 8 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0: 2 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "list_skills"
+          "get_skill_detail",
+          "list_installed_skills"
         ],
         "removed": [
-          "check_vetting_status",
-          "download_skill",
-          "get_install_guide",
-          "get_skill_schema",
-          "list_categories",
-          "list_platforms",
-          "register_developer",
-          "upload_skill"
+          "get_skill",
+          "list_skills"
         ],
         "version": "1.0"
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_skills"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_skill"
     },
     {
       "id": "AS-002",
@@ -75,6 +54,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search_skills"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_skill_detail"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_installed_skills"
     }
   ],
   "summary": {
@@ -86,38 +81,37 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_skill",
-    "list_skills",
+    "get_skill_detail",
+    "list_installed_skills",
     "search_skills"
   ],
   "tool_contexts": [
-    {
-      "tool_name": "list_skills",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_skill",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: SKILL.md"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
     {
       "tool_name": "search_skills",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: skills-hub.ai"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_skill_detail",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_installed_skills",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: skills-hub.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -144,6 +138,12 @@
     },
     {
       "scan_date": "2026-06-20T02:42:42Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0"
+    },
+    {
+      "scan_date": "2026-06-21T02:57:34Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0"

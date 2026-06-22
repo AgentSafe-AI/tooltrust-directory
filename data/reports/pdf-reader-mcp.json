@@ -1,16 +1,16 @@
 {
   "tool_id": "pdf-reader-mcp",
-  "version": "2.6.0",
+  "version": "2.7.2",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-06-21T03:01:05.729056317Z",
-  "scanner": "tooltrust-scanner/v0.3.18",
+  "scan_date": "2026-06-22T03:04:58.196525759Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/SylphxAI/pdf-reader-mcp",
   "category": "Developer Tools",
   "vendor": "SylphxAI",
-  "stars": 790,
+  "stars": 791,
   "npm_package": "@sylphx/pdf-reader-mcp",
-  "npm_downloads_monthly": 21694,
+  "npm_downloads_monthly": 20022,
   "license": "MIT",
   "language": "TypeScript",
   "description": "📄 Production-ready MCP server for PDF processing - 5-10x faster with parallel processing and 94%+ test coverage",
@@ -35,7 +35,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 26 properties (threshold: 10)",
+      "description": "input schema exposes 30 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "read_pdf"
     },
@@ -120,6 +120,30 @@
     "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/mcp.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 197,
+      "snippet": "new McpServer(",
+      "file": "src/mcp.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 205,
+      "snippet": ".registerTool(",
+      "file": "src/mcp.ts",
+      "language": "typescript"
+    }
+  ],
   "tool_names": [
     "analyze_regions",
     "extract_regions",
@@ -225,6 +249,12 @@
     },
     {
       "scan_date": "2026-06-20T02:46:17Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "2.6.0"
+    },
+    {
+      "scan_date": "2026-06-21T03:01:05Z",
       "grade": "A",
       "risk_score": 4,
       "version": "2.6.0"

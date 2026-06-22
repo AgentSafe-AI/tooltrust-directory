@@ -12,8 +12,8 @@ FINTRAC MSB certified (C10001283).
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ybolduc-ipayx-fx-audit](https://smithery.ai/server/ybolduc/ipayx-fx-audit) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-22 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
