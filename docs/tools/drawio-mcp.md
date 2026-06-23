@@ -6,10 +6,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-778b75e655c5` |
 | **Vendor** | jgraph |
-| **Stars** | ⭐ 4537 |
+| **Stars** | ⭐ 4551 |
 | **Language** | JavaScript |
 | **Source** | [drawio-mcp](https://github.com/jgraph/drawio-mcp) |
-| **Scan Date** | 2026-06-22 |
+| **Scan Date** | 2026-06-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

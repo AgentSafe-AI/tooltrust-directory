@@ -1,50 +1,26 @@
 {
   "tool_id": "pdf-reader-mcp",
-  "version": "2.7.2",
+  "version": "3.0.0",
   "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-06-22T03:04:58.196525759Z",
+  "risk_score": 2,
+  "scan_date": "2026-06-23T02:40:26.148365183Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/SylphxAI/pdf-reader-mcp",
   "category": "Developer Tools",
   "vendor": "SylphxAI",
-  "stars": 791,
+  "stars": 792,
   "npm_package": "@sylphx/pdf-reader-mcp",
-  "npm_downloads_monthly": 20022,
+  "npm_downloads_monthly": 18090,
   "license": "MIT",
   "language": "TypeScript",
   "description": "📄 Production-ready MCP server for PDF processing - 5-10x faster with parallel processing and 94%+ test coverage",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "inspect_pdf"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "read_pdf"
-    },
-    {
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 30 properties (threshold: 10)",
+      "description": "input schema exposes 33 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "read_pdf"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "read_pdf"
     },
     {
@@ -80,12 +56,12 @@
       "tool_name": "search_pdf"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "render_page"
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pdf_evidence"
     },
     {
       "id": "AS-014",
@@ -93,23 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "extract_regions"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_regions"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ocr_pages"
+      "tool_name": "pdf_evidence"
     }
   ],
   "summary": {
@@ -117,7 +77,7 @@
     "high": 0,
     "medium": 0,
     "low": 3,
-    "info": 9
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -145,30 +105,18 @@
     }
   ],
   "tool_names": [
-    "analyze_regions",
-    "extract_regions",
-    "inspect_pdf",
-    "ocr_pages",
+    "pdf_evidence",
     "read_pdf",
-    "render_page",
     "search_pdf"
   ],
   "tool_contexts": [
     {
-      "tool_name": "inspect_pdf",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
       "tool_name": "read_pdf",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
       "destinations": [
+        "dynamic email recipient (auto)",
+        "dynamic email recipient (auto_detail)",
         "dynamic email recipient (include_accessibility_report)"
       ],
       "dependency_visibility": "No dependency data",
@@ -185,31 +133,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "render_page",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "extract_regions",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "analyze_regions",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ocr_pages",
+      "tool_name": "pdf_evidence",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -258,6 +182,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "2.6.0"
+    },
+    {
+      "scan_date": "2026-06-22T03:04:58Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "2.7.2"
     }
   ]
 }

@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `3.0.0` |
 | **Vendor** | zhizhuodemao |
-| **Stars** | ⭐ 1958 |
+| **Stars** | ⭐ 1973 |
 | **npm Package** | `js-reverse-mcp` |
-| **npm Downloads (30d)** | 5.8k |
+| **npm Downloads (30d)** | 7.5k |
 | **Language** | TypeScript |
 | **Source** | [js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) |
-| **Scan Date** | 2026-06-22 |
+| **Scan Date** | 2026-06-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

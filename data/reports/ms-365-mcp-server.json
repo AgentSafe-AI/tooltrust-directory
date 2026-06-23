@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.126.0",
+  "version": "0.128.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-06-22T03:05:05.230152995Z",
+  "scan_date": "2026-06-23T02:40:31.799211043Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 787,
+  "stars": 791,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 116229,
+  "npm_downloads_monthly": 113937,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Office services through the Graph API",
@@ -4662,14 +4662,38 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "download-bytes"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-download-url"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get-download-url"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-download-url"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 222,
-    "info": 359
+    "low": 223,
+    "info": 361
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -4763,6 +4787,7 @@
     "get-calendar-event",
     "get-calendar-view",
     "get-current-user",
+    "get-download-url",
     "get-drive-delta",
     "get-drive-item",
     "get-drive-root-item",
@@ -7173,6 +7198,17 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get-download-url",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -7739,6 +7775,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.125.1"
+    },
+    {
+      "scan_date": "2026-06-22T03:05:05Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.126.0"
     }
   ]
 }

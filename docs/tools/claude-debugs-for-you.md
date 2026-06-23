@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.2` |
 | **Vendor** | jasonjmcghee |
-| **Stars** | ⭐ 509 |
+| **Stars** | ⭐ 510 |
 | **npm Package** | `claude-debugs-for-you` |
-| **npm Downloads (30d)** | 21 |
+| **npm Downloads (30d)** | 23 |
 | **Language** | TypeScript |
 | **Source** | [claude-debugs-for-you](https://github.com/jasonjmcghee/claude-debugs-for-you) |
-| **Scan Date** | 2026-06-22 |
+| **Scan Date** | 2026-06-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
