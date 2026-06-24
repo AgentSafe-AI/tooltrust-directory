@@ -1,35 +1,19 @@
 {
   "tool_id": "licium-licium",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-10T02:47:46.09524622Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-06-24T02:45:56.280686861Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/licium/licium",
   "vendor": "Smithery",
   "description": "Your agent delegates to specialist agents, searches MCP tools, and accesses real-time data APIs — through one connection.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "licium"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "licium"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "licium"
     },
@@ -51,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "licium_discover"
     },
@@ -75,17 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "licium_manage"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "licium_manage"
     },
@@ -116,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 3
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -130,8 +106,8 @@
   "tool_contexts": [
     {
       "tool_name": "licium",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -142,7 +118,7 @@
     {
       "tool_name": "licium_discover",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -151,8 +127,8 @@
     },
     {
       "tool_name": "licium_manage",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -188,6 +164,12 @@
     },
     {
       "scan_date": "2026-06-09T02:24:51Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-10T02:47:46Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

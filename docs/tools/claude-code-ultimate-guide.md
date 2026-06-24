@@ -1,6 +1,6 @@
 # 🟢 claude-code-ultimate-guide
 
-> A tremendous feat of documentation, this guide covers Claude Code from beginner to power user, with production-ready templates for Claude Code features, guides on agentic workflows, and a lot of great learning materials, including quizzes and a handy "cheatsheet". Whether it's the "ultimate" guide to Claude Code will be up to the reader :)
+> The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quizzes, and production-ready templates. 430K+ lines.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `3.27.0` |
 | **Vendor** | FlorianBruniaux |
-| **Stars** | ⭐ 5134 |
+| **Stars** | ⭐ 5181 |
 | **Language** | Python |
 | **Source** | [claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) |
-| **Scan Date** | 2026-06-22 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

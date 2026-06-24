@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.9.2` |
 | **Vendor** | freddy-schuetz |
-| **Stars** | ⭐ 533 |
+| **Stars** | ⭐ 534 |
 | **Language** | Shell |
 | **Source** | [n8n-claw](https://github.com/freddy-schuetz/n8n-claw) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

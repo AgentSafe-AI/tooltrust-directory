@@ -1,27 +1,35 @@
 {
-  "tool_id": "ios-simulator-mcp",
-  "version": "1.5.2",
+  "tool_id": "promptibus-mcp",
+  "version": "0.9.0",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-24T02:39:44.641920792Z",
+  "risk_score": 2,
+  "scan_date": "2026-06-24T02:45:21.851278239Z",
   "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/joshuayoes/ios-simulator-mcp",
+  "source_url": "https://github.com/promptibus/mcp",
   "category": "Developer Tools",
-  "vendor": "joshuayoes",
-  "stars": 2065,
-  "npm_package": "ios-simulator-mcp",
-  "npm_downloads_monthly": 17401,
+  "vendor": "promptibus",
+  "stars": 3,
+  "npm_package": "@promptibus/mcp",
+  "npm_downloads_monthly": 552,
   "license": "MIT",
   "language": "JavaScript",
-  "description": "MCP server for interacting with the iOS simulator",
+  "description": "Model intelligence MCP server — syntax, parameters, pricing for 67+ generative AI models (Midjourney, Flux, Suno, Runway, DALL-E, Stable Diffusion). 7 tools for any MCP client.",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_booted_sim_id"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "recommend_model"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "recommend_model"
     },
     {
       "id": "AS-014",
@@ -29,7 +37,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "open_simulator"
+      "tool_name": "recommend_model"
     },
     {
       "id": "AS-014",
@@ -37,7 +45,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_describe_all"
+      "tool_name": "optimize_prompt"
     },
     {
       "id": "AS-014",
@@ -45,55 +53,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_tap"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_type"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_swipe"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_describe_point"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_find_element"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ui_view"
+      "tool_name": "lint_prompt"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "screenshot"
+      "tool_name": "compare_models"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "compare_models"
     },
     {
       "id": "AS-014",
@@ -101,15 +77,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "screenshot"
+      "tool_name": "compare_models"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_parameters"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_model_profile"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "record_video"
+      "tool_name": "get_pricing"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_pricing"
     },
     {
       "id": "AS-014",
@@ -117,7 +117,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "record_video"
+      "tool_name": "get_pricing"
     },
     {
       "id": "AS-014",
@@ -125,15 +125,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "stop_recording"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "install_app"
+      "tool_name": "pick_cheapest_model"
     },
     {
       "id": "AS-014",
@@ -141,15 +133,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "install_app"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: environment variables",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "launch_app"
+      "tool_name": "count_tokens"
     },
     {
       "id": "AS-014",
@@ -157,15 +141,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "launch_app"
+      "tool_name": "format_prompt"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "health_check"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "whats_new"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 18
+    "low": 3,
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -179,188 +179,126 @@
     },
     {
       "kind": "init",
-      "line": 89,
+      "line": 8,
       "snippet": "new McpServer(",
       "file": "src/index.ts",
       "language": "typescript"
     }
   ],
   "tool_names": [
-    "get_booted_sim_id",
-    "install_app",
-    "launch_app",
-    "open_simulator",
-    "record_video",
-    "screenshot",
-    "stop_recording",
-    "ui_describe_all",
-    "ui_describe_point",
-    "ui_find_element",
-    "ui_swipe",
-    "ui_tap",
-    "ui_type",
-    "ui_view"
+    "compare_models",
+    "count_tokens",
+    "format_prompt",
+    "get_model_profile",
+    "get_parameters",
+    "get_pricing",
+    "health_check",
+    "lint_prompt",
+    "optimize_prompt",
+    "pick_cheapest_model",
+    "recommend_model",
+    "whats_new"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_booted_sim_id",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "open_simulator",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_describe_all",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_tap",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_type",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_swipe",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_describe_point",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_find_element",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ui_view",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "screenshot",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "record_video",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "stop_recording",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "install_app",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "launch_app",
+      "tool_name": "recommend_model",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_env"
-      ],
-      "destinations": [
-        "hardcoded domain: com.apple.mobilesafari"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "scan_history": [
-    {
-      "scan_date": "2026-06-15T23:47:53Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
     },
     {
-      "scan_date": "2026-06-16T03:02:00Z",
+      "tool_name": "optimize_prompt",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-17T02:59:02Z",
+      "tool_name": "lint_prompt",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-18T02:54:17Z",
+      "tool_name": "compare_models",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-19T03:38:34Z",
+      "tool_name": "get_parameters",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "destinations": [
+        "hardcoded domain: model.generate"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-20T02:44:28Z",
+      "tool_name": "get_model_profile",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-21T02:59:17Z",
+      "tool_name": "get_pricing",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-22T03:02:45Z",
+      "tool_name": "pick_cheapest_model",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-23T02:38:34Z",
+      "tool_name": "count_tokens",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.5.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "format_prompt",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "health_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "whats_new",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ]
 }

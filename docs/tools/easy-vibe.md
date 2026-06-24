@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | datawhalechina |
-| **Stars** | ⭐ 17223 |
+| **Stars** | ⭐ 17265 |
 | **npm Package** | `easy-vibe` |
 | **Language** | JavaScript |
 | **Source** | [easy-vibe](https://github.com/datawhalechina/easy-vibe) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

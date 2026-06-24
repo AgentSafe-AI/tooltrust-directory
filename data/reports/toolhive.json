@@ -1,14 +1,14 @@
 {
   "tool_id": "toolhive",
-  "version": "0.30.0",
+  "version": "0.30.1",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-06-23T02:38:42Z",
+  "scan_date": "2026-06-24T02:39:52Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/stacklok/toolhive",
   "category": "Developer Tools",
   "vendor": "stacklok",
-  "stars": 1900,
+  "stars": 1903,
   "license": "Apache-2.0",
   "language": "Go",
   "description": "ToolHive is an enterprise-grade platform for running and managing Model Context Protocol (MCP) servers.",
@@ -21,27 +21,6 @@
       "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
         "evidence": [
-          {
-            "kind": "import",
-            "line": 14,
-            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-            "file": "pkg/mcp/server/server.go",
-            "language": "go"
-          },
-          {
-            "kind": "init",
-            "line": 64,
-            "snippet": "server.NewMCPServer(",
-            "file": "pkg/mcp/server/server.go",
-            "language": "go"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 129,
-            "snippet": "AddTool(",
-            "file": "pkg/mcp/server/server.go",
-            "language": "go"
-          },
           {
             "kind": "import",
             "line": 16,
@@ -72,9 +51,30 @@
           },
           {
             "kind": "init",
-            "line": 222,
+            "line": 218,
             "snippet": "server.NewMCPServer(",
             "file": "pkg/vmcp/server/serve.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 13,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "test/integration/vmcp/helpers/backend.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 250,
+            "snippet": "server.NewMCPServer(",
+            "file": "test/integration/vmcp/helpers/backend.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 261,
+            "snippet": "AddTool(",
+            "file": "test/integration/vmcp/helpers/backend.go",
             "language": "go"
           }
         ]
@@ -92,27 +92,6 @@
   "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 14,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "pkg/mcp/server/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 64,
-      "snippet": "server.NewMCPServer(",
-      "file": "pkg/mcp/server/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 129,
-      "snippet": "AddTool(",
-      "file": "pkg/mcp/server/server.go",
-      "language": "go"
-    },
     {
       "kind": "import",
       "line": 16,
@@ -143,9 +122,30 @@
     },
     {
       "kind": "init",
-      "line": 222,
+      "line": 218,
       "snippet": "server.NewMCPServer(",
       "file": "pkg/vmcp/server/serve.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "test/integration/vmcp/helpers/backend.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 250,
+      "snippet": "server.NewMCPServer(",
+      "file": "test/integration/vmcp/helpers/backend.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 261,
+      "snippet": "AddTool(",
+      "file": "test/integration/vmcp/helpers/backend.go",
       "language": "go"
     }
   ]

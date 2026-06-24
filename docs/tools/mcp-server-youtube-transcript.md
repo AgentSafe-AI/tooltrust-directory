@@ -10,10 +10,10 @@
 | **Vendor** | kimtaeyoon83 |
 | **Stars** | ⭐ 563 |
 | **npm Package** | `@kimtaeyoon83/mcp-server-youtube-transcript` |
-| **npm Downloads (30d)** | 4.5k |
+| **npm Downloads (30d)** | 4.4k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

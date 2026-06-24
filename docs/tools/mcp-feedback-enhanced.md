@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.6.0` |
 | **Vendor** | Minidoracat |
-| **Stars** | ⭐ 3787 |
+| **Stars** | ⭐ 3788 |
 | **Language** | JavaScript |
 | **Source** | [mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

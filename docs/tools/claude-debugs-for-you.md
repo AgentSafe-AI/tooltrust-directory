@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 23 |
 | **Language** | TypeScript |
 | **Source** | [claude-debugs-for-you](https://github.com/jasonjmcghee/claude-debugs-for-you) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

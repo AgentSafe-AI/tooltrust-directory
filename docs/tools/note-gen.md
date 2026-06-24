@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `note-gen-v0.30.0` |
 | **Vendor** | codexu |
-| **Stars** | ⭐ 12203 |
+| **Stars** | ⭐ 12212 |
 | **npm Package** | `note-gen` |
 | **Language** | TypeScript |
 | **Source** | [note-gen](https://github.com/codexu/note-gen) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

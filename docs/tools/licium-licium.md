@@ -1,16 +1,16 @@
-# 🟠 licium-licium
+# 🟢 licium-licium
 
 > Your agent delegates to specialist agents, searches MCP tools, and accesses real-time data APIs — through one connection.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 40 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [licium-licium](https://smithery.ai/server/licium/licium) |
-| **Scan Date** | 2026-06-10 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-06-24 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -19,43 +19,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 5 |
-| Medium   | 1 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 4 |
-| Info     | 3 |
+| Info     | 6 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares exec permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
-
-**Description:**
-tool declares db permission
+declared capabilities: code/command execution, network access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -86,12 +62,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares exec permission
+declared capabilities: code/command execution
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -122,24 +98,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares exec permission
+declared capabilities: code/command execution, network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

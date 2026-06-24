@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.15.0` |
 | **Vendor** | yamadashy |
-| **Stars** | ⭐ 26486 |
+| **Stars** | ⭐ 26513 |
 | **npm Package** | `repomix` |
-| **npm Downloads (30d)** | 270.4k |
+| **npm Downloads (30d)** | 277.3k |
 | **Language** | TypeScript |
 | **Source** | [repomix](https://github.com/yamadashy/repomix) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.4.2` |
+| **Version** | `0.4.3` |
 | **Vendor** | linxule |
-| **Stars** | ⭐ 55 |
+| **Stars** | ⭐ 56 |
 | **npm Package** | `mcp-music-studio` |
-| **npm Downloads (30d)** | 676 |
+| **npm Downloads (30d)** | 866 |
 | **Language** | TypeScript |
 | **Source** | [linxule-mcp-music-studio](https://github.com/linxule/mcp-music-studio) |
-| **Scan Date** | 2026-06-22 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

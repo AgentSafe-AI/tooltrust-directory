@@ -1,19 +1,19 @@
 {
   "tool_id": "gunsnation-gunsnation-mcp",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-12T02:53:54.674394647Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-24T02:46:11.302970944Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/gunsnation/gunsnation-mcp",
   "vendor": "Smithery",
   "description": "The Gunsnation MCP Server is a lightweight integration layer that exposes the Gunsnation firearms catalog to AI assistants through the Model Context Protocol (MCP). It allows compatible AI clients to search, filter, and retrieve detailed firearm information using structured tool calls instead of manual API integration.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_firearms"
     },
@@ -84,10 +84,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 7
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -103,7 +103,7 @@
     {
       "tool_name": "search_firearms",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -264,6 +264,12 @@
     },
     {
       "scan_date": "2026-06-11T02:58:56Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-12T02:53:54Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

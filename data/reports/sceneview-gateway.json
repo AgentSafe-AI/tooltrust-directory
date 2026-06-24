@@ -1,10 +1,10 @@
 {
   "tool_id": "sceneview-gateway",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 41,
-  "scan_date": "2026-06-08T02:56:45.704387277Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-24T02:45:56.699185106Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/sceneview/gateway",
   "vendor": "Smithery",
   "description": "Cross-platform 3D \u0026 AR for Android (Compose + Filament), iOS / macOS / visionOS (SwiftUI + RealityKit), and Web (Filament.js + WebXR). 63 tools across 6 multiplexed MCPs:\n\n- **sceneview-mcp** — 26 free tools (samples, guides, validator, code analysis, search) + 7 Pro tools (scene gen, 3D artifacts, multi-platform setup)\n- **automotive-3d-mcp** — car configurators, AR showrooms, HUD overlays, parts catalogs\n- **gaming-3d-mcp** — character viewers, level editors, physics, particle effects\n- **healthcare-3d-mcp** — anatomy, surgical planning, dental, medical imaging, molecule viewers\n- **interior-design-3d-mcp** — room planners, AR furniture placement, lighting design\n- **rerun-3d-mcp** — live AR debugging through Rerun.io integration\n\nFree tier covers all read-only docs/samples/validation tools. Pro tier (€19/mo) unlocks scene generation, vertical packs, and the full multi-platform setup wizards. Subscribe at https://sceneview-mcp.mcp-tools-lab.workers.dev/pricing.",
@@ -107,9 +107,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "render_3d_preview"
     },
@@ -131,17 +131,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_3d_artifact"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_3d_artifact"
     },
@@ -179,9 +171,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "debug_issue"
     },
@@ -203,9 +195,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_scene"
     },
@@ -275,9 +267,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_model_optimization_guide"
     },
@@ -299,33 +291,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_models"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_models"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_models"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares env permission",
+      "description": "declared capabilities: network access, filesystem access, database access, environment variables",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_models"
     },
@@ -347,9 +315,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "analyze_project"
     },
@@ -363,9 +331,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_car_configurator"
     },
@@ -435,9 +403,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_car_models"
     },
@@ -475,9 +443,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_level_editor"
     },
@@ -507,9 +475,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_particle_effects"
     },
@@ -539,9 +507,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_game_models"
     },
@@ -587,9 +555,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_medical_imaging"
     },
@@ -627,9 +595,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_medical_models"
     },
@@ -667,9 +635,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_furniture_placement"
     },
@@ -683,17 +651,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_material_switcher"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_material_switcher"
     },
@@ -739,9 +699,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_furniture_models"
     },
@@ -771,9 +731,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "setup_rerun_project"
     },
@@ -787,9 +747,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_ar_logger"
     },
@@ -819,17 +779,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "embed_web_viewer"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "embed_web_viewer"
     },
@@ -851,9 +803,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "explain_concept"
     },
@@ -868,10 +820,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 13,
-    "medium": 11,
-    "low": 20,
-    "info": 63
+    "high": 1,
+    "medium": 0,
+    "low": 16,
+    "info": 84
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1043,7 +995,7 @@
     {
       "tool_name": "render_3d_preview",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1057,8 +1009,8 @@
     },
     {
       "tool_name": "create_3d_artifact",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -1089,7 +1041,7 @@
     {
       "tool_name": "debug_issue",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1099,7 +1051,7 @@
     {
       "tool_name": "generate_scene",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1177,8 +1129,8 @@
     },
     {
       "tool_name": "search_models",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_env",
         "reads_files",
@@ -1259,7 +1211,7 @@
     {
       "tool_name": "list_car_models",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1326,7 +1278,7 @@
     {
       "tool_name": "list_game_models",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1384,7 +1336,7 @@
     {
       "tool_name": "list_medical_models",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1417,8 +1369,8 @@
     },
     {
       "tool_name": "get_material_switcher",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "reads_files"
@@ -1450,7 +1402,7 @@
     {
       "tool_name": "list_furniture_models",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -1481,7 +1433,7 @@
     {
       "tool_name": "generate_ar_logger",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1505,8 +1457,8 @@
     },
     {
       "tool_name": "embed_web_viewer",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "reads_files",
@@ -1562,6 +1514,12 @@
     },
     {
       "scan_date": "2026-06-06T02:36:47Z",
+      "grade": "C",
+      "risk_score": 41,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-08T02:56:45Z",
       "grade": "C",
       "risk_score": 41,
       "version": "smithery"

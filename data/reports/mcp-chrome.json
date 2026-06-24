@@ -1,34 +1,50 @@
 {
   "tool_id": "mcp-chrome",
   "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-23T02:36:05.626463058Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-24T02:37:11.970713875Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/hangwin/mcp-chrome",
   "category": "Developer Tools",
   "vendor": "hangwin",
-  "stars": 11973,
+  "stars": 11979,
   "npm_package": "mcp-chrome-bridge-monorepo",
   "license": "MIT",
   "language": "TypeScript",
   "description": "Chrome MCP Server is a Chrome extension-based Model Context Protocol (MCP) server that exposes your Chrome browser functionality to AI assistants like Claude, enabling complex browser automation, content analysis, and semantic search.",
   "findings": [
     {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "bridge_find_best_route"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "v1_quote"
+        ],
+        "removed": [
+          "bridge_find_best_route"
+        ],
+        "version": "1.0.0"
+      }
     },
     {
-      "id": "AS-010",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"toToken\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "bridge_find_best_route"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "v1_quote"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "v1_quote"
     },
     {
       "id": "AS-014",
@@ -36,29 +52,30 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bridge_find_best_route"
+      "tool_name": "v1_quote"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 3
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "bridge_find_best_route"
+    "v1_quote"
   ],
   "tool_contexts": [
     {
-      "tool_name": "bridge_find_best_route",
+      "tool_name": "v1_quote",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
-        "dynamic email recipient (toChain)",
-        "dynamic email recipient (toToken)",
-        "dynamic email recipient (token)"
+        "hardcoded domain: Li.Fi"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -91,6 +108,12 @@
     },
     {
       "scan_date": "2026-06-22T02:59:56Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-23T02:36:05Z",
       "grade": "A",
       "risk_score": 0,
       "version": "1.0.0"

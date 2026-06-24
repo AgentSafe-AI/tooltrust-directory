@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.5.0` |
 | **Vendor** | redis |
-| **Stars** | ⭐ 537 |
+| **Stars** | ⭐ 538 |
 | **Language** | Python |
 | **Source** | [mcp-redis](https://github.com/redis/mcp-redis) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

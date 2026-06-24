@@ -1,19 +1,19 @@
 # 🟢 meigen-ai-design-mcp
 
-> Supports GPT Image 2, Nanobanana & ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system
+> Supports GPT Image 2, Seedance & ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.3.2` |
+| **Version** | `1.3.3` |
 | **Vendor** | jau123 |
-| **Stars** | ⭐ 1476 |
+| **Stars** | ⭐ 1482 |
 | **npm Package** | `meigen` |
-| **npm Downloads (30d)** | 1.2k |
+| **npm Downloads (30d)** | 1.3k |
 | **Language** | TypeScript |
 | **Source** | [meigen-ai-design-mcp](https://github.com/jau123/MeiGen-AI-Design-MCP) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

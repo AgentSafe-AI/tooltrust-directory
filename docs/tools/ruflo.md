@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `3.14.0` |
+| **Version** | `3.14.1` |
 | **Vendor** | ruvnet |
-| **Stars** | ⭐ 60952 |
+| **Stars** | ⭐ 61112 |
 | **npm Package** | `claude-flow` |
-| **npm Downloads (30d)** | 121.1k |
+| **npm Downloads (30d)** | 122.8k |
 | **Language** | TypeScript |
 | **Source** | [ruflo](https://github.com/ruvnet/ruflo) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

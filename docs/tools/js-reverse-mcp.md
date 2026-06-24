@@ -1,6 +1,6 @@
 # 🟠 js-reverse-mcp
 
-> 为 AI Agent 设计的 JS 逆向 MCP Server，内置反检测，基于 chrome-devtools-mcp 重构 | JS reverse engineering MCP server with agent-first tool design and built-in anti-detection. Rebuilt from chrome-devtools-mcp.
+> AI Agent-first JS 逆向 MCP Server：有头 Chrome 调试、断点、网络/WebSocket 分析、Patchright 反检测，可选 CloakBrowser。
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `3.0.0` |
 | **Vendor** | zhizhuodemao |
-| **Stars** | ⭐ 1973 |
+| **Stars** | ⭐ 1987 |
 | **npm Package** | `js-reverse-mcp` |
-| **npm Downloads (30d)** | 7.5k |
+| **npm Downloads (30d)** | 8.4k |
 | **Language** | TypeScript |
 | **Source** | [js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
