@@ -3,12 +3,12 @@
   "version": "1.5.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-24T02:35:53.709610236Z",
+  "scan_date": "2026-06-25T02:36:29.150428704Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Panniantong/Agent-Reach",
   "category": "Developer Tools",
   "vendor": "Panniantong",
-  "stars": 38703,
+  "stars": 39868,
   "license": "MIT",
   "language": "Python",
   "description": "Give your AI agent eyes to see the entire internet. Read \u0026 search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
@@ -17,10 +17,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.5.0: 7 tool(s) added, 8 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.5.0: 7 tool(s) added, 7 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "list_agents",
+          "list_channels",
+          "list_skills",
+          "message_status",
+          "read_messages",
+          "send_message",
+          "set_skills"
+        ],
+        "removed": [
           "compare_agents",
           "get_agent_details",
           "get_agent_history",
@@ -29,26 +38,24 @@
           "list_categories",
           "search_agents"
         ],
-        "removed": [
-          "agent_company_diagnostic",
-          "create_formation_request",
-          "get_compliance_calendar",
-          "get_documents",
-          "get_formation_requirements",
-          "get_formation_status",
-          "recommend_structure",
-          "request_amendment"
-        ],
         "version": "1.5.0"
       }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "send_message"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_agents"
+      "tool_name": "read_messages"
     },
     {
       "id": "AS-011",
@@ -56,7 +63,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_agents"
+      "tool_name": "read_messages"
     },
     {
       "id": "AS-014",
@@ -64,7 +71,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_agents"
+      "tool_name": "read_messages"
     },
     {
       "id": "AS-014",
@@ -72,7 +79,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_agent_details"
+      "tool_name": "list_channels"
     },
     {
       "id": "AS-014",
@@ -80,7 +87,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_agent_history"
+      "tool_name": "list_agents"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "message_status"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "message_status"
     },
     {
       "id": "AS-014",
@@ -88,7 +111,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_agents"
+      "tool_name": "message_status"
     },
     {
       "id": "AS-014",
@@ -96,7 +119,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_categories"
+      "tool_name": "list_skills"
     },
     {
       "id": "AS-014",
@@ -104,37 +127,40 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_category_ranking"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_methodology"
+      "tool_name": "set_skills"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 8
+    "low": 2,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compare_agents",
-    "get_agent_details",
-    "get_agent_history",
-    "get_category_ranking",
-    "get_methodology",
-    "list_categories",
-    "search_agents"
+    "list_agents",
+    "list_channels",
+    "list_skills",
+    "message_status",
+    "read_messages",
+    "send_message",
+    "set_skills"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_agents",
+      "tool_name": "send_message",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (reply_to_message_id)",
+        "dynamic email recipient (to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "read_messages",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -144,44 +170,52 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_agent_details",
+      "tool_name": "list_channels",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_agent_history",
+      "tool_name": "list_agents",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compare_agents",
+      "tool_name": "message_status",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_categories",
+      "tool_name": "list_skills",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_category_ranking",
+      "tool_name": "set_skills",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_methodology",
-      "action": "ALLOW",
-      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -239,6 +273,12 @@
       "scan_date": "2026-06-23T02:34:43Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.5.0"
+    },
+    {
+      "scan_date": "2026-06-24T02:35:53Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.5.0"
     }
   ]

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.13.0` |
 | **Vendor** | mongodb-js |
-| **Stars** | ⭐ 1061 |
+| **Stars** | ⭐ 1064 |
 | **npm Package** | `mongodb-mcp-server` |
-| **npm Downloads (30d)** | 317.3k |
+| **npm Downloads (30d)** | 324.1k |
 | **Language** | TypeScript |
 | **Source** | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

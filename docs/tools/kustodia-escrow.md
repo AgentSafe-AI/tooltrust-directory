@@ -20,7 +20,7 @@ Get your API key at [kustodia.app/register](https://kustodia.app/register)
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kustodia-escrow](https://smithery.ai/server/kustodia/escrow) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

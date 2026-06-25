@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-24T02:37:11.970713875Z",
+  "scan_date": "2026-06-25T02:37:51.658860659Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/hangwin/mcp-chrome",
   "category": "Developer Tools",
   "vendor": "hangwin",
-  "stars": 11979,
+  "stars": 11982,
   "npm_package": "mcp-chrome-bridge-monorepo",
   "license": "MIT",
   "language": "TypeScript",
@@ -22,10 +22,10 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "v1_quote"
+          "configure"
         ],
         "removed": [
-          "bridge_find_best_route"
+          "v1_quote"
         ],
         "version": "1.0.0"
       }
@@ -36,7 +36,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "v1_quote"
+      "tool_name": "configure"
     },
     {
       "id": "AS-011",
@@ -44,7 +44,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "v1_quote"
+      "tool_name": "configure"
     },
     {
       "id": "AS-014",
@@ -52,7 +52,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "v1_quote"
+      "tool_name": "configure"
     }
   ],
   "summary": {
@@ -64,18 +64,15 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "v1_quote"
+    "configure"
   ],
   "tool_contexts": [
     {
-      "tool_name": "v1_quote",
+      "tool_name": "configure",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Li.Fi"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -116,6 +113,12 @@
       "scan_date": "2026-06-23T02:36:05Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-06-24T02:37:11Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.0"
     }
   ]

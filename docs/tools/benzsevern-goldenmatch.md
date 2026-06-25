@@ -1,6 +1,6 @@
 # 🟢 benzsevern-goldenmatch
 
-> Zero-config entity resolution. The zero-tuning Fellegi-Sunter path beats hand-rolled Splink head-to-head; scales from a CSV to a verified 100M-row dedupe in 9.2 min on Ray. Fuzzy/exact/probabilistic + PPRL + LLM, identity graph. Python + edge-safe TypeScript (optional WASM), SQL-native in Postgres & DuckDB, MCP/REST + dbt/Airflow.
+> Zero-config entity resolution & record linkage. The zero-tuning Fellegi-Sunter path beats hand-tuned Splink head-to-head and scales from a CSV to a verified 100M-row dedupe in 9.2 min. Fuzzy/exact/probabilistic + PPRL + LLM + identity graph. Python + edge-safe TypeScript (WASM), SQL-native in Postgres & DuckDB, MCP/REST + dbt/Airflow.
 
 | Field | Value |
 |-------|-------|
@@ -12,7 +12,7 @@
 | **npm Package** | `goldenmatch-monorepo` |
 | **Language** | Python |
 | **Source** | [benzsevern-goldenmatch](https://github.com/benseverndev-oss/goldenmatch) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

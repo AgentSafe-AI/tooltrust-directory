@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.17.0` |
 | **Vendor** | Gentleman-Programming |
-| **Stars** | ⭐ 4599 |
+| **Stars** | ⭐ 4625 |
 | **Language** | Go |
 | **Source** | [engram](https://github.com/Gentleman-Programming/engram) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
