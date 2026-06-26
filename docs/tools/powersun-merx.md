@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [powersun-merx](https://smithery.ai/server/powersun/merx) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -12,7 +12,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mailwarm-mailx-tools](https://smithery.ai/server/mailwarm/mailx-tools) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

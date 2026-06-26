@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.6.4` |
+| **Version** | `0.8.0` |
 | **Vendor** | pinkpixel-dev |
-| **Stars** | ⭐ 96 |
+| **Stars** | ⭐ 97 |
 | **npm Package** | `@pinkpixel/mem0-mcp` |
-| **npm Downloads (30d)** | 291 |
-| **Language** | JavaScript |
+| **npm Downloads (30d)** | 327 |
+| **Language** | TypeScript |
 | **Source** | [mem0-mcp](https://github.com/pinkpixel-dev/mem0-mcp) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

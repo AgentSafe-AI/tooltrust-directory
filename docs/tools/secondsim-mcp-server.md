@@ -1,16 +1,16 @@
-# 🟡 secondsim-mcp-server
+# 🟢 secondsim-mcp-server
 
 > Manage and purchase UK domestic eSIM plans with real-time inventory checking. Streamlines the acquisition of physical-backed UK mobile numbers for reliable connectivity. Simplifies the checkout process by generating payment URLs. Unlimited UK calls and texts to set up whatsapp, telegram and others.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [secondsim-mcp-server](https://smithery.ai/server/secondsim/mcp-server) |
-| **Scan Date** | 2026-05-18 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-06-26 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 2 |
+| Info     | 3 |
 
 ## Detailed Findings
 
@@ -38,12 +38,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [benzsevern-goldenflow](https://smithery.ai/server/benzsevern/goldenflow) |
-| **Scan Date** | 2026-06-20 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-26 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
