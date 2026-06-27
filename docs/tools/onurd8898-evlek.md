@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [onurd8898-evlek](https://smithery.ai/server/onurd8898/evlek) |
-| **Scan Date** | 2026-06-25 |
+| **Scan Date** | 2026-06-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

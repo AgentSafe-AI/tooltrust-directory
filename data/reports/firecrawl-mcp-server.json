@@ -3,12 +3,12 @@
   "version": "3.2.1",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-06-26T02:43:36.00053378Z",
+  "scan_date": "2026-06-27T02:34:25.178310818Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/firecrawl/firecrawl-mcp-server",
   "category": "Developer Tools",
   "vendor": "firecrawl",
-  "stars": 6692,
+  "stars": 6700,
   "npm_package": "firecrawl-mcp",
   "npm_downloads_monthly": 512966,
   "license": "MIT",
@@ -155,7 +155,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_crawl"
     },
@@ -364,6 +364,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "firecrawl_monitor_create"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 15 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_monitor_create"
     },
@@ -676,7 +684,7 @@
     "critical": 1,
     "high": 0,
     "medium": 0,
-    "low": 29,
+    "low": 30,
     "info": 52
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -795,6 +803,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "reads_files",
         "uses_network"
       ],
@@ -1570,6 +1579,12 @@
     },
     {
       "scan_date": "2026-06-25T02:38:44Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "3.2.1"
+    },
+    {
+      "scan_date": "2026-06-26T02:43:36Z",
       "grade": "C",
       "risk_score": 25,
       "version": "3.2.1"

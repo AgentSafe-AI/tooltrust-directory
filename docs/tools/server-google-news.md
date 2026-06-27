@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | ChanMeng666 |
-| **Stars** | ⭐ 124 |
+| **Stars** | ⭐ 125 |
 | **npm Package** | `@chanmeng666/google-news-server` |
 | **npm Downloads (30d)** | 123 |
 | **Language** | TypeScript |
 | **Source** | [server-google-news](https://github.com/ChanMeng666/server-google-news) |
-| **Scan Date** | 2026-06-26 |
+| **Scan Date** | 2026-06-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

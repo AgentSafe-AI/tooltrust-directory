@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [quantoracle-quantoracle](https://smithery.ai/server/QuantOracle/quantoracle) |
-| **Scan Date** | 2026-06-17 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-27 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cecilyspeaks-demand-discovery-ai](https://smithery.ai/server/cecilyspeaks/demand-discovery-ai) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-27 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

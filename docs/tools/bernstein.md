@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.8.1` |
 | **Vendor** | sipyourdrink-ltd |
-| **Stars** | ⭐ 594 |
+| **Stars** | ⭐ 596 |
 | **Language** | Python |
 | **Source** | [bernstein](https://github.com/sipyourdrink-ltd/bernstein) |
-| **Scan Date** | 2026-06-26 |
+| **Scan Date** | 2026-06-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

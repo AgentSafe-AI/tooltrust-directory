@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [algovault-crypto-quant-signal-mcp](https://smithery.ai/server/algovault/crypto-quant-signal-mcp) |
-| **Scan Date** | 2026-06-25 |
+| **Scan Date** | 2026-06-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -3,7 +3,7 @@
   "version": "2.7.6",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-26T02:48:10.311036908Z",
+  "scan_date": "2026-06-27T02:38:50.662085962Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/PV-Bhat/vibe-check-mcp-server",
   "category": "Developer Tools",
@@ -19,10 +19,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.7.6: 7 tool(s) added, 16 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.7.6: 4 tool(s) added, 7 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "verity_agent",
+          "verity_batch",
+          "verity_deep_check",
+          "verity_verify"
+        ],
+        "removed": [
           "bulk_schedule_posts",
           "delete_post",
           "get_accounts",
@@ -31,42 +37,8 @@
           "schedule_post",
           "update_post"
         ],
-        "removed": [
-          "comment_on_vibe",
-          "delete_vibe",
-          "drop_vibe",
-          "explore_vibes",
-          "get_agent_profile",
-          "get_vibe",
-          "get_vibe_dna",
-          "get_vibe_interactions",
-          "get_vibe_neighbors",
-          "get_vibe_resonance",
-          "gift_time",
-          "react_to_vibe",
-          "register_agent",
-          "reverse_geocode",
-          "search_places",
-          "trending_locations"
-        ],
         "version": "2.7.6"
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_accounts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_all_posts"
     },
     {
       "id": "AS-002",
@@ -74,7 +46,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "schedule_post"
+      "tool_name": "verity_verify"
     },
     {
       "id": "AS-011",
@@ -82,7 +54,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "schedule_post"
+      "tool_name": "verity_verify"
     },
     {
       "id": "AS-014",
@@ -90,7 +62,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "schedule_post"
+      "tool_name": "verity_verify"
     },
     {
       "id": "AS-014",
@@ -98,7 +70,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bulk_schedule_posts"
+      "tool_name": "verity_deep_check"
     },
     {
       "id": "AS-014",
@@ -106,31 +78,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_subscription_status"
+      "tool_name": "verity_batch"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete_post"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete_post"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_post"
+      "tool_name": "verity_agent"
     },
     {
       "id": "AS-011",
@@ -138,7 +94,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "update_post"
+      "tool_name": "verity_agent"
     },
     {
       "id": "AS-014",
@@ -146,7 +102,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_post"
+      "tool_name": "verity_agent"
     }
   ],
   "summary": {
@@ -154,83 +110,49 @@
     "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 10
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "bulk_schedule_posts",
-    "delete_post",
-    "get_accounts",
-    "get_all_posts",
-    "get_subscription_status",
-    "schedule_post",
-    "update_post"
+    "verity_agent",
+    "verity_batch",
+    "verity_deep_check",
+    "verity_verify"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_accounts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_all_posts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "schedule_post",
+      "tool_name": "verity_verify",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (mediaUrls)",
-        "dynamic email recipient (accountId)"
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "bulk_schedule_posts",
+      "tool_name": "verity_deep_check",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_subscription_status",
+      "tool_name": "verity_batch",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "delete_post",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "update_post",
+      "tool_name": "verity_agent",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (mediaUrls)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -725,6 +647,12 @@
     },
     {
       "scan_date": "2026-06-25T02:43:27Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "2.7.6"
+    },
+    {
+      "scan_date": "2026-06-26T02:48:10Z",
       "grade": "B",
       "risk_score": 15,
       "version": "2.7.6"
