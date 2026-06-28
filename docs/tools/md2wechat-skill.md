@@ -1,19 +1,19 @@
 # 🟢 md2wechat-skill
 
-> Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布
+> Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布 、多账号管理
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2.6.0` |
+| **Version** | `2.9.0` |
 | **Vendor** | geekjourneyx |
-| **Stars** | ⭐ 2926 |
+| **Stars** | ⭐ 3007 |
 | **npm Package** | `@geekjourneyx/md2wechat` |
-| **npm Downloads (30d)** | 2.3k |
+| **npm Downloads (30d)** | 2.2k |
 | **Language** | Go |
 | **Source** | [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) |
-| **Scan Date** | 2026-06-23 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

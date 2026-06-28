@@ -1,10 +1,10 @@
 {
   "tool_id": "matlab-mcp-core-server",
   "version": "0.9.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-12T02:16:21.65431495Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-28T02:51:07.533988842Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/matlab/matlab-mcp-core-server",
   "category": "Developer Tools",
   "vendor": "matlab",
@@ -13,24 +13,6 @@
   "language": "Go",
   "description": "Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®. This MCP server for MATLAB supports a wide range of coding agents like Claude Code® and Visual Studio® Code.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.9.0: 2 tool(s) added, 2 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "compliance.exposure.forecast",
-          "compliance.queue.optimize"
-        ],
-        "removed": [
-          "simulation.montecarlo.decision",
-          "simulation.montecarlo.report"
-        ],
-        "version": "0.9.0"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -65,9 +47,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "compliance.edd.report"
     },
@@ -122,10 +104,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 9
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -183,7 +165,7 @@
     {
       "tool_name": "compliance.edd.report",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -298,6 +280,12 @@
     },
     {
       "scan_date": "2026-05-11T02:20:53Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.9.0"
+    },
+    {
+      "scan_date": "2026-05-12T02:16:21Z",
       "grade": "B",
       "risk_score": 17,
       "version": "0.9.0"

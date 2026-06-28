@@ -3,14 +3,14 @@
   "version": "2.7.6",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-27T02:38:50.662085962Z",
+  "scan_date": "2026-06-28T02:51:39.466478265Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/PV-Bhat/vibe-check-mcp-server",
   "category": "Developer Tools",
   "vendor": "PV-Bhat",
-  "stars": 492,
+  "stars": 493,
   "npm_package": "@pv-bhat/vibe-check-mcp",
-  "npm_downloads_monthly": 350,
+  "npm_downloads_monthly": 355,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Vibe Check is a tool that provides mentor-like feedback to AI Agents, preventing tunnel-vision, over-engineering and reasoning lock-in for complex and long-horizon agent workflows. KISS your over-eager AI Agents goodbye! Effective for: Coding, Ambiguous Tasks, High-Risk tasks",
@@ -19,42 +19,35 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.7.6: 4 tool(s) added, 7 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.7.6: 8 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "quantum_attest",
+          "xqbusd_batch_prices",
+          "xqbusd_get_price",
+          "xqbusd_get_quote",
+          "xqbusd_iso20022_message",
+          "xqbusd_oracle_status",
+          "xqbusd_protocol25_proof",
+          "xqbusd_xrpl_gateway"
+        ],
+        "removed": [
           "verity_agent",
           "verity_batch",
           "verity_deep_check",
           "verity_verify"
         ],
-        "removed": [
-          "bulk_schedule_posts",
-          "delete_post",
-          "get_accounts",
-          "get_all_posts",
-          "get_subscription_status",
-          "schedule_post",
-          "update_post"
-        ],
         "version": "2.7.6"
       }
     },
     {
-      "id": "AS-002",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "verity_verify"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "verity_verify"
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "quantum_attest"
     },
     {
       "id": "AS-014",
@@ -62,7 +55,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verity_verify"
+      "tool_name": "xqbusd_get_price"
     },
     {
       "id": "AS-014",
@@ -70,15 +63,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verity_deep_check"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verity_batch"
+      "tool_name": "xqbusd_batch_prices"
     },
     {
       "id": "AS-002",
@@ -86,7 +71,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "verity_agent"
+      "tool_name": "xqbusd_get_quote"
     },
     {
       "id": "AS-011",
@@ -94,7 +79,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "verity_agent"
+      "tool_name": "xqbusd_get_quote"
     },
     {
       "id": "AS-014",
@@ -102,58 +87,119 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verity_agent"
+      "tool_name": "xqbusd_get_quote"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xqbusd_iso20022_message"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xqbusd_oracle_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xqbusd_xrpl_gateway"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xqbusd_protocol25_proof"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 6
+    "low": 1,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "verity_agent",
-    "verity_batch",
-    "verity_deep_check",
-    "verity_verify"
+    "quantum_attest",
+    "xqbusd_batch_prices",
+    "xqbusd_get_price",
+    "xqbusd_get_quote",
+    "xqbusd_iso20022_message",
+    "xqbusd_oracle_status",
+    "xqbusd_protocol25_proof",
+    "xqbusd_xrpl_gateway"
   ],
   "tool_contexts": [
     {
-      "tool_name": "verity_verify",
+      "tool_name": "quantum_attest",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_get_price",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_batch_prices",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_get_quote",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: example.com"
+        "dynamic email recipient (to)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "verity_deep_check",
+      "tool_name": "xqbusd_iso20022_message",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "verity_batch",
+      "tool_name": "xqbusd_oracle_status",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "verity_agent",
+      "tool_name": "xqbusd_xrpl_gateway",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xqbusd_protocol25_proof",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -653,6 +699,12 @@
     },
     {
       "scan_date": "2026-06-26T02:48:10Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "2.7.6"
+    },
+    {
+      "scan_date": "2026-06-27T02:38:50Z",
       "grade": "B",
       "risk_score": 15,
       "version": "2.7.6"

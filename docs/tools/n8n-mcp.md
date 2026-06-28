@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.61.0` |
 | **Vendor** | czlonkowski |
-| **Stars** | ⭐ 21991 |
+| **Stars** | ⭐ 22005 |
 | **npm Package** | `n8n-mcp` |
-| **npm Downloads (30d)** | 525.6k |
+| **npm Downloads (30d)** | 542.7k |
 | **Language** | TypeScript |
 | **Source** | [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) |
-| **Scan Date** | 2026-06-27 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

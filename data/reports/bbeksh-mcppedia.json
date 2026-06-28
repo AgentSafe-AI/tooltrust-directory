@@ -1,19 +1,19 @@
 {
   "tool_id": "bbeksh-mcppedia",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-14T02:58:35.729943549Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-28T02:54:44.512427211Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/bbeksh/mcppedia",
   "vendor": "Smithery",
   "description": "Search, evaluate, and compare 17,000+ MCP servers from the [MCPpedia](https://mcppedia.org) catalog. Every server is scored on **security, maintenance, efficiency, documentation, and compatibility** — with real CVE scanning and tool-poisoning detection.\n\n## Tools\n\n- **search_servers** — keyword / category / min-score search\n- **get_server_details** — full profile + optional security report (CVEs, tool poisoning, injection risk, dangerous patterns, dep health)\n- **compare_servers** — side-by-side across all five scoring dimensions\n- **get_install_config** — ready-to-paste config for Claude Desktop, Cursor, Claude Code, Windsurf\n- **get_trending** — top-rated / most-starred / newest\n- **get_category_tree** — every category with live server counts\n- **what_changed** — servers re-scored since a given timestamp\n\n## Resources \u0026 prompts\n\nBrowsable resources: `mcppedia://trending`, `mcppedia://server/{slug}`, `mcppedia://category/{name}`.\nBuilt-in prompts: `audit-my-mcp-setup`, `find-alternative`, `security-review`.\n\n## Why\n\nStop guessing which MCP server is safe. Agents can now discover, audit, and swap MCPs with grounded data — not vibes.\n\nBrowse the full catalog at [mcppedia.org](https://mcppedia.org).",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_servers"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_server_details"
     },
@@ -100,10 +100,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 7
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -119,7 +119,7 @@
     {
       "tool_name": "search_servers",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -129,7 +129,7 @@
     {
       "tool_name": "get_server_details",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -202,6 +202,12 @@
     },
     {
       "scan_date": "2026-06-08T02:56:54Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-14T02:58:35Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

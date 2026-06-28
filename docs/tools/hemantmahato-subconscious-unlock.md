@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hemantmahato-subconscious-unlock](https://smithery.ai/server/hemantmahato/subconscious-unlock) |
-| **Scan Date** | 2026-06-24 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

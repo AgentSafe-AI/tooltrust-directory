@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [contrastcyber-contrastapi](https://smithery.ai/server/contrastcyber/contrastapi) |
-| **Scan Date** | 2026-06-18 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-06-28 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

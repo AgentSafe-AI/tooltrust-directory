@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.4` |
 | **Vendor** | Dicklesworthstone |
-| **Stars** | ⭐ 2007 |
+| **Stars** | ⭐ 2009 |
 | **Language** | Python |
 | **Source** | [mcp-agent-mail](https://github.com/Dicklesworthstone/mcp_agent_mail) |
-| **Scan Date** | 2026-06-27 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

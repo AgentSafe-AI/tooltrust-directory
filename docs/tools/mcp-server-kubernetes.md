@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `3.9.2` |
 | **Vendor** | Flux159 |
-| **Stars** | ⭐ 1443 |
+| **Stars** | ⭐ 1445 |
 | **npm Package** | `mcp-server-kubernetes` |
-| **npm Downloads (30d)** | 116.6k |
+| **npm Downloads (30d)** | 109.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) |
-| **Scan Date** | 2026-06-27 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

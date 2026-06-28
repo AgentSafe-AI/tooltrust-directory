@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.14.0` |
 | **Vendor** | epiral |
-| **Stars** | ⭐ 5899 |
+| **Stars** | ⭐ 5904 |
 | **npm Package** | `bb-browser` |
-| **npm Downloads (30d)** | 6.5k |
+| **npm Downloads (30d)** | 5.1k |
 | **Language** | TypeScript |
 | **Source** | [bb-browser](https://github.com/epiral/bb-browser) |
-| **Scan Date** | 2026-06-27 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,15 +1,15 @@
-# 🟡 city24-city24-lv-real-estate
+# 🟢 city24-city24-lv-real-estate
 
 > Official real estate data provider for Latvia. This server enables AI agents to search and filter live property listings from city24.lv, including apartments, houses, and commercial spaces. Supports precise geographic filtering, price range analysis, and detailed property metadata retrieval.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [city24-city24-lv-real-estate](https://smithery.ai/server/city24/city24-lv-real-estate) |
-| **Scan Date** | 2026-06-25 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 7 |
 | Info     | 25 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 23 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

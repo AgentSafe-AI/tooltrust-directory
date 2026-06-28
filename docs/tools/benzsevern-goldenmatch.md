@@ -12,7 +12,7 @@
 | **npm Package** | `goldenmatch-monorepo` |
 | **Language** | Python |
 | **Source** | [benzsevern-goldenmatch](https://github.com/benseverndev-oss/goldenmatch) |
-| **Scan Date** | 2026-06-27 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

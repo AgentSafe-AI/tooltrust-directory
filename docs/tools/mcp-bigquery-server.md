@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.4` |
 | **Vendor** | ergut |
-| **Stars** | ⭐ 143 |
+| **Stars** | ⭐ 142 |
 | **npm Package** | `@ergut/mcp-bigquery-server` |
-| **npm Downloads (30d)** | 4.9k |
+| **npm Downloads (30d)** | 4.2k |
 | **Language** | TypeScript |
 | **Source** | [mcp-bigquery-server](https://github.com/ergut/mcp-bigquery-server) |
-| **Scan Date** | 2026-06-27 |
+| **Scan Date** | 2026-06-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

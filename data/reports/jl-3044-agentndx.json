@@ -1,19 +1,19 @@
 {
   "tool_id": "jl-3044-agentndx",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-16T02:17:58.590264681Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-06-28T02:54:49.83541849Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/jl-3044/agentndx",
   "vendor": "Smithery",
   "description": "Search and discover MCP servers, A2A agents, and x402-enabled services. The agentic web's directory — add `https://agentndx.ai/mcp` to your MCP client to search 59+ servers by name, category, or capability. Pay $0.005 USDC per search via x402 micropayments — no API keys required.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_mcp_servers"
     },
@@ -60,10 +60,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 4
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -76,7 +76,7 @@
     {
       "tool_name": "search_mcp_servers",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -198,6 +198,12 @@
     },
     {
       "scan_date": "2026-05-15T02:36:01Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-16T02:17:58Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

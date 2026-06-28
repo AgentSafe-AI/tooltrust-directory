@@ -1,14 +1,32 @@
 {
   "tool_id": "satoshidata-wallet-intelligence",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-06-27T02:41:53.702039655Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-06-28T02:56:19.481975885Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/satoshidata/wallet-intelligence",
   "vendor": "Smithery",
-  "description": "Bitcoin wallet intelligence MCP for satoshidata.ai. Identify Bitcoin addresses by entity, category, confidence, evidence, and risk signals across exchanges, mining pools, scams, gambling, marketplaces, mixers, and government seizures. 39 live tools cover wallet summaries, transaction verification, fees, mempool and on-chain stats, pools, blocks, OP_RETURN decoding, timestamping, pulse alerts, and chain awakenings. Optional API-key forwarding supports gated calls.",
+  "description": "A keyless Bitcoin chain-intelligence API built for autonomous agents. Resolve addresses to known entities, pull wallet evidence packs, and check sanctions / illicit-fund exposure over MCP, no account required. Includes risk_check for free keyless exposure evidence, wallet evidence packs, entity / label lookup, and the Risk Exposure Oracle v0 with explicit disclaimers. Evidence-first: no opaque risk score or verdict from risk_check; agents receive underlying signals so they can decide. Core public surface is free during beta; optional X-WR-API-Key unlocks premium endpoints.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 5 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "address_evidence_pack",
+          "address_intelligence",
+          "batch_intelligence",
+          "risk_check",
+          "risk_check_batch"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -66,6 +84,38 @@
       "tool_name": "batch_risk_signals"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "risk_check"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "risk_check_batch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "address_evidence_pack"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "batch_intelligence"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -104,6 +154,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "wallet_contributors"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "address_intelligence"
     },
     {
       "id": "AS-014",
@@ -420,14 +478,17 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 6,
-    "info": 45
+    "info": 50
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "address_evidence_pack",
+    "address_intelligence",
     "address_risk",
+    "batch_intelligence",
     "batch_risk_signals",
     "batch_summary",
     "batch_trust_safety",
@@ -453,6 +514,8 @@
     "pulse_dormant",
     "pulse_summary",
     "pulse_whales",
+    "risk_check",
+    "risk_check_batch",
     "submit_feedback",
     "timestamp_hash",
     "timestamp_quote",
@@ -513,6 +576,37 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "risk_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "risk_check_batch",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "address_evidence_pack",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "batch_intelligence",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: satoshidata.ai"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "wallet_flow_graph",
       "action": "ALLOW",
       "grade": "A",
@@ -544,6 +638,16 @@
     },
     {
       "tool_name": "wallet_contributors",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: satoshidata.ai"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "address_intelligence",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
@@ -944,6 +1048,12 @@
     },
     {
       "scan_date": "2026-06-26T02:51:19Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-27T02:41:53Z",
       "grade": "A",
       "risk_score": 4,
       "version": "smithery"
