@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [srotzin-adqm-hive-mark](https://smithery.ai/server/srotzin-adqm/hive-mark) |
-| **Scan Date** | 2026-06-28 |
+| **Scan Date** | 2026-06-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

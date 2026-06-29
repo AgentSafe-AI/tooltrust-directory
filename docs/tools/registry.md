@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.7.9` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 6965 |
+| **Stars** | ⭐ 6967 |
 | **Language** | Go |
 | **Source** | [registry](https://github.com/modelcontextprotocol/registry) |
-| **Scan Date** | 2026-06-28 |
+| **Scan Date** | 2026-06-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

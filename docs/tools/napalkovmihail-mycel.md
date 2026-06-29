@@ -13,7 +13,7 @@ Tools: search_offers, get_offer, compare_offers, create_lead, get_manifest.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [napalkovmihail-mycel](https://smithery.ai/server/napalkovmihail/mycel) |
-| **Scan Date** | 2026-06-28 |
+| **Scan Date** | 2026-06-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

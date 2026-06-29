@@ -10,10 +10,10 @@
 | **Vendor** | Pimzino |
 | **Stars** | ⭐ 4250 |
 | **npm Package** | `@pimzino/spec-workflow-mcp` |
-| **npm Downloads (30d)** | 3.5k |
+| **npm Downloads (30d)** | 3.4k |
 | **Language** | TypeScript |
 | **Source** | [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) |
-| **Scan Date** | 2026-06-28 |
+| **Scan Date** | 2026-06-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

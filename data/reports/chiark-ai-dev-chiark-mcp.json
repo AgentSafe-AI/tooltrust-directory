@@ -1,19 +1,19 @@
 {
   "tool_id": "chiark-ai-dev-chiark-mcp",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-06-08T02:56:40.835289413Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-06-29T02:56:16.964531695Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/chiark-ai-dev/chiark-mcp",
   "vendor": "Smithery",
   "description": "Find the most reliable AI agent for any task. Search 2,000+ agents across A2A  and MCP with quality filters - min uptime, max latency, score thresholds. Check if an agent is alive before routing to it. Like Artificial Analysis, but for agent services.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_agent"
     },
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "check_agent_status"
     },
@@ -92,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 5
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -108,8 +108,8 @@
   "tool_contexts": [
     {
       "tool_name": "find_agent",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -126,7 +126,7 @@
     {
       "tool_name": "check_agent_status",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -178,6 +178,12 @@
     },
     {
       "scan_date": "2026-04-19T02:18:42Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-08T02:56:40Z",
       "grade": "C",
       "risk_score": 32,
       "version": "smithery"
