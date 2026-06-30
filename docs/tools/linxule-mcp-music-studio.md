@@ -10,10 +10,10 @@
 | **Vendor** | linxule |
 | **Stars** | ⭐ 56 |
 | **npm Package** | `mcp-music-studio` |
-| **npm Downloads (30d)** | 989 |
+| **npm Downloads (30d)** | 1.0k |
 | **Language** | TypeScript |
 | **Source** | [linxule-mcp-music-studio](https://github.com/linxule/mcp-music-studio) |
-| **Scan Date** | 2026-06-29 |
+| **Scan Date** | 2026-06-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

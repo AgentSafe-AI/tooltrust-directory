@@ -1,16 +1,16 @@
 {
   "tool_id": "js-reverse-mcp",
-  "version": "3.0.5",
+  "version": "3.0.7",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-06-29T02:49:16.741228406Z",
+  "scan_date": "2026-06-30T02:43:58.648940604Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/zhizhuodemao/js-reverse-mcp",
   "category": "Developer Tools",
   "vendor": "zhizhuodemao",
-  "stars": 2040,
+  "stars": 2047,
   "npm_package": "js-reverse-mcp",
-  "npm_downloads_monthly": 10658,
+  "npm_downloads_monthly": 10790,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "AI Agent-first JS 逆向 MCP Server：有头 Chrome 调试、断点、网络/WebSocket 分析、Patchright 反检测，可选 CloakBrowser。",
@@ -38,6 +38,30 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "break_on_xhr"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clear_network_requests"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "clear_network_requests"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clear_network_requests"
     },
     {
       "id": "AS-002",
@@ -532,12 +556,13 @@
     "critical": 3,
     "high": 2,
     "medium": 0,
-    "low": 17,
-    "info": 42
+    "low": 18,
+    "info": 44
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "break_on_xhr",
+    "clear_network_requests",
     "clear_site_data",
     "evaluate_script",
     "get_paused_info",
@@ -570,6 +595,16 @@
       ],
       "destinations": [
         "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "clear_network_requests",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -676,8 +711,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files",
-        "uses_network"
+        "uses_network",
+        "writes_files"
       ],
       "destinations": [
         "dynamic URL input (urlFilter)"
@@ -907,6 +942,12 @@
     },
     {
       "scan_date": "2026-06-28T02:49:04Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "3.0.5"
+    },
+    {
+      "scan_date": "2026-06-29T02:49:16Z",
       "grade": "C",
       "risk_score": 27,
       "version": "3.0.5"
