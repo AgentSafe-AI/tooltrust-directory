@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 2.0k |
 | **Language** | JavaScript |
 | **Source** | [todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

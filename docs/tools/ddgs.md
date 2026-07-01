@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2780 |
 | **Language** | Python |
 | **Source** | [ddgs](https://github.com/deedy5/ddgs) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

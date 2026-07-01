@@ -1,17 +1,17 @@
 # 🟢 fast-agent
 
-> Code, Build and Evaluate agents - excellent Model and Skills/MCP/ACP Support
+> Code, Build and Evaluate agents - excellent Model and Skills/MCP/ACP/A2A Support
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.8.1` |
+| **Version** | `0.8.2` |
 | **Vendor** | evalstate |
-| **Stars** | ⭐ 3844 |
+| **Stars** | ⭐ 3842 |
 | **Language** | Python |
 | **Source** | [fast-agent](https://github.com/evalstate/fast-agent) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

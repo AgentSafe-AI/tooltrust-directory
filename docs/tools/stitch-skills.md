@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0` |
 | **Vendor** | google-labs-code |
-| **Stars** | ⭐ 6233 |
+| **Stars** | ⭐ 6284 |
 | **Language** | TypeScript |
 | **Source** | [stitch-skills](https://github.com/google-labs-code/stitch-skills) |
-| **Scan Date** | 2026-06-29 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

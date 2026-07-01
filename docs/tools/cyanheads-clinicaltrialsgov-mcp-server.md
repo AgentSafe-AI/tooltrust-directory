@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `2.7.4` |
+| **Version** | `2.8.0` |
 | **Vendor** | cyanheads |
 | **Stars** | ⭐ 81 |
 | **npm Package** | `clinicaltrialsgov-mcp-server` |
 | **npm Downloads (30d)** | 9.2k |
 | **Language** | TypeScript |
 | **Source** | [cyanheads-clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.7.7` |
+| **Version** | `0.8.0` |
 | **Vendor** | jacob-bd |
-| **Stars** | ⭐ 5111 |
+| **Stars** | ⭐ 5123 |
 | **Language** | Python |
 | **Source** | [notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

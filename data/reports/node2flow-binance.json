@@ -1,10 +1,10 @@
 {
   "tool_id": "node2flow-binance",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 40,
-  "scan_date": "2026-06-09T02:25:12.511907153Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-01T02:56:54.085018098Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/node2flow/binance",
   "vendor": "Smithery",
   "description": "MCP server for Binance Global — the world's largest cryptocurrency exchange. 23 tools for market data, trading,\n  orders, and account management.\n\n  Features:\n  • 11 public market data tools (no API key needed) — ping, server time, exchange info, order book, recent trades,\n  aggregate trades, klines/candlesticks, average price, 24hr ticker, price ticker, book ticker\n  • 7 trading tools — place order, test order (dry run), query order, cancel order, cancel all orders, open orders, all\n  orders history\n  • 2 account tools — account info with balances, trade execution history\n  • 3 user data stream tools — create, keepalive, close WebSocket listen keys\n  • Test order endpoint (bn_test_order) — validate order parameters without using real funds\n  • HMAC SHA-256 authentication — same signing pattern as official Binance API\n  • Supports LIMIT, MARKET, STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, TAKE_PROFIT_LIMIT, LIMIT_MAKER order types\n  • Symbol format: BTCUSDT, ETHUSDT, BNBBTC (uppercase, no separator)\n\n  Transports: stdio (npx), Streamable HTTP (--http flag), Cloudflare Worker",
@@ -115,25 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bn_query_order"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "bn_query_order"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "bn_query_order"
     },
@@ -195,9 +179,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "bn_my_trades"
     },
@@ -219,9 +203,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "bn_create_listen_key"
     },
@@ -252,10 +236,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 23
+    "info": 26
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -385,8 +369,8 @@
     },
     {
       "tool_name": "bn_query_order",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -438,7 +422,7 @@
     {
       "tool_name": "bn_my_trades",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -668,6 +652,12 @@
     },
     {
       "scan_date": "2026-06-06T02:36:58Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-09T02:25:12Z",
       "grade": "C",
       "risk_score": 40,
       "version": "smithery"

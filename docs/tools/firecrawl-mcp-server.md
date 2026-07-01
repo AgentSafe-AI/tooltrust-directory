@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `3.2.1` |
 | **Vendor** | firecrawl |
-| **Stars** | ⭐ 6747 |
+| **Stars** | ⭐ 6766 |
 | **npm Package** | `firecrawl-mcp` |
 | **npm Downloads (30d)** | 508.0k |
 | **Language** | JavaScript |
 | **Source** | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -551,7 +551,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, filesystem access, HTTP requests
+declared capabilities: network access, filesystem access, database access, HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

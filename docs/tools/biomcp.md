@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 534 |
 | **Language** | Rust |
 | **Source** | [biomcp](https://github.com/genomoncology/biomcp) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.2k |
 | **Language** | JavaScript |
 | **Source** | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -29,7 +29,7 @@ https://tandem.ac/docs-mcp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tandem-docs-mcp](https://smithery.ai/server/tandem/docs-mcp) |
-| **Scan Date** | 2026-06-26 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

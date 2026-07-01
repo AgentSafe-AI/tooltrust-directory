@@ -1,87 +1,68 @@
 {
   "tool_id": "inspector",
   "version": "2.21.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-06-30T02:43:48.872438747Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-07-01T02:50:41Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/MCPJam/inspector",
   "category": "Developer Tools",
   "vendor": "MCPJam",
-  "stars": 2035,
+  "stars": 2037,
   "npm_package": "mcpjam-workspace",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Testing and evaluation platform to chat, inspect, and debug MCP servers, MCP apps, and ChatGPT apps.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.21.0: 4 tool(s) added, 9 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "gomemstats",
-          "goroutines",
-          "goruntime",
-          "pgrep"
-        ],
-        "removed": [
-          "channels_list_on_slack",
-          "get_channel_history_on_slack",
-          "get_channel_messages_on_slack",
-          "get_mentions_on_slack",
-          "get_thread_replies_on_slack",
-          "get_user_profile_on_slack",
-          "get_users_on_slack",
-          "reply_to_thread_on_slack",
-          "send_message_on_slack"
-        ],
-        "version": "2.21.0"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 2,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "mcp/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 34,
+            "snippet": "new McpServer(",
+            "file": "mcp/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 8,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "mcpjam-inspector/scripts/dev-echo-mcp.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 15,
+            "snippet": "new McpServer(",
+            "file": "mcpjam-inspector/scripts/dev-echo-mcp.mjs",
+            "language": "typescript"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gomemstats"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "goroutines"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "goruntime"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pgrep"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -111,42 +92,6 @@
       "snippet": "new McpServer(",
       "file": "mcpjam-inspector/scripts/dev-echo-mcp.mjs",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "gomemstats",
-    "goroutines",
-    "goruntime",
-    "pgrep"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "gomemstats",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "goroutines",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "goruntime",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pgrep",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -214,6 +159,12 @@
       "scan_date": "2026-06-29T02:49:06Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "2.21.0"
+    },
+    {
+      "scan_date": "2026-06-30T02:43:48Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "2.21.0"
     }
   ]

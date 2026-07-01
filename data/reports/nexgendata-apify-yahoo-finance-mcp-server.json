@@ -1,19 +1,19 @@
 {
   "tool_id": "nexgendata-apify-yahoo-finance-mcp-server",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-15T02:36:06.320877164Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-01T02:56:56.013031895Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/nexgendata-apify/yahoo-finance-mcp-server",
   "vendor": "Smithery",
   "description": "When you need company fundamentals (earnings, P/E, analyst targets, peer comparisons) rather than just price quotes. Feeds straight from Yahoo Finance. Best paired with the broader Finance MCP for portfolio math, or used standalone for equity-research workflows.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_stock_quote"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_multiple_quotes"
     },
@@ -68,10 +68,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -83,7 +83,7 @@
     {
       "tool_name": "get_stock_quote",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -93,7 +93,7 @@
     {
       "tool_name": "get_multiple_quotes",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -225,6 +225,12 @@
     },
     {
       "scan_date": "2026-05-14T02:37:46Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-15T02:36:06Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.8k |
 | **Language** | JavaScript |
 | **Source** | [mcp-hub](https://github.com/ravitemer/mcp-hub) |
-| **Scan Date** | 2026-06-29 |
+| **Scan Date** | 2026-07-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
