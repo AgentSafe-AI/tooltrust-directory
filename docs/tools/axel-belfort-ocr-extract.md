@@ -1,4 +1,4 @@
-# 🟢 axel-belfort-ocr-extract
+# 🟡 axel-belfort-ocr-extract
 
 > OCR (Optical Character Recognition) API for AI agents. Extract text from images via URL or base64 input. Confidence scoring, language detection, and multi-language support (English, French, German, Spanish, Chinese, Japanese, and more).
 
@@ -10,12 +10,12 @@ Returns: {text, confidence, language}. No API key required — x402 micropayment
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 2 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-ocr-extract](https://smithery.ai/server/axel-belfort/ocr-extract) |
-| **Scan Date** | 2026-07-01 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,19 +25,31 @@ Returns: {text, confidence, language}. No API key required — x402 micropayment
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 2 |
 
 ## Detailed Findings
 
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, filesystem access
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -10,7 +10,7 @@
 | **Vendor** | vybenetwork |
 | **Stars** | ⭐ 214 |
 | **Source** | [solana-mcp-vybe](https://github.com/vybenetwork/solana-mcp-vybe) |
-| **Scan Date** | 2026-06-29 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

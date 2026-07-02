@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.29` |
 | **Vendor** | datagouv |
-| **Stars** | ⭐ 1549 |
+| **Stars** | ⭐ 1550 |
 | **Language** | Python |
 | **Source** | [datagouv-mcp](https://github.com/datagouv/datagouv-mcp) |
-| **Scan Date** | 2026-07-01 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

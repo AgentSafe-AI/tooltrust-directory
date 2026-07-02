@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nextcut-nextcut](https://smithery.ai/server/NextCut/nextcut) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

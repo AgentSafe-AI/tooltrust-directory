@@ -1,6 +1,6 @@
 # 🟢 gram
 
-> Securely scale AI usage across your organization.  Control plane for building, securing and monitoring your agents, mcp and skills.
+> Securely scale AI usage across your organization. A single stack to Connect, Secure, Observe and Distribute agents, MCPs, and Skills within your company.
 
 | Field | Value |
 |-------|-------|
@@ -12,7 +12,7 @@
 | **npm Package** | `@gram/workspace` |
 | **Language** | Go |
 | **Source** | [gram](https://github.com/speakeasy-api/gram) |
-| **Scan Date** | 2026-06-29 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

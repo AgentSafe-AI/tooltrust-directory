@@ -1,4 +1,4 @@
-# 🟡 skills-hub-ai-skill-search
+# 🟢 skills-hub-ai-skill-search
 
 > Search and discover 4,400+ AI coding skills from 93 sources including Anthropic, Google, Microsoft, Vercel, Stripe, and more.
 
@@ -14,13 +14,13 @@ Built by [skills-hub.ai](https://skills-hub.ai) — the open skill registry for 
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [skills-hub-ai-skill-search](https://smithery.ai/server/skills-hub-ai/skill-search) |
-| **Scan Date** | 2026-06-13 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-07-02 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -29,19 +29,19 @@ Built by [skills-hub.ai](https://skills-hub.ai) — the open skill registry for 
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 3 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

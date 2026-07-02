@@ -1,21 +1,37 @@
 {
   "tool_id": "axel-belfort-ocr-extract",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-01T02:56:36.518643225Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-02T02:43:22.895195151Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/ocr-extract",
   "vendor": "Smithery",
   "description": "OCR (Optical Character Recognition) API for AI agents. Extract text from images via URL or base64 input. Confidence scoring, language detection, and multi-language support (English, French, German, Spanish, Chinese, Japanese, and more).\n\nTools: media_extract_text_from_image.\n\nUse this for reading documents, receipts, screenshots, or any image with text. Essential for document processing pipelines.\n\nReturns: {text, confidence, language}. No API key required — x402 micropayment $0.005/call on Base L2.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "media_extract_text_from_image"
+        ],
+        "removed": [
+          "vocr"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "vocr"
+      "tool_name": "media_extract_text_from_image"
     },
     {
       "id": "AS-011",
@@ -23,7 +39,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "vocr"
+      "tool_name": "media_extract_text_from_image"
     },
     {
       "id": "AS-014",
@@ -31,34 +47,41 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "vocr"
+      "tool_name": "media_extract_text_from_image"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 1,
     "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "vocr"
+    "media_extract_text_from_image"
   ],
   "tool_contexts": [
     {
-      "tool_name": "vocr",
+      "tool_name": "media_extract_text_from_image",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)",
-        "dynamic email recipient (file_store_key)"
+        "dynamic URL input (image_url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-07-01T02:56:36Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
     }
   ]
 }

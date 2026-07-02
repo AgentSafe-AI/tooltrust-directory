@@ -1,27 +1,19 @@
 {
   "tool_id": "chuhuoyuan-cloudflare",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-29T02:39:11.324553297Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:43:39.828493554Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/chuhuoyuan/cloudflare",
   "vendor": "Smithery",
   "description": "Search Cloudflare documentation across Workers, Pages, R2, Zero Trust, and more. Generate best-practice Workers code and accelerate troubleshooting with relevant guidance. Follow clear steps to migrate Pages projects to Workers with fewer pitfalls.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_cloudflare_documentation"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_cloudflare_documentation"
     },
@@ -52,10 +44,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 2
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -65,8 +57,8 @@
   "tool_contexts": [
     {
       "tool_name": "search_cloudflare_documentation",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -402,6 +394,12 @@
     },
     {
       "scan_date": "2026-05-28T02:26:08Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-29T02:39:11Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

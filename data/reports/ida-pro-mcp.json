@@ -3,12 +3,12 @@
   "version": "1.5.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-06-30T02:41:37.432830541Z",
+  "scan_date": "2026-07-02T02:36:27.331772059Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mrexodia/ida-pro-mcp",
   "category": "Developer Tools",
   "vendor": "mrexodia",
-  "stars": 9766,
+  "stars": 9820,
   "license": "MIT",
   "language": "Python",
   "description": "AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.",
@@ -17,43 +17,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.5.0: 1 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.5.0: 3 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "geminithinking"
-        ],
-        "removed": [
           "match_resume",
           "optimize_resume",
           "parse_resume"
         ],
+        "removed": [
+          "geminithinking"
+        ],
         "version": "1.5.0"
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "geminithinking"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 18 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "geminithinking"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "geminithinking"
     },
     {
       "id": "AS-014",
@@ -61,32 +37,83 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "geminithinking"
+      "tool_name": "match_resume"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "optimize_resume"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 27 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "optimize_resume"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "optimize_resume"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "parse_resume"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 2
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "geminithinking"
+    "match_resume",
+    "optimize_resume",
+    "parse_resume"
   ],
   "tool_contexts": [
     {
-      "tool_name": "geminithinking",
+      "tool_name": "match_resume",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "optimize_resume",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
-        "dynamic email recipient (totalThoughts)"
+        "dynamic email recipient (addMetricsToAccomplishments)",
+        "dynamic email recipient (addSkillsToWorkHistory)",
+        "dynamic email recipient (autoOptimize)",
+        "dynamic email recipient (highlightAccomplishments)",
+        "dynamic email recipient (motivators)",
+        "dynamic email recipient (numberOfSkillsToAddToWorkHistory)",
+        "dynamic email recipient (skillsToAdd)",
+        "hardcoded domain: resumeoptimizerpro.com"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "parse_resume",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -582,6 +609,12 @@
       "scan_date": "2026-06-29T02:46:50Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.5.0"
+    },
+    {
+      "scan_date": "2026-06-30T02:41:37Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.5.0"
     }
   ]

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 544 |
 | **Language** | JavaScript |
 | **Source** | [n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) |
-| **Scan Date** | 2026-07-01 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

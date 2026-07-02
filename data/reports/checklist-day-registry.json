@@ -1,10 +1,10 @@
 {
   "tool_id": "checklist-day-registry",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-19T02:17:50.103211378Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:43:18.355518083Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/checklist-day/registry",
   "vendor": "Smithery",
   "description": "Machine-first beacon of operational ground truth for AI agents.  Library registry (correct imports, quickstart, known footguns) and operational checklists. Currently covers Python; expanding to more languages.",
@@ -19,17 +19,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_registry"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_registry"
     },
@@ -51,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_checklists"
     },
@@ -76,10 +68,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 3
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -100,8 +92,8 @@
     },
     {
       "tool_name": "search_registry",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -111,7 +103,7 @@
     {
       "tool_name": "search_checklists",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -143,6 +135,12 @@
     },
     {
       "scan_date": "2026-04-18T01:55:26Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:17:50Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

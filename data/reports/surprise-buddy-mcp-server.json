@@ -1,27 +1,19 @@
 {
   "tool_id": "surprise-buddy-mcp-server",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-06T02:36:42.237003231Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:43:19.469097212Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/surprise-buddy/mcp-server",
   "vendor": "Smithery",
   "description": "## What is Surprise Buddy?\n\nSurprise Buddy is a curated, country-scoped gift database exposed via a public Model Context Protocol (MCP) server. International coverage — every result is a real product page on a real marketplace (Amazon, Etsy, Mercado Libre, Otto, Bol.com, Allegro, Jochen Schweizer) and the link can be presented to the user as-is.\n\n**Live MCP endpoint:** `https://www.surprise-buddy.com/api/mcp`\n\n## Exposed tools\n\n- **`find_gifts`** — main search (country required, all other filters optional)\n- `list_supported_countries`\n- `list_supported_occasions(country?)`\n- `list_supported_interests`\n- `list_supported_colors`\n\n## Authentication\n\nNone — the MCP server is fully open. Reasonable rate limiting may apply.\n\n## License\n\n[MIT](LICENSE) © Surprise Buddy",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find_gifts"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_gifts"
     },
@@ -43,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_supported_countries"
     },
@@ -67,9 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_supported_interests"
     },
@@ -100,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 2,
-    "low": 3,
-    "info": 5
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -116,8 +108,8 @@
   "tool_contexts": [
     {
       "tool_name": "find_gifts",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -180,6 +172,12 @@
     },
     {
       "scan_date": "2026-06-05T02:47:38Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-06T02:36:42Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

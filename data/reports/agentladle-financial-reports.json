@@ -1,0 +1,155 @@
+{
+  "tool_id": "agentladle-financial-reports",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:43:24.537544221Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/agentladle/financial-reports",
+  "vendor": "Smithery",
+  "description": "# AgentLadle Financial Reports MCP\n\nWelcome to the **AgentLadle Financial Reports MCP Server**! This tool empowers your favorite MCP-compatible clients (like Cursor and Claude Desktop) with professional-grade capabilities for corporate intelligence, financial data extraction, and report analysis.\n\n## 🚀 Getting Started\n\nTo use this server, you will need a valid AgentLadle API Key.\n\n### 1. Get Your API Key\n1. Go to our official website: [https://agentladle.com](https://agentladle.com)\n2. Sign up for an account or log in if you already have one.\n3. Navigate to the **MCP Keys** section in your dashboard.\n4. Generate a new API Key and copy it.\n\n### 2. Configuration\nWhen you install this server via Smithery, you will be prompted to enter your `apiKey`. \n\nSimply paste the raw API key you copied from your dashboard (e.g., `sk-123456789abcdef`).\n\n## ⚠️ Data Coverage Limitation\n\n\u003e Please note that currently, this server only supports searching and extracting **Annual Reports (Years 2023-2025)** from **Chinese A-share** listed companies (Shanghai and Shenzhen Stock Exchanges). US stocks, HK stocks, and quarterly/semi-annual reports are not supported yet.\n\n## 🛠️ Available Tools\n\nOur server provides the following core tools for financial analysis:\n\n* **SearchCompanyInfo**: Query essential corporate information and fundamentals.\n* **FinancialKeywordSearch**: Perform targeted keyword searches across comprehensive financial reports.\n* **GetFinancialReportPages**: Retrieve specific pages and precise data points from financial documents.\n* **GetFinancialStatementsStartPages**: Quickly locate the exact starting pages of balance sheets, income statements, and cash flow statements.\n* **GetReportChapters**: Extract organized chapter structures and sections from lengthy corporate reports.\n\n## 💬 Support\nIf you encounter any issues or have questions, please reach out to our support team at [support@agentladle.com](mailto:support@agentladle.com) or visit [https://agentladle.com](https://agentladle.com).",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "financialKeywordSearch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "financialKeywordSearch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "financialKeywordSearch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getFinancialReportPages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getFinancialStatementsStartPages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "getReportChapters"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "searchCompanyInfo"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "searchCompanyInfo"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "searchCompanyInfo"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 7
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "financialKeywordSearch",
+    "getFinancialReportPages",
+    "getFinancialStatementsStartPages",
+    "getReportChapters",
+    "searchCompanyInfo"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "financialKeywordSearch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (stockCode)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getFinancialReportPages",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (stockCode)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getFinancialStatementsStartPages",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (stockCode)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getReportChapters",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (stockCode)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "searchCompanyInfo",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -1,19 +1,19 @@
 {
   "tool_id": "skills-hub-ai-skill-search",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-13T02:46:01.651215165Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:43:18.214759542Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/skills-hub-ai/skill-search",
   "vendor": "Smithery",
   "description": "Search and discover 4,400+ AI coding skills from 93 sources including Anthropic, Google, Microsoft, Vercel, Stripe, and more.\n\nTools:\n  - search_skills — Find skills by keyword, category, or tag\n  - get_skill_detail — Get full instructions, quality\n  scores, and metadata for any skill\n  - list_installed_skill — Browse top skills by category and install count\n\nOne-command install: `npx @skills-hub-ai/cli install \u003cslug\u003e`\n\nBuilt by [skills-hub.ai](https://skills-hub.ai) — the open skill registry for Claude Code, Cursor, Windsurf, Codex, and Copilot.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_skills"
     },
@@ -52,10 +52,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 3
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -67,7 +67,7 @@
     {
       "tool_name": "search_skills",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -158,6 +158,12 @@
     },
     {
       "scan_date": "2026-06-12T02:53:32Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-13T02:46:01Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

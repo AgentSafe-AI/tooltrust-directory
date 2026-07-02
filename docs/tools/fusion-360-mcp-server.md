@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `latest` |
 | **Vendor** | AuraFriday |
-| **Stars** | ⭐ 105 |
+| **Stars** | ⭐ 106 |
 | **Language** | Python |
 | **Source** | [fusion-360-mcp-server](https://github.com/AuraFriday/Fusion-360-MCP-Server) |
-| **Scan Date** | 2026-06-29 |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

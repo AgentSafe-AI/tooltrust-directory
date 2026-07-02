@@ -1,10 +1,10 @@
 {
   "tool_id": "vinaybhosle-shippingrates",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-05T02:47:39.613958323Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:43:19.708513318Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/vinaybhosle/shippingrates",
   "vendor": "Smithery",
   "description": "Ocean container shipping intelligence for AI agents. 24 MCP tools covering:\n\n- **D\u0026D tariffs**: Detention \u0026 demurrage slab breakdowns across 6 major carriers (Maersk, MSC, CMA CGM, Hapag-Lloyd, ONE, COSCO), 158 countries\n- **Local charges**: THC, documentation, seal, BL fees across 176 countries\n- **Vessel schedules**: Upcoming port calls with ETA/ETD\n- **Port congestion**: Real-time wait times and congestion metrics\n- **Inland haulage**: Trucking and rail rates across 72 Indian destinations\n- **Total landed cost**: Full cost breakdown including freight + surcharges + D\u0026D + local charges\n- **Route risk score**: Composite 0–100 risk assessment per trade lane\n\nPayments via x402 USDC micropayments (Base/Solana). 4 free tools included.",
@@ -27,9 +27,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "shippingrates_search"
     },
@@ -83,9 +83,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "shippingrates_inland_search"
     },
@@ -147,9 +147,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "shippingrates_surcharges"
     },
@@ -211,9 +211,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "shippingrates_facilities"
     },
@@ -252,10 +252,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 24
+    "info": 28
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -302,7 +302,7 @@
     {
       "tool_name": "shippingrates_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -343,7 +343,7 @@
     {
       "tool_name": "shippingrates_inland_search",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -484,6 +484,12 @@
     },
     {
       "scan_date": "2026-04-19T02:17:49Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-05T02:47:39Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

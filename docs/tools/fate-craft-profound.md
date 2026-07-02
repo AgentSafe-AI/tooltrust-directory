@@ -7,12 +7,12 @@ http://profound.fate-craft.com/tools
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 4 |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fate-craft-profound](https://smithery.ai/server/fate-craft/profound) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-07-02 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -23,17 +23,17 @@ http://profound.fate-craft.com/tools
 | Critical | 0 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 2 |
-| Info     | 2 |
+| Low      | 1 |
+| Info     | 3 |
 
 ## Detailed Findings
 
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool declares http permission
+declared capabilities: HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

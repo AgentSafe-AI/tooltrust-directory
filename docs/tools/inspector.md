@@ -1,18 +1,19 @@
 # 🟢 inspector
 
-> Testing and evaluation platform to chat, inspect, and debug MCP servers, MCP apps, and ChatGPT apps.
+> Visual testing tool for MCP servers
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `2.21.0` |
-| **Vendor** | MCPJam |
-| **Stars** | ⭐ 2037 |
-| **npm Package** | `mcpjam-workspace` |
+| **Version** | `0.22.0` |
+| **Vendor** | modelcontextprotocol |
+| **Stars** | ⭐ 10242 |
+| **npm Package** | `@modelcontextprotocol/inspector` |
+| **npm Downloads (30d)** | 765.1k |
 | **Language** | TypeScript |
-| **Source** | [inspector](https://github.com/MCPJam/inspector) |
-| **Scan Date** | 2026-07-01 |
+| **Source** | [inspector](https://github.com/modelcontextprotocol/inspector) |
+| **Scan Date** | 2026-07-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,19 +26,55 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 1 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### ⚪ `AS-018` — Embedded MCP Server Detected
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 
