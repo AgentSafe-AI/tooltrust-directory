@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 258 |
 | **Language** | JavaScript |
 | **Source** | [agent-kit](https://github.com/KeyID-AI/agent-kit) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

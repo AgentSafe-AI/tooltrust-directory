@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [autonomyforge-pressuredesk](https://smithery.ai/server/autonomyforge/pressuredesk) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `2.4.0` |
+| **Version** | `2.8.0` |
 | **Vendor** | benzsevern |
 | **Stars** | ⭐ 119 |
 | **npm Package** | `goldenmatch-monorepo` |
 | **Language** | Python |
 | **Source** | [benzsevern-goldenmatch](https://github.com/benseverndev-oss/goldenmatch) |
-| **Scan Date** | 2026-06-30 |
+| **Scan Date** | 2026-07-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [savordish-changeagent360](https://smithery.ai/server/savordish/changeagent360) |
-| **Scan Date** | 2026-06-26 |
+| **Scan Date** | 2026-07-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

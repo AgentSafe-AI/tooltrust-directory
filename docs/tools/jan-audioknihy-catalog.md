@@ -23,8 +23,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jan-audioknihy-catalog](https://smithery.ai/server/jan/audioknihy-catalog) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-07-03 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

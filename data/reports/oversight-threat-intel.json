@@ -1,0 +1,199 @@
+{
+  "tool_id": "oversight-threat-intel",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-03T02:21:07.207581289Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/oversight/threat-intel",
+  "vendor": "Smithery",
+  "description": "## Sectora Threat Intelligence\n\n  Ask your AI *\"is this CVE actually being exploited?\"* and get real data back — not a guess from 2024 training cutoff.\n\n  Sectora blends **EPSS scores**, **CISA KEV** status, **public exploit** availability, **Nuclei templates**, and **CVSS** into a single 0–100 **weaponization\n  score**. Your LLM stops hallucinating severity and starts giving actionable answers grounded in live signals.\n\n  ---\n\n  ### 🛠️ Tools\n\n  | Tool | What it does |\n  |---|---|\n  | `lookup_cve` | Full CVE enrichment — EPSS, KEV, exploits, Nuclei, ransomware use |\n  | `get_weaponization_score` | 0–100 score blending 5 exploitation signals |\n  | `search_cves` | Find CVEs by keyword, severity, KEV status, or exploit availability |\n  | `assess_tech_risk` | Risk summary for a stack (e.g. `\"nginx 1.25, OpenSSL 3.1, PostgreSQL 16\"`) |\n  | `get_kev_recent` | Newly added CISA KEV entries |\n  | `get_trending_cves` | EPSS spikes + new exploits this week |\n  | `lookup_ip_reputation` | Community IP rep from the Sectora Shield WAF network |\n  | `get_threat_stats` | Database coverage stats |\n\n  ---\n\n  ### 💬 Try these prompts\n\n  - *\"Is CVE-2024-3400 being actively exploited? What's its weaponization score?\"*\n  - *\"What's the weaponization score for Log4Shell?\"*\n  - *\"Assess the security risk of running nginx 1.25 and OpenSSL 3.1\"*\n  - *\"Show me the critical CVEs added to CISA KEV this week\"*\n  - *\"Has IP 45.33.32.156 been reported for attacks?\"*\n\n  ---\n\n  ### ⚡ Quick start (Claude Desktop)\n\n  ```json\n  {\n    \"mcpServers\": {\n      \"sectora\": {\n        \"type\": \"streamable-http\",\n        \"url\": \"https://mcp.sectora.io/mcp\"\n      }\n    }\n  }\n\n  Works out of the box with Claude Desktop, Claude Code, Cursor, Windsurf, ChatGPT, and any MCP-compatible client.\n\n  ---\n  🎁 Free tier\n\n  300 requests/minute per IP. No signup. No credit card. Discovery calls (tools/list, initialize) don't count against quota.\n\n  Need higher limits for production use? Get a free API key at sectora.io/settings/api-keys → 3,000 req/min.\n\n  ---\n  🔒 Privacy\n\n  We log request metadata (IP, country, tool name, latency) for abuse detection and service reliability. We do not log tool arguments or responses — the CVEs and\n  IPs you look up are never stored. 30-day retention. Full details at sectora.io/legal/privacy.\n\n  ---\n  🏢 About\n\n  Built and operated by Sectora — an AI-era DAST platform that scans production apps for vulnerabilities. This MCP is our way of putting the same threat-intel\n  enrichment our scanners use directly inside your AI workflow",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "lookup_cve"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "assess_tech_risk"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_cves"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_cves"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_cves"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_kev_recent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_trending_cves"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_weaponization_score"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "lookup_ip_reputation"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "lookup_ip_reputation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "lookup_ip_reputation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_threat_stats"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_threat_stats"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 11
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "assess_tech_risk",
+    "get_kev_recent",
+    "get_threat_stats",
+    "get_trending_cves",
+    "get_weaponization_score",
+    "lookup_cve",
+    "lookup_ip_reputation",
+    "search_cves"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "lookup_cve",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "assess_tech_risk",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_cves",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_kev_recent",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_trending_cves",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_weaponization_score",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "lookup_ip_reputation",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_threat_stats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

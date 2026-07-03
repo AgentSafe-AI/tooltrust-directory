@@ -43,7 +43,7 @@ If you encounter any issues or have questions, please reach out to our support t
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agentladle-financial-reports](https://smithery.ai/server/agentladle/financial-reports) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

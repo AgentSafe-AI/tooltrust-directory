@@ -819,8 +819,8 @@ pour que je puisse la rajouter. J'ai mis juste une générique.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [contact-ymj4-timers-studio](https://smithery.ai/server/contact-ymj4/timers-studio) |
-| **Scan Date** | 2026-06-02 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-07-03 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

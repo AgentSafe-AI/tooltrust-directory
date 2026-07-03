@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-router",
   "version": "0.6.3",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-07-02T02:38:23.392694797Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-03T02:15:02.492878687Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mcp-router/mcp-router",
   "category": "Developer Tools",
@@ -15,12 +15,21 @@
   "description": "A Unified MCP Server Management App (MCP Manager).",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "invoke"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.6.3: 2 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_all_prices",
+          "get_crypto_price"
+        ],
+        "removed": [
+          "invoke"
+        ],
+        "version": "0.6.3"
+      }
     },
     {
       "id": "AS-014",
@@ -28,23 +37,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "invoke"
+      "tool_name": "get_crypto_price"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_all_prices"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
     "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "invoke"
+    "get_all_prices",
+    "get_crypto_price"
   ],
   "tool_contexts": [
     {
-      "tool_name": "invoke",
+      "tool_name": "get_crypto_price",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_all_prices",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -594,6 +619,12 @@
     },
     {
       "scan_date": "2026-07-01T02:50:32Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.6.3"
+    },
+    {
+      "scan_date": "2026-07-02T02:38:23Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.6.3"

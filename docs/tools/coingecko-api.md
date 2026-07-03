@@ -11,7 +11,7 @@ Free to access and no key required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [coingecko-api](https://smithery.ai/server/coingecko/api) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

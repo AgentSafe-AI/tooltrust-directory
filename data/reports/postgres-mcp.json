@@ -1,33 +1,49 @@
 {
   "tool_id": "postgres-mcp",
   "version": "0.3.0",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-07-02T02:37:48.955650847Z",
+  "scan_date": "2026-07-03T02:14:17Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/crystaldba/postgres-mcp",
   "category": "Developer Tools",
   "vendor": "crystaldba",
-  "stars": 2998,
+  "stars": 3002,
   "license": "MIT",
   "language": "Python",
   "description": "Postgres MCP Pro provides configurable read/write access and performance analysis for you and your AI agents.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute_custom_query"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "execute_custom_query"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 15,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "src/postgres_mcp/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 37,
+            "snippet": "FastMCP(",
+            "file": "src/postgres_mcp/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 83,
+            "snippet": "@mcp.tool(",
+            "file": "src/postgres_mcp/server.py",
+            "language": "python"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -35,9 +51,10 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -62,20 +79,12 @@
       "language": "python"
     }
   ],
-  "tool_names": [
-    "execute_custom_query"
-  ],
-  "tool_contexts": [
+  "scan_history": [
     {
-      "tool_name": "execute_custom_query",
-      "action": "ALLOW",
+      "scan_date": "2026-07-02T02:37:48Z",
       "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 0,
+      "version": "0.3.0"
     }
   ]
 }
