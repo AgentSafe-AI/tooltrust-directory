@@ -1,19 +1,19 @@
 {
   "tool_id": "bibigpt-video-summarizer",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-19T02:19:49.765448688Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-04T02:20:09.780936701Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/bibigpt/video-summarizer",
   "vendor": "Smithery",
   "description": "\n  BibiGPT is an AI-powered video and audio assistant that turns hours of content into actionable\n  knowledge in seconds.\n\n  What it does:\n  - Summarize videos and podcasts from YouTube, Bilibili, TikTok, Twitter/X, Xiaohongshu, Douyin, Apple\n  Podcasts, Spotify, and 20+ platforms\n  - Extract full transcripts with timestamps — even for videos without subtitles (powered by Whisper ASR)\n  - Generate chapter-by-chapter summaries for lectures, tutorials, and long-form content\n  - Async task processing for videos over 2 hours\n\n  Why agents love it:\n  - 6 MCP tools with clear, composable APIs — summarize, get subtitles, chapter breakdown, async task\n  creation \u0026 polling\n  - Works with any AI model (GPT-4o, Claude, Gemini, etc.) via custom prompt config\n  - Output in 5 languages: English, Chinese, Japanese, Korean, Traditional Chinese\n  - OAuth 2.1 + Bearer token auth — compatible with Claude, ChatGPT, Cursor, Codex, and all MCP clients\n\n  Who uses it:\n  500,000+ users — content creators, researchers, students, and knowledge workers who process video\n  content at scale.\n\n  Built by BibiGPT (bibigpt.co).",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "summarize_video"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "summarize_video_with_config"
     },
@@ -59,9 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "summarize_by_chapter"
     },
@@ -83,17 +83,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_summary_task"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_summary_task"
     },
@@ -123,9 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_subtitle"
     },
@@ -148,10 +140,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 5,
-    "info": 6
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -166,7 +158,7 @@
     {
       "tool_name": "summarize_video",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -180,7 +172,7 @@
     {
       "tool_name": "summarize_video_with_config",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -194,7 +186,7 @@
     {
       "tool_name": "summarize_by_chapter",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -207,8 +199,8 @@
     },
     {
       "tool_name": "create_summary_task",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network",
         "writes_files"
@@ -230,7 +222,7 @@
     {
       "tool_name": "get_subtitle",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -306,6 +298,12 @@
     },
     {
       "scan_date": "2026-04-17T02:15:58Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:19:49Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

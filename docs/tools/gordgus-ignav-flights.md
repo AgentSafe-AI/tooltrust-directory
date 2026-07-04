@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gordgus-ignav-flights](https://smithery.ai/server/gordgus/ignav-flights) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

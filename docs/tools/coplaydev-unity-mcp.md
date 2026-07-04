@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `10.0.0` |
 | **Vendor** | CoplayDev |
-| **Stars** | ⭐ 11283 |
+| **Stars** | ⭐ 11332 |
 | **Language** | C# |
 | **Source** | [coplaydev-unity-mcp](https://github.com/CoplayDev/unity-mcp) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

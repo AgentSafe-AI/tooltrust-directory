@@ -11,7 +11,7 @@ Sources include ChEMBL, PubChem BioAssay, DepMap, BioGRID ORCS, GenomeCRISPR, Cl
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nullary-drug-discovery](https://smithery.ai/server/nullary/drug-discovery) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

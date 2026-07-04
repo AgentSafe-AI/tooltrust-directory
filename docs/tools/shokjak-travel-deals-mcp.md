@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [shokjak-travel-deals-mcp](https://smithery.ai/server/shokjak/travel-deals-mcp) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-07-04 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

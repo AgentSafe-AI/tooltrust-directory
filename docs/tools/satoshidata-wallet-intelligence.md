@@ -1,15 +1,15 @@
-# 🟡 satoshidata-wallet-intelligence
+# 🟢 satoshidata-wallet-intelligence
 
 > A keyless Bitcoin chain-intelligence API built for autonomous agents. Resolve addresses to known entities, pull wallet evidence packs, and check sanctions / illicit-fund exposure over MCP, no account required. Includes risk_check for free keyless exposure evidence, wallet evidence packs, entity / label lookup, and the Risk Exposure Oracle v0 with explicit disclaimers. Evidence-first: no opaque risk score or verdict from risk_check; agents receive underlying signals so they can decide. Core public surface is free during beta; optional X-WR-API-Key unlocks premium endpoints.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [satoshidata-wallet-intelligence](https://smithery.ai/server/satoshidata/wallet-intelligence) |
-| **Scan Date** | 2026-06-28 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 50 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

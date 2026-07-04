@@ -1,18 +1,35 @@
 {
   "tool_id": "rails-mcp-server",
   "version": "1.5.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-29T02:51:18.874511654Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-04T02:16:30.33240094Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/maquina-app/rails-mcp-server",
   "category": "Other",
   "vendor": "maquina-app",
-  "stars": 563,
+  "stars": 564,
   "license": "MIT",
   "language": "Ruby",
   "description": "A Ruby gem implementation of a Model Context Protocol (MCP) server for Rails projects. This server allows LLMs (Large Language Models) to interact with Rails projects through the Model Context Protocol.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.5.1: 4 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "run_claude_proof_relay",
+          "run_durable_usage_ledger_event",
+          "run_investor_demo_v2",
+          "run_stripe_receipt_completion"
+        ],
+        "removed": null,
+        "version": "1.5.1"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -854,6 +871,54 @@
       "tool_name": "run_claude_evidence_analysis"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "run_claude_proof_relay"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "run_investor_demo_v2"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "run_stripe_receipt_completion"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "run_durable_usage_ledger_event"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "run_durable_usage_ledger_event"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "run_durable_usage_ledger_event"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -872,10 +937,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 11,
-    "info": 96
+    "low": 12,
+    "info": 101
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -924,13 +989,17 @@
     "rotate_signing_secret",
     "run_agent_to_agent_test",
     "run_claude_evidence_analysis",
+    "run_claude_proof_relay",
     "run_credential_enforcement_dry_run",
     "run_directory_submission_adapter",
+    "run_durable_usage_ledger_event",
     "run_external_agent_client_runner",
     "run_external_agent_invocation_test",
+    "run_investor_demo_v2",
     "run_live_supabase_verification",
     "run_multi_agent_rail_benchmark",
     "run_release_gate_automation",
+    "run_stripe_receipt_completion",
     "run_synthetic_agent_regression",
     "sign_directory_submission_receipt",
     "sign_receipt",
@@ -1558,6 +1627,40 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "run_claude_proof_relay",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "run_investor_demo_v2",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "run_stripe_receipt_completion",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "run_durable_usage_ledger_event",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (next_endpoint)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "validate_production_write",
       "action": "ALLOW",
       "grade": "A",
@@ -1577,6 +1680,12 @@
     },
     {
       "scan_date": "2026-06-28T02:51:07Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.5.1"
+    },
+    {
+      "scan_date": "2026-06-29T02:51:18Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.5.1"

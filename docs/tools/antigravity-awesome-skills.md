@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `13.7.0` |
+| **Version** | `13.9.0` |
 | **Vendor** | sickn33 |
-| **Stars** | ⭐ 42246 |
+| **Stars** | ⭐ 42302 |
 | **npm Package** | `antigravity-awesome-skills` |
-| **npm Downloads (30d)** | 23.5k |
+| **npm Downloads (30d)** | 23.3k |
 | **Language** | Python |
 | **Source** | [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

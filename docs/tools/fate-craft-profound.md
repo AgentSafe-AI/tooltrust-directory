@@ -11,7 +11,7 @@ http://profound.fate-craft.com/tools
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fate-craft-profound](https://smithery.ai/server/fate-craft/profound) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

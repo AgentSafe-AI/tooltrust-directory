@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `3.9.0` |
 | **Vendor** | opensumi |
-| **Stars** | ⭐ 3635 |
+| **Stars** | ⭐ 3638 |
 | **npm Package** | `@opensumi/core` |
 | **Language** | TypeScript |
 | **Source** | [core](https://github.com/opensumi/core) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 4 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v3.9.0: 2 tool(s) added, 9 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

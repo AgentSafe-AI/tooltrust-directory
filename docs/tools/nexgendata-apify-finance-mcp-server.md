@@ -1,16 +1,16 @@
-# 🟡 nexgendata-apify-finance-mcp-server
+# 🟢 nexgendata-apify-finance-mcp-server
 
 > Quick market data for AI workflows: real-time quotes, crypto prices, foreign exchange rates, portfolio P&L calculations. Wraps Yahoo Finance, CoinGecko, and FinViz behind a single tool surface. Use for trading copilots, financial planning chats, or end-of-day reporting agents.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-finance-mcp-server](https://smithery.ai/server/nexgendata-apify/finance-mcp-server) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-07-04 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -19,10 +19,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
-| Info     | 5 |
+| Info     | 6 |
 
 ## Detailed Findings
 
@@ -50,12 +50,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

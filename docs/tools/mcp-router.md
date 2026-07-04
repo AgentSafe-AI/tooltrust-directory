@@ -8,11 +8,11 @@
 | **Risk Score** | 15 |
 | **Version** | `0.6.3` |
 | **Vendor** | mcp-router |
-| **Stars** | ⭐ 2074 |
+| **Stars** | ⭐ 2077 |
 | **npm Package** | `mcp-router` |
 | **Language** | TypeScript |
 | **Source** | [mcp-router](https://github.com/mcp-router/mcp-router) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -34,22 +34,22 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at v0.6.3: 2 tool(s) added, 1 tool(s) removed without a version bump.
+Tool set changed silently at v0.6.3: 1 tool(s) added, 2 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+declared capabilities: filesystem access
 
 **Recommendation:**
-Review and remediate the identified issue.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

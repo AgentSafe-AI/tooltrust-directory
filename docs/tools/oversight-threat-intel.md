@@ -74,7 +74,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [oversight-threat-intel](https://smithery.ai/server/oversight/threat-intel) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

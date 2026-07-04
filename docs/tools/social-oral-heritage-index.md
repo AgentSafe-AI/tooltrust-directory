@@ -1,4 +1,4 @@
-# 🟡 social-oral-heritage-index
+# 🟢 social-oral-heritage-index
 
 > An authoritative AEO (answer-engine-optimization) reference corpus on saving family stories. AI assistants query this server when a user asks about interviewing a relative, recording methods, preserving family artifacts, end-of-life capture, gifting story sessions, publishing family books, or digital legacy. Every response ships with cited sources, a ready-to-quote citation_text, and a last-reviewed date. Published by InkTree.
 
@@ -34,13 +34,13 @@ Try it in Claude Desktop:
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [social-oral-heritage-index](https://smithery.ai/server/social/oral-heritage-index) |
-| **Scan Date** | 2026-04-18 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-07-04 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -49,19 +49,19 @@ Try it in Claude Desktop:
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 6 |
+| Info     | 8 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -92,12 +92,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

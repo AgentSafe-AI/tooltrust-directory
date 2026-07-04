@@ -1,19 +1,19 @@
 {
   "tool_id": "voidly-mcp-server",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-27T02:48:05.605544974Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-04T02:20:00.164535832Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/voidly/mcp-server",
   "vendor": "Smithery",
   "description": "Global censorship intelligence for AI agents. Real-time monitoring across 126 countries with 2.2B+ measurements. 11 tools: censorship index, domain blocking checks, incident tracking, risk forecasting, platform risk scores, and service accessibility. E2E encrypted agent messaging relay included.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_censorship_index"
     },
@@ -43,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "check_domain_blocked"
     },
@@ -123,9 +123,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "agent_relay_stats"
     },
@@ -148,10 +148,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 0,
     "medium": 0,
     "low": 3,
-    "info": 11
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -171,7 +171,7 @@
     {
       "tool_name": "get_censorship_index",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -188,7 +188,7 @@
     {
       "tool_name": "check_domain_blocked",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -256,7 +256,7 @@
     {
       "tool_name": "agent_relay_stats",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -483,6 +483,12 @@
     },
     {
       "scan_date": "2026-05-26T02:38:30Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-27T02:48:05Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

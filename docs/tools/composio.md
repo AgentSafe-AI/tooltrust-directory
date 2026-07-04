@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `0.11.1` |
 | **Vendor** | ComposioHQ |
-| **Stars** | ⭐ 29073 |
+| **Stars** | ⭐ 29086 |
 | **npm Package** | `composio` |
-| **npm Downloads (30d)** | 6.8k |
+| **npm Downloads (30d)** | 8.6k |
 | **Language** | TypeScript |
 | **Source** | [composio](https://github.com/ComposioHQ/composio) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -3,26 +3,12 @@
   "version": "smithery",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-07-03T02:21:05.538709476Z",
+  "scan_date": "2026-07-04T02:20:16.184938017Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/ia-qa/api",
   "vendor": "Smithery",
   "description": "IA-QA as an MCP Server\nUse IA-QA's developer tools to test your llm agents RAG ai tools, directly from Cursor, Claude Desktop, Windsurf, or any AI agent without leaving your IDE. \nMany classical testing tools too ! Enjoy ! \nNo API key. No signup. Free.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "analyze_responses"
-        ],
-        "removed": null,
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -339,7 +325,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_llm_cost"
     },
@@ -347,7 +333,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_llm_cost"
     },
@@ -2410,7 +2396,7 @@
   ],
   "summary": {
     "critical": 7,
-    "high": 3,
+    "high": 2,
     "medium": 0,
     "low": 45,
     "info": 244
@@ -4155,6 +4141,12 @@
     },
     {
       "scan_date": "2026-07-02T02:43:35Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-03T02:21:05Z",
       "grade": "C",
       "risk_score": 42,
       "version": "smithery"

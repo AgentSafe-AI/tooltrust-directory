@@ -1,10 +1,10 @@
 {
   "tool_id": "refetch-web",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-22T02:44:37.801248666Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-04T02:20:23.999549363Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/refetch/web",
   "vendor": "Smithery",
   "description": "Fetch pages, search the web, and extract structured data — built for AI agents.\n\n## Tools\n\n- **fetch** — Any URL → clean markdown, optimized for LLM context windows\n- **fetch_html** — Any URL → raw HTML with full SPA rendering\n- **fetch_structured_data** — Extract JSON-LD schema.org data from any page\n- **search_web** — Web search returning structured JSON results\n- **search_news** — News search across 20+ countries with sources and dates\n- **check_usage** — Check your credit balance and usage history (free)\n\n## Why refetch?\n\n- One credit = one request, every endpoint, no multipliers\n- $2.50 per 1,000 requests, credits never expire\n- Block detection, CAPTCHA handling, and SPA rendering built in\n- Streamable HTTP — no Docker, no stdio, no local process\n\n500 free requests on signup, no credit card required. [Get your API key →](https://www.refetch.cloud/console)",
@@ -19,9 +19,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch"
     },
@@ -43,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch_html"
     },
@@ -67,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fetch_structured_data"
     },
@@ -91,17 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_news"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_news"
     },
@@ -123,17 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_web"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_web"
     },
@@ -156,10 +140,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 5,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 5,
-    "info": 6
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -181,7 +165,7 @@
     {
       "tool_name": "fetch",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -196,7 +180,7 @@
     {
       "tool_name": "fetch_html",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -210,7 +194,7 @@
     {
       "tool_name": "fetch_structured_data",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -224,8 +208,8 @@
     },
     {
       "tool_name": "search_news",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -238,8 +222,8 @@
     },
     {
       "tool_name": "search_web",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -316,6 +300,12 @@
     },
     {
       "scan_date": "2026-05-21T02:41:57Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-22T02:44:37Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

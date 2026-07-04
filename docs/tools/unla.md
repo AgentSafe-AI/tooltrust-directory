@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.2` |
 | **Vendor** | AmoyLab |
-| **Stars** | ⭐ 2162 |
+| **Stars** | ⭐ 2164 |
 | **Language** | TypeScript |
 | **Source** | [unla](https://github.com/AmoyLab/Unla) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

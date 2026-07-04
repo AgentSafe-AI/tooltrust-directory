@@ -10,10 +10,10 @@
 | **Vendor** | rekog-labs |
 | **Stars** | ⭐ 668 |
 | **npm Package** | `@rekog/mcp-nest` |
-| **npm Downloads (30d)** | 453.3k |
+| **npm Downloads (30d)** | 481.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-nest](https://github.com/rekog-labs/MCP-Nest) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

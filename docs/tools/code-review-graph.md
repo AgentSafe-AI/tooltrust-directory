@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `scode-v0.2.1` |
 | **Vendor** | tirth8205 |
-| **Stars** | ⭐ 19075 |
+| **Stars** | ⭐ 19137 |
 | **Language** | Python |
 | **Source** | [code-review-graph](https://github.com/tirth8205/code-review-graph) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

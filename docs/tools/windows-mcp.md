@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.2` |
 | **Vendor** | cursortouch |
-| **Stars** | ⭐ 6308 |
+| **Stars** | ⭐ 6312 |
 | **npm Package** | `windows-mcp-pi-extension` |
 | **Language** | Python |
 | **Source** | [windows-mcp](https://github.com/CursorTouch/Windows-MCP) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

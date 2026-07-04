@@ -3,14 +3,14 @@
   "version": "2.4.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-03T02:15:59.094332432Z",
+  "scan_date": "2026-07-04T02:15:09.423122804Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/arabold/docs-mcp-server",
   "category": "Developer Tools",
   "vendor": "arabold",
-  "stars": 1507,
+  "stars": 1509,
   "npm_package": "@arabold/docs-mcp-server",
-  "npm_downloads_monthly": 2848,
+  "npm_downloads_monthly": 2910,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Grounded Docs MCP Server: Open-Source Alternative to Context7, Nia, and Ref.Tools",
@@ -19,10 +19,13 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.4.2: 10 tool(s) added, 33 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.4.2: 1 tool(s) added, 10 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "search_astro_docs"
+        ],
+        "removed": [
           "moxie.get_ai_context",
           "moxie.get_conventions",
           "moxie.get_doc_gaps",
@@ -34,41 +37,6 @@
           "moxie.propose_doc_update",
           "moxie.search_docs"
         ],
-        "removed": [
-          "GOOGLEDOCS_COPY_DOCUMENT",
-          "GOOGLEDOCS_CREATE_DOCUMENT",
-          "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN",
-          "GOOGLEDOCS_CREATE_FOOTER",
-          "GOOGLEDOCS_CREATE_FOOTNOTE",
-          "GOOGLEDOCS_CREATE_HEADER",
-          "GOOGLEDOCS_CREATE_NAMED_RANGE",
-          "GOOGLEDOCS_CREATE_PARAGRAPH_BULLETS",
-          "GOOGLEDOCS_DELETE_CONTENT_RANGE",
-          "GOOGLEDOCS_DELETE_FOOTER",
-          "GOOGLEDOCS_DELETE_HEADER",
-          "GOOGLEDOCS_DELETE_NAMED_RANGE",
-          "GOOGLEDOCS_DELETE_PARAGRAPH_BULLETS",
-          "GOOGLEDOCS_DELETE_TABLE",
-          "GOOGLEDOCS_DELETE_TABLE_COLUMN",
-          "GOOGLEDOCS_DELETE_TABLE_ROW",
-          "GOOGLEDOCS_GET_CHARTS_FROM_SPREADSHEET",
-          "GOOGLEDOCS_GET_DOCUMENT_BY_ID",
-          "GOOGLEDOCS_INSERT_INLINE_IMAGE",
-          "GOOGLEDOCS_INSERT_PAGE_BREAK",
-          "GOOGLEDOCS_INSERT_TABLE_ACTION",
-          "GOOGLEDOCS_INSERT_TABLE_COLUMN",
-          "GOOGLEDOCS_INSERT_TEXT_ACTION",
-          "GOOGLEDOCS_LIST_SPREADSHEET_CHARTS_ACTION",
-          "GOOGLEDOCS_REPLACE_ALL_TEXT",
-          "GOOGLEDOCS_REPLACE_IMAGE",
-          "GOOGLEDOCS_SEARCH_DOCUMENTS",
-          "GOOGLEDOCS_UNMERGE_TABLE_CELLS",
-          "GOOGLEDOCS_UPDATE_DOCUMENT_MARKDOWN",
-          "GOOGLEDOCS_UPDATE_DOCUMENT_SECTION_MARKDOWN",
-          "GOOGLEDOCS_UPDATE_DOCUMENT_STYLE",
-          "GOOGLEDOCS_UPDATE_EXISTING_DOCUMENT",
-          "GOOGLEDOCS_UPDATE_TABLE_ROW_STYLE"
-        ],
         "version": "2.4.2"
       }
     },
@@ -76,25 +44,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.get_conventions"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.get_conventions"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.search_docs"
+      "tool_name": "search_astro_docs"
     },
     {
       "id": "AS-011",
@@ -102,7 +54,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "moxie.search_docs"
+      "tool_name": "search_astro_docs"
     },
     {
       "id": "AS-014",
@@ -110,127 +62,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.search_docs"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.list_docs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.list_docs"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.get_doc_gaps"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.get_doc_gaps"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.get_documentation_opportunities"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.get_documentation_opportunities"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.get_documentation_patterns"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.get_ai_context"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.get_ai_context"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.get_doc_impact"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.get_doc_impact"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.propose_doc_update"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.propose_doc_update"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "moxie.propose_doc_removal"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "moxie.propose_doc_removal"
+      "tool_name": "search_astro_docs"
     }
   ],
   "summary": {
@@ -238,7 +70,7 @@
     "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 19
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -259,141 +91,15 @@
     }
   ],
   "tool_names": [
-    "moxie.get_ai_context",
-    "moxie.get_conventions",
-    "moxie.get_doc_gaps",
-    "moxie.get_doc_impact",
-    "moxie.get_documentation_opportunities",
-    "moxie.get_documentation_patterns",
-    "moxie.list_docs",
-    "moxie.propose_doc_removal",
-    "moxie.propose_doc_update",
-    "moxie.search_docs"
+    "search_astro_docs"
   ],
   "tool_contexts": [
     {
-      "tool_name": "moxie.get_conventions",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.search_docs",
+      "tool_name": "search_astro_docs",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.list_docs",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.get_doc_gaps",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.get_documentation_opportunities",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.get_documentation_patterns",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.get_ai_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.get_doc_impact",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)",
-        "hardcoded domain: route.ts"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.propose_doc_update",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)",
-        "hardcoded domain: billing.md"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "moxie.propose_doc_removal",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -434,6 +140,12 @@
       "scan_date": "2026-07-02T02:39:18Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "2.4.2"
+    },
+    {
+      "scan_date": "2026-07-03T02:15:59Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "2.4.2"
     }
   ]

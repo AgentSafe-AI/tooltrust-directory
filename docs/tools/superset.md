@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.1` |
 | **Vendor** | superset-sh |
-| **Stars** | ⭐ 12225 |
+| **Stars** | ⭐ 12246 |
 | **npm Package** | `@superset/repo` |
 | **Language** | TypeScript |
 | **Source** | [superset](https://github.com/superset-sh/superset) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

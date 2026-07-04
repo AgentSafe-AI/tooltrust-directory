@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `sha-6288015cee6b` |
 | **Vendor** | ckreiling |
-| **Stars** | ⭐ 725 |
+| **Stars** | ⭐ 724 |
 | **Language** | Python |
 | **Source** | [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
