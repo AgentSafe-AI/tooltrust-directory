@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.0.187` |
+| **Version** | `0.0.225` |
 | **Vendor** | vitali87 |
-| **Stars** | ⭐ 2281 |
+| **Stars** | ⭐ 2290 |
 | **Language** | Python |
 | **Source** | [code-graph-rag](https://github.com/vitali87/code-graph-rag) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

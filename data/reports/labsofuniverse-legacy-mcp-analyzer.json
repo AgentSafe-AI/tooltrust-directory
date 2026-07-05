@@ -1,27 +1,19 @@
 {
   "tool_id": "labsofuniverse-legacy-mcp-analyzer",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-05-21T02:42:13.243067129Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:27:00.25336013Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/labsofuniverse/legacy-mcp-analyzer",
   "vendor": "Smithery",
   "description": "Analyzes C++ codebases via AST parsing to build comprehensive, queryable dependency graphs for AI agents. Maps complex function relationships to identify upstream callers, circular dependencies, and orphan code. Includes GitHub repo ingestion and token-safe Mermaid.js visual exports to guide safe code refactoring.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "analyze_codebase"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "analyze_codebase"
     },
@@ -43,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_file_functions"
     },
@@ -59,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_file_coupling"
     },
@@ -75,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_callers"
     },
@@ -132,10 +124,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 3,
-    "low": 3,
-    "info": 8
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -151,8 +143,8 @@
   "tool_contexts": [
     {
       "tool_name": "analyze_codebase",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -450,6 +442,12 @@
     },
     {
       "scan_date": "2026-05-20T02:44:16Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-21T02:42:13Z",
       "grade": "C",
       "risk_score": 25,
       "version": "smithery"

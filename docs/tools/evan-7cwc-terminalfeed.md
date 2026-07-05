@@ -10,7 +10,7 @@ earthquakes, hacker news, AI infrastructure status, HuggingFace trending, Solana
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [evan-7cwc-terminalfeed](https://smithery.ai/server/evan-7cwc/terminalfeed) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-07-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

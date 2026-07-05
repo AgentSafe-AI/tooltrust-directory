@@ -1,0 +1,101 @@
+{
+  "tool_id": "beforeyouship-cost-model",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:26:51.038232159Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/beforeyouship/cost-model",
+  "vendor": "Smithery",
+  "description": "Model the realistic monthly cost of an LLM app **before you build it**. Not a token calculator: retries, prompt caching, batch discounts, infra overhead, and 3×/10× growth are modeled in, across GPT-5.x, Claude, Gemini, DeepSeek, and more.\n\n**Works without a key.** Connect and ask — demo mode covers the six free-tier models. A Pro API key ([beforeyouship.dev](https://beforeyouship.dev)) unlocks the full 18-model catalog.\n\n## Tools\n\n| Tool | What it does |\n|---|---|\n- **`estimate_cost`** Full cost model for an architecture at a given usage level. Returns Naive / Realistic / Worst Case $/mo per model, growth scenarios, and an opinionated recommendation. |\n- **`get_model_prices`** Current per-1M-token pricing (input, output, cached, batch) with context windows and staleness metadata. |\n- **`list_archetypes`** Seven preset architecture patterns (chatbot, RAG pipeline, multi-step agent, …) used as starting points for estimates. |\n\n## Try it\n\nPaste into Claude Code or Cursor after connecting:\n\n\u003e Estimate the monthly cost of a RAG pipeline at 10,000 requests/day\n\n## Setup\n\n```bash\nclaude mcp add --transport http beforeyouship https://beforeyouship.dev/api/mcp\n```\n## Links\n\n- Docs \u0026 tool reference: https://beforeyouship.dev/docs#mcp\n- Live calculator: https://beforeyouship.dev\n- Announcement: https://beforeyouship.dev/blog/query-llm-costs-from-claude-code",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_archetypes"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_model_prices"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "estimate_cost"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"avg_input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "estimate_cost"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"avg_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "estimate_cost"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "estimate_cost"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 5
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "estimate_cost",
+    "get_model_prices",
+    "list_archetypes"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "list_archetypes",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_model_prices",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "estimate_cost",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (avg_input_tokens)",
+        "dynamic email recipient (avg_output_tokens)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

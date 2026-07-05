@@ -1,0 +1,116 @@
+{
+  "tool_id": "kulkarnianirudha8-byteaskai",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:26:46.907674123Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/kulkarnianirudha8/byteaskai",
+  "vendor": "Smithery",
+  "description": "# ByteAsk Embedded Docs MCP\n\nPage-cited retrieval over embedded systems documentation, datasheets, reference manuals, RTOS documentation, coding standards, and firmware engineering references for AI coding agents.\n\n**Registry Namespace:** `ai.byteask/embedded-docs`\n\n**Endpoint:** `https://mcp.byteask.ai/mcp`\n\n**Documentation:** https://docs.byteask.ai/embedded\n\n**GitHub:** https://github.com/ByteAsk/ByteAsk-Embedded-MCP\n\n---\n\n# Why This MCP Exists\n\nModern AI coding agents are excellent at generating code, but often struggle when working with vendor-specific embedded documentation, hardware reference manuals, firmware SDKs, and coding standards.\n\nEmbedded engineers routinely need answers from:\n\n* STM32 Reference Manuals\n* ARM Cortex-M Technical Reference Manuals\n* CMSIS Documentation\n* FreeRTOS Documentation\n* Zephyr Documentation\n* ESP-IDF Documentation\n* Nordic SDK Documentation\n* NXP Documentation\n* MISRA C\n* MISRA C++\n* AUTOSAR\n* Device Datasheets\n* Vendor Application Notes\n\nSearching these sources manually can require navigating hundreds or thousands of pages of documentation.\n\nByteAsk Embedded Docs MCP gives AI coding agents direct access to these references and returns page-cited answers grounded in source documentation.\n\n---\n\n# Features\n\n## Page-Cited Retrieval\n\nEvery answer is grounded in source documentation with citations to the original reference.\n\nThis enables engineers to verify claims directly against vendor documentation.\n\n---\n\n## Documentation Search\n\nSearch across embedded and firmware engineering references.\n\nExamples:\n\n* Peripheral configuration\n* Register descriptions\n* DMA setup\n* Interrupt handling\n* Clock configuration\n* RTOS APIs\n* MISRA compliance questions\n* ARM architecture details\n\n---\n\n## Agent-Native\n\nWorks directly with MCP-compatible tools including:\n\n* Claude Code\n* Claude Desktop\n* Cursor\n* Windsurf\n* VS Code MCP Clients\n* GitHub Copilot MCP\n* Any MCP-compatible agent\n\n---\n\n## Remote Hosted\n\nNo indexing, crawling, or local setup required.\n\nThe server is hosted by ByteAsk and continuously updated.\n\n---\n\n# Example Prompts\n\n## STM32\n\n```text\nFind the STM32H7 Ethernet DMA initialization sequence.\n```\n\n```text\nShow the documentation for STM32 timer input capture.\n```\n\n```text\nFind the register definition for RCC clock configuration.\n```\n\n---\n\n## ARM Cortex-M\n\n```text\nExplain NVIC interrupt priority configuration on Cortex-M4.\n```\n\n```text\nFind documentation for SysTick configuration.\n```\n\n```text\nShow Cortex-M exception handling behavior.\n```\n\n---\n\n## CMSIS\n\n```text\nFind the CMSIS documentation for NVIC_SetPriority.\n```\n\n```text\nShow CMSIS APIs related to interrupt control.\n```\n\n---\n\n## FreeRTOS\n\n```text\nFind documentation for task notifications.\n```\n\n```text\nCompare queues and task notifications in FreeRTOS.\n```\n\n```text\nShow examples of FreeRTOS software timers.\n```\n\n---\n\n## MISRA\n\n```text\nFind MISRA C rules related to pointer arithmetic.\n```\n\n```text\nShow MISRA C++ guidance on exception handling.\n```\n\n```text\nFind rules regarding dynamic memory allocation.\n```\n\n---\n\n## Zephyr\n\n```text\nFind Zephyr GPIO driver documentation.\n```\n\n```text\nShow examples of Zephyr work queues.\n```\n\n```text\nExplain Zephyr device tree configuration.\n```\n\n---\n\n# Supported Knowledge Domains\n\n## Embedded Systems\n\n* Microcontrollers\n* SoCs\n* Device Drivers\n* Peripherals\n* DMA\n* Interrupts\n* Timers\n* GPIO\n* UART\n* SPI\n* I2C\n* CAN\n* Ethernet\n* USB\n\n## Firmware Engineering\n\n* RTOS Development\n* Bare-Metal Development\n* Bootloaders\n* Hardware Abstraction Layers\n* Embedded Networking\n* Memory Management\n\n## Documentation Sources\n\n* Reference Manuals\n* Datasheets\n* SDK Documentation\n* Application Notes\n* Programming Manuals\n* Technical Reference Manuals\n* Architecture Specifications\n\n## Coding Standards\n\n* MISRA C\n* MISRA C++\n* AUTOSAR\n* Embedded Best Practices\n\n---\n\n# Installation\n\nUse the MCP endpoint:\n\n```text\nhttps://mcp.byteask.ai/mcp\n```\n\nRefer to the documentation for client-specific installation instructions:\n\nhttps://docs.byteask.ai/embedded\n\n---\n\n# Example Workflow\n\nEngineer asks:\n\n```text\nHow do I configure Ethernet DMA on STM32H7?\n```\n\nAgent:\n\n1. Queries ByteAsk Embedded Docs MCP\n2. Retrieves relevant documentation sections\n3. Produces a grounded answer\n4. Includes citations to the source material\n\nResult:\n\n* Faster debugging\n* Fewer hallucinations\n* Traceable answers\n* Direct access to source references\n\n---\n\n# Ideal Users\n\n* Embedded Software Engineers\n* Firmware Engineers\n* RTOS Developers\n* Automotive Software Engineers\n* Safety-Critical Software Teams\n* Embedded AI Engineers\n* Hardware Bring-Up Teams\n* BSP Developers\n* Driver Developers\n* Platform Engineers\n\n---\n\n# About ByteAsk\n\nByteAsk builds citation-backed retrieval systems for high-value technical knowledge.\n\nThe Embedded Docs MCP provides page-cited access to embedded and firmware engineering documentation directly inside AI coding workflows.\n\nDocumentation:\nhttps://docs.byteask.ai/embedded\n\nGitHub:\nhttps://github.com/ByteAsk/ByteAsk-Embedded-MCP\n\nRegistry:\nai.byteask/embedded-docs",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_context"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "request_document"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "request_document"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "request_document"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 5
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "get_context",
+    "request_document",
+    "search_docs"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_docs",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: CONTROL.SPSEL"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_context",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "request_document",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

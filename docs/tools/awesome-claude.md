@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `mcp-v0.7.0` |
+| **Version** | `mcp-v0.8.0` |
 | **Vendor** | JSONbored |
-| **Stars** | ⭐ 275 |
+| **Stars** | ⭐ 277 |
 | **npm Package** | `heyclaude` |
 | **npm Downloads (30d)** | 25 |
 | **Language** | MDX |
 | **Source** | [awesome-claude](https://github.com/JSONbored/awesome-claude) |
-| **Scan Date** | 2026-07-04 |
+| **Scan Date** | 2026-07-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

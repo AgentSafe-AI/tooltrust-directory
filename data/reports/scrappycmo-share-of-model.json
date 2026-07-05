@@ -1,19 +1,19 @@
 {
   "tool_id": "scrappycmo-share-of-model",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 12,
-  "scan_date": "2026-04-19T02:21:09.554707373Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:26:54.248949398Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/scrappycmo/share-of-model",
   "vendor": "Smithery",
   "description": "Track how often AI models mention and recommend your brand. Probe GPT-4o, Claude, Gemini, and Perplexity to measure your Share of Model - mention rate, position quality, and competitive ranking. Essential for any brand in the era where AI agents influence purchasing decisions.\n\n**4 tools:**\n- `generate_som_report` - full analysis in one call\n- `probe_ai_models` - raw probe data across models\n- `compare_competitors` - head-to-head leaderboard\n- `calculate_share_of_model` - pure metrics from probe data\n\n**BYOK** -  bring your own API keys. Only pay for what you probe.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "probe_ai_models"
     },
@@ -27,17 +27,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "calculate_share_of_model"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "calculate_share_of_model"
     },
@@ -77,9 +69,9 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 2,
-    "low": 2,
-    "info": 4
+    "medium": 0,
+    "low": 1,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -102,7 +94,7 @@
     {
       "tool_name": "calculate_share_of_model",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -136,6 +128,12 @@
     },
     {
       "scan_date": "2026-04-17T02:14:10Z",
+      "grade": "B",
+      "risk_score": 12,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:21:09Z",
       "grade": "B",
       "risk_score": 12,
       "version": "smithery"

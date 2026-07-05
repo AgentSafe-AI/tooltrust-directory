@@ -1,10 +1,10 @@
 {
   "tool_id": "eliottreich-taskbounty",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 47,
-  "scan_date": "2026-05-29T02:39:07.014810372Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-07-05T02:26:55.364811948Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/eliottreich/taskbounty",
   "vendor": "Smithery",
   "description": "TaskBounty is where AI coding agents fix GitHub bugs and raise test coverage on your codebase. This MCP server brings both sides into Claude.\n\nNEW: every bug fix ships with a regression test, verified end-to-end in a sandbox before payout. Plus a Coverage Uplift task type that pays agents to raise your test coverage from X to Y.\n\nPOSTERS: describe a bug or set a coverage target in plain English. Claude drafts the bounty, returns a Stripe Checkout URL you click to fund (no auto-charge), tracks submissions, and lets you award winners from chat.\n\nSOLVERS: let Claude browse open bounties matching the language or repo you're already in, request read-only access for private code tasks, submit a PR, and get paid in USDC, ETH, or BTC.\n\nSet TASKBOUNTY_API_KEY (from task-bounty.com/dashboard/api-keys) and you're ready.\n\nTools (11):\n  Poster: create_bounty_draft, fund_bounty, list_my_bounties, get_bounty_submissions, award_bounty, cancel_bounty\n  Solver: list_open_bounties, get_bounty_detail, request_repo_access, submit_pr, check_submission_status\n\nBounties from $5. Coverage uplift bounties typically $50 to $500 depending on module size.",
@@ -19,26 +19,10 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_bounty_detail"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_bounty_detail"
-    },
-    {
-      "id": "AS-003",
-      "severity": "High",
-      "title": "Scope Mismatch",
-      "description": "tool name \"get_bounty_detail\" implies read-only operation but declares exec permission",
-      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
       "tool_name": "get_bounty_detail"
     },
     {
@@ -59,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "request_repo_access"
     },
@@ -83,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "submit_pr"
     },
@@ -115,25 +99,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_bounty_draft"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_bounty_draft"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_bounty_draft"
     },
@@ -163,9 +131,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fund_bounty"
     },
@@ -220,10 +188,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 8,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 6,
-    "info": 11
+    "info": 16
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -249,8 +217,8 @@
     },
     {
       "tool_name": "get_bounty_detail",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
@@ -261,7 +229,7 @@
     {
       "tool_name": "request_repo_access",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -271,7 +239,7 @@
     {
       "tool_name": "submit_pr",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -287,8 +255,8 @@
     },
     {
       "tool_name": "create_bounty_draft",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network",
@@ -303,7 +271,7 @@
     {
       "tool_name": "fund_bounty",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -337,6 +305,14 @@
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-05-29T02:39:07Z",
+      "grade": "C",
+      "risk_score": 47,
+      "version": "smithery"
     }
   ]
 }

@@ -2,18 +2,40 @@
   "tool_id": "mesquared-visibility",
   "version": "smithery",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-19T02:20:54.944646725Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "risk_score": 15,
+  "scan_date": "2026-07-05T02:26:53.12775104Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/mesquared/visibility",
   "vendor": "Smithery",
   "description": "Check how visible a business website is to AI search engines like ChatGPT, Perplexity, Claude, and Google AI Overviews. Returns a 0-100 visibility score, the top trust and citation issues, and a link to run the full scan on MeSquared Visibility.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "visibility_audit_info"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "visibility_audit_info"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_visibility"
     },
@@ -35,9 +57,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "compare_visibility"
     },
@@ -60,26 +82,35 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 2
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "compare_visibility",
-    "scan_visibility"
+    "scan_visibility",
+    "visibility_audit_info"
   ],
   "tool_contexts": [
     {
+      "tool_name": "visibility_audit_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "scan_visibility",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -87,13 +118,15 @@
     {
       "tool_name": "compare_visibility",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (first_url)",
-        "dynamic URL input (second_url)"
+        "dynamic URL input (second_url)",
+        "hardcoded domain: competitor.com",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -114,6 +147,12 @@
     },
     {
       "scan_date": "2026-04-17T02:17:34Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:20:54Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

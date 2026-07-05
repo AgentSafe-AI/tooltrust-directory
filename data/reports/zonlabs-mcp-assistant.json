@@ -1,18 +1,13 @@
 {
   "tool_id": "zonlabs-mcp-assistant",
-  "version": "1.0.0",
+  "version": "smithery",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-07-04T02:19:52.929099799Z",
+  "scan_date": "2026-07-05T02:27:00.883608831Z",
   "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/zonlabs/mcp-assistant",
-  "category": "Developer Tools",
-  "vendor": "zonlabs",
-  "stars": 1,
-  "npm_package": "mcp-assistant",
-  "license": "MIT",
-  "language": "TypeScript",
-  "description": "A browser-based MCP (Model Context Protocol) client for connecting to and interacting with remote MCP-compatible servers.",
+  "source_url": "https://smithery.ai/server/zonlabs/mcp_assistant",
+  "vendor": "Smithery",
+  "description": "# MCP Assistant \n\nMCP Assistant provides access to **100+ MCP servers** like GitHub, Notion, Zapier, Supabase, etc. \n* **Connect \u0026 Manage Integrations**: You can configure and connect these integrations/connectors directly from the [MCP Assistant Dashboard](https://mcp-assistant.in/mcp).\n* **Advanced Features**: It exposes **meta-tools for dynamic MCP discovery** and a **CodeMode tool** that executes programs inside a secure sandbox for programmatic tool calling, workflow execution, and result processing, avoiding expensive LLM tool-calling loops.\n\n\n## Endpoint\nUse this URL with your Assistant such as (OpenCode, Cursor, Codex, ClaudeCode, Antigravity etc.):\n```text\nhttps://api.mcp-assistant.in/mcp\n```\n\n---\n\n## Key Features\n\n* **Unified Gateway**: Access 100+ third-party integrations (GitHub, Notion, Zapier, Slack, Discord, Supabase) through a single endpoint.\n* **Dynamic Tool Discovery**: Run semantic searches across all connected tool schemas.\n* **CodeMode Sandbox**: Execute JavaScript/TypeScript scripts on the server side using the `@mcp-ts/codemode` secure sandbox. Run multi-step programmatic workflows or batch actions directly from a single LLM request to avoid expensive round-trips.\n* **Standard OAuth Authentication**: Fully compatible with client-side OAuth handlers—log in securely via your browser to authorize access to your integrations.\n\n---\n\n## Primary Tools Provided\n\n| Tool | Description |\n| :--- | :--- |\n| `search_mcp_tools` | Performs a semantic/phrase search across all your connected tools and returns normalized discovery results. |\n| `get_mcp_tool_schema` | Retrieves the exact input/output JSON schemas and execution helper details for any tool. |\n| `codemode_run` | Instantly executes a script inside the CodeMode sandbox to chain multiple tool calls, format outputs, or filter large responses. |\n| `list_mcp_servers` | Lists all connected MCP servers and the number of tools each provides. |\n\n---\n\n## Client Configuration\n\n### VS Code\nAdd the server connection to your VS Code settings:\n```json\n{\n  \"servers\": {\n    \"mcp-assistant\": {\n      \"type\": \"http\",\n      \"url\": \"https://api.mcp-assistant.in/mcp\"\n    }\n  }\n}\n```\n\n### Cursor / Antigravity / Claude Desktop\nAdd to your client configuration file:\n```json\n{\n  \"mcpServers\": {\n    \"mcp-assistant\": {\n      \"url\": \"https://api.mcp-assistant.in/mcp\"\n    }\n  }\n}\n```",
   "findings": [
     {
       "id": "AS-014",
@@ -147,6 +142,12 @@
   "scan_history": [
     {
       "scan_date": "2026-07-03T02:20:42Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-07-04T02:19:52Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.0.0"

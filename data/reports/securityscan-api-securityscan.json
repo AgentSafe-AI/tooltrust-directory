@@ -1,19 +1,19 @@
 {
   "tool_id": "securityscan-api-securityscan",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-22T02:44:25.362683565Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:26:57.711215904Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/securityscan-api/securityscan",
   "vendor": "Smithery",
   "description": "Scans GitHub repositories and skills for vulnerabilities like prompt injection, malware, and OWASP risks. Identifies security threats in external dependencies to ensure software health. Provides detailed reports and certification status to verify the safety and compliance of your projects.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_skill"
     },
@@ -43,9 +43,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "check_certification"
     },
@@ -67,9 +67,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scan_deps"
     },
@@ -92,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
+    "high": 0,
     "medium": 0,
     "low": 3,
-    "info": 4
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -108,7 +108,7 @@
     {
       "tool_name": "scan_skill",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -128,7 +128,7 @@
     {
       "tool_name": "check_certification",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -141,7 +141,7 @@
     {
       "tool_name": "scan_deps",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -389,6 +389,12 @@
     },
     {
       "scan_date": "2026-05-21T02:41:47Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-22T02:44:25Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

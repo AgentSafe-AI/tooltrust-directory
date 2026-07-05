@@ -1,0 +1,244 @@
+{
+  "tool_id": "promptfax-promptfax",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:27:30.333368609Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/promptfax/promptfax",
+  "vendor": "Smithery",
+  "description": "PromptFax is a pay-per-use remote MCP server that lets an AI assistant send a real fax to a US fax number.\n\nYour assistant uploads a PDF or image, enters the destination, reviews a quote, opens Stripe Checkout, and queues the transmission. Pricing is $2.00 for the first 5 pages, then $0.10 per page after that, capped at $4.50 for up to 35 pages. Payment is captured only after the fax is recorded as delivered.\n\nThere is no PromptFax account, no subscription, and no API key to manage. PromptFax uses OAuth and Streamable HTTP, so users install once and their assistant can start a fax workflow when needed.\n\nInside ChatGPT, PromptFax opens a connector widget that handles document review, destination entry, Stripe Checkout, and the delivery report. Inside Claude or other MCP hosts, PromptFax falls back to an agent-friendly hosted session page that handles the same flow without requiring the host to pass files directly.\n\nEvery real send requires a user-reviewed quote and Stripe authorization. The assistant cannot silently complete a fax. The `send_fax` and `cancel` tools are marked as destructive so well-behaved MCP hosts can surface confirmation steps.\n\n## Capabilities\n\n- Send outbound faxes to US fax numbers\n- Attach a PDF or image from the host, widget, hosted session page, or HTTPS URL\n- Generate a pay-per-use quote before payment\n- Open Stripe Checkout for payment authorization\n- Queue a paid fax for transmission\n- Check workflow, payment, and delivery status\n- Retry eligible failed faxes\n- Cancel an active send while cancellation is still possible\n\n## Tools\n\n- `start_session` — Create or resume a PromptFax MCP session.\n- `attach_document` — Bind a PromptFax document or HTTPS PDF URLs to an MCP session.\n- `get_quote` — Create a fax quote from a session, document, or HTTPS PDF URL.\n- `checkout` — Open Stripe Checkout after the user accepts a quote.\n- `send_fax` — Queue a paid fax for transmission.\n- `get_status` — Fetch workflow, payment, and transmission status.\n- `retry_failed_fax` — Prepare a retry flow after a retry-eligible failed fax.\n- `cancel` — Cancel the active send while cancellation is still possible.\n\n## Common use cases\n\n- Sending a one-off medical record, referral, or intake form to a clinic's fax line.\n- Returning a signed contract to a small business or law office that still operates by fax.\n- Sending insurance claim forms, prior-authorization paperwork, or appeal letters.\n- Sending a benefits or HR form to a payroll vendor that requires fax submission.\n- Sending court filings or notarized documents to a filing office.\n\n## Data handling\n\nPromptFax does not require an email address, does not provision a PromptFax account, and stores uploaded documents only as long as the fax workflow needs them. Server-side working copies are deleted after transmission. The browser-local delivery report persists for up to 24 hours unless cleared sooner.\n\nPromptFax is outbound-only and currently supports US fax numbers only. Payments are processed by Stripe for Cogint Labs LLC.\n\n## Links\n\n- Homepage: https://promptfax.app/\n- MCP endpoint: https://promptfax.app/mcp\n- Setup docs: https://promptfax.app/mcp-setup\n- Tool catalog: https://promptfax.app/mcp-tools\n- Demo: https://promptfax.app/mcp-demo\n- Pricing: https://promptfax.app/pricing\n- Privacy: https://promptfax.app/privacy\n- Terms: https://promptfax.app/terms",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "start_session"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "start_session"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "start_session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "attach_document"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "attach_document"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "attach_document"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_quote"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_quote"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_quote"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "checkout"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "send_fax"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_status"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "retry_failed_fax"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cancel"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 12
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "attach_document",
+    "cancel",
+    "checkout",
+    "get_quote",
+    "get_status",
+    "retry_failed_fax",
+    "send_fax",
+    "start_session"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "start_session",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (hostCapabilities)",
+        "dynamic URL input (hostType)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "attach_document",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (fileUrls)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_quote",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (fileUrls)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "checkout",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (autoSendAfterAuthorization)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "send_fax",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "retry_failed_fax",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "cancel",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

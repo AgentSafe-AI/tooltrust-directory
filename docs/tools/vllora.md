@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `.4.0-prerelease-32` |
 | **Vendor** | vllora |
-| **Stars** | ⭐ 808 |
+| **Stars** | ⭐ 809 |
 | **Language** | Rust |
 | **Source** | [vllora](https://github.com/vllora/vllora) |
-| **Scan Date** | 2026-07-04 |
+| **Scan Date** | 2026-07-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

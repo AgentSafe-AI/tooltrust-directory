@@ -1,19 +1,19 @@
 {
   "tool_id": "stayker-hotel-booking",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 19,
-  "scan_date": "2026-04-19T02:18:18.585032701Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-07-05T02:26:50.799570676Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/Stayker/hotel-booking",
   "vendor": "Smithery",
   "description": "The first MCP server that completes real hotel reservations inside AI conversations. 300K+ properties across 140+ countries — major chains, independents, boutiques. Real confirmation numbers, loyalty program eligibility (Hilton, Marriott, IHG), and secure PCI-compliant checkout.\n\nBuilders monetize every booking via Stripe Connect — set your own fee, get paid directly.\n\nQuick connect: npx 1stay-mcp\n\n7 tools: search_hotels, get_hotel_details, book_hotel, get_booking, cancel_booking, retrieve_booking, search_tools\n\nEndpoint: https://mcp.stayker.com/mcp | OAuth 2.1 | Streamable HTTP\n\nPlayground: 1stay.ai/playground\n\nBuilt on proven travel distribution architecture by Stayker.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_hotels"
     },
@@ -51,9 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "book_hotel"
     },
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "retrieve_booking"
     },
@@ -99,9 +99,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "cancel_booking"
     },
@@ -115,9 +115,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_tools"
     },
@@ -140,10 +140,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 3,
-    "medium": 2,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 7
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -159,7 +159,7 @@
     {
       "tool_name": "search_hotels",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -176,7 +176,7 @@
     {
       "tool_name": "book_hotel",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -217,12 +217,20 @@
     {
       "tool_name": "search_tools",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-19T02:18:18Z",
+      "grade": "B",
+      "risk_score": 19,
+      "version": "smithery"
     }
   ]
 }

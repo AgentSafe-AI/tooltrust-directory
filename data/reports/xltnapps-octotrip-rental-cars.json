@@ -1,0 +1,63 @@
+{
+  "tool_id": "xltnapps-octotrip-rental-cars",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:26:53.377293824Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/xltnapps/octotrip-rental-cars",
+  "vendor": "Smithery",
+  "description": "# OctoTrip Rental Cars MCP Server\n\nFree, no-login MCP server for discovering and comparing rental cars with real-time pricing from multiple providers worldwide.\n\n**Endpoint:** `https://mcp.octotrip.app/rental-cars/mcp`\n\n## Affiliate Disclosure\n\nOctoTrip is free to use. Booking links contain affiliate attribution -- OctoTrip may earn a commission at no extra cost to you. Search results are ranked by price within each car category, not by affiliate payout.\n\n## Quick Start\n\nAdd to your MCP client configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"octotrip-rental-cars\": {\n      \"url\": \"https://mcp.octotrip.app/rental-cars/mcp\"\n    }\n  }\n}\n```\n\nNo API key or login required.\n\n## Tool: `search`\n\nSearch for rental cars by location, dates, and preferences. Returns available cars from multiple vendors grouped by category (economy, compact, SUV, etc.), showing the cheapest options in each. Dates can be in any common format (YYYY-MM-DD, DD.MM.YYYY, \"August 1, 2026\", etc.).\n\n### Parameters\n\n| Parameter | Type | Required | Default | Description |\n|---|---|---|---|---|\n| `location` | string | yes | -- | Pickup city, airport, or address |\n| `pickup_date` | string | yes | -- | Any common date format |\n| `dropoff_date` | string | yes | -- | Any common date format |\n| `dropoff_location` | string | no | same as pickup | For one-way rentals |\n| `pickup_time` | string | no | `\"12:00\"` | HH:MM format |\n| `dropoff_time` | string | no | `\"12:00\"` | HH:MM format |\n| `currency` | string | no | `\"EUR\"` | ISO 4217 currency code |\n| `language` | string | no | `\"en\"` | 2-letter language code |\n| `age` | integer | no | `30` | Driver age (younger drivers may incur surcharges) |\n\n### Response Format\n\nResults are grouped by SIPP car category with the cheapest 2 options per group:\n\n```json\n{\n  \"results\": [\n    {\n      \"name\": \"Volkswagen Golf\",\n      \"vendor\": \"Europcar\",\n      \"sipp\": \"CDMR\",\n      \"category\": \"Compact\",\n      \"price\": 181.03,\n      \"price_per_day\": 45.26,\n      \"pay_now\": 181.03,\n      \"pay_later\": 0,\n      \"currency\": \"EUR\",\n      \"transmission\": \"manual\",\n      \"passengers\": 5,\n      \"bags\": 1,\n      \"doors\": 4,\n      \"air_con\": true,\n      \"fuel_policy\": \"Full to Full\",\n      \"mileage\": \"Unlimited\",\n      \"free_cancellation\": true,\n      \"free_amendment\": true,\n      \"deposit\": 800,\n      \"excess\": 950,\n      \"included_protections\": [\"Collision Damage Waiver\", \"Theft Protection\"],\n      \"image_url\": \"https://...\",\n      \"booking_url\": \"https://...\",\n      \"link_type\": \"affiliate\",\n      \"affiliate_disclosure\": \"This link contains affiliate attribution. OctoTrip may earn a commission at no extra cost to you.\"\n    }\n  ],\n  \"total\": 23,\n  \"total_available\": 379,\n  \"rental_days\": 4,\n  \"pickup_location_resolved\": \"Munich International Airport\",\n  \"dropoff_location_resolved\": \"Munich International Airport\",\n  \"query\": { ... }\n}\n```\n\n### Error Responses\n\nThe server returns structured errors with suggestions:\n\n- **`location_not_found`** -- location could not be resolved. Try a more specific name or airport.\n- **`invalid_date`** -- date format not recognized. Use YYYY-MM-DD, DD.MM.YYYY, or similar.\n- **`no_results`** -- no cars available for the given criteria. Try different dates or a nearby location.\n\n## Example Prompts\n\n- Find me a cheap rental car at Amsterdam Schiphol for next weekend\n- Compare automatic SUVs available in Munich Airport for July 10-15\n- I need a car in Barcelona from August 1-14, budget around 30 EUR/day\n- One-way rental from Berlin to Hamburg, picking up Friday, returning Monday\n- What's the cheapest economy car at London Heathrow for a week in September?\n\n## Privacy\n\nThis server does not store, log, or track any user data. Queries are forwarded to provider APIs and results are returned directly. See [PRIVACY.md](PRIVACY.md) for details.\n\n## Security\n\nTo report a vulnerability, see [SECURITY.md](SECURITY.md).\n\n## License\n\nMIT",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "search"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: DD.MM.YYYY"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

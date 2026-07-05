@@ -3,12 +3,12 @@
   "version": "2.4.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-04T02:15:09.423122804Z",
+  "scan_date": "2026-07-05T02:21:54.88944232Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/arabold/docs-mcp-server",
   "category": "Developer Tools",
   "vendor": "arabold",
-  "stars": 1509,
+  "stars": 1510,
   "npm_package": "@arabold/docs-mcp-server",
   "npm_downloads_monthly": 2910,
   "license": "MIT",
@@ -19,23 +19,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.4.2: 1 tool(s) added, 10 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.4.2: 2 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "search_astro_docs"
+          "get_doc",
+          "search_docs"
         ],
         "removed": [
-          "moxie.get_ai_context",
-          "moxie.get_conventions",
-          "moxie.get_doc_gaps",
-          "moxie.get_doc_impact",
-          "moxie.get_documentation_opportunities",
-          "moxie.get_documentation_patterns",
-          "moxie.list_docs",
-          "moxie.propose_doc_removal",
-          "moxie.propose_doc_update",
-          "moxie.search_docs"
+          "search_astro_docs"
         ],
         "version": "2.4.2"
       }
@@ -46,7 +38,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_astro_docs"
+      "tool_name": "search_docs"
     },
     {
       "id": "AS-011",
@@ -54,7 +46,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_astro_docs"
+      "tool_name": "search_docs"
     },
     {
       "id": "AS-014",
@@ -62,15 +54,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_astro_docs"
+      "tool_name": "search_docs"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_doc"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_doc"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_doc"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 2
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -91,15 +107,29 @@
     }
   ],
   "tool_names": [
-    "search_astro_docs"
+    "get_doc",
+    "search_docs"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_astro_docs",
+      "tool_name": "search_docs",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_doc",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -144,6 +174,12 @@
     },
     {
       "scan_date": "2026-07-03T02:15:59Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "2.4.2"
+    },
+    {
+      "scan_date": "2026-07-04T02:15:09Z",
       "grade": "B",
       "risk_score": 15,
       "version": "2.4.2"

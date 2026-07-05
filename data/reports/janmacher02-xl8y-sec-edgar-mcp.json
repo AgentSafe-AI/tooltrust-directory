@@ -1,19 +1,19 @@
 {
   "tool_id": "janmacher02-xl8y-sec-edgar-mcp",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-05-21T02:41:42.544612951Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-05T02:26:57.946155498Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/janmacher02-xl8y/sec-edgar-mcp",
   "vendor": "Smithery",
   "description": "Access SEC EDGAR financial data through your AI assistant. Search public companies, pull income statements, balance sheets, and cash flows, browse 10-K/10-Q filings, track insider trades, and view historical stock prices. Built for investors, analysts, and finance teams who need fast access to regulatory filings. Uses the free public SEC API. Free tier: 10 calls/day.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_company"
     },
@@ -59,9 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_filings"
     },
@@ -92,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 6
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -110,7 +110,7 @@
     {
       "tool_name": "search_company",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -141,7 +141,7 @@
     {
       "tool_name": "search_filings",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -174,6 +174,12 @@
     },
     {
       "scan_date": "2026-05-20T02:43:42Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-21T02:41:42Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"
