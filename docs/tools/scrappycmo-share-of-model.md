@@ -17,7 +17,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [scrappycmo-share-of-model](https://smithery.ai/server/scrappycmo/share-of-model) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -18,7 +18,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bikefuchs-stub](https://smithery.ai/server/bikefuchs/stub) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

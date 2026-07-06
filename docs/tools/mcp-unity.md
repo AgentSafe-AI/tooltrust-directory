@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.0` |
 | **Vendor** | CoderGamester |
-| **Stars** | ⭐ 1808 |
+| **Stars** | ⭐ 1809 |
 | **npm Package** | `com.gamelovers.mcp-unity` |
 | **npm Downloads (30d)** | 20 |
 | **Language** | C# |
 | **Source** | [mcp-unity](https://github.com/CoderGamester/mcp-unity) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

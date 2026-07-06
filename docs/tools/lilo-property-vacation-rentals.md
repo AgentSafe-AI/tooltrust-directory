@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lilo-property-vacation-rentals](https://smithery.ai/server/lilo-property/vacation-rentals) |
-| **Scan Date** | 2026-07-04 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

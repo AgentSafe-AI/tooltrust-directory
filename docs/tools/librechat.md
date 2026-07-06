@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.7` |
 | **Vendor** | danny-avila |
-| **Stars** | ⭐ 40283 |
+| **Stars** | ⭐ 40324 |
 | **npm Package** | `LibreChat` |
 | **Language** | TypeScript |
 | **Source** | [librechat](https://github.com/danny-avila/LibreChat) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

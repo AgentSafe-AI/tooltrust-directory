@@ -1,17 +1,17 @@
-# 🟡 remote-mcp-server
+# 🟢 remote-mcp-server
 
 > Remote MCP Server that securely connects Enterprise context with your LLM, IDE, or agent platform of choice.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `1.2.1` |
 | **Vendor** | gleanwork |
 | **Stars** | ⭐ 163 |
 | **npm Package** | `glean-remote-mcp-server` |
 | **Source** | [remote-mcp-server](https://github.com/gleanwork/remote-mcp-server) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 7 |
 | Info     | 12 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.2.1: 6 tool(s) added, 15 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

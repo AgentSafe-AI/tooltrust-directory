@@ -1,19 +1,19 @@
 {
   "tool_id": "aitutor3-icn-mcp",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 32,
-  "scan_date": "2026-05-21T02:41:44.190395896Z",
-  "scanner": "tooltrust-scanner/v0.3.12",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-07-06T02:36:28.664988191Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/AITutor3/icn-mcp",
   "vendor": "Smithery",
   "description": "Get real-time departure hall congestion, flight statuses, and parking availability at Incheon International Airport. Search departures and arrivals by flight ID or airport code and filter by date to plan your trip. Explore destination details for cities served from Incheon.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_departure_congestion"
     },
@@ -59,9 +59,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_parking_status"
     },
@@ -100,10 +100,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 4,
+    "high": 2,
     "medium": 0,
     "low": 2,
-    "info": 5
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -116,8 +116,8 @@
   "tool_contexts": [
     {
       "tool_name": "get_departure_congestion",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -143,8 +143,8 @@
     },
     {
       "tool_name": "get_parking_status",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "B",
       "behavior": [
         "executes_commands"
       ],
@@ -408,6 +408,12 @@
     },
     {
       "scan_date": "2026-05-20T02:43:48Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-21T02:41:44Z",
       "grade": "C",
       "risk_score": 32,
       "version": "smithery"

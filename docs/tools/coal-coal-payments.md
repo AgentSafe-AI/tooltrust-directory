@@ -111,7 +111,7 @@ Agents are gasless by default — Coal covers operator gas costs.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [coal-coal-payments](https://smithery.ai/server/coal/coal-payments) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

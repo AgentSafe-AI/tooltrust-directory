@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.0` |
 | **Vendor** | provos |
-| **Stars** | ⭐ 533 |
+| **Stars** | ⭐ 540 |
 | **npm Package** | `@provos/ironcurtain` |
-| **npm Downloads (30d)** | 476 |
+| **npm Downloads (30d)** | 587 |
 | **Language** | TypeScript |
 | **Source** | [ironcurtain](https://github.com/provos/ironcurtain) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

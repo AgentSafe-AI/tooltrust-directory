@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.1` |
 | **Vendor** | comet-ml |
-| **Stars** | ⭐ 209 |
+| **Stars** | ⭐ 211 |
 | **npm Package** | `opik-mcp` |
-| **npm Downloads (30d)** | 543 |
+| **npm Downloads (30d)** | 584 |
 | **Language** | Python |
 | **Source** | [opik-mcp](https://github.com/comet-ml/opik-mcp) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,75 +1,81 @@
 {
   "tool_id": "mcp-context-forge",
   "version": "1.0.4",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-05T02:20:05.821232947Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-07-06T02:30:48Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/IBM/mcp-context-forge",
   "category": "Developer Tools",
   "vendor": "IBM",
-  "stars": 4020,
+  "stars": 4028,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "An AI Gateway, registry, and proxy that sits in front of any MCP, A2A, or REST/gRPC APIs, exposing a unified endpoint with centralized discovery, guardrails and management. Optimizes Agent \u0026 Tool calling, and supports plugins.",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_health"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_license"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_quota"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_generation"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "create_generation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_generation"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 174,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "mcp-servers/go/fast-time-server/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 908,
+            "snippet": "server.NewMCPServer(",
+            "file": "mcp-servers/go/fast-time-server/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 931,
+            "snippet": "AddTool(",
+            "file": "mcp-servers/go/fast-time-server/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 12,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "mcp-servers/templates/go/{{cookiecutter.project_slug}}/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 34,
+            "snippet": "server.NewMCPServer(",
+            "file": "mcp-servers/templates/go/{{cookiecutter.project_slug}}/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 48,
+            "snippet": "AddTool(",
+            "file": "mcp-servers/templates/go/{{cookiecutter.project_slug}}/main.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 1,
-    "info": 5
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -115,54 +121,15 @@
       "language": "go"
     }
   ],
-  "tool_names": [
-    "create_generation",
-    "get_health",
-    "get_quota",
-    "validate_license"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get_health",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "validate_license",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_quota",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_generation",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic email recipient (tools)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-07-04T02:13:16Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.4"
+    },
+    {
+      "scan_date": "2026-07-05T02:20:05Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.4"
