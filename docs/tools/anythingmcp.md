@@ -1,6 +1,6 @@
 # 🟢 anythingmcp
 
-> Self-hosted, open-source MCP gateway: turn any API, database or MCP server into custom connectors for Claude, ChatGPT, Gemini, Copilot & Cursor — no code. Convert REST, SOAP, WSDL, GraphQL & SQL to MCP, with OAuth2, RBAC & audit log. 175+ pre-built adapters (Deutsche Bahn, weclapp, Etsy, DHL, Shopware…)
+> Self-hosted, open-source AI-empowered MCP gateway: turn any API, database or MCP server into custom connectors for Claude, ChatGPT, Gemini, Copilot & Cursor — no code. Convert REST, SOAP, WSDL, GraphQL & SQL to MCP, with OAuth2, RBAC & audit log. 175+ pre-built adapters (Deutsche Bahn, weclapp, Etsy, DHL, Shopware…)
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | HelpCode-ai |
-| **Stars** | ⭐ 145 |
+| **Stars** | ⭐ 147 |
 | **npm Package** | `anythingmcp` |
 | **Language** | TypeScript |
 | **Source** | [anythingmcp](https://github.com/HelpCode-ai/anythingmcp) |
-| **Scan Date** | 2026-07-06 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

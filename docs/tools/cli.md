@@ -10,10 +10,10 @@
 | **Vendor** | mcpgod |
 | **Stars** | ⭐ 116 |
 | **npm Package** | `mcpgod` |
-| **npm Downloads (30d)** | 80 |
+| **npm Downloads (30d)** | 82 |
 | **Language** | TypeScript |
 | **Source** | [cli](https://github.com/mcpgod/cli) |
-| **Scan Date** | 2026-07-06 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | clawplays |
 | **Stars** | ⭐ 559 |
 | **npm Package** | `@clawplays/ospec-cli` |
-| **npm Downloads (30d)** | 2.7k |
+| **npm Downloads (30d)** | 2.8k |
 | **Language** | JavaScript |
 | **Source** | [ospec](https://github.com/clawplays/ospec) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

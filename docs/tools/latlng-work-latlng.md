@@ -21,7 +21,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [latlng-work-latlng](https://smithery.ai/server/latlng-work/latlng) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

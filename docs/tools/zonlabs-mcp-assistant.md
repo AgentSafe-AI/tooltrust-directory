@@ -69,7 +69,7 @@ Add to your client configuration file:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [zonlabs-mcp-assistant](https://smithery.ai/server/zonlabs/mcp_assistant) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

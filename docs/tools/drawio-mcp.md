@@ -4,12 +4,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `sha-fb952971f8e0` |
+| **Version** | `sha-662417735af1` |
 | **Vendor** | jgraph |
-| **Stars** | ⭐ 4714 |
+| **Stars** | ⭐ 4721 |
 | **Language** | JavaScript |
 | **Source** | [drawio-mcp](https://github.com/jgraph/drawio-mcp) |
-| **Scan Date** | 2026-07-06 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

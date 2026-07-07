@@ -1,17 +1,17 @@
 {
   "tool_id": "oevortex-ddg-search",
-  "version": "1.2.1",
+  "version": "1.4.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-06T02:35:56.078832898Z",
+  "scan_date": "2026-07-07T02:26:12.610070569Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/OEvortex/ddg_search",
   "category": "Developer Tools",
   "vendor": "OEvortex",
   "stars": 39,
   "npm_package": "@oevortex/ddg_search",
-  "npm_downloads_monthly": 2237,
-  "license": "Apache-2.0",
+  "npm_downloads_monthly": 2224,
+  "license": "NOASSERTION",
   "language": "JavaScript",
   "description": "A powerful Model Context Protocol (MCP) server for web search and URL content extraction using DuckDuckGo.",
   "findings": [
@@ -38,95 +38,22 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "web-search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "iask-search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "iask-search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "iask-search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "monica-search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "monica-search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "monica-search"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 6
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "iask-search",
-    "monica-search",
     "web-search"
   ],
   "tool_contexts": [
     {
       "tool_name": "web-search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "iask-search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: IAsk.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "monica-search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -733,6 +660,12 @@
     },
     {
       "scan_date": "2026-07-05T02:26:07Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-07-06T02:35:56Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.2.1"

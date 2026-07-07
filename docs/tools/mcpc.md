@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.0` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 704 |
+| **Stars** | ⭐ 707 |
 | **npm Package** | `@apify/mcpc` |
 | **npm Downloads (30d)** | 14.6k |
 | **Language** | TypeScript |
 | **Source** | [mcpc](https://github.com/apify/mcpc) |
-| **Scan Date** | 2026-07-06 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

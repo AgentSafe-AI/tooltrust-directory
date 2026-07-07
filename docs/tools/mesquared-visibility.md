@@ -1,15 +1,15 @@
-# 🟡 mesquared-visibility
+# 🟢 mesquared-visibility
 
 > Check how visible a business website is to AI search engines like ChatGPT, Perplexity, Claude, and Google AI Overviews. Returns a 0-100 visibility score, the top trust and citation issues, and a link to run the full scan on MeSquared Visibility.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mesquared-visibility](https://smithery.ai/server/mesquared/visibility) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 5 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

@@ -12,7 +12,7 @@ You bring your own ScreenshotRender API key (starts with sr-), available at scre
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [methia-farid2001-screenshotrender](https://smithery.ai/server/methia-farid2001/screenshotrender) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

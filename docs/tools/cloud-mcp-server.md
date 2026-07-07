@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.7.0` |
 | **Vendor** | alexei-led |
-| **Stars** | ⭐ 184 |
+| **Stars** | ⭐ 185 |
 | **Language** | Python |
 | **Source** | [cloud-mcp-server](https://github.com/alexei-led/cloud-mcp-server) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

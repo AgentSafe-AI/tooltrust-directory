@@ -21,7 +21,7 @@ Built on proven travel distribution architecture by Stayker.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [stayker-hotel-booking](https://smithery.ai/server/Stayker/hotel-booking) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
