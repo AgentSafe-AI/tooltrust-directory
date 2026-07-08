@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 9.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

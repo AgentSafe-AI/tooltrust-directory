@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2062 |
 | **Language** | Python |
 | **Source** | [paperbanana](https://github.com/llmsresearch/paperbanana) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

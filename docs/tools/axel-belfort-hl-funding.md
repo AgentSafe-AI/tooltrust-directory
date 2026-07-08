@@ -15,7 +15,7 @@ Returns sorted rates with annualized APY. No API key required — x402 micropaym
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hl-funding](https://smithery.ai/server/axel-belfort/hl-funding) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

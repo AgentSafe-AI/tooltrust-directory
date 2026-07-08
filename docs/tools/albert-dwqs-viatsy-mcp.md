@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [albert-dwqs-viatsy-mcp](https://smithery.ai/server/albert-dwqs/viatsy-mcp) |
-| **Scan Date** | 2026-07-06 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

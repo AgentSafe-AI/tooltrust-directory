@@ -4,7 +4,16 @@
 
 Free, no-login MCP server for discovering and comparing rental cars with real-time pricing from multiple providers worldwide.
 
-**Endpoint:** `https://mcp.octotrip.app/rental-cars/mcp`
+**MCP Streamable HTTP Endpoint:**
+```
+https://mcp.octotrip.app/rental-cars/mcp
+```
+
+![Demo](https://raw.githubusercontent.com/octotrip/rental-cars/main/claude.gif)
+
+## Related
+
+- [OctoTrip Flights](https://github.com/octotrip/flights) — flight search MCP server
 
 ## Affiliate Disclosure
 
@@ -26,23 +35,178 @@ Add to your MCP client configuration:
 
 No API key or login required.
 
+## Use with...
+
+<details>
+<summary><strong>Claude Desktop</strong></summary>
+
+Add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "octotrip-rental-cars": {
+      "url": "https://mcp.octotrip.app/rental-cars/mcp"
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Cursor / Windsurf</strong></summary>
+
+Add to your MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "octotrip-rental-cars": {
+      "url": "https://mcp.octotrip.app/rental-cars/mcp"
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Cline</strong></summary>
+
+Add to your Cline MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "octotrip-rental-cars": {
+      "url": "https://mcp.octotrip.app/rental-cars/mcp"
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>LobeHub</strong></summary>
+
+[![MCP Badge](https://lobehub.com/badge/mcp/octotrip-rental-cars)](https://lobehub.com/mcp/octotrip-rental-cars)
+
+</details>
+
+<details>
+<summary><strong>OpenClaw</strong></summary>
+
+```bash
+openclaw plugins install clawhub:@xltnapps/octotrip-rental-cars
+```
+
+</details>
+
+<details>
+<summary><strong>Smithery</strong></summary>
+
+Install via [Smithery](https://smithery.ai/servers/xltnapps/octotrip-rental-cars):
+
+```bash
+npx -y @smithery/cli install xltnapps/octotrip-rental-cars --client claude
+```
+
+</details>
+
+<details>
+<summary><strong>Hermes Agent</strong></summary>
+
+```bash
+hermes mcp add octotrip-rental-cars --url https://mcp.octotrip.app/rental-cars/mcp
+hermes mcp test octotrip-rental-cars
+```
+
+Or add to `~/.hermes/config.yaml`:
+
+```yaml
+mcp_servers:
+  octotrip_rental_cars:
+    url: "https://mcp.octotrip.app/rental-cars/mcp"
+```
+
+</details>
+
+<details>
+<summary><strong>Stdio-only clients</strong></summary>
+
+For MCP clients that only support stdio transport:
+
+```bash
+npx mcp-remote https://mcp.octotrip.app/rental-cars/mcp
+```
+
+</details>
+
+<details>
+<summary><strong>curl / Protocol Example</strong></summary>
+
+A complete MCP session using curl (initialize, list tools, call search):
+
+```bash
+# 1. Initialize
+curl -s -X POST https://mcp.octotrip.app/rental-cars/mcp \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{
+    "jsonrpc": "2.0", "id": 1, "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {},
+      "clientInfo": {"name": "example", "version": "1.0"}
+    }
+  }'
+
+# 2. List tools
+curl -s -X POST https://mcp.octotrip.app/rental-cars/mcp \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc": "2.0", "id": 2, "method": "tools/list"}'
+
+# 3. Search
+curl -s -X POST https://mcp.octotrip.app/rental-cars/mcp \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{
+    "jsonrpc": "2.0", "id": 3, "method": "tools/call",
+    "params": {
+      "name": "search",
+      "arguments": {
+        "location": "Munich Airport",
+        "pickup_date": "2026-08-01",
+        "dropoff_date": "2026-08-07"
+      }
+    }
+  }'
+```
+
+Transport: stateless streamable HTTP. Responses use `text/event-stream` (SSE). No session persistence or resumability. Rate limit: 1 request/second with burst capacity of 5.
+
+</details>
+
 ## Tool: `search`
 
-Search for rental cars by location, dates, and preferences. Returns available cars from multiple vendors grouped by category (economy, compact, SUV, etc.), showing the cheapest options in each. Dates can be in any common format (YYYY-MM-DD, DD.MM.YYYY, "August 1, 2026", etc.).
+Searches live rental-car offers for a pickup location and rental period. Returns available cars from multiple vendors grouped by category (economy, compact, SUV, etc.), showing the cheapest options in each. The tool queries external provider APIs in real time and may include affiliate booking links. It does not book cars, modify reservations, charge users, or store user data.
 
 ### Parameters
 
 | Parameter | Type | Required | Default | Description |
 |---|---|---|---|---|
-| `location` | string | yes | -- | Pickup city, airport, or address |
-| `pickup_date` | string | yes | -- | Any common date format |
-| `dropoff_date` | string | yes | -- | Any common date format |
-| `dropoff_location` | string | no | same as pickup | For one-way rentals |
-| `pickup_time` | string | no | `"12:00"` | HH:MM format |
-| `dropoff_time` | string | no | `"12:00"` | HH:MM format |
-| `currency` | string | no | `"EUR"` | ISO 4217 currency code |
-| `language` | string | no | `"en"` | 2-letter language code |
-| `age` | integer | no | `30` | Driver age (younger drivers may incur surcharges) |
+| `location` | string | yes | -- | Pickup location: city, airport, station, address, or landmark |
+| `pickup_date` | string | yes | -- | Pickup date (YYYY-MM-DD, DD.MM.YYYY, or natural-language) |
+| `dropoff_date` | string | yes | -- | Dropoff date, must be after pickup date |
+| `dropoff_location` | string | no | same as pickup | Different dropoff location for one-way rentals |
+| `pickup_time` | string | no | `"12:00"` | Pickup time in 24-hour HH:MM format |
+| `dropoff_time` | string | no | `"12:00"` | Dropoff time in 24-hour HH:MM format |
+| `currency` | string | no | `"EUR"` | ISO 4217 currency code (EUR, USD, GBP, etc.) |
+| `language` | string | no | `"en"` | Response language code (en, de, etc.) |
+| `age` | integer | no | `30` | Driver age, minimum 18 (younger drivers may incur surcharges) |
 
 ### Response Format
 
@@ -106,7 +270,7 @@ The server returns structured errors with suggestions:
 
 ## Privacy
 
-This server does not store, log, or track any user data. Queries are forwarded to provider APIs and results are returned directly. See [PRIVACY.md](PRIVACY.md) for details.
+This server does not log IP addresses, search queries, or any user-identifiable data. See [PRIVACY.md](PRIVACY.md) for full details including sample log entries.
 
 ## Security
 
@@ -123,7 +287,7 @@ MIT
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xltnapps-octotrip-rental-cars](https://smithery.ai/server/xltnapps/octotrip-rental-cars) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,17 +1,17 @@
-# 🟡 mcp-access-point
+# 🟢 mcp-access-point
 
 > Turn a web server into an MCP server in one click without making any code changes.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | sxhxliang |
-| **Stars** | ⭐ 177 |
+| **Stars** | ⭐ 178 |
 | **Language** | Rust |
 | **Source** | [mcp-access-point](https://github.com/sxhxliang/mcp-access-point) |
-| **Scan Date** | 2026-07-04 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 11 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.3.0: 6 tool(s) added, 24 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

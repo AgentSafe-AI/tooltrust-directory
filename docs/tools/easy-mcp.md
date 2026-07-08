@@ -10,10 +10,10 @@
 | **Vendor** | zcaceres |
 | **Stars** | ⭐ 194 |
 | **npm Package** | `easy-mcp` |
-| **npm Downloads (30d)** | 68 |
+| **npm Downloads (30d)** | 55 |
 | **Language** | TypeScript |
 | **Source** | [easy-mcp](https://github.com/zcaceres/easy-mcp) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

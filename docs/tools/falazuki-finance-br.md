@@ -1,4 +1,4 @@
-# 🟡 falazuki-finance-br
+# 🟢 falazuki-finance-br
 
 > Calculadoras financeiras e dados econômicos do Brasil. 25 tools para cálculos de salário líquido, juros compostos, rescisão trabalhista, financiamento, investimentos, INSS, IRPF, custo de vida por cidade, e mais.
 
@@ -8,13 +8,13 @@ Por Fala, Zuki! — assistente financeiro pessoal no WhatsApp.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [falazuki-finance-br](https://smithery.ai/server/falazuki/finance-br) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-07-08 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -23,10 +23,10 @@ Por Fala, Zuki! — assistente financeiro pessoal no WhatsApp.
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
-| Medium   | 2 |
+| High     | 0 |
+| Medium   | 0 |
 | Low      | 1 |
-| Info     | 25 |
+| Info     | 28 |
 
 ## Detailed Findings
 
@@ -198,12 +198,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -222,12 +222,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -330,12 +330,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

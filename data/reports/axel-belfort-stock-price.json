@@ -1,0 +1,41 @@
+{
+  "tool_id": "axel-belfort-stock-price",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-08T02:08:10.197151728Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/stock-price",
+  "vendor": "Smithery",
+  "description": "Stock market price API for AI agents. Real-time quotes: current price, daily change %, volume, market cap, and company name. All major US exchanges (NYSE, NASDAQ) and international markets.\n\nTools: finance_get_stock_price.\n\nUse this for portfolio monitoring, market analysis, financial research, or building trading dashboards. IMPORTANT: For crypto prices, use finance_get_token_price instead.\n\nReturns: {price, change, volume, marketCap, name}. No API key required — x402 micropayment $0.002/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "finance_get_stock_price"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "finance_get_stock_price"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "finance_get_stock_price",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

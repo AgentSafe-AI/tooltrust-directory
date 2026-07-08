@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 39381 |
 | **Language** | Makefile |
 | **Source** | [minds](https://github.com/mindsdb/minds) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

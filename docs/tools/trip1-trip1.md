@@ -18,7 +18,7 @@ Default is USDC on Base via [x402](https://www.x402.org) - no account or KYC req
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [trip1-trip1](https://smithery.ai/server/trip1/trip1) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.1` |
 | **Vendor** | mcpgod |
-| **Stars** | ⭐ 116 |
+| **Stars** | ⭐ 117 |
 | **npm Package** | `mcpgod` |
 | **npm Downloads (30d)** | 82 |
 | **Language** | TypeScript |
 | **Source** | [cli](https://github.com/mcpgod/cli) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

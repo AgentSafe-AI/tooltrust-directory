@@ -3,12 +3,12 @@
   "version": "0.6.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-06T02:31:14.280194224Z",
+  "scan_date": "2026-07-08T02:01:30.532284655Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/googleanalytics/google-analytics-mcp",
   "category": "Developer Tools",
   "vendor": "googleanalytics",
-  "stars": 2577,
+  "stars": 2600,
   "license": "Apache-2.0",
   "language": "Python",
   "findings": [
@@ -16,18 +16,10 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.6.0: 6 tool(s) added, 25 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.6.0: 25 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
-          "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
-          "GOOGLESLIDES_PRESENTATIONS_CREATE",
-          "GOOGLESLIDES_PRESENTATIONS_GET",
-          "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
-          "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
-        ],
-        "removed": [
           "GOOGLE_ANALYTICS_BATCH_RUN_REPORTS",
           "GOOGLE_ANALYTICS_CHECK_COMPATIBILITY",
           "GOOGLE_ANALYTICS_CREATE_AUDIENCE_EXPORT",
@@ -54,6 +46,14 @@
           "GOOGLE_ANALYTICS_RUN_FUNNEL_REPORT",
           "GOOGLE_ANALYTICS_RUN_REPORT"
         ],
+        "removed": [
+          "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
+          "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
+          "GOOGLESLIDES_PRESENTATIONS_CREATE",
+          "GOOGLESLIDES_PRESENTATIONS_GET",
+          "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
+          "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+        ],
         "version": "0.6.0"
       }
     },
@@ -61,73 +61,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_CREATE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_CREATE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+      "tool_name": "GOOGLE_ANALYTICS_BATCH_RUN_REPORTS"
     },
     {
       "id": "AS-011",
@@ -135,7 +71,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+      "tool_name": "GOOGLE_ANALYTICS_BATCH_RUN_REPORTS"
     },
     {
       "id": "AS-014",
@@ -143,55 +79,399 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+      "tool_name": "GOOGLE_ANALYTICS_BATCH_RUN_REPORTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_CHECK_COMPATIBILITY"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_AUDIENCE_EXPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_AUDIENCE_EXPORT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_AUDIENCE_LIST"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_AUDIENCE_LIST"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_EXPANDED_DATA_SET"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_EXPANDED_DATA_SET"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_ROLLUP_PROPERTY"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_ROLLUP_PROPERTY"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_GET_ACCOUNT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_GET_AUDIENCE_EXPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_GET_AUDIENCE_LIST"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_GET_KEY_EVENT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_GET_METADATA"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_GET_PROPERTY_QUOTAS_SNAPSHOT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_ACCOUNTS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCE_EXPORTS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCE_EXPORTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCE_EXPORTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCE_LISTS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCES"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_KEY_EVENTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_PROPERTIES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_REPORTING_DATA_ANNOTATIONS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_ROLLUP_PROPERTIES"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_SEARCH_ADS360_LINKS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_SEARCH_ADS360_LINKS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_LIST_SEARCH_ADS360_LINKS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_EXPORT"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_EXPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_EXPORT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_LIST"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_LIST"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_LIST"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_RUN_FUNNEL_REPORT"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 15 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_ANALYTICS_RUN_REPORT"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GOOGLE_ANALYTICS_RUN_REPORT"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 10
+    "low": 7,
+    "info": 35
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
-    "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
-    "GOOGLESLIDES_PRESENTATIONS_CREATE",
-    "GOOGLESLIDES_PRESENTATIONS_GET",
-    "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
-    "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL"
+    "GOOGLE_ANALYTICS_BATCH_RUN_REPORTS",
+    "GOOGLE_ANALYTICS_CHECK_COMPATIBILITY",
+    "GOOGLE_ANALYTICS_CREATE_AUDIENCE_EXPORT",
+    "GOOGLE_ANALYTICS_CREATE_AUDIENCE_LIST",
+    "GOOGLE_ANALYTICS_CREATE_EXPANDED_DATA_SET",
+    "GOOGLE_ANALYTICS_CREATE_ROLLUP_PROPERTY",
+    "GOOGLE_ANALYTICS_GET_ACCOUNT",
+    "GOOGLE_ANALYTICS_GET_AUDIENCE_EXPORT",
+    "GOOGLE_ANALYTICS_GET_AUDIENCE_LIST",
+    "GOOGLE_ANALYTICS_GET_KEY_EVENT",
+    "GOOGLE_ANALYTICS_GET_METADATA",
+    "GOOGLE_ANALYTICS_GET_PROPERTY_QUOTAS_SNAPSHOT",
+    "GOOGLE_ANALYTICS_LIST_ACCOUNTS",
+    "GOOGLE_ANALYTICS_LIST_AUDIENCES",
+    "GOOGLE_ANALYTICS_LIST_AUDIENCE_EXPORTS",
+    "GOOGLE_ANALYTICS_LIST_AUDIENCE_LISTS",
+    "GOOGLE_ANALYTICS_LIST_KEY_EVENTS",
+    "GOOGLE_ANALYTICS_LIST_PROPERTIES",
+    "GOOGLE_ANALYTICS_LIST_REPORTING_DATA_ANNOTATIONS",
+    "GOOGLE_ANALYTICS_LIST_ROLLUP_PROPERTIES",
+    "GOOGLE_ANALYTICS_LIST_SEARCH_ADS360_LINKS",
+    "GOOGLE_ANALYTICS_QUERY_AUDIENCE_EXPORT",
+    "GOOGLE_ANALYTICS_QUERY_AUDIENCE_LIST",
+    "GOOGLE_ANALYTICS_RUN_FUNNEL_REPORT",
+    "GOOGLE_ANALYTICS_RUN_REPORT"
   ],
   "tool_contexts": [
     {
-      "tool_name": "GOOGLESLIDES_CREATE_SLIDES_MARKDOWN",
+      "tool_name": "GOOGLE_ANALYTICS_BATCH_RUN_REPORTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_CHECK_COMPATIBILITY",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_AUDIENCE_EXPORT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_AUDIENCE_LIST",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "writes_files"
       ],
       "destinations": [
-        "hardcoded domain: GitHub-Mark.png",
-        "hardcoded domain: github.githubassets.com",
-        "hardcoded domain: images.unsplash.com",
-        "hardcoded domain: picsum.photos",
-        "hardcoded domain: placekitten.com",
-        "hardcoded domain: raw.githubusercontent.com",
-        "hardcoded domain: via.placeholder.com",
-        "hardcoded domain: www.google.com"
+        "dynamic webhook destination (webhookNotification)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_BATCH_UPDATE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_CREATE",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_EXPANDED_DATA_SET",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -201,30 +481,188 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_GET",
+      "tool_name": "GOOGLE_ANALYTICS_CREATE_ROLLUP_PROPERTY",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (account)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_GET_ACCOUNT",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET",
+      "tool_name": "GOOGLE_ANALYTICS_GET_AUDIENCE_EXPORT",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "GOOGLESLIDES_PRESENTATIONS_PAGES_GET_THUMBNAIL",
+      "tool_name": "GOOGLE_ANALYTICS_GET_AUDIENCE_LIST",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_GET_KEY_EVENT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_GET_METADATA",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_GET_PROPERTY_QUOTAS_SNAPSHOT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_ACCOUNTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCE_EXPORTS",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: thumbnailProperties.mimeType",
-        "hardcoded domain: thumbnailProperties.thumbnailSize"
+        "dynamic email recipient (pageToken)"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCE_LISTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_AUDIENCES",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_KEY_EVENTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_PROPERTIES",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (account)",
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_REPORTING_DATA_ANNOTATIONS",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_ROLLUP_PROPERTIES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_LIST_SEARCH_ADS360_LINKS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pageToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_EXPORT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_QUERY_AUDIENCE_LIST",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_RUN_FUNNEL_REPORT",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_ANALYTICS_RUN_REPORT",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -306,6 +744,12 @@
       "scan_date": "2026-07-05T02:20:29Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.6.0"
+    },
+    {
+      "scan_date": "2026-07-06T02:31:14Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.6.0"
     }
   ]

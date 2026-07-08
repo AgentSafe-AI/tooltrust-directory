@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.1` |
 | **Vendor** | DeusData |
-| **Stars** | ⭐ 27432 |
+| **Stars** | ⭐ 28038 |
 | **Language** | C |
 | **Source** | [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

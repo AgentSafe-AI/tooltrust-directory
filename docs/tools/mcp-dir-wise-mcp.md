@@ -13,7 +13,7 @@ Funciona em qualquer cliente MCP. Servidor remoto: `https://api.mcp.ai/p_wise`
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mcp-dir-wise-mcp](https://smithery.ai/server/mcp-dir/wise-mcp) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

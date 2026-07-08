@@ -1,4 +1,4 @@
-# 🟡 agenticshelf-agentic-shelf
+# 🟢 agenticshelf-agentic-shelf
 
 > **Real-time product catalog, inventory, and pricing for AI agents.**
 
@@ -15,12 +15,12 @@ Read-only. Backends: Not limited to ecommerce platforms such as Shopify, WooComm
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agenticshelf-agentic-shelf](https://smithery.ai/server/agenticshelf/agentic-shelf) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -30,24 +30,12 @@ Read-only. Backends: Not limited to ecommerce platforms such as Shopify, WooComm
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 7 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 4 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

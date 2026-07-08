@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 176 |
 | **Language** | Python |
 | **Source** | [mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

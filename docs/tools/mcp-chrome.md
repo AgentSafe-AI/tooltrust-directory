@@ -8,11 +8,11 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.0` |
 | **Vendor** | hangwin |
-| **Stars** | ⭐ 12056 |
+| **Stars** | ⭐ 12058 |
 | **npm Package** | `mcp-chrome-bridge-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mcp-chrome](https://github.com/hangwin/mcp-chrome) |
-| **Scan Date** | 2026-07-07 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -24,8 +24,8 @@
 | Critical | 0 |
 | High     | 1 |
 | Medium   | 0 |
-| Low      | 1 |
-| Info     | 2 |
+| Low      | 0 |
+| Info     | 3 |
 
 ## Detailed Findings
 
@@ -41,27 +41,27 @@ The set of tools exposed by this server changed between scans of the same versio
 
 ---
 
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
 **Severity:** Info
 
 **Description:**
-declared capabilities: HTTP requests
+input parameter "toToken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 

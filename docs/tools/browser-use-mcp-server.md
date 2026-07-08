@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.3` |
 | **Vendor** | kontext-security |
-| **Stars** | ⭐ 825 |
+| **Stars** | ⭐ 827 |
 | **Language** | Python |
 | **Source** | [browser-use-mcp-server](https://github.com/kontext-security/browser-use-mcp-server) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
