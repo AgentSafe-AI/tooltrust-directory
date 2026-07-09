@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [garasegae-aiskillstore](https://smithery.ai/server/garasegae/aiskillstore) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

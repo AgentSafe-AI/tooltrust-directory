@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.34.0` |
 | **Vendor** | stacklok |
-| **Stars** | ⭐ 1928 |
+| **Stars** | ⭐ 1929 |
 | **Language** | Go |
 | **Source** | [toolhive](https://github.com/stacklok/toolhive) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `3.2.1` |
 | **Vendor** | firecrawl |
-| **Stars** | ⭐ 6875 |
+| **Stars** | ⭐ 6892 |
 | **npm Package** | `firecrawl-mcp` |
 | **npm Downloads (30d)** | 514.7k |
 | **Language** | JavaScript |
 | **Source** | [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,7 +25,7 @@
 | Critical | 1 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 30 |
+| Low      | 31 |
 | Info     | 52 |
 
 ## Detailed Findings
@@ -120,6 +120,18 @@ Review and remediate the identified issue.
 
 **Description:**
 declared capabilities: network access, filesystem access, database access, HTTP requests
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Low
+
+**Description:**
+input schema exposes 11 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

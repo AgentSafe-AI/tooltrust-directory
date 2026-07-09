@@ -305,7 +305,7 @@ ai.byteask/embedded-docs
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kulkarnianirudha8-byteaskai](https://smithery.ai/server/kulkarnianirudha8/byteaskai) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

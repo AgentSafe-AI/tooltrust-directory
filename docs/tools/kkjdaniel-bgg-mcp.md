@@ -1,18 +1,18 @@
-# 🟡 kkjdaniel-bgg-mcp
+# 🟢 kkjdaniel-bgg-mcp
 
 > BGG MCP provides access to BoardGameGeek and a variety of board game related data through the Model Context Protocol. Enabling retrieval and filtering of board game data, user collections, and profiles.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.6.1` |
 | **Vendor** | kkjdaniel |
-| **Stars** | ⭐ 32 |
+| **Stars** | ⭐ 50 |
 | **Language** | Go |
 | **Source** | [kkjdaniel-bgg-mcp](https://github.com/kkjdaniel/bgg-mcp) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Scan Date** | 2026-07-09 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -21,10 +21,10 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 10 |
+| Info     | 11 |
 
 ## Detailed Findings
 
@@ -112,12 +112,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

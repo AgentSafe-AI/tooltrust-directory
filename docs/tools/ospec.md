@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 2.8k |
 | **Language** | JavaScript |
 | **Source** | [ospec](https://github.com/clawplays/ospec) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,17 +1,17 @@
-# 🟡 mcp-server-docker
+# 🟢 mcp-server-docker
 
 > MCP server for Docker
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `sha-6288015cee6b` |
 | **Vendor** | ckreiling |
-| **Stars** | ⭐ 726 |
+| **Stars** | ⭐ 727 |
 | **Language** | Python |
 | **Source** | [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 10 |
 | Info     | 21 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsha-6288015cee6b: 9 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

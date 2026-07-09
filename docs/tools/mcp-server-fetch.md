@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 88173 |
+| **Stars** | ⭐ 88234 |
 | **npm Package** | `mcp-server-fetch` |
 | **npm Downloads (30d)** | 3.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

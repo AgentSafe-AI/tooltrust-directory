@@ -1,17 +1,17 @@
-# 🟡 mcp-bridge
+# 🟢 mcp-bridge
 
 > A middleware to provide an openAI compatible endpoint that can call MCP tools
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `0.5.1` |
 | **Vendor** | SecretiveShell |
 | **Stars** | ⭐ 928 |
 | **Language** | Python |
 | **Source** | [mcp-bridge](https://github.com/SecretiveShell/MCP-Bridge) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 3 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.5.1: 1 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 

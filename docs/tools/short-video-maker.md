@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 334 |
 | **Language** | TypeScript |
 | **Source** | [short-video-maker](https://github.com/gyoridavid/short-video-maker) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -6,10 +6,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | stuzero |
-| **Stars** | ⭐ 540 |
+| **Stars** | ⭐ 539 |
 | **Language** | Python |
 | **Source** | [pg-mcp-server](https://github.com/stuzero/pg-mcp-server) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

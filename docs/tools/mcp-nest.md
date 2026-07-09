@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 467.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-nest](https://github.com/rekog-labs/MCP-Nest) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

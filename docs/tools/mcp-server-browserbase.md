@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | browserbase |
-| **Stars** | ⭐ 3397 |
+| **Stars** | ⭐ 3398 |
 | **npm Package** | `@browserbasehq/mcp` |
 | **npm Downloads (30d)** | 62.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -35,7 +35,7 @@
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -47,7 +47,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -83,7 +83,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -95,7 +95,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -107,7 +107,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -119,7 +119,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.

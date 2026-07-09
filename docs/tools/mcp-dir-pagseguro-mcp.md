@@ -13,7 +13,7 @@ Funciona em qualquer cliente MCP. Servidor remoto: `https://api.mcp.ai/p_pagsegu
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mcp-dir-pagseguro-mcp](https://smithery.ai/server/mcp-dir/pagseguro-mcp) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

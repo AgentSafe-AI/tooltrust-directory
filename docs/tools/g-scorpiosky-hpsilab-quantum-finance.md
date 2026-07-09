@@ -14,7 +14,7 @@ Free tier · Pro $9.99/mo · EN · 中文 · 日本語
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [g-scorpiosky-hpsilab-quantum-finance](https://smithery.ai/server/g-scorpiosky/hpsilab-quantum-finance) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

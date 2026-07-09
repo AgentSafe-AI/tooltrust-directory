@@ -11,7 +11,7 @@ This server is your **Eveoy expert associate** inside any AI — here to help an
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [eveoy-mcp](https://smithery.ai/server/eveoy/mcp) |
-| **Scan Date** | 2026-07-08 |
+| **Scan Date** | 2026-07-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
