@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `@protocol-launcher/shared@1.4.13` |
 | **Vendor** | zhensherlock |
-| **Stars** | ⭐ 123 |
+| **Stars** | ⭐ 124 |
 | **npm Package** | `protocol-launcher` |
-| **npm Downloads (30d)** | 8.7k |
+| **npm Downloads (30d)** | 7.4k |
 | **Language** | TypeScript |
 | **Source** | [protocol-launcher](https://github.com/zhensherlock/protocol-launcher) |
-| **Scan Date** | 2026-07-09 |
+| **Scan Date** | 2026-07-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -395,7 +395,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "tokenOut" accepts a credential (informational; not evidence of insecure handling)
+input parameter "tokenIn" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -407,7 +407,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "tokenIn" accepts a credential (informational; not evidence of insecure handling)
+input parameter "tokenOut" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

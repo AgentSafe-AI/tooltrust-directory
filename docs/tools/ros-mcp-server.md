@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `3.1.0` |
 | **Vendor** | robotmcp |
-| **Stars** | ⭐ 1336 |
+| **Stars** | ⭐ 1337 |
 | **Language** | Python |
 | **Source** | [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) |
-| **Scan Date** | 2026-07-09 |
+| **Scan Date** | 2026-07-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

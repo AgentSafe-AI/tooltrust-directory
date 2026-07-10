@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.6.12` |
 | **Vendor** | imbenrabi |
-| **Stars** | ⭐ 138 |
+| **Stars** | ⭐ 139 |
 | **npm Package** | `financial-modeling-prep-mcp-server` |
-| **npm Downloads (30d)** | 1.6k |
+| **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [imbenrabi-financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) |
-| **Scan Date** | 2026-07-05 |
+| **Scan Date** | 2026-07-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

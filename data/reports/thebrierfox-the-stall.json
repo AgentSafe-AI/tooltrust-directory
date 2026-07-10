@@ -3,7 +3,7 @@
   "version": "4.94.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-09T02:19:35.518147304Z",
+  "scan_date": "2026-07-10T02:18:58.364859129Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/thebrierfox/the-stall",
   "category": "Developer Tools",
@@ -22,7 +22,7 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "weather-research-brief"
+          "polygon-defi-price"
         ],
         "removed": null,
         "version": "4.94.0"
@@ -4195,14 +4195,46 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "weather-research-brief"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "polygon-defi-price"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "polygon-defi-price"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "polygon-defi-price"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "polygon-defi-price"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 105,
-    "info": 416
+    "low": 106,
+    "info": 419
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -4402,6 +4434,7 @@
     "place-details",
     "podcast-intel",
     "policy-impact-mapper",
+    "polygon-defi-price",
     "polymarket-accuracy-score",
     "polymarket-category-performance",
     "polymarket-crypto-updown",
@@ -7270,6 +7303,19 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "polygon-defi-price",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -7325,6 +7371,12 @@
       "scan_date": "2026-07-08T02:07:20Z",
       "grade": "A",
       "risk_score": 4,
+      "version": "4.94.0"
+    },
+    {
+      "scan_date": "2026-07-09T02:19:35Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "4.94.0"
     }
   ]

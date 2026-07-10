@@ -15,7 +15,7 @@ Five public, key-free tools: list_indices, search_indices, get_price, get_index,
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [flopsindex-flopsindex](https://smithery.ai/server/flopsindex/flopsindex) |
-| **Scan Date** | 2026-07-09 |
+| **Scan Date** | 2026-07-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
