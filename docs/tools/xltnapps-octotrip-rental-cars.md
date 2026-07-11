@@ -287,7 +287,7 @@ MIT
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xltnapps-octotrip-rental-cars](https://smithery.ai/server/xltnapps/octotrip-rental-cars) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

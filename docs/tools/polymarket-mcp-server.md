@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 588 |
 | **Language** | Python |
 | **Source** | [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

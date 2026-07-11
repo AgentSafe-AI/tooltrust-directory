@@ -20,7 +20,7 @@ Read-only. Backends: Not limited to ecommerce platforms such as Shopify, WooComm
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [agenticshelf-agentic-shelf](https://smithery.ai/server/agenticshelf/agentic-shelf) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

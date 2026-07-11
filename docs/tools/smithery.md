@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [smithery](https://smithery.ai/server/smithery) |
-| **Scan Date** | 2026-07-04 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

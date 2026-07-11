@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 205 |
 | **Language** | Python |
 | **Source** | [zwldarren-akshare-one-mcp](https://github.com/zwldarren/akshare-one-mcp) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

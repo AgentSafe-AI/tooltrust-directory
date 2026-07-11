@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 50 |
 | **Language** | Go |
 | **Source** | [kkjdaniel-bgg-mcp](https://github.com/kkjdaniel/bgg-mcp) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

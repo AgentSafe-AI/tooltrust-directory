@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.4.2` |
 | **Vendor** | Microck |
-| **Stars** | ⭐ 680 |
+| **Stars** | ⭐ 679 |
 | **npm Package** | `opencode-studio-server` |
 | **npm Downloads (30d)** | 710 |
 | **Language** | TypeScript |
 | **Source** | [opencode-studio](https://github.com/Microck/opencode-studio) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

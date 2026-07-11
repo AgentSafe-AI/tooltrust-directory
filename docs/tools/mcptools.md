@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.7.1` |
 | **Vendor** | f |
-| **Stars** | ⭐ 1605 |
+| **Stars** | ⭐ 1606 |
 | **Language** | Go |
 | **Source** | [mcptools](https://github.com/f/mcptools) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

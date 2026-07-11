@@ -1,0 +1,68 @@
+{
+  "tool_id": "mindshub",
+  "version": "26.1.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-07-11T01:56:03Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/mindsdb/mindshub",
+  "category": "Other",
+  "vendor": "mindsdb",
+  "stars": 39393,
+  "license": "MIT",
+  "language": "Makefile",
+  "description": "Make AI do actual work. Swap the model anytime — keep everything you've built.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "mindsdb/api/mcp/mcp_instance.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 14,
+            "snippet": "FastMCP(",
+            "file": "mindsdb/api/mcp/mcp_instance.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "mindsdb/api/mcp/mcp_instance.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 14,
+      "snippet": "FastMCP(",
+      "file": "mindsdb/api/mcp/mcp_instance.py",
+      "language": "python"
+    }
+  ]
+}

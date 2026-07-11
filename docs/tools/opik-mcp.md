@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 598 |
 | **Language** | Python |
 | **Source** | [opik-mcp](https://github.com/comet-ml/opik-mcp) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

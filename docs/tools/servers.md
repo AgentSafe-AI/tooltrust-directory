@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `typescript-servers-0.6.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 88283 |
+| **Stars** | ⭐ 88311 |
 | **npm Package** | `@modelcontextprotocol/servers` |
 | **Language** | TypeScript |
 | **Source** | [servers](https://github.com/modelcontextprotocol/servers) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

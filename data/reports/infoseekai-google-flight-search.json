@@ -1,21 +1,45 @@
 {
   "tool_id": "infoseekai-google-flight-search",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-10T02:19:33.612349628Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-11T02:05:51.176021875Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/InfoseekAI/google-flight-search",
   "vendor": "Smithery",
   "description": "Search flights with Google Flights.\n\nGet the mcp server url @ https://Infoseek.ai/u",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "search_flights"
+        ],
+        "removed": [
+          "search_flights_goog"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_flights_goog"
+      "tool_name": "search_flights"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 20 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_flights"
     },
     {
       "id": "AS-011",
@@ -23,7 +47,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_flights_goog"
+      "tool_name": "search_flights"
     },
     {
       "id": "AS-014",
@@ -31,31 +55,30 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_flights_goog"
+      "tool_name": "search_flights"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 2,
     "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "search_flights_goog"
+    "search_flights"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_flights_goog",
+      "tool_name": "search_flights",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (max_stops)",
-        "dynamic email recipient (to_airports)"
+        "dynamic email recipient (stops)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -76,6 +99,12 @@
     },
     {
       "scan_date": "2026-07-09T02:20:10Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-10T02:19:33Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

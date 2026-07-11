@@ -1,4 +1,4 @@
-# 🟢 infoseekai-google-flight-search
+# 🟡 infoseekai-google-flight-search
 
 > Search flights with Google Flights.
 
@@ -6,12 +6,12 @@ Get the mcp server url @ https://Infoseek.ai/u
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 2 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [infoseekai-google-flight-search](https://smithery.ai/server/InfoseekAI/google-flight-search) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,12 +21,24 @@ Get the mcp server url @ https://Infoseek.ai/u
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
-| Low      | 1 |
+| Low      | 2 |
 | Info     | 2 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
@@ -34,6 +46,18 @@ Get the mcp server url @ https://Infoseek.ai/u
 
 **Description:**
 declared capabilities: network access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Low
+
+**Description:**
+input schema exposes 20 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

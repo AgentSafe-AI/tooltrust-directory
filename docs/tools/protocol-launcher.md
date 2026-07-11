@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 7.4k |
 | **Language** | TypeScript |
 | **Source** | [protocol-launcher](https://github.com/zhensherlock/protocol-launcher) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

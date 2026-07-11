@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | hiromitsusasaki |
-| **Stars** | ⭐ 76 |
+| **Stars** | ⭐ 75 |
 | **npm Package** | `raindrop-io-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [raindrop-io-mcp-server](https://github.com/hiromitsusasaki/raindrop-io-mcp-server) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

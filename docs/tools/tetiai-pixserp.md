@@ -10,7 +10,7 @@ Web, news, images, places, shopping, flights, hotels, YouTube videos & transcrip
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tetiai-pixserp](https://smithery.ai/server/tetiai/pixserp) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
