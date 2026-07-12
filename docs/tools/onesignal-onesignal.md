@@ -11,7 +11,7 @@ With the OneSignal MCP, manage your messaging directly from your AI assistant. S
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [onesignal-onesignal](https://smithery.ai/server/onesignal/onesignal) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

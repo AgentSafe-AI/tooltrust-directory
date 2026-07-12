@@ -36,7 +36,7 @@ claude mcp add --transport http beforeyouship https://beforeyouship.dev/api/mcp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [beforeyouship-cost-model](https://smithery.ai/server/beforeyouship/cost-model) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

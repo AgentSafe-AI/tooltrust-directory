@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `6.1.7` |
 | **Vendor** | tractorjuice |
-| **Stars** | ⭐ 2077 |
+| **Stars** | ⭐ 2084 |
 | **Language** | JavaScript |
 | **Source** | [arc-kit](https://github.com/tractorjuice/arc-kit) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

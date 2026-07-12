@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-11T02:03:32.141794676Z",
+  "scan_date": "2026-07-12T02:07:08.459546009Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/sxhxliang/mcp-access-point",
   "category": "Other",
@@ -17,14 +17,10 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.3.0: 2 tool(s) added, 6 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.3.0: 6 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "ai_summarize_text",
-          "ai_summarize_url"
-        ],
-        "removed": [
           "SHARE_POINT_SHAREPOINT_CREATE_FOLDER",
           "SHARE_POINT_SHAREPOINT_CREATE_LIST",
           "SHARE_POINT_SHAREPOINT_CREATE_LIST_ITEM",
@@ -32,24 +28,20 @@
           "SHARE_POINT_SHAREPOINT_FIND_USER",
           "SHARE_POINT_SHAREPOINT_REMOVE_USER"
         ],
+        "removed": [
+          "ai_summarize_text",
+          "ai_summarize_url"
+        ],
         "version": "0.3.0"
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ai_summarize_text"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ai_summarize_url"
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_FOLDER"
     },
     {
       "id": "AS-011",
@@ -57,7 +49,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ai_summarize_url"
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_FOLDER"
     },
     {
       "id": "AS-014",
@@ -65,38 +57,171 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ai_summarize_url"
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_FOLDER"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST_ITEM"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST_ITEM"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_USER"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_USER"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_FIND_USER"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_REMOVE_USER"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "SHARE_POINT_SHAREPOINT_REMOVE_USER"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 3
+    "low": 2,
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "ai_summarize_text",
-    "ai_summarize_url"
+    "SHARE_POINT_SHAREPOINT_CREATE_FOLDER",
+    "SHARE_POINT_SHAREPOINT_CREATE_LIST",
+    "SHARE_POINT_SHAREPOINT_CREATE_LIST_ITEM",
+    "SHARE_POINT_SHAREPOINT_CREATE_USER",
+    "SHARE_POINT_SHAREPOINT_FIND_USER",
+    "SHARE_POINT_SHAREPOINT_REMOVE_USER"
   ],
   "tool_contexts": [
     {
-      "tool_name": "ai_summarize_text",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_FOLDER",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ai_summarize_url",
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_LIST_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "SHARE_POINT_SHAREPOINT_CREATE_USER",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic email recipient (email)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "SHARE_POINT_SHAREPOINT_FIND_USER",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (email)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "SHARE_POINT_SHAREPOINT_REMOVE_USER",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (email)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -191,6 +316,12 @@
       "scan_date": "2026-07-10T02:17:19Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.3.0"
+    },
+    {
+      "scan_date": "2026-07-11T02:03:32Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.3.0"
     }
   ]

@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.4.12` |
 | **Vendor** | laravel |
-| **Stars** | ⭐ 3529 |
+| **Stars** | ⭐ 3532 |
 | **Language** | PHP |
 | **Source** | [boost](https://github.com/laravel/boost) |
-| **Scan Date** | 2026-07-10 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

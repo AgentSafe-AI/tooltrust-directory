@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `3.9.0` |
 | **Vendor** | opensumi |
-| **Stars** | ⭐ 3643 |
+| **Stars** | ⭐ 3644 |
 | **npm Package** | `@opensumi/core` |
 | **Language** | TypeScript |
 | **Source** | [core](https://github.com/opensumi/core) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

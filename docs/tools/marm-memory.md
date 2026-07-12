@@ -1,6 +1,6 @@
 # 🟢 marm-memory
 
-> Self-hosted, local-first MCP memory server for AI agents. Sub-20ms recall at 10k memories, hybrid semantic + exact-syntax search (RAG), code & concept knowledge graphs (158 languages). All local in SQLite: no cloud, no vector DB, no API keys. Works with Claude Code, Codex, Cursor, Gemini & any MCP client. 
+> Self-hosted, local-first MCP memory server for AI agents. Fast recall at 10k memories, hybrid semantic + exact-syntax search (RAG), code & concept knowledge graphs (158 languages). All local in SQLite: no cloud, no vector DB, no API keys. Works with Claude Code, Codex, Cursor, Gemini & any MCP client. 
 
 | Field | Value |
 |-------|-------|
@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 307 |
 | **Language** | Python |
 | **Source** | [marm-memory](https://github.com/Lyellr88/marm-memory) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [deepwiki](https://smithery.ai/server/deepwiki) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-07-12 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

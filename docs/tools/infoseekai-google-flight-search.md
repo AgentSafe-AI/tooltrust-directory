@@ -11,7 +11,7 @@ Get the mcp server url @ https://Infoseek.ai/u
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [infoseekai-google-flight-search](https://smithery.ai/server/InfoseekAI/google-flight-search) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,7 +23,7 @@ Get the mcp server url @ https://Infoseek.ai/u
 | Critical | 0 |
 | High     | 1 |
 | Medium   | 0 |
-| Low      | 2 |
+| Low      | 1 |
 | Info     | 2 |
 
 ## Detailed Findings
@@ -46,18 +46,6 @@ The set of tools exposed by this server changed between scans of the same versio
 
 **Description:**
 declared capabilities: network access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 20 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
