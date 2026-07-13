@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.1` |
 | **Vendor** | Klavis-AI |
-| **Stars** | ⭐ 5766 |
+| **Stars** | ⭐ 5768 |
 | **Language** | Python |
 | **Source** | [klavis](https://github.com/Klavis-AI/klavis) |
-| **Scan Date** | 2026-07-12 |
+| **Scan Date** | 2026-07-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

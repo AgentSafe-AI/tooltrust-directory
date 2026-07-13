@@ -1,9 +1,9 @@
 {
   "tool_id": "marm-memory",
-  "version": "2.18.0",
+  "version": "2.21.0",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-07-12T02:06:31.647353083Z",
+  "scan_date": "2026-07-13T02:06:39.629268947Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Lyellr88/marm-memory",
   "category": "Developer Tools",
@@ -11,7 +11,7 @@
   "stars": 307,
   "license": "Apache-2.0",
   "language": "Python",
-  "description": "Self-hosted, local-first MCP memory server for AI agents. Fast recall at 10k memories, hybrid semantic + exact-syntax search (RAG), code \u0026 concept knowledge graphs (158 languages). All local in SQLite: no cloud, no vector DB, no API keys. Works with Claude Code, Codex, Cursor, Gemini \u0026 any MCP client. ",
+  "description": "Local-first 3-in-1 AI memory layer \u0026 MCP server for Claude Code \u0026 Cursor. Fuses session history, codebase indices \u0026 concept graphs in SQLite. Enables zero-cloud, privacy-first context \u0026 instant recall for multi-agent swarms.",
   "findings": [
     {
       "id": "AS-014",
@@ -76,6 +76,70 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "marm_compaction"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_graph_index"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_code_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_graph_trace"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_graph_architecture"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_graph_impact"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_concept_build"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "marm_concept_recall"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "marm_concept_recall"
     }
   ],
   "summary": {
@@ -83,12 +147,19 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 8
+    "info": 16
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "marm_code_lookup",
     "marm_compaction",
+    "marm_concept_build",
+    "marm_concept_recall",
     "marm_delete",
+    "marm_graph_architecture",
+    "marm_graph_impact",
+    "marm_graph_index",
+    "marm_graph_trace",
     "marm_log_entry",
     "marm_log_show",
     "marm_notebook",
@@ -147,11 +218,66 @@
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_graph_index",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_code_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_graph_trace",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_graph_architecture",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_graph_impact",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_concept_build",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "marm_concept_recall",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
     {
       "scan_date": "2026-07-11T02:02:57Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "2.18.0"
+    },
+    {
+      "scan_date": "2026-07-12T02:06:31Z",
       "grade": "A",
       "risk_score": 0,
       "version": "2.18.0"

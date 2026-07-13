@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [googlesheets](https://smithery.ai/server/googlesheets) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

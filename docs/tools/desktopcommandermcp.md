@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.2.45` |
 | **Vendor** | wonderwhy-er |
-| **Stars** | ⭐ 7781 |
+| **Stars** | ⭐ 8005 |
 | **npm Package** | `@wonderwhy-er/desktop-commander` |
-| **npm Downloads (30d)** | 241.3k |
+| **npm Downloads (30d)** | 262.1k |
 | **Language** | TypeScript |
 | **Source** | [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) |
-| **Scan Date** | 2026-07-12 |
+| **Scan Date** | 2026-07-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

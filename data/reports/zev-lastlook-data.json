@@ -1,58 +1,14 @@
 {
   "tool_id": "zev-lastlook-data",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-07-12T02:09:27.473269Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-13T02:08:59.761364459Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/zev/lastlook-data",
   "vendor": "Smithery",
   "description": "LastLook Data gives AI agents real-time access to US financial market data: Treasury yields (2yr, 10yr, 30yr), mortgage rates, Fed funds rate, CPI, unemployment, GDP, WTI/Brent crude, natural gas, and G10 FX rates. Also includes derived indicators: yield curve spreads (2s10s, 3m10y) with inversion signal, Sahm Rule recession indicator, Fed policy spread (EFFR vs IORB), and upcoming FRED economic calendar. Data sourced from FRED and ECB. Pay per query via x402 on Base — no accounts, no API keys, no subscriptions.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 5 tool(s) added, 25 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get_fx_rate_current",
-          "get_fx_rate_series",
-          "get_series",
-          "get_treasury_yield_by_date",
-          "get_treasury_yield_current"
-        ],
-        "removed": [
-          "add_index",
-          "confirm_signup",
-          "create_entity",
-          "create_live_table",
-          "create_trigger",
-          "delete_trigger",
-          "get_db_load",
-          "get_entity",
-          "get_entity_errors",
-          "get_instance_metrics_summary",
-          "get_instance_spec",
-          "get_job_status",
-          "get_load_breakdown",
-          "get_top_sql",
-          "get_top_waits",
-          "get_trigger",
-          "get_trigger_firings",
-          "ingest_data",
-          "list_entities",
-          "list_live_tables",
-          "list_triggers",
-          "query_table",
-          "remove_index",
-          "signup",
-          "trigger_backfill"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -112,7 +68,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
     "info": 6
@@ -204,6 +160,12 @@
     },
     {
       "scan_date": "2026-07-11T02:05:57Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-12T02:09:27Z",
       "grade": "B",
       "risk_score": 15,
       "version": "smithery"

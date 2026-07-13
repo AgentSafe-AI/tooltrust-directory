@@ -21,7 +21,7 @@ Funciona em qualquer cliente MCP. Servidor remoto: `https://api.mcp.ai/banco`
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [douglas-banco-mcp](https://smithery.ai/server/douglas/banco-mcp) |
-| **Scan Date** | 2026-07-12 |
+| **Scan Date** | 2026-07-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

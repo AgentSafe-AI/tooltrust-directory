@@ -1,14 +1,28 @@
 {
   "tool_id": "ckbk-subwayinfo-nyc",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-12T02:09:00.480275444Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-13T02:08:56.199260504Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/ckbk/subwayinfo-nyc",
   "vendor": "Smithery",
   "description": "Real-time NYC transit data for subway, bus, ferry, commuter rail, and Citi Bike. Get live arrivals, service alerts, trip planning, and station info across all MTA services. Zero API key required - just connect and query.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "mta_get_planned_work"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -80,6 +94,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "mta_plan_trip"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mta_get_planned_work"
     },
     {
       "id": "AS-014",
@@ -300,10 +322,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 5,
-    "info": 31
+    "info": 32
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -320,6 +342,7 @@
     "ferry_search_landings",
     "mta_get_arrivals",
     "mta_get_line_status",
+    "mta_get_planned_work",
     "mta_get_station_info",
     "mta_list_alerts",
     "mta_plan_trip",
@@ -374,6 +397,13 @@
     },
     {
       "tool_name": "mta_plan_trip",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "mta_get_planned_work",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -942,6 +972,12 @@
     },
     {
       "scan_date": "2026-07-11T02:05:28Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-12T02:09:00Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

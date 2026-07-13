@@ -1,14 +1,14 @@
 {
   "tool_id": "bernstein",
-  "version": "3.4.0",
+  "version": "3.4.4",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-07-12T02:05:31Z",
+  "scan_date": "2026-07-13T02:05:48Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/sipyourdrink-ltd/bernstein",
   "category": "Developer Tools",
   "vendor": "sipyourdrink-ltd",
-  "stars": 658,
+  "stars": 666,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Audit-grade multi-agent orchestration for CLI coding agents (Claude Code, Codex, Gemini CLI, +40 more). HMAC-chained audit log, signed agent cards, per-artefact lineage, air-gap deploy. The orchestrator your compliance team will sign off on. https://bernstein.run",
@@ -17,31 +17,10 @@
       "id": "AS-018",
       "severity": "Info",
       "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
       "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
         "evidence": [
-          {
-            "kind": "import",
-            "line": 32,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "src/bernstein/mcp/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 644,
-            "snippet": "FastMCP(",
-            "file": "src/bernstein/mcp/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 117,
-            "snippet": "@mcp.tool(",
-            "file": "src/bernstein/mcp/server.py",
-            "language": "python"
-          },
           {
             "kind": "import",
             "line": 8,
@@ -71,27 +50,6 @@
   "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 32,
-      "snippet": "from mcp.server.fastmcp import FastMCP",
-      "file": "src/bernstein/mcp/server.py",
-      "language": "python"
-    },
-    {
-      "kind": "init",
-      "line": 644,
-      "snippet": "FastMCP(",
-      "file": "src/bernstein/mcp/server.py",
-      "language": "python"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 117,
-      "snippet": "@mcp.tool(",
-      "file": "src/bernstein/mcp/server.py",
-      "language": "python"
-    },
     {
       "kind": "import",
       "line": 8,

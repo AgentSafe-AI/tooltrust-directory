@@ -11,7 +11,7 @@ The MCP server manages authentication using OAuth (client registration, authoriz
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [meteomatics-meteomatics](https://smithery.ai/server/meteomatics/meteomatics) |
-| **Scan Date** | 2026-07-11 |
+| **Scan Date** | 2026-07-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

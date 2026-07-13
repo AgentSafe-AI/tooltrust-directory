@@ -2,18 +2,18 @@
   "tool_id": "noncelogic-rove",
   "version": "smithery",
   "grade": "C",
-  "risk_score": 42,
-  "scan_date": "2026-04-19T02:18:10.324276351Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "risk_score": 27,
+  "scan_date": "2026-07-13T02:08:35.036617905Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/noncelogic/rove",
   "vendor": "Smithery",
   "description": "Hosted Playwright browser automation for AI agents. Returns accessibility trees instead of screenshots, cutting token usage by 77%. Navigate, interact, extract structured data, and take screenshots — all via MCP. Zero infrastructure, credit-based pricing.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "navigate"
     },
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "scroll"
     },
@@ -91,9 +91,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "evaluate"
     },
@@ -140,10 +140,10 @@
   ],
   "summary": {
     "critical": 1,
-    "high": 2,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 2,
-    "info": 10
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -162,7 +162,7 @@
     {
       "tool_name": "navigate",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -246,6 +246,14 @@
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-19T02:18:10Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "smithery"
     }
   ]
 }

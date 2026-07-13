@@ -10,10 +10,10 @@
 | **Vendor** | karanb192 |
 | **Stars** | ⭐ 750 |
 | **npm Package** | `reddit-mcp-buddy` |
-| **npm Downloads (30d)** | 5.4k |
+| **npm Downloads (30d)** | 5.3k |
 | **Language** | TypeScript |
 | **Source** | [reddit-mcp-buddy](https://github.com/karanb192/reddit-mcp-buddy) |
-| **Scan Date** | 2026-07-12 |
+| **Scan Date** | 2026-07-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
