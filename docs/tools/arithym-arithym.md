@@ -13,7 +13,7 @@ multi-step chain-of-thought reasoning. Free tier available at arithym.xyz.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [arithym-arithym](https://smithery.ai/server/Arithym/Arithym) |
-| **Scan Date** | 2026-07-13 |
+| **Scan Date** | 2026-07-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

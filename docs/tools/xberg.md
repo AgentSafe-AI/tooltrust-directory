@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `5.0.0-rc.35` |
+| **Version** | `1.0.0-rc.29` |
 | **Vendor** | xberg-io |
-| **Stars** | ⭐ 8610 |
-| **npm Package** | `kreuzberg-root` |
+| **Stars** | ⭐ 8640 |
+| **npm Package** | `xberg-root` |
 | **Language** | Rust |
 | **Source** | [xberg](https://github.com/xberg-io/xberg) |
-| **Scan Date** | 2026-07-12 |
+| **Scan Date** | 2026-07-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

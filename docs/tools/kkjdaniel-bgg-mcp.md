@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.6.1` |
 | **Vendor** | kkjdaniel |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **Language** | Go |
 | **Source** | [kkjdaniel-bgg-mcp](https://github.com/kkjdaniel/bgg-mcp) |
-| **Scan Date** | 2026-07-13 |
+| **Scan Date** | 2026-07-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

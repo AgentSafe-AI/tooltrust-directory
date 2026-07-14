@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.6.0` |
 | **Vendor** | googleapis |
-| **Stars** | ⭐ 15933 |
+| **Stars** | ⭐ 15948 |
 | **Language** | Go |
 | **Source** | [genai-toolbox](https://github.com/googleapis/mcp-toolbox) |
-| **Scan Date** | 2026-07-12 |
+| **Scan Date** | 2026-07-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

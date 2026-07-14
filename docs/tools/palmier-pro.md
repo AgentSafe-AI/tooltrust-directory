@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.5` |
 | **Vendor** | palmier-io |
-| **Stars** | ⭐ 10326 |
+| **Stars** | ⭐ 10450 |
 | **Language** | Swift |
 | **Source** | [palmier-pro](https://github.com/palmier-io/palmier-pro) |
-| **Scan Date** | 2026-07-13 |
+| **Scan Date** | 2026-07-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
