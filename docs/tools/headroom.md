@@ -1,6 +1,6 @@
 # 🟢 headroom
 
-> Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.
+> Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.31.0` |
 | **Vendor** | headroomlabs-ai |
-| **Stars** | ⭐ 58973 |
+| **Stars** | ⭐ 59172 |
 | **Language** | Python |
 | **Source** | [headroom](https://github.com/headroomlabs-ai/headroom) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

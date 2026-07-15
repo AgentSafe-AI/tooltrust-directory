@@ -33,7 +33,7 @@ Free. No API key. Remote MCP server at `https://mcp.shibui.finance/mcp`. Connect
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [shibui-finance](https://smithery.ai/server/shibui/finance) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

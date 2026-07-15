@@ -11,7 +11,7 @@ Tools: search_assets (keyword + type + category + aspect-ratio filters), get_cat
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nmedia-cloud-stockflow-mcp](https://smithery.ai/server/nmedia-cloud/stockflow-mcp) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

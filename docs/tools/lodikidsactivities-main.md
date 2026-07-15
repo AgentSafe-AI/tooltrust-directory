@@ -17,7 +17,7 @@ Anonymous public access works with no auth. Personalized and write access uses a
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lodikidsactivities-main](https://smithery.ai/server/lodikidsactivities/main) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

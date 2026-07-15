@@ -17,7 +17,7 @@ To use premium endpoints, subscribe for an API Key at: https://buy.stripe.com/bJ
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [timothy-walton45-squeezeos-api](https://smithery.ai/server/timothy-walton45/squeezeos-api) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

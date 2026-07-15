@@ -32,7 +32,7 @@ MIT licensed. Built by HSH Intelligence.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hshintelligence-agentscrape](https://smithery.ai/server/hshintelligence/agentscrape) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

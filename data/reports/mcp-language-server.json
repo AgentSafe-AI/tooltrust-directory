@@ -1,30 +1,46 @@
 {
   "tool_id": "mcp-language-server",
   "version": "0.1.1",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-07-14T01:51:55.345073142Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-15T01:37:34.768396426Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/isaacphi/mcp-language-server",
   "category": "Developer Tools",
   "vendor": "isaacphi",
-  "stars": 1569,
+  "stars": 1570,
   "license": "BSD-3-Clause",
   "language": "Go",
   "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.1: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "text_translate"
+        ],
+        "removed": [
+          "text_detect_language"
+        ],
+        "version": "0.1.1"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_detect_language"
+      "tool_name": "text_translate"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
     "info": 1
@@ -48,18 +64,26 @@
     }
   ],
   "tool_names": [
-    "text_detect_language"
+    "text_translate"
   ],
   "tool_contexts": [
     {
-      "tool_name": "text_detect_language",
+      "tool_name": "text_translate",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands"
+      "destinations": [
+        "dynamic email recipient (to)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-07-14T01:51:55Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.1"
     }
   ]
 }

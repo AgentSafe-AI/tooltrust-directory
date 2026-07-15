@@ -1,25 +1,58 @@
 {
   "tool_id": "skill-seekers",
   "version": "3.8.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-14T01:48:50.246625735Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-15T01:34:36.844752317Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/yusufkaraaslan/Skill_Seekers",
   "category": "Developer Tools",
   "vendor": "yusufkaraaslan",
-  "stars": 14452,
+  "stars": 14454,
   "license": "MIT",
   "language": "Python",
   "description": "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.8.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_skill_downloads"
+        ],
+        "removed": [
+          "get_skill",
+          "list_skills"
+        ],
+        "version": "3.8.0"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_skill_downloads"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_skill_downloads"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_skills"
+      "tool_name": "get_skill_downloads"
     },
     {
       "id": "AS-002",
@@ -44,36 +77,27 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search_skills"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_skill"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 2,
     "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_skill",
-    "list_skills",
+    "get_skill_downloads",
     "search_skills"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list_skills",
+      "tool_name": "get_skill_downloads",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -83,18 +107,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_skill",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: SKILL.md"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -643,6 +656,12 @@
     },
     {
       "scan_date": "2026-07-12T02:00:37Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "3.8.0"
+    },
+    {
+      "scan_date": "2026-07-14T01:48:50Z",
       "grade": "A",
       "risk_score": 2,
       "version": "3.8.0"

@@ -13,7 +13,7 @@ Funciona em qualquer cliente MCP. Servidor remoto: `https://api.mcp.ai/p_nuvemsh
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mcp-dir-nuvemshop-mcp](https://smithery.ai/server/mcp-dir/nuvemshop-mcp) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-07-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
