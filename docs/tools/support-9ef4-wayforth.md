@@ -22,7 +22,7 @@ uvx wayforth-mcp · wayforth.io
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [support-9ef4-wayforth](https://smithery.ai/server/support-9ef4/Wayforth) |
-| **Scan Date** | 2026-07-15 |
+| **Scan Date** | 2026-07-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

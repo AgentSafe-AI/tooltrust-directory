@@ -3,12 +3,12 @@
   "version": "1.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-14T01:49:33.99897701Z",
+  "scan_date": "2026-07-16T01:56:15.144957705Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/google-labs-code/stitch-skills",
   "category": "Developer Tools",
   "vendor": "google-labs-code",
-  "stars": 7341,
+  "stars": 7448,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
@@ -17,17 +17,17 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0: 2 tool(s) added, 3 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0: 3 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get_doc",
-          "search_docs"
-        ],
-        "removed": [
           "get_skill_detail",
           "list_installed_skills",
           "search_skills"
+        ],
+        "removed": [
+          "get_doc",
+          "search_docs"
         ],
         "version": "1.0"
       }
@@ -38,7 +38,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_docs"
+      "tool_name": "search_skills"
     },
     {
       "id": "AS-011",
@@ -46,7 +46,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_docs"
+      "tool_name": "search_skills"
     },
     {
       "id": "AS-014",
@@ -54,23 +54,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_docs"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_doc"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_doc"
+      "tool_name": "search_skills"
     },
     {
       "id": "AS-014",
@@ -78,41 +62,57 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_doc"
+      "tool_name": "get_skill_detail"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_installed_skills"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 2,
+    "low": 1,
     "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_doc",
-    "search_docs"
+    "get_skill_detail",
+    "list_installed_skills",
+    "search_skills"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_docs",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_doc",
+      "tool_name": "search_skills",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "hardcoded domain: skills-hub.ai"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_skill_detail",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_installed_skills",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: skills-hub.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -247,6 +247,12 @@
     },
     {
       "scan_date": "2026-07-12T02:01:19Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0"
+    },
+    {
+      "scan_date": "2026-07-14T01:49:33Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0"

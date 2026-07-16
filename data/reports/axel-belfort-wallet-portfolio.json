@@ -1,0 +1,57 @@
+{
+  "tool_id": "axel-belfort-wallet-portfolio",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-16T02:04:14.25029671Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/wallet-portfolio",
+  "vendor": "Smithery",
+  "description": "Crypto wallet portfolio API for AI agents. Full token holdings across Ethereum, Base, Polygon, Arbitrum, and BSC: ETH balance, all ERC-20 tokens, USD values, 24h changes, and total portfolio value.\n\nTools: wallet_get_portfolio (full holdings), wallet_get_balance (ETH only).\n\nUse this for portfolio tracking, wealth verification, or wallet analysis. Essential for any agent managing crypto assets. IMPORTANT: For token safety check, use token_check_safety. For gas prices, use gas_get_current_price.\n\nReturns: {totalUsd, tokens[], ethBalance}. No API key required — x402 micropayment $0.003/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wallet_get_portfolio"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wallet_get_balance"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "wallet_get_balance",
+    "wallet_get_portfolio"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "wallet_get_portfolio",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "wallet_get_balance",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

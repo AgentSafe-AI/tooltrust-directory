@@ -1,0 +1,1639 @@
+{
+  "tool_id": "skone-pqc-khepra-mcp",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-16T02:04:36.918389266Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/skone/pqc-khepra-mcp",
+  "vendor": "Smithery",
+  "description": "KHEPRA MCP Server\nMCP Registry License Container PQC\n\nSovereign compliance engine with 36,195 STIG/CCI/NIST/CMMC mappings.\n\nAir-gappable. Zero token costs. Run ert_scan → get a Godfather Report with dollar-denominated business impact.\nThe only MCP compliance server that runs on your metal — with the World's First DoD PQC STIG built in.\n\nPQC-01-STIG-V1R1 — Full Whitepaper →\n17 controls covering CNSA 2.0, FIPS 203/204/205, and the NSA's May 2026 MCP security advisory.\nThe world's first DoD-style Post-Quantum Cryptography STIG, including the first PQC controls for agentic AI and MCP deployments.\n\nTiers\nTier\tLicense Key\tTools\tTelemetry\tEgress\nCommunity\t❌ Not required\tpqc_stig + 12 core tools\tOpt-in Dark Crypto Intel\tZero (sovereign mode)\nSovereign\t✅ Required\tAll 34 tools\tZero\tZero\nPharaoh\t✅ Required\tAll 34 tools + priority support\tZero\tZero\nCommunity tier is free. Run pqc_stig to assess your project's quantum readiness against\nPQC-01-STIG-V1R1 — the World's First DoD-style Post-Quantum Cryptography STIG — no license key needed.\n\nWhat It Does\nKHEPRA MCP connects your AI assistant directly to a hardened compliance engine. Ask Claude or any MCP client to scan a system, map findings to STIG/NIST/CMMC controls, and generate an executive-ready risk report — all without sending data to external APIs.\n\nKey capabilities:\n\n36,195 STIG/CCI/NIST 800-53/800-171/CMMC mappings (offline, bundled)\nPost-quantum cryptographic attestation on every tool call (ML-DSA-65 / FIPS 204)\nWorld's First DoD PQC STIG — 17 controls covering CNSA 2.0 / FIPS 203/204/205 + agentic AI / MCP (PQC-01-STIG-V1R1)\nGodfather Report: dollar-denominated business impact per finding (FAIR model)\nAir-gap and SCIF compatible — sovereign/ironbank modes make zero egress calls\nFlat annual licensing — no per-token or per-query charges\nRuns on your metal: on-prem, DoD, IC, classified environments\nInstallation\nThere are two delivery methods: Docker (recommended, no build required) and compiled binary (fastest startup, required for air-gap). Both support the same environment variables and all MCP clients.\n\nChoose your path:\n\nMethod\tBest For\tStartup\nDocker\tMost users, easiest setup\t~2s\nCompiled Binary\tAir-gap, SCIF, performance\t~300ms\nOption A: Docker (Recommended)\nRequires Docker Desktop or Docker Engine. The image is pre-built and ships the full compliance database — no additional downloads in sovereign mode.\n\n# Pull once\ndocker pull ghcr.io/nouchix/pqc-khepra-mcp:latest\n\n# Test it (should print the initialize response and exit)\necho '{\"jsonrpc\":\"2.0\",\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{},\"clientInfo\":{\"name\":\"test\",\"version\":\"1.0\"}},\"id\":0}' \\\n  | docker run --rm -i -e KHEPRA_MODE=sovereign ghcr.io/nouchix/pqc-khepra-mcp:latest\nOption B: Compiled Binary\nRequires Go 1.21+ for building, or download a pre-built release from GitHub Releases.\n\ngit clone https://github.com/nouchix/PQC-Khepra-MCP.git\ncd PQC-Khepra-MCP\n\n# Build (cross-compile for your OS)\ngo build -o khepra-mcp ./cmd/khepra-mcp        # Linux / macOS\ngo build -o khepra-mcp.exe ./cmd/khepra-mcp    # Windows\n\n# Test the binary\necho '{\"jsonrpc\":\"2.0\",\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{},\"clientInfo\":{\"name\":\"test\",\"version\":\"1.0\"}},\"id\":0}' \\\n  | KHEPRA_MODE=sovereign ./khepra-mcp\nWindows — using the batch launcher\nThe repo ships a run-mcp.bat launcher for Windows. It uses the pre-built binary (fast path) and falls back to go run automatically:\n\n:: run-mcp.bat is already in the repo at the root of PQC-Khepra-MCP\n:: Point your MCP client to: cmd /c C:\\path\\to\\PQC-Khepra-MCP\\run-mcp.bat\nAdding to Your AI Client\nClaude Desktop\nConfig file location:\n\nmacOS: ~/Library/Application Support/Claude/claude_desktop_config.json\nWindows: %APPDATA%\\Claude\\claude_desktop_config.json\nLinux: ~/.config/Claude/claude_desktop_config.json\nCommunity tier — Docker (macOS / Linux)\n{\n  \"mcpServers\": {\n    \"khepra\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"-v\", \"/var/lib/khepra:/var/lib/khepra\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ]\n    }\n  }\n}\nCommunity tier — Docker (Windows)\n{\n  \"mcpServers\": {\n    \"khepra\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"-v\", \"C:\\\\Users\\\\YourName\\\\.khepra:/var/lib/khepra\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ]\n    }\n  }\n}\nCommunity tier — Binary (Windows, fastest startup)\n{\n  \"mcpServers\": {\n    \"khepra\": {\n      \"command\": \"C:\\\\path\\\\to\\\\PQC-Khepra-MCP\\\\khepra-mcp.exe\",\n      \"args\": [],\n      \"env\": {\n        \"KHEPRA_MODE\": \"sovereign\",\n        \"KHEPRA_NETWORK_POLICY\": \"lan\",\n        \"MCP_PQC_ENABLED\": \"true\",\n        \"KHEPRA_MANIFEST_PATH\": \"C:\\\\path\\\\to\\\\PQC-Khepra-MCP\\\\manifest.json\"\n      }\n    }\n  }\n}\nCommunity tier — Binary via batch launcher (Windows)\n{\n  \"mcpServers\": {\n    \"khepra\": {\n      \"command\": \"cmd\",\n      \"args\": [\"/c\", \"C:\\\\path\\\\to\\\\PQC-Khepra-MCP\\\\run-mcp.bat\"],\n      \"env\": {\n        \"KHEPRA_MODE\": \"sovereign\",\n        \"KHEPRA_NETWORK_POLICY\": \"lan\",\n        \"MCP_PQC_ENABLED\": \"true\"\n      }\n    }\n  }\n}\nSovereign / Pharaoh tier (with license key)\n{\n  \"mcpServers\": {\n    \"khepra\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_LICENSE_KEY\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"-v\", \"/var/lib/khepra:/var/lib/khepra\",\n        \"-v\", \"/var/log/khepra:/var/log/khepra\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ],\n      \"env\": {\n        \"KHEPRA_LICENSE_KEY\": \"YOUR_LICENSE_KEY_HERE\"\n      }\n    }\n  }\n}\nAfter editing, restart Claude Desktop. Verify in Settings → Developer — you should see khepra with status running and all tools listed.\n\nCursor\nConfig file: .cursor/mcp.json in your project root, or ~/.cursor/mcp.json globally.\n\nDocker (macOS / Linux)\n{\n  \"servers\": {\n    \"khepra\": {\n      \"type\": \"stdio\",\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"-v\", \"/var/lib/khepra:/var/lib/khepra\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ]\n    }\n  }\n}\nBinary (macOS / Linux)\n{\n  \"servers\": {\n    \"khepra\": {\n      \"type\": \"stdio\",\n      \"command\": \"/path/to/khepra-mcp\",\n      \"args\": [],\n      \"env\": {\n        \"KHEPRA_MODE\": \"sovereign\",\n        \"KHEPRA_MANIFEST_PATH\": \"/path/to/PQC-Khepra-MCP/manifest.json\"\n      }\n    }\n  }\n}\nBinary (Windows)\n{\n  \"servers\": {\n    \"khepra\": {\n      \"type\": \"stdio\",\n      \"command\": \"C:\\\\path\\\\to\\\\PQC-Khepra-MCP\\\\khepra-mcp.exe\",\n      \"args\": [],\n      \"env\": {\n        \"KHEPRA_MODE\": \"sovereign\",\n        \"KHEPRA_MANIFEST_PATH\": \"C:\\\\path\\\\to\\\\PQC-Khepra-MCP\\\\manifest.json\"\n      }\n    }\n  }\n}\nVS Code (with GitHub Copilot or Cline extension)\nConfig file: .vscode/mcp.json in your project, or user settings.\n\n{\n  \"servers\": {\n    \"khepra\": {\n      \"type\": \"stdio\",\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"-v\", \"${env:HOME}/.khepra:/var/lib/khepra\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ]\n    }\n  }\n}\nOr via user settings.json for the Cline extension:\n\n{\n  \"cline.mcpServers\": {\n    \"khepra\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ]\n    }\n  }\n}\nWindsurf\nConfig file: ~/.codeium/windsurf/mcp_config.json\n\n{\n  \"mcpServers\": {\n    \"khepra\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\", \"--rm\", \"-i\",\n        \"-e\", \"KHEPRA_MODE=sovereign\",\n        \"-v\", \"/var/lib/khepra:/var/lib/khepra\",\n        \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n      ]\n    }\n  }\n}\nContinue.dev\nConfig file: ~/.continue/config.json — add to the experimental.modelContextProtocolServers array:\n\n{\n  \"experimental\": {\n    \"modelContextProtocolServers\": [\n      {\n        \"name\": \"khepra\",\n        \"transport\": {\n          \"type\": \"stdio\",\n          \"command\": \"docker\",\n          \"args\": [\n            \"run\", \"--rm\", \"-i\",\n            \"-e\", \"KHEPRA_MODE=sovereign\",\n            \"ghcr.io/nouchix/pqc-khepra-mcp:latest\"\n          ]\n        }\n      }\n    ]\n  }\n}\nCloud / SaaS AI Tools (Claude.ai, ChatGPT, Gemini, etc.)\nCloud-based AI tools cannot directly spawn local subprocesses — they need an HTTP/SSE bridge to reach your local KHEPRA server. There are two approaches:\n\nApproach 1 — mcp-remote proxy (easiest, no server required)\nmcp-remote tunnels a local stdio MCP server over HTTPS, making it accessible to any cloud tool. This is what the Kaggle MCP entry in the config above uses.\n\n# Install once\nnpm install -g mcp-remote\n\n# Start the bridge (exposes your local KHEPRA server at https://localhost:3000)\nKHEPRA_MODE=sovereign mcp-remote \\\n  --server \"docker run --rm -i -e KHEPRA_MODE=sovereign ghcr.io/nouchix/pqc-khepra-mcp:latest\" \\\n  --port 3000\nThen in Claude.ai (or any cloud tool that accepts MCP SSE URLs):\n\nMCP Server URL: http://localhost:3000/sse\nSecurity note: mcp-remote binds to localhost by default. Do not expose it to the public internet without TLS and authentication. In sovereign/ironbank mode, KHEPRA itself makes zero egress calls — only the bridge connection to the cloud tool carries data.\n\nApproach 2 — Self-hosted HTTP/SSE endpoint\nFor teams running KHEPRA on a shared server (e.g., Hostinger VPS at IP_ADDRESS), start the server in HTTP mode:\n\n# On your server — start KHEPRA in HTTP/SSE mode\ndocker run -d \\\n  -e KHEPRA_MODE=hybrid \\\n  -e KHEPRA_HTTP_PORT=8443 \\\n  -e KHEPRA_LICENSE_KEY=\"${KHEPRA_LICENSE_KEY}\" \\\n  -p 8443:8443 \\\n  ghcr.io/nouchix/pqc-khepra-mcp:latest\n\n# Point your cloud tool to:\n# https://your-server.com:8443/sse\nThen configure any cloud AI tool that supports MCP SSE:\n\nCloud Tool\tWhere to add MCP URL\nClaude.ai (Pro/Team)\tSettings → Integrations → MCP Servers\nOpenAI Assistants\tAPI tools field with type: \"mcp\"\nGemini for Workspace\tExtensions → Custom MCP (preview)\nGlama.ai\tWorkspace → MCP Servers\nSmithery.ai\tCatalog → Self-hosted server\nNote: HTTP/SSE mode (hybrid/edge) enables external connections. Always terminate TLS at a reverse proxy (nginx/Caddy) and restrict access by IP or API key. The sovereign mode refuses HTTP connections by design — air-gap integrity is preserved.\n\nApproach 3 — Smithery / MCP Registry (Community tier only)\nKHEPRA is listed on Smithery.ai and the MCP Registry. Cloud tools that support registry-based discovery can install it directly:\n\nRegistry ID: io.github.nouchix/pqc-khepra-mcp\nThis runs the Community tier via Smithery's managed infrastructure. For sovereign deployment (air-gap, your data stays on your metal), use Options A or B above.\n\nValidation — Test Your Installation\nRun this from your terminal to verify the server responds correctly:\n\n# Docker\necho '{\"jsonrpc\":\"2.0\",\"method\":\"tools/list\",\"params\":{},\"id\":1}' \\\n  | docker run --rm -i -e KHEPRA_MODE=sovereign ghcr.io/nouchix/pqc-khepra-mcp:latest\n\n# Binary (Linux / macOS)\necho '{\"jsonrpc\":\"2.0\",\"method\":\"tools/list\",\"params\":{},\"id\":1}' \\\n  | KHEPRA_MODE=sovereign ./khepra-mcp\n\n# Binary (Windows PowerShell)\n'{\"jsonrpc\":\"2.0\",\"method\":\"tools/list\",\"params\":{},\"id\":1}' \\\n  | \u0026 \".\\khepra-mcp.exe\"\nExpected output: a JSON-RPC response listing all available tools. If you see \"tools\": [...] with 12+ entries — you're connected.\n\nFull protocol validation (Windows)\n# Runs the complete Claude Desktop handshake sequence and validates all responses\n.\\scripts\\test-mcp-handshake.ps1 -BinaryPath \".\\khepra-mcp.exe\"\n\n# Expected output:\n# [PASS] initialize | protocolVersion=2025-11-25 | listChanged=False\n# [PASS] tools/list | count=34\n# TRL-10 READY - Server passes full Claude Desktop protocol validation\nMCP Tools\nCommunity Tier (Free — No License Key)\npqc_stig — World's First DoD PQC STIG ⭐\nAssesses a source code directory against PQC-01-STIG-V1R1: 12 controls covering CNSA 2.0 algorithm approval, ML-DSA-65 key strength, ML-KEM-768 encapsulation, hybrid cryptography, key storage, constant-time implementation, and certificate chain requirements.\n\npqc_stig(scan_path?: string, profile?: \"quick\" | \"full\" | \"executive\")\nExample: \"Run pqc_stig on my project and tell me if I'm CNSA 2.0 compliant\"\n\nnist_map\nMap CCI identifiers or STIG findings to NIST 800-53 Rev 5 controls.\n\nkhepra_query_stig\nQuery the 36,195-row STIG/CCI/NIST/CMMC compliance database by control ID.\n\ndark_crypto_contribute (opt-in)\nContribute anonymized cryptographic algorithm telemetry to the SouHimBou AI Dark Crypto Intelligence Network. No PII. Opt-in only — never fires without explicit invocation.\n\nSovereign / Pharaoh Tier\nert_scan\nEnterprise Risk \u0026 Threat scan across STIG, NIST 800-53, NIST 800-171, CMMC, and FedRAMP. Returns Godfather Report with dollar-denominated business impact.\n\nert_scan(target: string, frameworks?: string[], output_format?: \"godfather\" | \"json\" | \"csv\")\nExample: \"Run ert_scan on /etc and generate a Godfather Report\"\n\nstig_check\nAutomated RHEL-09-STIG-V1R3 compliance scan against a live system or configuration path.\n\ncmmc_assess\nFull CMMC Level 1, 2, or 3 assessment with gap analysis and POA\u0026M generation.\n\ngodfather_report\nGenerate an executive Godfather Report from prior scan results: top 10 findings ranked by dollar exposure, remediation ROI, and FAIR model business impact.\n\n+ 20 additional tools\nagent_record, dag_attestation, flight_export, khepra_get_dag_chain, nhi_inventory, acp_status, owasp_agent_assess, khepra_export_attestation, khepra_export_poam, khepra_get_compliance_score, ert_crypto, ert_readiness, stig_benchmark, ir_analysis, vuln_hunter, sbom_generate, threat_model, khepra_query_threat_intel, discover_assets, and more.\n\nThe Godfather Report\nUnlike compliance scanners that output a wall of CVEs, KHEPRA translates findings into the language executives care about:\n\nFinding: RHEL-09-212030 — No FIPS-validated crypto on /etc/ssh\nSeverity: CAT I (HIGH)\nBusiness Impact: $2.4M estimated breach exposure (FAIR model)\nRemediation Cost: $800 (4 hours engineer time)\nROI: 3,000x\nEvery finding includes control ID, framework mapping, business impact in dollars, remediation cost estimate, and ROI.\n\nDeployment Modes\nMode\tAir-Gap\tEgress\tTelemetry\tUse Case\nsovereign\t✅ Yes\tZero\tZero\tOn-prem, SCIF, classified (DEFAULT)\nironbank\t✅ Yes\tZero\tZero\tDoD/IC production, FIPS-only\nhybrid\t❌ No\tLAN\tZero\tEdge + cloud coordination\nedge\t❌ No\tUnrestricted\tZero\tFully stateless SaaS\nSet via KHEPRA_MODE environment variable. Unknown values are rejected at startup and fall back to sovereign (fail-closed).\n\nEnvironment Variables\nVariable\tRequired\tDefault\tDescription\nKHEPRA_LICENSE_KEY\tSovereign/Pharaoh only\t—\tLicense key. Community tier runs without one. Get at nouchix.com\nKHEPRA_MODE\tNo\tsovereign\tDeployment mode: sovereign, ironbank, hybrid, edge\nKHEPRA_MANIFEST_PATH\tNo\tmanifest.json\tPath to signed tool manifest file\nKHEPRA_HOME\tNo\t/var/lib/khepra\tData and compliance DB directory\nKHEPRA_LOG_DIR\tNo\t/var/log/khepra\tLog directory\nKHEPRA_DAG_PATH\tNo\t~/.khepra/dag\tDAG audit chain storage path\nKHEPRA_AUDIT_LOG_PATH\tNo\t~/.khepra/audit.ndjson\tSigned audit log path\nKHEPRA_MAX_CONCURRENT\tNo\t5\tMax concurrent tool calls per agent\nKHEPRA_NETWORK_POLICY\tNo\tlan\tNetwork scope: lan, none, unrestricted\nMCP_PQC_ENABLED\tNo\ttrue\tEnable ML-DSA-65 PQC attestation on all responses\nAir-Gap \u0026 SCIF Deployment\nKHEPRA makes zero external network calls in sovereign and ironbank modes:\n\nLicense validated offline via ML-DSA-65 signed license.adinkhepra file\nCompliance databases (36,195 mappings) bundled in container — no external downloads\nNo telemetry, no heartbeat, no egress — verified at the transport layer\n# Transfer image to air-gapped network\ndocker save ghcr.io/nouchix/pqc-khepra-mcp:latest | gzip \u003e khepra-mcp.tar.gz\n\n# On air-gapped host:\ndocker load \u003c khepra-mcp.tar.gz\nNote on telemetry: The dark_crypto_contribute tool (Community tier) sends anonymized cryptographic algorithm telemetry to the SouHimBou AI intelligence network only when explicitly invoked by the user. It is never triggered automatically. In sovereign/ironbank mode, all network calls are blocked at the transport layer regardless.\n\nCompliance Coverage\nFramework\tVersion\tMappings\nSTIG (RHEL 9)\tV1R3\tAutomated scanning\nNIST 800-53\tRev 5\t2,120 CCIs\nNIST 800-171\tRev 2\t320 controls\nCMMC\tLevel 3\tFull practice set\nFedRAMP\tHigh\tBaseline scanning\nPQC-01-STIG-V1R1\tV1R1\t17 PQC controls (CNSA 2.0)\nTotal\t\t36,195+ mappings\nLicensing\nFlat annual licensing — no per-token or per-query charges.\n\nTier\tCost\tLicense Key\tTools\nCommunity\tFree\tNot required\tpqc_stig + 12 core tools\nSovereign\tAnnual flat fee\tRequired\tAll 34 tools, air-gap, on-prem\nPharaoh\tAnnual flat fee\tRequired\tAll 34 tools + priority support + SLA\nCommunity tier is permanently free — contribute to open-source PQC adoption\nSovereign/Pharaoh: contact contact@nouchix.com or visit nouchix.com\nSecurity\nReporting Vulnerabilities\nDo not open public issues for security vulnerabilities.\n\nReport privately via GitHub Security Advisories or email support@nouchix.com.\n\nSLA\tTarget\nAcknowledgement\t24 hours\nInitial assessment\t5 business days\nPatch / mitigation (Critical)\t30 days\nWe accept encrypted reports via PGP (keys/security_contact.asc) and Post-Quantum channels (Dilithium / ML-DSA-65 keys in keys/). See SECURITY.md for the full disclosure policy and ASAF event taxonomy.\n\nSecurity Posture\nDeploying advanced post-quantum cryptography, air-gapped isolation, and comprehensive STIG mappings — built in direct alignment with NSA \u0026 ASD Model Context Protocol guidelines.\n\nNSA \u0026 ASD MCP Security Alignment\nThe NSA and Australian Signals Directorate (ASD) have published specific threat vectors for AI systems interacting with local environments. KHEPRA MCP is explicitly designed to mitigate every identified vector:\n\nNSA/ASD Requirement\tKHEPRA Implementation\nCryptographic validation of tool responses\tML-DSA-65 (Dilithium) signatures on all JSON-RPC 2.0 payloads\nInput validation \u0026 sanitization\tParameter injection resistance via strict JSON Schema validation\nPrinciple of least privilege credentials\tShort-lived ephemeral tokens tied to specific task execution windows\nComprehensive audit logging\tTamper-evident events compiled into an immutable DAG structure\nResource consumption limits\tRate limiting + backpressure for LLM request loops\nAuthorization gates for sensitive actions\tHuman-in-the-loop gate for destructive state changes\nEnvironment isolation\tContainerized execution with zero-egress sovereign mode\nSoftware supply chain integrity\tManifest pinning for all loaded tools and dependencies\nNetwork exposure reduction\tAir-gappable — zero internet transit in sovereign/ironbank modes\nPost-quantum resilience\tPQC-signed DAG trail protecting against harvest-now-decrypt-later\nCompliance Certifications\nFramework\tStatus\tCoverage\nCMMC Level 2\t✅\tAutomates evidence collection for AU, CM, SI, SC domains\nNIST SP 800-171 Rev 2\t✅\tLogging, accountability, system integrity\nNIST SP 800-53 Rev 5\t✅\tContinuous monitoring (AU-2, SI-4)\nFIPS 203 (ML-KEM)\t✅\tKey encapsulation for secure transit\nFIPS 204 (ML-DSA)\t✅\tDigital signatures for payload authentication\nNSM-10 PQC Mandate\t✅\tNational Security Memorandum 10 compliance\nDFARS 252.204-7012\t✅\tImmutable forensic trails for cyber incident reporting\nNSA MCP Security Guidelines\t✅\tDirect mapping to all published AI agent threat mitigations\nLive Deployment — Physical Edge\nRunning continuously on constrained edge hardware since May 12, 2026 to prove efficiency in sovereign environments:\n\nHardware: Raspberry Pi 2 · 1 GB RAM · 900 MHz ARM · Live Spectrum Router\nSCADA Pod: STM32U585 / QRB2210 · Modbus TCP · MQTT · Zephyr RTOS 3.4+ · Live Dilithium Signature Verification\nControls active: 3 open ports secured · 12 STIG violations detected · 100% file integrity monitoring (AIDE) · 24/7 continuous operation\nAcademic Validation\nEvent\tDate\tInstitution\nUAlbany AI Plus Symposium 2026 — \"KHEPRA Protocol: Quantum-Resilient Agentic AI Security Using Cultural Cryptography\"\tMarch 7, 2026\tNSA CAE-CDE Institution · 200+ audience\nSUNY Albany Cybersecurity Showcase — First PQC key ceremony on STM32-class device (SCADA Pod)\tMay 12–13, 2026\tLive demo · SCADA architecture poster\nUSPTO Provisional Patent #73565085 — pending.\n🔒 Iron Bank containers in DISA vetting process.\n\nAbout NouchiX\nVeteran-led advisory firm translating CMMC, NIST, and STIG mandates into executive roadmaps.\n\nSales / General: contact@nouchix.com\nSupport: support@nouchix.com\nWebsite: https://nouchix.com\nPhone: (518) 304-4450\nDeveloped by SecRed Knowledge Inc. dba NouchiX, Albany, NY.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "threat_model"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "threat_model"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "packet_analyze"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "packet_analyze"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "packet_analyze"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "khepra_export_attestation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_export_attestation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vuln_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vuln_scan"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "container_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "container_scan"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "khepra_query_threat_intel"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "khepra_query_threat_intel"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_query_threat_intel"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"staged_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "godfather_approve"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "godfather_approve"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "kasa_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "flight_record"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "drbc_restore"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "drbc_restore"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "drbc_restore"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "drbc_restore"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nhi_revoke"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ert_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ert_scan"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ert_godfather"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ert_godfather"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ert_godfather"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "enumerate_host"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "enumerate_host"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "enumerate_host"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compliance_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "identity_epiphany"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "godfather_report"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_get_compliance_score"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ouroboros_stig_eye"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fingerprint_device"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "fingerprint_device"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fingerprint_device"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "phantom_stealth"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "phantom_stealth"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "phantom_stealth"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "identity_shroud"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "acp_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nhi_excessive"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "stig_check"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "owasp_agent_assess"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "owasp_agent_assess"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ouroboros_fim_eye"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ouroboros_fim_eye"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, environment variables",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "forensic_snapshot"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "forensic_snapshot"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "forensic_snapshot"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pqc_verify"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "acp_issue"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "pqc_stig"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pqc_stig"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_get_dag_chain"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "sbom_generate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "sbom_generate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ir_add_ioc"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ouroboros_waf_eye"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "audit_dag_integrity"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"credential_id\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "acp_revoke"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "acp_revoke"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nhi_orphans"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ert_architect"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ert_architect"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "dark_crypto_contribute"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "dark_crypto_contribute"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dark_crypto_contribute"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "secret_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "secret_scan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pqc_keygen"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "drbc_backup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "drbc_backup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nhi_inventory"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ert_readiness"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ert_readiness"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "khepra_query_stig"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "khepra_query_stig"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_query_stig"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "quantum_optimize"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ir_incident"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ir_incident"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ir_incident"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "pqc_sign"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "dag_write"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dag_write"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dag_audit"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "discover_assets"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "discover_assets"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "kasa_start"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "kasa_start"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "kasa_start"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "threat_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "threat_lookup"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ert_crypto"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ert_crypto"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nist_map"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dag_attestation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_export_poam"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "agent_record"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "flight_export"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ea_threat_score"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ea_evolve"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "dag_query"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "dag_query"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dag_query"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "khepra_watch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "khepra_watch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ea_risk_summary"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ouroboros_vuln_eye"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "attack_graph"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nhi_expired"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "cmmc_assess"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cmmc_assess"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "drift_detect"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fim_baseline"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fim_baseline"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "port_scan"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 13,
+    "info": 108
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "acp_issue",
+    "acp_revoke",
+    "acp_status",
+    "agent_record",
+    "attack_graph",
+    "audit_dag_integrity",
+    "cmmc_assess",
+    "compliance_scan",
+    "container_scan",
+    "dag_attestation",
+    "dag_audit",
+    "dag_query",
+    "dag_write",
+    "dark_crypto_contribute",
+    "discover_assets",
+    "drbc_backup",
+    "drbc_restore",
+    "drift_detect",
+    "ea_evolve",
+    "ea_risk_summary",
+    "ea_threat_score",
+    "enumerate_host",
+    "ert_architect",
+    "ert_crypto",
+    "ert_godfather",
+    "ert_readiness",
+    "ert_scan",
+    "fim_baseline",
+    "fingerprint_device",
+    "flight_export",
+    "flight_record",
+    "forensic_snapshot",
+    "godfather_approve",
+    "godfather_report",
+    "identity_epiphany",
+    "identity_shroud",
+    "ir_add_ioc",
+    "ir_incident",
+    "kasa_start",
+    "kasa_status",
+    "khepra_export_attestation",
+    "khepra_export_poam",
+    "khepra_get_compliance_score",
+    "khepra_get_dag_chain",
+    "khepra_query_stig",
+    "khepra_query_threat_intel",
+    "khepra_watch",
+    "nhi_excessive",
+    "nhi_expired",
+    "nhi_inventory",
+    "nhi_orphans",
+    "nhi_revoke",
+    "nist_map",
+    "ouroboros_fim_eye",
+    "ouroboros_stig_eye",
+    "ouroboros_vuln_eye",
+    "ouroboros_waf_eye",
+    "owasp_agent_assess",
+    "packet_analyze",
+    "phantom_stealth",
+    "port_scan",
+    "pqc_keygen",
+    "pqc_sign",
+    "pqc_stig",
+    "pqc_verify",
+    "quantum_optimize",
+    "sbom_generate",
+    "secret_scan",
+    "stig_check",
+    "threat_lookup",
+    "threat_model",
+    "vuln_scan"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "threat_model",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "packet_analyze",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_export_attestation",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "vuln_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "container_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_query_threat_intel",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "godfather_approve",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (staged_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "kasa_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "flight_record",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "drbc_restore",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nhi_revoke",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ert_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ert_godfather",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "enumerate_host",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compliance_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "identity_epiphany",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "godfather_report",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_get_compliance_score",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ouroboros_stig_eye",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fingerprint_device",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "phantom_stealth",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "identity_shroud",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "acp_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nhi_excessive",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "stig_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "owasp_agent_assess",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ouroboros_fim_eye",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "forensic_snapshot",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_env",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pqc_verify",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "acp_issue",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pqc_stig",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_get_dag_chain",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "sbom_generate",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ir_add_ioc",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ouroboros_waf_eye",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "audit_dag_integrity",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "acp_revoke",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nhi_orphans",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ert_architect",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "dark_crypto_contribute",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "secret_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pqc_keygen",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "drbc_backup",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nhi_inventory",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ert_readiness",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_query_stig",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "quantum_optimize",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ir_incident",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pqc_sign",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "dag_write",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "dag_audit",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "discover_assets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "kasa_start",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "threat_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ert_crypto",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nist_map",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (top_k)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "dag_attestation",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_export_poam",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "agent_record",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "flight_export",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ea_threat_score",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ea_evolve",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "dag_query",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "khepra_watch",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ea_risk_summary",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ouroboros_vuln_eye",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "attack_graph",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nhi_expired",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "cmmc_assess",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "drift_detect",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fim_baseline",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "port_scan",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

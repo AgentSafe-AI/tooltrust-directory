@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nicholasallenfrench-stackswap](https://smithery.ai/server/nicholasallenfrench/stackswap) |
-| **Scan Date** | 2026-07-04 |
+| **Scan Date** | 2026-07-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

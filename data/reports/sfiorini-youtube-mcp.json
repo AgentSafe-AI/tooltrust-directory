@@ -1,19 +1,19 @@
 {
   "tool_id": "sfiorini-youtube-mcp",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-11T02:58:55.168648774Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-16T02:03:59.482491787Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/sfiorini/youtube-mcp",
   "vendor": "Smithery",
   "description": "Search and browse videos, channels, and playlists to fetch titles, descriptions, stats, and durations.\n\nRetrieve multilingual, timestamped transcripts and search within captions for precise context.\n\nSurface channel and playlist insights quickly by listing items and details.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "videos_getVideo"
     },
@@ -35,9 +35,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "videos_searchVideos"
     },
@@ -100,10 +100,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
+    "high": 0,
     "medium": 0,
     "low": 2,
-    "info": 7
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -119,7 +119,7 @@
     {
       "tool_name": "videos_getVideo",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -129,7 +129,7 @@
     {
       "tool_name": "videos_searchVideos",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -460,6 +460,12 @@
     },
     {
       "scan_date": "2026-06-10T02:48:04Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-11T02:58:55Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

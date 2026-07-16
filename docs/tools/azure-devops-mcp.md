@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.8.0` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 1887 |
+| **Stars** | ⭐ 1889 |
 | **npm Package** | `@azure-devops/mcp` |
-| **npm Downloads (30d)** | 326.6k |
+| **npm Downloads (30d)** | 372.5k |
 | **Language** | TypeScript |
 | **Source** | [azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) |
-| **Scan Date** | 2026-07-15 |
+| **Scan Date** | 2026-07-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

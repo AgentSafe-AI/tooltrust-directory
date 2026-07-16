@@ -10,10 +10,10 @@
 | **Vendor** | apify |
 | **Stars** | ⭐ 723 |
 | **npm Package** | `@apify/mcpc` |
-| **npm Downloads (30d)** | 21.6k |
+| **npm Downloads (30d)** | 23.4k |
 | **Language** | TypeScript |
 | **Source** | [mcpc](https://github.com/apify/mcpc) |
-| **Scan Date** | 2026-07-15 |
+| **Scan Date** | 2026-07-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `2.0.0` |
 | **Vendor** | rahilp |
-| **Stars** | ⭐ 597 |
+| **Stars** | ⭐ 600 |
 | **npm Package** | `second-brain` |
 | **npm Downloads (30d)** | 12 |
 | **Language** | TypeScript |
 | **Source** | [second-brain-cloudflare](https://github.com/rahilp/second-brain-cloudflare) |
-| **Scan Date** | 2026-07-15 |
+| **Scan Date** | 2026-07-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
