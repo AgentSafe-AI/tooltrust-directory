@@ -30,7 +30,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ilhami-sutci-alya-hub](https://smithery.ai/server/ilhami-sutci/alya-hub) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

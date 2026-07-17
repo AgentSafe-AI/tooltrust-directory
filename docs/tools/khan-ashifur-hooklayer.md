@@ -35,7 +35,7 @@ Listed on the [Anthropic Official MCP Registry](https://registry.modelcontextpro
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [khan-ashifur-hooklayer](https://smithery.ai/server/khan-ashifur/hooklayer) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

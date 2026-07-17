@@ -2,20 +2,42 @@
   "tool_id": "nexgendata-apify-seo-web-analysis-mcp-server",
   "version": "smithery",
   "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-22T02:16:58.569690271Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "risk_score": 15,
+  "scan_date": "2026-07-17T02:07:09.396110045Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/nexgendata-apify/seo-web-analysis-mcp-server",
   "vendor": "Smithery",
-  "description": "Crawl websites, detect tech stacks, check DNS records, inspect SSL certificates, and lookup WHOIS data for comprehensive site analysis.",
+  "description": "SEO audit toolkit: feed it a URL, get back rendered content, the technology stack (CMS, CDN, frameworks), DNS records, SSL cert status, and WHOIS. Useful for competitive analysis ('what's our competitor running?'), security checks, or due-diligence on a target acquisition.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-012",
       "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "audit_website",
+          "get_audit_page",
+          "get_services"
+        ],
+        "removed": [
+          "check_dns",
+          "check_ssl",
+          "crawl_website",
+          "detect_tech_stack",
+          "lookup_whois"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "crawl_website"
+      "tool_name": "audit_website"
     },
     {
       "id": "AS-011",
@@ -23,7 +45,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "crawl_website"
+      "tool_name": "audit_website"
     },
     {
       "id": "AS-014",
@@ -31,15 +53,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "crawl_website"
+      "tool_name": "audit_website"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_services"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "detect_tech_stack"
+      "tool_name": "get_audit_page"
     },
     {
       "id": "AS-011",
@@ -47,7 +77,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "detect_tech_stack"
+      "tool_name": "get_audit_page"
     },
     {
       "id": "AS-014",
@@ -55,118 +85,58 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "detect_tech_stack"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_dns"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_ssl"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "lookup_whois"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lookup_whois"
+      "tool_name": "get_audit_page"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 1,
+    "high": 1,
+    "medium": 0,
     "low": 2,
     "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "check_dns",
-    "check_ssl",
-    "crawl_website",
-    "detect_tech_stack",
-    "lookup_whois"
+    "audit_website",
+    "get_audit_page",
+    "get_services"
   ],
   "tool_contexts": [
     {
-      "tool_name": "crawl_website",
+      "tool_name": "audit_website",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (url)",
+        "dynamic email recipient (email)",
         "hardcoded domain: example.com",
-        "hardcoded domain: www.example.com"
+        "hardcoded domain: example.com)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "detect_tech_stack",
+      "tool_name": "get_services",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: Northwest.net"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_audit_page",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: www.example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_dns",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.org",
-        "hardcoded domain: google.com",
-        "hardcoded domain: subdomain.example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_ssl",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded API endpoint: api.example.com",
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "lookup_whois",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: company.org",
-        "hardcoded domain: example.com"
+        "hardcoded domain: Northwest.net"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -193,6 +163,12 @@
     },
     {
       "scan_date": "2026-04-21T02:17:52Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-22T02:16:58Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

@@ -1,14 +1,30 @@
 {
   "tool_id": "travis-kellogg1-coinrailz-mcp",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-04T02:20:06.152093703Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-17T02:06:58.506145759Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/travis-kellogg1/coinrailz-mcp",
   "vendor": "Smithery",
   "description": "63 x402 micropayment services via USDC — crypto analytics, trading signals, NASA/ESA satellite data, IoT sensors, AI inference, and prediction markets. Coinbase AgentKit compatible. Pay per call with prepaid credits or native on-chain USDC.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "coinrailz_first_call",
+          "coinrailz_instant_api_key",
+          "coinrailz_prediction_market_spread"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -16,6 +32,30 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "coinrailz_ping"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "coinrailz_first_call"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "coinrailz_first_call"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "coinrailz_first_call"
     },
     {
       "id": "AS-014",
@@ -498,6 +538,14 @@
       "tool_name": "coinrailz_kalshi_search"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "coinrailz_prediction_market_spread"
+    },
+    {
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
@@ -680,14 +728,38 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "coinrailz_ai_inference"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "coinrailz_instant_api_key"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "coinrailz_instant_api_key"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "coinrailz_instant_api_key"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 5,
-    "info": 79
+    "low": 7,
+    "info": 84
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -710,12 +782,14 @@
     "coinrailz_earthdata_soil_moisture",
     "coinrailz_earthdata_sst",
     "coinrailz_fire_alerts",
+    "coinrailz_first_call",
     "coinrailz_fleet_telematics",
     "coinrailz_flood_detection",
     "coinrailz_forex_sentiment",
     "coinrailz_fraud_detection",
     "coinrailz_gas_price_oracle",
     "coinrailz_instant_agent_wallet",
+    "coinrailz_instant_api_key",
     "coinrailz_iot_bulk_data",
     "coinrailz_iot_device_stream",
     "coinrailz_iot_sensor_reading",
@@ -733,6 +807,7 @@
     "coinrailz_portfolio_optimization",
     "coinrailz_portfolio_tracker",
     "coinrailz_prediction_market_odds",
+    "coinrailz_prediction_market_spread",
     "coinrailz_property_valuation",
     "coinrailz_risk_metrics",
     "coinrailz_satellite_earthdata",
@@ -760,6 +835,16 @@
       "tool_name": "coinrailz_ping",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "coinrailz_first_call",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1132,6 +1217,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "coinrailz_prediction_market_spread",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "coinrailz_solana_yield_finder",
       "action": "ALLOW",
       "grade": "A",
@@ -1272,6 +1364,24 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "coinrailz_instant_api_key",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-07-04T02:20:06Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
     }
   ]
 }

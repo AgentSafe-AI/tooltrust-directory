@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.97` |
 | **Vendor** | VikashLoomba |
-| **Stars** | ⭐ 501 |
+| **Stars** | ⭐ 502 |
 | **npm Package** | `copilot-mcp` |
 | **Language** | TypeScript |
 | **Source** | [copilot-mcp](https://github.com/VikashLoomba/copilot-mcp) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

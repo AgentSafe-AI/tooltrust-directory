@@ -1,21 +1,49 @@
 {
   "tool_id": "axel-belfort-hyperliquid-data",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-07-10T02:19:51.060227516Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-17T02:07:13.200248459Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/hyperliquid-data",
   "vendor": "Smithery",
   "description": "Hyperliquid perpetual market data API for AI agents. Real-time order books, mid prices, funding rates, open interest, 24h volume, and OHLCV candles for all 229 perp markets on Hyperliquid L1. Direct on-chain data, no CoinGecko dependency.\n\nTools: hyperliquid_get_market_data (single), hyperliquid_get_all_markets (overview), hyperliquid_get_candles (OHLCV).\n\nUse this for trading signals, market analysis, backtesting, or building Hyperliquid trading bots. The foundational data layer for any Hyperliquid integration. IMPORTANT: For whale tracking, use hyperliquid_track_whale_positions instead.\n\nReturns real-time L1 data. No API key required — x402 micropayment $0.001/call on Base L2.",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "hyperliquid_find_funding_arb",
+          "hyperliquid_get_funding_history",
+          "hyperliquid_get_funding_rates"
+        ],
+        "removed": [
+          "hyperliquid_get_all_markets",
+          "hyperliquid_get_candles",
+          "hyperliquid_get_market_data"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hyperliquid_get_market_data"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "hyperliquid_get_funding_rates"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "hyperliquid_get_funding_rates"
     },
     {
       "id": "AS-014",
@@ -23,7 +51,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hyperliquid_get_all_markets"
+      "tool_name": "hyperliquid_get_funding_rates"
     },
     {
       "id": "AS-014",
@@ -31,39 +59,50 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hyperliquid_get_candles"
+      "tool_name": "hyperliquid_get_funding_history"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "hyperliquid_find_funding_arb"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 3
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "hyperliquid_get_all_markets",
-    "hyperliquid_get_candles",
-    "hyperliquid_get_market_data"
+    "hyperliquid_find_funding_arb",
+    "hyperliquid_get_funding_history",
+    "hyperliquid_get_funding_rates"
   ],
   "tool_contexts": [
     {
-      "tool_name": "hyperliquid_get_market_data",
+      "tool_name": "hyperliquid_get_funding_rates",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "hyperliquid_get_funding_history",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hyperliquid_get_all_markets",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "hyperliquid_get_candles",
+      "tool_name": "hyperliquid_find_funding_arb",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -97,6 +136,12 @@
     },
     {
       "scan_date": "2026-07-08T02:08:22Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-10T02:19:51Z",
       "grade": "A",
       "risk_score": 0,
       "version": "smithery"

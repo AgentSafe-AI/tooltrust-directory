@@ -1,34 +1,54 @@
 {
   "tool_id": "brave-search-mcp-server",
   "version": "2.0.85",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-07-16T01:59:08.541342153Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-17T02:02:51.020674275Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/brave/brave-search-mcp-server",
   "category": "Developer Tools",
   "vendor": "brave",
-  "stars": 1300,
+  "stars": 1304,
   "npm_package": "@brave/brave-search-mcp-server",
-  "npm_downloads_monthly": 68530,
+  "npm_downloads_monthly": 65540,
   "license": "MIT",
   "language": "TypeScript",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_web_search"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.0.85: 6 tool(s) added, 8 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
+          "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
+          "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
+          "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
+          "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
+          "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
+        ],
+        "removed": [
+          "brave_image_search",
+          "brave_llm_context",
+          "brave_local_search",
+          "brave_news_search",
+          "brave_place_search",
+          "brave_summarizer",
+          "brave_video_search",
+          "brave_web_search"
+        ],
+        "version": "2.0.85"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 15 properties (threshold: 10)",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_web_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
     },
     {
       "id": "AS-011",
@@ -36,7 +56,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_web_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
     },
     {
       "id": "AS-014",
@@ -44,31 +64,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_web_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_news_search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_news_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP"
     },
     {
       "id": "AS-002",
@@ -76,7 +72,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_image_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
     },
     {
       "id": "AS-011",
@@ -84,7 +80,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_image_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
     },
     {
       "id": "AS-014",
@@ -92,7 +88,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_image_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL"
     },
     {
       "id": "AS-002",
@@ -100,7 +96,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_video_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
     },
     {
       "id": "AS-011",
@@ -108,7 +104,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_video_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
     },
     {
       "id": "AS-014",
@@ -116,31 +112,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_video_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_local_search"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_local_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS"
     },
     {
       "id": "AS-002",
@@ -148,31 +120,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_llm_context"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_llm_context"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "brave_llm_context"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"maximum_number_of_tokens_per_url\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "brave_llm_context"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
     },
     {
       "id": "AS-011",
@@ -180,7 +128,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_llm_context"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
     },
     {
       "id": "AS-014",
@@ -188,23 +136,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_llm_context"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_place_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 13 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "brave_place_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
     },
     {
       "id": "AS-011",
@@ -212,7 +152,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "brave_place_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
     },
     {
       "id": "AS-014",
@@ -220,7 +160,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_place_search"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     },
     {
       "id": "AS-014",
@@ -228,15 +184,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "brave_summarizer"
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 10,
-    "info": 17
+    "low": 6,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -257,93 +213,62 @@
     }
   ],
   "tool_names": [
-    "brave_image_search",
-    "brave_llm_context",
-    "brave_local_search",
-    "brave_news_search",
-    "brave_place_search",
-    "brave_summarizer",
-    "brave_video_search",
-    "brave_web_search"
+    "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
+    "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
+    "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
+    "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
+    "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
+    "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP"
   ],
   "tool_contexts": [
     {
-      "tool_name": "brave_web_search",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_GET_SITEMAP",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (site_url)",
+        "hardcoded domain: sitemap.xml",
+        "hardcoded domain: www.example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_INSPECT_URL",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: locations.results",
-        "hardcoded domain: search.brave.com",
-        "hardcoded domain: summarizer.key"
+        "dynamic URL input (inspection_url)",
+        "dynamic URL input (site_url)",
+        "dynamic URL input (url)",
+        "hardcoded domain: www.example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "brave_news_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_image_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_video_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_local_search",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITEMAPS",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: locations.results"
+        "dynamic URL input (site_url)",
+        "hardcoded domain: www.example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "brave_llm_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (maximum_number_of_snippets_per_url)",
-        "dynamic URL input (maximum_number_of_urls)",
-        "dynamic email recipient (maximum_number_of_tokens)",
-        "dynamic email recipient (maximum_number_of_tokens_per_url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "brave_place_search",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_LIST_SITES",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -353,11 +278,31 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "brave_summarizer",
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
-        "hardcoded domain: summarizer.key"
+        "dynamic URL input (site_url)",
+        "hardcoded domain: www.example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GOOGLE_SEARCH_CONSOLE_SUBMIT_SITEMAP",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (site_url)",
+        "hardcoded domain: sitemap.xml",
+        "hardcoded domain: www.example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -372,6 +317,12 @@
     },
     {
       "scan_date": "2026-07-15T01:38:07Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "2.0.85"
+    },
+    {
+      "scan_date": "2026-07-16T01:59:08Z",
       "grade": "A",
       "risk_score": 4,
       "version": "2.0.85"
