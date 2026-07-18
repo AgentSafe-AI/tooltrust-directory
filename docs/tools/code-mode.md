@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1515 |
 | **Language** | TypeScript |
 | **Source** | [code-mode](https://github.com/universal-tool-calling-protocol/code-mode) |
-| **Scan Date** | 2026-07-17 |
+| **Scan Date** | 2026-07-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -24,7 +24,7 @@
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 2 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -37,18 +37,6 @@ Tool set changed silently at v1.0.6: 1 tool(s) added, 1 tool(s) removed without 
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: code/command execution, database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

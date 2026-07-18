@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hissingspider-deerdawn](https://smithery.ai/server/hissingspider/DeerDawn) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

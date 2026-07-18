@@ -1,104 +1,69 @@
 {
   "tool_id": "claude-context",
   "version": "0.1.11",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-07-17T01:59:48Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-18T01:49:37.201108486Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/zilliztech/claude-context",
   "category": "Developer Tools",
   "vendor": "zilliztech",
-  "stars": 12145,
+  "stars": 12151,
   "npm_package": "claude-context",
-  "npm_downloads_monthly": 90,
+  "npm_downloads_monthly": 91,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 8,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "evaluation/servers/edit_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 11,
-            "snippet": "FastMCP(",
-            "file": "evaluation/servers/edit_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 14,
-            "snippet": "@mcp.tool(",
-            "file": "evaluation/servers/edit_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "import",
-            "line": 14,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "evaluation/servers/grep_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 17,
-            "snippet": "FastMCP(",
-            "file": "evaluation/servers/grep_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 35,
-            "snippet": "@mcp.tool(",
-            "file": "evaluation/servers/grep_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "import",
-            "line": 13,
-            "snippet": "from mcp.server.fastmcp import FastMCP",
-            "file": "evaluation/servers/read_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 16,
-            "snippet": "FastMCP(",
-            "file": "evaluation/servers/read_server.py",
-            "language": "python"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 19,
-            "snippet": "@mcp.tool(",
-            "file": "evaluation/servers/read_server.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_plugins"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_plugins"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_plugins"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_plugin"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_categories"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -165,48 +130,39 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "get_plugin",
+    "list_categories",
+    "search_plugins"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-07-10T02:11:09Z",
+      "tool_name": "search_plugins",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-11T01:57:30Z",
+      "tool_name": "get_plugin",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-12T02:00:54Z",
+      "tool_name": "list_categories",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
-    },
-    {
-      "scan_date": "2026-07-13T02:02:00Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
-    },
-    {
-      "scan_date": "2026-07-14T01:49:06Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
-    },
-    {
-      "scan_date": "2026-07-15T01:34:52Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
-    },
-    {
-      "scan_date": "2026-07-16T01:55:54Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "0.1.11"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

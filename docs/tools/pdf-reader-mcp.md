@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `3.0.14` |
+| **Version** | `3.1.1` |
 | **Vendor** | SylphxAI |
-| **Stars** | ⭐ 828 |
+| **Stars** | ⭐ 829 |
 | **npm Package** | `@sylphx/pdf-reader-mcp` |
-| **npm Downloads (30d)** | 29.4k |
+| **npm Downloads (30d)** | 28.4k |
 | **Language** | TypeScript |
 | **Source** | [pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) |
-| **Scan Date** | 2026-07-17 |
+| **Scan Date** | 2026-07-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,20 +25,20 @@
 | Critical | 0 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 3 |
-| Info     | 4 |
+| Low      | 1 |
+| Info     | 7 |
 
 ## Detailed Findings
 
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-input schema exposes 33 properties (threshold: 10)
+Tool 'read_pdf' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+Review and remediate the identified issue.
 
 ---
 
@@ -47,7 +47,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -63,6 +63,18 @@ declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
+
+**Severity:** Info
+
+**Description:**
+Tool 'search_pdf' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 
@@ -83,22 +95,22 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.
 
 ---
 
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ ℹ️ `AS-007` — INSUFFICIENT_TOOL_DATA
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-input schema exposes 12 properties (threshold: 10)
+Tool 'pdf_evidence' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+Review and remediate the identified issue.
 
 ---
 
@@ -107,7 +119,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
 Review and remediate the identified issue.

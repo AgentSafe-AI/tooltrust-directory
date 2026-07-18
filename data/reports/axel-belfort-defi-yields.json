@@ -1,0 +1,52 @@
+{
+  "tool_id": "axel-belfort-defi-yields",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:56:57.321961219Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/defi-yields",
+  "vendor": "Smithery",
+  "description": "DeFi yield aggregator API for AI agents. Find the best lending, staking, and LP yields across 100+ protocols (Aave, Compound, Morpho, Lido, Yearn, Curve, Convex). Powered by DeFiLlama with TVL, risk scoring, and historical APY.\n\nTools: defi_find_best_yields.\n\nUse this when looking for yield opportunities, comparing protocols, or building DeFi portfolio strategies. IMPORTANT: For swap quotes, use dex_get_swap_quote. For gas costs, use gas_get_current_price.\n\nReturns yields sorted by APY with TVL and risk. No API key required — x402 micropayment $0.002/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "defi_find_best_yields"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "defi_find_best_yields"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "defi_find_best_yields"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "defi_find_best_yields",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

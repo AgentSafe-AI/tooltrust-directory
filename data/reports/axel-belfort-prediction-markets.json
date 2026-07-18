@@ -1,0 +1,73 @@
+{
+  "tool_id": "axel-belfort-prediction-markets",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:56:54.235511453Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/prediction-markets",
+  "vendor": "Smithery",
+  "description": "Prediction market data API for AI agents. Real-time odds, probabilities, and volume from Polymarket and Kalshi. Browse active markets, trending events, and categories (politics, crypto, sports, tech). The betting intelligence layer for event forecasting.\n\nTools: prediction_list_markets, prediction_get_market_odds, prediction_trending_markets.\n\nUse this for event probability assessment, risk analysis, forecasting, or building prediction-based strategies. IMPORTANT: For resolving whether events actually occurred, use event_resolve_outcome.\n\nReturns: {markets[], odds, volume, category}. No API key required — x402 micropayment $0.005/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "prediction_list_markets"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "prediction_get_market_odds"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "prediction_trending_markets"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "prediction_get_market_odds",
+    "prediction_list_markets",
+    "prediction_trending_markets"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "prediction_list_markets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "prediction_get_market_odds",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "prediction_trending_markets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

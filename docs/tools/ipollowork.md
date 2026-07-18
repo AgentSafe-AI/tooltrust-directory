@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.0` |
 | **Vendor** | Devin-AXIS |
-| **Stars** | ⭐ 1266 |
+| **Stars** | ⭐ 1292 |
 | **npm Package** | `@ipollo/ipollowork-workspace` |
 | **Language** | TypeScript |
 | **Source** | [ipollowork](https://github.com/Devin-AXIS/iPolloWork) |
-| **Scan Date** | 2026-07-17 |
+| **Scan Date** | 2026-07-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

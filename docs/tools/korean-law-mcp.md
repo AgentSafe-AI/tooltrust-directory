@@ -1,6 +1,6 @@
 # 🟢 korean-law-mcp
 
-> 법제처 국가법령정보 MCP — 법령·판례·조례 조회부터 인용 환각 검증까지 · Korean law MCP for LLMs
+> 법제처 국가법령정보를 LLM에서 바로 조회하는 MCP 서버. 법령·판례·조례 검색과 인용 검증 | MCP server for Korean law — search statutes, precedents, and ordinances, and verify citations
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `4.7.4` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2215 |
+| **Stars** | ⭐ 2236 |
 | **npm Package** | `korean-law-mcp` |
-| **npm Downloads (30d)** | 19.5k |
+| **npm Downloads (30d)** | 20.9k |
 | **Language** | TypeScript |
 | **Source** | [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

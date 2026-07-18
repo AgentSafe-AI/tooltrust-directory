@@ -1,0 +1,44 @@
+{
+  "tool_id": "axel-belfort-timezone-converter",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:56:55.211924892Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/timezone-converter",
+  "vendor": "Smithery",
+  "description": "Timezone conversion API for AI agents. Convert datetime between any IANA timezone with DST awareness: UTC offset, local time, ISO 8601 format. Essential for scheduling across time zones.\n\nTools: utility_convert_timezone.\n\nUse this for meeting scheduling, event coordination, or displaying local times. Handles DST transitions automatically.\n\nReturns: {converted, utcOffset, isDST, timezone}. No API key required — x402 micropayment $0.001/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "utility_convert_timezone"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "utility_convert_timezone"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "utility_convert_timezone",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-04-19T02:18:24.341232642Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "scan_date": "2026-07-18T01:56:44.138708209Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/cammac/IBANforge",
   "vendor": "Smithery",
   "description": "IBAN validation, BIC/SWIFT lookup, Swiss clearing, SEPA compliance and risk indicators for AI   \n  agents. 121K+ bank entries from GLEIF, 1,190 Swiss BC-Nummer from SIX BankMaster, 84 countries.\n  Native MCP support with 5 tools, 2 resources, 1 prompt. ",
@@ -16,6 +16,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "validate_iban"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "batch_validate_iban"
     },
     {
       "id": "AS-014",
@@ -55,7 +63,7 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 5
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -98,8 +106,20 @@
       "tool_name": "lookup_ch_clearing",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: iban.com",
+        "hardcoded domain: sepa.com"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-19T02:18:24Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "smithery"
     }
   ]
 }

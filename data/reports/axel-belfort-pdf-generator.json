@@ -1,0 +1,52 @@
+{
+  "tool_id": "axel-belfort-pdf-generator",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:57:51.978158781Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/pdf-generator",
+  "vendor": "Smithery",
+  "description": "PDF document generation API for AI agents. Generate PDFs from HTML or Markdown: custom page size (A4, Letter), margins, headers, footers. Ideal for reports, invoices, contracts, and documentation.\n\nTools: document_generate_pdf.\n\nUse this for generating professional documents, reports, or invoices. IMPORTANT: For capturing existing web pages as PDF, use webpage_to_pdf instead.\n\nReturns: base64-encoded PDF document. No API key required — x402 micropayment $0.008/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "document_generate_pdf"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "document_generate_pdf"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "document_generate_pdf"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "document_generate_pdf",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

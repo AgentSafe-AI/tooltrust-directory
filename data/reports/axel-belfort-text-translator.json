@@ -1,0 +1,44 @@
+{
+  "tool_id": "axel-belfort-text-translator",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:57:00.784090592Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/text-translator",
+  "vendor": "Smithery",
+  "description": "Text translation API for AI agents. Translate between 50+ languages with automatic source language detection. Fast, accurate translations for content localization, multilingual support, and cross-language communication.\n\nTools: text_translate.\n\nUse this for translating user messages, localizing content, or building multilingual agents. IMPORTANT: For language detection only (without translation), use text_detect_language instead.\n\nReturns: {translated, from, to, confidence}. No API key required — x402 micropayment $0.005/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "text_translate"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "text_translate"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "text_translate",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

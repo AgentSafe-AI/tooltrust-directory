@@ -1,33 +1,33 @@
 {
   "tool_id": "pdf-reader-mcp",
-  "version": "3.0.14",
+  "version": "3.1.1",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-17T02:03:41.603029102Z",
+  "scan_date": "2026-07-18T01:53:20.190859355Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/SylphxAI/pdf-reader-mcp",
   "category": "Developer Tools",
   "vendor": "SylphxAI",
-  "stars": 828,
+  "stars": 829,
   "npm_package": "@sylphx/pdf-reader-mcp",
-  "npm_downloads_monthly": 29353,
+  "npm_downloads_monthly": 28442,
   "license": "MIT",
   "language": "TypeScript",
   "description": "📄 The PDF intelligence layer for AI agents — Agent Document Twin, evidence-first extraction, visual crops, OCR provenance, trust reports, and benchmark-gated releases. MCP server for Claude, Cursor, VS Code, and any MCP client.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 33 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'read_pdf' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "read_pdf"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "read_pdf"
     },
@@ -37,6 +37,14 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_pdf"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'search_pdf' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search_pdf"
     },
     {
@@ -51,23 +59,23 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search_pdf"
     },
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'pdf_evidence' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "pdf_evidence"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "pdf_evidence"
     }
@@ -76,34 +84,10 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 4
+    "low": 1,
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/mcp.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 268,
-      "snippet": "new McpServer(",
-      "file": "src/mcp.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 276,
-      "snippet": ".registerTool(",
-      "file": "src/mcp.ts",
-      "language": "typescript"
-    }
-  ],
   "tool_names": [
     "pdf_evidence",
     "read_pdf",
@@ -114,13 +98,8 @@
       "tool_name": "read_pdf",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (auto)",
-        "dynamic email recipient (auto_detail)",
-        "dynamic email recipient (include_accessibility_report)"
-      ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "search_pdf",
@@ -130,14 +109,14 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "pdf_evidence",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -329,6 +308,12 @@
     },
     {
       "scan_date": "2026-07-16T02:00:01Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "3.0.14"
+    },
+    {
+      "scan_date": "2026-07-17T02:03:41Z",
       "grade": "A",
       "risk_score": 2,
       "version": "3.0.14"

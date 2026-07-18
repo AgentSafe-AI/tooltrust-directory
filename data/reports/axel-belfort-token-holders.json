@@ -1,0 +1,41 @@
+{
+  "tool_id": "axel-belfort-token-holders",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:56:50.864052635Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/token-holders",
+  "vendor": "Smithery",
+  "description": "Token holder distribution API for AI agents. Analyze any ERC-20 token's holder structure: top holders with % ownership, whale count, Gini concentration coefficient, holder trend (growing/shrinking), and smart money addresses.\n\nTools: token_get_holder_analysis.\n\nUse this for due diligence before investing, detecting whale accumulation, or assessing decentralization. IMPORTANT: For contract safety (honeypot, rug-pull), use token_check_safety instead.\n\nReturns: {topHolders[], whaleCount, concentration, trend}. No API key required — x402 micropayment $0.005/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "token_get_holder_analysis"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "token_get_holder_analysis"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "token_get_holder_analysis",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

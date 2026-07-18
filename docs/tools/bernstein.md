@@ -1,17 +1,17 @@
 # 🟢 bernstein
 
-> Deterministic, audit-grade multi-agent orchestration for CLI coding agents (Claude Code, Codex, Gemini CLI, +40 more). HMAC-chained audit log, signed agent cards, per-artefact lineage, byte-identical replay with divergence detection, air-gap deploy. https://bernstein.run
+> Deterministic, audit-grade multi-agent orchestration for AI agents (Claude Code, Codex, Gemini CLI, +40 more). HMAC-chained audit log, signed agent cards, per-artefact lineage, byte-identical replay with divergence detection, air-gap deploy. https://bernstein.run
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `3.5.0` |
+| **Version** | `3.7.0` |
 | **Vendor** | sipyourdrink-ltd |
-| **Stars** | ⭐ 681 |
+| **Stars** | ⭐ 688 |
 | **Language** | Python |
 | **Source** | [bernstein](https://github.com/sipyourdrink-ltd/bernstein) |
-| **Scan Date** | 2026-07-17 |
+| **Scan Date** | 2026-07-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

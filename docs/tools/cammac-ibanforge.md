@@ -11,8 +11,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cammac-ibanforge](https://smithery.ai/server/cammac/IBANforge) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-07-18 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -24,7 +24,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 5 |
+| Info     | 6 |
 
 ## Detailed Findings
 
@@ -37,6 +37,18 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: database access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

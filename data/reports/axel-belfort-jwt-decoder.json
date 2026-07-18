@@ -1,0 +1,53 @@
+{
+  "tool_id": "axel-belfort-jwt-decoder",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:56:52.215236875Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/jwt-decoder",
+  "vendor": "Smithery",
+  "description": "JWT token decoder API for AI agents. Decode and inspect JSON Web Tokens without verification: extract header (algorithm, type), payload (claims, issuer, audience), expiry timestamp, and signature info.\n\nTools: security_decode_jwt.\n\nUse this for debugging authentication flows, inspecting token claims, or verifying token structure. IMPORTANT: This decodes without verifying — for security validation, verify signatures server-side.\n\nReturns: {header, payload, claims, expiresAt, algorithm}. No API key required — x402 micropayment $0.001/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "security_decode_jwt"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "security_decode_jwt"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "security_decode_jwt"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "security_decode_jwt",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (token)",
+        "hardcoded domain: header.payload.signature"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

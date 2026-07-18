@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-auth-proxy",
   "version": "2.10.2",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-07-17T02:05:40.829842605Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-07-18T01:55:31Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/sigbit/mcp-auth-proxy",
   "category": "Developer Tools",
@@ -14,43 +14,61 @@
   "description": "MCP Auth Proxy is a secure OAuth 2.1 authentication proxy for Model Context Protocol (MCP) servers",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.10.2: 1 tool(s) added, 6 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "invoke"
-        ],
-        "removed": [
-          "get_auth_examples",
-          "get_feature_details",
-          "get_integration_guide",
-          "get_llms_context",
-          "list_better_auth_features",
-          "search_better_auth"
-        ],
-        "version": "2.10.2"
-      }
-    },
-    {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "invoke"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 14,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "pkg/backend/proxy.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 117,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/backend/proxy.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 125,
+            "snippet": "AddTool(",
+            "file": "pkg/backend/proxy.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 6,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "pkg/backend/testserver/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 10,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/backend/testserver/main.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -89,23 +107,17 @@
       "language": "go"
     }
   ],
-  "tool_names": [
-    "invoke"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "invoke",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-07-16T02:02:09Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "2.10.2"
+    },
+    {
+      "scan_date": "2026-07-17T02:05:40Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "2.10.2"
     }
   ]

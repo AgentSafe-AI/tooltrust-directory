@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [infobip-mcp-search](https://smithery.ai/server/infobip-mcp/search) |
-| **Scan Date** | 2026-05-17 |
-| **Scanner** | tooltrust-scanner/v0.3.12 |
+| **Scan Date** | 2026-07-18 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
