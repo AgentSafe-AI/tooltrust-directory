@@ -20,7 +20,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ali-7ogs-storyflo](https://smithery.ai/server/ali-7ogs/storyflo) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

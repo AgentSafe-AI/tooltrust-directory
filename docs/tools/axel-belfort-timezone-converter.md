@@ -15,7 +15,7 @@ Returns: {converted, utcOffset, isDST, timezone}. No API key required — x402 m
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-timezone-converter](https://smithery.ai/server/axel-belfort/timezone-converter) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

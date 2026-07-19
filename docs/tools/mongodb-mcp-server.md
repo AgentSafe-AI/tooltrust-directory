@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `1.15.0-alpha.2` |
+| **Version** | `1.15.0-alpha.5` |
 | **Vendor** | mongodb-js |
 | **Stars** | ⭐ 1084 |
 | **npm Package** | `mongodb-mcp-server` |
-| **npm Downloads (30d)** | 315.4k |
+| **npm Downloads (30d)** | 312.2k |
 | **Language** | TypeScript |
 | **Source** | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

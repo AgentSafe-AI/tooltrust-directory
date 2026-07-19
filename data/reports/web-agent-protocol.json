@@ -1,99 +1,80 @@
 {
   "tool_id": "web-agent-protocol",
   "version": "wap-replay-tool-1.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-18T01:54:20.48200936Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-07-19T02:03:46Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/OTA-Tech-AI/web-agent-protocol",
   "category": "Developer Tools",
   "vendor": "OTA-Tech-AI",
-  "stars": 501,
+  "stars": 502,
   "license": "MIT",
   "language": "Python",
   "description": "🌐Web Agent Protocol (WAP) - Record and replay user interactions in the browser with MCP support",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_catalog_info"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "lookup_vendors"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "lookup_vendors"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lookup_vendors"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_vendor"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_vendor"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_vendor"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "report_to_outpost"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "report_to_outpost"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "file": "mcp_servers/find_top_rated_keyboard_amazon_ca_y757R6w6y17LVHXl_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 5,
+            "snippet": "FastMCP(",
+            "file": "mcp_servers/find_top_rated_keyboard_amazon_ca_y757R6w6y17LVHXl_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 7,
+            "snippet": "@mcp.tool(",
+            "file": "mcp_servers/find_top_rated_keyboard_amazon_ca_y757R6w6y17LVHXl_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "wap_replay/generate_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 70,
+            "snippet": "FastMCP(",
+            "file": "wap_replay/generate_mcp_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 76,
+            "snippet": "@mcp.tool(",
+            "file": "wap_replay/generate_mcp_server.py",
+            "language": "python"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 2,
-    "info": 7
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -138,64 +119,6 @@
       "language": "python"
     }
   ],
-  "tool_names": [
-    "get_catalog_info",
-    "get_vendor",
-    "lookup_vendors",
-    "report_to_outpost"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get_catalog_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "lookup_vendors",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (protocol)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_vendor",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: data.protocols"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "report_to_outpost",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (endpoint_live)",
-        "dynamic email recipient (protocol_attempted)",
-        "hardcoded domain: data.protocols",
-        "hardcoded domain: www.rolocache.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-07-14T01:54:11Z",
@@ -217,6 +140,12 @@
     },
     {
       "scan_date": "2026-07-17T02:04:29Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "wap-replay-tool-1.0.0"
+    },
+    {
+      "scan_date": "2026-07-18T01:54:20Z",
       "grade": "A",
       "risk_score": 2,
       "version": "wap-replay-tool-1.0.0"

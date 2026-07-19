@@ -1,5 +1,13 @@
 # 🟢 nell-creedspace
 
+> Constitutional-AI safety guardrails for any LLM — personas, constitutions, adjudication.
+
+Creed Space gives agents machine-readable value systems: pick a persona (ambassador, nanny, sentinel, godparent, muse, anchor), pull its merged constitution, generate complete system prompts, and evaluate actions against declared values. 16 tools, no credentials required — runs against the public Creed Space API.
+
+- Website: https://www.creed.space
+- Repo: https://github.com/Creed-Space/creedspace-mcp-server
+- npm: `@creedspace/mcp-server` (also installable locally via `npx`)
+
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
@@ -7,7 +15,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nell-creedspace](https://smithery.ai/server/nell/creedspace) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns: {score, entropy, crackTime, tips[]}. No API key required — x402 micro
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-password-strength](https://smithery.ai/server/axel-belfort/password-strength) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

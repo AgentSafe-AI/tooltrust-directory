@@ -15,7 +15,7 @@ Returns: {categories[], readability, contentType, confidence}. No API key requir
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-text-classifier](https://smithery.ai/server/axel-belfort/text-classifier) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

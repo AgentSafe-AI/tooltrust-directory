@@ -15,7 +15,7 @@ Returns structured JSON with bio, stats, verification, links. No API key require
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-social-profile](https://smithery.ai/server/axel-belfort/social-profile) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
