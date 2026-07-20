@@ -1,0 +1,44 @@
+{
+  "tool_id": "axel-belfort-email-finder",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-20T03:37:47.201390715Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/email-finder",
+  "vendor": "Smithery",
+  "description": "Email finder API for AI agents. Find professional email addresses from a person's name and company domain. Tests 15+ email patterns (first.last@, f.last@, first@, etc.) against live MX records with confidence scoring.\n\nTools: email_find_by_name.\n\nUse this when you have a prospect's name and company but need their email. Essential for outbound sales, recruiting outreach, and partnership emails. IMPORTANT: Always verify found emails with email_verify_address before sending.\n\nReturns: {email, confidence, pattern, mx_valid}. No API key required — x402 micropayment $0.005/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "email_find_by_name"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "email_find_by_name"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "email_find_by_name",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: company.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

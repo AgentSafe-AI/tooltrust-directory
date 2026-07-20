@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xqb-vibe-pay](https://smithery.ai/server/xqb/vibe-pay) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

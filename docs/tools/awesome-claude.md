@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 17 |
 | **Language** | MDX |
 | **Source** | [awesome-claude](https://github.com/JSONbored/awesome-claude) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,0 +1,61 @@
+{
+  "tool_id": "axel-belfort-dex-quotes",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-20T03:37:53.327509945Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/dex-quotes",
+  "vendor": "Smithery",
+  "description": "DEX swap quote API for AI agents. Best swap quotes across Uniswap V2/V3, SushiSwap, Aerodrome, and other DEXes. Returns optimal route, price impact, slippage estimate, gas cost, and minimum output.\n\nTools: dex_get_swap_quote.\n\nMANDATORY: Call this BEFORE executing any DEX swap to avoid excessive slippage. Essential for pre-trade analysis, route optimization, and MEV protection. IMPORTANT: For orderbook depth analysis, use dex_analyze_orderbook_depth.\n\nReturns: {route, amountOut, priceImpact, slippage, gas}. No API key required — x402 micropayment $0.005/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenIn\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "dex_get_swap_quote"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenOut\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "dex_get_swap_quote"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dex_get_swap_quote"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 3
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "dex_get_swap_quote"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "dex_get_swap_quote",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tokenIn)",
+        "dynamic email recipient (tokenOut)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

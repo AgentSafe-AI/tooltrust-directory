@@ -1,0 +1,65 @@
+{
+  "tool_id": "axel-belfort-email-verification",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-20T03:37:54.806108408Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/email-verification",
+  "vendor": "Smithery",
+  "description": "Email verification API for AI agents. Validate any email address in real-time with syntax check, MX record validation, disposable provider detection (Mailinator, Guerrilla Mail, 100+ providers), role-based flags (admin@, info@), and composite quality score 0-100.\n\nTools: email_verify_address (single), email_verify_batch (up to 100 emails).\n\nUse this BEFORE sending outreach emails, adding contacts to CRM, or processing signups. Essential for cleaning email lists, detecting fake registrations, and qualifying leads. Drop-in replacement for Hunter.io email verification at 15x lower cost.\n\nReturns: {valid, syntax, mx, disposable, role, free, score, email}. No API key required — x402 micropayment $0.002/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "email_verify_address"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "email_verify_batch"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "email_verify_address",
+    "email_verify_batch"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "email_verify_address",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (email)",
+        "hardcoded domain: example.com",
+        "hardcoded email recipient: user@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "email_verify_batch",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (emails)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

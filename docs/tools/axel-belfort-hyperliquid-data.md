@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-hyperliquid-data
+# 🟢 axel-belfort-hyperliquid-data
 
 > Hyperliquid perpetual market data API for AI agents. Real-time order books, mid prices, funding rates, open interest, 24h volume, and OHLCV candles for all 229 perp markets on Hyperliquid L1. Direct on-chain data, no CoinGecko dependency.
 
@@ -10,12 +10,12 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hyperliquid-data](https://smithery.ai/server/axel-belfort/hyperliquid-data) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 3 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 3 tool(s) added, 3 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

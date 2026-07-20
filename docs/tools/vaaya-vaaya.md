@@ -10,7 +10,7 @@ Agent docs: https://vaaya.ai/llms.txt
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vaaya-vaaya](https://smithery.ai/server/vaaya/vaaya) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

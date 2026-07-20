@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0-windows` |
 | **Vendor** | LING71671 |
-| **Stars** | ⭐ 847 |
+| **Stars** | ⭐ 856 |
 | **Language** | Python |
 | **Source** | [open-reverselab](https://github.com/LING71671/open-reverselab) |
-| **Scan Date** | 2026-07-19 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

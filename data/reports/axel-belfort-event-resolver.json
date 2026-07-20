@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-19T02:06:21.403138851Z",
+  "scan_date": "2026-07-20T03:37:35.666520278Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/event-resolver",
   "vendor": "Smithery",
@@ -17,14 +17,14 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "EVENTBRITE_GET_EVENT_CATEGORIES",
-          "EVENTBRITE_GET_EVENT_FORMATS",
-          "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
-        ],
-        "removed": [
           "event_check_price_threshold",
           "event_resolve_outcome",
           "event_verify_claim"
+        ],
+        "removed": [
+          "EVENTBRITE_GET_EVENT_CATEGORIES",
+          "EVENTBRITE_GET_EVENT_FORMATS",
+          "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
         ],
         "version": "smithery"
       }
@@ -35,7 +35,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "EVENTBRITE_GET_EVENT_CATEGORIES"
+      "tool_name": "event_resolve_outcome"
     },
     {
       "id": "AS-014",
@@ -43,23 +43,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "EVENTBRITE_GET_EVENT_FORMATS"
+      "tool_name": "event_verify_claim"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+      "tool_name": "event_check_price_threshold"
     },
     {
       "id": "AS-014",
@@ -67,44 +59,41 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+      "tool_name": "event_check_price_threshold"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "EVENTBRITE_GET_EVENT_CATEGORIES",
-    "EVENTBRITE_GET_EVENT_FORMATS",
-    "EVENTBRITE_GET_EVENT_SUBCATEGORIES"
+    "event_check_price_threshold",
+    "event_resolve_outcome",
+    "event_verify_claim"
   ],
   "tool_contexts": [
     {
-      "tool_name": "EVENTBRITE_GET_EVENT_CATEGORIES",
+      "tool_name": "event_resolve_outcome",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "EVENTBRITE_GET_EVENT_FORMATS",
+      "tool_name": "event_verify_claim",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "EVENTBRITE_GET_EVENT_SUBCATEGORIES",
+      "tool_name": "event_check_price_threshold",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -114,6 +103,12 @@
       "scan_date": "2026-07-18T01:56:41Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-19T02:06:21Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

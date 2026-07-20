@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.5` |
 | **Vendor** | IBM |
-| **Stars** | ⭐ 4106 |
+| **Stars** | ⭐ 4113 |
 | **Language** | Python |
 | **Source** | [mcp-context-forge](https://github.com/IBM/mcp-context-forge) |
-| **Scan Date** | 2026-07-19 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

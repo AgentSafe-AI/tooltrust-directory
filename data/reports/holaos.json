@@ -1,57 +1,66 @@
 {
   "tool_id": "holaos",
   "version": "@holaboss/app-sdk@0.1.1",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-07-19T01:59:44Z",
+  "scan_date": "2026-07-20T03:30:56.032478466Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/holaboss-ai/holaOS",
   "category": "Developer Tools",
   "vendor": "holaboss-ai",
-  "stars": 5506,
+  "stars": 5507,
   "npm_package": "hola-boss-oss",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Your super agent for work: local-first, learn your working context in mins and never forget it.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 20,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 64,
-            "snippet": "new McpServer(",
-            "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 20,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "sdk/app-builder-sdk/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 64,
-            "snippet": "new McpServer(",
-            "file": "sdk/app-builder-sdk/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "memoryoss_recall"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "memoryoss_recall"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "memoryoss_store"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "memoryoss_update"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "memoryoss_update"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "memoryoss_forget"
     }
   ],
   "summary": {
@@ -59,10 +68,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -94,12 +102,40 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "memoryoss_forget",
+    "memoryoss_recall",
+    "memoryoss_store",
+    "memoryoss_update"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-07-18T01:50:24Z",
+      "tool_name": "memoryoss_recall",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "@holaboss/app-sdk@0.1.1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "memoryoss_store",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "memoryoss_update",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "memoryoss_forget",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

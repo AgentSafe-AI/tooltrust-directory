@@ -1,18 +1,18 @@
-# 🟡 note-gen
+# 🟢 note-gen
 
 > A cross-platform Markdown AI note-taking software.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `note-gen-v0.31.2` |
 | **Vendor** | codexu |
-| **Stars** | ⭐ 12301 |
+| **Stars** | ⭐ 12306 |
 | **npm Package** | `note-gen` |
 | **Language** | TypeScript |
 | **Source** | [note-gen](https://github.com/codexu/note-gen) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 3 |
 | Info     | 15 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vnote-gen-v0.31.2: 8 tool(s) added, 3 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

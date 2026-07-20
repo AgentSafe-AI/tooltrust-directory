@@ -1,0 +1,65 @@
+{
+  "tool_id": "axel-belfort-person-enrichment",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-20T03:37:53.756263142Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/person-enrichment",
+  "vendor": "Smithery",
+  "description": "Person enrichment API for AI agents. Enrich any email address into a full professional profile: full name, job title, company, LinkedIn URL, GitHub profile, Twitter handle, avatar URL, location, and bio.\n\nTools: person_enrich_from_email.\n\nUse this when researching leads, personalizing outreach, building contact databases, or enriching CRM records. Essential for any sales or recruiting pipeline. IMPORTANT: Verify the email first with email_verify_address before enriching.\n\nReturns structured JSON with name, title, company, social links, avatar. No API key required — x402 micropayment $0.01/call on Base L2. Alternative to Apollo.io person lookup.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "person_enrich_from_email"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "person_enrich_from_email"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "person_enrich_from_email"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "person_enrich_from_email"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "person_enrich_from_email",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (email)",
+        "hardcoded domain: company.com",
+        "hardcoded email recipient: john@company.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

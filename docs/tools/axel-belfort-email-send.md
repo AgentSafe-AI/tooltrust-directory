@@ -15,7 +15,7 @@ Returns: {id, status, from, to, subject}. No API key required — x402 micropaym
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-email-send](https://smithery.ai/server/axel-belfort/email-send) |
-| **Scan Date** | 2026-07-19 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,0 +1,41 @@
+{
+  "tool_id": "axel-belfort-gas-estimator",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-20T03:37:50.763280026Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/axel-belfort/gas-estimator",
+  "vendor": "Smithery",
+  "description": "Multi-chain gas price API for AI agents. Compare gas prices across Ethereum, Base, Polygon, Arbitrum, and BSC in a single call. Find the cheapest chain for your transaction.\n\nTools: crypto_estimate_gas.\n\nUse this when choosing between chains for deployment, bridging decisions, or cross-chain cost optimization. IMPORTANT: For Ethereum-only gas, use gas_get_current_price for more detail.\n\nReturns gas prices for all chains in one response. No API key required — x402 micropayment $0.002/call on Base L2.",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "crypto_estimate_gas"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "crypto_estimate_gas"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "crypto_estimate_gas",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

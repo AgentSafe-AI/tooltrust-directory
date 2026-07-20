@@ -10,10 +10,10 @@
 | **Vendor** | comet-ml |
 | **Stars** | ⭐ 214 |
 | **npm Package** | `opik-mcp` |
-| **npm Downloads (30d)** | 626 |
+| **npm Downloads (30d)** | 644 |
 | **Language** | Python |
 | **Source** | [opik-mcp](https://github.com/comet-ml/opik-mcp) |
-| **Scan Date** | 2026-07-19 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

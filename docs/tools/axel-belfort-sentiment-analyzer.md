@@ -15,7 +15,7 @@ Returns: {sentiment, confidence, emotions[], keyPhrases[]}. No API key required 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-sentiment-analyzer](https://smithery.ai/server/axel-belfort/sentiment-analyzer) |
-| **Scan Date** | 2026-07-18 |
+| **Scan Date** | 2026-07-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
