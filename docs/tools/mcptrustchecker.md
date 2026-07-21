@@ -1,6 +1,6 @@
 # 🟢 mcptrustchecker
 
-> MCP security scanner — offline, deterministic A–F Trust Score for Model Context Protocol servers. Detects tool poisoning, prompt injection & toxic flows.
+> Security scanner for MCP (Model Context Protocol) servers — reads the real published npm/PyPI source, not just metadata, to catch tool poisoning, prompt injection, toxic flows & supply-chain risk. Offline, deterministic A–F Trust Score, SARIF + CI gates.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.0` |
 | **Vendor** | illiahaidar |
-| **Stars** | ⭐ 73 |
+| **Stars** | ⭐ 80 |
 | **npm Package** | `mcptrustchecker` |
-| **npm Downloads (30d)** | 351 |
+| **npm Downloads (30d)** | 359 |
 | **Language** | TypeScript |
 | **Source** | [mcptrustchecker](https://github.com/illiahaidar/mcptrustchecker) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,6 +1,6 @@
 # 🟢 hello-oipe-geppetto-robot-directory
 
-> Query the world's robot directory — 812 robots across 30 categories and 319 brands. Tools: search_robots (by category, brand, price, use case), get_robot and get_robot_full (complete specs), compare_robots (side-by-side diff), get_category, and get_job_automation_risk (robot displacement scores for 240+ professions — data available nowhere else). All reads public, no auth.
+> Query the world's robot directory - 812 robots across 30 categories and 319 brands. Tools: search_robots (by category, brand, price, use case), get_robot and get_robot_full (complete specs), compare_robots (side-by-side diff), get_category, and get_job_automation_risk (robot displacement scores for 240+ professions - data available nowhere else). All reads public, no auth.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hello-oipe-geppetto-robot-directory](https://smithery.ai/server/hello-oipe/Geppetto-Robot-Directory) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

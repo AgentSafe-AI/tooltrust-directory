@@ -15,7 +15,7 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hyperliquid-data](https://smithery.ai/server/axel-belfort/hyperliquid-data) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

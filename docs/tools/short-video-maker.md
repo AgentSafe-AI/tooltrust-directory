@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.4` |
 | **Vendor** | gyoridavid |
-| **Stars** | ⭐ 1242 |
+| **Stars** | ⭐ 1241 |
 | **npm Package** | `short-video-maker` |
-| **npm Downloads (30d)** | 404 |
+| **npm Downloads (30d)** | 414 |
 | **Language** | TypeScript |
 | **Source** | [short-video-maker](https://github.com/gyoridavid/short-video-maker) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

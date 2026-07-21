@@ -8,12 +8,12 @@
 | **Risk Score** | 10 |
 | **Version** | `0.2.0` |
 | **Vendor** | KeyID-AI |
-| **Stars** | ⭐ 685 |
+| **Stars** | ⭐ 684 |
 | **npm Package** | `@keyid/agent-kit` |
-| **npm Downloads (30d)** | 485 |
+| **npm Downloads (30d)** | 477 |
 | **Language** | JavaScript |
 | **Source** | [agent-kit](https://github.com/KeyID-AI/agent-kit) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

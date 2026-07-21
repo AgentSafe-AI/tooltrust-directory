@@ -15,7 +15,7 @@ Returns Base DeFi opportunities ranked by APY. No API key required — x402 micr
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-base-defi](https://smithery.ai/server/axel-belfort/base-defi) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

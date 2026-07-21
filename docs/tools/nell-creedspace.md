@@ -15,7 +15,7 @@ Creed Space gives agents machine-readable value systems: pick a persona (ambassa
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nell-creedspace](https://smithery.ai/server/nell/creedspace) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

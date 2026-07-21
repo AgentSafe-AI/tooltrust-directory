@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-address-validator
+# 🟢 axel-belfort-address-validator
 
 > Postal address validation API for AI agents. Parse and validate addresses worldwide: country detection, component extraction (street, city, state, postal code), postal code format verification. Supports US, UK, FR, DE, and 50+ countries.
 
@@ -10,12 +10,12 @@ Returns: {valid, components, country, formatted}. No API key required — x402 m
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-address-validator](https://smithery.ai/server/axel-belfort/address-validator) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {valid, components, country, formatted}. No API key required — x402 m
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 1 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

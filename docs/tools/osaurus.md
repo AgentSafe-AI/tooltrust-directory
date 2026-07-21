@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.22.7` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 7247 |
+| **Stars** | ⭐ 7268 |
 | **Language** | Swift |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

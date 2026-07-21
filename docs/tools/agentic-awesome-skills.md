@@ -1,6 +1,6 @@
 # 🟢 agentic-awesome-skills
 
-> AAS Core preview is the local, agent-first control plane for discovering, recommending, validating, and planning exact skill stacks, backed by 1,965+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.
+> AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 1,969+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `15.1.0` |
 | **Vendor** | sickn33 |
-| **Stars** | ⭐ 43599 |
+| **Stars** | ⭐ 43649 |
 | **npm Package** | `agentic-awesome-skills` |
-| **npm Downloads (30d)** | 4.1k |
+| **npm Downloads (30d)** | 4.5k |
 | **Language** | Python |
 | **Source** | [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-event-resolver
+# 🟢 axel-belfort-event-resolver
 
 > Prediction market event resolution API for AI agents. Determine if real-world events occurred with confidence scores. Aggregates news, price feeds, and web data for binary, numeric, and categorical outcomes. Settlement oracle for prediction markets.
 
@@ -10,12 +10,12 @@ Returns: {resolved, outcome, confidence, sources[]}. No API key required — x40
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-event-resolver](https://smithery.ai/server/axel-belfort/event-resolver) |
-| **Scan Date** | 2026-07-20 |
+| **Scan Date** | 2026-07-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {resolved, outcome, confidence, sources[]}. No API key required — x40
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 4 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 3 tool(s) added, 3 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
