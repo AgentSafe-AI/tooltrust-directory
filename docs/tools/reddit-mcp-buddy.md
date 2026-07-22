@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 5.4k |
 | **Language** | TypeScript |
 | **Source** | [reddit-mcp-buddy](https://github.com/karanb192/reddit-mcp-buddy) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

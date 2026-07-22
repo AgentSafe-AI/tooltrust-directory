@@ -17,7 +17,7 @@ The value is simple: we make AI commerce accessible to open-source agents while 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [theagenttimes-ucp-gateway](https://smithery.ai/server/theagenttimes/ucp-gateway) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

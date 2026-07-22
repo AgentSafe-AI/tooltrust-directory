@@ -15,7 +15,7 @@ Get a key instantly with the `register_agent` tool. Live inventory includes a fi
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [conductor-relay-exchange](https://smithery.ai/server/conductor-relay/exchange) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

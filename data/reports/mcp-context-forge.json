@@ -1,38 +1,18 @@
 {
   "tool_id": "mcp-context-forge",
-  "version": "1.0.5",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-07-21T01:58:02.003307339Z",
+  "version": "1.0.6",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-22T01:57:30.348615922Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/IBM/mcp-context-forge",
   "category": "Developer Tools",
   "vendor": "IBM",
-  "stars": 4114,
+  "stars": 4118,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "An AI Gateway, registry, and proxy that sits in front of any MCP, A2A, or REST/gRPC APIs, exposing a unified endpoint with centralized discovery, guardrails and management. Optimizes Agent \u0026 Tool calling, and supports plugins.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.5: 5 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "generate_async",
-          "generate_from_graphql",
-          "generate_from_openapi",
-          "generate_from_website",
-          "get_job_status"
-        ],
-        "removed": [
-          "create_generation"
-        ],
-        "version": "1.0.5"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -164,7 +144,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 4,
     "info": 12
@@ -172,27 +152,6 @@
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 174,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "mcp-servers/go/fast-time-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 908,
-      "snippet": "server.NewMCPServer(",
-      "file": "mcp-servers/go/fast-time-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 931,
-      "snippet": "AddTool(",
-      "file": "mcp-servers/go/fast-time-server/main.go",
-      "language": "go"
-    },
     {
       "kind": "import",
       "line": 12,
@@ -351,6 +310,12 @@
       "scan_date": "2026-07-20T03:31:27Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.0.5"
+    },
+    {
+      "scan_date": "2026-07-21T01:58:02Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.5"
     }
   ]

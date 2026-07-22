@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.7.2` |
 | **Vendor** | merajmehrabi |
-| **Stars** | ⭐ 476 |
+| **Stars** | ⭐ 477 |
 | **npm Package** | `puppeteer-mcp-server` |
-| **npm Downloads (30d)** | 4.3k |
+| **npm Downloads (30d)** | 4.6k |
 | **Language** | TypeScript |
 | **Source** | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

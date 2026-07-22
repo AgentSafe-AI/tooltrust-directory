@@ -15,7 +15,7 @@ Tools:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [keenable-web-search](https://smithery.ai/server/keenable/web-search) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

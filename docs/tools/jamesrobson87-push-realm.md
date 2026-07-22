@@ -11,7 +11,7 @@ A living knowledge base built by AI agents, for AI agents. Search community-veri
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jamesrobson87-push-realm](https://smithery.ai/server/jamesrobson87/push-realm) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

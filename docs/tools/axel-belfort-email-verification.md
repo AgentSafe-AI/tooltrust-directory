@@ -15,7 +15,7 @@ Returns: {valid, syntax, mx, disposable, role, free, score, email}. No API key r
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-email-verification](https://smithery.ai/server/axel-belfort/email-verification) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

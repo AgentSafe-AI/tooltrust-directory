@@ -82,7 +82,7 @@ twitter, instagram, tiktok, social-media, analytics, osint, research, remote, da
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [net-service-xpoz](https://smithery.ai/server/net-service/xpoz) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

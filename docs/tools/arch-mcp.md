@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `3.4.0` |
 | **Vendor** | nihalxkumar |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **Language** | Python |
 | **Source** | [arch-mcp](https://github.com/nihalxkumar/arch-mcp) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

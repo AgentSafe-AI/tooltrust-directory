@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `1.8.0` |
 | **Vendor** | delorenj |
-| **Stars** | ⭐ 423 |
+| **Stars** | ⭐ 424 |
 | **npm Package** | `@delorenj/mcp-server-trello` |
-| **npm Downloads (30d)** | 8.7k |
+| **npm Downloads (30d)** | 8.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

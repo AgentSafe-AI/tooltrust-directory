@@ -8,10 +8,10 @@
 | **Risk Score** | 27 |
 | **Version** | `1.10.0` |
 | **Vendor** | trpc-group |
-| **Stars** | ⭐ 1568 |
+| **Stars** | ⭐ 1575 |
 | **Language** | Go |
 | **Source** | [trpc-agent-go](https://github.com/trpc-group/trpc-agent-go) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

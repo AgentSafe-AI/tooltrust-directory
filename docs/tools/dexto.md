@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.3` |
 | **Vendor** | truffle-ai |
-| **Stars** | ⭐ 639 |
+| **Stars** | ⭐ 640 |
 | **npm Package** | `dexto` |
 | **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |
 | **Source** | [dexto](https://github.com/truffle-ai/dexto) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

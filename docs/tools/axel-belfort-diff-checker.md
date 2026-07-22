@@ -15,7 +15,7 @@ Returns: {diff[], added, removed, changed}. No API key required — x402 micropa
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-diff-checker](https://smithery.ai/server/axel-belfort/diff-checker) |
-| **Scan Date** | 2026-07-21 |
+| **Scan Date** | 2026-07-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
