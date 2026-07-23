@@ -15,7 +15,7 @@ Returns: {markets[], odds, volume, category}. No API key required — x402 micro
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-prediction-markets](https://smithery.ai/server/axel-belfort/prediction-markets) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

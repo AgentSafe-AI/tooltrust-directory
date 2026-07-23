@@ -1,6 +1,6 @@
 # 🟢 arc-kit
 
-> The Enterprise Architecture Governance Harness — strategy, architecture, delivery, and assurance for AI coding assistants
+> The Enterprise Architecture Governance Harness — strategy, architecture, delivery, and assurance using AI coding assistants
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `6.3.0` |
 | **Vendor** | tractorjuice |
-| **Stars** | ⭐ 2097 |
+| **Stars** | ⭐ 2099 |
 | **Language** | JavaScript |
 | **Source** | [arc-kit](https://github.com/tractorjuice/arc-kit) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

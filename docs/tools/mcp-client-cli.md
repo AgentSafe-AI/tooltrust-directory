@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 678 |
 | **Language** | Python |
 | **Source** | [mcp-client-cli](https://github.com/adhikasp/mcp-client-cli) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

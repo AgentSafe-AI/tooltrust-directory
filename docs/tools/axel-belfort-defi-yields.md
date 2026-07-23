@@ -15,7 +15,7 @@ Returns yields sorted by APY with TVL and risk. No API key required — x402 mic
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-defi-yields](https://smithery.ai/server/axel-belfort/defi-yields) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

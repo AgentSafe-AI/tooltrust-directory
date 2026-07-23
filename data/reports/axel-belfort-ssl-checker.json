@@ -1,42 +1,75 @@
 {
   "tool_id": "axel-belfort-ssl-checker",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-07-22T02:03:53.858610218Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-23T02:12:20.271598289Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/ssl-checker",
   "vendor": "Smithery",
   "description": "SSL/TLS certificate checker API for AI agents. Verify certificate validity, expiry date, issuer chain, protocol version, cipher strength, and security grade for any domain.\n\nTools: security_check_ssl.\n\nUse this for security monitoring, expiry alerting, or SSL audit automation. IMPORTANT: For comprehensive trust assessment (SSL + DNS + WHOIS + headers), use trust_score_evaluate instead.\n\nReturns: {valid, expiresIn, issuer, grade, protocol}. No API key required — x402 micropayment $0.002/call on Base L2.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "check_domain",
+          "rank_domains"
+        ],
+        "removed": [
+          "security_check_ssl"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "security_check_ssl"
+      "tool_name": "check_domain"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "rank_domains"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "security_check_ssl"
+    "check_domain",
+    "rank_domains"
   ],
   "tool_contexts": [
     {
-      "tool_name": "security_check_ssl",
+      "tool_name": "check_domain",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
         "hardcoded domain: example.com"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "rank_domains",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -62,6 +95,12 @@
     },
     {
       "scan_date": "2026-07-21T02:04:15Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-22T02:03:53Z",
       "grade": "A",
       "risk_score": 0,
       "version": "smithery"
