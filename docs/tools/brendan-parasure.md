@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [brendan-parasure](https://smithery.ai/server/brendan/parasure) |
-| **Scan Date** | 2026-07-23 |
+| **Scan Date** | 2026-07-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns: {translated, from, to, confidence}. No API key required — x402 microp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-text-translator](https://smithery.ai/server/axel-belfort/text-translator) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

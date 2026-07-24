@@ -15,7 +15,7 @@ Returns: {country, city, isp, asn, vpn, coordinates}. No API key required — x4
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-ip-geolocation](https://smithery.ai/server/axel-belfort/ip-geolocation) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

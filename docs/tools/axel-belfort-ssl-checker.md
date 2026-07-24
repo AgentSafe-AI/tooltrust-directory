@@ -15,7 +15,7 @@ Returns: {valid, expiresIn, issuer, grade, protocol}. No API key required — x4
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-ssl-checker](https://smithery.ai/server/axel-belfort/ssl-checker) |
-| **Scan Date** | 2026-07-23 |
+| **Scan Date** | 2026-07-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -28,7 +28,7 @@ Returns: {valid, expiresIn, issuer, grade, protocol}. No API key required — x4
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 2 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -37,22 +37,10 @@ Returns: {valid, expiresIn, issuer, grade, protocol}. No API key required — x4
 **Severity:** High
 
 **Description:**
-Tool set changed silently at vsmithery: 2 tool(s) added, 1 tool(s) removed without a version bump.
+Tool set changed silently at vsmithery: 1 tool(s) added, 2 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
 
 ---
 
