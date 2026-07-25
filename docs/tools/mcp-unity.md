@@ -10,10 +10,10 @@
 | **Vendor** | CoderGamester |
 | **Stars** | ⭐ 1843 |
 | **npm Package** | `com.gamelovers.mcp-unity` |
-| **npm Downloads (30d)** | 24 |
+| **npm Downloads (30d)** | 35 |
 | **Language** | C# |
 | **Source** | [mcp-unity](https://github.com/CoderGamester/mcp-unity) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

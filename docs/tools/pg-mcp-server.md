@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 540 |
 | **Language** | Python |
 | **Source** | [pg-mcp-server](https://github.com/stuzero/pg-mcp-server) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -23,7 +23,7 @@ https://framefetch.net
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [reyd8777-framefetch](https://smithery.ai/server/reyd8777/framefetch) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

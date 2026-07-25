@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `1.11.6` |
+| **Version** | `1.11.7` |
 | **Vendor** | zhu1090093659 |
-| **Stars** | ⭐ 1319 |
+| **Stars** | ⭐ 1329 |
 | **npm Package** | `deepseek-plus-plus` |
 | **Language** | TypeScript |
 | **Source** | [deepseek-pp](https://github.com/zhu1090093659/deepseek-pp) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

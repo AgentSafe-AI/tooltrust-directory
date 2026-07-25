@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.0` |
 | **Vendor** | louislva |
-| **Stars** | ⭐ 2180 |
+| **Stars** | ⭐ 2183 |
 | **npm Package** | `claude-peers` |
-| **npm Downloads (30d)** | 116 |
+| **npm Downloads (30d)** | 125 |
 | **Language** | TypeScript |
 | **Source** | [claude-peers-mcp](https://github.com/louislva/claude-peers-mcp) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

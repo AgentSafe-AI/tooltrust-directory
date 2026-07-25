@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lionmaster-operations-lion-x402](https://smithery.ai/server/lionmaster-operations/lion-x402) |
-| **Scan Date** | 2026-07-22 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

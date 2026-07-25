@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 8478 |
 | **Language** | Python |
 | **Source** | [mcp-agent](https://github.com/lastmile-ai/mcp-agent) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

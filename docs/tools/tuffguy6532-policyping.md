@@ -13,7 +13,7 @@ Connect at: https://mcp.policyping.net/mcp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tuffguy6532-policyping](https://smithery.ai/server/tuffguy6532/policyping) |
-| **Scan Date** | 2026-07-15 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

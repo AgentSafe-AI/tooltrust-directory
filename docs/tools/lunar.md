@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `lunar-ts-interceptor-v1.1.3` |
 | **Vendor** | TheLunarCompany |
-| **Stars** | ⭐ 471 |
+| **Stars** | ⭐ 472 |
 | **Language** | TypeScript |
 | **Source** | [lunar](https://github.com/TheLunarCompany/lunar) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

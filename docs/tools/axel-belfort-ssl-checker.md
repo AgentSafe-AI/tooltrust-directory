@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-ssl-checker
+# 🟢 axel-belfort-ssl-checker
 
 > SSL/TLS certificate checker API for AI agents. Verify certificate validity, expiry date, issuer chain, protocol version, cipher strength, and security grade for any domain.
 
@@ -10,12 +10,12 @@ Returns: {valid, expiresIn, issuer, grade, protocol}. No API key required — x4
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-ssl-checker](https://smithery.ai/server/axel-belfort/ssl-checker) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {valid, expiresIn, issuer, grade, protocol}. No API key required — x4
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 1 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

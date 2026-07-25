@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.0` |
 | **Vendor** | illiahaidar |
-| **Stars** | ⭐ 92 |
+| **Stars** | ⭐ 110 |
 | **npm Package** | `mcptrustchecker` |
-| **npm Downloads (30d)** | 990 |
+| **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |
 | **Source** | [mcptrustchecker](https://github.com/illiahaidar/mcptrustchecker) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

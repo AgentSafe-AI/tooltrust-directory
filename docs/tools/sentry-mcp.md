@@ -10,10 +10,10 @@
 | **Vendor** | getsentry |
 | **Stars** | ⭐ 790 |
 | **npm Package** | `sentry-mcp` |
-| **npm Downloads (30d)** | 116 |
+| **npm Downloads (30d)** | 127 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/sentry-mcp) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

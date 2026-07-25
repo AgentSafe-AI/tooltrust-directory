@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.9` |
 | **Vendor** | benborla |
-| **Stars** | ⭐ 1973 |
+| **Stars** | ⭐ 1975 |
 | **npm Package** | `@benborla29/mcp-server-mysql` |
-| **npm Downloads (30d)** | 51.0k |
+| **npm Downloads (30d)** | 50.0k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

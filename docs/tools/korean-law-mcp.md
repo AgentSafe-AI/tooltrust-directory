@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `4.8.0` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2272 |
+| **Stars** | ⭐ 2313 |
 | **npm Package** | `korean-law-mcp` |
-| **npm Downloads (30d)** | 23.3k |
+| **npm Downloads (30d)** | 24.0k |
 | **Language** | TypeScript |
 | **Source** | [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

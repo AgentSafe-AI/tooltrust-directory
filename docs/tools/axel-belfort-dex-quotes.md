@@ -15,7 +15,7 @@ Returns: {route, amountOut, priceImpact, slippage, gas}. No API key required —
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-dex-quotes](https://smithery.ai/server/axel-belfort/dex-quotes) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -37,7 +37,7 @@ Returns: {route, amountOut, priceImpact, slippage, gas}. No API key required —
 **Severity:** Info
 
 **Description:**
-input parameter "tokenIn" accepts a credential (informational; not evidence of insecure handling)
+input parameter "tokenOut" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -49,7 +49,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "tokenOut" accepts a credential (informational; not evidence of insecure handling)
+input parameter "tokenIn" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

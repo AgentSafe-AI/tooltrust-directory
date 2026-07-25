@@ -10,10 +10,10 @@
 | **Vendor** | merajmehrabi |
 | **Stars** | ⭐ 477 |
 | **npm Package** | `puppeteer-mcp-server` |
-| **npm Downloads (30d)** | 5.1k |
+| **npm Downloads (30d)** | 5.4k |
 | **Language** | TypeScript |
 | **Source** | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

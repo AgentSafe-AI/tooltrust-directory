@@ -23,8 +23,8 @@ Sample Queries
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [seahbk1006-seahboonkeong-chat-opendosm](https://smithery.ai/server/seahbk1006/seahboonkeong-chat-opendosm) |
-| **Scan Date** | 2026-06-21 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-07-25 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.26` |
 | **Vendor** | kimsungwhee |
-| **Stars** | ⭐ 1347 |
+| **Stars** | ⭐ 1346 |
 | **npm Package** | `@kimsungwhee/apple-docs-mcp` |
-| **npm Downloads (30d)** | 9.9k |
+| **npm Downloads (30d)** | 10.0k |
 | **Language** | TypeScript |
 | **Source** | [apple-docs-mcp](https://github.com/kimsungwhee/apple-docs-mcp) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

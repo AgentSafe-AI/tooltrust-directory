@@ -1,19 +1,19 @@
 # 🟢 pdf-reader-mcp
 
-> 📄 The PDF intelligence layer for AI agents — Agent Document Twin, evidence-first extraction, visual crops, OCR provenance, trust reports, and benchmark-gated releases. MCP server for Claude, Cursor, VS Code, and any MCP client.
+> Give your AI agent eyes for PDFs — structured text, tables, OCR, visual evidence, and page-level citations via MCP. Native Rust, local-first.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `3.2.2` |
+| **Version** | `4.1.1` |
 | **Vendor** | SylphxAI |
-| **Stars** | ⭐ 832 |
+| **Stars** | ⭐ 835 |
 | **npm Package** | `@sylphx/pdf-reader-mcp` |
-| **npm Downloads (30d)** | 26.1k |
+| **npm Downloads (30d)** | 28.7k |
 | **Language** | TypeScript |
 | **Source** | [pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

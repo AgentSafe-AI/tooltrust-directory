@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.2` |
 | **Vendor** | freestylefly |
-| **Stars** | ⭐ 563 |
+| **Stars** | ⭐ 564 |
 | **npm Package** | `mcp-server-weread` |
-| **npm Downloads (30d)** | 417 |
+| **npm Downloads (30d)** | 436 |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-weread](https://github.com/freestylefly/mcp-server-weread) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
