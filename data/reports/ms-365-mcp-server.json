@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.132.1",
+  "version": "0.133.1",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-07-25T02:02:56.1499762Z",
+  "scan_date": "2026-07-26T02:07:46.996300985Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 872,
+  "stars": 874,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 106570,
+  "npm_downloads_monthly": 107519,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Office services through the Graph API",
@@ -4765,6 +4765,30 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "download-bytes-to-file"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "download-bytes-to-file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "download-bytes-to-file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get-download-url"
     },
     {
@@ -4788,8 +4812,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 227,
-    "info": 369
+    "low": 228,
+    "info": 371
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -4877,6 +4901,7 @@
     "delete-todo-task-list",
     "dismiss-calendar-event-reminder",
     "download-bytes",
+    "download-bytes-to-file",
     "format-excel-range",
     "format-excel-range-border",
     "format-excel-range-fill",
@@ -7344,6 +7369,20 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "download-bytes-to-file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: invoice.pdf"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "get-download-url",
       "action": "ALLOW",
       "grade": "A",
@@ -8114,6 +8153,12 @@
     },
     {
       "scan_date": "2026-07-24T02:03:06Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.132.1"
+    },
+    {
+      "scan_date": "2026-07-25T02:02:56Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.132.1"

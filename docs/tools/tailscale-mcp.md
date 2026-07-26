@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `1.3.2` |
+| **Version** | `1.3.4` |
 | **Vendor** | HexSleeves |
 | **Stars** | ⭐ 113 |
 | **npm Package** | `@hexsleeves/tailscale-mcp-server` |
 | **npm Downloads (30d)** | 1.6k |
 | **Language** | TypeScript |
 | **Source** | [tailscale-mcp](https://github.com/HexSleeves/tailscale-mcp) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

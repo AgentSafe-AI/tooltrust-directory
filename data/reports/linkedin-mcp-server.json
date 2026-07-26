@@ -1,14 +1,14 @@
 {
   "tool_id": "linkedin-mcp-server",
-  "version": "4.17.0",
+  "version": "4.19.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-25T02:00:08.571547331Z",
+  "scan_date": "2026-07-26T02:05:04.953977891Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/stickerdaniel/linkedin-mcp-server",
   "category": "Developer Tools",
   "vendor": "stickerdaniel",
-  "stars": 2893,
+  "stars": 2897,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Open-source MCP server for LinkedIn. Give Claude and any MCP-compatible AI agent access to profiles, companies, jobs, and messages.",
@@ -174,6 +174,14 @@
       "tool_name": "search_jobs"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_saved_jobs"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -262,6 +270,30 @@
       "tool_name": "get_feed"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_posts"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_posts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_posts"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -274,8 +306,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 6,
-    "info": 26
+    "low": 7,
+    "info": 29
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -290,11 +322,13 @@
     "get_job_details",
     "get_my_profile",
     "get_person_profile",
+    "get_saved_jobs",
     "get_sidebar_profiles",
     "search_companies",
     "search_conversations",
     "search_jobs",
     "search_people",
+    "search_posts",
     "send_message"
   ],
   "tool_contexts": [
@@ -388,6 +422,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "get_saved_jobs",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "search_people",
       "action": "ALLOW",
       "grade": "A",
@@ -432,6 +473,16 @@
       "tool_name": "get_feed",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_posts",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1226,6 +1277,12 @@
     },
     {
       "scan_date": "2026-07-24T02:00:24Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "4.17.0"
+    },
+    {
+      "scan_date": "2026-07-25T02:00:08Z",
       "grade": "A",
       "risk_score": 2,
       "version": "4.17.0"

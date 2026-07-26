@@ -1,9 +1,9 @@
 {
   "tool_id": "web-agent-protocol",
   "version": "wap-replay-tool-1.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-25T02:03:37.361631789Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-26T02:08:31.285122116Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/OTA-Tech-AI/web-agent-protocol",
   "category": "Developer Tools",
@@ -14,28 +14,25 @@
   "description": "🌐Web Agent Protocol (WAP) - Record and replay user interactions in the browser with MCP support",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_catalog_info"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "lookup_vendors"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "lookup_vendors"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vwap-replay-tool-1.0.0: 3 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "compare_protocols",
+          "get_protocol_info",
+          "scan_opportunities"
+        ],
+        "removed": [
+          "get_catalog_info",
+          "get_vendor",
+          "lookup_vendors",
+          "report_to_outpost"
+        ],
+        "version": "wap-replay-tool-1.0.0"
+      }
     },
     {
       "id": "AS-014",
@@ -43,7 +40,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lookup_vendors"
+      "tool_name": "scan_opportunities"
     },
     {
       "id": "AS-002",
@@ -51,7 +48,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_vendor"
+      "tool_name": "get_protocol_info"
     },
     {
       "id": "AS-011",
@@ -59,7 +56,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_vendor"
+      "tool_name": "get_protocol_info"
     },
     {
       "id": "AS-014",
@@ -67,15 +64,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_vendor"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "report_to_outpost"
+      "tool_name": "get_protocol_info"
     },
     {
       "id": "AS-014",
@@ -83,15 +72,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "report_to_outpost"
+      "tool_name": "compare_protocols"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 7
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -139,24 +128,24 @@
     }
   ],
   "tool_names": [
-    "get_catalog_info",
-    "get_vendor",
-    "lookup_vendors",
-    "report_to_outpost"
+    "compare_protocols",
+    "get_protocol_info",
+    "scan_opportunities"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_catalog_info",
+      "tool_name": "scan_opportunities",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "lookup_vendors",
+      "tool_name": "get_protocol_info",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -166,32 +155,9 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_vendor",
+      "tool_name": "compare_protocols",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: data.protocols"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "report_to_outpost",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (endpoint_live)",
-        "dynamic email recipient (protocol_attempted)",
-        "hardcoded domain: data.protocols",
-        "hardcoded domain: www.rolocache.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -199,6 +165,12 @@
   "scan_history": [
     {
       "scan_date": "2026-07-24T02:03:44Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "wap-replay-tool-1.0.0"
+    },
+    {
+      "scan_date": "2026-07-25T02:03:37Z",
       "grade": "A",
       "risk_score": 2,
       "version": "wap-replay-tool-1.0.0"

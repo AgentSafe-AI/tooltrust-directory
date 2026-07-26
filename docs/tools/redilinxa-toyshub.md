@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [redilinxa-toyshub](https://smithery.ai/server/redilinxa/toyshub) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-07-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

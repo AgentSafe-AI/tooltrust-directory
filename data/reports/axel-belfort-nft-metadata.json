@@ -1,37 +1,30 @@
 {
   "tool_id": "axel-belfort-nft-metadata",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-25T02:06:48.038820708Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-26T02:11:25.149949214Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/nft-metadata",
   "vendor": "Smithery",
   "description": "NFT metadata lookup API for AI agents. Get name, image URL, attributes, description, and collection info for any NFT from contract address + token ID. Ethereum and Base chains supported.\n\nTools: crypto_get_nft_metadata.\n\nUse this when you need specific NFT details: image, traits, rarity traits, or ownership info. IMPORTANT: For collection-level data (floor price, volume), use nft_get_collection_data instead.\n\nReturns: {name, image, attributes[], collection, owner}. No API key required — x402 micropayment $0.003/call on Base L2.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "crypto_get_nft_metadata"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "crypto_get_nft_metadata"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "crypto_get_nft_metadata"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "nft_get_collection_data",
+          "nft_get_token_rarity"
+        ],
+        "removed": [
+          "crypto_get_nft_metadata"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-014",
@@ -39,29 +32,49 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "crypto_get_nft_metadata"
+      "tool_name": "nft_get_collection_data"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenId\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "nft_get_token_rarity"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "nft_get_token_rarity"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
+    "low": 0,
     "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "crypto_get_nft_metadata"
+    "nft_get_collection_data",
+    "nft_get_token_rarity"
   ],
   "tool_contexts": [
     {
-      "tool_name": "crypto_get_nft_metadata",
+      "tool_name": "nft_get_collection_data",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "nft_get_token_rarity",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (tokenId)"
       ],
@@ -102,6 +115,12 @@
     },
     {
       "scan_date": "2026-07-24T02:06:03Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-25T02:06:48Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

@@ -15,7 +15,7 @@ Returns: {status, latency, tlsTime, body}. No API key required — x402 micropay
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-webhook-tester](https://smithery.ai/server/axel-belfort/webhook-tester) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

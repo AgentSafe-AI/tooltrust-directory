@@ -10,10 +10,10 @@
 | **Vendor** | openclaw |
 | **Stars** | ⭐ 4823 |
 | **npm Package** | `mcporter` |
-| **npm Downloads (30d)** | 2.3M |
+| **npm Downloads (30d)** | 2.1M |
 | **Language** | TypeScript |
 | **Source** | [mcporter](https://github.com/openclaw/mcporter) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
