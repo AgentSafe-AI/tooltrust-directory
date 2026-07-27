@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | sxhxliang |
-| **Stars** | ⭐ 181 |
+| **Stars** | ⭐ 182 |
 | **Language** | Rust |
 | **Source** | [mcp-access-point](https://github.com/sxhxliang/mcp-access-point) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

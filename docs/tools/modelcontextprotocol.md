@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 91.1k |
 | **Language** | TypeScript |
 | **Source** | [modelcontextprotocol](https://github.com/perplexityai/modelcontextprotocol) |
-| **Scan Date** | 2026-07-26 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

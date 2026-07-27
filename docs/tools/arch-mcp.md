@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 52 |
 | **Language** | Python |
 | **Source** | [arch-mcp](https://github.com/nihalxkumar/arch-mcp) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

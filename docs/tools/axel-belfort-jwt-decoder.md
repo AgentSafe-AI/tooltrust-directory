@@ -15,7 +15,7 @@ Returns: {header, payload, claims, expiresAt, algorithm}. No API key required â€
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-jwt-decoder](https://smithery.ai/server/axel-belfort/jwt-decoder) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

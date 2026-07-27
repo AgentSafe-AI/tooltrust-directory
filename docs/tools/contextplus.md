@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.9` |
 | **Vendor** | forloopcodes |
-| **Stars** | ⭐ 1961 |
+| **Stars** | ⭐ 1962 |
 | **npm Package** | `contextplus` |
 | **npm Downloads (30d)** | 748 |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/forloopcodes/contextplus) |
-| **Scan Date** | 2026-07-26 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

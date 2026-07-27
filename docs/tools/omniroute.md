@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `3.8.48` |
 | **Vendor** | diegosouzapw |
-| **Stars** | ⭐ 30053 |
+| **Stars** | ⭐ 31110 |
 | **npm Package** | `omniroute` |
 | **npm Downloads (30d)** | 126.9k |
 | **Language** | TypeScript |
 | **Source** | [omniroute](https://github.com/diegosouzapw/OmniRoute) |
-| **Scan Date** | 2026-07-26 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -29,7 +29,7 @@ None — the MCP server is fully open. Reasonable rate limiting may apply.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [surprise-buddy-mcp-server](https://smithery.ai/server/surprise-buddy/mcp-server) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

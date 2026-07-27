@@ -23,7 +23,7 @@ Markdown output (~60% fewer tokens) or structured JSON. Sub-second latency. Free
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [prereason-briefings](https://smithery.ai/server/prereason/briefings) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

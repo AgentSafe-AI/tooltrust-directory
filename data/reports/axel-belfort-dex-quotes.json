@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-26T02:11:17.389696531Z",
+  "scan_date": "2026-07-27T02:19:36.025783094Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/dex-quotes",
   "vendor": "Smithery",
@@ -17,13 +17,29 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "solana_scan_pool_liquidity"
+          "dex_get_swap_quote"
         ],
         "removed": [
-          "dex_get_swap_quote"
+          "solana_scan_pool_liquidity"
         ],
         "version": "smithery"
       }
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenIn\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "dex_get_swap_quote"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokenOut\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "dex_get_swap_quote"
     },
     {
       "id": "AS-014",
@@ -31,7 +47,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "solana_scan_pool_liquidity"
+      "tool_name": "dex_get_swap_quote"
     }
   ],
   "summary": {
@@ -39,17 +55,21 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "solana_scan_pool_liquidity"
+    "dex_get_swap_quote"
   ],
   "tool_contexts": [
     {
-      "tool_name": "solana_scan_pool_liquidity",
+      "tool_name": "dex_get_swap_quote",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tokenIn)",
+        "dynamic email recipient (tokenOut)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -83,6 +103,12 @@
       "scan_date": "2026-07-25T02:06:27Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-26T02:11:17Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]
