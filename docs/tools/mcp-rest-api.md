@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 650 |
 | **Language** | JavaScript |
 | **Source** | [mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) |
-| **Scan Date** | 2026-07-27 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

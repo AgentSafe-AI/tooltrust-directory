@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-dex-quotes
+# 🟢 axel-belfort-dex-quotes
 
 > DEX swap quote API for AI agents. Best swap quotes across Uniswap V2/V3, SushiSwap, Aerodrome, and other DEXes. Returns optimal route, price impact, slippage estimate, gas cost, and minimum output.
 
@@ -10,12 +10,12 @@ Returns: {route, amountOut, priceImpact, slippage, gas}. No API key required —
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-dex-quotes](https://smithery.ai/server/axel-belfort/dex-quotes) |
-| **Scan Date** | 2026-07-27 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {route, amountOut, priceImpact, slippage, gas}. No API key required —
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 3 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 

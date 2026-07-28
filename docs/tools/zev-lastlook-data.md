@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [zev-lastlook-data](https://smithery.ai/server/zev/lastlook-data) |
-| **Scan Date** | 2026-07-25 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

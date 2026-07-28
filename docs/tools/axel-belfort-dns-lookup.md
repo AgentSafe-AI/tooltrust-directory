@@ -15,7 +15,7 @@ Returns: {records[], type, ttl}. No API key required — x402 micropayment $0.00
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-dns-lookup](https://smithery.ai/server/axel-belfort/dns-lookup) |
-| **Scan Date** | 2026-07-27 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

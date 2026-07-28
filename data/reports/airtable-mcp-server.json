@@ -1,14 +1,14 @@
 {
   "tool_id": "airtable-mcp-server",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-27T02:16:57.869432891Z",
+  "scan_date": "2026-07-28T01:58:40.94208675Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/domdomegg/airtable-mcp-server",
   "category": "Developer Tools",
   "vendor": "domdomegg",
-  "stars": 454,
+  "stars": 455,
   "npm_package": "airtable-mcp-server",
   "npm_downloads_monthly": 10993,
   "license": "MIT",
@@ -190,6 +190,46 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "update_field"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_comment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_comment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_comments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "upload_attachment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "upload_attachment"
     }
   ],
   "summary": {
@@ -197,10 +237,11 @@
     "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 21
+    "info": 26
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "create_comment",
     "create_field",
     "create_record",
     "create_table",
@@ -208,12 +249,14 @@
     "describe_table",
     "get_record",
     "list_bases",
+    "list_comments",
     "list_records",
     "list_tables",
     "search_records",
     "update_field",
     "update_records",
-    "update_table"
+    "update_table",
+    "upload_attachment"
   ],
   "tool_contexts": [
     {
@@ -324,6 +367,33 @@
       "grade": "A",
       "behavior": [
         "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create_comment",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_comments",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "upload_attachment",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1106,6 +1176,12 @@
     },
     {
       "scan_date": "2026-07-26T02:08:34Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.13.0"
+    },
+    {
+      "scan_date": "2026-07-27T02:16:57Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.13.0"

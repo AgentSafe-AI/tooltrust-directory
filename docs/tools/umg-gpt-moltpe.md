@@ -27,7 +27,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [umg-gpt-moltpe](https://smithery.ai/server/umg-gpt/moltpe) |
-| **Scan Date** | 2026-07-27 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

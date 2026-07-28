@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-csv-to-json
+# 🟢 axel-belfort-csv-to-json
 
 > CSV parsing API for AI agents. Convert CSV data to JSON array with auto-detection of delimiter (comma, semicolon, tab, pipe). Header row support, type inference, and clean structured output.
 
@@ -10,12 +10,12 @@ Returns: {data[], headers[], rowCount, delimiter}. No API key required — x402 
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-csv-to-json](https://smithery.ai/server/axel-belfort/csv-to-json) |
-| **Scan Date** | 2026-07-27 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {data[], headers[], rowCount, delimiter}. No API key required — x402 
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 2 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

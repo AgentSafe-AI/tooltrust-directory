@@ -1,30 +1,14 @@
 {
   "tool_id": "axel-belfort-dex-quotes",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-07-27T02:19:36.025783094Z",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-07-28T02:01:39.789119803Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/dex-quotes",
   "vendor": "Smithery",
   "description": "DEX swap quote API for AI agents. Best swap quotes across Uniswap V2/V3, SushiSwap, Aerodrome, and other DEXes. Returns optimal route, price impact, slippage estimate, gas cost, and minimum output.\n\nTools: dex_get_swap_quote.\n\nMANDATORY: Call this BEFORE executing any DEX swap to avoid excessive slippage. Essential for pre-trade analysis, route optimization, and MEV protection. IMPORTANT: For orderbook depth analysis, use dex_analyze_orderbook_depth.\n\nReturns: {route, amountOut, priceImpact, slippage, gas}. No API key required — x402 micropayment $0.005/call on Base L2.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "dex_get_swap_quote"
-        ],
-        "removed": [
-          "solana_scan_pool_liquidity"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-010",
       "severity": "Info",
@@ -52,7 +36,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
     "info": 3
@@ -107,6 +91,12 @@
     },
     {
       "scan_date": "2026-07-26T02:11:17Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-27T02:19:36Z",
       "grade": "B",
       "risk_score": 15,
       "version": "smithery"

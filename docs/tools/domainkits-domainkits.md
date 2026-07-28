@@ -1,4 +1,4 @@
-# 🟡 domainkits-domainkits
+# 🟢 domainkits-domainkits
 
 > # DomainKits MCP
 
@@ -305,12 +305,12 @@ For commercial use and API access, visit [domainkits.com](https://domainkits.com
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [domainkits-domainkits](https://smithery.ai/server/DomainKits/domainkits) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-07-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -320,24 +320,12 @@ For commercial use and API access, visit [domainkits.com](https://domainkits.com
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 9 |
 | Info     | 34 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 2 tool(s) added, 12 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
