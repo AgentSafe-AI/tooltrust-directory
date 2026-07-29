@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 97 |
 | **Language** | TypeScript |
 | **Source** | [easy-mcp](https://github.com/zcaceres/easy-mcp) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

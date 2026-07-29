@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.0-rc-04-27-0` |
 | **Vendor** | aaif-goose |
-| **Stars** | ⭐ 51823 |
+| **Stars** | ⭐ 51869 |
 | **Language** | Rust |
 | **Source** | [goose](https://github.com/aaif-goose/goose) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

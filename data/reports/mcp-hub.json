@@ -3,7 +3,7 @@
   "version": "4.2.1",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-28T01:58:40.537945706Z",
+  "scan_date": "2026-07-29T02:00:54.528728118Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ravitemer/mcp-hub",
   "category": "Developer Tools",
@@ -19,100 +19,13 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v4.2.1: 80 tool(s) added, 7 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v4.2.1: 1 tool(s) added, 0 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "ai_capacity_index",
-          "analyze_parcel",
-          "analyze_site",
-          "bind_email",
-          "claim_free_key",
-          "cluster_sites_by_latency",
-          "compare_isos",
-          "compare_sites",
-          "deal_autopsy",
-          "discover_tools",
-          "execute_plan",
-          "export_dataset",
-          "fetch",
-          "find_alternatives",
-          "generate_site_analysis",
-          "get_agent_registry",
-          "get_backup_status",
-          "get_changes",
-          "get_climate_intel",
-          "get_composite_site_score",
-          "get_dchub_recommendation",
-          "get_disaster_risk",
-          "get_energy_prices",
-          "get_facility",
-          "get_facility_risk_delta",
-          "get_fiber_intel",
-          "get_fiber_readiness",
-          "get_gas_economics",
-          "get_gas_index",
-          "get_gas_intelligence",
-          "get_global_power",
-          "get_grid_data",
-          "get_grid_intelligence",
-          "get_grid_scoreboard",
-          "get_infrastructure",
-          "get_intelligence_index",
-          "get_interconnection_queue",
-          "get_iso_context",
-          "get_market_context",
-          "get_market_dcpi_rank",
-          "get_market_intel",
-          "get_metro_fiber",
-          "get_news",
-          "get_permitting_intel",
-          "get_pipeline",
-          "get_power_pipeline",
-          "get_refined_queue",
-          "get_renewable_energy",
-          "get_retirement_headroom",
-          "get_shortlist",
-          "get_tax_incentives",
-          "get_water_risk",
-          "grid_transition_radar",
-          "hyperscaler_deals",
-          "list_saved_sites",
-          "list_transactions",
-          "plan_fiber_leadin",
-          "plan_query",
-          "predict_market_trajectory",
-          "rank_markets",
-          "rank_sites",
-          "recover_my_key",
-          "research_task",
-          "save_site",
-          "save_to_shortlist",
-          "score_facility",
-          "search",
-          "search_facilities",
-          "search_intelligence",
-          "semantic_search",
-          "set_market_alert",
-          "set_shortlist_alert",
-          "set_site_alert",
-          "simulate_scenario",
-          "site_selection_canvas",
-          "standing_intent",
-          "subscribe_digest",
-          "suggest_reallocation",
-          "unlock_more_data",
-          "why_dchub"
+          "get_hosting_capacity"
         ],
-        "removed": [
-          "get_crm_objects",
-          "get_properties",
-          "get_user_details",
-          "search_crm_objects",
-          "search_owners",
-          "search_properties",
-          "submit_feedback"
-        ],
+        "removed": null,
         "version": "4.2.1"
       }
     },
@@ -467,6 +380,38 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_retirement_headroom"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_hosting_capacity"
     },
     {
       "id": "AS-014",
@@ -1312,7 +1257,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: code/command execution, network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "claim_free_key"
     },
@@ -1401,8 +1346,8 @@
     "critical": 0,
     "high": 1,
     "medium": 1,
-    "low": 36,
-    "info": 123
+    "low": 38,
+    "info": 125
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1440,6 +1385,7 @@
     "get_grid_data",
     "get_grid_intelligence",
     "get_grid_scoreboard",
+    "get_hosting_capacity",
     "get_infrastructure",
     "get_intelligence_index",
     "get_interconnection_queue",
@@ -1713,6 +1659,17 @@
       ],
       "destinations": [
         "hardcoded domain: meta.caveat"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_hosting_capacity",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -2214,6 +2171,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -2481,6 +2439,12 @@
     },
     {
       "scan_date": "2026-07-27T02:16:57Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "4.2.1"
+    },
+    {
+      "scan_date": "2026-07-28T01:58:40Z",
       "grade": "B",
       "risk_score": 15,
       "version": "4.2.1"

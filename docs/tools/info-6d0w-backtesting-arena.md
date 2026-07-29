@@ -1,6 +1,6 @@
 # 🟢 info-6d0w-backtesting-arena
 
-> Quantitative crypto backtesting & Bitcoin market-regime analytics. 68 MCP tools: honest look-ahead-aware backtest validation with Deflated-Sharpe-Ratio correction, point-in-time 10-indicator Bitcoin cycle scoring, macro-regime composites, Edge-Library filter effects, 22 on-chain BRK series (since 2009), altcoin screener, sentiment, "buy now or wait?" decision-math, conditional historical-analog base rates & live subscriptions. Core outputs are not reproducible from public OHLCV/market-data APIs. Covers crypto plus stocks/ETFs/commodities/forex. Free tier, no credit card.
+> Quantitative crypto backtesting & Bitcoin market-regime analytics. 73 MCP tools: honest look-ahead-aware backtest validation with Deflated-Sharpe-Ratio correction, point-in-time 10-indicator Bitcoin cycle scoring, macro-regime composites, Edge-Library filter effects, 22 on-chain BRK series (since 2009), altcoin screener, sentiment, "buy now or wait?" decision-math, conditional historical-analog base rates & live subscriptions. Core outputs are not reproducible from public OHLCV/market-data APIs. Covers crypto plus stocks/ETFs/commodities/forex. Free tier, no credit card.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-6d0w-backtesting-arena](https://smithery.ai/server/info-6d0w/backtesting-arena) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

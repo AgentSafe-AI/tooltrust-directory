@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.3` |
 | **Vendor** | jau123 |
-| **Stars** | ⭐ 1624 |
+| **Stars** | ⭐ 1627 |
 | **npm Package** | `meigen` |
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |
 | **Source** | [meigen-ai-design-mcp](https://github.com/jau123/MeiGen-AI-Design-MCP) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

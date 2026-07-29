@@ -3,7 +3,7 @@
   "version": "0.0.1-beta.3",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-24T01:59:41.188230001Z",
+  "scan_date": "2026-07-29T01:56:45.518571017Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/aipotheosis-labs/aci",
   "category": "Developer Tools",
@@ -17,16 +17,12 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.0.1-beta.3: 6 tool(s) added, 0 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.0.1-beta.3: 2 tool(s) added, 0 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get_global_power",
-          "get_permitting_intel",
-          "plan_query",
-          "research_task",
-          "simulate_scenario",
-          "standing_intent"
+          "execute_plan",
+          "get_hosting_capacity"
         ],
         "removed": null,
         "version": "0.0.1-beta.3"
@@ -385,6 +381,38 @@
       "tool_name": "get_retirement_headroom"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_hosting_capacity"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -455,6 +483,30 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "plan_query"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_plan"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_plan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute_plan"
     },
     {
       "id": "AS-014",
@@ -1204,7 +1256,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: code/command execution, network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "claim_free_key"
     },
@@ -1293,8 +1345,8 @@
     "critical": 0,
     "high": 1,
     "medium": 1,
-    "low": 35,
-    "info": 121
+    "low": 38,
+    "info": 125
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1308,6 +1360,7 @@
     "compare_sites",
     "deal_autopsy",
     "discover_tools",
+    "execute_plan",
     "export_dataset",
     "fetch",
     "find_alternatives",
@@ -1331,6 +1384,7 @@
     "get_grid_data",
     "get_grid_intelligence",
     "get_grid_scoreboard",
+    "get_hosting_capacity",
     "get_infrastructure",
     "get_intelligence_index",
     "get_interconnection_queue",
@@ -1609,6 +1663,17 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "get_hosting_capacity",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "analyze_parcel",
       "action": "ALLOW",
       "grade": "A",
@@ -1642,6 +1707,19 @@
       "behavior": [
         "executes_commands",
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "execute_plan",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: dchub.cloud"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -2092,6 +2170,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -2145,6 +2224,12 @@
       "scan_date": "2026-07-16T01:56:52Z",
       "grade": "B",
       "risk_score": 10,
+      "version": "0.0.1-beta.3"
+    },
+    {
+      "scan_date": "2026-07-24T01:59:41Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.0.1-beta.3"
     }
   ]

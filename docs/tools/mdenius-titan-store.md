@@ -12,7 +12,7 @@ No authentication required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mdenius-titan-store](https://smithery.ai/server/mdenius/titan-store) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -118,7 +118,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "cc_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "payment_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -130,7 +130,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "payment_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "cc_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

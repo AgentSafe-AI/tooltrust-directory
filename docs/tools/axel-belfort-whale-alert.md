@@ -15,7 +15,7 @@ Returns: {transactions[], totalVolume, largestTransfer}. No API key required —
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-whale-alert](https://smithery.ai/server/axel-belfort/whale-alert) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

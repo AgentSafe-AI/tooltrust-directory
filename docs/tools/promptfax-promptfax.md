@@ -64,7 +64,7 @@ PromptFax is outbound-only and currently supports US fax numbers only. Payments 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [promptfax-promptfax](https://smithery.ai/server/promptfax/promptfax) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

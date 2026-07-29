@@ -15,7 +15,7 @@ Returns full account snapshot. No API key required — x402 micropayment $0.003/
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hl-portfolio](https://smithery.ai/server/axel-belfort/hl-portfolio) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-07-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
