@@ -1,16 +1,16 @@
 {
   "tool_id": "firecrawl-mcp-server",
   "version": "3.2.1",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-07-29T01:56:29.730506347Z",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-07-30T01:46:55.326808864Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/firecrawl/firecrawl-mcp-server",
   "category": "Developer Tools",
   "vendor": "firecrawl",
-  "stars": 7071,
+  "stars": 7076,
   "npm_package": "firecrawl-mcp",
-  "npm_downloads_monthly": 397744,
+  "npm_downloads_monthly": 335693,
   "license": "MIT",
   "language": "JavaScript",
   "description": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
@@ -19,7 +19,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_scrape"
     },
@@ -51,7 +51,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access, HTTP requests",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_map"
     },
@@ -75,7 +75,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_search"
     },
@@ -107,7 +107,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access, HTTP requests",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_search_feedback"
     },
@@ -243,7 +243,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_agent"
     },
@@ -267,7 +267,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_agent_status"
     },
@@ -296,14 +296,6 @@
       "tool_name": "firecrawl_interact"
     },
     {
-      "id": "AS-006",
-      "severity": "Critical",
-      "title": "Arbitrary Code Execution",
-      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
-      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
-      "tool_name": "firecrawl_interact"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -339,7 +331,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_parse"
     },
@@ -371,7 +363,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_monitor_create"
     },
@@ -547,7 +539,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_monitor_check"
     },
@@ -689,7 +681,7 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 0,
     "high": 0,
     "medium": 0,
     "low": 31,
@@ -731,17 +723,13 @@
       "grade": "A",
       "behavior": [
         "executes_commands",
-        "uses_network",
-        "writes_files"
+        "reads_files",
+        "uses_network"
       ],
       "destinations": [
         "dynamic URL input (url)",
         "dynamic email recipient (screenshotOptions)",
-        "dynamic email recipient (storeInCache)",
-        "hardcoded domain: docs.example.com",
-        "hardcoded domain: example.com",
-        "hardcoded domain: example.com\\",
-        "hardcoded domain: queryOptions.mode"
+        "dynamic email recipient (storeInCache)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -754,10 +742,7 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: docs.example.com",
-        "hardcoded domain: example.com",
-        "hardcoded domain: example.com\\"
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -767,12 +752,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded domain: firecrawl.dev"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -782,12 +762,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: docs.firecrawl.dev",
-        "hardcoded domain: github.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -812,15 +787,13 @@
       "grade": "A",
       "behavior": [
         "executes_commands",
-        "reads_files",
         "uses_network"
       ],
       "destinations": [
         "dynamic URL input (deduplicateSimilarURLs)",
         "dynamic URL input (url)",
         "dynamic webhook destination (webhook)",
-        "dynamic webhook destination (webhookHeaders)",
-        "hardcoded domain: example.com"
+        "dynamic webhook destination (webhookHeaders)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -840,12 +813,10 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (urls)",
-        "hardcoded domain: example.com"
+        "dynamic URL input (urls)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -855,14 +826,10 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (urls)",
-        "hardcoded domain: docs.firecrawl.dev",
-        "hardcoded domain: docs.firecrawl.dev\\",
-        "hardcoded domain: firecrawl.dev"
+        "dynamic URL input (urls)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -872,6 +839,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -879,15 +847,14 @@
     },
     {
       "tool_name": "firecrawl_interact",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: example.com"
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -907,13 +874,11 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network",
         "writes_files"
       ],
       "destinations": [
         "dynamic email recipient (storeInCache)",
-        "hardcoded domain: document.pdf",
         "hardcoded domain: pdfOptions.maxPages"
       ],
       "dependency_visibility": "No dependency data",
@@ -924,20 +889,12 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network",
         "writes_files"
       ],
       "destinations": [
         "dynamic email recipient (email)",
-        "dynamic webhook destination (webhookUrl)",
-        "hardcoded domain: example.com",
-        "hardcoded domain: monitor.check.completed",
-        "hardcoded domain: monitor.page",
-        "hardcoded domain: scrapeOptions.formats",
-        "hardcoded domain: snapshot.json",
-        "hardcoded email recipient: alerts@example.com",
-        "hardcoded webhook endpoint: example.com"
+        "dynamic webhook destination (webhookUrl)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -1009,17 +966,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: data.pages",
-        "hardcoded domain: diff.json",
-        "hardcoded domain: diff.text",
-        "hardcoded domain: example.com",
-        "hardcoded domain: judgment.meaningful",
-        "hardcoded domain: judgment.meaningfulChanges",
-        "hardcoded domain: snapshot.json"
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -1784,6 +1731,12 @@
     },
     {
       "scan_date": "2026-07-28T01:54:13Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "3.2.1"
+    },
+    {
+      "scan_date": "2026-07-29T01:56:29Z",
       "grade": "C",
       "risk_score": 25,
       "version": "3.2.1"

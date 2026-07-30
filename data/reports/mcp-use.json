@@ -1,118 +1,60 @@
 {
   "tool_id": "mcp-use",
   "version": "1.5.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-07-29T01:55:59.175726051Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-07-30T01:46:32Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mcp-use/mcp-use",
   "category": "Developer Tools",
   "vendor": "mcp-use",
-  "stars": 10418,
+  "stars": 10425,
   "license": "MIT",
   "language": "TypeScript",
   "description": "The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude \u0026 MCP Servers for AI Agents.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.5.0: 2 tool(s) added, 27 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "get_tool_context",
-          "search_tools"
-        ],
-        "removed": [
-          "suggest",
-          "useful",
-          "useful_address_string_parser",
-          "useful_batch_record_normalizer",
-          "useful_batch_slug_generator",
-          "useful_certificate_chain_inspector",
-          "useful_color_contrast_fixer",
-          "useful_contact_entry_parser",
-          "useful_cross_source_field_reconciler",
-          "useful_css_inline_tool",
-          "useful_dispatch",
-          "useful_food_temperature_inspection_parser",
-          "useful_income_narrative_batch_normalizer",
-          "useful_logit_lens_simulator",
-          "useful_mock_data_generator",
-          "useful_ndc_batch_normalizer_and_formulary_validator",
-          "useful_password_policy_validator",
-          "useful_phone_number_normalizer",
-          "useful_phone_number_parser",
-          "useful_prompt_drift_detector",
-          "useful_prompt_x_ray",
-          "useful_recurrence_rule_expander",
-          "useful_royalty_escalation_clause_parser",
-          "useful_suggest",
-          "useful_temporal_expression_normalizer",
-          "useful_token_attention_heatmap",
-          "useful_xml_schema_validator"
-        ],
-        "version": "1.5.0"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 4,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "libraries/typescript/packages/mcp-use/src/server/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 3798,
+            "snippet": "new McpServer(",
+            "file": "libraries/typescript/packages/mcp-use/src/server/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 598,
+            "snippet": ".registerTool(",
+            "file": "libraries/typescript/packages/mcp-use/src/server/mcp-server.ts",
+            "language": "typescript"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_tools"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_tools"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_tools"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_tool_context"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_tool_context"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_tool_context"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 2,
-    "info": 4
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -137,33 +79,6 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "get_tool_context",
-    "search_tools"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "search_tools",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_tool_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-07-27T02:12:06Z",
@@ -173,6 +88,12 @@
     },
     {
       "scan_date": "2026-07-28T01:53:43Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.5.0"
+    },
+    {
+      "scan_date": "2026-07-29T01:55:59Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.5.0"

@@ -1,21 +1,53 @@
 {
   "tool_id": "ychen20141229-douyin-insights",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-29T02:04:01.32262572Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-30T01:52:54.996807404Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/ychen20141229/douyin-insights",
   "vendor": "Smithery",
   "description": "Read-only Douyin MCP by SocialDataX with 13 tools for hot search, work search and details, comments and replies, creator profiles, creator works, and creator series. Use SOCIALDATAX_API_KEY from https://socialdatax.com.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 7 tool(s) added, 11 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "analyze_saju",
+          "check_compatibility",
+          "convert_calendar",
+          "get_dae_un",
+          "get_daily_fortune",
+          "get_fortune_by_period",
+          "manage_settings"
+        ],
+        "removed": [
+          "xhs_get_note_comments_by_note_id",
+          "xhs_get_note_comments_by_note_url",
+          "xhs_get_note_detail_by_note_id",
+          "xhs_get_note_detail_by_note_url",
+          "xhs_get_note_sub_comments_by_comment_id",
+          "xhs_get_search_hot_list",
+          "xhs_get_user_info_by_profile_url",
+          "xhs_get_user_info_by_user_id",
+          "xhs_get_user_posted_notes_by_profile_url",
+          "xhs_get_user_posted_notes_by_user_id",
+          "xhs_search_notes"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_get_note_detail_by_note_url"
+      "tool_name": "analyze_saju"
     },
     {
       "id": "AS-011",
@@ -23,7 +55,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_get_note_detail_by_note_url"
+      "tool_name": "analyze_saju"
     },
     {
       "id": "AS-014",
@@ -31,7 +63,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_note_detail_by_note_url"
+      "tool_name": "analyze_saju"
     },
     {
       "id": "AS-014",
@@ -39,23 +71,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_note_detail_by_note_id"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_search_notes"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_search_notes"
+      "tool_name": "check_compatibility"
     },
     {
       "id": "AS-014",
@@ -63,23 +79,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_search_notes"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_get_search_hot_list"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_get_search_hot_list"
+      "tool_name": "convert_calendar"
     },
     {
       "id": "AS-014",
@@ -87,7 +87,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_search_hot_list"
+      "tool_name": "get_daily_fortune"
     },
     {
       "id": "AS-014",
@@ -95,23 +95,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_note_comments_by_note_id"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_get_note_comments_by_note_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_get_note_comments_by_note_url"
+      "tool_name": "get_dae_un"
     },
     {
       "id": "AS-014",
@@ -119,7 +103,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_note_comments_by_note_url"
+      "tool_name": "get_fortune_by_period"
     },
     {
       "id": "AS-014",
@@ -127,118 +111,29 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_note_sub_comments_by_comment_id"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_user_info_by_user_id"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_get_user_info_by_profile_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_get_user_info_by_profile_url"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_user_info_by_profile_url"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_user_posted_notes_by_user_id"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_get_user_posted_notes_by_profile_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_get_user_posted_notes_by_profile_url"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_get_user_posted_notes_by_profile_url"
+      "tool_name": "manage_settings"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 6,
-    "info": 17
+    "low": 1,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "xhs_get_note_comments_by_note_id",
-    "xhs_get_note_comments_by_note_url",
-    "xhs_get_note_detail_by_note_id",
-    "xhs_get_note_detail_by_note_url",
-    "xhs_get_note_sub_comments_by_comment_id",
-    "xhs_get_search_hot_list",
-    "xhs_get_user_info_by_profile_url",
-    "xhs_get_user_info_by_user_id",
-    "xhs_get_user_posted_notes_by_profile_url",
-    "xhs_get_user_posted_notes_by_user_id",
-    "xhs_search_notes"
+    "analyze_saju",
+    "check_compatibility",
+    "convert_calendar",
+    "get_dae_un",
+    "get_daily_fortune",
+    "get_fortune_by_period",
+    "manage_settings"
   ],
   "tool_contexts": [
     {
-      "tool_name": "xhs_get_note_detail_by_note_url",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (note_url)",
-        "hardcoded domain: xhslink.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xhs_get_note_detail_by_note_id",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xhs_search_notes",
+      "tool_name": "analyze_saju",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -248,96 +143,49 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xhs_get_search_hot_list",
+      "tool_name": "check_compatibility",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xhs_get_note_comments_by_note_id",
+      "tool_name": "convert_calendar",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (page_token)"
+        "dynamic email recipient (toCalendar)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xhs_get_note_comments_by_note_url",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (note_url)",
-        "dynamic email recipient (page_token)",
-        "hardcoded domain: xhslink.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xhs_get_note_sub_comments_by_comment_id",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xhs_get_user_info_by_user_id",
+      "tool_name": "get_daily_fortune",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xhs_get_user_info_by_profile_url",
+      "tool_name": "get_dae_un",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (profile_url)",
-        "hardcoded domain: xhslink.com",
-        "hardcoded domain: xiaohongshu.com"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xhs_get_user_posted_notes_by_user_id",
+      "tool_name": "get_fortune_by_period",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "manage_settings",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xhs_get_user_posted_notes_by_profile_url",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (profile_url)",
-        "dynamic email recipient (page_token)",
-        "hardcoded domain: xhslink.com",
-        "hardcoded domain: xiaohongshu.com"
+        "dynamic email recipient (custom)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -394,6 +242,12 @@
     },
     {
       "scan_date": "2026-07-28T02:01:49Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-29T02:04:01Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

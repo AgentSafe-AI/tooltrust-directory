@@ -11,7 +11,7 @@ Note: this is NOT an official MCP server by Ghost.org, and is a direct fork of M
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hithereiamaliff-mcp-ghostcms](https://smithery.ai/server/hithereiamaliff/mcp-ghostcms) |
-| **Scan Date** | 2026-07-29 |
+| **Scan Date** | 2026-07-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -19,7 +19,7 @@ All actions run against your live Haus household, resolved automatically from yo
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [support-ix87-onehaus](https://smithery.ai/server/support-ix87/onehaus) |
-| **Scan Date** | 2026-07-29 |
+| **Scan Date** | 2026-07-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

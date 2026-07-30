@@ -1,4 +1,4 @@
-# 🟢 axel-belfort-hyperliquid-data
+# 🟡 axel-belfort-hyperliquid-data
 
 > Hyperliquid perpetual market data API for AI agents. Real-time order books, mid prices, funding rates, open interest, 24h volume, and OHLCV candles for all 229 perp markets on Hyperliquid L1. Direct on-chain data, no CoinGecko dependency.
 
@@ -10,12 +10,12 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hyperliquid-data](https://smithery.ai/server/axel-belfort/hyperliquid-data) |
-| **Scan Date** | 2026-07-29 |
+| **Scan Date** | 2026-07-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,34 +25,22 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 3 |
+| Info     | 1 |
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+Tool set changed silently at vsmithery: 1 tool(s) added, 3 tool(s) removed without a version bump.
 
 **Recommendation:**
-Review and remediate the identified issue.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
