@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.4` |
 | **Vendor** | blurrah |
-| **Stars** | ⭐ 403 |
+| **Stars** | ⭐ 405 |
 | **npm Package** | `mcp-graphql` |
 | **npm Downloads (30d)** | 6.8k |
 | **Language** | TypeScript |
 | **Source** | [mcp-graphql](https://github.com/blurrah/mcp-graphql) |
-| **Scan Date** | 2026-07-30 |
+| **Scan Date** | 2026-07-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.2.2` |
 | **Vendor** | dunialabs |
-| **Stars** | ⭐ 53 |
+| **Stars** | ⭐ 54 |
 | **npm Package** | `peta-core` |
 | **Language** | TypeScript |
 | **Source** | [peta-core](https://github.com/dunialabs/peta-core) |
-| **Scan Date** | 2026-07-30 |
+| **Scan Date** | 2026-07-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

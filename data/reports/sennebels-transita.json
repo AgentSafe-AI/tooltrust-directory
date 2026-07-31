@@ -1,14 +1,28 @@
 {
   "tool_id": "sennebels-transita",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:28:45.115275482Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-07-31T02:09:27.305770081Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/sennebels/transita",
   "vendor": "Smithery",
-  "description": "Visa eligibility matcher and immigration intelligence for MCP-compatible AI assistants. Scores ~45 visa pathways across 8 countries with country comparisons, document checklist previews, and curated nationality guides. Every match linked back to the official government source.",
+  "description": "Visa eligibility matcher and immigration intelligence for MCP-compatible AI assistants. Scores 100+ visa pathways across 15 countries with country comparisons, document checklist previews, and curated nationality guides. Every match linked back to the official government source.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "transita_programme_status"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -88,20 +102,29 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "transita_search_by_nationality"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "transita_programme_status"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 8
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "transita_compare_visas",
     "transita_country_overview",
     "transita_match_visas",
+    "transita_programme_status",
     "transita_search_by_nationality",
     "transita_visa_details"
   ],
@@ -147,6 +170,13 @@
       "behavior": [
         "uses_network"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "transita_programme_status",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -222,6 +252,12 @@
       "scan_date": "2026-06-04T02:59:51Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-22T03:28:45Z",
+      "grade": "A",
+      "risk_score": 2,
       "version": "smithery"
     }
   ]

@@ -3,7 +3,7 @@
   "version": "3.9.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-30T01:47:34.252232494Z",
+  "scan_date": "2026-07-31T02:04:35.999514765Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/opensumi/core",
   "category": "Developer Tools",
@@ -18,10 +18,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.9.0: 9 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v3.9.0: 4 tool(s) added, 9 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "add_subtask",
+          "create_task",
+          "list_tasks",
+          "update_task"
+        ],
+        "removed": [
           "compliance.edd.report",
           "compliance.exposure.forecast",
           "compliance.queue.optimize",
@@ -32,10 +38,6 @@
           "wallet.ofac.report",
           "wallet.ofac.screen"
         ],
-        "removed": [
-          "execute_tool",
-          "search_tools"
-        ],
         "version": "3.9.0"
       }
     },
@@ -45,39 +47,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "server.capabilities"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet.ofac.report"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet.ofac.screen"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet.ofac.batch"
+      "tool_name": "list_tasks"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "compliance.edd.report"
+      "tool_name": "create_task"
     },
     {
       "id": "AS-011",
@@ -85,7 +63,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "compliance.edd.report"
+      "tool_name": "create_task"
     },
     {
       "id": "AS-014",
@@ -93,7 +71,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compliance.edd.report"
+      "tool_name": "create_task"
     },
     {
       "id": "AS-014",
@@ -101,7 +79,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compliance.exposure.forecast"
+      "tool_name": "add_subtask"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_task"
     },
     {
       "id": "AS-014",
@@ -109,23 +95,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compliance.queue.optimize"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "report.pdf.generate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "report.docx.generate"
+      "tool_name": "update_task"
     }
   ],
   "summary": {
@@ -133,112 +103,45 @@
     "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 10
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compliance.edd.report",
-    "compliance.exposure.forecast",
-    "compliance.queue.optimize",
-    "report.docx.generate",
-    "report.pdf.generate",
-    "server.capabilities",
-    "wallet.ofac.batch",
-    "wallet.ofac.report",
-    "wallet.ofac.screen"
+    "add_subtask",
+    "create_task",
+    "list_tasks",
+    "update_task"
   ],
   "tool_contexts": [
     {
-      "tool_name": "server.capabilities",
+      "tool_name": "list_tasks",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: server.capabilities"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "wallet.ofac.report",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: wallet.ofac.report"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "wallet.ofac.screen",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: wallet.ofac.screen"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "wallet.ofac.batch",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: wallet.ofac.batch"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "compliance.edd.report",
+      "tool_name": "create_task",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (jurisdiction)",
-        "hardcoded domain: compliance.edd.report"
+        "executes_commands",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compliance.exposure.forecast",
+      "tool_name": "add_subtask",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: compliance.exposure.forecast"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compliance.queue.optimize",
+      "tool_name": "update_task",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: compliance.queue.optimize"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "report.pdf.generate",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: report.pdf.generate"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "report.docx.generate",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: report.docx.generate"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -482,6 +385,12 @@
       "scan_date": "2026-07-29T01:57:19Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "3.9.0"
+    },
+    {
+      "scan_date": "2026-07-30T01:47:34Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "3.9.0"
     }
   ]

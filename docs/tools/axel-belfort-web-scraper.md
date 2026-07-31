@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-web-scraper
+# 🟢 axel-belfort-web-scraper
 
 > Web content extraction API for AI agents. Scrape any URL and get clean, structured Markdown content with navigation, ads, and scripts stripped. Full JavaScript rendering via headless Chromium. Single and batch (10 URLs) modes. Built for RAG pipelines and AI research.
 
@@ -10,12 +10,12 @@ Returns: {markdown, title, wordCount, links[]}. No API key required — x402 mic
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-web-scraper](https://smithery.ai/server/axel-belfort/web-scraper) |
-| **Scan Date** | 2026-07-30 |
+| **Scan Date** | 2026-07-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {markdown, title, wordCount, links[]}. No API key required — x402 mic
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 12 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 6 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

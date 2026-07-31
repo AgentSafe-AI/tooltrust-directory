@@ -1,16 +1,16 @@
 {
   "tool_id": "one-search-mcp",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-30T01:51:45.823851977Z",
+  "scan_date": "2026-07-31T02:08:28.356891239Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/yokingma/one-search-mcp",
   "category": "Developer Tools",
   "vendor": "yokingma",
   "stars": 134,
   "npm_package": "one-search-mcp",
-  "npm_downloads_monthly": 1464,
+  "npm_downloads_monthly": 1410,
   "license": "MIT",
   "language": "TypeScript",
   "description": "🚀 OneSearch MCP Server: Web Search \u0026 Scraper \u0026 Extract,  Support agent-browser, SearXNG, Tavily, DuckDuckGo, Bing, etc.",
@@ -44,14 +44,6 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: code/command execution, network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "one_scrape"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "one_scrape"
     },
@@ -116,7 +108,7 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 4,
+    "low": 3,
     "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -131,14 +123,14 @@
     },
     {
       "kind": "init",
-      "line": 39,
+      "line": 41,
       "snippet": "new McpServer(",
       "file": "src/index.ts",
       "language": "typescript"
     },
     {
       "kind": "tool_definition",
-      "line": 79,
+      "line": 81,
       "snippet": ".registerTool(",
       "file": "src/index.ts",
       "language": "typescript"
@@ -184,8 +176,7 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: sitemap.xml"
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -471,6 +462,12 @@
     },
     {
       "scan_date": "2026-07-29T02:02:37Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.2.2"
+    },
+    {
+      "scan_date": "2026-07-30T01:51:45Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.2.2"

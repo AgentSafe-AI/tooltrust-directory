@@ -1,64 +1,51 @@
 {
   "tool_id": "davinci-resolve-mcp",
-  "version": "2.67.1",
-  "grade": "I",
+  "version": "2.68.2",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-07-30T01:48:43Z",
+  "scan_date": "2026-07-31T02:05:54.00588702Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/samuelgursky/davinci-resolve-mcp",
   "category": "Developer Tools",
   "vendor": "samuelgursky",
-  "stars": 1914,
+  "stars": 1928,
   "npm_package": "davinci-resolve-mcp",
-  "npm_downloads_monthly": 8894,
+  "npm_downloads_monthly": 9005,
   "license": "MIT",
   "language": "Python",
   "description": "MCP server integration for DaVinci Resolve Studio",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 25,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 79,
-            "snippet": "new McpServer(",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 82,
-            "snippet": ".registerTool(",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 19,
-            "file": "src/granular/common.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 95,
-            "snippet": "FastMCP(",
-            "file": "src/granular/common.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "event_resolve_outcome"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "event_verify_claim"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "event_check_price_threshold"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "event_check_price_threshold"
     }
   ],
   "summary": {
@@ -66,10 +53,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -107,42 +93,32 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "event_check_price_threshold",
+    "event_resolve_outcome",
+    "event_verify_claim"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-07-24T02:01:43Z",
+      "tool_name": "event_resolve_outcome",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "2.63.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-25T02:01:32Z",
+      "tool_name": "event_verify_claim",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "2.66.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-26T02:06:29Z",
+      "tool_name": "event_check_price_threshold",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "2.66.0"
-    },
-    {
-      "scan_date": "2026-07-27T02:14:52Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.66.0"
-    },
-    {
-      "scan_date": "2026-07-28T01:56:32Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.67.0"
-    },
-    {
-      "scan_date": "2026-07-29T01:58:50Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.67.1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

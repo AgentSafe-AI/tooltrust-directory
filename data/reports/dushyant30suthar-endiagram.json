@@ -1,10 +1,10 @@
 {
   "tool_id": "dushyant30suthar-endiagram",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-04-19T02:18:22.053854613Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-07-31T02:09:26.418296726Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/dushyant30suthar/endiagram",
   "vendor": "Smithery",
   "description": "Deterministic structural analysis that gets your AI laser focused. 13 graph-theory tools compute topology, bottlenecks, blast radius, and critical paths from EN syntax — no guessing, no hallucination. Use it to cut through noise and ground your agent in provable structural facts.",
@@ -19,9 +19,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "invariant"
     },
@@ -75,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "render"
     },
@@ -92,10 +92,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
-    "medium": 1,
+    "high": 0,
+    "medium": 0,
     "low": 1,
-    "info": 7
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -118,7 +118,7 @@
     {
       "tool_name": "invariant",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -159,6 +159,10 @@
       "tool_name": "compose",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: a.user",
+        "hardcoded domain: b.authenticated"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -166,6 +170,9 @@
       "tool_name": "render",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: themes.json"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -173,6 +180,12 @@
   "scan_history": [
     {
       "scan_date": "2026-04-17T02:14:20Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-04-19T02:18:22Z",
       "grade": "B",
       "risk_score": 17,
       "version": "smithery"

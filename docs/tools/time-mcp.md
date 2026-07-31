@@ -8,11 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.6` |
 | **Vendor** | yokingma |
-| **Stars** | ⭐ 68 |
+| **Stars** | ⭐ 69 |
 | **npm Package** | `time-mcp` |
+| **npm Downloads (30d)** | 7.5k |
 | **Language** | JavaScript |
 | **Source** | [time-mcp](https://github.com/yokingma/time-mcp) |
-| **Scan Date** | 2026-07-30 |
+| **Scan Date** | 2026-07-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
