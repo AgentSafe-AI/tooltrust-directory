@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mansamarkets-mansa](https://smithery.ai/server/mansamarkets/mansa) |
-| **Scan Date** | 2026-07-31 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

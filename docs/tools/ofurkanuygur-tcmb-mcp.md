@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ofurkanuygur-tcmb-mcp](https://smithery.ai/server/ofurkanuygur/tcmb_mcp) |
-| **Scan Date** | 2026-05-15 |
-| **Scanner** | tooltrust-scanner/v0.3.9 |
+| **Scan Date** | 2026-08-01 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

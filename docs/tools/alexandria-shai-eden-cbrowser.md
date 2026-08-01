@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alexandria-shai-eden-cbrowser](https://smithery.ai/server/alexandria-shai-eden/cbrowser) |
-| **Scan Date** | 2026-07-29 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

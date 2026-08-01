@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.13` |
 | **Vendor** | basementstudio |
-| **Stars** | ⭐ 1301 |
+| **Stars** | ⭐ 1303 |
 | **npm Package** | `xmcp-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [xmcp](https://github.com/basementstudio/xmcp) |
-| **Scan Date** | 2026-07-31 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

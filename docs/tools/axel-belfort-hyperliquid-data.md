@@ -15,7 +15,7 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hyperliquid-data](https://smithery.ai/server/axel-belfort/hyperliquid-data) |
-| **Scan Date** | 2026-07-30 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -28,7 +28,7 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 1 |
+| Info     | 3 |
 
 ## Detailed Findings
 
@@ -37,10 +37,34 @@ Returns real-time L1 data. No API key required — x402 micropayment $0.001/call
 **Severity:** High
 
 **Description:**
-Tool set changed silently at vsmithery: 1 tool(s) added, 3 tool(s) removed without a version bump.
+Tool set changed silently at vsmithery: 3 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

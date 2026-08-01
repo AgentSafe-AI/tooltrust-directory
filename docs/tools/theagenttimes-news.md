@@ -13,7 +13,7 @@ Every result carries citations, confidence scores, and Ethics Engine ratings. Bu
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [theagenttimes-news](https://smithery.ai/server/theagenttimes/news) |
-| **Scan Date** | 2026-07-29 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

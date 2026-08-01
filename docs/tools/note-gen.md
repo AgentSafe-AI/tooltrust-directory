@@ -1,18 +1,18 @@
 # 🟢 note-gen
 
-> A cross-platform Markdown AI note-taking software.
+> Capture first. Organize later. A local-first Markdown app that turns scattered records into clear notes with AI.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `note-gen-v0.32.1` |
+| **Version** | `note-gen-v0.33.0` |
 | **Vendor** | codexu |
-| **Stars** | ⭐ 12365 |
+| **Stars** | ⭐ 12411 |
 | **npm Package** | `note-gen` |
 | **Language** | TypeScript |
 | **Source** | [note-gen](https://github.com/codexu/note-gen) |
-| **Scan Date** | 2026-07-29 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

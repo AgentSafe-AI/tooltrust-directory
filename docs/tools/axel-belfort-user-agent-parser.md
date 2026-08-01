@@ -15,7 +15,7 @@ Returns: {browser, os, device, engine, isBot}. No API key required — x402 micr
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-user-agent-parser](https://smithery.ai/server/axel-belfort/user-agent-parser) |
-| **Scan Date** | 2026-07-30 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

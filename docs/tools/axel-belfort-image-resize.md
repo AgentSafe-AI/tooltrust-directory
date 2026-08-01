@@ -15,7 +15,7 @@ Returns: base64-encoded resized image. No API key required — x402 micropayment
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-image-resize](https://smithery.ai/server/axel-belfort/image-resize) |
-| **Scan Date** | 2026-07-31 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

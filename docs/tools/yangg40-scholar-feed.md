@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [yangg40-scholar-feed](https://smithery.ai/server/yangg40/scholar-feed) |
-| **Scan Date** | 2026-07-28 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

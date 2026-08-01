@@ -15,7 +15,7 @@ Returns: {score, headers[], missing[], server}. No API key required — x402 mic
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-http-headers](https://smithery.ai/server/axel-belfort/http-headers) |
-| **Scan Date** | 2026-07-31 |
+| **Scan Date** | 2026-08-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -27,7 +27,7 @@ Returns: {score, headers[], missing[], server}. No API key required — x402 mic
 | Critical | 0 |
 | High     | 1 |
 | Medium   | 0 |
-| Low      | 0 |
+| Low      | 1 |
 | Info     | 2 |
 
 ## Detailed Findings
@@ -49,10 +49,22 @@ The set of tools exposed by this server changed between scans of the same versio
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, HTTP requests
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
