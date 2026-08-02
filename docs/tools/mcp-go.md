@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.57.0` |
 | **Vendor** | mark3labs |
-| **Stars** | ⭐ 8960 |
+| **Stars** | ⭐ 8966 |
 | **Language** | Go |
 | **Source** | [mcp-go](https://github.com/mark3labs/mcp-go) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

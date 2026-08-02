@@ -1,15 +1,15 @@
-# 🟡 lionmaster-operations-lion-x402
+# 🟢 lionmaster-operations-lion-x402
 
 > Keyless MCP enrichment + real-world CPG/retail price intel for AI agents. Pay-per-call in USDC on Base (x402) — no API key, no account, no subscription. Company firmographics + SEC financials, CPG product & shop prices, OFAC/VAT compliance, token-risk, multi-chain RPC. Every response Ed25519-attested so agents can verify it offline. Free to try: lion_declare_need, lion_quick_intel.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lionmaster-operations-lion-x402](https://smithery.ai/server/lionmaster-operations/lion-x402) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 7 |
 | Info     | 30 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 20 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `15.7.1` |
 | **Vendor** | sickn33 |
-| **Stars** | ⭐ 44241 |
+| **Stars** | ⭐ 44277 |
 | **npm Package** | `agentic-awesome-skills` |
-| **npm Downloads (30d)** | 8.4k |
+| **npm Downloads (30d)** | 8.9k |
 | **Language** | Python |
 | **Source** | [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

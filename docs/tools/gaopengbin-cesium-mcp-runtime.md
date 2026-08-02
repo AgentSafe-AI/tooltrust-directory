@@ -11,7 +11,7 @@ Supports stdio (Claude Desktop, VS Code Copilot, Cursor) and Streamable HTTP (Di
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [gaopengbin-cesium-mcp-runtime](https://smithery.ai/server/gaopengbin/cesium-mcp-runtime) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

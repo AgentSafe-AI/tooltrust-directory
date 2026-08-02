@@ -3,14 +3,14 @@
   "version": "2.7.6",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-01T02:11:47.390740318Z",
+  "scan_date": "2026-08-02T02:06:49.906780791Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/PV-Bhat/vibe-check-mcp-server",
   "category": "Developer Tools",
   "vendor": "PV-Bhat",
-  "stars": 501,
+  "stars": 502,
   "npm_package": "@pv-bhat/vibe-check-mcp",
-  "npm_downloads_monthly": 704,
+  "npm_downloads_monthly": 723,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Vibe Check is a tool that provides mentor-like feedback to AI Agents, preventing tunnel-vision, over-engineering and reasoning lock-in for complex and long-horizon agent workflows. KISS your over-eager AI Agents goodbye! Effective for: Coding, Ambiguous Tasks, High-Risk tasks",
@@ -19,10 +19,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.7.6: 8 tool(s) added, 16 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.7.6: 4 tool(s) added, 8 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "verity_agent",
+          "verity_batch",
+          "verity_deep_check",
+          "verity_verify"
+        ],
+        "removed": [
           "quantum_attest",
           "xqbusd_batch_prices",
           "xqbusd_get_price",
@@ -32,50 +38,8 @@
           "xqbusd_protocol25_proof",
           "xqbusd_xrpl_gateway"
         ],
-        "removed": [
-          "comment_on_vibe",
-          "delete_vibe",
-          "drop_vibe",
-          "explore_vibes",
-          "get_agent_profile",
-          "get_vibe",
-          "get_vibe_dna",
-          "get_vibe_interactions",
-          "get_vibe_neighbors",
-          "get_vibe_resonance",
-          "gift_time",
-          "react_to_vibe",
-          "register_agent",
-          "reverse_geocode",
-          "search_places",
-          "trending_locations"
-        ],
         "version": "2.7.6"
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "quantum_attest"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_get_price"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_batch_prices"
     },
     {
       "id": "AS-002",
@@ -83,7 +47,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xqbusd_get_quote"
+      "tool_name": "verity_verify"
     },
     {
       "id": "AS-011",
@@ -91,7 +55,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xqbusd_get_quote"
+      "tool_name": "verity_verify"
     },
     {
       "id": "AS-014",
@@ -99,7 +63,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_get_quote"
+      "tool_name": "verity_verify"
     },
     {
       "id": "AS-014",
@@ -107,7 +71,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_iso20022_message"
+      "tool_name": "verity_deep_check"
     },
     {
       "id": "AS-014",
@@ -115,7 +79,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_oracle_status"
+      "tool_name": "verity_batch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "verity_agent"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "verity_agent"
     },
     {
       "id": "AS-014",
@@ -123,95 +103,58 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_xrpl_gateway"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xqbusd_protocol25_proof"
+      "tool_name": "verity_agent"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 9
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "quantum_attest",
-    "xqbusd_batch_prices",
-    "xqbusd_get_price",
-    "xqbusd_get_quote",
-    "xqbusd_iso20022_message",
-    "xqbusd_oracle_status",
-    "xqbusd_protocol25_proof",
-    "xqbusd_xrpl_gateway"
+    "verity_agent",
+    "verity_batch",
+    "verity_deep_check",
+    "verity_verify"
   ],
   "tool_contexts": [
     {
-      "tool_name": "quantum_attest",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xqbusd_get_price",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xqbusd_batch_prices",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xqbusd_get_quote",
+      "tool_name": "verity_verify",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (to)"
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xqbusd_iso20022_message",
+      "tool_name": "verity_deep_check",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xqbusd_oracle_status",
+      "tool_name": "verity_batch",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "xqbusd_xrpl_gateway",
+      "tool_name": "verity_agent",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xqbusd_protocol25_proof",
-      "action": "ALLOW",
-      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -909,6 +852,12 @@
     },
     {
       "scan_date": "2026-07-31T02:07:35Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "2.7.6"
+    },
+    {
+      "scan_date": "2026-08-01T02:11:47Z",
       "grade": "B",
       "risk_score": 15,
       "version": "2.7.6"

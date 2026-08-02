@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-auth-proxy",
   "version": "2.10.2",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-08-01T02:12:42.703673666Z",
+  "scan_date": "2026-08-02T02:07:44Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/sigbit/mcp-auth-proxy",
   "category": "Developer Tools",
@@ -14,12 +14,50 @@
   "description": "MCP Auth Proxy is a secure OAuth 2.1 authentication proxy for Model Context Protocol (MCP) servers",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "invoke"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 14,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "pkg/backend/proxy.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 117,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/backend/proxy.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 125,
+            "snippet": "AddTool(",
+            "file": "pkg/backend/proxy.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 6,
+            "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+            "file": "pkg/backend/testserver/main.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 10,
+            "snippet": "server.NewMCPServer(",
+            "file": "pkg/backend/testserver/main.go",
+            "language": "go"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -30,6 +68,7 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -68,16 +107,12 @@
       "language": "go"
     }
   ],
-  "tool_names": [
-    "invoke"
-  ],
-  "tool_contexts": [
+  "scan_history": [
     {
-      "tool_name": "invoke",
-      "action": "ALLOW",
+      "scan_date": "2026-08-01T02:12:42Z",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 0,
+      "version": "2.10.2"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# 🟡 axel-belfort-wallet-portfolio
+# 🟢 axel-belfort-wallet-portfolio
 
 > Crypto wallet portfolio API for AI agents. Full token holdings across Ethereum, Base, Polygon, Arbitrum, and BSC: ETH balance, all ERC-20 tokens, USD values, 24h changes, and total portfolio value.
 
@@ -10,12 +10,12 @@ Returns: {totalUsd, tokens[], ethBalance}. No API key required — x402 micropay
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-wallet-portfolio](https://smithery.ai/server/axel-belfort/wallet-portfolio) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Returns: {totalUsd, tokens[], ethBalance}. No API key required — x402 micropay
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 2 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 2 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

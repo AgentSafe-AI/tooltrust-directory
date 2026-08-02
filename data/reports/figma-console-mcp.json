@@ -1,253 +1,69 @@
 {
   "tool_id": "figma-console-mcp",
   "version": "1.38.2",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-08-01T02:09:19.370583709Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-02T02:04:24Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/southleft/figma-console-mcp",
   "category": "Developer Tools",
   "vendor": "southleft",
-  "stars": 2097,
+  "stars": 2100,
   "npm_package": "figma-console-mcp",
-  "npm_downloads_monthly": 122873,
+  "npm_downloads_monthly": 115864,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Your design system as an API. Connect AI to Figma for extraction, creation, and debugging.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.38.2: 9 tool(s) added, 113 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "get-comparisons",
-          "get-faqs",
-          "get-features",
-          "get-pricing",
-          "get-problems-solved",
-          "get-product-info",
-          "get-use-cases",
-          "get-workflow",
-          "search-product-info"
-        ],
-        "removed": [
-          "figjam_auto_arrange",
-          "figjam_create_code_block",
-          "figjam_create_connector",
-          "figjam_create_section",
-          "figjam_create_shape_with_text",
-          "figjam_create_stickies",
-          "figjam_create_sticky",
-          "figjam_create_table",
-          "figjam_get_board_contents",
-          "figjam_get_connections",
-          "figma_add_component_property",
-          "figma_add_mode",
-          "figma_add_shape_to_slide",
-          "figma_add_slot_property",
-          "figma_add_text_to_slide",
-          "figma_analyze_component_set",
-          "figma_append_to_slot",
-          "figma_arrange_component_set",
-          "figma_audit_component_accessibility",
-          "figma_audit_design_system_report",
-          "figma_batch_create_variables",
-          "figma_batch_update_variables",
-          "figma_blame_node",
-          "figma_capture_screenshot",
-          "figma_check_design_parity",
-          "figma_clear_console",
-          "figma_clone_node",
-          "figma_create_child",
-          "figma_create_component_set",
-          "figma_create_slide",
-          "figma_create_slot",
-          "figma_create_variable",
-          "figma_create_variable_collection",
-          "figma_delete_comment",
-          "figma_delete_component_property",
-          "figma_delete_node",
-          "figma_delete_slide",
-          "figma_delete_variable",
-          "figma_delete_variable_collection",
-          "figma_diagnose",
-          "figma_diff_versions",
-          "figma_duplicate_slide",
-          "figma_edit_component_property",
-          "figma_execute",
-          "figma_export_tokens",
-          "figma_focus_slide",
-          "figma_generate_changelog",
-          "figma_generate_component_doc",
-          "figma_get_annotation_categories",
-          "figma_get_annotations",
-          "figma_get_changes_since_version",
-          "figma_get_comments",
-          "figma_get_component",
-          "figma_get_component_details",
-          "figma_get_component_for_development",
-          "figma_get_component_for_development_deep",
-          "figma_get_component_image",
-          "figma_get_console_logs",
-          "figma_get_design_changes",
-          "figma_get_design_system_kit",
-          "figma_get_design_system_summary",
-          "figma_get_file_at_version",
-          "figma_get_file_data",
-          "figma_get_file_for_plugin",
-          "figma_get_file_versions",
-          "figma_get_focused_slide",
-          "figma_get_library_component_by_key",
-          "figma_get_library_components",
-          "figma_get_library_variables",
-          "figma_get_selection",
-          "figma_get_slide_content",
-          "figma_get_slide_grid",
-          "figma_get_slide_transition",
-          "figma_get_slots",
-          "figma_get_status",
-          "figma_get_styles",
-          "figma_get_text_styles",
-          "figma_get_token_values",
-          "figma_get_variables",
-          "figma_import_library_variable",
-          "figma_import_tokens",
-          "figma_instantiate_component",
-          "figma_lint_design",
-          "figma_list_open_files",
-          "figma_list_slides",
-          "figma_move_node",
-          "figma_navigate",
-          "figma_post_comment",
-          "figma_reconnect",
-          "figma_reload_plugin",
-          "figma_rename_mode",
-          "figma_rename_node",
-          "figma_rename_variable",
-          "figma_reorder_slides",
-          "figma_reset_slot",
-          "figma_resize_node",
-          "figma_scan_code_accessibility",
-          "figma_search_components",
-          "figma_set_annotations",
-          "figma_set_description",
-          "figma_set_fills",
-          "figma_set_image_fill",
-          "figma_set_instance_properties",
-          "figma_set_slide_background",
-          "figma_set_slide_transition",
-          "figma_set_slides_view_mode",
-          "figma_set_strokes",
-          "figma_set_text",
-          "figma_setup_design_tokens",
-          "figma_skip_slide",
-          "figma_take_screenshot",
-          "figma_update_variable",
-          "figma_watch_console"
-        ],
-        "version": "1.38.2"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 13,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 79,
+            "snippet": "new McpServer(",
+            "file": "src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 17,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/local.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 167,
+            "snippet": "new McpServer(",
+            "file": "src/local.ts",
+            "language": "typescript"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-product-info"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-features"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-pricing"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-workflow"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-problems-solved"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-use-cases"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-faqs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-comparisons"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search-product-info"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search-product-info"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search-product-info"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 1,
-    "info": 10
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -277,85 +93,6 @@
       "snippet": "new McpServer(",
       "file": "src/local.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "get-comparisons",
-    "get-faqs",
-    "get-features",
-    "get-pricing",
-    "get-problems-solved",
-    "get-product-info",
-    "get-use-cases",
-    "get-workflow",
-    "search-product-info"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get-product-info",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-features",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-pricing",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-workflow",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-problems-solved",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-use-cases",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-faqs",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-comparisons",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search-product-info",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -399,6 +136,12 @@
       "scan_date": "2026-07-30T01:48:55Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "1.38.2"
+    },
+    {
+      "scan_date": "2026-08-01T02:09:19Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.38.2"
     }
   ]

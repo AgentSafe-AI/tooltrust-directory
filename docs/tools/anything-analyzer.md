@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `3.6.52` |
 | **Vendor** | Mouseww |
-| **Stars** | ⭐ 3391 |
+| **Stars** | ⭐ 3395 |
 | **npm Package** | `anything-analyzer` |
 | **Language** | TypeScript |
 | **Source** | [anything-analyzer](https://github.com/Mouseww/anything-analyzer) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
