@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.6.1` |
 | **Vendor** | nickclyde |
-| **Stars** | ⭐ 1390 |
+| **Stars** | ⭐ 1393 |
 | **Language** | Python |
 | **Source** | [duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

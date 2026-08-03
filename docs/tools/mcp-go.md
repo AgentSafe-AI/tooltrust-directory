@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 8966 |
 | **Language** | Go |
 | **Source** | [mcp-go](https://github.com/mark3labs/mcp-go) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

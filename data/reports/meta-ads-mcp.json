@@ -1,41 +1,57 @@
 {
   "tool_id": "meta-ads-mcp",
   "version": "1.0.101",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-08-02T02:04:55Z",
+  "scan_date": "2026-08-03T02:09:14.909927486Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/pipeboard-co/meta-ads-mcp",
   "category": "Developer Tools",
   "vendor": "pipeboard-co",
-  "stars": 1129,
+  "stars": 1131,
   "license": "NOASSERTION",
   "language": "Python",
   "description": "Meta Ads (Facebook/Instagram) MCP server for Claude, ChatGPT, Perplexity \u0026 Cursor — the Meta node of Pipeboard’s 5-platform family (+ Google, TikTok, Snap, Reddit). Hosted remote MCP, badged Meta Business Partner, free plan — no self-hosting required.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "file": "meta_ads_mcp/core/server.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 17,
-            "snippet": "FastMCP(",
-            "file": "meta_ads_mcp/core/server.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_ad_accounts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_entities"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_performance"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_timeseries"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_entity_details"
     }
   ],
   "summary": {
@@ -43,10 +59,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -63,84 +78,61 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "get_entity_details",
+    "get_performance",
+    "get_timeseries",
+    "list_ad_accounts",
+    "list_entities"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-07-20T03:33:26Z",
+      "tool_name": "list_ad_accounts",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-21T01:59:56Z",
+      "tool_name": "list_entities",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
+      "destinations": [
+        "dynamic email recipient (account_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-22T01:59:31Z",
+      "tool_name": "get_performance",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
+      "destinations": [
+        "dynamic email recipient (account_id)",
+        "dynamic email recipient (date_to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-23T02:08:03Z",
+      "tool_name": "get_timeseries",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
+      "destinations": [
+        "dynamic email recipient (account_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-24T02:02:07Z",
+      "tool_name": "get_entity_details",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-25T02:01:59Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-26T02:06:55Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-27T02:15:21Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-28T01:57:02Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-29T01:59:16Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-30T01:49:10Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-07-31T02:06:12Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.101"
-    },
-    {
-      "scan_date": "2026-08-01T02:09:54Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.101"
+      "destinations": [
+        "dynamic email recipient (account_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

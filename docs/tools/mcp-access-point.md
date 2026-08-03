@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 182 |
 | **Language** | Rust |
 | **Source** | [mcp-access-point](https://github.com/sxhxliang/mcp-access-point) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

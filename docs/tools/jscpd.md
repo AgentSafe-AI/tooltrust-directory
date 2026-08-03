@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `5.0.14` |
 | **Vendor** | kucherenko |
-| **Stars** | ⭐ 5959 |
+| **Stars** | ⭐ 5964 |
 | **npm Package** | `jscpd-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [jscpd](https://github.com/kucherenko/jscpd) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

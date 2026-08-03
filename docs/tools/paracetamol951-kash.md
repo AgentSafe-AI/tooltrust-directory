@@ -170,7 +170,7 @@ The account is created instantly, the session is initialized automatically, and 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [paracetamol951-kash](https://smithery.ai/server/paracetamol951/kash) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.3.4` |
 | **Vendor** | HexSleeves |
-| **Stars** | ⭐ 114 |
+| **Stars** | ⭐ 115 |
 | **npm Package** | `@hexsleeves/tailscale-mcp-server` |
 | **npm Downloads (30d)** | 2.6k |
 | **Language** | TypeScript |
 | **Source** | [tailscale-mcp](https://github.com/HexSleeves/tailscale-mcp) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

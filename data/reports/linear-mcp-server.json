@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-02T02:07:14.690841882Z",
+  "scan_date": "2026-08-03T02:11:29.793724188Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/jerhadf/linear-mcp-server",
   "category": "Developer Tools",
   "vendor": "jerhadf",
   "stars": 347,
   "npm_package": "linear-mcp-server",
-  "npm_downloads_monthly": 3500,
+  "npm_downloads_monthly": 3346,
   "license": "MIT",
   "language": "JavaScript",
   "description": "A server that integrates Linear's project management system with the Model Context Protocol (MCP) to allow LLMs to interact with Linear.",
@@ -19,15 +19,15 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.0: 1 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.1.0: 2 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "list_my_issues"
-        ],
-        "removed": [
           "create_document",
           "update_document"
+        ],
+        "removed": [
+          "list_my_issues"
         ],
         "version": "0.1.0"
       }
@@ -97,6 +97,38 @@
       "tool_name": "list_documents"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_document"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_document"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_document"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update_document"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -132,7 +164,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 13 properties (threshold: 10)",
+      "description": "input schema exposes 18 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_issue"
     },
@@ -164,7 +196,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "input schema exposes 19 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "update_issue"
     },
@@ -206,14 +238,6 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_my_issues"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "list_issue_labels"
     },
     {
@@ -241,6 +265,14 @@
       "tool_name": "create_issue_label"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_projects"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -265,6 +297,14 @@
       "tool_name": "create_project"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_project"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -285,6 +325,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: code/command execution, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_project"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "update_project"
     },
@@ -373,12 +421,13 @@
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 11,
-    "info": 31
+    "low": 14,
+    "info": 34
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "create_comment",
+    "create_document",
     "create_issue",
     "create_issue_label",
     "create_project",
@@ -394,12 +443,12 @@
     "list_issue_labels",
     "list_issue_statuses",
     "list_issues",
-    "list_my_issues",
     "list_project_labels",
     "list_projects",
     "list_teams",
     "list_users",
     "search_documentation",
+    "update_document",
     "update_issue",
     "update_project"
   ],
@@ -447,6 +496,23 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "create_document",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_document",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "get_issue",
       "action": "ALLOW",
       "grade": "A",
@@ -468,6 +534,10 @@
         "executes_commands",
         "writes_files"
       ],
+      "destinations": [
+        "dynamic email recipient (milestone)",
+        "dynamic email recipient (relatedTo)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -477,6 +547,10 @@
       "grade": "A",
       "behavior": [
         "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (milestone)",
+        "dynamic email recipient (relatedTo)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -490,13 +564,6 @@
     },
     {
       "tool_name": "get_issue_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_my_issues",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -1402,6 +1469,12 @@
     },
     {
       "scan_date": "2026-08-01T02:12:09Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-08-02T02:07:14Z",
       "grade": "B",
       "risk_score": 15,
       "version": "0.1.0"

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 275 |
 | **Language** | TypeScript |
 | **Source** | [zig-mcp](https://github.com/zig-wasm/zig-mcp) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

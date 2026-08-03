@@ -10,10 +10,10 @@
 | **Vendor** | brightdata |
 | **Stars** | ⭐ 2556 |
 | **npm Package** | `@brightdata/mcp` |
-| **npm Downloads (30d)** | 22.4k |
+| **npm Downloads (30d)** | 22.6k |
 | **Language** | JavaScript |
 | **Source** | [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

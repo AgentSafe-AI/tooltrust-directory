@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `security` |
 | **Vendor** | Wh0am123 |
-| **Stars** | ⭐ 787 |
+| **Stars** | ⭐ 789 |
 | **Language** | Python |
 | **Source** | [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

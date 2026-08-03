@@ -15,7 +15,7 @@ Returns: {ids[], format, count}. No API key required — x402 micropayment $0.00
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-uuid-generator](https://smithery.ai/server/axel-belfort/uuid-generator) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

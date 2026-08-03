@@ -10,10 +10,10 @@
 | **Vendor** | blurrah |
 | **Stars** | ⭐ 406 |
 | **npm Package** | `mcp-graphql` |
-| **npm Downloads (30d)** | 6.4k |
+| **npm Downloads (30d)** | 5.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-graphql](https://github.com/blurrah/mcp-graphql) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

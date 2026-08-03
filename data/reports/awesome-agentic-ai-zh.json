@@ -1,25 +1,25 @@
 {
   "tool_id": "awesome-agentic-ai-zh",
-  "version": "2026.07.31",
+  "version": "2026.08.02",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-08-01T02:07:13.685944043Z",
+  "scan_date": "2026-08-03T02:06:36.555068033Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
   "category": "Developer Tools",
   "vendor": "WenyuChiou",
-  "stars": 4985,
+  "stars": 5020,
   "license": "MIT",
   "language": "Python",
   "description": "A trilingual (繁中 / English / 简中) learning roadmap for agentic AI: from LLM basics to multi-agent systems, with 240+ curated resources and hands-on examples. 中文 AI agent 學習地圖。",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_docs"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "find_awesome_section"
     },
     {
       "id": "AS-014",
@@ -27,7 +27,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_doc"
+      "tool_name": "find_awesome_section"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "get_awesome_items"
     },
     {
       "id": "AS-014",
@@ -35,23 +43,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_policy_packs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_policy_pack"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_full_library"
+      "tool_name": "get_awesome_items"
     }
   ],
   "summary": {
@@ -59,51 +51,27 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 5
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_doc",
-    "get_full_library",
-    "get_policy_pack",
-    "list_docs",
-    "list_policy_packs"
+    "find_awesome_section",
+    "get_awesome_items"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list_docs",
+      "tool_name": "find_awesome_section",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_doc",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_policy_packs",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_policy_pack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_full_library",
+      "tool_name": "get_awesome_items",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: llms-full.txt"
+        "dynamic email recipient (tokens)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -247,6 +215,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "2026.07.27"
+    },
+    {
+      "scan_date": "2026-08-01T02:07:13Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "2026.07.31"
     }
   ]
 }

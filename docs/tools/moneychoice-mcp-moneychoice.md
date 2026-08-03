@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [moneychoice-mcp-moneychoice](https://smithery.ai/server/MoneyChoice_MCP/MoneyChoice) |
-| **Scan Date** | 2026-07-16 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

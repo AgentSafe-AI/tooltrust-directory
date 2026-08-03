@@ -1,17 +1,17 @@
-# 🟡 home-assistant-vibecode-agent
+# 🟢 home-assistant-vibecode-agent
 
 > Home Assistant MCP server agent. Enable Claude Code, Cursor, VS Code or any MCP-enabled IDE to help you vibe-code and manage Home Assistant: create and debug automations, design dashboards, tweak themes, modify configs, and deploy changes using natural language
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `2.10.47` |
 | **Vendor** | Coolver |
-| **Stars** | ⭐ 603 |
+| **Stars** | ⭐ 604 |
 | **Language** | Python |
 | **Source** | [home-assistant-vibecode-agent](https://github.com/Coolver/home-assistant-vibecode-agent) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
 | Info     | 34 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v2.10.47: 18 tool(s) added, 11 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

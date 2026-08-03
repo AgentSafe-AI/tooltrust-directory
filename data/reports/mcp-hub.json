@@ -2,34 +2,20 @@
   "tool_id": "mcp-hub",
   "version": "4.2.1",
   "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-08-01T02:11:33.084725392Z",
+  "risk_score": 10,
+  "scan_date": "2026-08-03T02:10:52.718329485Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ravitemer/mcp-hub",
   "category": "Developer Tools",
   "vendor": "ravitemer",
   "stars": 506,
   "npm_package": "mcp-hub",
-  "npm_downloads_monthly": 3893,
+  "npm_downloads_monthly": 3890,
   "license": "MIT",
   "language": "JavaScript",
   "description": "A centralized manager for Model Context Protocol (MCP) servers with dynamic server management and monitoring",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v4.2.1: 1 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get_power_availability_timeline"
-        ],
-        "removed": null,
-        "version": "4.2.1"
-      }
-    },
-    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -76,6 +62,30 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "fetch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute_plan"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute_plan"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute_plan"
     },
     {
       "id": "AS-002",
@@ -457,8 +467,16 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
+      "description": "declared capabilities: code/command execution, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "discover_tools"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "discover_tools"
     },
     {
@@ -492,30 +510,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "plan_query"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "execute_plan"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "execute_plan"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "execute_plan"
     },
     {
       "id": "AS-014",
@@ -1352,9 +1346,9 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 1,
-    "low": 38,
+    "low": 39,
     "info": 126
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -1459,6 +1453,19 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "execute_plan",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: dchub.cloud"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1714,6 +1721,9 @@
       "tool_name": "discover_tools",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1724,19 +1734,6 @@
       "behavior": [
         "executes_commands",
         "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "execute_plan",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "hardcoded domain: dchub.cloud"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -2467,6 +2464,12 @@
     },
     {
       "scan_date": "2026-07-29T02:00:54Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "4.2.1"
+    },
+    {
+      "scan_date": "2026-08-01T02:11:33Z",
       "grade": "B",
       "risk_score": 15,
       "version": "4.2.1"

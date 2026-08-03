@@ -10,10 +10,10 @@
 | **Vendor** | yokingma |
 | **Stars** | ⭐ 69 |
 | **npm Package** | `time-mcp` |
-| **npm Downloads (30d)** | 7.3k |
+| **npm Downloads (30d)** | 7.1k |
 | **Language** | JavaScript |
 | **Source** | [time-mcp](https://github.com/yokingma/time-mcp) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

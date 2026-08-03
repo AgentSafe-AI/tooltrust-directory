@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.19.1` |
 | **Vendor** | CircleCI-Public |
-| **Stars** | ⭐ 86 |
+| **Stars** | ⭐ 85 |
 | **npm Package** | `@circleci/mcp-server-circleci` |
-| **npm Downloads (30d)** | 137.6k |
+| **npm Downloads (30d)** | 132.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

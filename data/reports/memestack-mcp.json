@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-07-02T02:43:17.440816816Z",
+  "scan_date": "2026-08-03T02:14:23.523863898Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/memestack/mcp",
   "vendor": "Smithery",
@@ -13,22 +13,11 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 12 tool(s) added, 0 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "browse_by_category",
-          "browse_by_tag",
-          "cite_image",
-          "find_meme_for_text",
-          "get_mutation_group",
-          "get_tag_profile",
-          "list_categories",
-          "popular_tags",
-          "reverse_image_search",
-          "search_text_in_image",
-          "submit_image",
-          "tag_autocomplete"
+          "generate_meme"
         ],
         "removed": null,
         "version": "smithery"
@@ -321,6 +310,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "submit_image"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "generate_meme"
     }
   ],
   "summary": {
@@ -328,7 +325,7 @@
     "high": 1,
     "medium": 0,
     "low": 7,
-    "info": 29
+    "info": 30
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -339,6 +336,7 @@
     "find_meme_for_text",
     "find_related",
     "find_similar",
+    "generate_meme",
     "get_image",
     "get_leaderboard",
     "get_mutation_group",
@@ -517,9 +515,15 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (image_url)",
-        "hardcoded domain: memestack.ai"
+        "dynamic URL input (image_url)"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "generate_meme",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -559,6 +563,12 @@
       "scan_date": "2026-04-19T02:21:08Z",
       "grade": "B",
       "risk_score": 17,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-07-02T02:43:17Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

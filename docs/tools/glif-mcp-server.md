@@ -10,7 +10,7 @@
 | **Vendor** | glifxyz |
 | **Stars** | ⭐ 197 |
 | **Source** | [glif-mcp-server](https://github.com/glifxyz/glif-mcp-server) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

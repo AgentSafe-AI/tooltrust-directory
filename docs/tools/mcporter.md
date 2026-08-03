@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.2M |
 | **Language** | TypeScript |
 | **Source** | [mcporter](https://github.com/openclaw/mcporter) |
-| **Scan Date** | 2026-08-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

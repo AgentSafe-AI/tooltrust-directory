@@ -1,4 +1,4 @@
-# 🟡 martin111ma-za5d-swiss-truth-mcp
+# 🟢 martin111ma-za5d-swiss-truth-mcp
 
 > Verified knowledge base for AI Agents — certified Swiss facts, no hallucinations.
 
@@ -20,13 +20,13 @@ No API key required. Fully public. Connect in 30 seconds.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [martin111ma-za5d-swiss-truth-mcp](https://smithery.ai/server/martin111ma-za5d/swiss-truth-mcp) |
-| **Scan Date** | 2026-06-10 |
-| **Scanner** | tooltrust-scanner/v0.3.13 |
+| **Scan Date** | 2026-08-03 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -35,19 +35,19 @@ No API key required. Fully public. Connect in 30 seconds.
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 0 |
 | Medium   | 0 |
-| Low      | 4 |
-| Info     | 6 |
+| Low      | 3 |
+| Info     | 9 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -102,12 +102,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -138,12 +138,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool declares http permission
+declared capabilities: HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

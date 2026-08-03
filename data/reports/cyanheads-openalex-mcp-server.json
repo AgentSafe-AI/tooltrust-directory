@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-openalex-mcp-server",
-  "version": "0.7.2",
+  "version": "0.7.8",
   "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-10T02:19:06.248296907Z",
+  "risk_score": 4,
+  "scan_date": "2026-08-03T02:13:29.226435205Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/openalex-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
-  "stars": 9,
+  "stars": 11,
   "npm_package": "@cyanheads/openalex-mcp-server",
-  "npm_downloads_monthly": 2276,
+  "npm_downloads_monthly": 2724,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Access the OpenAlex academic research catalog - 270M+ publications through MCP. STDIO \u0026 Streamable HTTP.",
@@ -27,7 +27,15 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access, HTTP requests",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "openalex_search_entities"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "openalex_search_entities"
     },
@@ -54,18 +62,52 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "openalex_analyze_trends"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "openalex_get_citation_graph"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "openalex_get_citation_graph"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "openalex_describe_fields"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "openalex_describe_fields"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 1,
-    "info": 4
+    "low": 2,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "openalex_analyze_trends",
+    "openalex_describe_fields",
+    "openalex_get_citation_graph",
     "openalex_resolve_name",
     "openalex_search_entities"
   ],
@@ -85,6 +127,7 @@
         "uses_network"
       ],
       "destinations": [
+        "hardcoded domain: authorships.author.id",
         "hardcoded domain: ror.org"
       ],
       "dependency_visibility": "No dependency data",
@@ -95,9 +138,29 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
+        "hardcoded domain: abstract.search",
         "hardcoded domain: authorships.institutions",
-        "hardcoded domain: field.id"
+        "hardcoded domain: default.search",
+        "hardcoded domain: field.id",
+        "hardcoded domain: title.search"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "openalex_get_citation_graph",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "openalex_describe_fields",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -435,6 +498,12 @@
     },
     {
       "scan_date": "2026-07-09T02:19:39Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.7.2"
+    },
+    {
+      "scan_date": "2026-07-10T02:19:06Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.7.2"

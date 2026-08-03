@@ -1,4 +1,4 @@
-# 🟡 opendata-cat-mcp-server
+# 🟢 opendata-cat-mcp-server
 
 > Servidor [MCP](https://modelcontextprotocol.io/) (Model Context Protocol) que connecta els models de llenguatge (Claude, ChatGPT, Gemini...) amb les **dades obertes publiques de Catalunya**. Cerca datasets, explora metadades i consulta dades reals de la Generalitat, l'Ajuntament de Barcelona i la Diputacio de Barcelona directament des del teu assistent d'IA.
 
@@ -6,13 +6,13 @@ Un projecte de [xaviviro](https://xaviviro.com) i d'**[opendata.cat](https://ope
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 17 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [opendata-cat-mcp-server](https://smithery.ai/server/opendata-cat/mcp-server) |
-| **Scan Date** | 2026-04-19 |
-| **Scanner** | tooltrust-scanner/v0.3.8 |
+| **Scan Date** | 2026-08-03 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 
@@ -21,19 +21,19 @@ Un projecte de [xaviviro](https://xaviviro.com) i d'**[opendata.cat](https://ope
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 6 |
+| Info     | 8 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -88,12 +88,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

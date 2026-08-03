@@ -10,10 +10,10 @@
 | **Vendor** | anyproto |
 | **Stars** | ⭐ 490 |
 | **npm Package** | `@anyproto/anytype-mcp` |
-| **npm Downloads (30d)** | 70.6k |
+| **npm Downloads (30d)** | 58.1k |
 | **Language** | TypeScript |
 | **Source** | [anytype-mcp](https://github.com/anyproto/anytype-mcp) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

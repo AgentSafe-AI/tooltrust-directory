@@ -23,7 +23,7 @@ Streamable HTTP at `https://mcp.memestack.ai/mcp`
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [memestack-mcp](https://smithery.ai/server/memestack/mcp) |
-| **Scan Date** | 2026-07-02 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -36,7 +36,7 @@ Streamable HTTP at `https://mcp.memestack.ai/mcp`
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 7 |
-| Info     | 29 |
+| Info     | 30 |
 
 ## Detailed Findings
 
@@ -45,7 +45,7 @@ Streamable HTTP at `https://mcp.memestack.ai/mcp`
 **Severity:** High
 
 **Description:**
-Tool set changed silently at vsmithery: 12 tool(s) added, 0 tool(s) removed without a version bump.
+Tool set changed silently at vsmithery: 1 tool(s) added, 0 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
@@ -469,6 +469,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

@@ -1,18 +1,18 @@
 # 🟢 xberg
 
-> A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured data from 101 formats (115 file extensions) plus code intelligence for 306 code languages. 15 language bindings — Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, TypeScript — plus CLI, REST API, and MCP server.
+> A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured data from 101 formats (115 file extensions) plus code intelligence for 371 code languages. 15 language bindings — Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, TypeScript — plus CLI, REST API, and MCP server.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.0.7` |
+| **Version** | `1.0.10` |
 | **Vendor** | xberg-io |
-| **Stars** | ⭐ 8724 |
+| **Stars** | ⭐ 8810 |
 | **npm Package** | `xberg-root` |
 | **Language** | Rust |
 | **Source** | [xberg](https://github.com/xberg-io/xberg) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

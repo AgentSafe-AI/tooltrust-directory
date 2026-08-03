@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.15.2` |
 | **Vendor** | Portkey-AI |
-| **Stars** | ⭐ 12618 |
+| **Stars** | ⭐ 12630 |
 | **npm Package** | `@portkey-ai/gateway` |
-| **npm Downloads (30d)** | 4.2k |
+| **npm Downloads (30d)** | 4.1k |
 | **Language** | TypeScript |
 | **Source** | [gateway](https://github.com/Portkey-AI/gateway) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

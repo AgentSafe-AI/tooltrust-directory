@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-02T02:05:58.816196593Z",
+  "scan_date": "2026-08-03T02:10:16.081201873Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/zaidmukaddam/scira-mcp-chat",
   "category": "Developer Tools",
   "vendor": "zaidmukaddam",
   "stars": 827,
   "npm_package": "mcp-chat",
-  "npm_downloads_monthly": 224,
+  "npm_downloads_monthly": 240,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "A minimalistic MCP client with a good feature set.",
@@ -19,15 +19,10 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.1.0: 3 tool(s) added, 8 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.1.0: 8 tool(s) added, 3 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "fetch_cometchat_doc_page",
-          "get_cometchat_implementation_bundle",
-          "search_cometchat_docs"
-        ],
-        "removed": [
           "CHATWORK_DELETE_MESSAGE",
           "CHATWORK_GET_CHATWORK_CONTACTS",
           "CHATWORK_GET_FILE",
@@ -37,6 +32,11 @@
           "CHATWORK_GET_ROOM_MESSAGES",
           "CHATWORK_UPLOAD_FILE"
         ],
+        "removed": [
+          "fetch_cometchat_doc_page",
+          "get_cometchat_implementation_bundle",
+          "search_cometchat_docs"
+        ],
         "version": "0.1.0"
       }
     },
@@ -44,9 +44,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_cometchat_docs"
+      "tool_name": "CHATWORK_DELETE_MESSAGE"
     },
     {
       "id": "AS-011",
@@ -54,7 +54,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_cometchat_docs"
+      "tool_name": "CHATWORK_DELETE_MESSAGE"
     },
     {
       "id": "AS-014",
@@ -62,7 +62,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_cometchat_docs"
+      "tool_name": "CHATWORK_DELETE_MESSAGE"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS"
     },
     {
       "id": "AS-002",
@@ -70,7 +94,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_cometchat_doc_page"
+      "tool_name": "CHATWORK_GET_FILE"
     },
     {
       "id": "AS-011",
@@ -78,7 +102,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch_cometchat_doc_page"
+      "tool_name": "CHATWORK_GET_FILE"
     },
     {
       "id": "AS-014",
@@ -86,7 +110,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch_cometchat_doc_page"
+      "tool_name": "CHATWORK_GET_FILE"
     },
     {
       "id": "AS-014",
@@ -94,54 +118,159 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_cometchat_implementation_bundle"
+      "tool_name": "CHATWORK_GET_MY_STATUS"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CHATWORK_GET_ROOM_MEMBERS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CHATWORK_GET_ROOM_MESSAGES"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CHATWORK_GET_ROOMS"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "CHATWORK_UPLOAD_FILE"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "CHATWORK_UPLOAD_FILE"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 5
+    "low": 4,
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "fetch_cometchat_doc_page",
-    "get_cometchat_implementation_bundle",
-    "search_cometchat_docs"
+    "CHATWORK_DELETE_MESSAGE",
+    "CHATWORK_GET_CHATWORK_CONTACTS",
+    "CHATWORK_GET_FILE",
+    "CHATWORK_GET_MY_STATUS",
+    "CHATWORK_GET_ROOMS",
+    "CHATWORK_GET_ROOM_MEMBERS",
+    "CHATWORK_GET_ROOM_MESSAGES",
+    "CHATWORK_UPLOAD_FILE"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_cometchat_docs",
+      "tool_name": "CHATWORK_DELETE_MESSAGE",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded API endpoint: api.chatwork.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CHATWORK_GET_CHATWORK_CONTACTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "fetch_cometchat_doc_page",
+      "tool_name": "CHATWORK_GET_FILE",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CHATWORK_GET_MY_STATUS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CHATWORK_GET_ROOM_MEMBERS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CHATWORK_GET_ROOM_MESSAGES",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: www.cometchat.com"
+        "hardcoded API endpoint: api.chatwork.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_cometchat_implementation_bundle",
+      "tool_name": "CHATWORK_GET_ROOMS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "CHATWORK_UPLOAD_FILE",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -362,6 +491,12 @@
       "scan_date": "2026-08-01T02:10:52Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.1.0"
+    },
+    {
+      "scan_date": "2026-08-02T02:05:58Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.1.0"
     }
   ]

@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `2026.07.31` |
+| **Version** | `2026.08.02` |
 | **Vendor** | WenyuChiou |
-| **Stars** | ⭐ 4985 |
+| **Stars** | ⭐ 5020 |
 | **Language** | Python |
 | **Source** | [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -24,19 +24,19 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 5 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+declared capabilities: database access
 
 **Recommendation:**
-Review and remediate the identified issue.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -52,27 +52,15 @@ Review and remediate the identified issue.
 
 ---
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
 
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+input parameter "tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
 
 ---
 
