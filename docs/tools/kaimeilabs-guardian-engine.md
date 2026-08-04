@@ -1,15 +1,15 @@
-# 🟡 kaimeilabs-guardian-engine
+# 🟢 kaimeilabs-guardian-engine
 
 > Deterministic recipe verification for AI agents. Catches hallucinated temperatures, missing techniques, wrong ingredients, and impossible cooking steps — then suggests one-click fixes. Covers 161+ dishes across 5 cuisines. Also checks EU allergen compliance (all 14 Annex II groups), verifies dietary claims (vegan, halal, kosher, gluten-free), and flags safety issues. Verify against Guardian's built-in master specs or your own house recipe. Same input → same verdict, every time. No API key required.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kaimeilabs-guardian-engine](https://smithery.ai/server/kaimeilabs/guardian-engine) |
-| **Scan Date** | 2026-07-31 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 9 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 5 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

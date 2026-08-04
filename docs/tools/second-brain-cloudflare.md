@@ -10,10 +10,10 @@
 | **Vendor** | rahilp |
 | **Stars** | ⭐ 697 |
 | **npm Package** | `second-brain` |
-| **npm Downloads (30d)** | 22 |
+| **npm Downloads (30d)** | 21 |
 | **Language** | TypeScript |
 | **Source** | [second-brain-cloudflare](https://github.com/rahilp/second-brain-cloudflare) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

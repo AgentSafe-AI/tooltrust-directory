@@ -11,7 +11,7 @@ With the OneSignal MCP, manage your messaging directly from your AI assistant. S
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [onesignal-onesignal](https://smithery.ai/server/onesignal/onesignal) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@ With the OneSignal MCP, manage your messaging directly from your AI assistant. S
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 15 |
 | Info     | 55 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 3 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

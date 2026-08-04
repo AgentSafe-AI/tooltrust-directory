@@ -13,7 +13,7 @@ Operated by SIA Brain Club (Latvia) — first-party server for vairogs.lv. Not l
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vairogs-vairogs](https://smithery.ai/server/vairogs/vairogs) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

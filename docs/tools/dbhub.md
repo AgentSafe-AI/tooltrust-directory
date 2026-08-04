@@ -1,6 +1,6 @@
 # 🟢 dbhub
 
-> Token efficient, zero-dependency database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.
+> Minimal database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.2.0` |
 | **Vendor** | bytebase |
-| **Stars** | ⭐ 3271 |
+| **Stars** | ⭐ 3275 |
 | **npm Package** | `dbhub` |
-| **npm Downloads (30d)** | 70 |
+| **npm Downloads (30d)** | 69 |
 | **Language** | TypeScript |
 | **Source** | [dbhub](https://github.com/bytebase/dbhub) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

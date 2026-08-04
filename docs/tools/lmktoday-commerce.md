@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lmktoday-commerce](https://smithery.ai/server/lmktoday/commerce) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

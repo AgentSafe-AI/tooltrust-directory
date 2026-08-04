@@ -3,14 +3,14 @@
   "version": "0.4.1",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-02T02:43:14.127648695Z",
+  "scan_date": "2026-08-04T01:59:43.103924657Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/congressgov-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 1,
   "npm_package": "@cyanheads/congressgov-mcp-server",
-  "npm_downloads_monthly": 1883,
+  "npm_downloads_monthly": 782,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Access U.S. congressional data - bills, votes, members, committees via MCP. STDIO \u0026 Streamable HTTP.",
@@ -35,8 +35,16 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "congressgov_member_lookup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "congressgov_member_lookup"
     },
     {
@@ -46,6 +54,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "congressgov_member_lookup"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "congressgov_committee_lookup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "congressgov_committee_lookup"
     },
     {
       "id": "AS-014",
@@ -140,8 +164,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 2,
-    "info": 13
+    "low": 4,
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -183,7 +207,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "reads_files",
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -192,6 +217,9 @@
       "tool_name": "congressgov_committee_lookup",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -517,6 +545,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.4.0"
+    },
+    {
+      "scan_date": "2026-07-02T02:43:14Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.4.1"
     }
   ]
 }

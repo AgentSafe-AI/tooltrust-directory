@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `sdk-0.27.4` |
 | **Vendor** | grafbase |
-| **Stars** | ⭐ 1231 |
+| **Stars** | ⭐ 1232 |
 | **Language** | Rust |
 | **Source** | [grafbase](https://github.com/grafbase/grafbase) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

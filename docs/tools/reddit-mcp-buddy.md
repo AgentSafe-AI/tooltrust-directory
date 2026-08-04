@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.14` |
 | **Vendor** | karanb192 |
-| **Stars** | ⭐ 774 |
+| **Stars** | ⭐ 778 |
 | **npm Package** | `reddit-mcp-buddy` |
-| **npm Downloads (30d)** | 7.7k |
+| **npm Downloads (30d)** | 7.9k |
 | **Language** | TypeScript |
 | **Source** | [reddit-mcp-buddy](https://github.com/karanb192/reddit-mcp-buddy) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

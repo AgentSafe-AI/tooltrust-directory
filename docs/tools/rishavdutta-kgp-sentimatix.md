@@ -26,7 +26,7 @@ By combining real-time financial news ingestion with advanced NLP sentiment anal
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rishavdutta-kgp-sentimatix](https://smithery.ai/server/rishavdutta-kgp/sentimatix) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

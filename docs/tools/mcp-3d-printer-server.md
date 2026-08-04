@@ -10,10 +10,10 @@
 | **Vendor** | DMontgomery40 |
 | **Stars** | ⭐ 221 |
 | **npm Package** | `mcp-3d-printer-server` |
-| **npm Downloads (30d)** | 364 |
+| **npm Downloads (30d)** | 363 |
 | **Language** | JavaScript |
 | **Source** | [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

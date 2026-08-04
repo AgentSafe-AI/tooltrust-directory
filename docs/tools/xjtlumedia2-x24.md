@@ -25,7 +25,7 @@ Give your AI assistant direct access to resume parsing, skill extraction, and pi
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xjtlumedia2-x24](https://smithery.ai/server/XJTLUmedia2/x24) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

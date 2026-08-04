@@ -15,7 +15,7 @@ Returns: {route, amountOut, priceImpact, slippage, gas}. No API key required —
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-dex-quotes](https://smithery.ai/server/axel-belfort/dex-quotes) |
-| **Scan Date** | 2026-08-03 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

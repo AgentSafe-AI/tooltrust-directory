@@ -1,6 +1,6 @@
 # 🟢 radar
 
-> The missing open source Kubernetes UI. Topology, event timeline, and service traffic — plus resource browsing and Helm management.
+> The missing open-source Kubernetes UI with a built-in MCP server for AI agents. See what's broken, why, and what changed. Issues, Topology, event timeline, Helm, GitOps, live service traffic, and cluster audits - all in one Go binary.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `1.8.7` |
 | **Vendor** | skyhook-io |
-| **Stars** | ⭐ 2707 |
+| **Stars** | ⭐ 2716 |
 | **Language** | Go |
 | **Source** | [radar](https://github.com/skyhook-io/radar) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

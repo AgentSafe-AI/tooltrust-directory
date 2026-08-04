@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [contact-e9h3-rnwy](https://smithery.ai/server/contact-e9h3/rnwy) |
-| **Scan Date** | 2026-06-28 |
+| **Scan Date** | 2026-08-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
