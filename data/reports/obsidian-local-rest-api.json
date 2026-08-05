@@ -1,27 +1,44 @@
 {
   "tool_id": "obsidian-local-rest-api",
   "version": "show",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-08-04T01:53:14.477124277Z",
+  "scan_date": "2026-08-05T01:54:02Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/coddingtonbear/obsidian-local-rest-api",
   "category": "Developer Tools",
   "vendor": "coddingtonbear",
-  "stars": 2742,
+  "stars": 2749,
   "npm_package": "obsidian-local-rest-api",
-  "npm_downloads_monthly": 404,
+  "npm_downloads_monthly": 419,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A secure REST API and Model Context Protocol (MCP) server for your vault.",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_local_viability"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/mcpHandler.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 95,
+            "snippet": "new McpServer(",
+            "file": "src/mcpHandler.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -32,6 +49,7 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -49,21 +67,15 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "check_local_viability"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "check_local_viability",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-08-03T02:07:30Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "show"
+    },
+    {
+      "scan_date": "2026-08-04T01:53:14Z",
       "grade": "A",
       "risk_score": 0,
       "version": "show"
