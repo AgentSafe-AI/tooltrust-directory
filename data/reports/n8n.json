@@ -1,62 +1,493 @@
 {
   "tool_id": "n8n",
   "version": "1",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-08-05T01:50:29Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-08-06T01:52:34.456328924Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/n8n-io/n8n",
   "category": "Developer Tools",
   "vendor": "n8n-io",
-  "stars": 199360,
+  "stars": 199490,
   "npm_package": "n8n-monorepo",
-  "npm_downloads_monthly": 7,
+  "npm_downloads_monthly": 8,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "packages/cli/src/modules/mcp/mcp.service.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 32,
-            "snippet": "new McpServer(",
-            "file": "packages/cli/src/modules/mcp/mcp.service.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 42,
-            "snippet": ".registerTool(",
-            "file": "packages/cli/src/modules/mcp/mcp.service.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_list_workflows"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_get_workflow"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_get_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_get_workflow"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_create_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_create_workflow"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_update_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_update_workflow"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_delete_workflow"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_delete_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_delete_workflow"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_activate_workflow"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_activate_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_activate_workflow"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_deactivate_workflow"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_deactivate_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_deactivate_workflow"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_execute_workflow"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_execute_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_execute_workflow"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_get_workflow_tags"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_update_workflow_tags"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_update_workflow_tags"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_list_executions"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_list_executions"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_list_executions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_get_execution"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_get_execution"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_get_execution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_delete_execution"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_delete_execution"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_delete_execution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_retry_execution"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "n8n_retry_execution"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_retry_execution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_create_credential"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_create_credential"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_update_credential"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_update_credential"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_delete_credential"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_delete_credential"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"credentialType\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "n8n_get_credential_schema"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_get_credential_schema"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_list_tags"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_get_tag"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_create_tag"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_create_tag"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_update_tag"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_update_tag"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_delete_tag"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_delete_tag"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_list_users"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_get_user"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_get_user"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_delete_user"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_delete_user"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "n8n_update_user_role"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "n8n_update_user_role"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 9,
+    "info": 49
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -81,846 +512,287 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-03-28T01:24:44Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.13.4"
-    },
-    {
-      "scan_date": "2026-03-31T01:31:02Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-03-31T22:11:41Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-01T20:11:54Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-03T06:46:43Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-03T20:30:20Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-03T21:09:35Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-03T22:46:46Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-04T01:34:07Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-04T06:18:36Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-04T16:40:37Z",
-      "grade": "C",
-      "risk_score": 44,
-      "version": "n8n@2.14.2"
-    },
-    {
-      "scan_date": "2026-04-04T22:50:53Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-05T01:09:37Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-05T01:49:50Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-06T01:52:38Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-07T01:39:21Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-07T21:56:27Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-08T01:35:23Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-09T01:28:13Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-10T01:53:06Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-11T01:34:53Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-12T01:59:35Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-13T02:03:26Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-14T01:58:51Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-15T01:56:46Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-16T02:11:07Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-17T01:59:08Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-18T01:41:40Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-19T02:03:02Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-20T02:09:22Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-21T02:02:16Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-22T02:00:20Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-23T02:03:37Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-24T02:03:46Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-25T01:55:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-26T02:05:23Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-26T07:21:53Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-27T01:21:53Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-28T02:21:12Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-29T02:20:05Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-04-30T02:18:43Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-01T02:22:24Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-02T02:10:32Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-03T02:20:00Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-04T02:17:04Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-05T02:06:14Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-06T02:05:34Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-07T02:08:06Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-08T02:14:49Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-09T02:10:31Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-10T02:09:43Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-11T02:18:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-12T02:14:00Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-13T02:28:35Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-14T02:31:18Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-15T02:29:15Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-16T02:11:17Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-17T02:16:26Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-18T02:37:17Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-19T02:35:21Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-20T02:37:09Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-21T02:35:50Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-22T02:38:04Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-23T02:15:48Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-24T02:34:51Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-25T02:42:07Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-26T02:31:51Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-27T02:41:55Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-28T02:19:32Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-29T02:32:53Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-30T02:17:13Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-05-31T02:42:03Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-01T02:52:17Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-02T02:49:13Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-03T02:57:47Z",
-      "grade": "C",
-      "risk_score": 42,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-04T02:53:08Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-05T02:41:06Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-06T02:29:36Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-07T02:45:55Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-08T02:49:39Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-09T02:17:44Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-10T02:40:44Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-11T02:51:42Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-12T02:46:33Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-13T02:38:54Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-14T02:51:31Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-15T02:55:31Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-15T18:26:45Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-15T20:12:36Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-06-15T23:43:57Z",
+  "tool_names": [
+    "n8n_activate_workflow",
+    "n8n_create_credential",
+    "n8n_create_tag",
+    "n8n_create_workflow",
+    "n8n_deactivate_workflow",
+    "n8n_delete_credential",
+    "n8n_delete_execution",
+    "n8n_delete_tag",
+    "n8n_delete_user",
+    "n8n_delete_workflow",
+    "n8n_execute_workflow",
+    "n8n_get_credential_schema",
+    "n8n_get_execution",
+    "n8n_get_tag",
+    "n8n_get_user",
+    "n8n_get_workflow",
+    "n8n_get_workflow_tags",
+    "n8n_list_executions",
+    "n8n_list_tags",
+    "n8n_list_users",
+    "n8n_list_workflows",
+    "n8n_retry_execution",
+    "n8n_update_credential",
+    "n8n_update_tag",
+    "n8n_update_user_role",
+    "n8n_update_workflow",
+    "n8n_update_workflow_tags"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "n8n_list_workflows",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-16T02:58:15Z",
+      "tool_name": "n8n_get_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-17T02:54:55Z",
+      "tool_name": "n8n_create_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-18T02:50:27Z",
+      "tool_name": "n8n_update_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-19T03:34:41Z",
+      "tool_name": "n8n_delete_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-20T02:40:40Z",
+      "tool_name": "n8n_activate_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-21T02:55:39Z",
+      "tool_name": "n8n_deactivate_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-22T02:58:30Z",
+      "tool_name": "n8n_execute_workflow",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-23T02:34:50Z",
+      "tool_name": "n8n_get_workflow_tags",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-24T02:35:57Z",
+      "tool_name": "n8n_update_workflow_tags",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-25T02:36:19Z",
+      "tool_name": "n8n_list_executions",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-26T02:41:20Z",
+      "tool_name": "n8n_get_execution",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-27T02:32:16Z",
+      "tool_name": "n8n_delete_execution",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-28T02:44:53Z",
+      "tool_name": "n8n_retry_execution",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-29T02:45:17Z",
+      "tool_name": "n8n_create_credential",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-30T02:40:11Z",
+      "tool_name": "n8n_update_credential",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-01T02:46:42Z",
+      "tool_name": "n8n_delete_credential",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-02T02:35:00Z",
+      "tool_name": "n8n_get_credential_schema",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-03T02:11:36Z",
+      "tool_name": "n8n_list_tags",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-04T02:10:17Z",
+      "tool_name": "n8n_get_tag",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-05T02:17:16Z",
+      "tool_name": "n8n_create_tag",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-06T02:28:18Z",
+      "tool_name": "n8n_update_tag",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-07T02:17:40Z",
+      "tool_name": "n8n_delete_tag",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-08T01:58:02Z",
+      "tool_name": "n8n_list_users",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-09T02:10:47Z",
+      "tool_name": "n8n_get_user",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-10T02:09:34Z",
+      "tool_name": "n8n_delete_user",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-11T01:55:53Z",
+      "tool_name": "n8n_update_user_role",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-12T01:59:20Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-13T02:00:29Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-14T01:47:32Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-15T01:33:24Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-16T01:54:25Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-17T01:58:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-18T01:48:12Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-19T01:57:21Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-20T03:28:41Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-21T01:55:11Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-22T01:54:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-23T02:03:05Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-24T01:57:04Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-25T01:56:46Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-26T02:01:49Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-27T02:10:12Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-28T01:51:49Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-29T01:54:09Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-30T01:44:55Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-07-31T02:02:00Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-08-01T02:04:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-08-02T01:59:42Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-08-03T02:04:02Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
-    },
-    {
-      "scan_date": "2026-08-04T01:49:45Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

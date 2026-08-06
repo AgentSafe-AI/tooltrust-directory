@@ -22,7 +22,7 @@ Built for **medieval market fans, reenactors, and living-history enthusiasts** â
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ralf-fyndling](https://smithery.ai/server/ralf/fyndling) |
-| **Scan Date** | 2026-08-04 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

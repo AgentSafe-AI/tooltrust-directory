@@ -1,0 +1,41 @@
+{
+  "tool_id": "adam-nntd-sickslip-verify",
+  "version": "smithery",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-08-06T02:03:07.430280961Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://smithery.ai/server/adam-nntd/sickslip-verify",
+  "vendor": "Smithery",
+  "description": "Verify the authenticity of a SickSlip doctor's note from your AI assistant.\n\nSickSlip is a U.S. asynchronous telehealth service operated by SickSlip P.A., reviewed and signed by Dr. Adam Z. Kawalek, MD (NPI 1326223306, board-certified internal medicine, 30+ states). Every note is QR-verifiable by the recipient employer.\n\nThis MCP server exposes one tool — `verify_sickslip_note(code)` — that any MCP-compliant client can call to verify a SickSlip note's authenticity. Returns the issued date, absence window, state of physician licensure, and physician name + NPI. No PHI is exposed (no patient name, DOB, or condition).\n\n**Use cases:**\n- HR person verifying an employee's note from Claude Desktop\n- Manager confirming a sick-leave document mid-conversation\n- Patient confirming their own note is registered + valid\n- Employment attorneys researching workplace dispute facts\n\n**Links:**\n- SickSlip: https://www.sickslip.co\n- Physician bio + NPI: https://www.sickslip.co/about/dr-adam-kawalek\n- npm package (stdio variant): https://www.npmjs.com/package/sickslip-mcp\n- GitHub: https://github.com/akawalek/sickslip-mcp",
+  "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_sickslip_note"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "verify_sickslip_note"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "verify_sickslip_note",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

@@ -1,35 +1,19 @@
 {
   "tool_id": "a7om-atom-mcp-server",
   "version": "smithery",
-  "grade": "D",
-  "risk_score": 50,
-  "scan_date": "2026-05-16T02:18:07.47117299Z",
-  "scanner": "tooltrust-scanner/v0.3.9",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-08-06T02:03:32.111386526Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/a7om/atom-mcp-server",
   "vendor": "Smithery",
   "description": "ATOM is the Global Price Benchmark for AI Inference, delivered as a native tool for AI agents. Query live pricing across the inference market through the AIPI (ATOM Inference Price Index) family of benchmarks. Search models, compare cross-vendor pricing, and access market intelligence. Independent and transparent. Free tier included, no API key needed.",
   "findings": [
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_models"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_models"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_models"
     },
@@ -43,9 +27,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "search_models"
     },
@@ -67,9 +51,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_model_detail"
     },
@@ -83,17 +67,17 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "compare_prices"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "compare_prices"
     },
@@ -107,25 +91,17 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_vendor_catalog"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_vendor_catalog"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_vendor_catalog"
     },
@@ -147,9 +123,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_market_stats"
     },
@@ -163,9 +139,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_index_benchmarks"
     },
@@ -179,9 +155,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_kpis"
     },
@@ -195,17 +171,17 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_vendors"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"_atom_api_key\" appears to accept a secret or credential",
+      "description": "input parameter \"_atom_api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "list_vendors"
     },
@@ -228,10 +204,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 11,
-    "medium": 4,
+    "high": 0,
+    "medium": 0,
     "low": 4,
-    "info": 8
+    "info": 20
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -247,8 +223,8 @@
   "tool_contexts": [
     {
       "tool_name": "search_models",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "D",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -263,7 +239,7 @@
     {
       "tool_name": "get_model_detail",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (_atom_api_key)"
       ],
@@ -273,7 +249,7 @@
     {
       "tool_name": "compare_prices",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (_atom_api_key)"
       ],
@@ -282,8 +258,8 @@
     },
     {
       "tool_name": "get_vendor_catalog",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -297,7 +273,7 @@
     {
       "tool_name": "get_market_stats",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (_atom_api_key)"
       ],
@@ -307,7 +283,7 @@
     {
       "tool_name": "get_index_benchmarks",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (_atom_api_key)"
       ],
@@ -317,7 +293,7 @@
     {
       "tool_name": "get_kpis",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (_atom_api_key)"
       ],
@@ -326,8 +302,8 @@
     },
     {
       "tool_name": "list_vendors",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -353,6 +329,12 @@
     },
     {
       "scan_date": "2026-04-19T02:21:50Z",
+      "grade": "D",
+      "risk_score": 50,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-05-16T02:18:07Z",
       "grade": "D",
       "risk_score": 50,
       "version": "smithery"

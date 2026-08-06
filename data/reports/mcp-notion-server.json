@@ -1,62 +1,349 @@
 {
   "tool_id": "mcp-notion-server",
   "version": "2.0.2",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-08-05T01:56:11Z",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-08-06T01:58:31.239695515Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/suekou/mcp-notion-server",
   "category": "Developer Tools",
   "vendor": "suekou",
-  "stars": 919,
+  "stars": 920,
   "npm_package": "@suekou/mcp-notion-server",
-  "npm_downloads_monthly": 9038,
+  "npm_downloads_monthly": 9065,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol server for connecting Notion to MCP-compatible clients",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 5,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/mcp/server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 152,
-            "snippet": "new McpServer(",
-            "file": "src/mcp/server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 194,
-            "snippet": ".registerTool(",
-            "file": "src/mcp/server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-fetch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-fetch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-fetch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-create-pages"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-create-pages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-create-pages"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-update-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-update-page"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-update-page"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-update-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-move-pages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-move-pages"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-duplicate-page"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-duplicate-page"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-duplicate-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-create-database"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-create-database"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-create-database"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-update-data-source"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-update-data-source"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-update-data-source"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-create-comment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-create-comment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-get-comments"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-get-comments"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-get-comments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-get-teams"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-get-teams"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-get-users"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-get-users"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-get-users"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-create-view"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-create-view"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-create-view"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-update-view"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-update-view"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-update-view"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 12,
+    "info": 28
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -81,840 +368,191 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-03-25T05:37:23Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-03-31T22:13:20Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-01T20:13:40Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-03T06:48:36Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-03T20:32:18Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-03T21:11:25Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-03T22:48:30Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-04T01:35:47Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-04T06:20:22Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-04T16:42:21Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-04T22:52:57Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-05T01:11:48Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-05T01:51:42Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-06T01:54:41Z",
-      "grade": "C",
-      "risk_score": 33,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-07T01:41:33Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-07T21:58:37Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-08T01:37:44Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-09T01:30:21Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-10T01:55:17Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-11T01:37:09Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-12T02:01:49Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-13T02:05:45Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-14T02:01:15Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-15T01:59:00Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-16T02:13:17Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-17T02:01:35Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-18T01:43:53Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-19T02:05:21Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-20T02:11:23Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-21T02:04:15Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-22T02:02:27Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-23T02:05:44Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-24T02:05:51Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-25T01:57:43Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-26T02:07:30Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-26T07:24:22Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-27T01:24:08Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-28T02:23:37Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-29T02:22:29Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-04-30T02:20:56Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-05-01T02:24:45Z",
-      "grade": "C",
-      "risk_score": 48,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-05-02T02:12:49Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-05-03T02:22:13Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-05-04T02:19:22Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "1.2.4"
-    },
-    {
-      "scan_date": "2026-05-05T02:08:38Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-06T02:08:01Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-07T02:10:35Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-08T02:17:13Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-09T02:13:02Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-10T02:12:17Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-11T02:21:03Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-12T02:16:33Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-13T02:31:14Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-14T02:33:55Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-15T02:32:01Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-16T02:13:56Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-17T02:19:48Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-18T02:40:07Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-19T02:38:05Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-20T02:39:38Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-21T02:38:05Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-22T02:40:30Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-23T02:18:09Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-24T02:37:13Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-25T02:44:36Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-26T02:34:22Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-27T02:44:17Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-28T02:22:04Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-29T02:35:23Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-30T02:20:16Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-05-31T02:44:33Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-01T02:54:47Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-02T02:51:54Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-03T03:00:15Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-04T02:55:38Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-05T02:43:33Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-06T02:32:16Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-07T02:48:20Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-08T02:52:22Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-09T02:20:27Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-10T02:43:25Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-11T02:54:26Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-12T02:49:17Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-13T02:41:42Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-14T02:54:11Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T02:58:15Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T18:30:07Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T20:15:19Z",
-      "grade": "D",
-      "risk_score": 50,
-      "version": "2.0.0"
-    },
-    {
-      "scan_date": "2026-06-15T23:49:35Z",
+  "tool_names": [
+    "notion-create-comment",
+    "notion-create-database",
+    "notion-create-pages",
+    "notion-create-view",
+    "notion-duplicate-page",
+    "notion-fetch",
+    "notion-get-comments",
+    "notion-get-teams",
+    "notion-get-users",
+    "notion-move-pages",
+    "notion-search",
+    "notion-update-data-source",
+    "notion-update-page",
+    "notion-update-view"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "notion-search",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (data_source_url)",
+        "dynamic URL input (page_url)",
+        "hardcoded domain: example.com",
+        "hardcoded domain: notion.so",
+        "hardcoded email recipient: john@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-16T03:03:26Z",
+      "tool_name": "notion-fetch",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: myspace.notion.site",
+        "hardcoded domain: notion.site",
+        "hardcoded domain: notion.so"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-17T03:00:44Z",
+      "tool_name": "notion-create-pages",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: cover.jpg",
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-18T02:55:43Z",
+      "tool_name": "notion-update-page",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: cover.jpg",
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-19T03:40:01Z",
+      "tool_name": "notion-move-pages",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-20T02:45:55Z",
+      "tool_name": "notion-duplicate-page",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-21T03:00:45Z",
+      "tool_name": "notion-create-database",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-22T03:04:32Z",
+      "tool_name": "notion-update-data-source",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.0"
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-23T02:40:06Z",
+      "tool_name": "notion-create-comment",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-24T02:41:14Z",
+      "tool_name": "notion-get-comments",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-25T02:41:57Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-06-26T02:46:44Z",
+      "tool_name": "notion-get-teams",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "2.0.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-27T02:37:26Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-06-28T02:50:13Z",
+      "tool_name": "notion-get-users",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-29T02:50:27Z",
+      "tool_name": "notion-create-view",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-06-30T02:45:04Z",
+      "tool_name": "notion-update-view",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-01T02:52:00Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-02T02:39:38Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-03T02:16:32Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-04T02:15:43Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-05T02:22:24Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-06T02:32:52Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-07T02:22:41Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-08T02:03:27Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-09T02:15:58Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-10T02:15:01Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-11T02:01:16Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-12T02:04:46Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-13T02:05:17Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-14T01:53:02Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-15T01:38:45Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-16T01:59:45Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-17T02:03:22Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-18T01:53:11Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-19T02:02:47Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-20T03:33:58Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-21T02:00:25Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-22T02:00:06Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-23T02:08:37Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-24T02:02:41Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-25T02:02:36Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-26T02:07:30Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-27T02:15:54Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-28T01:57:36Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-29T01:59:53Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-30T01:49:38Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-07-31T02:06:30Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-08-01T02:10:27Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-08-02T02:05:32Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-08-03T02:09:49Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
-    },
-    {
-      "scan_date": "2026-08-04T01:55:23Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "2.0.2"
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

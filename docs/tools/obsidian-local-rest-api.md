@@ -4,16 +4,16 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
 | **Version** | `show` |
 | **Vendor** | coddingtonbear |
-| **Stars** | ⭐ 2749 |
+| **Stars** | ⭐ 2755 |
 | **npm Package** | `obsidian-local-rest-api` |
-| **npm Downloads (30d)** | 419 |
+| **npm Downloads (30d)** | 441 |
 | **Language** | TypeScript |
 | **Source** | [obsidian-local-rest-api](https://github.com/coddingtonbear/obsidian-local-rest-api) |
-| **Scan Date** | 2026-08-05 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -30,15 +30,15 @@
 
 ## Detailed Findings
 
-### ⚪ `AS-018` — Embedded MCP Server Detected
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+Review and remediate the identified issue.
 
 ---
 

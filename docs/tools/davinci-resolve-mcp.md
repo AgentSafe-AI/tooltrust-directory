@@ -4,16 +4,16 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **I** |
+| **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `2.76.0` |
+| **Version** | `2.80.0` |
 | **Vendor** | samuelgursky |
-| **Stars** | ⭐ 1990 |
+| **Stars** | ⭐ 2005 |
 | **npm Package** | `davinci-resolve-mcp` |
-| **npm Downloads (30d)** | 12.5k |
+| **npm Downloads (30d)** | 14.0k |
 | **Language** | Python |
 | **Source** | [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) |
-| **Scan Date** | 2026-08-05 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -30,15 +30,15 @@
 
 ## Detailed Findings
 
-### ⚪ `AS-018` — Embedded MCP Server Detected
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
+Review and remediate the identified issue.
 
 ---
 

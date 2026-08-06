@@ -15,7 +15,7 @@ Returns: {airdrops[], totalValue, deadlines[]}. No API key required — x402 mic
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-airdrop-checker](https://smithery.ai/server/axel-belfort/airdrop-checker) |
-| **Scan Date** | 2026-08-04 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

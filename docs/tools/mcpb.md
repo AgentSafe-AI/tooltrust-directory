@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `2.1.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 2067 |
+| **Stars** | ⭐ 2069 |
 | **npm Package** | `@anthropic-ai/mcpb` |
-| **npm Downloads (30d)** | 220.2k |
+| **npm Downloads (30d)** | 227.0k |
 | **Language** | TypeScript |
 | **Source** | [mcpb](https://github.com/modelcontextprotocol/mcpb) |
-| **Scan Date** | 2026-08-05 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

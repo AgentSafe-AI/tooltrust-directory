@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.9.2` |
+| **Version** | `1.10.0` |
 | **Vendor** | themotionmachine |
 | **Stars** | ⭐ 226 |
 | **npm Package** | `omnifocus-mcp` |
-| **npm Downloads (30d)** | 667 |
+| **npm Downloads (30d)** | 693 |
 | **Language** | TypeScript |
 | **Source** | [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) |
-| **Scan Date** | 2026-08-05 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -71,7 +71,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 12 properties (threshold: 10)
+input schema exposes 13 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -12,7 +12,7 @@
 | **npm Package** | `xmcp-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [xmcp](https://github.com/basementstudio/xmcp) |
-| **Scan Date** | 2026-08-05 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns: {topHolders[], whaleCount, concentration, trend}. No API key required â
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-token-holders](https://smithery.ai/server/axel-belfort/token-holders) |
-| **Scan Date** | 2026-08-04 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

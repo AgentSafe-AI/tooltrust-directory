@@ -1,1159 +1,415 @@
 {
   "tool_id": "qwen-code",
-  "version": "0.21.6-preview.0",
+  "version": "0.21.6",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-08-05T01:51:24.606707588Z",
+  "risk_score": 2,
+  "scan_date": "2026-08-06T01:53:26.94890402Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/QwenLM/qwen-code",
   "category": "Developer Tools",
   "vendor": "QwenLM",
-  "stars": 26701,
+  "stars": 26752,
   "npm_package": "@qwen-code/qwen-code",
-  "npm_downloads_monthly": 300028,
+  "npm_downloads_monthly": 303620,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "An open-source AI coding agent that lives in your terminal.",
   "findings": [
     {
-      "id": "AS-007",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "click"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clipboard_read"
     },
     {
-      "id": "AS-007",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "clipboard_write"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "clipboard_write"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clipboard_write"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "drag"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "end_session"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "escalate_session"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_agent_cursor_state"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_cursor_position"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_desktop_state"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_screen_size"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_session_state"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "hotkey"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "invoke_menu"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "move_cursor"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "press_key"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scroll"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_agent_cursor_enabled"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_agent_cursor_motion"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_agent_cursor_theme"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_window_frame"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "start_session"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "type_text"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-007",
-      "severity": "Info",
-      "title": "INSUFFICIENT_TOOL_DATA",
-      "description": "Tool '' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
-      "recommendation": "Review and remediate the identified issue."
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue."
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_state"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 108
+    "low": 1,
+    "info": 24
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "click",
+    "clipboard_read",
+    "clipboard_write",
+    "drag",
+    "end_session",
+    "escalate_session",
+    "get_agent_cursor_state",
+    "get_cursor_position",
+    "get_desktop_state",
+    "get_screen_size",
+    "get_session_state",
+    "hotkey",
+    "invoke_menu",
+    "move_cursor",
+    "press_key",
+    "scroll",
+    "set_agent_cursor_enabled",
+    "set_agent_cursor_motion",
+    "set_agent_cursor_theme",
+    "set_window_frame",
+    "start_session",
+    "type_text",
+    "verify_state"
+  ],
   "tool_contexts": [
     {
-      "tool_name": "",
+      "tool_name": "click",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "clipboard_read",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "clipboard_write",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "drag",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "end_session",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "escalate_session",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "get_agent_cursor_state",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "get_cursor_position",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "get_desktop_state",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "get_screen_size",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "get_session_state",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "hotkey",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "invoke_menu",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "move_cursor",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "press_key",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "scroll",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "set_agent_cursor_enabled",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "set_agent_cursor_motion",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "set_agent_cursor_theme",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "set_window_frame",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "start_session",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
+      "tool_name": "type_text",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "",
+      "tool_name": "verify_state",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",

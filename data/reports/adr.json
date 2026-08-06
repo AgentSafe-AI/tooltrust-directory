@@ -1,0 +1,162 @@
+{
+  "tool_id": "adr",
+  "version": "sensor-v1.0.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-06T01:58:02Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/uber/ADR",
+  "category": "Developer Tools",
+  "vendor": "uber",
+  "stars": 1061,
+  "license": "Apache-2.0",
+  "language": "Python",
+  "description": "ADR secures enterprise AI agents through observability, security benchmarking, and threat detection. Deployed at Uber.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 12,
+            "file": "Detection/context_providers/policy_store_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 20,
+            "snippet": "FastMCP(",
+            "file": "Detection/context_providers/policy_store_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 42,
+            "snippet": "@mcp.tool(",
+            "file": "Detection/context_providers/policy_store_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "import",
+            "line": 12,
+            "file": "Detection/context_providers/source_code_analyzer_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 20,
+            "snippet": "FastMCP(",
+            "file": "Detection/context_providers/source_code_analyzer_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 42,
+            "snippet": "@mcp.tool(",
+            "file": "Detection/context_providers/source_code_analyzer_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "from mcp.server.fastmcp import FastMCP",
+            "file": "Detection/context_providers/source_codes/mcp_servers_0/arxiv_toolkit/arxiv_toolkit.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 9,
+            "snippet": "FastMCP(",
+            "file": "Detection/context_providers/source_codes/mcp_servers_0/arxiv_toolkit/arxiv_toolkit.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 16,
+            "snippet": "@mcp.tool(",
+            "file": "Detection/context_providers/source_codes/mcp_servers_0/arxiv_toolkit/arxiv_toolkit.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 12,
+      "file": "Detection/context_providers/policy_store_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 20,
+      "snippet": "FastMCP(",
+      "file": "Detection/context_providers/policy_store_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 42,
+      "snippet": "@mcp.tool(",
+      "file": "Detection/context_providers/policy_store_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "import",
+      "line": 12,
+      "file": "Detection/context_providers/source_code_analyzer_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 20,
+      "snippet": "FastMCP(",
+      "file": "Detection/context_providers/source_code_analyzer_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 42,
+      "snippet": "@mcp.tool(",
+      "file": "Detection/context_providers/source_code_analyzer_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "from mcp.server.fastmcp import FastMCP",
+      "file": "Detection/context_providers/source_codes/mcp_servers_0/arxiv_toolkit/arxiv_toolkit.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 9,
+      "snippet": "FastMCP(",
+      "file": "Detection/context_providers/source_codes/mcp_servers_0/arxiv_toolkit/arxiv_toolkit.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 16,
+      "snippet": "@mcp.tool(",
+      "file": "Detection/context_providers/source_codes/mcp_servers_0/arxiv_toolkit/arxiv_toolkit.py",
+      "language": "python"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 🟢 easy-vibe
 
-> 💻 vibe coding 2026 | Your First Modern Coding Course Beginners to Master Step by Step.
+> 💻  The first course for AI-native product builders.
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | datawhalechina |
-| **Stars** | ⭐ 18724 |
+| **Stars** | ⭐ 18763 |
 | **npm Package** | `easy-vibe` |
 | **Language** | JavaScript |
 | **Source** | [easy-vibe](https://github.com/datawhalechina/easy-vibe) |
-| **Scan Date** | 2026-08-04 |
+| **Scan Date** | 2026-08-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

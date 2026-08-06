@@ -1,62 +1,189 @@
 {
   "tool_id": "page-agent",
   "version": "1.12.2",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-08-05T01:51:07Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-08-06T01:53:08.785364651Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/alibaba/page-agent",
   "category": "Developer Tools",
   "vendor": "alibaba",
-  "stars": 28420,
+  "stars": 28456,
   "npm_package": "root",
-  "npm_downloads_monthly": 13319,
+  "npm_downloads_monthly": 13586,
   "license": "MIT",
   "language": "TypeScript",
   "description": "JavaScript in-page GUI agent. Control web interfaces with natural language.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "packages/mcp/src/index.js",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 35,
-            "snippet": "new McpServer(",
-            "file": "packages/mcp/src/index.js",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 37,
-            "snippet": ".registerTool(",
-            "file": "packages/mcp/src/index.js",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_dsos"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_dsos"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_dsos"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_dso_profile"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_dso_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_dso_profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_practices"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_practices"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_practices"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_practice_profile"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_practice_profile"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_practice_profile"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_top_dsos"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_top_dsos"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "compare_dsos"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compare_dsos"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_blog_articles"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_blog_articles"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_blog_articles"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "root_data_faq"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 5,
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -81,180 +208,94 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "compare_dsos",
+    "get_dso_profile",
+    "get_practice_profile",
+    "list_top_dsos",
+    "root_data_faq",
+    "search_blog_articles",
+    "search_dsos",
+    "search_practices"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-07-07T02:18:07Z",
+      "tool_name": "search_dsos",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-08T01:58:37Z",
+      "tool_name": "get_dso_profile",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-09T02:11:13Z",
+      "tool_name": "search_practices",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-10T02:10:05Z",
+      "tool_name": "get_practice_profile",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.0"
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-11T01:56:25Z",
+      "tool_name": "list_top_dsos",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.1"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-12T01:59:50Z",
+      "tool_name": "compare_dsos",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-13T02:01:01Z",
+      "tool_name": "search_blog_articles",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.1"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-07-14T01:47:58Z",
+      "tool_name": "root_data_faq",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.1"
-    },
-    {
-      "scan_date": "2026-07-15T01:33:47Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.1"
-    },
-    {
-      "scan_date": "2026-07-16T01:54:47Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.1"
-    },
-    {
-      "scan_date": "2026-07-17T01:58:44Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-18T01:48:32Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-19T01:57:50Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-20T03:29:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-21T01:55:34Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-22T01:55:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-23T02:03:35Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-24T01:57:31Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-25T01:57:18Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-26T02:02:15Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-27T02:10:44Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-28T01:52:21Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-29T01:54:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-30T01:45:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-07-31T02:02:33Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-08-01T02:05:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-08-02T02:00:21Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-08-03T02:04:34Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.12.2"
-    },
-    {
-      "scan_date": "2026-08-04T01:50:18Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }
