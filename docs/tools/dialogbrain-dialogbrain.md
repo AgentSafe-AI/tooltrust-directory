@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [dialogbrain-dialogbrain](https://smithery.ai/server/dialogbrain/dialogbrain) |
-| **Scan Date** | 2026-08-01 |
+| **Scan Date** | 2026-08-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

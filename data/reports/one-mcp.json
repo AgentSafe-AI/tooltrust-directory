@@ -1,9 +1,9 @@
 {
   "tool_id": "one-mcp",
   "version": "1.0.11",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-06T01:59:49.776001019Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-07T02:20:38.222739232Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/burugo/one-mcp",
   "category": "Developer Tools",
@@ -14,20 +14,70 @@
   "description": "A centralized reverse-proxy platform for MCP servers — manage, group, and export as Skills from a single endpoint.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_COPY_ITEM"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_COPY_ITEM"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.11: 17 tool(s) added, 35 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "Arcade_ListApps",
+          "MicrosoftOnedrive_CopyItem",
+          "MicrosoftOnedrive_CreateFolder",
+          "MicrosoftOnedrive_CreateShareLink",
+          "MicrosoftOnedrive_DeleteItem",
+          "MicrosoftOnedrive_DownloadFile",
+          "MicrosoftOnedrive_FindDuplicateFiles",
+          "MicrosoftOnedrive_GetCopyStatus",
+          "MicrosoftOnedrive_GetItem",
+          "MicrosoftOnedrive_GetMyDrive",
+          "MicrosoftOnedrive_GetSharedWithMe",
+          "MicrosoftOnedrive_ListFolderItems",
+          "MicrosoftOnedrive_ListItemPermissions",
+          "MicrosoftOnedrive_MoveItem",
+          "MicrosoftOnedrive_RevokeItemPermission",
+          "MicrosoftOnedrive_SearchItems",
+          "MicrosoftOnedrive_WhoAmI"
+        ],
+        "removed": [
+          "ONE_DRIVE_COPY_ITEM",
+          "ONE_DRIVE_CREATE_LINK",
+          "ONE_DRIVE_DELETE_ITEM",
+          "ONE_DRIVE_DOWNLOAD_FILE",
+          "ONE_DRIVE_GET_DRIVE",
+          "ONE_DRIVE_GET_ITEM",
+          "ONE_DRIVE_GET_ITEM_PERMISSIONS",
+          "ONE_DRIVE_GET_ITEM_THUMBNAILS",
+          "ONE_DRIVE_GET_ITEM_VERSIONS",
+          "ONE_DRIVE_GET_QUOTA",
+          "ONE_DRIVE_GET_RECENT_ITEMS",
+          "ONE_DRIVE_GET_SHARED_ITEMS",
+          "ONE_DRIVE_GET_SHAREPOINT_LIST_ITEMS",
+          "ONE_DRIVE_GET_SITE_DETAILS",
+          "ONE_DRIVE_GET_SITE_PAGE_CONTENT",
+          "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM",
+          "ONE_DRIVE_LIST_DRIVES",
+          "ONE_DRIVE_LIST_DRIVE_ITEM_ACTIVITIES",
+          "ONE_DRIVE_LIST_ROOT_DRIVE_CHANGES",
+          "ONE_DRIVE_LIST_SHAREPOINT_LIST_ITEMS_DELTA",
+          "ONE_DRIVE_LIST_SITE_COLUMNS",
+          "ONE_DRIVE_LIST_SITE_DRIVE_ITEMS_DELTA",
+          "ONE_DRIVE_LIST_SITE_LISTS",
+          "ONE_DRIVE_LIST_SITE_SUBSITES",
+          "ONE_DRIVE_LIST_SUBSCRIPTIONS",
+          "ONE_DRIVE_MOVE_ITEM",
+          "ONE_DRIVE_ONEDRIVE_CREATE_FOLDER",
+          "ONE_DRIVE_ONEDRIVE_CREATE_TEXT_FILE",
+          "ONE_DRIVE_ONEDRIVE_FIND_FILE",
+          "ONE_DRIVE_ONEDRIVE_FIND_FOLDER",
+          "ONE_DRIVE_ONEDRIVE_LIST_ITEMS",
+          "ONE_DRIVE_ONEDRIVE_UPLOAD_FILE",
+          "ONE_DRIVE_PREVIEW_DRIVE_ITEM",
+          "ONE_DRIVE_SEARCH_ITEMS",
+          "ONE_DRIVE_UPDATE_DRIVE_ITEM_METADATA"
+        ],
+        "version": "1.0.11"
+      }
     },
     {
       "id": "AS-014",
@@ -35,7 +85,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_COPY_ITEM"
+      "tool_name": "Arcade_ListApps"
     },
     {
       "id": "AS-002",
@@ -43,7 +93,39 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_CREATE_LINK"
+      "tool_name": "MicrosoftOnedrive_CopyItem"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftOnedrive_CopyItem"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "MicrosoftOnedrive_CreateFolder"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftOnedrive_CreateFolder"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "MicrosoftOnedrive_CreateShareLink"
     },
     {
       "id": "AS-010",
@@ -51,7 +133,7 @@
       "title": "Insecure Secret Handling",
       "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_CREATE_LINK"
+      "tool_name": "MicrosoftOnedrive_CreateShareLink"
     },
     {
       "id": "AS-014",
@@ -59,7 +141,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_CREATE_LINK"
+      "tool_name": "MicrosoftOnedrive_CreateShareLink"
     },
     {
       "id": "AS-002",
@@ -67,7 +149,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_DELETE_ITEM"
+      "tool_name": "MicrosoftOnedrive_DeleteItem"
     },
     {
       "id": "AS-014",
@@ -75,7 +157,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_DELETE_ITEM"
+      "tool_name": "MicrosoftOnedrive_DeleteItem"
     },
     {
       "id": "AS-002",
@@ -83,7 +165,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_DOWNLOAD_FILE"
+      "tool_name": "MicrosoftOnedrive_DownloadFile"
     },
     {
       "id": "AS-011",
@@ -91,7 +173,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_DOWNLOAD_FILE"
+      "tool_name": "MicrosoftOnedrive_DownloadFile"
     },
     {
       "id": "AS-014",
@@ -99,23 +181,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_DOWNLOAD_FILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_DRIVE"
+      "tool_name": "MicrosoftOnedrive_DownloadFile"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_ITEM"
+      "tool_name": "MicrosoftOnedrive_FindDuplicateFiles"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "MicrosoftOnedrive_FindDuplicateFiles"
     },
     {
       "id": "AS-014",
@@ -123,103 +205,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_ITEM"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_ITEM_PERMISSIONS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_ITEM_PERMISSIONS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_ITEM_THUMBNAILS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_ITEM_THUMBNAILS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_ITEM_VERSIONS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_ITEM_VERSIONS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_QUOTA"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_RECENT_ITEMS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_RECENT_ITEMS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_SHARED_ITEMS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_SHARED_ITEMS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_SHAREPOINT_LIST_ITEMS"
+      "tool_name": "MicrosoftOnedrive_FindDuplicateFiles"
     },
     {
       "id": "AS-002",
@@ -227,7 +213,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_GET_SITE_DETAILS"
+      "tool_name": "MicrosoftOnedrive_GetCopyStatus"
     },
     {
       "id": "AS-011",
@@ -235,7 +221,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_GET_SITE_DETAILS"
+      "tool_name": "MicrosoftOnedrive_GetCopyStatus"
     },
     {
       "id": "AS-014",
@@ -243,15 +229,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_SITE_DETAILS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_GET_SITE_PAGE_CONTENT"
+      "tool_name": "MicrosoftOnedrive_GetCopyStatus"
     },
     {
       "id": "AS-002",
@@ -259,23 +237,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 13 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM"
+      "tool_name": "MicrosoftOnedrive_GetItem"
     },
     {
       "id": "AS-014",
@@ -283,7 +245,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM"
+      "tool_name": "MicrosoftOnedrive_GetItem"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftOnedrive_GetMyDrive"
     },
     {
       "id": "AS-002",
@@ -291,7 +261,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_LIST_DRIVE_ITEM_ACTIVITIES"
+      "tool_name": "MicrosoftOnedrive_GetSharedWithMe"
     },
     {
       "id": "AS-014",
@@ -299,23 +269,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_DRIVE_ITEM_ACTIVITIES"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"skip_token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_LIST_DRIVES"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_DRIVES"
+      "tool_name": "MicrosoftOnedrive_GetSharedWithMe"
     },
     {
       "id": "AS-002",
@@ -323,15 +277,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_LIST_ROOT_DRIVE_CHANGES"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_LIST_ROOT_DRIVE_CHANGES"
+      "tool_name": "MicrosoftOnedrive_ListFolderItems"
     },
     {
       "id": "AS-014",
@@ -339,79 +285,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_ROOT_DRIVE_CHANGES"
+      "tool_name": "MicrosoftOnedrive_ListFolderItems"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_LIST_SHAREPOINT_LIST_ITEMS_DELTA"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_LIST_SHAREPOINT_LIST_ITEMS_DELTA"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_SHAREPOINT_LIST_ITEMS_DELTA"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_SITE_COLUMNS"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_LIST_SITE_DRIVE_ITEMS_DELTA"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_SITE_DRIVE_ITEMS_DELTA"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_SITE_LISTS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_SITE_SUBSITES"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_LIST_SUBSCRIPTIONS"
+      "tool_name": "MicrosoftOnedrive_ListItemPermissions"
     },
     {
       "id": "AS-011",
@@ -419,7 +301,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_LIST_SUBSCRIPTIONS"
+      "tool_name": "MicrosoftOnedrive_ListItemPermissions"
     },
     {
       "id": "AS-014",
@@ -427,7 +309,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_LIST_SUBSCRIPTIONS"
+      "tool_name": "MicrosoftOnedrive_ListItemPermissions"
     },
     {
       "id": "AS-002",
@@ -435,7 +317,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_MOVE_ITEM"
+      "tool_name": "MicrosoftOnedrive_MoveItem"
     },
     {
       "id": "AS-014",
@@ -443,7 +325,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_MOVE_ITEM"
+      "tool_name": "MicrosoftOnedrive_MoveItem"
     },
     {
       "id": "AS-002",
@@ -451,7 +333,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_CREATE_FOLDER"
+      "tool_name": "MicrosoftOnedrive_RevokeItemPermission"
     },
     {
       "id": "AS-014",
@@ -459,87 +341,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_CREATE_FOLDER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_CREATE_TEXT_FILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_CREATE_TEXT_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_FIND_FILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_FIND_FILE"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_FIND_FOLDER"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_FIND_FOLDER"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_LIST_ITEMS"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_LIST_ITEMS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_UPLOAD_FILE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_ONEDRIVE_UPLOAD_FILE"
+      "tool_name": "MicrosoftOnedrive_RevokeItemPermission"
     },
     {
       "id": "AS-002",
@@ -547,7 +349,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_PREVIEW_DRIVE_ITEM"
+      "tool_name": "MicrosoftOnedrive_SearchItems"
     },
     {
       "id": "AS-011",
@@ -555,7 +357,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_PREVIEW_DRIVE_ITEM"
+      "tool_name": "MicrosoftOnedrive_SearchItems"
     },
     {
       "id": "AS-014",
@@ -563,31 +365,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_PREVIEW_DRIVE_ITEM"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_SEARCH_ITEMS"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"skip_token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "ONE_DRIVE_SEARCH_ITEMS"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_SEARCH_ITEMS"
+      "tool_name": "MicrosoftOnedrive_SearchItems"
     },
     {
       "id": "AS-014",
@@ -595,95 +373,56 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_SEARCH_ITEMS"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ONE_DRIVE_UPDATE_DRIVE_ITEM_METADATA"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "ONE_DRIVE_UPDATE_DRIVE_ITEM_METADATA"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ONE_DRIVE_UPDATE_DRIVE_ITEM_METADATA"
+      "tool_name": "MicrosoftOnedrive_WhoAmI"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 8,
-    "info": 68
+    "low": 5,
+    "info": 32
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "ONE_DRIVE_COPY_ITEM",
-    "ONE_DRIVE_CREATE_LINK",
-    "ONE_DRIVE_DELETE_ITEM",
-    "ONE_DRIVE_DOWNLOAD_FILE",
-    "ONE_DRIVE_GET_DRIVE",
-    "ONE_DRIVE_GET_ITEM",
-    "ONE_DRIVE_GET_ITEM_PERMISSIONS",
-    "ONE_DRIVE_GET_ITEM_THUMBNAILS",
-    "ONE_DRIVE_GET_ITEM_VERSIONS",
-    "ONE_DRIVE_GET_QUOTA",
-    "ONE_DRIVE_GET_RECENT_ITEMS",
-    "ONE_DRIVE_GET_SHARED_ITEMS",
-    "ONE_DRIVE_GET_SHAREPOINT_LIST_ITEMS",
-    "ONE_DRIVE_GET_SITE_DETAILS",
-    "ONE_DRIVE_GET_SITE_PAGE_CONTENT",
-    "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM",
-    "ONE_DRIVE_LIST_DRIVES",
-    "ONE_DRIVE_LIST_DRIVE_ITEM_ACTIVITIES",
-    "ONE_DRIVE_LIST_ROOT_DRIVE_CHANGES",
-    "ONE_DRIVE_LIST_SHAREPOINT_LIST_ITEMS_DELTA",
-    "ONE_DRIVE_LIST_SITE_COLUMNS",
-    "ONE_DRIVE_LIST_SITE_DRIVE_ITEMS_DELTA",
-    "ONE_DRIVE_LIST_SITE_LISTS",
-    "ONE_DRIVE_LIST_SITE_SUBSITES",
-    "ONE_DRIVE_LIST_SUBSCRIPTIONS",
-    "ONE_DRIVE_MOVE_ITEM",
-    "ONE_DRIVE_ONEDRIVE_CREATE_FOLDER",
-    "ONE_DRIVE_ONEDRIVE_CREATE_TEXT_FILE",
-    "ONE_DRIVE_ONEDRIVE_FIND_FILE",
-    "ONE_DRIVE_ONEDRIVE_FIND_FOLDER",
-    "ONE_DRIVE_ONEDRIVE_LIST_ITEMS",
-    "ONE_DRIVE_ONEDRIVE_UPLOAD_FILE",
-    "ONE_DRIVE_PREVIEW_DRIVE_ITEM",
-    "ONE_DRIVE_SEARCH_ITEMS",
-    "ONE_DRIVE_UPDATE_DRIVE_ITEM_METADATA"
+    "Arcade_ListApps",
+    "MicrosoftOnedrive_CopyItem",
+    "MicrosoftOnedrive_CreateFolder",
+    "MicrosoftOnedrive_CreateShareLink",
+    "MicrosoftOnedrive_DeleteItem",
+    "MicrosoftOnedrive_DownloadFile",
+    "MicrosoftOnedrive_FindDuplicateFiles",
+    "MicrosoftOnedrive_GetCopyStatus",
+    "MicrosoftOnedrive_GetItem",
+    "MicrosoftOnedrive_GetMyDrive",
+    "MicrosoftOnedrive_GetSharedWithMe",
+    "MicrosoftOnedrive_ListFolderItems",
+    "MicrosoftOnedrive_ListItemPermissions",
+    "MicrosoftOnedrive_MoveItem",
+    "MicrosoftOnedrive_RevokeItemPermission",
+    "MicrosoftOnedrive_SearchItems",
+    "MicrosoftOnedrive_WhoAmI"
   ],
   "tool_contexts": [
     {
-      "tool_name": "ONE_DRIVE_COPY_ITEM",
+      "tool_name": "Arcade_ListApps",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_CopyItem",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (include_all_version_history)",
-        "hardcoded domain: microsoft.graph.conflictBehavior"
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ONE_DRIVE_CREATE_LINK",
+      "tool_name": "MicrosoftOnedrive_CreateFolder",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -693,7 +432,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ONE_DRIVE_DELETE_ITEM",
+      "tool_name": "MicrosoftOnedrive_CreateShareLink",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -703,105 +442,17 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ONE_DRIVE_DOWNLOAD_FILE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_DRIVE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_ITEM_PERMISSIONS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "hardcoded domain: FileB.txt"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_ITEM_THUMBNAILS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_ITEM_VERSIONS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_QUOTA",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_RECENT_ITEMS",
+      "tool_name": "MicrosoftOnedrive_DeleteItem",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "writes_files"
       ],
-      "destinations": [
-        "dynamic email recipient (top)",
-        "hardcoded domain: odata.nextLink"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ONE_DRIVE_GET_SHARED_ITEMS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_SHAREPOINT_LIST_ITEMS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_GET_SITE_DETAILS",
+      "tool_name": "MicrosoftOnedrive_DownloadFile",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -811,232 +462,123 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ONE_DRIVE_GET_SITE_PAGE_CONTENT",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_INVITE_USER_TO_DRIVE_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (recipients)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_DRIVE_ITEM_ACTIVITIES",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "dynamic email recipient ($top)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_DRIVES",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (skip_token)",
-        "dynamic email recipient (top)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_ROOT_DRIVE_CHANGES",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_SHAREPOINT_LIST_ITEMS_DELTA",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (token)",
-        "dynamic email recipient (top)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_SITE_COLUMNS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (top)",
-        "hardcoded domain: contoso.sharepoint.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_SITE_DRIVE_ITEMS_DELTA",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_SITE_LISTS",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (top)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_SITE_SUBSITES",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_LIST_SUBSCRIPTIONS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_MOVE_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_ONEDRIVE_CREATE_FOLDER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_ONEDRIVE_CREATE_TEXT_FILE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: notes.log",
-        "hardcoded domain: report.txt"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_ONEDRIVE_FIND_FILE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_ONEDRIVE_FIND_FOLDER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_ONEDRIVE_LIST_ITEMS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (top)",
-        "hardcoded domain: example.com",
-        "hardcoded email recipient: user@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_ONEDRIVE_UPLOAD_FILE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_PREVIEW_DRIVE_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "ONE_DRIVE_SEARCH_ITEMS",
+      "tool_name": "MicrosoftOnedrive_FindDuplicateFiles",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_GetCopyStatus",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
-        "dynamic email recipient (skip_token)",
-        "dynamic email recipient (top)",
-        "hardcoded domain: odata.nextLink"
+        "dynamic URL input (operation_url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ONE_DRIVE_UPDATE_DRIVE_ITEM_METADATA",
+      "tool_name": "MicrosoftOnedrive_GetItem",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_GetMyDrive",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_GetSharedWithMe",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (next_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_ListFolderItems",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (next_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_ListItemPermissions",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (next_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_MoveItem",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "writes_files"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_RevokeItemPermission",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_SearchItems",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (next_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftOnedrive_WhoAmI",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1272,6 +814,12 @@
     },
     {
       "scan_date": "2026-08-03T02:11:08Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.11"
+    },
+    {
+      "scan_date": "2026-08-06T01:59:49Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.11"

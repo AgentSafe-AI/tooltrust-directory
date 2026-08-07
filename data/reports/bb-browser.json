@@ -1,43 +1,85 @@
 {
   "tool_id": "bb-browser",
   "version": "0.14.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-06T01:54:59.877357026Z",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-08-07T02:17:02.96255682Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/epiral/bb-browser",
   "category": "Developer Tools",
   "vendor": "epiral",
-  "stars": 6028,
+  "stars": 6034,
   "npm_package": "bb-browser",
-  "npm_downloads_monthly": 2587,
+  "npm_downloads_monthly": 2599,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Your browser is the API. CLI + MCP server for AI agents to control Chrome with your login state.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.14.0: 26 tool(s) added, 18 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "click",
+          "close_page",
+          "drag",
+          "emulate",
+          "evaluate_script",
+          "fill",
+          "fill_form",
+          "get_console_message",
+          "get_network_request",
+          "handle_dialog",
+          "hover",
+          "list_console_messages",
+          "list_network_requests",
+          "list_pages",
+          "navigate_page",
+          "new_page",
+          "performance_analyze_insight",
+          "performance_start_trace",
+          "performance_stop_trace",
+          "press_key",
+          "resize_page",
+          "select_page",
+          "take_screenshot",
+          "take_snapshot",
+          "upload_file",
+          "wait_for"
+        ],
+        "removed": [
+          "BROWSER_TOOL_COPY_SELECTED_TEXT",
+          "BROWSER_TOOL_DRAG_AND_DROP",
+          "BROWSER_TOOL_FETCH_WEBPAGE",
+          "BROWSER_TOOL_GET_CLIPBOARD",
+          "BROWSER_TOOL_KEYBOARD_SHORTCUT",
+          "BROWSER_TOOL_MOUSE_CLICK",
+          "BROWSER_TOOL_MOUSE_DOUBLE_CLICK",
+          "BROWSER_TOOL_MOUSE_DOWN",
+          "BROWSER_TOOL_MOUSE_MOVE",
+          "BROWSER_TOOL_MOUSE_UP",
+          "BROWSER_TOOL_NAVIGATE",
+          "BROWSER_TOOL_PASTE_TEXT",
+          "BROWSER_TOOL_PERFORM_WEB_TASK",
+          "BROWSER_TOOL_SCREENSHOT_WEBPAGE",
+          "BROWSER_TOOL_SCROLL",
+          "BROWSER_TOOL_SET_CLIPBOARD",
+          "BROWSER_TOOL_TAKE_SCREENSHOT",
+          "BROWSER_TOOL_TYPE_TEXT"
+        ],
+        "version": "0.14.0"
+      }
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_COPY_SELECTED_TEXT"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_DRAG_AND_DROP"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_DRAG_AND_DROP"
+      "tool_name": "click"
     },
     {
       "id": "AS-014",
@@ -45,15 +87,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_DRAG_AND_DROP"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_FETCH_WEBPAGE"
+      "tool_name": "close_page"
     },
     {
       "id": "AS-014",
@@ -61,7 +95,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_FETCH_WEBPAGE"
+      "tool_name": "drag"
     },
     {
       "id": "AS-014",
@@ -69,7 +103,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_GET_CLIPBOARD"
+      "tool_name": "emulate"
     },
     {
       "id": "AS-002",
@@ -77,7 +111,15 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_KEYBOARD_SHORTCUT"
+      "tool_name": "evaluate_script"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "evaluate_script"
     },
     {
       "id": "AS-011",
@@ -85,7 +127,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_KEYBOARD_SHORTCUT"
+      "tool_name": "evaluate_script"
     },
     {
       "id": "AS-014",
@@ -93,7 +135,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_KEYBOARD_SHORTCUT"
+      "tool_name": "evaluate_script"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fill"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fill_form"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_console_message"
     },
     {
       "id": "AS-002",
@@ -101,7 +167,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_MOUSE_CLICK"
+      "tool_name": "get_network_request"
     },
     {
       "id": "AS-011",
@@ -109,7 +175,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_MOUSE_CLICK"
+      "tool_name": "get_network_request"
     },
     {
       "id": "AS-014",
@@ -117,23 +183,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_MOUSE_CLICK"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_MOUSE_DOUBLE_CLICK"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_MOUSE_DOUBLE_CLICK"
+      "tool_name": "get_network_request"
     },
     {
       "id": "AS-014",
@@ -141,7 +191,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_MOUSE_DOUBLE_CLICK"
+      "tool_name": "handle_dialog"
     },
     {
       "id": "AS-014",
@@ -149,7 +199,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_MOUSE_DOWN"
+      "tool_name": "hover"
     },
     {
       "id": "AS-014",
@@ -157,15 +207,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_MOUSE_MOVE"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_MOUSE_UP"
+      "tool_name": "list_console_messages"
     },
     {
       "id": "AS-002",
@@ -173,7 +215,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_NAVIGATE"
+      "tool_name": "list_network_requests"
     },
     {
       "id": "AS-011",
@@ -181,7 +223,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_NAVIGATE"
+      "tool_name": "list_network_requests"
     },
     {
       "id": "AS-014",
@@ -189,7 +231,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_NAVIGATE"
+      "tool_name": "list_network_requests"
     },
     {
       "id": "AS-014",
@@ -197,7 +239,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_PASTE_TEXT"
+      "tool_name": "list_pages"
     },
     {
       "id": "AS-002",
@@ -205,15 +247,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_PERFORM_WEB_TASK"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_PERFORM_WEB_TASK"
+      "tool_name": "navigate_page"
     },
     {
       "id": "AS-014",
@@ -221,7 +255,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_PERFORM_WEB_TASK"
+      "tool_name": "navigate_page"
     },
     {
       "id": "AS-002",
@@ -229,15 +263,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_SCREENSHOT_WEBPAGE"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_SCREENSHOT_WEBPAGE"
+      "tool_name": "new_page"
     },
     {
       "id": "AS-014",
@@ -245,23 +271,63 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_SCREENSHOT_WEBPAGE"
+      "tool_name": "new_page"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "performance_analyze_insight"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "performance_start_trace"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "performance_stop_trace"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "press_key"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "resize_page"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "select_page"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_SCROLL"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_SCROLL"
+      "tool_name": "take_screenshot"
     },
     {
       "id": "AS-014",
@@ -269,31 +335,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_SCROLL"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_SET_CLIPBOARD"
+      "tool_name": "take_screenshot"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "BROWSER_TOOL_TAKE_SCREENSHOT"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "BROWSER_TOOL_TAKE_SCREENSHOT"
+      "tool_name": "take_snapshot"
     },
     {
       "id": "AS-014",
@@ -301,7 +351,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_TAKE_SCREENSHOT"
+      "tool_name": "take_snapshot"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "upload_file"
     },
     {
       "id": "AS-014",
@@ -309,81 +367,133 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "BROWSER_TOOL_TYPE_TEXT"
+      "tool_name": "upload_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wait_for"
     }
   ],
   "summary": {
-    "critical": 0,
-    "high": 0,
+    "critical": 1,
+    "high": 1,
     "medium": 0,
-    "low": 9,
-    "info": 28
+    "low": 3,
+    "info": 34
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "BROWSER_TOOL_COPY_SELECTED_TEXT",
-    "BROWSER_TOOL_DRAG_AND_DROP",
-    "BROWSER_TOOL_FETCH_WEBPAGE",
-    "BROWSER_TOOL_GET_CLIPBOARD",
-    "BROWSER_TOOL_KEYBOARD_SHORTCUT",
-    "BROWSER_TOOL_MOUSE_CLICK",
-    "BROWSER_TOOL_MOUSE_DOUBLE_CLICK",
-    "BROWSER_TOOL_MOUSE_DOWN",
-    "BROWSER_TOOL_MOUSE_MOVE",
-    "BROWSER_TOOL_MOUSE_UP",
-    "BROWSER_TOOL_NAVIGATE",
-    "BROWSER_TOOL_PASTE_TEXT",
-    "BROWSER_TOOL_PERFORM_WEB_TASK",
-    "BROWSER_TOOL_SCREENSHOT_WEBPAGE",
-    "BROWSER_TOOL_SCROLL",
-    "BROWSER_TOOL_SET_CLIPBOARD",
-    "BROWSER_TOOL_TAKE_SCREENSHOT",
-    "BROWSER_TOOL_TYPE_TEXT"
+    "click",
+    "close_page",
+    "drag",
+    "emulate",
+    "evaluate_script",
+    "fill",
+    "fill_form",
+    "get_console_message",
+    "get_network_request",
+    "handle_dialog",
+    "hover",
+    "list_console_messages",
+    "list_network_requests",
+    "list_pages",
+    "navigate_page",
+    "new_page",
+    "performance_analyze_insight",
+    "performance_start_trace",
+    "performance_stop_trace",
+    "press_key",
+    "resize_page",
+    "select_page",
+    "take_screenshot",
+    "take_snapshot",
+    "upload_file",
+    "wait_for"
   ],
   "tool_contexts": [
     {
-      "tool_name": "BROWSER_TOOL_COPY_SELECTED_TEXT",
+      "tool_name": "click",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_DRAG_AND_DROP",
+      "tool_name": "close_page",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "drag",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (to_uid)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "emulate",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "evaluate_script",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
-        "executes_commands",
-        "writes_files"
+        "executes_commands"
       ],
       "destinations": [
-        "dynamic email recipient (button)"
+        "hardcoded domain: document.title",
+        "hardcoded domain: el.innerText",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_FETCH_WEBPAGE",
+      "tool_name": "fill",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fill_form",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_console_message",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_network_request",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_GET_CLIPBOARD",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_KEYBOARD_SHORTCUT",
+      "tool_name": "handle_dialog",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -393,135 +503,136 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_MOUSE_CLICK",
+      "tool_name": "hover",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_console_messages",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_network_requests",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_pages",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "navigate_page",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (button)"
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_MOUSE_DOUBLE_CLICK",
+      "tool_name": "new_page",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "performance_analyze_insight",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "performance_start_trace",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (autoStop)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "performance_stop_trace",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "press_key",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "resize_page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "select_page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "take_screenshot",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "take_snapshot",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "reads_files"
       ],
-      "destinations": [
-        "dynamic email recipient (button)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_MOUSE_DOWN",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (button)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_MOUSE_MOVE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_MOUSE_UP",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (button)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_NAVIGATE",
+      "tool_name": "upload_file",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "BROWSER_TOOL_PASTE_TEXT",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_PERFORM_WEB_TASK",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_SCREENSHOT_WEBPAGE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_SCROLL",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_SET_CLIPBOARD",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_TAKE_SCREENSHOT",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BROWSER_TOOL_TYPE_TEXT",
+      "tool_name": "wait_for",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -771,6 +882,12 @@
     },
     {
       "scan_date": "2026-08-04T01:52:08Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.14.0"
+    },
+    {
+      "scan_date": "2026-08-06T01:54:59Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.14.0"

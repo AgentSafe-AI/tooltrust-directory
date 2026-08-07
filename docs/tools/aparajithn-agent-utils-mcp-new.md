@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aparajithn-agent-utils-mcp-new](https://smithery.ai/server/aparajithn/agent-utils-mcp-new) |
-| **Scan Date** | 2026-06-20 |
-| **Scanner** | tooltrust-scanner/v0.3.18 |
+| **Scan Date** | 2026-08-07 |
+| **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
 

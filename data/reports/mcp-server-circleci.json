@@ -1,16 +1,16 @@
 {
   "tool_id": "mcp-server-circleci",
-  "version": "0.19.2",
+  "version": "0.20.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-08-06T02:01:43.431130241Z",
+  "scan_date": "2026-08-07T02:21:56.901938811Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/CircleCI-Public/mcp-server-circleci",
   "category": "Developer Tools",
   "vendor": "CircleCI-Public",
-  "stars": 85,
+  "stars": 88,
   "npm_package": "@circleci/mcp-server-circleci",
-  "npm_downloads_monthly": 139798,
+  "npm_downloads_monthly": 143338,
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "A specialized server implementation for the Model Context Protocol (MCP) designed to integrate with CircleCI's development workflow. This project serves as a bridge between CircleCI's infrastructure and the Model Context Protocol, enabling enhanced AI-powered development experiences.",
@@ -115,8 +115,16 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "config_helper"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "config_helper"
     },
     {
@@ -155,7 +163,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_followed_projects"
     },
@@ -235,8 +243,16 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "find_underused_resource_classes"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "find_underused_resource_classes"
     },
     {
@@ -275,7 +291,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_component_versions"
     },
@@ -332,7 +348,7 @@
     "critical": 0,
     "high": 2,
     "medium": 0,
-    "low": 11,
+    "low": 13,
     "info": 26
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -347,7 +363,7 @@
     },
     {
       "kind": "init",
-      "line": 15,
+      "line": 19,
       "snippet": "new McpServer(",
       "file": "src/index.ts",
       "language": "typescript"
@@ -392,7 +408,8 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: app.circleci.com"
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -419,7 +436,8 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: app.circleci.com"
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -428,6 +446,12 @@
       "tool_name": "config_helper",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -439,7 +463,8 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: app.circleci.com"
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -449,7 +474,11 @@
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -462,7 +491,8 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: app.circleci.com"
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -477,6 +507,7 @@
         "writes_files"
       ],
       "destinations": [
+        "hardcoded domain: circleci.com",
         "hardcoded domain: process.cwd"
       ],
       "dependency_visibility": "No dependency data",
@@ -487,7 +518,11 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -510,7 +545,11 @@
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -523,7 +562,8 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: app.circleci.com"
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -817,6 +857,12 @@
       "grade": "B",
       "risk_score": 17,
       "version": "0.19.1"
+    },
+    {
+      "scan_date": "2026-08-06T02:01:43Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.19.2"
     }
   ]
 }

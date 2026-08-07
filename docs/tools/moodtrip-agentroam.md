@@ -11,7 +11,7 @@ You can also explore crypto-friendly travel gift cards and airtime top-ups. Agen
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [moodtrip-agentroam](https://smithery.ai/server/moodtrip/agentroam) |
-| **Scan Date** | 2026-08-06 |
+| **Scan Date** | 2026-08-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
