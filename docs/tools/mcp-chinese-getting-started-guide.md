@@ -10,7 +10,7 @@
 | **Vendor** | liaokongVFX |
 | **Stars** | ⭐ 3552 |
 | **Source** | [mcp-chinese-getting-started-guide](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) |
-| **Scan Date** | 2026-08-06 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

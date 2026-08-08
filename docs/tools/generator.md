@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 336 |
 | **Language** | PHP |
 | **Source** | [generator](https://github.com/context-hub/generator) |
-| **Scan Date** | 2026-08-06 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

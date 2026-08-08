@@ -15,7 +15,7 @@ Returns: {report (markdown), sources[], wordCount}. No API key required — x402
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-research-report](https://smithery.ai/server/axel-belfort/research-report) |
-| **Scan Date** | 2026-08-06 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

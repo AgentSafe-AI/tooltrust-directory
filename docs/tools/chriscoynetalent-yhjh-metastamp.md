@@ -13,7 +13,7 @@ No key needed to browse. Pulling content returns a 402 with signup instructions 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [chriscoynetalent-yhjh-metastamp](https://smithery.ai/server/chriscoynetalent-yhjh/metastamp) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

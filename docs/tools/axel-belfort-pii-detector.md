@@ -15,7 +15,7 @@ Returns: {piiFound[], riskLevel, redacted}. No API key required — x402 micropa
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-pii-detector](https://smithery.ai/server/axel-belfort/pii-detector) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

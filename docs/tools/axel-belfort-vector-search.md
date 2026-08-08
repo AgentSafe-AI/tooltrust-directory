@@ -15,7 +15,7 @@ Returns: {results[], scores[], matchCount}. No API key required — x402 micropa
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-vector-search](https://smithery.ai/server/axel-belfort/vector-search) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

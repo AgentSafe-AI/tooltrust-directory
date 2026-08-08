@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [do-droid-seoul-essentials](https://smithery.ai/server/do-droid/seoul-essentials) |
-| **Scan Date** | 2026-07-03 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

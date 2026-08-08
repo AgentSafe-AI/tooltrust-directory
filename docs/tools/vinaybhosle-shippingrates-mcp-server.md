@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vinaybhosle-shippingrates-mcp-server](https://smithery.ai/server/vinaybhosle/shippingrates-mcp-server) |
-| **Scan Date** | 2026-07-27 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns structured JSON with name, title, company, social links, avatar. No API 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-person-enrichment](https://smithery.ai/server/axel-belfort/person-enrichment) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -21,7 +21,7 @@ Why use this MCP server? Generating questions takes seconds, but formatting them
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [xjtlumedia-x23](https://smithery.ai/server/XJTLUmedia/x23) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

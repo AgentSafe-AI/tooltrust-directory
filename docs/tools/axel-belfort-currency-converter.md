@@ -15,7 +15,7 @@ Returns: {result, rate, from, to, timestamp}. No API key required — x402 micro
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-currency-converter](https://smithery.ai/server/axel-belfort/currency-converter) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

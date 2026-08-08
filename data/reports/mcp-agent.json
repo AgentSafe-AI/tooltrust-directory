@@ -3,12 +3,12 @@
   "version": "0.2.6",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-07T02:16:44.376970756Z",
+  "scan_date": "2026-08-08T01:06:45.889378121Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/lastmile-ai/mcp-agent",
   "category": "Developer Tools",
   "vendor": "lastmile-ai",
-  "stars": 8492,
+  "stars": 8493,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Build effective agents using Model Context Protocol and simple workflow patterns",
@@ -17,21 +17,21 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.2.6: 5 tool(s) added, 4 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.2.6: 4 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "get_agent",
+          "list_agents",
+          "list_categories",
+          "search_agents"
+        ],
+        "removed": [
           "guild_attest",
           "guild_best_agent",
           "guild_register",
           "guild_risk_score",
           "guild_search"
-        ],
-        "removed": [
-          "get_agent",
-          "list_agents",
-          "list_categories",
-          "search_agents"
         ],
         "version": "0.2.6"
       }
@@ -40,9 +40,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "guild_search"
+      "tool_name": "search_agents"
     },
     {
       "id": "AS-011",
@@ -50,7 +50,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "guild_search"
+      "tool_name": "search_agents"
     },
     {
       "id": "AS-014",
@@ -58,7 +58,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "guild_search"
+      "tool_name": "search_agents"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_agent"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_agent"
     },
     {
       "id": "AS-014",
@@ -66,7 +82,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "guild_best_agent"
+      "tool_name": "get_agent"
     },
     {
       "id": "AS-014",
@@ -74,7 +90,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "guild_risk_score"
+      "tool_name": "list_agents"
     },
     {
       "id": "AS-014",
@@ -82,31 +98,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "guild_register"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"issuer_api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "guild_attest"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "guild_attest"
+      "tool_name": "list_categories"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 7
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -126,15 +126,14 @@
     }
   ],
   "tool_names": [
-    "guild_attest",
-    "guild_best_agent",
-    "guild_register",
-    "guild_risk_score",
-    "guild_search"
+    "get_agent",
+    "list_agents",
+    "list_categories",
+    "search_agents"
   ],
   "tool_contexts": [
     {
-      "tool_name": "guild_search",
+      "tool_name": "search_agents",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -144,28 +143,24 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "guild_best_agent",
+      "tool_name": "get_agent",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_agents",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "guild_risk_score",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "guild_register",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "guild_attest",
+      "tool_name": "list_categories",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -177,6 +172,12 @@
       "scan_date": "2026-08-06T01:54:33Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.2.6"
+    },
+    {
+      "scan_date": "2026-08-07T02:16:44Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.2.6"
     }
   ]

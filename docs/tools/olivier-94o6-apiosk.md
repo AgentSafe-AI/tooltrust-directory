@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [olivier-94o6-apiosk](https://smithery.ai/server/olivier-94o6/apiosk) |
-| **Scan Date** | 2026-07-17 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

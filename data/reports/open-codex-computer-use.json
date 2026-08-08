@@ -1,26 +1,49 @@
 {
   "tool_id": "open-codex-computer-use",
   "version": "0.3.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-06T01:57:26.856916082Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-08-08T01:09:20.792121769Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/iFurySt/open-codex-computer-use",
   "category": "Other",
   "vendor": "iFurySt",
-  "stars": 1613,
+  "stars": 1641,
   "npm_package": "open-computer-use-repo-tools",
   "license": "MIT",
   "language": "Swift",
   "description": "👾 Open Computer Use – Open-Source Alternative to Codex Computer Use",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.3.1: 5 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "batch_query_open_targets_graphql",
+          "get_open_targets_graphql_schema",
+          "get_type_dependencies",
+          "query_open_targets_graphql",
+          "search_entities"
+        ],
+        "removed": [
+          "compare_repos",
+          "get_repo_languages",
+          "get_repo_stats",
+          "search_repos"
+        ],
+        "version": "0.3.1"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_repo_stats"
+      "tool_name": "get_open_targets_graphql_schema"
     },
     {
       "id": "AS-011",
@@ -28,7 +51,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_repo_stats"
+      "tool_name": "get_open_targets_graphql_schema"
     },
     {
       "id": "AS-014",
@@ -36,15 +59,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_repo_stats"
+      "tool_name": "get_open_targets_graphql_schema"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_type_dependencies"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_repos"
+      "tool_name": "search_entities"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"search_entities\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "search_entities"
     },
     {
       "id": "AS-011",
@@ -52,7 +91,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_repos"
+      "tool_name": "search_entities"
     },
     {
       "id": "AS-014",
@@ -60,15 +99,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_repos"
+      "tool_name": "search_entities"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_repo_languages"
+      "tool_name": "query_open_targets_graphql"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "query_open_targets_graphql"
     },
     {
       "id": "AS-014",
@@ -76,7 +123,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_repo_languages"
+      "tool_name": "query_open_targets_graphql"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "batch_query_open_targets_graphql"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "batch_query_open_targets_graphql"
     },
     {
       "id": "AS-014",
@@ -84,36 +147,56 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_repos"
+      "tool_name": "batch_query_open_targets_graphql"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
-    "low": 2,
-    "info": 7
+    "low": 4,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compare_repos",
-    "get_repo_languages",
-    "get_repo_stats",
-    "search_repos"
+    "batch_query_open_targets_graphql",
+    "get_open_targets_graphql_schema",
+    "get_type_dependencies",
+    "query_open_targets_graphql",
+    "search_entities"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_repo_stats",
+      "tool_name": "get_open_targets_graphql_schema",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_repos",
+      "tool_name": "get_type_dependencies",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_entities",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "query_open_targets_graphql",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -124,19 +207,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_repo_languages",
+      "tool_name": "batch_query_open_targets_graphql",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "executes_commands",
+        "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "compare_repos",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -222,6 +299,12 @@
     },
     {
       "scan_date": "2026-08-04T01:54:27Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.3.1"
+    },
+    {
+      "scan_date": "2026-08-06T01:57:26Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.3.1"

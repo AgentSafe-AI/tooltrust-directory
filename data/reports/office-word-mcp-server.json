@@ -1,10 +1,10 @@
 {
   "tool_id": "office-word-mcp-server",
   "version": "1.1.11",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-04-24T02:05:06.129215158Z",
-  "scanner": "tooltrust-scanner/v0.3.8",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-08T01:09:13.072817932Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/GongRzhe/Office-Word-MCP-Server",
   "category": "Developer Tools",
   "vendor": "GongRzhe",
@@ -14,32 +14,135 @@
   "description": "A Model Context Protocol (MCP) server for creating, reading, and manipulating Microsoft Word documents. This server enables AI assistants to work with Word documents through a standardized interface, providing rich document editing capabilities.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.1.11: 5 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "Arcade_ListApps",
+          "MicrosoftWord_CreateDocument",
+          "MicrosoftWord_GetDocument",
+          "MicrosoftWord_InsertTextAtEnd",
+          "MicrosoftWord_WhoAmI"
+        ],
+        "removed": [
+          "text_count_words"
+        ],
+        "version": "1.1.11"
+      }
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_count_words"
+      "tool_name": "Arcade_ListApps"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "MicrosoftWord_CreateDocument"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftWord_CreateDocument"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftWord_GetDocument"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftWord_InsertTextAtEnd"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "MicrosoftWord_WhoAmI"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "text_count_words"
+    "Arcade_ListApps",
+    "MicrosoftWord_CreateDocument",
+    "MicrosoftWord_GetDocument",
+    "MicrosoftWord_InsertTextAtEnd",
+    "MicrosoftWord_WhoAmI"
   ],
   "tool_contexts": [
     {
-      "tool_name": "text_count_words",
+      "tool_name": "Arcade_ListApps",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftWord_CreateDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftWord_GetDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftWord_InsertTextAtEnd",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MicrosoftWord_WhoAmI",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-04-24T02:05:06Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.1.11"
     }
   ]
 }

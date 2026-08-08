@@ -15,7 +15,7 @@ Returns: {hash, algorithm, length}. No API key required — x402 micropayment $0
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-hash-generator](https://smithery.ai/server/axel-belfort/hash-generator) |
-| **Scan Date** | 2026-08-07 |
+| **Scan Date** | 2026-08-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
