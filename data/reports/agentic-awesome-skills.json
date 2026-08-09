@@ -1,14 +1,14 @@
 {
   "tool_id": "agentic-awesome-skills",
   "version": "15.11.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-08T01:05:30.415736705Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-09T01:08:36.667214858Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/sickn33/agentic-awesome-skills",
   "category": "Developer Tools",
   "vendor": "sickn33",
-  "stars": 44610,
+  "stars": 44655,
   "npm_package": "agentic-awesome-skills",
   "npm_downloads_monthly": 10788,
   "license": "MIT",
@@ -16,12 +16,43 @@
   "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,005+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v15.11.0: 4 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "AgentPMT-Report-Tool-Issue",
+          "AgentPMT-Send-Human-Request",
+          "AgentPMT-Tool-Search-and-Execution",
+          "AgentPMT-Workflow-Skills"
+        ],
+        "removed": [
+          "get_publisher_info",
+          "get_skill_details",
+          "get_trending_skills",
+          "list_categories",
+          "search_skills"
+        ],
+        "version": "15.11.0"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "AgentPMT-Report-Tool-Issue"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_skills"
+      "tool_name": "AgentPMT-Workflow-Skills"
     },
     {
       "id": "AS-011",
@@ -29,7 +60,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_skills"
+      "tool_name": "AgentPMT-Workflow-Skills"
     },
     {
       "id": "AS-014",
@@ -37,7 +68,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_skills"
+      "tool_name": "AgentPMT-Workflow-Skills"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "AgentPMT-Tool-Search-and-Execution"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "AgentPMT-Tool-Search-and-Execution"
     },
     {
       "id": "AS-014",
@@ -45,7 +92,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_skill_details"
+      "tool_name": "AgentPMT-Tool-Search-and-Execution"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "AgentPMT-Send-Human-Request"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "AgentPMT-Send-Human-Request"
     },
     {
       "id": "AS-014",
@@ -53,43 +116,36 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_categories"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_trending_skills"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_publisher_info"
+      "tool_name": "AgentPMT-Send-Human-Request"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 6
+    "low": 3,
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_publisher_info",
-    "get_skill_details",
-    "get_trending_skills",
-    "list_categories",
-    "search_skills"
+    "AgentPMT-Report-Tool-Issue",
+    "AgentPMT-Send-Human-Request",
+    "AgentPMT-Tool-Search-and-Execution",
+    "AgentPMT-Workflow-Skills"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_skills",
+      "tool_name": "AgentPMT-Report-Tool-Issue",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "AgentPMT-Workflow-Skills",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -99,30 +155,27 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_skill_details",
+      "tool_name": "AgentPMT-Tool-Search-and-Execution",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (tool_id)",
+        "dynamic email recipient (tool_name)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_categories",
+      "tool_name": "AgentPMT-Send-Human-Request",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_trending_skills",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_publisher_info",
-      "action": "ALLOW",
-      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -295,6 +348,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "15.9.0"
+    },
+    {
+      "scan_date": "2026-08-08T01:05:30Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "15.11.0"
     }
   ]
 }

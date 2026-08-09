@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 595 |
 | **Language** | Python |
 | **Source** | [dbt-mcp](https://github.com/dbt-labs/dbt-mcp) |
-| **Scan Date** | 2026-08-08 |
+| **Scan Date** | 2026-08-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns: base64-encoded image or PDF. No API key required — x402 micropayment 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-screenshot-pdf](https://smithery.ai/server/axel-belfort/screenshot-pdf) |
-| **Scan Date** | 2026-08-08 |
+| **Scan Date** | 2026-08-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

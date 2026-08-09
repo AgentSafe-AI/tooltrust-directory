@@ -15,7 +15,7 @@ Returns: {articles[], sentiment, tokenMentions[]}. No API key required — x402 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-crypto-news](https://smithery.ai/server/axel-belfort/crypto-news) |
-| **Scan Date** | 2026-08-08 |
+| **Scan Date** | 2026-08-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

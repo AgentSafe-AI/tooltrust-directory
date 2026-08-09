@@ -1,6 +1,6 @@
 # 🟢 blender-mcp
 
-> Open-source MCP to use Blender with any LLM
+> 🎨 Control Blender 3D with Claude AI — prompt-driven 3D modeling, materials & scene generation via MCP
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-3ab892510cc0` |
 | **Vendor** | ahujasid |
-| **Stars** | ⭐ 25605 |
+| **Stars** | ⭐ 25639 |
 | **Language** | Python |
-| **Source** | [blender-mcp](https://github.com/ahujasid/blender-mcp) |
-| **Scan Date** | 2026-08-08 |
+| **Source** | [blender-mcp](https://github.com/MCPBlender/blender-mcp) |
+| **Scan Date** | 2026-08-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

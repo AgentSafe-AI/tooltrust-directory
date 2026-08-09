@@ -1,17 +1,17 @@
-# 🟠 python-sdk
+# 🟡 python-sdk
 
 > The official Python SDK for Model Context Protocol servers and clients
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 25 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `2.0.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 23927 |
+| **Stars** | ⭐ 23934 |
 | **Language** | Python |
 | **Source** | [python-sdk](https://github.com/modelcontextprotocol/python-sdk) |
-| **Scan Date** | 2026-08-08 |
+| **Scan Date** | 2026-08-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -20,23 +20,47 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 1 |
-| High     | 0 |
+| Critical | 0 |
+| High     | 1 |
 | Medium   | 0 |
-| Low      | 0 |
-| Info     | 1 |
+| Low      | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
 
-### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
-**Severity:** Critical
+**Severity:** High
 
 **Description:**
-tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+Tool set changed silently at v2.0.0: 1 tool(s) added, 1 tool(s) removed without a version bump.
 
 **Recommendation:**
-This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: network access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
