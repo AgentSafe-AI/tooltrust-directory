@@ -38,7 +38,7 @@ Recommended: connect **both** servers for exhaustive "national + municipal" cove
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [localgov-jp-mcp-server](https://smithery.ai/server/localgov-jp/mcp-server) |
-| **Scan Date** | 2026-08-09 |
+| **Scan Date** | 2026-08-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

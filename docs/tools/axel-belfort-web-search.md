@@ -15,7 +15,7 @@ Returns: {results: [{title, url, snippet}]}. No API key required — x402 microp
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-web-search](https://smithery.ai/server/axel-belfort/web-search) |
-| **Scan Date** | 2026-08-08 |
+| **Scan Date** | 2026-08-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

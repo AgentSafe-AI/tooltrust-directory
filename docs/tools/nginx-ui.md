@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.5.6` |
 | **Vendor** | 0xJacky |
-| **Stars** | ⭐ 11381 |
+| **Stars** | ⭐ 11388 |
 | **npm Package** | `nginx-ui` |
-| **npm Downloads (30d)** | 25 |
+| **npm Downloads (30d)** | 21 |
 | **Language** | Go |
 | **Source** | [nginx-ui](https://github.com/0xJacky/nginx-ui) |
-| **Scan Date** | 2026-08-09 |
+| **Scan Date** | 2026-08-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

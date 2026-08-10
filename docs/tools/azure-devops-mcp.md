@@ -10,10 +10,10 @@
 | **Vendor** | microsoft |
 | **Stars** | ⭐ 1949 |
 | **npm Package** | `@azure-devops/mcp` |
-| **npm Downloads (30d)** | 570.8k |
+| **npm Downloads (30d)** | 559.4k |
 | **Language** | TypeScript |
 | **Source** | [azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) |
-| **Scan Date** | 2026-08-09 |
+| **Scan Date** | 2026-08-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

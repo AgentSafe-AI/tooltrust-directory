@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `wap-replay-tool-1.0.0` |
 | **Vendor** | OTA-Tech-AI |
-| **Stars** | ⭐ 505 |
+| **Stars** | ⭐ 506 |
 | **Language** | Python |
 | **Source** | [web-agent-protocol](https://github.com/OTA-Tech-AI/web-agent-protocol) |
-| **Scan Date** | 2026-08-09 |
+| **Scan Date** | 2026-08-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

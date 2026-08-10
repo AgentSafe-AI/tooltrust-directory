@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-09T01:17:28.055379563Z",
+  "scan_date": "2026-08-10T01:21:09.884185034Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/axel-belfort/web-scraper",
   "vendor": "Smithery",
@@ -17,12 +17,12 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "basic_scrape",
-          "premium_scrape"
-        ],
-        "removed": [
           "web_scrape_batch",
           "web_scrape_to_markdown"
+        ],
+        "removed": [
+          "basic_scrape",
+          "premium_scrape"
         ],
         "version": "smithery"
       }
@@ -33,7 +33,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "basic_scrape"
+      "tool_name": "web_scrape_to_markdown"
     },
     {
       "id": "AS-011",
@@ -41,7 +41,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "basic_scrape"
+      "tool_name": "web_scrape_to_markdown"
     },
     {
       "id": "AS-014",
@@ -49,7 +49,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "basic_scrape"
+      "tool_name": "web_scrape_to_markdown"
     },
     {
       "id": "AS-002",
@@ -57,7 +57,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "premium_scrape"
+      "tool_name": "web_scrape_batch"
     },
     {
       "id": "AS-011",
@@ -65,7 +65,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "premium_scrape"
+      "tool_name": "web_scrape_batch"
     },
     {
       "id": "AS-014",
@@ -73,7 +73,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "premium_scrape"
+      "tool_name": "web_scrape_batch"
     }
   ],
   "summary": {
@@ -85,25 +85,12 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "basic_scrape",
-    "premium_scrape"
+    "web_scrape_batch",
+    "web_scrape_to_markdown"
   ],
   "tool_contexts": [
     {
-      "tool_name": "basic_scrape",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "premium_scrape",
+      "tool_name": "web_scrape_to_markdown",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -111,7 +98,21 @@
         "uses_network"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "dynamic URL input (url)",
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "web_scrape_batch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (urls)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -260,6 +261,12 @@
       "scan_date": "2026-08-08T01:15:01Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-08-09T01:17:28Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

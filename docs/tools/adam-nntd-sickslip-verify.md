@@ -25,7 +25,7 @@ This MCP server exposes one tool — `verify_sickslip_note(code)` — that any M
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [adam-nntd-sickslip-verify](https://smithery.ai/server/adam-nntd/sickslip-verify) |
-| **Scan Date** | 2026-08-08 |
+| **Scan Date** | 2026-08-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

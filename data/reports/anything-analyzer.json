@@ -1,33 +1,49 @@
 {
   "tool_id": "anything-analyzer",
   "version": "3.6.60",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-08-09T01:11:14.272115481Z",
+  "scan_date": "2026-08-10T01:13:42Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Mouseww/anything-analyzer",
   "category": "Developer Tools",
   "vendor": "Mouseww",
-  "stars": 3453,
+  "stars": 3456,
   "npm_package": "anything-analyzer",
   "language": "TypeScript",
   "description": "全能协议分析工具：浏览器抓包 + MITM 代理 + 指纹伪装 + AI 分析 + MCP Server 无缝对接 AI Agent/IDE   |  All-in-one protocol analysis toolkit — built-in browser capture, MITM proxy, JS hooks, fingerprint spoofing, AI analysis \u0026 MCP server for agent integration",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_analyze_sentiment"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_analyze_sentiment_batch"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/main/mcp/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 61,
+            "snippet": "new McpServer(",
+            "file": "src/main/mcp/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 281,
+            "snippet": ".registerTool(",
+            "file": "src/main/mcp/mcp-server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -35,9 +51,10 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -62,26 +79,6 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "text_analyze_sentiment",
-    "text_analyze_sentiment_batch"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "text_analyze_sentiment",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "text_analyze_sentiment_batch",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-08-06T01:55:57Z",
@@ -97,6 +94,12 @@
     },
     {
       "scan_date": "2026-08-08T01:08:00Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "3.6.60"
+    },
+    {
+      "scan_date": "2026-08-09T01:11:14Z",
       "grade": "A",
       "risk_score": 0,
       "version": "3.6.60"
