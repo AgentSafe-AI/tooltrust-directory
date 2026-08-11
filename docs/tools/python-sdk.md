@@ -1,17 +1,17 @@
-# 🟡 python-sdk
+# 🟠 python-sdk
 
 > The official Python SDK for Model Context Protocol servers and clients
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **C** |
+| **Risk Score** | 25 |
 | **Version** | `2.0.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 23934 |
+| **Stars** | ⭐ 23969 |
 | **Language** | Python |
 | **Source** | [python-sdk](https://github.com/modelcontextprotocol/python-sdk) |
-| **Scan Date** | 2026-08-09 |
+| **Scan Date** | 2026-08-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -20,11 +20,11 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 0 |
+| Critical | 1 |
 | High     | 1 |
 | Medium   | 0 |
-| Low      | 1 |
-| Info     | 2 |
+| Low      | 0 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -40,27 +40,15 @@ The set of tools exposed by this server changed between scans of the same versio
 
 ---
 
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
 
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
+**Severity:** Critical
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
 
 ---
 

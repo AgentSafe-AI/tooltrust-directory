@@ -1,27 +1,8 @@
 # 🟢 net-service-xpoz
 
-> Social intelligence for AI agents - Twitter/X, Instagram, TikTok data access and insights.
-1.5B+ posts indexed. No API keys, no installation - just add endpoint URL.
+> Social media intelligence for AI agents: search and analyze Twitter/X, Instagram, Reddit, and TikTok through natural language. Billions of posts indexed, including historical data. No social media API keys, no installation, just add the endpoint URL.
 
-Perfect for brand monitoring, competitive analysis, influencer research, and content analysis.
-
-
-
-## Why Xpoz? 
-
-🚀 **Zero Setup** - No npm install, no Docker, no local dependencies. Add one URL to your config and go.
-
-🔑 **No API Keys** - no rate limit management required.
-
-📁 **Comprehensive Data** - User profiles, posts, followers, following lists, engagement metrics, and sentiment analysis ready.
-
-📤 **CSV Export** - Bulk data export for large-scale analysis and reporting.
-
-🔐 **OAuth 2.0 Authentication** - Secure Google authentication, no API keys to manage.
-
-📊 **1.5B+ Posts Indexed** - Including historical data.
-
-⚡ **Multi-Platform** - Query Twitter/X and Instagram from a single unified interface.
+Perfect for brand monitoring, competitive analysis, influencer research, market research, and OSINT.
 
 ## What You Can Do
 
@@ -32,48 +13,28 @@ Perfect for brand monitoring, competitive analysis, influencer research, and con
 - Export full datasets to CSV
 
 **Instagram:**
-- Look up user profiles and statistics  
-- Search posts by caption keywords
-- Get comments and engagement metrics
-- Analyze follower/following networks
+- Look up user profiles and statistics
+- Search posts by keywords in captions
+- Get comments and post engagement
 
-**TikTok**
-- coming soon
+**Reddit:**
+- Search posts and comments by keywords across all subreddits
+- Pull full threads with comment trees
+- Find and explore subreddits
 
-## Example Queries
+**TikTok:**
+- Search posts by keywords and hashtags
+- Look up users and their posts
+- Get comments and engagement data
 
-Just ask Claude naturally:
-- "Get @elonmusk's Twitter profile and recent tweets"
-- "Search for tweets about 'artificial intelligence' from last week"
-- "Find Instagram posts with #AIart and show engagement stats"
-- "Export all tweets mentioning 'OpenAI' to CSV"
-- "Compare follower counts between @nvidia and @amd"
+## Why Xpoz?
 
-## Use Cases
+- One subscription covers all four platforms
+- Pre-indexed data: fast keyword search over billions of posts, including historical
+- Natural language queries via any MCP client (Claude, ChatGPT, Cursor)
+- Free tier to start, no credit card required
 
-- Brand monitoring & sentiment analysis
-- Competitive intelligence
-- Influencer research & verification
-- Content trend analysis
-- Social media analytics
-- OSINT research
-
-## MCP Endpoint
-```
-https://mcp.xpoz.ai/mcp
-```
-
-## Tags (comma-separated)
-```
-twitter, instagram, tiktok, social-media, analytics, osint, research, remote, data, intelligence, brand-monitoring, influencer, sentiment-analysis, scraping
-```
-
-## Categories
-```
-  - Social Media
-  - Data & Analytics
-  - Research
-```
+Get started at https://xpoz.ai
 
 | Field | Value |
 |-------|-------|
@@ -82,7 +43,7 @@ twitter, instagram, tiktok, social-media, analytics, osint, research, remote, da
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [net-service-xpoz](https://smithery.ai/server/net-service/xpoz) |
-| **Scan Date** | 2026-08-10 |
+| **Scan Date** | 2026-08-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

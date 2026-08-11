@@ -1,33 +1,49 @@
 {
   "tool_id": "ai-engineering-from-scratch",
-  "version": "2026.07",
+  "version": "2026.08",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-07-29T01:54:10.219135998Z",
+  "scan_date": "2026-08-11T01:07:43.091192934Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
   "category": "Developer Tools",
   "vendor": "rohitg00",
-  "stars": 44621,
+  "stars": 46475,
   "license": "MIT",
   "language": "Python",
   "description": "Learn it. Build it. Ship it for others.",
   "findings": [
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Read' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Read"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_vibration"
+      "tool_name": "Read"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "tune_pid"
+      "tool_name": "Search"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Search' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Search"
     },
     {
       "id": "AS-011",
@@ -35,7 +51,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "tune_pid"
+      "tool_name": "Search"
     },
     {
       "id": "AS-014",
@@ -43,7 +59,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tune_pid"
+      "tool_name": "Search"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'RunFocusedTests' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "RunFocusedTests"
     },
     {
       "id": "AS-014",
@@ -51,7 +75,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_state_space"
+      "tool_name": "RunFocusedTests"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Computer' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Computer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Computer"
+    },
+    {
+      "id": "AS-007",
+      "severity": "Info",
+      "title": "INSUFFICIENT_TOOL_DATA",
+      "description": "Tool 'Edit' has no description - agents cannot reason about its purpose, and static analysis coverage is limited",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Edit"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Edit"
     }
   ],
   "summary": {
@@ -59,24 +115,26 @@
     "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 4
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "analyze_state_space",
-    "analyze_vibration",
-    "tune_pid"
+    "Computer",
+    "Edit",
+    "Read",
+    "RunFocusedTests",
+    "Search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "analyze_vibration",
+      "tool_name": "Read",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "tune_pid",
+      "tool_name": "Search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -86,7 +144,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "analyze_state_space",
+      "tool_name": "RunFocusedTests",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "Computer",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "Edit",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -102,6 +174,12 @@
     },
     {
       "scan_date": "2026-07-28T01:51:57Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2026.07"
+    },
+    {
+      "scan_date": "2026-07-29T01:54:10Z",
       "grade": "A",
       "risk_score": 2,
       "version": "2026.07"

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.21.8` |
+| **Version** | `0.21.9` |
 | **Vendor** | QwenLM |
-| **Stars** | ⭐ 26884 |
+| **Stars** | ⭐ 26900 |
 | **npm Package** | `@qwen-code/qwen-code` |
-| **npm Downloads (30d)** | 312.6k |
+| **npm Downloads (30d)** | 313.1k |
 | **Language** | TypeScript |
 | **Source** | [qwen-code](https://github.com/QwenLM/qwen-code) |
-| **Scan Date** | 2026-08-10 |
+| **Scan Date** | 2026-08-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

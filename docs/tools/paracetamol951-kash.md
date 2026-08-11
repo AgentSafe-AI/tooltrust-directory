@@ -170,7 +170,7 @@ The account is created instantly, the session is initialized automatically, and 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [paracetamol951-kash](https://smithery.ai/server/paracetamol951/kash) |
-| **Scan Date** | 2026-08-10 |
+| **Scan Date** | 2026-08-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -348,7 +348,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "prestaShopApiKey" accepts a credential (informational; not evidence of insecure handling)
+input parameter "yavinSecret" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -360,7 +360,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "yavinSecret" accepts a credential (informational; not evidence of insecure handling)
+input parameter "prestaShopApiKey" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

@@ -1,9 +1,9 @@
 {
   "tool_id": "cloud-mcp-server",
   "version": "1.7.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-08T01:12:15.714403361Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-11T01:15:58.031156362Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/alexei-led/cloud-mcp-server",
   "category": "Developer Tools",
@@ -14,28 +14,22 @@
   "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api.spec"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "api.spec"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "api.spec"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.7.0: 2 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "scenario.list",
+          "simulation.inject_failure"
+        ],
+        "removed": [
+          "api.spec",
+          "scenarios.list"
+        ],
+        "version": "1.7.0"
+      }
     },
     {
       "id": "AS-014",
@@ -43,7 +37,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scenarios.list"
+      "tool_name": "simulation.inject_failure"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scenario.list"
     },
     {
       "id": "AS-002",
@@ -96,40 +98,39 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 8
+    "low": 1,
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "api.spec",
-    "scenarios.list",
+    "scenario.list",
     "simulation.create",
+    "simulation.inject_failure",
     "simulation.inject_traffic",
     "simulation.metrics",
     "simulation.step"
   ],
   "tool_contexts": [
     {
-      "tool_name": "api.spec",
+      "tool_name": "simulation.inject_failure",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
       "destinations": [
-        "hardcoded API endpoint: api.spec"
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "scenarios.list",
+      "tool_name": "scenario.list",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: scenarios.list",
+        "hardcoded domain: scenario.list",
         "hardcoded domain: simulation.create"
       ],
       "dependency_visibility": "No dependency data",
@@ -144,8 +145,9 @@
         "writes_files"
       ],
       "destinations": [
+        "hardcoded API endpoint: api.spec",
+        "hardcoded domain: scenario.list",
         "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
         "hardcoded domain: simulation.step"
       ],
       "dependency_visibility": "No dependency data",
@@ -157,6 +159,7 @@
       "grade": "A",
       "destinations": [
         "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
         "hardcoded domain: simulation.step"
       ],
       "dependency_visibility": "No dependency data",
@@ -168,7 +171,8 @@
       "grade": "A",
       "destinations": [
         "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics"
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -178,7 +182,9 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: simulation.create"
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -505,6 +511,12 @@
     },
     {
       "scan_date": "2026-08-06T02:00:28Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.7.0"
+    },
+    {
+      "scan_date": "2026-08-08T01:12:15Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.7.0"
