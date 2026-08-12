@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `2026.08.04` |
+| **Version** | `2026.08.11` |
 | **Vendor** | WenyuChiou |
-| **Stars** | ⭐ 5150 |
+| **Stars** | ⭐ 5164 |
 | **Language** | Python |
 | **Source** | [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

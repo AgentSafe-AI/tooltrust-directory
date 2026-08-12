@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 709 |
 | **Language** | Python |
 | **Source** | [metatrader-mcp-server](https://github.com/ariadng/metatrader-mcp-server) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

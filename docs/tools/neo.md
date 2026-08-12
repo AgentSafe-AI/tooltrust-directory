@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 71.9k |
 | **Language** | JavaScript |
 | **Source** | [neo](https://github.com/neomjs/neo) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

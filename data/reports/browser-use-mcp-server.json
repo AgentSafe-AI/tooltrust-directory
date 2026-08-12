@@ -3,12 +3,12 @@
   "version": "1.0.3",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-11T01:14:05.355783238Z",
+  "scan_date": "2026-08-12T01:20:44.043853781Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/kontext-security/browser-use-mcp-server",
   "category": "Developer Tools",
   "vendor": "kontext-security",
-  "stars": 846,
+  "stars": 843,
   "license": "MIT",
   "language": "Python",
   "description": "Browse the web, directly from Cursor etc.",
@@ -17,23 +17,23 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.3: 5 tool(s) added, 6 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.3: 6 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "accounts_list",
-          "get_url_html_content",
-          "get_url_markdown",
-          "get_url_screenshot",
-          "set_active_account"
-        ],
-        "removed": [
           "act",
           "end",
           "extract",
           "navigate",
           "observe",
           "start"
+        ],
+        "removed": [
+          "accounts_list",
+          "get_url_html_content",
+          "get_url_markdown",
+          "get_url_screenshot",
+          "set_active_account"
         ],
         "version": "1.0.3"
       }
@@ -44,7 +44,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "accounts_list"
+      "tool_name": "start"
     },
     {
       "id": "AS-014",
@@ -52,7 +52,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "set_active_account"
+      "tool_name": "end"
     },
     {
       "id": "AS-002",
@@ -60,7 +60,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_url_html_content"
+      "tool_name": "navigate"
     },
     {
       "id": "AS-011",
@@ -68,7 +68,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_url_html_content"
+      "tool_name": "navigate"
     },
     {
       "id": "AS-014",
@@ -76,23 +76,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_url_html_content"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_url_markdown"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_url_markdown"
+      "tool_name": "navigate"
     },
     {
       "id": "AS-014",
@@ -100,23 +84,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_url_markdown"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_url_screenshot"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_url_screenshot"
+      "tool_name": "act"
     },
     {
       "id": "AS-014",
@@ -124,44 +92,50 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_url_screenshot"
+      "tool_name": "observe"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "extract"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 3,
-    "info": 8
+    "low": 1,
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "accounts_list",
-    "get_url_html_content",
-    "get_url_markdown",
-    "get_url_screenshot",
-    "set_active_account"
+    "act",
+    "end",
+    "extract",
+    "navigate",
+    "observe",
+    "start"
   ],
   "tool_contexts": [
     {
-      "tool_name": "accounts_list",
+      "tool_name": "start",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "set_active_account",
+      "tool_name": "end",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (activeAccountIdParam)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_url_html_content",
+      "tool_name": "navigate",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -174,28 +148,23 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_url_markdown",
+      "tool_name": "act",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_url_screenshot",
+      "tool_name": "observe",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "extract",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -895,6 +864,12 @@
       "scan_date": "2026-08-09T01:13:50Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.0.3"
+    },
+    {
+      "scan_date": "2026-08-11T01:14:05Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.3"
     }
   ]

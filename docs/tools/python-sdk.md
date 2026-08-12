@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `2.0.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 23969 |
+| **Stars** | ⭐ 23981 |
 | **Language** | Python |
 | **Source** | [python-sdk](https://github.com/modelcontextprotocol/python-sdk) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 1 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 1 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v2.0.0: 1 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
 

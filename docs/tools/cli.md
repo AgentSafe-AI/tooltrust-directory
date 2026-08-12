@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 131 |
 | **Language** | TypeScript |
 | **Source** | [cli](https://github.com/mcpgod/cli) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

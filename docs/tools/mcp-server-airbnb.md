@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 8.7k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

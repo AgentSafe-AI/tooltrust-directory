@@ -5,15 +5,15 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
-| **Risk Score** | 2 |
-| **Version** | `1.14.1` |
+| **Risk Score** | 4 |
+| **Version** | `1.15.0` |
 | **Vendor** | ihor-sokoliuk |
-| **Stars** | ⭐ 1109 |
+| **Stars** | ⭐ 1116 |
 | **npm Package** | `mcp-searxng` |
 | **npm Downloads (30d)** | 70.0k |
 | **Language** | TypeScript |
 | **Source** | [mcp-searxng](https://github.com/ihor-sokoliuk/mcp-searxng) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,7 +25,7 @@
 | Critical | 0 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 3 |
+| Low      | 4 |
 | Info     | 7 |
 
 ## Detailed Findings
@@ -36,6 +36,18 @@
 
 **Description:**
 declared capabilities: network access, database access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Low
+
+**Description:**
+input schema exposes 11 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

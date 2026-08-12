@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 28.2k |
 | **Language** | TypeScript |
 | **Source** | [pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

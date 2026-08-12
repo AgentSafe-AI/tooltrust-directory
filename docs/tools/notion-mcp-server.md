@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.5.0` |
 | **Vendor** | makenotion |
-| **Stars** | ⭐ 4584 |
+| **Stars** | ⭐ 4586 |
 | **npm Package** | `@notionhq/notion-mcp-server` |
 | **npm Downloads (30d)** | 739.6k |
 | **Language** | TypeScript |
 | **Source** | [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

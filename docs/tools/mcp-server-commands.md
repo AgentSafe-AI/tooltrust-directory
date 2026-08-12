@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

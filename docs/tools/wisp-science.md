@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | xuzhougeng |
-| **Stars** | ⭐ 1107 |
+| **Stars** | ⭐ 1140 |
 | **Language** | HTML |
 | **Source** | [wisp-science](https://github.com/xuzhougeng/wisp-science) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

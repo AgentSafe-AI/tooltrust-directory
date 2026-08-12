@@ -1,6 +1,6 @@
 # 🟢 dexto
 
-> A coding agent and general agent harness for building and orchestrating agentic applications.
+> Agent harness and tookit for building AI agents and agentic applications.
 
 | Field | Value |
 |-------|-------|
@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.5k |
 | **Language** | TypeScript |
 | **Source** | [dexto](https://github.com/truffle-ai/dexto) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

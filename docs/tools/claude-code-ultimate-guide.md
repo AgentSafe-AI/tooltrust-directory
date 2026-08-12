@@ -1,17 +1,17 @@
-# 🟡 claude-code-ultimate-guide
+# 🟢 claude-code-ultimate-guide
 
 > The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quizzes, and production-ready templates. 430K+ lines.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `3.27.0` |
 | **Vendor** | FlorianBruniaux |
-| **Stars** | ⭐ 5701 |
+| **Stars** | ⭐ 5713 |
 | **Language** | Python |
 | **Source** | [claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 19 |
 | Info     | 47 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v3.27.0: 27 tool(s) added, 4 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

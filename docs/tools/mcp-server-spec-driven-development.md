@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 311 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-spec-driven-development](https://github.com/formulahendry/mcp-server-spec-driven-development) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,17 +1,17 @@
-# 🟡 n8n-claw
+# 🟢 n8n-claw
 
 > OpenClaw-inspired autonomous AI agent built entirely in n8n. Adaptive RAG-powered memory, Skills via MCP templates, Expert Agents with delegated sub-agents, proactive task management, media understanding - self-hosted with one setup script
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.9.2` |
 | **Vendor** | freddy-schuetz |
-| **Stars** | ⭐ 545 |
+| **Stars** | ⭐ 546 |
 | **Language** | Shell |
 | **Source** | [n8n-claw](https://github.com/freddy-schuetz/n8n-claw) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 9 |
 | Info     | 49 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.9.2: 27 tool(s) added, 11 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

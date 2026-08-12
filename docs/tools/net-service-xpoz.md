@@ -43,7 +43,7 @@ Get started at https://xpoz.ai
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [net-service-xpoz](https://smithery.ai/server/net-service/xpoz) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

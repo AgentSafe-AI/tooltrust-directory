@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | PleasePrompto |
-| **Stars** | ⭐ 3218 |
+| **Stars** | ⭐ 3222 |
 | **npm Package** | `notebooklm-mcp` |
 | **npm Downloads (30d)** | 21.8k |
 | **Language** | TypeScript |
 | **Source** | [notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 603 |
 | **Language** | TypeScript |
 | **Source** | [ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

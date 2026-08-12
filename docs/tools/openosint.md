@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.25.0` |
 | **Vendor** | OpenOSINT |
-| **Stars** | ⭐ 1381 |
+| **Stars** | ⭐ 1389 |
 | **Language** | Python |
 | **Source** | [openosint](https://github.com/OpenOSINT/OpenOSINT) |
-| **Scan Date** | 2026-08-11 |
+| **Scan Date** | 2026-08-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
