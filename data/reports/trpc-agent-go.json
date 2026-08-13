@@ -3,12 +3,12 @@
   "version": "1.11.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-12T01:19:33.14734252Z",
+  "scan_date": "2026-08-13T01:21:32.396412404Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/trpc-group/trpc-agent-go",
   "category": "Developer Tools",
   "vendor": "trpc-group",
-  "stars": 1667,
+  "stars": 1675,
   "license": "Apache-2.0",
   "language": "Go",
   "description": "A Go framework for building production agent systems with graph workflows, tools, memory, A2A, AG-UI, MCP, evaluation, and observability.",
@@ -17,10 +17,21 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.11.0: 13 tool(s) added, 358 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.11.0: 9 tool(s) added, 13 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "agent_health_check",
+          "buy_credits",
+          "check_usage",
+          "estimate_agent_cost",
+          "evaluate_service",
+          "get_skill",
+          "list_skills",
+          "mcp_manifest_lint",
+          "register"
+        ],
+        "removed": [
           "relay_ack_approval",
           "relay_channel_info",
           "relay_create_channel",
@@ -35,376 +46,24 @@
           "relay_send_message",
           "relay_wait_message"
         ],
-        "removed": [
-          "ai_ask",
-          "ai_pro",
-          "ai_ultra",
-          "audit_github",
-          "bulk_crypto",
-          "bulk_dns",
-          "bulk_email_validate",
-          "bulk_github",
-          "bulk_ip",
-          "bulk_whois",
-          "bundle_company_360",
-          "bundle_crypto_360",
-          "bundle_dev_360",
-          "bundle_device_360",
-          "bundle_diligence_360",
-          "bundle_domain_360",
-          "bundle_drug_360",
-          "bundle_email_360",
-          "bundle_hazard_360",
-          "bundle_ip_360",
-          "bundle_kyb_360",
-          "bundle_regulatory_360",
-          "bundle_repo_360",
-          "bundle_risk_360",
-          "bundle_sales_intent",
-          "bundle_sec_360",
-          "calc_age",
-          "calc_apy",
-          "calc_aspect_ratio",
-          "calc_bac",
-          "calc_base",
-          "calc_base64",
-          "calc_binary",
-          "calc_bmi",
-          "calc_bmr",
-          "calc_bsa",
-          "calc_bytes",
-          "calc_cidr",
-          "calc_color",
-          "calc_combinatorics",
-          "calc_compound",
-          "calc_convert",
-          "calc_data_transfer",
-          "calc_date_diff",
-          "calc_decibel",
-          "calc_density",
-          "calc_dilution",
-          "calc_discount",
-          "calc_distance",
-          "calc_due_date",
-          "calc_eval",
-          "calc_force",
-          "calc_fraction",
-          "calc_fuel",
-          "calc_future_value",
-          "calc_geometry",
-          "calc_gpa",
-          "calc_hash",
-          "calc_heat_index",
-          "calc_hex_text",
-          "calc_inflation",
-          "calc_jwt",
-          "calc_kinetic_energy",
-          "calc_loan",
-          "calc_log",
-          "calc_margin",
-          "calc_molarity",
-          "calc_mortgage_affordability",
-          "calc_numbers",
-          "calc_ohms_law",
-          "calc_ovulation",
-          "calc_paycheck",
-          "calc_percentage",
-          "calc_ph",
-          "calc_present_value",
-          "calc_pressure",
-          "calc_quadratic",
-          "calc_roi",
-          "calc_roman",
-          "calc_rule72",
-          "calc_salary",
-          "calc_sales_tax_reverse",
-          "calc_savings",
-          "calc_scientific_notation",
-          "calc_statistics",
-          "calc_tax",
-          "calc_tax_bracket",
-          "calc_text",
-          "calc_time_duration",
-          "calc_timestamp",
-          "calc_tip",
-          "calc_unit",
-          "calc_url",
-          "calc_wavelength",
-          "calc_whr",
-          "calc_wind_chill",
-          "census_business_county",
-          "census_business_metro",
-          "census_business_state",
-          "census_demographics",
-          "census_demographics_county",
-          "census_demographics_place",
-          "census_industry",
-          "census_industry_counties",
-          "census_industry_metros",
-          "crypto_chains",
-          "crypto_defi_tvl",
-          "crypto_dex",
-          "crypto_exchanges",
-          "crypto_fear_greed",
-          "crypto_gas",
-          "crypto_global",
-          "crypto_history",
-          "crypto_market",
-          "crypto_price",
-          "crypto_protocols",
-          "crypto_stablecoins",
-          "crypto_treasury",
-          "crypto_trending",
-          "crypto_yields",
-          "data_air_quality",
-          "data_bls",
-          "data_clinical_trials",
-          "data_earthquakes",
-          "data_federal_agencies",
-          "data_holidays",
-          "data_ip_threat",
-          "data_localtime",
-          "data_sanctions_screen",
-          "data_sun",
-          "data_treasury_rates",
-          "data_worldbank",
-          "enrich_apify",
-          "enrich_browserbase",
-          "enrich_browsersnap",
-          "enrich_company",
-          "enrich_company_profile",
-          "enrich_domain",
-          "enrich_email",
-          "enrich_github",
-          "enrich_googlemaps",
-          "enrich_googlereviews",
-          "enrich_instagram",
-          "enrich_linkedin",
-          "enrich_reviews",
-          "enrich_spotify",
-          "enrich_threads",
-          "enrich_tiktok",
-          "enrich_x",
-          "enrich_youtube",
-          "extract_document",
-          "extract_url",
-          "finance_carrier",
-          "finance_forex",
-          "finance_gov_awards",
-          "finance_macro",
-          "finance_sec_events",
-          "finance_sec_filings",
-          "finance_sec_financials",
-          "finance_sec_insider",
-          "finance_sec_recent",
-          "finance_sec_search",
-          "finance_stock",
-          "finance_treasury",
-          "fred_search",
-          "fred_series",
-          "install_snippets",
-          "ip",
-          "leads_cfpb_complaints",
-          "leads_clinical_trials",
-          "leads_dialysis_facilities",
-          "leads_fda_devices",
-          "leads_fda_drugs",
-          "leads_fda_recalls",
-          "leads_fdic_banks",
-          "leads_federal_contracts",
-          "leads_federal_register",
-          "leads_funded_companies",
-          "leads_gleif_companies",
-          "leads_healthcare_providers",
-          "leads_home_health_agencies",
-          "leads_hospice_providers",
-          "leads_hospitals",
-          "leads_nih_grants",
-          "leads_nonprofits",
-          "leads_nursing_homes",
-          "leads_research_institutions",
-          "leads_worldbank_projects",
-          "list_endpoints",
-          "lookup_advice",
-          "lookup_age_calculator",
-          "lookup_anilist",
-          "lookup_arxiv",
-          "lookup_asn",
-          "lookup_base64",
-          "lookup_beer",
-          "lookup_bluesky",
-          "lookup_builtwith",
-          "lookup_case_law",
-          "lookup_coingecko",
-          "lookup_color_contrast",
-          "lookup_color_palette",
-          "lookup_country",
-          "lookup_crates",
-          "lookup_credit_card_validate",
-          "lookup_crypto",
-          "lookup_currency_historical",
-          "lookup_cve",
-          "lookup_dictionary",
-          "lookup_dns",
-          "lookup_dockerhub",
-          "lookup_dog_breed",
-          "lookup_domainage",
-          "lookup_drug_label",
-          "lookup_email_validate",
-          "lookup_emoji",
-          "lookup_exchange",
-          "lookup_food_barcode",
-          "lookup_geocode",
-          "lookup_github",
-          "lookup_github_gist",
-          "lookup_github_releases",
-          "lookup_github_user",
-          "lookup_gomodule",
-          "lookup_hash",
-          "lookup_hn",
-          "lookup_hn_user",
-          "lookup_holiday",
-          "lookup_iban",
-          "lookup_ip",
-          "lookup_ipinfo",
-          "lookup_itunes",
-          "lookup_joke",
-          "lookup_json_validate",
-          "lookup_jwt_decode",
-          "lookup_lemmy",
-          "lookup_lighthouse",
-          "lookup_lorem",
-          "lookup_mastodon",
-          "lookup_mdn",
-          "lookup_mxrecords",
-          "lookup_nasa_apod",
-          "lookup_npi",
-          "lookup_npm",
-          "lookup_oembed",
-          "lookup_open_library",
-          "lookup_packagist",
-          "lookup_pagespeed",
-          "lookup_password_strength",
-          "lookup_pokemon",
-          "lookup_postal",
-          "lookup_pypi",
-          "lookup_qr_code",
-          "lookup_random_image",
-          "lookup_random_quote",
-          "lookup_random_user",
-          "lookup_reddit",
-          "lookup_reverse_geocode",
-          "lookup_rubygem",
-          "lookup_sec_company_facts",
-          "lookup_similarweb",
-          "lookup_spfrecord",
-          "lookup_ssl_cert",
-          "lookup_sslstatus",
-          "lookup_stackoverflow",
-          "lookup_steam",
-          "lookup_timezone",
-          "lookup_translate",
-          "lookup_twitch",
-          "lookup_unicode",
-          "lookup_unsplash_search",
-          "lookup_url_encode",
-          "lookup_url_unfurl",
-          "lookup_user_agent_parse",
-          "lookup_useragents_top",
-          "lookup_usgs_earthquakes",
-          "lookup_uuid",
-          "lookup_weather",
-          "lookup_whois",
-          "lookup_wikipedia",
-          "lookup_word_count",
-          "lookup_youtube",
-          "lookup_zip",
-          "market_affordability",
-          "market_compare",
-          "market_industry_mix",
-          "market_profile",
-          "market_rank",
-          "market_saturation",
-          "news_headlines",
-          "posts_x",
-          "pricing_info",
-          "research_papers",
-          "risk_bank",
-          "risk_entity_score",
-          "risk_sanctions_screen",
-          "risk_vendor",
-          "scrape_airbnb",
-          "scrape_aliexpress",
-          "scrape_amazon",
-          "scrape_appstore",
-          "scrape_binance",
-          "scrape_booking",
-          "scrape_chromestore",
-          "scrape_coinbase",
-          "scrape_crunchbase",
-          "scrape_dockerhub",
-          "scrape_ebay",
-          "scrape_etsy",
-          "scrape_fbpage",
-          "scrape_firefoxstore",
-          "scrape_glassdoor",
-          "scrape_goodreads",
-          "scrape_googleplay",
-          "scrape_imdb",
-          "scrape_indeed",
-          "scrape_letterboxd",
-          "scrape_medium",
-          "scrape_pinterest",
-          "scrape_polygon",
-          "scrape_producthunt",
-          "scrape_reddit",
-          "scrape_redfin",
-          "scrape_sec",
-          "scrape_steam",
-          "scrape_substack",
-          "scrape_telegram",
-          "scrape_tripadvisor",
-          "scrape_uniswap",
-          "scrape_vscode",
-          "scrape_walmart",
-          "scrape_wikidata",
-          "scrape_wikipedia",
-          "scrape_yahoo",
-          "scrape_yelp",
-          "scrape_zillow",
-          "search_github",
-          "search_instagram_hashtag",
-          "search_places",
-          "search_tiktok_hashtag",
-          "search_web",
-          "search_youtube",
-          "signal_device_radar",
-          "signal_funding_radar",
-          "signal_govcon_radar",
-          "signal_grant_radar",
-          "signal_research_radar",
-          "trending_hackernews",
-          "usage_stats",
-          "validate_iban",
-          "validate_isbn",
-          "validate_luhn",
-          "validate_routing",
-          "validate_upc",
-          "validate_vin",
-          "wallet_helper",
-          "weather",
-          "weather_alerts"
-        ],
         "version": "1.11.0"
       }
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "register"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_register_agent"
+      "tool_name": "register"
     },
     {
       "id": "AS-002",
@@ -412,15 +71,15 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "relay_create_channel"
+      "tool_name": "list_skills"
     },
     {
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_create_channel"
+      "tool_name": "list_skills"
     },
     {
       "id": "AS-014",
@@ -428,39 +87,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_create_channel"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_join_channel"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_join_channel"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_send_message"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_send_message"
+      "tool_name": "list_skills"
     },
     {
       "id": "AS-002",
@@ -468,15 +95,15 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "relay_create_task"
+      "tool_name": "get_skill"
     },
     {
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_create_task"
+      "tool_name": "get_skill"
     },
     {
       "id": "AS-014",
@@ -484,15 +111,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_create_task"
+      "tool_name": "get_skill"
     },
     {
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_list_messages"
+      "tool_name": "check_usage"
     },
     {
       "id": "AS-014",
@@ -500,39 +127,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_list_messages"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_wait_message"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_wait_message"
+      "tool_name": "check_usage"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "relay_request_approval"
+      "tool_name": "buy_credits"
     },
     {
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_request_approval"
+      "tool_name": "buy_credits"
     },
     {
       "id": "AS-011",
@@ -540,7 +151,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "relay_request_approval"
+      "tool_name": "buy_credits"
     },
     {
       "id": "AS-014",
@@ -548,15 +159,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_request_approval"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"humanToken\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_respond_approval"
+      "tool_name": "buy_credits"
     },
     {
       "id": "AS-014",
@@ -564,15 +167,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_respond_approval"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_leave_channel"
+      "tool_name": "agent_health_check"
     },
     {
       "id": "AS-014",
@@ -580,23 +175,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_leave_channel"
+      "tool_name": "mcp_manifest_lint"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "relay_list_approvals"
+      "tool_name": "estimate_agent_cost"
     },
     {
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_list_approvals"
+      "tool_name": "estimate_agent_cost"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "estimate_agent_cost"
     },
     {
       "id": "AS-011",
@@ -604,7 +207,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "relay_list_approvals"
+      "tool_name": "estimate_agent_cost"
     },
     {
       "id": "AS-014",
@@ -612,31 +215,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_list_approvals"
+      "tool_name": "estimate_agent_cost"
     },
     {
-      "id": "AS-010",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_ack_approval"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "evaluate_service"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_ack_approval"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"secret\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "relay_channel_info"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "evaluate_service"
     },
     {
       "id": "AS-014",
@@ -644,139 +239,120 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "relay_channel_info"
+      "tool_name": "evaluate_service"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 29
+    "low": 3,
+    "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "relay_ack_approval",
-    "relay_channel_info",
-    "relay_create_channel",
-    "relay_create_task",
-    "relay_join_channel",
-    "relay_leave_channel",
-    "relay_list_approvals",
-    "relay_list_messages",
-    "relay_register_agent",
-    "relay_request_approval",
-    "relay_respond_approval",
-    "relay_send_message",
-    "relay_wait_message"
+    "agent_health_check",
+    "buy_credits",
+    "check_usage",
+    "estimate_agent_cost",
+    "evaluate_service",
+    "get_skill",
+    "list_skills",
+    "mcp_manifest_lint",
+    "register"
   ],
   "tool_contexts": [
     {
-      "tool_name": "relay_register_agent",
+      "tool_name": "register",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "relay_create_channel",
+      "tool_name": "list_skills",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_skill",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_usage",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "buy_credits",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
         "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "relay_join_channel",
+      "tool_name": "agent_health_check",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "relay_send_message",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_create_task",
+      "tool_name": "mcp_manifest_lint",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "writes_files"
+        "executes_commands"
       ],
       "destinations": [
-        "dynamic email recipient (acceptance)"
+        "dynamic email recipient (tools_json)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "relay_list_messages",
+      "tool_name": "estimate_agent_cost",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (input_tokens)",
+        "dynamic email recipient (output_tokens)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "relay_wait_message",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_request_approval",
+      "tool_name": "evaluate_service",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_respond_approval",
-      "action": "ALLOW",
-      "grade": "A",
       "destinations": [
-        "dynamic email recipient (humanToken)"
+        "dynamic URL input (server_url)",
+        "hardcoded domain: example.com"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_leave_channel",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_list_approvals",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_ack_approval",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "relay_channel_info",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1062,6 +638,12 @@
       "scan_date": "2026-08-09T01:12:41Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.11.0"
+    },
+    {
+      "scan_date": "2026-08-12T01:19:33Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.11.0"
     }
   ]

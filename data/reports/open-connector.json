@@ -1,165 +1,61 @@
 {
   "tool_id": "open-connector",
   "version": "1.3.5",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-08-12T01:17:48.354994934Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-13T01:19:54Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/oomol-lab/open-connector",
   "category": "Developer Tools",
   "vendor": "oomol-lab",
-  "stars": 4585,
+  "stars": 4621,
   "npm_package": "@oomol-lab/open-connector",
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Open-source auth gateway connecting 1000+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.3.5: 4 tool(s) added, 39 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "openchargemap_find_stations",
-          "openchargemap_get_station",
-          "openchargemap_get_station_comments",
-          "openchargemap_lookup_reference"
-        ],
-        "removed": [
-          "ask_question",
-          "get_abandoned_checkouts",
-          "get_analytics",
-          "get_clarity",
-          "get_complete_dashboard",
-          "get_customer_insights",
-          "get_customers",
-          "get_daily_metrics_breakdown",
-          "get_daily_revenue",
-          "get_daily_stats",
-          "get_data_sources",
-          "get_discounts",
-          "get_gorgias",
-          "get_inventory",
-          "get_inventory_velocity",
-          "get_klaviyo",
-          "get_loyalty",
-          "get_marketing_performance",
-          "get_meta_ads",
-          "get_metrics_comparison",
-          "get_metrics_multi_compare",
-          "get_orders",
-          "get_product_catalog",
-          "get_product_velocity",
-          "get_products_by_channel",
-          "get_recharge",
-          "get_refunds",
-          "get_reviews",
-          "get_reviewsio",
-          "get_search_console",
-          "get_shipstation",
-          "get_store_summary",
-          "get_top_products",
-          "get_triple_whale",
-          "get_weekly_trends",
-          "get_wishlist",
-          "get_xero",
-          "get_youtube",
-          "query_orders"
-        ],
-        "version": "1.3.5"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 9,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/mcp.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 101,
+            "snippet": "new McpServer(",
+            "file": "src/mcp.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 111,
+            "snippet": ".registerTool(",
+            "file": "src/mcp.ts",
+            "language": "typescript"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openchargemap_find_stations"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openchargemap_find_stations"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openchargemap_find_stations"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openchargemap_find_stations"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openchargemap_get_station"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openchargemap_get_station"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openchargemap_get_station"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openchargemap_lookup_reference"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openchargemap_lookup_reference"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openchargemap_get_station_comments"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 7
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -184,56 +80,17 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "openchargemap_find_stations",
-    "openchargemap_get_station",
-    "openchargemap_get_station_comments",
-    "openchargemap_lookup_reference"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "openchargemap_find_stations",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (operatorid)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "openchargemap_get_station",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "openchargemap_lookup_reference",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "openchargemap_get_station_comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-08-11T01:11:02Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.3.5"
+    },
+    {
+      "scan_date": "2026-08-12T01:17:48Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.3.5"
     }
   ]

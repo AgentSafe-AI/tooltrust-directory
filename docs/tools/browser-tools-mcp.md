@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2.0.0` |
+| **Version** | `2.0.2` |
 | **Vendor** | AgentDeskAI |
-| **Stars** | ⭐ 7289 |
+| **Stars** | ⭐ 7290 |
 | **npm Package** | `browser-tools-mcp-workspace` |
 | **Language** | TypeScript |
 | **Source** | [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -24,32 +24,20 @@
 | Critical | 0 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 4 |
+| Low      | 3 |
 | Info     | 8 |
 
 ## Detailed Findings
 
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Review and remediate the identified issue.
 
 ---
 

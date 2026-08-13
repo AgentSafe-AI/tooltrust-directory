@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 11722 |
 | **Language** | Python |
 | **Source** | [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

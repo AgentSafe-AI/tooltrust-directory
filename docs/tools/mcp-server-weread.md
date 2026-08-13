@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 604 |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-weread](https://github.com/freestylefly/mcp-server-weread) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,6 +1,6 @@
 # 🟢 blender-mcp
 
-> Control Blender 3D with any LLM of your choice
+> Community plugin to control Blender 3D with any LLM of your choice
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-3ab892510cc0` |
 | **Vendor** | ahujasid |
-| **Stars** | ⭐ 25729 |
+| **Stars** | ⭐ 25764 |
 | **Language** | Python |
 | **Source** | [blender-mcp](https://github.com/ahujasid/blender-mcp) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

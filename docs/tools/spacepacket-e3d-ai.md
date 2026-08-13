@@ -17,7 +17,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [spacepacket-e3d-ai](https://smithery.ai/server/spacepacket/e3d-ai) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

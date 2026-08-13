@@ -1,18 +1,18 @@
-# 🟡 gram
+# 🟢 gram
 
 > Securely scale AI usage across your organization. A single stack to Connect, Secure, Observe and Distribute agents, MCPs, and Skills within your company.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `tunnel@0.1.0` |
 | **Vendor** | speakeasy-api |
 | **Stars** | ⭐ 260 |
 | **npm Package** | `@gram/workspace` |
 | **Language** | Go |
 | **Source** | [gram](https://github.com/speakeasy-api/gram) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -22,24 +22,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 13 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vtunnel@0.1.0: 9 tool(s) added, 1 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

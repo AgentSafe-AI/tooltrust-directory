@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.6` |
 | **Vendor** | universal-tool-calling-protocol |
-| **Stars** | ⭐ 1524 |
+| **Stars** | ⭐ 1525 |
 | **Language** | TypeScript |
 | **Source** | [code-mode](https://github.com/universal-tool-calling-protocol/code-mode) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

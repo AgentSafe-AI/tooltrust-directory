@@ -4,15 +4,15 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `3.6.60` |
 | **Vendor** | Mouseww |
-| **Stars** | ⭐ 3486 |
+| **Stars** | ⭐ 3495 |
 | **npm Package** | `anything-analyzer` |
 | **Language** | TypeScript |
 | **Source** | [anything-analyzer](https://github.com/Mouseww/anything-analyzer) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,31 +25,19 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 2 |
+| Info     | 1 |
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### ⚪ `AS-018` — Embedded MCP Server Detected
 
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
+Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
 
 ---
 

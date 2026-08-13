@@ -1,15 +1,15 @@
-# 🟡 metavolve-labs-intelligence-aeternum
+# 🟢 metavolve-labs-intelligence-aeternum
 
 > Intelligence Aeternum — AI training dataset marketplace with 100,000+ museum artwork images with 4K token .json metadata. Search, preview, and purchase curated art datasets with provenance tracking. Powered by x402 USDC micropayments.   
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [metavolve-labs-intelligence-aeternum](https://smithery.ai/server/metavolve-labs/intelligence-aeternum) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 50 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 44 tool(s) added, 10 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

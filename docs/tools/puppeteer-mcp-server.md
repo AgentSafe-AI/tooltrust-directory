@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.7.2` |
 | **Vendor** | merajmehrabi |
-| **Stars** | ⭐ 481 |
+| **Stars** | ⭐ 480 |
 | **npm Package** | `puppeteer-mcp-server` |
 | **npm Downloads (30d)** | 7.1k |
 | **Language** | TypeScript |
 | **Source** | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -59,7 +59,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -95,7 +95,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -107,7 +107,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -119,7 +119,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -131,7 +131,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -143,7 +143,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -155,7 +155,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -203,7 +203,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.

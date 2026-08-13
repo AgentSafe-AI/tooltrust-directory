@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 6.1k |
 | **Language** | TypeScript |
 | **Source** | [gemini-mcp-tool](https://github.com/jamubc/gemini-mcp-tool) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

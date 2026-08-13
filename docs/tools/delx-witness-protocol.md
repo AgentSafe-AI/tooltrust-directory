@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [delx-witness-protocol](https://smithery.ai/server/delx/witness-protocol) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

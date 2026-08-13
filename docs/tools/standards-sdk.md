@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 22.9k |
 | **Language** | TypeScript |
 | **Source** | [standards-sdk](https://github.com/hashgraph-online/standards-sdk) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
