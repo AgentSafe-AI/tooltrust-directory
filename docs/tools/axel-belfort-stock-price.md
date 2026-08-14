@@ -15,7 +15,7 @@ Returns: {price, change, volume, marketCap, name}. No API key required — x402 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-stock-price](https://smithery.ai/server/axel-belfort/stock-price) |
-| **Scan Date** | 2026-08-13 |
+| **Scan Date** | 2026-08-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

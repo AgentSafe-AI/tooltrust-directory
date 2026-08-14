@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [stockvibes07-meeting-mcp](https://smithery.ai/server/stockvibes07/meeting-mcp) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

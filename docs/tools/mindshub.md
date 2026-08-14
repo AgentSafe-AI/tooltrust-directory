@@ -1,6 +1,6 @@
 # 🟢 mindshub
 
-> Make AI do actual work. Swap the model anytime — keep everything you've built.
+> The unified workspace where open-source models get things done for you.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `26.1.0` |
 | **Vendor** | mindsdb |
-| **Stars** | ⭐ 39541 |
+| **Stars** | ⭐ 39560 |
 | **Language** | Makefile |
 | **Source** | [mindshub](https://github.com/mindsdb/mindshub) |
-| **Scan Date** | 2026-08-13 |
+| **Scan Date** | 2026-08-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

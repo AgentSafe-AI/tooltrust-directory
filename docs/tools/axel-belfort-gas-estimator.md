@@ -15,7 +15,7 @@ Returns gas prices for all chains in one response. No API key required — x402 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-gas-estimator](https://smithery.ai/server/axel-belfort/gas-estimator) |
-| **Scan Date** | 2026-08-13 |
+| **Scan Date** | 2026-08-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

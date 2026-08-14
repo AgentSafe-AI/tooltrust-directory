@@ -1,14 +1,14 @@
 {
   "tool_id": "ios-simulator-mcp",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-08-13T01:21:03.782821109Z",
+  "risk_score": 2,
+  "scan_date": "2026-08-14T01:19:14.490433724Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/joshuayoes/ios-simulator-mcp",
   "category": "Developer Tools",
   "vendor": "joshuayoes",
-  "stars": 2133,
+  "stars": 2135,
   "npm_package": "ios-simulator-mcp",
   "npm_downloads_monthly": 18892,
   "license": "MIT",
@@ -158,24 +158,67 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "launch_app"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "terminate_app"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "open_url"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "open_url"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "open_url"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_apps"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 18
+    "low": 1,
+    "info": 22
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "get_booted_sim_id",
     "install_app",
     "launch_app",
+    "list_apps",
     "open_simulator",
+    "open_url",
     "record_video",
     "screenshot",
     "stop_recording",
+    "terminate_app",
     "ui_describe_all",
     "ui_describe_point",
     "ui_find_element",
@@ -286,6 +329,37 @@
       "destinations": [
         "hardcoded domain: com.apple.mobilesafari"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "terminate_app",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: com.apple.mobilesafari"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "open_url",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_apps",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
@@ -641,6 +715,12 @@
     },
     {
       "scan_date": "2026-08-12T01:19:04Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-08-13T01:21:03Z",
       "grade": "A",
       "risk_score": 0,
       "version": "2.0.0"
