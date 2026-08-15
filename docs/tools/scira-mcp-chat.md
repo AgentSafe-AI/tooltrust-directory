@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 393 |
 | **Language** | TypeScript |
 | **Source** | [scira-mcp-chat](https://github.com/zaidmukaddam/scira-mcp-chat) |
-| **Scan Date** | 2026-08-14 |
+| **Scan Date** | 2026-08-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -11,7 +11,7 @@ Supports all basic & advanced filters for querying oneway & roundtrip flights.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mrabi-google-flights-mcp](https://smithery.ai/server/mrabi/google-flights-mcp) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

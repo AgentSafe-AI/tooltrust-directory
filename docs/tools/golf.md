@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 837 |
 | **Language** | Python |
 | **Source** | [golf](https://github.com/golf-mcp/golf) |
-| **Scan Date** | 2026-08-14 |
+| **Scan Date** | 2026-08-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
