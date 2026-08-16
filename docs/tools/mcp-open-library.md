@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 332 |
 | **Language** | TypeScript |
 | **Source** | [mcp-open-library](https://github.com/8enSmith/mcp-open-library) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

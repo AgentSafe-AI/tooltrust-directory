@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `1.0.0` |
 | **Vendor** | quboqin |
-| **Stars** | ⭐ 75 |
+| **Stars** | ⭐ 77 |
 | **Language** | Shell |
 | **Source** | [template-agenticide-vibecoding](https://github.com/quboqin/template-agenticide-vibecoding) |
-| **Scan Date** | 2026-07-14 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -117,7 +117,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 13 properties (threshold: 10)
+input schema exposes 14 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -129,7 +129,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "adminPassword" accepts a credential (informational; not evidence of insecure handling)
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

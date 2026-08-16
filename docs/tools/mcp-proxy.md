@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.12.0` |
 | **Vendor** | sparfenyuk |
-| **Stars** | ⭐ 2707 |
+| **Stars** | ⭐ 2709 |
 | **Language** | Python |
 | **Source** | [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

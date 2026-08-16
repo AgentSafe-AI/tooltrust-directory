@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 153 |
 | **Language** | PowerShell |
 | **Source** | [1c-ai-development-kit](https://github.com/Arman-Kudaibergenov/1c-ai-development-kit) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

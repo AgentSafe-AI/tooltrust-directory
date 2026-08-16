@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `erify-v3.20.1` |
+| **Version** | `erify-v3.20.2` |
 | **Vendor** | emiliaprotocol |
 | **Stars** | ⭐ 841 |
 | **npm Package** | `emilia-protocol` |
 | **Language** | TypeScript |
 | **Source** | [emilia-protocol](https://github.com/emiliaprotocol/emilia-protocol) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -394,7 +394,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "tokenIn" accepts a credential (informational; not evidence of insecure handling)
+input parameter "tokenOut" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -406,7 +406,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "tokenOut" accepts a credential (informational; not evidence of insecure handling)
+input parameter "tokenIn" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

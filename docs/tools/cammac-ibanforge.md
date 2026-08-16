@@ -11,7 +11,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cammac-ibanforge](https://smithery.ai/server/cammac/IBANforge) |
-| **Scan Date** | 2026-08-12 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

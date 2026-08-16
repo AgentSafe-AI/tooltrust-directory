@@ -1,10 +1,10 @@
 {
   "tool_id": "ciprianpater-srv-d7aoqmh5pdvs7391dcqg",
   "version": "smithery",
-  "grade": "C",
-  "risk_score": 45,
-  "scan_date": "2026-06-08T02:56:45.409213468Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-08-16T01:00:18.203281874Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/ciprianpater/srv-d7aoqmh5pdvs7391dcqg",
   "vendor": "Smithery",
   "description": "# NWO Robotics MCP Server\n\nControl real robots, IoT devices, and autonomous agent swarms through natural language — powered by the [NWO Robotics API](https://nwo.capital).\n\n---\n\n## What This Server Does\n\nThis MCP server exposes the full NWO Robotics API as 64 ready-to-use tools. Any MCP-compatible AI agent (Claude, ChatGPT, Cursor, etc.) can use it to:\n\n- Send natural language instructions to physical robots\n- Run Visual-Language-Action (VLA) inference on live camera feeds\n- Plan, validate, and execute multi-step robot tasks\n- Monitor sensors, detect slip, and fuse multi-modal data\n- Train robots online with reinforcement learning\n- Register and manage agent identities on Base mainnet via the Cardiac biometric ID system\n\nNo local installation needed. The server runs on Render and is ready to connect.\n\n---\n\n## Tools Overview\n\n### 🤖 VLA Inference \u0026 Models\nRun Vision-Language-Action inference on any supported robot. Send a text instruction and camera images, receive joint action vectors in real time. Supports auto model routing, ultra-low-latency Cloudflare edge inference (28ms avg), and WebSocket streaming at up to 50Hz.\n\n`vla_inference` · `edge_inference` · `list_models` · `get_model_info` · `get_streaming_config`\n\n---\n\n### 🦾 Robot Control \u0026 State\nQuery live robot state (joint angles, gripper, battery, position), execute pre-computed action sequences, and fuse camera + lidar + thermal + force + GPS sensor inputs into a single inference call.\n\n`query_robot_state` · `execute_actions` · `sensor_fusion` · `robot_query` · `get_agent_status`\n\n---\n\n### 🗺️ Task Planning \u0026 Learning\nDecompose complex instructions into ordered subtasks, execute them step by step, poll progress, and log outcomes so the model learns and improves with every run.\n\n`task_planner` · `execute_subtask` · `status_poll` · `learning_recommend` · `learning_log`\n\n---\n\n### 🔑 Agent Management\nSelf-register a new AI agent in under 2 seconds, check your monthly API quota, upgrade tiers by paying ETH, and manage robot registrations and capabilities.\n\n| Tier | Calls/month | Cost |\n|------|-------------|------|\n| Free | 100,000 | $0 |\n| Prototype | 500,000 | ~0.015 ETH/mo |\n| Production | Unlimited | ~0.062 ETH/mo |\n\n`register_agent` · `check_balance` · `pay_upgrade` · `create_wallet` · `register_robot` · `update_agent` · `get_agent_info`\n\n---\n\n### 🔍 Agent Discovery\nDiscover all available execution modes (mock / simulated / live), robot types, VLA models, and sensor capabilities. Validate tasks with a dry-run before committing to execution.\n\n`nwo_health` · `nwo_whoami` · `discover_capabilities` · `dry_run` · `plan_task`\n\n---\n\n### 🔌 ROS2 Bridge (Physical Robots)\nConnect directly to physical robots over the ROS2 bridge. Send joint commands, submit action sequences, and trigger emergency stops on one or all robots within 10ms.\n\nSupported: UR5e, Panda, Spot, Unitree G1, and more.\n\n`ros2_list_robots` · `ros2_robot_status` · `ros2_send_command` · `ros2_submit_action` · `ros2_emergency_stop` · `ros2_emergency_stop_all` · `ros2_get_robot_types`\n\n---\n\n### 🧪 Physics Simulation\nSimulate trajectories, check for collisions, estimate joint torques, validate grasps, and plan collision-free motions with MoveIt2 — before touching real hardware.\n\n`simulate_trajectory` · `check_collision` · `estimate_torques` · `validate_grasp` · `plan_motion` · `get_scene_library` · `generate_scene`\n\n---\n\n### 📐 Embodiment \u0026 Calibration\nBrowse the robot embodiment registry (DOF, joint limits, sensors), download URDF models, get normalization parameters for VLA inference, and run automatic joint calibration.\n\n`list_embodiments` · `get_robot_specs` · `get_normalization` · `download_urdf` · `get_test_results` · `compare_robots` · `run_calibration` · `calibrate_confidence`\n\n---\n\n### 🧠 Online RL \u0026 Fine-Tuning\nStart online reinforcement learning sessions, stream state/action/reward telemetry, build fine-tuning datasets from logged runs, and launch LoRA fine-tuning jobs on any base VLA model.\n\n`start_rl_training` · `submit_rl_telemetry` · `create_finetune_dataset` · `start_finetune_job`\n\n---\n\n### 🖐️ Tactile Sensing (ORCA Hand)\nRead 256-taxel tactile sensor arrays from the ORCA robot hand, assess grip quality and object texture, and detect slip in real time to prevent dropped objects.\n\n`read_tactile` · `process_tactile` · `detect_slip`\n\n---\n\n### 📦 Dataset Hub\nAccess 1.54 million+ human robot demonstrations for the Unitree G1 humanoid (430+ hours, LeRobot-compatible format) for training and fine-tuning.\n\n`list_datasets`\n\n---\n\n### 🫀 Cardiac Blockchain Identity (Base Mainnet)\nRegister AI agents on Base mainnet and receive a permanent soul-bound Digital ID (`rootTokenId`). Issue verifiable credentials for task authorization, swarm control, location access, and payments — all gasless via the NWO relayer.\n\nSmart contracts deployed on Base Mainnet (Chain ID 8453):\n- `NWOIdentityRegistry` — `0x78455AFd5E5088F8B5fecA0523291A75De1dAfF8`\n- `NWOAccessController` — `0x29d177bedaef29304eacdc63b2d0285c459a0f50`\n- `NWOPaymentProcessor` — `0x4afa4618bb992a073dbcfbddd6d1aebc3d5abd7c`\n\n`cardiac_register_agent` · `cardiac_identify_agent` · `cardiac_renew_key` · `cardiac_issue_credential` · `cardiac_check_credential` · `cardiac_grant_access` · `cardiac_get_nonce` · `cardiac_check_access` · `cardiac_payment_process`\n\n---\n\n### 🔮 Cardiac Oracle\nValidate ECG biometric data from smartwatches to authenticate human identities, compute cardiac hashes, and verify recent validations.\n\n`oracle_health` · `oracle_validate_ecg` · `oracle_hash_ecg` · `oracle_verify`\n\n---\n\n## Supported Robot Models\n\n| Model | Type | Capabilities |\n|-------|------|--------------|\n| `xiaomi-robotics-0` | VLA | Grasp, navigate, manipulate |\n| `pi05` | VLA | General manipulation |\n| `groot_n1.7` | VLA | Humanoid control |\n| `deepseek-ocr-2b` | OCR | Label reading, text recognition |\n\n---\n\n## Example Usage\n\n**Pick and place:**\n\u003e \"Pick up the red box from the table and place it on shelf B\"\n\n**Sensor query:**\n\u003e \"What is the temperature in warehouse zone 3?\"\n\n**Safety:**\n\u003e \"Run a safety check before moving robot_001 to the loading dock\"\n\n**Swarm:**\n\u003e \"Deploy all available robots to patrol the perimeter\"\n\n**Learning:**\n\u003e \"What grip technique should I use for fragile glass objects?\"\n\n---\n\n## Links\n\n- 🌐 [NWO Capital](https://nwo.capital)\n- 📄 [Agent Skill File](https://nwo.capital/webapp/agent.md)\n- 📖 [API Docs](https://nwo.capital/webapp/nwo-robotics.html)\n- 🧬 [Cardiac SDK](https://github.com/RedCiprianPater/nwo-cardiac-sdk)\n- 🔑 [Get API Key](https://nwo.capital/webapp/api-key.php)\n- 🤗 [Live Demo](https://huggingface.co/spaces/PUBLICAE/nwo-robotics-api-demo)\n- 📜 [OpenAPI Spec](https://nwo.capital/openapi.yaml)\n\n---\n\n## Support\n\n📧 support@nwo.capital",
@@ -51,17 +51,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "query_robot_state"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "query_robot_state"
     },
@@ -83,9 +75,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_actions"
     },
@@ -115,17 +107,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "robot_query"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "robot_query"
     },
@@ -163,9 +147,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "execute_subtask"
     },
@@ -195,9 +179,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "learning_recommend"
     },
@@ -219,9 +203,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "learning_log"
     },
@@ -267,9 +251,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_wallet"
     },
@@ -291,9 +275,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "update_agent"
     },
@@ -307,9 +291,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_agent_info"
     },
@@ -339,9 +323,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "discover_capabilities"
     },
@@ -363,9 +347,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "dry_run"
     },
@@ -387,9 +371,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "plan_task"
     },
@@ -427,9 +411,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ros2_send_command"
     },
@@ -491,9 +475,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares env permission",
+      "description": "declared capabilities: environment variables",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "check_collision"
     },
@@ -507,9 +491,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "estimate_torques"
     },
@@ -587,9 +571,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "download_urdf"
     },
@@ -627,9 +611,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "run_calibration"
     },
@@ -675,17 +659,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_finetune_dataset"
-    },
-    {
-      "id": "AS-002",
-      "severity": "High",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "create_finetune_dataset"
     },
@@ -747,9 +723,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key_hash\" appears to accept a secret or credential",
+      "description": "input parameter \"api_key_hash\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_register_agent"
     },
@@ -763,9 +739,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key_hash\" appears to accept a secret or credential",
+      "description": "input parameter \"api_key_hash\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_identify_agent"
     },
@@ -779,17 +755,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"root_token_id\" appears to accept a secret or credential",
+      "description": "input parameter \"root_token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_renew_key"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"new_api_key_hash\" appears to accept a secret or credential",
+      "description": "input parameter \"new_api_key_hash\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_renew_key"
     },
@@ -803,25 +779,25 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"root_token_id\" appears to accept a secret or credential",
+      "description": "input parameter \"root_token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_issue_credential"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"credential_hash\" appears to accept a secret or credential",
+      "description": "input parameter \"credential_hash\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_issue_credential"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"credential_type\" appears to accept a secret or credential",
+      "description": "input parameter \"credential_type\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_issue_credential"
     },
@@ -835,17 +811,17 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"credential_type\" appears to accept a secret or credential",
+      "description": "input parameter \"root_token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_check_credential"
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"root_token_id\" appears to accept a secret or credential",
+      "description": "input parameter \"credential_type\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_check_credential"
     },
@@ -859,9 +835,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"root_token_id\" appears to accept a secret or credential",
+      "description": "input parameter \"root_token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_grant_access"
     },
@@ -883,9 +859,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"root_token_id\" appears to accept a secret or credential",
+      "description": "input parameter \"root_token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_check_access"
     },
@@ -899,9 +875,9 @@
     },
     {
       "id": "AS-010",
-      "severity": "High",
+      "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"root_token_id\" appears to accept a secret or credential",
+      "description": "input parameter \"root_token_id\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "cardiac_payment_process"
     },
@@ -939,9 +915,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "oracle_verify"
     },
@@ -964,10 +940,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 24,
-    "medium": 7,
-    "low": 18,
-    "info": 70
+    "high": 0,
+    "medium": 0,
+    "low": 15,
+    "info": 101
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1080,8 +1056,8 @@
     },
     {
       "tool_name": "query_robot_state",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1091,7 +1067,7 @@
     {
       "tool_name": "execute_actions",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1107,8 +1083,8 @@
     },
     {
       "tool_name": "robot_query",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1132,7 +1108,7 @@
     {
       "tool_name": "execute_subtask",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1149,7 +1125,7 @@
     {
       "tool_name": "learning_recommend",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1159,7 +1135,7 @@
     {
       "tool_name": "learning_log",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1244,7 +1220,7 @@
     {
       "tool_name": "discover_capabilities",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1254,7 +1230,7 @@
     {
       "tool_name": "dry_run",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1264,7 +1240,7 @@
     {
       "tool_name": "plan_task",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1288,7 +1264,7 @@
     {
       "tool_name": "ros2_send_command",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "executes_commands"
       ],
@@ -1411,7 +1387,7 @@
     {
       "tool_name": "download_urdf",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "uses_network"
       ],
@@ -1465,8 +1441,8 @@
     },
     {
       "tool_name": "create_finetune_dataset",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
         "executes_commands",
         "writes_files"
@@ -1512,21 +1488,21 @@
     {
       "tool_name": "cardiac_register_agent",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "cardiac_identify_agent",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "cardiac_renew_key",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (root_token_id)"
       ],
@@ -1535,8 +1511,8 @@
     },
     {
       "tool_name": "cardiac_issue_credential",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (root_token_id)"
       ],
@@ -1545,8 +1521,8 @@
     },
     {
       "tool_name": "cardiac_check_credential",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (root_token_id)"
       ],
@@ -1556,7 +1532,7 @@
     {
       "tool_name": "cardiac_grant_access",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (root_token_id)"
       ],
@@ -1573,7 +1549,7 @@
     {
       "tool_name": "cardiac_check_access",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (root_token_id)"
       ],
@@ -1583,7 +1559,7 @@
     {
       "tool_name": "cardiac_payment_process",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "destinations": [
         "dynamic email recipient (root_token_id)"
       ],
@@ -1811,6 +1787,12 @@
     },
     {
       "scan_date": "2026-06-07T02:52:37Z",
+      "grade": "C",
+      "risk_score": 45,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-08T02:56:45Z",
       "grade": "C",
       "risk_score": 45,
       "version": "smithery"

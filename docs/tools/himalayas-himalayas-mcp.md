@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [himalayas-himalayas-mcp](https://smithery.ai/server/Himalayas/himalayas-mcp) |
-| **Scan Date** | 2026-08-14 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.17.0` |
 | **Vendor** | ProfessionalWiki |
-| **Stars** | ⭐ 119 |
+| **Stars** | ⭐ 120 |
 | **npm Package** | `@professional-wiki/mediawiki-mcp-server` |
 | **npm Downloads (30d)** | 7.5k |
 | **Language** | TypeScript |
 | **Source** | [mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

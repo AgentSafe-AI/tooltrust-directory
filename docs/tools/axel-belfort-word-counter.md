@@ -15,7 +15,7 @@ Returns: {words, characters, sentences, paragraphs, readingTime}. No API key req
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-word-counter](https://smithery.ai/server/axel-belfort/word-counter) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

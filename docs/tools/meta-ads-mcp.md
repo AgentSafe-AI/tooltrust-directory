@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.101` |
 | **Vendor** | pipeboard-co |
-| **Stars** | ⭐ 1175 |
+| **Stars** | ⭐ 1177 |
 | **Language** | Python |
 | **Source** | [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

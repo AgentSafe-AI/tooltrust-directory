@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 812 |
 | **Language** | Rust |
 | **Source** | [vllora](https://github.com/vllora/vllora) |
-| **Scan Date** | 2026-08-15 |
+| **Scan Date** | 2026-08-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
