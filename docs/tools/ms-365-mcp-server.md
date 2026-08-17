@@ -10,10 +10,10 @@
 | **Vendor** | Softeria |
 | **Stars** | ⭐ 913 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
-| **npm Downloads (30d)** | 133.3k |
+| **npm Downloads (30d)** | 159.7k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-08-16 |
+| **Scan Date** | 2026-08-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

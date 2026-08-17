@@ -10,10 +10,10 @@
 | **Vendor** | tableau |
 | **Stars** | ⭐ 322 |
 | **npm Package** | `@tableau/mcp-server` |
-| **npm Downloads (30d)** | 40.6k |
+| **npm Downloads (30d)** | 38.8k |
 | **Language** | TypeScript |
 | **Source** | [tableau-mcp](https://github.com/tableau/tableau-mcp) |
-| **Scan Date** | 2026-08-16 |
+| **Scan Date** | 2026-08-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

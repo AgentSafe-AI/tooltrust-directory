@@ -20,7 +20,7 @@ POST https://agentdevx.onrender.com/agents/v1/bootstrap
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mirajmahmudul57-agentdevx](https://smithery.ai/server/mirajmahmudul57/agentdevx) |
-| **Scan Date** | 2026-08-16 |
+| **Scan Date** | 2026-08-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -30,24 +30,12 @@ POST https://agentdevx.onrender.com/agents/v1/bootstrap
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 2 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 45 |
 | Info     | 103 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 4 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

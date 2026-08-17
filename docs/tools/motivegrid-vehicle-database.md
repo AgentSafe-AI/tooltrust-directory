@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [motivegrid-vehicle-database](https://smithery.ai/server/motivegrid/vehicle-database) |
-| **Scan Date** | 2026-08-14 |
+| **Scan Date** | 2026-08-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

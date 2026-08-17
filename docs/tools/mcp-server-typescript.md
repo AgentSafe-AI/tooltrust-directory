@@ -10,10 +10,10 @@
 | **Vendor** | dataforseo |
 | **Stars** | ⭐ 241 |
 | **npm Package** | `dataforseo-mcp-server` |
-| **npm Downloads (30d)** | 20.0k |
+| **npm Downloads (30d)** | 23.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) |
-| **Scan Date** | 2026-08-16 |
+| **Scan Date** | 2026-08-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

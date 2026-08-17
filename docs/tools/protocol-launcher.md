@@ -10,10 +10,10 @@
 | **Vendor** | zhensherlock |
 | **Stars** | ⭐ 126 |
 | **npm Package** | `protocol-launcher` |
-| **npm Downloads (30d)** | 7.5k |
+| **npm Downloads (30d)** | 13.8k |
 | **Language** | TypeScript |
 | **Source** | [protocol-launcher](https://github.com/zhensherlock/protocol-launcher) |
-| **Scan Date** | 2026-08-16 |
+| **Scan Date** | 2026-08-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
