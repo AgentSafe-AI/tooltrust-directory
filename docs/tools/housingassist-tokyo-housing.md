@@ -14,7 +14,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [housingassist-tokyo-housing](https://smithery.ai/server/housingassist/tokyo-housing) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

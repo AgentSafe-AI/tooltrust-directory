@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [entia-entity-verification](https://smithery.ai/server/entia/entity-verification) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

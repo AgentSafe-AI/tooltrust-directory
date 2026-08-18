@@ -15,7 +15,7 @@ Returns: {score, headers[], missing[], server}. No API key required — x402 mic
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-http-headers](https://smithery.ai/server/axel-belfort/http-headers) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

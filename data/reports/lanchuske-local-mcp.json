@@ -1,14 +1,28 @@
 {
   "tool_id": "lanchuske-local-mcp",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-08-10T01:20:50.187237192Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-18T00:57:43.229255653Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/lanchuske/local-mcp",
   "vendor": "Smithery",
   "description": "Give your AI agent full control of your real apps — Mail, iMessage, Microsoft Teams, Slack, WhatsApp, Calendar, OneDrive, Outlook, OmniFocus, Notes, files and Office docs. 143 tools, 100% local, no API keys. Reaches what cloud connectors can't. Mac + Windows.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 0 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "lmcp_welcome"
+        ],
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -256,14 +270,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "connect_m365_account"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "connect_todoist"
     },
     {
       "id": "AS-014",
@@ -1152,22 +1158,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "lmcp_upgrade_diagnostics"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "lmcp_welcome"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lmcp_welcome"
     },
     {
       "id": "AS-002",
@@ -3228,10 +3218,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 59,
-    "info": 343
+    "info": 340
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -3311,7 +3301,6 @@
     "lmcp_install_upgrade",
     "lmcp_state",
     "lmcp_upgrade_diagnostics",
-    "lmcp_welcome",
     "m365_create_event",
     "m365_delete_event",
     "m365_get_contact",
@@ -3641,9 +3630,6 @@
       "tool_name": "connect_todoist",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (api_token)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -4256,16 +4242,6 @@
       "tool_name": "lmcp_upgrade_diagnostics",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "lmcp_welcome",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -5573,6 +5549,7 @@
         "executes_commands"
       ],
       "destinations": [
+        "dynamic email recipient (selector)",
         "hardcoded domain: document.querySelector"
       ],
       "dependency_visibility": "No dependency data",
@@ -5668,6 +5645,12 @@
       "scan_date": "2026-08-06T02:03:05Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-08-10T01:20:50Z",
+      "grade": "A",
+      "risk_score": 4,
       "version": "smithery"
     }
   ]

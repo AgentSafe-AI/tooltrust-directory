@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.1` |
 | **Vendor** | formulahendry |
-| **Stars** | ⭐ 435 |
+| **Stars** | ⭐ 436 |
 | **npm Package** | `mcp-server-spec-driven-development` |
 | **npm Downloads (30d)** | 293 |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-spec-driven-development](https://github.com/formulahendry/mcp-server-spec-driven-development) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

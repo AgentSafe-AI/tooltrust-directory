@@ -15,7 +15,7 @@ Returns: {address, name, avatar, records}. No API key required — x402 micropay
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-ens-resolver](https://smithery.ai/server/axel-belfort/ens-resolver) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

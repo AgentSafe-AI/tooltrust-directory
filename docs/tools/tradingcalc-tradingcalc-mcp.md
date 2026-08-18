@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [tradingcalc-tradingcalc-mcp](https://smithery.ai/server/tradingcalc/tradingcalc-mcp) |
-| **Scan Date** | 2026-08-14 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

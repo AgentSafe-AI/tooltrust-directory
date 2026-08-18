@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.0k |
 | **Language** | TypeScript |
 | **Source** | [bb-browser](https://github.com/epiral/bb-browser) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

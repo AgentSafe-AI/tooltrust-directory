@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.22` |
 | **Vendor** | agentic-community |
-| **Stars** | ⭐ 862 |
+| **Stars** | ⭐ 864 |
 | **Language** | Python |
 | **Source** | [mcp-gateway-registry](https://github.com/agentic-community/mcp-gateway-registry) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

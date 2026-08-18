@@ -48,7 +48,7 @@ Capabilities :
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [cturkieh-france-data](https://smithery.ai/server/cturkieh/france-data) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

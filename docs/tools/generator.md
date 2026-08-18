@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.34.0-beta5` |
 | **Vendor** | context-hub |
-| **Stars** | ⭐ 337 |
+| **Stars** | ⭐ 338 |
 | **Language** | PHP |
 | **Source** | [generator](https://github.com/context-hub/generator) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

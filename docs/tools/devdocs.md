@@ -12,7 +12,7 @@
 | **npm Package** | `devdocs-explorer` |
 | **Language** | TypeScript |
 | **Source** | [devdocs](https://github.com/cyberagiinc/DevDocs) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

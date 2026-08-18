@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | maquina-app |
-| **Stars** | ⭐ 569 |
+| **Stars** | ⭐ 570 |
 | **Language** | Ruby |
 | **Source** | [rails-mcp-server](https://github.com/maquina-app/rails-mcp-server) |
-| **Scan Date** | 2026-08-17 |
+| **Scan Date** | 2026-08-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
