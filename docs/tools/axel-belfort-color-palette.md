@@ -15,7 +15,7 @@ Returns: {palette[], scheme, hex, rgb, hsl, css}. No API key required — x402 m
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-color-palette](https://smithery.ai/server/axel-belfort/color-palette) |
-| **Scan Date** | 2026-08-18 |
+| **Scan Date** | 2026-08-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

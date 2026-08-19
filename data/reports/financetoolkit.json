@@ -1,14 +1,14 @@
 {
   "tool_id": "financetoolkit",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-08-18T00:49:51.701784242Z",
+  "scan_date": "2026-08-19T00:50:44.424923993Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/JerBouma/FinanceToolkit",
   "category": "Developer Tools",
   "vendor": "JerBouma",
-  "stars": 5235,
+  "stars": 5239,
   "license": "MIT",
   "language": "Python",
   "description": "Transparent and Efficient Financial Analysis",
@@ -211,6 +211,14 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "econometrics"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "options"
     },
     {
@@ -220,6 +228,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "government"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "macroeconomics"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "macroeconomics"
     },
     {
       "id": "AS-014",
@@ -249,7 +273,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "rates"
     },
@@ -402,13 +426,14 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 11,
-    "info": 37
+    "low": 12,
+    "info": 39
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "breadth",
     "discovery",
+    "econometrics",
     "efficiency",
     "environment",
     "fixed_income",
@@ -538,6 +563,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "econometrics",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "options",
       "action": "ALLOW",
       "grade": "A",
@@ -555,6 +587,13 @@
       "tool_name": "macroeconomics",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded API endpoint: fred.stlouisfed.org",
+        "hardcoded domain: fred.stlouisfed.org"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -579,6 +618,10 @@
       "behavior": [
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded API endpoint: fred.stlouisfed.org",
+        "hardcoded domain: fred.stlouisfed.org"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -600,6 +643,9 @@
       "tool_name": "market_data",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -972,6 +1018,12 @@
     },
     {
       "scan_date": "2026-08-17T00:52:49Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.1.4"
+    },
+    {
+      "scan_date": "2026-08-18T00:49:51Z",
       "grade": "A",
       "risk_score": 2,
       "version": "2.1.4"

@@ -1,21 +1,39 @@
 {
   "tool_id": "chuhuoyuan-cloudflare",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-18T00:58:45.757830996Z",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-08-19T00:58:56.449020906Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/chuhuoyuan/cloudflare",
   "vendor": "Smithery",
   "description": "Search Cloudflare documentation across Workers, Pages, R2, Zero Trust, and more. Generate best-practice Workers code and accelerate troubleshooting with relevant guidance. Follow clear steps to migrate Pages projects to Workers with fewer pitfalls.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 2 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "execute",
+          "search"
+        ],
+        "removed": [
+          "migrate_pages_to_workers_guide",
+          "search_cloudflare_documentation"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_cloudflare_documentation"
+      "tool_name": "search"
     },
     {
       "id": "AS-011",
@@ -23,7 +41,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_cloudflare_documentation"
+      "tool_name": "search"
     },
     {
       "id": "AS-014",
@@ -31,7 +49,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_cloudflare_documentation"
+      "tool_name": "search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "execute"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "execute"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "execute"
     },
     {
       "id": "AS-014",
@@ -39,36 +81,57 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "migrate_pages_to_workers_guide"
+      "tool_name": "execute"
     }
   ],
   "summary": {
-    "critical": 0,
-    "high": 0,
+    "critical": 1,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 3
+    "low": 2,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "migrate_pages_to_workers_guide",
-    "search_cloudflare_documentation"
+    "execute",
+    "search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_cloudflare_documentation",
+      "tool_name": "search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Object.entries",
+        "hardcoded domain: method.toUpperCase",
+        "hardcoded domain: op.summary",
+        "hardcoded domain: op.tags",
+        "hardcoded domain: results.push",
+        "hardcoded domain: spec.paths",
+        "hardcoded domain: t.toLowerCase"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "migrate_pages_to_workers_guide",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "execute",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (account_id)",
+        "hardcoded domain: Date.now",
+        "hardcoded domain: JSON.stringify",
+        "hardcoded domain: cloudflare.request",
+        "hardcoded domain: e.respondWith"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -418,6 +481,12 @@
     },
     {
       "scan_date": "2026-08-17T01:01:48Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-08-18T00:58:45Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"
