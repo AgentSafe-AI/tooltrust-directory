@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [etweisberg-mlb-mcp](https://smithery.ai/server/etweisberg/mlb-mcp) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

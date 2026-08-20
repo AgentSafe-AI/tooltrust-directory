@@ -1,120 +1,52 @@
 {
   "tool_id": "mcp-agent",
   "version": "0.2.6",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-08-19T00:50:02.39442404Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-20T00:50:25Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/lastmile-ai/mcp-agent",
   "category": "Developer Tools",
   "vendor": "lastmile-ai",
-  "stars": 8511,
+  "stars": 8512,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Build effective agents using Model Context Protocol and simple workflow patterns",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.2.6: 4 tool(s) added, 11 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "get_agent",
-          "list_agents",
-          "list_categories",
-          "search_agents"
-        ],
-        "removed": [
-          "agent_company_diagnostic",
-          "create_formation_request",
-          "create_standalone_company",
-          "get_compliance_calendar",
-          "get_documents",
-          "get_formation_requirements",
-          "get_formation_status",
-          "order_annual_report",
-          "recommend_structure",
-          "request_amendment",
-          "reserve_company_name"
-        ],
-        "version": "0.2.6"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 13,
+            "file": "src/mcp_agent/data/templates/basic_agent_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 30,
+            "snippet": "FastMCP(",
+            "file": "src/mcp_agent/data/templates/basic_agent_server.py",
+            "language": "python"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_agents"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_agents"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_agents"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_agent"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_agent"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_agent"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_agents"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_categories"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
-    "low": 2,
-    "info": 6
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -129,48 +61,6 @@
       "snippet": "FastMCP(",
       "file": "src/mcp_agent/data/templates/basic_agent_server.py",
       "language": "python"
-    }
-  ],
-  "tool_names": [
-    "get_agent",
-    "list_agents",
-    "list_categories",
-    "search_agents"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "search_agents",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_agent",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_agents",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_categories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -202,6 +92,12 @@
       "scan_date": "2026-08-18T00:49:10Z",
       "grade": "A",
       "risk_score": 4,
+      "version": "0.2.6"
+    },
+    {
+      "scan_date": "2026-08-19T00:50:02Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.2.6"
     }
   ]

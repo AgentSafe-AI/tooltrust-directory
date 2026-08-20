@@ -3,16 +3,30 @@
   "version": "1.9.0",
   "grade": "C",
   "risk_score": 42,
-  "scan_date": "2026-08-18T00:48:29.82196825Z",
+  "scan_date": "2026-08-20T00:49:46.195835729Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/googleapis/mcp-toolbox",
   "category": "Developer Tools",
   "vendor": "googleapis",
-  "stars": 16185,
+  "stars": 16204,
   "license": "Apache-2.0",
   "language": "Go",
   "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.9.0: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "metamorphic_check"
+        ],
+        "removed": null,
+        "version": "1.9.0"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -329,7 +343,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_llm_cost"
     },
@@ -337,7 +351,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"input_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "estimate_llm_cost"
     },
@@ -857,6 +871,14 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
+      "description": "input parameter \"expected_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "token_budget_calculator"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
       "description": "input parameter \"context_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_budget_calculator"
@@ -874,14 +896,6 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"system_prompt_tokens\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "token_budget_calculator"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"expected_output_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "token_budget_calculator"
     },
@@ -2094,6 +2108,22 @@
       "tool_name": "run_semantic_tests"
     },
     {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "metamorphic_check"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "metamorphic_check"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -2369,7 +2399,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "jira_to_test_suite"
     },
@@ -2377,7 +2407,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "jira_to_test_suite"
     },
@@ -2472,10 +2502,10 @@
   ],
   "summary": {
     "critical": 9,
-    "high": 2,
+    "high": 3,
     "medium": 0,
     "low": 47,
-    "info": 249
+    "info": 251
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -2567,6 +2597,7 @@
     "mcp_server_evaluate",
     "mcp_server_health_check",
     "merge_json",
+    "metamorphic_check",
     "minify_js",
     "mock_from_schema",
     "model_info",
@@ -3925,6 +3956,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "metamorphic_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "get_testing_guidelines",
       "action": "REQUIRE_APPROVAL",
       "grade": "C",
@@ -4405,6 +4443,12 @@
     },
     {
       "scan_date": "2026-08-17T00:51:32Z",
+      "grade": "C",
+      "risk_score": 42,
+      "version": "1.9.0"
+    },
+    {
+      "scan_date": "2026-08-18T00:48:29Z",
       "grade": "C",
       "risk_score": 42,
       "version": "1.9.0"

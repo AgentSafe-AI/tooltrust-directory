@@ -15,7 +15,7 @@ Returns: {email, confidence, pattern, mx_valid}. No API key required — x402 mi
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-email-finder](https://smithery.ai/server/axel-belfort/email-finder) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

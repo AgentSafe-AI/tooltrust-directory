@@ -1,0 +1,125 @@
+{
+  "tool_id": "northcinder",
+  "version": "0.1.2",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-20T00:53:46Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/cinderline/northcinder",
+  "category": "Developer Tools",
+  "vendor": "cinderline",
+  "stars": 1193,
+  "npm_package": "northcinder-monorepo",
+  "license": "MIT",
+  "language": "JavaScript",
+  "description": "Buyer-run, ad-neutral shopping-agent MCP software with deterministic ranking, signed purchase mandates, and a local audit trail.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 23,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "client/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 262,
+            "snippet": "new McpServer(",
+            "file": "client/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 508,
+            "snippet": ".registerTool(",
+            "file": "client/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 33,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "remote/src/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 124,
+            "snippet": "new McpServer(",
+            "file": "remote/src/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 127,
+            "snippet": ".registerTool(",
+            "file": "remote/src/mcp-server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 23,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "client/src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 262,
+      "snippet": "new McpServer(",
+      "file": "client/src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 508,
+      "snippet": ".registerTool(",
+      "file": "client/src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 33,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "remote/src/mcp-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 124,
+      "snippet": "new McpServer(",
+      "file": "remote/src/mcp-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 127,
+      "snippet": ".registerTool(",
+      "file": "remote/src/mcp-server.ts",
+      "language": "typescript"
+    }
+  ]
+}

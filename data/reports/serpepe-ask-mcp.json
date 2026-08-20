@@ -1,33 +1,50 @@
 {
   "tool_id": "serpepe-ask-mcp",
   "version": "1.1.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-04-04T22:59:33.681855641Z",
-  "scanner": "tooltrust-scanner/v0.3.6",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-20T00:59:50.340420978Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/SerPepe/Ask-MCP",
   "category": "Developer Tools",
   "vendor": "SerPepe",
   "npm_package": "ask-mcp",
+  "npm_downloads_monthly": 61,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A powerful MCP server providing access to multiple AI models (Grok, Gemini, Kimi, Qwen, GLM) through OpenRouter. Perfect for Cursor, Claude Desktop, and other MCP clients.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "audiences.create"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.1.0: 3 tool(s) added, 7 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "estimate_pricing",
+          "query_docs_filesystem_my_ask_ai",
+          "search_my_ask_ai"
+        ],
+        "removed": [
+          "audiences.ask",
+          "audiences.compare",
+          "audiences.create",
+          "audiences.export",
+          "digital_humans.ask",
+          "digital_humans.search",
+          "usage.get"
+        ],
+        "version": "1.1.0"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares exec permission",
+      "description": "declared capabilities: network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "audiences.create"
+      "tool_name": "search_my_ask_ai"
     },
     {
       "id": "AS-011",
@@ -35,7 +52,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "audiences.create"
+      "tool_name": "search_my_ask_ai"
     },
     {
       "id": "AS-014",
@@ -43,47 +60,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "audiences.create"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "audiences.ask"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "audiences.compare"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "audiences.export"
+      "tool_name": "search_my_ask_ai"
     },
     {
       "id": "AS-002",
-      "severity": "High",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares network permission",
+      "description": "declared capabilities: code/command execution, network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "digital_humans.search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Medium",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares db permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "digital_humans.search"
+      "tool_name": "query_docs_filesystem_my_ask_ai"
     },
     {
       "id": "AS-011",
@@ -91,7 +76,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "digital_humans.search"
+      "tool_name": "query_docs_filesystem_my_ask_ai"
     },
     {
       "id": "AS-014",
@@ -99,7 +84,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "digital_humans.search"
+      "tool_name": "query_docs_filesystem_my_ask_ai"
     },
     {
       "id": "AS-014",
@@ -107,104 +92,53 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "digital_humans.ask"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "usage.get"
+      "tool_name": "estimate_pricing"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 2,
-    "medium": 2,
+    "high": 1,
+    "medium": 0,
     "low": 2,
-    "info": 7
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "audiences.ask",
-    "audiences.compare",
-    "audiences.create",
-    "audiences.export",
-    "digital_humans.ask",
-    "digital_humans.search",
-    "usage.get"
+    "estimate_pricing",
+    "query_docs_filesystem_my_ask_ai",
+    "search_my_ask_ai"
   ],
   "tool_contexts": [
     {
-      "tool_name": "audiences.create",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
+      "tool_name": "search_my_ask_ai",
+      "action": "ALLOW",
+      "grade": "A",
       "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: audiences.create"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "audiences.ask",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: audiences.ask",
-        "hardcoded domain: audiences.create"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "audiences.compare",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: audiences.compare"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "audiences.export",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: audiences.export"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "digital_humans.search",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "digital_humans.ask",
+      "tool_name": "query_docs_filesystem_my_ask_ai",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: index.mdx"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "usage.get",
+      "tool_name": "estimate_pricing",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: usage.get"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -218,6 +152,12 @@
     },
     {
       "scan_date": "2026-04-04T16:48:48Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-04-04T22:59:33Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.1.0"

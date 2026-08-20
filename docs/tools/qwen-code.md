@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `weaken-tool-error-shots` |
 | **Vendor** | QwenLM |
-| **Stars** | ⭐ 27164 |
+| **Stars** | ⭐ 27200 |
 | **npm Package** | `@qwen-code/qwen-code` |
-| **npm Downloads (30d)** | 293.4k |
+| **npm Downloads (30d)** | 290.4k |
 | **Language** | TypeScript |
 | **Source** | [qwen-code](https://github.com/QwenLM/qwen-code) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

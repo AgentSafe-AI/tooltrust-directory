@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.14.0` |
+| **Version** | `1.14.1` |
 | **Vendor** | themotionmachine |
 | **Stars** | ⭐ 234 |
 | **npm Package** | `omnifocus-mcp` |
-| **npm Downloads (30d)** | 2.7k |
+| **npm Downloads (30d)** | 4.1k |
 | **Language** | TypeScript |
 | **Source** | [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | mongodb-js |
 | **Stars** | ⭐ 1102 |
 | **npm Package** | `mongodb-mcp-server` |
-| **npm Downloads (30d)** | 436.4k |
+| **npm Downloads (30d)** | 446.2k |
 | **Language** | TypeScript |
 | **Source** | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

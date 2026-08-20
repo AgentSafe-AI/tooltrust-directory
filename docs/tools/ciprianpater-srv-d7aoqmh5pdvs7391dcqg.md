@@ -180,7 +180,7 @@ Validate ECG biometric data from smartwatches to authenticate human identities, 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ciprianpater-srv-d7aoqmh5pdvs7391dcqg](https://smithery.ai/server/ciprianpater/srv-d7aoqmh5pdvs7391dcqg) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -1402,7 +1402,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "credential_type" accepts a credential (informational; not evidence of insecure handling)
+input parameter "root_token_id" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -1414,7 +1414,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "root_token_id" accepts a credential (informational; not evidence of insecure handling)
+input parameter "credential_type" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

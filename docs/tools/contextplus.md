@@ -10,10 +10,10 @@
 | **Vendor** | forloopcodes |
 | **Stars** | ⭐ 1972 |
 | **npm Package** | `contextplus` |
-| **npm Downloads (30d)** | 5.8k |
+| **npm Downloads (30d)** | 6.3k |
 | **Language** | TypeScript |
 | **Source** | [contextplus](https://github.com/forloopcodes/contextplus) |
-| **Scan Date** | 2026-08-19 |
+| **Scan Date** | 2026-08-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
