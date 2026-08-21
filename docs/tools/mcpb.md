@@ -10,10 +10,10 @@
 | **Vendor** | modelcontextprotocol |
 | **Stars** | ⭐ 2083 |
 | **npm Package** | `@anthropic-ai/mcpb` |
-| **npm Downloads (30d)** | 242.4k |
+| **npm Downloads (30d)** | 244.1k |
 | **Language** | TypeScript |
 | **Source** | [mcpb](https://github.com/modelcontextprotocol/mcpb) |
-| **Scan Date** | 2026-08-20 |
+| **Scan Date** | 2026-08-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

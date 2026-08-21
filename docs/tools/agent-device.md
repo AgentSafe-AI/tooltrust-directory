@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `0.20.10` |
 | **Vendor** | callstack |
-| **Stars** | ⭐ 4136 |
+| **Stars** | ⭐ 4148 |
 | **npm Package** | `agent-device` |
 | **npm Downloads (30d)** | 590.9k |
 | **Language** | TypeScript |
 | **Source** | [agent-device](https://github.com/callstack/agent-device) |
-| **Scan Date** | 2026-08-20 |
+| **Scan Date** | 2026-08-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

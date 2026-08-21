@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.7.1` |
 | **Vendor** | ivnvxd |
-| **Stars** | ⭐ 371 |
+| **Stars** | ⭐ 372 |
 | **Language** | Python |
 | **Source** | [mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo) |
-| **Scan Date** | 2026-08-18 |
+| **Scan Date** | 2026-08-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

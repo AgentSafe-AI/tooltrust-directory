@@ -1,0 +1,80 @@
+{
+  "tool_id": "qwenpaw",
+  "version": "2.1.1-beta.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-21T00:53:02Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/agentscope-ai/QwenPaw",
+  "category": "Developer Tools",
+  "vendor": "agentscope-ai",
+  "stars": 34222,
+  "license": "Apache-2.0",
+  "language": "Python",
+  "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 15,
+            "file": "packages/qwenpawmail-mcp/src/qwenpawmail_mcp/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 226,
+            "snippet": "FastMCP(",
+            "file": "packages/qwenpawmail-mcp/src/qwenpawmail_mcp/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 255,
+            "snippet": "@mcp.tool(",
+            "file": "packages/qwenpawmail-mcp/src/qwenpawmail_mcp/server.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 15,
+      "file": "packages/qwenpawmail-mcp/src/qwenpawmail_mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 226,
+      "snippet": "FastMCP(",
+      "file": "packages/qwenpawmail-mcp/src/qwenpawmail_mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 255,
+      "snippet": "@mcp.tool(",
+      "file": "packages/qwenpawmail-mcp/src/qwenpawmail_mcp/server.py",
+      "language": "python"
+    }
+  ]
+}

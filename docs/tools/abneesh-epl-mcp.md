@@ -18,7 +18,7 @@ This server provides AI coding assistants with direct access to the EPL runtime,
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [abneesh-epl-mcp](https://smithery.ai/server/abneesh/epl-mcp) |
-| **Scan Date** | 2026-08-20 |
+| **Scan Date** | 2026-08-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
