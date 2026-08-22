@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 19.4k |
 | **Language** | TypeScript |
 | **Source** | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) |
-| **Scan Date** | 2026-08-21 |
+| **Scan Date** | 2026-08-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

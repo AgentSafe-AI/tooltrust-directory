@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [philpof102-mainstreet](https://smithery.ai/server/philpof102/mainstreet) |
-| **Scan Date** | 2026-08-21 |
+| **Scan Date** | 2026-08-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

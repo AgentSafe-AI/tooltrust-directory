@@ -15,7 +15,7 @@ Returns: {valid, explanation, nextRuns[]}. No API key required — x402 micropay
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-cron-parser](https://smithery.ai/server/axel-belfort/cron-parser) |
-| **Scan Date** | 2026-08-21 |
+| **Scan Date** | 2026-08-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

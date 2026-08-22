@@ -1,14 +1,14 @@
 {
   "tool_id": "davinci-resolve-mcp",
-  "version": "2.98.3",
+  "version": "2.98.7",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-08-21T00:56:45.231002513Z",
+  "scan_date": "2026-08-22T00:53:04.558575233Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/samuelgursky/davinci-resolve-mcp",
   "category": "Developer Tools",
   "vendor": "samuelgursky",
-  "stars": 2215,
+  "stars": 2233,
   "npm_package": "davinci-resolve-mcp",
   "npm_downloads_monthly": 23779,
   "license": "MIT",
@@ -21,7 +21,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "event_resolve_outcome"
+      "tool_name": "compatibility_lookup"
     },
     {
       "id": "AS-014",
@@ -29,23 +29,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "event_verify_claim"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "event_check_price_threshold"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "event_check_price_threshold"
+      "tool_name": "compatibility_changes"
     }
   ],
   "summary": {
@@ -53,7 +37,7 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -94,29 +78,27 @@
     }
   ],
   "tool_names": [
-    "event_check_price_threshold",
-    "event_resolve_outcome",
-    "event_verify_claim"
+    "compatibility_changes",
+    "compatibility_lookup"
   ],
   "tool_contexts": [
     {
-      "tool_name": "event_resolve_outcome",
+      "tool_name": "compatibility_lookup",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "event_verify_claim",
+      "tool_name": "compatibility_changes",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "event_check_price_threshold",
-      "action": "ALLOW",
-      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -127,6 +109,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "2.98.2"
+    },
+    {
+      "scan_date": "2026-08-21T00:56:45Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "2.98.3"
     }
   ]
 }
