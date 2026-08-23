@@ -10,10 +10,10 @@
 | **Vendor** | louislva |
 | **Stars** | ⭐ 2198 |
 | **npm Package** | `claude-peers` |
-| **npm Downloads (30d)** | 114 |
+| **npm Downloads (30d)** | 117 |
 | **Language** | TypeScript |
 | **Source** | [claude-peers-mcp](https://github.com/louislva/claude-peers-mcp) |
-| **Scan Date** | 2026-08-22 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

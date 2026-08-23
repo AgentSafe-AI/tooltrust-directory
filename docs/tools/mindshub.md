@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `26.1.0` |
 | **Vendor** | mindsdb |
-| **Stars** | ⭐ 39624 |
+| **Stars** | ⭐ 39634 |
 | **Language** | Makefile |
 | **Source** | [mindshub](https://github.com/mindsdb/mindshub) |
-| **Scan Date** | 2026-08-22 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

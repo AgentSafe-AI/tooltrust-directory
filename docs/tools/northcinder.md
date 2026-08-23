@@ -1,18 +1,18 @@
 # 🟢 northcinder
 
-> Buyer-run, ad-neutral shopping-agent MCP software with deterministic ranking, signed purchase mandates, and a local audit trail.
+> Open-source MCP server for comparing products and asking the buyer before purchase.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.1.2` |
+| **Version** | `0.2.1` |
 | **Vendor** | cinderline |
-| **Stars** | ⭐ 1203 |
+| **Stars** | ⭐ 1205 |
 | **npm Package** | `northcinder-monorepo` |
 | **Language** | JavaScript |
 | **Source** | [northcinder](https://github.com/cinderline/northcinder) |
-| **Scan Date** | 2026-08-22 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

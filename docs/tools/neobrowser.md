@@ -10,10 +10,10 @@
 | **Vendor** | pitiflautico |
 | **Stars** | ⭐ 93 |
 | **npm Package** | `neobrowser` |
-| **npm Downloads (30d)** | 65 |
+| **npm Downloads (30d)** | 71 |
 | **Language** | Rust |
 | **Source** | [neobrowser](https://github.com/pitiflautico/neobrowser) |
-| **Scan Date** | 2026-08-22 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

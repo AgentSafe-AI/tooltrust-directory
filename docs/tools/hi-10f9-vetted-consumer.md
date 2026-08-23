@@ -13,7 +13,7 @@ Works with Claude, Cursor, Cline, and any MCP client.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hi-10f9-vetted-consumer](https://smithery.ai/server/hi-10f9/vetted-consumer) |
-| **Scan Date** | 2026-08-22 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

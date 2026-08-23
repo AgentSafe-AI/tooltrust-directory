@@ -15,7 +15,7 @@ Returns: {html, theme, wordCount}. No API key required — x402 micropayment $0.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-markdown-renderer](https://smithery.ai/server/axel-belfort/markdown-renderer) |
-| **Scan Date** | 2026-08-21 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

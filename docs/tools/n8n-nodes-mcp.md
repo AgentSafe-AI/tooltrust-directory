@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.37` |
 | **Vendor** | nerding-io |
-| **Stars** | ⭐ 3043 |
+| **Stars** | ⭐ 3042 |
 | **npm Package** | `n8n-nodes-mcp` |
-| **npm Downloads (30d)** | 133.5k |
+| **npm Downloads (30d)** | 132.4k |
 | **Language** | TypeScript |
 | **Source** | [n8n-nodes-mcp](https://github.com/nerding-io/n8n-nodes-mcp) |
-| **Scan Date** | 2026-08-21 |
+| **Scan Date** | 2026-08-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
