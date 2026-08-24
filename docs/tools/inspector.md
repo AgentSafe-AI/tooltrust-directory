@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2-alpha-15` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 10724 |
+| **Stars** | ⭐ 10733 |
 | **npm Package** | `@modelcontextprotocol/inspector` |
-| **npm Downloads (30d)** | 948.6k |
+| **npm Downloads (30d)** | 938.4k |
 | **Language** | TypeScript |
 | **Source** | [inspector](https://github.com/modelcontextprotocol/inspector) |
-| **Scan Date** | 2026-08-23 |
+| **Scan Date** | 2026-08-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

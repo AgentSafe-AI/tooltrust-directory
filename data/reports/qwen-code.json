@@ -1,20 +1,38 @@
 {
   "tool_id": "qwen-code",
   "version": "weaken-tool-error-shots",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-23T00:53:54.781436751Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-24T00:49:23.29644854Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/QwenLM/qwen-code",
   "category": "Developer Tools",
   "vendor": "QwenLM",
-  "stars": 27293,
+  "stars": 27322,
   "npm_package": "@qwen-code/qwen-code",
-  "npm_downloads_monthly": 273429,
+  "npm_downloads_monthly": 266130,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "An open-source AI coding agent that lives in your terminal.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vweaken-tool-error-shots: 5 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_session",
+          "get_window_state",
+          "list_sessions",
+          "perform_secondary_action",
+          "set_value"
+        ],
+        "removed": null,
+        "version": "weaken-tool-error-shots"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -117,7 +135,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_session"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_session_state"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_window_state"
     },
     {
       "id": "AS-014",
@@ -141,7 +175,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_sessions"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "move_cursor"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "perform_secondary_action"
     },
     {
       "id": "AS-014",
@@ -189,6 +239,14 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "set_value"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "set_window_frame"
     },
     {
@@ -218,10 +276,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 24
+    "info": 29
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -235,15 +293,20 @@
     "get_cursor_position",
     "get_desktop_state",
     "get_screen_size",
+    "get_session",
     "get_session_state",
+    "get_window_state",
     "hotkey",
     "invoke_menu",
+    "list_sessions",
     "move_cursor",
+    "perform_secondary_action",
     "press_key",
     "scroll",
     "set_agent_cursor_enabled",
     "set_agent_cursor_motion",
     "set_agent_cursor_theme",
+    "set_value",
     "set_window_frame",
     "start_session",
     "type_text",
@@ -325,7 +388,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "get_session",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "get_session_state",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_window_state",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -346,7 +423,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "list_sessions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "move_cursor",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "perform_secondary_action",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -382,6 +473,13 @@
     },
     {
       "tool_name": "set_agent_cursor_theme",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "set_value",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -515,6 +613,12 @@
     },
     {
       "scan_date": "2026-08-22T00:49:36Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "weaken-tool-error-shots"
+    },
+    {
+      "scan_date": "2026-08-23T00:53:54Z",
       "grade": "A",
       "risk_score": 2,
       "version": "weaken-tool-error-shots"

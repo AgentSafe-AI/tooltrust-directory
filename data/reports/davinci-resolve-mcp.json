@@ -1,64 +1,27 @@
 {
   "tool_id": "davinci-resolve-mcp",
-  "version": "2.99.3",
-  "grade": "I",
+  "version": "2.103.1",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-08-23T00:57:25Z",
+  "scan_date": "2026-08-24T00:52:03.807163163Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/samuelgursky/davinci-resolve-mcp",
   "category": "Developer Tools",
   "vendor": "samuelgursky",
-  "stars": 2249,
+  "stars": 2263,
   "npm_package": "davinci-resolve-mcp",
-  "npm_downloads_monthly": 24686,
+  "npm_downloads_monthly": 25696,
   "license": "MIT",
   "language": "Python",
   "description": "MCP server integration for DaVinci Resolve Studio",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 25,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 79,
-            "snippet": "new McpServer(",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 82,
-            "snippet": ".registerTool(",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 19,
-            "file": "src/granular/common.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 97,
-            "snippet": "FastMCP(",
-            "file": "src/granular/common.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "resolve"
     }
   ],
   "summary": {
@@ -69,7 +32,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -107,24 +69,16 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "resolve"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-08-20T00:52:52Z",
+      "tool_name": "resolve",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "2.98.2"
-    },
-    {
-      "scan_date": "2026-08-21T00:56:45Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.98.3"
-    },
-    {
-      "scan_date": "2026-08-22T00:53:04Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.98.7"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

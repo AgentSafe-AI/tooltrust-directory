@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-language-server",
   "version": "0.1.1",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-08-23T00:57:53.797507346Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-24T00:52:36.787364638Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/isaacphi/mcp-language-server",
   "category": "Developer Tools",
@@ -14,17 +14,33 @@
   "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.1: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "text_detect_language"
+        ],
+        "removed": [
+          "text_translate"
+        ],
+        "version": "0.1.1"
+      }
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "text_translate"
+      "tool_name": "text_detect_language"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
     "info": 1
@@ -48,18 +64,26 @@
     }
   ],
   "tool_names": [
-    "text_translate"
+    "text_detect_language"
   ],
   "tool_contexts": [
     {
-      "tool_name": "text_translate",
+      "tool_name": "text_detect_language",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to)"
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-08-23T00:57:53Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.1"
     }
   ]
 }

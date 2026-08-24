@@ -1,102 +1,89 @@
 {
   "tool_id": "holaos",
   "version": "latest",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-08-23T00:54:52.919036443Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-08-24T00:50:07Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/holaboss-ai/holaOS",
   "category": "Developer Tools",
   "vendor": "holaboss-ai",
-  "stars": 10652,
+  "stars": 10718,
   "npm_package": "hola-boss-oss",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Open-source agentic workspace enterprises can make their own. Connect the systems you already run — 100+ integrations, MCP, chat tools, apps, browser, local files — with shared memory. Any agent (Claude Code, Codex), any model, or BYOK. Set up in clicks, not months. Local-first: your data never leaves your machines.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vlatest: 4 tool(s) added, 8 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
-        "added": [
-          "memoryoss_forget",
-          "memoryoss_recall",
-          "memoryoss_store",
-          "memoryoss_update"
-        ],
-        "removed": [
-          "create_order",
-          "get_blog_post",
-          "get_categories",
-          "get_product",
-          "get_shipping_info",
-          "get_store_info",
-          "search_blog",
-          "search_products"
-        ],
-        "version": "latest"
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 20,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/app-builder-sdk/src/runtime/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 64,
+            "snippet": "new McpServer(",
+            "file": "packages/app-builder-sdk/src/runtime/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 2,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/remote-api/src/mcp/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 32,
+            "snippet": "new McpServer(",
+            "file": "packages/remote-api/src/mcp/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 37,
+            "snippet": ".registerTool(",
+            "file": "packages/remote-api/src/mcp/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 20,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 64,
+            "snippet": "new McpServer(",
+            "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
+            "language": "typescript"
+          }
+        ]
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "memoryoss_recall"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "memoryoss_recall"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "memoryoss_store"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "memoryoss_update"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "memoryoss_update"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "memoryoss_forget"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 6
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -149,42 +136,6 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "memoryoss_forget",
-    "memoryoss_recall",
-    "memoryoss_store",
-    "memoryoss_update"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "memoryoss_recall",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "memoryoss_store",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "memoryoss_update",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "memoryoss_forget",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
   "scan_history": [
     {
       "scan_date": "2026-08-20T00:50:21Z",
@@ -200,6 +151,12 @@
     },
     {
       "scan_date": "2026-08-22T00:50:31Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "latest"
+    },
+    {
+      "scan_date": "2026-08-23T00:54:52Z",
       "grade": "B",
       "risk_score": 15,
       "version": "latest"
