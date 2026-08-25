@@ -1,19 +1,19 @@
-# 🟡 agentic-awesome-skills
+# 🟢 agentic-awesome-skills
 
 > AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,005+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
-| **Version** | `15.16.0` |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
+| **Version** | `16.0.0` |
 | **Vendor** | sickn33 |
-| **Stars** | ⭐ 45314 |
+| **Stars** | ⭐ 45346 |
 | **npm Package** | `agentic-awesome-skills` |
-| **npm Downloads (30d)** | 10.1k |
+| **npm Downloads (30d)** | 9.9k |
 | **Language** | Python |
 | **Source** | [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) |
-| **Scan Date** | 2026-08-24 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 6 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v15.16.0: 4 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

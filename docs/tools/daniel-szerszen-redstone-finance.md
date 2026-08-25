@@ -11,7 +11,7 @@ with $4.943B Total Value Secured.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [daniel-szerszen-redstone-finance](https://smithery.ai/server/daniel-szerszen/redstone-finance) |
-| **Scan Date** | 2026-08-24 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

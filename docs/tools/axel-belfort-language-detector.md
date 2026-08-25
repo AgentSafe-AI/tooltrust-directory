@@ -15,7 +15,7 @@ Returns: {language, script, confidence, alternatives[]}. No API key required —
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-language-detector](https://smithery.ai/server/axel-belfort/language-detector) |
-| **Scan Date** | 2026-08-24 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

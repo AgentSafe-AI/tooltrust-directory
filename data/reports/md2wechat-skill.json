@@ -1,43 +1,43 @@
 {
   "tool_id": "md2wechat-skill",
   "version": "3.2.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-21T00:55:53.508866148Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-25T00:53:01.044820155Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/geekjourneyx/md2wechat-skill",
   "category": "Developer Tools",
   "vendor": "geekjourneyx",
-  "stars": 3567,
+  "stars": 3586,
   "npm_package": "@geekjourneyx/md2wechat",
-  "npm_downloads_monthly": 1126,
+  "npm_downloads_monthly": 937,
   "license": "NOASSERTION",
   "language": "Go",
   "description": "Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布 、多账号管理",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scan_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "scan_url"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_url"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.2.0: 6 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "cron_explain",
+          "diff_texts",
+          "json_validate",
+          "lint_skill",
+          "packaging_check",
+          "regex_test"
+        ],
+        "removed": [
+          "gate_check",
+          "reputation_check",
+          "scan_github",
+          "scan_url"
+        ],
+        "version": "3.2.0"
+      }
     },
     {
       "id": "AS-002",
@@ -45,7 +45,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "scan_github"
+      "tool_name": "lint_skill"
     },
     {
       "id": "AS-014",
@@ -53,23 +53,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "scan_github"
+      "tool_name": "lint_skill"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "gate_check"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "gate_check"
+      "tool_name": "packaging_check"
     },
     {
       "id": "AS-014",
@@ -77,7 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "gate_check"
+      "tool_name": "packaging_check"
     },
     {
       "id": "AS-014",
@@ -85,64 +77,106 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reputation_check"
+      "tool_name": "regex_test"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "json_validate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "diff_texts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cron_explain"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 7
+    "low": 0,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "gate_check",
-    "reputation_check",
-    "scan_github",
-    "scan_url"
+    "cron_explain",
+    "diff_texts",
+    "json_validate",
+    "lint_skill",
+    "packaging_check",
+    "regex_test"
   ],
   "tool_contexts": [
     {
-      "tool_name": "scan_url",
+      "tool_name": "lint_skill",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "executes_commands",
+        "reads_files"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "hardcoded domain: SKILL.md"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "scan_github",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gate_check",
+      "tool_name": "packaging_check",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "reads_files"
       ],
       "destinations": [
-        "dynamic URL input (url)"
+        "hardcoded domain: SKILL.md",
+        "hardcoded domain: examples.md"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "reputation_check",
+      "tool_name": "regex_test",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "json_validate",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "diff_texts",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: example.com"
+        "hardcoded domain: SKILL.md"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "cron_explain",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -596,6 +630,12 @@
       "scan_date": "2026-08-20T00:51:56Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "3.2.0"
+    },
+    {
+      "scan_date": "2026-08-21T00:55:53Z",
+      "grade": "A",
+      "risk_score": 2,
       "version": "3.2.0"
     }
   ]

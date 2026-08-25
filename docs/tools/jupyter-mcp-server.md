@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `1.5.2` |
 | **Vendor** | datalayer |
-| **Stars** | ⭐ 1256 |
+| **Stars** | ⭐ 1257 |
 | **Language** | Python |
 | **Source** | [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) |
-| **Scan Date** | 2026-08-24 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

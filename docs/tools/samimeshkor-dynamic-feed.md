@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [samimeshkor-dynamic-feed](https://smithery.ai/server/samimeshkor/dynamic-feed) |
-| **Scan Date** | 2026-08-23 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

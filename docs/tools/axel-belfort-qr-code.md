@@ -15,7 +15,7 @@ Returns: {qrCode (base64 PNG), size}. No API key required — x402 micropayment 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-qr-code](https://smithery.ai/server/axel-belfort/qr-code) |
-| **Scan Date** | 2026-08-24 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

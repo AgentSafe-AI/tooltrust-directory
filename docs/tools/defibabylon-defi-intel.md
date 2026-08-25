@@ -1,4 +1,4 @@
-# 🟡 defibabylon-defi-intel
+# 🟢 defibabylon-defi-intel
 
 > Operator-grade DeFi intelligence MCP. 
 - 10 tools vs DefiLlama's basic 4,
@@ -13,12 +13,12 @@ Built for DeFi researchers, protocol contributors, and fund analysts.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [defibabylon-defi-intel](https://smithery.ai/server/defibabylon/defi-intel) |
-| **Scan Date** | 2026-08-23 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -28,24 +28,12 @@ Built for DeFi researchers, protocol contributors, and fund analysts.
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 12 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 10 tool(s) added, 16 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

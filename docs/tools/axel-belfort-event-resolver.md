@@ -15,7 +15,7 @@ Returns: {resolved, outcome, confidence, sources[]}. No API key required — x40
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-event-resolver](https://smithery.ai/server/axel-belfort/event-resolver) |
-| **Scan Date** | 2026-08-22 |
+| **Scan Date** | 2026-08-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
