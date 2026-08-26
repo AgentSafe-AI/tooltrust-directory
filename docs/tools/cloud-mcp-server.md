@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 185 |
 | **Language** | Python |
 | **Source** | [cloud-mcp-server](https://github.com/alexei-led/cloud-mcp-server) |
-| **Scan Date** | 2026-08-25 |
+| **Scan Date** | 2026-08-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

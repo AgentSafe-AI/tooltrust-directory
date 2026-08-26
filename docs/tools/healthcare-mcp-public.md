@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.1` |
 | **Vendor** | Cicatriiz |
-| **Stars** | ⭐ 126 |
+| **Stars** | ⭐ 127 |
 | **npm Package** | `healthcare-mcp` |
-| **npm Downloads (30d)** | 283 |
+| **npm Downloads (30d)** | 281 |
 | **Language** | JavaScript |
 | **Source** | [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) |
-| **Scan Date** | 2026-08-25 |
+| **Scan Date** | 2026-08-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

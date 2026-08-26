@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `3.7.0` |
 | **Vendor** | pitiflautico |
-| **Stars** | ⭐ 94 |
+| **Stars** | ⭐ 95 |
 | **npm Package** | `neobrowser` |
-| **npm Downloads (30d)** | 73 |
+| **npm Downloads (30d)** | 62 |
 | **Language** | Rust |
 | **Source** | [neobrowser](https://github.com/pitiflautico/neobrowser) |
-| **Scan Date** | 2026-08-25 |
+| **Scan Date** | 2026-08-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

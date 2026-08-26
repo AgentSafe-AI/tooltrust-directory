@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.10.2` |
 | **Vendor** | sigbit |
-| **Stars** | ⭐ 164 |
+| **Stars** | ⭐ 165 |
 | **Language** | Go |
 | **Source** | [mcp-auth-proxy](https://github.com/sigbit/mcp-auth-proxy) |
-| **Scan Date** | 2026-08-25 |
+| **Scan Date** | 2026-08-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,89 +1,108 @@
 {
   "tool_id": "holaos",
   "version": "latest",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-08-25T00:51:48Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-26T00:51:42.775928579Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/holaboss-ai/holaOS",
   "category": "Developer Tools",
   "vendor": "holaboss-ai",
-  "stars": 10754,
+  "stars": 10845,
   "npm_package": "hola-boss-oss",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Open-source agentic workspace enterprises can make their own. Connect the systems you already run — 100+ integrations, MCP, chat tools, apps, browser, local files — with shared memory. Any agent (Claude Code, Codex), any model, or BYOK. Set up in clicks, not months. Local-first: your data never leaves your machines.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 20,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "packages/app-builder-sdk/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 64,
-            "snippet": "new McpServer(",
-            "file": "packages/app-builder-sdk/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "packages/remote-api/src/mcp/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 32,
-            "snippet": "new McpServer(",
-            "file": "packages/remote-api/src/mcp/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 37,
-            "snippet": ".registerTool(",
-            "file": "packages/remote-api/src/mcp/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 20,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 64,
-            "snippet": "new McpServer(",
-            "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.system.healthz"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.system.info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.gems.sample"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ossgems.gems.list"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.gems.list"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ossgems.gems.list"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.gems.list"
+    },
+    {
+      "id": "AS-013",
+      "severity": "High",
+      "title": "Tool Shadowing",
+      "description": "tool name \"ossgems.gems.list\" duplicates \"ossgems.gems.list\" already registered in this tool set — a malicious server can shadow a trusted tool by registering an identical name",
+      "recommendation": "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
+      "tool_name": "ossgems.gems.list"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.gems.trending"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems.gems.dump"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -134,6 +153,87 @@
       "snippet": "new McpServer(",
       "file": "runtime/harnesses/src/embedded-skills/app-builder-sdk/sdk-package/src/runtime/mcp-server.ts",
       "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "ossgems.gems.dump",
+    "ossgems.gems.list",
+    "ossgems.gems.list",
+    "ossgems.gems.sample",
+    "ossgems.gems.trending",
+    "ossgems.system.healthz",
+    "ossgems.system.info"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "ossgems.system.healthz",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ossgems.system.healthz"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ossgems.system.info",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ossgems.system.info"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ossgems.gems.sample",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ossgems.gems.sample"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ossgems.gems.list",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ossgems.gems.list"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ossgems.gems.list",
+      "action": "ALLOW",
+      "grade": "B",
+      "destinations": [
+        "hardcoded domain: ossgems.gems.list"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ossgems.gems.trending",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ossgems.gems.trending"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "ossgems.gems.dump",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: ossgems.gems.dump"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

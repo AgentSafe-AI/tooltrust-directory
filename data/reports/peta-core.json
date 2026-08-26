@@ -1,9 +1,9 @@
 {
   "tool_id": "peta-core",
   "version": "1.2.2",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-25T00:57:00.779171492Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-26T00:56:32.25767248Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/dunialabs/peta-core",
   "category": "Developer Tools",
@@ -15,20 +15,71 @@
   "description": "The Control Plane for MCP — secure vault, managed runtime, audit trail, and policy-based approvals.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.2.2: 9 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "compliance.edd.report",
+          "compliance.exposure.forecast",
+          "compliance.queue.optimize",
+          "report.docx.generate",
+          "report.pdf.generate",
+          "server.capabilities",
+          "wallet.ofac.batch",
+          "wallet.ofac.report",
+          "wallet.ofac.screen"
+        ],
+        "removed": [
+          "add_subtask",
+          "create_task",
+          "list_tasks",
+          "update_task"
+        ],
+        "version": "1.2.2"
+      }
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_tasks"
+      "tool_name": "server.capabilities"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wallet.ofac.report"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wallet.ofac.screen"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "wallet.ofac.batch"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_task"
+      "tool_name": "compliance.edd.report"
     },
     {
       "id": "AS-011",
@@ -36,7 +87,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "create_task"
+      "tool_name": "compliance.edd.report"
     },
     {
       "id": "AS-014",
@@ -44,7 +95,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_task"
+      "tool_name": "compliance.edd.report"
     },
     {
       "id": "AS-014",
@@ -52,15 +103,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "add_subtask"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "update_task"
+      "tool_name": "compliance.exposure.forecast"
     },
     {
       "id": "AS-014",
@@ -68,15 +111,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "update_task"
+      "tool_name": "compliance.queue.optimize"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "report.pdf.generate"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "report.docx.generate"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 6
+    "info": 10
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -111,43 +170,118 @@
     }
   ],
   "tool_names": [
-    "add_subtask",
-    "create_task",
-    "list_tasks",
-    "update_task"
+    "compliance.edd.report",
+    "compliance.exposure.forecast",
+    "compliance.queue.optimize",
+    "report.docx.generate",
+    "report.pdf.generate",
+    "server.capabilities",
+    "wallet.ofac.batch",
+    "wallet.ofac.report",
+    "wallet.ofac.screen"
   ],
   "tool_contexts": [
     {
-      "tool_name": "list_tasks",
+      "tool_name": "server.capabilities",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_task",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
+      "destinations": [
+        "hardcoded domain: server.capabilities"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "add_subtask",
+      "tool_name": "wallet.ofac.report",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: wallet.ofac.report"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "update_task",
+      "tool_name": "wallet.ofac.screen",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: wallet.ofac.screen"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "wallet.ofac.batch",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: wallet.ofac.batch"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compliance.edd.report",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (jurisdiction)",
+        "hardcoded domain: compliance.edd.report"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compliance.exposure.forecast",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: compliance.exposure.forecast"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compliance.queue.optimize",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: compliance.queue.optimize"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "report.pdf.generate",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: report.pdf.generate"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "report.docx.generate",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: report.docx.generate"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-08-25T00:57:00Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.2.2"
     }
   ]
 }

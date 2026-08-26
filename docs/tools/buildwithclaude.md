@@ -8,11 +8,11 @@
 | **Risk Score** | 4 |
 | **Version** | `1.1.0` |
 | **Vendor** | davepoon |
-| **Stars** | ⭐ 3341 |
+| **Stars** | ⭐ 3358 |
 | **npm Package** | `claude-code-subagents-collection` |
 | **Language** | Python |
 | **Source** | [buildwithclaude](https://github.com/davepoon/buildwithclaude) |
-| **Scan Date** | 2026-08-25 |
+| **Scan Date** | 2026-08-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

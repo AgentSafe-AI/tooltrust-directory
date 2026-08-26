@@ -3,14 +3,14 @@
   "version": "2.0.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-25T00:55:01.364910593Z",
+  "scan_date": "2026-08-26T00:54:38.412114641Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/suekou/mcp-notion-server",
   "category": "Developer Tools",
   "vendor": "suekou",
   "stars": 920,
   "npm_package": "@suekou/mcp-notion-server",
-  "npm_downloads_monthly": 8274,
+  "npm_downloads_monthly": 8986,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol server for connecting Notion to MCP-compatible clients",
@@ -19,23 +19,23 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.0.2: 5 tool(s) added, 6 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.0.2: 6 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "fetch",
-          "notion-get-self",
-          "notion-get-user",
-          "notion-update-database",
-          "search"
-        ],
-        "removed": [
           "notion-create-view",
           "notion-fetch",
           "notion-get-teams",
           "notion-search",
           "notion-update-data-source",
           "notion-update-view"
+        ],
+        "removed": [
+          "fetch",
+          "notion-get-self",
+          "notion-get-user",
+          "notion-update-database",
+          "search"
         ],
         "version": "2.0.2"
       }
@@ -46,7 +46,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search"
+      "tool_name": "notion-search"
     },
     {
       "id": "AS-011",
@@ -54,7 +54,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search"
+      "tool_name": "notion-search"
     },
     {
       "id": "AS-014",
@@ -62,15 +62,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search"
+      "tool_name": "notion-search"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch"
+      "tool_name": "notion-fetch"
     },
     {
       "id": "AS-011",
@@ -78,7 +78,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch"
+      "tool_name": "notion-fetch"
     },
     {
       "id": "AS-014",
@@ -86,7 +86,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch"
+      "tool_name": "notion-fetch"
     },
     {
       "id": "AS-002",
@@ -116,7 +116,15 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-update-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "notion-update-page"
     },
@@ -206,7 +214,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: code/command execution, network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "notion-update-database"
+      "tool_name": "notion-update-data-source"
     },
     {
       "id": "AS-011",
@@ -214,7 +222,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "notion-update-database"
+      "tool_name": "notion-update-data-source"
     },
     {
       "id": "AS-014",
@@ -222,7 +230,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "notion-update-database"
+      "tool_name": "notion-update-data-source"
     },
     {
       "id": "AS-002",
@@ -239,6 +247,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "notion-create-comment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-get-comments"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-get-comments"
     },
     {
       "id": "AS-014",
@@ -249,11 +273,35 @@
       "tool_name": "notion-get-comments"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-get-teams"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-get-teams"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-get-users"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "notion-get-users"
     },
     {
@@ -262,15 +310,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "notion-get-self"
+      "tool_name": "notion-get-users"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "notion-get-user"
+      "tool_name": "notion-create-view"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-create-view"
     },
     {
       "id": "AS-014",
@@ -278,15 +334,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "notion-get-user"
+      "tool_name": "notion-create-view"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "notion-update-view"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "notion-update-view"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "notion-update-view"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 7,
-    "info": 23
+    "low": 12,
+    "info": 28
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -314,42 +394,24 @@
     }
   ],
   "tool_names": [
-    "fetch",
     "notion-create-comment",
     "notion-create-database",
     "notion-create-pages",
+    "notion-create-view",
     "notion-duplicate-page",
+    "notion-fetch",
     "notion-get-comments",
-    "notion-get-self",
-    "notion-get-user",
+    "notion-get-teams",
     "notion-get-users",
     "notion-move-pages",
-    "notion-update-database",
+    "notion-search",
+    "notion-update-data-source",
     "notion-update-page",
-    "search"
+    "notion-update-view"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (data_source_url)",
-        "dynamic URL input (page_url)",
-        "hardcoded domain: design.company.com",
-        "hardcoded domain: example.com",
-        "hardcoded domain: notion.so",
-        "hardcoded domain: www.notion.so",
-        "hardcoded email recipient: john@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "fetch",
+      "tool_name": "notion-search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -357,8 +419,27 @@
         "uses_network"
       ],
       "destinations": [
+        "dynamic URL input (data_source_url)",
+        "dynamic URL input (page_url)",
+        "hardcoded domain: example.com",
         "hardcoded domain: notion.so",
-        "hardcoded domain: www.notion.so"
+        "hardcoded email recipient: john@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-fetch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: myspace.notion.site",
+        "hardcoded domain: notion.site",
+        "hardcoded domain: notion.so"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -373,9 +454,8 @@
         "writes_files"
       ],
       "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded domain: example.com]",
-        "hardcoded domain: example.com].\\nColors:\\n\\u003cspan"
+        "hardcoded domain: cover.jpg",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -388,6 +468,10 @@
         "executes_commands",
         "uses_network",
         "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: cover.jpg",
+        "hardcoded domain: example.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -422,7 +506,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "notion-update-database",
+      "tool_name": "notion-update-data-source",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -438,6 +522,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "writes_files"
       ],
       "dependency_visibility": "No dependency data",
@@ -447,6 +532,16 @@
       "tool_name": "notion-get-comments",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-get-teams",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -454,22 +549,32 @@
       "tool_name": "notion-get-users",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "notion-get-self",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-get-user",
+      "tool_name": "notion-create-view",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-update-view",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -588,6 +693,12 @@
       "scan_date": "2026-08-24T00:53:15Z",
       "grade": "A",
       "risk_score": 4,
+      "version": "2.0.2"
+    },
+    {
+      "scan_date": "2026-08-25T00:55:01Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "2.0.2"
     }
   ]

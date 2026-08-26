@@ -1,15 +1,15 @@
-# 🟡 predictionmarketspicks-quant
+# 🟢 predictionmarketspicks-quant
 
 > Institutional-grade quant toolkit for prediction-market trading on Kalshi and Polymarket. Ten tools covering expected value, Kelly position sizing, Bayesian updating, probability/odds conversion, base-rate gaps, combo edge, cross-platform arbitrage, market pulse, commodity edge, and KL-divergence mispricing detection. Free stateless calculators plus Pro data tools.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [predictionmarketspicks-quant](https://smithery.ai/server/predictionmarketspicks/quant) |
-| **Scan Date** | 2026-08-25 |
+| **Scan Date** | 2026-08-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 12 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 10 tool(s) added, 10 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
