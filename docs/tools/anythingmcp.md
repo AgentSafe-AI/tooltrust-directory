@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.2` |
 | **Vendor** | HelpCode-ai |
-| **Stars** | ⭐ 182 |
+| **Stars** | ⭐ 183 |
 | **npm Package** | `anythingmcp` |
 | **Language** | TypeScript |
 | **Source** | [anythingmcp](https://github.com/HelpCode-ai/anythingmcp) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

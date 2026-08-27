@@ -10,10 +10,10 @@
 | **Vendor** | gannonh |
 | **Stars** | ⭐ 426 |
 | **npm Package** | `@gannonh/memento-mcp` |
-| **npm Downloads (30d)** | 120 |
+| **npm Downloads (30d)** | 123 |
 | **Language** | TypeScript |
 | **Source** | [memento-mcp](https://github.com/gannonh/memento-mcp) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

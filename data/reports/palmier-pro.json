@@ -1,25 +1,66 @@
 {
   "tool_id": "palmier-pro",
   "version": "0.7.6",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-08-26T00:51:33.055120517Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-27T06:02:08.681316652Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/palmier-io/palmier-pro",
   "category": "Other",
   "vendor": "palmier-io",
-  "stars": 13875,
+  "stars": 13994,
   "license": "GPL-3.0",
   "language": "Swift",
   "description": "macOS video editor built for AI",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.7.6: 1 tool(s) added, 10 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "geminithinking"
+        ],
+        "removed": [
+          "cancel_sms",
+          "check_credits",
+          "count_sms_parts",
+          "generate_otp",
+          "get_blacklist",
+          "get_delivery_report",
+          "get_responses",
+          "send_sms",
+          "verify_number",
+          "verify_otp"
+        ],
+        "version": "0.7.6"
+      }
+    },
+    {
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "send_sms"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "geminithinking"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 18 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "geminithinking"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "geminithinking"
     },
     {
       "id": "AS-014",
@@ -27,172 +68,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_credits"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_delivery_report"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_responses"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verify_number"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_blacklist"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "cancel_sms"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "generate_otp"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "count_sms_parts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verify_otp"
+      "tool_name": "geminithinking"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 10
+    "low": 2,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "cancel_sms",
-    "check_credits",
-    "count_sms_parts",
-    "generate_otp",
-    "get_blacklist",
-    "get_delivery_report",
-    "get_responses",
-    "send_sms",
-    "verify_number",
-    "verify_otp"
+    "geminithinking"
   ],
   "tool_contexts": [
     {
-      "tool_name": "send_sms",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_credits",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_delivery_report",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_responses",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "verify_number",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_blacklist",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "cancel_sms",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "generate_otp",
+      "tool_name": "geminithinking",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "writes_files"
       ],
       "destinations": [
-        "dynamic email recipient (to)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "count_sms_parts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "verify_otp",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to)"
+        "dynamic email recipient (totalThoughts)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -441,6 +341,12 @@
     },
     {
       "scan_date": "2026-08-25T00:51:36Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.7.6"
+    },
+    {
+      "scan_date": "2026-08-26T00:51:33Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.7.6"

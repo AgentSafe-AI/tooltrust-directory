@@ -1,21 +1,42 @@
 {
   "tool_id": "nexgendata-apify-google-maps-mcp-server",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-26T00:57:49.891442082Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-27T06:11:23.034902214Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/nexgendata-apify/google-maps-mcp-server",
   "vendor": "Smithery",
   "description": "B2B lead generation tool: search Google Maps by 'plumbers in Austin', get back business profiles with emails, phone numbers, ratings, websites. The differentiator over plain Google Maps API is the contact-enrichment layer (scraped from each business's site). Built for agency prospecting workflows.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 4 tool(s) added, 3 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "details",
+          "resolve",
+          "reviews",
+          "search"
+        ],
+        "removed": [
+          "generate_leads",
+          "search_local_businesses",
+          "validate_emails"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access, HTTP requests",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_local_businesses"
+      "tool_name": "search"
     },
     {
       "id": "AS-011",
@@ -23,7 +44,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_local_businesses"
+      "tool_name": "search"
     },
     {
       "id": "AS-014",
@@ -31,15 +52,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_local_businesses"
+      "tool_name": "search"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "generate_leads"
+      "tool_name": "details"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "details"
     },
     {
       "id": "AS-014",
@@ -47,7 +76,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "generate_leads"
+      "tool_name": "details"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "reviews"
     },
     {
       "id": "AS-014",
@@ -55,25 +92,50 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_emails"
+      "tool_name": "reviews"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "resolve"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "resolve"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "resolve"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 5
+    "low": 3,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "generate_leads",
-    "search_local_businesses",
-    "validate_emails"
+    "details",
+    "resolve",
+    "reviews",
+    "search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_local_businesses",
+      "tool_name": "search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -83,18 +145,38 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "generate_leads",
+      "tool_name": "details",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "validate_emails",
+      "tool_name": "reviews",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "destinations": [
-        "dynamic email recipient (emails)"
+        "dynamic email recipient (page_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "resolve",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: maps.app.goo.gl"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -283,6 +365,12 @@
     },
     {
       "scan_date": "2026-08-25T00:58:38Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-08-26T00:57:49Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

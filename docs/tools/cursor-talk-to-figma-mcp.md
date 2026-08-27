@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 4.3k |
 | **Language** | JavaScript |
 | **Source** | [cursor-talk-to-figma-mcp](https://github.com/grab/cursor-talk-to-figma-mcp) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `2.2.15-canary.65` |
+| **Version** | `2.2.15-canary.75` |
 | **Vendor** | lobehub |
-| **Stars** | ⭐ 81989 |
+| **Stars** | ⭐ 82026 |
 | **npm Package** | `@lobehub/lobehub` |
-| **npm Downloads (30d)** | 2.4k |
+| **npm Downloads (30d)** | 2.5k |
 | **Language** | TypeScript |
 | **Source** | [lobehub](https://github.com/lobehub/lobehub) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

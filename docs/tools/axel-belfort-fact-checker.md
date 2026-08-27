@@ -15,7 +15,7 @@ Returns: {verdict, confidence, sources[], evidence[]}. No API key required — x
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-fact-checker](https://smithery.ai/server/axel-belfort/fact-checker) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

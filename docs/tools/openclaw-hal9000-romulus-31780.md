@@ -18,7 +18,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [openclaw-hal9000-romulus-31780](https://smithery.ai/server/openclaw-hal9000/romulus-31780) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

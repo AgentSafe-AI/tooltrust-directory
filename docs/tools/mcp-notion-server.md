@@ -1,19 +1,19 @@
-# 🟡 mcp-notion-server
+# 🟢 mcp-notion-server
 
 > A Model Context Protocol server for connecting Notion to MCP-compatible clients
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `2.0.2` |
 | **Vendor** | suekou |
 | **Stars** | ⭐ 920 |
 | **npm Package** | `@suekou/mcp-notion-server` |
-| **npm Downloads (30d)** | 9.0k |
+| **npm Downloads (30d)** | 9.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 12 |
 | Info     | 28 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v2.0.2: 6 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

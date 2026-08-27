@@ -12,7 +12,7 @@
 | **npm Package** | `mongodb-mcp-server-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |
-| **Scan Date** | 2026-08-26 |
+| **Scan Date** | 2026-08-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

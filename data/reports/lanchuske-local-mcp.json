@@ -1,14 +1,30 @@
 {
   "tool_id": "lanchuske-local-mcp",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-08-26T00:57:46.225494949Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-08-27T06:11:16.598108902Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/lanchuske/local-mcp",
   "vendor": "Smithery",
   "description": "Give your AI agent full control of your real apps — Mail, iMessage, Microsoft Teams, Slack, WhatsApp, Calendar, OneDrive, Outlook, OmniFocus, Notes, files and Office docs. 143 tools, 100% local, no API keys. Reaches what cloud connectors can't. Mac + Windows.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 3 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "delete_note",
+          "gdrive_delete_file",
+          "web_session_delete"
+        ],
+        "removed": null,
+        "version": "smithery"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -271,6 +287,22 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_note"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete_note"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "delete_reminder"
     },
     {
@@ -480,6 +512,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "finder_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "gdrive_delete_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "gdrive_delete_file"
     },
     {
       "id": "AS-002",
@@ -2642,12 +2690,36 @@
       "tool_name": "web_screenshot"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "web_session_close"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "web_session_close"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "web_session_delete"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "web_session_delete"
     },
     {
       "id": "AS-002",
@@ -2820,10 +2892,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 46,
-    "info": 305
+    "info": 312
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -2842,6 +2914,7 @@
     "create_reminder_list",
     "daily_brief",
     "delete_calendar_event",
+    "delete_note",
     "delete_reminder",
     "delete_reminder_folder",
     "disconnect_m365_account",
@@ -2855,6 +2928,7 @@
     "file_write",
     "finder_list",
     "finder_search",
+    "gdrive_delete_file",
     "gdrive_file_info",
     "gdrive_list_files",
     "gdrive_read_file",
@@ -3016,6 +3090,7 @@
     "web_read",
     "web_screenshot",
     "web_session_close",
+    "web_session_delete",
     "web_session_list",
     "web_show",
     "web_type",
@@ -3216,6 +3291,16 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "delete_note",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "delete_reminder",
       "action": "ALLOW",
       "grade": "A",
@@ -3346,6 +3431,16 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "gdrive_delete_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "gdrive_file_info",
       "action": "ALLOW",
       "grade": "A",
@@ -3459,7 +3554,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
       ],
       "destinations": [
         "hardcoded domain: Reminders.app"
@@ -3478,6 +3573,9 @@
       "tool_name": "list_accounts",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "destinations": [
         "hardcoded domain: Mail.app"
       ],
@@ -4262,6 +4360,9 @@
       "tool_name": "screenshot_capture",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -4828,6 +4929,19 @@
       "tool_name": "web_session_close",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "web_session_delete",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -5015,6 +5129,12 @@
     },
     {
       "scan_date": "2026-08-25T00:58:34Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-08-26T00:57:46Z",
       "grade": "A",
       "risk_score": 4,
       "version": "smithery"
