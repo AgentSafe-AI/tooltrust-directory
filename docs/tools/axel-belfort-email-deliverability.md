@@ -15,7 +15,7 @@ Returns: {score, spf, dkim, dmarc, mx, recommendations[]}. No API key required â
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-email-deliverability](https://smithery.ai/server/axel-belfort/email-deliverability) |
-| **Scan Date** | 2026-08-27 |
+| **Scan Date** | 2026-08-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

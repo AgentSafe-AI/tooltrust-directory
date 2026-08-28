@@ -12,7 +12,7 @@
 | **npm Package** | `raindrop-io-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [raindrop-io-mcp-server](https://github.com/hiromitsusasaki/raindrop-io-mcp-server) |
-| **Scan Date** | 2026-08-27 |
+| **Scan Date** | 2026-08-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

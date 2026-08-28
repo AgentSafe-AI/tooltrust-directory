@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.15.3` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 5080 |
+| **Stars** | ⭐ 5199 |
 | **npm Package** | `@apify/actors-mcp-server` |
-| **npm Downloads (30d)** | 121.9k |
+| **npm Downloads (30d)** | 125.1k |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
-| **Scan Date** | 2026-08-27 |
+| **Scan Date** | 2026-08-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

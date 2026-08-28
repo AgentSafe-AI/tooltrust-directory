@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-08-27T06:08:22.274371034Z",
+  "scan_date": "2026-08-28T08:19:49.453333997Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Arman-Kudaibergenov/1c-ai-development-kit",
   "category": "Other",
@@ -17,32 +17,32 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.2.0: 4 tool(s) added, 5 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.2.0: 5 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "compare_build_vs_custom",
-          "generate_project_blueprint",
-          "match_theme",
-          "recommend_setup"
-        ],
-        "removed": [
           "get_doc",
           "get_full_library",
           "get_policy_pack",
           "list_docs",
           "list_policy_packs"
         ],
+        "removed": [
+          "compare_build_vs_custom",
+          "generate_project_blueprint",
+          "match_theme",
+          "recommend_setup"
+        ],
         "version": "1.2.0"
       }
     },
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "recommend_setup"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_docs"
     },
     {
       "id": "AS-014",
@@ -50,15 +50,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "recommend_setup"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "generate_project_blueprint"
+      "tool_name": "get_doc"
     },
     {
       "id": "AS-014",
@@ -66,7 +58,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "generate_project_blueprint"
+      "tool_name": "list_policy_packs"
     },
     {
       "id": "AS-014",
@@ -74,15 +66,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "match_theme"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "compare_build_vs_custom"
+      "tool_name": "get_policy_pack"
     },
     {
       "id": "AS-014",
@@ -90,49 +74,60 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_build_vs_custom"
+      "tool_name": "get_full_library"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 3,
-    "info": 4
+    "low": 0,
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compare_build_vs_custom",
-    "generate_project_blueprint",
-    "match_theme",
-    "recommend_setup"
+    "get_doc",
+    "get_full_library",
+    "get_policy_pack",
+    "list_docs",
+    "list_policy_packs"
   ],
   "tool_contexts": [
     {
-      "tool_name": "recommend_setup",
+      "tool_name": "list_docs",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "generate_project_blueprint",
+      "tool_name": "get_doc",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "match_theme",
+      "tool_name": "list_policy_packs",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compare_build_vs_custom",
+      "tool_name": "get_policy_pack",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_full_library",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: llms-full.txt"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -382,6 +377,12 @@
       "scan_date": "2026-08-26T00:55:53Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "1.2.0"
+    },
+    {
+      "scan_date": "2026-08-27T06:08:22Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.2.0"
     }
   ]
