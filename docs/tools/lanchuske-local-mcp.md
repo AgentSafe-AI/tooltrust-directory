@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [lanchuske-local-mcp](https://smithery.ai/server/lanchuske/local-mcp) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -175,7 +175,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 11 properties (threshold: 10)
+input schema exposes 12 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

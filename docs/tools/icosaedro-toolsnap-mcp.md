@@ -17,7 +17,7 @@ Includes pay-proxy: local stdio bridge that auto-signs x402 challenges — any M
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [icosaedro-toolsnap-mcp](https://smithery.ai/server/icosaedro/toolsnap-mcp) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

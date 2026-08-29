@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `0.2.22` |
 | **Vendor** | tavily-ai |
-| **Stars** | ⭐ 2358 |
+| **Stars** | ⭐ 2360 |
 | **npm Package** | `tavily-mcp` |
-| **npm Downloads (30d)** | 120.4k |
+| **npm Downloads (30d)** | 119.1k |
 | **Language** | JavaScript |
 | **Source** | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

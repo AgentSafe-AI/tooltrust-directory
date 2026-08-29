@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.8` |
 | **Vendor** | CodeAbra |
-| **Stars** | ⭐ 814 |
+| **Stars** | ⭐ 816 |
 | **Language** | Python |
 | **Source** | [iai-personal-memory-engine](https://github.com/CodeAbra/iai-personal-memory-engine) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

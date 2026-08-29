@@ -1,6 +1,6 @@
 # 🟢 arxiv-mcp-server
 
-> A Model Context Protocol server for searching and analyzing arXiv papers
+> A local MCP server for agent literature work. Original-LaTeX section reads, BibTeX from arXiv metadata, and topic watches. Papers stay on disk. Search is optional.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.7.2` |
 | **Vendor** | blazickjp |
-| **Stars** | ⭐ 3088 |
+| **Stars** | ⭐ 3091 |
 | **Language** | Python |
 | **Source** | [arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

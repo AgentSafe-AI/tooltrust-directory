@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `sha-eb33932a66ee` |
 | **Vendor** | markuspfundstein |
-| **Stars** | ⭐ 4348 |
+| **Stars** | ⭐ 4350 |
 | **Language** | Python |
 | **Source** | [mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
