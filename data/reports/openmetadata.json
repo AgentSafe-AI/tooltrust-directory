@@ -1,34 +1,69 @@
 {
   "tool_id": "openmetadata",
   "version": "1.2.1",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-08-29T05:01:15.414182068Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-08-30T02:45:35.905531345Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/open-metadata/OpenMetadata",
   "category": "Developer Tools",
   "vendor": "open-metadata",
-  "stars": 15022,
+  "stars": 15028,
   "npm_package": "open-metadata",
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "The Open Context Layer for Data and AI ,  OpenMetadata is the open platform for building trusted data context and business semantics for humans, AI assistants, and agents.",
   "findings": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_search_books"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.2.1: 12 tool(s) added, 9 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "build_setlist",
+          "find_compatible_keys",
+          "find_tracks_by_bpm",
+          "find_tracks_by_key",
+          "get_audio_features",
+          "get_audio_features_batch",
+          "get_recommendations",
+          "get_related_artists",
+          "score_transition",
+          "search_catalog",
+          "suggest_next_track",
+          "tag_track"
+        ],
+        "removed": [
+          "openlibrary_get_author",
+          "openlibrary_get_author_works",
+          "openlibrary_get_cover_url",
+          "openlibrary_get_edition",
+          "openlibrary_get_editions",
+          "openlibrary_get_subject",
+          "openlibrary_get_work",
+          "openlibrary_search_authors",
+          "openlibrary_search_books"
+        ],
+        "version": "1.2.1"
+      }
     },
     {
       "id": "AS-002",
-      "severity": "Low",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "declared capabilities: code/command execution, network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_search_books"
+      "tool_name": "get_audio_features"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_audio_features\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_audio_features"
     },
     {
       "id": "AS-011",
@@ -36,7 +71,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openlibrary_search_books"
+      "tool_name": "get_audio_features"
     },
     {
       "id": "AS-014",
@@ -44,7 +79,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_search_books"
+      "tool_name": "get_audio_features"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_audio_features_batch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_audio_features_batch"
     },
     {
       "id": "AS-002",
@@ -52,7 +103,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_get_work"
+      "tool_name": "search_catalog"
     },
     {
       "id": "AS-011",
@@ -60,7 +111,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openlibrary_get_work"
+      "tool_name": "search_catalog"
     },
     {
       "id": "AS-014",
@@ -68,7 +119,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_work"
+      "tool_name": "search_catalog"
     },
     {
       "id": "AS-014",
@@ -76,15 +127,55 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_editions"
+      "tool_name": "find_tracks_by_bpm"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "find_tracks_by_key"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "find_compatible_keys"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "score_transition"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "suggest_next_track"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "build_setlist"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_get_edition"
+      "tool_name": "get_recommendations"
     },
     {
       "id": "AS-011",
@@ -92,7 +183,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openlibrary_get_edition"
+      "tool_name": "get_recommendations"
     },
     {
       "id": "AS-014",
@@ -100,15 +191,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_edition"
+      "tool_name": "get_recommendations"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_search_authors"
+      "tool_name": "get_related_artists"
     },
     {
       "id": "AS-011",
@@ -116,7 +207,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openlibrary_search_authors"
+      "tool_name": "get_related_artists"
     },
     {
       "id": "AS-014",
@@ -124,15 +215,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_search_authors"
+      "tool_name": "get_related_artists"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_get_author"
+      "tool_name": "tag_track"
     },
     {
       "id": "AS-011",
@@ -140,7 +231,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openlibrary_get_author"
+      "tool_name": "tag_track"
     },
     {
       "id": "AS-014",
@@ -148,99 +239,55 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_author"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_author_works"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_subject"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openlibrary_get_cover_url"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openlibrary_get_cover_url"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openlibrary_get_cover_url"
+      "tool_name": "tag_track"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
-    "low": 7,
-    "info": 15
+    "low": 5,
+    "info": 18
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "openlibrary_get_author",
-    "openlibrary_get_author_works",
-    "openlibrary_get_cover_url",
-    "openlibrary_get_edition",
-    "openlibrary_get_editions",
-    "openlibrary_get_subject",
-    "openlibrary_get_work",
-    "openlibrary_search_authors",
-    "openlibrary_search_books"
+    "build_setlist",
+    "find_compatible_keys",
+    "find_tracks_by_bpm",
+    "find_tracks_by_key",
+    "get_audio_features",
+    "get_audio_features_batch",
+    "get_recommendations",
+    "get_related_artists",
+    "score_transition",
+    "search_catalog",
+    "suggest_next_track",
+    "tag_track"
   ],
   "tool_contexts": [
     {
-      "tool_name": "openlibrary_search_books",
+      "tool_name": "get_audio_features",
       "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "openlibrary_get_work",
-      "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
         "executes_commands",
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded domain: open.spotify.com"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openlibrary_get_editions",
+      "tool_name": "get_audio_features_batch",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openlibrary_get_edition",
+      "tool_name": "search_catalog",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -250,7 +297,55 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openlibrary_search_authors",
+      "tool_name": "find_tracks_by_bpm",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tolerance)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_tracks_by_key",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_compatible_keys",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "score_transition",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (to_track_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "suggest_next_track",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "build_setlist",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_recommendations",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -260,7 +355,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openlibrary_get_author",
+      "tool_name": "get_related_artists",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -270,28 +365,14 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openlibrary_get_author_works",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "openlibrary_get_subject",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "openlibrary_get_cover_url",
+      "tool_name": "tag_track",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: covers.openlibrary.org"
+        "hardcoded domain: open.spotify.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1130,6 +1211,12 @@
       "scan_date": "2026-08-28T08:14:29Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-08-29T05:01:15Z",
+      "grade": "A",
+      "risk_score": 4,
       "version": "1.2.1"
     }
   ]

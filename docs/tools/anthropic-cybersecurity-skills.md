@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.0` |
 | **Vendor** | mukul975 |
-| **Stars** | ⭐ 31529 |
+| **Stars** | ⭐ 31633 |
 | **Language** | Python |
 | **Source** | [anthropic-cybersecurity-skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

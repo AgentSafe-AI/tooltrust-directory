@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 741 |
 | **Language** | Python |
 | **Source** | [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) |
-| **Scan Date** | 2026-08-28 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

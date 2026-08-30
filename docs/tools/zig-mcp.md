@@ -10,10 +10,10 @@
 | **Vendor** | zig-wasm |
 | **Stars** | ⭐ 170 |
 | **npm Package** | `zig-mcp` |
-| **npm Downloads (30d)** | 327 |
+| **npm Downloads (30d)** | 328 |
 | **Language** | TypeScript |
 | **Source** | [zig-mcp](https://github.com/zig-wasm/zig-mcp) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

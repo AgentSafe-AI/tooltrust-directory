@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2037 |
 | **Language** | Go |
 | **Source** | [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

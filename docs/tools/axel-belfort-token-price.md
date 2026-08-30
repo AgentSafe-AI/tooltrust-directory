@@ -15,7 +15,7 @@ Returns: {price, change24h, marketCap, volume}. No API key required — x402 mic
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-token-price](https://smithery.ai/server/axel-belfort/token-price) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

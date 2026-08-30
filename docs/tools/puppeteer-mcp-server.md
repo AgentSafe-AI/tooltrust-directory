@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 7.5k |
 | **Language** | TypeScript |
 | **Source** | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

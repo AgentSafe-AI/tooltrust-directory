@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.1` |
 | **Vendor** | coding-solo |
-| **Stars** | ⭐ 5415 |
+| **Stars** | ⭐ 5430 |
 | **npm Package** | `godot-mcp` |
-| **npm Downloads (30d)** | 806 |
+| **npm Downloads (30d)** | 816 |
 | **Language** | JavaScript |
 | **Source** | [godot-mcp](https://github.com/Coding-Solo/godot-mcp) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

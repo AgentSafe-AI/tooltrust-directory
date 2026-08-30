@@ -18,7 +18,7 @@ Built for DeFi researchers, protocol contributors, and fund analysts.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [defibabylon-defi-intel](https://smithery.ai/server/defibabylon/defi-intel) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

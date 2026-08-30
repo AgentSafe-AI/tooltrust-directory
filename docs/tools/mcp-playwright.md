@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `1.0.12` |
 | **Vendor** | executeautomation |
-| **Stars** | ⭐ 5636 |
+| **Stars** | ⭐ 5637 |
 | **npm Package** | `@executeautomation/playwright-mcp-server` |
-| **npm Downloads (30d)** | 82.6k |
+| **npm Downloads (30d)** | 80.8k |
 | **Language** | TypeScript |
 | **Source** | [mcp-playwright](https://github.com/executeautomation/mcp-playwright) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

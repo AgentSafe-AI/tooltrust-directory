@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 10.7k |
 | **Language** | TypeScript |
 | **Source** | [apple-docs-mcp](https://github.com/kimsungwhee/apple-docs-mcp) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

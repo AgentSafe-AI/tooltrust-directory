@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `1.7.1` |
+| **Version** | `1.8.0` |
 | **Vendor** | xuzhougeng |
-| **Stars** | ⭐ 1062 |
+| **Stars** | ⭐ 1067 |
 | **Language** | Rust |
 | **Source** | [wisp-science](https://github.com/xuzhougeng/wisp-science) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

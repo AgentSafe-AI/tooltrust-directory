@@ -10,10 +10,10 @@
 | **Vendor** | Cicatriiz |
 | **Stars** | ⭐ 127 |
 | **npm Package** | `healthcare-mcp` |
-| **npm Downloads (30d)** | 280 |
+| **npm Downloads (30d)** | 276 |
 | **Language** | JavaScript |
 | **Source** | [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) |
-| **Scan Date** | 2026-08-29 |
+| **Scan Date** | 2026-08-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
