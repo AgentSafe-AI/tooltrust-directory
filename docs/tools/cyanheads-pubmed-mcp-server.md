@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `2.10.4` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 140 |
+| **Stars** | ⭐ 141 |
 | **npm Package** | `@cyanheads/pubmed-mcp-server` |
-| **npm Downloads (30d)** | 11.9k |
+| **npm Downloads (30d)** | 11.7k |
 | **Language** | TypeScript |
 | **Source** | [cyanheads-pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-08-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

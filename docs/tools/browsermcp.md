@@ -10,10 +10,10 @@
 | **Vendor** | browsermcp |
 | **Stars** | ⭐ 7032 |
 | **npm Package** | `@browsermcp/mcp` |
-| **npm Downloads (30d)** | 41.8k |
+| **npm Downloads (30d)** | 41.6k |
 | **Language** | TypeScript |
 | **Source** | [browsermcp](https://github.com/browsermcp/mcp) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-08-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

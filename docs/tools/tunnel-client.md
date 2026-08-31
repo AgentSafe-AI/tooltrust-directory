@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.13` |
 | **Vendor** | openai |
-| **Stars** | ⭐ 323 |
+| **Stars** | ⭐ 325 |
 | **Language** | Go |
 | **Source** | [tunnel-client](https://github.com/openai/tunnel-client) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-08-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

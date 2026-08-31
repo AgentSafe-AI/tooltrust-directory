@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `1.23.0` |
 | **Vendor** | opena2a-org |
-| **Stars** | ⭐ 57 |
+| **Stars** | ⭐ 58 |
 | **npm Package** | `agent-identity-management` |
 | **Language** | Go |
 | **Source** | [agent-identity-management](https://github.com/opena2a-org/agent-identity-management) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-08-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

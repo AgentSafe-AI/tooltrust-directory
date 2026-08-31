@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | golf-mcp |
-| **Stars** | ⭐ 838 |
+| **Stars** | ⭐ 839 |
 | **Language** | Python |
 | **Source** | [golf](https://github.com/golf-mcp/golf) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-08-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

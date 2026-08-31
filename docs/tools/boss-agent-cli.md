@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.19.1` |
 | **Vendor** | can4hou6joeng4 |
-| **Stars** | ⭐ 1630 |
+| **Stars** | ⭐ 1632 |
 | **Language** | Python |
 | **Source** | [boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-08-31 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
