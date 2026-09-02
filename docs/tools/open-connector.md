@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `1.4.0` |
+| **Version** | `1.4.1` |
 | **Vendor** | oomol-lab |
-| **Stars** | ⭐ 5438 |
+| **Stars** | ⭐ 5487 |
 | **npm Package** | `@oomol-lab/open-connector` |
 | **Language** | TypeScript |
 | **Source** | [open-connector](https://github.com/oomol-lab/open-connector) |
-| **Scan Date** | 2026-08-31 |
+| **Scan Date** | 2026-09-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

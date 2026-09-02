@@ -8,10 +8,10 @@
 | **Risk Score** | 15 |
 | **Version** | `0.6.9` |
 | **Vendor** | RightNow-AI |
-| **Stars** | ⭐ 18150 |
+| **Stars** | ⭐ 18154 |
 | **Language** | Rust |
 | **Source** | [openfang](https://github.com/RightNow-AI/openfang) |
-| **Scan Date** | 2026-08-31 |
+| **Scan Date** | 2026-09-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -33,7 +33,7 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at v0.6.9: 12 tool(s) added, 0 tool(s) removed without a version bump.
+Tool set changed silently at v0.6.9: 19 tool(s) added, 19 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.

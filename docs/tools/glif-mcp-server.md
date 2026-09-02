@@ -8,9 +8,9 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.1` |
 | **Vendor** | glifxyz |
-| **Stars** | ⭐ 203 |
+| **Stars** | ⭐ 204 |
 | **Source** | [glif-mcp-server](https://github.com/glifxyz/glif-mcp-server) |
-| **Scan Date** | 2026-08-31 |
+| **Scan Date** | 2026-09-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

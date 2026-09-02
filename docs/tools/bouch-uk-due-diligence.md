@@ -11,7 +11,7 @@ Give an agent a company name and it pulls corporate status, filing compliance, d
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bouch-uk-due-diligence](https://smithery.ai/server/bouch/uk-due-diligence) |
-| **Scan Date** | 2026-08-30 |
+| **Scan Date** | 2026-09-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
