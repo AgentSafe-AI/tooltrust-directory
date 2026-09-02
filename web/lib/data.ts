@@ -42,6 +42,7 @@ export interface RepositoryHealth {
   last_release_at?: string;
   last_commit_at?: string;
   refreshed_at: string;
+  last_attempt_at?: string;
   history?: HealthSnapshot[];
 }
 
@@ -152,18 +153,36 @@ export function getRepositoryHealth(report: Report): RepositoryHealth | null {
 
   if (healthIndex === undefined) {
     const healthPath = getRepoHealthPath();
-    try {
-      healthIndex = JSON.parse(fs.readFileSync(healthPath, "utf-8")) as RepositoryHealthIndex;
-    } catch {
+    if (!fs.existsSync(healthPath)) {
       healthIndex = {};
+    } else {
+      try {
+        const parsed = JSON.parse(fs.readFileSync(healthPath, "utf-8")) as unknown;
+        if (!parsed || typeof parsed !== "object") {
+          throw new Error("expected a JSON object");
+        }
+        healthIndex = parsed as RepositoryHealthIndex;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        throw new Error(`Failed to load repository health data: ${message}`);
+      }
     }
   }
-  return healthIndex.repositories?.[repository] ?? null;
+  const health = healthIndex.repositories?.[repository];
+  return health?.refreshed_at ? health : null;
 }
 
-function githubRepositoryFromSource(sourceUrl: string): string | null {
-  const match = sourceUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/?#]+)/);
-  return match ? `${match[1]}/${match[2]}` : null;
+function githubRepositoryFromSource(sourceUrl: unknown): string | null {
+  if (typeof sourceUrl !== "string") return null;
+  try {
+    const parsed = new URL(sourceUrl);
+    if (parsed.protocol !== "https:" || parsed.hostname !== "github.com") return null;
+    const [owner, repo] = parsed.pathname.split("/").filter(Boolean);
+    if (!owner || !repo) return null;
+    return `${owner}/${repo.replace(/\.git$/, "")}`;
+  } catch {
+    return null;
+  }
 }
 
 function isGithubBackedReport(report: Report): boolean {

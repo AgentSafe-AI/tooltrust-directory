@@ -6,25 +6,34 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"log"
+	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"sort"
 	"strings"
 	"time"
 
+	"github.com/AgentSafe-AI/tooltrust-directory/pkg/sync"
 	"github.com/google/go-github/v68/github"
 	"golang.org/x/oauth2"
 )
 
 const defaultHistoryDays = 28
+const defaultRefreshLimit = 200
+const refreshTimeout = 10 * time.Minute
 
 type reportRef struct {
-	ToolID    string `json:"tool_id"`
-	SourceURL string `json:"source_url"`
-	Stars     int    `json:"stars"`
+	ToolID         string            `json:"tool_id"`
+	SourceURL      string            `json:"source_url"`
+	Stars          int               `json:"stars"`
+	Category       string            `json:"category"`
+	ScanIncomplete bool              `json:"scan_incomplete"`
+	Findings       []json.RawMessage `json:"findings"`
 }
 
 type HealthSnapshot struct {
@@ -43,6 +52,7 @@ type RepositoryHealth struct {
 	LastReleaseAt    string           `json:"last_release_at,omitempty"`
 	LastCommitAt     string           `json:"last_commit_at,omitempty"`
 	RefreshedAt      string           `json:"refreshed_at"`
+	LastAttemptAt    string           `json:"last_attempt_at,omitempty"`
 	History          []HealthSnapshot `json:"history,omitempty"`
 }
 
@@ -56,15 +66,23 @@ type candidate struct {
 	ToolID     string
 	Repository string
 	Stars      int
-	Refreshed  time.Time
+	CheckedAt  time.Time
 }
 
 func main() {
 	reportsDir := flag.String("reports-dir", "data/reports", "directory containing ToolTrust report JSON files")
 	output := flag.String("output", "data/repo-health.json", "health index JSON output path")
-	limit := flag.Int("limit", 250, "maximum GitHub repositories to refresh per run; 0 refreshes all")
+	limit := flag.Int("limit", defaultRefreshLimit, "maximum GitHub repositories to refresh per run; 0 refreshes all")
 	historyDays := flag.Int("history-days", defaultHistoryDays, "number of daily snapshots to retain")
+	publishOnly := flag.Bool("publish-only", false, "commit and push the output file using the repository sync helper")
 	flag.Parse()
+
+	if *publishOnly {
+		if err := sync.GitCommitAndPush(".", "chore: refresh repository health [skip actions]", *output); err != nil {
+			log.Fatalf("publish health index: %v", err)
+		}
+		return
+	}
 
 	if *limit < 0 || *historyDays < 1 {
 		log.Fatal("limit must be >= 0 and history-days must be >= 1")
@@ -87,13 +105,23 @@ func main() {
 		return
 	}
 
-	client := newGitHubClient(context.Background(), os.Getenv("GITHUB_TOKEN"))
+	runCtx, cancel := context.WithTimeout(context.Background(), refreshTimeout)
+	defer cancel()
+	client := newGitHubClient(runCtx, os.Getenv("GITHUB_TOKEN"))
 	now := time.Now().UTC()
 	for _, c := range candidates {
 		owner, repo, _ := strings.Cut(c.Repository, "/")
-		health, err := fetchHealth(context.Background(), client, owner, repo, index.Repositories[c.Repository], now, *historyDays)
+		previous := index.Repositories[c.Repository]
+		health, err := fetchHealth(runCtx, client, owner, repo, previous, now, *historyDays)
 		if err != nil {
 			log.Printf("%s: %v", c.Repository, err)
+			previous.Repository = c.Repository
+			previous.LastAttemptAt = now.Format(time.RFC3339)
+			index.Repositories[c.Repository] = previous
+			if isRateLimitError(err) {
+				log.Printf("GitHub rate limit reached; stopping refresh after %s", c.Repository)
+				break
+			}
 			continue
 		}
 		index.Repositories[c.Repository] = health
@@ -126,17 +154,29 @@ func loadReportRefs(dir string) ([]reportRef, error) {
 		}
 		data, err := os.ReadFile(filepath.Join(dir, entry.Name()))
 		if err != nil {
-			return nil, err
+			log.Printf("warning: skip %s: %v", entry.Name(), err)
+			continue
 		}
 		var report reportRef
 		if err := json.Unmarshal(data, &report); err != nil {
-			return nil, fmt.Errorf("%s: %w", entry.Name(), err)
+			log.Printf("warning: skip %s (parse error): %v", entry.Name(), err)
+			continue
 		}
-		if report.ToolID != "" {
+		if report.ToolID != "" && isPublicReportRef(report) {
 			reports = append(reports, report)
 		}
 	}
 	return reports, nil
+}
+
+func isPublicReportRef(report reportRef) bool {
+	if report.ScanIncomplete && len(report.Findings) == 0 {
+		return false
+	}
+	if strings.Contains(report.SourceURL, "github.com") && report.Stars < sync.MinPublicGitHubStars && report.Category != "Scan Request" {
+		return false
+	}
+	return true
 }
 
 func loadIndex(path string) (HealthIndex, error) {
@@ -170,25 +210,36 @@ func healthCandidates(reports []reportRef, index HealthIndex) []candidate {
 			continue
 		}
 		seen[name] = true
-		var refreshed time.Time
-		if entry, ok := index.Repositories[name]; ok && entry.RefreshedAt != "" {
-			refreshed, _ = time.Parse(time.RFC3339, entry.RefreshedAt)
+		var checkedAt time.Time
+		if entry, ok := index.Repositories[name]; ok {
+			checkedAt = laterTimestamp(entry.RefreshedAt, entry.LastAttemptAt)
 		}
-		candidates = append(candidates, candidate{ToolID: report.ToolID, Repository: name, Stars: report.Stars, Refreshed: refreshed})
+		candidates = append(candidates, candidate{ToolID: report.ToolID, Repository: name, Stars: report.Stars, CheckedAt: checkedAt})
 	}
 	sort.Slice(candidates, func(i, j int) bool {
-		if candidates[i].Refreshed.Equal(candidates[j].Refreshed) {
+		if candidates[i].CheckedAt.Equal(candidates[j].CheckedAt) {
 			return candidates[i].Stars > candidates[j].Stars
 		}
-		if candidates[i].Refreshed.IsZero() {
+		if candidates[i].CheckedAt.IsZero() {
 			return true
 		}
-		if candidates[j].Refreshed.IsZero() {
+		if candidates[j].CheckedAt.IsZero() {
 			return false
 		}
-		return candidates[i].Refreshed.Before(candidates[j].Refreshed)
+		return candidates[i].CheckedAt.Before(candidates[j].CheckedAt)
 	})
 	return candidates
+}
+
+func laterTimestamp(values ...string) time.Time {
+	var latest time.Time
+	for _, value := range values {
+		parsed, err := time.Parse(time.RFC3339, value)
+		if err == nil && parsed.After(latest) {
+			latest = parsed
+		}
+	}
+	return latest
 }
 
 func fetchHealth(ctx context.Context, client *github.Client, owner, repo string, previous RepositoryHealth, now time.Time, historyDays int) (RepositoryHealth, error) {
@@ -224,6 +275,7 @@ func fetchHealth(ctx context.Context, client *github.Client, owner, repo string,
 		OpenPullRequests: openPRs,
 		LastCommitAt:     formatTimestamp(ghRepo.GetPushedAt().Time),
 		RefreshedAt:      now.Format(time.RFC3339),
+		LastAttemptAt:    now.Format(time.RFC3339),
 		History: appendSnapshot(previous.History, HealthSnapshot{
 			Date:             now.Format("2006-01-02"),
 			Stars:            ghRepo.GetStargazersCount(),
@@ -232,12 +284,34 @@ func fetchHealth(ctx context.Context, client *github.Client, owner, repo string,
 	}
 
 	release, _, releaseErr := client.Repositories.GetLatestRelease(ctx, owner, repo)
-	if releaseErr == nil && release != nil {
-		health.LastReleaseAt = formatTimestamp(release.GetPublishedAt().Time)
-	} else {
-		health.LastReleaseAt = previous.LastReleaseAt
+	health.LastReleaseAt, err = resolveLastReleaseAt(release, releaseErr, previous.LastReleaseAt)
+	if err != nil {
+		return RepositoryHealth{}, err
 	}
 	return health, nil
+}
+
+func resolveLastReleaseAt(release *github.RepositoryRelease, releaseErr error, previous string) (string, error) {
+	if releaseErr != nil {
+		var githubErr *github.ErrorResponse
+		if errors.As(releaseErr, &githubErr) && githubErr.Response != nil && githubErr.Response.StatusCode == http.StatusNotFound {
+			return "", nil
+		}
+		return "", fmt.Errorf("get latest release: %w", releaseErr)
+	}
+	if release == nil {
+		return previous, nil
+	}
+	return formatTimestamp(release.GetPublishedAt().Time), nil
+}
+
+func isRateLimitError(err error) bool {
+	var primary *github.RateLimitError
+	if errors.As(err, &primary) {
+		return true
+	}
+	var secondary *github.AbuseRateLimitError
+	return errors.As(err, &secondary)
 }
 
 func formatTimestamp(t time.Time) string {
@@ -261,15 +335,15 @@ func appendSnapshot(history []HealthSnapshot, next HealthSnapshot, keep int) []H
 }
 
 func parseGitHubRepo(sourceURL string) (owner, repo string, ok bool) {
-	const prefix = "https://github.com/"
-	if !strings.HasPrefix(sourceURL, prefix) {
+	parsed, err := url.Parse(sourceURL)
+	if err != nil || parsed.Scheme != "https" || parsed.Hostname() != "github.com" {
 		return "", "", false
 	}
-	parts := strings.Split(strings.TrimPrefix(sourceURL, prefix), "/")
+	parts := strings.Split(strings.Trim(parsed.Path, "/"), "/")
 	if len(parts) < 2 || parts[0] == "" || parts[1] == "" {
 		return "", "", false
 	}
-	return parts[0], parts[1], true
+	return parts[0], strings.TrimSuffix(parts[1], ".git"), true
 }
 
 func writeIndex(path string, index HealthIndex) error {

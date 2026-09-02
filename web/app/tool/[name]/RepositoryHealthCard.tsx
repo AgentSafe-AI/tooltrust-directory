@@ -22,7 +22,12 @@ function rangeLabel(history: RepositoryHealth["history"]): string | null {
   if (!history || history.length < 2) return null;
   const delta = history[history.length - 1].stars - history[0].stars;
   if (delta === 0) return "No star change yet";
-  return `${delta > 0 ? "+" : ""}${formatNumber(delta)} stars in ${history.length - 1}d`;
+  const firstDate = Date.parse(`${history[0].date}T00:00:00Z`);
+  const lastDate = Date.parse(`${history[history.length - 1].date}T00:00:00Z`);
+  const rangeDays = Number.isNaN(firstDate) || Number.isNaN(lastDate)
+    ? history.length - 1
+    : Math.max(1, Math.round((lastDate - firstDate) / 86_400_000));
+  return `${delta > 0 ? "+" : ""}${formatNumber(delta)} stars in ${rangeDays}d`;
 }
 
 function Sparkline({ values, color }: { values: number[]; color: string }) {
