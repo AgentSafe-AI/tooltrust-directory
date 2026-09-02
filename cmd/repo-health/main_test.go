@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"net/http"
@@ -109,15 +110,18 @@ func TestResolveLastReleaseAt(t *testing.T) {
 			want:     "",
 		},
 		{
-			name:     "rate limit fails refresh",
+			name:     "rate limit keeps the previous release value",
 			err:      &github.ErrorResponse{Response: &http.Response{StatusCode: http.StatusForbidden}},
 			previous: "2026-01-01T00:00:00Z",
+			want:     "2026-01-01T00:00:00Z",
 			wantErr:  true,
 		},
 		{
-			name:    "network error fails refresh",
-			err:     errors.New("network unavailable"),
-			wantErr: true,
+			name:     "network error keeps the previous release value",
+			err:      errors.New("network unavailable"),
+			previous: "2026-01-01T00:00:00Z",
+			want:     "2026-01-01T00:00:00Z",
+			wantErr:  true,
 		},
 	}
 
@@ -129,6 +133,29 @@ func TestResolveLastReleaseAt(t *testing.T) {
 			}
 			if got != tt.want {
 				t.Errorf("resolveLastReleaseAt() = %q, want %q", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestShouldStopRefresh(t *testing.T) {
+	canceled, cancel := context.WithCancel(context.Background())
+	cancel()
+	tests := []struct {
+		name string
+		ctx  context.Context
+		err  error
+		want bool
+	}{
+		{name: "ordinary failure", ctx: context.Background(), err: errors.New("network unavailable"), want: false},
+		{name: "rate limit", ctx: context.Background(), err: &github.RateLimitError{}, want: true},
+		{name: "expired context", ctx: canceled, err: errors.New("network unavailable"), want: true},
+		{name: "deadline error", ctx: context.Background(), err: context.DeadlineExceeded, want: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := shouldStopRefresh(tt.ctx, tt.err); got != tt.want {
+				t.Errorf("shouldStopRefresh() = %t, want %t", got, tt.want)
 			}
 		})
 	}

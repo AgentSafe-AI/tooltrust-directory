@@ -27,14 +27,7 @@ const defaultHistoryDays = 28
 const defaultRefreshLimit = 200
 const refreshTimeout = 10 * time.Minute
 
-type reportRef struct {
-	ToolID         string            `json:"tool_id"`
-	SourceURL      string            `json:"source_url"`
-	Stars          int               `json:"stars"`
-	Category       string            `json:"category"`
-	ScanIncomplete bool              `json:"scan_incomplete"`
-	Findings       []json.RawMessage `json:"findings"`
-}
+type reportRef = sync.Report
 
 type HealthSnapshot struct {
 	Date             string `json:"date"`
@@ -110,15 +103,23 @@ func main() {
 	client := newGitHubClient(runCtx, os.Getenv("GITHUB_TOKEN"))
 	now := time.Now().UTC()
 	for _, c := range candidates {
+		if err := runCtx.Err(); err != nil {
+			log.Printf("repository health refresh stopped: %v", err)
+			break
+		}
 		owner, repo, _ := strings.Cut(c.Repository, "/")
 		previous := index.Repositories[c.Repository]
 		health, err := fetchHealth(runCtx, client, owner, repo, previous, now, *historyDays)
 		if err != nil {
 			log.Printf("%s: %v", c.Repository, err)
+			if runCtx.Err() != nil || isContextError(err) {
+				log.Printf("repository health refresh stopped after %s", c.Repository)
+				break
+			}
 			previous.Repository = c.Repository
 			previous.LastAttemptAt = now.Format(time.RFC3339)
 			index.Repositories[c.Repository] = previous
-			if isRateLimitError(err) {
+			if shouldStopRefresh(runCtx, err) {
 				log.Printf("GitHub rate limit reached; stopping refresh after %s", c.Repository)
 				break
 			}
@@ -162,21 +163,11 @@ func loadReportRefs(dir string) ([]reportRef, error) {
 			log.Printf("warning: skip %s (parse error): %v", entry.Name(), err)
 			continue
 		}
-		if report.ToolID != "" && isPublicReportRef(report) {
+		if report.ToolID != "" && sync.IsPublicReport(report) {
 			reports = append(reports, report)
 		}
 	}
 	return reports, nil
-}
-
-func isPublicReportRef(report reportRef) bool {
-	if report.ScanIncomplete && len(report.Findings) == 0 {
-		return false
-	}
-	if strings.Contains(report.SourceURL, "github.com") && report.Stars < sync.MinPublicGitHubStars && report.Category != "Scan Request" {
-		return false
-	}
-	return true
 }
 
 func loadIndex(path string) (HealthIndex, error) {
@@ -286,7 +277,7 @@ func fetchHealth(ctx context.Context, client *github.Client, owner, repo string,
 	release, _, releaseErr := client.Repositories.GetLatestRelease(ctx, owner, repo)
 	health.LastReleaseAt, err = resolveLastReleaseAt(release, releaseErr, previous.LastReleaseAt)
 	if err != nil {
-		return RepositoryHealth{}, err
+		log.Printf("%s/%s: %v; retaining the previous release timestamp", owner, repo, err)
 	}
 	return health, nil
 }
@@ -297,7 +288,7 @@ func resolveLastReleaseAt(release *github.RepositoryRelease, releaseErr error, p
 		if errors.As(releaseErr, &githubErr) && githubErr.Response != nil && githubErr.Response.StatusCode == http.StatusNotFound {
 			return "", nil
 		}
-		return "", fmt.Errorf("get latest release: %w", releaseErr)
+		return previous, fmt.Errorf("get latest release: %w", releaseErr)
 	}
 	if release == nil {
 		return previous, nil
@@ -312,6 +303,14 @@ func isRateLimitError(err error) bool {
 	}
 	var secondary *github.AbuseRateLimitError
 	return errors.As(err, &secondary)
+}
+
+func isContextError(err error) bool {
+	return errors.Is(err, context.Canceled) || errors.Is(err, context.DeadlineExceeded)
+}
+
+func shouldStopRefresh(ctx context.Context, err error) bool {
+	return ctx.Err() != nil || isContextError(err) || isRateLimitError(err)
 }
 
 func formatTimestamp(t time.Time) string {

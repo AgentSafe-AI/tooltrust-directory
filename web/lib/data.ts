@@ -164,7 +164,8 @@ export function getRepositoryHealth(report: Report): RepositoryHealth | null {
         healthIndex = parsed as RepositoryHealthIndex;
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        throw new Error(`Failed to load repository health data: ${message}`);
+        console.warn(`Failed to load repository health data; hiding health cards: ${message}`);
+        healthIndex = {};
       }
     }
   }
