@@ -1,0 +1,284 @@
+// Command repo-health refreshes GitHub repository health metadata used by the
+// directory detail pages. It is intentionally separate from security scans so
+// popularity and activity can update without rescanning every MCP server.
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"flag"
+	"fmt"
+	"log"
+	"os"
+	"path/filepath"
+	"sort"
+	"strings"
+	"time"
+
+	"github.com/google/go-github/v68/github"
+	"golang.org/x/oauth2"
+)
+
+const defaultHistoryDays = 28
+
+type reportRef struct {
+	ToolID    string `json:"tool_id"`
+	SourceURL string `json:"source_url"`
+	Stars     int    `json:"stars"`
+}
+
+type HealthSnapshot struct {
+	Date             string `json:"date"`
+	Stars            int    `json:"stars"`
+	OpenPullRequests int    `json:"open_pull_requests"`
+}
+
+type RepositoryHealth struct {
+	Repository       string           `json:"repository"`
+	Stars            int              `json:"stars"`
+	Forks            int              `json:"forks"`
+	Contributors     int              `json:"contributors"`
+	OpenIssues       int              `json:"open_issues"`
+	OpenPullRequests int              `json:"open_pull_requests"`
+	LastReleaseAt    string           `json:"last_release_at,omitempty"`
+	LastCommitAt     string           `json:"last_commit_at,omitempty"`
+	RefreshedAt      string           `json:"refreshed_at"`
+	History          []HealthSnapshot `json:"history,omitempty"`
+}
+
+type HealthIndex struct {
+	SchemaVersion string                      `json:"schema_version"`
+	RefreshedAt   string                      `json:"refreshed_at"`
+	Repositories  map[string]RepositoryHealth `json:"repositories"`
+}
+
+type candidate struct {
+	ToolID     string
+	Repository string
+	Stars      int
+	Refreshed  time.Time
+}
+
+func main() {
+	reportsDir := flag.String("reports-dir", "data/reports", "directory containing ToolTrust report JSON files")
+	output := flag.String("output", "data/repo-health.json", "health index JSON output path")
+	limit := flag.Int("limit", 250, "maximum GitHub repositories to refresh per run; 0 refreshes all")
+	historyDays := flag.Int("history-days", defaultHistoryDays, "number of daily snapshots to retain")
+	flag.Parse()
+
+	if *limit < 0 || *historyDays < 1 {
+		log.Fatal("limit must be >= 0 and history-days must be >= 1")
+	}
+
+	index, err := loadIndex(*output)
+	if err != nil {
+		log.Fatalf("load health index: %v", err)
+	}
+	reports, err := loadReportRefs(*reportsDir)
+	if err != nil {
+		log.Fatalf("load reports: %v", err)
+	}
+	candidates := healthCandidates(reports, index)
+	if *limit > 0 && len(candidates) > *limit {
+		candidates = candidates[:*limit]
+	}
+	if len(candidates) == 0 {
+		log.Println("No GitHub repositories require health refresh")
+		return
+	}
+
+	client := newGitHubClient(context.Background(), os.Getenv("GITHUB_TOKEN"))
+	now := time.Now().UTC()
+	for _, c := range candidates {
+		owner, repo, _ := strings.Cut(c.Repository, "/")
+		health, err := fetchHealth(context.Background(), client, owner, repo, index.Repositories[c.Repository], now, *historyDays)
+		if err != nil {
+			log.Printf("%s: %v", c.Repository, err)
+			continue
+		}
+		index.Repositories[c.Repository] = health
+		log.Printf("refreshed %s", c.Repository)
+	}
+	index.SchemaVersion = "1.0"
+	index.RefreshedAt = now.Format(time.RFC3339)
+	if err := writeIndex(*output, index); err != nil {
+		log.Fatalf("write health index: %v", err)
+	}
+}
+
+func newGitHubClient(ctx context.Context, token string) *github.Client {
+	if token == "" {
+		return github.NewClient(nil)
+	}
+	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: token})
+	return github.NewClient(oauth2.NewClient(ctx, ts))
+}
+
+func loadReportRefs(dir string) ([]reportRef, error) {
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return nil, err
+	}
+	var reports []reportRef
+	for _, entry := range entries {
+		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".json") {
+			continue
+		}
+		data, err := os.ReadFile(filepath.Join(dir, entry.Name()))
+		if err != nil {
+			return nil, err
+		}
+		var report reportRef
+		if err := json.Unmarshal(data, &report); err != nil {
+			return nil, fmt.Errorf("%s: %w", entry.Name(), err)
+		}
+		if report.ToolID != "" {
+			reports = append(reports, report)
+		}
+	}
+	return reports, nil
+}
+
+func loadIndex(path string) (HealthIndex, error) {
+	index := HealthIndex{SchemaVersion: "1.0", Repositories: map[string]RepositoryHealth{}}
+	data, err := os.ReadFile(path)
+	if os.IsNotExist(err) {
+		return index, nil
+	}
+	if err != nil {
+		return index, err
+	}
+	if err := json.Unmarshal(data, &index); err != nil {
+		return index, err
+	}
+	if index.Repositories == nil {
+		index.Repositories = map[string]RepositoryHealth{}
+	}
+	return index, nil
+}
+
+func healthCandidates(reports []reportRef, index HealthIndex) []candidate {
+	seen := map[string]bool{}
+	var candidates []candidate
+	for _, report := range reports {
+		owner, repo, ok := parseGitHubRepo(report.SourceURL)
+		if !ok {
+			continue
+		}
+		name := owner + "/" + repo
+		if seen[name] {
+			continue
+		}
+		seen[name] = true
+		var refreshed time.Time
+		if entry, ok := index.Repositories[name]; ok && entry.RefreshedAt != "" {
+			refreshed, _ = time.Parse(time.RFC3339, entry.RefreshedAt)
+		}
+		candidates = append(candidates, candidate{ToolID: report.ToolID, Repository: name, Stars: report.Stars, Refreshed: refreshed})
+	}
+	sort.Slice(candidates, func(i, j int) bool {
+		if candidates[i].Refreshed.Equal(candidates[j].Refreshed) {
+			return candidates[i].Stars > candidates[j].Stars
+		}
+		if candidates[i].Refreshed.IsZero() {
+			return true
+		}
+		if candidates[j].Refreshed.IsZero() {
+			return false
+		}
+		return candidates[i].Refreshed.Before(candidates[j].Refreshed)
+	})
+	return candidates
+}
+
+func fetchHealth(ctx context.Context, client *github.Client, owner, repo string, previous RepositoryHealth, now time.Time, historyDays int) (RepositoryHealth, error) {
+	ghRepo, _, err := client.Repositories.Get(ctx, owner, repo)
+	if err != nil {
+		return RepositoryHealth{}, fmt.Errorf("get repository: %w", err)
+	}
+
+	contributors, contributorResp, err := client.Repositories.ListContributors(ctx, owner, repo, &github.ListContributorsOptions{ListOptions: github.ListOptions{PerPage: 1}})
+	if err != nil {
+		return RepositoryHealth{}, fmt.Errorf("list contributors: %w", err)
+	}
+	contributorCount := len(contributors)
+	if contributorResp != nil && contributorResp.LastPage > 0 {
+		contributorCount = contributorResp.LastPage
+	}
+
+	prs, prResp, err := client.PullRequests.List(ctx, owner, repo, &github.PullRequestListOptions{State: "open", ListOptions: github.ListOptions{PerPage: 1}})
+	if err != nil {
+		return RepositoryHealth{}, fmt.Errorf("list open pull requests: %w", err)
+	}
+	openPRs := len(prs)
+	if prResp != nil && prResp.LastPage > 0 {
+		openPRs = prResp.LastPage
+	}
+
+	health := RepositoryHealth{
+		Repository:       owner + "/" + repo,
+		Stars:            ghRepo.GetStargazersCount(),
+		Forks:            ghRepo.GetForksCount(),
+		Contributors:     contributorCount,
+		OpenIssues:       ghRepo.GetOpenIssuesCount(),
+		OpenPullRequests: openPRs,
+		LastCommitAt:     formatTimestamp(ghRepo.GetPushedAt().Time),
+		RefreshedAt:      now.Format(time.RFC3339),
+		History: appendSnapshot(previous.History, HealthSnapshot{
+			Date:             now.Format("2006-01-02"),
+			Stars:            ghRepo.GetStargazersCount(),
+			OpenPullRequests: openPRs,
+		}, historyDays),
+	}
+
+	release, _, releaseErr := client.Repositories.GetLatestRelease(ctx, owner, repo)
+	if releaseErr == nil && release != nil {
+		health.LastReleaseAt = formatTimestamp(release.GetPublishedAt().Time)
+	} else {
+		health.LastReleaseAt = previous.LastReleaseAt
+	}
+	return health, nil
+}
+
+func formatTimestamp(t time.Time) string {
+	if t.IsZero() {
+		return ""
+	}
+	return t.UTC().Format(time.RFC3339)
+}
+
+func appendSnapshot(history []HealthSnapshot, next HealthSnapshot, keep int) []HealthSnapshot {
+	result := append([]HealthSnapshot(nil), history...)
+	if len(result) > 0 && result[len(result)-1].Date == next.Date {
+		result[len(result)-1] = next
+	} else {
+		result = append(result, next)
+	}
+	if len(result) > keep {
+		result = result[len(result)-keep:]
+	}
+	return result
+}
+
+func parseGitHubRepo(sourceURL string) (owner, repo string, ok bool) {
+	const prefix = "https://github.com/"
+	if !strings.HasPrefix(sourceURL, prefix) {
+		return "", "", false
+	}
+	parts := strings.Split(strings.TrimPrefix(sourceURL, prefix), "/")
+	if len(parts) < 2 || parts[0] == "" || parts[1] == "" {
+		return "", "", false
+	}
+	return parts[0], parts[1], true
+}
+
+func writeIndex(path string, index HealthIndex) error {
+	data, err := json.MarshalIndent(index, "", "  ")
+	if err != nil {
+		return err
+	}
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
+	return os.WriteFile(path, append(data, '\n'), 0o644)
+}

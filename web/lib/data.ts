@@ -23,7 +23,33 @@ export const getToolImpactLine = getToolImpactLineUtil;
 export const getToolNarrative = getToolNarrativeUtil;
 
 const REPORTS_DIR = "data/reports";
+const REPO_HEALTH_PATH = "data/repo-health.json";
 const MIN_PUBLIC_GITHUB_STARS = 50;
+
+export interface HealthSnapshot {
+  date: string;
+  stars: number;
+  open_pull_requests: number;
+}
+
+export interface RepositoryHealth {
+  repository: string;
+  stars: number;
+  forks: number;
+  contributors: number;
+  open_issues: number;
+  open_pull_requests: number;
+  last_release_at?: string;
+  last_commit_at?: string;
+  refreshed_at: string;
+  history?: HealthSnapshot[];
+}
+
+interface RepositoryHealthIndex {
+  repositories?: Record<string, RepositoryHealth>;
+}
+
+let healthIndex: RepositoryHealthIndex | undefined;
 
 function getReportsDir(): string {
   const cwd = process.cwd();
@@ -31,6 +57,14 @@ function getReportsDir(): string {
     return path.join(cwd, "..", REPORTS_DIR);
   }
   return path.join(cwd, REPORTS_DIR);
+}
+
+function getRepoHealthPath(): string {
+  const cwd = process.cwd();
+  if (cwd.endsWith("web")) {
+    return path.join(cwd, "..", REPO_HEALTH_PATH);
+  }
+  return path.join(cwd, REPO_HEALTH_PATH);
 }
 
 /**
@@ -105,6 +139,31 @@ export function getReportByToolName(name: string): Report | null {
   } catch {
     return null;
   }
+}
+
+/**
+ * Returns an optional GitHub activity snapshot. This data is refreshed
+ * independently from security scans, so repository popularity can stay current
+ * without changing a security report's version or scan date.
+ */
+export function getRepositoryHealth(report: Report): RepositoryHealth | null {
+  const repository = githubRepositoryFromSource(report.source_url);
+  if (!repository) return null;
+
+  if (healthIndex === undefined) {
+    const healthPath = getRepoHealthPath();
+    try {
+      healthIndex = JSON.parse(fs.readFileSync(healthPath, "utf-8")) as RepositoryHealthIndex;
+    } catch {
+      healthIndex = {};
+    }
+  }
+  return healthIndex.repositories?.[repository] ?? null;
+}
+
+function githubRepositoryFromSource(sourceUrl: string): string | null {
+  const match = sourceUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/?#]+)/);
+  return match ? `${match[1]}/${match[2]}` : null;
 }
 
 function isGithubBackedReport(report: Report): boolean {
