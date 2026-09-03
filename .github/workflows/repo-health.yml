@@ -1,0 +1,50 @@
+name: Refresh Repository Health
+
+on:
+  schedule:
+    # Runs after the main security audit to avoid competing repository writes.
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "GitHub repositories to refresh (0 refreshes all)"
+        required: false
+        default: "200"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-health
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REGISTRY_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+          cache: true
+
+      - name: Test health collector
+        run: go test -race ./cmd/repo-health
+
+      - name: Refresh GitHub repository health
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGISTRY_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+          REQUESTED_LIMIT: ${{ inputs.limit }}
+        run: |
+          LIMIT="${REQUESTED_LIMIT:-200}"
+          go run ./cmd/repo-health --limit "$LIMIT"
+
+      - name: Commit refreshed health index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          go run ./cmd/repo-health --publish-only

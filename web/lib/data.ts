@@ -23,7 +23,34 @@ export const getToolImpactLine = getToolImpactLineUtil;
 export const getToolNarrative = getToolNarrativeUtil;
 
 const REPORTS_DIR = "data/reports";
+const REPO_HEALTH_PATH = "data/repo-health.json";
 const MIN_PUBLIC_GITHUB_STARS = 50;
+
+export interface HealthSnapshot {
+  date: string;
+  stars: number;
+  open_pull_requests: number;
+}
+
+export interface RepositoryHealth {
+  repository: string;
+  stars: number;
+  forks: number;
+  contributors: number;
+  open_issues: number;
+  open_pull_requests: number;
+  last_release_at?: string;
+  last_commit_at?: string;
+  refreshed_at: string;
+  last_attempt_at?: string;
+  history?: HealthSnapshot[];
+}
+
+interface RepositoryHealthIndex {
+  repositories?: Record<string, RepositoryHealth>;
+}
+
+let healthIndex: RepositoryHealthIndex | undefined;
 
 function getReportsDir(): string {
   const cwd = process.cwd();
@@ -31,6 +58,14 @@ function getReportsDir(): string {
     return path.join(cwd, "..", REPORTS_DIR);
   }
   return path.join(cwd, REPORTS_DIR);
+}
+
+function getRepoHealthPath(): string {
+  const cwd = process.cwd();
+  if (cwd.endsWith("web")) {
+    return path.join(cwd, "..", REPO_HEALTH_PATH);
+  }
+  return path.join(cwd, REPO_HEALTH_PATH);
 }
 
 /**
@@ -102,6 +137,50 @@ export function getReportByToolName(name: string): Report | null {
     const raw = fs.readFileSync(file, "utf-8");
     const report = JSON.parse(raw) as Report;
     return isPublicReport(report) ? report : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Returns an optional GitHub activity snapshot. This data is refreshed
+ * independently from security scans, so repository popularity can stay current
+ * without changing a security report's version or scan date.
+ */
+export function getRepositoryHealth(report: Report): RepositoryHealth | null {
+  const repository = githubRepositoryFromSource(report.source_url);
+  if (!repository) return null;
+
+  if (healthIndex === undefined) {
+    const healthPath = getRepoHealthPath();
+    if (!fs.existsSync(healthPath)) {
+      healthIndex = {};
+    } else {
+      try {
+        const parsed = JSON.parse(fs.readFileSync(healthPath, "utf-8")) as unknown;
+        if (!parsed || typeof parsed !== "object") {
+          throw new Error("expected a JSON object");
+        }
+        healthIndex = parsed as RepositoryHealthIndex;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.warn(`Failed to load repository health data; hiding health cards: ${message}`);
+        healthIndex = {};
+      }
+    }
+  }
+  const health = healthIndex.repositories?.[repository];
+  return health?.refreshed_at ? health : null;
+}
+
+function githubRepositoryFromSource(sourceUrl: unknown): string | null {
+  if (typeof sourceUrl !== "string") return null;
+  try {
+    const parsed = new URL(sourceUrl);
+    if (parsed.protocol !== "https:" || parsed.hostname !== "github.com") return null;
+    const [owner, repo] = parsed.pathname.split("/").filter(Boolean);
+    if (!owner || !repo) return null;
+    return `${owner}/${repo.replace(/\.git$/, "")}`;
   } catch {
     return null;
   }

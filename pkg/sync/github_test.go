@@ -23,6 +23,27 @@ func TestGradeRank(t *testing.T) {
 	}
 }
 
+func TestIsPublicReport(t *testing.T) {
+	tests := []struct {
+		name   string
+		report Report
+		want   bool
+	}{
+		{name: "public GitHub report", report: Report{SourceURL: "https://github.com/acme/public", Stars: MinPublicGitHubStars}, want: true},
+		{name: "low-star GitHub report", report: Report{SourceURL: "https://github.com/acme/private", Stars: MinPublicGitHubStars - 1}, want: false},
+		{name: "scan request bypasses star threshold", report: Report{SourceURL: "https://github.com/acme/request", Stars: 1, Category: "Scan Request"}, want: true},
+		{name: "empty incomplete scan", report: Report{SourceURL: "https://github.com/acme/incomplete", Stars: 100, ScanIncomplete: true}, want: false},
+		{name: "incomplete scan with findings", report: Report{SourceURL: "https://github.com/acme/finding", Stars: 100, ScanIncomplete: true, Findings: []Finding{{ID: "AS-001"}}}, want: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := IsPublicReport(tt.report); got != tt.want {
+				t.Errorf("IsPublicReport() = %t, want %t", got, tt.want)
+			}
+		})
+	}
+}
+
 func TestTruncateRunes(t *testing.T) {
 	tests := []struct {
 		input string

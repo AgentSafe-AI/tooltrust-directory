@@ -50,7 +50,8 @@ type Report struct {
 		Low      int `json:"low"`
 		Info     int `json:"info"`
 	} `json:"summary"`
-	Methodology string `json:"methodology"`
+	Methodology    string `json:"methodology"`
+	ScanIncomplete bool   `json:"scan_incomplete"`
 }
 
 // Finding mirrors the finding shape from report.schema.json.
@@ -206,7 +207,7 @@ func loadReports(dir string) ([]Report, error) {
 			log.Printf("warning: skip %s (parse error): %v", e.Name(), err)
 			continue
 		}
-		if !isPublicReport(r) {
+		if !IsPublicReport(r) {
 			continue
 		}
 		reports = append(reports, r)
@@ -228,7 +229,11 @@ func loadReports(dir string) ([]Report, error) {
 	return reports, nil
 }
 
-func isPublicReport(r Report) bool {
+// IsPublicReport applies the visibility rules shared by registry consumers.
+func IsPublicReport(r Report) bool {
+	if r.ScanIncomplete && len(r.Findings) == 0 {
+		return false
+	}
 	if strings.Contains(r.SourceURL, "github.com") && r.Stars < MinPublicGitHubStars {
 		if r.Category == "Scan Request" {
 			return true
