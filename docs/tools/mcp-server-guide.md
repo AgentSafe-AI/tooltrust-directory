@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.2.96-figquery.1` |
 | **Vendor** | figma |
-| **Stars** | ⭐ 1943 |
+| **Stars** | ⭐ 1950 |
 | **Language** | Python |
 | **Source** | [mcp-server-guide](https://github.com/figma/mcp-server-guide) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

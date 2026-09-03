@@ -10,7 +10,7 @@ Point your AI at smarts.md: https://mcp.smarts.md
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [defi-io-smartcontract](https://smithery.ai/server/defi-io/smartcontract) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

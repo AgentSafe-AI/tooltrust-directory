@@ -310,7 +310,7 @@ For commercial use and API access, visit [domainkits.com](https://domainkits.com
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [domainkits-domainkits](https://smithery.ai/server/DomainKits/domainkits) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

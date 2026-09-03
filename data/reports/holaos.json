@@ -3,80 +3,47 @@
   "version": "latest",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-02T02:14:12.81060108Z",
+  "scan_date": "2026-09-03T02:19:17.603900858Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/holaboss-ai/holaOS",
   "category": "Developer Tools",
   "vendor": "holaboss-ai",
-  "stars": 11112,
+  "stars": 11121,
   "npm_package": "hola-boss-oss",
   "license": "NOASSERTION",
   "language": "TypeScript",
   "description": "Open-source agentic workspace enterprises can make their own. Connect the systems you already run — 100+ integrations, MCP, chat tools, apps, browser, local files — with shared memory. Any agent (Claude Code, Codex), any model, or BYOK. Set up in clicks, not months. Local-first: your data never leaves your machines.",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.system.healthz"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.system.info"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.gems.sample"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ossgems.gems.list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.gems.list"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ossgems.gems.list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.gems.list"
-    },
-    {
-      "id": "AS-013",
+      "id": "AS-012",
       "severity": "High",
-      "title": "Tool Shadowing",
-      "description": "tool name \"ossgems.gems.list\" duplicates \"ossgems.gems.list\" already registered in this tool set — a malicious server can shadow a trusted tool by registering an identical name",
-      "recommendation": "Two or more tools registered in your MCP environment share an identical or near-identical name. A malicious server can shadow a trusted tool this way, intercepting calls you intend for the legitimate tool. Remove the conflicting server or rename its tools to be unambiguous.",
-      "tool_name": "ossgems.gems.list"
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vlatest: 10 tool(s) added, 7 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ossgems_gems_dump",
+          "ossgems_gems_list",
+          "ossgems_gems_sample",
+          "ossgems_gems_trending",
+          "ossgems_system_healthz",
+          "ossgems_system_info",
+          "webextractor_extract",
+          "webextractor_sample",
+          "webextractor_system_healthz",
+          "webextractor_system_info"
+        ],
+        "removed": [
+          "ossgems.gems.dump",
+          "ossgems.gems.list",
+          "ossgems.gems.list",
+          "ossgems.gems.sample",
+          "ossgems.gems.trending",
+          "ossgems.system.healthz",
+          "ossgems.system.info"
+        ],
+        "version": "latest"
+      }
     },
     {
       "id": "AS-014",
@@ -84,7 +51,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.gems.trending"
+      "tool_name": "ossgems_system_healthz"
     },
     {
       "id": "AS-014",
@@ -92,15 +59,103 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "ossgems.gems.dump"
+      "tool_name": "ossgems_system_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems_gems_sample"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ossgems_gems_list"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems_gems_list"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems_gems_trending"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ossgems_gems_dump"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "webextractor_system_healthz"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "webextractor_system_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "webextractor_sample"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "webextractor_extract"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "webextractor_extract"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "webextractor_extract"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 9
+    "low": 1,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -156,81 +211,87 @@
     }
   ],
   "tool_names": [
-    "ossgems.gems.dump",
-    "ossgems.gems.list",
-    "ossgems.gems.list",
-    "ossgems.gems.sample",
-    "ossgems.gems.trending",
-    "ossgems.system.healthz",
-    "ossgems.system.info"
+    "ossgems_gems_dump",
+    "ossgems_gems_list",
+    "ossgems_gems_sample",
+    "ossgems_gems_trending",
+    "ossgems_system_healthz",
+    "ossgems_system_info",
+    "webextractor_extract",
+    "webextractor_sample",
+    "webextractor_system_healthz",
+    "webextractor_system_info"
   ],
   "tool_contexts": [
     {
-      "tool_name": "ossgems.system.healthz",
+      "tool_name": "ossgems_system_healthz",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: ossgems.system.healthz"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ossgems.system.info",
+      "tool_name": "ossgems_system_info",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: ossgems.system.info"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ossgems.gems.sample",
+      "tool_name": "ossgems_gems_sample",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: ossgems.gems.sample"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ossgems.gems.list",
+      "tool_name": "ossgems_gems_list",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: ossgems.gems.list"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ossgems.gems.list",
+      "tool_name": "ossgems_gems_trending",
       "action": "ALLOW",
-      "grade": "B",
-      "destinations": [
-        "hardcoded domain: ossgems.gems.list"
-      ],
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ossgems.gems.trending",
+      "tool_name": "ossgems_gems_dump",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: ossgems.gems.trending"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "ossgems.gems.dump",
+      "tool_name": "webextractor_system_healthz",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: ossgems.gems.dump"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "webextractor_system_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "webextractor_sample",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "webextractor_extract",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -269,6 +330,12 @@
     },
     {
       "scan_date": "2026-08-31T02:37:50Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "latest"
+    },
+    {
+      "scan_date": "2026-09-02T02:14:12Z",
       "grade": "B",
       "risk_score": 15,
       "version": "latest"

@@ -27,7 +27,7 @@ No setup needed for reading data. For publishing charts, get free API keys at ht
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [autario-data](https://smithery.ai/server/autario/data) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

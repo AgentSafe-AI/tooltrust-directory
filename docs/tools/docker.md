@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `mcp-v0.1.2` |
 | **Vendor** | decionis |
-| **Stars** | ⭐ 166 |
+| **Stars** | ⭐ 167 |
 | **Language** | Go |
 | **Source** | [docker](https://github.com/decionis/docker) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

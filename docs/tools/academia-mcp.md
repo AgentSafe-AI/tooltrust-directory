@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.13.4` |
 | **Vendor** | IlyaGusev |
-| **Stars** | ⭐ 90 |
+| **Stars** | ⭐ 91 |
 | **Language** | Python |
 | **Source** | [academia-mcp](https://github.com/IlyaGusev/academia_mcp) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

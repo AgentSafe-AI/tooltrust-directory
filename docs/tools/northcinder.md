@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.1` |
 | **Vendor** | cinderline |
-| **Stars** | ⭐ 1218 |
+| **Stars** | ⭐ 1219 |
 | **npm Package** | `northcinder-monorepo` |
 | **Language** | JavaScript |
 | **Source** | [northcinder](https://github.com/cinderline/northcinder) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns: {audio (base64 MP3), language, duration}. No API key required — x402 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-text-to-speech](https://smithery.ai/server/axel-belfort/text-to-speech) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
