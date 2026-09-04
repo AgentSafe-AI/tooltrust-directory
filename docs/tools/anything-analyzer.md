@@ -12,7 +12,7 @@
 | **npm Package** | `anything-analyzer` |
 | **Language** | TypeScript |
 | **Source** | [anything-analyzer](https://github.com/Mouseww/anything-analyzer) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

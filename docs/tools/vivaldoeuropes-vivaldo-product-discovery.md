@@ -22,7 +22,7 @@ This MCP server is public and read-only. It does not provide access to customer 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [vivaldoeuropes-vivaldo-product-discovery](https://smithery.ai/server/vivaldoeuropes/vivaldo-product-discovery) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

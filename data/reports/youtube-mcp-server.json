@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-03T02:23:33.077426692Z",
+  "scan_date": "2026-09-04T02:21:38.533695366Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ZubeidHendricks/youtube-mcp-server",
   "category": "Developer Tools",
@@ -19,16 +19,10 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.2: 4 tool(s) added, 7 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.2: 7 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "hasdata_youtube_channel_getYoutubeChannel",
-          "hasdata_youtube_search_getYoutubeSearchResults",
-          "hasdata_youtube_transcript_getYoutubeTranscript",
-          "hasdata_youtube_video_getYoutubeVideo"
-        ],
-        "removed": [
           "channels_getChannel",
           "channels_listVideos",
           "playlists_getPlaylist",
@@ -36,6 +30,12 @@
           "transcripts_getTranscript",
           "videos_getVideo",
           "videos_searchVideos"
+        ],
+        "removed": [
+          "hasdata_youtube_channel_getYoutubeChannel",
+          "hasdata_youtube_search_getYoutubeSearchResults",
+          "hasdata_youtube_transcript_getYoutubeTranscript",
+          "hasdata_youtube_video_getYoutubeVideo"
         ],
         "version": "1.0.2"
       }
@@ -46,15 +46,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "hasdata_youtube_channel_getYoutubeChannel"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"paginationToken\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "hasdata_youtube_channel_getYoutubeChannel"
+      "tool_name": "videos_getVideo"
     },
     {
       "id": "AS-011",
@@ -62,7 +54,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "hasdata_youtube_channel_getYoutubeChannel"
+      "tool_name": "videos_getVideo"
     },
     {
       "id": "AS-014",
@@ -70,47 +62,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hasdata_youtube_channel_getYoutubeChannel"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "hasdata_youtube_search_getYoutubeSearchResults"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "hasdata_youtube_search_getYoutubeSearchResults"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"paginationToken\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "hasdata_youtube_search_getYoutubeSearchResults"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "hasdata_youtube_search_getYoutubeSearchResults"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hasdata_youtube_search_getYoutubeSearchResults"
+      "tool_name": "videos_getVideo"
     },
     {
       "id": "AS-002",
@@ -118,7 +70,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "hasdata_youtube_transcript_getYoutubeTranscript"
+      "tool_name": "videos_searchVideos"
     },
     {
       "id": "AS-011",
@@ -126,7 +78,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "hasdata_youtube_transcript_getYoutubeTranscript"
+      "tool_name": "videos_searchVideos"
     },
     {
       "id": "AS-014",
@@ -134,23 +86,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hasdata_youtube_transcript_getYoutubeTranscript"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "hasdata_youtube_video_getYoutubeVideo"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "hasdata_youtube_video_getYoutubeVideo"
+      "tool_name": "videos_searchVideos"
     },
     {
       "id": "AS-014",
@@ -158,78 +94,114 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hasdata_youtube_video_getYoutubeVideo"
+      "tool_name": "transcripts_getTranscript"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "channels_getChannel"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "channels_listVideos"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "playlists_getPlaylist"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "playlists_getPlaylistItems"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 5,
-    "info": 10
+    "low": 2,
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "hasdata_youtube_channel_getYoutubeChannel",
-    "hasdata_youtube_search_getYoutubeSearchResults",
-    "hasdata_youtube_transcript_getYoutubeTranscript",
-    "hasdata_youtube_video_getYoutubeVideo"
+    "channels_getChannel",
+    "channels_listVideos",
+    "playlists_getPlaylist",
+    "playlists_getPlaylistItems",
+    "transcripts_getTranscript",
+    "videos_getVideo",
+    "videos_searchVideos"
   ],
   "tool_contexts": [
     {
-      "tool_name": "hasdata_youtube_channel_getYoutubeChannel",
+      "tool_name": "videos_getVideo",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (paginationToken)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hasdata_youtube_search_getYoutubeSearchResults",
+      "tool_name": "videos_searchVideos",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (paginationToken)",
-        "hardcoded domain: searchInformation.totalResults"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hasdata_youtube_transcript_getYoutubeTranscript",
+      "tool_name": "transcripts_getTranscript",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: www.youtube.com"
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "hasdata_youtube_video_getYoutubeVideo",
+      "tool_name": "channels_getChannel",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: www.youtube.com"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "channels_listVideos",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "playlists_getPlaylist",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "playlists_getPlaylistItems",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1209,6 +1181,12 @@
     },
     {
       "scan_date": "2026-09-02T02:19:22Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-09-03T02:23:33Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.2"

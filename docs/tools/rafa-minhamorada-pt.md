@@ -17,7 +17,7 @@ No authentication required. Public API.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rafa-minhamorada-pt](https://smithery.ai/server/rafa/minhamorada-pt) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

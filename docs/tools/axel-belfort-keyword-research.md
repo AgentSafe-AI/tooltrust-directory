@@ -15,7 +15,7 @@ Returns: {keywords[], intent, volume, relatedQueries[]}. No API key required —
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-keyword-research](https://smithery.ai/server/axel-belfort/keyword-research) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -12,7 +12,7 @@
 | **npm Package** | `agent-identity-management` |
 | **Language** | Go |
 | **Source** | [agent-identity-management](https://github.com/opena2a-org/agent-identity-management) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

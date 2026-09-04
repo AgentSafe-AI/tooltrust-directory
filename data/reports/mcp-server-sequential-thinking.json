@@ -1,14 +1,14 @@
 {
   "tool_id": "mcp-server-sequential-thinking",
   "version": "typescript-servers-0.6.2",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-09-03T02:17:28.894580383Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-04T02:14:14.77664044Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
   "category": "Developer Tools",
   "vendor": "modelcontextprotocol",
-  "stars": 90037,
+  "stars": 90061,
   "npm_package": "@modelcontextprotocol/server-sequential-thinking",
   "npm_downloads_monthly": 484365,
   "license": "NOASSERTION",
@@ -16,20 +16,52 @@
   "description": "Model Context Protocol Servers",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vtypescript-servers-0.6.2: 1 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "rct_think"
+        ],
+        "removed": [
+          "sequentialthinking"
+        ],
+        "version": "typescript-servers-0.6.2"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, environment variables",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "rct_think"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "rct_think"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "sequentialthinking"
+      "tool_name": "rct_think"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 1,
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -92,18 +124,19 @@
     }
   ],
   "tool_names": [
-    "sequentialthinking"
+    "rct_think"
   ],
   "tool_contexts": [
     {
-      "tool_name": "sequentialthinking",
+      "tool_name": "rct_think",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (totalThoughts)"
+      "behavior": [
+        "executes_commands",
+        "reads_env"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -1105,6 +1138,12 @@
     },
     {
       "scan_date": "2026-09-02T02:12:01Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "typescript-servers-0.6.2"
+    },
+    {
+      "scan_date": "2026-09-03T02:17:28Z",
       "grade": "A",
       "risk_score": 0,
       "version": "typescript-servers-0.6.2"

@@ -15,7 +15,7 @@ Returns: {routes[], fees, estimatedTime, bridge}. No API key required — x402 m
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-bridge-routes](https://smithery.ai/server/axel-belfort/bridge-routes) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

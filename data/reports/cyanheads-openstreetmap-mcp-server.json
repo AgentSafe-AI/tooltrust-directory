@@ -1,9 +1,9 @@
 {
   "tool_id": "cyanheads-openstreetmap-mcp-server",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-09-03T02:25:44.871594109Z",
+  "scan_date": "2026-09-04T02:25:00.96580141Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/openstreetmap-mcp-server",
   "category": "Developer Tools",
@@ -19,9 +19,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access, HTTP requests",
+      "description": "declared capabilities: database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openstreetmap_search_places"
+      "tool_name": "openstreetmap_geocode"
     },
     {
       "id": "AS-002",
@@ -29,7 +29,7 @@
       "title": "Excessive Permission Surface",
       "description": "input schema exposes 14 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openstreetmap_search_places"
+      "tool_name": "openstreetmap_geocode"
     },
     {
       "id": "AS-011",
@@ -37,23 +37,23 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openstreetmap_search_places"
+      "tool_name": "openstreetmap_geocode"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openstreetmap_search_places"
+      "tool_name": "openstreetmap_geocode"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access, HTTP requests",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openstreetmap_reverse_geocode"
+      "tool_name": "openstreetmap_reverse"
     },
     {
       "id": "AS-011",
@@ -61,15 +61,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openstreetmap_reverse_geocode"
+      "tool_name": "openstreetmap_reverse"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openstreetmap_reverse_geocode"
+      "tool_name": "openstreetmap_reverse"
     },
     {
       "id": "AS-002",
@@ -77,7 +77,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "openstreetmap_lookup_objects"
+      "tool_name": "openstreetmap_lookup"
     },
     {
       "id": "AS-011",
@@ -85,15 +85,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "openstreetmap_lookup_objects"
+      "tool_name": "openstreetmap_lookup"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "openstreetmap_lookup_objects"
+      "tool_name": "openstreetmap_lookup"
     },
     {
       "id": "AS-002",
@@ -107,7 +107,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "openstreetmap_query_nearby"
     },
@@ -131,7 +131,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "openstreetmap_query_bbox"
     },
@@ -147,7 +147,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "openstreetmap_query_raw"
     }
@@ -161,43 +161,43 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "openstreetmap_lookup_objects",
+    "openstreetmap_geocode",
+    "openstreetmap_lookup",
     "openstreetmap_query_bbox",
     "openstreetmap_query_nearby",
     "openstreetmap_query_raw",
-    "openstreetmap_reverse_geocode",
-    "openstreetmap_search_places"
+    "openstreetmap_reverse"
   ],
   "tool_contexts": [
     {
-      "tool_name": "openstreetmap_search_places",
+      "tool_name": "openstreetmap_geocode",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openstreetmap_reverse_geocode",
+      "tool_name": "openstreetmap_reverse",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "openstreetmap_lookup_objects",
+      "tool_name": "openstreetmap_lookup",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "openstreetmap_query_nearby",
@@ -207,7 +207,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "openstreetmap_query_bbox",
@@ -217,7 +217,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "openstreetmap_query_raw",
@@ -231,7 +231,7 @@
         "hardcoded domain: overpass-turbo.eu"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -429,6 +429,12 @@
     },
     {
       "scan_date": "2026-09-02T02:22:08Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.4.2"
+    },
+    {
+      "scan_date": "2026-09-03T02:25:44Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.4.2"

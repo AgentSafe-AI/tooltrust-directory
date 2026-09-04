@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.5` |
 | **Vendor** | cursortouch |
-| **Stars** | ⭐ 6875 |
+| **Stars** | ⭐ 6897 |
 | **Language** | Python |
 | **Source** | [windows-mcp](https://github.com/CursorTouch/Windows-MCP) |
-| **Scan Date** | 2026-09-03 |
+| **Scan Date** | 2026-09-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
