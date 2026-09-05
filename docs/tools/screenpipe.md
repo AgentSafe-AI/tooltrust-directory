@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.3.27` |
 | **Vendor** | screenpipe |
-| **Stars** | ⭐ 21401 |
+| **Stars** | ⭐ 21413 |
 | **Language** | Rust |
 | **Source** | [screenpipe](https://github.com/screenpipe/screenpipe) |
-| **Scan Date** | 2026-09-04 |
+| **Scan Date** | 2026-09-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

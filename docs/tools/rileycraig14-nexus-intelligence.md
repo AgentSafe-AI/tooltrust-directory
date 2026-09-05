@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rileycraig14-nexus-intelligence](https://smithery.ai/server/rileycraig14/nexus-intelligence) |
-| **Scan Date** | 2026-09-02 |
+| **Scan Date** | 2026-09-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

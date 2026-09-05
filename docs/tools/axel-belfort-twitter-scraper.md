@@ -15,7 +15,7 @@ Returns structured JSON with profiles, tweets, engagement metrics. No API key re
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-twitter-scraper](https://smithery.ai/server/axel-belfort/twitter-scraper) |
-| **Scan Date** | 2026-09-04 |
+| **Scan Date** | 2026-09-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

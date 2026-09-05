@@ -1,9 +1,9 @@
 {
   "tool_id": "omnifocus-mcp",
   "version": "1.15.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-09-04T02:22:35Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-09-05T02:20:24.105651329Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/themotionmachine/OmniFocus-MCP",
   "category": "Developer Tools",
@@ -16,40 +16,182 @@
   "description": "Let LLMs interface with your tasks and projects through the Model Context Protocol. Add, organize, and query your OmniFocus database with natural language commands.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/buildServer.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 77,
-            "snippet": "new McpServer(",
-            "file": "src/buildServer.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "dump_database"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dump_database"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "add_omnifocus_task"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "add_omnifocus_task"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add_omnifocus_task"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add_project"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "remove_item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "remove_item"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 21 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "edit_item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "edit_item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "batch_add_items"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "batch_remove_items"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "batch_remove_items"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "query_omnifocus"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "query_omnifocus"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "query_omnifocus"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_perspectives"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_perspective_view"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_tags"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_tag"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_tag"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 3,
+    "info": 18
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,486 +209,129 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "add_omnifocus_task",
+    "add_project",
+    "batch_add_items",
+    "batch_remove_items",
+    "create_tag",
+    "dump_database",
+    "edit_item",
+    "get_perspective_view",
+    "list_perspectives",
+    "list_tags",
+    "query_omnifocus",
+    "remove_item"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-06-15T23:53:08Z",
+      "tool_name": "dump_database",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-16T03:05:45Z",
+      "tool_name": "add_omnifocus_task",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-17T03:04:31Z",
+      "tool_name": "add_project",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-18T02:58:18Z",
+      "tool_name": "remove_item",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (allowPastOccurrence)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-19T03:42:27Z",
+      "tool_name": "edit_item",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "destinations": [
+        "dynamic email recipient (allowPastOccurrence)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-20T02:48:14Z",
+      "tool_name": "batch_add_items",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-21T03:03:01Z",
+      "tool_name": "batch_remove_items",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-22T03:08:27Z",
+      "tool_name": "query_omnifocus",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (sortOrder)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-23T02:42:22Z",
+      "tool_name": "list_perspectives",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "destinations": [
+        "dynamic email recipient (includeCustom)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-24T02:43:32Z",
+      "tool_name": "get_perspective_view",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-25T02:44:17Z",
+      "tool_name": "list_tags",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-26T02:49:02Z",
+      "tool_name": "create_tag",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-06-27T02:39:39Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-06-28T02:52:30Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-06-29T02:52:42Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-06-30T02:47:11Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-01T02:54:09Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-02T02:41:26Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-03T02:18:40Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-04T02:17:52Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-05T02:24:33Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-06T02:34:39Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-07T02:24:39Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-08T02:05:35Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-09T02:17:58Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-10T02:17:08Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-11T02:03:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-12T02:07:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-13T02:07:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-14T01:55:08Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-15T01:40:47Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-16T02:01:48Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-17T02:05:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-18T01:55:14Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-19T02:04:46Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-20T03:35:59Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-21T02:02:32Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-22T02:02:06Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-23T02:10:35Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-24T02:04:42Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-25T02:04:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-26T02:09:27Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-27T02:17:51Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-28T01:59:40Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-29T02:01:49Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-30T01:51:12Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-07-31T02:07:57Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-08-01T02:12:28Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-08-02T02:07:30Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-08-03T02:11:48Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-08-04T01:57:17Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-08-05T01:58:07Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.9.2"
-    },
-    {
-      "scan_date": "2026-08-06T02:00:25Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.10.0"
-    },
-    {
-      "scan_date": "2026-08-07T02:21:06Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.10.0"
-    },
-    {
-      "scan_date": "2026-08-08T01:12:13Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.10.0"
-    },
-    {
-      "scan_date": "2026-08-09T01:15:38Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.10.0"
-    },
-    {
-      "scan_date": "2026-08-10T01:18:09Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.10.0"
-    },
-    {
-      "scan_date": "2026-08-11T01:15:52Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.10.0"
-    },
-    {
-      "scan_date": "2026-08-12T01:22:30Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
-    },
-    {
-      "scan_date": "2026-08-13T01:24:02Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
-    },
-    {
-      "scan_date": "2026-08-14T01:22:19Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
-    },
-    {
-      "scan_date": "2026-08-15T01:00:15Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.11.0"
-    },
-    {
-      "scan_date": "2026-08-16T00:57:04Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.0"
-    },
-    {
-      "scan_date": "2026-08-17T00:57:41Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.12.0"
-    },
-    {
-      "scan_date": "2026-08-18T00:54:45Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.13.0"
-    },
-    {
-      "scan_date": "2026-08-19T00:55:17Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.0"
-    },
-    {
-      "scan_date": "2026-08-20T00:55:57Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-21T00:59:56Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-22T00:56:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-23T01:00:22Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-24T00:54:21Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-25T00:56:07Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-26T00:55:41Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.14.1"
-    },
-    {
-      "scan_date": "2026-08-27T06:08:08Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
-    },
-    {
-      "scan_date": "2026-08-28T08:19:33Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
-    },
-    {
-      "scan_date": "2026-08-29T05:06:10Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
-    },
-    {
-      "scan_date": "2026-08-30T02:50:44Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
-    },
-    {
-      "scan_date": "2026-08-31T02:43:15Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
-    },
-    {
-      "scan_date": "2026-09-02T02:19:57Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
-    },
-    {
-      "scan_date": "2026-09-03T02:24:00Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.15.0"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ]
 }

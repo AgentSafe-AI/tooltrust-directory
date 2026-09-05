@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-04T02:21:27.682483648Z",
+  "scan_date": "2026-09-05T02:19:33.016438138Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/kimtaeyoon83/mcp-server-youtube-transcript",
   "category": "Developer Tools",
@@ -23,10 +23,10 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "search.list"
+          "get_transcript"
         ],
         "removed": [
-          "get_transcript"
+          "search.list"
         ],
         "version": "0.1.1"
       }
@@ -37,7 +37,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search.list"
+      "tool_name": "get_transcript"
     },
     {
       "id": "AS-011",
@@ -45,15 +45,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search.list"
+      "tool_name": "get_transcript"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search.list"
+      "tool_name": "get_transcript"
     }
   ],
   "summary": {
@@ -65,11 +65,11 @@
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "search.list"
+    "get_transcript"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search.list",
+      "tool_name": "get_transcript",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -77,11 +77,10 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: search.list",
-        "hardcoded domain: youtube.com"
+        "dynamic URL input (url)"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -1091,6 +1090,12 @@
       "scan_date": "2026-09-03T02:23:09Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.1.1"
+    },
+    {
+      "scan_date": "2026-09-04T02:21:27Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.1.1"
     }
   ]

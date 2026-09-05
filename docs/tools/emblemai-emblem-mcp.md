@@ -74,7 +74,7 @@ MIT (stdio bridge + documentation). Hosted MCP is managed SaaS.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [emblemai-emblem-mcp](https://smithery.ai/server/emblemai/emblem-mcp) |
-| **Scan Date** | 2026-09-04 |
+| **Scan Date** | 2026-09-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -288,7 +288,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-input parameter "fromTokenAddress" accepts a credential (informational; not evidence of insecure handling)
+input parameter "toTokenAddress" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -300,7 +300,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "toTokenAddress" accepts a credential (informational; not evidence of insecure handling)
+input parameter "fromTokenAddress" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

@@ -1,9 +1,9 @@
 {
   "tool_id": "mcp-neovim-server",
   "version": "0.5.5",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-09-04T02:22:27Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-09-05T02:20:14.517729918Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/bigcodegen/mcp-neovim-server",
   "category": "Developer Tools",
@@ -16,40 +16,278 @@
   "description": "Control Neovim using Model Context Protocol (MCP) and the official neovim/node-client JavaScript library",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 7,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 12,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_buffer"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_buffer"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_command"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "vim_command"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_command"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_edit"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_window"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "vim_window"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_window"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_mark"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_register"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_visual"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_buffer_switch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_buffer_save"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_buffer_save"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_file_open"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_file_open"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "vim_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_search_replace"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "vim_search_replace"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_search_replace"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_grep"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_grep"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_health"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_macro"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_tab"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_tab"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_fold"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "vim_jump"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "vim_jump"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 4,
+    "info": 29
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,1014 +305,190 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "vim_buffer",
+    "vim_buffer_save",
+    "vim_buffer_switch",
+    "vim_command",
+    "vim_edit",
+    "vim_file_open",
+    "vim_fold",
+    "vim_grep",
+    "vim_health",
+    "vim_jump",
+    "vim_macro",
+    "vim_mark",
+    "vim_register",
+    "vim_search",
+    "vim_search_replace",
+    "vim_status",
+    "vim_tab",
+    "vim_visual",
+    "vim_window"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-03-25T05:38:19Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-03-31T22:14:15Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-01T20:14:34Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-03T06:49:29Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-03T20:33:12Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-03T21:12:23Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-03T22:49:40Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-04T01:36:57Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-04T06:21:38Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-04T16:43:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-04T22:54:15Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-05T01:13:10Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-05T01:52:59Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-06T01:55:55Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-07T01:42:53Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-07T21:59:50Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-08T01:39:03Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-09T01:31:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-10T01:56:33Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-11T01:38:20Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-12T02:03:09Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-13T02:07:00Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-14T02:02:29Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-15T02:00:15Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-16T02:14:35Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-17T02:02:55Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-18T01:45:10Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-19T02:06:39Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-20T02:12:42Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-21T02:05:26Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-22T02:03:44Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-23T02:06:56Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-24T02:07:07Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-25T01:58:57Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-26T02:08:45Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-26T07:26:01Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-27T01:25:30Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-28T02:25:01Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-29T02:23:52Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-04-30T02:22:22Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-01T02:26:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-02T02:14:06Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-03T02:23:30Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-04T02:20:43Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-05T02:09:48Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-06T02:09:12Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-07T02:11:43Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-08T02:18:14Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-09T02:14:12Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-10T02:13:18Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-11T02:22:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-12T02:17:38Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-13T02:32:29Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-14T02:35:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-15T02:33:13Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-16T02:15:10Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-17T02:21:37Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-18T02:41:26Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-19T02:39:23Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-20T02:40:58Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-21T02:39:25Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-22T02:41:57Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-23T02:19:27Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-24T02:38:33Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-25T02:46:02Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-26T02:35:49Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-27T02:45:35Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-28T02:23:32Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-29T02:36:46Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-30T02:22:09Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-05-31T02:45:46Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-01T02:56:04Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-02T02:53:14Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-03T03:01:33Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-04T02:56:54Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-05T02:44:51Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-06T02:33:38Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-07T02:49:42Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-08T02:53:43Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-09T02:21:46Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-10T02:44:49Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-11T02:55:48Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-12T02:50:38Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-13T02:42:55Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-14T02:55:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-15T02:59:33Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-15T18:31:51Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-15T20:16:49Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-15T23:52:21Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-16T03:05:24Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-17T03:03:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-18T02:57:50Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-19T03:42:05Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-20T02:47:55Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-21T03:02:40Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-22T03:07:28Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-23T02:42:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-24T02:43:10Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-25T02:43:53Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-26T02:48:41Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-27T02:39:18Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-28T02:52:09Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-29T02:52:20Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-06-30T02:46:50Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-01T02:53:50Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-02T02:41:11Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-03T02:18:24Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-04T02:17:35Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-05T02:24:17Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-06T02:34:22Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-07T02:24:27Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-08T02:05:20Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-09T02:17:46Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-10T02:16:55Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-11T02:03:08Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-12T02:06:45Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-13T02:06:48Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-14T01:54:53Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-15T01:40:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-16T02:01:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-17T02:05:09Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-18T01:55:00Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-19T02:04:31Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-20T03:35:45Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-21T02:02:18Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-22T02:01:51Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-23T02:10:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-24T02:04:27Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-25T02:04:25Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-26T02:09:16Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-27T02:17:39Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-28T01:59:24Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-29T02:01:38Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-30T01:51:00Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-07-31T02:07:50Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-01T02:12:14Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-02T02:07:17Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-03T02:11:34Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-04T01:57:04Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-05T01:57:56Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-06T02:00:15Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-07T02:20:56Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-08T01:12:00Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-09T01:15:24Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-10T01:17:54Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-11T01:15:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-12T01:22:18Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-13T01:23:53Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-14T01:22:07Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
-    },
-    {
-      "scan_date": "2026-08-15T01:00:05Z",
+      "tool_name": "vim_buffer",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-16T00:56:54Z",
+      "tool_name": "vim_command",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-17T00:57:31Z",
+      "tool_name": "vim_status",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-18T00:54:35Z",
+      "tool_name": "vim_edit",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-19T00:55:07Z",
+      "tool_name": "vim_window",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-20T00:55:46Z",
+      "tool_name": "vim_mark",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-21T00:59:45Z",
+      "tool_name": "vim_register",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-22T00:55:50Z",
+      "tool_name": "vim_visual",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-23T01:00:10Z",
+      "tool_name": "vim_buffer_switch",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-24T00:54:12Z",
+      "tool_name": "vim_buffer_save",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-25T00:55:59Z",
+      "tool_name": "vim_file_open",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-26T00:55:35Z",
+      "tool_name": "vim_search",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-27T06:07:54Z",
+      "tool_name": "vim_search_replace",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-28T08:19:20Z",
+      "tool_name": "vim_grep",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-29T05:05:57Z",
+      "tool_name": "vim_health",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-30T02:50:33Z",
+      "tool_name": "vim_macro",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-08-31T02:43:02Z",
+      "tool_name": "vim_tab",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-09-02T02:19:43Z",
+      "tool_name": "vim_fold",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-09-03T02:23:51Z",
+      "tool_name": "vim_jump",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.5"
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ]
 }

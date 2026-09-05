@@ -17,7 +17,7 @@ Returns: {compositeScore, grade, verdict, subscores{}}. No API key required — 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-trust-score](https://smithery.ai/server/axel-belfort/trust-score) |
-| **Scan Date** | 2026-09-04 |
+| **Scan Date** | 2026-09-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
