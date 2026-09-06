@@ -13,7 +13,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nutribalance-nutribalance-mcp](https://smithery.ai/server/NutriBalance/nutribalance-mcp) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

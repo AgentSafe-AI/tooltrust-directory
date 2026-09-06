@@ -12,7 +12,7 @@
 | **npm Package** | `deuz-sdk` |
 | **Language** | TypeScript |
 | **Source** | [deuz-sdk](https://github.com/Deuz-AI/Deuz-SDK) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 69 |
 | **Language** | Rust |
 | **Source** | [neobrowser](https://github.com/pitiflautico/neobrowser) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 831 |
 | **Language** | Python |
 | **Source** | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

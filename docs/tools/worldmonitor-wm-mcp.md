@@ -1,6 +1,6 @@
 # 🟢 worldmonitor-wm-mcp
 
->  Live global-intelligence data as a 39-tool MCP server: real-time markets, conflict events, country risk and resilience scores, shipping chokepoints, maritime and aviation activity, energy, climate, health, cyber threats, sanctions, forecasts, and AI-generated world/country briefs. Discovery is anonymous — connect and issue tools/list with no key. Every tool supports JMESPath projection so agents fetch exactly the fields they need. Data calls use OAuth2 or an API key from worldmonitor.app/pro.
+> Live global-intelligence data as a 74-tool MCP server: real-time markets, conflict events, country risk and resilience scores, shipping chokepoints, maritime, aviation and flight pricing, energy, climate, health, cyber threats, sanctions, trade flows, forecasts, and AI-generated world/country briefs. Also ships 25 Agent Skills, 6 workflow prompts, 11 resources, and 10 interactive in-chat apps. Discovery is anonymous — connect and issue tools/list, prompts/list, or skills/list with no key. Nearly every tool takes a JMESPath projection so agents fetch exactly the fields they need. get_sources is free and anonymous; signed-in accounts get a daily taste of the cached tools; full access via OAuth2 or an API key from worldmonitor.app/pro.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [worldmonitor-wm-mcp](https://smithery.ai/server/worldmonitor/wm-mcp) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-09-05T02:23:15.699258777Z",
+  "scan_date": "2026-09-06T02:19:39.447483513Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/cturkieh/france-data",
   "vendor": "Smithery",
@@ -88,6 +88,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "entreprise_by_siren"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "data_freshness"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "data_freshness"
     },
     {
       "id": "AS-014",
@@ -510,8 +526,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 12,
-    "info": 50
+    "low": 13,
+    "info": 51
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -622,6 +638,9 @@
       "tool_name": "data_freshness",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -1067,6 +1086,12 @@
     },
     {
       "scan_date": "2026-09-04T02:26:02Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-09-05T02:23:15Z",
       "grade": "A",
       "risk_score": 4,
       "version": "smithery"

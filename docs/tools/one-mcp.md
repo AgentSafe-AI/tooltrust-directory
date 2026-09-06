@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 412 |
 | **Language** | Go |
 | **Source** | [one-mcp](https://github.com/burugo/one-mcp) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.0.80` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 36806 |
+| **Stars** | ⭐ 36836 |
 | **npm Package** | `@playwright/mcp` |
 | **npm Downloads (30d)** | 24.4M |
 | **Language** | TypeScript |
 | **Source** | [playwright-mcp](https://github.com/microsoft/playwright-mcp) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 1 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
 | Info     | 36 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.0.80: 24 tool(s) added, 6 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

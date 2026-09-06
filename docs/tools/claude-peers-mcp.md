@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 112 |
 | **Language** | TypeScript |
 | **Source** | [claude-peers-mcp](https://github.com/louislva/claude-peers-mcp) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

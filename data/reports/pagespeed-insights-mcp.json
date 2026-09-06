@@ -1,26 +1,71 @@
 {
   "tool_id": "pagespeed-insights-mcp",
   "version": "2.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-27T06:09:23.731510658Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-06T02:17:36.347041376Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ruslanlap/pagespeed-insights-mcp",
   "category": "Developer Tools",
   "vendor": "ruslanlap",
-  "stars": 55,
+  "stars": 58,
   "npm_package": "@ruslanlap/pagespeed-insights-mcp",
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Six-tool MCP server for Google PageSpeed Insights \u0026 Chrome UX Report APIs. Analyze, compare, and optimize web performance directly through Claude, Cursor, or any MCP-compatible AI client.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.0.0: 8 tool(s) added, 7 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "compare-audience-influencers",
+          "get-audience-content",
+          "get-audience-insights",
+          "get-baselines",
+          "get-categories",
+          "get-report-info",
+          "get-reports",
+          "report-summary"
+        ],
+        "removed": [
+          "analyze_saju",
+          "check_compatibility",
+          "convert_calendar",
+          "get_dae_un",
+          "get_daily_fortune",
+          "get_fortune_by_period",
+          "manage_settings"
+        ],
+        "version": "2.0.0"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-reports"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-report-info"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "analyze_saju"
+      "tool_name": "get-audience-insights"
     },
     {
       "id": "AS-011",
@@ -28,7 +73,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "analyze_saju"
+      "tool_name": "get-audience-insights"
     },
     {
       "id": "AS-014",
@@ -36,7 +81,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_saju"
+      "tool_name": "get-audience-insights"
     },
     {
       "id": "AS-014",
@@ -44,7 +89,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_compatibility"
+      "tool_name": "get-baselines"
     },
     {
       "id": "AS-014",
@@ -52,7 +97,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "convert_calendar"
+      "tool_name": "get-categories"
     },
     {
       "id": "AS-014",
@@ -60,7 +105,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_daily_fortune"
+      "tool_name": "compare-audience-influencers"
     },
     {
       "id": "AS-014",
@@ -68,7 +113,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_dae_un"
+      "tool_name": "get-audience-content"
     },
     {
       "id": "AS-014",
@@ -76,37 +121,44 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_fortune_by_period"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "manage_settings"
+      "tool_name": "report-summary"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 8
+    "info": 9
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "analyze_saju",
-    "check_compatibility",
-    "convert_calendar",
-    "get_dae_un",
-    "get_daily_fortune",
-    "get_fortune_by_period",
-    "manage_settings"
+    "compare-audience-influencers",
+    "get-audience-content",
+    "get-audience-insights",
+    "get-baselines",
+    "get-categories",
+    "get-report-info",
+    "get-reports",
+    "report-summary"
   ],
   "tool_contexts": [
     {
-      "tool_name": "analyze_saju",
+      "tool_name": "get-reports",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-report-info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-audience-insights",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -116,50 +168,37 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "check_compatibility",
+      "tool_name": "get-baselines",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "convert_calendar",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (toCalendar)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_daily_fortune",
+      "tool_name": "get-categories",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_dae_un",
+      "tool_name": "compare-audience-influencers",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_fortune_by_period",
+      "tool_name": "get-audience-content",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "manage_settings",
+      "tool_name": "report-summary",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (custom)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -170,6 +209,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.5.1"
+    },
+    {
+      "scan_date": "2026-08-27T06:09:23Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.0.0"
     }
   ]
 }

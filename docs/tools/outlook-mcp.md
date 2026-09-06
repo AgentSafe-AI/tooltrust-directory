@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `2.0.0` |
 | **Vendor** | ryaker |
-| **Stars** | ⭐ 435 |
+| **Stars** | ⭐ 433 |
 | **npm Package** | `m365-mcp` |
 | **npm Downloads (30d)** | 169 |
 | **Language** | JavaScript |
 | **Source** | [outlook-mcp](https://github.com/ryaker/outlook-mcp) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

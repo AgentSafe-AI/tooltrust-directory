@@ -17,7 +17,7 @@ Wraps compuute-scan (MIT, zero deps). Per-rule false-positive rates and the meth
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [daniel-abbay-compuute-scan-api](https://smithery.ai/server/daniel-abbay/compuute-scan-api) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

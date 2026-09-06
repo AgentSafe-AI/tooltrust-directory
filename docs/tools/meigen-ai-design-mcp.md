@@ -1,19 +1,19 @@
-# 🟡 meigen-ai-design-mcp
+# 🟢 meigen-ai-design-mcp
 
 > Supports GPT Image 2, Seedance & ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.4.0` |
 | **Vendor** | jau123 |
-| **Stars** | ⭐ 1742 |
+| **Stars** | ⭐ 1744 |
 | **npm Package** | `meigen` |
 | **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [meigen-ai-design-mcp](https://github.com/jau123/MeiGen-AI-Design-MCP) |
-| **Scan Date** | 2026-09-05 |
+| **Scan Date** | 2026-09-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
 | Info     | 15 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.4.0: 9 tool(s) added, 6 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

@@ -1,14 +1,14 @@
 {
   "tool_id": "server-google-news",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-09-05T02:20:59.631089178Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-09-06T02:17:00.987899844Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ChanMeng666/server-google-news",
   "category": "Developer Tools",
   "vendor": "ChanMeng666",
-  "stars": 126,
+  "stars": 127,
   "npm_package": "@chanmeng666/google-news-server",
   "npm_downloads_monthly": 169,
   "license": "MIT",
@@ -16,27 +16,19 @@
   "description": "【Star-crossed coders unite!⭐️】Model Context Protocol (MCP) server implementation providing Google News search capabilities via SerpAPI, with automatic news categorization and multi-language support.",
   "findings": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 1 tool(s) added, 1 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "google_news_search"
-        ],
-        "removed": [
-          "search_news"
-        ],
-        "version": "1.0.0"
-      }
-    },
-    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "google_news_search"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"section_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "google_news_search"
     },
     {
@@ -64,14 +56,6 @@
       "tool_name": "google_news_search"
     },
     {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"section_token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "google_news_search"
-    },
-    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -90,7 +74,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
     "info": 6
@@ -600,6 +584,12 @@
     },
     {
       "scan_date": "2026-09-04T02:23:32Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-09-05T02:20:59Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.0"
