@@ -19,7 +19,7 @@ Use it to research topics, analyze articles, gather documentation, or extract an
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [compress-new-compress-tokens](https://smithery.ai/server/compress-new/compress-tokens) |
-| **Scan Date** | 2026-09-06 |
+| **Scan Date** | 2026-09-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `5.2.9` |
+| **Version** | `5.3.0` |
 | **Vendor** | amruthpillai |
-| **Stars** | ⭐ 42221 |
+| **Stars** | ⭐ 42258 |
 | **npm Package** | `reactive-resume` |
 | **npm Downloads (30d)** | 48 |
 | **Language** | TypeScript |
 | **Source** | [reactive-resume](https://github.com/amruthpillai/reactive-resume) |
-| **Scan Date** | 2026-09-06 |
+| **Scan Date** | 2026-09-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -15,7 +15,7 @@ Returns: {name, image, attributes[], collection, owner}. No API key required —
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-nft-metadata](https://smithery.ai/server/axel-belfort/nft-metadata) |
-| **Scan Date** | 2026-09-06 |
+| **Scan Date** | 2026-09-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

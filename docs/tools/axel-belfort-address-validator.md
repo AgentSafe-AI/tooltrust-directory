@@ -15,7 +15,7 @@ Returns: {valid, components, country, formatted}. No API key required — x402 m
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [axel-belfort-address-validator](https://smithery.ai/server/axel-belfort/address-validator) |
-| **Scan Date** | 2026-09-06 |
+| **Scan Date** | 2026-09-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

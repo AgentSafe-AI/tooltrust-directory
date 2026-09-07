@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.6` |
 | **Vendor** | MinishLab |
-| **Stars** | ⭐ 6005 |
+| **Stars** | ⭐ 6009 |
 | **Language** | Python |
 | **Source** | [semble](https://github.com/MinishLab/semble) |
-| **Scan Date** | 2026-09-06 |
+| **Scan Date** | 2026-09-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

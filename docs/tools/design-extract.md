@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `13.2.0` |
 | **Vendor** | Manavarya09 |
-| **Stars** | ⭐ 4049 |
+| **Stars** | ⭐ 4052 |
 | **npm Package** | `designlang` |
 | **npm Downloads (30d)** | 2.3k |
 | **Language** | HTML |
 | **Source** | [design-extract](https://github.com/Manavarya09/design-extract) |
-| **Scan Date** | 2026-09-06 |
+| **Scan Date** | 2026-09-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
