@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `sha-c5f35d9cc544` |
+| **Version** | `sha-5f8ddaf6e987` |
 | **Vendor** | ahujasid |
-| **Stars** | ⭐ 27280 |
+| **Stars** | ⭐ 27571 |
 | **Language** | Python |
 | **Source** | [blender-mcp](https://github.com/ahujasid/blender-mcp) |
-| **Scan Date** | 2026-09-07 |
+| **Scan Date** | 2026-09-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

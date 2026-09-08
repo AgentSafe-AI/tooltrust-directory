@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.11.1` |
 | **Vendor** | mark3labs |
-| **Stars** | ⭐ 684 |
+| **Stars** | ⭐ 685 |
 | **Language** | Go |
 | **Source** | [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) |
-| **Scan Date** | 2026-09-07 |
+| **Scan Date** | 2026-09-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

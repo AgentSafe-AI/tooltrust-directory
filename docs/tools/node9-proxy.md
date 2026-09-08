@@ -10,10 +10,10 @@
 | **Vendor** | node9-ai |
 | **Stars** | ⭐ 210 |
 | **npm Package** | `@node9/proxy` |
-| **npm Downloads (30d)** | 5.1k |
+| **npm Downloads (30d)** | 6.8k |
 | **Language** | TypeScript |
 | **Source** | [node9-proxy](https://github.com/node9-ai/node9-proxy) |
-| **Scan Date** | 2026-09-07 |
+| **Scan Date** | 2026-09-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

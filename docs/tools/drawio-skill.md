@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.2.1` |
 | **Vendor** | Agents365-ai |
-| **Stars** | ⭐ 9086 |
+| **Stars** | ⭐ 9115 |
 | **Language** | Python |
 | **Source** | [drawio-skill](https://github.com/Agents365-ai/drawio-skill) |
-| **Scan Date** | 2026-09-07 |
+| **Scan Date** | 2026-09-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

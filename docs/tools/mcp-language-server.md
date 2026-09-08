@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.1` |
 | **Vendor** | isaacphi |
-| **Stars** | ⭐ 1588 |
+| **Stars** | ⭐ 1589 |
 | **Language** | Go |
 | **Source** | [mcp-language-server](https://github.com/isaacphi/mcp-language-server) |
-| **Scan Date** | 2026-09-07 |
+| **Scan Date** | 2026-09-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
