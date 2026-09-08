@@ -2,7 +2,6 @@
 
 import { useMemo, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Link from "next/link";
 import { Search, LayoutGrid, List, Star } from "lucide-react";
 import type { RegistryReport } from "@/lib/data";
 import {
@@ -247,7 +246,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
                   className="border-b border-zinc-800/80 transition hover:bg-zinc-800/30 last:border-0"
                 >
                   <td className="px-4 py-3">
-                    <Link
+                    <a
                       href={`/tool/${r.tool_id}`}
                       className="flex items-center gap-2 font-medium text-emerald-400 hover:underline"
                     >
@@ -262,7 +261,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
                         />
                       )}
                       {r.tool_id}
-                    </Link>
+                    </a>
                   </td>
                   <td className="px-4 py-3 font-mono text-xs text-zinc-500">
                     {r.version || "—"}
@@ -271,9 +270,9 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
                     {popularityLabel(r)}
                   </td>
                   <td className="px-4 py-3">
-                    <Link href={`/tool/${r.tool_id}`}>
+                    <a href={`/tool/${r.tool_id}`}>
                       <GradeBadge grade={displayGrade(r)} size="sm" dark />
-                    </Link>
+                    </a>
                   </td>
                   <td className="px-4 py-3 text-zinc-300">
                     <p className="max-w-md">{getToolImpactLine(r)}</p>
@@ -293,7 +292,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
           {filtered.map((r) => (
-            <Link
+            <a
               key={r.tool_id}
               href={`/tool/${r.tool_id}`}
               className="flex flex-col rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition hover:border-zinc-700 hover:bg-zinc-800/60"
@@ -357,7 +356,7 @@ export function RegistryWithFilters({ reports }: { reports: RegistryReport[] }) 
                   )}
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       )}

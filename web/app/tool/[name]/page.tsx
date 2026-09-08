@@ -1,4 +1,4 @@
-import { getAllReports, getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
+import { getAllReports, getReportByToolName, displayGrade, getRepositoryHealth, getToolNarrative } from "@/lib/data";
 import { formatVersionLabel } from "@/lib/report-utils";
 import { GradeProgressRing } from "@/lib/grades";
 import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Shield, ExternalLink, CheckCircle2, ScanSearch, Star } from "lucide-react";
 import { CopyBadgeButton } from "./CopyBadgeButton";
+import { RepositoryHealthCard } from "./RepositoryHealthCard";
 import { ScanSnippets } from "./ScanSnippets";
 
 interface PageProps {
@@ -97,6 +98,8 @@ export default async function ToolPage({ params }: PageProps) {
   const { name } = await params;
   const report = getReportByToolName(name);
   if (!report) notFound();
+
+  const repositoryHealth = getRepositoryHealth(report);
 
   const grade = displayGrade(report);
   const hasFindings = report.findings && report.findings.length > 0;
@@ -255,6 +258,8 @@ export default async function ToolPage({ params }: PageProps) {
           </p>
         </div>
       </div>
+
+      {repositoryHealth && <RepositoryHealthCard health={repositoryHealth} />}
 
       {hasFindings && severityChips.length > 0 && (
         <div className="flex flex-wrap gap-2">
