@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.21` |
 | **Vendor** | vostride |
-| **Stars** | ⭐ 902 |
+| **Stars** | ⭐ 904 |
 | **npm Package** | `agent-qa-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [agent-qa](https://github.com/vostride/agent-qa) |
-| **Scan Date** | 2026-09-08 |
+| **Scan Date** | 2026-09-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

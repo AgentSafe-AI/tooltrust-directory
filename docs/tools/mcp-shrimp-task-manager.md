@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.21` |
 | **Vendor** | cjo4m06 |
-| **Stars** | ⭐ 2153 |
+| **Stars** | ⭐ 2154 |
 | **npm Package** | `mcp-shrimp-task-manager` |
 | **npm Downloads (30d)** | 2.1k |
 | **Language** | JavaScript |
 | **Source** | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) |
-| **Scan Date** | 2026-09-08 |
+| **Scan Date** | 2026-09-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

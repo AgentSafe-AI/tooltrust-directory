@@ -1,14 +1,14 @@
 {
   "tool_id": "mobile-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-09-08T02:20:45.753438051Z",
+  "scan_date": "2026-09-09T02:25:47.492574101Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mobile-next/mobile-mcp",
   "category": "Developer Tools",
   "vendor": "mobile-next",
-  "stars": 6359,
+  "stars": 6566,
   "npm_package": "@mobilenext/mobile-mcp",
   "npm_downloads_monthly": 74898,
   "license": "Apache-2.0",
@@ -134,6 +134,14 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "mobile_list_apps"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mobile_get_foreground_app"
     },
     {
       "id": "AS-014",
@@ -304,6 +312,54 @@
       "tool_name": "mobile_set_orientation"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "mobile_set_location"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "mobile_set_location"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mobile_set_location"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mobile_clipboard"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "mobile_get_device_logs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mobile_get_device_logs"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -350,14 +406,22 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "mobile_get_crash"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mobile_batch_commands"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 5,
-    "info": 37
+    "low": 6,
+    "info": 44
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -371,14 +435,14 @@
     },
     {
       "kind": "init",
-      "line": 55,
+      "line": 56,
       "snippet": "new McpServer(",
       "file": "src/server.ts",
       "language": "typescript"
     },
     {
       "kind": "tool_definition",
-      "line": 80,
+      "line": 87,
       "snippet": ".registerTool(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -386,9 +450,13 @@
   ],
   "tool_names": [
     "mobile_allocate_remote_device",
+    "mobile_batch_commands",
     "mobile_click_on_screen_at_coordinates",
+    "mobile_clipboard",
     "mobile_double_tap_on_screen",
     "mobile_get_crash",
+    "mobile_get_device_logs",
+    "mobile_get_foreground_app",
     "mobile_get_orientation",
     "mobile_get_screen_size",
     "mobile_install_app",
@@ -404,6 +472,7 @@
     "mobile_press_button",
     "mobile_release_remote_device",
     "mobile_save_screenshot",
+    "mobile_set_location",
     "mobile_set_orientation",
     "mobile_start_screen_recording",
     "mobile_stop_screen_recording",
@@ -466,6 +535,13 @@
     },
     {
       "tool_name": "mobile_list_apps",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "mobile_get_foreground_app",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -599,6 +675,36 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "mobile_set_location",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "mobile_clipboard",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "mobile_get_device_logs",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (saveTo)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "mobile_get_orientation",
       "action": "ALLOW",
       "grade": "A",
@@ -630,6 +736,19 @@
       "tool_name": "mobile_get_crash",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "mobile_batch_commands",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (stopOnError)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
@@ -1663,6 +1782,12 @@
     },
     {
       "scan_date": "2026-09-07T02:09:32Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-09-08T02:20:45Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.2"

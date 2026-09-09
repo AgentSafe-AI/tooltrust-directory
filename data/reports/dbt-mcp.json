@@ -1,9 +1,9 @@
 {
   "tool_id": "dbt-mcp",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-09-08T02:24:24.337653159Z",
+  "scan_date": "2026-09-09T02:29:22.392442609Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/dbt-labs/dbt-mcp",
   "category": "Developer Tools",
@@ -204,6 +204,38 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_job_details"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_job_run_artifacts"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"get_job_run_artifacts\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "get_job_run_artifacts"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_job_run_artifacts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_job_run_artifacts"
     },
     {
       "id": "AS-002",
@@ -736,10 +768,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 9,
+    "high": 10,
     "medium": 0,
-    "low": 19,
-    "info": 62
+    "low": 20,
+    "info": 64
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -753,6 +785,7 @@
     "get_exposure_details",
     "get_exposures",
     "get_job_details",
+    "get_job_run_artifacts",
     "get_job_run_details",
     "get_job_run_error",
     "get_lineage",
@@ -879,6 +912,26 @@
       "behavior": [
         "executes_commands",
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_job_run_artifacts",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: catalog.json",
+        "hardcoded domain: dbt.log",
+        "hardcoded domain: manifest.json",
+        "hardcoded domain: model.project.name",
+        "hardcoded domain: sources.json",
+        "hardcoded domain: value.config.materialized"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1590,6 +1643,12 @@
     },
     {
       "scan_date": "2026-09-07T02:12:40Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.2.1"
+    },
+    {
+      "scan_date": "2026-09-08T02:24:24Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2.2.1"

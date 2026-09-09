@@ -3,12 +3,12 @@
   "version": "3.6.61",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-08T02:21:32.013169729Z",
+  "scan_date": "2026-09-09T02:26:38.711245496Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Mouseww/anything-analyzer",
   "category": "Developer Tools",
   "vendor": "Mouseww",
-  "stars": 3625,
+  "stars": 3629,
   "npm_package": "anything-analyzer",
   "language": "TypeScript",
   "description": "全能协议分析工具：浏览器抓包 + MITM 代理 + 指纹伪装 + AI 分析 + MCP Server 无缝对接 AI Agent/IDE   |  All-in-one protocol analysis toolkit — built-in browser capture, MITM proxy, JS hooks, fingerprint spoofing, AI analysis \u0026 MCP server for agent integration",
@@ -17,22 +17,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.6.61: 5 tool(s) added, 5 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v3.6.61: 2 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "text_analyze_sentiment",
+          "text_analyze_sentiment_batch"
+        ],
+        "removed": [
           "analyze_symbol",
           "compare_symbols",
           "describe_coverage",
           "get_strategy_signals",
           "list_covered_symbols"
-        ],
-        "removed": [
-          "check_errors",
-          "draft_dispute",
-          "lookup_average_price",
-          "negotiation_script",
-          "parse_quote"
         ],
         "version": "3.6.61"
       }
@@ -43,7 +40,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyze_symbol"
+      "tool_name": "text_analyze_sentiment"
     },
     {
       "id": "AS-014",
@@ -51,31 +48,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_strategy_signals"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_symbols"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_covered_symbols"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "describe_coverage"
+      "tool_name": "text_analyze_sentiment_batch"
     }
   ],
   "summary": {
@@ -83,7 +56,7 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 5
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -111,43 +84,19 @@
     }
   ],
   "tool_names": [
-    "analyze_symbol",
-    "compare_symbols",
-    "describe_coverage",
-    "get_strategy_signals",
-    "list_covered_symbols"
+    "text_analyze_sentiment",
+    "text_analyze_sentiment_batch"
   ],
   "tool_contexts": [
     {
-      "tool_name": "analyze_symbol",
+      "tool_name": "text_analyze_sentiment",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_strategy_signals",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "compare_symbols",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_covered_symbols",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "describe_coverage",
+      "tool_name": "text_analyze_sentiment_batch",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -231,6 +180,12 @@
       "scan_date": "2026-09-07T02:10:16Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "3.6.61"
+    },
+    {
+      "scan_date": "2026-09-08T02:21:32Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "3.6.61"
     }
   ]

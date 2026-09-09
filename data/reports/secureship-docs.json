@@ -1,21 +1,109 @@
 {
   "tool_id": "secureship-docs",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-08T02:28:56.896406076Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-09T02:33:36.552289398Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/secureship/docs",
   "vendor": "Smithery",
   "description": "Secureship MCP gives AI assistants access to a multi-carrier shipping API covering rate comparison, label generation, package tracking, pickup scheduling, address book management, shipment history, customs documents, and more — across carriers like UPS, FedEx, Purolator, Canpar, and others. Browse 150+ live endpoint schemas, parameters, and auth details — always current, never stale.\n\nSecureship isn't just for shipping with one carrier — it's a multi-carrier shipping platform, and this MCP server gives AI assistants full access to the API documentation for every supported action: compare rates across carriers, generate shipping labels, track packages, schedule pickups, manage address books, review shipment history, produce customs documents, handle invoices, and even perform actions available on the Secureship web dashboard — all through a single API.\n\nThe MCP documentation server exposes live endpoint metadata pulled directly from the running application — not static docs that go stale. That means AI assistants always get the correct paths, parameters, request bodies, response schemas, and authentication requirements for 150+ endpoints.\n\nRead-only, public, no API key needed to browse. Authentication for the actual shipping API uses a simple X-API-KEY header.\n\n**Tools exposed:**\n- SearchDocs — keyword search across all API endpoints\n- GetEndpointDetail — full schema for a specific endpoint (params, request body, responses, auth)\n- ListEndpoints — list all endpoints, optionally filtered by category\n- GetAuthInfo — authentication instructions (X-API-KEY header)\n\n**Categories:** Shipping, logistics, e-commerce, carriers, rates, labels, tracking, address book, customs documents, shipment history",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 14 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "Arcade_ListApps",
+          "GoogleDocs_CommentOnDocument",
+          "GoogleDocs_CreateBlankDocument",
+          "GoogleDocs_CreateDocumentFromText",
+          "GoogleDocs_EditDocument",
+          "GoogleDocs_GenerateGoogleFilePickerUrl",
+          "GoogleDocs_GetDocumentAsDocmd",
+          "GoogleDocs_GetDocumentById",
+          "GoogleDocs_GetDocumentMetadata",
+          "GoogleDocs_InsertTextAtEndOfDocument",
+          "GoogleDocs_ListDocumentComments",
+          "GoogleDocs_SearchAndRetrieveDocuments",
+          "GoogleDocs_SearchDocuments",
+          "GoogleDocs_WhoAmI"
+        ],
+        "removed": [
+          "get_auth_info",
+          "get_endpoint_detail",
+          "list_endpoints",
+          "search_docs"
+        ],
+        "version": "smithery"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "Arcade_ListApps"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_CommentOnDocument"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access, HTTP requests",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_endpoint_detail"
+      "tool_name": "GoogleDocs_CreateBlankDocument"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_CreateBlankDocument"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GoogleDocs_CreateDocumentFromText"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_CreateDocumentFromText"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_EditDocument"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GoogleDocs_GenerateGoogleFilePickerUrl"
     },
     {
       "id": "AS-011",
@@ -23,7 +111,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_endpoint_detail"
+      "tool_name": "GoogleDocs_GenerateGoogleFilePickerUrl"
     },
     {
       "id": "AS-014",
@@ -31,7 +119,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_endpoint_detail"
+      "tool_name": "GoogleDocs_GenerateGoogleFilePickerUrl"
     },
     {
       "id": "AS-014",
@@ -39,7 +127,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_auth_info"
+      "tool_name": "GoogleDocs_GetDocumentAsDocmd"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_GetDocumentById"
     },
     {
       "id": "AS-002",
@@ -47,7 +143,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_docs"
+      "tool_name": "GoogleDocs_GetDocumentMetadata"
     },
     {
       "id": "AS-011",
@@ -55,7 +151,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_docs"
+      "tool_name": "GoogleDocs_GetDocumentMetadata"
     },
     {
       "id": "AS-014",
@@ -63,7 +159,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_docs"
+      "tool_name": "GoogleDocs_GetDocumentMetadata"
     },
     {
       "id": "AS-014",
@@ -71,26 +167,171 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_endpoints"
+      "tool_name": "GoogleDocs_InsertTextAtEndOfDocument"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_ListDocumentComments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"pagination_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GoogleDocs_SearchDocuments"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"pagination_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "GoogleDocs_SearchDocuments"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "GoogleDocs_SearchDocuments"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_SearchDocuments"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "GoogleDocs_WhoAmI"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "GoogleDocs_WhoAmI"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 6
+    "low": 4,
+    "info": 23
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_auth_info",
-    "get_endpoint_detail",
-    "list_endpoints",
-    "search_docs"
+    "Arcade_ListApps",
+    "GoogleDocs_CommentOnDocument",
+    "GoogleDocs_CreateBlankDocument",
+    "GoogleDocs_CreateDocumentFromText",
+    "GoogleDocs_EditDocument",
+    "GoogleDocs_GenerateGoogleFilePickerUrl",
+    "GoogleDocs_GetDocumentAsDocmd",
+    "GoogleDocs_GetDocumentById",
+    "GoogleDocs_GetDocumentMetadata",
+    "GoogleDocs_InsertTextAtEndOfDocument",
+    "GoogleDocs_ListDocumentComments",
+    "GoogleDocs_SearchAndRetrieveDocuments",
+    "GoogleDocs_SearchDocuments",
+    "GoogleDocs_WhoAmI"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_endpoint_detail",
+      "tool_name": "Arcade_ListApps",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_CommentOnDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_CreateBlankDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_CreateDocumentFromText",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_EditDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded domain: img.png",
+        "hardcoded domain: new.png",
+        "hardcoded email recipient: alice@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_GenerateGoogleFilePickerUrl",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -101,14 +342,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_auth_info",
+      "tool_name": "GoogleDocs_GetDocumentAsDocmd",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_docs",
+      "tool_name": "GoogleDocs_GetDocumentById",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_GetDocumentMetadata",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -118,9 +366,52 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_endpoints",
+      "tool_name": "GoogleDocs_InsertTextAtEndOfDocument",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_ListDocumentComments",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pagination_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_SearchDocuments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pagination_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_WhoAmI",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -314,6 +605,12 @@
     },
     {
       "scan_date": "2026-09-07T02:16:11Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-09-08T02:28:56Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"
