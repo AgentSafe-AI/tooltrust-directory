@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | Deuz-AI |
-| **Stars** | ⭐ 1291 |
+| **Stars** | ⭐ 1203 |
 | **npm Package** | `deuz-sdk` |
 | **Language** | TypeScript |
 | **Source** | [deuz-sdk](https://github.com/Deuz-AI/Deuz-SDK) |
-| **Scan Date** | 2026-09-08 |
+| **Scan Date** | 2026-09-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

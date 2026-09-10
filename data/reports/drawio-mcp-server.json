@@ -1,9 +1,9 @@
 {
   "tool_id": "drawio-mcp-server",
   "version": "2.2.0",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-09-09T02:28:25Z",
+  "scan_date": "2026-09-10T02:25:34.739337984Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/lgazo/drawio-mcp-server",
   "category": "Developer Tools",
@@ -16,29 +16,20 @@
   "description": "Draw.io Model Context Protocol (MCP) Server",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "packages/drawio-mcp-server/src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 703,
-            "snippet": "new McpServer(",
-            "file": "packages/drawio-mcp-server/src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_diagram"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_diagram"
     }
   ],
   "summary": {
@@ -46,10 +37,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,180 +57,22 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "create_diagram"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-08-10T01:15:31Z",
+      "tool_name": "create_diagram",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-11T01:13:06Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-12T01:19:55Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-13T01:21:53Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-14T01:20:04Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-15T00:57:57Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-16T00:54:43Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-17T00:55:20Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-18T00:52:25Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-19T00:53:05Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-20T00:53:41Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-21T00:57:37Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-22T00:53:50Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-23T00:58:11Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-24T00:52:48Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-25T00:54:29Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-26T00:54:12Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-27T06:05:53Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-28T08:17:20Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-29T05:03:58Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-30T02:48:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-08-31T02:41:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-02T02:17:45Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-03T02:22:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-04T02:20:03Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-05T02:18:24Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-06T02:14:10Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-07T02:11:45Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
-    },
-    {
-      "scan_date": "2026-09-08T02:23:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.2.0"
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: draw.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

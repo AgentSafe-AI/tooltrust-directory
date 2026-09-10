@@ -3,12 +3,12 @@
   "version": "0.6.3",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-09T02:27:45.918815641Z",
+  "scan_date": "2026-09-10T02:24:55.275688064Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mcp-router/mcp-router",
   "category": "Developer Tools",
   "vendor": "mcp-router",
-  "stars": 2138,
+  "stars": 2139,
   "npm_package": "mcp-router",
   "license": "NOASSERTION",
   "language": "TypeScript",
@@ -18,10 +18,14 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.6.3: 6 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.6.3: 2 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "invoke",
+          "selftest"
+        ],
+        "removed": [
           "certify",
           "describe_agent",
           "green_route",
@@ -29,20 +33,16 @@
           "quote_footprint",
           "verify_green_certificate"
         ],
-        "removed": [
-          "invoke",
-          "selftest"
-        ],
         "version": "0.6.3"
       }
     },
     {
-      "id": "AS-014",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "quote_footprint"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "invoke"
     },
     {
       "id": "AS-014",
@@ -50,7 +50,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "green_route"
+      "tool_name": "invoke"
     },
     {
       "id": "AS-014",
@@ -58,31 +58,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "certify"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verify_green_certificate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_green_certificates"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "describe_agent"
+      "tool_name": "selftest"
     }
   ],
   "summary": {
@@ -90,57 +66,28 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 6
+    "info": 3
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "certify",
-    "describe_agent",
-    "green_route",
-    "list_green_certificates",
-    "quote_footprint",
-    "verify_green_certificate"
+    "invoke",
+    "selftest"
   ],
   "tool_contexts": [
     {
-      "tool_name": "quote_footprint",
+      "tool_name": "invoke",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "green_route",
+      "tool_name": "selftest",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "certify",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "verify_green_certificate",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_green_certificates",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "describe_agent",
-      "action": "ALLOW",
-      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1086,6 +1033,12 @@
       "scan_date": "2026-09-08T02:22:40Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "0.6.3"
+    },
+    {
+      "scan_date": "2026-09-09T02:27:45Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.6.3"
     }
   ]
