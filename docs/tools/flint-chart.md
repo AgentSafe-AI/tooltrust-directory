@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.5.1` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 4169 |
+| **Stars** | ⭐ 4180 |
 | **npm Package** | `flint-chart-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [flint-chart](https://github.com/microsoft/flint-chart) |
-| **Scan Date** | 2026-09-10 |
+| **Scan Date** | 2026-09-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

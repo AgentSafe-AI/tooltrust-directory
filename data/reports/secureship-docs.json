@@ -1,46 +1,14 @@
 {
   "tool_id": "secureship-docs",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-09-10T02:30:43.561497359Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-09-11T02:26:08.146225535Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/secureship/docs",
   "vendor": "Smithery",
   "description": "Secureship MCP gives AI assistants access to a multi-carrier shipping API covering rate comparison, label generation, package tracking, pickup scheduling, address book management, shipment history, customs documents, and more — across carriers like UPS, FedEx, Purolator, Canpar, and others. Browse 150+ live endpoint schemas, parameters, and auth details — always current, never stale.\n\nSecureship isn't just for shipping with one carrier — it's a multi-carrier shipping platform, and this MCP server gives AI assistants full access to the API documentation for every supported action: compare rates across carriers, generate shipping labels, track packages, schedule pickups, manage address books, review shipment history, produce customs documents, handle invoices, and even perform actions available on the Secureship web dashboard — all through a single API.\n\nThe MCP documentation server exposes live endpoint metadata pulled directly from the running application — not static docs that go stale. That means AI assistants always get the correct paths, parameters, request bodies, response schemas, and authentication requirements for 150+ endpoints.\n\nRead-only, public, no API key needed to browse. Authentication for the actual shipping API uses a simple X-API-KEY header.\n\n**Tools exposed:**\n- SearchDocs — keyword search across all API endpoints\n- GetEndpointDetail — full schema for a specific endpoint (params, request body, responses, auth)\n- ListEndpoints — list all endpoints, optionally filtered by category\n- GetAuthInfo — authentication instructions (X-API-KEY header)\n\n**Categories:** Shipping, logistics, e-commerce, carriers, rates, labels, tracking, address book, customs documents, shipment history",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 4 tool(s) added, 14 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get_auth_info",
-          "get_endpoint_detail",
-          "list_endpoints",
-          "search_docs"
-        ],
-        "removed": [
-          "Arcade_ListApps",
-          "GoogleDocs_CommentOnDocument",
-          "GoogleDocs_CreateBlankDocument",
-          "GoogleDocs_CreateDocumentFromText",
-          "GoogleDocs_EditDocument",
-          "GoogleDocs_GenerateGoogleFilePickerUrl",
-          "GoogleDocs_GetDocumentAsDocmd",
-          "GoogleDocs_GetDocumentById",
-          "GoogleDocs_GetDocumentMetadata",
-          "GoogleDocs_InsertTextAtEndOfDocument",
-          "GoogleDocs_ListDocumentComments",
-          "GoogleDocs_SearchAndRetrieveDocuments",
-          "GoogleDocs_SearchDocuments",
-          "GoogleDocs_WhoAmI"
-        ],
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -108,7 +76,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 2,
     "info": 6
@@ -358,6 +326,12 @@
     },
     {
       "scan_date": "2026-09-09T02:33:36Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-09-10T02:30:43Z",
       "grade": "B",
       "risk_score": 15,
       "version": "smithery"

@@ -5,15 +5,15 @@
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Risk Score** | 10 |
 | **Version** | `1.0.0-beta.1` |
 | **Vendor** | pascalorg |
-| **Stars** | ⭐ 22968 |
+| **Stars** | ⭐ 23254 |
 | **npm Package** | `editor` |
-| **npm Downloads (30d)** | 1.6M |
+| **npm Downloads (30d)** | 1.5M |
 | **Language** | TypeScript |
 | **Source** | [editor](https://github.com/pascalorg/editor) |
-| **Scan Date** | 2026-09-10 |
+| **Scan Date** | 2026-09-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 1 |
 | Low      | 49 |
 | Info     | 202 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.0.0-beta.1: 134 tool(s) added, 5 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

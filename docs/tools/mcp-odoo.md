@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.2` |
 | **Vendor** | erpipe-org |
-| **Stars** | ⭐ 406 |
+| **Stars** | ⭐ 408 |
 | **Language** | Python |
 | **Source** | [mcp-odoo](https://github.com/erpipe-org/mcp-odoo) |
-| **Scan Date** | 2026-09-10 |
+| **Scan Date** | 2026-09-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

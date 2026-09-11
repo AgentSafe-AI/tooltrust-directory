@@ -1,4 +1,4 @@
-# 🟡 secureship-docs
+# 🟢 secureship-docs
 
 > Secureship MCP gives AI assistants access to a multi-carrier shipping API covering rate comparison, label generation, package tracking, pickup scheduling, address book management, shipment history, customs documents, and more — across carriers like UPS, FedEx, Purolator, Canpar, and others. Browse 150+ live endpoint schemas, parameters, and auth details — always current, never stale.
 
@@ -18,12 +18,12 @@ Read-only, public, no API key needed to browse. Authentication for the actual sh
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [secureship-docs](https://smithery.ai/server/secureship/docs) |
-| **Scan Date** | 2026-09-10 |
+| **Scan Date** | 2026-09-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -33,24 +33,12 @@ Read-only, public, no API key needed to browse. Authentication for the actual sh
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 6 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 4 tool(s) added, 14 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

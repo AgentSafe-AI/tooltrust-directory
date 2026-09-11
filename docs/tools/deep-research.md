@@ -10,10 +10,10 @@
 | **Vendor** | u14app |
 | **Stars** | ⭐ 4683 |
 | **npm Package** | `deep-research` |
-| **npm Downloads (30d)** | 96 |
+| **npm Downloads (30d)** | 95 |
 | **Language** | JavaScript |
 | **Source** | [deep-research](https://github.com/u14app/deep-research) |
-| **Scan Date** | 2026-09-10 |
+| **Scan Date** | 2026-09-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,16 +1,16 @@
 {
   "tool_id": "mediawiki-mcp-server",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-10T02:28:15.960715316Z",
+  "risk_score": 4,
+  "scan_date": "2026-09-11T02:23:55.790090922Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
   "category": "Developer Tools",
   "vendor": "ProfessionalWiki",
-  "stars": 127,
+  "stars": 129,
   "npm_package": "@professional-wiki/mediawiki-mcp-server",
-  "npm_downloads_monthly": 2801,
+  "npm_downloads_monthly": 2626,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol (MCP) Server to connect your AI with any MediaWiki",
@@ -43,7 +43,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get-pages"
     },
@@ -339,7 +339,15 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update-page"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "update-page"
     },
@@ -588,7 +596,7 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 19,
+    "low": 20,
     "info": 52
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -1510,6 +1518,12 @@
     },
     {
       "scan_date": "2026-09-09T02:31:05Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.17.0"
+    },
+    {
+      "scan_date": "2026-09-10T02:28:15Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.17.0"

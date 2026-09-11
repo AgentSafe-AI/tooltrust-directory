@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-openstreetmap-mcp-server",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-09-10T02:29:33.236897621Z",
+  "scan_date": "2026-09-11T02:25:10.261328719Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/openstreetmap-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 5,
   "npm_package": "@cyanheads/openstreetmap-mcp-server",
-  "npm_downloads_monthly": 1652,
+  "npm_downloads_monthly": 1275,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Geocode, reverse geocode, and run Overpass spatial queries on OpenStreetMap data via MCP. STDIO or Streamable HTTP.",
@@ -104,6 +104,14 @@
       "tool_name": "openstreetmap_query_nearby"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "openstreetmap_query_nearby"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -123,7 +131,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "openstreetmap_query_bbox"
     },
@@ -156,7 +164,7 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 5,
+    "low": 6,
     "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -474,6 +482,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.4.3"
+    },
+    {
+      "scan_date": "2026-09-10T02:29:33Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.4.5"
     }
   ]
 }

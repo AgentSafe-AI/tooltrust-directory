@@ -10,10 +10,10 @@
 | **Vendor** | freestylefly |
 | **Stars** | ⭐ 575 |
 | **npm Package** | `mcp-server-weread` |
-| **npm Downloads (30d)** | 560 |
+| **npm Downloads (30d)** | 549 |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-weread](https://github.com/freestylefly/mcp-server-weread) |
-| **Scan Date** | 2026-09-10 |
+| **Scan Date** | 2026-09-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
