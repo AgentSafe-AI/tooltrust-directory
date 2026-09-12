@@ -1,17 +1,17 @@
 {
   "tool_id": "mcp-proxy",
-  "version": "0.12.0",
+  "version": "0.58.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-09-11T02:20:13.591748832Z",
+  "scan_date": "2026-09-12T02:28:06.839558352Z",
   "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/sparfenyuk/mcp-proxy",
+  "source_url": "https://github.com/tbxark/mcp-proxy",
   "category": "Developer Tools",
-  "vendor": "sparfenyuk",
-  "stars": 2747,
+  "vendor": "tbxark",
+  "stars": 719,
   "license": "MIT",
-  "language": "Python",
-  "description": "A bridge between Streamable HTTP and stdio MCP transports",
+  "language": "Go",
+  "description": "An MCP proxy server that aggregates and serves multiple MCP resource servers through a single HTTP server.",
   "findings": [
     {
       "id": "AS-014",
@@ -214,6 +214,51 @@
     "info": 22
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 16,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 455,
+      "snippet": "server.NewMCPServer(",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 314,
+      "snippet": "AddTool(",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 36,
+      "snippet": "server.NewMCPServer(",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 51,
+      "snippet": "AddTool(",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    }
+  ],
   "tool_names": [
     "buy_mobile_proxies",
     "buy_proxies",
@@ -911,6 +956,12 @@
     },
     {
       "scan_date": "2026-09-10T02:24:11Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.12.0"
+    },
+    {
+      "scan_date": "2026-09-11T02:20:13Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.12.0"

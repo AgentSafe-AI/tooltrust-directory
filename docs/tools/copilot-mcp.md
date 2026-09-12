@@ -12,7 +12,7 @@
 | **npm Package** | `copilot-mcp` |
 | **Language** | TypeScript |
 | **Source** | [copilot-mcp](https://github.com/VikashLoomba/copilot-mcp) |
-| **Scan Date** | 2026-09-11 |
+| **Scan Date** | 2026-09-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,6 +1,6 @@
 # 🟢 trigger-dev
 
-> Trigger.dev – build and deploy fully‑managed AI agents and workflows
+> Trigger.dev – build and deploy durable AI agents and workflows
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `4.5.16` |
 | **Vendor** | triggerdotdev |
-| **Stars** | ⭐ 16257 |
+| **Stars** | ⭐ 16264 |
 | **npm Package** | `triggerdotdev` |
 | **Language** | TypeScript |
 | **Source** | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) |
-| **Scan Date** | 2026-09-11 |
+| **Scan Date** | 2026-09-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

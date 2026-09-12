@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.3` |
 | **Vendor** | browsermcp |
-| **Stars** | ⭐ 7070 |
+| **Stars** | ⭐ 7077 |
 | **npm Package** | `@browsermcp/mcp` |
-| **npm Downloads (30d)** | 38.1k |
+| **npm Downloads (30d)** | 38.2k |
 | **Language** | TypeScript |
 | **Source** | [browsermcp](https://github.com/browsermcp/mcp) |
-| **Scan Date** | 2026-09-11 |
+| **Scan Date** | 2026-09-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

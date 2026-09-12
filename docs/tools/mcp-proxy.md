@@ -1,17 +1,17 @@
 # 🟢 mcp-proxy
 
-> A bridge between Streamable HTTP and stdio MCP transports
+> An MCP proxy server that aggregates and serves multiple MCP resource servers through a single HTTP server.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.12.0` |
-| **Vendor** | sparfenyuk |
-| **Stars** | ⭐ 2747 |
-| **Language** | Python |
-| **Source** | [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) |
-| **Scan Date** | 2026-09-11 |
+| **Version** | `0.58.0` |
+| **Vendor** | tbxark |
+| **Stars** | ⭐ 719 |
+| **Language** | Go |
+| **Source** | [mcp-proxy](https://github.com/tbxark/mcp-proxy) |
+| **Scan Date** | 2026-09-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

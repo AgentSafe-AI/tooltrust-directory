@@ -1,6 +1,6 @@
 # 🟢 openhuman
 
-> OpenHuman is an open source personal AI for Mac, Windows and Linux — local-first memory, agent orchestration, and deep research.
+> OpenHuman is an open source agent harness with local-first memory, agent orchestration, and workflows
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.63.21` |
 | **Vendor** | tinyhumansai |
-| **Stars** | ⭐ 39617 |
+| **Stars** | ⭐ 39673 |
 | **npm Package** | `openhuman-repo` |
 | **Language** | Rust |
 | **Source** | [openhuman](https://github.com/tinyhumansai/openhuman) |
-| **Scan Date** | 2026-09-11 |
+| **Scan Date** | 2026-09-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
