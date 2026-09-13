@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.13` |
 | **Vendor** | burugo |
-| **Stars** | ⭐ 412 |
+| **Stars** | ⭐ 413 |
 | **Language** | Go |
 | **Source** | [one-mcp](https://github.com/burugo/one-mcp) |
-| **Scan Date** | 2026-09-12 |
+| **Scan Date** | 2026-09-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

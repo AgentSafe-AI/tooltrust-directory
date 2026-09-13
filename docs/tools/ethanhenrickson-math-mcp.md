@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.3` |
 | **Vendor** | EthanHenrickson |
-| **Stars** | ⭐ 179 |
+| **Stars** | ⭐ 180 |
 | **npm Package** | `math-mcp` |
-| **npm Downloads (30d)** | 121 |
+| **npm Downloads (30d)** | 119 |
 | **Language** | TypeScript |
 | **Source** | [ethanhenrickson-math-mcp](https://github.com/EthanHenrickson/math-mcp) |
-| **Scan Date** | 2026-09-12 |
+| **Scan Date** | 2026-09-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

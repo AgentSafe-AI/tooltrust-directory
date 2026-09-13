@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3034 |
 | **Language** | Python |
 | **Source** | [agent-scan](https://github.com/snyk/agent-scan) |
-| **Scan Date** | 2026-09-12 |
+| **Scan Date** | 2026-09-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
