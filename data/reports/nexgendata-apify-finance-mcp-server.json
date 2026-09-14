@@ -3,7 +3,7 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-13T02:28:58.926694197Z",
+  "scan_date": "2026-09-14T02:48:28.975986224Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/nexgendata-apify/finance-mcp-server",
   "vendor": "Smithery",
@@ -13,21 +13,21 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 4 tool(s) added, 5 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsmithery: 5 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "calculate_currency_conversion",
-          "get_mas_exchange_rates",
-          "get_sg_interest_rates",
-          "get_sgx_market_data"
-        ],
-        "removed": [
           "get_crypto_prices",
           "get_exchange_rates",
           "get_stock_data",
           "screen_stocks",
           "track_crypto_portfolio"
+        ],
+        "removed": [
+          "calculate_currency_conversion",
+          "get_mas_exchange_rates",
+          "get_sg_interest_rates",
+          "get_sgx_market_data"
         ],
         "version": "smithery"
       }
@@ -38,7 +38,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_mas_exchange_rates"
+      "tool_name": "get_stock_data"
     },
     {
       "id": "AS-014",
@@ -46,15 +46,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "calculate_currency_conversion"
+      "tool_name": "screen_stocks"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_sg_interest_rates"
+      "tool_name": "get_crypto_prices"
     },
     {
       "id": "AS-011",
@@ -62,7 +62,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_sg_interest_rates"
+      "tool_name": "get_crypto_prices"
     },
     {
       "id": "AS-014",
@@ -70,7 +70,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_sg_interest_rates"
+      "tool_name": "get_crypto_prices"
     },
     {
       "id": "AS-014",
@@ -78,7 +78,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_sgx_market_data"
+      "tool_name": "get_exchange_rates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "track_crypto_portfolio"
     }
   ],
   "summary": {
@@ -86,35 +94,33 @@
     "high": 1,
     "medium": 0,
     "low": 1,
-    "info": 5
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "calculate_currency_conversion",
-    "get_mas_exchange_rates",
-    "get_sg_interest_rates",
-    "get_sgx_market_data"
+    "get_crypto_prices",
+    "get_exchange_rates",
+    "get_stock_data",
+    "screen_stocks",
+    "track_crypto_portfolio"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_mas_exchange_rates",
+      "tool_name": "get_stock_data",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "calculate_currency_conversion",
+      "tool_name": "screen_stocks",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to_currency)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_sg_interest_rates",
+      "tool_name": "get_crypto_prices",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -124,7 +130,14 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_sgx_market_data",
+      "tool_name": "get_exchange_rates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "track_crypto_portfolio",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -508,6 +521,12 @@
       "scan_date": "2026-09-12T02:32:44Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-09-13T02:28:58Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

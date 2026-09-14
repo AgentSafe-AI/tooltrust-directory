@@ -1,4 +1,4 @@
-# 🟡 digby-oldridge-colour-memory-api
+# 🟢 digby-oldridge-colour-memory-api
 
 > The world's only historically grounded colour archive built for AI agents.
 
@@ -6,16 +6,18 @@ Thousands of named colours across dozens of cultural archives spanning Ancient R
 
 Every color has a name, a documented archival source, CIE Lab values, cultural consequence data, and material provenance. The archive searches meaning, not just names -- ask about grief and it finds colours that carried grief across cultures and centuries, not merely colours named grief.
 
-Built as a retrieval system, not a generator. Deterministic, evidence-based, source-cited. The anti-hallucination layer for colour history.
+Built as a retrieval system, not a generator. Deterministic, evidence-based, source-cited. The anti-hallucination layer for colour history. 
+
+Prefer a direct connection? Point your MCP client at https://api.colourmemory.com/mcp — no signup, no key for the free tools.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [digby-oldridge-colour-memory-api](https://smithery.ai/server/digby-oldridge/colour-memory-api) |
-| **Scan Date** | 2026-09-12 |
+| **Scan Date** | 2026-09-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +27,12 @@ Built as a retrieval system, not a generator. Deterministic, evidence-based, sou
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 48 |
 | Info     | 140 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 20 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

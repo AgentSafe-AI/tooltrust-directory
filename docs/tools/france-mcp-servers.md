@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 83 |
 | **Language** | Python |
 | **Source** | [france-mcp-servers](https://github.com/bsab/france-mcp-servers) |
-| **Scan Date** | 2026-09-12 |
+| **Scan Date** | 2026-09-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
