@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `0.0.80` |
+| **Version** | `0.0.81` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 37067 |
+| **Stars** | ⭐ 37111 |
 | **npm Package** | `@playwright/mcp` |
 | **npm Downloads (30d)** | 23.4M |
 | **Language** | TypeScript |
 | **Source** | [playwright-mcp](https://github.com/microsoft/playwright-mcp) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
-| Info     | 36 |
+| Info     | 38 |
 
 ## Detailed Findings
 
@@ -507,6 +507,30 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

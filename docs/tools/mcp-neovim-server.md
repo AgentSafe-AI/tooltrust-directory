@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 221 |
 | **Language** | TypeScript |
 | **Source** | [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 86.8k |
 | **Language** | TypeScript |
 | **Source** | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

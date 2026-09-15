@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.0` |
 | **Vendor** | bostrot |
-| **Stars** | ⭐ 4000 |
+| **Stars** | ⭐ 3999 |
 | **Language** | Dart |
 | **Source** | [wsl2-distro-manager](https://github.com/bostrot/wsl2-distro-manager) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

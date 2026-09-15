@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 13.7k |
 | **Language** | TypeScript |
 | **Source** | [cyanheads-pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

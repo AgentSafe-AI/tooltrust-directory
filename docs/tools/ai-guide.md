@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | liyupi |
-| **Stars** | ⭐ 19901 |
+| **Stars** | ⭐ 19957 |
 | **npm Package** | `codefather` |
 | **Language** | JavaScript |
 | **Source** | [ai-guide](https://github.com/liyupi/ai-guide) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

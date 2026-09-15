@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |
 | **Source** | [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

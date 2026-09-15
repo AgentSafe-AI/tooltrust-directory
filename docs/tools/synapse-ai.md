@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 389 |
 | **Language** | Python |
 | **Source** | [synapse-ai](https://github.com/synapseorch-ai/synapse-ai) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

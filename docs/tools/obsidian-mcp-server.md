@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 23.0k |
 | **Language** | TypeScript |
 | **Source** | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

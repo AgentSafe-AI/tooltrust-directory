@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3689 |
 | **Language** | Java |
 | **Source** | [java-sdk](https://github.com/modelcontextprotocol/java-sdk) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

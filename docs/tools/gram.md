@@ -12,7 +12,7 @@
 | **npm Package** | `@gram/workspace` |
 | **Language** | Go |
 | **Source** | [gram](https://github.com/speakeasy-api/gram) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

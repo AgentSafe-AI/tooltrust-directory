@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.3k |
 | **Language** | TypeScript |
 | **Source** | [anytype-mcp](https://github.com/anyproto/anytype-mcp) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

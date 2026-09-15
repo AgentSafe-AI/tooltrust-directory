@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1278 |
 | **Language** | Python |
 | **Source** | [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

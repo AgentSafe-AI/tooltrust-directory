@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 4.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-bigquery-server](https://github.com/ergut/mcp-bigquery-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.2k |
 | **Language** | JavaScript |
 | **Source** | [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

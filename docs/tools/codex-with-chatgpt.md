@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.3` |
 | **Vendor** | XiaoDuoYa |
-| **Stars** | ⭐ 4186 |
+| **Stars** | ⭐ 4304 |
 | **npm Package** | `codex-with-chatgpt` |
 | **Language** | TypeScript |
 | **Source** | [codex-with-chatgpt](https://github.com/XiaoDuoYa/codex-with-chatgpt) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

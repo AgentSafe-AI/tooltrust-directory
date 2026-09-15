@@ -7,7 +7,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bitget-ai-bitget-mcp](https://smithery.ai/server/bitget-ai/bitget-mcp) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

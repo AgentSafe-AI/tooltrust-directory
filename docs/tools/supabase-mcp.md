@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.7.0` |
 | **Vendor** | supabase-community |
-| **Stars** | ⭐ 2906 |
+| **Stars** | ⭐ 2908 |
 | **Language** | TypeScript |
 | **Source** | [supabase-mcp](https://github.com/supabase/mcp) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

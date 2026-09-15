@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 570 |
 | **Language** | Ruby |
 | **Source** | [rails-mcp-server](https://github.com/maquina-app/rails-mcp-server) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

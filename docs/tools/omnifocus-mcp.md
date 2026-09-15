@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 4.7k |
 | **Language** | TypeScript |
 | **Source** | [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

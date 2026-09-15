@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |
 | **Source** | [tailscale-mcp](https://github.com/HexSleeves/tailscale-mcp) |
-| **Scan Date** | 2026-09-14 |
+| **Scan Date** | 2026-09-15 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
