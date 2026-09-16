@@ -3,12 +3,12 @@
   "version": "0.0.28",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-15T02:45:01.033569876Z",
+  "scan_date": "2026-09-16T02:40:28.880543596Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Pimzino/spec-workflow-mcp",
   "category": "Developer Tools",
   "vendor": "Pimzino",
-  "stars": 4292,
+  "stars": 4293,
   "npm_package": "@pimzino/spec-workflow-mcp",
   "npm_downloads_monthly": 1811,
   "license": "GPL-3.0",
@@ -23,23 +23,31 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "convert",
-          "validate"
-        ],
-        "removed": [
           "specpilot_generate_specs",
           "specpilot_next_questions"
+        ],
+        "removed": [
+          "convert",
+          "validate"
         ],
         "version": "0.0.28"
       }
     },
     {
-      "id": "AS-014",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "convert"
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "specpilot_next_questions"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "specpilot_next_questions"
     },
     {
       "id": "AS-014",
@@ -47,33 +55,58 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate"
+      "tool_name": "specpilot_next_questions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "specpilot_generate_specs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "specpilot_generate_specs"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 0,
-    "info": 2
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "convert",
-    "validate"
+    "specpilot_generate_specs",
+    "specpilot_next_questions"
   ],
   "tool_contexts": [
     {
-      "tool_name": "convert",
+      "tool_name": "specpilot_next_questions",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "validate",
+      "tool_name": "specpilot_generate_specs",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -507,6 +540,12 @@
     },
     {
       "scan_date": "2026-09-14T02:42:03Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.0.28"
+    },
+    {
+      "scan_date": "2026-09-15T02:45:01Z",
       "grade": "B",
       "risk_score": 15,
       "version": "0.0.28"

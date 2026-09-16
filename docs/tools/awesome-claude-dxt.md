@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 180 |
 | **Language** | JavaScript |
 | **Source** | [awesome-claude-dxt](https://github.com/milisp/awesome-claude-dxt) |
-| **Scan Date** | 2026-09-15 |
+| **Scan Date** | 2026-09-16 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
