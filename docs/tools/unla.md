@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2228 |
 | **Language** | TypeScript |
 | **Source** | [unla](https://github.com/AmoyLab/Unla) |
-| **Scan Date** | 2026-09-16 |
+| **Scan Date** | 2026-09-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

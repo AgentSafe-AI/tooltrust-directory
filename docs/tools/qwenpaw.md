@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.1` |
 | **Vendor** | agentscope-ai |
-| **Stars** | ⭐ 34988 |
+| **Stars** | ⭐ 35037 |
 | **Language** | TypeScript |
 | **Source** | [qwenpaw](https://github.com/agentscope-ai/QwenPaw) |
-| **Scan Date** | 2026-09-16 |
+| **Scan Date** | 2026-09-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

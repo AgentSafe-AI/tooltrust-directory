@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3657 |
 | **Language** | Python |
 | **Source** | [langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) |
-| **Scan Date** | 2026-09-16 |
+| **Scan Date** | 2026-09-17 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
