@@ -10,10 +10,10 @@
 | **Vendor** | rohitg00 |
 | **Stars** | ⭐ 958 |
 | **npm Package** | `kubectl-mcp-server` |
-| **npm Downloads (30d)** | 418 |
+| **npm Downloads (30d)** | 383 |
 | **Language** | Python |
 | **Source** | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

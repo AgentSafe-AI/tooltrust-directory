@@ -1,21 +1,28 @@
 {
   "tool_id": "pkobielak-social-superpowers",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-17T02:50:32.96359599Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-18T02:37:29.340421896Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/pkobielak/social-superpowers",
   "vendor": "Smithery",
-  "description": "Hosted MCP for X/Twitter and Reddit. 12 read-only tools, no API keys, free during beta.",
+  "description": "Live X/Twitter and Reddit research. 10 read-only MCP tools, Google/GitHub sign-in. Free tier.",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reddit-get-posts"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 0 tool(s) added, 2 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "reddit-get-subreddit-info",
+          "reddit-get-user-info"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-014",
@@ -31,7 +38,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reddit-get-subreddit-info"
+      "tool_name": "reddit-get-posts"
     },
     {
       "id": "AS-014",
@@ -40,14 +47,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "reddit-get-user-comments"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reddit-get-user-info"
     },
     {
       "id": "AS-014",
@@ -156,18 +155,16 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 3,
-    "info": 15
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "reddit-get-post",
     "reddit-get-posts",
-    "reddit-get-subreddit-info",
     "reddit-get-user-comments",
-    "reddit-get-user-info",
     "reddit-get-user-posts",
     "reddit-search",
     "twitter-news",
@@ -178,13 +175,6 @@
   ],
   "tool_contexts": [
     {
-      "tool_name": "reddit-get-posts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
       "tool_name": "reddit-get-post",
       "action": "ALLOW",
       "grade": "A",
@@ -192,7 +182,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "reddit-get-subreddit-info",
+      "tool_name": "reddit-get-posts",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -200,13 +190,6 @@
     },
     {
       "tool_name": "reddit-get-user-comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "reddit-get-user-info",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -604,6 +587,12 @@
     },
     {
       "scan_date": "2026-09-16T02:46:11Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-09-17T02:50:32Z",
       "grade": "A",
       "risk_score": 2,
       "version": "smithery"

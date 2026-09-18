@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.3.0` |
 | **Vendor** | hashicorp |
-| **Stars** | ⭐ 1529 |
+| **Stars** | ⭐ 1530 |
 | **Language** | Go |
 | **Source** | [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

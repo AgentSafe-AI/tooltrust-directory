@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.3.27` |
 | **Vendor** | screenpipe |
-| **Stars** | ⭐ 21603 |
+| **Stars** | ⭐ 21613 |
 | **Language** | TypeScript |
 | **Source** | [screenpipe](https://github.com/screenpipe/screenpipe) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

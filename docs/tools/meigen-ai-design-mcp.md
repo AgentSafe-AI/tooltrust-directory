@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `2.0.0` |
+| **Version** | `2.0.1` |
 | **Vendor** | jau123 |
-| **Stars** | ⭐ 1765 |
+| **Stars** | ⭐ 1766 |
 | **npm Package** | `meigen` |
-| **npm Downloads (30d)** | 1.5k |
+| **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [meigen-ai-design-mcp](https://github.com/jau123/MeiGen-AI-Design-MCP) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-18 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -563,7 +563,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, database access
+declared capabilities: network access, filesystem access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -575,7 +575,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 14 properties (threshold: 10)
+input schema exposes 16 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-openstreetmap-mcp-server",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-09-17T02:49:21.770000454Z",
+  "scan_date": "2026-09-18T02:36:18.573260907Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/openstreetmap-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 5,
   "npm_package": "@cyanheads/openstreetmap-mcp-server",
-  "npm_downloads_monthly": 1887,
+  "npm_downloads_monthly": 2362,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Geocode, reverse geocode, and run Overpass spatial queries on OpenStreetMap data via MCP. STDIO or Streamable HTTP.",
@@ -19,7 +19,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access, HTTP requests",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "openstreetmap_search_places"
     },
@@ -147,7 +147,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access, database access",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "openstreetmap_query_raw"
     },
@@ -232,11 +232,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: overpass-turbo.eu"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -524,6 +520,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.4.7"
+    },
+    {
+      "scan_date": "2026-09-17T02:49:21Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.5.0"
     }
   ]
 }
