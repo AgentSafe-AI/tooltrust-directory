@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.3` |
 | **Vendor** | 21st-dev |
-| **Stars** | ⭐ 5879 |
+| **Stars** | ⭐ 5892 |
 | **npm Package** | `@21st-dev/magic` |
-| **npm Downloads (30d)** | 111.8k |
+| **npm Downloads (30d)** | 116.4k |
 | **Language** | TypeScript |
 | **Source** | [magic-mcp](https://github.com/21st-dev/magic-mcp) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

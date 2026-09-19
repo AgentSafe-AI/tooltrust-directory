@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | bsab |
-| **Stars** | ⭐ 84 |
+| **Stars** | ⭐ 61 |
 | **Language** | Python |
 | **Source** | [france-mcp-servers](https://github.com/bsab/france-mcp-servers) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

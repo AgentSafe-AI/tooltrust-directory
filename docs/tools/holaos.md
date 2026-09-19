@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `latest` |
 | **Vendor** | holaboss-ai |
-| **Stars** | ⭐ 11319 |
+| **Stars** | ⭐ 11316 |
 | **npm Package** | `hola-boss-oss` |
 | **Language** | TypeScript |
 | **Source** | [holaos](https://github.com/holaboss-ai/holaOS) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

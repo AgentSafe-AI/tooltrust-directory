@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nexgendata-apify-legal-mcp-server](https://smithery.ai/server/nexgendata-apify/legal-mcp-server) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

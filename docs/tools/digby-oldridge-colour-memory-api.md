@@ -17,7 +17,7 @@ Prefer a direct connection? Point your MCP client at https://api.colourmemory.co
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [digby-oldridge-colour-memory-api](https://smithery.ai/server/digby-oldridge/colour-memory-api) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

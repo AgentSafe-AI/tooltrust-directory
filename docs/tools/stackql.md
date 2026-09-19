@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 965 |
 | **Language** | Go |
 | **Source** | [stackql](https://github.com/stackql/stackql) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

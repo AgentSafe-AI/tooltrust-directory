@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.25.1` |
+| **Version** | `0.26.0` |
 | **Vendor** | ankimcp |
-| **Stars** | ⭐ 484 |
+| **Stars** | ⭐ 486 |
 | **npm Package** | `@ankimcp/anki-mcp-server` |
 | **npm Downloads (30d)** | 7.3k |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,9 +26,45 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 63 |
+| Info     | 66 |
 
 ## Detailed Findings
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

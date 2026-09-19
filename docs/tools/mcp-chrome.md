@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | hangwin |
-| **Stars** | ⭐ 12420 |
+| **Stars** | ⭐ 12434 |
 | **npm Package** | `mcp-chrome-bridge-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mcp-chrome](https://github.com/hangwin/mcp-chrome) |
-| **Scan Date** | 2026-09-16 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

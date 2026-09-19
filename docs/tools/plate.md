@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 412 |
 | **Language** | TypeScript |
 | **Source** | [plate](https://github.com/udecode/plate) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

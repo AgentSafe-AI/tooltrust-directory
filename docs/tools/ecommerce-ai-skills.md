@@ -1,6 +1,6 @@
 # 🟢 ecommerce-ai-skills
 
-> Cross-border e-commerce AI knowledge base, designed to be read by people and installed by agents. 69 trilingual guides, 878 structured prompts, a 94-entity / 318-constraint domain ontology, and 9 agent skills served over MCP. Factual claims are dated and CI-verified; prompts declare their data requirements and failure boundaries. CC0.
+> Cross-border e-commerce AI knowledge base, read by people and installed by agents: 69 trilingual guides, 878 prompts, a 100-entity / 322-constraint ontology, and 9 skills as a Claude Code plugin or over MCP. Factual claims are dated and CI-verified. CC0.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | kangise |
-| **Stars** | ⭐ 71 |
+| **Stars** | ⭐ 72 |
 | **Language** | Python |
 | **Source** | [ecommerce-ai-skills](https://github.com/kangise/ecommerce-ai-skills) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

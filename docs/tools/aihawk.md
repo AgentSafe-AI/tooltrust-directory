@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.68.4` |
+| **Version** | `0.68.9` |
 | **Vendor** | feder-cr |
-| **Stars** | ⭐ 31625 |
+| **Stars** | ⭐ 31593 |
 | **Language** | Python |
 | **Source** | [aihawk](https://github.com/feder-cr/AIHawk) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

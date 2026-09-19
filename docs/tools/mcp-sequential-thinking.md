@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 952 |
 | **Language** | Python |
 | **Source** | [mcp-sequential-thinking](https://github.com/arben-adm/mcp-sequential-thinking) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

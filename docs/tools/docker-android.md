@@ -1,17 +1,17 @@
 # 🟢 docker-android
 
-> Android in docker solution with noVNC supported, video recording and mcp server
+> Android in docker solution with noVNC supported, video recording, mcp server and AI-agent
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `3.7.0-p0` |
+| **Version** | `3.7.0-p1` |
 | **Vendor** | budtmo |
-| **Stars** | ⭐ 15862 |
+| **Stars** | ⭐ 15867 |
 | **Language** | Python |
 | **Source** | [docker-android](https://github.com/budtmo/docker-android) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

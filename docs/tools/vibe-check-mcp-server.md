@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.7.6` |
 | **Vendor** | PV-Bhat |
-| **Stars** | ⭐ 503 |
+| **Stars** | ⭐ 504 |
 | **npm Package** | `@pv-bhat/vibe-check-mcp` |
-| **npm Downloads (30d)** | 457 |
+| **npm Downloads (30d)** | 419 |
 | **Language** | TypeScript |
 | **Source** | [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) |
-| **Scan Date** | 2026-09-17 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

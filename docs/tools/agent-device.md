@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `w4-find-with-signal` |
 | **Vendor** | callstack |
-| **Stars** | ⭐ 4626 |
+| **Stars** | ⭐ 4669 |
 | **npm Package** | `agent-device` |
 | **npm Downloads (30d)** | 557.2k |
 | **Language** | TypeScript |
 | **Source** | [agent-device](https://github.com/callstack/agent-device) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

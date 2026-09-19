@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.3k |
 | **Language** | TypeScript |
 | **Source** | [dexto](https://github.com/truffle-ai/dexto) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

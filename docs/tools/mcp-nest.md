@@ -12,7 +12,7 @@
 | **npm Package** | `mcp-nest-workspace` |
 | **Language** | TypeScript |
 | **Source** | [mcp-nest](https://github.com/rekog-labs/MCP-Nest) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

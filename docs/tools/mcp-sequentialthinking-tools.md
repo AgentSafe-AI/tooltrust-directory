@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 4.2k |
 | **Language** | TypeScript |
 | **Source** | [mcp-sequentialthinking-tools](https://github.com/spences10/mcp-sequentialthinking-tools) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

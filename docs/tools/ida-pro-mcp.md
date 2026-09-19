@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.5.0` |
 | **Vendor** | mrexodia |
-| **Stars** | ⭐ 12111 |
+| **Stars** | ⭐ 12138 |
 | **Language** | Python |
 | **Source** | [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-19 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
