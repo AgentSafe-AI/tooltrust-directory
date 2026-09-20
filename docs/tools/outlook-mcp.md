@@ -10,10 +10,10 @@
 | **Vendor** | ryaker |
 | **Stars** | ⭐ 438 |
 | **npm Package** | `m365-mcp` |
-| **npm Downloads (30d)** | 168 |
+| **npm Downloads (30d)** | 157 |
 | **Language** | JavaScript |
 | **Source** | [outlook-mcp](https://github.com/ryaker/outlook-mcp) |
-| **Scan Date** | 2026-09-19 |
+| **Scan Date** | 2026-09-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

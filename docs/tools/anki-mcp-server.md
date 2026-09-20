@@ -10,10 +10,10 @@
 | **Vendor** | ankimcp |
 | **Stars** | ⭐ 486 |
 | **npm Package** | `@ankimcp/anki-mcp-server` |
-| **npm Downloads (30d)** | 7.3k |
+| **npm Downloads (30d)** | 7.4k |
 | **Language** | TypeScript |
 | **Source** | [anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) |
-| **Scan Date** | 2026-09-19 |
+| **Scan Date** | 2026-09-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

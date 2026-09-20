@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `54.0.0-beta.1` |
 | **Vendor** | udecode |
-| **Stars** | ⭐ 16600 |
+| **Stars** | ⭐ 16603 |
 | **npm Package** | `plate` |
-| **npm Downloads (30d)** | 412 |
+| **npm Downloads (30d)** | 400 |
 | **Language** | TypeScript |
 | **Source** | [plate](https://github.com/udecode/plate) |
-| **Scan Date** | 2026-09-19 |
+| **Scan Date** | 2026-09-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

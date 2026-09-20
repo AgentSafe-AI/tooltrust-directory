@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `4.6.3` |
 | **Vendor** | triggerdotdev |
-| **Stars** | ⭐ 16338 |
+| **Stars** | ⭐ 16345 |
 | **npm Package** | `triggerdotdev` |
 | **Language** | TypeScript |
 | **Source** | [trigger-dev](https://github.com/triggerdotdev/trigger.dev) |
-| **Scan Date** | 2026-09-19 |
+| **Scan Date** | 2026-09-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

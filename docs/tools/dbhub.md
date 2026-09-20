@@ -1,19 +1,19 @@
 # 🟢 dbhub
 
-> Token conscious database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.
+> Token conscious database MCP server for Postgres, MySQL, SQL Server, Oracle, MariaDB, SQLite.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.2.5` |
+| **Version** | `1.3.0` |
 | **Vendor** | bytebase |
-| **Stars** | ⭐ 3537 |
+| **Stars** | ⭐ 3540 |
 | **npm Package** | `dbhub` |
-| **npm Downloads (30d)** | 73 |
+| **npm Downloads (30d)** | 67 |
 | **Language** | TypeScript |
 | **Source** | [dbhub](https://github.com/bytebase/dbhub) |
-| **Scan Date** | 2026-09-19 |
+| **Scan Date** | 2026-09-20 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
