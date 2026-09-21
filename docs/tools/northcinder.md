@@ -12,7 +12,7 @@
 | **npm Package** | `northcinder-monorepo` |
 | **Language** | JavaScript |
 | **Source** | [northcinder](https://github.com/cinderline/northcinder) |
-| **Scan Date** | 2026-09-20 |
+| **Scan Date** | 2026-09-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

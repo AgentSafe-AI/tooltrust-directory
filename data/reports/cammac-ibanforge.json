@@ -1,33 +1,14 @@
 {
   "tool_id": "cammac-ibanforge",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-09-20T02:43:42.963164914Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-09-21T02:44:47.116755718Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/cammac/IBANforge",
   "vendor": "Smithery",
   "description": "IBAN validation and bank-data tools for AI agents, ERP, invoicing and payroll workflows. IBANforge covers 89 countries and provides BIC/SWIFT lookup, Swiss clearing lookup, SEPA and country-risk indicators, payment-reference validation, postal-address checks and Swiss QR-bill checks. The current MCP service offers 11 tools, including batch validation, feedback and API-key requests. Connect to https://api.ibanforge.com/mcp or use the ibanforge-mcp npm package. Free access: 25 calls per day without a key, 25 per month with an anonymous key, or 200 per month after claiming a key by email. Paid credit packs, a Pro subscription and x402 payments are available. Batch validation consumes one unit per IBAN. Validation checks format and checksum; it does not confirm that an account exists or belongs to a beneficiary, and it does not perform beneficiary AML/KYC screening. Documentation: https://ibanforge.com/docs",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsmithery: 6 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "check_postal_address",
-          "check_swiss_qr_bill",
-          "poll_api_key",
-          "request_api_key",
-          "send_feedback",
-          "validate_payment_reference"
-        ],
-        "removed": null,
-        "version": "smithery"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -295,7 +276,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 11,
     "info": 22
@@ -746,6 +727,12 @@
       "scan_date": "2026-09-19T02:38:35Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-09-20T02:43:42Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "smithery"
     }
   ]

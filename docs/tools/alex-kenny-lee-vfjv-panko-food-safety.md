@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alex-kenny-lee-vfjv-panko-food-safety](https://smithery.ai/server/alex-kenny-lee-vfjv/panko-food-safety) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

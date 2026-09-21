@@ -1,50 +1,50 @@
 {
   "tool_id": "anything-analyzer",
   "version": "3.6.61",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-09-20T02:39:02Z",
+  "scan_date": "2026-09-21T02:38:26.397840822Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Mouseww/anything-analyzer",
   "category": "Developer Tools",
   "vendor": "Mouseww",
-  "stars": 3674,
+  "stars": 3676,
   "npm_package": "anything-analyzer",
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "全能协议分析工具：浏览器抓包 + MITM 代理 + 指纹伪装 + AI 分析 + MCP Server 无缝对接 AI Agent/IDE   |  All-in-one protocol analysis toolkit — built-in browser capture, MITM proxy, JS hooks, fingerprint spoofing, AI analysis \u0026 MCP server for agent integration",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/main/mcp/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 61,
-            "snippet": "new McpServer(",
-            "file": "src/main/mcp/mcp-server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 281,
-            "snippet": ".registerTool(",
-            "file": "src/main/mcp/mcp-server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "anythingmcp_overview"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "anythingmcp_get_started"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "anythingmcp_connect_client"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "anythingmcp_list_connectors"
     }
   ],
   "summary": {
@@ -52,10 +52,9 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -80,42 +79,40 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "anythingmcp_connect_client",
+    "anythingmcp_get_started",
+    "anythingmcp_list_connectors",
+    "anythingmcp_overview"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-09-14T02:41:54Z",
+      "tool_name": "anythingmcp_overview",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-09-15T02:44:49Z",
+      "tool_name": "anythingmcp_get_started",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-09-16T02:40:16Z",
+      "tool_name": "anythingmcp_connect_client",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-09-17T02:43:12Z",
+      "tool_name": "anythingmcp_list_connectors",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-18T02:30:11Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-19T02:31:43Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "3.6.61"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

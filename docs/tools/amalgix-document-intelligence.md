@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [amalgix-document-intelligence](https://smithery.ai/server/amalgix/document-intelligence) |
-| **Scan Date** | 2026-07-24 |
+| **Scan Date** | 2026-09-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

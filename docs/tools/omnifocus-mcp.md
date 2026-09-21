@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.16.0` |
 | **Vendor** | themotionmachine |
-| **Stars** | ⭐ 242 |
+| **Stars** | ⭐ 243 |
 | **npm Package** | `omnifocus-mcp` |
-| **npm Downloads (30d)** | 3.0k |
+| **npm Downloads (30d)** | 3.1k |
 | **Language** | TypeScript |
 | **Source** | [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) |
-| **Scan Date** | 2026-09-20 |
+| **Scan Date** | 2026-09-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.43.0` |
 | **Vendor** | FlorianBruniaux |
-| **Stars** | ⭐ 6001 |
+| **Stars** | ⭐ 6009 |
 | **Language** | Python |
 | **Source** | [claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) |
-| **Scan Date** | 2026-09-20 |
+| **Scan Date** | 2026-09-21 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
