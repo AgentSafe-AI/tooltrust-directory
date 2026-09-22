@@ -1,10 +1,10 @@
 {
   "tool_id": "data-transform-agent-data-transform",
   "version": "smithery",
-  "grade": "B",
-  "risk_score": 12,
-  "scan_date": "2026-06-01T02:58:27.798629351Z",
-  "scanner": "tooltrust-scanner/v0.3.13",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-09-22T02:44:52.353434009Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/data-transform-agent/data-transform",
   "vendor": "Smithery",
   "description": "Convert data between over 40 formats including JSON, CSV, Excel, and PDF. Restructure complex schemas into custom layouts to ensure seamless data integration. Simplify information processing by automating transformations between structured and unstructured file types.",
@@ -19,17 +19,9 @@
     },
     {
       "id": "AS-002",
-      "severity": "Medium",
+      "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "tool declares fs permission",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "reshape_json"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "tool declares http permission",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "reshape_json"
     },
@@ -61,9 +53,9 @@
   "summary": {
     "critical": 0,
     "high": 0,
-    "medium": 1,
-    "low": 2,
-    "info": 3
+    "medium": 0,
+    "low": 1,
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -82,7 +74,7 @@
     {
       "tool_name": "reshape_json",
       "action": "ALLOW",
-      "grade": "B",
+      "grade": "A",
       "behavior": [
         "reads_files",
         "uses_network"
@@ -312,6 +304,12 @@
     },
     {
       "scan_date": "2026-05-31T02:48:12Z",
+      "grade": "B",
+      "risk_score": 12,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-06-01T02:58:27Z",
       "grade": "B",
       "risk_score": 12,
       "version": "smithery"

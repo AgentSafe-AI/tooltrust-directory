@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [deficlow-zipp](https://smithery.ai/server/deficlow/zipp) |
-| **Scan Date** | 2026-09-18 |
+| **Scan Date** | 2026-09-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

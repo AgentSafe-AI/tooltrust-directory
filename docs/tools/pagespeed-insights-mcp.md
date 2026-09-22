@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2.0.0` |
+| **Version** | `2.1.0` |
 | **Vendor** | ruslanlap |
-| **Stars** | ⭐ 58 |
+| **Stars** | ⭐ 63 |
 | **npm Package** | `@ruslanlap/pagespeed-insights-mcp` |
 | **Language** | TypeScript |
 | **Source** | [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) |
-| **Scan Date** | 2026-09-07 |
+| **Scan Date** | 2026-09-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

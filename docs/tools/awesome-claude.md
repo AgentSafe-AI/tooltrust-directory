@@ -10,10 +10,10 @@
 | **Vendor** | JSONbored |
 | **Stars** | ⭐ 299 |
 | **npm Package** | `heyclaude` |
-| **npm Downloads (30d)** | 9 |
+| **npm Downloads (30d)** | 7 |
 | **Language** | MDX |
 | **Source** | [awesome-claude](https://github.com/JSONbored/awesome-claude) |
-| **Scan Date** | 2026-09-19 |
+| **Scan Date** | 2026-09-22 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

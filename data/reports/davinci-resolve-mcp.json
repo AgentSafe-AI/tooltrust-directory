@@ -1,64 +1,27 @@
 {
   "tool_id": "davinci-resolve-mcp",
   "version": "4.8.15",
-  "grade": "I",
+  "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-09-21T02:38:56Z",
+  "scan_date": "2026-09-22T02:40:14.743594201Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/samuelgursky/davinci-resolve-mcp",
   "category": "Developer Tools",
   "vendor": "samuelgursky",
-  "stars": 3021,
+  "stars": 3054,
   "npm_package": "davinci-resolve-mcp",
-  "npm_downloads_monthly": 69850,
+  "npm_downloads_monthly": 71721,
   "license": "MIT",
   "language": "Python",
   "description": "MCP server integration for DaVinci Resolve Studio",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 25,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 79,
-            "snippet": "new McpServer(",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 82,
-            "snippet": ".registerTool(",
-            "file": "resolve-advanced/server/index.mjs",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 19,
-            "file": "src/granular/common.py",
-            "language": "python"
-          },
-          {
-            "kind": "init",
-            "line": 103,
-            "snippet": "FastMCP(",
-            "file": "src/granular/common.py",
-            "language": "python"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "resolve_migration_exception"
     }
   ],
   "summary": {
@@ -69,7 +32,6 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -107,168 +69,16 @@
       "language": "python"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "resolve_migration_exception"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-08-24T00:52:03Z",
+      "tool_name": "resolve_migration_exception",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 0,
-      "version": "2.103.1"
-    },
-    {
-      "scan_date": "2026-08-25T00:53:48Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "2.103.1"
-    },
-    {
-      "scan_date": "2026-08-26T00:53:31Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.103.2"
-    },
-    {
-      "scan_date": "2026-08-27T06:04:59Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.103.2"
-    },
-    {
-      "scan_date": "2026-08-28T08:16:25Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "2.103.2"
-    },
-    {
-      "scan_date": "2026-08-29T05:03:13Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.103.3"
-    },
-    {
-      "scan_date": "2026-08-30T02:47:36Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.104.1"
-    },
-    {
-      "scan_date": "2026-08-31T02:40:19Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.121.0"
-    },
-    {
-      "scan_date": "2026-09-02T02:16:51Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.203.0"
-    },
-    {
-      "scan_date": "2026-09-03T02:21:23Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.203.0"
-    },
-    {
-      "scan_date": "2026-09-04T02:18:54Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.205.0"
-    },
-    {
-      "scan_date": "2026-09-05T02:17:34Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.207.0"
-    },
-    {
-      "scan_date": "2026-09-06T02:13:19Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.207.0"
-    },
-    {
-      "scan_date": "2026-09-07T02:11:03Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.210.0"
-    },
-    {
-      "scan_date": "2026-09-08T02:22:32Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.212.1"
-    },
-    {
-      "scan_date": "2026-09-09T02:27:27Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.215.0"
-    },
-    {
-      "scan_date": "2026-09-10T02:24:37Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.223.0"
-    },
-    {
-      "scan_date": "2026-09-11T02:20:32Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "2.224.1"
-    },
-    {
-      "scan_date": "2026-09-12T02:26:09Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "3.2.0"
-    },
-    {
-      "scan_date": "2026-09-13T02:23:14Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "3.2.0"
-    },
-    {
-      "scan_date": "2026-09-14T02:42:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "4.1.3"
-    },
-    {
-      "scan_date": "2026-09-15T02:45:30Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "4.5.2"
-    },
-    {
-      "scan_date": "2026-09-16T02:40:44Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "4.7.3"
-    },
-    {
-      "scan_date": "2026-09-17T02:43:49Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "4.7.6"
-    },
-    {
-      "scan_date": "2026-09-18T02:30:49Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "4.7.10"
-    },
-    {
-      "scan_date": "2026-09-19T02:32:19Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "4.7.10"
-    },
-    {
-      "scan_date": "2026-09-20T02:39:22Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "4.8.13"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

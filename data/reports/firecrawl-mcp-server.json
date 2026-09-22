@@ -1,25 +1,40 @@
 {
   "tool_id": "firecrawl-mcp-server",
   "version": "3.24.1",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-09-21T02:37:32.321189199Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-22T02:39:09.47250748Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/firecrawl/firecrawl-mcp-server",
   "category": "Developer Tools",
   "vendor": "firecrawl",
-  "stars": 7491,
+  "stars": 7499,
   "npm_package": "firecrawl-mcp",
-  "npm_downloads_monthly": 131592,
+  "npm_downloads_monthly": 127207,
   "license": "MIT",
   "language": "JavaScript",
   "description": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.24.1: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "firecrawl_credit_usage",
+          "firecrawl_find_tools"
+        ],
+        "removed": null,
+        "version": "3.24.1"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
+      "description": "declared capabilities: code/command execution, network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_scrape"
     },
@@ -27,16 +42,8 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 23 properties (threshold: 10)",
+      "description": "input schema exposes 28 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "firecrawl_scrape"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "firecrawl_scrape"
     },
     {
@@ -75,7 +82,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: code/command execution, network access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_search"
     },
@@ -83,7 +90,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
+      "description": "input schema exposes 14 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_search"
     },
@@ -102,6 +109,30 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "firecrawl_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "firecrawl_find_tools"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "firecrawl_find_tools"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "firecrawl_find_tools"
     },
     {
       "id": "AS-002",
@@ -646,14 +677,46 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "firecrawl_developer_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "firecrawl_credit_usage"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"byApiKey\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "firecrawl_credit_usage"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "firecrawl_credit_usage"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "firecrawl_credit_usage"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 29,
-    "info": 50
+    "low": 30,
+    "info": 55
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -661,8 +724,10 @@
     "firecrawl_agent_status",
     "firecrawl_check_crawl_status",
     "firecrawl_crawl",
+    "firecrawl_credit_usage",
     "firecrawl_developer_search",
     "firecrawl_extract",
+    "firecrawl_find_tools",
     "firecrawl_interact",
     "firecrawl_interact_stop",
     "firecrawl_map",
@@ -690,13 +755,18 @@
       "grade": "A",
       "behavior": [
         "executes_commands",
-        "reads_files",
-        "uses_network"
+        "uses_network",
+        "writes_files"
       ],
       "destinations": [
         "dynamic URL input (url)",
+        "dynamic email recipient (domainTools)",
         "dynamic email recipient (screenshotOptions)",
-        "dynamic email recipient (storeInCache)"
+        "dynamic email recipient (storeInCache)",
+        "dynamic email recipient (toolDetail)",
+        "hardcoded domain: data.alexandria",
+        "hardcoded domain: metadata.scrapeId",
+        "hardcoded domain: requiresAction.url"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -719,11 +789,31 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: data.developer",
-        "hardcoded domain: data.web"
+        "dynamic email recipient (domainTools)",
+        "dynamic email recipient (toolDetail)",
+        "hardcoded domain: data.tools",
+        "hardcoded domain: data.web",
+        "hardcoded domain: example.request",
+        "hardcoded domain: example.response",
+        "hardcoded domain: response.key"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "firecrawl_find_tools",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (urls)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -826,6 +916,7 @@
       ],
       "destinations": [
         "dynamic email recipient (storeInCache)",
+        "hardcoded domain: data.metadata.scrapeId",
         "hardcoded domain: pdfOptions.maxPages"
       ],
       "dependency_visibility": "No dependency data",
@@ -984,6 +1075,16 @@
       "grade": "A",
       "behavior": [
         "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "firecrawl_credit_usage",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -2007,6 +2108,12 @@
     },
     {
       "scan_date": "2026-09-20T02:38:23Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "3.24.1"
+    },
+    {
+      "scan_date": "2026-09-21T02:37:32Z",
       "grade": "A",
       "risk_score": 4,
       "version": "3.24.1"
