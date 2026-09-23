@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 171 |
 | **Language** | Go |
 | **Source** | [mcp-auth-proxy](https://github.com/sigbit/mcp-auth-proxy) |
-| **Scan Date** | 2026-09-22 |
+| **Scan Date** | 2026-09-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

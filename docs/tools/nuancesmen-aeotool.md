@@ -1,4 +1,4 @@
-# 🟡 nuancesmen-aeotool
+# 🟢 nuancesmen-aeotool
 
 > Audit any website for AI citability on **67 criteria across 7 AI engines** (ChatGPT, Gemini, Perplexity, Claude, Copilot, Grok, Google AI Overviews).
 
@@ -12,12 +12,12 @@ Auth: OAuth 2.1 (paste your `wl_` API key on the consent screen).
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nuancesmen-aeotool](https://smithery.ai/server/nuancesmen/aeotool) |
-| **Scan Date** | 2026-09-22 |
+| **Scan Date** | 2026-09-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -27,24 +27,12 @@ Auth: OAuth 2.1 (paste your `wl_` API key on the consent screen).
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 9 |
 | Info     | 46 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 28 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

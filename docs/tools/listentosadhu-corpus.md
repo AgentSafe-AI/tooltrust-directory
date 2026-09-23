@@ -1,15 +1,15 @@
-# 🟡 listentosadhu-corpus
+# 🟢 listentosadhu-corpus
 
 > Listen to Sadhu exposes a searchable corpus of Vedic scripture and recorded lectures. Look up verses by reference (e.g. "BG 2.13", "SB 5.5.3", "CC Madhya 8.128") with original Devanagari/Bengali, IAST transliteration and translations; read commentaries, prose chapters and letters; and search transcribed talks with semantic + lexical retrieval. Inline audio/video players let you hear a lecture passage or watch a clip. Read-only, no auth, no writes.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [listentosadhu-corpus](https://smithery.ai/server/listentosadhu/corpus) |
-| **Scan Date** | 2026-09-22 |
+| **Scan Date** | 2026-09-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 3 |
 | Info     | 25 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 18 tool(s) added, 7 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

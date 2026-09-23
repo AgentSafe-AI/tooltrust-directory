@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2026.9.22` |
 | **Vendor** | pnoker |
-| **Stars** | ⭐ 1288 |
+| **Stars** | ⭐ 1289 |
 | **Language** | Java |
 | **Source** | [iot-dc3](https://github.com/pnoker/iot-dc3) |
-| **Scan Date** | 2026-09-22 |
+| **Scan Date** | 2026-09-23 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
