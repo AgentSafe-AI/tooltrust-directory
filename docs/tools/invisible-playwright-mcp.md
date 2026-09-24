@@ -1,17 +1,17 @@
 # 🟢 invisible-playwright-mcp
 
-> Anti-detect agentic stealth browser: undetected browsing, browser automation, Python AI web browsing agent, computer use, scraping, lead generation. No captchas.
+> Your AI agent browses the web without captchas: self-hosted Python MCP server on undetected anti-detect stealth Firefox, for browser automation, scraping, computer use.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.69.2` |
+| **Version** | `0.70.0` |
 | **Vendor** | feder-cr |
-| **Stars** | ⭐ 31628 |
+| **Stars** | ⭐ 31643 |
 | **Language** | Python |
 | **Source** | [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp) |
-| **Scan Date** | 2026-09-23 |
+| **Scan Date** | 2026-09-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

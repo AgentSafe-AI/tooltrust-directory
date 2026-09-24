@@ -1,20 +1,35 @@
 {
   "tool_id": "qwen-code",
   "version": "weaken-tool-error-shots",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-23T02:39:27.394365442Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-24T02:29:09.101798164Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/QwenLM/qwen-code",
   "category": "Developer Tools",
   "vendor": "QwenLM",
-  "stars": 28073,
+  "stars": 28102,
   "npm_package": "@qwen-code/qwen-code",
   "npm_downloads_monthly": 260258,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "An open-source AI coding agent that lives in your terminal.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vweaken-tool-error-shots: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "paste",
+          "select_text"
+        ],
+        "removed": null,
+        "version": "weaken-tool-error-shots"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -168,6 +183,30 @@
       "tool_name": "move_cursor"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "paste"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "paste"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "paste"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -190,6 +229,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "scroll"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "select_text"
     },
     {
       "id": "AS-014",
@@ -258,10 +305,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 29
+    "low": 2,
+    "info": 32
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -282,9 +329,11 @@
     "invoke_menu",
     "list_sessions",
     "move_cursor",
+    "paste",
     "perform_secondary_action",
     "press_key",
     "scroll",
+    "select_text",
     "set_agent_cursor_enabled",
     "set_agent_cursor_motion",
     "set_agent_cursor_theme",
@@ -419,6 +468,16 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "paste",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "perform_secondary_action",
       "action": "ALLOW",
       "grade": "A",
@@ -434,6 +493,13 @@
     },
     {
       "tool_name": "scroll",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "select_text",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -775,6 +841,12 @@
     },
     {
       "scan_date": "2026-09-22T02:38:05Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "weaken-tool-error-shots"
+    },
+    {
+      "scan_date": "2026-09-23T02:39:27Z",
       "grade": "A",
       "risk_score": 2,
       "version": "weaken-tool-error-shots"

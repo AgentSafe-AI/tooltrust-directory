@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.10.48` |
 | **Vendor** | Coolver |
-| **Stars** | ⭐ 632 |
+| **Stars** | ⭐ 633 |
 | **Language** | Python |
 | **Source** | [home-assistant-vibecode-agent](https://github.com/Coolver/home-assistant-vibecode-agent) |
-| **Scan Date** | 2026-09-23 |
+| **Scan Date** | 2026-09-24 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

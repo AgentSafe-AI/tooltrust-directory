@@ -1,9 +1,9 @@
 {
   "tool_id": "cyanheads-orcid-mcp-server",
-  "version": "0.2.17",
+  "version": "0.3.0",
   "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-23T02:48:24.490442117Z",
+  "risk_score": 4,
+  "scan_date": "2026-09-24T02:38:13.863442697Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/orcid-mcp-server",
   "category": "Developer Tools",
@@ -44,6 +44,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "orcid_search_researchers"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "orcid_search_researchers"
     },
@@ -220,7 +228,7 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 8,
+    "low": 9,
     "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -259,6 +267,10 @@
         "uses_network"
       ],
       "destinations": [
+        "hardcoded domain: doi.org",
+        "hardcoded domain: dx.doi.org",
+        "hardcoded domain: ncbi.nlm.nih.gov",
+        "hardcoded domain: pubmed.ncbi.nlm.nih.gov",
         "hardcoded domain: ror.org"
       ],
       "dependency_visibility": "No dependency data",
@@ -346,6 +358,12 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: doi.org",
+        "hardcoded domain: dx.doi.org",
+        "hardcoded domain: ncbi.nlm.nih.gov",
+        "hardcoded domain: pubmed.ncbi.nlm.nih.gov"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -645,6 +663,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.2.16"
+    },
+    {
+      "scan_date": "2026-09-23T02:48:24Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.2.17"
     }
   ]
 }

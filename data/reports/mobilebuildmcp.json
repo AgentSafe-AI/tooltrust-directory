@@ -1,0 +1,69 @@
+{
+  "tool_id": "mobilebuildmcp",
+  "version": "2.7.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-09-24T02:31:19Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/getsentry/MobileBuildMCP",
+  "category": "Developer Tools",
+  "vendor": "getsentry",
+  "stars": 6416,
+  "npm_package": "mobilebuildmcp",
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "A Model Context Protocol (MCP) server and CLI that provides tools for agent use when working on iOS and macOS projects.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 15,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/server/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 27,
+            "snippet": "new McpServer(",
+            "file": "src/server/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 15,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/server/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 27,
+      "snippet": "new McpServer(",
+      "file": "src/server/server.ts",
+      "language": "typescript"
+    }
+  ]
+}
