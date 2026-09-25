@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.0.0` |
 | **Vendor** | go-kratos |
-| **Stars** | ⭐ 25940 |
+| **Stars** | ⭐ 25945 |
 | **Language** | Go |
 | **Source** | [kratos](https://github.com/go-kratos/kratos) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

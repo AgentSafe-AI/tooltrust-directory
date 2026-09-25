@@ -1,4 +1,4 @@
-# 🟡 dynamoi-music-youtube-marketing-mcp
+# 🟢 dynamoi-music-youtube-marketing-mcp
 
 > Music marketing for AI agents. Connect ChatGPT, Claude, Cursor, and other AI agents to Dynamoi for free Spotify Smart Links, music promotion campaigns, analytics, and distribution. Dynamoi is a music marketing platform for artists, labels, and managers.
 
@@ -13,12 +13,12 @@ Docs: https://dynamoi.com/docs/mcp-server
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [dynamoi-music-youtube-marketing-mcp](https://smithery.ai/server/dynamoi/music-youtube-marketing-mcp) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -28,24 +28,12 @@ Docs: https://dynamoi.com/docs/mcp-server
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 10 |
 | Info     | 28 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 13 tool(s) added, 9 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

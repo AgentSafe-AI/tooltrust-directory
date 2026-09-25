@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.6` |
 | **Vendor** | NanmiCoder |
-| **Stars** | ⭐ 14695 |
+| **Stars** | ⭐ 14705 |
 | **npm Package** | `claude-code-local` |
 | **Language** | TypeScript |
 | **Source** | [cc-haha](https://github.com/NanmiCoder/cc-haha) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

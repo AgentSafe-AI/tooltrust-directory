@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.5.0` |
 | **Vendor** | Panniantong |
-| **Stars** | ⭐ 85112 |
+| **Stars** | ⭐ 85289 |
 | **Language** | Python |
 | **Source** | [agent-reach](https://github.com/Panniantong/Agent-Reach) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-25 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
