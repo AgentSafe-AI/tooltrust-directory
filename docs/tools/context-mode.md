@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.0.169` |
 | **Vendor** | mksglu |
-| **Stars** | ⭐ 24035 |
+| **Stars** | ⭐ 24073 |
 | **npm Package** | `context-mode` |
-| **npm Downloads (30d)** | 69.1k |
+| **npm Downloads (30d)** | 70.1k |
 | **Language** | TypeScript |
 | **Source** | [context-mode](https://github.com/mksglu/context-mode) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

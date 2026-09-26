@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 42 |
-| **Version** | `1.12.0` |
+| **Version** | `1.13.1` |
 | **Vendor** | googleapis |
-| **Stars** | ⭐ 16484 |
+| **Stars** | ⭐ 16492 |
 | **Language** | Go |
 | **Source** | [genai-toolbox](https://github.com/googleapis/mcp-toolbox) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -1293,6 +1293,18 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
+input parameter "context_tokens" accepts a credential (informational; not evidence of insecure handling)
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** Info
+
+**Description:**
 input parameter "user_input_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
@@ -1318,18 +1330,6 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 
 **Description:**
 input parameter "expected_output_tokens" accepts a credential (informational; not evidence of insecure handling)
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** Info
-
-**Description:**
-input parameter "context_tokens" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [hello-uvza-sansfiction](https://smithery.ai/server/hello-uvza/sansfiction) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

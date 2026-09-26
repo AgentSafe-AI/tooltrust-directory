@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.11.0` |
 | **Vendor** | u14app |
-| **Stars** | ⭐ 4690 |
+| **Stars** | ⭐ 4691 |
 | **npm Package** | `deep-research` |
-| **npm Downloads (30d)** | 75 |
+| **npm Downloads (30d)** | 78 |
 | **Language** | JavaScript |
 | **Source** | [deep-research](https://github.com/u14app/deep-research) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

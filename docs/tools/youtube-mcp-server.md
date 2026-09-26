@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.2` |
 | **Vendor** | ZubeidHendricks |
-| **Stars** | ⭐ 576 |
+| **Stars** | ⭐ 577 |
 | **npm Package** | `zubeid-youtube-mcp-server` |
 | **npm Downloads (30d)** | 1.6k |
 | **Language** | TypeScript |
 | **Source** | [youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

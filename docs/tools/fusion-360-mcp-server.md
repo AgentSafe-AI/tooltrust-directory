@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 127 |
 | **Language** | Python |
 | **Source** | [fusion-360-mcp-server](https://github.com/AuraFriday/Fusion-360-MCP-Server) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

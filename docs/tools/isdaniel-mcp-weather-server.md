@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 61 |
 | **Language** | Python |
 | **Source** | [isdaniel-mcp-weather-server](https://github.com/isdaniel/mcp_weather_server) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,14 +1,14 @@
 {
   "tool_id": "code-mode",
   "version": "1.0.6",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-09-25T02:46:58.636512013Z",
+  "grade": "C",
+  "risk_score": 25,
+  "scan_date": "2026-09-26T02:52:37.92168529Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/universal-tool-calling-protocol/code-mode",
   "category": "Developer Tools",
   "vendor": "universal-tool-calling-protocol",
-  "stars": 1570,
+  "stars": 1571,
   "license": "MPL-2.0",
   "language": "TypeScript",
   "description": "🔌 Plug-and-play library to enable agents to call MCP and UTCP tools via code execution. ",
@@ -17,10 +17,13 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.6: 6 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.6: 1 tool(s) added, 6 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "run-code"
+        ],
+        "removed": [
           "medcode_browse_hierarchy",
           "medcode_check_code",
           "medcode_get_code",
@@ -28,35 +31,16 @@
           "medcode_map_codes",
           "medcode_search_codes"
         ],
-        "removed": [
-          "run-code"
-        ],
         "version": "1.0.6"
       }
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "medcode_get_code"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "medcode_search_codes"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "medcode_search_codes"
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "run-code"
     },
     {
       "id": "AS-014",
@@ -64,55 +48,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "medcode_search_codes"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "medcode_check_code"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "medcode_map_codes"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "medcode_map_codes"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "medcode_browse_hierarchy"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "medcode_list_systems"
+      "tool_name": "run-code"
     }
   ],
   "summary": {
-    "critical": 0,
+    "critical": 1,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 8
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -140,63 +84,13 @@
     }
   ],
   "tool_names": [
-    "medcode_browse_hierarchy",
-    "medcode_check_code",
-    "medcode_get_code",
-    "medcode_list_systems",
-    "medcode_map_codes",
-    "medcode_search_codes"
+    "run-code"
   ],
   "tool_contexts": [
     {
-      "tool_name": "medcode_get_code",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "medcode_search_codes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "medcode_check_code",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "medcode_map_codes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "medcode_browse_hierarchy",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "medcode_list_systems",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "run-code",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -218,6 +112,12 @@
       "scan_date": "2026-09-24T02:33:12Z",
       "grade": "C",
       "risk_score": 25,
+      "version": "1.0.6"
+    },
+    {
+      "scan_date": "2026-09-25T02:46:58Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.6"
     }
   ]

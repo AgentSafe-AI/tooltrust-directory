@@ -1,6 +1,6 @@
 # 🟢 cortex
 
-> Cortex - Generate interactive docs, typed SDKs from OpenAPI, AsyncAPI, GraphQL, gRPC, OpenRPC and MCP servers enriched with custom Markdown.
+> Cortex - Generates interactive API documentation, typed SDKs, and MCP servers from OpenAPI, AsyncAPI, GraphQL, gRPC, OpenRPC, and Markdown.
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.35` |
 | **Vendor** | cortex-docs |
-| **Stars** | ⭐ 3213 |
+| **Stars** | ⭐ 3217 |
 | **npm Package** | `cortex-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [cortex](https://github.com/cortex-docs/cortex) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

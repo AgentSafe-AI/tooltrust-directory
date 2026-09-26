@@ -10,10 +10,10 @@
 | **Vendor** | kimsungwhee |
 | **Stars** | ⭐ 1377 |
 | **npm Package** | `@kimsungwhee/apple-docs-mcp` |
-| **npm Downloads (30d)** | 2.9k |
+| **npm Downloads (30d)** | 2.8k |
 | **Language** | TypeScript |
 | **Source** | [apple-docs-mcp](https://github.com/kimsungwhee/apple-docs-mcp) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

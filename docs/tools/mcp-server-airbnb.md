@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | openbnb-org |
-| **Stars** | ⭐ 543 |
+| **Stars** | ⭐ 544 |
 | **npm Package** | `@openbnb/mcp-server-airbnb` |
-| **npm Downloads (30d)** | 9.0k |
+| **npm Downloads (30d)** | 7.9k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

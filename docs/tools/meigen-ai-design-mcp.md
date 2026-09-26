@@ -1,11 +1,11 @@
-# 🟢 meigen-ai-design-mcp
+# 🟡 meigen-ai-design-mcp
 
 > Supports GPT Image 2, Seedance & ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 4 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
 | **Version** | `2.0.1` |
 | **Vendor** | jau123 |
 | **Stars** | ⭐ 1773 |
@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [meigen-ai-design-mcp](https://github.com/jau123/MeiGen-AI-Design-MCP) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,7 +23,7 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 17 |
 | Info     | 31 |
@@ -335,10 +335,22 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: code/command execution, network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 📐 `AS-003` — Scope Mismatch
+
+**Severity:** High
+
+**Description:**
+tool name "search_gallery" implies read-only operation but declares exec permission
+
+**Recommendation:**
+Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
 
 ---
 

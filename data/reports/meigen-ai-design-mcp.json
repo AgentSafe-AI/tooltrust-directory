@@ -1,16 +1,16 @@
 {
   "tool_id": "meigen-ai-design-mcp",
   "version": "2.0.1",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-09-25T02:46:58.17737319Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-09-26T02:52:39.001777357Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/jau123/MeiGen-AI-Design-MCP",
   "category": "Developer Tools",
   "vendor": "jau123",
   "stars": 1773,
   "npm_package": "meigen",
-  "npm_downloads_monthly": 1800,
+  "npm_downloads_monthly": 1774,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Supports GPT Image 2, Seedance \u0026 ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system",
@@ -219,8 +219,16 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_gallery"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"search_gallery\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
       "tool_name": "search_gallery"
     },
     {
@@ -402,7 +410,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 17,
     "info": 31
@@ -560,8 +568,9 @@
     {
       "tool_name": "search_gallery",
       "action": "ALLOW",
-      "grade": "A",
+      "grade": "B",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1248,6 +1257,12 @@
     },
     {
       "scan_date": "2026-09-24T02:33:13Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "2.0.1"
+    },
+    {
+      "scan_date": "2026-09-25T02:46:58Z",
       "grade": "A",
       "risk_score": 4,
       "version": "2.0.1"

@@ -1,18 +1,18 @@
 # 🟢 openhuman
 
-> OpenHuman is an open source agent harness with local-first memory, agent orchestration, and workflows
+> OpenHuman is the fastest, cheapest, most efficient open-source agent harness. Written in Rust
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.63.21` |
+| **Version** | `0.64.4` |
 | **Vendor** | tinyhumansai |
-| **Stars** | ⭐ 40080 |
+| **Stars** | ⭐ 40114 |
 | **npm Package** | `openhuman-repo` |
 | **Language** | Rust |
 | **Source** | [openhuman](https://github.com/tinyhumansai/openhuman) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

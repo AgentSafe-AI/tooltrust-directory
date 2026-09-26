@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `0.18.0` |
+| **Version** | `0.19.0` |
 | **Vendor** | ProfessionalWiki |
 | **Stars** | ⭐ 134 |
 | **npm Package** | `@professional-wiki/mediawiki-mcp-server` |
 | **npm Downloads (30d)** | 3.1k |
 | **Language** | TypeScript |
 | **Source** | [mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 20 |
-| Info     | 52 |
+| Info     | 53 |
 
 ## Detailed Findings
 
@@ -639,6 +639,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

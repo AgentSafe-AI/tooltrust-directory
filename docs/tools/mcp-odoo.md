@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 415 |
 | **Language** | Python |
 | **Source** | [mcp-odoo](https://github.com/erpipe-org/mcp-odoo) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

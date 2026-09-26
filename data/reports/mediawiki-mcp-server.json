@@ -1,16 +1,16 @@
 {
   "tool_id": "mediawiki-mcp-server",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-09-25T02:49:06.625148464Z",
+  "scan_date": "2026-09-26T02:55:50.309882475Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
   "category": "Developer Tools",
   "vendor": "ProfessionalWiki",
   "stars": 134,
   "npm_package": "@professional-wiki/mediawiki-mcp-server",
-  "npm_downloads_monthly": 3060,
+  "npm_downloads_monthly": 3135,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol (MCP) Server to connect your AI with any MediaWiki",
@@ -432,6 +432,14 @@
       "tool_name": "undelete-page"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "protect-page"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -597,7 +605,7 @@
     "high": 0,
     "medium": 0,
     "low": 20,
-    "info": 52
+    "info": 53
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -620,6 +628,7 @@
     "oauth-logout",
     "oauth-status",
     "parse-wikitext",
+    "protect-page",
     "remove-wiki",
     "search-page",
     "search-page-by-prefix",
@@ -895,6 +904,16 @@
         "uses_network",
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "protect-page",
+      "action": "ALLOW",
+      "grade": "A",
       "destinations": [
         "hardcoded domain: en.wikipedia.org"
       ],
@@ -1608,6 +1627,12 @@
     },
     {
       "scan_date": "2026-09-24T02:36:23Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.18.0"
+    },
+    {
+      "scan_date": "2026-09-25T02:49:06Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.18.0"

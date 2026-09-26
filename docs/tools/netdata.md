@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.11.1` |
 | **Vendor** | netdata |
-| **Stars** | ⭐ 80647 |
+| **Stars** | ⭐ 80654 |
 | **Language** | Go |
 | **Source** | [netdata](https://github.com/netdata/netdata) |
-| **Scan Date** | 2026-09-25 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

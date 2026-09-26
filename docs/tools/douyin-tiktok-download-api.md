@@ -1,6 +1,6 @@
 # 🟢 douyin-tiktok-download-api
 
-> 🚀 Self-hosted TikTok & Douyin scraper and no-watermark video downloader — async REST API, MCP server, CLI and web console for posts, profiles, comments and playlists. Self-healing identity pool, PostgreSQL archive, one docker compose up. 抖音、TikTok 数据采集与无水印视频下载 API，自托管，支持 MCP 调用与 Docker 一键部署。
+> 🚀 抖音、TikTok 数据采集与无水印视频下载 API，自托管，支持 MCP 调用与 Docker 一键部署。| Self-hosted TikTok & Douyin scraper and no-watermark video downloader — async REST API, MCP server, CLI and web console for posts, profiles, comments and playlists. Self-healing identity pool, PostgreSQL archive, one docker compose up. 
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `5.1.1` |
 | **Vendor** | Evil0ctal |
-| **Stars** | ⭐ 20306 |
+| **Stars** | ⭐ 20337 |
 | **Language** | Python |
 | **Source** | [douyin-tiktok-download-api](https://github.com/Evil0ctal/Douyin_TikTok_Download_API) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

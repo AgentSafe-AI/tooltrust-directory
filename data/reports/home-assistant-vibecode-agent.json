@@ -1,9 +1,9 @@
 {
   "tool_id": "home-assistant-vibecode-agent",
   "version": "2.10.48",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-24T02:34:34.407657824Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-09-26T02:53:57.71134067Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Coolver/home-assistant-vibecode-agent",
   "category": "Developer Tools",
@@ -13,6 +13,21 @@
   "language": "Python",
   "description": "Home Assistant MCP server agent. Enable Claude Code, Cursor, VS Code or any MCP-enabled IDE to help you vibe-code and manage Home Assistant: create and debug automations, design dashboards, tweak themes, modify configs, and deploy changes using natural language",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.10.48: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "cancel_booking",
+          "get_more_tools"
+        ],
+        "removed": null,
+        "version": "2.10.48"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -166,10 +181,18 @@
       "tool_name": "book_same_pro_again"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cancel_booking"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access, database access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_handyman"
     },
@@ -201,7 +224,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access, database access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_hvac"
     },
@@ -233,7 +256,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access, database access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_plumber"
     },
@@ -265,7 +288,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access, database access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_electrician"
     },
@@ -297,7 +320,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access, database access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "find_renovation"
     },
@@ -324,14 +347,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "book_renovation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_more_tools"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 5,
-    "info": 34
+    "info": 36
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -341,6 +372,7 @@
     "book_plumber",
     "book_renovation",
     "book_same_pro_again",
+    "cancel_booking",
     "create_booking",
     "find_electrician",
     "find_handyman",
@@ -348,6 +380,7 @@
     "find_plumber",
     "find_renovation",
     "get_booking_status",
+    "get_more_tools",
     "get_my_profile",
     "get_previous_jobs",
     "get_provider_details",
@@ -362,6 +395,9 @@
       "behavior": [
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -371,6 +407,9 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -432,11 +471,21 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "cancel_booking",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "find_handyman",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -445,6 +494,9 @@
       "tool_name": "book_handyman",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: address.postalCode"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -453,7 +505,10 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -462,6 +517,9 @@
       "tool_name": "book_hvac",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: address.postalCode"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -470,7 +528,10 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -479,6 +540,9 @@
       "tool_name": "book_plumber",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: address.postalCode"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -487,7 +551,10 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -496,6 +563,9 @@
       "tool_name": "book_electrician",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: address.postalCode"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -504,13 +574,26 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: address.postalCode"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
       "tool_name": "book_renovation",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: address.postalCode"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_more_tools",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -952,6 +1035,12 @@
     },
     {
       "scan_date": "2026-09-23T02:44:47Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.48"
+    },
+    {
+      "scan_date": "2026-09-24T02:34:34Z",
       "grade": "A",
       "risk_score": 2,
       "version": "2.10.48"

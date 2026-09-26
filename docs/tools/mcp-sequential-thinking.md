@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.7.0` |
 | **Vendor** | arben-adm |
-| **Stars** | ⭐ 955 |
+| **Stars** | ⭐ 953 |
 | **Language** | Python |
 | **Source** | [mcp-sequential-thinking](https://github.com/arben-adm/mcp-sequential-thinking) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

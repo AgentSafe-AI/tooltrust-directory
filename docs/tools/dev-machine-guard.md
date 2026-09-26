@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.16.0` |
+| **Version** | `1.17.0` |
 | **Vendor** | step-security |
-| **Stars** | ⭐ 177 |
+| **Stars** | ⭐ 178 |
 | **Language** | Go |
 | **Source** | [dev-machine-guard](https://github.com/step-security/dev-machine-guard) |
-| **Scan Date** | 2026-09-24 |
+| **Scan Date** | 2026-09-26 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
