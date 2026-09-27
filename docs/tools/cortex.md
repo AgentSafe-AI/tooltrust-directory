@@ -8,11 +8,11 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.35` |
 | **Vendor** | cortex-docs |
-| **Stars** | ⭐ 3217 |
+| **Stars** | ⭐ 3224 |
 | **npm Package** | `cortex-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [cortex](https://github.com/cortex-docs/cortex) |
-| **Scan Date** | 2026-09-26 |
+| **Scan Date** | 2026-09-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

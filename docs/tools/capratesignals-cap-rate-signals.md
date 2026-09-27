@@ -1,4 +1,4 @@
-# 🟡 capratesignals-cap-rate-signals
+# 🟢 capratesignals-cap-rate-signals
 
 > Cap Rate Signals — US Real Estate Investment Intelligence
 
@@ -10,12 +10,12 @@ Use it to ask: Where should I invest right now? What's happening in Indianapolis
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [capratesignals-cap-rate-signals](https://smithery.ai/server/capratesignals/cap-rate-signals) |
-| **Scan Date** | 2026-09-26 |
+| **Scan Date** | 2026-09-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Use it to ask: Where should I invest right now? What's happening in Indianapolis
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 3 |
 | Info     | 17 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 14 tool(s) added, 4 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

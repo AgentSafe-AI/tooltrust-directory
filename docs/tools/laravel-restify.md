@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 682 |
 | **Language** | PHP |
 | **Source** | [laravel-restify](https://github.com/BinarCode/laravel-restify) |
-| **Scan Date** | 2026-09-26 |
+| **Scan Date** | 2026-09-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

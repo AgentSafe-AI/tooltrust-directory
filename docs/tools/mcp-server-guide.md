@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2022 |
 | **Language** | Python |
 | **Source** | [mcp-server-guide](https://github.com/figma/mcp-server-guide) |
-| **Scan Date** | 2026-09-26 |
+| **Scan Date** | 2026-09-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

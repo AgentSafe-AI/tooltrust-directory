@@ -1,4 +1,4 @@
-# 🟡 moodtrip-moodtrip-hotel-search
+# 🟢 moodtrip-moodtrip-hotel-search
 
 > MoodTrip is an AI-powered hotel search that understands natural language. Instead of clicking through dozens of filters, simply describe your ideal stay: "boutique hotel in Tokyo for 2 adults, December 10-15, under $200/night." MoodTrip interprets your request, searches real-time availability across thousands of properties, and returns hotels with:
 
@@ -10,12 +10,12 @@ Perfect for travelers who know what they want but hate the traditional search pr
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [moodtrip-moodtrip-hotel-search](https://smithery.ai/server/moodtrip/moodtrip-hotel-search) |
-| **Scan Date** | 2026-09-26 |
+| **Scan Date** | 2026-09-27 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,24 +25,12 @@ Perfect for travelers who know what they want but hate the traditional search pr
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 6 |
 | Info     | 16 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 12 tool(s) added, 7 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
