@@ -10,10 +10,10 @@
 | **Vendor** | synapseorch-ai |
 | **Stars** | ⭐ 327 |
 | **npm Package** | `synapse-orch-ai` |
-| **npm Downloads (30d)** | 202 |
+| **npm Downloads (30d)** | 193 |
 | **Language** | Python |
 | **Source** | [synapse-ai](https://github.com/synapseorch-ai/synapse-ai) |
-| **Scan Date** | 2026-09-27 |
+| **Scan Date** | 2026-09-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

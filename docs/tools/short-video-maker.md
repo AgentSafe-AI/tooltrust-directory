@@ -10,10 +10,10 @@
 | **Vendor** | gyoridavid |
 | **Stars** | ⭐ 1379 |
 | **npm Package** | `short-video-maker` |
-| **npm Downloads (30d)** | 319 |
+| **npm Downloads (30d)** | 318 |
 | **Language** | TypeScript |
 | **Source** | [short-video-maker](https://github.com/gyoridavid/short-video-maker) |
-| **Scan Date** | 2026-09-27 |
+| **Scan Date** | 2026-09-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

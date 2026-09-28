@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1571 |
 | **Language** | TypeScript |
 | **Source** | [code-mode](https://github.com/universal-tool-calling-protocol/code-mode) |
-| **Scan Date** | 2026-09-27 |
+| **Scan Date** | 2026-09-28 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
