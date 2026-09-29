@@ -83,8 +83,8 @@ export function RepositoryHealthPanel({ report }: Props) {
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <Metric icon={<Star className="h-3.5 w-3.5" />} label="Stars" value={formatCount(report.stars)} detail={report.stars != null ? "current snapshot" : undefined} />
-        <Metric icon={<GitFork className="h-3.5 w-3.5" />} label="Forks" value="Not collected" detail="GitHub metadata pending" />
-        <Metric icon={<Users className="h-3.5 w-3.5" />} label="Contributors" value="Not collected" detail="GitHub metadata pending" />
+        <Metric icon={<GitFork className="h-3.5 w-3.5" />} label="Forks" value={formatCount(report.forks)} detail={report.forks != null ? "current snapshot" : "GitHub metadata pending"} />
+        <Metric icon={<Users className="h-3.5 w-3.5" />} label="Contributors" value={formatCount(report.contributors)} detail={report.contributors != null ? "public GitHub contributors" : "GitHub metadata pending"} />
         <Metric icon={<GitCommitHorizontal className="h-3.5 w-3.5" />} label="Last commit" value={formatDate(report.last_commit_at)} detail={report.last_commit_at ? "GitHub repository activity" : "GitHub metadata pending"} />
         <Metric icon={<Tag className="h-3.5 w-3.5" />} label="Last release" value={formatDate(report.last_release_at)} detail={report.latest_release_name || "GitHub metadata pending"} />
         <Metric icon={<PackageCheck className="h-3.5 w-3.5" />} label="Release version" value={formatReleaseVersion(report)} detail={report.latest_release_tag && report.latest_release_version && report.latest_release_tag !== report.latest_release_version ? `Tag ${report.latest_release_tag}` : "Latest GitHub release"} />

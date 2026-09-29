@@ -42,6 +42,8 @@ export interface Report {
   category?: string;
   vendor?: string;
   stars?: number;
+  forks?: number;
+  contributors?: number;
   last_commit_at?: string;
   last_release_at?: string;
   latest_release_version?: string;
@@ -71,6 +73,8 @@ export interface RegistryReport {
   category?: string;
   vendor?: string;
   stars?: number;
+  forks?: number;
+  contributors?: number;
   last_commit_at?: string;
   last_release_at?: string;
   latest_release_version?: string;
