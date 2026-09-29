@@ -11,6 +11,11 @@ contains compact, date-partitioned repository health aggregates.
 - `pull_request_history_weekly`: weekly PR opened/merged/closed activity.
 - `collection_runs`: collector run provenance and failures.
 
+Refresh the enabled GitHub repository scope with
+`./infra/bigquery/seed-repository-registry.sh`. It deduplicates repository
+URLs from the committed reports, merges them by canonical `owner/repo`, and
+removes its temporary staging table.
+
 ## Daily scheduled query
 
 `queries/daily-history.sql` dynamically selects yesterday's concrete GitHub
