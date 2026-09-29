@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.7.1` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 6434 |
+| **Stars** | ⭐ 6440 |
 | **npm Package** | `mobilebuildmcp` |
-| **npm Downloads (30d)** | 685 |
+| **npm Downloads (30d)** | 756 |
 | **Language** | TypeScript |
 | **Source** | [mobilebuildmcp](https://github.com/getsentry/MobileBuildMCP) |
-| **Scan Date** | 2026-09-28 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

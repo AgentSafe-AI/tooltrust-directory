@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1878 |
 | **Language** | Python |
 | **Source** | [video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization) |
-| **Scan Date** | 2026-09-28 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

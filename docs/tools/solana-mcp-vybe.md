@@ -8,9 +8,9 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.2` |
 | **Vendor** | vybenetwork |
-| **Stars** | ⭐ 1384 |
+| **Stars** | ⭐ 1428 |
 | **Source** | [solana-mcp-vybe](https://github.com/vybenetwork/solana-mcp-vybe) |
-| **Scan Date** | 2026-09-26 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

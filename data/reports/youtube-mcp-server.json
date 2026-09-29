@@ -3,14 +3,14 @@
   "version": "1.0.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-28T02:56:11.33730761Z",
+  "scan_date": "2026-09-29T03:36:29.21580133Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ZubeidHendricks/youtube-mcp-server",
   "category": "Developer Tools",
   "vendor": "ZubeidHendricks",
   "stars": 577,
   "npm_package": "zubeid-youtube-mcp-server",
-  "npm_downloads_monthly": 1634,
+  "npm_downloads_monthly": 1710,
   "license": "MIT",
   "language": "TypeScript",
   "description": "MCP Server for YouTube API, enabling video management, Shorts creation, and advanced analytics",
@@ -19,10 +19,24 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.2: 18 tool(s) added, 12 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.2: 12 tool(s) added, 18 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "get_channel_info",
+          "get_channel_latest_videos",
+          "get_channel_sections",
+          "get_video_metadata",
+          "get_youtube_transcript",
+          "get_youtube_video_info",
+          "list_channel_playlists",
+          "list_channel_posts",
+          "list_channel_videos",
+          "list_playlist_videos",
+          "search_channel_videos",
+          "search_youtube"
+        ],
+        "removed": [
           "dynamoi_about",
           "dynamoi_apply_for_distribution",
           "dynamoi_create_smart_link_from_spotify",
@@ -42,62 +56,16 @@
           "fetch",
           "search"
         ],
-        "removed": [
-          "get_channel_info",
-          "get_channel_latest_videos",
-          "get_channel_sections",
-          "get_video_metadata",
-          "get_youtube_transcript",
-          "get_youtube_video_info",
-          "list_channel_playlists",
-          "list_channel_posts",
-          "list_channel_videos",
-          "list_playlist_videos",
-          "search_channel_videos",
-          "search_youtube"
-        ],
         "version": "1.0.2"
       }
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_about"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_get_account_overview"
-    },
-    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_list_artists"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_list_artists"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_search"
+      "tool_name": "get_youtube_transcript"
     },
     {
       "id": "AS-011",
@@ -105,7 +73,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_search"
+      "tool_name": "get_youtube_transcript"
     },
     {
       "id": "AS-014",
@@ -113,7 +81,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_search"
+      "tool_name": "get_youtube_transcript"
     },
     {
       "id": "AS-002",
@@ -121,7 +89,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search"
+      "tool_name": "get_youtube_video_info"
     },
     {
       "id": "AS-011",
@@ -129,7 +97,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search"
+      "tool_name": "get_youtube_video_info"
     },
     {
       "id": "AS-014",
@@ -137,7 +105,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search"
+      "tool_name": "get_youtube_video_info"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_youtube"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_youtube"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_youtube"
     },
     {
       "id": "AS-002",
@@ -145,7 +137,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch"
+      "tool_name": "get_channel_latest_videos"
     },
     {
       "id": "AS-011",
@@ -153,7 +145,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch"
+      "tool_name": "get_channel_latest_videos"
     },
     {
       "id": "AS-014",
@@ -161,7 +153,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch"
+      "tool_name": "get_channel_latest_videos"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_channel_videos"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_channel_videos"
     },
     {
       "id": "AS-014",
@@ -169,31 +177,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_list_campaigns"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_get_campaign"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_get_artist_analytics"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_get_platform_status"
+      "tool_name": "search_channel_videos"
     },
     {
       "id": "AS-002",
@@ -201,7 +185,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_get_distribution_application"
+      "tool_name": "list_channel_videos"
     },
     {
       "id": "AS-011",
@@ -209,7 +193,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_get_distribution_application"
+      "tool_name": "list_channel_videos"
     },
     {
       "id": "AS-014",
@@ -217,31 +201,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_get_distribution_application"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_apply_for_distribution"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_preview_smart_link_themes"
+      "tool_name": "list_channel_videos"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access, filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_create_smart_link_from_spotify"
+      "tool_name": "list_playlist_videos"
     },
     {
       "id": "AS-011",
@@ -249,7 +217,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_create_smart_link_from_spotify"
+      "tool_name": "list_playlist_videos"
     },
     {
       "id": "AS-014",
@@ -257,7 +225,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_create_smart_link_from_spotify"
+      "tool_name": "list_playlist_videos"
     },
     {
       "id": "AS-002",
@@ -265,7 +233,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_create_smart_links_from_spotify_artist"
+      "tool_name": "get_channel_info"
     },
     {
       "id": "AS-011",
@@ -273,7 +241,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_create_smart_links_from_spotify_artist"
+      "tool_name": "get_channel_info"
     },
     {
       "id": "AS-014",
@@ -281,7 +249,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_create_smart_links_from_spotify_artist"
+      "tool_name": "get_channel_info"
     },
     {
       "id": "AS-002",
@@ -289,7 +257,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_list_smart_links"
+      "tool_name": "list_channel_playlists"
     },
     {
       "id": "AS-011",
@@ -297,7 +265,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_list_smart_links"
+      "tool_name": "list_channel_playlists"
     },
     {
       "id": "AS-014",
@@ -305,7 +273,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_list_smart_links"
+      "tool_name": "list_channel_playlists"
     },
     {
       "id": "AS-002",
@@ -313,7 +281,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_get_smart_link"
+      "tool_name": "list_channel_posts"
     },
     {
       "id": "AS-011",
@@ -321,7 +289,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_get_smart_link"
+      "tool_name": "list_channel_posts"
     },
     {
       "id": "AS-014",
@@ -329,23 +297,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_get_smart_link"
+      "tool_name": "list_channel_posts"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_update_smart_link"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "dynamoi_update_smart_link"
+      "tool_name": "get_channel_sections"
     },
     {
       "id": "AS-011",
@@ -353,7 +313,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "dynamoi_update_smart_link"
+      "tool_name": "get_channel_sections"
     },
     {
       "id": "AS-014",
@@ -361,150 +321,136 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dynamoi_update_smart_link"
+      "tool_name": "get_channel_sections"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_video_metadata"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_video_metadata"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_video_metadata"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 10,
-    "info": 28
+    "low": 12,
+    "info": 24
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "dynamoi_about",
-    "dynamoi_apply_for_distribution",
-    "dynamoi_create_smart_link_from_spotify",
-    "dynamoi_create_smart_links_from_spotify_artist",
-    "dynamoi_get_account_overview",
-    "dynamoi_get_artist_analytics",
-    "dynamoi_get_campaign",
-    "dynamoi_get_distribution_application",
-    "dynamoi_get_platform_status",
-    "dynamoi_get_smart_link",
-    "dynamoi_list_artists",
-    "dynamoi_list_campaigns",
-    "dynamoi_list_smart_links",
-    "dynamoi_preview_smart_link_themes",
-    "dynamoi_search",
-    "dynamoi_update_smart_link",
-    "fetch",
-    "search"
+    "get_channel_info",
+    "get_channel_latest_videos",
+    "get_channel_sections",
+    "get_video_metadata",
+    "get_youtube_transcript",
+    "get_youtube_video_info",
+    "list_channel_playlists",
+    "list_channel_posts",
+    "list_channel_videos",
+    "list_playlist_videos",
+    "search_channel_videos",
+    "search_youtube"
   ],
   "tool_contexts": [
     {
-      "tool_name": "dynamoi_about",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_get_account_overview",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_list_artists",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_search",
+      "tool_name": "get_youtube_transcript",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "executes_commands",
         "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
+      "destinations": [
+        "dynamic URL input (video_url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "fetch",
+      "tool_name": "get_youtube_video_info",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_list_campaigns",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_get_campaign",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_get_artist_analytics",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_get_platform_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_get_distribution_application",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: dynamoi.com"
+        "dynamic URL input (video_url)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dynamoi_apply_for_distribution",
+      "tool_name": "search_youtube",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dynamoi_preview_smart_link_themes",
+      "tool_name": "get_channel_latest_videos",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dynamoi_create_smart_link_from_spotify",
+      "tool_name": "search_channel_videos",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_channel_videos",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_playlist_videos",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_channel_info",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -512,29 +458,11 @@
         "uses_network",
         "writes_files"
       ],
-      "destinations": [
-        "dynamic URL input (spotifyUrl)",
-        "dynamic email recipient (customDescription)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dynamoi_create_smart_links_from_spotify_artist",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (spotifyArtistUrl)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dynamoi_list_smart_links",
+      "tool_name": "list_channel_playlists",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -544,29 +472,36 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dynamoi_get_smart_link",
+      "tool_name": "list_channel_posts",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "dynamic URL input (spotifyUrl)",
-        "hardcoded domain: play.dynamoi.com"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_channel_sections",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "dynamoi_update_smart_link",
+      "tool_name": "get_video_metadata",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network"
       ],
       "destinations": [
-        "dynamic email recipient (customDescription)",
-        "dynamic email recipient (tiktokPixelId)"
+        "dynamic URL input (video_url)",
+        "hardcoded domain: details.available"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1693,6 +1628,12 @@
       "scan_date": "2026-09-27T02:53:09Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-09-28T02:56:11Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "1.0.2"
     }
   ]

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1288 |
 | **Language** | Java |
 | **Source** | [iot-dc3](https://github.com/pnoker/iot-dc3) |
-| **Scan Date** | 2026-09-27 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

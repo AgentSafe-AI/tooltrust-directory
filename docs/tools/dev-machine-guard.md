@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 179 |
 | **Language** | Go |
 | **Source** | [dev-machine-guard](https://github.com/step-security/dev-machine-guard) |
-| **Scan Date** | 2026-09-28 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

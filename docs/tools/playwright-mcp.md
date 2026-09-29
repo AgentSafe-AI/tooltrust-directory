@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `0.0.82` |
+| **Version** | `0.0.83` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 37631 |
+| **Stars** | ⭐ 37674 |
 | **npm Package** | `@playwright/mcp` |
-| **npm Downloads (30d)** | 24.9M |
+| **npm Downloads (30d)** | 24.4M |
 | **Language** | TypeScript |
 | **Source** | [playwright-mcp](https://github.com/microsoft/playwright-mcp) |
-| **Scan Date** | 2026-09-28 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
-| Info     | 37 |
+| Info     | 38 |
 
 ## Detailed Findings
 
@@ -183,6 +183,18 @@ No metadata.dependencies or repo_url were exposed by this MCP server, and no loc
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

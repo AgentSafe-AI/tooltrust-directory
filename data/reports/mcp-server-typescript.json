@@ -3,14 +3,14 @@
   "version": "3.1.1",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-09-28T02:56:58.619034711Z",
+  "scan_date": "2026-09-29T03:37:12.395929884Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/dataforseo/mcp-server-typescript",
   "category": "Developer Tools",
   "vendor": "dataforseo",
-  "stars": 248,
+  "stars": 249,
   "npm_package": "dataforseo-mcp-server",
-  "npm_downloads_monthly": 42058,
+  "npm_downloads_monthly": 42645,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "DataForSEO API modelcontextprotocol server ",
@@ -19,24 +19,20 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.1.1: 4 tool(s) added, 8 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v3.1.1: 4 tool(s) added, 4 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "api_request",
+          "docs_index",
+          "docs_list_sections",
+          "docs_search"
+        ],
+        "removed": [
           "fetch_generic_url_content",
           "fetch_typescript_documentation",
           "search_typescript_code",
           "search_typescript_documentation"
-        ],
-        "removed": [
-          "analyze_impact",
-          "find_references",
-          "find_symbol",
-          "get_capabilities",
-          "get_importers",
-          "get_imports",
-          "get_symbol_context",
-          "query_code"
         ],
         "version": "3.1.1"
       }
@@ -45,9 +41,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_typescript_documentation"
+      "tool_name": "docs_index"
     },
     {
       "id": "AS-011",
@@ -55,15 +51,23 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch_typescript_documentation"
+      "tool_name": "docs_index"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch_typescript_documentation"
+      "tool_name": "docs_index"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "docs_list_sections"
     },
     {
       "id": "AS-002",
@@ -71,7 +75,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_typescript_documentation"
+      "tool_name": "docs_search"
     },
     {
       "id": "AS-011",
@@ -79,23 +83,23 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_typescript_documentation"
+      "tool_name": "docs_search"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_typescript_documentation"
+      "tool_name": "docs_search"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_typescript_code"
+      "tool_name": "api_request"
     },
     {
       "id": "AS-011",
@@ -103,47 +107,23 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_typescript_code"
+      "tool_name": "api_request"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_typescript_code"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_generic_url_content"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch_generic_url_content"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch_generic_url_content"
+      "tool_name": "api_request"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 4,
-    "info": 8
+    "low": 3,
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -185,48 +165,34 @@
     }
   ],
   "tool_names": [
-    "fetch_generic_url_content",
-    "fetch_typescript_documentation",
-    "search_typescript_code",
-    "search_typescript_documentation"
+    "api_request",
+    "docs_index",
+    "docs_list_sections",
+    "docs_search"
   ],
   "tool_contexts": [
     {
-      "tool_name": "fetch_typescript_documentation",
+      "tool_name": "docs_index",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands",
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded domain: llms.txt"
+      ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "search_typescript_documentation",
+      "tool_name": "docs_list_sections",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "search_typescript_code",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "fetch_generic_url_content",
+      "tool_name": "docs_search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -234,10 +200,24 @@
       ],
       "destinations": [
         "dynamic URL input (url)",
-        "hardcoded domain: robots.txt"
+        "hardcoded domain: Node.js",
+        "hardcoded domain: docs.dataforseo.com"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "api_request",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -275,6 +255,12 @@
       "scan_date": "2026-09-27T02:54:05Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "3.1.1"
+    },
+    {
+      "scan_date": "2026-09-28T02:56:58Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "3.1.1"
     }
   ]

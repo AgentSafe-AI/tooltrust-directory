@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.28` |
 | **Vendor** | Pimzino |
-| **Stars** | ⭐ 4296 |
+| **Stars** | ⭐ 4297 |
 | **npm Package** | `@pimzino/spec-workflow-mcp` |
-| **npm Downloads (30d)** | 1.5k |
+| **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) |
-| **Scan Date** | 2026-09-28 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

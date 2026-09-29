@@ -10,10 +10,10 @@
 | **Vendor** | neomjs |
 | **Stars** | ⭐ 3280 |
 | **npm Package** | `neo.mjs` |
-| **npm Downloads (30d)** | 19.9k |
+| **npm Downloads (30d)** | 20.3k |
 | **Language** | JavaScript |
 | **Source** | [neo](https://github.com/neomjs/neo) |
-| **Scan Date** | 2026-09-28 |
+| **Scan Date** | 2026-09-29 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
