@@ -40,6 +40,7 @@ type metadata struct {
 func main() {
 	reportsDir := flag.String("reports-dir", envOr("REPORTS_DIR", "data/reports"), "directory containing report JSON files")
 	maxRepos := flag.Int("max-repos", envInt("METADATA_MAX_REPOS", 0), "maximum repos to enrich; 0 means all")
+	offset := flag.Int("offset", envInt("METADATA_OFFSET", 0), "number of eligible GitHub reports to skip before enriching")
 	toolFilter := flag.String("tool-id", os.Getenv("METADATA_TOOL_ID"), "only enrich this report tool_id")
 	flag.Parse()
 
@@ -56,6 +57,7 @@ func main() {
 	sort.Strings(paths)
 	updated := 0
 	seen := 0
+	eligible := 0
 	for _, path := range paths {
 		if *maxRepos > 0 && seen >= *maxRepos {
 			break
@@ -76,6 +78,11 @@ func main() {
 		if !ok {
 			continue
 		}
+		if eligible < *offset {
+			eligible++
+			continue
+		}
+		eligible++
 		seen++
 		m, err := collect(ctx, client, owner, repo)
 		if err != nil {

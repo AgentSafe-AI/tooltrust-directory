@@ -551,10 +551,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPORTS_DIR: ${{ env.REPORTS_DIR }}
-          # Keep the first rollout below the GitHub API rate limit. Increase
-          # after the collector is connected to the repository registry.
+          # Process a rotating shard so every repo is refreshed instead of
+          # repeatedly enriching only the first alphabetical page.
           METADATA_MAX_REPOS: '100'
-        run: go run ./cmd/repo-metadata --reports-dir "${REPORTS_DIR}" --max-repos "${METADATA_MAX_REPOS}"
+        run: |
+          DAY_OF_YEAR=$(date -u +%j)
+          SHARD=$((10#$DAY_OF_YEAR % 15))
+          OFFSET=$((SHARD * 100))
+          echo "Enriching metadata shard ${SHARD} (offset ${OFFSET})"
+          go run ./cmd/repo-metadata --reports-dir "${REPORTS_DIR}" --max-repos "${METADATA_MAX_REPOS}" --offset "${OFFSET}"
 
       - name: Configure Git identity
         run: |
