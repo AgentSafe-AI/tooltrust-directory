@@ -6,6 +6,7 @@ contains compact, date-partitioned repository health aggregates.
 ## Tables
 
 - `repository_snapshots`: current GitHub metadata snapshots.
+- `repository_registry`: enabled canonical GitHub repositories to collect.
 - `star_history_daily`: daily observed GitHub `WatchEvent` star additions.
 - `pull_request_history_weekly`: weekly PR opened/merged/closed activity.
 - `collection_runs`: collector run provenance and failures.
@@ -14,9 +15,9 @@ contains compact, date-partitioned repository health aggregates.
 
 `queries/daily-history.sql` dynamically selects yesterday's concrete GitHub
 Archive table and MERGEs the aggregates, so it does not expand
-`githubarchive.day.*` views or duplicate rows on retry. The current POC query
-targets `modelcontextprotocol/typescript-sdk`; replace that predicate with a
-repository registry when the multi-repository collector is enabled.
+`githubarchive.day.*` views or duplicate rows on retry. It reads enabled repos
+from `repository_registry`, allowing the collector scope to grow without
+changing the scheduled query.
 
 Creating a scheduled query with `bq mk --transfer_config` may ask for a
 one-time BigQuery Data Transfer OAuth consent. Complete the URL shown by the

@@ -15,7 +15,11 @@ EXECUTE IMMEDIATE FORMAT("""
       COUNT(*) AS stars_added
     FROM %s
     WHERE type = 'WatchEvent'
-      AND repo.name = 'modelcontextprotocol/typescript-sdk'
+      AND repo.name IN (
+        SELECT repo
+        FROM `gws-cli-1785715774.tooltrust_analytics.repository_registry`
+        WHERE enabled
+      )
     GROUP BY repo, day
   ) AS source
   ON target.repo = source.repo
@@ -45,7 +49,11 @@ EXECUTE IMMEDIATE FORMAT("""
       COUNT(DISTINCT actor.login) AS active_contributors
     FROM %s
     WHERE type = 'PullRequestEvent'
-      AND repo.name = 'modelcontextprotocol/typescript-sdk'
+      AND repo.name IN (
+        SELECT repo
+        FROM `gws-cli-1785715774.tooltrust_analytics.repository_registry`
+        WHERE enabled
+      )
     GROUP BY repo, week
   ) AS source
   ON target.repo = source.repo

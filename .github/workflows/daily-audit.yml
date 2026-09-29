@@ -547,6 +547,15 @@ jobs:
           name: scan-results
           path: ${{ env.REPORTS_DIR }}/
 
+      - name: Enrich reports with GitHub repository metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPORTS_DIR: ${{ env.REPORTS_DIR }}
+          # Keep the first rollout below the GitHub API rate limit. Increase
+          # after the collector is connected to the repository registry.
+          METADATA_MAX_REPOS: '100'
+        run: go run ./cmd/repo-metadata --reports-dir "${REPORTS_DIR}" --max-repos "${METADATA_MAX_REPOS}"
+
       - name: Configure Git identity
         run: |
           git config user.name  "ToolTrust Bot"

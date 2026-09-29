@@ -2,6 +2,15 @@
 -- Dataset location: US. Keep raw event queries date-partitioned and materialize
 -- only compact daily/weekly aggregates here.
 
+CREATE TABLE IF NOT EXISTS `gws-cli-1785715774.tooltrust_analytics.repository_registry` (
+  repo STRING NOT NULL,
+  enabled BOOL NOT NULL,
+  source STRING,
+  tool_id STRING,
+  updated_at TIMESTAMP NOT NULL
+)
+CLUSTER BY repo;
+
 CREATE TABLE IF NOT EXISTS `gws-cli-1785715774.tooltrust_analytics.repository_snapshots` (
   repo STRING NOT NULL,
   snapshot_date DATE NOT NULL,

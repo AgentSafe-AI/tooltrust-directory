@@ -27,23 +27,31 @@ const MinPublicGitHubStars = 50
 
 // Report mirrors the fields we need from report.schema.json.
 type Report struct {
-	ToolID              string    `json:"tool_id"`
-	Version             string    `json:"version"`
-	Grade               string    `json:"grade"`
-	RiskScore           int       `json:"risk_score"`
-	ScanDate            time.Time `json:"scan_date"`
-	Scanner             string    `json:"scanner"`
-	SourceURL           string    `json:"source_url"`
-	Vendor              string    `json:"vendor"`
-	Stars               int       `json:"stars"`
-	NPMPackage          string    `json:"npm_package,omitempty"`
-	NPMDownloadsMonthly int       `json:"npm_downloads_monthly,omitempty"`
-	License             string    `json:"license"`
-	Language            string    `json:"language"`
-	Category            string    `json:"category"`
-	Description         string    `json:"description"`
-	Findings            []Finding `json:"findings"`
-	Summary             struct {
+	ToolID               string    `json:"tool_id"`
+	Version              string    `json:"version"`
+	Grade                string    `json:"grade"`
+	RiskScore            int       `json:"risk_score"`
+	ScanDate             time.Time `json:"scan_date"`
+	Scanner              string    `json:"scanner"`
+	SourceURL            string    `json:"source_url"`
+	Vendor               string    `json:"vendor"`
+	Stars                int       `json:"stars"`
+	Forks                int       `json:"forks,omitempty"`
+	Contributors         int       `json:"contributors,omitempty"`
+	LastCommitAt         string    `json:"last_commit_at,omitempty"`
+	LastReleaseAt        string    `json:"last_release_at,omitempty"`
+	LatestReleaseVersion string    `json:"latest_release_version,omitempty"`
+	LatestReleaseTag     string    `json:"latest_release_tag,omitempty"`
+	LatestReleaseName    string    `json:"latest_release_name,omitempty"`
+	LatestReleaseURL     string    `json:"latest_release_url,omitempty"`
+	NPMPackage           string    `json:"npm_package,omitempty"`
+	NPMDownloadsMonthly  int       `json:"npm_downloads_monthly,omitempty"`
+	License              string    `json:"license"`
+	Language             string    `json:"language"`
+	Category             string    `json:"category"`
+	Description          string    `json:"description"`
+	Findings             []Finding `json:"findings"`
+	Summary              struct {
 		Critical int `json:"critical"`
 		High     int `json:"high"`
 		Medium   int `json:"medium"`
