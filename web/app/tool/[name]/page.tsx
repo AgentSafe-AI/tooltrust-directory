@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Shield, ExternalLink, CheckCircle2, ScanSearch, Star } from "lucide-react";
 import { CopyBadgeButton } from "./CopyBadgeButton";
 import { ScanSnippets } from "./ScanSnippets";
+import { RepositoryHealthPanel } from "./RepositoryHealthPanel";
 
 interface PageProps {
   params: Promise<{ name: string }>;
@@ -255,6 +256,8 @@ export default async function ToolPage({ params }: PageProps) {
           </p>
         </div>
       </div>
+
+      <RepositoryHealthPanel report={report} />
 
       {hasFindings && severityChips.length > 0 && (
         <div className="flex flex-wrap gap-2">

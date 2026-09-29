@@ -42,6 +42,12 @@ export interface Report {
   category?: string;
   vendor?: string;
   stars?: number;
+  last_commit_at?: string;
+  last_release_at?: string;
+  latest_release_version?: string;
+  latest_release_tag?: string;
+  latest_release_name?: string;
+  latest_release_url?: string;
   npm_package?: string;
   npm_downloads_monthly?: number;
   license?: string;
@@ -65,6 +71,12 @@ export interface RegistryReport {
   category?: string;
   vendor?: string;
   stars?: number;
+  last_commit_at?: string;
+  last_release_at?: string;
+  latest_release_version?: string;
+  latest_release_tag?: string;
+  latest_release_name?: string;
+  latest_release_url?: string;
   npm_package?: string;
   npm_downloads_monthly?: number;
   license?: string;
