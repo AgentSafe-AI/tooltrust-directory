@@ -23,6 +23,7 @@ import (
 
 func main() {
 	reportsDir := envOr("REPORTS_DIR", "data/reports")
+	metricsDir := envOr("METRICS_DIR", "data/repository-metrics")
 	readmePath := envOr("README_PATH", "README.md")
 	repoDir := envOr("REPO_DIR", ".")
 	commitMsg := envOr("COMMIT_MSG", fmt.Sprintf(
@@ -37,7 +38,7 @@ func main() {
 	log.Println("README.md updated.")
 
 	log.Println("Staging and pushing changes …")
-	if err := syncer.GitCommitAndPush(repoDir, commitMsg, readmePath, reportsDir, "docs/"); err != nil {
+	if err := syncer.GitCommitAndPush(repoDir, commitMsg, readmePath, reportsDir, metricsDir, "docs/"); err != nil {
 		log.Fatalf("GitCommitAndPush: %v", err)
 	}
 	log.Println("Done.")

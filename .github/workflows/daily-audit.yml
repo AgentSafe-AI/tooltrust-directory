@@ -17,6 +17,7 @@ permissions:
 env:
   GO_VERSION: '1.26'
   REPORTS_DIR: data/reports
+  METRICS_DIR: data/repository-metrics
   PENDING_SCANS_PATH: data/pending-scans.json
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
@@ -528,6 +529,13 @@ jobs:
     if: ${{ !cancelled() && needs.scan.result != 'failure' }}
     runs-on: ubuntu-latest
 
+    # BigQuery export uses GitHub OIDC; no service-account private key is stored
+    # in GitHub. The export steps remain skipped until these two repository
+    # secrets are configured.
+    permissions:
+      contents: write
+      id-token: write
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -560,6 +568,25 @@ jobs:
           OFFSET=$((SHARD * 100))
           echo "Enriching metadata shard ${SHARD} (offset ${OFFSET})"
           go run ./cmd/repo-metadata --reports-dir "${REPORTS_DIR}" --max-repos "${METADATA_MAX_REPOS}" --offset "${OFFSET}"
+
+      - name: Authenticate to Google Cloud for metrics export
+        if: ${{ secrets.GCP_WIF_PROVIDER != '' && secrets.GCP_SERVICE_ACCOUNT != '' }}
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Install Google Cloud CLI
+        if: ${{ secrets.GCP_WIF_PROVIDER != '' && secrets.GCP_SERVICE_ACCOUNT != '' }}
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Export BigQuery repository history
+        if: ${{ secrets.GCP_WIF_PROVIDER != '' && secrets.GCP_SERVICE_ACCOUNT != '' }}
+        env:
+          BQ_PROJECT_ID: gws-cli-1785715774
+          BQ_DATASET: tooltrust_analytics
+          METRICS_OUTPUT_DIR: ${{ env.METRICS_DIR }}
+        run: ./infra/bigquery/export-repository-metrics.sh
 
       - name: Configure Git identity
         run: |

@@ -16,6 +16,17 @@ Refresh the enabled GitHub repository scope with
 URLs from the committed reports, merges them by canonical `owner/repo`, and
 removes its temporary staging table.
 
+Export the collected history for the static directory build with
+`./infra/bigquery/export-repository-metrics.sh`. It writes one compact JSON
+artifact per repository under `data/repository-metrics/`; the web app reads
+these artifacts at build time and never needs BigQuery credentials at runtime.
+
+The daily GitHub Action runs this export when repository secrets
+`GCP_WIF_PROVIDER` and `GCP_SERVICE_ACCOUNT` are configured. The recommended
+setup uses GitHub OIDC with the existing service account
+`tooltrust-bq-scheduler@gws-cli-1785715774.iam.gserviceaccount.com`; no JSON key
+is committed or stored in the repository.
+
 ## Daily scheduled query
 
 `queries/daily-history.sql` dynamically selects yesterday's concrete GitHub
