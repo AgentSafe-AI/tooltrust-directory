@@ -62,6 +62,22 @@ export interface Report {
   tool_contexts?: ToolContext[];
 }
 
+export interface RepositoryMetrics {
+  tool_id: string;
+  repo: string;
+  source: string;
+  fetched_at: string;
+  data_quality: string;
+  stars_daily: Array<{ day: string; stars_added: number }>;
+  pull_requests_weekly: Array<{
+    week: string;
+    prs_opened: number;
+    prs_merged: number;
+    prs_closed: number;
+    active_contributors?: number;
+  }>;
+}
+
 export interface RegistryReport {
   tool_id: string;
   version: string;

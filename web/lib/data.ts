@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import type { RegistryReport, Report } from "./report-utils";
+import type { RegistryReport, Report, RepositoryMetrics } from "./report-utils";
 import {
   displayGrade as displayGradeUtil,
   keyFindingsSummary as keyFindingsSummaryUtil,
@@ -14,6 +14,7 @@ import {
 export type { Report };
 export type { RegistryReport };
 export type { Finding, Summary } from "./report-utils";
+export type { RepositoryMetrics } from "./report-utils";
 export const displayGrade = displayGradeUtil;
 export const keyFindingsSummary = keyFindingsSummaryUtil;
 export const findingEmoji = findingEmojiUtil;
@@ -102,6 +103,17 @@ export function getReportByToolName(name: string): Report | null {
     const raw = fs.readFileSync(file, "utf-8");
     const report = JSON.parse(raw) as Report;
     return isPublicReport(report) ? report : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Read the optional BigQuery-exported history artifact for one tool. */
+export function getRepositoryMetrics(toolId: string): RepositoryMetrics | null {
+  const file = path.join(getReportsDir(), "..", "repository-metrics", `${toolId}.json`);
+  if (!fs.existsSync(file)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf-8")) as RepositoryMetrics;
   } catch {
     return null;
   }

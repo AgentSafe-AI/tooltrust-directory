@@ -1,8 +1,8 @@
 import { ExternalLink, GitFork, GitPullRequest, Users, Star, Tag, Activity, GitCommitHorizontal, PackageCheck } from "lucide-react";
 import type { ReactNode } from "react";
-import type { Report } from "@/lib/report-utils";
+import type { Report, RepositoryMetrics } from "@/lib/report-utils";
 
-type Props = { report: Report };
+type Props = { report: Report; metrics: RepositoryMetrics | null };
 
 function formatCount(value?: number): string {
   if (value == null) return "Not collected";
@@ -56,11 +56,16 @@ function Metric({ icon, label, value, detail }: { icon: ReactNode; label: string
   );
 }
 
-export function RepositoryHealthPanel({ report }: Props) {
+export function RepositoryHealthPanel({ report, metrics }: Props) {
   // These metadata fields are optional until the GitHub metadata collector is enabled.
   const hasRepoUrl = report.source_url?.includes("github.com");
-  const sampleStars = [61, 68, 72, 79, 86, 91, 100];
-  const samplePullRequests = [2, 4, 3, 7, 5, 8, 10];
+  const stars = metrics?.stars_daily ?? [];
+  const pullRequests = metrics?.pull_requests_weekly ?? [];
+  const starValues = stars.map((point) => point.stars_added);
+  const pullRequestValues = pullRequests.map((point) => point.prs_opened + point.prs_merged + point.prs_closed);
+  const hasStars = starValues.length > 0;
+  const hasPullRequests = pullRequestValues.length > 0;
+  const sourceLabel = metrics ? `${metrics.source} · fetched ${formatDate(metrics.fetched_at)}` : "History data pending";
 
   return (
     <section className="space-y-4 rounded-xl border border-zinc-800 bg-zinc-900 p-5">
@@ -95,26 +100,28 @@ export function RepositoryHealthPanel({ report }: Props) {
           <div className="flex items-center justify-between gap-3">
             <div>
               <h3 className="text-sm font-medium text-zinc-200">Stars trend</h3>
-              <p className="text-xs text-zinc-500">POC preview · daily history collector pending</p>
+              <p className="text-xs text-zinc-500">Daily star additions · {sourceLabel}</p>
             </div>
-            <span className="rounded-full border border-sky-500/20 bg-sky-500/10 px-2 py-1 text-xs text-sky-300">28d</span>
+            <span className="rounded-full border border-sky-500/20 bg-sky-500/10 px-2 py-1 text-xs text-sky-300">{hasStars ? `${stars.length}d` : "—"}</span>
           </div>
-          <MiniLineChart values={sampleStars} color="#38bdf8" />
-          <div className="flex justify-between text-xs text-zinc-600"><span>28d ago</span><span>Today</span></div>
+          {hasStars ? <MiniLineChart values={starValues} color="#38bdf8" /> : <p className="py-10 text-center text-xs text-zinc-600">No observed star events yet.</p>}
+          <div className="flex justify-between text-xs text-zinc-600"><span>{stars[0]?.day ?? "—"}</span><span>{stars.at(-1)?.day ?? "—"}</span></div>
         </div>
 
         <div className="rounded-lg border border-zinc-800 bg-zinc-950/60 p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
               <h3 className="text-sm font-medium text-zinc-200">Pull request activity</h3>
-              <p className="text-xs text-zinc-500">POC preview · monthly history collector pending</p>
+              <p className="text-xs text-zinc-500">Weekly PR events · {sourceLabel}</p>
             </div>
             <GitPullRequest className="h-4 w-4 text-violet-400" />
           </div>
-          <MiniLineChart values={samplePullRequests} color="#a78bfa" />
-          <div className="flex justify-between text-xs text-zinc-600"><span>Older</span><span>Latest</span></div>
+          {hasPullRequests ? <MiniLineChart values={pullRequestValues} color="#a78bfa" /> : <p className="py-10 text-center text-xs text-zinc-600">No observed PR events yet.</p>}
+          <div className="flex justify-between text-xs text-zinc-600"><span>{pullRequests[0]?.week ?? "—"}</span><span>{pullRequests.at(-1)?.week ?? "—"}</span></div>
         </div>
       </div>
+
+      {metrics && <p className="text-xs text-zinc-600">Data quality: {metrics.data_quality}. Charts show observed events, not a reconstructed historical total.</p>}
 
       <div className="flex flex-wrap gap-2 border-t border-zinc-800 pt-4 text-xs">
         {report.language && <span className="rounded-full border border-zinc-700 bg-zinc-800 px-2.5 py-1 text-zinc-300">{report.language}</span>}

@@ -1,4 +1,4 @@
-import { getAllReports, getReportByToolName, displayGrade, getToolNarrative } from "@/lib/data";
+import { getAllReports, getReportByToolName, getRepositoryMetrics, displayGrade, getToolNarrative } from "@/lib/data";
 import { formatVersionLabel } from "@/lib/report-utils";
 import { GradeProgressRing } from "@/lib/grades";
 import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
@@ -98,6 +98,7 @@ export default async function ToolPage({ params }: PageProps) {
   const { name } = await params;
   const report = getReportByToolName(name);
   if (!report) notFound();
+  const repositoryMetrics = getRepositoryMetrics(report.tool_id);
 
   const grade = displayGrade(report);
   const hasFindings = report.findings && report.findings.length > 0;
@@ -257,7 +258,7 @@ export default async function ToolPage({ params }: PageProps) {
         </div>
       </div>
 
-      <RepositoryHealthPanel report={report} />
+      <RepositoryHealthPanel report={report} metrics={repositoryMetrics} />
 
       {hasFindings && severityChips.length > 0 && (
         <div className="flex flex-wrap gap-2">
