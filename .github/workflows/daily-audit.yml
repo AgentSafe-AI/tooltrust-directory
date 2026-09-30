@@ -525,8 +525,10 @@ jobs:
   # ── 3. Publish ───────────────────────────────────────────────────────────────
   publish:
     name: Publish Results & Update Registry
-    needs: scan
-    if: ${{ !cancelled() && needs.scan.result != 'failure' }}
+    needs: [discover, scan]
+    # Run the metadata/history refresh even when discover found no new tool to
+    # scan. A skipped scan is a normal daily outcome, not a publish blocker.
+    if: ${{ !cancelled() && needs.discover.result == 'success' && (needs.scan.result == 'success' || needs.scan.result == 'skipped') }}
     runs-on: ubuntu-latest
 
     # BigQuery export uses GitHub OIDC; no service-account private key is stored
