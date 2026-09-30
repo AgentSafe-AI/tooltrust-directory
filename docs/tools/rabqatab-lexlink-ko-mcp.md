@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rabqatab-lexlink-ko-mcp](https://smithery.ai/server/rabqatab/lexlink-ko-mcp) |
-| **Scan Date** | 2026-09-29 |
+| **Scan Date** | 2026-09-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | hashgraph-online |
 | **Stars** | ⭐ 1232 |
 | **npm Package** | `@hashgraphonline/standards-sdk` |
-| **npm Downloads (30d)** | 23.3k |
+| **npm Downloads (30d)** | 22.9k |
 | **Language** | TypeScript |
 | **Source** | [standards-sdk](https://github.com/hashgraph-online/standards-sdk) |
-| **Scan Date** | 2026-09-29 |
+| **Scan Date** | 2026-09-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

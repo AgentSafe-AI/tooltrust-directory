@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.0` |
 | **Vendor** | apache |
-| **Stars** | ⭐ 266 |
+| **Stars** | ⭐ 348 |
 | **Language** | Python |
 | **Source** | [doris-mcp-server](https://github.com/apache/doris-mcp-server) |
 | **Scan Date** | 2026-03-18 |

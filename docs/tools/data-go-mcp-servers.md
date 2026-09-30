@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-dd27f9949040` |
 | **Vendor** | Koomook |
-| **Stars** | ⭐ 283 |
+| **Stars** | ⭐ 329 |
 | **Language** | Python |
 | **Source** | [data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers) |
 | **Scan Date** | 2026-06-22 |

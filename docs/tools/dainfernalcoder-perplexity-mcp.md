@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `Feature` |
 | **Vendor** | DaInfernalCoder |
-| **Stars** | ⭐ 290 |
+| **Stars** | ⭐ 297 |
 | **npm Package** | `perplexity-mcp` |
 | **npm Downloads (30d)** | 12.5k |
 | **Language** | JavaScript |

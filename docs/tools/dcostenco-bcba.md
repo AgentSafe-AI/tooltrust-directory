@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `13.0.1` |
 | **Vendor** | dcostenco |
-| **Stars** | ⭐ 132 |
+| **Stars** | ⭐ 157 |
 | **npm Package** | `prism-mcp-server` |
 | **npm Downloads (30d)** | 5.5k |
 | **Language** | TypeScript |

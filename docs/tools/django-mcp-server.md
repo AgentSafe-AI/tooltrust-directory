@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.6` |
 | **Vendor** | gts360 |
-| **Stars** | ⭐ 290 |
+| **Stars** | ⭐ 382 |
 | **Language** | Python |
 | **Source** | [django-mcp-server](https://github.com/gts360/django-mcp-server) |
 | **Scan Date** | 2026-03-18 |

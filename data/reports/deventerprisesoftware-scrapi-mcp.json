@@ -1,19 +1,30 @@
 {
-  "tool_id": "deventerprisesoftware-scrapi-mcp",
-  "version": "0.4.3",
-  "grade": "C",
-  "risk_score": 27,
-  "scan_date": "2026-07-16T02:03:30.879344751Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/DevEnterpriseSoftware/scrapi-mcp",
   "category": "Developer Tools",
-  "vendor": "DevEnterpriseSoftware",
-  "stars": 18,
-  "npm_package": "@deventerprisesoftware/scrapi-mcp",
-  "npm_downloads_monthly": 373,
-  "license": "MIT",
-  "language": "JavaScript",
+  "contributors": 4,
   "description": "MCP server for using ScrAPI to scrape web pages.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 106,
+      "snippet": "new McpServer(",
+      "file": "index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 111,
+      "snippet": ".registerTool(",
+      "file": "index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -80,74 +91,22 @@
       "tool_name": "scrape_url_markdown"
     }
   ],
-  "summary": {
-    "critical": 2,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 4
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 4,
+  "grade": "C",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 5,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 106,
-      "snippet": "new McpServer(",
-      "file": "index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 111,
-      "snippet": ".registerTool(",
-      "file": "index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "scrape_url_html",
-    "scrape_url_markdown"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "scrape_url_html",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: console.log"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "scrape_url_markdown",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: console.log"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "JavaScript",
+  "last_commit_at": "2026-09-03T07:29:11Z",
+  "last_release_at": "2026-09-03T07:29:23Z",
+  "latest_release_name": "v0.4.5",
+  "latest_release_tag": "v0.4.5",
+  "latest_release_url": "https://github.com/DevEnterpriseSoftware/scrapi-mcp/releases/tag/v0.4.5",
+  "latest_release_version": "v0.4.5",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 373,
+  "npm_package": "@deventerprisesoftware/scrapi-mcp",
+  "risk_score": 27,
+  "scan_date": "2026-07-16T02:03:30.879344751Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:43:20Z",
@@ -347,5 +306,54 @@
       "risk_score": 27,
       "version": "0.4.3"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/DevEnterpriseSoftware/scrapi-mcp",
+  "stars": 18,
+  "summary": {
+    "critical": 2,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 4
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "scrape_url_html",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: console.log"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "scrape_url_markdown",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: console.log"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "deventerprisesoftware-scrapi-mcp",
+  "tool_names": [
+    "scrape_url_html",
+    "scrape_url_markdown"
+  ],
+  "vendor": "DevEnterpriseSoftware",
+  "version": "0.4.3"
 }

@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.40.7` |
 | **Vendor** | southleft |
-| **Stars** | ⭐ 2394 |
+| **Stars** | ⭐ 2405 |
 | **npm Package** | `figma-console-mcp` |
-| **npm Downloads (30d)** | 76.4k |
+| **npm Downloads (30d)** | 90.3k |
 | **Language** | TypeScript |
 | **Source** | [figma-console-mcp](https://github.com/southleft/figma-console-mcp) |
-| **Scan Date** | 2026-09-29 |
+| **Scan Date** | 2026-09-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

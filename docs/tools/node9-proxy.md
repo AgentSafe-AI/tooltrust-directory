@@ -1,19 +1,19 @@
 # 🟢 node9-proxy
 
-> IAM for your AI agents. Set what Claude Code, Codex, Gemini, Cursor and any MCP server are allowed to do, review risky actions before they run, and keep every action on the record.
+> Access control for AI agents. Set what Claude Code, Codex, Gemini, Cursor and any MCP server are allowed to do, review risky actions before they run, and keep every action on the record.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2.25.1` |
+| **Version** | `2.26.2` |
 | **Vendor** | node9-ai |
 | **Stars** | ⭐ 216 |
 | **npm Package** | `@node9/proxy` |
-| **npm Downloads (30d)** | 9.9k |
+| **npm Downloads (30d)** | 9.7k |
 | **Language** | TypeScript |
 | **Source** | [node9-proxy](https://github.com/node9-ai/node9-proxy) |
-| **Scan Date** | 2026-09-29 |
+| **Scan Date** | 2026-09-30 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

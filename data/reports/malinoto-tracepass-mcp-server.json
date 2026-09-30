@@ -1,16 +1,16 @@
 {
   "tool_id": "malinoto-tracepass-mcp-server",
-  "version": "1.12.0",
+  "version": "1.14.1",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-09-29T03:39:03.653369403Z",
+  "scan_date": "2026-09-30T03:23:51.06754636Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/malinoto/tracepass-mcp-server",
   "category": "Developer Tools",
   "vendor": "malinoto",
   "stars": 1,
   "npm_package": "tracepass-mcp-server",
-  "npm_downloads_monthly": 800,
+  "npm_downloads_monthly": 1346,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol server for TracePass — the EU Digital Product Passport platform",
@@ -27,7 +27,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "tracepass_passports"
     },
@@ -197,7 +197,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "uses_network",
+        "writes_files"
       ],
       "destinations": [
         "hardcoded domain: args.confirmOverage",
@@ -676,6 +677,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.9.0"
+    },
+    {
+      "scan_date": "2026-09-29T03:39:03Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.12.0"
     }
   ]
 }

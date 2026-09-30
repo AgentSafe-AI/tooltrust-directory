@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.0` |
 | **Vendor** | cyberagiinc |
-| **Stars** | ⭐ 2106 |
+| **Stars** | ⭐ 2108 |
 | **npm Package** | `devdocs-explorer` |
 | **Language** | TypeScript |
 | **Source** | [devdocs](https://github.com/cyberagiinc/DevDocs) |

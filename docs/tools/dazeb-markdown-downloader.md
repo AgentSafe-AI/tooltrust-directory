@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | dazeb |
-| **Stars** | ⭐ 52 |
+| **Stars** | ⭐ 56 |
 | **npm Package** | `markdown-downloader` |
 | **npm Downloads (30d)** | 22 |
 | **Language** | JavaScript |

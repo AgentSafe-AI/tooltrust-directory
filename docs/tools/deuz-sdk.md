@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | Deuz-AI |
-| **Stars** | ⭐ 1073 |
+| **Stars** | ⭐ 697 |
 | **npm Package** | `deuz-sdk` |
 | **Language** | TypeScript |
 | **Source** | [deuz-sdk](https://github.com/Deuz-AI/Deuz-SDK) |

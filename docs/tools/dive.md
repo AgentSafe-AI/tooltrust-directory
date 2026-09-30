@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.14.2` |
 | **Vendor** | OpenAgentPlatform |
-| **Stars** | ⭐ 1791 |
+| **Stars** | ⭐ 1828 |
 | **npm Package** | `dive` |
 | **npm Downloads (30d)** | 32.9k |
 | **Language** | TypeScript |
