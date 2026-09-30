@@ -48,10 +48,10 @@ function MiniLineChart({ values, color }: { values: number[]; color: string }) {
 
 function Metric({ icon, label, value, detail }: { icon: ReactNode; label: string; value: string; detail?: string }) {
   return (
-    <div className="rounded-lg border border-zinc-800 bg-zinc-950/60 p-3">
+    <div className="min-w-0 bg-zinc-950/90 px-3 py-2.5">
       <div className="flex items-center gap-2 text-xs text-zinc-500">{icon}{label}</div>
-      <p className="mt-2 text-lg font-semibold text-zinc-100">{value}</p>
-      {detail && <p className="mt-1 text-xs text-zinc-500">{detail}</p>}
+      <p className="mt-1.5 truncate text-base font-semibold text-zinc-100">{value}</p>
+      {detail && <p className="mt-0.5 truncate text-[11px] text-zinc-500">{detail}</p>}
     </div>
   );
 }
@@ -86,7 +86,7 @@ export function RepositoryHealthPanel({ report, metrics }: Props) {
         )}
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="grid gap-px overflow-hidden rounded-lg border border-zinc-800 bg-zinc-800 sm:grid-cols-3 lg:grid-cols-6">
         <Metric icon={<Star className="h-3.5 w-3.5" />} label="Stars" value={formatCount(report.stars)} detail={report.stars != null ? "current snapshot" : undefined} />
         <Metric icon={<GitFork className="h-3.5 w-3.5" />} label="Forks" value={formatCount(report.forks)} detail={report.forks != null ? "current snapshot" : "GitHub metadata pending"} />
         <Metric icon={<Users className="h-3.5 w-3.5" />} label="Contributors" value={formatCount(report.contributors)} detail={report.contributors != null ? "public GitHub contributors" : "GitHub metadata pending"} />
