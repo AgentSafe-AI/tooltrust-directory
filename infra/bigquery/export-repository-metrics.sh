@@ -14,15 +14,21 @@ STARS_FILE=$(mktemp)
 PRS_FILE=$(mktemp)
 trap 'rm -f "$REGISTRY_FILE" "$STARS_FILE" "$PRS_FILE"' EXIT
 
-bq query --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
+# --quiet keeps gcloud/bq notices out of stdout. The files are consumed by jq
+# and must contain JSON only, especially when this runs in GitHub Actions.
+bq query --quiet --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
   "SELECT repo, tool_id FROM \`${PROJECT_ID}.${DATASET}.repository_registry\` WHERE enabled ORDER BY tool_id" \
   > "$REGISTRY_FILE"
-bq query --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
+bq query --quiet --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
   "SELECT repo, CAST(day AS STRING) AS day, stars_added, fetched_at FROM \`${PROJECT_ID}.${DATASET}.star_history_daily\` ORDER BY repo, day" \
   > "$STARS_FILE"
-bq query --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
+bq query --quiet --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
   "SELECT repo, CAST(week AS STRING) AS week, prs_opened, prs_merged, prs_closed, active_contributors, fetched_at FROM \`${PROJECT_ID}.${DATASET}.pull_request_history_weekly\` ORDER BY repo, week" \
   > "$PRS_FILE"
+
+jq -e 'type == "array"' "$REGISTRY_FILE" >/dev/null
+jq -e 'type == "array"' "$STARS_FILE" >/dev/null
+jq -e 'type == "array"' "$PRS_FILE" >/dev/null
 
 jq -c '.[]' "$REGISTRY_FILE" | while IFS= read -r registry_row; do
   tool_id=$(jq -r '.tool_id // empty' <<<"$registry_row")
