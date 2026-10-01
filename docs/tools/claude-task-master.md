@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.20.0` |
 | **Vendor** | eyaltoledano |
-| **Stars** | ⭐ 28112 |
+| **Stars** | ⭐ 28122 |
 | **npm Package** | `task-master-ai` |
-| **npm Downloads (30d)** | 58.6k |
+| **npm Downloads (30d)** | 62.1k |
 | **Language** | JavaScript |
 | **Source** | [claude-task-master](https://github.com/eyaltoledano/claude-task-master) |
-| **Scan Date** | 2026-09-30 |
+| **Scan Date** | 2026-10-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

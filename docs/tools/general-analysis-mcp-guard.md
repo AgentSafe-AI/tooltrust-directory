@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.3` |
 | **Vendor** | General-Analysis |
-| **Stars** | ⭐ 53 |
+| **Stars** | ⭐ 56 |
 | **npm Package** | `@general-analysis/mcp-guard` |
 | **npm Downloads (30d)** | 97 |
 | **Language** | TypeScript |

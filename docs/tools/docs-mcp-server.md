@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `3.2.1` |
 | **Vendor** | arabold |
-| **Stars** | ⭐ 1773 |
+| **Stars** | ⭐ 1779 |
 | **npm Package** | `@arabold/docs-mcp-server` |
-| **npm Downloads (30d)** | 5.6k |
+| **npm Downloads (30d)** | 5.4k |
 | **Language** | TypeScript |
 | **Source** | [docs-mcp-server](https://github.com/arabold/docs-mcp-server) |
-| **Scan Date** | 2026-09-30 |
+| **Scan Date** | 2026-10-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.0` |
 | **Vendor** | tadata-org |
-| **Stars** | ⭐ 11656 |
+| **Stars** | ⭐ 12014 |
 | **Language** | Python |
 | **Source** | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) |
 | **Scan Date** | 2026-03-18 |

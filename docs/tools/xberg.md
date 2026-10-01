@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.0` |
 | **Vendor** | xberg-io |
-| **Stars** | ⭐ 9359 |
+| **Stars** | ⭐ 9361 |
 | **npm Package** | `xberg-root` |
 | **Language** | Rust |
 | **Source** | [xberg](https://github.com/xberg-io/xberg) |
-| **Scan Date** | 2026-09-30 |
+| **Scan Date** | 2026-10-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

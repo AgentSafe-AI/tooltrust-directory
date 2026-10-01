@@ -1,19 +1,23 @@
 {
-  "tool_id": "evm-mcp-server",
-  "version": "2.0.4",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:07:15.457610808Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/mcpdotdirect/evm-mcp-server",
   "category": "Developer Tools",
-  "vendor": "mcpdotdirect",
-  "stars": 380,
-  "npm_package": "@mcpdotdirect/evm-mcp-server",
-  "npm_downloads_monthly": 412,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 9,
   "description": "MCP server that provides LLMs with tools for interacting with EVM networks",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/server/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 11,
+      "snippet": "new McpServer(",
+      "file": "src/server/server.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -56,74 +60,22 @@
       "tool_name": "describe_schema"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 4
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 105,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/server/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 11,
-      "snippet": "new McpServer(",
-      "file": "src/server/server.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "describe_schema",
-    "execute_query"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "execute_query",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: cel.bind",
-        "hardcoded domain: schema.context",
-        "hardcoded domain: schema.contracts",
-        "hardcoded domain: usdc.balanceOf",
-        "hardcoded domain: usdc.decimals"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "describe_schema",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: cel.bind",
-        "hardcoded domain: token.balanceOf",
-        "hardcoded domain: token.decimals",
-        "hardcoded domain: token.totalSupply",
-        "hardcoded domain: usdc.balanceOf",
-        "hardcoded domain: usdc.decimals",
-        "hardcoded domain: wallets.all",
-        "hardcoded domain: wallets.exists",
-        "hardcoded domain: wallets.filter",
-        "hardcoded domain: wallets.map"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-06-04T22:17:38Z",
+  "last_release_at": "2025-11-26T17:09:23Z",
+  "latest_release_name": "Release v2.0.4",
+  "latest_release_tag": "v2.0.4",
+  "latest_release_url": "https://github.com/mcpdotdirect/evm-mcp-server/releases/tag/v2.0.4",
+  "latest_release_version": "v2.0.4",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 412,
+  "npm_package": "@mcpdotdirect/evm-mcp-server",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:07:15.457610808Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T06:49:21Z",
@@ -641,5 +593,61 @@
       "risk_score": 15,
       "version": "2.0.4"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/mcpdotdirect/evm-mcp-server",
+  "stars": 379,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 4
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "execute_query",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: cel.bind",
+        "hardcoded domain: schema.context",
+        "hardcoded domain: schema.contracts",
+        "hardcoded domain: usdc.balanceOf",
+        "hardcoded domain: usdc.decimals"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "describe_schema",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: cel.bind",
+        "hardcoded domain: token.balanceOf",
+        "hardcoded domain: token.decimals",
+        "hardcoded domain: token.totalSupply",
+        "hardcoded domain: usdc.balanceOf",
+        "hardcoded domain: usdc.decimals",
+        "hardcoded domain: wallets.all",
+        "hardcoded domain: wallets.exists",
+        "hardcoded domain: wallets.filter",
+        "hardcoded domain: wallets.map"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "evm-mcp-server",
+  "tool_names": [
+    "describe_schema",
+    "execute_query"
+  ],
+  "vendor": "mcpdotdirect",
+  "version": "2.0.4"
 }

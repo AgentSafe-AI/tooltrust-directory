@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.5` |
 | **Vendor** | PraneshASP |
-| **Stars** | ⭐ 250 |
+| **Stars** | ⭐ 253 |
 | **npm Package** | `@pranesh.asp/foundry-mcp-server` |
 | **npm Downloads (30d)** | 217 |
 | **Language** | TypeScript |

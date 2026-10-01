@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.0` |
 | **Vendor** | f4ww4z |
-| **Stars** | ⭐ 157 |
+| **Stars** | ⭐ 168 |
 | **npm Package** | `@f4ww4z/mcp-mysql-server` |
 | **npm Downloads (30d)** | 2.4k |
 | **Language** | JavaScript |

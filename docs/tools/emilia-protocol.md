@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `erify-v3.20.2` |
 | **Vendor** | emiliaprotocol |
-| **Stars** | ⭐ 812 |
+| **Stars** | ⭐ 613 |
 | **npm Package** | `emilia-protocol` |
 | **Language** | TypeScript |
 | **Source** | [emilia-protocol](https://github.com/emiliaprotocol/emilia-protocol) |

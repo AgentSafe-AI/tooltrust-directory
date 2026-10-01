@@ -1,0 +1,80 @@
+{
+  "tool_id": "redamon",
+  "version": "6.14.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-01T13:02:27Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/samugit83/redamon",
+  "category": "Developer Tools",
+  "vendor": "samugit83",
+  "stars": 2882,
+  "license": "MIT",
+  "language": "Python",
+  "description": "Open-source, self-hosted AI penetration testing framework: maps your attack surface into a graph, autonomously exploits it from a Kali sandbox with human approval gates, and opens PRs that fix what it finds. MCP both ways: plug in any MCP server as a tool, or drive RedAmon from Claude Code or your own agent.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 22,
+            "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 32,
+            "snippet": "FastMCP(",
+            "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 34,
+            "snippet": "@mcp.tool(",
+            "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 22,
+      "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 32,
+      "snippet": "FastMCP(",
+      "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 34,
+      "snippet": "@mcp.tool(",
+      "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
+      "language": "python"
+    }
+  ]
+}

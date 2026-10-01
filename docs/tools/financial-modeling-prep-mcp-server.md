@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.6.10` |
 | **Vendor** | imbenrabi |
-| **Stars** | ⭐ 136 |
+| **Stars** | ⭐ 149 |
 | **npm Package** | `financial-modeling-prep-mcp-server` |
 | **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |

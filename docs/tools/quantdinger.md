@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `5.4.6` |
 | **Vendor** | OpenByteInc |
-| **Stars** | ⭐ 12328 |
+| **Stars** | ⭐ 12349 |
 | **Language** | Python |
 | **Source** | [quantdinger](https://github.com/OpenByteInc/QuantDinger) |
-| **Scan Date** | 2026-09-30 |
+| **Scan Date** | 2026-10-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

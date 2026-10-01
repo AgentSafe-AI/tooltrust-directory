@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.4` |
 | **Vendor** | mcpdotdirect |
-| **Stars** | ⭐ 380 |
+| **Stars** | ⭐ 379 |
 | **npm Package** | `@mcpdotdirect/evm-mcp-server` |
 | **npm Downloads (30d)** | 412 |
 | **Language** | TypeScript |

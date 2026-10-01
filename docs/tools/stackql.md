@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.732` |
 | **Vendor** | stackql |
-| **Stars** | ⭐ 1027 |
+| **Stars** | ⭐ 1056 |
 | **Language** | Go |
 | **Source** | [stackql](https://github.com/stackql/stackql) |
-| **Scan Date** | 2026-09-30 |
+| **Scan Date** | 2026-10-01 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -1,19 +1,19 @@
 {
   "tool_id": "cyanheads-imf-mcp-server",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-09-30T03:23:58.132350676Z",
+  "scan_date": "2026-10-01T13:09:56.522159672Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/cyanheads/imf-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 1,
   "npm_package": "@cyanheads/imf-mcp-server",
-  "npm_downloads_monthly": 1468,
+  "npm_downloads_monthly": 1473,
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "description": "Query IMF SDMX 3.0 macroeconomic data — 193 dataflows, 190 countries, WEO projections, BOP, CPI, exchange rates, and national accounts via MCP. STDIO or Streamable HTTP. ",
+  "description": "Query IMF SDMX 3.0 macroeconomic data — hundreds of dataflows across 190 countries, WEO projections, BOP, CPI, exchange rates, and national accounts via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
       "id": "AS-002",
@@ -59,7 +59,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "imf_query_dataset"
     },
@@ -78,59 +78,17 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "imf_query_dataset"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "imf_dataframe_describe"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "imf_dataframe_describe"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "imf_dataframe_query"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "imf_dataframe_query"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "imf_dataframe_query"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 3,
-    "info": 10
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "imf_dataframe_describe",
-    "imf_dataframe_query",
     "imf_get_database",
     "imf_list_databases",
     "imf_query_dataset"
@@ -170,23 +128,6 @@
       "destinations": [
         "hardcoded domain: IMF.RES",
         "hardcoded domain: IMF.STA"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "imf_dataframe_describe",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "imf_dataframe_query",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -243,6 +184,12 @@
     },
     {
       "scan_date": "2026-09-29T03:39:27Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.4.2"
+    },
+    {
+      "scan_date": "2026-09-30T03:23:58Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.4.2"

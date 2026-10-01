@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `sha-1a9406e9a8cc` |
 | **Vendor** | gomarble-ai |
-| **Stars** | ⭐ 329 |
+| **Stars** | ⭐ 366 |
 | **Language** | Python |
 | **Source** | [facebook-ads-mcp-server](https://github.com/gomarble-ai/facebook-ads-mcp-server) |
 | **Scan Date** | 2026-06-22 |
