@@ -537,6 +537,9 @@ jobs:
     permissions:
       contents: write
       id-token: write
+    env:
+      GCP_WIF_PROVIDER: ${{ secrets.GCP_WIF_PROVIDER }}
+      GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
     steps:
       - uses: actions/checkout@v4
@@ -572,18 +575,18 @@ jobs:
           go run ./cmd/repo-metadata --reports-dir "${REPORTS_DIR}" --max-repos "${METADATA_MAX_REPOS}" --offset "${OFFSET}"
 
       - name: Authenticate to Google Cloud for metrics export
-        if: ${{ secrets.GCP_WIF_PROVIDER != '' && secrets.GCP_SERVICE_ACCOUNT != '' }}
+        if: ${{ env.GCP_WIF_PROVIDER != '' && env.GCP_SERVICE_ACCOUNT != '' }}
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       - name: Install Google Cloud CLI
-        if: ${{ secrets.GCP_WIF_PROVIDER != '' && secrets.GCP_SERVICE_ACCOUNT != '' }}
+        if: ${{ env.GCP_WIF_PROVIDER != '' && env.GCP_SERVICE_ACCOUNT != '' }}
         uses: google-github-actions/setup-gcloud@v2
 
       - name: Export BigQuery repository history
-        if: ${{ secrets.GCP_WIF_PROVIDER != '' && secrets.GCP_SERVICE_ACCOUNT != '' }}
+        if: ${{ env.GCP_WIF_PROVIDER != '' && env.GCP_SERVICE_ACCOUNT != '' }}
         env:
           BQ_PROJECT_ID: gws-cli-1785715774
           BQ_DATASET: tooltrust_analytics
