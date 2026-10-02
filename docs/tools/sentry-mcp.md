@@ -1,19 +1,19 @@
 # 🟢 sentry-mcp
 
-> An MCP server for interacting with Sentry via LLMs.
+> Agentic tooling for Sentry
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.42.0` |
+| **Version** | `cli@0.46.0` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 875 |
+| **Stars** | ⭐ 883 |
 | **npm Package** | `sentry-mcp` |
-| **npm Downloads (30d)** | 113 |
+| **npm Downloads (30d)** | 110 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/toolkit) |
-| **Scan Date** | 2026-10-01 |
+| **Scan Date** | 2026-10-02 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

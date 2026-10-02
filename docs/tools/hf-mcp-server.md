@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.20` |
 | **Vendor** | huggingface |
-| **Stars** | ⭐ 249 |
+| **Stars** | ⭐ 301 |
 | **npm Package** | `hf-mcp` |
 | **Language** | TypeScript |
 | **Source** | [hf-mcp-server](https://github.com/huggingface/hf-mcp-server) |

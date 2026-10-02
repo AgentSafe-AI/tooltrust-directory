@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `tunnel@0.1.1` |
 | **Vendor** | speakeasy-api |
-| **Stars** | ⭐ 271 |
+| **Stars** | ⭐ 272 |
 | **npm Package** | `@gram/workspace` |
 | **Language** | Go |
 | **Source** | [gram](https://github.com/speakeasy-api/gram) |

@@ -1,19 +1,23 @@
 {
-  "tool_id": "hint-services-obsidian-github-mcp",
-  "version": "0.5.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:17:12.523225672Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/Hint-Services/obsidian-github-mcp",
   "category": "Developer Tools",
-  "vendor": "Hint-Services",
-  "stars": 8,
-  "npm_package": "obsidian-github-mcp",
-  "npm_downloads_monthly": 52,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 1,
   "description": "MCP Server to search individual private Github Repositories",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 17,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 36,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -112,88 +116,22 @@
       "tool_name": "diagnoseSearch"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 9
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 7,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 17,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 36,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "diagnoseSearch",
-    "getCommitHistory",
-    "getFileContents",
-    "searchFiles",
-    "searchIssues"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "getFileContents",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "searchFiles",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "searchIssues",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "getCommitHistory",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "diagnoseSearch",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2025-11-10T23:03:00Z",
+  "last_release_at": "2025-09-14T15:18:23Z",
+  "latest_release_name": "Release v0.5.0: Enhanced search diagnostics and error handling",
+  "latest_release_tag": "v0.5.0",
+  "latest_release_url": "https://github.com/Hint-Services/obsidian-github-mcp/releases/tag/v0.5.0",
+  "latest_release_version": "v0.5.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 52,
+  "npm_package": "obsidian-github-mcp",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:17:12.523225672Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:52:48Z",
@@ -327,5 +265,75 @@
       "risk_score": 2,
       "version": "0.5.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/Hint-Services/obsidian-github-mcp",
+  "stars": 9,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 9
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "getFileContents",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "searchFiles",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "searchIssues",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "getCommitHistory",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "diagnoseSearch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "hint-services-obsidian-github-mcp",
+  "tool_names": [
+    "diagnoseSearch",
+    "getCommitHistory",
+    "getFileContents",
+    "searchFiles",
+    "searchIssues"
+  ],
+  "vendor": "Hint-Services",
+  "version": "0.5.0"
 }

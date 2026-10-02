@@ -1,0 +1,88 @@
+{
+  "category": "Developer Tools",
+  "contributors": 15,
+  "description": "Convert Claude Code or Codex into the most intelligent Deep Research Agent. Collect, search, and synthesize web research into a persistent, searchable wiki that builds on itself. Hosted API + MCP: hyperresearch.ai",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 10,
+      "file": "src/hyperresearch/mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 13,
+      "snippet": "FastMCP(",
+      "file": "src/hyperresearch/mcp/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 32,
+      "snippet": "@server.tool(",
+      "file": "src/hyperresearch/mcp/server.py",
+      "language": "python"
+    }
+  ],
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 10,
+            "file": "src/hyperresearch/mcp/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "init",
+            "line": 13,
+            "snippet": "FastMCP(",
+            "file": "src/hyperresearch/mcp/server.py",
+            "language": "python"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 32,
+            "snippet": "@server.tool(",
+            "file": "src/hyperresearch/mcp/server.py",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  ],
+  "forks": 372,
+  "grade": "I",
+  "has_embedded_mcp": true,
+  "language": "Python",
+  "last_commit_at": "2026-09-30T22:31:52Z",
+  "last_release_at": "2026-09-24T14:37:27Z",
+  "latest_release_name": "v0.12.0",
+  "latest_release_tag": "v0.12.0",
+  "latest_release_url": "https://github.com/jordan-gibbs/hyperresearch/releases/tag/v0.12.0",
+  "latest_release_version": "v0.12.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 0,
+  "scan_date": "2026-10-02T02:48:08Z",
+  "scan_incomplete": true,
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/jordan-gibbs/hyperresearch",
+  "stars": 3747,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "tool_id": "hyperresearch",
+  "vendor": "jordan-gibbs",
+  "version": "0.12.0"
+}

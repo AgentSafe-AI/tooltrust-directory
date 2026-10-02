@@ -1,53 +1,7 @@
 {
-  "tool_id": "guangxiangdebizi-youtube-subtitle-mcp",
-  "version": "1.1.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:27:32.083252302Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/guangxiangdebizi/youtube-subtitle-mcp",
   "category": "Developer Tools",
-  "vendor": "guangxiangdebizi",
-  "npm_package": "youtube-subtitle-mcp",
-  "npm_downloads_monthly": 56,
-  "license": "NOASSERTION",
-  "language": "JavaScript",
+  "contributors": 1,
   "description": "A Model Context Protocol (MCP) server for fetching YouTube video subtitles/transcripts with support for multiple output formats (SRT, VTT, TXT, JSON).",
-  "findings": [
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "fetch_youtube_subtitles"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "fetch_youtube_subtitles"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fetch_youtube_subtitles"
-    }
-  ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 2
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
       "kind": "import",
@@ -92,27 +46,48 @@
       "language": "typescript"
     }
   ],
-  "tool_names": [
-    "fetch_youtube_subtitles"
-  ],
-  "tool_contexts": [
+  "findings": [
     {
-      "tool_name": "fetch_youtube_subtitles",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: www.youtube.com",
-        "hardcoded domain: youtu.be"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fetch_youtube_subtitles"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "fetch_youtube_subtitles"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fetch_youtube_subtitles"
     }
   ],
+  "forks": 0,
+  "grade": "A",
+  "has_embedded_mcp": true,
+  "language": "JavaScript",
+  "last_commit_at": "2025-11-26T11:13:53Z",
+  "last_release_at": "2025-11-25T03:35:43Z",
+  "latest_release_name": "v1.1.1",
+  "latest_release_tag": "v1.1.1",
+  "latest_release_url": "https://github.com/guangxiangdebizi/youtube-subtitle-mcp/releases/tag/v1.1.1",
+  "latest_release_version": "v1.1.1",
+  "license": "NOASSERTION",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 56,
+  "npm_package": "youtube-subtitle-mcp",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:27:32.083252302Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:55:27Z",
@@ -354,5 +329,39 @@
       "risk_score": 2,
       "version": "1.1.1"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/guangxiangdebizi/youtube-subtitle-mcp",
+  "stars": 0,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 2
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "fetch_youtube_subtitles",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: www.youtube.com",
+        "hardcoded domain: youtu.be"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "guangxiangdebizi-youtube-subtitle-mcp",
+  "tool_names": [
+    "fetch_youtube_subtitles"
+  ],
+  "vendor": "guangxiangdebizi",
+  "version": "1.1.1"
 }

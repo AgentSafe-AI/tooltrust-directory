@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `3.0.6` |
 | **Vendor** | stape-io |
-| **Stars** | ⭐ 166 |
+| **Stars** | ⭐ 222 |
 | **npm Package** | `google-tag-manager-mcp-server` |
 | **npm Downloads (30d)** | 114 |
 | **Language** | TypeScript |

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | henryhawke |
-| **Stars** | ⭐ 90 |
+| **Stars** | ⭐ 92 |
 | **npm Package** | `@henryhawke/mcp-titan` |
 | **npm Downloads (30d)** | 112 |
 | **Language** | TypeScript |

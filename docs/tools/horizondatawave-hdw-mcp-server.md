@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.7.1` |
 | **Vendor** | horizondatawave |
-| **Stars** | ⭐ 60 |
+| **Stars** | ⭐ 65 |
 | **npm Package** | `@anysiteio/mcp` |
 | **npm Downloads (30d)** | 235 |
 | **Language** | JavaScript |

@@ -1,19 +1,65 @@
 {
-  "tool_id": "hithereiamaliff-mcp-grabmaps",
-  "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-08-02T02:09:16.093918055Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/hithereiamaliff/mcp-grabmaps",
   "category": "Developer Tools",
-  "vendor": "hithereiamaliff",
-  "stars": 3,
-  "npm_package": "mcp-grabmaps",
-  "npm_downloads_monthly": 33,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 1,
   "description": "A Model Context Protocol (MCP) server for GrabMaps API integration, providing access to GrabMaps services through AWS Location Service.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 31,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "post-build.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 48,
+      "snippet": "new McpServer(",
+      "file": "post-build.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/http-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 258,
+      "snippet": "new McpServer(",
+      "file": "src/http-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 265,
+      "snippet": ".registerTool(",
+      "file": "src/http-server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 6,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/smithery.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 30,
+      "snippet": "new McpServer(",
+      "file": "src/smithery.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 49,
+      "snippet": ".registerTool(",
+      "file": "src/smithery.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -112,134 +158,22 @@
       "tool_name": "calculateRouteMatrix"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 9
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 1,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 31,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "post-build.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 48,
-      "snippet": "new McpServer(",
-      "file": "post-build.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 13,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/http-server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 258,
-      "snippet": "new McpServer(",
-      "file": "src/http-server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 265,
-      "snippet": ".registerTool(",
-      "file": "src/http-server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 6,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/smithery.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 30,
-      "snippet": "new McpServer(",
-      "file": "src/smithery.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 49,
-      "snippet": ".registerTool(",
-      "file": "src/smithery.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "calculateRoute",
-    "calculateRouteMatrix",
-    "getPlace",
-    "searchPlaceIndexForPosition",
-    "searchPlaceIndexForSuggestions",
-    "searchPlaceIndexForText"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "searchPlaceIndexForText",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "searchPlaceIndexForPosition",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "searchPlaceIndexForSuggestions",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "getPlace",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "calculateRoute",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "calculateRouteMatrix",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-04-03T13:12:06Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 33,
+  "npm_package": "mcp-grabmaps",
+  "risk_score": 2,
+  "scan_date": "2026-08-02T02:09:16.093918055Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:53:58Z",
@@ -517,5 +451,79 @@
       "risk_score": 2,
       "version": "1.0.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/hithereiamaliff/mcp-grabmaps",
+  "stars": 3,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 9
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "searchPlaceIndexForText",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "searchPlaceIndexForPosition",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "searchPlaceIndexForSuggestions",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "getPlace",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "calculateRoute",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "calculateRouteMatrix",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "hithereiamaliff-mcp-grabmaps",
+  "tool_names": [
+    "calculateRoute",
+    "calculateRouteMatrix",
+    "getPlace",
+    "searchPlaceIndexForPosition",
+    "searchPlaceIndexForSuggestions",
+    "searchPlaceIndexForText"
+  ],
+  "vendor": "hithereiamaliff",
+  "version": "1.0.0"
 }

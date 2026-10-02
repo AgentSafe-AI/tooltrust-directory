@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.1` |
 | **Vendor** | greatSumini |
-| **Stars** | ⭐ 52 |
+| **Stars** | ⭐ 58 |
 | **npm Package** | `nanobanana-api-mcp` |
 | **npm Downloads (30d)** | 479 |
 | **Language** | TypeScript |

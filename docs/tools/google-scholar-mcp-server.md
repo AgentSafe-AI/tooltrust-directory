@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `sha-738d60a4d694` |
 | **Vendor** | JackKuo666 |
-| **Stars** | ⭐ 360 |
+| **Stars** | ⭐ 410 |
 | **Language** | Python |
 | **Source** | [google-scholar-mcp-server](https://github.com/JackKuo666/Google-Scholar-MCP-Server) |
 | **Scan Date** | 2026-06-22 |

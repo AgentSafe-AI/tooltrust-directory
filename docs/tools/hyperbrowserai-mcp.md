@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | hyperbrowserai |
-| **Stars** | ⭐ 760 |
+| **Stars** | ⭐ 790 |
 | **npm Package** | `hyperbrowser-mcp` |
 | **npm Downloads (30d)** | 3.2k |
 | **Language** | TypeScript |

@@ -1,18 +1,30 @@
 {
-  "tool_id": "gong8-knownissue",
-  "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-06-22T03:21:35.841335691Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/gong8/knownissue",
   "category": "Developer Tools",
-  "vendor": "gong8",
-  "stars": 1,
-  "npm_package": "knownissue",
-  "license": "NOASSERTION",
-  "language": "TypeScript",
+  "contributors": 2,
   "description": "Shared debugging memory for AI coding agents. Search, report, patch, and verify issues via MCP. Every fix survives beyond the conversation.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "apps/api/src/mcp/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 154,
+      "snippet": "new McpServer(",
+      "file": "apps/api/src/mcp/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 160,
+      "snippet": ".registerTool(",
+      "file": "apps/api/src/mcp/server.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -95,104 +107,21 @@
       "tool_name": "my_activity"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 7
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 0,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "apps/api/src/mcp/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 154,
-      "snippet": "new McpServer(",
-      "file": "apps/api/src/mcp/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 160,
-      "snippet": ".registerTool(",
-      "file": "apps/api/src/mcp/server.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "my_activity",
-    "patch",
-    "report",
-    "search",
-    "verify"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: lodash.merge"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "report",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (relatedTo)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "patch",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (relatedTo)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "verify",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (issueAccuracy)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "my_activity",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-03-20T15:12:45Z",
+  "last_release_at": "2026-03-16T23:26:30Z",
+  "latest_release_name": "v1.0.0",
+  "latest_release_tag": "v1.0.0",
+  "latest_release_url": "https://github.com/gong8/knownissue/releases/tag/v1.0.0",
+  "latest_release_version": "v1.0.0",
+  "license": "NOASSERTION",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_package": "knownissue",
+  "risk_score": 4,
+  "scan_date": "2026-06-22T03:21:35.841335691Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:48:34Z",
@@ -284,5 +213,84 @@
       "risk_score": 4,
       "version": "1.0.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/gong8/knownissue",
+  "stars": 1,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 7
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: lodash.merge"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "report",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (relatedTo)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "patch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (relatedTo)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "verify",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (issueAccuracy)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "my_activity",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "gong8-knownissue",
+  "tool_names": [
+    "my_activity",
+    "patch",
+    "report",
+    "search",
+    "verify"
+  ],
+  "vendor": "gong8",
+  "version": "1.0.0"
 }

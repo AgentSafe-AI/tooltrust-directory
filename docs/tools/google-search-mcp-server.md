@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `3.0.0` |
 | **Vendor** | mixelpixx |
-| **Stars** | ⭐ 237 |
+| **Stars** | ⭐ 256 |
 | **npm Package** | `google-search-mcp` |
 | **npm Downloads (30d)** | 145 |
 | **Language** | TypeScript |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `4.3.6` |
 | **Vendor** | httprunner |
-| **Stars** | ⭐ 4265 |
+| **Stars** | ⭐ 4296 |
 | **Language** | Go |
 | **Source** | [httprunner](https://github.com/httprunner/httprunner) |
 | **Scan Date** | 2026-03-18 |

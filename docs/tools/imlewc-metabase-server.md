@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.0` |
 | **Vendor** | imlewc |
-| **Stars** | ⭐ 145 |
+| **Stars** | ⭐ 150 |
 | **npm Package** | `@imlewc/metabase-server` |
 | **npm Downloads (30d)** | 437 |
 | **Language** | JavaScript |
