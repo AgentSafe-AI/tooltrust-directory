@@ -10,6 +10,10 @@ on:
         description: 'Ignore existing versions and re-scan all discovered tools'
         required: false
         default: 'true'
+      reuse_scan_run_id:
+        description: 'Reuse scan-results artifact from an earlier workflow run'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -38,6 +42,7 @@ jobs:
           cache: true
 
       - name: Run crawler
+        if: ${{ inputs.reuse_scan_run_id == '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPORTS_DIR: ${{ env.REPORTS_DIR }}
@@ -48,6 +53,11 @@ jobs:
       - name: Check for pending scans
         id: check
         run: |
+          if [ -n "${{ inputs.reuse_scan_run_id }}" ]; then
+            echo "Reusing scan-results artifact from run ${{ inputs.reuse_scan_run_id }}"
+            echo "has_pending=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if [ ! -f "${{ env.PENDING_SCANS_PATH }}" ]; then
             echo "has_pending=false" >> "$GITHUB_OUTPUT"
             exit 0
@@ -62,7 +72,7 @@ jobs:
           fi
 
       - name: Upload pending-scans artifact
-        if: steps.check.outputs.has_pending == 'true'
+        if: steps.check.outputs.has_pending == 'true' && inputs.reuse_scan_run_id == ''
         uses: actions/upload-artifact@v4
         with:
           name: pending-scans
@@ -87,10 +97,21 @@ jobs:
           cache: false
 
       - name: Download pending-scans artifact
+        if: ${{ inputs.reuse_scan_run_id == '' }}
         uses: actions/download-artifact@v4
         with:
           name: pending-scans
           path: data/
+
+      - name: Reuse scan-results artifact
+        if: ${{ inputs.reuse_scan_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: scan-results
+          path: ${{ env.REPORTS_DIR }}/
+          run-id: ${{ inputs.reuse_scan_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
 
       # ── Install ToolTrust Scanner ────────────────────────────────────────────
       # Build from source — the repo is public and Go is already available.
@@ -99,6 +120,7 @@ jobs:
       # broken commit on the scanner's main branch cannot cascade into a CI failure.
       # https://github.com/AgentSafe-AI/tooltrust-scanner
       - name: Build ToolTrust Scanner from source
+        if: ${{ inputs.reuse_scan_run_id == '' }}
         run: |
           # Resolve the latest release tag via GitHub's Releases API first.
           # This is more reliable right after a fresh release than tag listing
@@ -138,6 +160,7 @@ jobs:
       # Running `go run` inside each subshell compiles the same packages
       # concurrently, which causes cache-lock contention and slows the scan.
       - name: Build internal Go tools
+        if: ${{ inputs.reuse_scan_run_id == '' }}
         run: |
           go build -o /usr/local/bin/tt-analyze    ./cmd/analyze
           go build -o /usr/local/bin/tt-fetch      ./cmd/smithery-fetch
@@ -145,6 +168,7 @@ jobs:
           echo "Internal tools built OK"
 
       - name: Scan each pending tool
+        if: ${{ inputs.reuse_scan_run_id == '' }}
         run: |
           PENDING="${{ env.PENDING_SCANS_PATH }}"
           COUNT=$(jq 'length' "$PENDING")
