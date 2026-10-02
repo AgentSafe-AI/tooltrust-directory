@@ -19,16 +19,16 @@ trap 'rm -f "$REGISTRY_FILE" "$STARS_FILE" "$PRS_FILE"' EXIT
 bq query --quiet --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
   "SELECT repo, tool_id FROM \`${PROJECT_ID}.${DATASET}.repository_registry\` WHERE enabled ORDER BY tool_id" \
   > "$REGISTRY_FILE"
+jq -e 'type == "array"' "$REGISTRY_FILE" >/dev/null || { echo "BigQuery registry query did not return JSON:" >&2; head -c 2000 "$REGISTRY_FILE" >&2; exit 1; }
 bq query --quiet --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
   "SELECT repo, CAST(day AS STRING) AS day, stars_added, fetched_at FROM \`${PROJECT_ID}.${DATASET}.star_history_daily\` ORDER BY repo, day" \
   > "$STARS_FILE"
+jq -e 'type == "array"' "$STARS_FILE" >/dev/null || { echo "BigQuery stars query did not return JSON:" >&2; head -c 2000 "$STARS_FILE" >&2; exit 1; }
 bq query --quiet --project_id="$PROJECT_ID" --max_rows=100000 --use_legacy_sql=false --format=json \
   "SELECT repo, CAST(week AS STRING) AS week, prs_opened, prs_merged, prs_closed, active_contributors, fetched_at FROM \`${PROJECT_ID}.${DATASET}.pull_request_history_weekly\` ORDER BY repo, week" \
   > "$PRS_FILE"
+jq -e 'type == "array"' "$PRS_FILE" >/dev/null || { echo "BigQuery pull request query did not return JSON:" >&2; head -c 2000 "$PRS_FILE" >&2; exit 1; }
 
-jq -e 'type == "array"' "$REGISTRY_FILE" >/dev/null
-jq -e 'type == "array"' "$STARS_FILE" >/dev/null
-jq -e 'type == "array"' "$PRS_FILE" >/dev/null
 
 jq -c '.[]' "$REGISTRY_FILE" | while IFS= read -r registry_row; do
   tool_id=$(jq -r '.tool_id // empty' <<<"$registry_row")
