@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.47` |
 | **Vendor** | isnow890 |
-| **Stars** | ⭐ 66 |
+| **Stars** | ⭐ 86 |
 | **npm Package** | `@isnow890/naver-search-mcp` |
 | **npm Downloads (30d)** | 684 |
 | **Language** | JavaScript |

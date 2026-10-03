@@ -10,10 +10,10 @@
 | **Vendor** | hridaya423 |
 | **Stars** | ⭐ 74 |
 | **npm Package** | `conductor-tasks` |
-| **npm Downloads (30d)** | 73 |
+| **npm Downloads (30d)** | 76 |
 | **Language** | TypeScript |
 | **Source** | [conductor-tasks](https://github.com/hridaya423/conductor-tasks) |
-| **Scan Date** | 2026-10-02 |
+| **Scan Date** | 2026-10-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

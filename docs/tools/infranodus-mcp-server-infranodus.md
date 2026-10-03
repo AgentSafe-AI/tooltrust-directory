@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.6.1` |
 | **Vendor** | infranodus |
-| **Stars** | ⭐ 83 |
+| **Stars** | ⭐ 102 |
 | **npm Package** | `infranodus-mcp-server` |
 | **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |

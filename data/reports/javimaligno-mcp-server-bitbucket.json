@@ -1,17 +1,29 @@
 {
-  "tool_id": "javimaligno-mcp-server-bitbucket",
-  "version": "0.12.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:21:53.979097703Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/JaviMaligno/mcp-server-bitbucket",
   "category": "Developer Tools",
-  "vendor": "javimaligno",
-  "stars": 1,
-  "license": "MIT",
-  "language": "Python",
+  "contributors": 2,
   "description": "MCP server for Bitbucket API operations",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 18,
+      "file": "python/src/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "init",
+      "line": 58,
+      "snippet": "FastMCP(",
+      "file": "python/src/server.py",
+      "language": "python"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 87,
+      "snippet": "@mcp.tool(",
+      "file": "python/src/server.py",
+      "language": "python"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -318,232 +330,20 @@
       "tool_name": "BITBUCKET_UPDATE_ISSUE"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 6,
-    "info": 32
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 3,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 18,
-      "file": "python/src/server.py",
-      "language": "python"
-    },
-    {
-      "kind": "init",
-      "line": 58,
-      "snippet": "FastMCP(",
-      "file": "python/src/server.py",
-      "language": "python"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 87,
-      "snippet": "@mcp.tool(",
-      "file": "python/src/server.py",
-      "language": "python"
-    }
-  ],
-  "tool_names": [
-    "BITBUCKET_CREATE_BRANCH",
-    "BITBUCKET_CREATE_ISSUE",
-    "BITBUCKET_CREATE_ISSUE_COMMENT",
-    "BITBUCKET_CREATE_PULL_REQUEST",
-    "BITBUCKET_CREATE_REPOSITORY",
-    "BITBUCKET_CREATE_SNIPPET_COMMENT",
-    "BITBUCKET_DELETE_ISSUE",
-    "BITBUCKET_DELETE_REPOSITORY",
-    "BITBUCKET_GET_CURRENT_USER",
-    "BITBUCKET_GET_FILE_FROM_REPOSITORY",
-    "BITBUCKET_GET_PULL_REQUEST",
-    "BITBUCKET_GET_SNIPPET",
-    "BITBUCKET_LIST_PULL_REQUESTS",
-    "BITBUCKET_LIST_REPOSITORIES_IN_WORKSPACE",
-    "BITBUCKET_LIST_WORKSPACES",
-    "BITBUCKET_LIST_WORKSPACE_MEMBERS",
-    "BITBUCKET_UPDATE_ISSUE"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "BITBUCKET_CREATE_BRANCH",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_CREATE_ISSUE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (milestone_id)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_CREATE_ISSUE_COMMENT",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_CREATE_PULL_REQUEST",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_CREATE_REPOSITORY",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_CREATE_SNIPPET_COMMENT",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_DELETE_ISSUE",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_DELETE_REPOSITORY",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_GET_CURRENT_USER",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_GET_FILE_FROM_REPOSITORY",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "hardcoded domain: main.py"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_GET_PULL_REQUEST",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_GET_SNIPPET",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (accept_format)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_LIST_PULL_REQUESTS",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_LIST_REPOSITORIES_IN_WORKSPACE",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_LIST_WORKSPACE_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_LIST_WORKSPACES",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "BITBUCKET_UPDATE_ISSUE",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (assignee_account_id)",
-        "dynamic email recipient (milestone)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "Python",
+  "last_commit_at": "2026-10-02T11:02:16Z",
+  "last_release_at": "2025-12-08T10:46:39Z",
+  "latest_release_name": "v0.9.1",
+  "latest_release_tag": "v0.9.1",
+  "latest_release_url": "https://github.com/JaviMaligno/mcp-server-bitbucket/releases/tag/v0.9.1",
+  "latest_release_version": "v0.9.1",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:21:53.979097703Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:54:00Z",
@@ -809,5 +609,213 @@
       "risk_score": 2,
       "version": "0.12.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/JaviMaligno/mcp-server-bitbucket",
+  "stars": 2,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 32
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "BITBUCKET_CREATE_BRANCH",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_CREATE_ISSUE",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (milestone_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_CREATE_ISSUE_COMMENT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_CREATE_PULL_REQUEST",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_CREATE_REPOSITORY",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_CREATE_SNIPPET_COMMENT",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_DELETE_ISSUE",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_DELETE_REPOSITORY",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_GET_CURRENT_USER",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_GET_FILE_FROM_REPOSITORY",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: main.py"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_GET_PULL_REQUEST",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_GET_SNIPPET",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (accept_format)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_LIST_PULL_REQUESTS",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_LIST_REPOSITORIES_IN_WORKSPACE",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_LIST_WORKSPACE_MEMBERS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_LIST_WORKSPACES",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "BITBUCKET_UPDATE_ISSUE",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (assignee_account_id)",
+        "dynamic email recipient (milestone)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "javimaligno-mcp-server-bitbucket",
+  "tool_names": [
+    "BITBUCKET_CREATE_BRANCH",
+    "BITBUCKET_CREATE_ISSUE",
+    "BITBUCKET_CREATE_ISSUE_COMMENT",
+    "BITBUCKET_CREATE_PULL_REQUEST",
+    "BITBUCKET_CREATE_REPOSITORY",
+    "BITBUCKET_CREATE_SNIPPET_COMMENT",
+    "BITBUCKET_DELETE_ISSUE",
+    "BITBUCKET_DELETE_REPOSITORY",
+    "BITBUCKET_GET_CURRENT_USER",
+    "BITBUCKET_GET_FILE_FROM_REPOSITORY",
+    "BITBUCKET_GET_PULL_REQUEST",
+    "BITBUCKET_GET_SNIPPET",
+    "BITBUCKET_LIST_PULL_REQUESTS",
+    "BITBUCKET_LIST_REPOSITORIES_IN_WORKSPACE",
+    "BITBUCKET_LIST_WORKSPACES",
+    "BITBUCKET_LIST_WORKSPACE_MEMBERS",
+    "BITBUCKET_UPDATE_ISSUE"
+  ],
+  "vendor": "javimaligno",
+  "version": "0.12.0"
 }

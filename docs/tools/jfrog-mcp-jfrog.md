@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.0.1` |
 | **Vendor** | jfrog |
-| **Stars** | ⭐ 115 |
+| **Stars** | ⭐ 118 |
 | **npm Package** | `mcp-jfrog` |
 | **Language** | TypeScript |
 | **Source** | [jfrog-mcp-jfrog](https://github.com/jfrog/mcp-jfrog) |

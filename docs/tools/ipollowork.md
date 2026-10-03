@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.17.26` |
 | **Vendor** | Devin-AXIS |
-| **Stars** | ⭐ 1444 |
+| **Stars** | ⭐ 6581 |
 | **npm Package** | `@ipollo/ipollowork-workspace` |
 | **Language** | TypeScript |
 | **Source** | [ipollowork](https://github.com/Devin-AXIS/iPolloWork) |

@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `2.35.6` |
 | **Vendor** | AnkleBreaker-Studio |
-| **Stars** | ⭐ 487 |
+| **Stars** | ⭐ 489 |
 | **npm Package** | `anklebreaker-unity-mcp` |
-| **npm Downloads (30d)** | 946 |
+| **npm Downloads (30d)** | 945 |
 | **Language** | JavaScript |
 | **Source** | [unity-mcp-server](https://github.com/AnkleBreaker-Studio/unity-mcp-server) |
-| **Scan Date** | 2026-10-02 |
+| **Scan Date** | 2026-10-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

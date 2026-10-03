@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.2.0-beta04` |
 | **Vendor** | janwilmake |
-| **Stars** | ⭐ 889 |
+| **Stars** | ⭐ 903 |
 | **npm Package** | `openapi-mcp-server` |
 | **npm Downloads (30d)** | 3.4k |
 | **Language** | TypeScript |

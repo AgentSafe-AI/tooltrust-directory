@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.69.0` |
 | **Vendor** | IvanMurzak |
-| **Stars** | ⭐ 2525 |
+| **Stars** | ⭐ 4376 |
 | **Language** | C# |
 | **Source** | [ivanmurzak-unity-mcp](https://github.com/IvanMurzak/Unity-MCP) |
 | **Scan Date** | 2026-06-22 |

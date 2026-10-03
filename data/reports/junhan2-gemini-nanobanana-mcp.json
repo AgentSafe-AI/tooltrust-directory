@@ -1,19 +1,23 @@
 {
-  "tool_id": "junhan2-gemini-nanobanana-mcp",
-  "version": "0.1.6",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:16:38.869851148Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/Junhan2/gemini-nanobanana-mcp",
   "category": "Developer Tools",
-  "vendor": "Junhan2",
-  "stars": 11,
-  "npm_package": "gemini-nanobanana-mcp",
-  "npm_downloads_monthly": 195,
-  "license": "MIT",
-  "language": "JavaScript",
+  "contributors": 1,
   "description": "MCP server for Google Gemini 2.5 Flash Image preview (text-to-image, editing, composition)",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 411,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -80,82 +84,22 @@
       "tool_name": "style_transfer"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 8
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 5,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 5,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 411,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "compose_images",
-    "edit_image",
-    "generate_image",
-    "style_transfer"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "generate_image",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (saveToFilePath)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "edit_image",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (saveToFilePath)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "compose_images",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (saveToFilePath)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "style_transfer",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (saveToFilePath)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "JavaScript",
+  "last_commit_at": "2025-09-09T03:32:45Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 195,
+  "npm_package": "gemini-nanobanana-mcp",
+  "risk_score": 0,
+  "scan_date": "2026-06-22T03:16:38.869851148Z",
   "scan_history": [
     {
       "scan_date": "2026-04-20T02:18:03Z",
@@ -289,5 +233,69 @@
       "risk_score": 0,
       "version": "0.1.6"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/Junhan2/gemini-nanobanana-mcp",
+  "stars": 11,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 8
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "generate_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (saveToFilePath)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "edit_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (saveToFilePath)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "compose_images",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (saveToFilePath)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "style_transfer",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (saveToFilePath)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "junhan2-gemini-nanobanana-mcp",
+  "tool_names": [
+    "compose_images",
+    "edit_image",
+    "generate_image",
+    "style_transfer"
+  ],
+  "vendor": "Junhan2",
+  "version": "0.1.6"
 }

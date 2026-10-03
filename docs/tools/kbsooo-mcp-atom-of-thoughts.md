@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | kbsooo |
-| **Stars** | ⭐ 56 |
+| **Stars** | ⭐ 62 |
 | **npm Package** | `atom-of-thoughts` |
 | **Language** | JavaScript |
 | **Source** | [kbsooo-mcp-atom-of-thoughts](https://github.com/kbsooo/MCP_Atom_of_Thoughts) |

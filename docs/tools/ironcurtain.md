@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.0` |
 | **Vendor** | provos |
-| **Stars** | ⭐ 550 |
+| **Stars** | ⭐ 613 |
 | **npm Package** | `@provos/ironcurtain` |
 | **npm Downloads (30d)** | 541 |
 | **Language** | TypeScript |

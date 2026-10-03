@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `5.2.0` |
 | **Vendor** | kucherenko |
-| **Stars** | ⭐ 6210 |
+| **Stars** | ⭐ 6328 |
 | **npm Package** | `jscpd-repo` |
 | **Language** | Rust |
 | **Source** | [jscpd](https://github.com/kucherenko/jscpd) |

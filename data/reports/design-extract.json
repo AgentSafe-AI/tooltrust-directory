@@ -3,14 +3,14 @@
   "version": "13.3.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-02T02:48:21.040515438Z",
+  "scan_date": "2026-10-03T03:09:24.716941659Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Manavarya09/design-extract",
   "category": "Other",
   "vendor": "Manavarya09",
-  "stars": 4162,
+  "stars": 4159,
   "npm_package": "designlang",
-  "npm_downloads_monthly": 3639,
+  "npm_downloads_monthly": 3702,
   "license": "MIT",
   "language": "HTML",
   "description": "Extract any website's complete design system with one command. DTCG tokens, semantic+primitive+composite, MCP server for Claude Code/Cursor/Windsurf, multi-platform emitters (iOS SwiftUI, Android Compose, Flutter, WordPress), Tailwind v4, Figma variables, shadcn/ui, CSS health audit, WCAG remediation, Chrome extension. MIT, Playwright, Node 20+.",
@@ -19,10 +19,18 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v13.3.2: 9 tool(s) added, 6 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v13.3.2: 6 tool(s) added, 9 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "get-design-system-docs",
+          "get-review-rules",
+          "get-ui-principle",
+          "resolve-design-system",
+          "resolve-icon-library",
+          "search-icons"
+        ],
+        "removed": [
           "get_color_palette",
           "get_component_code",
           "get_krds_resources",
@@ -33,14 +41,6 @@
           "search_krds_components",
           "validate_krds_compliance"
         ],
-        "removed": [
-          "get-design-system-docs",
-          "get-review-rules",
-          "get-ui-principle",
-          "resolve-design-system",
-          "resolve-icon-library",
-          "search-icons"
-        ],
         "version": "13.3.2"
       }
     },
@@ -48,17 +48,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_krds_components"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_krds_components"
+      "tool_name": "resolve-design-system"
     },
     {
       "id": "AS-014",
@@ -66,7 +58,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_krds_components"
+      "tool_name": "resolve-design-system"
     },
     {
       "id": "AS-014",
@@ -74,7 +66,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_component_code"
+      "tool_name": "get-design-system-docs"
     },
     {
       "id": "AS-014",
@@ -82,7 +74,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_component_categories"
+      "tool_name": "get-ui-principle"
     },
     {
       "id": "AS-014",
@@ -90,7 +82,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_all_components"
+      "tool_name": "resolve-icon-library"
     },
     {
       "id": "AS-002",
@@ -98,7 +90,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_design_tokens"
+      "tool_name": "search-icons"
     },
     {
       "id": "AS-011",
@@ -106,7 +98,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_design_tokens"
+      "tool_name": "search-icons"
     },
     {
       "id": "AS-014",
@@ -114,7 +106,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_design_tokens"
+      "tool_name": "search-icons"
     },
     {
       "id": "AS-014",
@@ -122,55 +114,59 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_color_palette"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_token_stats"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_krds_compliance"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_krds_resources"
+      "tool_name": "get-review-rules"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 11
+    "low": 1,
+    "info": 8
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "get_color_palette",
-    "get_component_code",
-    "get_krds_resources",
-    "get_token_stats",
-    "list_all_components",
-    "list_component_categories",
-    "search_design_tokens",
-    "search_krds_components",
-    "validate_krds_compliance"
+    "get-design-system-docs",
+    "get-review-rules",
+    "get-ui-principle",
+    "resolve-design-system",
+    "resolve-icon-library",
+    "search-icons"
   ],
   "tool_contexts": [
     {
-      "tool_name": "search_krds_components",
+      "tool_name": "resolve-design-system",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-design-system-docs",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-ui-principle",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "resolve-icon-library",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search-icons",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -180,59 +176,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_component_code",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_component_categories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "list_all_components",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search_design_tokens",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_color_palette",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_token_stats",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "validate_krds_compliance",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_krds_resources",
+      "tool_name": "get-review-rules",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -676,6 +620,12 @@
       "scan_date": "2026-10-01T13:02:03Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "13.3.2"
+    },
+    {
+      "scan_date": "2026-10-02T02:48:21Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "13.3.2"
     }
   ]

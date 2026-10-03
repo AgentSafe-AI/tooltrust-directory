@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `1.40.8` |
+| **Version** | `1.40.9` |
 | **Vendor** | southleft |
-| **Stars** | ⭐ 2422 |
+| **Stars** | ⭐ 2430 |
 | **npm Package** | `figma-console-mcp` |
-| **npm Downloads (30d)** | 98.5k |
+| **npm Downloads (30d)** | 107.0k |
 | **Language** | TypeScript |
 | **Source** | [figma-console-mcp](https://github.com/southleft/figma-console-mcp) |
-| **Scan Date** | 2026-10-02 |
+| **Scan Date** | 2026-10-03 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | joshuayoes |
-| **Stars** | ⭐ 2175 |
+| **Stars** | ⭐ 2186 |
 | **npm Package** | `ios-simulator-mcp` |
 | **npm Downloads (30d)** | 24.2k |
 | **Language** | JavaScript |
