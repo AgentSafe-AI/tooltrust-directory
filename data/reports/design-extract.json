@@ -3,12 +3,12 @@
   "version": "13.3.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-03T03:09:24.716941659Z",
+  "scan_date": "2026-10-04T03:38:45.293611023Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Manavarya09/design-extract",
   "category": "Other",
   "vendor": "Manavarya09",
-  "stars": 4159,
+  "stars": 4165,
   "npm_package": "designlang",
   "npm_downloads_monthly": 3702,
   "license": "MIT",
@@ -19,38 +19,19 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v13.3.2: 6 tool(s) added, 9 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v13.3.2: 3 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "get-design-system-docs",
-          "get-review-rules",
-          "get-ui-principle",
-          "resolve-design-system",
-          "resolve-icon-library",
-          "search-icons"
+          "check-comprehension",
+          "extract-design-system",
+          "find-design"
         ],
         "removed": [
-          "get_color_palette",
-          "get_component_code",
-          "get_krds_resources",
-          "get_token_stats",
-          "list_all_components",
-          "list_component_categories",
-          "search_design_tokens",
-          "search_krds_components",
-          "validate_krds_compliance"
+          "resolve-design-system"
         ],
         "version": "13.3.2"
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "resolve-design-system"
     },
     {
       "id": "AS-014",
@@ -58,7 +39,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "resolve-design-system"
+      "tool_name": "find-design"
     },
     {
       "id": "AS-014",
@@ -115,27 +96,69 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get-review-rules"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check-comprehension"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "check-comprehension"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check-comprehension"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"maxTokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "extract-design-system"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "extract-design-system"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 1,
-    "info": 8
+    "low": 2,
+    "info": 11
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "check-comprehension",
+    "extract-design-system",
+    "find-design",
     "get-design-system-docs",
     "get-review-rules",
     "get-ui-principle",
-    "resolve-design-system",
     "resolve-icon-library",
     "search-icons"
   ],
   "tool_contexts": [
     {
-      "tool_name": "resolve-design-system",
+      "tool_name": "find-design",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -179,6 +202,27 @@
       "tool_name": "get-review-rules",
       "action": "ALLOW",
       "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check-comprehension",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "extract-design-system",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (maxTokens)",
+        "hardcoded domain: globals.css"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -624,6 +668,12 @@
     },
     {
       "scan_date": "2026-10-02T02:48:21Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "13.3.2"
+    },
+    {
+      "scan_date": "2026-10-03T03:09:24Z",
       "grade": "B",
       "risk_score": 15,
       "version": "13.3.2"

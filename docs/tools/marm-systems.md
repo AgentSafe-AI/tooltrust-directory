@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.18.0` |
 | **Vendor** | Lyellr88 |
-| **Stars** | ⭐ 305 |
+| **Stars** | ⭐ 415 |
 | **Language** | Python |
 | **Source** | [marm-systems](https://github.com/Lyellr88/MARM-Systems) |
 | **Scan Date** | 2026-07-10 |

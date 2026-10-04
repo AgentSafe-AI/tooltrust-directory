@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `4.17.1` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2296 |
+| **Stars** | ⭐ 2340 |
 | **npm Package** | `kordoc` |
 | **npm Downloads (30d)** | 65.9k |
 | **Language** | TypeScript |

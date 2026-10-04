@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.1` |
 | **Vendor** | mario-andreschak |
-| **Stars** | ⭐ 129 |
+| **Stars** | ⭐ 202 |
 | **npm Package** | `mcp-abap-abap-adt-api` |
 | **Language** | TypeScript |
 | **Source** | [mario-andreschak-mcp-abap-abap-adt-api](https://github.com/mario-andreschak/mcp-abap-abap-adt-api) |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `9.20` |
 | **Vendor** | firerpa |
-| **Stars** | ⭐ 7671 |
+| **Stars** | ⭐ 8525 |
 | **Language** | Python |
 | **Source** | [lamda](https://github.com/firerpa/lamda) |
 | **Scan Date** | 2026-03-18 |

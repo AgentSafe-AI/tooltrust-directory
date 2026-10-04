@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.1` |
 | **Vendor** | jinzcdev |
-| **Stars** | ⭐ 211 |
+| **Stars** | ⭐ 289 |
 | **npm Package** | `@jinzcdev/markmap-mcp-server` |
 | **npm Downloads (30d)** | 5.1k |
 | **Language** | TypeScript |

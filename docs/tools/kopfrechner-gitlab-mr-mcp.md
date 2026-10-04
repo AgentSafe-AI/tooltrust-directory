@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.0` |
 | **Vendor** | kopfrechner |
-| **Stars** | ⭐ 89 |
+| **Stars** | ⭐ 94 |
 | **npm Package** | `gitlab-mr-mcp` |
 | **npm Downloads (30d)** | 194 |
 | **Language** | JavaScript |

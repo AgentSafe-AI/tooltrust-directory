@@ -1,19 +1,51 @@
 {
-  "tool_id": "linxule-mcp-music-studio",
-  "version": "0.4.3",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-07-02T02:42:50.116617184Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/linxule/mcp-music-studio",
   "category": "Developer Tools",
-  "vendor": "linxule",
-  "stars": 56,
-  "npm_package": "mcp-music-studio",
-  "npm_downloads_monthly": 1010,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 3,
   "description": "Two-mode MCP music studio: scored composition (ABC notation) and live performance (Strudel). Interactive ext-apps UI with sheet music rendering, 30+ instruments, style presets, and live coding REPL.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 118,
+      "snippet": "new McpServer(",
+      "file": "server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 227,
+      "snippet": ".registerTool(",
+      "file": "server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "worker/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 147,
+      "snippet": "new McpServer(",
+      "file": "worker/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 204,
+      "snippet": ".registerTool(",
+      "file": "worker/src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-014",
@@ -72,121 +104,22 @@
       "tool_name": "search-music-docs"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 6
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 9,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 118,
-      "snippet": "new McpServer(",
-      "file": "server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 227,
-      "snippet": ".registerTool(",
-      "file": "server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 13,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "worker/src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 147,
-      "snippet": "new McpServer(",
-      "file": "worker/src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 204,
-      "snippet": ".registerTool(",
-      "file": "worker/src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "get-music-guide",
-    "get-strudel-guide",
-    "play-live-pattern",
-    "play-sheet-music",
-    "search-music-docs"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "play-sheet-music",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-music-guide",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "play-live-pattern",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (autoplay)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-strudel-guide",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search-music-docs",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: strudel.cc"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-10-03T13:38:53Z",
+  "last_release_at": "2026-10-03T13:49:40Z",
+  "latest_release_name": "0.11.0 — controls the AI draws",
+  "latest_release_tag": "v0.11.0",
+  "latest_release_url": "https://github.com/linxule/mcp-music-studio/releases/tag/v0.11.0",
+  "latest_release_version": "v0.11.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 1010,
+  "npm_package": "mcp-music-studio",
+  "risk_score": 2,
+  "scan_date": "2026-07-02T02:42:50.116617184Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:43:22Z",
@@ -536,5 +469,80 @@
       "risk_score": 2,
       "version": "0.4.3"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/linxule/mcp-music-studio",
+  "stars": 73,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 6
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "play-sheet-music",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-music-guide",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "play-live-pattern",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoplay)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-strudel-guide",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search-music-docs",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: strudel.cc"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "linxule-mcp-music-studio",
+  "tool_names": [
+    "get-music-guide",
+    "get-strudel-guide",
+    "play-live-pattern",
+    "play-sheet-music",
+    "search-music-docs"
+  ],
+  "vendor": "linxule",
+  "version": "0.4.3"
 }

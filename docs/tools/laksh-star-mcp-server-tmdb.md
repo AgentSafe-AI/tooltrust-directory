@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | Laksh-star |
-| **Stars** | ⭐ 67 |
+| **Stars** | ⭐ 76 |
 | **npm Package** | `mcp-server-tmdb` |
 | **npm Downloads (30d)** | 44 |
 | **Language** | JavaScript |

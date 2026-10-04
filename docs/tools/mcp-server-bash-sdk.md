@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 515 |
 | **Language** | Shell |
 | **Source** | [mcp-server-bash-sdk](https://github.com/muthuishere/mcp-server-bash-sdk) |
-| **Scan Date** | 2026-10-03 |
+| **Scan Date** | 2026-10-04 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

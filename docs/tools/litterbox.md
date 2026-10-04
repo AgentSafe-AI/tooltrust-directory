@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `5.0.0` |
 | **Vendor** | BlackSnufkin |
-| **Stars** | ⭐ 1413 |
+| **Stars** | ⭐ 1543 |
 | **Language** | YARA |
 | **Source** | [litterbox](https://github.com/BlackSnufkin/LitterBox) |
 | **Scan Date** | 2026-06-22 |
