@@ -1,19 +1,23 @@
 {
-  "tool_id": "mcp-server-circleci",
-  "version": "0.20.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-10-04T03:43:37.131790893Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/CircleCI-Public/mcp-server-circleci",
   "category": "Developer Tools",
-  "vendor": "CircleCI-Public",
-  "stars": 93,
-  "npm_package": "@circleci/mcp-server-circleci",
-  "npm_downloads_monthly": 127775,
-  "license": "NOASSERTION",
-  "language": "TypeScript",
+  "contributors": 25,
   "description": "[DEPRECATED] This package is no longer maintained. Migrate to CircleCI's hosted MCP server or the CircleCI CLI MCP. See https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 19,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -344,231 +348,22 @@
       "tool_name": "list_artifacts"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 13,
-    "info": 26
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 63,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 19,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "config_helper",
-    "download_usage_api_data",
-    "find_flaky_tests",
-    "find_underused_resource_classes",
-    "get_build_failure_logs",
-    "get_job_test_results",
-    "get_latest_pipeline_status",
-    "list_artifacts",
-    "list_component_versions",
-    "list_followed_projects",
-    "rerun_workflow",
-    "run_pipeline",
-    "run_rollback_pipeline"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get_build_failure_logs",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "find_flaky_tests",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_latest_pipeline_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_job_test_results",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "config_helper",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "run_pipeline",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_followed_projects",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "rerun_workflow",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "download_usage_api_data",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: circleci.com",
-        "hardcoded domain: process.cwd"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "find_underused_resource_classes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "run_rollback_pipeline",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_component_versions",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_artifacts",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: app.circleci.com",
-        "hardcoded domain: circleci.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-08-06T17:41:41Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "license": "NOASSERTION",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 124701,
+  "npm_package": "@circleci/mcp-server-circleci",
+  "risk_score": 17,
+  "scan_date": "2026-10-05T03:23:42.175554268Z",
   "scan_history": [
     {
       "scan_date": "2026-06-15T23:55:35Z",
@@ -1205,6 +1000,225 @@
       "grade": "B",
       "risk_score": 17,
       "version": "0.20.0"
+    },
+    {
+      "scan_date": "2026-10-04T03:43:37Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "0.20.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/CircleCI-Public/mcp-server-circleci",
+  "stars": 93,
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 0,
+    "low": 13,
+    "info": 26
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "get_build_failure_logs",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "find_flaky_tests",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_latest_pipeline_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_job_test_results",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "config_helper",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "run_pipeline",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_followed_projects",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "rerun_workflow",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "download_usage_api_data",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com",
+        "hardcoded domain: process.cwd"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "find_underused_resource_classes",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "run_rollback_pipeline",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_component_versions",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_artifacts",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: app.circleci.com",
+        "hardcoded domain: circleci.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "mcp-server-circleci",
+  "tool_names": [
+    "config_helper",
+    "download_usage_api_data",
+    "find_flaky_tests",
+    "find_underused_resource_classes",
+    "get_build_failure_logs",
+    "get_job_test_results",
+    "get_latest_pipeline_status",
+    "list_artifacts",
+    "list_component_versions",
+    "list_followed_projects",
+    "rerun_workflow",
+    "run_pipeline",
+    "run_rollback_pipeline"
+  ],
+  "vendor": "CircleCI-Public",
+  "version": "0.20.0"
 }

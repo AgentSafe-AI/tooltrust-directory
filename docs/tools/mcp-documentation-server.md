@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.14.0` |
 | **Vendor** | andrea9293 |
-| **Stars** | ⭐ 323 |
+| **Stars** | ⭐ 342 |
 | **npm Package** | `@andrea9293/mcp-documentation-server` |
 | **npm Downloads (30d)** | 804 |
 | **Language** | TypeScript |

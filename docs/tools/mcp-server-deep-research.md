@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `sha-640129a84d09` |
 | **Vendor** | reading-plus-ai |
-| **Stars** | ⭐ 209 |
+| **Stars** | ⭐ 215 |
 | **Language** | Python |
 | **Source** | [mcp-server-deep-research](https://github.com/reading-plus-ai/mcp-server-deep-research) |
 | **Scan Date** | 2026-06-22 |

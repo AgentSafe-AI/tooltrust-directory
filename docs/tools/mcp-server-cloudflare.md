@@ -8,10 +8,10 @@
 | **Vendor** | cloudflare |
 | **Stars** | ⭐ 4352 |
 | **npm Package** | `@cloudflare/mcp-server-cloudflare` |
-| **npm Downloads (30d)** | 7.2k |
+| **npm Downloads (30d)** | 7.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

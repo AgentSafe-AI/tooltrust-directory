@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.0` |
 | **Vendor** | willccbb |
-| **Stars** | ⭐ 124 |
+| **Stars** | ⭐ 127 |
 | **npm Package** | `mcp-test-client` |
 | **npm Downloads (30d)** | 5.3k |
 | **Language** | TypeScript |

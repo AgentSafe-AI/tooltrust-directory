@@ -1,27 +1,67 @@
 {
   "tool_id": "md2wechat-skill",
   "version": "3.8.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-10-04T03:38:39.403092946Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-05T03:18:26.521292692Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/geekjourneyx/md2wechat-skill",
   "category": "Developer Tools",
   "vendor": "geekjourneyx",
   "stars": 3687,
   "npm_package": "@geekjourneyx/md2wechat",
-  "npm_downloads_monthly": 1018,
+  "npm_downloads_monthly": 989,
   "license": "NOASSERTION",
   "language": "Go",
   "description": "面向 AI Agent 的微信公众号创作与发布 CLI：Markdown 排版、AI 配图、预览与草稿创建；支持由浏览器 Agent 保存知乎、CSDN、头条未发布草稿。",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.8.0: 4 tool(s) added, 6 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_skill",
+          "get_skill_content",
+          "get_skill_file",
+          "list_library"
+        ],
+        "removed": [
+          "cron_explain",
+          "diff_texts",
+          "json_validate",
+          "lint_skill",
+          "packaging_check",
+          "regex_test"
+        ],
+        "version": "3.8.0"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_skill"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_skill_content"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "lint_skill"
+      "tool_name": "get_skill_file"
     },
     {
       "id": "AS-014",
@@ -29,15 +69,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lint_skill"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "packaging_check"
+      "tool_name": "get_skill_file"
     },
     {
       "id": "AS-014",
@@ -45,60 +77,43 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "packaging_check"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "regex_test"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "json_validate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "diff_texts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "cron_explain"
+      "tool_name": "list_library"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 8
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "cron_explain",
-    "diff_texts",
-    "json_validate",
-    "lint_skill",
-    "packaging_check",
-    "regex_test"
+    "get_skill",
+    "get_skill_content",
+    "get_skill_file",
+    "list_library"
   ],
   "tool_contexts": [
     {
-      "tool_name": "lint_skill",
+      "tool_name": "get_skill",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_skill_content",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: SKILL.md"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_skill_file",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -106,53 +121,21 @@
         "reads_files"
       ],
       "destinations": [
-        "hardcoded domain: SKILL.md"
+        "hardcoded domain: REFERENCE.md",
+        "hardcoded domain: SKILL.md",
+        "hardcoded domain: agentskills.io",
+        "hardcoded domain: extract.py"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "packaging_check",
+      "tool_name": "list_library",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "executes_commands"
       ],
-      "destinations": [
-        "hardcoded domain: SKILL.md",
-        "hardcoded domain: examples.md"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "regex_test",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "json_validate",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "diff_texts",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: SKILL.md"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "cron_explain",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -796,6 +779,12 @@
     },
     {
       "scan_date": "2026-10-03T03:09:25Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "3.8.0"
+    },
+    {
+      "scan_date": "2026-10-04T03:38:39Z",
       "grade": "A",
       "risk_score": 0,
       "version": "3.8.0"

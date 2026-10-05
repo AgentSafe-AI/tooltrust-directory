@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.2.1` |
 | **Vendor** | doggybee |
-| **Stars** | ⭐ 139 |
+| **Stars** | ⭐ 145 |
 | **npm Package** | `@mcpfun/mcp-server-ccxt` |
 | **npm Downloads (30d)** | 734 |
 | **Language** | TypeScript |

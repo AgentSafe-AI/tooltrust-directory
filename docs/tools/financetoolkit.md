@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.2.1` |
 | **Vendor** | JerBouma |
-| **Stars** | ⭐ 5396 |
+| **Stars** | ⭐ 5401 |
 | **Language** | Python |
 | **Source** | [financetoolkit](https://github.com/JerBouma/FinanceToolkit) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 178 |
 | **Language** | Python |
 | **Source** | [serpapi-mcp](https://github.com/serpapi/serpapi-mcp) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

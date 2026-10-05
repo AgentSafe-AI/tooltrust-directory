@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `show` |
 | **Vendor** | coddingtonbear |
-| **Stars** | ⭐ 2985 |
+| **Stars** | ⭐ 2989 |
 | **npm Package** | `obsidian-local-rest-api` |
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [obsidian-local-rest-api](https://github.com/coddingtonbear/obsidian-local-rest-api) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

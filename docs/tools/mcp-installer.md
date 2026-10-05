@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.0` |
 | **Vendor** | anaisbetts |
-| **Stars** | ⭐ 1529 |
+| **Stars** | ⭐ 1531 |
 | **npm Package** | `@anaisbetts/mcp-installer` |
 | **npm Downloads (30d)** | 863 |
 | **Language** | JavaScript |

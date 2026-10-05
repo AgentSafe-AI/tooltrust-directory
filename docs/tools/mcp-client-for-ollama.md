@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.33.3` |
 | **Vendor** | jonigl |
-| **Stars** | ⭐ 813 |
+| **Stars** | ⭐ 826 |
 | **Language** | Python |
 | **Source** | [mcp-client-for-ollama](https://github.com/jonigl/mcp-client-for-ollama) |
 | **Scan Date** | 2026-08-28 |

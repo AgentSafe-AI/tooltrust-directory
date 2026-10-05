@@ -6,7 +6,7 @@
 | **Risk Score** | 0 |
 | **Version** | `push` |
 | **Vendor** | yangkyeongmo |
-| **Stars** | ⭐ 166 |
+| **Stars** | ⭐ 178 |
 | **Language** | Python |
 | **Source** | [mcp-server-apache-airflow](https://github.com/yangkyeongmo/mcp-server-apache-airflow) |
 | **Scan Date** | 2026-06-15 |

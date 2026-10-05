@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [delx-delx-mcp](https://smithery.ai/server/delx/delx-mcp) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

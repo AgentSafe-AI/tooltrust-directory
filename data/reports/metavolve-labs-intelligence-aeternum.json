@@ -1,21 +1,83 @@
 {
   "tool_id": "metavolve-labs-intelligence-aeternum",
   "version": "smithery",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-10-04T03:45:43.837920538Z",
+  "grade": "B",
+  "risk_score": 17,
+  "scan_date": "2026-10-05T03:25:45.221468022Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://smithery.ai/server/metavolve-labs/intelligence-aeternum",
   "vendor": "Smithery",
   "description": "Intelligence Aeternum — AI training dataset marketplace with 100,000+ museum artwork images with 4K token .json metadata. Search, preview, and purchase curated art datasets with provenance tracking. Powered by x402 USDC micropayments.   ",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet_trust_safety"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vsmithery: 12 tool(s) added, 44 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "ask_intelligence_rag",
+          "batch_optimize_codon",
+          "get_alpha_gap",
+          "get_dossier_delta",
+          "get_model_record",
+          "list_dossiers",
+          "optimize_codon",
+          "query_knowledge_graph",
+          "read_dossier",
+          "search_dossiers",
+          "search_intelligence_matrix",
+          "verify_commitment"
+        ],
+        "removed": [
+          "address_evidence_pack",
+          "address_intelligence",
+          "address_risk",
+          "batch_intelligence",
+          "batch_risk_signals",
+          "batch_summary",
+          "batch_trust_safety",
+          "bitcoin_price",
+          "block_detail",
+          "chain_awakenings",
+          "dormancy_flushes",
+          "entity_categories",
+          "entity_list",
+          "entity_lookup",
+          "entity_recent_activity",
+          "fees_recommended",
+          "mempool_stats",
+          "mempool_stress",
+          "mempool_tx",
+          "mining_pool_info",
+          "network_intelligence",
+          "onchain_stats",
+          "op_return_decode",
+          "pool_detail",
+          "pool_list",
+          "pulse_consolidations",
+          "pulse_dormant",
+          "pulse_summary",
+          "pulse_whales",
+          "risk_check",
+          "risk_check_batch",
+          "submit_feedback",
+          "timestamp_hash",
+          "timestamp_quote",
+          "tx_broadcast",
+          "tx_status",
+          "tx_verify",
+          "verify_timestamp",
+          "wallet_contributors",
+          "wallet_detail",
+          "wallet_flow_graph",
+          "wallet_summary",
+          "wallet_trust_safety",
+          "whale_alerts"
+        ],
+        "version": "smithery"
+      }
     },
     {
       "id": "AS-014",
@@ -23,15 +85,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "address_risk"
+      "tool_name": "list_dossiers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "read_dossier"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "batch_trust_safety"
+      "tool_name": "search_intelligence_matrix"
+    },
+    {
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"search_intelligence_matrix\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "search_intelligence_matrix"
     },
     {
       "id": "AS-011",
@@ -39,7 +117,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "batch_trust_safety"
+      "tool_name": "search_intelligence_matrix"
     },
     {
       "id": "AS-014",
@@ -47,111 +125,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "batch_trust_safety"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "batch_summary"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "batch_risk_signals"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "risk_check"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "risk_check_batch"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "address_evidence_pack"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "batch_intelligence"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "wallet_flow_graph"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet_flow_graph"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet_summary"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet_detail"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wallet_contributors"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "address_intelligence"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "bitcoin_price"
+      "tool_name": "search_intelligence_matrix"
     },
     {
       "id": "AS-002",
@@ -159,7 +133,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "onchain_stats"
+      "tool_name": "query_knowledge_graph"
     },
     {
       "id": "AS-011",
@@ -167,7 +141,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "onchain_stats"
+      "tool_name": "query_knowledge_graph"
     },
     {
       "id": "AS-014",
@@ -175,7 +149,79 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "onchain_stats"
+      "tool_name": "query_knowledge_graph"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_dossier_delta"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ask_intelligence_rag"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "batch_optimize_codon"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "batch_optimize_codon"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "batch_optimize_codon"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "batch_optimize_codon"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "optimize_codon"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "optimize_codon"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "optimize_codon"
     },
     {
       "id": "AS-002",
@@ -183,7 +229,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "network_intelligence"
+      "tool_name": "get_model_record"
     },
     {
       "id": "AS-011",
@@ -191,7 +237,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "network_intelligence"
+      "tool_name": "get_model_record"
     },
     {
       "id": "AS-014",
@@ -199,231 +245,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "network_intelligence"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "fees_recommended"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "mempool_stats"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "mempool_stress"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "chain_awakenings"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "mempool_tx"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "block_detail"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "entity_list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "entity_lookup"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "entity_recent_activity"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "entity_categories"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "whale_alerts"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "whale_alerts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "whale_alerts"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pulse_whales"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pulse_dormant"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pulse_consolidations"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pulse_summary"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "dormancy_flushes"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pool_list"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "pool_detail"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "mining_pool_info"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tx_status"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "op_return_decode"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tx_broadcast"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "tx_verify"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "timestamp_hash"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "timestamp_quote"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "verify_timestamp"
+      "tool_name": "get_model_record"
     },
     {
       "id": "AS-002",
@@ -431,15 +253,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "submit_feedback"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "submit_feedback"
+      "tool_name": "search_dossiers"
     },
     {
       "id": "AS-011",
@@ -447,7 +261,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "submit_feedback"
+      "tool_name": "search_dossiers"
     },
     {
       "id": "AS-014",
@@ -455,83 +269,75 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "submit_feedback"
+      "tool_name": "search_dossiers"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "verify_commitment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_alpha_gap"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 2,
     "medium": 0,
     "low": 6,
-    "info": 50
+    "info": 19
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "address_evidence_pack",
-    "address_intelligence",
-    "address_risk",
-    "batch_intelligence",
-    "batch_risk_signals",
-    "batch_summary",
-    "batch_trust_safety",
-    "bitcoin_price",
-    "block_detail",
-    "chain_awakenings",
-    "dormancy_flushes",
-    "entity_categories",
-    "entity_list",
-    "entity_lookup",
-    "entity_recent_activity",
-    "fees_recommended",
-    "mempool_stats",
-    "mempool_stress",
-    "mempool_tx",
-    "mining_pool_info",
-    "network_intelligence",
-    "onchain_stats",
-    "op_return_decode",
-    "pool_detail",
-    "pool_list",
-    "pulse_consolidations",
-    "pulse_dormant",
-    "pulse_summary",
-    "pulse_whales",
-    "risk_check",
-    "risk_check_batch",
-    "submit_feedback",
-    "timestamp_hash",
-    "timestamp_quote",
-    "tx_broadcast",
-    "tx_status",
-    "tx_verify",
-    "verify_timestamp",
-    "wallet_contributors",
-    "wallet_detail",
-    "wallet_flow_graph",
-    "wallet_summary",
-    "wallet_trust_safety",
-    "whale_alerts"
+    "ask_intelligence_rag",
+    "batch_optimize_codon",
+    "get_alpha_gap",
+    "get_dossier_delta",
+    "get_model_record",
+    "list_dossiers",
+    "optimize_codon",
+    "query_knowledge_graph",
+    "read_dossier",
+    "search_dossiers",
+    "search_intelligence_matrix",
+    "verify_commitment"
   ],
   "tool_contexts": [
     {
-      "tool_name": "wallet_trust_safety",
+      "tool_name": "list_dossiers",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "read_dossier",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search_intelligence_matrix",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "address_risk",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "batch_trust_safety",
+      "tool_name": "query_knowledge_graph",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -541,217 +347,48 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "batch_summary",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "batch_risk_signals",
+      "tool_name": "get_dossier_delta",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "risk_check",
+      "tool_name": "ask_intelligence_rag",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "risk_check_batch",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "address_evidence_pack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "batch_intelligence",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "wallet_flow_graph",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "wallet_summary",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "wallet_detail",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "wallet_contributors",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "address_intelligence",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "bitcoin_price",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "onchain_stats",
+      "tool_name": "batch_optimize_codon",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: satoshidata.ai"
+        "dynamic URL input (host)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "network_intelligence",
+      "tool_name": "optimize_codon",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: satoshidata.ai"
+        "dynamic URL input (host)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "fees_recommended",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "mempool_stats",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "mempool_stress",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (history_hours)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "chain_awakenings",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "mempool_tx",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "block_detail",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "entity_list",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "entity_lookup",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "entity_recent_activity",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "entity_categories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "whale_alerts",
+      "tool_name": "get_model_record",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -761,148 +398,26 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "pulse_whales",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pulse_dormant",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pulse_consolidations",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pulse_summary",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "dormancy_flushes",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pool_list",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pool_detail",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "mining_pool_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "tx_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "op_return_decode",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "tx_broadcast",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "tx_verify",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "timestamp_hash",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: satoshidata.ai"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "timestamp_quote",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "verify_timestamp",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "submit_feedback",
+      "tool_name": "search_dossiers",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
-      "destinations": [
-        "dynamic URL input (endpoint)",
-        "dynamic URL input (source_url)"
-      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "verify_commitment",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_alpha_gap",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1648,6 +1163,12 @@
     },
     {
       "scan_date": "2026-10-03T03:15:12Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-10-04T03:45:43Z",
       "grade": "A",
       "risk_score": 4,
       "version": "smithery"

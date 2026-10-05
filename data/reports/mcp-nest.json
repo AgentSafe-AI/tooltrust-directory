@@ -1,26 +1,47 @@
 {
-  "tool_id": "mcp-nest",
-  "version": "2.0.7",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-04T03:41:19.480996055Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/rekog-labs/MCP-Nest",
   "category": "Developer Tools",
-  "vendor": "rekog-labs",
-  "stars": 712,
-  "npm_package": "mcp-nest-workspace",
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 38,
   "description": "A NestJS module to effortlessly create Model Context Protocol (MCP) servers for exposing AI tools, resources, and prompts.",
   "findings": [
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "channels_list_on_slack"
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2.0.7: 17 tool(s) added, 9 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_approval",
+          "get_dataset",
+          "get_next_actions",
+          "get_readiness",
+          "get_receipts",
+          "get_run",
+          "get_tool_insights",
+          "get_usage",
+          "list_approvals",
+          "list_contracts",
+          "list_datasets",
+          "list_drift_alerts",
+          "list_events",
+          "list_review_items",
+          "list_scenarios",
+          "list_tools",
+          "list_value_sets"
+        ],
+        "removed": [
+          "channels_list_on_slack",
+          "get_channel_history_on_slack",
+          "get_channel_messages_on_slack",
+          "get_mentions_on_slack",
+          "get_thread_replies_on_slack",
+          "get_user_profile_on_slack",
+          "get_users_on_slack",
+          "reply_to_thread_on_slack",
+          "send_message_on_slack"
+        ],
+        "version": "2.0.7"
+      }
     },
     {
       "id": "AS-014",
@@ -28,7 +49,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "send_message_on_slack"
+      "tool_name": "list_datasets"
     },
     {
       "id": "AS-014",
@@ -36,7 +57,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "reply_to_thread_on_slack"
+      "tool_name": "get_dataset"
     },
     {
       "id": "AS-014",
@@ -44,7 +65,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_channel_history_on_slack"
+      "tool_name": "list_contracts"
     },
     {
       "id": "AS-014",
@@ -52,7 +73,39 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_thread_replies_on_slack"
+      "tool_name": "get_readiness"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_review_items"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_receipts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_value_sets"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_run"
     },
     {
       "id": "AS-002",
@@ -60,7 +113,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_users_on_slack"
+      "tool_name": "list_approvals"
     },
     {
       "id": "AS-014",
@@ -68,7 +121,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_users_on_slack"
+      "tool_name": "list_approvals"
     },
     {
       "id": "AS-002",
@@ -76,7 +129,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_user_profile_on_slack"
+      "tool_name": "get_approval"
     },
     {
       "id": "AS-014",
@@ -84,15 +137,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_user_profile_on_slack"
+      "tool_name": "get_approval"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_channel_messages_on_slack"
+      "tool_name": "list_tools"
     },
     {
       "id": "AS-011",
@@ -100,7 +153,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_channel_messages_on_slack"
+      "tool_name": "list_tools"
     },
     {
       "id": "AS-014",
@@ -108,15 +161,63 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_channel_messages_on_slack"
+      "tool_name": "list_tools"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_scenarios"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_tool_insights"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_mentions_on_slack"
+      "tool_name": "list_drift_alerts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_drift_alerts"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_usage"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_next_actions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_events"
     },
     {
       "id": "AS-011",
@@ -124,7 +225,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_mentions_on_slack"
+      "tool_name": "list_events"
     },
     {
       "id": "AS-014",
@@ -132,105 +233,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_mentions_on_slack"
+      "tool_name": "list_events"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 13
-  },
+  "forks": 121,
+  "grade": "B",
+  "language": "TypeScript",
+  "last_commit_at": "2026-10-02T04:48:32Z",
+  "last_release_at": "2026-09-21T05:55:45Z",
+  "latest_release_name": "v2.0.7",
+  "latest_release_tag": "v2.0.7",
+  "latest_release_url": "https://github.com/rekog-labs/MCP-Nest/releases/tag/v2.0.7",
+  "latest_release_version": "v2.0.7",
+  "license": "MIT",
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "tool_names": [
-    "channels_list_on_slack",
-    "get_channel_history_on_slack",
-    "get_channel_messages_on_slack",
-    "get_mentions_on_slack",
-    "get_thread_replies_on_slack",
-    "get_user_profile_on_slack",
-    "get_users_on_slack",
-    "reply_to_thread_on_slack",
-    "send_message_on_slack"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "channels_list_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "send_message_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "reply_to_thread_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_channel_history_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_thread_replies_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_users_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_user_profile_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_channel_messages_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_mentions_on_slack",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "npm_package": "mcp-nest-workspace",
+  "risk_score": 15,
+  "scan_date": "2026-10-05T03:21:12.551730745Z",
   "scan_history": [
     {
       "scan_date": "2026-08-08T01:10:47Z",
@@ -495,6 +514,196 @@
       "grade": "A",
       "risk_score": 2,
       "version": "2.0.7"
+    },
+    {
+      "scan_date": "2026-10-04T03:41:19Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.0.7"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/rekog-labs/MCP-Nest",
+  "stars": 712,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 2,
+    "info": 22
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "list_datasets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_dataset",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_contracts",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_readiness",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_review_items",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_receipts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_value_sets",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_run",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_approvals",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_approval",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_tools",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_scenarios",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_tool_insights",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_drift_alerts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_usage",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_next_actions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "list_events",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: accuracy.dropped",
+        "hardcoded domain: approval.requested",
+        "hardcoded domain: credits.low",
+        "hardcoded domain: drift.alert",
+        "hardcoded domain: release.held",
+        "hardcoded domain: release.ready",
+        "hardcoded domain: review.opened",
+        "hardcoded domain: tool.failing"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "mcp-nest",
+  "tool_names": [
+    "get_approval",
+    "get_dataset",
+    "get_next_actions",
+    "get_readiness",
+    "get_receipts",
+    "get_run",
+    "get_tool_insights",
+    "get_usage",
+    "list_approvals",
+    "list_contracts",
+    "list_datasets",
+    "list_drift_alerts",
+    "list_events",
+    "list_review_items",
+    "list_scenarios",
+    "list_tools",
+    "list_value_sets"
+  ],
+  "vendor": "rekog-labs",
+  "version": "2.0.7"
 }

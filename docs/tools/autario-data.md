@@ -1,24 +1,28 @@
 # 🟢 autario-data
 
-> Access 2,300+ verified public datasets from World Bank, IMF, Eurostat, OECD, WHO, FRED, and more. Search, query, and publish data visualizations with real data.
+> autario is data app infrastructure: your tools and thousands of public datasets in one normalized layer, with the data apps that run on top of it. Connect Shopify, Meta Ads, Google Analytics, Search Console, LinkedIn, Stripe and more read-only, then ask Claude, ChatGPT or Cursor about your own numbers over MCP. No code, no export.
+
+## How it works
+1. Connect a service at https://autario.com/connectors. Each connector has its own page with the reports it reads.
+2. Add https://autario.com/mcp to your assistant.
+3. Ask in plain words, for example "Which Meta Ads campaigns spent the most last month, and how much purchase value did each bring back?"
 
 ## What you can do
-- **Search** across 2,300+ datasets by topic, category, or keyword
-- **Query** any dataset with filters, sorting, and field selection
-- **Get schema** and column statistics before querying
-- **Publish charts** with Plotly specs — Autario pulls real data, no hallucinated values
-- **Create datasets** and write your own data
+- Read your own connected data: ads, shop orders, analytics, search, social, email, CRM, finance
+- Search and query thousands of public datasets from World Bank, IMF, Eurostat, OECD, WHO, FRED and more
+- Run statistics on the server (correlation, regression, drivers, seasonality) instead of pasting tables into the chat
+- Publish charts built from real data, with the source shown
+- Build and publish your own data apps
 
-## Categories
-Finance, Trade, Technology, Health, Demographics, Energy, Environment, Infrastructure, E-Commerce
-
-## Setup
-No setup needed for reading data. For publishing charts, get free API keys at https://autario.com/account
+## Good to know
+- Every connector is read-only.
+- Public data needs no setup. Your own data uses OAuth sign-in or API keys from https://autario.com/account
 
 ## Links
-- npm: `npx autario-mcp`
+- Connectors: https://autario.com/connectors
 - Documentation: https://autario.com/documentation
-- API: https://autario.com/api/v1/public/datasets
+- Security: https://autario.com/security
+- npm: npx autario-mcp
 
 | Field | Value |
 |-------|-------|
@@ -27,7 +31,7 @@ No setup needed for reading data. For publishing charts, get free API keys at ht
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [autario-data](https://smithery.ai/server/autario/data) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

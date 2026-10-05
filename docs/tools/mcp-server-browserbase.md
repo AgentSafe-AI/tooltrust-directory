@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | browserbase |
-| **Stars** | ⭐ 3408 |
+| **Stars** | ⭐ 3410 |
 | **npm Package** | `@browserbasehq/mcp` |
 | **npm Downloads (30d)** | 28.5k |
 | **Language** | TypeScript |

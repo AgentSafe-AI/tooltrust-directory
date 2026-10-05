@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | executeautomation |
-| **Stars** | ⭐ 355 |
+| **Stars** | ⭐ 386 |
 | **npm Package** | `@executeautomation/database-server` |
 | **npm Downloads (30d)** | 3.7k |
 | **Language** | TypeScript |

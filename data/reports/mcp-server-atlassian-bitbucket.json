@@ -1,18 +1,23 @@
 {
-  "tool_id": "mcp-server-atlassian-bitbucket",
-  "version": "3.1.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:08:58.250804799Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/aashari/mcp-server-atlassian-bitbucket",
   "category": "Developer Tools",
-  "vendor": "aashari",
-  "stars": 156,
-  "npm_package": "@aashari/mcp-server-atlassian-bitbucket",
-  "npm_downloads_monthly": 12438,
-  "language": "TypeScript",
+  "contributors": 8,
   "description": "Node.js/TypeScript MCP server for Atlassian Bitbucket. Enables AI systems (LLMs) to interact with workspaces, repositories, and pull requests via tools (list, get, comment, search). Connects AI directly to version control workflows through the standard MCP interface.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 41,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -159,139 +164,21 @@
       "tool_name": "bb_clone"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 6,
-    "info": 12
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 62,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 41,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "bb_clone",
-    "bb_delete",
-    "bb_get",
-    "bb_patch",
-    "bb_post",
-    "bb_put"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "bb_get",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: developer.atlassian.com",
-        "hardcoded domain: jmespath.org",
-        "hardcoded domain: source.branch.name",
-        "hardcoded domain: values.state",
-        "hardcoded domain: values.title"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bb_post",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: developer.atlassian.com",
-        "hardcoded domain: jmespath.org",
-        "hardcoded domain: values.state",
-        "hardcoded domain: values.title"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bb_put",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: developer.atlassian.com",
-        "hardcoded domain: jmespath.org",
-        "hardcoded domain: values.state",
-        "hardcoded domain: values.title"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bb_patch",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: developer.atlassian.com",
-        "hardcoded domain: jmespath.org",
-        "hardcoded domain: values.state",
-        "hardcoded domain: values.title"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bb_delete",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: developer.atlassian.com",
-        "hardcoded domain: jmespath.org",
-        "hardcoded domain: values.state",
-        "hardcoded domain: values.title"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bb_clone",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-03-06T07:29:47Z",
+  "last_release_at": "2026-02-17T08:38:51Z",
+  "latest_release_name": "v3.1.0",
+  "latest_release_tag": "v3.1.0",
+  "latest_release_url": "https://github.com/aashari/mcp-server-atlassian-bitbucket/releases/tag/v3.1.0",
+  "latest_release_version": "v3.1.0",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 12438,
+  "npm_package": "@aashari/mcp-server-atlassian-bitbucket",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:08:58.250804799Z",
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:39:29Z",
@@ -833,5 +720,126 @@
       "risk_score": 2,
       "version": "3.1.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/aashari/mcp-server-atlassian-bitbucket",
+  "stars": 163,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 12
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "bb_get",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: source.branch.name",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bb_post",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bb_put",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bb_patch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bb_delete",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: developer.atlassian.com",
+        "hardcoded domain: jmespath.org",
+        "hardcoded domain: values.state",
+        "hardcoded domain: values.title"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bb_clone",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "mcp-server-atlassian-bitbucket",
+  "tool_names": [
+    "bb_clone",
+    "bb_delete",
+    "bb_get",
+    "bb_patch",
+    "bb_post",
+    "bb_put"
+  ],
+  "vendor": "aashari",
+  "version": "3.1.0"
 }

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.8.2` |
 | **Vendor** | mixelpixx |
-| **Stars** | ⭐ 2561 |
+| **Stars** | ⭐ 2569 |
 | **npm Package** | `kicad-mcp` |
-| **npm Downloads (30d)** | 234 |
+| **npm Downloads (30d)** | 231 |
 | **Language** | Python |
 | **Source** | [kicad-mcp-server](https://github.com/mixelpixx/KiCAD-MCP-Server) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

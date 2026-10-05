@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.2.0` |
 | **Vendor** | marcopesani |
-| **Stars** | ⭐ 155 |
+| **Stars** | ⭐ 169 |
 | **npm Package** | `serper-search-scrape-mcp-server` |
 | **npm Downloads (30d)** | 16.5k |
 | **Language** | TypeScript |

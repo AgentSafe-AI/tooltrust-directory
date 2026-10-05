@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.1` |
 | **Vendor** | gotoolkits |
-| **Stars** | ⭐ 58 |
+| **Stars** | ⭐ 62 |
 | **Language** | Go |
 | **Source** | [mcp-difyworkflow-server](https://github.com/gotoolkits/mcp-difyworkflow-server) |
 | **Scan Date** | 2026-06-22 |

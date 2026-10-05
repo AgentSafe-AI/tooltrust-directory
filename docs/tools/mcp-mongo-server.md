@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.2` |
 | **Vendor** | kiliczsh |
-| **Stars** | ⭐ 276 |
+| **Stars** | ⭐ 281 |
 | **Language** | TypeScript |
 | **Source** | [mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) |
 | **Scan Date** | 2026-03-18 |

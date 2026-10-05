@@ -8,12 +8,12 @@
 | **Risk Score** | 15 |
 | **Version** | `1.9.1` |
 | **Vendor** | synapseorch-ai |
-| **Stars** | ⭐ 326 |
+| **Stars** | ⭐ 327 |
 | **npm Package** | `synapse-orch-ai` |
-| **npm Downloads (30d)** | 178 |
+| **npm Downloads (30d)** | 187 |
 | **Language** | Python |
 | **Source** | [synapse-ai](https://github.com/synapseorch-ai/synapse-ai) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,8 +25,8 @@
 | Critical | 0 |
 | High     | 1 |
 | Medium   | 0 |
-| Low      | 4 |
-| Info     | 11 |
+| Low      | 1 |
+| Info     | 91 |
 
 ## Detailed Findings
 
@@ -35,10 +35,22 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at v1.9.1: 6 tool(s) added, 80 tool(s) removed without a version bump.
+Tool set changed silently at v1.9.1: 80 tool(s) added, 6 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 
@@ -47,7 +59,79 @@ The set of tools exposed by this server changed between scans of the same versio
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: code/command execution, filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -107,22 +191,58 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, filesystem access
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -155,22 +275,322 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 
@@ -191,22 +611,526 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, database access
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

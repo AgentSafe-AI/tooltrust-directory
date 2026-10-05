@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.3` |
 | **Vendor** | pascalorg |
-| **Stars** | ⭐ 24602 |
+| **Stars** | ⭐ 24625 |
 | **npm Package** | `editor` |
 | **npm Downloads (30d)** | 1.7M |
 | **Language** | TypeScript |
 | **Source** | [editor](https://github.com/pascalorg/editor) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

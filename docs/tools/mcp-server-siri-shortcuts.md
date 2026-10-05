@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.0` |
 | **Vendor** | dvcrn |
-| **Stars** | ⭐ 189 |
+| **Stars** | ⭐ 194 |
 | **npm Package** | `mcp-server-siri-shortcuts` |
 | **npm Downloads (30d)** | 440 |
 | **Language** | TypeScript |

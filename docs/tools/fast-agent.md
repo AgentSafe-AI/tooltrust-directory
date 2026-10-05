@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3927 |
 | **Language** | Python |
 | **Source** | [fast-agent](https://github.com/evalstate/fast-agent) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

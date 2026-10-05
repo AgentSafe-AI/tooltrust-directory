@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.3.0` |
 | **Vendor** | ahonn |
-| **Stars** | ⭐ 219 |
+| **Stars** | ⭐ 275 |
 | **npm Package** | `mcp-server-gsc` |
 | **npm Downloads (30d)** | 11.2k |
 | **Language** | TypeScript |

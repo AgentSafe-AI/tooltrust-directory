@@ -1,19 +1,65 @@
 {
-  "tool_id": "mcp-server-fetch",
-  "version": "typescript-servers-0.6.2",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-04T03:34:22.524161325Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
   "category": "Developer Tools",
-  "vendor": "modelcontextprotocol",
-  "stars": 90986,
-  "npm_package": "mcp-server-fetch",
-  "npm_downloads_monthly": 11528,
-  "license": "NOASSERTION",
-  "language": "TypeScript",
+  "contributors": 427,
   "description": "Model Context Protocol Servers",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/everything/server/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 47,
+      "snippet": "new McpServer(",
+      "file": "src/everything/server/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/filesystem/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 164,
+      "snippet": "new McpServer(",
+      "file": "src/filesystem/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 214,
+      "snippet": ".registerTool(",
+      "file": "src/filesystem/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/memory/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 382,
+      "snippet": "new McpServer(",
+      "file": "src/memory/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 402,
+      "snippet": ".registerTool(",
+      "file": "src/memory/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -104,137 +150,22 @@
       "tool_name": "clear_cache"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 8
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 11752,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/everything/server/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 47,
-      "snippet": "new McpServer(",
-      "file": "src/everything/server/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/filesystem/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 164,
-      "snippet": "new McpServer(",
-      "file": "src/filesystem/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 214,
-      "snippet": ".registerTool(",
-      "file": "src/filesystem/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/memory/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 382,
-      "snippet": "new McpServer(",
-      "file": "src/memory/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 402,
-      "snippet": ".registerTool(",
-      "file": "src/memory/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "cache_stats",
-    "check_domain",
-    "clear_cache",
-    "fetch_markdown",
-    "fetch_url"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "fetch_url",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "fetch_markdown",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check_domain",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "cache_stats",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "clear_cache",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-10-04T04:01:54Z",
+  "last_release_at": "2026-08-31T20:34:32Z",
+  "latest_release_name": "Release 2026.8.31",
+  "latest_release_tag": "2026.8.31",
+  "latest_release_url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.8.31",
+  "latest_release_version": "2026.8.31",
+  "license": "NOASSERTION",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 10787,
+  "npm_package": "mcp-server-fetch",
+  "risk_score": 2,
+  "scan_date": "2026-10-05T03:14:07.055047479Z",
   "scan_history": [
     {
       "scan_date": "2026-08-06T01:52:08Z",
@@ -583,6 +514,89 @@
       "grade": "A",
       "risk_score": 2,
       "version": "typescript-servers-0.6.2"
+    },
+    {
+      "scan_date": "2026-10-04T03:34:22Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "typescript-servers-0.6.2"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+  "stars": 91011,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 8
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "fetch_url",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fetch_markdown",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "check_domain",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "cache_stats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "clear_cache",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "mcp-server-fetch",
+  "tool_names": [
+    "cache_stats",
+    "check_domain",
+    "clear_cache",
+    "fetch_markdown",
+    "fetch_url"
+  ],
+  "vendor": "modelcontextprotocol",
+  "version": "typescript-servers-0.6.2"
 }

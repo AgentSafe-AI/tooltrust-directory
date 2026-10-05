@@ -3,7 +3,7 @@
   "version": "2.10.48",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-04T03:41:24.217552916Z",
+  "scan_date": "2026-10-05T03:21:19.251819411Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Coolver/home-assistant-vibecode-agent",
   "category": "Developer Tools",
@@ -17,10 +17,20 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.10.48: 20 tool(s) added, 11 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v2.10.48: 8 tool(s) added, 20 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "check_agent",
+          "find_agents",
+          "get_agent_code",
+          "get_agent_template",
+          "how_to_run_agent",
+          "request_service",
+          "share_agent",
+          "use_agent_here"
+        ],
+        "removed": [
           "book_electrician",
           "book_handyman",
           "book_hvac",
@@ -42,19 +52,6 @@
           "get_provider_reviews",
           "search_providers"
         ],
-        "removed": [
-          "agent_company_diagnostic",
-          "create_formation_request",
-          "create_standalone_company",
-          "get_compliance_calendar",
-          "get_documents",
-          "get_formation_requirements",
-          "get_formation_status",
-          "order_annual_report",
-          "recommend_structure",
-          "request_amendment",
-          "reserve_company_name"
-        ],
         "version": "2.10.48"
       }
     },
@@ -64,7 +61,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_my_profile"
+      "tool_name": "get_agent_template"
     },
     {
       "id": "AS-014",
@@ -72,7 +69,95 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_my_profile"
+      "tool_name": "get_agent_template"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "check_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "check_agent"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "find_agents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "find_agents"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_agent_code"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "use_agent_here"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "use_agent_here"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "how_to_run_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "how_to_run_agent"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "share_agent"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "share_agent"
     },
     {
       "id": "AS-002",
@@ -80,7 +165,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_providers"
+      "tool_name": "request_service"
     },
     {
       "id": "AS-011",
@@ -88,7 +173,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_providers"
+      "tool_name": "request_service"
     },
     {
       "id": "AS-014",
@@ -96,536 +181,97 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_providers"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_provider_details"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_provider_details"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_provider_details"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_provider_reviews"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_provider_reviews"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_provider_reviews"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_booking"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "create_booking"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_booking"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_previous_jobs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_booking_status"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "book_same_pro_again"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "book_same_pro_again"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "book_same_pro_again"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "cancel_booking"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find_handyman"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find_handyman"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "book_handyman"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "book_handyman"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find_hvac"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find_hvac"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "book_hvac"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "book_hvac"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find_plumber"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find_plumber"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "book_plumber"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "book_plumber"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find_electrician"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find_electrician"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "book_electrician"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "book_electrician"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "find_renovation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find_renovation"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "book_renovation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "book_renovation"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_more_tools"
+      "tool_name": "request_service"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 5,
-    "info": 36
+    "low": 1,
+    "info": 15
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "book_electrician",
-    "book_handyman",
-    "book_hvac",
-    "book_plumber",
-    "book_renovation",
-    "book_same_pro_again",
-    "cancel_booking",
-    "create_booking",
-    "find_electrician",
-    "find_handyman",
-    "find_hvac",
-    "find_plumber",
-    "find_renovation",
-    "get_booking_status",
-    "get_more_tools",
-    "get_my_profile",
-    "get_previous_jobs",
-    "get_provider_details",
-    "get_provider_reviews",
-    "search_providers"
+    "check_agent",
+    "find_agents",
+    "get_agent_code",
+    "get_agent_template",
+    "how_to_run_agent",
+    "request_service",
+    "share_agent",
+    "use_agent_here"
   ],
   "tool_contexts": [
     {
-      "tool_name": "get_my_profile",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search_providers",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_provider_details",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_provider_reviews",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create_booking",
+      "tool_name": "get_agent_template",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "executes_commands",
-        "writes_files"
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_previous_jobs",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_booking_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "book_same_pro_again",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "cancel_booking",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "find_handyman",
+      "tool_name": "check_agent",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "writes_files"
       ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "book_handyman",
+      "tool_name": "find_agents",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: address.postalCode"
+      "behavior": [
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "find_hvac",
+      "tool_name": "get_agent_code",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "use_agent_here",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "writes_files"
       ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "book_hvac",
+      "tool_name": "how_to_run_agent",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "find_plumber",
+      "tool_name": "share_agent",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "book_plumber",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "find_electrician",
+      "tool_name": "request_service",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "writes_files"
+        "uses_network"
       ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "book_electrician",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "find_renovation",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "book_renovation",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: address.postalCode"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_more_tools",
-      "action": "ALLOW",
-      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -1113,6 +759,12 @@
     },
     {
       "scan_date": "2026-10-03T03:11:45Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "2.10.48"
+    },
+    {
+      "scan_date": "2026-10-04T03:41:24Z",
       "grade": "B",
       "risk_score": 15,
       "version": "2.10.48"

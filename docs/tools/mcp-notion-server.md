@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `2.0.2` |
 | **Vendor** | suekou |
-| **Stars** | ⭐ 919 |
+| **Stars** | ⭐ 918 |
 | **npm Package** | `@suekou/mcp-notion-server` |
-| **npm Downloads (30d)** | 4.2k |
+| **npm Downloads (30d)** | 4.3k |
 | **Language** | TypeScript |
 | **Source** | [mcp-notion-server](https://github.com/suekou/mcp-notion-server) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

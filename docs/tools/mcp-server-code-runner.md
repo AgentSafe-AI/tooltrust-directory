@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.8` |
 | **Vendor** | formulahendry |
-| **Stars** | ⭐ 241 |
+| **Stars** | ⭐ 245 |
 | **npm Package** | `mcp-server-code-runner` |
 | **npm Downloads (30d)** | 4.2k |
 | **Language** | TypeScript |

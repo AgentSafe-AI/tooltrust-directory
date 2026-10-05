@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | lucasmontano |
-| **Stars** | ⭐ 136 |
+| **Stars** | ⭐ 134 |
 | **npm Package** | `mcp-montano-server` |
 | **Language** | TypeScript |
 | **Source** | [mcp-montano-server](https://github.com/lucasmontano/mcp-montano-server) |

@@ -10,10 +10,10 @@
 | **Vendor** | tuannvm |
 | **Stars** | ⭐ 642 |
 | **npm Package** | `codex-mcp-server` |
-| **npm Downloads (30d)** | 4.0k |
+| **npm Downloads (30d)** | 4.1k |
 | **Language** | TypeScript |
 | **Source** | [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

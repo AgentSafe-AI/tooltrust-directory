@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 4172 |
 | **Language** | Go |
 | **Source** | [kubefwd](https://github.com/txn2/kubefwd) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

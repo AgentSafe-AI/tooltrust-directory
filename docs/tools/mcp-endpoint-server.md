@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.7` |
 | **Vendor** | xinnan-tech |
-| **Stars** | ⭐ 148 |
+| **Stars** | ⭐ 168 |
 | **Language** | Python |
 | **Source** | [mcp-endpoint-server](https://github.com/xinnan-tech/mcp-endpoint-server) |
 | **Scan Date** | 2026-06-22 |

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.9.11` |
 | **Vendor** | PDFMathTranslate |
-| **Stars** | ⭐ 37312 |
+| **Stars** | ⭐ 37330 |
 | **Language** | Python |
 | **Source** | [pdfmathtranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

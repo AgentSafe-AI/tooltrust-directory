@@ -1,18 +1,18 @@
-# 🟢 mcp-nest
+# 🟡 mcp-nest
 
 > A NestJS module to effortlessly create Model Context Protocol (MCP) servers for exposing AI tools, resources, and prompts.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 2 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `2.0.7` |
 | **Vendor** | rekog-labs |
 | **Stars** | ⭐ 712 |
 | **npm Package** | `mcp-nest-workspace` |
 | **Language** | TypeScript |
 | **Source** | [mcp-nest](https://github.com/rekog-labs/MCP-Nest) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -22,13 +22,61 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 13 |
+| Info     | 22 |
 
 ## Detailed Findings
 
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at v2.0.7: 17 tool(s) added, 9 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
@@ -142,7 +190,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -173,12 +221,84 @@ Review and remediate the identified issue.
 
 ---
 
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: database access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

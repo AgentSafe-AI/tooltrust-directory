@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 5808 |
 | **Language** | Python |
 | **Source** | [klavis](https://github.com/Klavis-AI/klavis) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

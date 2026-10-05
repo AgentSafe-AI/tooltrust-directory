@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `wren-v0.15.0` |
 | **Vendor** | Canner |
-| **Stars** | ⭐ 17799 |
+| **Stars** | ⭐ 17803 |
 | **Language** | Python |
 | **Source** | [wrenai](https://github.com/Canner/WrenAI) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

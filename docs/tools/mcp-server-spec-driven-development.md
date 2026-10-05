@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.1` |
 | **Vendor** | formulahendry |
-| **Stars** | ⭐ 436 |
+| **Stars** | ⭐ 439 |
 | **npm Package** | `mcp-server-spec-driven-development` |
 | **npm Downloads (30d)** | 293 |
 | **Language** | TypeScript |

@@ -1,17 +1,44 @@
 {
-  "tool_id": "mcp-proxy",
-  "version": "1.1.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-04T03:41:16.125500756Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/tbxark/mcp-proxy",
   "category": "Developer Tools",
-  "vendor": "tbxark",
-  "stars": 734,
-  "license": "MIT",
-  "language": "Go",
+  "contributors": 12,
   "description": "An MCP proxy server that aggregates and serves multiple MCP resource servers through a single HTTP server.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 905,
+      "snippet": "server.NewMCPServer(",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 36,
+      "snippet": "server.NewMCPServer(",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 51,
+      "snippet": "AddTool(",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-014",
@@ -206,6 +233,37 @@
       "tool_name": "buy_mobile_proxies"
     }
   ],
+  "forks": 108,
+  "grade": "A",
+  "has_embedded_mcp": true,
+  "language": "Go",
+  "last_commit_at": "2026-09-15T14:53:19Z",
+  "last_release_at": "2026-09-15T14:55:00Z",
+  "latest_release_name": "v1.1.0",
+  "latest_release_tag": "v1.1.0",
+  "latest_release_url": "https://github.com/tbxark/mcp-proxy/releases/tag/v1.1.0",
+  "latest_release_version": "v1.1.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 2,
+  "scan_date": "2026-10-05T03:21:08.501196371Z",
+  "scan_history": [
+    {
+      "scan_date": "2026-10-03T03:11:37Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-04T03:41:16Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.1.0"
+    }
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/tbxark/mcp-proxy",
+  "stars": 734,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -213,66 +271,6 @@
     "low": 2,
     "info": 22
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 20,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "client.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 905,
-      "snippet": "server.NewMCPServer(",
-      "file": "client.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 20,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "testdata/stdio-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 36,
-      "snippet": "server.NewMCPServer(",
-      "file": "testdata/stdio-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 51,
-      "snippet": "AddTool(",
-      "file": "testdata/stdio-server/main.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "buy_mobile_proxies",
-    "buy_proxies",
-    "buy_residential_package",
-    "create_residential_endpoint",
-    "delete_residential_endpoint",
-    "get_balance",
-    "get_order_proxies",
-    "list_orders",
-    "list_products",
-    "list_proxies",
-    "list_residential_endpoints",
-    "mobile_tariffs",
-    "quote_order",
-    "quote_renewal",
-    "renew_order",
-    "residential_locations",
-    "residential_packages",
-    "residential_plans",
-    "residential_universal_access"
-  ],
   "tool_contexts": [
     {
       "tool_name": "get_balance",
@@ -424,12 +422,28 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-10-03T03:11:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.1.0"
-    }
-  ]
+  "tool_id": "mcp-proxy",
+  "tool_names": [
+    "buy_mobile_proxies",
+    "buy_proxies",
+    "buy_residential_package",
+    "create_residential_endpoint",
+    "delete_residential_endpoint",
+    "get_balance",
+    "get_order_proxies",
+    "list_orders",
+    "list_products",
+    "list_proxies",
+    "list_residential_endpoints",
+    "mobile_tariffs",
+    "quote_order",
+    "quote_renewal",
+    "renew_order",
+    "residential_locations",
+    "residential_packages",
+    "residential_plans",
+    "residential_universal_access"
+  ],
+  "vendor": "tbxark",
+  "version": "1.1.0"
 }

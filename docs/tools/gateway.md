@@ -10,10 +10,10 @@
 | **Vendor** | Portkey-AI |
 | **Stars** | ⭐ 13125 |
 | **npm Package** | `@portkey-ai/gateway` |
-| **npm Downloads (30d)** | 1.9k |
+| **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [gateway](https://github.com/Portkey-AI/gateway) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-05 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

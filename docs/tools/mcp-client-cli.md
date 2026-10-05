@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.5` |
 | **Vendor** | adhikasp |
-| **Stars** | ⭐ 678 |
+| **Stars** | ⭐ 675 |
 | **Language** | Python |
 | **Source** | [mcp-client-cli](https://github.com/adhikasp/mcp-client-cli) |
 | **Scan Date** | 2026-07-24 |
