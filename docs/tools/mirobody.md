@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | thetahealth |
-| **Stars** | ⭐ 1058 |
+| **Stars** | ⭐ 1358 |
 | **npm Package** | `mirobody-chart-renderer` |
 | **Language** | Python |
 | **Source** | [mirobody](https://github.com/thetahealth/mirobody) |

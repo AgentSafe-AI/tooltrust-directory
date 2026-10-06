@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `3.0.0-prerelease.2` |
 | **Vendor** | mongodb-js |
-| **Stars** | ⭐ 1124 |
+| **Stars** | ⭐ 1140 |
 | **npm Package** | `mongodb-mcp-server-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) |

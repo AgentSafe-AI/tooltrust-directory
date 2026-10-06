@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.5.1` |
 | **Vendor** | mnemox-ai |
-| **Stars** | ⭐ 1039 |
+| **Stars** | ⭐ 1424 |
 | **Language** | Python |
 | **Source** | [mnemox-ai-tradememory-protocol](https://github.com/mnemox-ai/tradememory-protocol) |
 | **Scan Date** | 2026-06-22 |

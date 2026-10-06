@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.2` |
 | **Vendor** | AVIDS2 |
-| **Stars** | ⭐ 519 |
+| **Stars** | ⭐ 832 |
 | **npm Package** | `memorix` |
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |

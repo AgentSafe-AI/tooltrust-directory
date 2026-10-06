@@ -1,30 +1,19 @@
 {
+  "tool_id": "mcp-notion-server",
+  "version": "2.0.2",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-06T04:08:55.214836375Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/suekou/mcp-notion-server",
   "category": "Developer Tools",
-  "contributors": 12,
+  "vendor": "suekou",
+  "stars": 920,
+  "npm_package": "@suekou/mcp-notion-server",
+  "npm_downloads_monthly": 4291,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "A Model Context Protocol server for connecting Notion to MCP-compatible clients",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 5,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/mcp/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 152,
-      "snippet": "new McpServer(",
-      "file": "src/mcp/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 194,
-      "snippet": ".registerTool(",
-      "file": "src/mcp/server.ts",
-      "language": "typescript"
-    }
-  ],
   "findings": [
     {
       "id": "AS-002",
@@ -347,22 +336,225 @@
       "tool_name": "notion-update-view"
     }
   ],
-  "forks": 180,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-07-12T05:42:22Z",
-  "last_release_at": "2026-06-22T13:13:54Z",
-  "latest_release_name": "v2.0.2",
-  "latest_release_tag": "v2.0.2",
-  "latest_release_url": "https://github.com/suekou/mcp-notion-server/releases/tag/v2.0.2",
-  "latest_release_version": "v2.0.2",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 12,
+    "info": 28
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 4326,
-  "npm_package": "@suekou/mcp-notion-server",
-  "risk_score": 4,
-  "scan_date": "2026-10-05T03:21:02.331304453Z",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/mcp/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 152,
+      "snippet": "new McpServer(",
+      "file": "src/mcp/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 194,
+      "snippet": ".registerTool(",
+      "file": "src/mcp/server.ts",
+      "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "notion-create-comment",
+    "notion-create-database",
+    "notion-create-pages",
+    "notion-create-view",
+    "notion-duplicate-page",
+    "notion-fetch",
+    "notion-get-comments",
+    "notion-get-teams",
+    "notion-get-users",
+    "notion-move-pages",
+    "notion-search",
+    "notion-update-data-source",
+    "notion-update-page",
+    "notion-update-view"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "notion-search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (data_source_url)",
+        "dynamic URL input (page_url)",
+        "hardcoded domain: example.com",
+        "hardcoded domain: notion.so",
+        "hardcoded email recipient: john@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-fetch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: myspace.notion.site",
+        "hardcoded domain: notion.site",
+        "hardcoded domain: notion.so"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-create-pages",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: cover.jpg",
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-update-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: cover.jpg",
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-move-pages",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-duplicate-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-create-database",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-update-data-source",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-create-comment",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-get-comments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-get-teams",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-get-users",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-create-view",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "notion-update-view",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-08-06T01:58:31Z",
@@ -717,206 +909,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "2.0.2"
+    },
+    {
+      "scan_date": "2026-10-05T03:21:02Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "2.0.2"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/suekou/mcp-notion-server",
-  "stars": 918,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 12,
-    "info": 28
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "notion-search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (data_source_url)",
-        "dynamic URL input (page_url)",
-        "hardcoded domain: example.com",
-        "hardcoded domain: notion.so",
-        "hardcoded email recipient: john@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-fetch",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: myspace.notion.site",
-        "hardcoded domain: notion.site",
-        "hardcoded domain: notion.so"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-create-pages",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: cover.jpg",
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-update-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: cover.jpg",
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-move-pages",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-duplicate-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-create-database",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-update-data-source",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-create-comment",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-get-comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-get-teams",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-get-users",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-create-view",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "notion-update-view",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "mcp-notion-server",
-  "tool_names": [
-    "notion-create-comment",
-    "notion-create-database",
-    "notion-create-pages",
-    "notion-create-view",
-    "notion-duplicate-page",
-    "notion-fetch",
-    "notion-get-comments",
-    "notion-get-teams",
-    "notion-get-users",
-    "notion-move-pages",
-    "notion-search",
-    "notion-update-data-source",
-    "notion-update-page",
-    "notion-update-view"
-  ],
-  "vendor": "suekou",
-  "version": "2.0.2"
+  ]
 }

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `4.8.28` |
+| **Version** | `4.9.0` |
 | **Vendor** | samuelgursky |
-| **Stars** | ⭐ 3342 |
+| **Stars** | ⭐ 3363 |
 | **npm Package** | `davinci-resolve-mcp` |
-| **npm Downloads (30d)** | 55.6k |
+| **npm Downloads (30d)** | 54.4k |
 | **Language** | Python |
 | **Source** | [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) |
-| **Scan Date** | 2026-10-05 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,9 +26,21 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 1 |
+| Info     | 2 |
 
 ## Detailed Findings
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

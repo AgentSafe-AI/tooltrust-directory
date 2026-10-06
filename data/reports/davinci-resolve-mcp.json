@@ -1,16 +1,16 @@
 {
   "tool_id": "davinci-resolve-mcp",
-  "version": "4.8.28",
+  "version": "4.9.0",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-10-05T03:18:48.567212708Z",
+  "scan_date": "2026-10-06T04:06:59.477304412Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/samuelgursky/davinci-resolve-mcp",
   "category": "Developer Tools",
   "vendor": "samuelgursky",
-  "stars": 3342,
+  "stars": 3363,
   "npm_package": "davinci-resolve-mcp",
-  "npm_downloads_monthly": 55565,
+  "npm_downloads_monthly": 54396,
   "license": "MIT",
   "language": "Python",
   "description": "MCP server integration for DaVinci Resolve Studio",
@@ -21,7 +21,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "resolve_migration_exception"
+      "tool_name": "compatibility_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "compatibility_changes"
     }
   ],
   "summary": {
@@ -29,7 +37,7 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 1
+    "info": 2
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -70,13 +78,27 @@
     }
   ],
   "tool_names": [
-    "resolve_migration_exception"
+    "compatibility_changes",
+    "compatibility_lookup"
   ],
   "tool_contexts": [
     {
-      "tool_name": "resolve_migration_exception",
+      "tool_name": "compatibility_lookup",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "compatibility_changes",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool)"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
@@ -93,6 +115,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "4.8.27"
+    },
+    {
+      "scan_date": "2026-10-05T03:18:48Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "4.8.28"
     }
   ]
 }

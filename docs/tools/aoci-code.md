@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.1.0-rc17` |
+| **Version** | `0.1.0-rc18` |
 | **Vendor** | aoci-spec |
-| **Stars** | ⭐ 1083 |
+| **Stars** | ⭐ 1160 |
 | **Language** | Go |
 | **Source** | [aoci-code](https://github.com/aoci-spec/aoci-code) |
-| **Scan Date** | 2026-10-05 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

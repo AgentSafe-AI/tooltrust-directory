@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.0` |
 | **Vendor** | dkmaker |
-| **Stars** | ⭐ 102 |
+| **Stars** | ⭐ 103 |
 | **npm Package** | `dkmaker-mcp-rest-api` |
-| **npm Downloads (30d)** | 391 |
+| **npm Downloads (30d)** | 400 |
 | **Language** | JavaScript |
 | **Source** | [mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

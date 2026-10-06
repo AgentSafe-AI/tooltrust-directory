@@ -1,6 +1,6 @@
 # 🟢 stealth-browser-mcp
 
-> The only browser automation that bypasses anti-bot systems. AI writes network hooks, clones UIs pixel-perfect via simple chat.
+> Stealth browser automation for AI agents over MCP and the Chrome DevTools Protocol: navigation, network hooks, DOM extraction, and pixel-accurate UI cloning.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.5` |
 | **Vendor** | vibheksoni |
-| **Stars** | ⭐ 2167 |
+| **Stars** | ⭐ 2196 |
 | **Language** | Python |
 | **Source** | [stealth-browser-mcp](https://github.com/vibheksoni/stealth-browser-mcp) |
-| **Scan Date** | 2026-10-05 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

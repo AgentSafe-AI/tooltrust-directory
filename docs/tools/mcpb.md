@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `2.1.2` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 2093 |
+| **Stars** | ⭐ 2130 |
 | **npm Package** | `@anthropic-ai/mcpb` |
 | **npm Downloads (30d)** | 246.9k |
 | **Language** | TypeScript |

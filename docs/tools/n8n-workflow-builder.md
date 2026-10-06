@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.10.1` |
 | **Vendor** | makafeli |
-| **Stars** | ⭐ 531 |
+| **Stars** | ⭐ 546 |
 | **npm Package** | `@makafeli/n8n-workflow-builder` |
 | **npm Downloads (30d)** | 540 |
 | **Language** | JavaScript |

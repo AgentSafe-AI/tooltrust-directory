@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `0.1.59` |
 | **Vendor** | vitali87 |
-| **Stars** | ⭐ 5231 |
+| **Stars** | ⭐ 5232 |
 | **Language** | Python |
 | **Source** | [code-graph-rag](https://github.com/vitali87/code-graph-rag) |
-| **Scan Date** | 2026-10-05 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

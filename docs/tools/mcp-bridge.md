@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.1` |
 | **Vendor** | SecretiveShell |
-| **Stars** | ⭐ 928 |
+| **Stars** | ⭐ 927 |
 | **Language** | Python |
 | **Source** | [mcp-bridge](https://github.com/SecretiveShell/MCP-Bridge) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

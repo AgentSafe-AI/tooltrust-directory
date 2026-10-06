@@ -3,14 +3,14 @@
   "version": "13.3.2",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-04T03:38:45.293611023Z",
+  "scan_date": "2026-10-06T04:06:44.723342095Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Manavarya09/design-extract",
   "category": "Other",
   "vendor": "Manavarya09",
-  "stars": 4165,
+  "stars": 4170,
   "npm_package": "designlang",
-  "npm_downloads_monthly": 3702,
+  "npm_downloads_monthly": 4007,
   "license": "MIT",
   "language": "HTML",
   "description": "Extract any website's complete design system with one command. DTCG tokens, semantic+primitive+composite, MCP server for Claude Code/Cursor/Windsurf, multi-platform emitters (iOS SwiftUI, Android Compose, Flutter, WordPress), Tailwind v4, Figma variables, shadcn/ui, CSS health audit, WCAG remediation, Chrome extension. MIT, Playwright, Node 20+.",
@@ -19,51 +19,25 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v13.3.2: 3 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v13.3.2: 2 tool(s) added, 8 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "check-comprehension",
-          "extract-design-system",
-          "find-design"
+          "velrim_extract",
+          "velrim_job_status"
         ],
         "removed": [
-          "resolve-design-system"
+          "check-comprehension",
+          "extract-design-system",
+          "find-design",
+          "get-design-system-docs",
+          "get-review-rules",
+          "get-ui-principle",
+          "resolve-icon-library",
+          "search-icons"
         ],
         "version": "13.3.2"
       }
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "find-design"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-design-system-docs"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-ui-principle"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "resolve-icon-library"
     },
     {
       "id": "AS-002",
@@ -71,7 +45,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search-icons"
+      "tool_name": "velrim_extract"
     },
     {
       "id": "AS-011",
@@ -79,7 +53,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search-icons"
+      "tool_name": "velrim_extract"
     },
     {
       "id": "AS-014",
@@ -87,23 +61,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search-icons"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get-review-rules"
+      "tool_name": "velrim_extract"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: network access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "check-comprehension"
+      "tool_name": "velrim_job_status"
     },
     {
       "id": "AS-011",
@@ -111,7 +77,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "check-comprehension"
+      "tool_name": "velrim_job_status"
     },
     {
       "id": "AS-014",
@@ -119,23 +85,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check-comprehension"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"maxTokens\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "extract-design-system"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "extract-design-system"
+      "tool_name": "velrim_job_status"
     }
   ],
   "summary": {
@@ -143,85 +93,36 @@
     "high": 1,
     "medium": 0,
     "low": 2,
-    "info": 11
+    "info": 4
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "check-comprehension",
-    "extract-design-system",
-    "find-design",
-    "get-design-system-docs",
-    "get-review-rules",
-    "get-ui-principle",
-    "resolve-icon-library",
-    "search-icons"
+    "velrim_extract",
+    "velrim_job_status"
   ],
   "tool_contexts": [
     {
-      "tool_name": "find-design",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-design-system-docs",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-ui-principle",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "resolve-icon-library",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search-icons",
+      "tool_name": "velrim_extract",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-review-rules",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "check-comprehension",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
+      "destinations": [
+        "hardcoded domain: velrim.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "extract-design-system",
+      "tool_name": "velrim_job_status",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "destinations": [
-        "dynamic email recipient (maxTokens)",
-        "hardcoded domain: globals.css"
+        "hardcoded domain: velrim.com"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -674,6 +575,12 @@
     },
     {
       "scan_date": "2026-10-03T03:09:24Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "13.3.2"
+    },
+    {
+      "scan_date": "2026-10-04T03:38:45Z",
       "grade": "B",
       "risk_score": 15,
       "version": "13.3.2"

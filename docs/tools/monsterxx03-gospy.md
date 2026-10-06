@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.1` |
 | **Vendor** | monsterxx03 |
-| **Stars** | ⭐ 96 |
+| **Stars** | ⭐ 97 |
 | **Language** | Go |
 | **Source** | [monsterxx03-gospy](https://github.com/monsterxx03/gospy) |
 | **Scan Date** | 2026-06-22 |

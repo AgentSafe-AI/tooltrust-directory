@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.4` |
 | **Vendor** | openclaw |
-| **Stars** | ⭐ 4856 |
+| **Stars** | ⭐ 5049 |
 | **npm Package** | `mcporter` |
 | **npm Downloads (30d)** | 1.2M |
 | **Language** | TypeScript |

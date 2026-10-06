@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.0` |
 | **Vendor** | RichardHan |
-| **Stars** | ⭐ 321 |
+| **Stars** | ⭐ 394 |
 | **Language** | Python |
 | **Source** | [mssql-mcp-server](https://github.com/RichardHan/mssql_mcp_server) |
 | **Scan Date** | 2026-03-18 |

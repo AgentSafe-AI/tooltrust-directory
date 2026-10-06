@@ -10,10 +10,10 @@
 | **Vendor** | QuantGeekDev |
 | **Stars** | ⭐ 930 |
 | **npm Package** | `mcp-framework` |
-| **npm Downloads (30d)** | 234.3k |
+| **npm Downloads (30d)** | 233.8k |
 | **Language** | TypeScript |
 | **Source** | [mcp-framework](https://github.com/QuantGeekDev/mcp-framework) |
-| **Scan Date** | 2026-10-05 |
+| **Scan Date** | 2026-10-06 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
