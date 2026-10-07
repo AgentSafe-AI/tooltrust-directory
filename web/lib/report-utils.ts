@@ -67,6 +67,7 @@ export interface RepositoryMetrics {
   repo: string;
   source: string;
   fetched_at: string;
+  exported_at?: string;
   data_quality: string;
   stars_daily: Array<{ day: string; stars_added: number }>;
   pull_requests_weekly: Array<{

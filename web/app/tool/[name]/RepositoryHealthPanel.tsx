@@ -65,7 +65,9 @@ export function RepositoryHealthPanel({ report, metrics }: Props) {
   const pullRequestValues = pullRequests.map((point) => point.prs_opened + point.prs_merged + point.prs_closed);
   const hasStars = starValues.length > 0;
   const hasPullRequests = pullRequestValues.length > 0;
-  const sourceLabel = metrics ? `${metrics.source} · fetched ${formatDate(metrics.fetched_at)}` : "History data pending";
+  const sourceLabel = metrics
+    ? `${metrics.source} · observed through ${formatDate(metrics.fetched_at)}${metrics.exported_at ? ` · export updated ${formatDate(metrics.exported_at)}` : ""}`
+    : "History data pending";
 
   return (
     <section className="space-y-4 rounded-xl border border-zinc-800 bg-zinc-900 p-5">

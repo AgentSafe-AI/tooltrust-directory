@@ -6,6 +6,7 @@ set -euo pipefail
 PROJECT_ID="${BQ_PROJECT_ID:-gws-cli-1785715774}"
 DATASET="${BQ_DATASET:-tooltrust_analytics}"
 OUTPUT_DIR="${METRICS_OUTPUT_DIR:-data/repository-metrics}"
+EXPORTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -48,10 +49,12 @@ jq -c '.[]' "$REGISTRY_FILE" | while IFS= read -r registry_row; do
     --arg repo "$repo" \
     --arg source "githubarchive_bq" \
     --arg fetched_at "$fetched_at" \
+    --arg exported_at "$EXPORTED_AT" \
     --arg data_quality "observed_events" \
     --argjson stars_daily "$stars_daily" \
     --argjson pull_requests_weekly "$pull_requests_weekly" \
     '{tool_id: $tool_id, repo: $repo, source: $source, fetched_at: $fetched_at,
+      exported_at: $exported_at,
       data_quality: $data_quality, stars_daily: $stars_daily,
       pull_requests_weekly: $pull_requests_weekly}' \
     > "$OUTPUT_DIR/${tool_id}.json"
