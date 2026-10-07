@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.7` |
 | **Vendor** | rekog-labs |
-| **Stars** | ⭐ 712 |
+| **Stars** | ⭐ 713 |
 | **npm Package** | `mcp-nest-workspace` |
 | **Language** | TypeScript |
 | **Source** | [mcp-nest](https://github.com/rekog-labs/MCP-Nest) |
-| **Scan Date** | 2026-10-06 |
+| **Scan Date** | 2026-10-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

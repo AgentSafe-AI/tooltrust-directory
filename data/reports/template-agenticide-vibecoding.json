@@ -1,9 +1,9 @@
 {
   "tool_id": "template-agenticide-vibecoding",
   "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-06T04:10:48.591659432Z",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-07T03:20:17.534914557Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/quboqin/template-agenticide-vibecoding",
   "category": "Other",
@@ -12,39 +12,6 @@
   "language": "Shell",
   "description": "🤖 Claude Code定制化研发流程系统 - 基于Spec-Driven和Test-Driven的AI智能体团队协作框架。构建AI优先的软件开发新范式，让AI智能体团队替代传统人类开发团队。",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.0: 4 tool(s) added, 15 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "add-template",
-          "auth-login",
-          "create-tenant",
-          "http-request"
-        ],
-        "removed": [
-          "diagnose_render_error",
-          "get_capabilities",
-          "get_carousel_schema",
-          "get_creative_guide",
-          "get_example",
-          "get_render_instructions",
-          "get_template",
-          "get_video_schema",
-          "list_carousel_templates",
-          "list_templates",
-          "list_video_projects",
-          "propose_video_storyboard",
-          "review_video_project",
-          "scaffold_carousel_deck",
-          "scaffold_video_spec"
-        ],
-        "version": "1.0.0"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -113,7 +80,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"accessToken\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create-tenant"
     },
@@ -121,7 +88,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"accessToken\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create-tenant"
     },
@@ -168,7 +135,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 4,
     "info": 11
@@ -517,6 +484,12 @@
     },
     {
       "scan_date": "2026-10-05T03:23:21Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-10-06T04:10:48Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.0"

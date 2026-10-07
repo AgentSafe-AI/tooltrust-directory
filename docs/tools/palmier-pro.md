@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.0` |
 | **Vendor** | palmier-io |
-| **Stars** | ⭐ 14432 |
+| **Stars** | ⭐ 14522 |
 | **Language** | Swift |
 | **Source** | [palmier-pro](https://github.com/palmier-io/palmier-pro) |
 | **Scan Date** | 2026-09-19 |

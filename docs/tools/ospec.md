@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.6.1` |
 | **Vendor** | clawplays |
-| **Stars** | ⭐ 559 |
+| **Stars** | ⭐ 452 |
 | **npm Package** | `@clawplays/ospec-cli` |
 | **npm Downloads (30d)** | 2.8k |
 | **Language** | JavaScript |

@@ -1,6 +1,17 @@
 {
+  "tool_id": "megamind-0x-skillaudit",
+  "version": "1.1.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-07T03:21:00.385561296Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/megamind-0x/skillaudit",
   "category": "Developer Tools",
-  "contributors": 0,
+  "vendor": "megamind-0x",
+  "stars": 5,
+  "npm_package": "skillaudit",
+  "npm_downloads_monthly": 79,
+  "language": "JavaScript",
   "description": "🛡️ Security scanner for AI agent skills — detect credential stealers, exfiltration, and malicious patterns before install",
   "findings": [
     {
@@ -76,20 +87,65 @@
       "tool_name": "reputation_check"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "JavaScript",
-  "last_commit_at": "2026-03-15T04:54:16Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 7
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 79,
-  "npm_package": "skillaudit",
-  "risk_score": 2,
-  "scan_date": "2026-10-06T04:11:44.091284808Z",
+  "tool_names": [
+    "gate_check",
+    "reputation_check",
+    "scan_github",
+    "scan_url"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "scan_url",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "scan_github",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gate_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "reputation_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:47:32Z",
@@ -732,70 +788,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-06T04:11:44Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.1.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/megamind-0x/skillaudit",
-  "stars": 5,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 7
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "scan_url",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scan_github",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gate_check",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "reputation_check",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "megamind-0x-skillaudit",
-  "tool_names": [
-    "gate_check",
-    "reputation_check",
-    "scan_github",
-    "scan_url"
-  ],
-  "vendor": "megamind-0x",
-  "version": "1.1.0"
+  ]
 }

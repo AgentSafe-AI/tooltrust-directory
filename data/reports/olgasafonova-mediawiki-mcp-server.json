@@ -1,17 +1,30 @@
 {
-  "tool_id": "olgasafonova-mediawiki-mcp-server",
-  "version": "1.30.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:16:47.364393622Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/olgasafonova/mediawiki-mcp-server",
   "category": "Developer Tools",
-  "vendor": "olgasafonova",
-  "stars": 9,
-  "license": "MIT",
-  "language": "Go",
+  "contributors": 4,
   "description": "MCP server for MediaWiki wikis - search, read, and edit wiki content from AI assistants",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 25,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 501,
+      "snippet": "mcp.NewServer(",
+      "file": "main.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 971,
+      "snippet": "AddTool(",
+      "file": "main.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-014",
@@ -134,115 +147,20 @@
       "tool_name": "create-page"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 12
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 7,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 25,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 501,
-      "snippet": "mcp.NewServer(",
-      "file": "main.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 971,
-      "snippet": "AddTool(",
-      "file": "main.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "create-page",
-    "get-file",
-    "get-page",
-    "get-page-history",
-    "search-page",
-    "set-wiki",
-    "update-page"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-page-history",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "set-wiki",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (wikiUrl)",
-        "hardcoded domain: en.wikipedia.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "update-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-file",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "Go",
+  "last_commit_at": "2026-10-05T07:20:22Z",
+  "last_release_at": "2026-07-22T18:12:01Z",
+  "latest_release_name": "v1.34.0",
+  "latest_release_tag": "v1.34.0",
+  "latest_release_url": "https://github.com/olgasafonova/mediawiki-mcp-server/releases/tag/v1.34.0",
+  "latest_release_version": "v1.34.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:16:47.364393622Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:45:05Z",
@@ -430,5 +348,95 @@
       "risk_score": 2,
       "version": "1.30.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/olgasafonova/mediawiki-mcp-server",
+  "stars": 19,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 12
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "get-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-page-history",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "set-wiki",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (wikiUrl)",
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "olgasafonova-mediawiki-mcp-server",
+  "tool_names": [
+    "create-page",
+    "get-file",
+    "get-page",
+    "get-page-history",
+    "search-page",
+    "set-wiki",
+    "update-page"
+  ],
+  "vendor": "olgasafonova",
+  "version": "1.30.0"
 }

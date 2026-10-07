@@ -1,20 +1,34 @@
 {
   "tool_id": "firecrawl-mcp-server",
   "version": "3.24.1",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-10-06T04:05:51.735097958Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-07T03:15:54.609266555Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/firecrawl/firecrawl-mcp-server",
   "category": "Developer Tools",
   "vendor": "firecrawl",
-  "stars": 7557,
+  "stars": 7564,
   "npm_package": "firecrawl-mcp",
   "npm_downloads_monthly": 445335,
   "license": "MIT",
   "language": "JavaScript",
   "description": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.24.1: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "firecrawl_gov_search"
+        ],
+        "removed": null,
+        "version": "3.24.1"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -621,6 +635,30 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "firecrawl_gov_search"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "firecrawl_gov_search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "firecrawl_gov_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "firecrawl_credit_usage"
     },
     {
@@ -650,10 +688,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 28,
-    "info": 51
+    "low": 29,
+    "info": 53
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -664,6 +702,7 @@
     "firecrawl_credit_usage",
     "firecrawl_developer_search",
     "firecrawl_find_tools",
+    "firecrawl_gov_search",
     "firecrawl_interact",
     "firecrawl_interact_stop",
     "firecrawl_map",
@@ -990,6 +1029,16 @@
     },
     {
       "tool_name": "firecrawl_developer_search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "firecrawl_gov_search",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -2116,6 +2165,12 @@
     },
     {
       "scan_date": "2026-10-05T03:17:27Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "3.24.1"
+    },
+    {
+      "scan_date": "2026-10-06T04:05:51Z",
       "grade": "A",
       "risk_score": 4,
       "version": "3.24.1"

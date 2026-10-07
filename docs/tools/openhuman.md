@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.64.10` |
 | **Vendor** | tinyhumansai |
-| **Stars** | ⭐ 40833 |
+| **Stars** | ⭐ 41466 |
 | **npm Package** | `openhuman-repo` |
 | **Language** | Rust |
 | **Source** | [openhuman](https://github.com/tinyhumansai/openhuman) |
-| **Scan Date** | 2026-10-06 |
+| **Scan Date** | 2026-10-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

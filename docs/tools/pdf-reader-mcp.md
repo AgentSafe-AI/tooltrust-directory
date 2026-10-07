@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `4.1.3` |
 | **Vendor** | SylphxAI |
-| **Stars** | ⭐ 934 |
+| **Stars** | ⭐ 1026 |
 | **npm Package** | `@sylphx/pdf-reader-mcp` |
 | **npm Downloads (30d)** | 7.2k |
 | **Language** | TypeScript |

@@ -1,17 +1,23 @@
 {
-  "tool_id": "olgasafonova-miro-mcp-server",
-  "version": "1.20.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:14:40.626498916Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/olgasafonova/miro-mcp-server",
   "category": "Developer Tools",
-  "vendor": "olgasafonova",
-  "stars": 22,
-  "license": "MIT",
-  "language": "Go",
+  "contributors": 4,
   "description": "MCP server for controlling Miro whiteboards with AI assistants",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 18,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 105,
+      "snippet": "mcp.NewServer(",
+      "file": "main.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -222,177 +228,20 @@
       "tool_name": "MIRO_UPDATE_BOARD"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 23
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 11,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 18,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 105,
-      "snippet": "mcp.NewServer(",
-      "file": "main.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "MIRO_CREATE_APP_CARD_ITEM",
-    "MIRO_CREATE_BOARD",
-    "MIRO_DELETE_APP_CARD_ITEM",
-    "MIRO_DELETE_DOCUMENT_ITEM",
-    "MIRO_DELETE_ITEM",
-    "MIRO_GET_APP_CARD_ITEM",
-    "MIRO_GET_BOARD",
-    "MIRO_GET_BOARDS",
-    "MIRO_GET_BOARD_ITEMS",
-    "MIRO_GET_BOARD_MEMBERS",
-    "MIRO_GET_CONNECTORS",
-    "MIRO_GET_TAG",
-    "MIRO_LIST_ORGANIZATIONS",
-    "MIRO_UPDATE_APP_CARD_ITEM",
-    "MIRO_UPDATE_BOARD"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "MIRO_CREATE_APP_CARD_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_CREATE_BOARD",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_DELETE_APP_CARD_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_DELETE_DOCUMENT_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_DELETE_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_APP_CARD_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_BOARD",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_BOARD_ITEMS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_BOARD_MEMBERS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_BOARDS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_CONNECTORS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_GET_TAG",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_LIST_ORGANIZATIONS",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_UPDATE_APP_CARD_ITEM",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MIRO_UPDATE_BOARD",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "Go",
+  "last_commit_at": "2026-10-05T06:54:00Z",
+  "last_release_at": "2026-09-18T19:12:39Z",
+  "latest_release_name": "v1.25.0 — pagination correctness: nine fixes for tools that answered confidently about data they had not read",
+  "latest_release_tag": "v1.25.0",
+  "latest_release_url": "https://github.com/olgasafonova/miro-mcp-server/releases/tag/v1.25.0",
+  "latest_release_version": "v1.25.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:14:40.626498916Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:43:29Z",
@@ -538,5 +387,164 @@
       "risk_score": 2,
       "version": "1.20.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/olgasafonova/miro-mcp-server",
+  "stars": 28,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 23
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "MIRO_CREATE_APP_CARD_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_CREATE_BOARD",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_DELETE_APP_CARD_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_DELETE_DOCUMENT_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_DELETE_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_APP_CARD_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_BOARD",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_BOARD_ITEMS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_BOARD_MEMBERS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_BOARDS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_CONNECTORS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_GET_TAG",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_LIST_ORGANIZATIONS",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_UPDATE_APP_CARD_ITEM",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "MIRO_UPDATE_BOARD",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "olgasafonova-miro-mcp-server",
+  "tool_names": [
+    "MIRO_CREATE_APP_CARD_ITEM",
+    "MIRO_CREATE_BOARD",
+    "MIRO_DELETE_APP_CARD_ITEM",
+    "MIRO_DELETE_DOCUMENT_ITEM",
+    "MIRO_DELETE_ITEM",
+    "MIRO_GET_APP_CARD_ITEM",
+    "MIRO_GET_BOARD",
+    "MIRO_GET_BOARDS",
+    "MIRO_GET_BOARD_ITEMS",
+    "MIRO_GET_BOARD_MEMBERS",
+    "MIRO_GET_CONNECTORS",
+    "MIRO_GET_TAG",
+    "MIRO_LIST_ORGANIZATIONS",
+    "MIRO_UPDATE_APP_CARD_ITEM",
+    "MIRO_UPDATE_BOARD"
+  ],
+  "vendor": "olgasafonova",
+  "version": "1.20.0"
 }

@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.4.15` |
 | **Vendor** | omega-memory |
-| **Stars** | ⭐ 151 |
+| **Stars** | ⭐ 219 |
 | **Language** | Python |
 | **Source** | [omega-memory-core](https://github.com/omega-memory/omega-memory) |
 | **Scan Date** | 2026-06-22 |

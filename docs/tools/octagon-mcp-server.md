@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | OctagonAI |
-| **Stars** | ⭐ 131 |
+| **Stars** | ⭐ 147 |
 | **npm Package** | `octagon-mcp` |
 | **npm Downloads (30d)** | 895 |
 | **Language** | TypeScript |

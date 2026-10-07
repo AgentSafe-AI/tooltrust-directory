@@ -1,6 +1,6 @@
 # 🟢 ahmednegm-1711-maqami-travel
 
-> Official MCP server for MAQAMI, a hotel and flight booking platform with 3M+ hotels. Search live hotel rates and flights, look up places, airports and hotel details, then prebook and book. Remote Streamable HTTP endpoint, no API key required.
+> Search hotels (3M+ hotels) and flights worldwide, read hotel details, then prebook and book. Remote Streamable HTTP, no API key.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ahmednegm-1711-maqami-travel](https://smithery.ai/server/ahmednegm-1711/maqami-travel) |
-| **Scan Date** | 2026-10-04 |
+| **Scan Date** | 2026-10-07 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
