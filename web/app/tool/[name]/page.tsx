@@ -1,4 +1,4 @@
-import { getAllReports, getReportByToolName, getRepositoryMetrics, displayGrade, getToolNarrative } from "@/lib/data";
+import { getAllReports, getReportByToolName, getRepositoryMetrics, displayGrade } from "@/lib/data";
 import { formatVersionLabel } from "@/lib/report-utils";
 import { GradeProgressRing } from "@/lib/grades";
 import { formatSeverityLabel, getMethodologyHref, getRuleInfo, getSeverityBadgeClass, getSeverityCardClass } from "@/lib/rules";
@@ -39,34 +39,6 @@ function getDecisionLabel(grade: string): string {
   return "Safe With Normal Controls";
 }
 
-function getActionCardStyle(grade: string): { border: string; bg: string; badge: string; title: string; body: string } {
-  if (grade === "D" || grade === "F") {
-    return {
-      border: "border-red-500/25",
-      bg: "bg-red-500/[0.05]",
-      badge: "border-red-400/30 bg-red-400/10 text-red-200",
-      title: "Block In Production",
-      body: "This tool should stay disabled in production agents until the flagged risks are fixed and the scan is clean.",
-    };
-  }
-  if (grade === "C") {
-    return {
-      border: "border-yellow-500/20",
-      bg: "bg-yellow-500/[0.05]",
-      badge: "border-yellow-300/25 bg-yellow-300/10 text-yellow-100",
-      title: "Review Before Use",
-      body: "Keep this tool behind manual approval and avoid unattended runs until the risky capabilities are narrowed or removed.",
-    };
-  }
-  return {
-    border: "border-emerald-500/20",
-    bg: "bg-emerald-500/[0.05]",
-    badge: "border-emerald-400/25 bg-emerald-400/10 text-emerald-200",
-    title: "Safe With Normal Controls",
-    body: "No high-risk findings were detected in this scan, but you should still apply least-privilege defaults and rescan after changes.",
-  };
-}
-
 export async function generateMetadata({ params }: PageProps) {
   const { name } = await params;
   const report = getReportByToolName(name);
@@ -105,7 +77,6 @@ export default async function ToolPage({ params }: PageProps) {
   const directoryUrl =
     "https://github.com/AgentSafe-AI/tooltrust-directory";
   const summary = report.summary;
-  const narrative = getToolNarrative(report);
   const blockSnippet = `{
   "mcpServers": {
     "${report.tool_id}": {
@@ -114,7 +85,6 @@ export default async function ToolPage({ params }: PageProps) {
   }
 }`;
   const decisionLabel = getDecisionLabel(grade);
-  const actionStyle = getActionCardStyle(grade);
   const severityChips = [
     { label: "Critical", n: summary.critical },
     { label: "High", n: summary.high },
@@ -256,113 +226,27 @@ export default async function ToolPage({ params }: PageProps) {
             )}
           </p>
         </div>
+        <aside className="w-full shrink-0 rounded-lg border border-zinc-800 bg-zinc-900/70 p-3 sm:ml-auto sm:w-72">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">Risk summary</p>
+            <span className="text-xs font-medium text-zinc-300">{decisionLabel}</span>
+          </div>
+          <p className="mt-1 text-sm text-zinc-300">
+            {hasFindings ? `${report.findings.length} finding${report.findings.length === 1 ? "" : "s"}` : "No findings detected"}
+            {severityChips.length > 0 && ` · ${severityChips.map((s) => `${s.n} ${s.label.toLowerCase()}`).join(", ")}`}
+          </p>
+          {(grade === "D" || grade === "F") && (
+            <CopyBadgeButton
+              snippet={blockSnippet}
+              label="Copy block config"
+              copiedLabel="Copied"
+              className="mt-2 text-xs text-zinc-500 hover:text-zinc-200"
+            />
+          )}
+        </aside>
       </div>
 
       <RepositoryHealthPanel report={report} metrics={repositoryMetrics} />
-
-      {hasFindings && severityChips.length > 0 && (
-        <div className="flex flex-wrap gap-2">
-          {severityChips.map((s) => (
-            <span
-              key={s.label}
-              className={getSeverityBadgeClass(s.label)}
-            >
-              {s.n} {s.label}
-            </span>
-          ))}
-        </div>
-      )}
-
-      {hasFindings && (() => {
-        const riskStyle: Record<string, { border: string; bg: string; heading: string; badge: string }> = {
-          F: {
-            border: "border-red-500/25",
-            bg: "bg-red-500/8",
-            heading: "text-red-300",
-            badge: "bg-red-500/12 text-red-300 border-red-500/30",
-          },
-          D: {
-            border: "border-orange-500/25",
-            bg: "bg-orange-500/8",
-            heading: "text-orange-300",
-            badge: "bg-orange-500/12 text-orange-300 border-orange-500/30",
-          },
-          C: {
-            border: "border-yellow-500/20",
-            bg: "bg-yellow-500/6",
-            heading: "text-yellow-200",
-            badge: "bg-yellow-500/10 text-yellow-200 border-yellow-500/25",
-          },
-          B: {
-            border: "border-sky-500/20",
-            bg: "bg-sky-500/6",
-            heading: "text-sky-300",
-            badge: "bg-sky-500/10 text-sky-300 border-sky-500/25",
-          },
-          A: {
-            border: "border-emerald-500/20",
-            bg: "bg-emerald-500/6",
-            heading: "text-emerald-300",
-            badge: "bg-emerald-500/10 text-emerald-300 border-emerald-500/25",
-          },
-          S: {
-            border: "border-amber-500/20",
-            bg: "bg-amber-500/6",
-            heading: "text-amber-200",
-            badge: "bg-amber-500/10 text-amber-200 border-amber-500/25",
-          },
-        };
-        const s = riskStyle[grade] ?? riskStyle["C"];
-        return (
-          <section className={`rounded-xl border ${s.border} ${s.bg} p-6`}>
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <h2 className={`text-sm font-semibold uppercase tracking-wider ${s.heading}`}>
-                    Risk Summary
-                  </h2>
-                  <span className={`rounded-full border px-2 py-0.5 text-xs font-medium ${s.badge}`}>
-                    {decisionLabel}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">
-                  {narrative.impactLine}
-                </p>
-              </div>
-              {(grade === "D" || grade === "F") && (
-                <CopyBadgeButton
-                  snippet={blockSnippet}
-                  label="Copy Block Config"
-                  copiedLabel="Copied Block Config"
-                  className="inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-xs text-zinc-300 hover:border-zinc-600 hover:bg-zinc-800 hover:text-zinc-100"
-                />
-              )}
-            </div>
-            <div className="mt-4 space-y-3">
-              <p className="text-sm leading-6 text-zinc-400">
-                <span className="font-medium text-zinc-100">Potential impact:</span>{" "}
-                {narrative.consequence}
-              </p>
-              <p className="text-sm leading-6 text-zinc-400">
-                <span className="font-medium text-zinc-100">Recommended action:</span>{" "}
-                {actionStyle.body}
-              </p>
-              {grade === "D" || grade === "F" ? (
-                <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
-                  <pre className="overflow-x-auto text-sm text-zinc-300">{blockSnippet}</pre>
-                </div>
-              ) : (
-                <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-zinc-400">
-                  <p>
-                    <span className="font-medium text-zinc-100">Suggested policy:</span>{" "}
-                    keep this tool behind manual approval, do not allow unattended runs, and re-scan after narrowing risky permissions.
-                  </p>
-                </div>
-              )}
-            </div>
-          </section>
-        );
-      })()}
 
       {report.scan_incomplete && (
         <div className="flex items-start gap-3 rounded-xl border border-yellow-500/30 bg-yellow-500/10 px-5 py-4">
