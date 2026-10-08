@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 395 |
 | **Language** | Python |
 | **Source** | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) |
-| **Scan Date** | 2026-10-07 |
+| **Scan Date** | 2026-10-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

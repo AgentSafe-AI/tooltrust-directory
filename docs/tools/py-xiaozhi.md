@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.8` |
 | **Vendor** | huangjunsen0406 |
-| **Stars** | ⭐ 3224 |
+| **Stars** | ⭐ 3492 |
 | **Language** | Python |
 | **Source** | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) |
 | **Scan Date** | 2026-03-18 |

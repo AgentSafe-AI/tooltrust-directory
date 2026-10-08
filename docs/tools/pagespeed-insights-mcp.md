@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | ruslanlap |
-| **Stars** | ⭐ 67 |
+| **Stars** | ⭐ 68 |
 | **npm Package** | `@ruslanlap/pagespeed-insights-mcp` |
 | **Language** | TypeScript |
 | **Source** | [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) |
-| **Scan Date** | 2026-10-07 |
+| **Scan Date** | 2026-10-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

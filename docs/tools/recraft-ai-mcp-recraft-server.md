@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.6.5` |
 | **Vendor** | recraft-ai |
-| **Stars** | ⭐ 53 |
+| **Stars** | ⭐ 60 |
 | **npm Package** | `@recraft-ai/mcp-recraft-server` |
 | **npm Downloads (30d)** | 1.2k |
 | **Language** | TypeScript |

@@ -6,13 +6,14 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `1.4.2` |
+| **Version** | `1.5.0` |
 | **Vendor** | gitmotion |
 | **Stars** | ⭐ 75 |
 | **npm Package** | `ntfy-me-mcp` |
+| **npm Downloads (30d)** | 763 |
 | **Language** | TypeScript |
 | **Source** | [ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) |
-| **Scan Date** | 2026-10-07 |
+| **Scan Date** | 2026-10-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

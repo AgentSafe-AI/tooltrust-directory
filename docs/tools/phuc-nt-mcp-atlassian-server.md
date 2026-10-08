@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.1` |
 | **Vendor** | phuc-nt |
-| **Stars** | ⭐ 51 |
+| **Stars** | ⭐ 52 |
 | **npm Package** | `@phuc-nt/mcp-atlassian-server` |
 | **npm Downloads (30d)** | 263 |
 | **Language** | TypeScript |

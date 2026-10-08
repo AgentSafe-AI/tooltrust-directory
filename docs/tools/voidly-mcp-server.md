@@ -1,6 +1,6 @@
 # 🟢 voidly-mcp-server
 
-> Live internet-censorship data for AI agents. Check whether a website or app is blocked in a country, read dated incident records with links to the raw evidence, and get 7-day shutdown-risk forecasts. Covers 130 countries and 690,000+ evidence records from OONI, IODA, Censored Planet and Voidly's own probe network. Outages are kept separate from censorship, and countries without enough data are marked unmeasured. Optional end-to-end encrypted agent messaging is included, with write tools off by default. Source: github.com/voidly-ai/atlas-mcp
+> Live internet-censorship data for AI agents. Check whether a website or app is blocked in a country, read dated incident records with links to the raw evidence, and get 7-day shutdown-risk forecasts. Covers 130 countries and 690,000+ evidence records from OONI, IODA, Censored Planet and Voidly's own probe network. Outages are kept separate from censorship, and countries without enough data are marked unmeasured. This hosted listing has no messaging tools; the npm package adds optional agent relay tools (state-changing actions off by default), and relay messages are relay-readable, not end-to-end encrypted. Source: github.com/voidly-ai/atlas-mcp
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [voidly-mcp-server](https://smithery.ai/server/voidly/mcp-server) |
-| **Scan Date** | 2026-10-07 |
+| **Scan Date** | 2026-10-08 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

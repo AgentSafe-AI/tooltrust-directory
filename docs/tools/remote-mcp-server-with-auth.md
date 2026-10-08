@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.0.1` |
 | **Vendor** | coleam00 |
-| **Stars** | ⭐ 292 |
+| **Stars** | ⭐ 300 |
 | **npm Package** | `remote-mcp-github-oauth` |
 | **Language** | TypeScript |
 | **Source** | [remote-mcp-server-with-auth](https://github.com/coleam00/remote-mcp-server-with-auth) |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.0` |
 | **Vendor** | icip-cas |
-| **Stars** | ⭐ 3553 |
+| **Stars** | ⭐ 5091 |
 | **Language** | Python |
 | **Source** | [pptagent](https://github.com/icip-cas/PPTAgent) |
 | **Scan Date** | 2026-03-18 |

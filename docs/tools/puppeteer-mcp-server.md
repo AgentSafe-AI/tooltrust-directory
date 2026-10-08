@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `0.7.2` |
 | **Vendor** | merajmehrabi |
-| **Stars** | ⭐ 484 |
+| **Stars** | ⭐ 486 |
 | **npm Package** | `puppeteer-mcp-server` |
 | **npm Downloads (30d)** | 9.5k |
 | **Language** | TypeScript |

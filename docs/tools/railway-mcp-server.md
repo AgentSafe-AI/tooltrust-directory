@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.11` |
 | **Vendor** | railwayapp |
-| **Stars** | ⭐ 192 |
+| **Stars** | ⭐ 191 |
 | **npm Package** | `@railway/mcp-server` |
 | **npm Downloads (30d)** | 34.9k |
 | **Language** | TypeScript |

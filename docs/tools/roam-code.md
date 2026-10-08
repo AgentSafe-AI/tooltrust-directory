@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `13.6.1` |
 | **Vendor** | Cranot |
-| **Stars** | ⭐ 483 |
+| **Stars** | ⭐ 517 |
 | **Language** | Python |
 | **Source** | [roam-code](https://github.com/Cranot/roam-code) |
 | **Scan Date** | 2026-06-22 |

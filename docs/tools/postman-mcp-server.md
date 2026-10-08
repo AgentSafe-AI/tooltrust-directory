@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `2.9.1` |
 | **Vendor** | postmanlabs |
-| **Stars** | ⭐ 262 |
+| **Stars** | ⭐ 318 |
 | **npm Package** | `@postman/postman-mcp-server` |
 | **npm Downloads (30d)** | 27.3k |
 | **Language** | TypeScript |

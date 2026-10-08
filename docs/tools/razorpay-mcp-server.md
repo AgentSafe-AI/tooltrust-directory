@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.2.1` |
 | **Vendor** | razorpay |
-| **Stars** | ⭐ 225 |
+| **Stars** | ⭐ 231 |
 | **Language** | Go |
 | **Source** | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) |
 | **Scan Date** | 2026-06-22 |

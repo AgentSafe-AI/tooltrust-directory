@@ -1,17 +1,30 @@
 {
-  "tool_id": "podman-mcp-server",
-  "version": "0.0.15",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:11:02Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/manusa/podman-mcp-server",
   "category": "Developer Tools",
-  "vendor": "manusa",
-  "stars": 74,
-  "license": "Apache-2.0",
-  "language": "Go",
+  "contributors": 3,
   "description": "Model Context Protocol (MCP) server for container runtimes (Podman and Docker)",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "pkg/mcp/mcp.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 25,
+      "snippet": "mcp.NewServer(",
+      "file": "pkg/mcp/mcp.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 50,
+      "snippet": "server.AddTool(",
+      "file": "pkg/mcp/mcp.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-018",
@@ -46,6 +59,24 @@
       }
     }
   ],
+  "forks": 18,
+  "grade": "I",
+  "has_embedded_mcp": true,
+  "language": "Go",
+  "last_commit_at": "2026-08-21T03:56:01Z",
+  "last_release_at": "2026-02-27T12:03:52Z",
+  "latest_release_name": "v0.0.15",
+  "latest_release_tag": "v0.0.15",
+  "latest_release_url": "https://github.com/manusa/podman-mcp-server/releases/tag/v0.0.15",
+  "latest_release_version": "v0.0.15",
+  "license": "Apache-2.0",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 0,
+  "scan_date": "2026-06-22T03:11:02Z",
+  "scan_incomplete": true,
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/manusa/podman-mcp-server",
+  "stars": 84,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -53,30 +84,7 @@
     "low": 0,
     "info": 1
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 13,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "pkg/mcp/mcp.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 25,
-      "snippet": "mcp.NewServer(",
-      "file": "pkg/mcp/mcp.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 50,
-      "snippet": "server.AddTool(",
-      "file": "pkg/mcp/mcp.go",
-      "language": "go"
-    }
-  ]
+  "tool_id": "podman-mcp-server",
+  "vendor": "manusa",
+  "version": "0.0.15"
 }

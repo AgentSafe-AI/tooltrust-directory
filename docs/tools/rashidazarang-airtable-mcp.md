@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `4.0.0` |
 | **Vendor** | rashidazarang |
-| **Stars** | ⭐ 78 |
+| **Stars** | ⭐ 87 |
 | **npm Package** | `@rashidazarang/airtable-mcp` |
 | **npm Downloads (30d)** | 991 |
 | **Language** | TypeScript |
