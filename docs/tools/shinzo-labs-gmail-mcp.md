@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.7.4` |
 | **Vendor** | shinzo-labs |
-| **Stars** | ⭐ 53 |
+| **Stars** | ⭐ 61 |
 | **npm Package** | `@shinzolabs/gmail-mcp` |
 | **npm Downloads (30d)** | 6.4k |
 | **Language** | JavaScript |

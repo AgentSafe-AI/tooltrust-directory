@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.2.3` |
 | **Vendor** | affaan-m |
-| **Stars** | ⭐ 275001 |
+| **Stars** | ⭐ 275468 |
 | **npm Package** | `ecc-universal` |
-| **npm Downloads (30d)** | 47.1k |
+| **npm Downloads (30d)** | 47.3k |
 | **Language** | JavaScript |
 | **Source** | [ecc](https://github.com/affaan-m/ECC) |
-| **Scan Date** | 2026-10-08 |
+| **Scan Date** | 2026-10-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

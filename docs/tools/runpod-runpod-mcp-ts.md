@@ -6,7 +6,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.1.0` |
 | **Vendor** | runpod |
-| **Stars** | ⭐ 55 |
+| **Stars** | ⭐ 83 |
 | **npm Package** | `@runpod/mcp-server` |
 | **npm Downloads (30d)** | 4.0k |
 | **Language** | TypeScript |

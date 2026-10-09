@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `ersioning-example@0.1.6` |
 | **Vendor** | ComposioHQ |
-| **Stars** | ⭐ 30465 |
+| **Stars** | ⭐ 30475 |
 | **npm Package** | `composio` |
-| **npm Downloads (30d)** | 2.6k |
+| **npm Downloads (30d)** | 2.5k |
 | **Language** | TypeScript |
 | **Source** | [composio](https://github.com/ComposioHQ/composio) |
-| **Scan Date** | 2026-10-08 |
+| **Scan Date** | 2026-10-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

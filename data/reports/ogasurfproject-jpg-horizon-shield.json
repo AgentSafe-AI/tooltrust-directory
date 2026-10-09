@@ -1,9 +1,9 @@
 {
   "tool_id": "ogasurfproject-jpg-horizon-shield",
-  "version": "1.0.13",
+  "version": "workers/hs-ledger/nenrin/sdk-go/v0.1.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-08T03:57:30.898968345Z",
+  "scan_date": "2026-10-09T04:02:02.753255254Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/ogasurfproject-jpg/horizon-shield",
   "category": "Other",
@@ -156,7 +156,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "suggest_ehn"
+      "tool_name": "get_anonymous_estimate_review_link"
     },
     {
       "id": "AS-011",
@@ -164,7 +164,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "suggest_ehn"
+      "tool_name": "get_anonymous_estimate_review_link"
     },
     {
       "id": "AS-014",
@@ -172,7 +172,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "suggest_ehn"
+      "tool_name": "get_anonymous_estimate_review_link"
     },
     {
       "id": "AS-002",
@@ -221,6 +221,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "verify_integrity_claim"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "find_verified_contractor"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "find_verified_contractor"
     }
   ],
   "summary": {
@@ -228,14 +244,16 @@
     "high": 0,
     "medium": 0,
     "low": 6,
-    "info": 20
+    "info": 22
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "audit_estimate",
     "check_red_flags",
     "create_ap2_fairness_attestation",
+    "find_verified_contractor",
     "get_agent_card",
+    "get_anonymous_estimate_review_link",
     "get_estimate_reading_guide",
     "get_fair_price_sources",
     "get_jccdb_dataset_info",
@@ -243,7 +261,6 @@
     "list_cost_categories",
     "preview_reverse_estimate",
     "search_cost_category",
-    "suggest_ehn",
     "verify_fair_price",
     "verify_integrity_claim"
   ],
@@ -337,7 +354,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "suggest_ehn",
+      "tool_name": "get_anonymous_estimate_review_link",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -362,6 +379,16 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "find_verified_contractor",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -466,6 +493,12 @@
     },
     {
       "scan_date": "2026-10-07T03:21:47Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.13"
+    },
+    {
+      "scan_date": "2026-10-08T03:57:30Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.13"

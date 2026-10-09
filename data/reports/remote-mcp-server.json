@@ -1,54 +1,18 @@
 {
+  "tool_id": "remote-mcp-server",
+  "version": "1.2.1",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-09T03:59:04.68381405Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/gleanwork/remote-mcp-server",
   "category": "Other",
-  "contributors": 1,
+  "vendor": "gleanwork",
+  "stars": 165,
+  "npm_package": "glean-remote-mcp-server",
+  "license": "MIT",
   "description": "Remote MCP Server that securely connects Enterprise context with your LLM, IDE, or agent platform of choice.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.2.1: 2 tool(s) added, 30 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "get_jobs",
-          "get_taxonomies"
-        ],
-        "removed": [
-          "create_directory",
-          "edit_block",
-          "force_terminate",
-          "get_config",
-          "get_file_info",
-          "get_more_search_results",
-          "get_prompts",
-          "get_recent_tool_calls",
-          "get_usage_stats",
-          "give_feedback_to_desktop_commander",
-          "interact_with_process",
-          "kill_process",
-          "list_devices",
-          "list_directory",
-          "list_processes",
-          "list_searches",
-          "list_sessions",
-          "move_file",
-          "ping",
-          "read_file",
-          "read_multiple_files",
-          "read_process_output",
-          "set_config_value",
-          "shutdown",
-          "start_process",
-          "start_search",
-          "stop_search",
-          "who_am_i",
-          "write_file",
-          "write_pdf"
-        ],
-        "version": "1.2.1"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -82,19 +46,38 @@
       "tool_name": "get_taxonomies"
     }
   ],
-  "forks": 3,
-  "grade": "B",
-  "last_commit_at": "2026-04-17T16:55:15Z",
-  "last_release_at": "2026-04-17T16:55:28Z",
-  "latest_release_name": "v1.2.1",
-  "latest_release_tag": "v1.2.1",
-  "latest_release_url": "https://github.com/gleanwork/remote-mcp-server/releases/tag/v1.2.1",
-  "latest_release_version": "v1.2.1",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 3
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_package": "glean-remote-mcp-server",
-  "risk_score": 15,
-  "scan_date": "2026-10-08T03:54:23.291193796Z",
+  "tool_names": [
+    "get_jobs",
+    "get_taxonomies"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_jobs",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_taxonomies",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-06-15T23:53:33Z",
@@ -605,43 +588,12 @@
       "grade": "B",
       "risk_score": 17,
       "version": "1.2.1"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/gleanwork/remote-mcp-server",
-  "stars": 165,
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 1,
-    "info": 3
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "get_jobs",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_taxonomies",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "scan_date": "2026-10-08T03:54:23Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.2.1"
     }
-  ],
-  "tool_id": "remote-mcp-server",
-  "tool_names": [
-    "get_jobs",
-    "get_taxonomies"
-  ],
-  "vendor": "gleanwork",
-  "version": "1.2.1"
+  ]
 }

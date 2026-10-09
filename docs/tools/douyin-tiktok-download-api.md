@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `5.1.3` |
 | **Vendor** | Evil0ctal |
-| **Stars** | ⭐ 20503 |
+| **Stars** | ⭐ 20525 |
 | **Language** | Python |
 | **Source** | [douyin-tiktok-download-api](https://github.com/Evil0ctal/Douyin_TikTok_Download_API) |
-| **Scan Date** | 2026-10-08 |
+| **Scan Date** | 2026-10-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

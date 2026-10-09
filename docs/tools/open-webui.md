@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.11.4` |
 | **Vendor** | open-webui |
-| **Stars** | ⭐ 154175 |
+| **Stars** | ⭐ 154073 |
 | **npm Package** | `open-webui` |
-| **npm Downloads (30d)** | 207 |
+| **npm Downloads (30d)** | 204 |
 | **Language** | Python |
 | **Source** | [open-webui](https://github.com/open-webui/open-webui) |
-| **Scan Date** | 2026-10-08 |
+| **Scan Date** | 2026-10-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

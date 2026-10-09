@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.13.0` |
 | **Vendor** | shinpr |
-| **Stars** | ⭐ 246 |
+| **Stars** | ⭐ 411 |
 | **npm Package** | `mcp-local-rag` |
 | **npm Downloads (30d)** | 8.3k |
 | **Language** | TypeScript |

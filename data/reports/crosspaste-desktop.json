@@ -1,41 +1,96 @@
 {
   "tool_id": "crosspaste-desktop",
   "version": "1.0.1",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-10-08T03:50:41.395008061Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-09T03:55:30.982874587Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/CrossPaste/crosspaste-desktop",
   "category": "Other",
   "vendor": "CrossPaste",
-  "stars": 2618,
+  "stars": 2621,
   "license": "AGPL-3.0",
   "language": "Kotlin",
   "description": "Cross-device clipboard sync for macOS, Windows \u0026 Linux — end-to-end encrypted, LAN-only, no cloud. OCR, CLI and MCP server built in.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.0.1: 5 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "autonomous_desktop_app_architect",
+          "build_tauri_commands_and_state",
+          "generate_electron_main_and_preload",
+          "implement_native_features",
+          "prepare_desktop_release_pipeline"
+        ],
+        "removed": [
+          "compare_apps",
+          "list_sdk_categories",
+          "lookup_app",
+          "search_apps"
+        ],
+        "version": "1.0.1"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "autonomous_desktop_app_architect"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "autonomous_desktop_app_architect"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lookup_app"
+      "tool_name": "autonomous_desktop_app_architect"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "generate_electron_main_and_preload"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "generate_electron_main_and_preload"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_apps"
+      "tool_name": "build_tauri_commands_and_state"
     },
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 16 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_apps"
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "build_tauri_commands_and_state"
     },
     {
       "id": "AS-011",
@@ -43,7 +98,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_apps"
+      "tool_name": "build_tauri_commands_and_state"
     },
     {
       "id": "AS-014",
@@ -51,7 +106,23 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_apps"
+      "tool_name": "build_tauri_commands_and_state"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "implement_native_features"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "implement_native_features"
     },
     {
       "id": "AS-014",
@@ -59,7 +130,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_apps"
+      "tool_name": "implement_native_features"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "prepare_desktop_release_pipeline"
     },
     {
       "id": "AS-014",
@@ -67,57 +146,67 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_sdk_categories"
+      "tool_name": "prepare_desktop_release_pipeline"
     }
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 2,
-    "info": 5
+    "low": 1,
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "compare_apps",
-    "list_sdk_categories",
-    "lookup_app",
-    "search_apps"
+    "autonomous_desktop_app_architect",
+    "build_tauri_commands_and_state",
+    "generate_electron_main_and_preload",
+    "implement_native_features",
+    "prepare_desktop_release_pipeline"
   ],
   "tool_contexts": [
     {
-      "tool_name": "lookup_app",
+      "tool_name": "autonomous_desktop_app_architect",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "generate_electron_main_and_preload",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "hardcoded domain: com.figma.Desktop"
+        "hardcoded domain: ipcMain.handle"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_apps",
+      "tool_name": "build_tauri_commands_and_state",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "executes_commands"
       ],
       "destinations": [
-        "dynamic email recipient (autoUpdateSdk)",
-        "hardcoded domain: Socket.IO"
+        "hardcoded domain: tauri.conf.json"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "compare_apps",
+      "tool_name": "implement_native_features",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_sdk_categories",
+      "tool_name": "prepare_desktop_release_pipeline",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -271,6 +360,12 @@
     },
     {
       "scan_date": "2026-10-07T03:16:57Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "1.0.1"
+    },
+    {
+      "scan_date": "2026-10-08T03:50:41Z",
       "grade": "A",
       "risk_score": 4,
       "version": "1.0.1"

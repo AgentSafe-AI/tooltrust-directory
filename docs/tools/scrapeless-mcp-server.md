@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.9` |
 | **Vendor** | scrapeless-ai |
-| **Stars** | ⭐ 162 |
+| **Stars** | ⭐ 169 |
 | **npm Package** | `scrapeless-mcp-server` |
 | **npm Downloads (30d)** | 350 |
 | **Language** | TypeScript |

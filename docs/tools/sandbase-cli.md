@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.17` |
 | **Vendor** | sandbaseai |
-| **Stars** | ⭐ 94 |
+| **Stars** | ⭐ 188 |
 | **npm Package** | `@sandbaseai/cli` |
 | **npm Downloads (30d)** | 914 |
 | **Language** | TypeScript |

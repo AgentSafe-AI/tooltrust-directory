@@ -1,17 +1,22 @@
 {
-  "tool_id": "samihalawa-whatsapp-go-mcp",
-  "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:18:59.250232788Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/samihalawa/whatsapp-go-mcp",
   "category": "Developer Tools",
-  "vendor": "samihalawa",
-  "stars": 5,
-  "npm_package": "@samihalawa/whatsapp-go-mcp",
-  "license": "MIT",
-  "language": "Go",
+  "contributors": 2,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+      "file": "src/cmd/mcp.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 38,
+      "snippet": "server.NewMCPServer(",
+      "file": "src/cmd/mcp.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-014",
@@ -70,81 +75,21 @@
       "tool_name": "whatsapp_send_text"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 6
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 6,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 13,
-      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
-      "file": "src/cmd/mcp.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 38,
-      "snippet": "server.NewMCPServer(",
-      "file": "src/cmd/mcp.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "whatsapp_send_contact",
-    "whatsapp_send_image",
-    "whatsapp_send_link",
-    "whatsapp_send_location",
-    "whatsapp_send_text"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "whatsapp_send_contact",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "whatsapp_send_image",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (image_url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "whatsapp_send_link",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "whatsapp_send_location",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "whatsapp_send_text",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "Go",
+  "last_commit_at": "2025-11-10T19:24:35Z",
+  "last_release_at": "2025-08-26T01:10:58Z",
+  "latest_release_name": "v1.0.0: Optimized WhatsApp MCP Server",
+  "latest_release_tag": "v1.0.0",
+  "latest_release_url": "https://github.com/samihalawa/whatsapp-go-mcp/releases/tag/v1.0.0",
+  "latest_release_version": "v1.0.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_package": "@samihalawa/whatsapp-go-mcp",
+  "risk_score": 2,
+  "scan_date": "2026-06-22T03:18:59.250232788Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:53:28Z",
@@ -296,5 +241,68 @@
       "risk_score": 2,
       "version": "1.0.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/samihalawa/whatsapp-go-mcp",
+  "stars": 6,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 6
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "whatsapp_send_contact",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "whatsapp_send_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (image_url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "whatsapp_send_link",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "whatsapp_send_location",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "whatsapp_send_text",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "samihalawa-whatsapp-go-mcp",
+  "tool_names": [
+    "whatsapp_send_contact",
+    "whatsapp_send_image",
+    "whatsapp_send_link",
+    "whatsapp_send_location",
+    "whatsapp_send_text"
+  ],
+  "vendor": "samihalawa",
+  "version": "1.0.0"
 }

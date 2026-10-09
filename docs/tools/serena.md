@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | oraios |
-| **Stars** | ⭐ 21673 |
+| **Stars** | ⭐ 30111 |
 | **Language** | Python |
 | **Source** | [serena](https://github.com/oraios/serena) |
 | **Scan Date** | 2026-03-18 |

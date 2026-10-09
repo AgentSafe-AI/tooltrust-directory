@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `tunnel@0.1.1` |
 | **Vendor** | speakeasy-api |
-| **Stars** | ⭐ 272 |
+| **Stars** | ⭐ 273 |
 | **npm Package** | `@gram/workspace` |
 | **Language** | Go |
 | **Source** | [gram](https://github.com/speakeasy-api/gram) |
-| **Scan Date** | 2026-10-08 |
+| **Scan Date** | 2026-10-09 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
