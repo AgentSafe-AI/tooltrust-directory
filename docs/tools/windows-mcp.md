@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.8.7` |
+| **Version** | `0.8.8` |
 | **Vendor** | cursortouch |
-| **Stars** | ⭐ 8351 |
+| **Stars** | ⭐ 8500 |
 | **Language** | Python |
 | **Source** | [windows-mcp](https://github.com/CursorTouch/Windows-MCP) |
-| **Scan Date** | 2026-10-09 |
+| **Scan Date** | 2026-10-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -24,9 +24,21 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 4 |
-| Info     | 26 |
+| Info     | 27 |
 
 ## Detailed Findings
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

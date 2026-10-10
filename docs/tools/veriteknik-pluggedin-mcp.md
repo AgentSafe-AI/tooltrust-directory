@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | VeriTeknik |
-| **Stars** | ⭐ 51 |
+| **Stars** | ⭐ 52 |
 | **npm Package** | `@pluggedin/pluggedin-mcp-proxy` |
 | **npm Downloads (30d)** | 448 |
 | **Language** | TypeScript |

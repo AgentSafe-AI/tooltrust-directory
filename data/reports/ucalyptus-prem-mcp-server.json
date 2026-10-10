@@ -1,17 +1,23 @@
 {
-  "tool_id": "ucalyptus-prem-mcp-server",
-  "version": "0.1.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:23:37.993987353Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/ucalyptus/prem-mcp-server",
   "category": "Developer Tools",
-  "vendor": "ucalyptus",
-  "stars": 1,
-  "npm_package": "prem-mcp-server",
-  "language": "JavaScript",
+  "contributors": 2,
   "description": "Implementation of an MCP Server to use the Prem SDK",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 55,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-010",
@@ -62,72 +68,20 @@
       "tool_name": "prem_chat_with_template"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 6
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 1,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 55,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "chat",
-    "prem_chat_with_template",
-    "prem_upload_document"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "chat",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (max_tokens)",
-        "dynamic email recipient (repository_ids)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "prem_upload_document",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (repository_id)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "prem_chat_with_template",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (max_tokens)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "JavaScript",
+  "last_commit_at": "2025-03-26T02:24:52Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_package": "prem-mcp-server",
+  "risk_score": 0,
+  "scan_date": "2026-06-22T03:23:37.993987353Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:48:31Z",
@@ -285,5 +239,59 @@
       "risk_score": 0,
       "version": "0.1.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/ucalyptus/prem-mcp-server",
+  "stars": 1,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 6
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "chat",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (max_tokens)",
+        "dynamic email recipient (repository_ids)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "prem_upload_document",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (repository_id)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "prem_chat_with_template",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (max_tokens)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "ucalyptus-prem-mcp-server",
+  "tool_names": [
+    "chat",
+    "prem_chat_with_template",
+    "prem_upload_document"
+  ],
+  "vendor": "ucalyptus",
+  "version": "0.1.0"
 }

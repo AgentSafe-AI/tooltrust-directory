@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.4.4` |
 | **Vendor** | tomohiro-owada |
-| **Stars** | ⭐ 54 |
+| **Stars** | ⭐ 64 |
 | **Language** | Go |
 | **Source** | [tomohiro-owada-devrag](https://github.com/tomohiro-owada/devrag) |
 | **Scan Date** | 2026-06-22 |

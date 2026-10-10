@@ -1,17 +1,37 @@
 {
-  "tool_id": "terraform-mcp-server",
-  "version": "1.3.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-10-09T03:56:31Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/hashicorp/terraform-mcp-server",
   "category": "Developer Tools",
-  "vendor": "hashicorp",
-  "stars": 1546,
-  "license": "MPL-2.0",
-  "language": "Go",
+  "contributors": 30,
   "description": "The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 28,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "cmd/terraform-mcp-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 197,
+      "snippet": "server.NewMCPServer(",
+      "file": "cmd/terraform-mcp-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 9,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "pkg/mcp-official/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 20,
+      "snippet": "mcp.NewServer(",
+      "file": "pkg/mcp-official/server.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-018",
@@ -53,6 +73,24 @@
       }
     }
   ],
+  "forks": 201,
+  "grade": "I",
+  "has_embedded_mcp": true,
+  "language": "Go",
+  "last_commit_at": "2026-10-08T20:50:57Z",
+  "last_release_at": "2026-08-26T17:30:29Z",
+  "latest_release_name": "v1.3.0",
+  "latest_release_tag": "v1.3.0",
+  "latest_release_url": "https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.3.0",
+  "latest_release_version": "v1.3.0",
+  "license": "MPL-2.0",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 0,
+  "scan_date": "2026-10-10T03:40:24Z",
+  "scan_incomplete": true,
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/hashicorp/terraform-mcp-server",
+  "stars": 1546,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -60,37 +98,7 @@
     "low": 0,
     "info": 1
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 28,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "cmd/terraform-mcp-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 197,
-      "snippet": "server.NewMCPServer(",
-      "file": "cmd/terraform-mcp-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 9,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "pkg/mcp-official/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 20,
-      "snippet": "mcp.NewServer(",
-      "file": "pkg/mcp-official/server.go",
-      "language": "go"
-    }
-  ]
+  "tool_id": "terraform-mcp-server",
+  "vendor": "hashicorp",
+  "version": "1.3.0"
 }

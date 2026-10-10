@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.0` |
 | **Vendor** | abhiz123 |
-| **Stars** | ⭐ 391 |
+| **Stars** | ⭐ 392 |
 | **npm Package** | `@abhiz123/todoist-mcp-server` |
 | **npm Downloads (30d)** | 2.3k |
 | **Language** | JavaScript |

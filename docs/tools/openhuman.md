@@ -1,18 +1,18 @@
 # 🟢 openhuman
 
-> OpenHuman is the fastest, cheapest, most efficient open-source agent harness. Written in Rust
+> The fastest, cheapest, most efficient open-source agent harness. Run more than 500 agents on a $10 VPS.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.64.14` |
+| **Version** | `0.64.15` |
 | **Vendor** | tinyhumansai |
-| **Stars** | ⭐ 41695 |
+| **Stars** | ⭐ 41754 |
 | **npm Package** | `openhuman-repo` |
 | **Language** | Rust |
 | **Source** | [openhuman](https://github.com/tinyhumansai/openhuman) |
-| **Scan Date** | 2026-10-09 |
+| **Scan Date** | 2026-10-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

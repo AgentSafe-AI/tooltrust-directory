@@ -1,17 +1,58 @@
 {
-  "tool_id": "tjhop-prometheus-mcp-server",
-  "version": "0.18.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:12:33.699185836Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/tjhop/prometheus-mcp-server",
   "category": "Developer Tools",
-  "vendor": "tjhop",
-  "stars": 46,
-  "license": "Apache-2.0",
-  "language": "Go",
+  "contributors": 8,
   "description": "MCP server for LLMs to interact with Prometheus",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "cmd/prometheus-mcp-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 194,
+      "snippet": "mcp.NewServer(",
+      "file": "cmd/prometheus-mcp-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 9,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "pkg/mcp/mcptest/harness.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 35,
+      "snippet": "mcp.NewServer(",
+      "file": "pkg/mcp/mcptest/harness.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 71,
+      "snippet": "AddTool(",
+      "file": "pkg/mcp/mcptest/harness.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 18,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "pkg/mcp/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 131,
+      "snippet": "mcp.NewServer(",
+      "file": "pkg/mcp/server.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-007",
@@ -126,124 +167,20 @@
       "tool_name": "get-alert-groups"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 14
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 24,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 20,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "cmd/prometheus-mcp-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 194,
-      "snippet": "mcp.NewServer(",
-      "file": "cmd/prometheus-mcp-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 9,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "pkg/mcp/mcptest/harness.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 35,
-      "snippet": "mcp.NewServer(",
-      "file": "pkg/mcp/mcptest/harness.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 71,
-      "snippet": "AddTool(",
-      "file": "pkg/mcp/mcptest/harness.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 18,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "pkg/mcp/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 131,
-      "snippet": "mcp.NewServer(",
-      "file": "pkg/mcp/server.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "create-silence",
-    "delete-silence",
-    "get-alert-details",
-    "get-alert-groups",
-    "get-alerts",
-    "get-silences"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get-alerts",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-alert-details",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create-silence",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-silences",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "delete-silence",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-alert-groups",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "Go",
+  "last_commit_at": "2026-10-02T04:43:35Z",
+  "last_release_at": "2026-04-25T19:43:29Z",
+  "latest_release_name": "v0.18.0",
+  "latest_release_tag": "v0.18.0",
+  "latest_release_url": "https://github.com/prometheus/prometheus-mcp/releases/tag/v0.18.0",
+  "latest_release_version": "v0.18.0",
+  "license": "Apache-2.0",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 0,
+  "scan_date": "2026-06-22T03:12:33.699185836Z",
   "scan_history": [
     {
       "scan_date": "2026-04-20T02:15:29Z",
@@ -377,5 +314,76 @@
       "risk_score": 0,
       "version": "0.18.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/tjhop/prometheus-mcp-server",
+  "stars": 120,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 14
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "get-alerts",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-alert-details",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create-silence",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-silences",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "delete-silence",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-alert-groups",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "tjhop-prometheus-mcp-server",
+  "tool_names": [
+    "create-silence",
+    "delete-silence",
+    "get-alert-details",
+    "get-alert-groups",
+    "get-alerts",
+    "get-silences"
+  ],
+  "vendor": "tjhop",
+  "version": "0.18.0"
 }

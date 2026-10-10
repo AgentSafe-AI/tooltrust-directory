@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.0` |
 | **Vendor** | appboypov |
-| **Stars** | ⭐ 88 |
+| **Stars** | ⭐ 87 |
 | **Language** | Shell |
 | **Source** | [pew-pew-plaza-packs](https://github.com/appboypov/pew-pew-plaza-packs) |
-| **Scan Date** | 2026-10-09 |
+| **Scan Date** | 2026-10-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

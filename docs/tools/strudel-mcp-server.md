@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.4.1` |
 | **Vendor** | williamzujkowski |
-| **Stars** | ⭐ 192 |
+| **Stars** | ⭐ 242 |
 | **npm Package** | `@williamzujkowski/strudel-mcp-server` |
 | **npm Downloads (30d)** | 76 |
 | **Language** | TypeScript |

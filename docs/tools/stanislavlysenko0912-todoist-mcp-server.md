@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.3.4` |
 | **Vendor** | stanislavlysenko0912 |
-| **Stars** | ⭐ 61 |
+| **Stars** | ⭐ 63 |
 | **npm Package** | `todoist-mcp` |
 | **npm Downloads (30d)** | 1.6k |
 | **Language** | TypeScript |

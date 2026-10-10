@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.30` |
 | **Vendor** | upstash |
-| **Stars** | ⭐ 59209 |
+| **Stars** | ⭐ 62848 |
 | **npm Package** | `@upstash/context7-mcp` |
 | **npm Downloads (30d)** | 3.4M |
 | **Language** | TypeScript |

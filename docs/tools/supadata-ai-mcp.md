@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.2.2` |
 | **Vendor** | supadata-ai |
-| **Stars** | ⭐ 58 |
+| **Stars** | ⭐ 63 |
 | **npm Package** | `@supadata/mcp` |
 | **npm Downloads (30d)** | 545 |
 | **Language** | TypeScript |

@@ -1,16 +1,16 @@
 {
   "tool_id": "mobile-mcp",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-09T03:53:46.505854513Z",
+  "scan_date": "2026-10-10T03:37:28.907696697Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/mobile-next/mobile-mcp",
   "category": "Developer Tools",
   "vendor": "mobile-next",
-  "stars": 8785,
+  "stars": 8822,
   "npm_package": "@mobilenext/mobile-mcp",
-  "npm_downloads_monthly": 210541,
+  "npm_downloads_monthly": 217838,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)",
@@ -416,6 +416,22 @@
       "tool_name": "mobile_get_crash"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "mobile_batch_commands"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "mobile_batch_commands"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -428,8 +444,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 6,
-    "info": 45
+    "low": 7,
+    "info": 46
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -736,7 +752,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network"
       ],
       "destinations": [
         "dynamic email recipient (stopOnError)"
@@ -1960,6 +1977,12 @@
     },
     {
       "scan_date": "2026-10-08T03:48:57Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.8"
+    },
+    {
+      "scan_date": "2026-10-09T03:53:46Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.8"

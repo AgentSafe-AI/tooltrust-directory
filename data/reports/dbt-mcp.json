@@ -1,9 +1,9 @@
 {
   "tool_id": "dbt-mcp",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-10-09T03:57:47.717549964Z",
+  "scan_date": "2026-10-10T03:41:44.28216133Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/dbt-labs/dbt-mcp",
   "category": "Developer Tools",
@@ -657,7 +657,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution",
+      "description": "declared capabilities: code/command execution, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "list_saved_queries"
     },
@@ -1182,7 +1182,8 @@
       "action": "ALLOW",
       "grade": "B",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1848,6 +1849,12 @@
     },
     {
       "scan_date": "2026-10-08T03:53:04Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.6.0"
+    },
+    {
+      "scan_date": "2026-10-09T03:57:47Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2.6.0"

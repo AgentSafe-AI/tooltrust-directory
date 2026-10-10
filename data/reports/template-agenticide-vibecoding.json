@@ -1,15 +1,6 @@
 {
-  "tool_id": "template-agenticide-vibecoding",
-  "version": "1.0.0",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-10-09T03:59:42.330027042Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/quboqin/template-agenticide-vibecoding",
   "category": "Other",
-  "vendor": "quboqin",
-  "stars": 81,
-  "language": "Shell",
+  "contributors": 0,
   "description": "🤖 Claude Code定制化研发流程系统 - 基于Spec-Driven和Test-Driven的AI智能体团队协作框架。构建AI优先的软件开发新范式，让AI智能体团队替代传统人类开发团队。",
   "findings": [
     {
@@ -80,7 +71,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"accessToken\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create-tenant"
     },
@@ -88,7 +79,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"accessToken\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create-tenant"
     },
@@ -133,78 +124,18 @@
       "tool_name": "http-request"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 4,
-    "info": 11
-  },
+  "forks": 18,
+  "grade": "A",
+  "language": "Shell",
+  "last_commit_at": "2025-08-03T02:32:31Z",
+  "last_release_at": "2025-08-02T05:53:17Z",
+  "latest_release_name": "🎉 Claude Code AI研发流程系统 v1.0.0 - 初始发布",
+  "latest_release_tag": "v1.0.0",
+  "latest_release_url": "https://github.com/quboqin/template-agenticide-vibecoding/releases/tag/v1.0.0",
+  "latest_release_version": "v1.0.0",
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "tool_names": [
-    "add-template",
-    "auth-login",
-    "create-tenant",
-    "http-request"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "add-template",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (accessToken)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "auth-login",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (email)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create-tenant",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (logoUrl)",
-        "dynamic URL input (url)",
-        "dynamic email recipient (accessToken)",
-        "dynamic email recipient (email)",
-        "hardcoded domain: logo.svg",
-        "hardcoded domain: platform.clara.care"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "http-request",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "risk_score": 4,
+  "scan_date": "2026-10-10T03:43:47.516643919Z",
   "scan_history": [
     {
       "scan_date": "2026-06-15T23:55:49Z",
@@ -505,6 +436,89 @@
       "grade": "A",
       "risk_score": 4,
       "version": "1.0.0"
+    },
+    {
+      "scan_date": "2026-10-09T03:59:42Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "1.0.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/quboqin/template-agenticide-vibecoding",
+  "stars": 81,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 11
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "add-template",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (accessToken)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "auth-login",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (email)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create-tenant",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (logoUrl)",
+        "dynamic URL input (url)",
+        "dynamic email recipient (accessToken)",
+        "dynamic email recipient (email)",
+        "hardcoded domain: logo.svg",
+        "hardcoded domain: platform.clara.care"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "http-request",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "template-agenticide-vibecoding",
+  "tool_names": [
+    "add-template",
+    "auth-login",
+    "create-tenant",
+    "http-request"
+  ],
+  "vendor": "quboqin",
+  "version": "1.0.0"
 }

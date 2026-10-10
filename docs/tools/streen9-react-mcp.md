@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.0` |
 | **Vendor** | Streen9 |
-| **Stars** | ⭐ 69 |
+| **Stars** | ⭐ 76 |
 | **npm Package** | `react-mcp` |
 | **npm Downloads (30d)** | 14 |
 | **Language** | JavaScript |

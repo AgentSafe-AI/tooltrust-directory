@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.39.0` |
 | **Vendor** | stacklok |
-| **Stars** | ⭐ 1947 |
+| **Stars** | ⭐ 2263 |
 | **Language** | Go |
 | **Source** | [toolhive](https://github.com/stacklok/toolhive) |
 | **Scan Date** | 2026-07-17 |

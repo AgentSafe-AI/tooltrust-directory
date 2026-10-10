@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.5` |
 | **Vendor** | vibheksoni |
-| **Stars** | ⭐ 617 |
+| **Stars** | ⭐ 2219 |
 | **Language** | Python |
 | **Source** | [vibheksoni-stealth-browser-mcp](https://github.com/vibheksoni/stealth-browser-mcp) |
 | **Scan Date** | 2026-06-22 |

@@ -1,18 +1,26 @@
 {
   "tool_id": "windows-mcp",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-09T03:53:35.212534894Z",
+  "scan_date": "2026-10-10T03:37:12.681898855Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/CursorTouch/Windows-MCP",
   "category": "Developer Tools",
   "vendor": "cursortouch",
-  "stars": 8351,
+  "stars": 8500,
   "license": "MIT",
   "language": "Python",
   "description": "MCP Server for Computer Use in Windows",
   "findings": [
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ControlStatus"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -259,13 +267,14 @@
     "high": 0,
     "medium": 0,
     "low": 4,
-    "info": 26
+    "info": 27
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "App",
     "Click",
     "Clipboard",
+    "ControlStatus",
     "DisplayInventory",
     "FileSystem",
     "Move",
@@ -285,6 +294,13 @@
     "WaitFor"
   ],
   "tool_contexts": [
+    {
+      "tool_name": "ControlStatus",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
     {
       "tool_name": "App",
       "action": "ALLOW",
@@ -1132,6 +1148,12 @@
     },
     {
       "scan_date": "2026-10-08T03:48:40Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.8.7"
+    },
+    {
+      "scan_date": "2026-10-09T03:53:35Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.8.7"

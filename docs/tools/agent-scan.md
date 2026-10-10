@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.8` |
 | **Vendor** | snyk |
-| **Stars** | ⭐ 3127 |
+| **Stars** | ⭐ 3129 |
 | **Language** | Python |
 | **Source** | [agent-scan](https://github.com/snyk/agent-scan) |
-| **Scan Date** | 2026-10-09 |
+| **Scan Date** | 2026-10-10 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

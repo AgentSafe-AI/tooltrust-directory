@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | iceener |
-| **Stars** | ⭐ 132 |
+| **Stars** | ⭐ 144 |
 | **npm Package** | `mcp-server-template` |
 | **npm Downloads (30d)** | 76 |
 | **Language** | TypeScript |
