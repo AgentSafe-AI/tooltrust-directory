@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2065 |
 | **Language** | TypeScript |
 | **Source** | [gonavi](https://github.com/Syngnat/GoNavi) |
-| **Scan Date** | 2026-10-10 |
+| **Scan Date** | 2026-10-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

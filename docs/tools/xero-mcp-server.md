@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.16` |
 | **Vendor** | XeroAPI |
-| **Stars** | ⭐ 307 |
+| **Stars** | ⭐ 375 |
 | **npm Package** | `@xeroapi/xero-mcp-server` |
 | **npm Downloads (30d)** | 10.8k |
 | **Language** | TypeScript |

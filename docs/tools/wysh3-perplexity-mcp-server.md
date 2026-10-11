@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.3.1` |
 | **Vendor** | wysh3 |
-| **Stars** | ⭐ 90 |
+| **Stars** | ⭐ 97 |
 | **npm Package** | `perplexity-mcp-zerver` |
 | **Language** | TypeScript |
 | **Source** | [wysh3-perplexity-mcp-server](https://github.com/wysh3/perplexity-mcp-zerver) |

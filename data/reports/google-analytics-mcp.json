@@ -1,17 +1,33 @@
 {
   "tool_id": "google-analytics-mcp",
   "version": "0.7.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-10T03:38:52.388901929Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-11T03:12:04.155964656Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/googleanalytics/google-analytics-mcp",
   "category": "Developer Tools",
   "vendor": "googleanalytics",
-  "stars": 3418,
+  "stars": 3423,
   "license": "Apache-2.0",
   "language": "Python",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.7.0: 3 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "clarity_pages",
+          "clarity_sources",
+          "clarity_summary"
+        ],
+        "removed": null,
+        "version": "0.7.0"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -186,6 +202,30 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clarity_summary"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clarity_pages"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "clarity_sources"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "gsc_summary"
     },
     {
@@ -231,13 +271,16 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 3,
-    "info": 24
+    "info": 27
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "clarity_pages",
+    "clarity_sources",
+    "clarity_summary",
     "ga4_pages",
     "ga4_sources",
     "ga4_summary",
@@ -375,6 +418,33 @@
     },
     {
       "tool_name": "ga4_pages",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "clarity_summary",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "clarity_pages",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "clarity_sources",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -888,6 +958,12 @@
     },
     {
       "scan_date": "2026-10-09T03:55:08Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.7.0"
+    },
+    {
+      "scan_date": "2026-10-10T03:38:52Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.7.0"

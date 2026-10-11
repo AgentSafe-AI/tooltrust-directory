@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.4` |
 | **Vendor** | VisActor |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 52 |
 | **npm Package** | `@visactor/vchart-mcp-server` |
 | **npm Downloads (30d)** | 74 |
 | **Language** | TypeScript |

@@ -1,19 +1,23 @@
 {
-  "tool_id": "zig-mcp",
-  "version": "1.4.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-10T03:43:20.303121003Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/zig-wasm/zig-mcp",
   "category": "Developer Tools",
-  "vendor": "zig-wasm",
-  "stars": 173,
-  "npm_package": "zig-mcp",
-  "npm_downloads_monthly": 199,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 2,
   "description": "Model Context Protocol (MCP) server that provides up-to-date documentation for the Zig programming language standard library and builtin functions",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "mcp/mcp.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 125,
+      "snippet": "new McpServer(",
+      "file": "mcp/mcp.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-014",
@@ -72,78 +76,22 @@
       "tool_name": "get_std_lib_item"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 6
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 8,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "mcp/mcp.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 125,
-      "snippet": "new McpServer(",
-      "file": "mcp/mcp.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "get_builtin_function",
-    "get_std_lib_item",
-    "list_builtin_functions",
-    "search_std_lib"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "list_builtin_functions",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_builtin_function",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "search_std_lib",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_std_lib_item",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "hardcoded domain: std.ArrayList",
-        "hardcoded domain: std.debug.print",
-        "hardcoded domain: std.mem.Allocator"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-03-23T18:27:34Z",
+  "last_release_at": "2025-09-10T22:26:51Z",
+  "latest_release_name": "Release v1.4.0",
+  "latest_release_tag": "v1.4.0",
+  "latest_release_url": "https://github.com/zig-wasm/zig-mcp/releases/tag/v1.4.0",
+  "latest_release_version": "v1.4.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 201,
+  "npm_package": "zig-mcp",
+  "risk_score": 2,
+  "scan_date": "2026-10-11T03:16:30.49474766Z",
   "scan_history": [
     {
       "scan_date": "2026-09-05T02:20:46Z",
@@ -354,6 +302,72 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.4.0"
+    },
+    {
+      "scan_date": "2026-10-10T03:43:20Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.4.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/zig-wasm/zig-mcp",
+  "stars": 173,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 6
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "list_builtin_functions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_builtin_function",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "search_std_lib",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_std_lib_item",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: std.ArrayList",
+        "hardcoded domain: std.debug.print",
+        "hardcoded domain: std.mem.Allocator"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "zig-mcp",
+  "tool_names": [
+    "get_builtin_function",
+    "get_std_lib_item",
+    "list_builtin_functions",
+    "search_std_lib"
+  ],
+  "vendor": "zig-wasm",
+  "version": "1.4.0"
 }

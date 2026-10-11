@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.1` |
 | **Vendor** | caol64 |
-| **Stars** | ⭐ 1153 |
+| **Stars** | ⭐ 1339 |
 | **npm Package** | `@wenyan-md/mcp` |
 | **npm Downloads (30d)** | 619 |
 | **Language** | JavaScript |

@@ -10,10 +10,10 @@
 | **Vendor** | AnkleBreaker-Studio |
 | **Stars** | ⭐ 492 |
 | **npm Package** | `anklebreaker-unity-mcp` |
-| **npm Downloads (30d)** | 1.2k |
+| **npm Downloads (30d)** | 1.3k |
 | **Language** | JavaScript |
 | **Source** | [unity-mcp-server](https://github.com/AnkleBreaker-Studio/unity-mcp-server) |
-| **Scan Date** | 2026-10-10 |
+| **Scan Date** | 2026-10-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

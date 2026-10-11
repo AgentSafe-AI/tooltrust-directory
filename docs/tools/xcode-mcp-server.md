@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.3` |
 | **Vendor** | r-huijts |
-| **Stars** | ⭐ 380 |
+| **Stars** | ⭐ 385 |
 | **npm Package** | `xcode-mcp-server` |
 | **npm Downloads (30d)** | 819 |
 | **Language** | TypeScript |

@@ -1,6 +1,18 @@
 {
+  "tool_id": "tavily-mcp",
+  "version": "0.2.23",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-11T03:13:02.492066498Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/tavily-ai/tavily-mcp",
   "category": "Developer Tools",
-  "contributors": 16,
+  "vendor": "tavily-ai",
+  "stars": 2427,
+  "npm_package": "tavily-mcp",
+  "npm_downloads_monthly": 94780,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "Production ready MCP server with real-time search, extract, map \u0026 crawl.",
   "findings": [
     {
@@ -140,21 +152,89 @@
       "tool_name": "tavily_research"
     }
   ],
-  "forks": 301,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-09-16T20:56:38Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 7,
+    "info": 10
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 95912,
-  "npm_package": "tavily-mcp",
-  "risk_score": 4,
-  "scan_date": "2026-10-10T03:39:49.647914943Z",
+  "tool_names": [
+    "tavily_crawl",
+    "tavily_extract",
+    "tavily_map",
+    "tavily_research",
+    "tavily_search"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "tavily_search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (topic)",
+        "hardcoded domain: docs.tavily.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "tavily_extract",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (urls)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "tavily_crawl",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "tavily_map",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "tavily_research",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:36:49Z",
@@ -1379,94 +1459,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.2.23"
+    },
+    {
+      "scan_date": "2026-10-10T03:39:49Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.2.23"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/tavily-ai/tavily-mcp",
-  "stars": 2425,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 7,
-    "info": 10
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "tavily_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (topic)",
-        "hardcoded domain: docs.tavily.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "tavily_extract",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (urls)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "tavily_crawl",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "tavily_map",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "tavily_research",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "tavily-mcp",
-  "tool_names": [
-    "tavily_crawl",
-    "tavily_extract",
-    "tavily_map",
-    "tavily_research",
-    "tavily_search"
-  ],
-  "vendor": "tavily-ai",
-  "version": "0.2.23"
+  ]
 }

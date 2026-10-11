@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.0` |
 | **Vendor** | juehang |
-| **Stars** | ⭐ 374 |
+| **Stars** | ⭐ 392 |
 | **npm Package** | `vscode-mcp-server` |
 | **npm Downloads (30d)** | 5.3k |
 | **Language** | TypeScript |

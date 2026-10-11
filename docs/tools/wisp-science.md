@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `1.16.0` |
 | **Vendor** | xuzhougeng |
-| **Stars** | ⭐ 1180 |
+| **Stars** | ⭐ 1027 |
 | **Language** | Rust |
 | **Source** | [wisp-science](https://github.com/xuzhougeng/wisp-science) |
 | **Scan Date** | 2026-10-01 |

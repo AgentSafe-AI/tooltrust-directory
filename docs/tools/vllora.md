@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `.4.0-prerelease-32` |
 | **Vendor** | vllora |
-| **Stars** | ⭐ 813 |
+| **Stars** | ⭐ 811 |
 | **Language** | Rust |
 | **Source** | [vllora](https://github.com/vllora/vllora) |
 | **Scan Date** | 2026-08-29 |

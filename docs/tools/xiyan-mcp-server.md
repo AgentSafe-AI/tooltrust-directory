@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | XGenerationLab |
-| **Stars** | ⭐ 232 |
+| **Stars** | ⭐ 238 |
 | **Language** | Python |
 | **Source** | [xiyan-mcp-server](https://github.com/XGenerationLab/xiyan_mcp_server) |
 | **Scan Date** | 2026-03-18 |

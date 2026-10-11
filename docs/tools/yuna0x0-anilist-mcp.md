@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.4.0` |
 | **Vendor** | yuna0x0 |
-| **Stars** | ⭐ 75 |
+| **Stars** | ⭐ 91 |
 | **npm Package** | `anilist-mcp` |
 | **npm Downloads (30d)** | 623 |
 | **Language** | TypeScript |

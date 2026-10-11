@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.6` |
 | **Vendor** | yokingma |
-| **Stars** | ⭐ 64 |
+| **Stars** | ⭐ 72 |
 | **npm Package** | `time-mcp` |
 | **npm Downloads (30d)** | 6.5k |
 | **Language** | JavaScript |

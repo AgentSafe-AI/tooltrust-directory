@@ -12,7 +12,7 @@
 | **npm Package** | `sap-mcp-list` |
 | **Language** | JavaScript |
 | **Source** | [sap-ai-mcp-servers](https://github.com/marianfoo/sap-ai-mcp-servers) |
-| **Scan Date** | 2026-10-10 |
+| **Scan Date** | 2026-10-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

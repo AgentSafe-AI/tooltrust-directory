@@ -1,17 +1,17 @@
 # 🟢 ai-engineering-from-scratch
 
-> Learn it. Build it. Ship it for others.
+> Learn AI Engineering! Learn it. Build it. Ship it for others.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2026.10.1` |
+| **Version** | `2026.10.2` |
 | **Vendor** | rohitg00 |
-| **Stars** | ⭐ 66241 |
+| **Stars** | ⭐ 66819 |
 | **Language** | Python |
 | **Source** | [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
-| **Scan Date** | 2026-10-10 |
+| **Scan Date** | 2026-10-11 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

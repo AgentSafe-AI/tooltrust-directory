@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.3.0` |
 | **Vendor** | ezh0v |
-| **Stars** | ⭐ 245 |
+| **Stars** | ⭐ 248 |
 | **Language** | Go |
 | **Source** | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) |
 | **Scan Date** | 2026-06-22 |

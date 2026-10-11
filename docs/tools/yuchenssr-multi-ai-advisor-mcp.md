@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | YuChenSSR |
-| **Stars** | ⭐ 78 |
+| **Stars** | ⭐ 88 |
 | **npm Package** | `multi-model-advisor` |
 | **Language** | TypeScript |
 | **Source** | [yuchenssr-multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp) |

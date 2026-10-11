@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.5.0` |
 | **Vendor** | sheshbabu |
-| **Stars** | ⭐ 1069 |
+| **Stars** | ⭐ 1182 |
 | **Language** | JavaScript |
 | **Source** | [zen](https://github.com/sheshbabu/zen) |
 | **Scan Date** | 2026-06-22 |

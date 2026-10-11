@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.7.0` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 6413 |
+| **Stars** | ⭐ 6473 |
 | **npm Package** | `xcodebuildmcp` |
 | **npm Downloads (30d)** | 381.1k |
 | **Language** | TypeScript |

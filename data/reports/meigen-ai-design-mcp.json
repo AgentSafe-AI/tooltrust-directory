@@ -1,16 +1,16 @@
 {
   "tool_id": "meigen-ai-design-mcp",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-10-10T03:40:25.937221481Z",
+  "scan_date": "2026-10-11T03:13:35.715230992Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/jau123/MeiGen-AI-Design-MCP",
   "category": "Developer Tools",
   "vendor": "jau123",
   "stars": 1781,
   "npm_package": "meigen",
-  "npm_downloads_monthly": 2427,
+  "npm_downloads_monthly": 2350,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Supports GPT Image 2, Seedance \u0026 ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system",
@@ -219,7 +219,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "search_gallery"
     },
@@ -331,22 +331,6 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "comfyui_workflow"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "comfyui_workflow"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_image"
@@ -355,7 +339,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 15 properties (threshold: 10)",
+      "description": "input schema exposes 14 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_image"
     },
@@ -413,7 +397,7 @@
     "high": 1,
     "medium": 0,
     "low": 17,
-    "info": 31
+    "info": 29
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -427,7 +411,7 @@
     },
     {
       "kind": "init",
-      "line": 63,
+      "line": 68,
       "snippet": "new McpServer(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -436,7 +420,6 @@
   "tool_names": [
     "check_generation",
     "check_skill",
-    "comfyui_workflow",
     "enhance_prompt",
     "generate_ai_background",
     "generate_image",
@@ -486,6 +469,10 @@
         "uses_network",
         "writes_files"
       ],
+      "destinations": [
+        "hardcoded API endpoint: www.meigen.ai",
+        "hardcoded domain: www.meigen.ai"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -499,7 +486,9 @@
       ],
       "destinations": [
         "dynamic email recipient (autoCopy)",
-        "dynamic email recipient (customStyle)"
+        "dynamic email recipient (customStyle)",
+        "hardcoded API endpoint: www.meigen.ai",
+        "hardcoded domain: www.meigen.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -514,7 +503,9 @@
       ],
       "destinations": [
         "dynamic email recipient (autoCopy)",
-        "dynamic email recipient (customModules)"
+        "dynamic email recipient (customModules)",
+        "hardcoded API endpoint: www.meigen.ai",
+        "hardcoded domain: www.meigen.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -529,7 +520,9 @@
         "writes_files"
       ],
       "destinations": [
-        "dynamic email recipient (customPrompt)"
+        "dynamic email recipient (customPrompt)",
+        "hardcoded API endpoint: www.meigen.ai",
+        "hardcoded domain: www.meigen.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -543,7 +536,9 @@
         "writes_files"
       ],
       "destinations": [
-        "dynamic URL input (imageUrl)"
+        "dynamic URL input (imageUrl)",
+        "hardcoded API endpoint: www.meigen.ai",
+        "hardcoded domain: www.meigen.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -616,15 +611,8 @@
       "tool_name": "manage_preferences",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "comfyui_workflow",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
+      "destinations": [
+        "hardcoded domain: preferences.json"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -1347,6 +1335,12 @@
     },
     {
       "scan_date": "2026-10-09T03:56:31Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.0.2"
+    },
+    {
+      "scan_date": "2026-10-10T03:40:25Z",
       "grade": "B",
       "risk_score": 17,
       "version": "2.0.2"
