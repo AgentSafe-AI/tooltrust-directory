@@ -1,6 +1,6 @@
 # ToolTrust — Full Directory
 
-All 1917 audited tools. [← Back to README](../README.md#-security-registry)
+All 1919 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Popularity | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -701,6 +701,7 @@ All 1917 audited tools. [← Back to README](../README.md#-security-registry)
 | [awesome-claude](https://github.com/JSONbored/awesome-claude) | `mcp-v0.14.9` | 13/mo | **[A](tools/awesome-claude.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 11 |
 | [n8n](https://github.com/n8n-io/n8n) | `1` | 11/mo | **[A](tools/n8n.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 11 |
 | [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.8.4` | 10/mo | **[I](tools/nginx-ui.md)** | `AS-018` | Oct 11 |
+| [magic-hour-mcp](https://github.com/magichourhq/magic-hour-mcp/tree/958836e73d0fe0ba090f162654e2c922ad14292e) | `0.1.0+git.…` | 8 | **[A](tools/magic-hour-mcp.md)** | `AS-014` ×44, 🔑 `AS-002` ×43, ⚡ `AS-011` ×37, ⚡ `AS-006` | Oct 11 |
 | [helix-pilot](https://github.com/tsunamayo7/helix-pilot) | `2.0.0` | 4 | **[F](tools/helix-pilot.md)** | 📦 `AS-004` ×2380, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Jun 22 |
 | [agentservices](https://github.com/vbkotecha/agentservices-api/tree/bdd9d9db2e35e0275dec7a6250c804483aa88511) | `5.3.0+git.…` | 1 | **[A](tools/agentservices.md)** | `AS-014` ×43, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×3 | Sep 1 |
 | [bissell-skyler-cityparity](https://smithery.ai/server/bissell-skyler/cityparity) | `smithery` | — | **[A](tools/bissell-skyler-cityparity.md)** | `AS-014` ×6, 🔑 `AS-002` | Oct 11 |
@@ -2001,6 +2002,7 @@ All 1917 audited tools. [← Back to README](../README.md#-security-registry)
 | [oura](https://smithery.ai/server/oura) | `smithery` | — | **[C](tools/oura.md)** | `AS-014` ×40, 🔑 `AS-002` ×14, ⚡ `AS-011` ×8, 🗝️ `AS-010` ×2 | Apr 19 |
 | [hegetiby-jwao-woocommerce-mcp-hegetiby](https://smithery.ai/server/hegetiby-jwao/woocommerce-mcp-hegetiby) | `smithery` | — | **[C](tools/hegetiby-jwao-woocommerce-mcp-hegetiby.md)** | 🔑 `AS-002` ×28, `AS-014` ×47, ⚡ `AS-011` ×6, 🗝️ `AS-010` | May 11 |
 | [clouatre-labs-math-mcp](https://smithery.ai/server/clouatre-labs/math-mcp) | `smithery` | — | **[C](tools/clouatre-labs-math-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-006`, ⚡ `AS-011` ×4, `AS-014` ×17 | Apr 19 |
+| [autoposting-cli](https://github.com/Autoposting-ai/autoposting-cli/tree/da104175c6545d521f33d4e06847674daa364458) | `0.4.0` | — | **[C](tools/autoposting-cli.md)** | `AS-014` ×61, 🔑 `AS-002` ×30, ⚡ `AS-011` ×12, 🗝️ `AS-010`, 📦 `AS-004` ×2 | Oct 11 |
 | [ia-qa-api](https://smithery.ai/server/ia-qa/api) | `smithery` | — | **[C](tools/ia-qa-api.md)** | `AS-014` ×151, 🔑 `AS-002` ×64, ⚡ `AS-011` ×46, ⚡ `AS-006` ×12, 🗝️ `AS-010` ×34, 📐 `AS-003` ×2 | Oct 11 |
 | [browserous-browserous](https://smithery.ai/server/browserous/browserous) | `smithery` | — | **[C](tools/browserous-browserous.md)** | `AS-014` ×26, 🔑 `AS-002` ×8, ⚡ `AS-006`, ⚡ `AS-011` ×3 | Apr 19 |
 | [vercel](https://smithery.ai/server/vercel) | `smithery` | — | **[C](tools/vercel.md)** | 🔑 `AS-002` ×9, 🗝️ `AS-010`, ⚡ `AS-011` ×6, `AS-014` ×12, 📐 `AS-003` | Apr 19 |

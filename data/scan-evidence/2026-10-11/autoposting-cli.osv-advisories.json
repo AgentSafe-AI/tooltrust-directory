@@ -1,0 +1,178 @@
+[
+  {
+    "id": "GHSA-6qxp-vccf-f47h",
+    "summary": "MCP TypeScript SDK: OAuth client could send credentials to an authorization server chosen by the MCP server",
+    "details": "### Summary\nIn affected versions, the SDK's OAuth client let the MCP server decide which authorization server received the client's OAuth credentials. Credentials were not tied to the authorization server they belong to.\n\nA malicious or compromised MCP server could name its own authorization server. With no user interaction, the client would send it:\n\n- the `refresh_token` and `client_secret` stored from an earlier sign-in\n- the `client_secret` or signed assertion configured on a bundled provider\n\n### Am I affected?\nYes, if both of these hold:\n\n- your application uses the SDK's OAuth client over HTTP, through any of:\n    - an `authProvider` on a transport\n    - the `withOAuth()` middleware\n    - direct calls to `auth()` or `fetchToken()`\n- it may connect to an MCP server you do not fully trust while holding credentials for a legitimate authorization server\n\nAffected versions:\n\n- `@modelcontextprotocol/sdk` 1.12.0 through 1.30.1\n- `@modelcontextprotocol/client` 2.0.0 through 2.1.0, only for:\n    - bundled providers without `expectedIssuer`\n    - credentials stored or supplied without `issuer`\n    - direct calls to `fetchToken()`\n    - providers that read storage back through `OAuthTokensSchema` or `OAuthClientInformationSchema`\n\nNot affected:\n\n- MCP servers built with the SDK\n- stdio clients\n\n### Fix\nUpgrade to:\n\n- 1.x: `@modelcontextprotocol/sdk` 1.31.0 or later\n- 2.x: `@modelcontextprotocol/client` 2.2.0 or later, and `@modelcontextprotocol/core` 2.2.0 or later if you import it directly\n\nThe client now records the authorization server as `issuer` on saved credentials and does not send them to a different one. The user signs in again, or the call throws.\n\nIn the following cases, upgrading to the patched version is not enough. You also need to make a change:\n\n- **Bundled providers** (`ClientCredentialsProvider`, `PrivateKeyJwtProvider`, `StaticPrivateKeyJwtProvider`, `CrossAppAccessProvider`): pass `expectedIssuer`, for example `expectedIssuer: 'https://auth.example.com'`. Without it they still use whichever authorization server the MCP server names.\n- **Credentials saved without `issuer`:** tokens and client information your `OAuthClientProvider` persisted (file, keychain, database) before upgrading, including everything 1.x saved before 1.31.0. They still go to whichever authorization server is named at first use. Add `issuer` to them, or clear them so users sign in again.\n- **Your own `OAuthClientProvider`:** save exactly what `saveTokens()` and `saveClientInformation()` are given, including `issuer`. For pre-registered credentials, include `issuer` in what `clientInformation()` returns.\n\nNot covered by this fix:\n\n- a new interactive sign-in, which still goes to the authorization server the MCP server names. Only complete sign-ins for servers you trust.\n- `refreshAuthorization()` and `exchangeAuthorization()` called directly\n- 2.x with `skipIssuerMetadataValidation: true`\n\nIf an affected client may have connected to an untrusted MCP server, rotate its client secret or signing key and revoke its tokens.\n\nIf you cannot upgrade yet, connect OAuth clients only to MCP servers you trust. 2.0.0 and 2.1.0 already accept `expectedIssuer`.",
+    "aliases": [
+      "CVE-2026-104850"
+    ],
+    "modified": "2026-10-06T15:46:47.143033168Z",
+    "published": "2026-10-06T15:35:44Z",
+    "database_specific": {
+      "severity": "HIGH",
+      "github_reviewed": true,
+      "github_reviewed_at": "2026-10-06T15:35:44Z",
+      "nvd_published_at": null,
+      "cwe_ids": [
+        "CWE-345",
+        "CWE-522"
+      ]
+    },
+    "references": [
+      {
+        "type": "WEB",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6qxp-vccf-f47h"
+      },
+      {
+        "type": "WEB",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2887"
+      },
+      {
+        "type": "WEB",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/commit/edd12e282620ebf770d67316f19cf91d4112a1bd"
+      },
+      {
+        "type": "PACKAGE",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk"
+      },
+      {
+        "type": "WEB",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.2.0"
+      }
+    ],
+    "affected": [
+      {
+        "package": {
+          "name": "@modelcontextprotocol/sdk",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/%40modelcontextprotocol/sdk"
+        },
+        "ranges": [
+          {
+            "type": "SEMVER",
+            "events": [
+              {
+                "introduced": "1.12.0"
+              },
+              {
+                "fixed": "1.31.0"
+              }
+            ]
+          }
+        ],
+        "database_specific": {
+          "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-6qxp-vccf-f47h/GHSA-6qxp-vccf-f47h.json"
+        }
+      },
+      {
+        "package": {
+          "name": "@modelcontextprotocol/client",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/%40modelcontextprotocol/client"
+        },
+        "ranges": [
+          {
+            "type": "SEMVER",
+            "events": [
+              {
+                "introduced": "2.0.0"
+              },
+              {
+                "fixed": "2.2.0"
+              }
+            ]
+          }
+        ],
+        "database_specific": {
+          "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-6qxp-vccf-f47h/GHSA-6qxp-vccf-f47h.json"
+        }
+      }
+    ],
+    "schema_version": "1.9.0",
+    "severity": [
+      {
+        "type": "CVSS_V3",
+        "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      }
+    ]
+  },
+  {
+    "id": "GHSA-jqcg-44mw-7w3h",
+    "summary": "proxy-addr vulnerable to IP spoofing via IPv4-mapped IPv6 trust subnet",
+    "details": "### Impact\n\n`proxy-addr` determines which network hops are trusted proxies so that `X-Forwarded-For` can be believed. When an application configures a trust subnet as an IPv4-mapped IPv6 address with a short prefix, such as `::ffff:10.0.0.0/8` (the correct spelling is `::ffff:10.0.0.0/104`), the subnet compiles with all-zero leading bits and matches every IPv4 address instead of the block it names. The same happens for any IPv6 trust subnet with zero leading bits, such as `::/1`.\n\nEvery unauthenticated client is then trusted as a proxy at hop 0, so `proxyaddr(req, trust)`, and therefore `req.ip` and `req.ips` in Express, returns whatever the client sends in `X-Forwarded-For`. This defeats IP-based access control, rate limiting, geolocation, and audit logging. The misconfiguration compiles without any error, and the same block written correctly behaves correctly, so the difference is not visible from the configuration.\n\n### Patches\n\nUpgrade to `proxy-addr` 2.0.8. An IPv4 address now matches an IPv6 trust subnet only when that subnet is a genuine IPv4-mapped subnet whose prefix covers the mapped marker.\n\n### Workarounds\n\nWrite IPv4 trust subnets in plain IPv4 notation (for example `10.0.0.0/8`). If IPv4-mapped IPv6 notation is required, use the full form so the prefix covers the mapped marker (for example `::ffff:10.0.0.0/104` for the `10.0.0.0/8` block).",
+    "aliases": [
+      "CVE-2026-90711"
+    ],
+    "modified": "2026-10-05T23:45:07.322157228Z",
+    "published": "2026-10-05T23:30:26Z",
+    "database_specific": {
+      "nvd_published_at": "2026-09-15T07:16:33Z",
+      "cwe_ids": [
+        "CWE-290",
+        "CWE-348",
+        "CWE-697"
+      ],
+      "severity": "CRITICAL",
+      "github_reviewed": true,
+      "github_reviewed_at": "2026-10-05T23:30:26Z"
+    },
+    "references": [
+      {
+        "type": "WEB",
+        "url": "https://github.com/jshttp/proxy-addr/security/advisories/GHSA-jqcg-44mw-7w3h"
+      },
+      {
+        "type": "ADVISORY",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90711"
+      },
+      {
+        "type": "WEB",
+        "url": "https://github.com/jshttp/proxy-addr/commit/780911d84d18e2c5fa008ed0c0d387631ec11965"
+      },
+      {
+        "type": "WEB",
+        "url": "https://cna.openjsf.org/security-advisories.html"
+      },
+      {
+        "type": "PACKAGE",
+        "url": "https://github.com/jshttp/proxy-addr"
+      },
+      {
+        "type": "WEB",
+        "url": "https://github.com/jshttp/proxy-addr/releases/tag/v2.0.8"
+      }
+    ],
+    "affected": [
+      {
+        "package": {
+          "name": "proxy-addr",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/proxy-addr"
+        },
+        "ranges": [
+          {
+            "type": "SEMVER",
+            "events": [
+              {
+                "introduced": "1.1.0"
+              },
+              {
+                "fixed": "2.0.8"
+              }
+            ]
+          }
+        ],
+        "database_specific": {
+          "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-jqcg-44mw-7w3h/GHSA-jqcg-44mw-7w3h.json"
+        }
+      }
+    ],
+    "schema_version": "1.9.0",
+    "severity": [
+      {
+        "type": "CVSS_V3",
+        "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+      }
+    ]
+  }
+]
