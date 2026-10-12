@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 91130 |
+| **Stars** | ⭐ 91156 |
 | **npm Package** | `@modelcontextprotocol/server-sequential-thinking` |
-| **npm Downloads (30d)** | 535.0k |
+| **npm Downloads (30d)** | 523.3k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

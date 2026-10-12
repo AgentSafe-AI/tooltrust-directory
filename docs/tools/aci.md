@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.0.1-beta.3` |
 | **Vendor** | aipotheosis-labs |
-| **Stars** | ⭐ 4824 |
+| **Stars** | ⭐ 4909 |
 | **Language** | Python |
 | **Source** | [aci](https://github.com/aipotheosis-labs/aci) |
 | **Scan Date** | 2026-07-29 |

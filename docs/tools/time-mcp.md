@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 9.0k |
 | **Language** | JavaScript |
 | **Source** | [time-mcp](https://github.com/yokingma/time-mcp) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

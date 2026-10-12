@@ -1,19 +1,23 @@
 {
-  "tool_id": "amol21p-mcp-interactive-terminal",
-  "version": "1.0.9",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-06-22T03:16:35.969376928Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/amol21p/mcp-interactive-terminal",
   "category": "Developer Tools",
-  "vendor": "amol21p",
-  "stars": 12,
-  "npm_package": "mcp-interactive-terminal",
-  "npm_downloads_monthly": 217,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 1,
   "description": "MCP server that gives AI agents (Claude Code, Cursor, Windsurf) real interactive terminal sessions — REPLs, SSH, databases, Docker, and any interactive CLI with clean output and smart completion detection",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 39,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -168,111 +172,22 @@
       "tool_name": "confirm_dangerous_command"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 2,
-    "medium": 0,
-    "low": 5,
-    "info": 12
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 6,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 13,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 39,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "close_session",
-    "confirm_dangerous_command",
-    "create_session",
-    "list_sessions",
-    "read_output",
-    "send_command",
-    "send_control"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "create_session",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_env",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "send_command",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "read_output",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_sessions",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "close_session",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "send_control",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "confirm_dangerous_command",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-02-16T16:30:37Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 217,
+  "npm_package": "mcp-interactive-terminal",
+  "risk_score": 17,
+  "scan_date": "2026-06-22T03:16:35.969376928Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:52:41Z",
@@ -388,5 +303,98 @@
       "risk_score": 17,
       "version": "1.0.9"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/amol21p/mcp-interactive-terminal",
+  "stars": 19,
+  "summary": {
+    "critical": 0,
+    "high": 2,
+    "medium": 0,
+    "low": 5,
+    "info": 12
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "create_session",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_env",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "send_command",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "read_output",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_sessions",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "close_session",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "send_control",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "confirm_dangerous_command",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "amol21p-mcp-interactive-terminal",
+  "tool_names": [
+    "close_session",
+    "confirm_dangerous_command",
+    "create_session",
+    "list_sessions",
+    "read_output",
+    "send_command",
+    "send_control"
+  ],
+  "vendor": "amol21p",
+  "version": "1.0.9"
 }

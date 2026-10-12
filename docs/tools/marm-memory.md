@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `2.59.3` |
+| **Version** | `2.60.0` |
 | **Vendor** | Lyellr88 |
-| **Stars** | ⭐ 418 |
+| **Stars** | ⭐ 419 |
 | **Language** | Python |
 | **Source** | [marm-memory](https://github.com/Lyellr88/marm-memory) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

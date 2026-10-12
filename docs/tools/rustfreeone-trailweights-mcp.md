@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [rustfreeone-trailweights-mcp](https://smithery.ai/server/rustfreeone/trailweights-mcp) |
-| **Scan Date** | 2026-09-21 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

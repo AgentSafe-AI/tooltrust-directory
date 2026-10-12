@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 117 |
 | **Language** | Python |
 | **Source** | [model-compose](https://github.com/hanyeol/model-compose) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

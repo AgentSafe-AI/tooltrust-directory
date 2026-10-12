@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.0.9` |
+| **Version** | `1.0.10` |
 | **Vendor** | mobile-next |
-| **Stars** | ⭐ 8917 |
+| **Stars** | ⭐ 9019 |
 | **npm Package** | `@mobilenext/mobile-mcp` |
-| **npm Downloads (30d)** | 220.6k |
+| **npm Downloads (30d)** | 221.1k |
 | **Language** | TypeScript |
 | **Source** | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,9 +26,21 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 7 |
-| Info     | 46 |
+| Info     | 47 |
 
 ## Detailed Findings
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

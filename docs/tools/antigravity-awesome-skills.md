@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `13.12.0` |
 | **Vendor** | sickn33 |
-| **Stars** | ⭐ 42555 |
+| **Stars** | ⭐ 47475 |
 | **npm Package** | `antigravity-awesome-skills` |
 | **npm Downloads (30d)** | 23.5k |
 | **Language** | Python |

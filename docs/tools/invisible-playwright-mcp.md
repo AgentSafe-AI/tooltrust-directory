@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.71.1` |
+| **Version** | `0.71.2` |
 | **Vendor** | feder-cr |
-| **Stars** | ⭐ 2734 |
+| **Stars** | ⭐ 2749 |
 | **Language** | Python |
 | **Source** | [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.0` |
 | **Vendor** | HelpCode-ai |
-| **Stars** | ⭐ 373 |
+| **Stars** | ⭐ 729 |
 | **npm Package** | `anythingmcp` |
 | **Language** | TypeScript |
 | **Source** | [anythingmcp](https://github.com/HelpCode-ai/anythingmcp) |

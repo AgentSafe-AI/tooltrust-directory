@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1857 |
 | **Language** | Go |
 | **Source** | [trpc-agent-go](https://github.com/trpc-group/trpc-agent-go) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

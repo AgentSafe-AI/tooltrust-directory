@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.160.0",
+  "version": "0.162.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-11T03:14:38.677477242Z",
+  "scan_date": "2026-10-12T03:37:23.83976924Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
   "stars": 1031,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 225968,
+  "npm_downloads_monthly": 224547,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Microsoft Office services through the Graph API",
@@ -2342,6 +2342,54 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "accept-calendar-event"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "add-calendar-event-attachment"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "add-calendar-event-attachment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add-calendar-event-attachment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-calendar-event-attachment-upload-session"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create-calendar-event-attachment-upload-session"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-calendar-event-attachment-upload-session"
     },
     {
       "id": "AS-002",
@@ -5220,8 +5268,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 229,
-    "info": 421
+    "low": 231,
+    "info": 425
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -5243,6 +5291,7 @@
   ],
   "tool_names": [
     "accept-calendar-event",
+    "add-calendar-event-attachment",
     "add-excel-table-rows",
     "add-mail-attachment",
     "cancel-calendar-event",
@@ -5251,6 +5300,7 @@
     "copy-mail-message",
     "create-calendar",
     "create-calendar-event",
+    "create-calendar-event-attachment-upload-session",
     "create-contact-child-folder",
     "create-contact-folder",
     "create-contact-in-folder",
@@ -5549,6 +5599,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5633,6 +5684,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -5665,6 +5717,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5703,6 +5756,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5719,6 +5773,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5734,6 +5789,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5762,6 +5818,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5808,6 +5865,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6011,6 +6069,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6040,6 +6099,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6092,6 +6152,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6140,6 +6201,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6155,6 +6217,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6216,6 +6279,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6232,6 +6296,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6246,6 +6311,7 @@
       ],
       "destinations": [
         "dynamic email recipient (skiptoken)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -6263,6 +6329,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6312,6 +6379,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6339,6 +6407,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6366,6 +6435,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6427,6 +6497,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6442,6 +6513,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6502,6 +6574,36 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "add-calendar-event-attachment",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: file.pdf",
+        "hardcoded domain: microsoft.graph.fileAttachment",
+        "hardcoded domain: odata.type"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "create-calendar-event-attachment-upload-session",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: report.pdf"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -6579,6 +6681,7 @@
       ],
       "destinations": [
         "dynamic email recipient (skiptoken)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -6609,6 +6712,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6685,6 +6789,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6734,6 +6839,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6761,6 +6867,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6816,6 +6923,7 @@
         "dynamic email recipient (top)",
         "hardcoded domain: example.com",
         "hardcoded domain: learn.microsoft.com",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink",
         "hardcoded email recipient: john@example.com"
       ],
@@ -6833,6 +6941,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -6852,6 +6961,7 @@
         "dynamic email recipient (top)",
         "hardcoded domain: example.com",
         "hardcoded domain: learn.microsoft.com",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink",
         "hardcoded email recipient: john@example.com"
       ],
@@ -6929,6 +7039,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7094,6 +7205,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7120,6 +7232,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7146,6 +7259,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7197,6 +7311,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7212,6 +7327,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7227,6 +7343,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7253,6 +7370,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7279,6 +7397,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7294,6 +7413,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7323,6 +7443,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7349,6 +7470,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7404,6 +7526,7 @@
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (todoTaskListId)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7480,6 +7603,7 @@
         "dynamic email recipient (todoTaskId)",
         "dynamic email recipient (todoTaskListId)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7586,6 +7710,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7601,6 +7726,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7682,6 +7808,7 @@
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
         "hardcoded domain: Mail.Read",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7779,6 +7906,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -9091,6 +9219,12 @@
     },
     {
       "scan_date": "2026-10-10T03:41:29Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.160.0"
+    },
+    {
+      "scan_date": "2026-10-11T03:14:38Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.160.0"

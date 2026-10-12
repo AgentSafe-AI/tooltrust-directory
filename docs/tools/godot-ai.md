@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `4.3.0` |
 | **Vendor** | hi-godot |
-| **Stars** | ⭐ 2901 |
+| **Stars** | ⭐ 2924 |
 | **Language** | GDScript |
 | **Source** | [godot-ai](https://github.com/hi-godot/godot-ai) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

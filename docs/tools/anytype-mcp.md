@@ -8,12 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `2.0.1` |
 | **Vendor** | anyproto |
-| **Stars** | ⭐ 531 |
+| **Stars** | ⭐ 532 |
 | **npm Package** | `@anyproto/anytype-mcp` |
-| **npm Downloads (30d)** | 7.7k |
+| **npm Downloads (30d)** | 8.0k |
 | **Language** | TypeScript |
 | **Source** | [anytype-mcp](https://github.com/anyproto/anytype-mcp) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

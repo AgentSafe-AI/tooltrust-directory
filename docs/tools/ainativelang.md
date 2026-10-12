@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.8.0` |
 | **Vendor** | sbhooley |
-| **Stars** | ⭐ 734 |
+| **Stars** | ⭐ 650 |
 | **Language** | Python |
 | **Source** | [ainativelang](https://github.com/sbhooley/ainativelang) |
 | **Scan Date** | 2026-08-06 |

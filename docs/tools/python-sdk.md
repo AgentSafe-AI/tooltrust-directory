@@ -8,10 +8,10 @@
 | **Risk Score** | 25 |
 | **Version** | `2.3.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 24538 |
+| **Stars** | ⭐ 24547 |
 | **Language** | Python |
 | **Source** | [python-sdk](https://github.com/modelcontextprotocol/python-sdk) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

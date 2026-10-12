@@ -1,18 +1,23 @@
 {
-  "tool_id": "alxspiker-windows-command-line-mcp-server",
-  "version": "0.3.0",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-06-22T03:17:05.899568975Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/alxspiker/Windows-Command-Line-MCP-Server",
   "category": "Developer Tools",
-  "vendor": "alxspiker",
-  "stars": 8,
-  "npm_package": "windows-command-line-mcp-server",
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 3,
   "description": "This server creates a secure bridge between Claude and your computer's command-line functionality.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 11,
+      "snippet": "new McpServer(",
+      "file": "index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -112,72 +117,21 @@
       "tool_name": "remote_screenshot"
     }
   ],
-  "summary": {
-    "critical": 1,
-    "high": 1,
-    "medium": 0,
-    "low": 2,
-    "info": 6
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 8,
+  "grade": "C",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 11,
-      "snippet": "new McpServer(",
-      "file": "index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "remote_exec",
-    "remote_screenshot",
-    "session_status"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "remote_exec",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "session_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "remote_screenshot",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2025-04-25T19:19:47Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_package": "windows-command-line-mcp-server",
+  "risk_score": 25,
+  "scan_date": "2026-06-22T03:17:05.899568975Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:52:41Z",
@@ -383,5 +337,59 @@
       "risk_score": 17,
       "version": "0.3.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/alxspiker/Windows-Command-Line-MCP-Server",
+  "stars": 10,
+  "summary": {
+    "critical": 1,
+    "high": 1,
+    "medium": 0,
+    "low": 2,
+    "info": 6
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "remote_exec",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "session_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "remote_screenshot",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "alxspiker-windows-command-line-mcp-server",
+  "tool_names": [
+    "remote_exec",
+    "remote_screenshot",
+    "session_status"
+  ],
+  "vendor": "alxspiker",
+  "version": "0.3.0"
 }

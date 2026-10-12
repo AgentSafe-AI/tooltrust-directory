@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.1.2` |
 | **Vendor** | yctimlin |
-| **Stars** | ⭐ 2525 |
+| **Stars** | ⭐ 2531 |
 | **npm Package** | `mcp-excalidraw-server` |
-| **npm Downloads (30d)** | 12.7k |
+| **npm Downloads (30d)** | 12.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-excalidraw](https://github.com/yctimlin/mcp_excalidraw) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

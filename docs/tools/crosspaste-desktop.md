@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.1` |
 | **Vendor** | CrossPaste |
-| **Stars** | ⭐ 2622 |
+| **Stars** | ⭐ 2625 |
 | **Language** | Kotlin |
 | **Source** | [crosspaste-desktop](https://github.com/CrossPaste/crosspaste-desktop) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

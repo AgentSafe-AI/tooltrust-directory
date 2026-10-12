@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.191` |
 | **Vendor** | hashgraph-online |
-| **Stars** | ⭐ 1259 |
+| **Stars** | ⭐ 1260 |
 | **npm Package** | `@hashgraphonline/standards-sdk` |
-| **npm Downloads (30d)** | 20.1k |
+| **npm Downloads (30d)** | 18.4k |
 | **Language** | TypeScript |
 | **Source** | [standards-sdk](https://github.com/hashgraph-online/standards-sdk) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

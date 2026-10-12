@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `11.19.1` |
 | **Vendor** | neomjs |
-| **Stars** | ⭐ 3289 |
+| **Stars** | ⭐ 3290 |
 | **npm Package** | `neo.mjs` |
-| **npm Downloads (30d)** | 31.9k |
+| **npm Downloads (30d)** | 32.3k |
 | **Language** | JavaScript |
 | **Source** | [neo](https://github.com/neomjs/neo) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-12 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
