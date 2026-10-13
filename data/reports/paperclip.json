@@ -1,0 +1,154 @@
+{
+  "tool_id": "paperclip",
+  "version": "2026.1012.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-13T04:45:53Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/paperclipai/paperclip",
+  "category": "Developer Tools",
+  "vendor": "paperclipai",
+  "stars": 101059,
+  "npm_package": "paperclip",
+  "npm_downloads_monthly": 7154,
+  "license": "MIT",
+  "language": "TypeScript",
+  "description": "The open-source app everyone uses to manage agents at work",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/google-sheets-mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 15,
+            "snippet": "new McpServer(",
+            "file": "packages/google-sheets-mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 28,
+            "snippet": ".registerTool(",
+            "file": "packages/google-sheets-mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/kv-demo-mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 16,
+            "snippet": "new McpServer(",
+            "file": "packages/kv-demo-mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 22,
+            "snippet": ".registerTool(",
+            "file": "packages/kv-demo-mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 8,
+            "snippet": "new McpServer(",
+            "file": "packages/mcp-server/src/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "packages/google-sheets-mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 15,
+      "snippet": "new McpServer(",
+      "file": "packages/google-sheets-mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 28,
+      "snippet": ".registerTool(",
+      "file": "packages/google-sheets-mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "packages/kv-demo-mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 16,
+      "snippet": "new McpServer(",
+      "file": "packages/kv-demo-mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 22,
+      "snippet": ".registerTool(",
+      "file": "packages/kv-demo-mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "packages/mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 8,
+      "snippet": "new McpServer(",
+      "file": "packages/mcp-server/src/index.ts",
+      "language": "typescript"
+    }
+  ]
+}

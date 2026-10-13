@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-4e5f00da5073` |
 | **Vendor** | chongdashu |
-| **Stars** | ⭐ 2093 |
+| **Stars** | ⭐ 2094 |
 | **Language** | C++ |
 | **Source** | [unreal-mcp](https://github.com/chongdashu/unreal-mcp) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

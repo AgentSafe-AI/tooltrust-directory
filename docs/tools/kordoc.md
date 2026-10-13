@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `4.21.23` |
+| **Version** | `4.21.30` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2416 |
+| **Stars** | ⭐ 2431 |
 | **npm Package** | `kordoc` |
-| **npm Downloads (30d)** | 117.7k |
+| **npm Downloads (30d)** | 121.7k |
 | **Language** | TypeScript |
 | **Source** | [kordoc](https://github.com/chrisryugj/kordoc) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

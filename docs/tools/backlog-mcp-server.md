@@ -6,7 +6,7 @@
 | **Risk Score** | 0 |
 | **Version** | `v0.3.1` |
 | **Vendor** | nulab |
-| **Stars** | ⭐ 206 |
+| **Stars** | ⭐ 236 |
 | **npm Package** | `backlog-mcp-server` |
 | **npm Downloads (30d)** | 24.7k |
 | **Language** | TypeScript |

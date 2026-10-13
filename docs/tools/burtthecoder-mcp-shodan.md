@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.27` |
 | **Vendor** | burtthecoder |
-| **Stars** | ⭐ 124 |
+| **Stars** | ⭐ 177 |
 | **npm Package** | `@burtthecoder/mcp-shodan` |
 | **npm Downloads (30d)** | 807 |
 | **Language** | TypeScript |

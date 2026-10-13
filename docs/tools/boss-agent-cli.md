@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | can4hou6joeng4 |
-| **Stars** | ⭐ 2069 |
+| **Stars** | ⭐ 2076 |
 | **Language** | Python |
 | **Source** | [boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) |
 | **Scan Date** | 2026-10-12 |

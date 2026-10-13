@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.3.1` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 13555 |
+| **Stars** | ⭐ 13562 |
 | **npm Package** | `@modelcontextprotocol/sdk` |
-| **npm Downloads (30d)** | 269.4M |
+| **npm Downloads (30d)** | 266.7M |
 | **Language** | TypeScript |
 | **Source** | [typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

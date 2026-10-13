@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `5.0.0` |
 | **Vendor** | bgauryy |
-| **Stars** | ⭐ 805 |
+| **Stars** | ⭐ 950 |
 | **npm Package** | `octocode-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [bgauryy-octocode-mcp](https://github.com/bgauryy/octocode-mcp) |

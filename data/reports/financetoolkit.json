@@ -1,14 +1,14 @@
 {
   "tool_id": "financetoolkit",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-12T03:33:49.337980132Z",
+  "scan_date": "2026-10-13T04:49:14.685909872Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/JerBouma/FinanceToolkit",
   "category": "Developer Tools",
   "vendor": "JerBouma",
-  "stars": 5415,
+  "stars": 5425,
   "license": "MIT",
   "language": "Python",
   "description": "Transparent and Efficient Financial Analysis",
@@ -206,12 +206,44 @@
       "tool_name": "risk"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "econometrics"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "econometrics"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "econometrics"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "options"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "options"
     },
     {
       "id": "AS-014",
@@ -318,6 +350,14 @@
       "tool_name": "fixed_income"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "discovery"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -329,7 +369,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
+      "description": "declared capabilities: code/command execution, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "market_data"
     },
@@ -355,7 +395,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_categories"
+      "tool_name": "search_metric_categories"
     },
     {
       "id": "AS-011",
@@ -363,7 +403,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_categories"
+      "tool_name": "search_metric_categories"
     },
     {
       "id": "AS-014",
@@ -371,7 +411,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_categories"
+      "tool_name": "search_metric_categories"
     },
     {
       "id": "AS-002",
@@ -420,38 +460,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search_metrics"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_instruments"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_instruments"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_instruments"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 14,
-    "info": 40
+    "low": 15,
+    "info": 41
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -475,8 +491,7 @@
     "rates",
     "risk",
     "search_by_category",
-    "search_categories",
-    "search_instruments",
+    "search_metric_categories",
     "search_metrics",
     "solvency",
     "valuation",
@@ -590,6 +605,9 @@
       "tool_name": "econometrics",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -597,6 +615,9 @@
       "tool_name": "options",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -678,7 +699,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "search_categories",
+      "tool_name": "search_metric_categories",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -700,16 +721,6 @@
     },
     {
       "tool_name": "search_metrics",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search_instruments",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -1370,6 +1381,12 @@
     },
     {
       "scan_date": "2026-10-11T03:11:11Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.2.2"
+    },
+    {
+      "scan_date": "2026-10-12T03:33:49Z",
       "grade": "A",
       "risk_score": 2,
       "version": "2.2.2"

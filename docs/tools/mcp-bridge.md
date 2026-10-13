@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 926 |
 | **Language** | Python |
 | **Source** | [mcp-bridge](https://github.com/SecretiveShell/MCP-Bridge) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

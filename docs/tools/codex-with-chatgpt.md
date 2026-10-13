@@ -4,15 +4,15 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `0.1.4` |
 | **Vendor** | XiaoDuoYa |
-| **Stars** | ⭐ 7272 |
+| **Stars** | ⭐ 7309 |
 | **npm Package** | `codex-with-chatgpt` |
 | **Language** | TypeScript |
 | **Source** | [codex-with-chatgpt](https://github.com/XiaoDuoYa/codex-with-chatgpt) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -29,15 +29,15 @@
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### ⚪ `AS-018` — Embedded MCP Server Detected
 
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
-Review and remediate the identified issue.
+Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
 
 ---
 

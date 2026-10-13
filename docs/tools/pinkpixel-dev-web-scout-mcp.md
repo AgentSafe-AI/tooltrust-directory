@@ -10,10 +10,10 @@
 | **Vendor** | pinkpixel-dev |
 | **Stars** | ⭐ 136 |
 | **npm Package** | `@pinkpixel/web-scout-mcp` |
-| **npm Downloads (30d)** | 168 |
+| **npm Downloads (30d)** | 169 |
 | **Language** | JavaScript |
 | **Source** | [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-13 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
