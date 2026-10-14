@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.160.0",
+  "version": "0.165.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-11T03:14:38.677477242Z",
+  "scan_date": "2026-10-14T03:01:27.090850359Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 1031,
+  "stars": 1037,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 225968,
+  "npm_downloads_monthly": 229670,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Microsoft Office services through the Graph API",
@@ -2347,6 +2347,54 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "add-calendar-event-attachment"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "add-calendar-event-attachment"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add-calendar-event-attachment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-calendar-event-attachment-upload-session"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create-calendar-event-attachment-upload-session"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-calendar-event-attachment-upload-session"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "cancel-calendar-event"
@@ -3219,7 +3267,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get-mail-message-mime"
     },
@@ -3326,6 +3374,30 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "delete-mail-attachment"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-mail-attachment-content"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get-mail-attachment-content"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get-mail-attachment-content"
     },
     {
       "id": "AS-002",
@@ -4414,6 +4486,118 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "delete-todo-task"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list-todo-checklist-items"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list-todo-checklist-items"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"skiptoken\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "list-todo-checklist-items"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "list-todo-checklist-items"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list-todo-checklist-items"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create-todo-checklist-item"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "create-todo-checklist-item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create-todo-checklist-item"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update-todo-checklist-item"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "update-todo-checklist-item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update-todo-checklist-item"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete-todo-checklist-item"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "delete-todo-checklist-item"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete-todo-checklist-item"
     },
     {
       "id": "AS-002",
@@ -5220,8 +5404,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 229,
-    "info": 421
+    "low": 237,
+    "info": 436
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -5243,6 +5427,7 @@
   ],
   "tool_names": [
     "accept-calendar-event",
+    "add-calendar-event-attachment",
     "add-excel-table-rows",
     "add-mail-attachment",
     "cancel-calendar-event",
@@ -5251,6 +5436,7 @@
     "copy-mail-message",
     "create-calendar",
     "create-calendar-event",
+    "create-calendar-event-attachment-upload-session",
     "create-contact-child-folder",
     "create-contact-folder",
     "create-contact-in-folder",
@@ -5280,6 +5466,7 @@
     "create-reply-draft",
     "create-specific-calendar-event",
     "create-subscription",
+    "create-todo-checklist-item",
     "create-todo-linked-resource",
     "create-todo-task",
     "create-todo-task-list",
@@ -5304,6 +5491,7 @@
     "delete-planner-task-message",
     "delete-specific-calendar-event",
     "delete-subscription",
+    "delete-todo-checklist-item",
     "delete-todo-linked-resource",
     "delete-todo-task",
     "delete-todo-task-list",
@@ -5327,6 +5515,7 @@
     "get-excel-range-format",
     "get-excel-table",
     "get-excel-used-range",
+    "get-mail-attachment-content",
     "get-mail-message",
     "get-mail-message-mime",
     "get-mail-tips",
@@ -5387,6 +5576,7 @@
     "list-subscriptions",
     "list-supported-languages",
     "list-supported-time-zones",
+    "list-todo-checklist-items",
     "list-todo-linked-resources",
     "list-todo-task-lists",
     "list-todo-tasks",
@@ -5426,6 +5616,7 @@
     "update-planner-task-details",
     "update-specific-calendar-event",
     "update-subscription",
+    "update-todo-checklist-item",
     "update-todo-task",
     "update-todo-task-list",
     "upload-file-content",
@@ -5549,6 +5740,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5633,6 +5825,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -5665,6 +5858,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5703,6 +5897,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5719,6 +5914,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5734,6 +5930,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5762,6 +5959,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -5808,6 +6006,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6011,6 +6210,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6040,6 +6240,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6092,6 +6293,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6140,6 +6342,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6155,6 +6358,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6216,6 +6420,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6232,6 +6437,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6246,6 +6452,7 @@
       ],
       "destinations": [
         "dynamic email recipient (skiptoken)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -6263,6 +6470,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6312,6 +6520,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6339,6 +6548,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6366,6 +6576,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6427,6 +6638,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6442,6 +6654,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6502,6 +6715,36 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "add-calendar-event-attachment",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: file.pdf",
+        "hardcoded domain: microsoft.graph.fileAttachment",
+        "hardcoded domain: odata.type"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "create-calendar-event-attachment-upload-session",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: report.pdf"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -6579,6 +6822,7 @@
       ],
       "destinations": [
         "dynamic email recipient (skiptoken)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -6609,6 +6853,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6685,6 +6930,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6734,6 +6980,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6761,6 +7008,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6816,6 +7064,7 @@
         "dynamic email recipient (top)",
         "hardcoded domain: example.com",
         "hardcoded domain: learn.microsoft.com",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink",
         "hardcoded email recipient: john@example.com"
       ],
@@ -6833,6 +7082,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
         "hardcoded domain: odata.nextLink"
       ],
@@ -6852,6 +7102,7 @@
         "dynamic email recipient (top)",
         "hardcoded domain: example.com",
         "hardcoded domain: learn.microsoft.com",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink",
         "hardcoded email recipient: john@example.com"
       ],
@@ -6909,6 +7160,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
@@ -6929,6 +7181,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -6957,6 +7210,20 @@
       "behavior": [
         "uses_network",
         "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get-mail-attachment-content",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -7094,6 +7361,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7120,6 +7388,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7146,6 +7415,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7197,6 +7467,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7212,6 +7483,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7227,6 +7499,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7253,6 +7526,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7279,6 +7553,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7294,6 +7569,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7323,6 +7599,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7349,6 +7626,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7404,6 +7682,7 @@
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (todoTaskListId)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7443,6 +7722,69 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (todoTaskId)",
+        "dynamic email recipient (todoTaskListId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "delete-todo-task",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (todoTaskId)",
+        "dynamic email recipient (todoTaskListId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list-todo-checklist-items",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (skiptoken)",
+        "dynamic email recipient (todoTaskId)",
+        "dynamic email recipient (todoTaskListId)",
+        "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
+        "hardcoded domain: odata.nextLink"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "create-todo-checklist-item",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (todoTaskId)",
+        "dynamic email recipient (todoTaskListId)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "update-todo-checklist-item",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
         "reads_files",
         "uses_network"
       ],
@@ -7454,7 +7796,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "delete-todo-task",
+      "tool_name": "delete-todo-checklist-item",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -7480,6 +7822,7 @@
         "dynamic email recipient (todoTaskId)",
         "dynamic email recipient (todoTaskListId)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7586,6 +7929,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7601,6 +7945,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7682,6 +8027,7 @@
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
         "hardcoded domain: Mail.Read",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -7779,6 +8125,7 @@
       "destinations": [
         "dynamic email recipient (skiptoken)",
         "dynamic email recipient (top)",
+        "hardcoded domain: odata.count",
         "hardcoded domain: odata.nextLink"
       ],
       "dependency_visibility": "No dependency data",
@@ -9094,6 +9441,24 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.160.0"
+    },
+    {
+      "scan_date": "2026-10-11T03:14:38Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.160.0"
+    },
+    {
+      "scan_date": "2026-10-12T03:37:23Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.162.0"
+    },
+    {
+      "scan_date": "2026-10-13T04:52:49Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.162.0"
     }
   ]
 }

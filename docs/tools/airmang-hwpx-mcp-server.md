@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.6` |
 | **Vendor** | airmang |
-| **Stars** | ⭐ 54 |
+| **Stars** | ⭐ 67 |
 | **Language** | Python |
 | **Source** | [airmang-hwpx-mcp-server](https://github.com/airmang/hwpx-mcp-server) |
 | **Scan Date** | 2026-06-22 |

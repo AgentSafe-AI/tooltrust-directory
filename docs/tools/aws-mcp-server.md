@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.7.0` |
 | **Vendor** | alexei-led |
-| **Stars** | ⭐ 182 |
+| **Stars** | ⭐ 186 |
 | **Language** | Python |
 | **Source** | [aws-mcp-server](https://github.com/alexei-led/aws-mcp-server) |
 | **Scan Date** | 2026-06-22 |

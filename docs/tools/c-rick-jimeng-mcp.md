@@ -6,7 +6,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.10.0` |
 | **Vendor** | c-rick |
-| **Stars** | ⭐ 51 |
+| **Stars** | ⭐ 53 |
 | **npm Package** | `jimeng-mcp` |
 | **npm Downloads (30d)** | 105 |
 | **Language** | TypeScript |

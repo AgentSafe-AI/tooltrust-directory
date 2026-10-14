@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.26.0` |
 | **Vendor** | cgoinglove |
-| **Stars** | ⭐ 1047 |
+| **Stars** | ⭐ 1189 |
 | **npm Package** | `better-chatbot` |
 | **Language** | TypeScript |
 | **Source** | [better-chatbot](https://github.com/cgoinglove/better-chatbot) |

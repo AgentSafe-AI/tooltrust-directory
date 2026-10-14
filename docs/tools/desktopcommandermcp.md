@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `0.2.52` |
+| **Version** | `0.3.0` |
 | **Vendor** | wonderwhy-er |
-| **Stars** | ⭐ 9996 |
+| **Stars** | ⭐ 10038 |
 | **npm Package** | `@wonderwhy-er/desktop-commander` |
-| **npm Downloads (30d)** | 942.9k |
-| **Language** | TypeScript |
+| **npm Downloads (30d)** | 950.1k |
+| **Language** | JavaScript |
 | **Source** | [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 8 |
-| Info     | 45 |
+| Info     | 44 |
 
 ## Detailed Findings
 
@@ -591,18 +591,6 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
 
 ---
 

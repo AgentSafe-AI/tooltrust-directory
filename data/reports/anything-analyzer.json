@@ -3,12 +3,12 @@
   "version": "3.7.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-11T03:11:54.31002365Z",
+  "scan_date": "2026-10-14T02:58:43.348331478Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/Mouseww/anything-analyzer",
   "category": "Developer Tools",
   "vendor": "Mouseww",
-  "stars": 3759,
+  "stars": 3769,
   "npm_package": "anything-analyzer",
   "license": "Apache-2.0",
   "language": "TypeScript",
@@ -20,7 +20,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "parse_quote"
+      "tool_name": "analyze_video_ad"
     },
     {
       "id": "AS-011",
@@ -28,7 +28,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "parse_quote"
+      "tool_name": "analyze_video_ad"
     },
     {
       "id": "AS-014",
@@ -36,7 +36,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "parse_quote"
+      "tool_name": "analyze_video_ad"
     },
     {
       "id": "AS-014",
@@ -44,7 +44,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "check_errors"
+      "tool_name": "get_analysis"
     },
     {
       "id": "AS-014",
@@ -52,7 +52,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "lookup_average_price"
+      "tool_name": "upgrade_to_full_review"
     },
     {
       "id": "AS-014",
@@ -60,7 +60,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "draft_dispute"
+      "tool_name": "list_my_analyses"
     },
     {
       "id": "AS-014",
@@ -68,7 +68,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "negotiation_script"
+      "tool_name": "get_account"
     }
   ],
   "summary": {
@@ -104,182 +104,60 @@
     }
   ],
   "tool_names": [
-    "check_errors",
-    "draft_dispute",
-    "lookup_average_price",
-    "negotiation_script",
-    "parse_quote"
+    "analyze_video_ad",
+    "get_account",
+    "get_analysis",
+    "list_my_analyses",
+    "upgrade_to_full_review"
   ],
   "tool_contexts": [
     {
-      "tool_name": "parse_quote",
+      "tool_name": "analyze_video_ad",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
         "uses_network"
       ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: quelta.ai"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "check_errors",
+      "tool_name": "get_analysis",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "lookup_average_price",
+      "tool_name": "upgrade_to_full_review",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "draft_dispute",
+      "tool_name": "list_my_analyses",
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (contractor_name)",
-        "dynamic email recipient (customer_name)"
+        "hardcoded domain: quelta.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "negotiation_script",
+      "tool_name": "get_account",
       "action": "ALLOW",
       "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
       "destinations": [
-        "dynamic email recipient (contractor_name)"
+        "hardcoded domain: quelta.ai"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "scan_history": [
-    {
-      "scan_date": "2026-09-21T02:38:26Z",
-      "grade": "A",
-      "risk_score": 0,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-22T02:39:52Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-23T02:41:59Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-24T02:31:45Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-25T02:45:52Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-26T02:51:04Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-27T02:49:47Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-28T02:52:46Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-29T03:33:37Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-09-30T03:18:02Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-10-01T13:01:52Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-10-02T02:48:11Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-10-03T03:09:18Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-10-04T03:38:33Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-10-05T03:18:21Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.61"
-    },
-    {
-      "scan_date": "2026-10-06T04:06:36Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.6.63"
-    },
-    {
-      "scan_date": "2026-10-07T03:16:38Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.7.0"
-    },
-    {
-      "scan_date": "2026-10-08T03:50:09Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.7.0"
-    },
-    {
-      "scan_date": "2026-10-09T03:54:58Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.7.0"
-    },
-    {
-      "scan_date": "2026-10-10T03:38:42Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.7.0"
     }
   ]
 }

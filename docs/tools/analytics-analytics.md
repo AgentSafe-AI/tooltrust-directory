@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `sha-43cc3b9250b4` |
 | **Vendor** | analytics |
-| **Stars** | ⭐ 92 |
+| **Stars** | ⭐ 93 |
 | **Language** | Haskell |
 | **Source** | [analytics-analytics](https://github.com/analytics/analytics) |
 | **Scan Date** | 2026-06-22 |

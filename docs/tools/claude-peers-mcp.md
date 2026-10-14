@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.0` |
 | **Vendor** | louislva |
-| **Stars** | ⭐ 2205 |
+| **Stars** | ⭐ 2206 |
 | **npm Package** | `claude-peers` |
 | **npm Downloads (30d)** | 92 |
 | **Language** | TypeScript |

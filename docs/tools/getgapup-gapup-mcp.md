@@ -12,7 +12,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [getgapup-gapup-mcp](https://smithery.ai/server/getgapup/gapup-mcp) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

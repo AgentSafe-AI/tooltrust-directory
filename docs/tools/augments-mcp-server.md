@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `7.1.0` |
 | **Vendor** | augmnt |
-| **Stars** | ⭐ 120 |
+| **Stars** | ⭐ 127 |
 | **npm Package** | `@augmnt-sh/augments-mcp-server` |
 | **npm Downloads (30d)** | 131 |
 | **Language** | TypeScript |

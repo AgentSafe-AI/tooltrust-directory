@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `sha-97e7585e212d` |
 | **Vendor** | Simon-Kansara |
-| **Stars** | ⭐ 387 |
+| **Stars** | ⭐ 394 |
 | **Language** | Python |
 | **Source** | [ableton-live-mcp-server](https://github.com/Simon-Kansara/ableton-live-mcp-server) |
 | **Scan Date** | 2026-06-22 |

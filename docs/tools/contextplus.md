@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.9` |
 | **Vendor** | forloopcodes |
-| **Stars** | ⭐ 1974 |
+| **Stars** | ⭐ 1983 |
 | **npm Package** | `contextplus` |
 | **npm Downloads (30d)** | 7.0k |
 | **Language** | TypeScript |

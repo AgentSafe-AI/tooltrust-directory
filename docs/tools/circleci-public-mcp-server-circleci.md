@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.15.1` |
 | **Vendor** | CircleCI-Public |
-| **Stars** | ⭐ 84 |
+| **Stars** | ⭐ 93 |
 | **npm Package** | `@circleci/mcp-server-circleci` |
 | **npm Downloads (30d)** | 126.3k |
 | **Language** | TypeScript |

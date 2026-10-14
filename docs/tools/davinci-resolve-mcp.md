@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `4.10.4` |
+| **Version** | `4.13.1` |
 | **Vendor** | samuelgursky |
-| **Stars** | ⭐ 3459 |
+| **Stars** | ⭐ 3537 |
 | **npm Package** | `davinci-resolve-mcp` |
-| **npm Downloads (30d)** | 48.9k |
+| **npm Downloads (30d)** | 45.0k |
 | **Language** | Python |
 | **Source** | [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

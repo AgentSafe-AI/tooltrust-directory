@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `2.8.15` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 479 |
+| **Stars** | ⭐ 477 |
 | **npm Package** | `atlas-mcp-server` |
 | **npm Downloads (30d)** | 191 |
 | **Language** | TypeScript |

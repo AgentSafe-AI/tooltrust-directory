@@ -1,18 +1,18 @@
 # 🟢 mcp-server-excel
 
-> Automate real Microsoft Excel with AI via MCP Server or CLI — Power Query, DAX, VBA, PivotTables, charts, and 326 operations.
+> Automate real Microsoft Excel with AI via MCP Server or CLI — Power Query, DAX, VBA, PivotTables, charts, and 412 operations.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `2.3.9` |
+| **Version** | `2.4.1` |
 | **Vendor** | sbroenne |
-| **Stars** | ⭐ 813 |
+| **Stars** | ⭐ 817 |
 | **npm Package** | `excelmcp` |
 | **Language** | C# |
 | **Source** | [mcp-server-excel](https://github.com/sbroenne/mcp-server-excel) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

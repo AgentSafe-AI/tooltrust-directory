@@ -1,6 +1,6 @@
 # 🟢 excel-mcp-server
 
-> Excel MCP server: let AI (Claude, Cursor, VS Code) create and edit Excel files with charts, PivotTables, slicers and formulas. No Excel required.
+> Excel MCP server: let AI (Claude, Cursor, Codex) create and edit Excel files with charts, PivotTables, slicers and formulas. No Excel required.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | haris-musa |
-| **Stars** | ⭐ 4228 |
+| **Stars** | ⭐ 4235 |
 | **Language** | Python |
 | **Source** | [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

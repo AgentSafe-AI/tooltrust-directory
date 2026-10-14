@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.8` |
 | **Vendor** | LibreChat-AI |
-| **Stars** | ⭐ 45494 |
+| **Stars** | ⭐ 45646 |
 | **npm Package** | `LibreChat` |
 | **Language** | TypeScript |
 | **Source** | [librechat](https://github.com/LibreChat-AI/LibreChat) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

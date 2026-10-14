@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `golden-b326f2a1d4fe` |
+| **Version** | `golden-f60c6fbd46aa` |
 | **Vendor** | feder-cr |
-| **Stars** | ⭐ 31941 |
+| **Stars** | ⭐ 32024 |
 | **npm Package** | `invisible-dots-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [invisible-dots](https://github.com/feder-cr/invisible_dots) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -25,7 +25,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 4 |
-| Info     | 23 |
+| Info     | 25 |
 
 ## Detailed Findings
 
@@ -302,6 +302,30 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

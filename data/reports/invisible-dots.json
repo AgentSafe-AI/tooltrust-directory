@@ -1,14 +1,14 @@
 {
   "tool_id": "invisible-dots",
-  "version": "golden-b326f2a1d4fe",
+  "version": "golden-f60c6fbd46aa",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-11T03:08:56.951207077Z",
+  "scan_date": "2026-10-14T02:55:54.219126215Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/feder-cr/invisible_dots",
   "category": "Developer Tools",
   "vendor": "feder-cr",
-  "stars": 31941,
+  "stars": 32024,
   "npm_package": "invisible-dots-monorepo",
   "license": "MIT",
   "language": "TypeScript",
@@ -207,6 +207,22 @@
       "tool_name": "browser_select_option"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "browser_upload_files"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "browser_upload_files"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -236,7 +252,7 @@
     "high": 0,
     "medium": 0,
     "low": 4,
-    "info": 23
+    "info": 25
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -255,6 +271,7 @@
     "browser_status",
     "browser_take_screenshot",
     "browser_type",
+    "browser_upload_files",
     "browser_watch"
   ],
   "tool_contexts": [
@@ -395,6 +412,19 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "browser_upload_files",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (selector)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "browser_press_key",
       "action": "ALLOW",
       "grade": "A",
@@ -430,6 +460,24 @@
       "grade": "A",
       "risk_score": 2,
       "version": "golden-b326f2a1d4fe"
+    },
+    {
+      "scan_date": "2026-10-11T03:08:56Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "golden-b326f2a1d4fe"
+    },
+    {
+      "scan_date": "2026-10-12T03:31:34Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "golden-d9b4cfd820af"
+    },
+    {
+      "scan_date": "2026-10-13T04:46:58Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "golden-f60c6fbd46aa"
     }
   ]
 }

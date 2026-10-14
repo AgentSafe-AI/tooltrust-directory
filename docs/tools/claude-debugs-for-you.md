@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.2` |
 | **Vendor** | jasonjmcghee |
-| **Stars** | ⭐ 510 |
+| **Stars** | ⭐ 516 |
 | **npm Package** | `claude-debugs-for-you` |
 | **npm Downloads (30d)** | 23 |
 | **Language** | TypeScript |

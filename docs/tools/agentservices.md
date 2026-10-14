@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `5.3.0+git.bdd9d9d` |
 | **Vendor** | vbkotecha |
-| **Stars** | ⭐ 1 |
+| **Stars** | ⭐ 2 |
 | **Language** | Python |
 | **Source** | [agentservices](https://github.com/vbkotecha/agentservices-api/tree/bdd9d9db2e35e0275dec7a6250c804483aa88511) |
 | **Scan Date** | 2026-09-01 |

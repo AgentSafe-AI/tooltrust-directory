@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.6.0` |
 | **Vendor** | bradleygolden |
-| **Stars** | ⭐ 66 |
+| **Stars** | ⭐ 70 |
 | **npm Package** | `hexdocs-mcp` |
 | **npm Downloads (30d)** | 342 |
 | **Language** | Elixir |

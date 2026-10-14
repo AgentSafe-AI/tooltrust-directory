@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 91130 |
+| **Stars** | ⭐ 91228 |
 | **npm Package** | `mcp-server-fetch` |
 | **npm Downloads (30d)** | 10.1k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

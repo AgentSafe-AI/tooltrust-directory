@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `3.15.0` |
+| **Version** | `3.16.0` |
 | **Vendor** | MCPJam |
-| **Stars** | ⭐ 2247 |
+| **Stars** | ⭐ 2256 |
 | **npm Package** | `mcpjam-workspace` |
 | **Language** | TypeScript |
 | **Source** | [inspector](https://github.com/MCPJam/inspector) |
-| **Scan Date** | 2026-10-11 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

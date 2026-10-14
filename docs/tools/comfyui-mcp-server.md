@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.1` |
 | **Vendor** | joenorton |
-| **Stars** | ⭐ 358 |
+| **Stars** | ⭐ 408 |
 | **Language** | Python |
 | **Source** | [comfyui-mcp-server](https://github.com/joenorton/comfyui-mcp-server) |
 | **Scan Date** | 2026-06-22 |
