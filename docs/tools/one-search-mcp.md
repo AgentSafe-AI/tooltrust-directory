@@ -10,10 +10,10 @@
 | **Vendor** | yokingma |
 | **Stars** | ⭐ 145 |
 | **npm Package** | `one-search-mcp` |
-| **npm Downloads (30d)** | 922 |
+| **npm Downloads (30d)** | 911 |
 | **Language** | TypeScript |
 | **Source** | [one-search-mcp](https://github.com/yokingma/one-search-mcp) |
-| **Scan Date** | 2026-10-13 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

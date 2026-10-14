@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.11` |
 | **Vendor** | zilliztech |
-| **Stars** | ⭐ 12376 |
+| **Stars** | ⭐ 12610 |
 | **npm Package** | `claude-context` |
 | **npm Downloads (30d)** | 107 |
 | **Language** | TypeScript |

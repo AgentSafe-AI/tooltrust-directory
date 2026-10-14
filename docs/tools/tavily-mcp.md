@@ -10,10 +10,10 @@
 | **Vendor** | tavily-ai |
 | **Stars** | ⭐ 2429 |
 | **npm Package** | `tavily-mcp` |
-| **npm Downloads (30d)** | 96.2k |
+| **npm Downloads (30d)** | 96.5k |
 | **Language** | TypeScript |
 | **Source** | [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) |
-| **Scan Date** | 2026-10-13 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

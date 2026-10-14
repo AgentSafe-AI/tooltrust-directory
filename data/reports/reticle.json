@@ -1,0 +1,69 @@
+{
+  "tool_id": "reticle",
+  "version": "3.7.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-14T03:01:01Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/reticlehq/reticle",
+  "category": "Developer Tools",
+  "vendor": "reticlehq",
+  "stars": 1218,
+  "npm_package": "reticle-monorepo",
+  "license": "NOASSERTION",
+  "language": "TypeScript",
+  "description": "AI agents can generate code, but still struggle to understand what they build. Reticle brings Jev-style machine-native runtime perception to web \u0026 desktop applications.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "server/src/surface/mcp/mcp.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 658,
+            "snippet": "new McpServer(",
+            "file": "server/src/surface/mcp/mcp.ts",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "server/src/surface/mcp/mcp.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 658,
+      "snippet": "new McpServer(",
+      "file": "server/src/surface/mcp/mcp.ts",
+      "language": "typescript"
+    }
+  ]
+}

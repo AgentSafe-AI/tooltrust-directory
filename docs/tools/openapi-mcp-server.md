@@ -10,10 +10,10 @@
 | **Vendor** | janwilmake |
 | **Stars** | ⭐ 903 |
 | **npm Package** | `openapi-mcp-server` |
-| **npm Downloads (30d)** | 2.7k |
+| **npm Downloads (30d)** | 2.9k |
 | **Language** | TypeScript |
 | **Source** | [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) |
-| **Scan Date** | 2026-10-13 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

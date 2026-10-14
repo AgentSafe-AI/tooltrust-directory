@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `3.2.0` |
 | **Vendor** | conorluddy |
-| **Stars** | ⭐ 82 |
+| **Stars** | ⭐ 99 |
 | **npm Package** | `xc-mcp` |
 | **npm Downloads (30d)** | 1.2k |
 | **Language** | TypeScript |

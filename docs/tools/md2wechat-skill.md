@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `3.8.0` |
 | **Vendor** | geekjourneyx |
-| **Stars** | ⭐ 3690 |
+| **Stars** | ⭐ 3697 |
 | **npm Package** | `@geekjourneyx/md2wechat` |
-| **npm Downloads (30d)** | 1.0k |
+| **npm Downloads (30d)** | 825 |
 | **Language** | Go |
 | **Source** | [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

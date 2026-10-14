@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.21` |
 | **Vendor** | cjo4m06 |
-| **Stars** | ⭐ 2091 |
+| **Stars** | ⭐ 2147 |
 | **npm Package** | `mcp-shrimp-task-manager` |
 | **npm Downloads (30d)** | 3.3k |
 | **Language** | JavaScript |

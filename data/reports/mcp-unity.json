@@ -1,14 +1,14 @@
 {
   "tool_id": "mcp-unity",
   "version": "1.5.0",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-10-13T04:51:21Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-14T03:00:08.275517079Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/CoderGamester/mcp-unity",
   "category": "Other",
   "vendor": "CoderGamester",
-  "stars": 1929,
+  "stars": 1930,
   "npm_package": "com.gamelovers.mcp-unity",
   "npm_downloads_monthly": 38,
   "license": "MIT",
@@ -16,40 +16,126 @@
   "description": "Model Context Protocol (MCP) plugin to connect with Unity Editor — designed for Cursor, Claude Code, Codex, Windsurf and other IDEs",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 2,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "Server~/src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 50,
-            "snippet": "new McpServer (",
-            "file": "Server~/src/index.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "autonomous_game_architect"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "autonomous_game_architect"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "autonomous_game_architect"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "generate_gameplay_mechanics"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "generate_gameplay_mechanics"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "implement_procedural_generation"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "implement_procedural_generation"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "optimize_game_performance"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "optimize_game_performance"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "optimize_game_performance"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "prepare_game_release"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "prepare_game_release"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "prepare_game_release"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "prepare_game_release"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 1,
+    "info": 13
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -67,48 +153,74 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "autonomous_game_architect",
+    "generate_gameplay_mechanics",
+    "implement_procedural_generation",
+    "optimize_game_performance",
+    "prepare_game_release"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-10-06T04:07:48Z",
+      "tool_name": "autonomous_game_architect",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.5.0"
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Three.js",
+        "hardcoded domain: itch.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-07T03:17:43Z",
+      "tool_name": "generate_gameplay_mechanics",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.5.0"
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: Three.js"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-08T03:51:28Z",
+      "tool_name": "implement_procedural_generation",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.5.0"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-09T03:56:17Z",
+      "tool_name": "optimize_game_performance",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.5.0"
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (symptom)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-10T03:40:07Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.5.0"
-    },
-    {
-      "scan_date": "2026-10-11T03:13:16Z",
+      "tool_name": "prepare_game_release",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.5.0"
-    },
-    {
-      "scan_date": "2026-10-12T03:35:57Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.5.0"
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (store_target)",
+        "hardcoded domain: itch.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

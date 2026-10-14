@@ -1,16 +1,6 @@
 {
-  "tool_id": "cloud-mcp-server",
-  "version": "1.7.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-09-12T02:29:31.556318616Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/alexei-led/cloud-mcp-server",
   "category": "Developer Tools",
-  "vendor": "alexei-led",
-  "stars": 186,
-  "license": "MIT",
-  "language": "Python",
+  "contributors": 2,
   "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
   "findings": [
     {
@@ -78,100 +68,19 @@
       "tool_name": "simulation.inject_traffic"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 7
-  },
+  "forks": 34,
+  "grade": "A",
+  "language": "Python",
+  "last_commit_at": "2026-02-27T14:31:23Z",
+  "last_release_at": "2026-02-27T14:31:51Z",
+  "latest_release_name": "v1.7.0 — LLM Documentation \u0026 Developer Experience",
+  "latest_release_tag": "v1.7.0",
+  "latest_release_url": "https://github.com/alexei-led/cloud-mcp-server/releases/tag/v1.7.0",
+  "latest_release_version": "v1.7.0",
+  "license": "MIT",
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "tool_names": [
-    "scenario.list",
-    "simulation.create",
-    "simulation.inject_failure",
-    "simulation.inject_traffic",
-    "simulation.metrics",
-    "simulation.step"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "simulation.inject_failure",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scenario.list",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: scenario.list",
-        "hardcoded domain: simulation.create"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: api.spec",
-        "hardcoded domain: scenario.list",
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.step",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.metrics",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.inject_traffic",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "risk_score": 2,
+  "scan_date": "2026-09-12T02:29:31.556318616Z",
   "scan_history": [
     {
       "scan_date": "2026-05-28T02:24:04Z",
@@ -647,5 +556,104 @@
       "risk_score": 2,
       "version": "1.7.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/alexei-led/cloud-mcp-server",
+  "stars": 186,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 7
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "simulation.inject_failure",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "scenario.list",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: scenario.list",
+        "hardcoded domain: simulation.create"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.create",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded API endpoint: api.spec",
+        "hardcoded domain: scenario.list",
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.step",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.metrics",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.inject_traffic",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "cloud-mcp-server",
+  "tool_names": [
+    "scenario.list",
+    "simulation.create",
+    "simulation.inject_failure",
+    "simulation.inject_traffic",
+    "simulation.metrics",
+    "simulation.step"
+  ],
+  "vendor": "alexei-led",
+  "version": "1.7.0"
 }

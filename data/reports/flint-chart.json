@@ -1,61 +1,76 @@
 {
   "tool_id": "flint-chart",
   "version": "0.5.1",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-10-13T04:50:15Z",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-14T02:58:59.628388242Z",
   "scanner": "tooltrust-scanner/v0.3.19",
   "source_url": "https://github.com/microsoft/flint-chart",
   "category": "Developer Tools",
   "vendor": "microsoft",
-  "stars": 4366,
+  "stars": 4367,
   "npm_package": "flint-chart-monorepo",
   "license": "MIT",
   "language": "TypeScript",
   "description": "🪄 Flint is a visualization language that lets AI agents reliably create expressive, good-looking charts from simple, human-editable chart specs.",
   "findings": [
     {
-      "id": "AS-018",
+      "id": "AS-014",
       "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 5,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "packages/flint-mcp/src/server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 136,
-            "snippet": "new McpServer(",
-            "file": "packages/flint-mcp/src/server.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 160,
-            "snippet": ".registerTool(",
-            "file": "packages/flint-mcp/src/server.ts",
-            "language": "typescript"
-          }
-        ]
-      }
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "chart"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "submit_feedback"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_feedback_reply"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "index_tools"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "index_tools"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "index_tools"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 0,
-    "info": 1
+    "low": 1,
+    "info": 5
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -80,48 +95,49 @@
       "language": "typescript"
     }
   ],
-  "scan_history": [
+  "tool_names": [
+    "chart",
+    "get_feedback_reply",
+    "index_tools",
+    "submit_feedback"
+  ],
+  "tool_contexts": [
     {
-      "scan_date": "2026-10-06T04:06:48Z",
+      "tool_name": "chart",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.1"
+      "destinations": [
+        "dynamic email recipient (indicators)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-07T03:16:43Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "0.5.1"
+      "tool_name": "submit_feedback",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tool)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-08T03:50:29Z",
+      "tool_name": "get_feedback_reply",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.1"
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "scan_date": "2026-10-09T03:55:12Z",
+      "tool_name": "index_tools",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.1"
-    },
-    {
-      "scan_date": "2026-10-10T03:39:01Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.1"
-    },
-    {
-      "scan_date": "2026-10-11T03:12:12Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.1"
-    },
-    {
-      "scan_date": "2026-10-12T03:34:51Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "0.5.1"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ]
 }

@@ -1,19 +1,19 @@
-# 🟡 mcp-rest-api
+# 🟢 mcp-rest-api
 
 > A TypeScript-based MCP server that enables testing of REST APIs through Cline. This tool allows you to test and interact with any REST API endpoints directly from your development environment.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `0.4.0` |
 | **Vendor** | dkmaker |
 | **Stars** | ⭐ 103 |
 | **npm Package** | `dkmaker-mcp-rest-api` |
-| **npm Downloads (30d)** | 392 |
+| **npm Downloads (30d)** | 419 |
 | **Language** | JavaScript |
 | **Source** | [mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) |
-| **Scan Date** | 2026-10-12 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 9 |
 | Info     | 59 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v0.4.0: 47 tool(s) added, 10 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.6` |
 | **Vendor** | NanmiCoder |
-| **Stars** | ⭐ 14726 |
+| **Stars** | ⭐ 14999 |
 | **npm Package** | `claude-code-local` |
 | **Language** | TypeScript |
 | **Source** | [cc-haha](https://github.com/NanmiCoder/cc-haha) |

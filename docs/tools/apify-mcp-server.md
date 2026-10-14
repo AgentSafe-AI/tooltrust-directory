@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `0.17.4` |
+| **Version** | `0.18.0` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 10851 |
+| **Stars** | ⭐ 11064 |
 | **npm Package** | `@apify/actors-mcp-server` |
-| **npm Downloads (30d)** | 106.6k |
+| **npm Downloads (30d)** | 105.1k |
 | **Language** | TypeScript |
 | **Source** | [apify-mcp-server](https://github.com/apify/apify-mcp-server) |
-| **Scan Date** | 2026-10-13 |
+| **Scan Date** | 2026-10-14 |
 | **Scanner** | tooltrust-scanner/v0.3.19 |
 
 ---

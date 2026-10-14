@@ -1,52 +1,31 @@
 {
-  "tool_id": "context-mode",
-  "version": "1.0.169",
-  "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-10-13T04:47:40.637225143Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/mksglu/context-mode",
   "category": "Developer Tools",
-  "vendor": "mksglu",
-  "stars": 27454,
-  "npm_package": "context-mode",
-  "npm_downloads_monthly": 102090,
-  "license": "NOASSERTION",
-  "language": "TypeScript",
+  "contributors": 111,
   "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
-  "findings": [
+  "embedded_mcp_evidence": [
     {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.169: 11 tool(s) added, 7 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "ctx_batch_execute",
-          "ctx_doctor",
-          "ctx_execute",
-          "ctx_execute_file",
-          "ctx_fetch_and_index",
-          "ctx_index",
-          "ctx_insight",
-          "ctx_purge",
-          "ctx_search",
-          "ctx_stats",
-          "ctx_upgrade"
-        ],
-        "removed": [
-          "create_memory_bucket",
-          "get_user_memory_buckets",
-          "list_items_in_memory_bucket",
-          "read_context",
-          "save_conversation",
-          "save_memory",
-          "search_memory"
-        ],
-        "version": "1.0.169"
-      }
+      "kind": "import",
+      "line": 2,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
     },
+    {
+      "kind": "init",
+      "line": 143,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 242,
+      "snippet": ".registerTool(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ],
+  "findings": [
     {
       "id": "AS-002",
       "severity": "Info",
@@ -288,207 +267,22 @@
       "tool_name": "ctx_insight"
     }
   ],
-  "summary": {
-    "critical": 3,
-    "high": 1,
-    "medium": 0,
-    "low": 6,
-    "info": 21
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 1997,
+  "grade": "C",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 143,
-      "snippet": "new McpServer(",
-      "file": "src/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 242,
-      "snippet": ".registerTool(",
-      "file": "src/server.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "ctx_batch_execute",
-    "ctx_doctor",
-    "ctx_execute",
-    "ctx_execute_file",
-    "ctx_fetch_and_index",
-    "ctx_index",
-    "ctx_insight",
-    "ctx_purge",
-    "ctx_search",
-    "ctx_stats",
-    "ctx_upgrade"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "ctx_execute",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: Console.WriteLine",
-        "hardcoded domain: IO.puts",
-        "hardcoded domain: JSON.parse",
-        "hardcoded domain: console.log",
-        "hardcoded domain: f.endsWith",
-        "hardcoded domain: files.forEach",
-        "hardcoded domain: fmt.Println",
-        "hardcoded domain: fs.readFileSync",
-        "hardcoded domain: fs.readdirSync",
-        "hardcoded domain: i.test",
-        "hardcoded domain: i.title",
-        "hardcoded domain: out.split",
-        "hardcoded webhook endpoint: hooks.length"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_execute_file",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: Console.WriteLine",
-        "hardcoded domain: IO.puts",
-        "hardcoded domain: console.log",
-        "hardcoded domain: data.csv",
-        "hardcoded domain: errs.length",
-        "hardcoded domain: errs.slice",
-        "hardcoded domain: huge.log",
-        "hardcoded domain: rows.length"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_index",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files"
-      ],
-      "destinations": [
-        "hardcoded domain: large-spec.md"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_fetch_and_index",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (url)",
-        "hardcoded domain: os.cpus",
-        "hardcoded domain: react.dev",
-        "hardcoded domain: vuejs.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_batch_execute",
-      "action": "REQUIRE_APPROVAL",
-      "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_stats",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_doctor",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_upgrade",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_purge",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ctx_insight",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: context-mode.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-10-14T00:11:32Z",
+  "last_release_at": "2026-06-29T18:18:53Z",
+  "latest_release_name": "v1.0.169",
+  "latest_release_tag": "v1.0.169",
+  "latest_release_url": "https://github.com/mksglu/context-mode/releases/tag/v1.0.169",
+  "latest_release_version": "v1.0.169",
+  "license": "NOASSERTION",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 104151,
+  "npm_package": "context-mode",
+  "risk_score": 25,
+  "scan_date": "2026-10-14T02:56:30.678948602Z",
   "scan_history": [
     {
       "scan_date": "2026-09-05T02:14:55Z",
@@ -717,6 +511,194 @@
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.169"
+    },
+    {
+      "scan_date": "2026-10-13T04:47:40Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.0.169"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/mksglu/context-mode",
+  "stars": 28344,
+  "summary": {
+    "critical": 3,
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 21
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "ctx_execute",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Console.WriteLine",
+        "hardcoded domain: IO.puts",
+        "hardcoded domain: JSON.parse",
+        "hardcoded domain: console.log",
+        "hardcoded domain: f.endsWith",
+        "hardcoded domain: files.forEach",
+        "hardcoded domain: fmt.Println",
+        "hardcoded domain: fs.readFileSync",
+        "hardcoded domain: fs.readdirSync",
+        "hardcoded domain: i.test",
+        "hardcoded domain: i.title",
+        "hardcoded domain: out.split",
+        "hardcoded webhook endpoint: hooks.length"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_execute_file",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: Console.WriteLine",
+        "hardcoded domain: IO.puts",
+        "hardcoded domain: console.log",
+        "hardcoded domain: data.csv",
+        "hardcoded domain: errs.length",
+        "hardcoded domain: errs.slice",
+        "hardcoded domain: huge.log",
+        "hardcoded domain: rows.length"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_index",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: large-spec.md"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_fetch_and_index",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (url)",
+        "hardcoded domain: os.cpus",
+        "hardcoded domain: react.dev",
+        "hardcoded domain: vuejs.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_batch_execute",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_stats",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_doctor",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_upgrade",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_purge",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ctx_insight",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: context-mode.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "context-mode",
+  "tool_names": [
+    "ctx_batch_execute",
+    "ctx_doctor",
+    "ctx_execute",
+    "ctx_execute_file",
+    "ctx_fetch_and_index",
+    "ctx_index",
+    "ctx_insight",
+    "ctx_purge",
+    "ctx_search",
+    "ctx_stats",
+    "ctx_upgrade"
+  ],
+  "vendor": "mksglu",
+  "version": "1.0.169"
 }

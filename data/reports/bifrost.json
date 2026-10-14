@@ -1,51 +1,17 @@
 {
+  "tool_id": "bifrost",
+  "version": "transports/v2.3.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-14T02:57:50Z",
+  "scanner": "tooltrust-scanner/v0.3.19",
+  "source_url": "https://github.com/maximhq/bifrost",
   "category": "Developer Tools",
-  "contributors": 194,
-  "description": "Fastest enterprise AI gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support \u0026 \u003c100 µs overhead at 5k RPS.",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 20,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "core/mcp/clientmanager.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 3473,
-      "snippet": "server.NewMCPServer(",
-      "file": "core/mcp/clientmanager.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 2398,
-      "snippet": "AddTool (",
-      "file": "core/mcp/clientmanager.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 13,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "transports/bifrost-http/handlers/mcpserver.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 367,
-      "snippet": "server.NewMCPServer(",
-      "file": "transports/bifrost-http/handlers/mcpserver.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 456,
-      "snippet": "AddTool(",
-      "file": "transports/bifrost-http/handlers/mcpserver.go",
-      "language": "go"
-    }
-  ],
+  "vendor": "maximhq",
+  "stars": 8763,
+  "license": "Apache-2.0",
+  "language": "Go",
+  "description": "Open-source, high-performance AI gateway that works as your LLM gateway, MCP gateway and agent gateway. One OpenAI-compatible API for 10,000+ models, with failover, load balancing, semantic caching, virtual keys, budgets and MCP Code Mode. Works with any SDK or agent and adds under 200µs of overhead at 5k RPS.",
   "findings": [
     {
       "id": "AS-018",
@@ -64,16 +30,37 @@
           },
           {
             "kind": "init",
-            "line": 3473,
+            "line": 3766,
             "snippet": "server.NewMCPServer(",
             "file": "core/mcp/clientmanager.go",
             "language": "go"
           },
           {
             "kind": "tool_definition",
-            "line": 2398,
+            "line": 2591,
             "snippet": "AddTool (",
             "file": "core/mcp/clientmanager.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 8,
+            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+            "file": "framework/openapimcp/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 35,
+            "snippet": "server.NewMCPServer(",
+            "file": "framework/openapimcp/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 40,
+            "snippet": "AddTool(",
+            "file": "framework/openapimcp/server.go",
             "language": "go"
           },
           {
@@ -101,24 +88,6 @@
       }
     }
   ],
-  "forks": 1378,
-  "grade": "I",
-  "has_embedded_mcp": true,
-  "language": "Go",
-  "last_commit_at": "2026-10-13T03:21:24Z",
-  "last_release_at": "2026-10-13T03:34:34Z",
-  "latest_release_name": "Enterprise v2.3.0 base",
-  "latest_release_tag": "ent-v2.3.0-base",
-  "latest_release_url": "https://github.com/maximhq/bifrost/releases/tag/ent-v2.3.0-base",
-  "latest_release_version": "ent-v2.3.0-base",
-  "license": "Apache-2.0",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "risk_score": 0,
-  "scan_date": "2026-10-13T04:48:58Z",
-  "scan_incomplete": true,
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/maximhq/bifrost",
-  "stars": 8734,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -126,7 +95,72 @@
     "low": 0,
     "info": 1
   },
-  "tool_id": "bifrost",
-  "vendor": "maximhq",
-  "version": "transports/v2.3.0"
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "core/mcp/clientmanager.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 3766,
+      "snippet": "server.NewMCPServer(",
+      "file": "core/mcp/clientmanager.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 2591,
+      "snippet": "AddTool (",
+      "file": "core/mcp/clientmanager.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 8,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "framework/openapimcp/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 35,
+      "snippet": "server.NewMCPServer(",
+      "file": "framework/openapimcp/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 40,
+      "snippet": "AddTool(",
+      "file": "framework/openapimcp/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 13,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "transports/bifrost-http/handlers/mcpserver.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 367,
+      "snippet": "server.NewMCPServer(",
+      "file": "transports/bifrost-http/handlers/mcpserver.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 456,
+      "snippet": "AddTool(",
+      "file": "transports/bifrost-http/handlers/mcpserver.go",
+      "language": "go"
+    }
+  ]
 }
