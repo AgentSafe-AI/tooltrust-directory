@@ -11,8 +11,8 @@
 | **npm Package** | `@autoposting.ai/cli` |
 | **Language** | TypeScript |
 | **Source** | [autoposting-cli](https://github.com/Autoposting-ai/autoposting-cli/tree/da104175c6545d521f33d4e06847674daa364458) |
-| **Scan Date** | 2026-10-11 |
-| **Scanner** | tooltrust-scanner/0.3.19 |
+| **Scan Date** | 2026-10-14 |
+| **Scanner** | tooltrust-scanner/0.3.20 |
 
 ---
 

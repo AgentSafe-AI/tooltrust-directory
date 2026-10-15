@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 8 |
 | **Language** | Python |
 | **Source** | [magic-hour-mcp](https://github.com/magichourhq/magic-hour-mcp/tree/958836e73d0fe0ba090f162654e2c922ad14292e) |
-| **Scan Date** | 2026-10-11 |
-| **Scanner** | tooltrust-scanner/0.3.19 |
+| **Scan Date** | 2026-10-14 |
+| **Scanner** | tooltrust-scanner/0.3.20 |
 
 ---
 
