@@ -1,0 +1,124 @@
+{
+  "tool_id": "jcode",
+  "version": "0.98.1",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-15T02:35:31Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/1jehuang/jcode",
+  "category": "Other",
+  "vendor": "1jehuang",
+  "stars": 20806,
+  "license": "MIT",
+  "language": "Rust",
+  "description": "High performance coding agent harness written in rust",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in rust source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 3,
+            "snippet": "use serde_json::",
+            "file": "crates/jcode-app-core/src/agent_tests/mcp_remote_cache.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "init",
+            "line": 120,
+            "snippet": "\"tools/list\" =\u003e",
+            "file": "crates/jcode-app-core/src/agent_tests/mcp_remote_cache.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 123,
+            "snippet": "\"inputSchema\":",
+            "file": "crates/jcode-app-core/src/agent_tests/mcp_remote_cache.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "import",
+            "line": 6,
+            "snippet": "use serde_json::",
+            "file": "crates/jcode-base/src/mcp/remote_tests.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "init",
+            "line": 345,
+            "snippet": "\"tools/list\" =\u003e",
+            "file": "crates/jcode-base/src/mcp/remote_tests.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 346,
+            "snippet": "\"inputSchema\":",
+            "file": "crates/jcode-base/src/mcp/remote_tests.rs",
+            "language": "rust"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "use serde_json::",
+      "file": "crates/jcode-app-core/src/agent_tests/mcp_remote_cache.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "init",
+      "line": 120,
+      "snippet": "\"tools/list\" =\u003e",
+      "file": "crates/jcode-app-core/src/agent_tests/mcp_remote_cache.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 123,
+      "snippet": "\"inputSchema\":",
+      "file": "crates/jcode-app-core/src/agent_tests/mcp_remote_cache.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "import",
+      "line": 6,
+      "snippet": "use serde_json::",
+      "file": "crates/jcode-base/src/mcp/remote_tests.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "init",
+      "line": 345,
+      "snippet": "\"tools/list\" =\u003e",
+      "file": "crates/jcode-base/src/mcp/remote_tests.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 346,
+      "snippet": "\"inputSchema\":",
+      "file": "crates/jcode-base/src/mcp/remote_tests.rs",
+      "language": "rust"
+    }
+  ]
+}

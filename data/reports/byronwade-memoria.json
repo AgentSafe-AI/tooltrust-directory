@@ -1,6 +1,18 @@
 {
+  "tool_id": "byronwade-memoria",
+  "version": "1.0.11",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T02:59:20.845724603Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/byronwade/memoria",
   "category": "Developer Tools",
-  "contributors": 5,
+  "vendor": "byronwade",
+  "stars": 2,
+  "npm_package": "@byronwade/memoria",
+  "npm_downloads_monthly": 68,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "Prevents your AI from breaking code by revealing hidden file dependencies through git forensics.",
   "findings": [
     {
@@ -116,21 +128,98 @@
       "tool_name": "search_memories"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-08-09T17:21:57Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 12
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 110,
-  "npm_package": "@byronwade/memoria",
-  "risk_score": 2,
-  "scan_date": "2026-06-23T02:44:33.104147017Z",
+  "tool_names": [
+    "analyze_file",
+    "ask_history",
+    "extract_memories",
+    "get_context",
+    "save_lesson",
+    "search_memories"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "analyze_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: file.ts"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ask_history",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files"
+      ],
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded email recipient: john@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_context",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoSave)",
+        "dynamic email recipient (includeHistory)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "save_lesson",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "extract_memories",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoSave)",
+        "dynamic email recipient (autoSaveThreshold)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "search_memories",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:54:44Z",
@@ -251,103 +340,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.11"
+    },
+    {
+      "scan_date": "2026-06-23T02:44:33Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.11"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/byronwade/memoria",
-  "stars": 2,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 12
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "analyze_file",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: file.ts"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ask_history",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files"
-      ],
-      "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded email recipient: john@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (autoSave)",
-        "dynamic email recipient (includeHistory)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "save_lesson",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "extract_memories",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (autoSave)",
-        "dynamic email recipient (autoSaveThreshold)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "search_memories",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "byronwade-memoria",
-  "tool_names": [
-    "analyze_file",
-    "ask_history",
-    "extract_memories",
-    "get_context",
-    "save_lesson",
-    "search_memories"
-  ],
-  "vendor": "byronwade",
-  "version": "1.0.11"
+  ]
 }

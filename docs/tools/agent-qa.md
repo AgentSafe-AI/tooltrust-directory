@@ -12,8 +12,8 @@
 | **npm Package** | `agent-qa-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [agent-qa](https://github.com/vostride/agent-qa) |
-| **Scan Date** | 2026-09-09 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

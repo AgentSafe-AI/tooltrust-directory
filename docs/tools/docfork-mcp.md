@@ -8,13 +8,13 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | docfork |
-| **Stars** | ⭐ 488 |
+| **Stars** | ⭐ 486 |
 | **npm Package** | `docfork` |
-| **npm Downloads (30d)** | 2.7k |
+| **npm Downloads (30d)** | 700 |
 | **Language** | TypeScript |
 | **Source** | [docfork-mcp](https://github.com/docfork/docfork) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

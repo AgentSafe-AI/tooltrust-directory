@@ -1,18 +1,18 @@
-# 🟢 imprvhub-mcp-domain-availability
+# 🟡 imprvhub-mcp-domain-availability
 
 > A Model Context Protocol (MCP) server that enables Claude Desktop to check domain availability across 50+ TLDs. Features DNS/WHOIS verification, bulk checking, and smart suggestions. Zero-clone installation via uvx.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 0 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `0.4.1` |
 | **Vendor** | imprvhub |
 | **Stars** | ⭐ 59 |
 | **Language** | Python |
 | **Source** | [imprvhub-mcp-domain-availability](https://github.com/imprvhub/mcp-domain-availability) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
@@ -21,12 +21,24 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 2 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at v0.4.1: 1 tool(s) added, 1 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

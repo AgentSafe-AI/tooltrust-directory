@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 3760 |
 | **Language** | JavaScript |
 | **Source** | [mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

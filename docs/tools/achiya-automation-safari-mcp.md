@@ -10,11 +10,11 @@
 | **Vendor** | achiya-automation |
 | **Stars** | ⭐ 214 |
 | **npm Package** | `safari-mcp` |
-| **npm Downloads (30d)** | 5.0k |
+| **npm Downloads (30d)** | 14.1k |
 | **Language** | JavaScript |
 | **Source** | [achiya-automation-safari-mcp](https://github.com/achiya-automation/safari-mcp) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

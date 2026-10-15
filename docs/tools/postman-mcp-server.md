@@ -10,11 +10,11 @@
 | **Vendor** | postmanlabs |
 | **Stars** | ⭐ 318 |
 | **npm Package** | `@postman/postman-mcp-server` |
-| **npm Downloads (30d)** | 27.3k |
+| **npm Downloads (30d)** | 31.3k |
 | **Language** | TypeScript |
 | **Source** | [postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | sickn33 |
 | **Stars** | ⭐ 47475 |
 | **npm Package** | `antigravity-awesome-skills` |
-| **npm Downloads (30d)** | 23.5k |
+| **npm Downloads (30d)** | 3.6k |
 | **Language** | Python |
 | **Source** | [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) |
-| **Scan Date** | 2026-07-08 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

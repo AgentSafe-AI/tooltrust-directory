@@ -8,11 +8,11 @@
 | **Risk Score** | 17 |
 | **Version** | `1.1.0` |
 | **Vendor** | nitrocloudofficial |
-| **Stars** | ⭐ 2461 |
+| **Stars** | ⭐ 2458 |
 | **Language** | TypeScript |
 | **Source** | [nitrostack](https://github.com/nitrocloudofficial/nitrostack) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

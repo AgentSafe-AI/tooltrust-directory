@@ -1,19 +1,33 @@
 {
   "tool_id": "xiaohongshu-mcp",
   "version": "2026.07.26.1327-b8412a2",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-14T02:56:45.243907806Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:35:32.488642905Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/xpzouying/xiaohongshu-mcp",
   "category": "Developer Tools",
   "vendor": "xpzouying",
-  "stars": 16267,
+  "stars": 16282,
   "license": "Apache-2.0",
   "language": "Go",
   "description": "MCP for xiaohongshu.com",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v2026.07.26.1327-b8412a2: 0 tool(s) added, 1 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "xhs_search_videos"
+        ],
+        "version": "2026.07.26.1327-b8412a2"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -84,30 +98,6 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "xhs_search_notes"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "xhs_search_videos"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "xhs_search_videos"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "xhs_search_videos"
     },
     {
       "id": "AS-002",
@@ -592,10 +582,10 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 18,
-    "info": 54
+    "low": 17,
+    "info": 52
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -656,7 +646,6 @@
     "xhs_search_products",
     "xhs_search_suggestions",
     "xhs_search_users",
-    "xhs_search_videos",
     "xhs_submit_video_speech_text_by_note_id",
     "xhs_submit_video_speech_text_by_note_url"
   ],
@@ -690,19 +679,6 @@
     },
     {
       "tool_name": "xhs_search_notes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (page_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "xhs_search_videos",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -1061,6 +1037,14 @@
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "scan_history": [
+    {
+      "scan_date": "2026-10-14T02:56:45Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2026.07.26.1327-b8412a2"
     }
   ]
 }

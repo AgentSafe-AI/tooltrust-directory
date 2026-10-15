@@ -10,11 +10,11 @@
 | **Vendor** | supadata-ai |
 | **Stars** | ⭐ 63 |
 | **npm Package** | `@supadata/mcp` |
-| **npm Downloads (30d)** | 545 |
+| **npm Downloads (30d)** | 987 |
 | **Language** | TypeScript |
 | **Source** | [supadata-ai-mcp](https://github.com/supadata-ai/mcp) |
-| **Scan Date** | 2026-07-08 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

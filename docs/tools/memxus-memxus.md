@@ -29,8 +29,8 @@ Built for developers and power users who work across multiple AI tools without r
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [memxus-memxus](https://smithery.ai/server/memxus/memxus) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

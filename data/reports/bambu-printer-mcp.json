@@ -1,14 +1,14 @@
 {
   "tool_id": "bambu-printer-mcp",
-  "version": "1.1.26",
+  "version": "1.1.27",
   "grade": "C",
   "risk_score": 25,
-  "scan_date": "2026-10-14T03:02:52.521230671Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
+  "scan_date": "2026-10-15T02:46:14.005494029Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/DMontgomery40/bambu-printer-mcp",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
-  "stars": 198,
+  "stars": 203,
   "npm_package": "bambu-printer-mcp",
   "npm_downloads_monthly": 6327,
   "license": "GPL-2.0",
@@ -1091,6 +1091,22 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "inspect_print_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "inspect_print_file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: code/command execution, network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "print_3mf"
@@ -1277,7 +1293,7 @@
     "high": 0,
     "medium": 6,
     "low": 32,
-    "info": 118
+    "info": 120
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1297,6 +1313,7 @@
     "get_printer_status",
     "get_slice_settings",
     "get_stl_info",
+    "inspect_print_file",
     "lay_flat",
     "list_3mf_plate_objects",
     "list_printer_files",
@@ -1810,6 +1827,16 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "inspect_print_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "print_3mf",
       "action": "ALLOW",
       "grade": "A",
@@ -1991,6 +2018,12 @@
     },
     {
       "scan_date": "2026-10-13T04:54:27Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.1.26"
+    },
+    {
+      "scan_date": "2026-10-14T03:02:52Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.1.26"

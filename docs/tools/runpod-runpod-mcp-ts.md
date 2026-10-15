@@ -8,11 +8,11 @@
 | **Vendor** | runpod |
 | **Stars** | ⭐ 83 |
 | **npm Package** | `@runpod/mcp-server` |
-| **npm Downloads (30d)** | 4.0k |
+| **npm Downloads (30d)** | 46.9k |
 | **Language** | TypeScript |
 | **Source** | [runpod-runpod-mcp-ts](https://github.com/runpod/runpod-mcp) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

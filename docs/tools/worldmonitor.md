@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.10.0` |
 | **Vendor** | koala73 |
-| **Stars** | ⭐ 88395 |
+| **Stars** | ⭐ 88463 |
 | **npm Package** | `world-monitor` |
 | **Language** | TypeScript |
 | **Source** | [worldmonitor](https://github.com/koala73/worldmonitor) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | portel-dev |
 | **Stars** | ⭐ 100 |
 | **npm Package** | `@portel/ncp` |
-| **npm Downloads (30d)** | 646 |
+| **npm Downloads (30d)** | 2.1k |
 | **Language** | JavaScript |
 | **Source** | [portel-dev-ncp](https://github.com/portel-dev/ncp) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

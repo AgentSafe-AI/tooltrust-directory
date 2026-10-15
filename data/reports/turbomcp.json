@@ -1,0 +1,82 @@
+{
+  "tool_id": "turbomcp",
+  "version": "4.0.0-alpha.5",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-15T02:48:06Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/Epistates/turbomcp",
+  "category": "Other",
+  "vendor": "Epistates",
+  "stars": 98,
+  "license": "MIT",
+  "language": "Rust",
+  "description": "A full featured, enterprise grade rust MCP SDK",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in rust source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 19,
+            "snippet": "use rmcp::",
+            "file": "crates/turbomcp-interop/benches/sdk_comparison.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "init",
+            "line": 70,
+            "snippet": "impl ServerHandler for",
+            "file": "crates/turbomcp-interop/benches/sdk_comparison.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 50,
+            "snippet": "#[tool_router",
+            "file": "crates/turbomcp-interop/benches/sdk_comparison.rs",
+            "language": "rust"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 19,
+      "snippet": "use rmcp::",
+      "file": "crates/turbomcp-interop/benches/sdk_comparison.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "init",
+      "line": 70,
+      "snippet": "impl ServerHandler for",
+      "file": "crates/turbomcp-interop/benches/sdk_comparison.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 50,
+      "snippet": "#[tool_router",
+      "file": "crates/turbomcp-interop/benches/sdk_comparison.rs",
+      "language": "rust"
+    }
+  ]
+}

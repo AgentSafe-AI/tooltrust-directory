@@ -40,8 +40,8 @@ Per Knowledge Token model. Paid plans scale with usage and seats.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [quelvio-mcp-server](https://smithery.ai/server/quelvio/mcp-server) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

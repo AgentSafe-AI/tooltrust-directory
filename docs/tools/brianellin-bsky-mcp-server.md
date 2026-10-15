@@ -12,8 +12,8 @@
 | **npm Package** | `bsky-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [brianellin-bsky-mcp-server](https://github.com/brianellin/bsky-mcp-server) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

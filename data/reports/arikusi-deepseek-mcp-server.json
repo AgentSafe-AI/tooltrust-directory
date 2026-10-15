@@ -1,7 +1,46 @@
 {
+  "tool_id": "arikusi-deepseek-mcp-server",
+  "version": "1.6.0",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-10-15T02:52:56.938458808Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/arikusi/deepseek-mcp-server",
   "category": "Developer Tools",
-  "contributors": 4,
+  "vendor": "arikusi",
+  "stars": 21,
+  "npm_package": "@arikusi/deepseek-mcp-server",
+  "npm_downloads_monthly": 2086,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "MCP Server for DeepSeek API - enables MCP clients to use DeepSeek Chat and Reasoner models",
+  "findings": [
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "deepseek_chat"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "deepseek_chat"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
       "kind": "import",
@@ -32,40 +71,23 @@
       "language": "typescript"
     }
   ],
-  "findings": [
+  "tool_names": [
+    "deepseek_chat"
+  ],
+  "tool_contexts": [
     {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"max_tokens\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "deepseek_chat"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "deepseek_chat"
+      "tool_name": "deepseek_chat",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (max_tokens)",
+        "dynamic email recipient (tool_choice)",
+        "dynamic email recipient (tools)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "forks": 11,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-09-06T00:09:29Z",
-  "last_release_at": "2026-09-05T17:05:38Z",
-  "latest_release_name": "v2.3.0",
-  "latest_release_tag": "v2.3.0",
-  "latest_release_url": "https://github.com/arikusi/deepseek-mcp-server/releases/tag/v2.3.0",
-  "latest_release_version": "v2.3.0",
-  "license": "MIT",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 4749,
-  "npm_package": "@arikusi/deepseek-mcp-server",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:18:13.752089953Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:45:38Z",
@@ -162,36 +184,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "1.6.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/arikusi/deepseek-mcp-server",
-  "stars": 21,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 2
-  },
-  "tool_contexts": [
+    },
     {
-      "tool_name": "deepseek_chat",
-      "action": "ALLOW",
+      "scan_date": "2026-06-22T03:18:13Z",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (max_tokens)",
-        "dynamic email recipient (tool_choice)",
-        "dynamic email recipient (tools)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 0,
+      "version": "1.6.0"
     }
-  ],
-  "tool_id": "arikusi-deepseek-mcp-server",
-  "tool_names": [
-    "deepseek_chat"
-  ],
-  "vendor": "arikusi",
-  "version": "1.6.0"
+  ]
 }

@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | iFurySt |
-| **Stars** | ⭐ 2415 |
+| **Stars** | ⭐ 2425 |
 | **npm Package** | `open-computer-use-repo-tools` |
 | **Language** | Swift |
 | **Source** | [open-codex-computer-use](https://github.com/iFurySt/open-codex-computer-use) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

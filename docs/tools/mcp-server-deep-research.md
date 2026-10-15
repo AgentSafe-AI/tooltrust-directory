@@ -9,8 +9,8 @@
 | **Stars** | ⭐ 215 |
 | **Language** | Python |
 | **Source** | [mcp-server-deep-research](https://github.com/reading-plus-ai/mcp-server-deep-research) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

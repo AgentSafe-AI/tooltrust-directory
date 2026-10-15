@@ -10,11 +10,11 @@
 | **Vendor** | reactive-resume |
 | **Stars** | ⭐ 44152 |
 | **npm Package** | `reactive-resume` |
-| **npm Downloads (30d)** | 62 |
+| **npm Downloads (30d)** | 64 |
 | **Language** | TypeScript |
 | **Source** | [app](https://github.com/reactive-resume/app) |
-| **Scan Date** | 2026-09-12 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

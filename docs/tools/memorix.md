@@ -10,11 +10,11 @@
 | **Vendor** | AVIDS2 |
 | **Stars** | ⭐ 832 |
 | **npm Package** | `memorix` |
-| **npm Downloads (30d)** | 1.7k |
+| **npm Downloads (30d)** | 6.2k |
 | **Language** | TypeScript |
 | **Source** | [memorix](https://github.com/AVIDS2/memorix) |
-| **Scan Date** | 2026-06-29 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

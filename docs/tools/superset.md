@@ -12,8 +12,8 @@
 | **npm Package** | `@superset/repo` |
 | **Language** | TypeScript |
 | **Source** | [superset](https://github.com/superset-sh/superset) |
-| **Scan Date** | 2026-08-08 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

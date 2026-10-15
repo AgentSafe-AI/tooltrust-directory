@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-libofcongress-mcp-server",
+  "version": "0.5.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T02:57:26.43571071Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/libofcongress-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 5,
+  "npm_package": "@cyanheads/libofcongress-mcp-server",
+  "npm_downloads_monthly": 1077,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Search LOC digital collections, browse Chronicling America newspapers with full OCR text, and look up LC Subject Headings via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -9,7 +21,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "libofcongress_search"
+      "tool_name": "libofcongress_search_items"
     },
     {
       "id": "AS-011",
@@ -17,7 +29,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "libofcongress_search"
+      "tool_name": "libofcongress_search_items"
     },
     {
       "id": "AS-014",
@@ -25,13 +37,13 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "libofcongress_search"
+      "tool_name": "libofcongress_search_items"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "libofcongress_get_item"
     },
@@ -103,7 +115,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "libofcongress_search_subjects"
     },
@@ -148,21 +160,101 @@
       "tool_name": "libofcongress_browse_collections"
     }
   ],
-  "forks": 1,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-07T12:24:04Z",
-  "last_release_at": "2026-10-07T12:43:56Z",
-  "latest_release_name": "v0.3.1: mcp-ts-core 0.13.13 adoption, registry HTTP entry fix",
-  "latest_release_tag": "v0.3.1",
-  "latest_release_url": "https://github.com/cyanheads/libofcongress-mcp-server/releases/tag/v0.3.1",
-  "latest_release_version": "v0.3.1",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 12
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1077,
-  "npm_package": "@cyanheads/libofcongress-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-14T03:04:34.226517727Z",
+  "tool_names": [
+    "libofcongress_browse_collections",
+    "libofcongress_get_item",
+    "libofcongress_get_newspaper_page",
+    "libofcongress_search_items",
+    "libofcongress_search_newspapers",
+    "libofcongress_search_subjects"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "libofcongress_search_items",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "libofcongress_get_item",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: loc.gov",
+        "hardcoded domain: www.loc.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "libofcongress_search_newspapers",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "libofcongress_get_newspaper_page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (page_url)",
+        "hardcoded domain: chroniclingamerica.loc.gov",
+        "hardcoded domain: www.loc.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "libofcongress_search_subjects",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "libofcongress_browse_collections",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: loc.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-08-06T02:02:38Z",
@@ -541,102 +633,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.3.1"
+    },
+    {
+      "scan_date": "2026-10-14T03:04:34Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.3.1"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/cyanheads/libofcongress-mcp-server",
-  "stars": 5,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 6,
-    "info": 12
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "libofcongress_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "libofcongress_get_item",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: loc.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "libofcongress_search_newspapers",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "libofcongress_get_newspaper_page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (page_url)",
-        "hardcoded domain: www.loc.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "libofcongress_search_subjects",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "libofcongress_browse_collections",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: loc.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-libofcongress-mcp-server",
-  "tool_names": [
-    "libofcongress_browse_collections",
-    "libofcongress_get_item",
-    "libofcongress_get_newspaper_page",
-    "libofcongress_search",
-    "libofcongress_search_newspapers",
-    "libofcongress_search_subjects"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.3.1"
+  ]
 }

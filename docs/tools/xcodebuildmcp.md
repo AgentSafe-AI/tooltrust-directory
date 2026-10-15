@@ -10,11 +10,11 @@
 | **Vendor** | getsentry |
 | **Stars** | ⭐ 6473 |
 | **npm Package** | `xcodebuildmcp` |
-| **npm Downloads (30d)** | 381.1k |
+| **npm Downloads (30d)** | 271.1k |
 | **Language** | TypeScript |
 | **Source** | [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) |
-| **Scan Date** | 2026-09-23 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

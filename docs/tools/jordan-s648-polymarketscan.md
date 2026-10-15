@@ -21,8 +21,8 @@ No API key required. Data provided by PolymarketScan (polymarketscan.org).
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [jordan-s648-polymarketscan](https://smithery.ai/server/jordan-s648/PolymarketScan) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

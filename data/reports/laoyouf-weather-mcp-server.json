@@ -1,88 +1,38 @@
 {
+  "tool_id": "laoyouf-weather-mcp-server",
+  "version": "sha-3538eec9a16f",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T03:09:54.302595628Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/laoyouf/weather-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "laoyouf",
+  "license": "MIT",
+  "language": "Python",
   "findings": [
     {
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at vsha-3538eec9a16f: 1 tool(s) added, 59 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at vsha-3538eec9a16f: 8 tool(s) added, 1 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "WEATHERMAP_WEATHER"
+          "convert_time",
+          "get_air_quality",
+          "get_air_quality_details",
+          "get_current_datetime",
+          "get_current_weather",
+          "get_timezone_info",
+          "get_weather_byDateTimeRange",
+          "get_weather_details"
         ],
         "removed": [
-          "alerts_active",
-          "alerts_active_area",
-          "alerts_active_count",
-          "alerts_active_region",
-          "alerts_active_zone",
-          "alerts_query",
-          "alerts_single",
-          "alerts_types",
-          "cwa",
-          "cwas",
-          "cwsu",
-          "glossary",
-          "gridpoint",
-          "gridpoint_forecast",
-          "gridpoint_forecast_hourly",
-          "gridpoint_stations",
-          "icons",
-          "iconsDualCondition",
-          "icons_summary",
-          "latest_product_type_location",
-          "location_products",
-          "obs_station",
-          "obs_stations",
-          "office",
-          "office_headline",
-          "office_headlines",
-          "point",
-          "point_radio",
-          "point_stations",
-          "product",
-          "product_locations",
-          "product_types",
-          "products_query",
-          "products_type",
-          "products_type_location",
-          "products_type_locations",
-          "radar_profiler",
-          "radar_queue",
-          "radar_server",
-          "radar_servers",
-          "radar_station",
-          "radar_station_alarms",
-          "radar_stations",
-          "satellite_thumbnails",
-          "sigmet",
-          "sigmetQuery",
-          "sigmetsByATSU",
-          "sigmetsByATSUByDate",
-          "station_observation_latest",
-          "station_observation_list",
-          "station_observation_time",
-          "taf",
-          "tafs",
-          "zone",
-          "zone_forecast",
-          "zone_list",
-          "zone_list_type",
-          "zone_obs",
-          "zone_stations"
+          "WEATHERMAP_WEATHER"
         ],
         "version": "sha-3538eec9a16f"
       }
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "WEATHERMAP_WEATHER"
     },
     {
       "id": "AS-014",
@@ -90,22 +40,147 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "WEATHERMAP_WEATHER"
+      "tool_name": "get_current_weather"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_weather_byDateTimeRange"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_weather_details"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_current_datetime"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_timezone_info"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "convert_time"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_air_quality"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_air_quality_details"
     }
   ],
-  "forks": 0,
-  "grade": "B",
-  "language": "Python",
-  "last_commit_at": "2025-11-20T14:55:04Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 8
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "risk_score": 15,
-  "scan_date": "2026-06-22T03:26:06.930756261Z",
+  "tool_names": [
+    "convert_time",
+    "get_air_quality",
+    "get_air_quality_details",
+    "get_current_datetime",
+    "get_current_weather",
+    "get_timezone_info",
+    "get_weather_byDateTimeRange",
+    "get_weather_details"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_current_weather",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_weather_byDateTimeRange",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_weather_details",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_current_datetime",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_timezone_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "convert_time",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (to_timezone)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_air_quality",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_air_quality_details",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:55:38Z",
@@ -172,31 +247,12 @@
       "grade": "B",
       "risk_score": 15,
       "version": "sha-3538eec9a16f"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/laoyouf/weather-mcp-server",
-  "stars": 0,
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 0,
-    "info": 2
-  },
-  "tool_contexts": [
+    },
     {
-      "tool_name": "WEATHERMAP_WEATHER",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "scan_date": "2026-06-22T03:26:06Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "sha-3538eec9a16f"
     }
-  ],
-  "tool_id": "laoyouf-weather-mcp-server",
-  "tool_names": [
-    "WEATHERMAP_WEATHER"
-  ],
-  "vendor": "laoyouf",
-  "version": "sha-3538eec9a16f"
+  ]
 }

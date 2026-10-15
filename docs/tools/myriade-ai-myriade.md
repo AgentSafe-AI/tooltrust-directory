@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 62 |
 | **Language** | Shell |
 | **Source** | [myriade-ai-myriade](https://github.com/myriade-ai/myriade) |
-| **Scan Date** | 2026-07-17 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

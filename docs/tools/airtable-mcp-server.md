@@ -10,11 +10,11 @@
 | **Vendor** | domdomegg |
 | **Stars** | ⭐ 456 |
 | **npm Package** | `airtable-mcp-server` |
-| **npm Downloads (30d)** | 19.5k |
+| **npm Downloads (30d)** | 11.7k |
 | **Language** | TypeScript |
 | **Source** | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) |
-| **Scan Date** | 2026-08-26 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

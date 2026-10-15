@@ -1,8 +1,36 @@
 {
+  "tool_id": "ojaskord-vat-validator-mcp",
+  "version": "1.4.6",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T03:06:32.223392414Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/OjasKord/vat-validator-mcp",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "OjasKord",
+  "npm_package": "vat-validator-mcp",
+  "npm_downloads_monthly": 373,
+  "license": "MIT",
+  "language": "JavaScript",
   "description": "VAT number validation for AI agents. EU VIES, UK HMRC, Australian ABN",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.4.6: 0 tool(s) added, 4 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": null,
+        "removed": [
+          "analyse_vat_risk",
+          "batch_validate",
+          "compare_invoice_details",
+          "validate_uk_vat"
+        ],
+        "version": "1.4.6"
+      }
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -17,56 +45,37 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "validate_uk_vat"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_vat_rates"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "batch_validate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "analyse_vat_risk"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "compare_invoice_details"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "JavaScript",
-  "last_commit_at": "2026-09-07T12:33:44Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 2411,
-  "npm_package": "vat-validator-mcp",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:31:07.342906692Z",
+  "tool_names": [
+    "get_vat_rates",
+    "validate_vat"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "validate_vat",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_vat_rates",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:51:20Z",
@@ -211,71 +220,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "1.4.6"
+    },
+    {
+      "scan_date": "2026-06-22T03:31:07Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "1.4.6"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/OjasKord/vat-validator-mcp",
-  "stars": 0,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 6
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "validate_vat",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "validate_uk_vat",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_vat_rates",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "batch_validate",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "analyse_vat_risk",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "compare_invoice_details",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "ojaskord-vat-validator-mcp",
-  "tool_names": [
-    "analyse_vat_risk",
-    "batch_validate",
-    "compare_invoice_details",
-    "get_vat_rates",
-    "validate_uk_vat",
-    "validate_vat"
-  ],
-  "vendor": "OjasKord",
-  "version": "1.4.6"
+  ]
 }

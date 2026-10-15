@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-arxiv-mcp-server",
+  "version": "1.5.4",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T02:56:20.084871302Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/arxiv-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 6,
+  "npm_package": "@cyanheads/arxiv-mcp-server",
+  "npm_downloads_monthly": 2590,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Search arXiv, fetch paper metadata, and read full-text content via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -68,21 +80,64 @@
       "tool_name": "arxiv_list_categories"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-05T06:25:52Z",
-  "last_release_at": "2026-10-05T06:22:56Z",
-  "latest_release_name": "v1.5.4: mcp-ts-core 0.13.12 adoption",
-  "latest_release_tag": "v1.5.4",
-  "latest_release_url": "https://github.com/cyanheads/arxiv-mcp-server/releases/tag/v1.5.4",
-  "latest_release_version": "v1.5.4",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 6
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 2590,
-  "npm_package": "@cyanheads/arxiv-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-14T03:04:32.381017519Z",
+  "tool_names": [
+    "arxiv_get_metadata",
+    "arxiv_list_categories",
+    "arxiv_read_paper",
+    "arxiv_search"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "arxiv_search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: cs.CL",
+        "hardcoded domain: math.AG"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "arxiv_get_metadata",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "arxiv_read_paper",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: ar5iv.labs.arxiv.org",
+        "hardcoded domain: arxiv.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "arxiv_list_categories",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-28T02:37:26Z",
@@ -815,69 +870,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.5.4"
+    },
+    {
+      "scan_date": "2026-10-14T03:04:32Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.5.4"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/cyanheads/arxiv-mcp-server",
-  "stars": 6,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 6
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "arxiv_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: cs.CL",
-        "hardcoded domain: math.AG"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "arxiv_get_metadata",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "arxiv_read_paper",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: ar5iv.labs.arxiv.org",
-        "hardcoded domain: arxiv.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "arxiv_list_categories",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-arxiv-mcp-server",
-  "tool_names": [
-    "arxiv_get_metadata",
-    "arxiv_list_categories",
-    "arxiv_read_paper",
-    "arxiv_search"
-  ],
-  "vendor": "cyanheads",
-  "version": "1.5.4"
+  ]
 }

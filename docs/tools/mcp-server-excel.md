@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `2.4.1` |
 | **Vendor** | sbroenne |
-| **Stars** | ⭐ 817 |
+| **Stars** | ⭐ 818 |
 | **npm Package** | `excelmcp` |
 | **Language** | C# |
 | **Source** | [mcp-server-excel](https://github.com/sbroenne/mcp-server-excel) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
