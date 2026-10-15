@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-fema-mcp-server",
+  "version": "0.3.2",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T03:02:58.77135197Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/fema-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 1,
+  "npm_package": "@cyanheads/fema-mcp-server",
+  "npm_downloads_monthly": 1214,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Query FEMA disaster declarations, public assistance grants, housing aid, and NFIP flood insurance claims via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -156,21 +168,104 @@
       "tool_name": "fema_query_dataset"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-04T06:24:28Z",
-  "last_release_at": "2026-10-04T06:35:12Z",
-  "latest_release_name": "v0.3.2: Framework adoption and portable production installs",
-  "latest_release_tag": "v0.3.2",
-  "latest_release_url": "https://github.com/cyanheads/fema-mcp-server/releases/tag/v0.3.2",
-  "latest_release_version": "v0.3.2",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 5,
+    "info": 14
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1214,
-  "npm_package": "@cyanheads/fema-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-14T03:05:38.57887994Z",
+  "tool_names": [
+    "fema_dataframe_describe",
+    "fema_dataframe_query",
+    "fema_get_disaster",
+    "fema_get_housing_assistance",
+    "fema_get_public_assistance",
+    "fema_query_dataset",
+    "fema_search_disasters",
+    "fema_search_nfip"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "fema_search_disasters",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (date_to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_get_disaster",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_get_public_assistance",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_get_housing_assistance",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_search_nfip",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (year_to)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_dataframe_query",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_dataframe_describe",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fema_query_dataset",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-08-04T01:59:56Z",
@@ -525,109 +620,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.3.2"
+    },
+    {
+      "scan_date": "2026-10-14T03:05:38Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.3.2"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/cyanheads/fema-mcp-server",
-  "stars": 1,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 5,
-    "info": 14
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "fema_search_disasters",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (date_to)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_get_disaster",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_get_public_assistance",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_get_housing_assistance",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_search_nfip",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (year_to)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_dataframe_query",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_dataframe_describe",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fema_query_dataset",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-fema-mcp-server",
-  "tool_names": [
-    "fema_dataframe_describe",
-    "fema_dataframe_query",
-    "fema_get_disaster",
-    "fema_get_housing_assistance",
-    "fema_get_public_assistance",
-    "fema_query_dataset",
-    "fema_search_disasters",
-    "fema_search_nfip"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.3.2"
+  ]
 }

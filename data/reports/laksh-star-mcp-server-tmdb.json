@@ -1,30 +1,19 @@
 {
+  "tool_id": "laksh-star-mcp-server-tmdb",
+  "version": "1.0.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T02:49:04.259315442Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/Laksh-star/mcp-server-tmdb",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "Laksh-star",
+  "stars": 76,
+  "npm_package": "mcp-server-tmdb",
+  "npm_downloads_monthly": 66,
+  "license": "MIT",
+  "language": "JavaScript",
   "description": "MCP Server with TMDB",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 4,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/worker.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 543,
-      "snippet": "new McpServer(",
-      "file": "src/worker.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 548,
-      "snippet": ".registerTool(",
-      "file": "src/worker.ts",
-      "language": "typescript"
-    }
-  ],
   "findings": [
     {
       "id": "AS-002",
@@ -67,22 +56,69 @@
       "tool_name": "get_trending"
     }
   ],
-  "forks": 28,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "JavaScript",
-  "last_commit_at": "2026-06-07T03:22:05Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 4
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 44,
-  "npm_package": "mcp-server-tmdb",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:11:36.188484382Z",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 4,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/worker.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 543,
+      "snippet": "new McpServer(",
+      "file": "src/worker.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 548,
+      "snippet": ".registerTool(",
+      "file": "src/worker.ts",
+      "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "get_recommendations",
+    "get_trending",
+    "search_movies"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search_movies",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_recommendations",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_trending",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:51:34Z",
@@ -239,50 +275,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/Laksh-star/mcp-server-tmdb",
-  "stars": 76,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 4
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "search_movies",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_recommendations",
-      "action": "ALLOW",
+      "scan_date": "2026-06-22T03:11:36Z",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get_trending",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 2,
+      "version": "1.0.0"
     }
-  ],
-  "tool_id": "laksh-star-mcp-server-tmdb",
-  "tool_names": [
-    "get_recommendations",
-    "get_trending",
-    "search_movies"
-  ],
-  "vendor": "Laksh-star",
-  "version": "1.0.0"
+  ]
 }

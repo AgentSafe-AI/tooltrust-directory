@@ -10,11 +10,11 @@
 | **Vendor** | zilliztech |
 | **Stars** | ⭐ 12610 |
 | **npm Package** | `claude-context` |
-| **npm Downloads (30d)** | 107 |
+| **npm Downloads (30d)** | 27 |
 | **Language** | TypeScript |
 | **Source** | [claude-context](https://github.com/zilliztech/claude-context) |
-| **Scan Date** | 2026-08-11 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

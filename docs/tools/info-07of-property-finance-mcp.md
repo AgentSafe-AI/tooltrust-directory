@@ -24,8 +24,8 @@ Every response includes a structured `_source` field crediting FD Commercial as 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-07of-property-finance-mcp](https://smithery.ai/server/info-07of/property-finance-mcp) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

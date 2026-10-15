@@ -10,11 +10,11 @@
 | **Vendor** | PleasePrompto |
 | **Stars** | ⭐ 3432 |
 | **npm Package** | `notebooklm-mcp` |
-| **npm Downloads (30d)** | 15.8k |
+| **npm Downloads (30d)** | 9.6k |
 | **Language** | TypeScript |
 | **Source** | [notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) |
-| **Scan Date** | 2026-09-10 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

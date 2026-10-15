@@ -10,11 +10,11 @@
 | **Vendor** | FradSer |
 | **Stars** | ⭐ 214 |
 | **npm Package** | `mcp-server-apple-events` |
-| **npm Downloads (30d)** | 970 |
+| **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
@@ -47,7 +47,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 31 properties (threshold: 10)
+input schema exposes 23 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -107,7 +107,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 20 properties (threshold: 10)
+input schema exposes 13 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

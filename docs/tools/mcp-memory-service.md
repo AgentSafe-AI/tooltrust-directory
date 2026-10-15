@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `12.0.0` |
 | **Vendor** | doobidoo |
-| **Stars** | ⭐ 2013 |
+| **Stars** | ⭐ 2014 |
 | **Language** | Python |
 | **Source** | [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

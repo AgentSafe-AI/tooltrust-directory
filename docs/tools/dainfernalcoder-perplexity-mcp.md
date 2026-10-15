@@ -1,20 +1,20 @@
-# 🟡 dainfernalcoder-perplexity-mcp
+# 🟢 dainfernalcoder-perplexity-mcp
 
 > A Model Context Protocol (MCP) server for research and documentation assistance using Perplexity AI. Won 1st @ Cline Hackathon
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `Feature` |
 | **Vendor** | DaInfernalCoder |
-| **Stars** | ⭐ 297 |
+| **Stars** | ⭐ 298 |
 | **npm Package** | `perplexity-mcp` |
-| **npm Downloads (30d)** | 12.5k |
+| **npm Downloads (30d)** | 4.1k |
 | **Language** | JavaScript |
 | **Source** | [dainfernalcoder-perplexity-mcp](https://github.com/DaInfernalCoder/perplexity-mcp) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 1 |
 | Info     | 2 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vFeature: 0 tool(s) added, 2 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

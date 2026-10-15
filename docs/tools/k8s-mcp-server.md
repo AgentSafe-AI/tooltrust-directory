@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 212 |
 | **Language** | Python |
 | **Source** | [k8s-mcp-server](https://github.com/alexei-led/k8s-mcp-server) |
-| **Scan Date** | 2026-09-12 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

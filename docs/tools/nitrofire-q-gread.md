@@ -13,8 +13,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nitrofire-q-gread](https://smithery.ai/server/nitrofire-q/gread) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

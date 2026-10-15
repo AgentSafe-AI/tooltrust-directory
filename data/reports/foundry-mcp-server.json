@@ -1,7 +1,121 @@
 {
+  "tool_id": "foundry-mcp-server",
+  "version": "0.1.5",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-10-15T02:45:28.703132399Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/PraneshASP/foundry-mcp-server",
   "category": "Developer Tools",
-  "contributors": 3,
+  "vendor": "PraneshASP",
+  "stars": 253,
+  "npm_package": "@pranesh.asp/foundry-mcp-server",
+  "npm_downloads_monthly": 163,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "An experimental MCP Server for foundry built for Solidity devs",
+  "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v0.1.5: 3 tool(s) added, 10 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "docs",
+          "execute",
+          "query"
+        ],
+        "removed": [
+          "MOIS-LAWD-CODE-GET",
+          "MOLIT-APT-RENT-GET",
+          "MOLIT-APT-TRADE-GET",
+          "MOLIT-OFFICE-TEL-RENT-GET",
+          "MOLIT-OFFICE-TEL-TRADE-GET",
+          "MOLIT-ROW-MULTI-RENT-GET",
+          "MOLIT-ROW-MULTI-TRADE-GET",
+          "MOLIT-SINGLE-MULTI-RENT-GET",
+          "MOLIT-SINGLE-MULTI-TRADE-GET",
+          "UTIL-TIME_NOW"
+        ],
+        "version": "0.1.5"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "docs"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "docs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "docs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "docs"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "query"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "query"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "query"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "execute"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 1,
+    "medium": 0,
+    "low": 2,
+    "info": 5
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
       "kind": "import",
@@ -18,199 +132,60 @@
       "language": "typescript"
     }
   ],
-  "findings": [
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "UTIL-TIME_NOW"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOIS-LAWD-CODE-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-APT-RENT-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-APT-TRADE-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-OFFICE-TEL-RENT-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-OFFICE-TEL-TRADE-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-ROW-MULTI-RENT-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-ROW-MULTI-TRADE-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-SINGLE-MULTI-RENT-GET"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "MOLIT-SINGLE-MULTI-TRADE-GET"
-    }
+  "tool_names": [
+    "docs",
+    "execute",
+    "query"
   ],
-  "forks": 37,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-01-17T15:25:55Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 217,
-  "npm_package": "@pranesh.asp/foundry-mcp-server",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:07:51.335170718Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/PraneshASP/foundry-mcp-server",
-  "stars": 253,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 10
-  },
   "tool_contexts": [
     {
-      "tool_name": "UTIL-TIME_NOW",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "docs",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "MOIS-LAWD-CODE-GET",
+      "tool_name": "query",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: actors.length",
+        "hardcoded domain: console.log",
+        "hardcoded domain: foundry.actors.list"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "MOLIT-APT-RENT-GET",
+      "tool_name": "execute",
       "action": "ALLOW",
       "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-APT-TRADE-GET",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-OFFICE-TEL-RENT-GET",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-OFFICE-TEL-TRADE-GET",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-ROW-MULTI-RENT-GET",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-ROW-MULTI-TRADE-GET",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-SINGLE-MULTI-RENT-GET",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "MOLIT-SINGLE-MULTI-TRADE-GET",
-      "action": "ALLOW",
-      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: a.id",
+        "hardcoded domain: console.log",
+        "hardcoded domain: foundry.actors.create"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "tool_id": "foundry-mcp-server",
-  "tool_names": [
-    "MOIS-LAWD-CODE-GET",
-    "MOLIT-APT-RENT-GET",
-    "MOLIT-APT-TRADE-GET",
-    "MOLIT-OFFICE-TEL-RENT-GET",
-    "MOLIT-OFFICE-TEL-TRADE-GET",
-    "MOLIT-ROW-MULTI-RENT-GET",
-    "MOLIT-ROW-MULTI-TRADE-GET",
-    "MOLIT-SINGLE-MULTI-RENT-GET",
-    "MOLIT-SINGLE-MULTI-TRADE-GET",
-    "UTIL-TIME_NOW"
-  ],
-  "vendor": "PraneshASP",
-  "version": "0.1.5"
+  "scan_history": [
+    {
+      "scan_date": "2026-06-22T03:07:51Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.5"
+    }
+  ]
 }

@@ -10,11 +10,11 @@
 | **Vendor** | provos |
 | **Stars** | ⭐ 613 |
 | **npm Package** | `@provos/ironcurtain` |
-| **npm Downloads (30d)** | 541 |
+| **npm Downloads (30d)** | 269 |
 | **Language** | TypeScript |
 | **Source** | [ironcurtain](https://github.com/provos/ironcurtain) |
-| **Scan Date** | 2026-07-09 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

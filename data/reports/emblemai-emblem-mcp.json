@@ -3,8 +3,8 @@
   "version": "smithery",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-14T03:06:00.634294431Z",
-  "scanner": "tooltrust-scanner/v0.3.19",
+  "scan_date": "2026-10-15T03:11:24.954574302Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://smithery.ai/server/emblemai/emblem-mcp",
   "vendor": "Smithery",
   "description": "# EmblemAI MCP\n\nEmblemAI is a hosted Model Context Protocol server that gives AI agents a full-featured crypto wallet plus **200+ tools** for trading, DeFi, NFTs, and on-chain analytics across **7 blockchains**:\n\n- **Bitcoin** — native BTC, Ordinals inscriptions, Runes, BRC-20, Stamps / SRC-20, Alkanes, rare sats\n- **Solana** — SOL + SPL tokens, Jupiter-routed swaps, Solana memecoin discovery, RugCheck\n- **Ethereum** — native ETH, ERC-20, ERC-721 / ERC-1155 NFTs, ETH swaps\n- **Base** — native ETH on L2, ERC-20, NFTs, Clanker discovery\n- **BSC** — native BNB, BEP-20, FourMeme bonding-curve discovery and trading\n- **Polygon** — native MATIC, ERC-20, swaps\n- **Hedera** — HBAR, HTS tokens, MemeJob discovery and trading\n\nPlus prediction markets via **Polymarket**, market research, conditional orders (limit / stop-loss / take-profit) on supported chains, and on-chain analytics.\n\n## Quick start\n\nThe Smithery deployment connects directly to the hosted EmblemAI MCP at `https://emblemvault.ai/api/mcp`. You only need an API key:\n\n1. Sign in at [emblemvault.ai](https://emblemvault.ai).\n2. Open **Settings → Vault Access Key** and copy your key.\n3. Paste it as the `apiKey` parameter in the Smithery connection form.\n\nBrowsing tools (`tools/list`) works anonymously, so you can inspect the catalog before authenticating.\n\n## Auth modes\n\n| Mode | When to use | Scope |\n| --- | --- | --- |\n| **API key** (`x-api-key`) | Unattended agents, cron jobs, server-to-server, any workflow that mints tokens or sends transactions | Full read + write, no expiry until revoked |\n| **OAuth 2.0 + PKCE** (RFC 7591 Dynamic Client Registration) | Interactive sessions where a human can click a browser popup | Read-only `vault:read`, short-lived JWT |\n| **x402 micropayments** | Pay-per-call across the public catalog without an account | Per-tool-call USDC settlement |\n\nThe Smithery deployment defaults to the API-key path, configured via the `apiKey` parameter (sent to the upstream as the `x-api-key` header).\n\n## Enabling transactional tools\n\nState-changing tools (sends, swaps, mints, conditional-trade creates) are hidden by default. Opt in by setting the `enableTransactions` parameter to `enabled` — Smithery's gateway forwards it as the `x-mcp-transactions: enabled` header. Transactional tools then surface in `tools/list` with a `-transaction` suffix, which makes them easy to allow- or block-list with wildcard rules in the host client.\n\nNote: transactional tools also require API-key auth — OAuth bearers do not pass the `vault:write` gate.\n\n## Specialized listings (filter)\n\nThe full 200-tool surface is wide. For Bitcoin-only, Solana-only, or any other curated slice, use the stdio bridge `@emblemvault/mcp` (npm) and set:\n\n```\nEMBLEMAI_TOOLS_FILTER=\"bitcoin*,*Rune*,*Inscription*\"\n```\n\nThe bridge applies the glob filter to both `tools/list` and `tools/call`, exposing only the matching subset to the host LLM. The hosted Smithery deployment always exposes the full catalog; the filter is a stdio-side feature.\n\n## Categories\n\nTrading · DeFi · NFTs · Wallet · Bitcoin Ordinals · Polymarket prediction markets · Cross-chain · Market analytics · Research / web search.\n\n## Links\n\n- Hosted MCP: `https://emblemvault.ai/api/mcp`\n- Stdio bridge: `@emblemvault/mcp` ([github](https://github.com/EmblemCompany/Agent-skills/tree/main/mcp-bridge))\n- Repo: [EmblemCompany/Agent-skills](https://github.com/EmblemCompany/Agent-skills)\n- Web app: [emblemvault.ai](https://emblemvault.ai)\n- Glama listing: [glama.ai/mcp/servers/EmblemCompany/Agent-skills](https://glama.ai/mcp/servers/EmblemCompany/Agent-skills)\n- Docs: [emblemvault.ai/docs/mcp](https://emblemvault.ai/docs/mcp)\n\n## License\n\nMIT (stdio bridge + documentation). Hosted MCP is managed SaaS.",
@@ -445,7 +445,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"fromTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"toTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "ethSwapQuote"
     },
@@ -453,7 +453,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"toTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"fromTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "ethSwapQuote"
     },
@@ -565,22 +565,6 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"fromTokenDecimals\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "hederaTokensSwapQuote"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"toTokenId\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "hederaTokensSwapQuote"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"fromTokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "hederaTokensSwapQuote"
@@ -590,6 +574,22 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"toTokenDecimals\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "hederaTokensSwapQuote"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"fromTokenDecimals\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "hederaTokensSwapQuote"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"toTokenId\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "hederaTokensSwapQuote"
     },
@@ -1421,7 +1421,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"fromTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"toTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "polygonSwapQuote"
     },
@@ -1429,7 +1429,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"toTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"fromTokenAddress\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "polygonSwapQuote"
     },
@@ -3551,6 +3551,12 @@
     },
     {
       "scan_date": "2026-10-12T03:42:15Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "smithery"
+    },
+    {
+      "scan_date": "2026-10-14T03:06:00Z",
       "grade": "B",
       "risk_score": 15,
       "version": "smithery"

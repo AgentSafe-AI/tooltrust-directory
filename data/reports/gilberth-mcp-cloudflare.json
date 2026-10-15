@@ -1,6 +1,18 @@
 {
+  "tool_id": "gilberth-mcp-cloudflare",
+  "version": "1.6.0",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-10-15T02:58:15.594311227Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/gilberth/mcp-cloudflare",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "gilberth",
+  "stars": 3,
+  "npm_package": "@thelord/mcp-cloudflare",
+  "npm_downloads_monthly": 1066,
+  "license": "GPL-3.0",
+  "language": "JavaScript",
   "findings": [
     {
       "id": "AS-002",
@@ -59,21 +71,58 @@
       "tool_name": "execute"
     }
   ],
-  "forks": 4,
-  "grade": "C",
-  "language": "JavaScript",
-  "last_commit_at": "2025-06-25T22:32:44Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "GPL-3.0",
+  "summary": {
+    "critical": 1,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 4
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1380,
-  "npm_package": "@thelord/mcp-cloudflare",
-  "risk_score": 27,
-  "scan_date": "2026-06-22T03:20:13.167685526Z",
+  "tool_names": [
+    "execute",
+    "search"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Object.entries",
+        "hardcoded domain: method.toUpperCase",
+        "hardcoded domain: op.summary",
+        "hardcoded domain: op.tags",
+        "hardcoded domain: results.push",
+        "hardcoded domain: spec.paths",
+        "hardcoded domain: t.toLowerCase"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "execute",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (account_id)",
+        "hardcoded domain: Date.now",
+        "hardcoded domain: JSON.stringify",
+        "hardcoded domain: cloudflare.request",
+        "hardcoded domain: e.respondWith"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:53:58Z",
@@ -284,63 +333,12 @@
       "grade": "C",
       "risk_score": 27,
       "version": "1.6.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/gilberth/mcp-cloudflare",
-  "stars": 3,
-  "summary": {
-    "critical": 1,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 4
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Object.entries",
-        "hardcoded domain: method.toUpperCase",
-        "hardcoded domain: op.summary",
-        "hardcoded domain: op.tags",
-        "hardcoded domain: results.push",
-        "hardcoded domain: spec.paths",
-        "hardcoded domain: t.toLowerCase"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "execute",
-      "action": "REQUIRE_APPROVAL",
+      "scan_date": "2026-06-22T03:20:13Z",
       "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (account_id)",
-        "hardcoded domain: Date.now",
-        "hardcoded domain: JSON.stringify",
-        "hardcoded domain: cloudflare.request",
-        "hardcoded domain: e.respondWith"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 27,
+      "version": "1.6.0"
     }
-  ],
-  "tool_id": "gilberth-mcp-cloudflare",
-  "tool_names": [
-    "execute",
-    "search"
-  ],
-  "vendor": "gilberth",
-  "version": "1.6.0"
+  ]
 }

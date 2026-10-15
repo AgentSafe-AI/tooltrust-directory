@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 120 |
 | **Language** | Go |
 | **Source** | [tjhop-prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

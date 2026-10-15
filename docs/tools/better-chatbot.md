@@ -12,8 +12,8 @@
 | **npm Package** | `better-chatbot` |
 | **Language** | TypeScript |
 | **Source** | [better-chatbot](https://github.com/cgoinglove/better-chatbot) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

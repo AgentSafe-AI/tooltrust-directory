@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 2183 |
 | **Language** | Python |
 | **Source** | [mcp-agent-mail](https://github.com/Dicklesworthstone/mcp_agent_mail) |
-| **Scan Date** | 2026-07-18 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

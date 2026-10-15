@@ -1,23 +1,19 @@
 {
+  "tool_id": "jjikky-dynamo-readonly-mcp",
+  "version": "0.1.3",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T03:00:20.360017203Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/jjikky/dynamo-readonly-mcp",
   "category": "Developer Tools",
-  "contributors": 5,
+  "vendor": "jjikky",
+  "stars": 2,
+  "npm_package": "dynamo-readonly-mcp",
+  "npm_downloads_monthly": 141,
+  "license": "MIT",
+  "language": "JavaScript",
   "description": "AWS DynamoDB Read-Only MCP Server",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 17,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
   "findings": [
     {
       "id": "AS-014",
@@ -108,21 +104,97 @@
       "tool_name": "count-items"
     }
   ],
-  "forks": 6,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "JavaScript",
-  "last_commit_at": "2025-08-23T23:36:26Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 9
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_package": "dynamo-readonly-mcp",
-  "risk_score": 2,
-  "scan_date": "2026-06-22T03:21:24.65305753Z",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 17,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "count-items",
+    "describe-table",
+    "get-item",
+    "list-tables",
+    "paginate-query-table",
+    "query-table",
+    "scan-table"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "list-tables",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "describe-table",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "scan-table",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "query-table",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "paginate-query-table",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-item",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "count-items",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:47:43Z",
@@ -291,85 +363,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.1.3"
+    },
+    {
+      "scan_date": "2026-06-22T03:21:24Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.1.3"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/jjikky/dynamo-readonly-mcp",
-  "stars": 2,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 9
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "list-tables",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "describe-table",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scan-table",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "query-table",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "paginate-query-table",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-item",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "count-items",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "jjikky-dynamo-readonly-mcp",
-  "tool_names": [
-    "count-items",
-    "describe-table",
-    "get-item",
-    "list-tables",
-    "paginate-query-table",
-    "query-table",
-    "scan-table"
-  ],
-  "vendor": "jjikky",
-  "version": "0.1.3"
+  ]
 }

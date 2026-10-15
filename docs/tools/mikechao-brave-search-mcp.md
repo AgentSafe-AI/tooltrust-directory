@@ -12,8 +12,8 @@
 | **npm Package** | `brave-search-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mikechao-brave-search-mcp](https://github.com/mikechao/brave-search-mcp) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

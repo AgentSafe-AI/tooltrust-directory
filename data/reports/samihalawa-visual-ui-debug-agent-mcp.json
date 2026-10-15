@@ -1,58 +1,36 @@
 {
+  "tool_id": "samihalawa-visual-ui-debug-agent-mcp",
+  "version": "1.0.1",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:48:41.857368414Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/samihalawa/visual-ui-debug-agent-mcp",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "samihalawa",
+  "stars": 83,
+  "npm_package": "visual-ui-debug-agent-mcp",
+  "npm_downloads_monthly": 172,
+  "license": "ISC",
+  "language": "JavaScript",
   "description": "VUDA is an autonomous debugging agent that empowers AI models to visually analyze, test, and debug web",
   "findings": [
     {
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.1: 5 tool(s) added, 35 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.0.1: 1 tool(s) added, 5 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "debug"
+        ],
+        "removed": [
           "agentbeck_add_context",
           "agentbeck_confirm",
           "agentbeck_search",
           "agentbeck_share_context",
           "agentbeck_should_share_context"
-        ],
-        "removed": [
-          "axint.agent.advice",
-          "axint.agent.claim",
-          "axint.agent.install",
-          "axint.agent.release",
-          "axint.cloud.check",
-          "axint.compile",
-          "axint.context.docs",
-          "axint.context.memory",
-          "axint.doctor",
-          "axint.feature",
-          "axint.feedback.create",
-          "axint.fix-packet",
-          "axint.project.index",
-          "axint.project.pack",
-          "axint.project.syncVersion",
-          "axint.registry.search",
-          "axint.repair",
-          "axint.run",
-          "axint.run.cancel",
-          "axint.run.status",
-          "axint.scaffold",
-          "axint.schema.compile",
-          "axint.session.start",
-          "axint.status",
-          "axint.suggest",
-          "axint.swift.fix",
-          "axint.swift.validate",
-          "axint.templates.get",
-          "axint.templates.list",
-          "axint.tokens.ingest",
-          "axint.upgrade",
-          "axint.validate",
-          "axint.workflow.check",
-          "axint.xcode.guard",
-          "axint.xcode.write"
         ],
         "version": "1.0.1"
       }
@@ -61,9 +39,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "agentbeck_search"
+      "tool_name": "debug"
     },
     {
       "id": "AS-011",
@@ -71,7 +49,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "agentbeck_search"
+      "tool_name": "debug"
     },
     {
       "id": "AS-014",
@@ -79,72 +57,32 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "agentbeck_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: environment variables",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "agentbeck_should_share_context"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "agentbeck_should_share_context"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: environment variables",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "agentbeck_share_context"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "agentbeck_share_context"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "agentbeck_confirm"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "agentbeck_add_context"
+      "tool_name": "debug"
     }
   ],
-  "forks": 10,
-  "grade": "B",
-  "language": "JavaScript",
-  "last_commit_at": "2026-08-11T00:44:21Z",
-  "last_release_at": "2026-08-11T00:36:14Z",
-  "latest_release_name": "VUDA v1.1.0",
-  "latest_release_tag": "v1.1.0",
-  "latest_release_url": "https://github.com/samihalawa/visual-ui-debug-agent-mcp/releases/tag/v1.1.0",
-  "latest_release_version": "v1.1.0",
-  "license": "ISC",
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 2
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 47,
-  "npm_package": "visual-ui-debug-agent-mcp",
-  "risk_score": 15,
-  "scan_date": "2026-06-22T03:11:00.4263879Z",
+  "tool_names": [
+    "debug"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "debug",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:40:06Z",
@@ -283,75 +221,12 @@
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.1"
+    },
+    {
+      "scan_date": "2026-06-22T03:11:00Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.1"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/samihalawa/visual-ui-debug-agent-mcp",
-  "stars": 83,
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 1,
-    "info": 8
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "agentbeck_search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "agentbeck_should_share_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_env"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "agentbeck_share_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_env"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "agentbeck_confirm",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "agentbeck_add_context",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "samihalawa-visual-ui-debug-agent-mcp",
-  "tool_names": [
-    "agentbeck_add_context",
-    "agentbeck_confirm",
-    "agentbeck_search",
-    "agentbeck_share_context",
-    "agentbeck_should_share_context"
-  ],
-  "vendor": "samihalawa",
-  "version": "1.0.1"
+  ]
 }

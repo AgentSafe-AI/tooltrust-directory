@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-congressgov-mcp-server",
+  "version": "0.4.1",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T03:01:17.706027218Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/congressgov-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 1,
+  "npm_package": "@cyanheads/congressgov-mcp-server",
+  "npm_downloads_monthly": 1480,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Access U.S. congressional data - bills, votes, members, committees via MCP. STDIO \u0026 Streamable HTTP.",
   "findings": [
     {
@@ -148,21 +160,127 @@
       "tool_name": "congressgov_daily_record"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-13T12:43:12Z",
-  "last_release_at": "2026-10-13T12:53:30Z",
-  "latest_release_name": "v0.8.0: Input normalization and quota-aware errors",
-  "latest_release_tag": "v0.8.0",
-  "latest_release_url": "https://github.com/cyanheads/congressgov-mcp-server/releases/tag/v0.8.0",
-  "latest_release_version": "v0.8.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 14
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 782,
-  "npm_package": "@cyanheads/congressgov-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-08-04T01:59:43.103924657Z",
+  "tool_names": [
+    "congressgov_bill_lookup",
+    "congressgov_bill_summaries",
+    "congressgov_committee_lookup",
+    "congressgov_committee_reports",
+    "congressgov_crs_reports",
+    "congressgov_daily_record",
+    "congressgov_enacted_laws",
+    "congressgov_member_lookup",
+    "congressgov_roll_votes",
+    "congressgov_senate_nominations"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "congressgov_bill_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (toDateTime)",
+        "hardcoded domain: Congress.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_enacted_laws",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: Congress.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_member_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_committee_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_roll_votes",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: Congress.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_senate_nominations",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_bill_summaries",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (toDateTime)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_crs_reports",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_committee_reports",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: Congress.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "congressgov_daily_record",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-05-22T02:44:27Z",
@@ -433,132 +551,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.4.1"
+    },
+    {
+      "scan_date": "2026-08-04T01:59:43Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.4.1"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/cyanheads/congressgov-mcp-server",
-  "stars": 1,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 4,
-    "info": 14
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "congressgov_bill_lookup",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (toDateTime)",
-        "hardcoded domain: Congress.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_enacted_laws",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: Congress.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_member_lookup",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_committee_lookup",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_roll_votes",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: Congress.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_senate_nominations",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_bill_summaries",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (toDateTime)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_crs_reports",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_committee_reports",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "hardcoded domain: Congress.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "congressgov_daily_record",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "cyanheads-congressgov-mcp-server",
-  "tool_names": [
-    "congressgov_bill_lookup",
-    "congressgov_bill_summaries",
-    "congressgov_committee_lookup",
-    "congressgov_committee_reports",
-    "congressgov_crs_reports",
-    "congressgov_daily_record",
-    "congressgov_enacted_laws",
-    "congressgov_member_lookup",
-    "congressgov_roll_votes",
-    "congressgov_senate_nominations"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.4.1"
+  ]
 }

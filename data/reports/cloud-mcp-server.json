@@ -1,8 +1,50 @@
 {
+  "tool_id": "cloud-mcp-server",
+  "version": "1.7.0",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:46:11.689753238Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/alexei-led/cloud-mcp-server",
   "category": "Developer Tools",
-  "contributors": 2,
+  "vendor": "alexei-led",
+  "stars": 186,
+  "license": "MIT",
+  "language": "Python",
   "description": "A lightweight service that enables AI assistants to execute AWS CLI commands (in safe containerized environment) through the Model Context Protocol (MCP). Bridges Claude, Cursor, and other MCP-aware AI tools with AWS CLI for enhanced cloud infrastructure management.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.7.0: 3 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "scenario.get",
+          "simulation.delete",
+          "simulation.recover_resource"
+        ],
+        "removed": null,
+        "version": "1.7.0"
+      }
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "simulation.inject_failure"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "simulation.inject_failure"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -10,6 +52,46 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "simulation.inject_failure"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "simulation.recover_resource"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "simulation.recover_resource"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "simulation.recover_resource"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "simulation.delete"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "simulation.delete"
     },
     {
       "id": "AS-014",
@@ -20,10 +102,26 @@
       "tool_name": "scenario.list"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "scenario.get"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
+      "description": "declared capabilities: code/command execution, filesystem access, database access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "simulation.create"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 20 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "simulation.create"
     },
@@ -42,6 +140,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "simulation.create"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "simulation.step"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "simulation.step"
     },
     {
       "id": "AS-014",
@@ -68,19 +182,185 @@
       "tool_name": "simulation.inject_traffic"
     }
   ],
-  "forks": 34,
-  "grade": "A",
-  "language": "Python",
-  "last_commit_at": "2026-02-27T14:31:23Z",
-  "last_release_at": "2026-02-27T14:31:51Z",
-  "latest_release_name": "v1.7.0 — LLM Documentation \u0026 Developer Experience",
-  "latest_release_tag": "v1.7.0",
-  "latest_release_url": "https://github.com/alexei-led/cloud-mcp-server/releases/tag/v1.7.0",
-  "latest_release_version": "v1.7.0",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 5,
+    "info": 14
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "risk_score": 2,
-  "scan_date": "2026-09-12T02:29:31.556318616Z",
+  "tool_names": [
+    "scenario.get",
+    "scenario.list",
+    "simulation.create",
+    "simulation.delete",
+    "simulation.inject_failure",
+    "simulation.inject_traffic",
+    "simulation.metrics",
+    "simulation.recover_resource",
+    "simulation.step"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "simulation.inject_failure",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: characteristics.auroraStandbyResourceId",
+        "hardcoded domain: errorBreakdown.dbFailure",
+        "hardcoded domain: failure.create",
+        "hardcoded domain: failure.delete",
+        "hardcoded domain: metrics.databases",
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.recover_resource",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: recoveryProgress.state",
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.delete",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.delete"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "scenario.list",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: scenario.get",
+        "hardcoded domain: scenario.list",
+        "hardcoded domain: simulation.create"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "scenario.get",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: scenario.get",
+        "hardcoded domain: scenario.list",
+        "hardcoded domain: simulation.create"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.create",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (autoscaleTargetCpuPercent)",
+        "dynamic email recipient (autoscalingTargetCpu)",
+        "hardcoded API endpoint: api.spec",
+        "hardcoded domain: VM.Standard.E4.Flex",
+        "hardcoded domain: autoscalingConfig.maxInstances",
+        "hardcoded domain: autoscalingConfig.minInstances",
+        "hardcoded domain: characteristics.capacityRps",
+        "hardcoded domain: characteristics.config.minCapacity",
+        "hardcoded domain: characteristics.minAcu",
+        "hardcoded domain: characteristics.minCapacity",
+        "hardcoded domain: characteristics.ocpus",
+        "hardcoded domain: characteristics.scaleInCpuThreshold",
+        "hardcoded domain: characteristics.scaleOutCpuThreshold",
+        "hardcoded domain: db.r5.large",
+        "hardcoded domain: db.serverless",
+        "hardcoded domain: location.regionKey",
+        "hardcoded domain: m5.large",
+        "hardcoded domain: recoveryProgress.state",
+        "hardcoded domain: scenario.get",
+        "hardcoded domain: scenario.list",
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.step",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: characteristics.eksSpotInterruption",
+        "hardcoded domain: characteristics.inferenceMode",
+        "hardcoded domain: recoveryProgress.state",
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.metrics",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: characteristics.inferenceMode",
+        "hardcoded domain: recoveryProgress.state",
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "simulation.inject_traffic",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: simulation.create",
+        "hardcoded domain: simulation.metrics",
+        "hardcoded domain: simulation.step"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-05-28T02:24:04Z",
@@ -555,105 +835,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.7.0"
+    },
+    {
+      "scan_date": "2026-09-12T02:29:31Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.7.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/alexei-led/cloud-mcp-server",
-  "stars": 186,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 7
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "simulation.inject_failure",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "scenario.list",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: scenario.list",
-        "hardcoded domain: simulation.create"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.create",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: api.spec",
-        "hardcoded domain: scenario.list",
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.step",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.metrics",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "simulation.inject_traffic",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: simulation.create",
-        "hardcoded domain: simulation.metrics",
-        "hardcoded domain: simulation.step"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "cloud-mcp-server",
-  "tool_names": [
-    "scenario.list",
-    "simulation.create",
-    "simulation.inject_failure",
-    "simulation.inject_traffic",
-    "simulation.metrics",
-    "simulation.step"
-  ],
-  "vendor": "alexei-led",
-  "version": "1.7.0"
+  ]
 }

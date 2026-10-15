@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.0` |
 | **Vendor** | Cyreslab-AI |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **npm Package** | `mcp-shodan-server` |
 | **Language** | JavaScript |
 | **Source** | [cyreslab-ai-shodan-mcp-server](https://github.com/Cyreslab-AI/shodan-mcp-server) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

@@ -6,13 +6,13 @@
 | **Risk Score** | 4 |
 | **Version** | `2.1.4` |
 | **Vendor** | brave |
-| **Stars** | ⭐ 1497 |
+| **Stars** | ⭐ 1498 |
 | **npm Package** | `@brave/brave-search-mcp-server` |
 | **npm Downloads (30d)** | 104.6k |
 | **Language** | TypeScript |
 | **Source** | [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

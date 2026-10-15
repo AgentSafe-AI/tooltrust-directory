@@ -10,11 +10,11 @@
 | **Vendor** | shaikhspeare |
 | **Stars** | ⭐ 147 |
 | **npm Package** | `wanderlog-mcp` |
-| **npm Downloads (30d)** | 909 |
+| **npm Downloads (30d)** | 941 |
 | **Language** | TypeScript |
 | **Source** | [shaikhspeare-wanderlog-mcp](https://github.com/shaikhspeare/wanderlog-mcp) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

@@ -10,11 +10,11 @@
 | **Vendor** | thirdstrandstudio |
 | **Stars** | ⭐ 76 |
 | **npm Package** | `@thirdstrandstudio/mcp-figma` |
-| **npm Downloads (30d)** | 3.0k |
+| **npm Downloads (30d)** | 33.0k |
 | **Language** | TypeScript |
 | **Source** | [thirdstrandstudio-mcp-figma](https://github.com/thirdstrandstudio/mcp-figma) |
-| **Scan Date** | 2026-06-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.1` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 3732 |
+| **Stars** | ⭐ 3736 |
 | **Language** | Java |
 | **Source** | [java-sdk](https://github.com/modelcontextprotocol/java-sdk) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

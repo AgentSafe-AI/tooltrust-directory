@@ -1,79 +1,18 @@
 {
+  "tool_id": "google-search-mcp-server",
+  "version": "3.0.0",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-15T02:45:12.598019841Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/mixelpixx/Google-Search-MCP-Server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "mixelpixx",
+  "stars": 256,
+  "license": "NOASSERTION",
+  "language": "TypeScript",
   "description": "MCP Server built for use with Claude Code, Claude Desktop, VS Code, Cline  - enable google search and ability to follow links and research websites",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/google-search-v2.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 94,
-      "snippet": "new McpServer(",
-      "file": "src/google-search-v2.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 105,
-      "snippet": ".registerTool(",
-      "file": "src/google-search-v2.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/google-search-v3.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 192,
-      "snippet": "new McpServer(",
-      "file": "src/google-search-v3.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 285,
-      "snippet": ".registerTool(",
-      "file": "src/google-search-v3.ts",
-      "language": "typescript"
-    }
-  ],
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v3.0.0: 8 tool(s) added, 5 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "brave_image_search",
-          "brave_llm_context",
-          "brave_local_search",
-          "brave_news_search",
-          "brave_place_search",
-          "brave_summarizer",
-          "brave_video_search",
-          "brave_web_search"
-        ],
-        "removed": [
-          "GOOGLEADS_ADD_OR_REMOVE_TO_CUSTOMER_LIST",
-          "GOOGLEADS_CREATE_CUSTOMER_LIST",
-          "GOOGLEADS_GET_CAMPAIGN_BY_ID",
-          "GOOGLEADS_GET_CAMPAIGN_BY_NAME",
-          "GOOGLEADS_GET_CUSTOMER_LISTS"
-        ],
-        "version": "3.0.0"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -291,40 +230,24 @@
       "tool_name": "brave_summarizer"
     }
   ],
-  "forks": 58,
-  "grade": "B",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-08-14T12:10:58Z",
-  "last_release_at": "2026-10-02T02:39:46Z",
-  "latest_release_name": "Nimrod 2.0",
-  "latest_release_tag": "v2.0.0",
-  "latest_release_url": "https://github.com/mixelpixx/Nimrod/releases/tag/v2.0.0",
-  "latest_release_version": "v2.0.0",
-  "license": "NOASSERTION",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 145,
-  "npm_package": "google-search-mcp",
-  "risk_score": 15,
-  "scan_date": "2026-06-22T03:07:53.766293879Z",
-  "scan_history": [
-    {
-      "scan_date": "2026-06-17T03:04:04Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "3.0.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/mixelpixx/Google-Search-MCP-Server",
-  "stars": 256,
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 10,
     "info": 17
   },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "brave_image_search",
+    "brave_llm_context",
+    "brave_local_search",
+    "brave_news_search",
+    "brave_place_search",
+    "brave_summarizer",
+    "brave_video_search",
+    "brave_web_search"
+  ],
   "tool_contexts": [
     {
       "tool_name": "brave_web_search",
@@ -422,17 +345,18 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "tool_id": "google-search-mcp-server",
-  "tool_names": [
-    "brave_image_search",
-    "brave_llm_context",
-    "brave_local_search",
-    "brave_news_search",
-    "brave_place_search",
-    "brave_summarizer",
-    "brave_video_search",
-    "brave_web_search"
-  ],
-  "vendor": "mixelpixx",
-  "version": "3.0.0"
+  "scan_history": [
+    {
+      "scan_date": "2026-06-17T03:04:04Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "3.0.0"
+    },
+    {
+      "scan_date": "2026-06-22T03:07:53Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "3.0.0"
+    }
+  ]
 }

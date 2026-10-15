@@ -1,0 +1,82 @@
+{
+  "tool_id": "thclaws",
+  "version": "0.141.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-15T02:41:16Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/thClaws/thClaws",
+  "category": "Other",
+  "vendor": "thClaws",
+  "stars": 1238,
+  "license": "Apache-2.0",
+  "language": "Rust",
+  "description": "Open-source AI agent harness in native Rust — GUI, CLI, headless, and webapp from one binary. Multi-provider, MCP, skills, plugins, agent teams.",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in rust source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 38,
+            "snippet": "use serde_json::",
+            "file": "crates/core/src/sdk_mcp.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "init",
+            "line": 132,
+            "snippet": "\"tools/list\" =\u003e",
+            "file": "crates/core/src/sdk_mcp.rs",
+            "language": "rust"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 139,
+            "snippet": "\"inputSchema\":",
+            "file": "crates/core/src/sdk_mcp.rs",
+            "language": "rust"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 38,
+      "snippet": "use serde_json::",
+      "file": "crates/core/src/sdk_mcp.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "init",
+      "line": 132,
+      "snippet": "\"tools/list\" =\u003e",
+      "file": "crates/core/src/sdk_mcp.rs",
+      "language": "rust"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 139,
+      "snippet": "\"inputSchema\":",
+      "file": "crates/core/src/sdk_mcp.rs",
+      "language": "rust"
+    }
+  ]
+}

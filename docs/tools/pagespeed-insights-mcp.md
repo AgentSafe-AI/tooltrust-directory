@@ -12,8 +12,8 @@
 | **npm Package** | `@ruslanlap/pagespeed-insights-mcp` |
 | **Language** | TypeScript |
 | **Source** | [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) |
-| **Scan Date** | 2026-10-09 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

@@ -17,8 +17,8 @@ Auth: OAuth 2.1 (paste your `wl_` API key on the consent screen).
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nuancesmen-aeotool](https://smithery.ai/server/nuancesmen/aeotool) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

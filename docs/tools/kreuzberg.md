@@ -9,11 +9,11 @@
 | **Version** | `5.0.0-rc.30` |
 | **Vendor** | kreuzberg-dev |
 | **Stars** | ⭐ 9368 |
-| **npm Package** | `kreuzberg-root` |
+| **npm Package** | `xberg-root` |
 | **Language** | Rust |
 | **Source** | [kreuzberg](https://github.com/kreuzberg-dev/kreuzberg) |
-| **Scan Date** | 2026-06-23 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

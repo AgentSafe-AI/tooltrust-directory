@@ -10,11 +10,11 @@
 | **Vendor** | upstash |
 | **Stars** | ⭐ 62848 |
 | **npm Package** | `@upstash/context7-mcp` |
-| **npm Downloads (30d)** | 3.4M |
+| **npm Downloads (30d)** | 2.9M |
 | **Language** | TypeScript |
 | **Source** | [upstash-context7-mcp](https://github.com/upstash/context7) |
-| **Scan Date** | 2026-07-17 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

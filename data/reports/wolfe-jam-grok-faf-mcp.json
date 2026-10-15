@@ -1,33 +1,20 @@
 {
+  "tool_id": "wolfe-jam-grok-faf-mcp",
+  "version": "1.2.1",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T02:53:19.596620949Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/Wolfe-Jam/grok-faf-mcp",
   "category": "Developer Tools",
-  "contributors": 3,
+  "vendor": "wolfe-jam",
+  "stars": 19,
+  "npm_package": "grok-faf-mcp",
+  "npm_downloads_monthly": 1500,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "MCP server for xAI Grok — read and serve .faf project context. npm: grok-faf-mcp",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.2.1: 0 tool(s) added, 12 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": null,
-        "removed": [
-          "faf_about",
-          "faf_bi_sync",
-          "faf_clear",
-          "faf_debug",
-          "faf_enhance",
-          "faf_friday",
-          "faf_guide",
-          "faf_list",
-          "faf_read",
-          "faf_status",
-          "faf_what",
-          "faf_write"
-        ],
-        "version": "1.2.1"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -51,6 +38,14 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "refresh_faf"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "refresh_fafm"
     },
     {
       "id": "AS-014",
@@ -197,129 +192,28 @@
       "tool_name": "rag_cache_clear"
     }
   ],
-  "forks": 2,
-  "grade": "B",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-06T19:34:59Z",
-  "last_release_at": "2026-10-05T13:08:31Z",
-  "latest_release_name": "v2.1.0 — The New Era Edition",
-  "latest_release_tag": "v2.1.0",
-  "latest_release_url": "https://github.com/Wolfe-Jam/grok-faf-mcp/releases/tag/v2.1.0",
-  "latest_release_version": "v2.1.0",
-  "license": "MIT",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 2476,
-  "npm_package": "grok-faf-mcp",
-  "risk_score": 15,
-  "scan_date": "2026-06-22T03:15:39.160938869Z",
-  "scan_history": [
-    {
-      "scan_date": "2026-04-11T01:43:39Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-12T02:08:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-13T02:12:20Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-14T02:08:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-15T02:05:29Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-16T02:19:46Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-17T02:08:21Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-18T01:50:08Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-19T02:11:58Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-04-26T07:32:38Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-17T02:28:51Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-05-30T02:29:36Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-06-15T18:39:13Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-06-15T20:22:32Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-06-15T23:59:33Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.2.1"
-    },
-    {
-      "scan_date": "2026-06-17T03:11:34Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.2.1"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/Wolfe-Jam/grok-faf-mcp",
-  "stars": 19,
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 1,
-    "info": 20
+    "info": 21
   },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "faf_get_orchestration_policy",
+    "faf_init",
+    "faf_orchestrate_recommendation",
+    "faf_score",
+    "faf_sync",
+    "faf_trust",
+    "rag_cache_clear",
+    "rag_cache_stats",
+    "rag_query",
+    "refresh_blend",
+    "refresh_faf",
+    "refresh_fafm"
+  ],
   "tool_contexts": [
     {
       "tool_name": "faf_score",
@@ -342,6 +236,12 @@
       "tool_name": "refresh_fafm",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: fafm-refresh-receipts.json"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -438,21 +338,108 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
-  "tool_id": "wolfe-jam-grok-faf-mcp",
-  "tool_names": [
-    "faf_get_orchestration_policy",
-    "faf_init",
-    "faf_orchestrate_recommendation",
-    "faf_score",
-    "faf_sync",
-    "faf_trust",
-    "rag_cache_clear",
-    "rag_cache_stats",
-    "rag_query",
-    "refresh_blend",
-    "refresh_faf",
-    "refresh_fafm"
-  ],
-  "vendor": "wolfe-jam",
-  "version": "1.2.1"
+  "scan_history": [
+    {
+      "scan_date": "2026-04-11T01:43:39Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-12T02:08:27Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-13T02:12:20Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-14T02:08:08Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-15T02:05:29Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-16T02:19:46Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-17T02:08:21Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-18T01:50:08Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-19T02:11:58Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-04-26T07:32:38Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:28:51Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:29:36Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-06-15T18:39:13Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:22:32Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-06-15T23:59:33Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-06-17T03:11:34Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.2.1"
+    },
+    {
+      "scan_date": "2026-06-22T03:15:39Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.2.1"
+    }
+  ]
 }

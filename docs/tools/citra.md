@@ -10,11 +10,11 @@
 | **Vendor** | SylphxAI |
 | **Stars** | ⭐ 1040 |
 | **npm Package** | `@sylphx/pdf-reader-mcp` |
-| **npm Downloads (30d)** | 6.1k |
+| **npm Downloads (30d)** | 24.9k |
 | **Language** | TypeScript |
 | **Source** | [citra](https://github.com/SylphxAI/citra) |
-| **Scan Date** | 2026-09-22 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

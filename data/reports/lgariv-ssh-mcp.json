@@ -1,6 +1,77 @@
 {
+  "tool_id": "lgariv-ssh-mcp",
+  "version": "1.0.2",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-15T03:00:59.338821465Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/lgariv/ssh-mcp",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "lgariv",
+  "stars": 1,
+  "npm_package": "@lgariv/ssh-mcp",
+  "npm_downloads_monthly": 77,
+  "license": "ISC",
+  "language": "JavaScript",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ssh_test_connection"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ssh_test_connection"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ssh_test_connection"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ssh_run"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ssh_run"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ssh_run"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 4
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
       "kind": "import",
@@ -45,301 +116,31 @@
       "language": "typescript"
     }
   ],
-  "findings": [
-    {
-      "id": "AS-018",
-      "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 76,
-            "snippet": "new McpServer(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 81,
-            "snippet": ".registerTool(",
-            "file": "src/index.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 1,
-            "snippet": "\"@modelcontextprotocol/sdk",
-            "file": "src/smithery.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 55,
-            "snippet": "new McpServer(",
-            "file": "src/smithery.ts",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 57,
-            "snippet": ".registerTool(",
-            "file": "src/smithery.ts",
-            "language": "typescript"
-          }
-        ]
-      }
-    }
+  "tool_names": [
+    "ssh_run",
+    "ssh_test_connection"
   ],
-  "forks": 0,
-  "grade": "I",
-  "has_embedded_mcp": true,
-  "language": "JavaScript",
-  "last_commit_at": "2025-08-09T17:08:38Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "ISC",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 52,
-  "npm_package": "@lgariv/ssh-mcp",
-  "risk_score": 0,
-  "scan_date": "2026-06-22T03:22:56Z",
-  "scan_history": [
+  "tool_contexts": [
     {
-      "scan_date": "2026-04-03T22:54:43Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-04T01:41:31Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-04T06:27:08Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-04T16:48:12Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-04T22:59:05Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-05T01:19:15Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-05T01:57:23Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-06T02:00:48Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-07T01:47:20Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-07T22:04:02Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-08T01:44:59Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-09T01:35:08Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-10T02:00:38Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-20T02:21:34Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-21T02:13:45Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-22T02:12:34Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-23T02:15:55Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-24T02:15:37Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-25T02:08:16Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-26T02:18:00Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-26T07:40:02Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-27T01:35:08Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-28T02:34:52Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-29T02:33:09Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-04-30T02:31:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-05-01T02:35:16Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-05-02T02:22:54Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-05-03T02:31:56Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-05-04T02:29:55Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-05-17T02:36:19Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-05-30T02:36:28Z",
-      "grade": "C",
-      "risk_score": 47,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-06-15T18:46:25Z",
-      "grade": "C",
-      "risk_score": 47,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-06-15T20:28:29Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.0.2"
-    },
-    {
-      "scan_date": "2026-06-16T00:05:50Z",
+      "tool_name": "ssh_test_connection",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.2"
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "scan_date": "2026-06-17T03:19:04Z",
+      "tool_name": "ssh_run",
+      "action": "ALLOW",
       "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.2"
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
-  ],
-  "scan_incomplete": true,
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/lgariv/ssh-mcp",
-  "stars": 1,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
-  },
-  "tool_id": "lgariv-ssh-mcp",
-  "vendor": "lgariv",
-  "version": "1.0.2"
+  ]
 }

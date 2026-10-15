@@ -10,11 +10,11 @@
 | **Vendor** | ivo-toby |
 | **Stars** | ⭐ 297 |
 | **npm Package** | `@ivotoby/openapi-mcp-server` |
-| **npm Downloads (30d)** | 27.1k |
+| **npm Downloads (30d)** | 31.8k |
 | **Language** | TypeScript |
 | **Source** | [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) |
-| **Scan Date** | 2026-10-12 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

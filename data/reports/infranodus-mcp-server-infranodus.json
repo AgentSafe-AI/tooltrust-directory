@@ -1,36 +1,54 @@
 {
+  "tool_id": "infranodus-mcp-server-infranodus",
+  "version": "1.6.1",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:48:23.453484278Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/infranodus/mcp-server-infranodus",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "infranodus",
+  "stars": 102,
+  "npm_package": "infranodus-mcp-server",
+  "npm_downloads_monthly": 813,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "The official InfraNodus MCP server",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 65,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 125,
-      "snippet": ".registerTool(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v1.6.1: 8 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "add_project_learnings",
+          "delete_graph",
+          "delete_statements",
+          "enable_project_learnings",
+          "get_project_learnings",
+          "optimize_knowledge_base",
+          "submit_workflow_feedback",
+          "update_statements"
+        ],
+        "removed": null,
+        "version": "1.6.1"
+      }
+    },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_knowledge_graph"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_knowledge_graph"
     },
@@ -59,6 +77,14 @@
       "tool_name": "create_knowledge_graph"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_knowledge_graph"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -73,6 +99,14 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "create_knowledge_graph"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_ontology_graph"
     },
     {
       "id": "AS-014",
@@ -115,6 +149,14 @@
       "tool_name": "analyze_text"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "analyze_text"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -183,6 +225,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_research_questions"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_research_questions"
     },
@@ -214,7 +264,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 14 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "generate_research_ideas"
     },
@@ -375,6 +425,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "develop_text_tool"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "develop_text_tool"
     },
@@ -627,6 +685,14 @@
       "tool_name": "generate_seo_report"
     },
     {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "generate_seo_report"
+    },
+    {
       "id": "AS-011",
       "severity": "Low",
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
@@ -643,6 +709,142 @@
       "tool_name": "generate_seo_report"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "optimize_knowledge_base"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "optimize_knowledge_base"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "enable_project_learnings"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "add_project_learnings"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_project_learnings"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_project_learnings"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "submit_workflow_feedback"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "submit_workflow_feedback"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_statements"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "delete_statements"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete_statements"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_statements"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 13 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_statements"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update_statements"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete_graph"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "delete_graph"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete_graph"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -651,130 +853,80 @@
       "tool_name": "get_more_tools"
     }
   ],
-  "forks": 27,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-09-19T20:28:30Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
-  "license": "MIT",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1081,
-  "npm_package": "infranodus-mcp-server",
-  "risk_score": 4,
-  "scan_date": "2026-06-22T03:10:55.767889617Z",
-  "scan_history": [
-    {
-      "scan_date": "2026-04-11T01:40:22Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-12T02:05:10Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-13T02:09:02Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-14T02:04:38Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-15T02:02:14Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-16T02:16:37Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-17T02:05:00Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-18T01:47:04Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-19T02:08:40Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-04-26T07:28:11Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-05-17T02:24:24Z",
-      "grade": "C",
-      "risk_score": 32,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-05-30T02:25:17Z",
-      "grade": "C",
-      "risk_score": 47,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-06-15T18:34:48Z",
-      "grade": "C",
-      "risk_score": 40,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-06-15T20:19:01Z",
-      "grade": "C",
-      "risk_score": 25,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-06-15T23:55:26Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.6.1"
-    },
-    {
-      "scan_date": "2026-06-17T03:07:00Z",
-      "grade": "A",
-      "risk_score": 4,
-      "version": "1.6.1"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/infranodus/mcp-server-infranodus",
-  "stars": 102,
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 24,
-    "info": 54
+    "low": 35,
+    "info": 67
   },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 84,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 225,
+      "snippet": ".registerTool(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "add_project_learnings",
+    "analyze_existing_graph_by_name",
+    "analyze_google_search_results",
+    "analyze_llm_results",
+    "analyze_related_search_queries",
+    "analyze_text",
+    "analyze_youtube_results",
+    "create_knowledge_graph",
+    "delete_graph",
+    "delete_statements",
+    "develop_conceptual_bridges",
+    "develop_latent_topics",
+    "develop_text_tool",
+    "difference_between_texts",
+    "enable_project_learnings",
+    "fetch",
+    "generate_content_gaps",
+    "generate_contextual_hint",
+    "generate_knowledge_graph",
+    "generate_ontology_graph",
+    "generate_research_ideas",
+    "generate_research_questions",
+    "generate_responses_from_graph",
+    "generate_seo_report",
+    "generate_topical_clusters",
+    "get_more_tools",
+    "get_project_learnings",
+    "list_graphs",
+    "memory_add_relations",
+    "memory_get_relations",
+    "merged_graph_from_texts",
+    "optimize_knowledge_base",
+    "optimize_reasoning",
+    "optimize_text_structure",
+    "overlap_between_texts",
+    "retrieve_from_knowledge_base",
+    "search",
+    "search_queries_vs_search_results",
+    "submit_workflow_feedback",
+    "update_statements"
+  ],
   "tool_contexts": [
     {
       "tool_name": "generate_knowledge_graph",
@@ -808,7 +960,8 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
-        "dynamic email recipient (modelToUse)"
+        "dynamic email recipient (modelToUse)",
+        "dynamic email recipient (ontologyMode)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -1136,6 +1289,85 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "optimize_knowledge_base",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (modelToUse)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "enable_project_learnings",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "add_project_learnings",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_project_learnings",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "submit_workflow_feedback",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (toolsUsed)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "delete_statements",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "update_statements",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "delete_graph",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "get_more_tools",
       "action": "ALLOW",
       "grade": "A",
@@ -1143,41 +1375,108 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
-  "tool_id": "infranodus-mcp-server-infranodus",
-  "tool_names": [
-    "analyze_existing_graph_by_name",
-    "analyze_google_search_results",
-    "analyze_llm_results",
-    "analyze_related_search_queries",
-    "analyze_text",
-    "analyze_youtube_results",
-    "create_knowledge_graph",
-    "develop_conceptual_bridges",
-    "develop_latent_topics",
-    "develop_text_tool",
-    "difference_between_texts",
-    "fetch",
-    "generate_content_gaps",
-    "generate_contextual_hint",
-    "generate_knowledge_graph",
-    "generate_ontology_graph",
-    "generate_research_ideas",
-    "generate_research_questions",
-    "generate_responses_from_graph",
-    "generate_seo_report",
-    "generate_topical_clusters",
-    "get_more_tools",
-    "list_graphs",
-    "memory_add_relations",
-    "memory_get_relations",
-    "merged_graph_from_texts",
-    "optimize_reasoning",
-    "optimize_text_structure",
-    "overlap_between_texts",
-    "retrieve_from_knowledge_base",
-    "search",
-    "search_queries_vs_search_results"
-  ],
-  "vendor": "infranodus",
-  "version": "1.6.1"
+  "scan_history": [
+    {
+      "scan_date": "2026-04-11T01:40:22Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-12T02:05:10Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-13T02:09:02Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-14T02:04:38Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-15T02:02:14Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-16T02:16:37Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-17T02:05:00Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-18T01:47:04Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-19T02:08:40Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-04-26T07:28:11Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-05-17T02:24:24Z",
+      "grade": "C",
+      "risk_score": 32,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-05-30T02:25:17Z",
+      "grade": "C",
+      "risk_score": 47,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-06-15T18:34:48Z",
+      "grade": "C",
+      "risk_score": 40,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-06-15T20:19:01Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-06-15T23:55:26Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-06-17T03:07:00Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "1.6.1"
+    },
+    {
+      "scan_date": "2026-06-22T03:10:55Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "1.6.1"
+    }
+  ]
 }

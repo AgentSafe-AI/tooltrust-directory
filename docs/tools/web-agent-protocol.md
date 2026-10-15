@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 506 |
 | **Language** | Python |
 | **Source** | [web-agent-protocol](https://github.com/OTA-Tech-AI/web-agent-protocol) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

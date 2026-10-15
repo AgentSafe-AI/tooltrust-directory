@@ -17,8 +17,8 @@ Built for mission-driven teams that want engineers who care about the work, not 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [zachary-royals-devmatch](https://smithery.ai/server/zachary-royals/devmatch) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

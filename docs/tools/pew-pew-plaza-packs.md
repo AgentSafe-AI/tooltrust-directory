@@ -11,8 +11,8 @@
 | **Stars** | ⭐ 87 |
 | **Language** | Shell |
 | **Source** | [pew-pew-plaza-packs](https://github.com/appboypov/pew-pew-plaza-packs) |
-| **Scan Date** | 2026-10-14 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-15 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
