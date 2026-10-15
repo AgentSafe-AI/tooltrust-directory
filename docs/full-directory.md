@@ -1,6 +1,6 @@
 # ToolTrust — Full Directory
 
-All 1934 audited tools. [← Back to README](../README.md#-security-registry)
+All 1937 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Popularity | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
@@ -720,6 +720,7 @@ All 1934 audited tools. [← Back to README](../README.md#-security-registry)
 | [n8n](https://github.com/n8n-io/n8n) | `1` | 11/mo | **[A](tools/n8n.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 15 |
 | [awesome-claude](https://github.com/JSONbored/awesome-claude) | `mcp-v0.14.9` | 11/mo | **[A](tools/awesome-claude.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 15 |
 | [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.8.4` | 9/mo | **[I](tools/nginx-ui.md)** | `AS-018` | Oct 15 |
+| [magic-hour-mcp](https://github.com/magichourhq/magic-hour-mcp/tree/958836e73d0fe0ba090f162654e2c922ad14292e) | `0.1.0+git.…` | 8 | **[A](tools/magic-hour-mcp.md)** | `AS-014` ×44, 🔑 `AS-002` ×43, ⚡ `AS-011` ×37, ⚡ `AS-006` | Oct 14 |
 | [helix-pilot](https://github.com/tsunamayo7/helix-pilot) | `2.0.0` | 4 | **[F](tools/helix-pilot.md)** | 📦 `AS-004` ×2920, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Oct 15 |
 | [agentservices](https://github.com/vbkotecha/agentservices-api/tree/bdd9d9db2e35e0275dec7a6250c804483aa88511) | `5.3.0+git.…` | 2 | **[A](tools/agentservices.md)** | `AS-014` ×43, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×3 | Sep 1 |
 | [axel-belfort-token-price](https://smithery.ai/server/axel-belfort/token-price) | `smithery` | — | **[A](tools/axel-belfort-token-price.md)** | 🗝️ `AS-010`, `AS-014` | Sep 20 |
@@ -1509,6 +1510,7 @@ All 1934 audited tools. [← Back to README](../README.md#-security-registry)
 | [mcp-dir-pagseguro-mcp](https://smithery.ai/server/mcp-dir/pagseguro-mcp) | `smithery` | — | **[A](tools/mcp-dir-pagseguro-mcp.md)** | `AS-014` ×17, 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, 🗝️ `AS-010` | Jul 15 |
 | [mcp-dir-nubank-mcp](https://smithery.ai/server/mcp-dir/nubank-mcp) | `smithery` | — | **[A](tools/mcp-dir-nubank-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, `AS-014` ×24, 🗝️ `AS-010` | Jul 16 |
 | [spencerdgarrett-trialpath](https://smithery.ai/server/spencerdgarrett/TRIALPATH) | `smithery` | — | **[A](tools/spencerdgarrett-trialpath.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2, `AS-014` ×14 | Jul 4 |
+| [hyperconsciousness](https://github.com/louis030195/hyperconsciousness/tree/9500fd232c2755e28f2fae1d738c76390b91eb8e) | `0.1.0-alph…` | — | **[A](tools/hyperconsciousness.md)** | `AS-014` ×10, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` | Oct 14 |
 | [convention-sh-toolkit](https://smithery.ai/server/convention-sh/toolkit) | `smithery` | — | **[A](tools/convention-sh-toolkit.md)** | 🔑 `AS-002`, `AS-014` | May 29 |
 | [kishore-venkata-m-weathermcpmvk](https://smithery.ai/server/kishore.venkata.m/weathermcpmvk) | `smithery` | — | **[A](tools/kishore-venkata-m-weathermcpmvk.md)** | 🔑 `AS-002`, `AS-014` | May 19 |
 | [spajjuri-pro-vsfclubnew6](https://smithery.ai/server/spajjuri.pro/vsfclubnew6) | `smithery` | — | **[A](tools/spajjuri-pro-vsfclubnew6.md)** | 🔑 `AS-002`, `AS-014` | May 4 |
@@ -2024,6 +2026,7 @@ All 1934 audited tools. [← Back to README](../README.md#-security-registry)
 | [glazyr-glazyr-viz](https://smithery.ai/server/glazyr/glazyr-viz) | `smithery` | — | **[C](tools/glazyr-glazyr-viz.md)** | `AS-014` ×10, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, ⚡ `AS-006` | Apr 16 |
 | [clouatre-labs-math-mcp](https://smithery.ai/server/clouatre-labs/math-mcp) | `smithery` | — | **[C](tools/clouatre-labs-math-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-006`, ⚡ `AS-011` ×4, `AS-014` ×17 | Apr 19 |
 | [oura](https://smithery.ai/server/oura) | `smithery` | — | **[C](tools/oura.md)** | `AS-014` ×40, 🔑 `AS-002` ×14, ⚡ `AS-011` ×8, 🗝️ `AS-010` ×2 | Apr 19 |
+| [autoposting-cli](https://github.com/Autoposting-ai/autoposting-cli/tree/da104175c6545d521f33d4e06847674daa364458) | `0.4.0` | — | **[C](tools/autoposting-cli.md)** | `AS-014` ×61, 🔑 `AS-002` ×30, ⚡ `AS-011` ×12, 🗝️ `AS-010`, 📦 `AS-004` ×2 | Oct 14 |
 | [nimble-nimble-mcp](https://smithery.ai/server/nimble/nimble-mcp) | `smithery` | — | **[C](tools/nimble-nimble-mcp.md)** | 🔑 `AS-002` ×32, ⚡ `AS-011` ×12, `AS-014` ×18 | Apr 19 |
 | [postman](https://smithery.ai/server/postman) | `smithery` | — | **[C](tools/postman.md)** | 🔑 `AS-002` ×53, ⚡ `AS-011` ×15, `AS-014` ×41 | Apr 19 |
 | [plith-plith](https://smithery.ai/server/plith/plith) | `smithery` | — | **[C](tools/plith-plith.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×14, 🗝️ `AS-010` ×3 | May 26 |

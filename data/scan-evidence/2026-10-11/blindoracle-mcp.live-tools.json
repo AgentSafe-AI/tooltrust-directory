@@ -1,0 +1,659 @@
+{
+  "tools": [
+    {
+      "name": "health_check",
+      "description": "Check BlindOracle service health and API status",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "agent.prehire-check",
+      "description": "Pre-hire due-diligence check on an agent before you delegate it real spend authority: settlement history, dispute rate, and any flagged incidents, in one signed report. (x402: $0.25 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.25
+      }
+    },
+    {
+      "name": "agent.trust-badge",
+      "description": "$0.01 queryable trust badge summarizing an agent's verified settlement history \u2014 the minimum-viable signal to check before a first transaction. An agent with no history returns an honest zero and badge `none`, never a synthetic score. (x402: $0.01 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.01
+      }
+    },
+    {
+      "name": "arbitration.dispute-settlement",
+      "description": "Adjudication of a contested deliverable: both sides submit evidence and a signed verdict (upheld / overturned / withdrawn; ProofOfAdjudicatedOutcome 30129) is written to the settlement ledger. Disclosure: today the adjudicator is the BlindOracle operator panel \u2014 the verdict is unilateral and there is no buyer contest channel yet. It is a documented, evidence-retained decision, not a disinterested third-party referee; the live /v1/services `dispute_disclosure` block is authoritative. No charge if the required source cannot be fetched. (x402: $5.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 5.0
+      }
+    },
+    {
+      "name": "attestation.single-use-seal",
+      "description": "A single-use cryptographic seal proving a specific deliverable was produced by a specific agent at a specific time and has not been altered since \u2014 the receipt a counterparty can independently check. (x402: $0.05 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.05
+      }
+    },
+    {
+      "name": "content.youtube-research",
+      "description": "Researches YouTube videos from their real transcripts: pass video URLs in the task or in `urls`, or describe a topic and it finds relevant videos. Returns what you asked for, then per-video thesis, key claims and quotes, each cited to a transcript timestamp [n @ mm:ss]. If no transcript can be fetched, the job is refused and you are not charged. Refuses, with no charge, when fetched transcript cannot be fetched. (x402: $0.03 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.03
+      }
+    },
+    {
+      "name": "crypto.market-analyzer",
+      "description": "Real-time market data, technical indicators, and sentiment for any ticker, run by crypto-market-agent-sonnet against live exchange data rather than cached snapshots. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Broader single-ticker view than any one oracle.* SKU; feeds crypto.investment-plays' risk scoring. May deliver with a first-line DEGRADED notice when live data is unavailable. (x402: $0.02 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.02
+      }
+    },
+    {
+      "name": "data.business-registry",
+      "description": "Public business-registry record extraction (SEC / state Secretary-of-State / UK Companies House) over a buyer-supplied public records URL, wrapped in the BlindOracle trust envelope. Public records only. (x402: $0.10 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.1
+      }
+    },
+    {
+      "name": "data.sec-edgar-filing",
+      "description": "Per-call retrieval of recent SEC EDGAR filings (10-K/10-Q/8-K) for a ticker or CIK, with a tamper-evident BlindOracle trust envelope (content hash + content-trap scan + provenance). Public-domain source. (x402: $0.05 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.05
+      }
+    },
+    {
+      "name": "data.web-extract",
+      "description": "Clean main-content extraction of a single buyer-supplied URL via Firecrawl, wrapped in the BlindOracle trust envelope. Thin extraction tool; no data inventory held. (x402: $0.05 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.05
+      }
+    },
+    {
+      "name": "deliberation.multi-agent-debate",
+      "description": "5-11 agent panel debate with 11 LLM models, structured voting, forced decision-making May deliver with a first-line DEGRADED notice when buyer question is unavailable. (x402: $2.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 2.0
+      }
+    },
+    {
+      "name": "finops.token-spend-audit",
+      "description": "Independent audit of an agent's actual token spend against its budget and declared task scope \u2014 surfaces cost overruns or scope creep a counterparty wouldn't otherwise see. (x402: $0.05 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.05
+      }
+    },
+    {
+      "name": "ops.due-diligence-scan",
+      "description": "Automated DD scan: financials, litigation, key personnel, IP, media sentiment, red flags Refuses, with no charge, when \u22655 web sources + registry/EDGAR lookups cannot be fetched. Refuses, with no charge, when the required source (\u22655 web sources + registry/EDGAR lookups) cannot be fetched. (x402: $1.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 1.0
+      }
+    },
+    {
+      "name": "ops.link-integrity",
+      "description": "Deterministic HEAD/GET check of every URL in the task; PASS/FAIL verdict with per-URL status codes. Post-deploy verification SKU (RQ-BO-DELEGATE-02). (x402: $0.01 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.01
+      }
+    },
+    {
+      "name": "oracle.alert-generator",
+      "description": "Defines a custom price/event alert and returns its current trigger state \u2014 armed, fired, or stale \u2014 not just the spec. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Reads off oracle.volatility-monitor and oracle.price-feed; this SKU is the trigger layer, not the data layer. Refuses, with no charge, when live price + buyer threshold fields cannot be fetched. (x402: $0.02 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.02
+      }
+    },
+    {
+      "name": "oracle.comprehensive-report",
+      "description": "Consolidated market/asset report combining price, volatility, sentiment, and arbitrage reads for one ticker across venues, run by crypto-market-agent-sonnet. Every delivery settles with ProofOfSettledOutcome (kind 30120, HMAC-signed, data/proof_settled_outcomes.jsonl) \u2014 verifiable proof the report was paid for and delivered, not just claimed. Broader scope than any single oracle.* SKU below; narrower and cheaper than security.massat-audit's compliance-grade evidence. May deliver with a first-line DEGRADED notice when live data is unavailable. (x402: $0.20 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.2
+      }
+    },
+    {
+      "name": "oracle.cross-chain-prices",
+      "description": "Aggregates a token's price across multiple chains and venues (DEX + CEX) into one comparable read, flagging the highest-deviation pair. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Narrower than oracle.comprehensive-report (single metric, not a full report); feeds oracle.market-arbitrage's spread detection. Refuses, with no charge, when live price feed, \u22652 chains cannot be fetched. (x402: $0.03 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.03
+      }
+    },
+    {
+      "name": "oracle.historical-analysis",
+      "description": "Historical trend and pattern analysis for an asset or time series, identifying the specific pattern rather than a generic 'trending up/down' label. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Feeds crypto.investment-plays' entry/exit logic; distinct from oracle.volatility-monitor's real-time (not historical) read. Refuses, with no charge, when price history \u226530d cannot be fetched. (x402: $0.08 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.08
+      }
+    },
+    {
+      "name": "oracle.market-arbitrage",
+      "description": "Detects live cross-venue arbitrage spreads for a given asset and returns an actionable entry/exit spread, not just a price delta. Built on oracle.cross-chain-prices' price aggregation. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Pairs with crypto.investment-plays for a full execution plan. Refuses, with no charge, when live prices from \u22652 venues cannot be fetched. (x402: $0.10 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.1
+      }
+    },
+    {
+      "name": "oracle.price-feed",
+      "description": "Real-time price feed for a named pair and venue, with the source cited per read instead of a black-box number. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). The base data layer the other oracle.* SKUs (arbitrage, volatility, alerts) are built on. Refuses, with no charge, when live price feed cannot be fetched. Refuses, with no charge, when the required source (live price feed) cannot be fetched. (x402: $0.02 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.02
+      }
+    },
+    {
+      "name": "oracle.sentiment-analysis",
+      "description": "Social + news sentiment read for a named crypto asset or topic, scored and sourced (not a raw keyword count). Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Same sentiment methodology as research.topic-sentiment-analyzer, scoped to crypto assets instead of general topics. May deliver with a first-line DEGRADED notice when live data is unavailable. (x402: $0.06 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.06
+      }
+    },
+    {
+      "name": "oracle.volatility-monitor",
+      "description": "Real-time volatility read for a trading pair with configurable alert thresholds you can act on. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Complements oracle.alert-generator (fires the alert) and oracle.historical-analysis (explains the trend behind the number). Refuses, with no charge, when live price history cannot be fetched. Refuses, with no charge, when the required source (live price history) cannot be fetched. (x402: $0.04 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.04
+      }
+    },
+    {
+      "name": "prediction.blindoracle",
+      "description": "RETIRED (RQ-PRED-RETIRE-01, 2026-07-19) \u2014 the underlying contract is deployed on Base mainnet with zero markets, so there is no market state to query. Priced at 0.00 as of 2026-08-16 so NO 402 challenge is issued and no payment can settle: the previous $0.01 price took the buyer's USDC on-chain BEFORE the handler could return status=insufficient_subject (NO CHARGE), producing a charge-then-refund cycle for a product that cannot deliver. Kept listed for catalog completeness. See specs/decision-retire-prediction-markets.md (x402: $0.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      }
+    },
+    {
+      "name": "procurement.council",
+      "description": "5-11 agent panel debate playing CFO + CIO + CISO + Procurement Lead. Forced vote on any vendor decision. Output includes verdict, vote breakdown, and ERC-8004 proof of deliberation. Refuses, with no charge, when \u22653 web sources about the subject cannot be fetched. Refuses, with no charge, when the required source (\u22653 web sources about the subject) cannot be fetched. (x402: $2.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 2.0
+      }
+    },
+    {
+      "name": "procurement.trust-layer",
+      "description": "Signed, ledger-derived trust evidence about a NAMED BlindOracle agent (pass the agent name or erc8004 id as `subject`): passport status, audit-report count (ProofOfAuditReport 30105), dispute record, settlement-proof attestations, and revocation flags \u2014 each field read from the live ledgers, never fabricated. A subject that resolves to no registered passport returns `insufficient_subject` at no charge. It does NOT research external companies; use procurement.vendor-vetting or ops.due-diligence-scan for that. (x402: $0.01 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.01
+      }
+    },
+    {
+      "name": "procurement.vendor-vetting",
+      "description": "Structured vendor risk assessment across four lenses: financial health, security posture (OWASP ASI01-10), adverse media and litigation, and supplier reputation. Returns a 0-10 risk score, per-category findings, and red flags. Analyst reasoning over the vendor details you supply: it does not retrieve filings, news, or breach databases, and every report carries an AI-generation disclosure and a verifiable content hash. For an automated audit of a live agent system, see security.massat-audit. Refuses, with no charge, when \u22655 web sources incl. vendor's published terms cannot be fetched. (x402: $99.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 99.0
+      }
+    },
+    {
+      "name": "reputation.lookup",
+      "description": "Look up an agent's settlement track record before you transact with it: completed vs. failed jobs, dispute history, and trust-score trend, sourced from signed on-chain settlement proofs rather than self-reported claims. (x402: $0.01 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.01
+      }
+    },
+    {
+      "name": "research.topic-deep-researcher",
+      "description": "Structured research brief (exec summary, mechanisms, alternatives, risks, [n] citations) synthesized over live web search results plus any `urls` you supply \u2014 each supplied URL is fetched, content-scanned and cited as a numbered source. It is a $0.05 search-and-synthesize pass, not a crawler: URLs not passed in `urls` are not opened, and claims the sources do not cover are marked '(unverified \u2014 no source)'. Settlement proof: ProofOfSettledOutcome (kind 30120). Deeper than research.topic-news-scanner; web + supplied documents vs content.youtube-research's video-only pool. Refuses, with no charge, when \u22655 fetched web sources cannot be fetched. (x402: $0.05 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.05
+      }
+    },
+    {
+      "name": "research.topic-news-scanner",
+      "description": "Fast real-time news scan across 44+ curated domains (configs/search_domain_profiles.json), every item source-attributed. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). The quick-scan tier below research.topic-deep-researcher's slower, citation-grade report. Refuses, with no charge, when \u22653 fetched web sources cannot be fetched. Refuses, with no charge, when the required source (\u22653 fetched web sources) cannot be fetched. (x402: $0.02 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.02
+      }
+    },
+    {
+      "name": "research.topic-sentiment-analyzer",
+      "description": "Opinion and sentiment mapping across social, expert, and community channels for a named topic, scored per-channel rather than one blended number. Settlement proof: ProofOfSettledOutcome (kind 30120, data/proof_settled_outcomes.jsonl). Same methodology as oracle.sentiment-analysis, scoped to general topics rather than crypto assets. Refuses, with no charge, when \u22653 fetched web sources cannot be fetched. Refuses, with no charge, when the required source (\u22653 fetched web sources) cannot be fetched. (x402: $0.03 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.03
+      }
+    },
+    {
+      "name": "security.audit-attestation",
+      "description": "Neutral third-party notarization of an AI audit result: we did not run the audit, we attest that a specified audit was performed and its findings match what's claimed \u2014 the credential a checkpoint can trust without re-running the audit itself. (x402: $0.50 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.5
+      }
+    },
+    {
+      "name": "security.concordium-card-verify",
+      "description": "Verifies an agent's Concordium identity card integrity and badge status against the issuing registry \u2014 confirms the credential wasn't forged or revoked before you rely on it. (x402: $0.02 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.02
+      }
+    },
+    {
+      "name": "security.enterprise-audit",
+      "description": "13-agent coordinated security audit producing a signed ProofOfAuditReport, Merkle-anchored to Base, for enterprises that need documented evidence an agent fleet was assessed before deployment \u2014 not a self-attestation. Refuses, with no charge, when the required source (buyer target) cannot be fetched. (x402: $25.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 25.0
+      }
+    },
+    {
+      "name": "security.injection-resilience",
+      "description": "Tests whether a counterparty agent's input handling resists prompt-injection and content-trap patterns \u2014 a concrete resilience check, not a compliance checkbox. (x402: $0.50 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.5
+      }
+    },
+    {
+      "name": "security.massat-audit",
+      "description": "Independent multi-agent security audit (OWASP ASI01-ASI10 coverage) of a counterparty agent or MCP server before you grant it tool access or spend authority. Findings are Merkle-committed and the audit report is signed. (x402: $5.00 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 5.0
+      }
+    },
+    {
+      "name": "security.massat-conformance",
+      "description": "Checks a counterparty agent's stated security posture against the MASSAT governance framework's actual requirements \u2014 flags claims that don't hold up. (x402: $0.25 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.25
+      }
+    },
+    {
+      "name": "security.process-attestation",
+      "description": "Signed attestation that a specific process was followed (not just that an outcome occurred) \u2014 useful when a counterparty needs evidence of *how* something was done, not only *that* it was done. (x402: $0.25 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.25
+      }
+    },
+    {
+      "name": "translation.zh-en",
+      "description": "Professional Simplified-Chinese<->English translation of documents and text. Auto-detects direction, preserves formatting, names, and numbers. Offshore/PIPL-guarded (refuses mainland-CN data subjects). BO trust envelope (content hash + scan + provenance) on every deliverable. (x402: $0.05 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.05
+      }
+    },
+    {
+      "name": "trust.receipt-verify",
+      "description": "Verify a BlindOracle receipt against the parts a buyer cannot check alone: is the proof_id really in BlindOracle's append-only proof rail, does its payload still hash to the stored row, and does the row's HMAC-SHA256 verify against the signing key. Also recomputes content_sha256 and confirms the Base payment, so one call is a complete answer. Deterministic, no LLM. The self-checkable half is free forever in the published verify-blindoracle-receipt skill (RQ-BO-RECEIPT-VERIFY-01). (x402: $0.01 USDC per call)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "Task/query text for this SKU"
+          }
+        }
+      },
+      "_meta": {
+        "agents-x402/paymentRequired": true,
+        "agents-x402/priceUSD": 0.01
+      }
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+    "requested": null,
+    "source": null
+  }
+}
