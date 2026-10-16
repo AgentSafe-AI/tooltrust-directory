@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.98.1` |
 | **Vendor** | 1jehuang |
-| **Stars** | ⭐ 20806 |
+| **Stars** | ⭐ 20885 |
 | **Language** | Rust |
 | **Source** | [jcode](https://github.com/1jehuang/jcode) |
-| **Scan Date** | 2026-10-15 |
+| **Scan Date** | 2026-10-16 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

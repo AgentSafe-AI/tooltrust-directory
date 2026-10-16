@@ -1,14 +1,14 @@
 {
   "tool_id": "chrome-devtools-mcp",
-  "version": "chrome-devtools-mcp-v1.10.1",
+  "version": "chrome-devtools-mcp-v1.11.0",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-10-15T02:33:39.092332809Z",
+  "scan_date": "2026-10-16T02:27:23.282357854Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
   "category": "Developer Tools",
   "vendor": "ChromeDevTools",
-  "stars": 53556,
+  "stars": 53614,
   "npm_package": "chrome-devtools-mcp",
   "npm_downloads_monthly": 7560962,
   "license": "Apache-2.0",
@@ -43,7 +43,15 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: network access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "emulate"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "emulate"
     },
@@ -312,6 +320,30 @@
       "tool_name": "resize_page"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "screencast_start"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "screencast_start"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "screencast_stop"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -404,8 +436,8 @@
     "critical": 1,
     "high": 0,
     "medium": 0,
-    "low": 4,
-    "info": 43
+    "low": 5,
+    "info": 46
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -432,6 +464,8 @@
     "performance_stop_trace",
     "press_key",
     "resize_page",
+    "screencast_start",
+    "screencast_stop",
     "select_page",
     "take_heapsnapshot",
     "take_screenshot",
@@ -517,6 +551,9 @@
       "tool_name": "get_css_styles",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: element.style"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -553,7 +590,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -654,6 +691,23 @@
     },
     {
       "tool_name": "resize_page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "screencast_start",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "screencast_stop",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -1967,6 +2021,12 @@
     },
     {
       "scan_date": "2026-10-14T02:55:07Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "chrome-devtools-mcp-v1.10.1"
+    },
+    {
+      "scan_date": "2026-10-15T02:33:39Z",
       "grade": "C",
       "risk_score": 27,
       "version": "chrome-devtools-mcp-v1.10.1"

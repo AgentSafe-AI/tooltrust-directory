@@ -6,7 +6,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.18` |
 | **Vendor** | Antonytm |
-| **Stars** | ⭐ 173 |
+| **Stars** | ⭐ 175 |
 | **Language** | TypeScript |
 | **Source** | [figma-mcp-server](https://github.com/Antonytm/figma-mcp-server) |
 | **Scan Date** | 2026-10-15 |

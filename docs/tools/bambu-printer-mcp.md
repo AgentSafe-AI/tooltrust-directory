@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.1.27` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 203 |
+| **Stars** | ⭐ 205 |
 | **npm Package** | `bambu-printer-mcp` |
 | **npm Downloads (30d)** | 6.3k |
 | **Language** | TypeScript |
 | **Source** | [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) |
-| **Scan Date** | 2026-10-15 |
+| **Scan Date** | 2026-10-16 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

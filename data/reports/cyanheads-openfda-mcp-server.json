@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-openfda-mcp-server",
+  "version": "0.8.1",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-16T02:37:51.102817141Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/openfda-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 4,
+  "npm_package": "@cyanheads/openfda-mcp-server",
+  "npm_downloads_monthly": 2108,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Query FDA data on drugs, food, devices, and recalls via openFDA. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -148,21 +160,105 @@
       "tool_name": "openfda_lookup_ndc"
     }
   ],
-  "forks": 2,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-13T00:28:27Z",
-  "last_release_at": "2026-10-13T00:38:03Z",
-  "latest_release_name": "v0.8.1: fields projection, Markdown escaping, sort normalization",
-  "latest_release_tag": "v0.8.1",
-  "latest_release_url": "https://github.com/cyanheads/openfda-mcp-server/releases/tag/v0.8.1",
-  "latest_release_version": "v0.8.1",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 5,
+    "info": 13
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 2108,
-  "npm_package": "@cyanheads/openfda-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-15T02:58:12.489700128Z",
+  "tool_names": [
+    "openfda_count",
+    "openfda_get_drug_label",
+    "openfda_lookup_ndc",
+    "openfda_search_adverse_events",
+    "openfda_search_device_clearances",
+    "openfda_search_drug_approvals",
+    "openfda_search_recalls"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "openfda_search_adverse_events",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: patient.drug.medicinalproduct",
+        "hardcoded domain: patient.reaction.reactionmeddrapt"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "openfda_search_recalls",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (endpoint)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "openfda_count",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (endpoint)",
+        "hardcoded domain: patient.drug.medicinalproduct",
+        "hardcoded domain: patient.reaction.reactionmeddrapt.exact"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "openfda_get_drug_label",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "openfda_search_drug_approvals",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "openfda_search_device_clearances",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "openfda_lookup_ndc",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-07-29T02:03:38Z",
@@ -613,110 +709,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.8.1"
+    },
+    {
+      "scan_date": "2026-10-15T02:58:12Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.8.1"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/openfda-mcp-server",
-  "stars": 4,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 5,
-    "info": 13
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "openfda_search_adverse_events",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: patient.drug.medicinalproduct",
-        "hardcoded domain: patient.reaction.reactionmeddrapt"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "openfda_search_recalls",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (endpoint)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "openfda_count",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (endpoint)",
-        "hardcoded domain: patient.drug.medicinalproduct",
-        "hardcoded domain: patient.reaction.reactionmeddrapt.exact"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "openfda_get_drug_label",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "openfda_search_drug_approvals",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "openfda_search_device_clearances",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "openfda_lookup_ndc",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-openfda-mcp-server",
-  "tool_names": [
-    "openfda_count",
-    "openfda_get_drug_label",
-    "openfda_lookup_ndc",
-    "openfda_search_adverse_events",
-    "openfda_search_device_clearances",
-    "openfda_search_drug_approvals",
-    "openfda_search_recalls"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.8.1"
+  ]
 }

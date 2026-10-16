@@ -1,9 +1,9 @@
 {
   "tool_id": "cyanheads-libofcongress-mcp-server",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-15T02:57:26.43571071Z",
+  "scan_date": "2026-10-16T02:37:42.788624242Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/libofcongress-mcp-server",
   "category": "Developer Tools",
@@ -67,7 +67,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "libofcongress_search_newspapers"
     },
@@ -91,7 +91,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "libofcongress_get_newspaper_page"
     },
@@ -185,6 +185,10 @@
         "executes_commands",
         "uses_network"
       ],
+      "destinations": [
+        "hardcoded domain: catalog.loc.gov",
+        "hardcoded domain: hdl.loc.gov"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -198,6 +202,9 @@
         "uses_network"
       ],
       "destinations": [
+        "hardcoded domain: catalog.loc.gov",
+        "hardcoded domain: hdl.loc.gov",
+        "hardcoded domain: lccn.loc.gov",
         "hardcoded domain: loc.gov",
         "hardcoded domain: www.loc.gov"
       ],
@@ -639,6 +646,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.3.1"
+    },
+    {
+      "scan_date": "2026-10-15T02:57:26Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.5.0"
     }
   ]
 }

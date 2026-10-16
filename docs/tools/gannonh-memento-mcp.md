@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.9` |
 | **Vendor** | gannonh |
-| **Stars** | ⭐ 425 |
+| **Stars** | ⭐ 424 |
 | **npm Package** | `@gannonh/memento-mcp` |
 | **npm Downloads (30d)** | 106 |
 | **Language** | TypeScript |

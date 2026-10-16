@@ -1,54 +1,20 @@
 {
+  "tool_id": "cyanheads-pubchem-mcp-server",
+  "version": "1.0.2",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-16T02:37:27.14669536Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/pubchem-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 10,
+  "npm_package": "@cyanheads/pubchem-mcp-server",
+  "npm_downloads_monthly": 2362,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Search the PubChem chemical database for compounds, properties, safety data, bioactivity, cross-references, and entity summaries via MCP. STDIO or Streamable HTTP.",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 18,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/mcp-server/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 54,
-      "snippet": "new McpServer(",
-      "file": "src/mcp-server/server.ts",
-      "language": "typescript"
-    }
-  ],
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.0.2: 8 tool(s) added, 8 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "pubchem_get_bioactivity",
-          "pubchem_get_compound_3d_structure",
-          "pubchem_get_compound_details",
-          "pubchem_get_compound_interactions",
-          "pubchem_get_compound_safety",
-          "pubchem_get_compound_xrefs",
-          "pubchem_search_assays",
-          "pubchem_search_compounds"
-        ],
-        "removed": [
-          "pubchem_fetch_compound_properties",
-          "pubchem_fetch_compound_xrefs",
-          "pubchem_fetch_substance_details",
-          "pubchem_search_assays_by_target",
-          "pubchem_search_compound_by_identifier",
-          "pubchem_search_compounds_by_formula",
-          "pubchem_search_compounds_by_similarity",
-          "pubchem_search_compounds_by_structure"
-        ],
-        "version": "1.0.2"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -210,22 +176,139 @@
       "tool_name": "pubchem_get_summary"
     }
   ],
-  "forks": 3,
-  "grade": "B",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-15T02:12:18Z",
-  "last_release_at": "2026-10-15T02:16:22Z",
-  "latest_release_name": "v0.7.0: Per-source GHS, target-aware bioactivity, per-call caps",
-  "latest_release_tag": "v0.7.0",
-  "latest_release_url": "https://github.com/cyanheads/pubchem-mcp-server/releases/tag/v0.7.0",
-  "latest_release_version": "v0.7.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 16
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 2362,
-  "npm_package": "@cyanheads/pubchem-mcp-server",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T02:54:43.147130788Z",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 18,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/mcp-server/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 54,
+      "snippet": "new McpServer(",
+      "file": "src/mcp-server/server.ts",
+      "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "pubchem_get_bioactivity",
+    "pubchem_get_compound_3d_structure",
+    "pubchem_get_compound_details",
+    "pubchem_get_compound_image",
+    "pubchem_get_compound_interactions",
+    "pubchem_get_compound_safety",
+    "pubchem_get_compound_xrefs",
+    "pubchem_get_summary",
+    "pubchem_search_assays",
+    "pubchem_search_compounds"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "pubchem_search_compounds",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_compound_details",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_compound_image",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_compound_3d_structure",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (maxAtoms)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_compound_xrefs",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_compound_safety",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_bioactivity",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (targetAccession)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_compound_interactions",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_search_assays",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "pubchem_get_summary",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-07-30T01:52:32Z",
@@ -670,127 +753,12 @@
       "grade": "B",
       "risk_score": 15,
       "version": "1.0.2"
+    },
+    {
+      "scan_date": "2026-10-15T02:54:43Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.0.2"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/pubchem-mcp-server",
-  "stars": 10,
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 4,
-    "info": 16
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "pubchem_search_compounds",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_compound_details",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_compound_image",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_compound_3d_structure",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (maxAtoms)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_compound_xrefs",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_compound_safety",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_bioactivity",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (targetAccession)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_compound_interactions",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_search_assays",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "pubchem_get_summary",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "cyanheads-pubchem-mcp-server",
-  "tool_names": [
-    "pubchem_get_bioactivity",
-    "pubchem_get_compound_3d_structure",
-    "pubchem_get_compound_details",
-    "pubchem_get_compound_image",
-    "pubchem_get_compound_interactions",
-    "pubchem_get_compound_safety",
-    "pubchem_get_compound_xrefs",
-    "pubchem_get_summary",
-    "pubchem_search_assays",
-    "pubchem_search_compounds"
-  ],
-  "vendor": "cyanheads",
-  "version": "1.0.2"
+  ]
 }

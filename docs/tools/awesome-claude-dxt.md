@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | milisp |
-| **Stars** | ⭐ 181 |
+| **Stars** | ⭐ 182 |
 | **Language** | JavaScript |
 | **Source** | [awesome-claude-dxt](https://github.com/milisp/awesome-claude-dxt) |
-| **Scan Date** | 2026-10-15 |
+| **Scan Date** | 2026-10-16 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

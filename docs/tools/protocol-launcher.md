@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `@protocol-launcher/shared@1.4.13` |
 | **Vendor** | zhensherlock |
-| **Stars** | ⭐ 126 |
+| **Stars** | ⭐ 135 |
 | **npm Package** | `protocol-launcher` |
 | **npm Downloads (30d)** | 8.1k |
 | **Language** | TypeScript |
 | **Source** | [protocol-launcher](https://github.com/zhensherlock/protocol-launcher) |
-| **Scan Date** | 2026-10-15 |
+| **Scan Date** | 2026-10-16 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
