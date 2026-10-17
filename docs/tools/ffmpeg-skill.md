@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.10.3` |
 | **Vendor** | kajisho5 |
-| **Stars** | ⭐ 1963 |
+| **Stars** | ⭐ 1980 |
 | **npm Package** | `ffmpeg-skill` |
 | **npm Downloads (30d)** | 13.4k |
 | **Language** | Python |
 | **Source** | [ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) |
-| **Scan Date** | 2026-10-16 |
+| **Scan Date** | 2026-10-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

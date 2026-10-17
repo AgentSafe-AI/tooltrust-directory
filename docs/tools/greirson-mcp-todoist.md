@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.3` |
 | **Vendor** | greirson |
-| **Stars** | ⭐ 245 |
+| **Stars** | ⭐ 246 |
 | **npm Package** | `@greirson/mcp-todoist` |
 | **npm Downloads (30d)** | 1.1k |
 | **Language** | TypeScript |

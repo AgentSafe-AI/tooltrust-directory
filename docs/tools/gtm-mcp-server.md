@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.6.0` |
 | **Vendor** | paolobietolini |
-| **Stars** | ⭐ 168 |
+| **Stars** | ⭐ 177 |
 | **Language** | Go |
 | **Source** | [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) |
 | **Scan Date** | 2026-10-15 |

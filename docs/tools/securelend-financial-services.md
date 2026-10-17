@@ -19,7 +19,7 @@ Perfect for financial advisors, fintech developers, and anyone comparing financi
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [securelend-financial-services](https://smithery.ai/server/securelend/financial-services) |
-| **Scan Date** | 2026-10-16 |
+| **Scan Date** | 2026-10-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

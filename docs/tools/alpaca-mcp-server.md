@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1023 |
 | **Language** | Python |
 | **Source** | [alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server) |
-| **Scan Date** | 2026-10-16 |
+| **Scan Date** | 2026-10-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

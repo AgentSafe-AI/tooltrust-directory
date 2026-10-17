@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.4.116` |
+| **Version** | `0.4.117` |
 | **Vendor** | hanyeol |
 | **Stars** | ⭐ 118 |
 | **Language** | Python |
 | **Source** | [model-compose](https://github.com/hanyeol/model-compose) |
-| **Scan Date** | 2026-10-16 |
+| **Scan Date** | 2026-10-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

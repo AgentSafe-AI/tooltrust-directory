@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.12.4` |
 | **Vendor** | gregorydickson |
-| **Stars** | ⭐ 249 |
+| **Stars** | ⭐ 252 |
 | **Language** | Python |
 | **Source** | [gregorydickson-memory-graph](https://github.com/memory-graph/memory-graph) |
 | **Scan Date** | 2026-10-15 |

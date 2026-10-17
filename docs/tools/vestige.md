@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `whitepaper-tr-2026-01` |
 | **Vendor** | samvallad33 |
-| **Stars** | ⭐ 650 |
+| **Stars** | ⭐ 651 |
 | **npm Package** | `vestige` |
 | **npm Downloads (30d)** | 14 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-10-16 |
+| **Scan Date** | 2026-10-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `3.0.6` |
 | **Vendor** | stape-io |
-| **Stars** | ⭐ 222 |
+| **Stars** | ⭐ 230 |
 | **npm Package** | `gtm-mcp-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [google-tag-manager-mcp-server](https://github.com/stape-io/google-tag-manager-mcp-server) |

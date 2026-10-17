@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.1` |
 | **Vendor** | hustcc |
-| **Stars** | ⭐ 639 |
+| **Stars** | ⭐ 644 |
 | **npm Package** | `mcp-mermaid` |
 | **npm Downloads (30d)** | 18.2k |
 | **Language** | TypeScript |

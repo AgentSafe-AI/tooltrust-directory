@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.7` |
 | **Vendor** | xinnan-tech |
-| **Stars** | ⭐ 10865 |
+| **Stars** | ⭐ 10879 |
 | **Language** | JavaScript |
 | **Source** | [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) |
-| **Scan Date** | 2026-10-16 |
+| **Scan Date** | 2026-10-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

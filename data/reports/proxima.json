@@ -1,0 +1,70 @@
+{
+  "tool_id": "proxima",
+  "version": "5.5.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-10-17T02:26:30Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/Zen4-bit/Proxima",
+  "category": "Developer Tools",
+  "vendor": "Zen4-bit",
+  "stars": 1197,
+  "npm_package": "proxima",
+  "npm_downloads_monthly": 487,
+  "license": "NOASSERTION",
+  "language": "JavaScript",
+  "description": "Multi-AI MCP Server - Connect ChatGPT, Claude, Gemini \u0026 Perplexity to your coding tools without any API",
+  "findings": [
+    {
+      "id": "AS-018",
+      "severity": "Info",
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 5,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "src/mcp/index.js",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 208,
+            "snippet": "new McpServer(",
+            "file": "src/mcp/index.js",
+            "language": "typescript"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/mcp/index.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 208,
+      "snippet": "new McpServer(",
+      "file": "src/mcp/index.js",
+      "language": "typescript"
+    }
+  ]
+}

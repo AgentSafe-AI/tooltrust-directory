@@ -1,0 +1,85 @@
+{
+  "tool_id": "next-ai-draw-io",
+  "version": "0.5.0",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-10-17T02:20:29.440358108Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/DayuanJiang/next-ai-draw-io",
+  "category": "Developer Tools",
+  "vendor": "DayuanJiang",
+  "stars": 36283,
+  "npm_package": "next-ai-draw-io",
+  "npm_downloads_monthly": 153,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
+  "description": "Draw and edit draw.io diagrams by chatting with an AI. Web app, desktop app, and an MCP server for Claude Code, Cursor, Codex and VS Code.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_diagram"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_diagram"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 22,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "packages/mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 139,
+      "snippet": "new McpServer(",
+      "file": "packages/mcp-server/src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 153,
+      "snippet": ".registerTool(",
+      "file": "packages/mcp-server/src/index.ts",
+      "language": "typescript"
+    }
+  ],
+  "tool_names": [
+    "create_diagram"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "create_diagram",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: draw.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ]
+}

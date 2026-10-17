@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.1` |
 | **Vendor** | graphlit |
-| **Stars** | ⭐ 379 |
+| **Stars** | ⭐ 378 |
 | **npm Package** | `graphlit-mcp-server` |
 | **npm Downloads (30d)** | 919 |
 | **Language** | TypeScript |
