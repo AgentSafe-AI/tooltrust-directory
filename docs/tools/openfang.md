@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.6.9` |
 | **Vendor** | RightNow-AI |
-| **Stars** | ⭐ 18213 |
+| **Stars** | ⭐ 18211 |
 | **Language** | Rust |
 | **Source** | [openfang](https://github.com/RightNow-AI/openfang) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

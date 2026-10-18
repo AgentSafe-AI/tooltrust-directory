@@ -1,41 +1,64 @@
 {
   "tool_id": "boss-agent-cli",
   "version": "3.0.0",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-17T02:25:25.610590826Z",
+  "grade": "C",
+  "risk_score": 42,
+  "scan_date": "2026-10-18T02:24:45.992354213Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/can4hou6joeng4/boss-agent-cli",
   "category": "Developer Tools",
   "vendor": "can4hou6joeng4",
-  "stars": 2094,
+  "stars": 2097,
   "license": "MIT",
   "language": "Python",
   "description": "🤖 Local-assist BOSS Zhipin CLI for AI agents — search, welfare filtering, shortlist, JSON-envelope output; low-risk \u0026 compliant by default.",
   "findings": [
     {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at v3.0.0: 4 tool(s) added, 5 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "get_guide",
+          "get_mcp_server",
+          "get_pricing",
+          "search_atlas"
+        ],
+        "removed": [
+          "discover_capabilities",
+          "get_entry",
+          "list_categories",
+          "list_entries",
+          "search_registry"
+        ],
+        "version": "3.0.0"
+      }
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "discover_capabilities"
+      "tool_name": "search_atlas"
     },
     {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "discover_capabilities"
+      "id": "AS-003",
+      "severity": "High",
+      "title": "Scope Mismatch",
+      "description": "tool name \"search_atlas\" implies read-only operation but declares exec permission",
+      "recommendation": "Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.",
+      "tool_name": "search_atlas"
     },
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "search_registry"
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
+      "tool_name": "search_atlas"
     },
     {
       "id": "AS-011",
@@ -43,7 +66,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "search_registry"
+      "tool_name": "search_atlas"
     },
     {
       "id": "AS-014",
@@ -51,23 +74,15 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "search_registry"
+      "tool_name": "search_atlas"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "get_entry"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "get_entry"
+      "tool_name": "get_guide"
     },
     {
       "id": "AS-014",
@@ -75,7 +90,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "get_entry"
+      "tool_name": "get_guide"
     },
     {
       "id": "AS-014",
@@ -83,7 +98,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_categories"
+      "tool_name": "get_mcp_server"
     },
     {
       "id": "AS-014",
@@ -91,61 +106,58 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "list_entries"
+      "tool_name": "get_pricing"
     }
   ],
   "summary": {
-    "critical": 0,
-    "high": 0,
+    "critical": 1,
+    "high": 2,
     "medium": 0,
-    "low": 2,
-    "info": 8
+    "low": 1,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "discover_capabilities",
-    "get_entry",
-    "list_categories",
-    "list_entries",
-    "search_registry"
+    "get_guide",
+    "get_mcp_server",
+    "get_pricing",
+    "search_atlas"
   ],
   "tool_contexts": [
     {
-      "tool_name": "discover_capabilities",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search_registry",
-      "action": "ALLOW",
-      "grade": "A",
+      "tool_name": "search_atlas",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "get_entry",
+      "tool_name": "get_guide",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "executes_commands",
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_categories",
+      "tool_name": "get_mcp_server",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "list_entries",
+      "tool_name": "get_pricing",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -743,6 +755,12 @@
     },
     {
       "scan_date": "2026-10-16T02:32:40Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "3.0.0"
+    },
+    {
+      "scan_date": "2026-10-17T02:25:25Z",
       "grade": "A",
       "risk_score": 2,
       "version": "3.0.0"

@@ -10,10 +10,10 @@
 | **Vendor** | srthkdev |
 | **Stars** | ⭐ 85 |
 | **npm Package** | `dbeaver-mcp-server` |
-| **npm Downloads (30d)** | 379 |
+| **npm Downloads (30d)** | 373 |
 | **Language** | TypeScript |
 | **Source** | [omnisql-mcp](https://github.com/srthkdev/omnisql-mcp) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

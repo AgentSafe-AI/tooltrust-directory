@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 4480 |
 | **Language** | Python |
 | **Source** | [mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

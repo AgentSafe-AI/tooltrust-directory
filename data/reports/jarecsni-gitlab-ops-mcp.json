@@ -1,18 +1,37 @@
 {
-  "tool_id": "jarecsni-gitlab-ops-mcp",
-  "version": "1.1.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T03:09:59.987333574Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/jarecsni/gitlab-ops-mcp",
   "category": "Developer Tools",
-  "vendor": "jarecsni",
-  "npm_package": "gitlab-ops-mcp",
-  "npm_downloads_monthly": 66,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 1,
   "description": "Supplementary MCP server for GitLab — operational and orchestration layer (webhooks, CI variables, branch protection, project settings, groups, access tokens)",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 18,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 24,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -133,77 +152,22 @@
       "tool_name": "gitlab_find_action"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 2,
-    "info": 4
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 0,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 18,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 5,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 24,
-      "snippet": "new McpServer(",
-      "file": "src/server.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "gitlab_execute_action",
-    "gitlab_find_action"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "gitlab_execute_action",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "hardcoded domain: issue.close",
-        "hardcoded domain: issue.update",
-        "hardcoded domain: project.list"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "gitlab_find_action",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-03-05T00:08:00Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 66,
+  "npm_package": "gitlab-ops-mcp",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T03:09:59.987333574Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:55:13Z",
@@ -385,5 +349,50 @@
       "risk_score": 15,
       "version": "1.1.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/jarecsni/gitlab-ops-mcp",
+  "stars": 0,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 2,
+    "info": 4
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "gitlab_execute_action",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "hardcoded domain: issue.close",
+        "hardcoded domain: issue.update",
+        "hardcoded domain: project.list"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "gitlab_find_action",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "jarecsni-gitlab-ops-mcp",
+  "tool_names": [
+    "gitlab_execute_action",
+    "gitlab_find_action"
+  ],
+  "vendor": "jarecsni",
+  "version": "1.1.0"
 }

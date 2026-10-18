@@ -1,19 +1,19 @@
-# 🟡 open-connector
+# 🟢 open-connector
 
 > Open-source auth gateway connecting 1500+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `1.9.0` |
 | **Vendor** | oomol-lab |
-| **Stars** | ⭐ 6031 |
+| **Stars** | ⭐ 6039 |
 | **npm Package** | `@oomol-lab/open-connector` |
 | **npm Downloads (30d)** | 8.5k |
 | **Language** | TypeScript |
 | **Source** | [open-connector](https://github.com/oomol-lab/open-connector) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 2 |
 | Info     | 7 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v1.9.0: 5 tool(s) added, 4 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

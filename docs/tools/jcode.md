@@ -1,6 +1,6 @@
 # 🟢 jcode
 
-> High performance coding agent harness written in rust
+> High performance coding agent harness written in Rust, built for heavy multi-agent dev workflows
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.98.1` |
 | **Vendor** | 1jehuang |
-| **Stars** | ⭐ 20949 |
+| **Stars** | ⭐ 20979 |
 | **Language** | Rust |
 | **Source** | [jcode](https://github.com/1jehuang/jcode) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

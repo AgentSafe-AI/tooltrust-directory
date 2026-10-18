@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 637 |
 | **Language** | Python |
 | **Source** | [home-assistant-vibecode-agent](https://github.com/Coolver/home-assistant-vibecode-agent) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2020 |
 | **Language** | Python |
 | **Source** | [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

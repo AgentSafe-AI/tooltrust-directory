@@ -1,17 +1,17 @@
-# 🟡 awesome-agentic-ai-zh
+# 🟢 awesome-agentic-ai-zh
 
 > A trilingual (繁中 / English / 简中) learning roadmap for agentic AI: from LLM basics to multi-agent systems, with 240+ curated resources and hands-on examples. 中文 AI agent 學習地圖。
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 0 |
 | **Version** | `2026.10.16` |
 | **Vendor** | WenyuChiou |
-| **Stars** | ⭐ 7706 |
+| **Stars** | ⭐ 7720 |
 | **Language** | Python |
 | **Source** | [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -21,24 +21,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
 | Info     | 4 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at v2026.10.16: 2 tool(s) added, 12 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

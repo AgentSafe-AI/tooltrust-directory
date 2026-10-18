@@ -10,10 +10,10 @@
 | **Vendor** | benborla |
 | **Stars** | ⭐ 2166 |
 | **npm Package** | `@benborla29/mcp-server-mysql` |
-| **npm Downloads (30d)** | 51.2k |
+| **npm Downloads (30d)** | 49.2k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

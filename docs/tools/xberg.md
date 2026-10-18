@@ -12,7 +12,7 @@
 | **npm Package** | `xberg-root` |
 | **Language** | Rust |
 | **Source** | [xberg](https://github.com/xberg-io/xberg) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-gutenberg-mcp-server",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-17T02:31:04.979572308Z",
+  "scan_date": "2026-10-18T02:30:10.002137046Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/gutenberg-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
-  "stars": 3,
+  "stars": 4,
   "npm_package": "@cyanheads/gutenberg-mcp-server",
-  "npm_downloads_monthly": 1337,
+  "npm_downloads_monthly": 1516,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Search, browse, and read 75,000+ public-domain books from Project Gutenberg with full plain-text retrieval and offset/limit chunking via MCP. STDIO or Streamable HTTP.",
@@ -91,7 +91,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "gutenberg_browse_popular"
     },
@@ -168,6 +168,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "destinations": [
@@ -333,6 +334,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.1.10"
+    },
+    {
+      "scan_date": "2026-10-17T02:31:04Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.1.11"
     }
   ]
 }

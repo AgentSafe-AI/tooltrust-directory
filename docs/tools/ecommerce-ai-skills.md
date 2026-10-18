@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | kangise |
-| **Stars** | ⭐ 93 |
+| **Stars** | ⭐ 95 |
 | **Language** | Python |
 | **Source** | [ecommerce-ai-skills](https://github.com/kangise/ecommerce-ai-skills) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

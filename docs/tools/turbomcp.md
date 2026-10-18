@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 98 |
 | **Language** | Rust |
 | **Source** | [turbomcp](https://github.com/Epistates/turbomcp) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

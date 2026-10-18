@@ -1,6 +1,6 @@
 # 🟢 vestige
 
-> Think before doing, prove before saving.  Vestige is a local, deterministic safety kernel for AI agents. Every memory write and agent action is recorded in Strata, a signed, append-only log, so you can see exactly what your agent did and why. 
+> Think before doing, prove before saving.  Vestige is a local, deterministic safety kernel for AI agents. Every memory write and agent action is recorded in Strata, an append-only log, so you can see exactly what your agent did and why.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `whitepaper-tr-2026-01` |
 | **Vendor** | samvallad33 |
-| **Stars** | ⭐ 651 |
+| **Stars** | ⭐ 652 |
 | **npm Package** | `vestige` |
 | **npm Downloads (30d)** | 14 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

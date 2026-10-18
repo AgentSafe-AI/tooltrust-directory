@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.2.0` |
 | **Vendor** | Arman-Kudaibergenov |
-| **Stars** | ⭐ 166 |
+| **Stars** | ⭐ 167 |
 | **Language** | PowerShell |
 | **Source** | [1c-ai-development-kit](https://github.com/Arman-Kudaibergenov/1c-ai-development-kit) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

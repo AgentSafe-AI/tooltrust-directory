@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `website@2.17.2` |
 | **Vendor** | nukeop |
-| **Stars** | ⭐ 18718 |
+| **Stars** | ⭐ 18728 |
 | **npm Package** | `nuclear` |
-| **npm Downloads (30d)** | 34 |
+| **npm Downloads (30d)** | 27 |
 | **Language** | TypeScript |
 | **Source** | [nuclear](https://github.com/nukeop/nuclear) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

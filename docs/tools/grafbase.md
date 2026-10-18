@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1228 |
 | **Language** | Rust |
 | **Source** | [grafbase](https://github.com/grafbase/grafbase) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

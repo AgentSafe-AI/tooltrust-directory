@@ -1,18 +1,18 @@
-# 🟢 open-seo
+# 🟡 open-seo
 
 > Open source alternative to Semrush and Ahrefs
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 2 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `0.1.13` |
 | **Vendor** | every-app |
-| **Stars** | ⭐ 23851 |
+| **Stars** | ⭐ 23932 |
 | **npm Package** | `open-seo` |
 | **Language** | TypeScript |
 | **Source** | [open-seo](https://github.com/every-app/open-seo) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -22,70 +22,22 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
 | Low      | 2 |
-| Info     | 12 |
+| Info     | 4 |
 
 ## Detailed Findings
 
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-declared capabilities: filesystem access
+Tool set changed silently at v0.1.13: 2 tool(s) added, 7 tool(s) removed without a version bump.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: filesystem access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
@@ -130,43 +82,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: filesystem access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access
+declared capabilities: network access, HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

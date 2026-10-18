@@ -1,17 +1,17 @@
-# 🟢 boss-agent-cli
+# 🟠 boss-agent-cli
 
 > 🤖 Local-assist BOSS Zhipin CLI for AI agents — search, welfare filtering, shortlist, JSON-envelope output; low-risk & compliant by default.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 2 |
+| **Grade** | **C** |
+| **Risk Score** | 42 |
 | **Version** | `3.0.0` |
 | **Vendor** | can4hou6joeng4 |
-| **Stars** | ⭐ 2094 |
+| **Stars** | ⭐ 2097 |
 | **Language** | Python |
 | **Source** | [boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -20,35 +20,23 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 0 |
-| High     | 0 |
+| Critical | 1 |
+| High     | 2 |
 | Medium   | 0 |
-| Low      | 2 |
-| Info     | 8 |
+| Low      | 1 |
+| Info     | 6 |
 
 ## Detailed Findings
 
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
 
-**Severity:** Info
-
-**Description:**
-declared capabilities: database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
+**Severity:** High
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+Tool set changed silently at v3.0.0: 4 tool(s) added, 5 tool(s) removed without a version bump.
 
 **Recommendation:**
-Review and remediate the identified issue.
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
 
 ---
 
@@ -57,10 +45,34 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: code/command execution, network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🟠 📐 `AS-003` — Scope Mismatch
+
+**Severity:** High
+
+**Description:**
+tool name "search_atlas" implies read-only operation but declares exec permission
+
+**Recommendation:**
+Ensure tool names, descriptions, and permission declarations are internally consistent. Use explicit naming conventions that fully reflect actual capabilities.
+
+---
+
+### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+
+**Severity:** Critical
+
+**Description:**
+tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+
+**Recommendation:**
+This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
 
 ---
 
@@ -93,22 +105,10 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 

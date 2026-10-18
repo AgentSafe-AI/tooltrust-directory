@@ -8,11 +8,11 @@
 | **Risk Score** | 4 |
 | **Version** | `1.2.1` |
 | **Vendor** | open-metadata |
-| **Stars** | ⭐ 15502 |
+| **Stars** | ⭐ 15506 |
 | **npm Package** | `open-metadata` |
 | **Language** | TypeScript |
 | **Source** | [openmetadata](https://github.com/open-metadata/OpenMetadata) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

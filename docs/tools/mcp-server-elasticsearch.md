@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 719 |
 | **Language** | Rust |
 | **Source** | [mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch) |
-| **Scan Date** | 2026-10-17 |
+| **Scan Date** | 2026-10-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
