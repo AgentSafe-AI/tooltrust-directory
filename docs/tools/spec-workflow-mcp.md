@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |
 | **Source** | [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

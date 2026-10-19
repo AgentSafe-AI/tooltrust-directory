@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.4.0` |
 | **Vendor** | alpacahq |
-| **Stars** | ⭐ 1024 |
+| **Stars** | ⭐ 1026 |
 | **Language** | Python |
 | **Source** | [alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

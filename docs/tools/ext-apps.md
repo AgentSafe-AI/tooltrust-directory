@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0.3` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 2968 |
+| **Stars** | ⭐ 2973 |
 | **npm Package** | `@modelcontextprotocol/ext-apps` |
 | **npm Downloads (30d)** | 19.5M |
 | **Language** | TypeScript |
 | **Source** | [ext-apps](https://github.com/modelcontextprotocol/ext-apps) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.3` |
 | **Vendor** | 21st-dev |
-| **Stars** | ⭐ 5964 |
+| **Stars** | ⭐ 6104 |
 | **npm Package** | `@21st-dev/magic` |
 | **npm Downloads (30d)** | 117.5k |
 | **Language** | TypeScript |

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 93 |
 | **Language** | Rust |
 | **Source** | [wasmcp](https://github.com/wasmcp/wasmcp) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

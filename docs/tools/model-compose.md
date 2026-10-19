@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.118` |
 | **Vendor** | hanyeol |
-| **Stars** | ⭐ 119 |
+| **Stars** | ⭐ 120 |
 | **Language** | Python |
 | **Source** | [model-compose](https://github.com/hanyeol/model-compose) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

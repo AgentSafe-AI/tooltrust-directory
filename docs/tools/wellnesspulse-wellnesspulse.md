@@ -21,7 +21,7 @@ With a single integration, your copilots, agents, and dashboards gain access to 
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [wellnesspulse-wellnesspulse](https://smithery.ai/server/WellnessPulse/WellnessPulse) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

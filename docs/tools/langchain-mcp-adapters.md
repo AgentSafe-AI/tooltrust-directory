@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `langchain-mcp-adapters==0.3.2` |
 | **Vendor** | langchain-ai |
-| **Stars** | ⭐ 3655 |
+| **Stars** | ⭐ 3650 |
 | **Language** | Python |
 | **Source** | [langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) |
 | **Scan Date** | 2026-10-15 |

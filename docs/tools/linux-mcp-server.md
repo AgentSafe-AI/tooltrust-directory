@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `1.4.1` |
 | **Vendor** | rhel-lightspeed |
-| **Stars** | ⭐ 312 |
+| **Stars** | ⭐ 317 |
 | **Language** | Python |
 | **Source** | [linux-mcp-server](https://github.com/rhel-lightspeed/linux-mcp-server) |
 | **Scan Date** | 2026-10-15 |

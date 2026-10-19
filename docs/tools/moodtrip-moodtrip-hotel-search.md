@@ -15,7 +15,7 @@ Perfect for travelers who know what they want but hate the traditional search pr
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [moodtrip-moodtrip-hotel-search](https://smithery.ai/server/moodtrip/moodtrip-hotel-search) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

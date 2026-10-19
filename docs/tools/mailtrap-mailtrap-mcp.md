@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.0` |
 | **Vendor** | mailtrap |
-| **Stars** | ⭐ 65 |
+| **Stars** | ⭐ 66 |
 | **npm Package** | `mcp-mailtrap` |
 | **npm Downloads (30d)** | 2.4k |
 | **Language** | TypeScript |

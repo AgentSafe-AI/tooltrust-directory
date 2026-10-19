@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 98 |
 | **Language** | Rust |
 | **Source** | [ramparts](https://github.com/highflame-ai/ramparts) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `rea-agents-6.5.0` |
+| **Version** | `rea-agents-6.7.0` |
 | **Vendor** | morluto |
-| **Stars** | ⭐ 308476 |
+| **Stars** | ⭐ 323508 |
 | **npm Package** | `rea-agents` |
 | **npm Downloads (30d)** | 346.8k |
 | **Language** | TypeScript |
 | **Source** | [rea](https://github.com/morluto/rea) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
