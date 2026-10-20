@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [nausika-nausika](https://smithery.ai/server/nausika/nausika) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

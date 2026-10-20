@@ -10,7 +10,7 @@
 | **Vendor** | OWASP |
 | **Stars** | ⭐ 91 |
 | **Source** | [owasp-mcp-governance-and-risk-project](https://github.com/OWASP/OWASP-MCP-Governance-and-Risk-Project) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

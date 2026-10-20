@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.0` |
 | **Vendor** | adamwattis |
-| **Stars** | ⭐ 203 |
+| **Stars** | ⭐ 202 |
 | **npm Package** | `mcp-proxy-server` |
 | **npm Downloads (30d)** | 279 |
 | **Language** | TypeScript |

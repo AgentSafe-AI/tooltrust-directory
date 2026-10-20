@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.5.2` |
 | **Vendor** | 78 |
-| **Stars** | ⭐ 31366 |
+| **Stars** | ⭐ 31560 |
 | **Language** | C++ |
 | **Source** | [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

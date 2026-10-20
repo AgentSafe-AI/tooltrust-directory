@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.0` |
 | **Vendor** | pinkpixel-dev |
-| **Stars** | ⭐ 97 |
+| **Stars** | ⭐ 96 |
 | **npm Package** | `@pinkpixel/mem0-mcp` |
-| **npm Downloads (30d)** | 152 |
+| **npm Downloads (30d)** | 143 |
 | **Language** | TypeScript |
 | **Source** | [mem0-mcp](https://github.com/pinkpixel-dev/mem0-mcp) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

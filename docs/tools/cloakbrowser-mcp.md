@@ -6,14 +6,15 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `1.14.1` |
+| **Version** | `1.15.1` |
 | **Vendor** | swimmwatch |
-| **Stars** | ⭐ 165 |
+| **Stars** | ⭐ 171 |
 | **npm Package** | `cloakbrowser-mcp` |
+| **npm Downloads (30d)** | 2.7k |
 | **Language** | TypeScript |
 | **Source** | [cloakbrowser-mcp](https://github.com/swimmwatch/cloakbrowser-mcp) |
-| **Scan Date** | 2026-10-07 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-20 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
@@ -25,7 +26,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 5 |
-| Info     | 39 |
+| Info     | 40 |
 
 ## Detailed Findings
 
@@ -182,6 +183,18 @@ No metadata.dependencies or repo_url were exposed by this MCP server, and no loc
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

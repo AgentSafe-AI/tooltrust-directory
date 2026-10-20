@@ -77,7 +77,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [segellfosc-dev-ayfx-menjometre](https://smithery.ai/server/segellfosc-dev-ayfx/menjometre) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

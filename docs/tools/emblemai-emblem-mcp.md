@@ -74,7 +74,7 @@ MIT (stdio bridge + documentation). Hosted MCP is managed SaaS.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [emblemai-emblem-mcp](https://smithery.ai/server/emblemai/emblem-mcp) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

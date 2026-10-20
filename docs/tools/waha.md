@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `2026.9.2` |
 | **Vendor** | devlikeapro |
-| **Stars** | ⭐ 7628 |
+| **Stars** | ⭐ 7640 |
 | **npm Package** | `waha` |
 | **Language** | TypeScript |
 | **Source** | [waha](https://github.com/devlikeapro/waha) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

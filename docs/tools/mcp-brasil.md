@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.14.0` |
 | **Vendor** | Mcp-Brasil |
-| **Stars** | ⭐ 1802 |
+| **Stars** | ⭐ 1816 |
 | **Language** | Python |
 | **Source** | [mcp-brasil](https://github.com/Mcp-Brasil/mcp-brasil) |
 | **Scan Date** | 2026-10-15 |

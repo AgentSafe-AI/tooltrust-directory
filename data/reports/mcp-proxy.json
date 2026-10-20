@@ -1,17 +1,44 @@
 {
-  "tool_id": "mcp-proxy",
-  "version": "1.1.0",
-  "grade": "B",
-  "risk_score": 17,
-  "scan_date": "2026-10-19T02:42:25.872517589Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/tbxark/mcp-proxy",
   "category": "Developer Tools",
-  "vendor": "tbxark",
-  "stars": 738,
-  "license": "MIT",
-  "language": "Go",
+  "contributors": 12,
   "description": "An MCP proxy server that aggregates and serves multiple MCP resource servers through a single HTTP server.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 905,
+      "snippet": "server.NewMCPServer(",
+      "file": "client.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 20,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 36,
+      "snippet": "server.NewMCPServer(",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 51,
+      "snippet": "AddTool(",
+      "file": "testdata/stdio-server/main.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-014",
@@ -374,6 +401,61 @@
       "tool_name": "get_tiktok_ad_details"
     }
   ],
+  "forks": 113,
+  "grade": "B",
+  "has_embedded_mcp": true,
+  "language": "Go",
+  "last_commit_at": "2026-09-15T14:53:19Z",
+  "last_release_at": "2026-09-15T14:55:00Z",
+  "latest_release_name": "v1.1.0",
+  "latest_release_tag": "v1.1.0",
+  "latest_release_url": "https://github.com/tbxark/mcp-proxy/releases/tag/v1.1.0",
+  "latest_release_version": "v1.1.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 17,
+  "scan_date": "2026-10-20T02:54:01.029241255Z",
+  "scan_history": [
+    {
+      "scan_date": "2026-10-14T03:01:30Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-15T02:42:20Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-16T02:34:16Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-17T02:27:04Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-18T02:26:27Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.1.0"
+    },
+    {
+      "scan_date": "2026-10-19T02:42:25Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "1.1.0"
+    }
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/tbxark/mcp-proxy",
+  "stars": 739,
   "summary": {
     "critical": 0,
     "high": 1,
@@ -381,64 +463,6 @@
     "low": 14,
     "info": 30
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 20,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "client.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 905,
-      "snippet": "server.NewMCPServer(",
-      "file": "client.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 20,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "testdata/stdio-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 36,
-      "snippet": "server.NewMCPServer(",
-      "file": "testdata/stdio-server/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 51,
-      "snippet": "AddTool(",
-      "file": "testdata/stdio-server/main.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "analyze_ad_image",
-    "analyze_ad_video",
-    "get_competitive_brief",
-    "get_credit_balance",
-    "get_google_ad_details",
-    "get_google_ads",
-    "get_google_platform_id",
-    "get_linkedin_ad_details",
-    "get_meta_ads",
-    "get_meta_platform_id",
-    "get_tiktok_ad_details",
-    "search_competitors",
-    "search_linkedin_ads",
-    "search_meta_ads_by_keyword",
-    "search_tiktok_ads",
-    "show_ad_carousel",
-    "submit_feedback"
-  ],
   "tool_contexts": [
     {
       "tool_name": "submit_feedback",
@@ -634,36 +658,26 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-10-14T03:01:30Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-10-15T02:42:20Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-10-16T02:34:16Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-10-17T02:27:04Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.1.0"
-    },
-    {
-      "scan_date": "2026-10-18T02:26:27Z",
-      "grade": "B",
-      "risk_score": 17,
-      "version": "1.1.0"
-    }
-  ]
+  "tool_id": "mcp-proxy",
+  "tool_names": [
+    "analyze_ad_image",
+    "analyze_ad_video",
+    "get_competitive_brief",
+    "get_credit_balance",
+    "get_google_ad_details",
+    "get_google_ads",
+    "get_google_platform_id",
+    "get_linkedin_ad_details",
+    "get_meta_ads",
+    "get_meta_platform_id",
+    "get_tiktok_ad_details",
+    "search_competitors",
+    "search_linkedin_ads",
+    "search_meta_ads_by_keyword",
+    "search_tiktok_ads",
+    "show_ad_carousel",
+    "submit_feedback"
+  ],
+  "vendor": "tbxark",
+  "version": "1.1.0"
 }

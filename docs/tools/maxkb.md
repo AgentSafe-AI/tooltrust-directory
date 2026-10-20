@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.6.1` |
 | **Vendor** | 1Panel-dev |
-| **Stars** | ⭐ 22900 |
+| **Stars** | ⭐ 22999 |
 | **Language** | Python |
 | **Source** | [maxkb](https://github.com/1Panel-dev/MaxKB) |
 | **Scan Date** | 2026-03-18 |

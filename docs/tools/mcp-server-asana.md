@@ -6,7 +6,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.6.0` |
 | **Vendor** | roychri |
-| **Stars** | ⭐ 148 |
+| **Stars** | ⭐ 149 |
 | **npm Package** | `@roychri/mcp-server-asana` |
 | **npm Downloads (30d)** | 14.4k |
 | **Language** | TypeScript |

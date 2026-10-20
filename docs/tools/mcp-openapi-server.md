@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.14.0` |
 | **Vendor** | ivo-toby |
-| **Stars** | ⭐ 297 |
+| **Stars** | ⭐ 301 |
 | **npm Package** | `@ivotoby/openapi-mcp-server` |
 | **npm Downloads (30d)** | 31.8k |
 | **Language** | TypeScript |

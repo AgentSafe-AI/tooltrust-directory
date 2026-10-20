@@ -1,6 +1,18 @@
 {
+  "tool_id": "cloakbrowser-mcp",
+  "version": "1.15.1",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-10-20T02:55:31.814276279Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/swimmwatch/cloakbrowser-mcp",
   "category": "Developer Tools",
-  "contributors": 4,
+  "vendor": "swimmwatch",
+  "stars": 171,
+  "npm_package": "cloakbrowser-mcp",
+  "npm_downloads_monthly": 2689,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "⚡ CloakBrowser MCP server for AI agents: Playwright-powered browsing, clean tool forwarding, Docker support, and multi-session HTTP transport.",
   "findings": [
     {
@@ -106,6 +118,14 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "browser_drop"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "browser_find"
     },
     {
       "id": "AS-014",
@@ -364,38 +384,43 @@
       "tool_name": "cloakbrowser_bridge_info"
     }
   ],
-  "forks": 19,
-  "grade": "C",
-  "language": "TypeScript",
-  "last_commit_at": "2026-09-29T12:53:05Z",
-  "last_release_at": "2026-09-27T16:34:14Z",
-  "latest_release_name": "v1.14.1",
-  "latest_release_tag": "v1.14.1",
-  "latest_release_url": "https://github.com/swimmwatch/cloakbrowser-mcp/releases/tag/v1.14.1",
-  "latest_release_version": "v1.14.1",
-  "license": "MIT",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_package": "cloakbrowser-mcp",
-  "risk_score": 27,
-  "scan_date": "2026-10-07T03:20:22.52333264Z",
-  "scan_history": [
-    {
-      "scan_date": "2026-10-06T04:10:45Z",
-      "grade": "C",
-      "risk_score": 27,
-      "version": "1.14.1"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.19",
-  "source_url": "https://github.com/swimmwatch/cloakbrowser-mcp",
-  "stars": 165,
   "summary": {
     "critical": 1,
     "high": 0,
     "medium": 0,
     "low": 5,
-    "info": 39
+    "info": 40
   },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "tool_names": [
+    "browser_click",
+    "browser_close",
+    "browser_console_messages",
+    "browser_drag",
+    "browser_drop",
+    "browser_emulate_media",
+    "browser_evaluate",
+    "browser_file_upload",
+    "browser_fill_form",
+    "browser_find",
+    "browser_handle_dialog",
+    "browser_hover",
+    "browser_navigate",
+    "browser_navigate_back",
+    "browser_network_request",
+    "browser_network_requests",
+    "browser_press_key",
+    "browser_resize",
+    "browser_run_code_unsafe",
+    "browser_select_option",
+    "browser_snapshot",
+    "browser_tabs",
+    "browser_take_screenshot",
+    "browser_type",
+    "browser_wait_for",
+    "cloakbrowser_binary_info",
+    "cloakbrowser_bridge_info"
+  ],
   "tool_contexts": [
     {
       "tool_name": "browser_close",
@@ -470,6 +495,9 @@
       "tool_name": "browser_find",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -632,36 +660,18 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
-  "tool_id": "cloakbrowser-mcp",
-  "tool_names": [
-    "browser_click",
-    "browser_close",
-    "browser_console_messages",
-    "browser_drag",
-    "browser_drop",
-    "browser_emulate_media",
-    "browser_evaluate",
-    "browser_file_upload",
-    "browser_fill_form",
-    "browser_find",
-    "browser_handle_dialog",
-    "browser_hover",
-    "browser_navigate",
-    "browser_navigate_back",
-    "browser_network_request",
-    "browser_network_requests",
-    "browser_press_key",
-    "browser_resize",
-    "browser_run_code_unsafe",
-    "browser_select_option",
-    "browser_snapshot",
-    "browser_tabs",
-    "browser_take_screenshot",
-    "browser_type",
-    "browser_wait_for",
-    "cloakbrowser_binary_info",
-    "cloakbrowser_bridge_info"
-  ],
-  "vendor": "swimmwatch",
-  "version": "1.14.1"
+  "scan_history": [
+    {
+      "scan_date": "2026-10-06T04:10:45Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.14.1"
+    },
+    {
+      "scan_date": "2026-10-07T03:20:22Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.14.1"
+    }
+  ]
 }

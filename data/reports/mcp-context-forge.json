@@ -1,61 +1,7 @@
 {
-  "tool_id": "mcp-context-forge",
-  "version": "1.0.11",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-10-19T02:38:56Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/IBM/mcp-context-forge",
   "category": "Developer Tools",
-  "vendor": "IBM",
-  "stars": 4649,
-  "license": "Apache-2.0",
-  "language": "Python",
+  "contributors": 170,
   "description": "An AI Gateway, registry, and proxy that sits in front of any MCP, A2A, or REST/gRPC APIs, exposing a unified endpoint with centralized discovery, guardrails and management. Optimizes Agent \u0026 Tool calling, and supports plugins.",
-  "findings": [
-    {
-      "id": "AS-018",
-      "severity": "Info",
-      "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
-      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
-      "metadata": {
-        "evidence": [
-          {
-            "kind": "import",
-            "line": 12,
-            "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-            "file": "mcp-servers/templates/go/{{cookiecutter.project_slug}}/main.go",
-            "language": "go"
-          },
-          {
-            "kind": "init",
-            "line": 34,
-            "snippet": "server.NewMCPServer(",
-            "file": "mcp-servers/templates/go/{{cookiecutter.project_slug}}/main.go",
-            "language": "go"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 48,
-            "snippet": "AddTool(",
-            "file": "mcp-servers/templates/go/{{cookiecutter.project_slug}}/main.go",
-            "language": "go"
-          }
-        ]
-      }
-    }
-  ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 1
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
-  "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
       "kind": "import",
@@ -79,84 +25,229 @@
       "language": "go"
     }
   ],
-  "scan_history": [
+  "findings": [
     {
-      "scan_date": "2026-10-06T04:06:20Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search_resources"
     },
     {
-      "scan_date": "2026-10-07T03:16:23Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search_resources"
     },
     {
-      "scan_date": "2026-10-08T03:49:54Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search_resources"
     },
     {
-      "scan_date": "2026-10-09T03:54:40Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "load_resource"
     },
     {
-      "scan_date": "2026-10-10T03:38:24Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fill_prompt"
     },
     {
-      "scan_date": "2026-10-11T03:11:36Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_download_link"
     },
     {
-      "scan_date": "2026-10-12T03:34:17Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "get_download_link"
     },
     {
-      "scan_date": "2026-10-13T04:49:39Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_download_link"
     },
     {
-      "scan_date": "2026-10-14T02:58:27Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "estimate_cost"
     },
     {
-      "scan_date": "2026-10-15T02:37:47Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.11"
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "search"
     },
     {
-      "scan_date": "2026-10-16T02:30:56Z",
-      "grade": "B",
-      "risk_score": 15,
-      "version": "1.0.11"
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "search"
     },
     {
-      "scan_date": "2026-10-17T02:23:35Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "search"
     },
     {
-      "scan_date": "2026-10-18T02:23:02Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "1.0.11"
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "fetch"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "fetch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "fetch"
     }
-  ]
+  ],
+  "forks": 928,
+  "grade": "A",
+  "has_embedded_mcp": true,
+  "language": "Python",
+  "last_commit_at": "2026-10-19T12:48:01Z",
+  "last_release_at": "2026-09-28T15:49:34Z",
+  "latest_release_name": "v1.0.11 - Release 2026-09-28 - MCP Python SDK 2.x, Tool Preview, SSO Controls, and Live E2E Coverage",
+  "latest_release_tag": "v1.0.11",
+  "latest_release_url": "https://github.com/IBM/mcp-context-forge/releases/tag/v1.0.11",
+  "latest_release_version": "v1.0.11",
+  "license": "Apache-2.0",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 2,
+  "scan_date": "2026-10-20T02:51:25.768278113Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/IBM/mcp-context-forge",
+  "stars": 4658,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 11
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "search_resources",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "load_resource",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fill_prompt",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_download_link",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "estimate_cost",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "fetch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "mcp-context-forge",
+  "tool_names": [
+    "estimate_cost",
+    "fetch",
+    "fill_prompt",
+    "get_download_link",
+    "load_resource",
+    "search",
+    "search_resources"
+  ],
+  "vendor": "IBM",
+  "version": "1.0.11"
 }

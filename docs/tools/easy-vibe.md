@@ -1,6 +1,6 @@
 # 🟢 easy-vibe
 
-> 💻  vibe coding 101｜The first course for AI-native product builders.
+> 💻  Vibe Coding 101｜Your First Course For AI Product Builders.
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.0` |
 | **Vendor** | datawhalechina |
-| **Stars** | ⭐ 19767 |
+| **Stars** | ⭐ 20032 |
 | **npm Package** | `easy-vibe` |
 | **Language** | JavaScript |
 | **Source** | [easy-vibe](https://github.com/datawhalechina/easy-vibe) |
-| **Scan Date** | 2026-10-18 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

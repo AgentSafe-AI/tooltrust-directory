@@ -1,19 +1,19 @@
-# 🟡 vestige
+# 🟢 vestige
 
 > Think before doing, prove before saving.  Vestige is a local, deterministic safety kernel for AI agents. Every memory write and agent action is recorded in Strata, an append-only log, so you can see exactly what your agent did and why.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 4 |
 | **Version** | `whitepaper-tr-2026-01` |
 | **Vendor** | samvallad33 |
 | **Stars** | ⭐ 652 |
 | **npm Package** | `vestige` |
-| **npm Downloads (30d)** | 14 |
+| **npm Downloads (30d)** | 11 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-10-19 |
+| **Scan Date** | 2026-10-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -23,24 +23,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 12 |
 | Info     | 26 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vwhitepaper-tr-2026-01: 2 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 

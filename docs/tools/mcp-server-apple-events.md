@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.4.0` |
 | **Vendor** | FradSer |
-| **Stars** | ⭐ 214 |
+| **Stars** | ⭐ 224 |
 | **npm Package** | `mcp-server-apple-events` |
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | TypeScript |

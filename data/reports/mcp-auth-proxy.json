@@ -1,17 +1,44 @@
 {
-  "tool_id": "mcp-auth-proxy",
-  "version": "2.10.2",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-19T02:44:05.753189892Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/sigbit/mcp-auth-proxy",
   "category": "Developer Tools",
-  "vendor": "sigbit",
-  "stars": 182,
-  "license": "MIT",
-  "language": "Go",
+  "contributors": 13,
   "description": "MCP Auth Proxy is a secure OAuth 2.1 authentication proxy for Model Context Protocol (MCP) servers",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 14,
+      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
+      "file": "pkg/backend/proxy.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 117,
+      "snippet": "server.NewMCPServer(",
+      "file": "pkg/backend/proxy.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 125,
+      "snippet": "AddTool(",
+      "file": "pkg/backend/proxy.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 6,
+      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
+      "file": "pkg/backend/testserver/main.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 10,
+      "snippet": "server.NewMCPServer(",
+      "file": "pkg/backend/testserver/main.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -70,6 +97,61 @@
       "tool_name": "ip_lookup"
     }
   ],
+  "forks": 46,
+  "grade": "A",
+  "has_embedded_mcp": true,
+  "language": "Go",
+  "last_commit_at": "2026-05-27T13:05:44Z",
+  "last_release_at": "2026-05-08T14:52:47Z",
+  "latest_release_name": "v2.10.2",
+  "latest_release_tag": "v2.10.2",
+  "latest_release_url": "https://github.com/sigbit/mcp-auth-proxy/releases/tag/v2.10.2",
+  "latest_release_version": "v2.10.2",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 2,
+  "scan_date": "2026-10-20T02:55:10.745565706Z",
+  "scan_history": [
+    {
+      "scan_date": "2026-10-14T03:02:46Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.2"
+    },
+    {
+      "scan_date": "2026-10-15T02:46:18Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.2"
+    },
+    {
+      "scan_date": "2026-10-16T02:35:47Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.2"
+    },
+    {
+      "scan_date": "2026-10-17T02:28:40Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.2"
+    },
+    {
+      "scan_date": "2026-10-18T02:28:00Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.2"
+    },
+    {
+      "scan_date": "2026-10-19T02:44:05Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.10.2"
+    }
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/sigbit/mcp-auth-proxy",
+  "stars": 182,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -77,50 +159,6 @@
     "low": 2,
     "info": 5
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 14,
-      "snippet": "\"github.com/mark3labs/mcp-go/mcp\"",
-      "file": "pkg/backend/proxy.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 117,
-      "snippet": "server.NewMCPServer(",
-      "file": "pkg/backend/proxy.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 125,
-      "snippet": "AddTool(",
-      "file": "pkg/backend/proxy.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 6,
-      "snippet": "\"github.com/mark3labs/mcp-go/server\"",
-      "file": "pkg/backend/testserver/main.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 10,
-      "snippet": "server.NewMCPServer(",
-      "file": "pkg/backend/testserver/main.go",
-      "language": "go"
-    }
-  ],
-  "tool_names": [
-    "ip_lookup",
-    "proxy_check",
-    "proxy_list"
-  ],
   "tool_contexts": [
     {
       "tool_name": "proxy_list",
@@ -154,36 +192,12 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "scan_history": [
-    {
-      "scan_date": "2026-10-14T03:02:46Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "2.10.2"
-    },
-    {
-      "scan_date": "2026-10-15T02:46:18Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "2.10.2"
-    },
-    {
-      "scan_date": "2026-10-16T02:35:47Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "2.10.2"
-    },
-    {
-      "scan_date": "2026-10-17T02:28:40Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "2.10.2"
-    },
-    {
-      "scan_date": "2026-10-18T02:28:00Z",
-      "grade": "A",
-      "risk_score": 2,
-      "version": "2.10.2"
-    }
-  ]
+  "tool_id": "mcp-auth-proxy",
+  "tool_names": [
+    "ip_lookup",
+    "proxy_check",
+    "proxy_list"
+  ],
+  "vendor": "sigbit",
+  "version": "2.10.2"
 }

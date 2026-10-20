@@ -6,7 +6,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.2` |
 | **Vendor** | MCP-Manager |
-| **Stars** | ⭐ 197 |
+| **Stars** | ⭐ 199 |
 | **npm Package** | `mcp-checklists` |
 | **Language** | JavaScript |
 | **Source** | [mcp-checklists](https://github.com/MCP-Manager/MCP-Checklists) |
