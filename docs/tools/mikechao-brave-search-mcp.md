@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | mikechao |
-| **Stars** | ⭐ 127 |
+| **Stars** | ⭐ 130 |
 | **npm Package** | `brave-search-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mikechao-brave-search-mcp](https://github.com/mikechao/brave-search-mcp) |

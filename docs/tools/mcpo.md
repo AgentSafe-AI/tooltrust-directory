@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.20` |
 | **Vendor** | open-webui |
-| **Stars** | ⭐ 4390 |
+| **Stars** | ⭐ 4404 |
 | **Language** | Python |
 | **Source** | [mcpo](https://github.com/open-webui/mcpo) |
 | **Scan Date** | 2026-03-18 |

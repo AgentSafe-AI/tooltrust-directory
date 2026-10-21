@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.2-rc.0` |
 | **Vendor** | langfuse |
-| **Stars** | ⭐ 173 |
+| **Stars** | ⭐ 176 |
 | **npm Package** | `mcp-server-langfuse` |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-langfuse](https://github.com/langfuse/mcp-server-langfuse) |

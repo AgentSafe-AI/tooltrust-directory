@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.0` |
 | **Vendor** | apify |
-| **Stars** | ⭐ 975 |
+| **Stars** | ⭐ 1063 |
 | **npm Package** | `@apify/mcpc` |
 | **npm Downloads (30d)** | 15.3k |
 | **Language** | TypeScript |

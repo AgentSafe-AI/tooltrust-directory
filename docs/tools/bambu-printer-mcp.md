@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 25 |
-| **Version** | `1.1.31` |
+| **Version** | `1.1.32` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 212 |
+| **Stars** | ⭐ 217 |
 | **npm Package** | `bambu-printer-mcp` |
 | **npm Downloads (30d)** | 7.0k |
 | **Language** | JavaScript |
 | **Source** | [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) |
-| **Scan Date** | 2026-10-20 |
+| **Scan Date** | 2026-10-21 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -1679,7 +1679,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 34 properties (threshold: 10)
+input schema exposes 35 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
