@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 922.7k |
 | **Language** | JavaScript |
 | **Source** | [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

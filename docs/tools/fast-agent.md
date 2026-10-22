@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.10.46` |
+| **Version** | `0.10.47` |
 | **Vendor** | evalstate |
-| **Stars** | ⭐ 3943 |
+| **Stars** | ⭐ 3944 |
 | **Language** | Python |
 | **Source** | [fast-agent](https://github.com/evalstate/fast-agent) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

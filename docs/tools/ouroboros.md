@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.59.3` |
+| **Version** | `0.59.4` |
 | **Vendor** | Q00 |
 | **Stars** | ⭐ 6255 |
 | **Language** | Python |
 | **Source** | [ouroboros](https://github.com/Q00/ouroboros) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

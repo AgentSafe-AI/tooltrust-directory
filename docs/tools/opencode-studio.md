@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `2.4.5` |
 | **Vendor** | Microck |
-| **Stars** | ⭐ 791 |
+| **Stars** | ⭐ 792 |
 | **npm Package** | `opencode-studio-server` |
 | **npm Downloads (30d)** | 685 |
 | **Language** | TypeScript |

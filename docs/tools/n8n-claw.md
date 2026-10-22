@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 560 |
 | **Language** | Shell |
 | **Source** | [n8n-claw](https://github.com/freddy-schuetz/n8n-claw) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

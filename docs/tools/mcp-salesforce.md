@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `0.1.18` |
 | **Vendor** | smn2gnt |
-| **Stars** | ⭐ 179 |
+| **Stars** | ⭐ 180 |
 | **Language** | Python |
 | **Source** | [mcp-salesforce](https://github.com/smn2gnt/MCP-Salesforce) |
-| **Scan Date** | 2026-10-20 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

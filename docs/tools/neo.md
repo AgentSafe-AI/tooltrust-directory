@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `11.19.1` |
 | **Vendor** | neomjs |
-| **Stars** | ⭐ 3292 |
+| **Stars** | ⭐ 3294 |
 | **npm Package** | `neo.mjs` |
 | **npm Downloads (30d)** | 32.2k |
 | **Language** | JavaScript |

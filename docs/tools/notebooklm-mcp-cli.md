@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.9.2` |
 | **Vendor** | jacob-bd |
-| **Stars** | ⭐ 6243 |
+| **Stars** | ⭐ 6374 |
 | **Language** | Python |
 | **Source** | [notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) |
 | **Scan Date** | 2026-10-15 |

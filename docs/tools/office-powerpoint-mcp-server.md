@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.7` |
 | **Vendor** | GongRzhe |
-| **Stars** | ⭐ 1854 |
+| **Stars** | ⭐ 1858 |
 | **Language** | Python |
 | **Source** | [office-powerpoint-mcp-server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server) |
 | **Scan Date** | 2026-10-15 |

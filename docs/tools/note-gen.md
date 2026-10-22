@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `note-gen-v0.34.1` |
 | **Vendor** | codexu |
-| **Stars** | ⭐ 12872 |
+| **Stars** | ⭐ 12906 |
 | **npm Package** | `note-gen` |
 | **Language** | TypeScript |
 | **Source** | [note-gen](https://github.com/codexu/note-gen) |

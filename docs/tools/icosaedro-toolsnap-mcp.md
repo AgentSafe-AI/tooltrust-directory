@@ -1,14 +1,12 @@
 # 🟢 icosaedro-toolsnap-mcp
 
-> Context-efficient microtools for AI agents. 33 tools total. Flagship fetch_extract: 98.1% median token reduction (53,820 → 2,001 tokens) — saves ~$0.156/call at Sonnet pricing vs loading raw HTML.
+> Deterministic, context-efficient microtools for AI agents. 47 tools total, 36 free. tools/list shows a curated core of 17; the rest is one free tool_catalog call away and runs via use_tool.
 
-Paid tools: web extraction, full-page screenshots, background removal (fal.ai rembg), keyword research (DataForSEO), PDF text extract, HTML-to-Markdown, page asset/link inventory, temporary file upload.
+Free flagships: fetch_extract (median 98.1% token reduction vs raw HTML, 53,820 → 2,001 tokens on 11 real pages) and fetch_html, plus html_to_markdown, fetch_metadata, PDF text, CSV/JSON queries, sitemaps, RSS/Atom feeds, link checking and utilities (UUID, hash, Base64, regex, diff, token count...). Extraction is pure parsing: no LLM in the loop, stable output.
 
-20 always-free utility tools: UUID, hash, Base64, URL encode/decode, JSON format/query, timestamps, text stats, regex extract, CSV/JSON query, RSS/sitemap parse, and more.
+11 paid tools with real per-call cost (no first-call-free): screenshot_url, fetch_rendered (JS pages) and keyword_research ($0.04), remove_background ($0.03), fal.ai media tools image_generate, image_upscale, audio_transcribe, text_to_speech (from $0.02) and video_generate (from $0.08), and csv_query_xl / json_query_xl for large files ($0.02).
 
-Pricing: $0.02 USDC on Base via x402 (EIP-3009), or $0.01 prepaid (deposit ≥$0.50 USDC, off-chain debit, no per-call gas). First call free per wallet on most tools.
-
-Includes pay-proxy: local stdio bridge that auto-signs x402 challenges — any MCP client gains payment capability without code changes or API keys.
+Pay per call with USDC on Base via x402 (no account), prepay a balance (min $0.50, ~33-38% cheaper, off-chain debit, no per-call gas), or buy card credits at https://mcp.toolsnap.app/checkout. Calling a paid tool without payment returns a structured 402 with payment options: expected behaviour, not a broken tool.
 
 | Field | Value |
 |-------|-------|
@@ -17,7 +15,7 @@ Includes pay-proxy: local stdio bridge that auto-signs x402 challenges — any M
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [icosaedro-toolsnap-mcp](https://smithery.ai/server/icosaedro/toolsnap-mcp) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

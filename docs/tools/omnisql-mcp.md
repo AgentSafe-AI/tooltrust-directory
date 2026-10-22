@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.2.0` |
 | **Vendor** | srthkdev |
-| **Stars** | ⭐ 86 |
+| **Stars** | ⭐ 88 |
 | **npm Package** | `omnisql-mcp` |
 | **npm Downloads (30d)** | 2.8k |
 | **Language** | TypeScript |

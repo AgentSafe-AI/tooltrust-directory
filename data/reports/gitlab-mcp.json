@@ -1,14 +1,14 @@
 {
   "tool_id": "gitlab-mcp",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-10-21T02:48:05.834154349Z",
+  "scan_date": "2026-10-22T02:45:22.616579209Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/zereight/gitlab-mcp",
   "category": "Developer Tools",
   "vendor": "zereight",
-  "stars": 2055,
+  "stars": 2060,
   "npm_package": "@zereight/mcp-gitlab",
   "npm_downloads_monthly": 526272,
   "license": "MIT",
@@ -5491,7 +5491,15 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"resource_access_token_events\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"resource_deploy_token_events\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "create_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"signing_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_webhook"
     },
@@ -5507,15 +5515,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"resource_deploy_token_events\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "create_webhook"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"signing_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"resource_access_token_events\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_webhook"
     },
@@ -5555,14 +5555,6 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "update_webhook"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"resource_access_token_events\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "update_webhook"
@@ -5571,7 +5563,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"resource_deploy_token_events\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "update_webhook"
     },
@@ -5580,6 +5572,14 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"signing_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "update_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"resource_deploy_token_events\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "update_webhook"
     },
@@ -9611,6 +9611,12 @@
       "grade": "B",
       "risk_score": 17,
       "version": "2.3.4"
+    },
+    {
+      "scan_date": "2026-10-21T02:48:05Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.3.5"
     }
   ]
 }

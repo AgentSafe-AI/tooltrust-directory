@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.1` |
 | **Vendor** | iFurySt |
-| **Stars** | ⭐ 2458 |
+| **Stars** | ⭐ 2613 |
 | **npm Package** | `open-computer-use-repo-tools` |
 | **Language** | Swift |
 | **Source** | [open-codex-computer-use](https://github.com/iFurySt/open-codex-computer-use) |

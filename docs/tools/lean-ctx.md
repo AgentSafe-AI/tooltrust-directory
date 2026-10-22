@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `scode-v0.2.0` |
 | **Vendor** | yvgude |
-| **Stars** | ⭐ 3894 |
+| **Stars** | ⭐ 3898 |
 | **Language** | Rust |
 | **Source** | [lean-ctx](https://github.com/yvgude/lean-ctx) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

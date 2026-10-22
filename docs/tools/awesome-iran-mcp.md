@@ -1,17 +1,17 @@
 # 🟢 awesome-iran-mcp
 
-> 24 MCP servers (385 tools) that give AI agents the Iranian web: Digikala, Torob, Divar, Snappfood, Jabama, MrBilit, Paziresh24, Taaghche and more. Prices in Toman.
+> 36 MCP servers (469 tools) that give AI agents the Iranian web: Digikala, Torob, Divar, Snappfood, Jabama, MrBilit, Paziresh24, Taaghche, qavanin.ir laws, tax, news and more. Prices in Toman.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `1.7` |
+| **Version** | `2.0` |
 | **Vendor** | sepehr071 |
-| **Stars** | ⭐ 133 |
+| **Stars** | ⭐ 144 |
 | **Language** | Python |
 | **Source** | [awesome-iran-mcp](https://github.com/sepehr071/awesome-iran-mcp) |
-| **Scan Date** | 2026-10-20 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

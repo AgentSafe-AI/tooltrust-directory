@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 320 |
 | **Language** | Go |
 | **Source** | [standards-sdk-go](https://github.com/hashgraph-online/standards-sdk-go) |
-| **Scan Date** | 2026-10-20 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `10.4.64` |
+| **Version** | `10.4.66` |
 | **Vendor** | BinarCode |
 | **Stars** | ⭐ 683 |
 | **Language** | PHP |
 | **Source** | [laravel-restify](https://github.com/BinarCode/laravel-restify) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

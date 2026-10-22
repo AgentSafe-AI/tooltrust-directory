@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.1` |
 | **Vendor** | comet-ml |
-| **Stars** | ⭐ 219 |
+| **Stars** | ⭐ 223 |
 | **npm Package** | `opik-mcp` |
 | **npm Downloads (30d)** | 485 |
 | **Language** | Python |

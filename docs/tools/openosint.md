@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.32.0` |
 | **Vendor** | OpenOSINT |
-| **Stars** | ⭐ 1731 |
+| **Stars** | ⭐ 1792 |
 | **Language** | Python |
 | **Source** | [openosint](https://github.com/OpenOSINT/OpenOSINT) |
 | **Scan Date** | 2026-10-10 |

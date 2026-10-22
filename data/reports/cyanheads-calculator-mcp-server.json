@@ -3,7 +3,7 @@
   "version": "0.5.1",
   "grade": "A",
   "risk_score": 0,
-  "scan_date": "2026-10-21T02:53:44.483333861Z",
+  "scan_date": "2026-10-22T02:51:29.956929549Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/calculator-mcp-server",
   "category": "Developer Tools",
@@ -27,7 +27,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "calculate"
     }
@@ -48,8 +48,11 @@
       "tool_name": "calculate",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: math.js"
+      ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -853,6 +856,12 @@
     },
     {
       "scan_date": "2026-10-20T02:56:55Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.5.1"
+    },
+    {
+      "scan_date": "2026-10-21T02:53:44Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.5.1"

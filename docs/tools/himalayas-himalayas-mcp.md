@@ -1,6 +1,6 @@
 # 🟢 himalayas-himalayas-mcp
 
-> Search remote jobs, post job listings, find remote candidates, check salary benchmarks, and manage your career, all through AI conversation. The Himalayas Remote Jobs MCP server connects your AI assistant to the Himalayas remote jobs marketplace in real time. 
+> Himalayas is a remote jobs marketplace. Job seekers search remote jobs by role, country, seniority and salary, save them to an application tracker, tailor a resume and cover letter, get the employer's apply link, track each application to hired and reply to recruiters. Employers post remote jobs for free, search candidates by skill and country and message them. Job search, salary data and company profiles need no account; everything else uses a Himalayas sign-in (OAuth). Connect directly at https://mcp.himalayas.app/mcp (Streamable HTTP, 79 tools). Setup for every client: https://himalayas.app/docs/remote-jobs-mcp
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [himalayas-himalayas-mcp](https://smithery.ai/server/Himalayas/himalayas-mcp) |
-| **Scan Date** | 2026-10-20 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

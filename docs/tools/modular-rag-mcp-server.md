@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1184 |
 | **Language** | Python |
 | **Source** | [modular-rag-mcp-server](https://github.com/jerry-ai-dev/MODULAR-RAG-MCP-SERVER) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

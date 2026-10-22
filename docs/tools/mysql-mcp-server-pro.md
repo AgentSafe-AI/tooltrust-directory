@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.7.0` |
 | **Vendor** | wenb1n-dev |
-| **Stars** | ⭐ 248 |
+| **Stars** | ⭐ 250 |
 | **Language** | Python |
 | **Source** | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) |
 | **Scan Date** | 2026-10-15 |

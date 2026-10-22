@@ -8,10 +8,10 @@
 | **Risk Score** | 17 |
 | **Version** | `2.8.0` |
 | **Vendor** | dbt-labs |
-| **Stars** | ⭐ 610 |
+| **Stars** | ⭐ 612 |
 | **Language** | Python |
 | **Source** | [dbt-mcp](https://github.com/dbt-labs/dbt-mcp) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

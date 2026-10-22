@@ -7,13 +7,13 @@
 | **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `3.8.52` |
-| **Vendor** | diegosouzapw |
-| **Stars** | ⭐ 79007 |
+| **Vendor** | cheaper-inference |
+| **Stars** | ⭐ 79475 |
 | **npm Package** | `omniroute` |
 | **npm Downloads (30d)** | 233.9k |
 | **Language** | TypeScript |
-| **Source** | [omniroute](https://github.com/diegosouzapw/OmniRoute) |
-| **Scan Date** | 2026-10-21 |
+| **Source** | [omniroute](https://github.com/cheaper-inference/OmniRoute) |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

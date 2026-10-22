@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `6.14.1` |
 | **Vendor** | samugit83 |
-| **Stars** | ⭐ 3170 |
+| **Stars** | ⭐ 3182 |
 | **Language** | Python |
 | **Source** | [redamon](https://github.com/samugit83/redamon) |
-| **Scan Date** | 2026-10-21 |
+| **Scan Date** | 2026-10-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0` |
 | **Vendor** | PleasePrompto |
-| **Stars** | ⭐ 3432 |
+| **Stars** | ⭐ 3438 |
 | **npm Package** | `notebooklm-mcp` |
 | **npm Downloads (30d)** | 9.6k |
 | **Language** | TypeScript |
