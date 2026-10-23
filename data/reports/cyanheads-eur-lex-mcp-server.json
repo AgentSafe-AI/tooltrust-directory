@@ -3,12 +3,12 @@
   "version": "0.19.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-22T02:50:38.651665298Z",
+  "scan_date": "2026-10-23T02:55:38.395599182Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/eur-lex-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
-  "stars": 9,
+  "stars": 10,
   "npm_package": "@cyanheads/eur-lex-mcp-server",
   "npm_downloads_monthly": 3568,
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_lookup_celex"
     },
@@ -59,7 +59,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_browse_subjects"
     },
@@ -68,6 +68,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "eurlex_search_documents"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "eurlex_search_documents"
     },
@@ -83,15 +91,23 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_search_documents"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "eurlex_get_cases"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_get_cases"
     },
@@ -107,7 +123,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "eurlex_get_document"
     },
@@ -123,7 +139,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_get_document"
     },
@@ -147,7 +163,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_get_relations"
     },
@@ -163,7 +179,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "eurlex_query_sparql"
     }
@@ -172,8 +188,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 6,
-    "info": 13
+    "low": 7,
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -194,10 +210,12 @@
         "uses_network"
       ],
       "destinations": [
-        "hardcoded domain: data.europa.eu"
+        "hardcoded domain: data.europa.eu",
+        "hardcoded domain: eur-lex.europa.eu",
+        "hardcoded domain: publications.europa.eu"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "eurlex_browse_subjects",
@@ -207,7 +225,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "eurlex_search_documents",
@@ -221,17 +239,20 @@
         "hardcoded domain: eurovoc.europa.eu"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "eurlex_get_cases",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "destinations": [
         "dynamic email recipient (date_to)"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "eurlex_get_document",
@@ -248,7 +269,7 @@
         "hardcoded domain: selection.missed"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "eurlex_get_relations",
@@ -262,7 +283,7 @@
         "hardcoded domain: publications.europa.eu"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "eurlex_query_sparql",
@@ -273,7 +294,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -741,6 +762,12 @@
     },
     {
       "scan_date": "2026-10-21T02:52:56Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.19.0"
+    },
+    {
+      "scan_date": "2026-10-22T02:50:38Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.19.0"

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 9.4k |
 | **Language** | TypeScript |
 | **Source** | [node9-proxy](https://github.com/node9-ai/node9-proxy) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

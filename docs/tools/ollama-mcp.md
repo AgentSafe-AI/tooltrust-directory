@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 3.9k |
 | **Language** | TypeScript |
 | **Source** | [ollama-mcp](https://github.com/rawveg/ollama-mcp) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

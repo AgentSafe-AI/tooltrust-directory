@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `sensor-v1.0.0` |
 | **Vendor** | uber |
-| **Stars** | ⭐ 2072 |
+| **Stars** | ⭐ 2074 |
 | **Language** | Python |
 | **Source** | [adr](https://github.com/uber/ADR) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

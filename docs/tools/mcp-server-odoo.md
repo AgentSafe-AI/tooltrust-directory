@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 405 |
 | **Language** | Python |
 | **Source** | [mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

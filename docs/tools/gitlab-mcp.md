@@ -1,19 +1,19 @@
 # 🟡 gitlab-mcp
 
-> MCP server for GitLab: 100+ tools for projects, MRs, issues, pipelines, wikis and more via the GitLab REST/GraphQL API
+> MCP server for GitLab: 277 tools for projects, MRs, issues, pipelines, wikis and more via the GitLab REST/GraphQL API
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `2.3.6` |
+| **Version** | `2.3.7` |
 | **Vendor** | zereight |
-| **Stars** | ⭐ 2060 |
+| **Stars** | ⭐ 2061 |
 | **npm Package** | `@zereight/mcp-gitlab` |
 | **npm Downloads (30d)** | 526.3k |
 | **Language** | TypeScript |
 | **Source** | [gitlab-mcp](https://github.com/zereight/gitlab-mcp) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 2 |
 | Medium   | 0 |
 | Low      | 248 |
-| Info     | 535 |
+| Info     | 537 |
 
 ## Detailed Findings
 
@@ -819,6 +819,30 @@ Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage 
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -8243,30 +8267,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "resource_deploy_token_events" accepts a credential (informational; not evidence of insecure handling)
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** Info
-
-**Description:**
-input parameter "signing_token" accepts a credential (informational; not evidence of insecure handling)
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** Info
-
-**Description:**
 input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
@@ -8280,6 +8280,30 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 
 **Description:**
 input parameter "resource_access_token_events" accepts a credential (informational; not evidence of insecure handling)
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** Info
+
+**Description:**
+input parameter "resource_deploy_token_events" accepts a credential (informational; not evidence of insecure handling)
+
+**Recommendation:**
+Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+
+---
+
+### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+
+**Severity:** Info
+
+**Description:**
+input parameter "signing_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -8339,7 +8363,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "resource_access_token_events" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -8351,7 +8375,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "resource_access_token_events" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -9383,7 +9407,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, filesystem access, HTTP requests
+declared capabilities: network access, filesystem access, database access, HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | ruslanlap |
-| **Stars** | ⭐ 68 |
+| **Stars** | ⭐ 75 |
 | **npm Package** | `@ruslanlap/pagespeed-insights-mcp` |
 | **Language** | TypeScript |
 | **Source** | [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) |

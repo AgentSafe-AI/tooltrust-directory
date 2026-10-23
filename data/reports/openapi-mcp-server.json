@@ -1,16 +1,32 @@
 {
+  "tool_id": "openapi-mcp-server",
+  "version": "1.2.0-beta04",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-10-23T02:52:18.739149215Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/janwilmake/openapi-mcp-server",
   "category": "Developer Tools",
-  "contributors": 5,
+  "vendor": "janwilmake",
+  "stars": 905,
+  "npm_package": "openapi-mcp-server",
+  "npm_downloads_monthly": 3289,
+  "license": "MIT",
+  "language": "TypeScript",
   "description": "Allow AI to wade through complex OpenAPIs using Simple Language",
   "findings": [
     {
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.2.0-beta04: 8 tool(s) added, 2 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v1.2.0-beta04: 2 tool(s) added, 8 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "getApiOperation",
+          "getApiOverview"
+        ],
+        "removed": [
           "api.architect",
           "api.health_report_live",
           "contract.baseline_diff",
@@ -20,10 +36,6 @@
           "release.gate",
           "schema.validate_live"
         ],
-        "removed": [
-          "getApiOperation",
-          "getApiOverview"
-        ],
         "version": "1.2.0-beta04"
       }
     },
@@ -31,9 +43,9 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api.architect"
+      "tool_name": "getApiOverview"
     },
     {
       "id": "AS-011",
@@ -41,23 +53,23 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "api.architect"
+      "tool_name": "getApiOverview"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "api.architect"
+      "tool_name": "getApiOverview"
     },
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "contract.parse"
+      "tool_name": "getApiOperation"
     },
     {
       "id": "AS-011",
@@ -65,160 +77,69 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "contract.parse"
+      "tool_name": "getApiOperation"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "contract.parse"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "endpoints.probe_live"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "endpoints.probe_live"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "endpoints.probe_live"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "schema.validate_live"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "schema.validate_live"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "schema.validate_live"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "contract.drift_live"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "contract.drift_live"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "contract.drift_live"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "api.health_report_live"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "api.health_report_live"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "api.health_report_live"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "contract.baseline_diff"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "release.gate"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "release.gate"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "release.gate"
+      "tool_name": "getApiOperation"
     }
   ],
-  "forks": 95,
-  "grade": "B",
-  "language": "TypeScript",
-  "last_commit_at": "2026-07-07T15:21:08Z",
-  "last_release_at": "2025-01-27T11:14:01Z",
-  "latest_release_name": "v1.2.0-beta04",
-  "latest_release_tag": "v1.2.0-beta04",
-  "latest_release_url": "https://github.com/janwilmake/openapi-mcp-server/releases/tag/v1.2.0-beta04",
-  "latest_release_version": "v1.2.0-beta04",
-  "license": "MIT",
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 2,
+    "info": 4
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 3289,
-  "npm_package": "openapi-mcp-server",
-  "risk_score": 15,
-  "scan_date": "2026-10-22T02:47:11.608376863Z",
+  "tool_names": [
+    "getApiOperation",
+    "getApiOverview"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "getApiOverview",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: apis.guru",
+        "hardcoded domain: apis.guru\\n-",
+        "hardcoded domain: news.ycombinator.com",
+        "hardcoded domain: openapisearch.com",
+        "hardcoded domain: podscan.fm"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "getApiOperation",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: apis.guru",
+        "hardcoded domain: apis.guru\\n-",
+        "hardcoded domain: news.ycombinator.com",
+        "hardcoded domain: openapisearch.com",
+        "hardcoded domain: podscan.fm"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:37:12Z",
@@ -1443,138 +1364,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.2.0-beta04"
+    },
+    {
+      "scan_date": "2026-10-22T02:47:11Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.2.0-beta04"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/janwilmake/openapi-mcp-server",
-  "stars": 905,
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 7,
-    "info": 15
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "api.architect",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic URL input (spec_url)",
-        "hardcoded API endpoint: api.architect"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "contract.parse",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic URL input (spec_url)",
-        "hardcoded domain: contract.parse"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "endpoints.probe_live",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic URL input (endpoints)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "schema.validate_live",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic URL input (endpoints)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "contract.drift_live",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic URL input (spec_url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "api.health_report_live",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (base_url)",
-        "dynamic URL input (spec_url)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "contract.baseline_diff",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "release.gate",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (security_reviewed)",
-        "hardcoded domain: release.gate"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
-  "tool_id": "openapi-mcp-server",
-  "tool_names": [
-    "api.architect",
-    "api.health_report_live",
-    "contract.baseline_diff",
-    "contract.drift_live",
-    "contract.parse",
-    "endpoints.probe_live",
-    "release.gate",
-    "schema.validate_live"
-  ],
-  "vendor": "janwilmake",
-  "version": "1.2.0-beta04"
+  ]
 }

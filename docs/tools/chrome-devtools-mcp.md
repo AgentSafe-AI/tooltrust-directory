@@ -1,19 +1,19 @@
-# 🟡 chrome-devtools-mcp
+# 🟠 chrome-devtools-mcp
 
 > Chrome DevTools for coding agents
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
-| **Version** | `chrome-devtools-mcp-v1.11.0` |
+| **Grade** | **C** |
+| **Risk Score** | 27 |
+| **Version** | `chrome-devtools-mcp-v1.12.0` |
 | **Vendor** | ChromeDevTools |
-| **Stars** | ⭐ 53957 |
+| **Stars** | ⭐ 54003 |
 | **npm Package** | `chrome-devtools-mcp` |
 | **npm Downloads (30d)** | 7.9M |
 | **Language** | TypeScript |
 | **Source** | [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -22,47 +22,23 @@
 
 | Severity | Count |
 |----------|:-----:|
-| Critical | 0 |
-| High     | 1 |
+| Critical | 1 |
+| High     | 0 |
 | Medium   | 0 |
-| Low      | 3 |
-| Info     | 14 |
+| Low      | 5 |
+| Info     | 46 |
 
 ## Detailed Findings
 
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vchrome-devtools-mcp-v1.11.0: 5 tool(s) added, 32 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-declared capabilities: filesystem access
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** Info
-
-**Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+Review and remediate the identified issue.
 
 ---
 
@@ -71,7 +47,19 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -83,22 +71,22 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: network access, HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+### 🔵 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Info
+**Severity:** Low
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+input schema exposes 11 properties (threshold: 10)
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -119,22 +107,46 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
 
 ---
 
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+declared capabilities: code/command execution, filesystem access
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔴 ⚡ `AS-006` — Arbitrary Code Execution
+
+**Severity:** Critical
+
+**Description:**
+tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)
+
+**Recommendation:**
+This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
@@ -143,7 +155,55 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -162,18 +222,6 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
-
-**Severity:** Info
-
-**Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
-
-**Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
-
----
-
 ### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
 
 **Severity:** Low
@@ -191,7 +239,31 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -203,22 +275,46 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: code/command execution
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
-### ⚪ 🗝️ `AS-010` — Insecure Secret Handling
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
 
 **Description:**
-input parameter "api_key" accepts a credential (informational; not evidence of insecure handling)
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: network access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -239,7 +335,319 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: code/command execution, network access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: network access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.

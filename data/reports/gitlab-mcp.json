@@ -1,19 +1,19 @@
 {
   "tool_id": "gitlab-mcp",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "grade": "B",
   "risk_score": 17,
-  "scan_date": "2026-10-22T02:45:22.616579209Z",
+  "scan_date": "2026-10-23T02:50:50.03139034Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/zereight/gitlab-mcp",
   "category": "Developer Tools",
   "vendor": "zereight",
-  "stars": 2060,
+  "stars": 2061,
   "npm_package": "@zereight/mcp-gitlab",
   "npm_downloads_monthly": 526272,
   "license": "MIT",
   "language": "TypeScript",
-  "description": "MCP server for GitLab: 100+ tools for projects, MRs, issues, pipelines, wikis and more via the GitLab REST/GraphQL API",
+  "description": "MCP server for GitLab: 277 tools for projects, MRs, issues, pipelines, wikis and more via the GitLab REST/GraphQL API",
   "findings": [
     {
       "id": "AS-002",
@@ -550,6 +550,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "protect_branch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "update_protected_branch"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "update_protected_branch"
     },
     {
       "id": "AS-014",
@@ -5491,22 +5507,6 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"resource_deploy_token_events\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "create_webhook"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"signing_token\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "create_webhook"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
       "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_webhook"
@@ -5516,6 +5516,22 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"resource_access_token_events\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "create_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"resource_deploy_token_events\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "create_webhook"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"signing_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "create_webhook"
     },
@@ -5555,7 +5571,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"resource_access_token_events\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "update_webhook"
     },
@@ -5563,7 +5579,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"resource_access_token_events\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "update_webhook"
     },
@@ -6251,7 +6267,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, HTTP requests",
+      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "gitlab_api_request"
     },
@@ -6301,7 +6317,7 @@
     "high": 2,
     "medium": 0,
     "low": 248,
-    "info": 535
+    "info": 537
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -6569,6 +6585,7 @@
     "update_pipeline_trigger",
     "update_project",
     "update_project_variable",
+    "update_protected_branch",
     "update_release",
     "update_snippet",
     "update_webhook",
@@ -6832,6 +6849,21 @@
         "dynamic email recipient (merge_access_level)",
         "dynamic email recipient (push_access_level)",
         "dynamic email recipient (unprotect_access_level)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update_protected_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (allowed_to_merge)",
+        "dynamic email recipient (allowed_to_push)",
+        "dynamic email recipient (allowed_to_unprotect)"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -9617,6 +9649,12 @@
       "grade": "B",
       "risk_score": 17,
       "version": "2.3.5"
+    },
+    {
+      "scan_date": "2026-10-22T02:45:22Z",
+      "grade": "B",
+      "risk_score": 17,
+      "version": "2.3.6"
     }
   ]
 }

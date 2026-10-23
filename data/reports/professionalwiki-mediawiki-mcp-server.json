@@ -1,19 +1,23 @@
 {
-  "tool_id": "professionalwiki-mediawiki-mcp-server",
-  "version": "0.6.5",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T02:47:47.945747874Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
   "category": "Developer Tools",
-  "vendor": "ProfessionalWiki",
-  "stars": 136,
-  "npm_package": "@professional-wiki/mediawiki-mcp-server",
-  "npm_downloads_monthly": 4779,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 11,
   "description": "Model Context Protocol (MCP) Server to connect your AI with any MediaWiki",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 15,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -174,108 +178,22 @@
       "tool_name": "create-page"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 3,
-    "info": 12
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 42,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 15,
-      "snippet": "new McpServer(",
-      "file": "src/server.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "create-page",
-    "get-file",
-    "get-page",
-    "get-page-history",
-    "search-page",
-    "set-wiki",
-    "update-page"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "get-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-page-history",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "search-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "set-wiki",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (wikiUrl)",
-        "hardcoded domain: en.wikipedia.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "update-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "get-file",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "create-page",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-10-22T04:55:42Z",
+  "last_release_at": "2026-10-22T04:55:52Z",
+  "latest_release_name": "v0.20.0",
+  "latest_release_tag": "v0.20.0",
+  "latest_release_url": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server/releases/tag/v0.20.0",
+  "latest_release_version": "v0.20.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 4779,
+  "npm_package": "@professional-wiki/mediawiki-mcp-server",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:47:47.945747874Z",
   "scan_history": [
     {
       "scan_date": "2026-04-04T06:23:29Z",
@@ -439,5 +357,95 @@
       "risk_score": 2,
       "version": "0.6.5"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
+  "stars": 139,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 3,
+    "info": 12
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "get-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-page-history",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "search-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "set-wiki",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (wikiUrl)",
+        "hardcoded domain: en.wikipedia.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "update-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get-file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "create-page",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "professionalwiki-mediawiki-mcp-server",
+  "tool_names": [
+    "create-page",
+    "get-file",
+    "get-page",
+    "get-page-history",
+    "search-page",
+    "set-wiki",
+    "update-page"
+  ],
+  "vendor": "ProfessionalWiki",
+  "version": "0.6.5"
 }

@@ -3,7 +3,7 @@
   "version": "0.2.6",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-22T02:51:08.023069968Z",
+  "scan_date": "2026-10-23T02:56:05.678002447Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/wikipedia-mcp-server",
   "category": "Developer Tools",
@@ -23,10 +23,10 @@
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
-          "wikipedia_search"
+          "wikipedia_search_articles"
         ],
         "removed": [
-          "wikipedia_search_articles"
+          "wikipedia_search"
         ],
         "version": "0.2.6"
       }
@@ -37,7 +37,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "wikipedia_search"
+      "tool_name": "wikipedia_search_articles"
     },
     {
       "id": "AS-011",
@@ -45,15 +45,15 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "wikipedia_search"
+      "tool_name": "wikipedia_search_articles"
     },
     {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "wikipedia_search"
+      "tool_name": "wikipedia_search_articles"
     },
     {
       "id": "AS-002",
@@ -75,7 +75,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "wikipedia_get_summary"
     },
@@ -99,7 +99,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "wikipedia_get_article"
     },
@@ -123,7 +123,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "wikipedia_get_sections"
     },
@@ -147,7 +147,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "wikipedia_search_nearby"
     },
@@ -171,7 +171,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "wikipedia_get_languages"
     }
@@ -189,19 +189,20 @@
     "wikipedia_get_languages",
     "wikipedia_get_sections",
     "wikipedia_get_summary",
-    "wikipedia_search",
+    "wikipedia_search_articles",
     "wikipedia_search_nearby"
   ],
   "tool_contexts": [
     {
-      "tool_name": "wikipedia_search",
+      "tool_name": "wikipedia_search_articles",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "wikipedia_get_summary",
@@ -212,17 +213,18 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "wikipedia_get_article",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "wikipedia_get_sections",
@@ -232,17 +234,18 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "wikipedia_search_nearby",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "wikipedia_get_languages",
@@ -252,7 +255,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -674,6 +677,12 @@
       "scan_date": "2026-10-21T02:53:20Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.2.6"
+    },
+    {
+      "scan_date": "2026-10-22T02:51:08Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.2.6"
     }
   ]

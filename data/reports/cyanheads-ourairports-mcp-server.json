@@ -3,7 +3,7 @@
   "version": "0.2.6",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-22T02:52:03.003789024Z",
+  "scan_date": "2026-10-23T02:56:50.234287087Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/ourairports-mcp-server",
   "category": "Developer Tools",
@@ -19,13 +19,13 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.2.6: 0 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.2.6: 1 tool(s) added, 0 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
-        "added": null,
-        "removed": [
+        "added": [
           "ourairports_search_runways"
         ],
+        "removed": null,
         "version": "0.2.6"
       }
     },
@@ -49,7 +49,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ourairports_search_airports"
     },
@@ -57,7 +57,31 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ourairports_search_runways"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ourairports_search_runways"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ourairports_search_runways"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ourairports_get_airport"
     },
@@ -73,7 +97,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ourairports_get_airport"
     },
@@ -97,7 +121,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ourairports_find_airports"
     },
@@ -105,7 +129,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: HTTP requests",
+      "description": "declared capabilities: database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "ourairports_find_navaids"
     },
@@ -121,7 +145,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ourairports_find_navaids"
     },
@@ -145,7 +169,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ourairports_list_countries"
     }
@@ -154,8 +178,8 @@
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 5,
-    "info": 10
+    "low": 6,
+    "info": 12
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -163,7 +187,8 @@
     "ourairports_find_navaids",
     "ourairports_get_airport",
     "ourairports_list_countries",
-    "ourairports_search_airports"
+    "ourairports_search_airports",
+    "ourairports_search_runways"
   ],
   "tool_contexts": [
     {
@@ -174,7 +199,17 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ourairports_search_runways",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "ourairports_get_airport",
@@ -184,7 +219,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "ourairports_find_airports",
@@ -194,7 +229,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "ourairports_find_navaids",
@@ -204,7 +239,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "ourairports_list_countries",
@@ -214,7 +249,7 @@
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -402,6 +437,12 @@
       "scan_date": "2026-10-21T02:54:36Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.2.6"
+    },
+    {
+      "scan_date": "2026-10-22T02:52:03Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.2.6"
     }
   ]

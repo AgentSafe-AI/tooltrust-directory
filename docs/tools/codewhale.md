@@ -1,6 +1,6 @@
 # 🟢 codewhale
 
-> Open-source Rust agent engine and terminal client for Codewhale, with provider choice, tools, approvals and receipts.
+> Open-source agent for the terminal written in Rust. Use any provider or model. Issues & PRs always welcome
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.10.1` |
 | **Vendor** | codewhale-hq |
-| **Stars** | ⭐ 41104 |
+| **Stars** | ⭐ 41111 |
 | **npm Package** | `codewhale` |
 | **npm Downloads (30d)** | 23.6k |
 | **Language** | Rust |
 | **Source** | [codewhale](https://github.com/codewhale-hq/Codewhale) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

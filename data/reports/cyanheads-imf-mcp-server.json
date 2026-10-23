@@ -3,7 +3,7 @@
   "version": "0.4.4",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-22T02:52:18.547025175Z",
+  "scan_date": "2026-10-23T02:57:04.398881391Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/imf-mcp-server",
   "category": "Developer Tools",
@@ -19,14 +19,14 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.4.4: 2 tool(s) added, 0 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v0.4.4: 0 tool(s) added, 2 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
-        "added": [
+        "added": null,
+        "removed": [
           "imf_dataframe_describe",
           "imf_dataframe_query"
         ],
-        "removed": null,
         "version": "0.4.4"
       }
     },
@@ -42,7 +42,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "imf_list_databases"
     },
@@ -66,7 +66,7 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "imf_get_database"
     },
@@ -74,7 +74,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "imf_query_dataset"
     },
@@ -90,62 +90,20 @@
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "imf_query_dataset"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "imf_dataframe_describe"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "imf_dataframe_describe"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "imf_dataframe_query"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "imf_dataframe_query"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "imf_dataframe_query"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 1,
     "medium": 0,
-    "low": 3,
-    "info": 10
+    "low": 2,
+    "info": 6
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
-    "imf_dataframe_describe",
-    "imf_dataframe_query",
     "imf_get_database",
     "imf_list_databases",
     "imf_query_dataset"
@@ -155,8 +113,11 @@
       "tool_name": "imf_list_databases",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "imf_get_database",
@@ -170,7 +131,7 @@
         "hardcoded domain: IMF.STA"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
       "tool_name": "imf_query_dataset",
@@ -184,24 +145,7 @@
         "hardcoded domain: IMF.STA"
       ],
       "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "imf_dataframe_describe",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "imf_dataframe_query",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     }
   ],
   "scan_history": [
@@ -389,6 +333,12 @@
       "scan_date": "2026-10-21T02:54:26Z",
       "grade": "A",
       "risk_score": 2,
+      "version": "0.4.4"
+    },
+    {
+      "scan_date": "2026-10-22T02:52:18Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "0.4.4"
     }
   ]

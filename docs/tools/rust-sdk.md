@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `rmcp-v3.6.0` |
+| **Version** | `rmcp-v3.7.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 4036 |
+| **Stars** | ⭐ 4040 |
 | **Language** | Rust |
 | **Source** | [rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

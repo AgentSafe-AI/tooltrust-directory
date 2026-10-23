@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.6.5` |
 | **Vendor** | ProfessionalWiki |
-| **Stars** | ⭐ 136 |
+| **Stars** | ⭐ 139 |
 | **npm Package** | `@professional-wiki/mediawiki-mcp-server` |
 | **npm Downloads (30d)** | 4.8k |
 | **Language** | TypeScript |

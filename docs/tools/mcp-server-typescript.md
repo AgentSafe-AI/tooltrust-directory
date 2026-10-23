@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 62.4k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

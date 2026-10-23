@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 5.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

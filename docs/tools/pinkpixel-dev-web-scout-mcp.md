@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.5.2` |
 | **Vendor** | pinkpixel-dev |
-| **Stars** | ⭐ 138 |
+| **Stars** | ⭐ 137 |
 | **npm Package** | `@pinkpixel/web-scout-mcp` |
 | **npm Downloads (30d)** | 166 |
 | **Language** | JavaScript |
 | **Source** | [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -59,7 +59,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -95,7 +95,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.

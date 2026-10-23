@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.3.0` |
 | **Vendor** | dunialabs |
-| **Stars** | ⭐ 58 |
+| **Stars** | ⭐ 59 |
 | **npm Package** | `peta-core` |
 | **Language** | TypeScript |
 | **Source** | [peta-core](https://github.com/dunialabs/peta-core) |

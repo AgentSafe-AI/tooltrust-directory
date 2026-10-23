@@ -10,7 +10,7 @@
 | **npm Package** | `mcp-checklists` |
 | **Language** | JavaScript |
 | **Source** | [mcp-security-checklists](https://github.com/MCP-Manager/MCP-Security-Checklists) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

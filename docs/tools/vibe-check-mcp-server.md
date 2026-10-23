@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 373 |
 | **Language** | TypeScript |
 | **Source** | [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

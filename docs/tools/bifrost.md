@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `transports/v2.3.2` |
 | **Vendor** | maximhq |
-| **Stars** | ⭐ 9004 |
+| **Stars** | ⭐ 9027 |
 | **Language** | Go |
 | **Source** | [bifrost](https://github.com/maximhq/bifrost) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

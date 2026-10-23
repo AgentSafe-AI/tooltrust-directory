@@ -1,7 +1,46 @@
 {
+  "tool_id": "next-ai-draw-io",
+  "version": "0.5.0",
+  "grade": "A",
+  "risk_score": 0,
+  "scan_date": "2026-10-23T02:46:02.123256939Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/DayuanJiang/next-ai-draw-io",
   "category": "Developer Tools",
-  "contributors": 69,
+  "vendor": "DayuanJiang",
+  "stars": 36378,
+  "npm_package": "next-ai-draw-io",
+  "npm_downloads_monthly": 154,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Draw and edit draw.io diagrams by chatting with an AI. Web app, desktop app, and an MCP server for Claude Code, Cursor, Codex and VS Code.",
+  "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "create_diagram"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "create_diagram"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
       "kind": "import",
@@ -25,40 +64,24 @@
       "language": "typescript"
     }
   ],
-  "findings": [
+  "tool_names": [
+    "create_diagram"
+  ],
+  "tool_contexts": [
     {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_diagram"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_diagram"
+      "tool_name": "create_diagram",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: draw.io"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
-  "forks": 3796,
-  "grade": "A",
-  "has_embedded_mcp": true,
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-22T02:47:04Z",
-  "last_release_at": "2026-10-10T03:06:27Z",
-  "latest_release_name": "v0.5.0",
-  "latest_release_tag": "v0.5.0",
-  "latest_release_url": "https://github.com/DayuanJiang/next-ai-draw-io/releases/tag/v0.5.0",
-  "latest_release_version": "v0.5.0",
-  "license": "Apache-2.0",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 154,
-  "npm_package": "next-ai-draw-io",
-  "risk_score": 0,
-  "scan_date": "2026-10-22T02:41:09.101235913Z",
   "scan_history": [
     {
       "scan_date": "2026-10-17T02:20:29Z",
@@ -89,37 +112,12 @@
       "grade": "A",
       "risk_score": 0,
       "version": "0.5.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/DayuanJiang/next-ai-draw-io",
-  "stars": 36344,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 2
-  },
-  "tool_contexts": [
+    },
     {
-      "tool_name": "create_diagram",
-      "action": "ALLOW",
+      "scan_date": "2026-10-22T02:41:09Z",
       "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: draw.io"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 0,
+      "version": "0.5.0"
     }
-  ],
-  "tool_id": "next-ai-draw-io",
-  "tool_names": [
-    "create_diagram"
-  ],
-  "vendor": "DayuanJiang",
-  "version": "0.5.0"
+  ]
 }

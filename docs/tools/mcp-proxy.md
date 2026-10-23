@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 739 |
 | **Language** | Go |
 | **Source** | [mcp-proxy](https://github.com/tbxark/mcp-proxy) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

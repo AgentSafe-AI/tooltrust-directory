@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.15` |
 | **Vendor** | archestra-ai |
-| **Stars** | ⭐ 4386 |
+| **Stars** | ⭐ 4392 |
 | **Language** | TypeScript |
 | **Source** | [archestra](https://github.com/archestra-ai/archestra) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

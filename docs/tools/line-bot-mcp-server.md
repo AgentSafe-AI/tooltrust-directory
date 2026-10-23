@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.0` |
 | **Vendor** | line |
-| **Stars** | ⭐ 789 |
+| **Stars** | ⭐ 790 |
 | **npm Package** | `@line/line-bot-mcp-server` |
 | **npm Downloads (30d)** | 4.9k |
 | **Language** | TypeScript |
 | **Source** | [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 230 |
 | **Language** | TypeScript |
 | **Source** | [server-google-news](https://github.com/ChanMeng666/server-google-news) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

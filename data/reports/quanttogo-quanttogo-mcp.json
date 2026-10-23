@@ -1,19 +1,51 @@
 {
-  "tool_id": "quanttogo-quanttogo-mcp",
-  "version": "0.2.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T02:54:53.355829332Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/QuantToGo/quanttogo-mcp",
   "category": "Developer Tools",
-  "vendor": "quanttogo",
-  "stars": 9,
-  "npm_package": "quanttogo-mcp",
-  "npm_downloads_monthly": 548,
-  "license": "MIT",
-  "language": "Python",
+  "contributors": 2,
   "description": "Macro-factor quantitative signal source for AI agents via MCP. 宏观因子量化信号源。",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 17,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "coze-sse/server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 39,
+      "snippet": "new McpServer(",
+      "file": "coze-sse/server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 11,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "seattle/server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 33,
+      "snippet": "new McpServer(",
+      "file": "seattle/server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 35,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -118,136 +150,22 @@
       "tool_name": "login"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 0,
-    "info": 9
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 3,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 17,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "coze-sse/server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 39,
-      "snippet": "new McpServer(",
-      "file": "coze-sse/server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 11,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "seattle/server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 33,
-      "snippet": "new McpServer(",
-      "file": "seattle/server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 35,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "create_risk_order",
-    "evidence_card",
-    "ledger_review",
-    "login",
-    "market_now",
-    "my_risk_orders",
-    "risk_check",
-    "verify_reasons"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "risk_check",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "verify_reasons",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "create_risk_order",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (tolerance)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "my_risk_orders",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "market_now",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (top)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "ledger_review",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "evidence_card",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "login",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "Python",
+  "last_commit_at": "2026-10-10T18:33:13Z",
+  "last_release_at": "2026-03-12T21:52:57Z",
+  "latest_release_name": "v0.2.0 — Agent Self-Service Trial + Signals API",
+  "latest_release_tag": "v0.2.0",
+  "latest_release_url": "https://github.com/QuantToGo/quanttogo-mcp/releases/tag/v0.2.0",
+  "latest_release_version": "v0.2.0",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 548,
+  "npm_package": "quanttogo-mcp",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:54:53.355829332Z",
   "scan_history": [
     {
       "scan_date": "2026-04-03T22:53:12Z",
@@ -405,5 +323,95 @@
       "risk_score": 0,
       "version": "0.2.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/QuantToGo/quanttogo-mcp",
+  "stars": 9,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "info": 9
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "risk_check",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "verify_reasons",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "create_risk_order",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (tolerance)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "my_risk_orders",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "market_now",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (top)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ledger_review",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "evidence_card",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "login",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "quanttogo-quanttogo-mcp",
+  "tool_names": [
+    "create_risk_order",
+    "evidence_card",
+    "ledger_review",
+    "login",
+    "market_now",
+    "my_risk_orders",
+    "risk_check",
+    "verify_reasons"
+  ],
+  "vendor": "quanttogo",
+  "version": "0.2.0"
 }

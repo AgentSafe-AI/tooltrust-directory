@@ -1,14 +1,14 @@
 {
   "tool_id": "xerj",
-  "version": "1.0.0-rc.97",
+  "version": "1.0.0-rc.98",
   "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-10-22T02:42:19.323304659Z",
+  "risk_score": 4,
+  "scan_date": "2026-10-23T02:47:32.152645157Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/xerj-org/xerj",
   "category": "Other",
   "vendor": "xerj-org",
-  "stars": 12824,
+  "stars": 13144,
   "license": "Apache-2.0",
   "language": "Rust",
   "description": "Local-first search engine and MCP server for AI agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
@@ -249,6 +249,38 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "xerj_index_budget"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xerj_index_budget"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "xerj_autoindex_remove"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xerj_autoindex_remove"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "xerj_code_search"
@@ -316,6 +348,38 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "xerj_field_report"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "xerj_corpus_feedback"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "xerj_corpus_feedback"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "xerj_corpus_feedback"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xerj_corpus_feedback"
     },
     {
       "id": "AS-002",
@@ -402,21 +466,24 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 9,
-    "info": 39
+    "low": 11,
+    "info": 45
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "xerj_autoindex_remove",
     "xerj_brain_ego",
     "xerj_brain_link",
     "xerj_brain_overview",
     "xerj_brain_unlink",
     "xerj_code_search",
+    "xerj_corpus_feedback",
     "xerj_field_report",
     "xerj_hub_ask",
     "xerj_hub_def",
     "xerj_hub_find",
     "xerj_hybrid_search",
+    "xerj_index_budget",
     "xerj_map",
     "xerj_memory_recall",
     "xerj_memory_store",
@@ -550,6 +617,26 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "xerj_index_budget",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xerj_autoindex_remove",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "xerj_code_search",
       "action": "ALLOW",
       "grade": "A",
@@ -582,6 +669,20 @@
         "dynamic URL input (endpoint)",
         "hardcoded API endpoint: xerj.org",
         "hardcoded domain: xerj.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xerj_corpus_feedback",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded API endpoint: hub.xerj.org",
+        "hardcoded domain: hub.xerj.org"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -630,6 +731,12 @@
     },
     {
       "scan_date": "2026-10-21T02:44:48Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.0-rc.97"
+    },
+    {
+      "scan_date": "2026-10-22T02:42:19Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.0-rc.97"

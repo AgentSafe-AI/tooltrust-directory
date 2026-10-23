@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `4.24.1` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2649 |
+| **Stars** | ⭐ 2676 |
 | **npm Package** | `kordoc` |
 | **npm Downloads (30d)** | 142.0k |
 | **Language** | TypeScript |
 | **Source** | [kordoc](https://github.com/chrisryugj/kordoc) |
-| **Scan Date** | 2026-10-22 |
+| **Scan Date** | 2026-10-23 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

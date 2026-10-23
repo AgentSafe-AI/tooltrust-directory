@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `2025-dec-31` |
 | **Vendor** | planexeorg |
-| **Stars** | ⭐ 401 |
+| **Stars** | ⭐ 403 |
 | **Language** | Python |
 | **Source** | [planexeorg-planexe](https://github.com/PlanExeOrg/PlanExe) |
 | **Scan Date** | 2026-10-15 |
