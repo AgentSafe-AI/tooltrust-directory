@@ -10,10 +10,10 @@
 | **Vendor** | udecode |
 | **Stars** | ⭐ 16666 |
 | **npm Package** | `plate` |
-| **npm Downloads (30d)** | 320 |
+| **npm Downloads (30d)** | 281 |
 | **Language** | TypeScript |
 | **Source** | [plate](https://github.com/udecode/plate) |
-| **Scan Date** | 2026-10-23 |
+| **Scan Date** | 2026-10-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

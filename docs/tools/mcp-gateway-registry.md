@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1012 |
 | **Language** | Python |
 | **Source** | [mcp-gateway-registry](https://github.com/agentic-community/mcp-gateway-registry) |
-| **Scan Date** | 2026-10-23 |
+| **Scan Date** | 2026-10-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `2.2.0` |
 | **Vendor** | rahilp |
-| **Stars** | ⭐ 805 |
+| **Stars** | ⭐ 822 |
 | **npm Package** | `second-brain` |
 | **npm Downloads (30d)** | 12 |
 | **Language** | TypeScript |

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.0` |
 | **Vendor** | render-oss |
-| **Stars** | ⭐ 176 |
+| **Stars** | ⭐ 180 |
 | **Language** | Go |
 | **Source** | [render-mcp-server](https://github.com/render-oss/render-mcp-server) |
 | **Scan Date** | 2026-10-15 |

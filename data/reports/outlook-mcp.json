@@ -1,52 +1,19 @@
 {
+  "tool_id": "outlook-mcp",
+  "version": "2.0.0",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-24T02:51:05.750770254Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/ryaker/outlook-mcp",
   "category": "Developer Tools",
-  "contributors": 12,
+  "vendor": "ryaker",
+  "stars": 446,
+  "npm_package": "m365-mcp",
+  "npm_downloads_monthly": 106,
+  "language": "JavaScript",
   "description": "MCP server for Claude to access Outlook data via Microsoft Graph API",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v2.0.0: 6 tool(s) added, 24 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "calendar",
-          "me",
-          "message",
-          "notifications",
-          "summary",
-          "teams"
-        ],
-        "removed": [
-          "calendar.create",
-          "calendar.findMeetingTimes",
-          "calendar.freeBusy",
-          "calendar.list",
-          "files.list",
-          "files.search",
-          "identity.me",
-          "mail.draft",
-          "mail.list",
-          "mail.read",
-          "mail.reply",
-          "mail.search",
-          "mail.send",
-          "people.myManager",
-          "people.search",
-          "site.drive.list",
-          "site.drive.read",
-          "site.drive.share",
-          "site.drive.upload",
-          "site.list.items",
-          "site.lists",
-          "site.metadata",
-          "site.pages.list",
-          "site.search"
-        ],
-        "version": "2.0.0"
-      }
-    },
     {
       "id": "AS-002",
       "severity": "Info",
@@ -232,20 +199,91 @@
       "tool_name": "teams"
     }
   ],
-  "forks": 163,
-  "grade": "B",
-  "language": "JavaScript",
-  "last_commit_at": "2026-03-30T19:25:19Z",
-  "last_release_at": "",
-  "latest_release_name": "",
-  "latest_release_tag": "",
-  "latest_release_url": "",
-  "latest_release_version": "",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 7,
+    "info": 16
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 121,
-  "npm_package": "m365-mcp",
-  "risk_score": 15,
-  "scan_date": "2026-10-23T02:53:32.728268368Z",
+  "tool_names": [
+    "calendar",
+    "me",
+    "message",
+    "notifications",
+    "summary",
+    "teams"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "message",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (bcc)",
+        "dynamic email recipient (cc)",
+        "dynamic email recipient (to)",
+        "hardcoded domain: structuredContent.messages"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "calendar",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (attendeeEmails)",
+        "hardcoded domain: structuredContent.events"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "me",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "summary",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "notifications",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "teams",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (includeEmails)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-08-28T08:19:20Z",
@@ -570,96 +608,12 @@
       "grade": "B",
       "risk_score": 15,
       "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-10-23T02:53:32Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "2.0.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/ryaker/outlook-mcp",
-  "stars": 444,
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 7,
-    "info": 16
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "message",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (bcc)",
-        "dynamic email recipient (cc)",
-        "dynamic email recipient (to)",
-        "hardcoded domain: structuredContent.messages"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "calendar",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (attendeeEmails)",
-        "hardcoded domain: structuredContent.events"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "me",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "summary",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "notifications",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "teams",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (includeEmails)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "outlook-mcp",
-  "tool_names": [
-    "calendar",
-    "me",
-    "message",
-    "notifications",
-    "summary",
-    "teams"
-  ],
-  "vendor": "ryaker",
-  "version": "2.0.0"
+  ]
 }

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.14` |
 | **Vendor** | karanb192 |
-| **Stars** | ⭐ 845 |
+| **Stars** | ⭐ 864 |
 | **npm Package** | `reddit-mcp-buddy` |
 | **npm Downloads (30d)** | 7.2k |
 | **Language** | TypeScript |

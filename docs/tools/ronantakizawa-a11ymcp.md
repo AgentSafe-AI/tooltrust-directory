@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | ronantakizawa |
-| **Stars** | ⭐ 92 |
+| **Stars** | ⭐ 93 |
 | **npm Package** | `a11y-mcp-server` |
 | **npm Downloads (30d)** | 1.1k |
 | **Language** | JavaScript |

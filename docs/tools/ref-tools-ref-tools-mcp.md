@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.3` |
 | **Vendor** | ref-tools |
-| **Stars** | ⭐ 1177 |
+| **Stars** | ⭐ 1183 |
 | **npm Package** | `ref-tools-mcp` |
 | **npm Downloads (30d)** | 4.0k |
 | **Language** | TypeScript |

@@ -1,34 +1,20 @@
 {
   "tool_id": "malinoto-tracepass-mcp-server",
-  "version": "1.19.1",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-23T02:56:31.050994082Z",
+  "version": "1.20.2",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-24T02:54:19.473884434Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/malinoto/tracepass-mcp-server",
   "category": "Developer Tools",
   "vendor": "malinoto",
   "stars": 1,
   "npm_package": "tracepass-mcp-server",
-  "npm_downloads_monthly": 3603,
+  "npm_downloads_monthly": 3594,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol server for TracePass — the EU Digital Product Passport platform",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v1.19.1: 1 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "tracepass_scope"
-        ],
-        "removed": null,
-        "version": "1.19.1"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -160,7 +146,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 4,
     "info": 12
@@ -177,14 +163,14 @@
     },
     {
       "kind": "init",
-      "line": 640,
+      "line": 702,
       "snippet": "new McpServer(",
       "file": "src/compliance-server.ts",
       "language": "typescript"
     },
     {
       "kind": "tool_definition",
-      "line": 669,
+      "line": 731,
       "snippet": ".registerTool(",
       "file": "src/compliance-server.ts",
       "language": "typescript"
@@ -205,7 +191,7 @@
     },
     {
       "kind": "tool_definition",
-      "line": 79,
+      "line": 81,
       "snippet": ".registerTool(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -261,7 +247,6 @@
         "writes_files"
       ],
       "destinations": [
-        "hardcoded domain: args.confirmOverage",
         "hardcoded domain: doi.org"
       ],
       "dependency_visibility": "No dependency data",
@@ -893,6 +878,12 @@
     },
     {
       "scan_date": "2026-10-22T02:52:12Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "1.19.1"
+    },
+    {
+      "scan_date": "2026-10-23T02:56:31Z",
       "grade": "B",
       "risk_score": 15,
       "version": "1.19.1"

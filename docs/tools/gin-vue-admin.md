@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.9.2` |
 | **Vendor** | flipped-aurora |
-| **Stars** | ⭐ 25087 |
+| **Stars** | ⭐ 25089 |
 | **Language** | Go |
 | **Source** | [gin-vue-admin](https://github.com/flipped-aurora/gin-vue-admin) |
-| **Scan Date** | 2026-10-23 |
+| **Scan Date** | 2026-10-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

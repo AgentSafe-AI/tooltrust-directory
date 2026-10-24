@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.2` |
 | **Vendor** | SigNoz |
-| **Stars** | ⭐ 126 |
+| **Stars** | ⭐ 128 |
 | **Language** | Go |
 | **Source** | [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) |
 | **Scan Date** | 2026-10-15 |

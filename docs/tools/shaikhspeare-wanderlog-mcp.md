@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.0` |
 | **Vendor** | shaikhspeare |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 156 |
 | **npm Package** | `wanderlog-mcp` |
 | **npm Downloads (30d)** | 941 |
 | **Language** | TypeScript |

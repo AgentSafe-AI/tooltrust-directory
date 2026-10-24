@@ -1,35 +1,20 @@
 {
   "tool_id": "cyanheads-crossref-mcp-server",
-  "version": "0.4.2",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-23T02:56:07.326912296Z",
+  "version": "0.4.3",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-24T02:53:44.181153884Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/crossref-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 4,
   "npm_package": "@cyanheads/crossref-mcp-server",
-  "npm_downloads_monthly": 2293,
+  "npm_downloads_monthly": 1875,
   "license": "NOASSERTION",
   "language": "TypeScript",
-  "description": "Resolve DOIs, search ~155M scholarly works, and fetch references via the Crossref REST API. STDIO or Streamable HTTP.",
+  "description": "Resolve DOIs, search ~188M scholarly works, and fetch references via the Crossref REST API. STDIO or Streamable HTTP.",
   "findings": [
-    {
-      "id": "AS-012",
-      "severity": "High",
-      "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v0.4.2: 2 tool(s) added, 0 tool(s) removed without a version bump.",
-      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
-      "metadata": {
-        "added": [
-          "crossref_get_member",
-          "crossref_get_prefix"
-        ],
-        "removed": null,
-        "version": "0.4.2"
-      }
-    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -82,7 +67,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access, filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "crossref_search_journals"
     },
@@ -145,7 +130,7 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 1,
+    "high": 0,
     "medium": 0,
     "low": 4,
     "info": 10
@@ -200,6 +185,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -677,6 +663,12 @@
     },
     {
       "scan_date": "2026-10-22T02:51:26Z",
+      "grade": "B",
+      "risk_score": 15,
+      "version": "0.4.2"
+    },
+    {
+      "scan_date": "2026-10-23T02:56:07Z",
       "grade": "B",
       "risk_score": 15,
       "version": "0.4.2"
