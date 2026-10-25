@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1242 |
 | **Language** | Rust |
 | **Source** | [thclaws](https://github.com/thClaws/thClaws) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

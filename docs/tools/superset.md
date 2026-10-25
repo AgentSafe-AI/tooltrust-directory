@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.1` |
 | **Vendor** | superset-sh |
-| **Stars** | ⭐ 15038 |
+| **Stars** | ⭐ 15528 |
 | **npm Package** | `@superset/repo` |
 | **Language** | TypeScript |
 | **Source** | [superset](https://github.com/superset-sh/superset) |

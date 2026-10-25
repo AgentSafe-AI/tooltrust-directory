@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `4.2.1` |
 | **Vendor** | ravitemer |
-| **Stars** | ⭐ 523 |
+| **Stars** | ⭐ 524 |
 | **npm Package** | `mcp-hub` |
 | **npm Downloads (30d)** | 1.7k |
 | **Language** | JavaScript |
 | **Source** | [mcp-hub](https://github.com/ravitemer/mcp-hub) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

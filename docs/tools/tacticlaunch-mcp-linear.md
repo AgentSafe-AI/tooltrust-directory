@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.1.2` |
 | **Vendor** | tacticlaunch |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 148 |
 | **npm Package** | `@tacticlaunch/mcp-linear` |
 | **npm Downloads (30d)** | 145.8k |
 | **Language** | TypeScript |

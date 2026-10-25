@@ -12,7 +12,7 @@ No API key. No signup. Free.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [ia-qa-api](https://smithery.ai/server/ia-qa/api) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

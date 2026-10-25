@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.7.0` |
 | **Vendor** | thirdstrandstudio |
-| **Stars** | ⭐ 76 |
+| **Stars** | ⭐ 77 |
 | **npm Package** | `@thirdstrandstudio/mcp-figma` |
 | **npm Downloads (30d)** | 33.0k |
 | **Language** | TypeScript |

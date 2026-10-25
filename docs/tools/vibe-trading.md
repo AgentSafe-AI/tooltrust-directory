@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.18` |
 | **Vendor** | HKUDS |
-| **Stars** | ⭐ 36444 |
+| **Stars** | ⭐ 36566 |
 | **Language** | Python |
 | **Source** | [vibe-trading](https://github.com/HKUDS/Vibe-Trading) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

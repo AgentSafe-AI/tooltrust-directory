@@ -1,9 +1,9 @@
 {
   "tool_id": "cyanheads-ris-austria-mcp-server",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-24T02:54:11.16398094Z",
+  "scan_date": "2026-10-25T02:42:21.980100896Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/ris-austria-mcp-server",
   "category": "Developer Tools",
@@ -176,6 +176,22 @@
       "tool_name": "ris_search_announcements"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ris_lookup_citation"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "ris_lookup_citation"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -244,8 +260,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 12,
-    "info": 16
+    "low": 13,
+    "info": 17
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -338,6 +354,10 @@
       "tool_name": "ris_lookup_citation",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -511,6 +531,12 @@
     },
     {
       "scan_date": "2026-10-23T02:56:31Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.5.2"
+    },
+    {
+      "scan_date": "2026-10-24T02:54:11Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.5.2"

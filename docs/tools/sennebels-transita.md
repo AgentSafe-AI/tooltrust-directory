@@ -1,6 +1,8 @@
 # 🟢 sennebels-transita
 
-> Visa eligibility matcher and immigration intelligence for MCP-compatible AI assistants. Scores 100+ visa pathways across 15 countries with country comparisons, document checklist previews, and curated nationality guides. Every match linked back to the official government source.
+> Connect directly: https://transita.app/api/mcp (Streamable HTTP, no auth). Smithery's hosted URL stops working on 31 October 2026, so use the direct URL.
+
+Visa eligibility matcher and immigration intelligence for MCP-compatible AI assistants. Scores 100+ visa pathways across 15 countries with country comparisons, document checklist previews, and curated nationality guides. Every match linked back to the official government source.
 
 | Field | Value |
 |-------|-------|
@@ -9,7 +11,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [sennebels-transita](https://smithery.ai/server/sennebels/transita) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

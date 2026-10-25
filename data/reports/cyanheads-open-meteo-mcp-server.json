@@ -1,9 +1,9 @@
 {
   "tool_id": "cyanheads-open-meteo-mcp-server",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-24T02:53:16.274917225Z",
+  "scan_date": "2026-10-25T02:41:37.195792437Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/open-meteo-mcp-server",
   "category": "Developer Tools",
@@ -59,7 +59,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 12 properties (threshold: 10)",
+      "description": "input schema exposes 13 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "openmeteo_get_forecast"
     },
@@ -116,6 +116,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "openmeteo_get_marine"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 14 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "openmeteo_get_marine"
     },
@@ -276,7 +284,7 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 11,
+    "low": 12,
     "info": 21
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
@@ -308,6 +316,10 @@
       "tool_name": "openmeteo_get_elevation",
       "action": "ALLOW",
       "grade": "A",
+      "destinations": [
+        "hardcoded domain: latitudes.slice",
+        "hardcoded domain: longitudes.slice"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -917,6 +929,12 @@
       "scan_date": "2026-10-23T02:55:37Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "0.4.1"
+    },
+    {
+      "scan_date": "2026-10-24T02:53:16Z",
+      "grade": "A",
+      "risk_score": 4,
       "version": "0.4.1"
     }
   ]

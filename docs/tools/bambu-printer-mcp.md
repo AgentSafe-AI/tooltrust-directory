@@ -8,12 +8,12 @@
 | **Risk Score** | 25 |
 | **Version** | `1.1.33` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 231 |
+| **Stars** | ⭐ 236 |
 | **npm Package** | `bambu-printer-mcp` |
 | **npm Downloads (30d)** | 7.1k |
 | **Language** | JavaScript |
 | **Source** | [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -623,7 +623,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "bambu_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -635,7 +635,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "password" accepts a credential (informational; not evidence of insecure handling)
+input parameter "bambu_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

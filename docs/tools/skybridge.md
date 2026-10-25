@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.4.1` |
 | **Vendor** | alpic-ai |
-| **Stars** | ⭐ 2150 |
+| **Stars** | ⭐ 2177 |
 | **npm Package** | `@skybridge/monorepo` |
 | **Language** | TypeScript |
 | **Source** | [skybridge](https://github.com/alpic-ai/skybridge) |

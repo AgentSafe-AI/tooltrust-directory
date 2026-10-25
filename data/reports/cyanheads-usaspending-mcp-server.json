@@ -1,9 +1,9 @@
 {
   "tool_id": "cyanheads-usaspending-mcp-server",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-24T02:53:27.191709334Z",
+  "scan_date": "2026-10-25T02:41:49.217965439Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/usaspending-mcp-server",
   "category": "Developer Tools",
@@ -15,6 +15,14 @@
   "language": "TypeScript",
   "description": "Access US federal award, recipient, agency, and spending analytics data from USAspending.gov via MCP. STDIO or Streamable HTTP.",
   "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "usaspending_list_agencies"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -341,7 +349,7 @@
     "high": 0,
     "medium": 0,
     "low": 11,
-    "info": 29
+    "info": 30
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -369,6 +377,9 @@
       "tool_name": "usaspending_list_agencies",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -1023,6 +1034,12 @@
       "scan_date": "2026-10-23T02:55:49Z",
       "grade": "B",
       "risk_score": 15,
+      "version": "0.5.0"
+    },
+    {
+      "scan_date": "2026-10-24T02:53:27Z",
+      "grade": "A",
+      "risk_score": 4,
       "version": "0.5.0"
     }
   ]

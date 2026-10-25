@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `5.0.1` |
+| **Version** | `6.0.0` |
 | **Vendor** | tableau |
-| **Stars** | ⭐ 355 |
+| **Stars** | ⭐ 356 |
 | **npm Package** | `@tableau/mcp-server` |
 | **npm Downloads (30d)** | 46.2k |
 | **Language** | TypeScript |
 | **Source** | [tableau-mcp](https://github.com/tableau/tableau-mcp) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

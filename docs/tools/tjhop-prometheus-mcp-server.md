@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.18.0` |
 | **Vendor** | tjhop |
-| **Stars** | ⭐ 120 |
+| **Stars** | ⭐ 127 |
 | **Language** | Go |
 | **Source** | [tjhop-prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server) |
 | **Scan Date** | 2026-10-15 |

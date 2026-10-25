@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.2.19` |
 | **Vendor** | tavily-ai |
-| **Stars** | ⭐ 2425 |
+| **Stars** | ⭐ 2456 |
 | **npm Package** | `tavily-mcp` |
 | **npm Downloads (30d)** | 96.5k |
 | **Language** | JavaScript |

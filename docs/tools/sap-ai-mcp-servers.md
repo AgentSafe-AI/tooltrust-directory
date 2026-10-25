@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | marianfoo |
-| **Stars** | ⭐ 538 |
+| **Stars** | ⭐ 539 |
 | **npm Package** | `sap-mcp-list` |
 | **Language** | JavaScript |
 | **Source** | [sap-ai-mcp-servers](https://github.com/marianfoo/sap-ai-mcp-servers) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

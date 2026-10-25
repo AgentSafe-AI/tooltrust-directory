@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.20` |
 | **Vendor** | hashgraph-online |
-| **Stars** | ⭐ 320 |
+| **Stars** | ⭐ 321 |
 | **Language** | Go |
 | **Source** | [standards-sdk-go](https://github.com/hashgraph-online/standards-sdk-go) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -1,15 +1,15 @@
-# 🟡 kangletian-paper-mcp
+# 🟢 kangletian-paper-mcp
 
 > Unified academic paper search for AI agents. search_all queries arXiv, Semantic Scholar and OpenAlex at once, de-duplicates the same work across corpora (by DOI/title) and re-ranks with Reciprocal Rank Fusion so papers found by several sources rank highest. read_paper returns full arXiv text with formulas as LaTeX. Plus citation graphs, author metrics (h-index), recommendations and full-text snippet search across 220M+ papers. Remote streamable-HTTP, no auth required.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kangletian-paper-mcp](https://smithery.ai/server/kangletian/paper-mcp) |
-| **Scan Date** | 2026-10-24 |
+| **Scan Date** | 2026-10-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 19 |
 | Info     | 64 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 3 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
