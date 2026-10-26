@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 16.5k |
 | **Language** | TypeScript |
 | **Source** | [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) |
-| **Scan Date** | 2026-10-25 |
+| **Scan Date** | 2026-10-26 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

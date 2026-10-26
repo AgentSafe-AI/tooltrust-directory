@@ -6,7 +6,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.2.0` |
 | **Vendor** | hashicorp |
-| **Stars** | ⭐ 64 |
+| **Stars** | ⭐ 65 |
 | **Language** | Go |
 | **Source** | [vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) |
 | **Scan Date** | 2026-10-15 |

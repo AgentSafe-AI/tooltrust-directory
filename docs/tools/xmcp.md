@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `@xmcp-dev/x402@1.1.0` |
 | **Vendor** | basementstudio |
-| **Stars** | ⭐ 1341 |
+| **Stars** | ⭐ 1343 |
 | **npm Package** | `xmcp-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [xmcp](https://github.com/basementstudio/xmcp) |

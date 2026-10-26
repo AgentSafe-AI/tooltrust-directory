@@ -1,18 +1,51 @@
 {
-  "tool_id": "wxkingstar-doc-hub-mcp",
-  "version": "1.0.13",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T02:53:25.035184661Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/wxkingstar/doc-hub-mcp",
   "category": "Other",
-  "vendor": "wxkingstar",
-  "stars": 19,
-  "npm_package": "doc-hub-mcp",
-  "npm_downloads_monthly": 79,
-  "language": "HTML",
+  "contributors": 2,
   "description": "主要聚合了企业微信和飞书开放平台的完整开发者文档，方便在 AI 编程助手中快速检索和查阅接口文档的MCP Server。",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 2,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "mcp/doc-server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 25,
+      "snippet": "new McpServer(",
+      "file": "mcp/doc-server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 36,
+      "snippet": ".registerTool(",
+      "file": "mcp/doc-server.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 29,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 41,
+      "snippet": ".registerTool(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -292,209 +325,21 @@
       "tool_name": "GoogleDocs_WhoAmI"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 4,
-    "info": 23
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 4,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 2,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "mcp/doc-server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 25,
-      "snippet": "new McpServer(",
-      "file": "mcp/doc-server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 36,
-      "snippet": ".registerTool(",
-      "file": "mcp/doc-server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 29,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 41,
-      "snippet": ".registerTool(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "Arcade_ListApps",
-    "GoogleDocs_CommentOnDocument",
-    "GoogleDocs_CreateBlankDocument",
-    "GoogleDocs_CreateDocumentFromText",
-    "GoogleDocs_EditDocument",
-    "GoogleDocs_GenerateGoogleFilePickerUrl",
-    "GoogleDocs_GetDocumentAsDocmd",
-    "GoogleDocs_GetDocumentById",
-    "GoogleDocs_GetDocumentMetadata",
-    "GoogleDocs_InsertTextAtEndOfDocument",
-    "GoogleDocs_ListDocumentComments",
-    "GoogleDocs_SearchAndRetrieveDocuments",
-    "GoogleDocs_SearchDocuments",
-    "GoogleDocs_WhoAmI"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "Arcade_ListApps",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_CommentOnDocument",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_CreateBlankDocument",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_CreateDocumentFromText",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_EditDocument",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: example.com",
-        "hardcoded domain: img.png",
-        "hardcoded domain: new.png",
-        "hardcoded email recipient: alice@example.com"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_GenerateGoogleFilePickerUrl",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_GetDocumentAsDocmd",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_GetDocumentById",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_GetDocumentMetadata",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_InsertTextAtEndOfDocument",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_ListDocumentComments",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (pagination_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_SearchDocuments",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (pagination_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "GoogleDocs_WhoAmI",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "HTML",
+  "last_commit_at": "2026-02-28T06:27:02Z",
+  "last_release_at": "2026-02-12T03:09:15Z",
+  "latest_release_name": "v1.0.13",
+  "latest_release_tag": "v1.0.13",
+  "latest_release_url": "https://github.com/wxkingstar/doc-hub-mcp/releases/tag/v1.0.13",
+  "latest_release_version": "v1.0.13",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 79,
+  "npm_package": "doc-hub-mcp",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:53:25.035184661Z",
   "scan_history": [
     {
       "scan_date": "2026-04-20T02:17:49Z",
@@ -634,5 +479,168 @@
       "risk_score": 2,
       "version": "1.0.13"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/wxkingstar/doc-hub-mcp",
+  "stars": 19,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 4,
+    "info": 23
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "Arcade_ListApps",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_CommentOnDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_CreateBlankDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_CreateDocumentFromText",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_EditDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: example.com",
+        "hardcoded domain: img.png",
+        "hardcoded domain: new.png",
+        "hardcoded email recipient: alice@example.com"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_GenerateGoogleFilePickerUrl",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_GetDocumentAsDocmd",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_GetDocumentById",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_GetDocumentMetadata",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_InsertTextAtEndOfDocument",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_ListDocumentComments",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_SearchAndRetrieveDocuments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pagination_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_SearchDocuments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (pagination_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "GoogleDocs_WhoAmI",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "wxkingstar-doc-hub-mcp",
+  "tool_names": [
+    "Arcade_ListApps",
+    "GoogleDocs_CommentOnDocument",
+    "GoogleDocs_CreateBlankDocument",
+    "GoogleDocs_CreateDocumentFromText",
+    "GoogleDocs_EditDocument",
+    "GoogleDocs_GenerateGoogleFilePickerUrl",
+    "GoogleDocs_GetDocumentAsDocmd",
+    "GoogleDocs_GetDocumentById",
+    "GoogleDocs_GetDocumentMetadata",
+    "GoogleDocs_InsertTextAtEndOfDocument",
+    "GoogleDocs_ListDocumentComments",
+    "GoogleDocs_SearchAndRetrieveDocuments",
+    "GoogleDocs_SearchDocuments",
+    "GoogleDocs_WhoAmI"
+  ],
+  "vendor": "wxkingstar",
+  "version": "1.0.13"
 }

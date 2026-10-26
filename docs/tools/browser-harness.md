@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.13` |
 | **Vendor** | browser-use |
-| **Stars** | ⭐ 18595 |
+| **Stars** | ⭐ 18615 |
 | **Language** | Python |
 | **Source** | [browser-harness](https://github.com/browser-use/browser-harness) |
-| **Scan Date** | 2026-10-25 |
+| **Scan Date** | 2026-10-26 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

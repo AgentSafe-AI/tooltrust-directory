@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.3.0` |
 | **Vendor** | bostrot |
-| **Stars** | ⭐ 4028 |
+| **Stars** | ⭐ 4035 |
 | **Language** | Dart |
 | **Source** | [wsl2-distro-manager](https://github.com/bostrot/wsl2-distro-manager) |
 | **Scan Date** | 2026-10-15 |
