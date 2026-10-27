@@ -1,20 +1,36 @@
 {
   "tool_id": "figma-console-mcp",
-  "version": "1.40.9",
+  "version": "1.41.4",
   "grade": "C",
-  "risk_score": 25,
-  "scan_date": "2026-10-26T02:34:23.845227909Z",
+  "risk_score": 27,
+  "scan_date": "2026-10-27T03:12:02.537736632Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/southleft/figma-console-mcp",
   "category": "Developer Tools",
   "vendor": "southleft",
-  "stars": 2600,
+  "stars": 2607,
   "npm_package": "figma-console-mcp",
-  "npm_downloads_monthly": 92648,
+  "npm_downloads_monthly": 73690,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Your design system as an API. Connect AI to Figma for extraction, creation, and debugging.",
   "findings": [
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "figma_get_console_logs"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "figma_get_console_logs"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -53,6 +69,14 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: code/command execution",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "figma_watch_console"
+    },
+    {
+      "id": "AS-006",
+      "severity": "Critical",
+      "title": "Arbitrary Code Execution",
+      "description": "tool name or description implies arbitrary script/code execution (evaluate_script, execute javascript, etc.)",
+      "recommendation": "This tool can execute arbitrary code or shell commands on the host system. Remove it unless strictly required. If kept: (1) restrict access to trusted users/agents only, (2) require human approval before each invocation (Claude Desktop: set approval_required: true; other clients: enable equivalent confirmation), (3) use the most restrictive sandbox or read-only mode available, and (4) never expose this tool to untrusted input sources.",
       "tool_name": "figma_watch_console"
     },
     {
@@ -1880,11 +1904,11 @@
       "tool_name": "figma_create_slot"
     },
     {
-      "id": "AS-014",
+      "id": "AS-002",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
-      "recommendation": "Review and remediate the identified issue.",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "figma_get_slots"
     },
     {
@@ -1893,7 +1917,31 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "figma_get_slots"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "figma_append_to_slot"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "figma_append_to_slot"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "figma_reset_slot"
     },
     {
       "id": "AS-014",
@@ -1907,7 +1955,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution",
+      "description": "declared capabilities: code/command execution, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "figma_add_slot_property"
     },
@@ -1953,11 +2001,11 @@
     }
   ],
   "summary": {
-    "critical": 1,
+    "critical": 2,
     "high": 0,
     "medium": 0,
-    "low": 44,
-    "info": 197
+    "low": 45,
+    "info": 201
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -2089,6 +2137,10 @@
       "tool_name": "figma_get_console_logs",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -2104,8 +2156,8 @@
     },
     {
       "tool_name": "figma_watch_console",
-      "action": "ALLOW",
-      "grade": "A",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
       "behavior": [
         "executes_commands"
       ],
@@ -3313,6 +3365,9 @@
       "tool_name": "figma_get_slots",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -3320,6 +3375,9 @@
       "tool_name": "figma_append_to_slot",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -3327,6 +3385,9 @@
       "tool_name": "figma_reset_slot",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
       "destinations": [
         "hardcoded domain: SlotNode.resetSlot"
       ],
@@ -3338,7 +3399,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -3559,6 +3621,12 @@
     },
     {
       "scan_date": "2026-10-25T02:36:29Z",
+      "grade": "C",
+      "risk_score": 25,
+      "version": "1.40.9"
+    },
+    {
+      "scan_date": "2026-10-26T02:34:23Z",
       "grade": "C",
       "risk_score": 25,
       "version": "1.40.9"

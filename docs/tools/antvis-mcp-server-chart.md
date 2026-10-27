@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.9.10` |
 | **Vendor** | antvis |
-| **Stars** | ⭐ 4396 |
+| **Stars** | ⭐ 4406 |
 | **npm Package** | `@antv/mcp-server-chart` |
 | **npm Downloads (30d)** | 19.1k |
 | **Language** | TypeScript |

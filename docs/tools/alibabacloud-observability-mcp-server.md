@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.2` |
 | **Vendor** | aliyun |
-| **Stars** | ⭐ 166 |
+| **Stars** | ⭐ 169 |
 | **Language** | Go |
 | **Source** | [alibabacloud-observability-mcp-server](https://github.com/aliyun/alibabacloud-observability-mcp-server) |
 | **Scan Date** | 2026-10-15 |

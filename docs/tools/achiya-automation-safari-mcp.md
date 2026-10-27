@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.10.2` |
 | **Vendor** | achiya-automation |
-| **Stars** | ⭐ 214 |
+| **Stars** | ⭐ 225 |
 | **npm Package** | `safari-mcp` |
 | **npm Downloads (30d)** | 14.1k |
 | **Language** | JavaScript |

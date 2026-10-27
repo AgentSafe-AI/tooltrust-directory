@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.11` |
 | **Vendor** | Aas-ee |
-| **Stars** | ⭐ 1852 |
+| **Stars** | ⭐ 1876 |
 | **npm Package** | `open-websearch` |
 | **npm Downloads (30d)** | 40.1k |
 | **Language** | TypeScript |

@@ -1,14 +1,14 @@
 {
   "tool_id": "librechat",
-  "version": "0.8.8",
+  "version": "0.8.9-rc1",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-10-26T02:30:55Z",
+  "scan_date": "2026-10-27T03:07:19Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/LibreChat-AI/LibreChat",
   "category": "Developer Tools",
   "vendor": "LibreChat-AI",
-  "stars": 46321,
+  "stars": 46359,
   "npm_package": "LibreChat",
   "license": "MIT",
   "language": "TypeScript",
@@ -22,6 +22,27 @@
       "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
         "evidence": [
+          {
+            "kind": "import",
+            "line": 8,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "e2e/setup/fake-mcp-app-server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 272,
+            "snippet": "new McpServer(",
+            "file": "e2e/setup/fake-mcp-app-server.mjs",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 287,
+            "snippet": ".registerTool(",
+            "file": "e2e/setup/fake-mcp-app-server.mjs",
+            "language": "typescript"
+          },
           {
             "kind": "import",
             "line": 5,
@@ -63,27 +84,6 @@
             "snippet": ".registerTool(",
             "file": "e2e/setup/fake-mcp-http-server.js",
             "language": "typescript"
-          },
-          {
-            "kind": "import",
-            "line": 5,
-            "snippet": "'@modelcontextprotocol/sdk",
-            "file": "e2e/setup/fake-mcp-server.js",
-            "language": "typescript"
-          },
-          {
-            "kind": "init",
-            "line": 18,
-            "snippet": "new McpServer(",
-            "file": "e2e/setup/fake-mcp-server.js",
-            "language": "typescript"
-          },
-          {
-            "kind": "tool_definition",
-            "line": 23,
-            "snippet": ".registerTool(",
-            "file": "e2e/setup/fake-mcp-server.js",
-            "language": "typescript"
           }
         ]
       }
@@ -100,6 +100,27 @@
   "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 8,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "e2e/setup/fake-mcp-app-server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 272,
+      "snippet": "new McpServer(",
+      "file": "e2e/setup/fake-mcp-app-server.mjs",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 287,
+      "snippet": ".registerTool(",
+      "file": "e2e/setup/fake-mcp-app-server.mjs",
+      "language": "typescript"
+    },
     {
       "kind": "import",
       "line": 5,
@@ -140,27 +161,6 @@
       "line": 28,
       "snippet": ".registerTool(",
       "file": "e2e/setup/fake-mcp-http-server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 5,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "e2e/setup/fake-mcp-server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 18,
-      "snippet": "new McpServer(",
-      "file": "e2e/setup/fake-mcp-server.js",
-      "language": "typescript"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 23,
-      "snippet": ".registerTool(",
-      "file": "e2e/setup/fake-mcp-server.js",
       "language": "typescript"
     }
   ]

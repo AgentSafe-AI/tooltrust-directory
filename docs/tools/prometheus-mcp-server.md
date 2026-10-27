@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.6.2` |
 | **Vendor** | pab1it0 |
-| **Stars** | ⭐ 519 |
+| **Stars** | ⭐ 520 |
 | **Language** | Python |
 | **Source** | [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) |
-| **Scan Date** | 2026-10-26 |
+| **Scan Date** | 2026-10-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

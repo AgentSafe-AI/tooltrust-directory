@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `1.2.6` |
 | **Vendor** | 8enSmith |
-| **Stars** | ⭐ 99 |
+| **Stars** | ⭐ 100 |
 | **npm Package** | `mcp-open-library` |
-| **npm Downloads (30d)** | 948 |
+| **npm Downloads (30d)** | 117 |
 | **Language** | TypeScript |
 | **Source** | [mcp-open-library](https://github.com/8enSmith/mcp-open-library) |
-| **Scan Date** | 2026-10-26 |
+| **Scan Date** | 2026-10-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

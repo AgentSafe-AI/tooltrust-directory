@@ -10,10 +10,10 @@
 | **Vendor** | samvallad33 |
 | **Stars** | ⭐ 656 |
 | **npm Package** | `vestige` |
-| **npm Downloads (30d)** | 11 |
+| **npm Downloads (30d)** | 22 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-10-26 |
+| **Scan Date** | 2026-10-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

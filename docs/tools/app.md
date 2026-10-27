@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `5.3.0` |
 | **Vendor** | reactive-resume |
-| **Stars** | ⭐ 44152 |
+| **Stars** | ⭐ 44908 |
 | **npm Package** | `reactive-resume` |
 | **npm Downloads (30d)** | 64 |
 | **Language** | TypeScript |

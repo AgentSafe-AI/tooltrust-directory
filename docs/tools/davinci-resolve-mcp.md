@@ -8,12 +8,12 @@
 | **Risk Score** | 15 |
 | **Version** | `4.15.3` |
 | **Vendor** | samuelgursky |
-| **Stars** | ⭐ 3766 |
+| **Stars** | ⭐ 3785 |
 | **npm Package** | `davinci-resolve-mcp` |
-| **npm Downloads (30d)** | 21.9k |
+| **npm Downloads (30d)** | 15.1k |
 | **Language** | Python |
 | **Source** | [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) |
-| **Scan Date** | 2026-10-26 |
+| **Scan Date** | 2026-10-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 1 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 4 |
+| Info     | 1 |
 
 ## Detailed Findings
 
@@ -35,46 +35,10 @@
 **Severity:** High
 
 **Description:**
-Tool set changed silently at v4.15.3: 3 tool(s) added, 1 tool(s) removed without a version bump.
+Tool set changed silently at v4.15.3: 1 tool(s) added, 3 tool(s) removed without a version bump.
 
 **Recommendation:**
 The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: filesystem access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

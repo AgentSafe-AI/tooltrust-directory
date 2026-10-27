@@ -3,14 +3,14 @@
   "version": "4.15.3",
   "grade": "B",
   "risk_score": 15,
-  "scan_date": "2026-10-26T02:33:33.394702003Z",
+  "scan_date": "2026-10-27T03:11:21.325428867Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/samuelgursky/davinci-resolve-mcp",
   "category": "Developer Tools",
   "vendor": "samuelgursky",
-  "stars": 3766,
+  "stars": 3785,
   "npm_package": "davinci-resolve-mcp",
-  "npm_downloads_monthly": 21929,
+  "npm_downloads_monthly": 15050,
   "license": "MIT",
   "language": "Python",
   "description": "MCP server integration for DaVinci Resolve Studio",
@@ -19,16 +19,16 @@
       "id": "AS-012",
       "severity": "High",
       "title": "Rug-Pull (Post-Install Description Change)",
-      "description": "Tool set changed silently at v4.15.3: 3 tool(s) added, 1 tool(s) removed without a version bump.",
+      "description": "Tool set changed silently at v4.15.3: 1 tool(s) added, 3 tool(s) removed without a version bump.",
       "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
       "metadata": {
         "added": [
+          "resolve_migration_exception"
+        ],
+        "removed": [
           "event_check_price_threshold",
           "event_resolve_outcome",
           "event_verify_claim"
-        ],
-        "removed": [
-          "resolve_migration_exception"
         ],
         "version": "4.15.3"
       }
@@ -39,31 +39,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "event_resolve_outcome"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "event_verify_claim"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "event_check_price_threshold"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "event_check_price_threshold"
+      "tool_name": "resolve_migration_exception"
     }
   ],
   "summary": {
@@ -71,7 +47,7 @@
     "high": 1,
     "medium": 0,
     "low": 0,
-    "info": 4
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -112,27 +88,11 @@
     }
   ],
   "tool_names": [
-    "event_check_price_threshold",
-    "event_resolve_outcome",
-    "event_verify_claim"
+    "resolve_migration_exception"
   ],
   "tool_contexts": [
     {
-      "tool_name": "event_resolve_outcome",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "event_verify_claim",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "event_check_price_threshold",
+      "tool_name": "resolve_migration_exception",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -276,6 +236,12 @@
       "scan_date": "2026-10-25T02:35:37Z",
       "grade": "A",
       "risk_score": 0,
+      "version": "4.15.3"
+    },
+    {
+      "scan_date": "2026-10-26T02:33:33Z",
+      "grade": "B",
+      "risk_score": 15,
       "version": "4.15.3"
     }
   ]
