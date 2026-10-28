@@ -10,9 +10,10 @@
 | **Vendor** | getsentry |
 | **Stars** | ⭐ 6511 |
 | **npm Package** | `mobilebuildmcp` |
+| **npm Downloads (30d)** | 6.7k |
 | **Language** | TypeScript |
 | **Source** | [mobilebuildmcp](https://github.com/getsentry/MobileBuildMCP) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

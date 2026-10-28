@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.0` |
 | **Vendor** | lemaiwo |
-| **Stars** | ⭐ 137 |
+| **Stars** | ⭐ 140 |
 | **npm Package** | `btp-sap-odata-to-mcp-server` |
 | **npm Downloads (30d)** | 144 |
 | **Language** | TypeScript |

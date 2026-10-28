@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.1` |
 | **Vendor** | ravikiranvm |
-| **Stars** | ⭐ 183 |
+| **Stars** | ⭐ 184 |
 | **Language** | Python |
 | **Source** | [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) |
 | **Scan Date** | 2026-10-15 |

@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `4.0.21` |
 | **Vendor** | farion1231 |
-| **Stars** | ⭐ 149022 |
+| **Stars** | ⭐ 149454 |
 | **npm Package** | `cc-switch` |
 | **Language** | Rust |
 | **Source** | [cc-switch](https://github.com/farion1231/cc-switch) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

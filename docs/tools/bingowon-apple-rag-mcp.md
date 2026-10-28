@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `4.18.7` |
 | **Vendor** | BingoWon |
-| **Stars** | ⭐ 120 |
+| **Stars** | ⭐ 121 |
 | **npm Package** | `apple-rag-mcp` |
 | **Language** | TypeScript |
 | **Source** | [bingowon-apple-rag-mcp](https://github.com/BingoWon/apple-rag-mcp) |

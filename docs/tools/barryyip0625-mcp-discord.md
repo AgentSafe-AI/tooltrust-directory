@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.3.9` |
 | **Vendor** | barryyip0625 |
-| **Stars** | ⭐ 106 |
+| **Stars** | ⭐ 108 |
 | **npm Package** | `mcp-discord` |
 | **npm Downloads (30d)** | 2.8k |
 | **Language** | TypeScript |

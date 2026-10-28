@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `golden-f60c6fbd46aa` |
 | **Vendor** | feder-cr |
-| **Stars** | ⭐ 32260 |
+| **Stars** | ⭐ 32273 |
 | **npm Package** | `invisible-dots-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [invisible-dots](https://github.com/feder-cr/invisible_dots) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.8.0` |
 | **Vendor** | benzsevern |
-| **Stars** | ⭐ 133 |
+| **Stars** | ⭐ 134 |
 | **npm Package** | `goldenmatch-monorepo` |
 | **Language** | Python |
 | **Source** | [benzsevern-goldenmatch](https://github.com/benseverndev-oss/goldenmatch) |

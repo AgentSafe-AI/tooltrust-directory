@@ -1,700 +1,699 @@
 # ToolTrust — Full Directory
 
-All 1951 audited tools. [← Back to README](../README.md#-security-registry)
+All 1952 audited tools. [← Back to README](../README.md#-security-registry)
 
 | Tool | Version | Popularity | Grade | Key Findings | Scanned |
 |------|---------|:-----:|:-----:|:-------------|:-------:|
-| [typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) | `2.4.0` | 172.3M/mo | **[A](tools/typescript-sdk.md)** | `AS-014` | Oct 27 |
-| [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.83` | 24.4M/mo | **[C](tools/playwright-mcp.md)** | `AS-014` ×25, 🔑 `AS-002` ×12, ⚡ `AS-006` ×2, ⚡ `AS-011` ×5 | Oct 27 |
-| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 10.9M/mo | **[C](tools/chrome-devtools-mcp.md)** | `AS-014` ×32, 🔑 `AS-002` ×15, ⚡ `AS-011` ×4, ⚡ `AS-006` | Oct 27 |
-| [ext-apps](https://github.com/modelcontextprotocol/ext-apps) | `2.0.3` | 7.8M/mo | **[A](tools/ext-apps.md)** | 🔑 `AS-002`, `AS-014` ×3 | Oct 27 |
+| [typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) | `2.4.0` | 244.6M/mo | **[A](tools/typescript-sdk.md)** | `AS-014` | Oct 28 |
+| [playwright-mcp](https://github.com/microsoft/playwright-mcp) | `0.0.83` | 24.8M/mo | **[C](tools/playwright-mcp.md)** | `AS-014` ×25, 🔑 `AS-002` ×12, ⚡ `AS-006` ×2, ⚡ `AS-011` ×5 | Oct 28 |
+| [ext-apps](https://github.com/modelcontextprotocol/ext-apps) | `2.0.4` | 18.9M/mo | **[A](tools/ext-apps.md)** | 🔑 `AS-002`, `AS-014` ×3 | Oct 28 |
+| [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `chrome-dev…` | 7.3M/mo | **[C](tools/chrome-devtools-mcp.md)** | `AS-014` ×32, 🔑 `AS-002` ×15, ⚡ `AS-011` ×4, ⚡ `AS-006` | Oct 28 |
 | [cloudflare-containers](https://github.com/cloudflare/containers) | `0.3.2` | 6.6M/mo | **[A](tools/cloudflare-containers.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011`, `AS-014` ×7 | Oct 15 |
-| [context7](https://github.com/upstash/context7) | `1.0.30` | 4.2M/mo | **[A](tools/context7.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [upstash-context7-mcp](https://github.com/upstash/context7) | `1.0.30` | 4.2M/mo | **[A](tools/upstash-context7-mcp.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.67.0-nig…` | 2.6M/mo | **[A](tools/gemini-cli.md)** | `AS-014` ×56, 🔑 `AS-002` ×23, ⚡ `AS-011` ×11 | Oct 27 |
-| [editor](https://github.com/pascalorg/editor) | `1.0.3` | 1.7M/mo | **[A](tools/editor.md)** | `AS-014` ×49, 🔑 `AS-002` ×13, ⚡ `AS-011` | Oct 27 |
-| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `2.1.0` | 1.3M/mo | **[A](tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 27 |
+| [context7](https://github.com/upstash/context7) | `1.0.30` | 2.5M/mo | **[A](tools/context7.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [upstash-context7-mcp](https://github.com/upstash/context7) | `1.0.30` | 2.5M/mo | **[A](tools/upstash-context7-mcp.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [mcp-server-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | `2.1.0` | 2.3M/mo | **[A](tools/mcp-server-filesystem.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 28 |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | `0.67.0-pre…` | 1.4M/mo | **[A](tools/gemini-cli.md)** | `AS-014` ×56, 🔑 `AS-002` ×23, ⚡ `AS-011` ×11 | Oct 28 |
+| [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) | `0.3.1` | 1.3M/mo | **[B](tools/desktopcommandermcp.md)** | 🔑 `AS-002` ×19, `AS-014` ×25, ⚡ `AS-011` ×8, 📐 `AS-003` | Oct 28 |
+| [editor](https://github.com/pascalorg/editor) | `1.0.3` | 1.3M/mo | **[A](tools/editor.md)** | `AS-014` ×49, 🔑 `AS-002` ×13, ⚡ `AS-011` | Oct 28 |
 | [mcporter](https://github.com/openclaw/mcporter) | `0.12.4` | 1.2M/mo | **[I](tools/mcporter.md)** | `AS-018` | Aug 3 |
-| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.1.0` | 636.3k/mo | **[A](tools/mcp-server-github.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 27 |
+| [agent-device](https://github.com/callstack/agent-device) | `0.21.33` | 1.1M/mo | **[A](tools/agent-device.md)** | `AS-014` | Oct 28 |
+| [rea](https://github.com/morluto/rea) | `rea-agents…` | 954.2k/mo | **[A](tools/rea.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×11 | Oct 28 |
+| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.5.2` | 629.2k/mo | **[A](tools/notion-mcp-server.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×24, `AS-014` ×24 | Oct 28 |
 | [mcpb](https://github.com/modelcontextprotocol/mcpb) | `2.1.2` | 588.5k/mo | **[C](tools/mcpb.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×10, ⚡ `AS-006` | Oct 15 |
-| [agent-device](https://github.com/callstack/agent-device) | `0.21.32` | 566.7k/mo | **[A](tools/agent-device.md)** | `AS-014` | Oct 27 |
-| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.99.1` | 552.2k/mo | **[A](tools/n8n-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×8, ⚡ `AS-011` ×4 | Oct 27 |
-| [notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | `2.5.2` | 543.4k/mo | **[A](tools/notion-mcp-server.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×24, `AS-014` ×24 | Oct 27 |
-| [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.24.1` | 541.9k/mo | **[A](tools/firecrawl-mcp-server.md)** | 🔑 `AS-002` ×32, `AS-014` ×26, ⚡ `AS-011` ×24, 🗝️ `AS-010` | Oct 27 |
-| [qwen-code](https://github.com/QwenLM/qwen-code) | `weaken-too…` | 503.7k/mo | **[A](tools/qwen-code.md)** | `AS-014` ×30, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
+| [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2.1.0` | 588.1k/mo | **[A](tools/mcp-server-sequential-thinking.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 28 |
+| [firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) | `3.24.1` | 548.3k/mo | **[A](tools/firecrawl-mcp-server.md)** | 🔑 `AS-002` ×32, `AS-014` ×26, ⚡ `AS-011` ×24, 🗝️ `AS-010` | Oct 28 |
+| [gitlab-mcp](https://github.com/zereight/gitlab-mcp) | `2.3.13` | 513.5k/mo | **[A](tools/gitlab-mcp.md)** | `AS-014` ×54, 🔑 `AS-002` ×29, ⚡ `AS-011` ×15 | Oct 28 |
 | [azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) | `2.9.0` | 500.2k/mo | **[A](tools/azure-devops-mcp.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.13.2` | 426.1k/mo | **[A](tools/figma-context-mcp.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [mcp-server-sequential-thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) | `2.1.0` | 422.0k/mo | **[A](tools/mcp-server-sequential-thinking.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 27 |
-| [gitlab-mcp](https://github.com/zereight/gitlab-mcp) | `2.3.12` | 418.5k/mo | **[A](tools/gitlab-mcp.md)** | `AS-014` ×54, 🔑 `AS-002` ×29, ⚡ `AS-011` ×15 | Oct 27 |
-| [rea](https://github.com/morluto/rea) | `rea-agents…` | 392.3k | **[A](tools/rea.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×11 | Oct 27 |
-| [repomix](https://github.com/yamadashy/repomix) | `1.18.1` | 307.3k/mo | **[I](tools/repomix.md)** | `AS-018` | Oct 27 |
-| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.7.0` | 271.1k/mo | **[A](tools/xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×31, ⚡ `AS-011` ×3 | Oct 15 |
+| [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) | `2.1.0` | 428.9k/mo | **[A](tools/mcp-server-github.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 28 |
+| [repomix](https://github.com/yamadashy/repomix) | `1.18.1` | 336.4k/mo | **[I](tools/repomix.md)** | `AS-018` | Oct 28 |
+| [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) | `0.13.2` | 332.3k/mo | **[A](tools/figma-context-mcp.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | `2.99.2` | 321.1k/mo | **[A](tools/n8n-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×8, ⚡ `AS-011` ×4 | Oct 28 |
+| [qwen-code](https://github.com/QwenLM/qwen-code) | `weaken-too…` | 288.9k/mo | **[A](tools/qwen-code.md)** | `AS-014` ×30, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
 | [cameroncooke-xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.3.2` | 271.1k/mo | **[A](tools/cameroncooke-xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×31, ⚡ `AS-011` ×3 | Oct 15 |
-| [mcp-framework](https://github.com/QuantGeekDev/mcp-framework) | `mcp-framew…` | 260.2k/mo | **[B](tools/mcp-framework.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×9, `AS-014` ×10, 📐 `AS-003` ×2 | Oct 27 |
-| [desktopcommandermcp](https://github.com/wonderwhy-er/DesktopCommanderMCP) | `0.3.1` | 197.8k/mo | **[B](tools/desktopcommandermcp.md)** | 🔑 `AS-002` ×19, `AS-014` ×25, ⚡ `AS-011` ×8, 📐 `AS-003` | Oct 27 |
-| [n8n-nodes-mcp](https://github.com/nerding-io/n8n-nodes-mcp) | `0.1.37` | 183.6k/mo | **[A](tools/n8n-nodes-mcp.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 27 |
-| [mcp-playwright](https://github.com/executeautomation/mcp-playwright) | `1.0.12` | 163.7k/mo | **[B](tools/mcp-playwright.md)** | `AS-012`, 🔑 `AS-002` ×10, `AS-014` ×8, ⚡ `AS-011` ×2 | Oct 27 |
-| [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.23` | 160.1k/mo | **[A](tools/tavily-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 27 |
+| [xcodebuildmcp](https://github.com/getsentry/XcodeBuildMCP) | `2.7.0` | 271.1k/mo | **[A](tools/xcodebuildmcp.md)** | `AS-014` ×71, 🔑 `AS-002` ×31, ⚡ `AS-011` ×3 | Oct 15 |
+| [omniroute](https://github.com/cheaper-inference/OmniRoute) | `3.8.52` | 236.4k/mo | **[I](tools/omniroute.md)** | `AS-018` | Oct 28 |
+| [n8n-nodes-mcp](https://github.com/nerding-io/n8n-nodes-mcp) | `0.1.37` | 229.2k/mo | **[A](tools/n8n-nodes-mcp.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 28 |
+| [mcp-framework](https://github.com/QuantGeekDev/mcp-framework) | `mcp-framew…` | 201.6k/mo | **[B](tools/mcp-framework.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×9, `AS-014` ×10, 📐 `AS-003` ×2 | Oct 28 |
+| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.175.0` | 199.0k/mo | **[A](tools/ms-365-mcp-server.md)** | `AS-014` ×200, 🔑 `AS-002` ×237, ⚡ `AS-011` ×193, 🗝️ `AS-010` ×49 | Oct 28 |
+| [mobile-mcp](https://github.com/mobile-next/mobile-mcp) | `1.0.14` | 189.9k/mo | **[A](tools/mobile-mcp.md)** | `AS-014` ×34, 🔑 `AS-002` ×13, ⚡ `AS-011` ×7 | Oct 28 |
+| [kordoc](https://github.com/chrisryugj/kordoc) | `4.24.14` | 157.5k/mo | **[I](tools/kordoc.md)** | `AS-018` | Oct 28 |
 | [chrisdoc-hevy-mcp](https://github.com/chrisdoc/hevy-mcp) | `1.23.3` | 157.0k/mo | **[A](tools/chrisdoc-hevy-mcp.md)** | `AS-014` ×24, 🔑 `AS-002` ×13, ⚡ `AS-011` ×4 | Oct 15 |
-| [mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | `0.20.0` | 153.1k/mo | **[B](tools/mcp-server-circleci.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×13, `AS-014` ×13, 📐 `AS-003` ×2 | Oct 27 |
-| [cc-switch](https://github.com/farion1231/cc-switch) | `4.0.21` | 149.0k | **[A](tools/cc-switch.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×8, `AS-014` ×14 | Oct 27 |
+| [cc-switch](https://github.com/farion1231/cc-switch) | `4.0.21` | 149.5k | **[A](tools/cc-switch.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×8, `AS-014` ×14 | Oct 28 |
 | [tacticlaunch-mcp-linear](https://github.com/tacticlaunch/mcp-linear) | `1.1.2` | 145.8k/mo | **[A](tools/tacticlaunch-mcp-linear.md)** | `AS-014` ×42, 🔑 `AS-002` ×14, ⚡ `AS-011` ×8 | Oct 15 |
-| [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | `0.173.0` | 130.1k/mo | **[A](tools/ms-365-mcp-server.md)** | `AS-014` ×200, 🔑 `AS-002` ×237, ⚡ `AS-011` ×193, 🗝️ `AS-010` ×49 | Oct 27 |
-| [browser-use](https://github.com/browser-use/browser-use) | `0.13.14` | 119.2k | **[A](tools/browser-use.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×11 | Oct 27 |
-| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `2.1.0` | 118.5k/mo | **[A](tools/mcp-server-brave-search.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 27 |
-| [context-mode](https://github.com/mksglu/context-mode) | `2.0.0-next.2` | 117.9k/mo | **[A](tools/context-mode.md)** | 🔑 `AS-002` ×7, `AS-014` ×7, ⚡ `AS-011` | Oct 27 |
+| [browser-use](https://github.com/browser-use/browser-use) | `0.13.14` | 119.3k | **[A](tools/browser-use.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×11 | Oct 28 |
 | [magic-mcp](https://github.com/21st-dev/magic-mcp) | `0.2.3` | 117.5k/mo | **[A](tools/magic-mcp.md)** | `AS-014` ×43, 🔑 `AS-002` ×42, ⚡ `AS-011` ×36, ⚡ `AS-006` | Oct 4 |
 | [circleci-public-mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | `0.15.1` | 115.2k/mo | **[B](tools/circleci-public-mcp-server-circleci.md)** | `AS-012`, `AS-014` ×22, 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, 📐 `AS-003` ×2 | Oct 15 |
-| [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) | `3.4.2` | 114.0k/mo | **[A](tools/exa-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `4.2.1` | 106.6k/mo | **[A](tools/mcp-server-kubernetes.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Oct 27 |
-| [ruflo](https://github.com/ruvnet/ruflo) | `3.63.4` | 104.4k/mo | **[A](tools/ruflo.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 27 |
-| [agent-reach](https://github.com/Panniantong/Agent-Reach) | `1.6.0` | 103.8k | **[A](tools/agent-reach.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×9 | Oct 27 |
-| [mcp-searxng](https://github.com/ihor-sokoliuk/mcp-searxng) | `2.8.1` | 100.8k/mo | **[A](tools/mcp-searxng.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 27 |
+| [agent-reach](https://github.com/Panniantong/Agent-Reach) | `1.6.0` | 105.0k | **[A](tools/agent-reach.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×9 | Oct 28 |
 | [tavily-ai-tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.19` | 96.5k/mo | **[A](tools/tavily-ai-tavily-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 15 |
-| [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2.1.0` | 91.6k | **[A](tools/mcp-server-time.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 27 |
+| [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) | `2.1.0` | 91.6k/mo | **[A](tools/mcp-server-brave-search.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 28 |
+| [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) | `2.1.0` | 91.6k | **[A](tools/mcp-server-time.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 28 |
 | [servers](https://github.com/modelcontextprotocol/servers) | `typescript…` | 91.5k | **[A](tools/servers.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 15 |
-| [mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) | `2.0.9` | 90.7k/mo | **[A](tools/mcp-server-mysql.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` | Oct 27 |
-| [worldmonitor](https://github.com/koala73/worldmonitor) | `2.11.6` | 89.6k | **[B](tools/worldmonitor.md)** | `AS-014` ×95, 🔑 `AS-002` ×55, ⚡ `AS-011` ×49, 📐 `AS-003` | Oct 27 |
+| [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.19.5` | 90.6k/mo | **[C](tools/apify-mcp-server.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Oct 28 |
+| [context-mode](https://github.com/mksglu/context-mode) | `2.0.0-next.8` | 90.0k/mo | **[A](tools/context-mode.md)** | 🔑 `AS-002` ×7, `AS-014` ×7, ⚡ `AS-011` | Oct 28 |
+| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.1.4` | 89.8k/mo | **[A](tools/brave-search-mcp-server.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 28 |
+| [worldmonitor](https://github.com/koala73/worldmonitor) | `2.11.6` | 89.7k | **[B](tools/worldmonitor.md)** | `AS-014` ×95, 🔑 `AS-002` ×55, ⚡ `AS-011` ×49, 📐 `AS-003` | Oct 28 |
 | [scrapling](https://github.com/D4Vinci/Scrapling) | `0.4.12` | 89.4k | **[I](tools/scrapling.md)** | `AS-018` | Aug 9 |
-| [modelcontextprotocol](https://github.com/perplexityai/modelcontextprotocol) | `1.4.0` | 87.7k/mo | **[I](tools/modelcontextprotocol.md)** | `AS-018` | Oct 27 |
-| [mobile-mcp](https://github.com/mobile-next/mobile-mcp) | `1.0.14` | 81.6k/mo | **[A](tools/mobile-mcp.md)** | `AS-014` ×34, 🔑 `AS-002` ×13, ⚡ `AS-011` ×7 | Oct 27 |
-| [netdata](https://github.com/netdata/netdata) | `2.12.2` | 81.2k | **[A](tools/netdata.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` ×3 | Oct 27 |
-| [headroom](https://github.com/headroomlabs-ai/headroom) | `0.42.0` | 77.9k | **[A](tools/headroom.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | `2026.10.4` | 74.4k | **[A](tools/ai-engineering-from-scratch.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [figma-console-mcp](https://github.com/southleft/figma-console-mcp) | `1.41.4` | 73.7k/mo | **[C](tools/figma-console-mcp.md)** | 🔑 `AS-002` ×82, ⚡ `AS-011` ×42, `AS-014` ×121, ⚡ `AS-006` ×2, 🗝️ `AS-010` | Oct 27 |
-| [apify-mcp-server](https://github.com/apify/apify-mcp-server) | `0.19.3` | 72.3k/mo | **[C](tools/apify-mcp-server.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Oct 27 |
-| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `0.20.0` | 68.9k/mo | **[A](tools/claude-task-master.md)** | 🔑 `AS-002` ×23, `AS-014` ×57, ⚡ `AS-011` ×8, 🗝️ `AS-010` | Oct 27 |
-| [brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) | `2.1.4` | 66.3k/mo | **[A](tools/brave-search-mcp-server.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 27 |
+| [trail-code](https://github.com/trailhq/Trail-Code) | `0.21.1` | 88.6k/mo | **[A](tools/trail-code.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Oct 28 |
+| [figma-console-mcp](https://github.com/southleft/figma-console-mcp) | `1.44.2` | 82.9k/mo | **[C](tools/figma-console-mcp.md)** | 🔑 `AS-002` ×82, ⚡ `AS-011` ×42, `AS-014` ×121, ⚡ `AS-006` ×2, 🗝️ `AS-010` | Oct 28 |
+| [netdata](https://github.com/netdata/netdata) | `2.12.2` | 81.2k | **[A](tools/netdata.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` ×3 | Oct 28 |
+| [headroom](https://github.com/headroomlabs-ai/headroom) | `0.42.0` | 78.1k | **[A](tools/headroom.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [tavily-mcp](https://github.com/tavily-ai/tavily-mcp) | `0.2.23` | 77.8k/mo | **[A](tools/tavily-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 28 |
+| [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | `2026.10.4` | 74.7k | **[A](tools/ai-engineering-from-scratch.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | `0.0.16` | 63.3k/mo | **[A](tools/xero-mcp-server.md)** | 🔑 `AS-002` ×16, `AS-014` ×40 | Oct 15 |
 | [trendradar](https://github.com/sansan0/TrendRadar) | `6.5.0` | 63.2k | **[I](tools/trendradar.md)** | ✅ None | Mar 18 |
-| [mempalace](https://github.com/MemPalace/mempalace) | `3.11.0` | 59.8k | **[A](tools/mempalace.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
-| [ai-agent-book](https://github.com/bojieli/ai-agent-book) | `1.2` | 56.0k | **[C](tools/ai-agent-book.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Oct 27 |
-| [goose](https://github.com/aaif-goose/goose) | `2.0.0-rc-0…` | 55.8k | **[I](tools/goose.md)** | `AS-018` | Oct 27 |
-| [localai](https://github.com/mudler/LocalAI) | `4.12.1` | 50.0k | **[I](tools/localai.md)** | `AS-018` | Oct 27 |
-| [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | `20.0.0` | 48.6k | **[A](tools/agentic-awesome-skills.md)** | `AS-014` ×12, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5 | Oct 27 |
-| [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | `0.12.1` | 47.6k | **[A](tools/codebase-memory-mcp.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Oct 27 |
+| [mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | `0.20.0` | 60.9k/mo | **[B](tools/mcp-server-circleci.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×13, `AS-014` ×13, 📐 `AS-003` ×2 | Oct 28 |
+| [claude-task-master](https://github.com/eyaltoledano/claude-task-master) | `0.20.0` | 60.7k/mo | **[A](tools/claude-task-master.md)** | 🔑 `AS-002` ×23, `AS-014` ×57, ⚡ `AS-011` ×8, 🗝️ `AS-010` | Oct 28 |
+| [modelcontextprotocol](https://github.com/perplexityai/modelcontextprotocol) | `1.4.0` | 59.8k/mo | **[I](tools/modelcontextprotocol.md)** | `AS-018` | Oct 28 |
+| [mempalace](https://github.com/MemPalace/mempalace) | `3.11.0` | 59.8k | **[A](tools/mempalace.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
+| [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) | `3.4.2` | 59.6k/mo | **[A](tools/exa-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [ruflo](https://github.com/ruvnet/ruflo) | `3.63.6` | 58.9k/mo | **[A](tools/ruflo.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 28 |
+| [ai-agent-book](https://github.com/bojieli/ai-agent-book) | `1.2` | 56.3k | **[C](tools/ai-agent-book.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×7, `AS-014` ×16, ⚡ `AS-006` ×2 | Oct 28 |
+| [goose](https://github.com/aaif-goose/goose) | `2.0.0-rc-0…` | 55.8k | **[I](tools/goose.md)** | `AS-018` | Oct 28 |
+| [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | `3.1.3` | 55.1k/mo | **[A](tools/mcp-server-typescript.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 28 |
+| [ecc](https://github.com/affaan-m/ECC) | `2.2.3` | 53.5k/mo | **[A](tools/ecc.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×19 | Oct 28 |
+| [mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) | `2.0.9` | 50.3k/mo | **[A](tools/mcp-server-mysql.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` | Oct 28 |
+| [localai](https://github.com/mudler/LocalAI) | `4.12.1` | 50.0k | **[I](tools/localai.md)** | `AS-018` | Oct 28 |
+| [tableau-mcp](https://github.com/tableau/tableau-mcp) | `5.1.8` | 48.2k/mo | **[A](tools/tableau-mcp.md)** | 🔑 `AS-002` ×39, `AS-014` ×55, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 28 |
+| [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) | `4.1.0` | 47.7k/mo | **[A](tools/brightdata-mcp.md)** | 🔑 `AS-002` ×26, ⚡ `AS-011` ×26, `AS-014` ×32 | Oct 28 |
+| [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | `0.12.1` | 47.7k | **[A](tools/codebase-memory-mcp.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Oct 28 |
 | [runpod-runpod-mcp-ts](https://github.com/runpod/runpod-mcp) | `1.1.0` | 46.9k/mo | **[A](tools/runpod-runpod-mcp-ts.md)** | `AS-014` ×26, 🔑 `AS-002` ×17, ⚡ `AS-011` ×3, 🗝️ `AS-010` | Oct 15 |
-| [omniroute](https://github.com/cheaper-inference/OmniRoute) | `3.8.52` | 46.4k/mo | **[I](tools/omniroute.md)** | `AS-018` | Oct 27 |
-| [librechat](https://github.com/LibreChat-AI/LibreChat) | `0.8.9-rc1` | 46.4k | **[I](tools/librechat.md)** | `AS-018` | Oct 27 |
+| [librechat](https://github.com/LibreChat-AI/LibreChat) | `0.8.9-rc1` | 46.4k | **[I](tools/librechat.md)** | `AS-018` | Oct 28 |
+| [mcp-playwright](https://github.com/executeautomation/mcp-playwright) | `1.0.12` | 45.6k/mo | **[A](tools/mcp-playwright.md)** | 🔑 `AS-002` ×10, `AS-014` ×8, ⚡ `AS-011` ×2 | Oct 28 |
 | [backlog-mcp-server](https://github.com/nulab/backlog-mcp-server) | `v0.3.1` | 45.2k/mo | **[I](tools/backlog-mcp-server.md)** | `AS-018` | Oct 15 |
-| [kong](https://github.com/Kong/kong) | `3.9.4` | 44.3k | **[A](tools/kong.md)** | `AS-014` | Oct 27 |
-| [openhuman](https://github.com/tinyhumansai/openhuman) | `0.64.15` | 42.4k | **[A](tools/openhuman.md)** | 🔑 `AS-002` ×3, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
-| [browsermcp](https://github.com/browsermcp/mcp) | `0.1.3` | 41.7k/mo | **[C](tools/browsermcp.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-006`, ⚡ `AS-011`, `AS-014` | Oct 27 |
+| [kong](https://github.com/Kong/kong) | `3.9.4` | 44.3k | **[A](tools/kong.md)** | `AS-014` | Oct 28 |
+| [mcp-searxng](https://github.com/ihor-sokoliuk/mcp-searxng) | `2.9.0` | 42.7k/mo | **[A](tools/mcp-searxng.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 28 |
+| [openhuman](https://github.com/tinyhumansai/openhuman) | `0.64.15` | 42.4k | **[A](tools/openhuman.md)** | 🔑 `AS-002` ×3, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
 | [railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | `0.1.11` | 40.8k/mo | **[B](tools/railway-mcp-server.md)** | `AS-012`, `AS-014` ×7, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
 | [aas-ee-open-websearch](https://github.com/Aas-ee/open-webSearch) | `2.1.11` | 40.1k/mo | **[A](tools/aas-ee-open-websearch.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×6 | Oct 15 |
-| [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | `3.1.3` | 40.1k/mo | **[B](tools/mcp-server-typescript.md)** | `AS-012`, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 27 |
-| [mindshub](https://github.com/mindsdb/mindshub) | `26.1.0` | 39.8k | **[I](tools/mindshub.md)** | `AS-018` | Oct 27 |
+| [mindshub](https://github.com/mindsdb/mindshub) | `26.1.0` | 39.8k | **[I](tools/mindshub.md)** | `AS-018` | Oct 28 |
 | [minds](https://github.com/mindsdb/minds) | `26.1.0` | 39.8k | **[B](tools/minds.md)** | `AS-014` ×31, 🔑 `AS-002` ×17, ⚡ `AS-011` ×8, 📐 `AS-003` | Oct 15 |
-| [pdfmathtranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) | `1.9.11` | 37.9k | **[I](tools/pdfmathtranslate.md)** | `AS-018` | Oct 27 |
-| [tableau-mcp](https://github.com/tableau/tableau-mcp) | `5.1.3` | 37.3k/mo | **[A](tools/tableau-mcp.md)** | 🔑 `AS-002` ×39, `AS-014` ×55, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 27 |
-| [vibe-trading](https://github.com/HKUDS/Vibe-Trading) | `0.1.18` | 36.8k | **[A](tools/vibe-trading.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [qwenpaw](https://github.com/agentscope-ai/QwenPaw) | `2.2.2` | 36.4k | **[I](tools/qwenpaw.md)** | `AS-018` | Oct 27 |
-| [anthropic-cybersecurity-skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | `1.3.0` | 35.1k | **[C](tools/anthropic-cybersecurity-skills.md)** | 🔑 `AS-002` ×11, `AS-014` ×16, ⚡ `AS-011` ×7, ⚡ `AS-006` | Oct 27 |
-| [github-mcp-server](https://github.com/github/github-mcp-server) | `2.0.3` | 34.0k | **[B](tools/github-mcp-server.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Oct 27 |
-| [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) | `4.1.0` | 33.4k/mo | **[A](tools/brightdata-mcp.md)** | 🔑 `AS-002` ×26, ⚡ `AS-011` ×26, `AS-014` ×32 | Oct 27 |
+| [browsermcp](https://github.com/browsermcp/mcp) | `2.1.0` | 38.4k/mo | **[C](tools/browsermcp.md)** | 🔑 `AS-002`, ⚡ `AS-006`, ⚡ `AS-011`, `AS-014` | Oct 28 |
+| [pdfmathtranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) | `1.9.11` | 38.0k | **[I](tools/pdfmathtranslate.md)** | `AS-018` | Oct 28 |
+| [vibe-trading](https://github.com/HKUDS/Vibe-Trading) | `0.1.18` | 36.9k | **[A](tools/vibe-trading.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [qwenpaw](https://github.com/agentscope-ai/QwenPaw) | `2.3.0-beta.1` | 36.6k | **[I](tools/qwenpaw.md)** | `AS-018` | Oct 28 |
+| [anthropic-cybersecurity-skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | `1.3.0` | 35.1k | **[C](tools/anthropic-cybersecurity-skills.md)** | 🔑 `AS-002` ×11, `AS-014` ×16, ⚡ `AS-011` ×7, ⚡ `AS-006` | Oct 28 |
+| [mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | `4.2.1` | 34.2k/mo | **[A](tools/mcp-server-kubernetes.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3 | Oct 28 |
+| [github-mcp-server](https://github.com/github/github-mcp-server) | `2.0.3` | 34.0k | **[B](tools/github-mcp-server.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Oct 28 |
 | [thirdstrandstudio-mcp-figma](https://github.com/thirdstrandstudio/mcp-figma) | `0.7.0` | 33.0k/mo | **[A](tools/thirdstrandstudio-mcp-figma.md)** | `AS-014` ×31, 🔑 `AS-002` ×24, ⚡ `AS-011` ×5 | Oct 15 |
+| [blender-mcp](https://github.com/ahujasid/mcp-for-blender) | `sha-7684c6…` | 32.5k | **[I](tools/blender-mcp.md)** | `AS-018` | Oct 28 |
 | [dive](https://github.com/OpenAgentPlatform/Dive) | `0.14.2` | 32.5k/mo | **[B](tools/dive.md)** | `AS-012`, 🔑 `AS-002` ×14, `AS-014` ×18, ⚡ `AS-011` ×3 | Oct 15 |
-| [blender-mcp](https://github.com/ahujasid/mcp-for-blender) | `sha-7684c6…` | 32.4k | **[I](tools/blender-mcp.md)** | `AS-018` | Oct 27 |
-| [code-review-graph](https://github.com/tirth8205/code-review-graph) | `scode-v0.2.1` | 32.4k | **[A](tools/code-review-graph.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×8 | Oct 27 |
+| [code-review-graph](https://github.com/tirth8205/code-review-graph) | `scode-v0.2.1` | 32.4k | **[A](tools/code-review-graph.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×8 | Oct 28 |
+| [invisible-dots](https://github.com/feder-cr/invisible_dots) | `golden-f60…` | 32.3k | **[A](tools/invisible-dots.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×17, ⚡ `AS-006` | Oct 28 |
 | [aihawk](https://github.com/feder-cr/AIHawk) | `0.69.1` | 32.3k | **[A](tools/aihawk.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×17, ⚡ `AS-006` | Oct 15 |
-| [invisible-dots](https://github.com/feder-cr/invisible_dots) | `golden-f60…` | 32.3k | **[A](tools/invisible-dots.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×17, ⚡ `AS-006` | Oct 27 |
 | [neo](https://github.com/neomjs/neo) | `11.19.1` | 32.2k/mo | **[A](tools/neo.md)** | `AS-014` ×8 | Oct 16 |
-| [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | `2.5.2` | 32.0k | **[A](tools/xiaozhi-esp32.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×5, `AS-014` ×5 | Oct 27 |
+| [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | `2.5.2` | 32.1k | **[A](tools/xiaozhi-esp32.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×5, `AS-014` ×5 | Oct 28 |
 | [mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) | `1.14.0` | 31.8k/mo | **[A](tools/mcp-openapi-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×8 | Oct 15 |
 | [postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) | `2.9.1` | 31.3k/mo | **[A](tools/postman-mcp-server.md)** | 🔑 `AS-002` ×31, ⚡ `AS-011` ×15, `AS-014` ×41 | Oct 15 |
 | [serena](https://github.com/oraios/serena) | `0.1.4` | 30.7k | **[I](tools/serena.md)** | ✅ None | Mar 18 |
-| [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.7.0` | 30.3k | **[A](tools/gpt-researcher.md)** | `AS-014` | Oct 27 |
-| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 29.5k/mo | **[A](tools/mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | `3.7.0` | 30.3k | **[A](tools/gpt-researcher.md)** | `AS-014` | Oct 28 |
 | [mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | `0.1.11` | 29.4k/mo | **[A](tools/mcp-server-azure-devops.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
 | [shinpr-mcp-local-rag](https://github.com/shinpr/mcp-local-rag) | `0.13.0` | 29.0k/mo | **[B](tools/shinpr-mcp-local-rag.md)** | `AS-012`, `AS-014` | Oct 15 |
 | [mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | `3.0.0` | 28.5k/mo | **[A](tools/mcp-server-browserbase.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Jul 20 |
-| [kordoc](https://github.com/chrisryugj/kordoc) | `4.24.11` | 27.8k/mo | **[I](tools/kordoc.md)** | `AS-018` | Oct 27 |
-| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `3.7.2` | 26.2k/mo | **[A](tools/obsidian-mcp-server.md)** | 🔑 `AS-002` ×9, `AS-014` ×13, ⚡ `AS-011` ×2 | Oct 27 |
-| [kratos](https://github.com/go-kratos/kratos) | `3.0.0` | 26.0k | **[I](tools/kratos.md)** | `AS-018` | Oct 27 |
-| [activepieces](https://github.com/activepieces/activepieces) | `release-ca…` | 25.2k | **[A](tools/activepieces.md)** | `AS-014` ×45, 🔑 `AS-002` ×22, ⚡ `AS-011` ×6 | Oct 27 |
-| [open-seo](https://github.com/every-app/open-seo) | `0.1.19` | 25.1k | **[A](tools/open-seo.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [gin-vue-admin](https://github.com/flipped-aurora/gin-vue-admin) | `2.9.2` | 25.1k | **[A](tools/gin-vue-admin.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×16 | Oct 27 |
-| [citra](https://github.com/SylphxAI/citra) | `4.1.3` | 24.9k/mo | **[A](tools/citra.md)** | `AS-014` ×45, 🔑 `AS-002` ×31, ⚡ `AS-011` ×27, 🗝️ `AS-010` ×6 | Oct 15 |
+| [kratos](https://github.com/go-kratos/kratos) | `3.0.0` | 26.0k | **[I](tools/kratos.md)** | `AS-018` | Oct 28 |
+| [open-seo](https://github.com/every-app/open-seo) | `0.1.19` | 25.4k | **[A](tools/open-seo.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [activepieces](https://github.com/activepieces/activepieces) | `release-ca…` | 25.3k | **[A](tools/activepieces.md)** | `AS-014` ×45, 🔑 `AS-002` ×22, ⚡ `AS-011` ×6 | Oct 28 |
+| [gin-vue-admin](https://github.com/flipped-aurora/gin-vue-admin) | `2.9.2` | 25.1k | **[A](tools/gin-vue-admin.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×16 | Oct 28 |
 | [pdf-reader-mcp](https://github.com/SylphxAI/pdf-reader-mcp) | `4.1.3` | 24.9k/mo | **[A](tools/pdf-reader-mcp.md)** | `AS-014` ×45, 🔑 `AS-002` ×31, ⚡ `AS-011` ×27, 🗝️ `AS-010` ×6 | Oct 15 |
-| [genai-agents](https://github.com/NirDiamant/GenAI_Agents) | `book-v1.0` | 24.7k | **[A](tools/genai-agents.md)** | 🔑 `AS-002` ×43, ⚡ `AS-011` ×35, `AS-014` ×46, 🗝️ `AS-010` ×9 | Oct 27 |
-| [python-sdk](https://github.com/modelcontextprotocol/python-sdk) | `2.3.0` | 24.7k | **[C](tools/python-sdk.md)** | ⚡ `AS-006`, `AS-014` | Oct 27 |
-| [codewhale](https://github.com/codewhale-hq/Codewhale) | `0.10.2` | 24.1k/mo | **[A](tools/codewhale.md)** | `AS-014` | Oct 27 |
+| [citra](https://github.com/SylphxAI/citra) | `4.1.3` | 24.9k/mo | **[A](tools/citra.md)** | `AS-014` ×45, 🔑 `AS-002` ×31, ⚡ `AS-011` ×27, 🗝️ `AS-010` ×6 | Oct 15 |
+| [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | `20.1.0` | 24.8k/mo | **[A](tools/agentic-awesome-skills.md)** | `AS-014` ×12, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5 | Oct 28 |
+| [genai-agents](https://github.com/NirDiamant/GenAI_Agents) | `book-v1.0` | 24.7k | **[A](tools/genai-agents.md)** | 🔑 `AS-002` ×43, ⚡ `AS-011` ×35, `AS-014` ×46, 🗝️ `AS-010` ×9 | Oct 28 |
+| [python-sdk](https://github.com/modelcontextprotocol/python-sdk) | `2.3.0` | 24.7k | **[C](tools/python-sdk.md)** | ⚡ `AS-006`, `AS-014` | Oct 28 |
+| [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) | `4.15.14` | 23.4k/mo | **[B](tools/korean-law-mcp.md)** | `AS-012`, 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×10 | Oct 28 |
 | [mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) | `3.1.0` | 23.0k/mo | **[A](tools/mcp-server-atlassian-bitbucket.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×6 | Oct 15 |
 | [maxkb](https://github.com/1Panel-dev/MaxKB) | `2.6.1` | 23.0k | **[I](tools/maxkb.md)** | ✅ None | Mar 18 |
-| [skillspector](https://github.com/NVIDIA/SkillSpector) | `2.13.1` | 22.3k | **[I](tools/skillspector.md)** | `AS-018` | Oct 27 |
+| [skillspector](https://github.com/NVIDIA/SkillSpector) | `2.13.1` | 22.8k | **[I](tools/skillspector.md)** | `AS-018` | Oct 28 |
+| [screenpipe](https://github.com/screenpipe/screenpipe) | `2.3.27` | 22.1k | **[A](tools/screenpipe.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 28 |
 | [ios-simulator-mcp](https://github.com/joshuayoes/ios-simulator-mcp) | `2.1.0` | 22.1k/mo | **[A](tools/ios-simulator-mcp.md)** | `AS-014` ×17, 🔑 `AS-002` ×5, ⚡ `AS-011` | Oct 15 |
-| [screenpipe](https://github.com/screenpipe/screenpipe) | `2.3.27` | 22.1k | **[A](tools/screenpipe.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 27 |
-| [agents-towards-production](https://github.com/NirDiamant/agents-towards-production) | `book-v1.0` | 21.8k | **[A](tools/agents-towards-production.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×11 | Oct 27 |
-| [ai-guide](https://github.com/liyupi/ai-guide) | `1.0.0` | 21.6k | **[A](tools/ai-guide.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
-| [jcode](https://github.com/1jehuang/jcode) | `0.99.1` | 21.2k | **[I](tools/jcode.md)** | `AS-018` | Oct 27 |
-| [douyin-tiktok-download-api](https://github.com/Evil0ctal/Douyin_TikTok_Download_API) | `5.1.7` | 20.9k | **[A](tools/douyin-tiktok-download-api.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×3, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 27 |
-| [easy-vibe](https://github.com/datawhalechina/easy-vibe) | `0.4.0` | 20.2k | **[A](tools/easy-vibe.md)** | 🔑 `AS-002` ×4, `AS-014` ×22 | Oct 27 |
-| [standards-sdk](https://github.com/hashgraph-online/standards-sdk) | `0.1.192` | 19.9k/mo | **[A](tools/standards-sdk.md)** | `AS-014` ×8, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Oct 27 |
+| [agents-towards-production](https://github.com/NirDiamant/agents-towards-production) | `book-v1.0` | 21.8k | **[A](tools/agents-towards-production.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×11 | Oct 28 |
+| [ai-guide](https://github.com/liyupi/ai-guide) | `1.0.0` | 21.7k | **[A](tools/ai-guide.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
+| [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) | `4.15.5` | 21.5k/mo | **[A](tools/davinci-resolve-mcp.md)** | `AS-014` | Oct 28 |
+| [jcode](https://github.com/1jehuang/jcode) | `0.99.1` | 21.3k | **[I](tools/jcode.md)** | `AS-018` | Oct 28 |
+| [codewhale](https://github.com/codewhale-hq/Codewhale) | `0.10.2` | 21.0k/mo | **[A](tools/codewhale.md)** | `AS-014` | Oct 28 |
+| [douyin-tiktok-download-api](https://github.com/Evil0ctal/Douyin_TikTok_Download_API) | `5.1.8` | 20.9k | **[A](tools/douyin-tiktok-download-api.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×3, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 28 |
+| [easy-vibe](https://github.com/datawhalechina/easy-vibe) | `0.4.0` | 20.2k | **[A](tools/easy-vibe.md)** | 🔑 `AS-002` ×4, `AS-014` ×22 | Oct 28 |
 | [antvis-mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 19.1k/mo | **[A](tools/antvis-mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [browser-harness](https://github.com/browser-use/browser-harness) | `0.1.13` | 18.6k | **[A](tools/browser-harness.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [anytype-mcp](https://github.com/anyproto/anytype-mcp) | `2.0.1` | 18.3k/mo | **[B](tools/anytype-mcp.md)** | `AS-014` ×18, 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, 📐 `AS-003` | Oct 27 |
-| [openfang](https://github.com/RightNow-AI/openfang) | `0.6.9` | 18.2k | **[A](tools/openfang.md)** | `AS-014` ×65, 🔑 `AS-002` ×14, ⚡ `AS-011` ×6, 🗝️ `AS-010` ×2 | Oct 27 |
+| [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `3.0.0` | 19.1k/mo | **[A](tools/shadcn-ui-mcp-server.md)** | `AS-014` ×10, 🔑 `AS-002` | Oct 28 |
+| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | `3.7.2` | 19.0k/mo | **[A](tools/obsidian-mcp-server.md)** | 🔑 `AS-002` ×9, `AS-014` ×13, ⚡ `AS-011` ×2 | Oct 28 |
+| [browser-harness](https://github.com/browser-use/browser-harness) | `0.1.13` | 18.7k | **[A](tools/browser-harness.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [openfang](https://github.com/RightNow-AI/openfang) | `0.6.9` | 18.2k | **[A](tools/openfang.md)** | `AS-014` ×65, 🔑 `AS-002` ×14, ⚡ `AS-011` ×6, 🗝️ `AS-010` ×2 | Oct 28 |
 | [hustcc-mcp-mermaid](https://github.com/hustcc/mcp-mermaid) | `0.4.1` | 18.2k/mo | **[I](tools/hustcc-mcp-mermaid.md)** | `AS-018` | Oct 15 |
-| [auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | `0.4.28` | 18.1k | **[A](tools/auto-claude-code-research-in-sleep.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [wrenai](https://github.com/Canner/WrenAI) | `wren-v0.17.0` | 18.0k | **[I](tools/wrenai.md)** | `AS-018` | Oct 27 |
-| [xerj](https://github.com/xerj-org/xerj) | `1.0.0-rc.99` | 16.9k | **[A](tools/xerj.md)** | 🔑 `AS-002` ×22, 🗝️ `AS-010` ×8, `AS-014` ×22, ⚡ `AS-011` ×11 | Oct 27 |
-| [genai-toolbox](https://github.com/googleapis/mcp-toolbox) | `1.15.0` | 16.7k | **[A](tools/genai-toolbox.md)** | `AS-014` ×20, 🔑 `AS-002` ×6, 🗝️ `AS-010` ×25, ⚡ `AS-011` ×5 | Oct 27 |
-| [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) | `1.15.0` | 16.7k | **[C](tools/mcp-toolbox.md)** | `AS-014` ×151, 🔑 `AS-002` ×64, ⚡ `AS-011` ×46, ⚡ `AS-006` ×12, 🗝️ `AS-010` ×34, 📐 `AS-003` ×2 | Oct 27 |
-| [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.8.1` | 16.6k | **[I](tools/trigger-dev.md)** | `AS-018` | Oct 27 |
-| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.07.26…` | 16.6k | **[A](tools/xiaohongshu-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×17, `AS-014` ×35 | Oct 27 |
-| [docker-android](https://github.com/budtmo/docker-android) | `3.8.0-p1` | 16.0k | **[A](tools/docker-android.md)** | 🔑 `AS-002` ×4, `AS-014` ×5 | Oct 27 |
-| [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.2.1` | 15.6k | **[A](tools/openmetadata.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×6, `AS-014` ×9 | Oct 27 |
-| [ecc](https://github.com/affaan-m/ECC) | `2.2.3` | 15.6k/mo | **[A](tools/ecc.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×19 | Oct 27 |
+| [auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | `0.4.28` | 18.2k | **[A](tools/auto-claude-code-research-in-sleep.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [wrenai](https://github.com/Canner/WrenAI) | `wren-v0.17.0` | 18.0k | **[I](tools/wrenai.md)** | `AS-018` | Oct 28 |
+| [xerj](https://github.com/xerj-org/xerj) | `1.0.0-rc.100` | 17.1k | **[A](tools/xerj.md)** | 🔑 `AS-002` ×22, 🗝️ `AS-010` ×8, `AS-014` ×22, ⚡ `AS-011` ×11 | Oct 28 |
+| [genai-toolbox](https://github.com/googleapis/mcp-toolbox) | `1.15.0` | 16.7k | **[A](tools/genai-toolbox.md)** | `AS-014` ×20, 🔑 `AS-002` ×6, 🗝️ `AS-010` ×25, ⚡ `AS-011` ×5 | Oct 28 |
+| [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) | `1.15.0` | 16.7k | **[C](tools/mcp-toolbox.md)** | `AS-014` ×151, 🔑 `AS-002` ×64, ⚡ `AS-011` ×46, ⚡ `AS-006` ×12, 🗝️ `AS-010` ×34, 📐 `AS-003` ×2 | Oct 28 |
+| [trigger-dev](https://github.com/triggerdotdev/trigger.dev) | `4.8.1` | 16.6k | **[I](tools/trigger-dev.md)** | `AS-018` | Oct 28 |
+| [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | `2026.07.26…` | 16.6k | **[A](tools/xiaohongshu-mcp.md)** | 🔑 `AS-002` ×17, ⚡ `AS-011` ×17, `AS-014` ×35 | Oct 28 |
+| [docker-android](https://github.com/budtmo/docker-android) | `3.9.0-p1` | 16.0k | **[A](tools/docker-android.md)** | 🔑 `AS-002` ×4, `AS-014` ×5 | Oct 28 |
+| [cyanheads-pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | `2.11.1` | 16.0k/mo | **[A](tools/cyanheads-pubmed-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×9 | Oct 28 |
+| [openmetadata](https://github.com/open-metadata/OpenMetadata) | `1.2.1` | 15.6k | **[A](tools/openmetadata.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×6, `AS-014` ×9 | Oct 28 |
 | [superset](https://github.com/superset-sh/superset) | `0.0.1` | 15.5k | **[A](tools/superset.md)** | 🔑 `AS-002` ×3, `AS-014` ×5, ⚡ `AS-011` | Oct 15 |
-| [coplaydev-unity-mcp](https://github.com/CoplayDev/unity-mcp) | `10.3.0` | 15.4k | **[C](tools/coplaydev-unity-mcp.md)** | `AS-014` ×43, 🔑 `AS-002` ×13, ⚡ `AS-006` ×2, ⚡ `AS-011` ×6 | Oct 27 |
+| [coplaydev-unity-mcp](https://github.com/CoplayDev/unity-mcp) | `10.3.0` | 15.5k | **[C](tools/coplaydev-unity-mcp.md)** | `AS-014` ×43, 🔑 `AS-002` ×13, ⚡ `AS-006` ×2, ⚡ `AS-011` ×6 | Oct 28 |
 | [mcpc](https://github.com/apify/mcpc) | `0.6.0` | 15.3k/mo | **[I](tools/mcpc.md)** | `AS-018` | Oct 15 |
-| [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | `3.10.0` | 15.2k | **[A](tools/skill-seekers.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
-| [davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) | `4.15.3` | 15.1k/mo | **[B](tools/davinci-resolve-mcp.md)** | `AS-012`, `AS-014` | Oct 27 |
+| [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | `3.10.0` | 15.2k | **[A](tools/skill-seekers.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
+| [ghost-mcp](https://github.com/MFYDev/ghost-mcp) | `0.2.0` | 15.2k/mo | **[A](tools/ghost-mcp.md)** | `AS-014` ×44, 🔑 `AS-002` ×11, ⚡ `AS-011` ×3 | Oct 28 |
 | [cc-haha](https://github.com/NanmiCoder/cc-haha) | `0.6.6` | 15.0k | **[A](tools/cc-haha.md)** | `AS-014` | Oct 15 |
 | [palmier-pro](https://github.com/palmier-io/palmier-pro) | `0.9.0` | 14.6k | **[A](tools/palmier-pro.md)** | `AS-014` ×10 | Oct 15 |
-| [js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) | `4.0.5` | 14.6k/mo | **[C](tools/js-reverse-mcp.md)** | 🔑 `AS-002` ×24, ⚡ `AS-006` ×11, ⚡ `AS-011` ×21, `AS-014` ×24, 📐 `AS-003` ×6 | Oct 27 |
-| [cyanheads-pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | `2.11.1` | 14.4k/mo | **[A](tools/cyanheads-pubmed-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×9 | Oct 27 |
 | [mcp-server-asana](https://github.com/roychri/mcp-server-asana) | `1.6.0` | 14.4k/mo | **[A](tools/mcp-server-asana.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×10 | Oct 15 |
 | [git-mcp-server](https://github.com/cyanheads/git-mcp-server) | `2.15.1` | 14.4k/mo | **[A](tools/git-mcp-server.md)** | 🔑 `AS-002` ×30, `AS-014` ×28, ⚡ `AS-011` ×9 | Oct 15 |
 | [achiya-automation-safari-mcp](https://github.com/achiya-automation/safari-mcp) | `2.10.2` | 14.1k/mo | **[I](tools/achiya-automation-safari-mcp.md)** | `AS-018` | Oct 15 |
-| [gemini-mcp-tool](https://github.com/jamubc/gemini-mcp-tool) | `1.2.0-beta.1` | 13.7k/mo | **[A](tools/gemini-mcp-tool.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
-| [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `workers-ob…` | 13.5k/mo | **[C](tools/mcp-server-cloudflare.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2, ⚡ `AS-006` | Oct 27 |
-| [nightingale](https://github.com/ccfos/nightingale) | `9.3.0` | 13.4k | **[I](tools/nightingale.md)** | `AS-018` | Oct 27 |
+| [gemini-mcp-tool](https://github.com/jamubc/gemini-mcp-tool) | `1.2.0-beta.1` | 14.1k/mo | **[A](tools/gemini-mcp-tool.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
+| [mcp-server-chart](https://github.com/antvis/mcp-server-chart) | `0.9.10` | 13.7k/mo | **[A](tools/mcp-server-chart.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [nightingale](https://github.com/ccfos/nightingale) | `9.3.0` | 13.4k | **[I](tools/nightingale.md)** | `AS-018` | Oct 28 |
 | [mcp-server-trello](https://github.com/delorenj/mcp-server-trello) | `2.0.0-beta.0` | 13.4k/mo | **[A](tools/mcp-server-trello.md)** | 🔑 `AS-002` ×106, `AS-014` ×200, ⚡ `AS-011` ×53, 🗝️ `AS-010` | Oct 15 |
-| [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | `1.5.0` | 13.2k | **[A](tools/ida-pro-mcp.md)** | `AS-014` ×3, 🔑 `AS-002` ×2 | Oct 27 |
-| [quantdinger](https://github.com/OpenByteInc/QuantDinger) | `5.7.7` | 13.1k | **[I](tools/quantdinger.md)** | `AS-018` | Oct 27 |
-| [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.8` | 13.1k | **[A](tools/xhs-downloader.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 27 |
+| [quantdinger](https://github.com/OpenByteInc/QuantDinger) | `5.7.8` | 13.2k | **[I](tools/quantdinger.md)** | `AS-018` | Oct 28 |
+| [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | `1.5.0` | 13.2k | **[A](tools/ida-pro-mcp.md)** | `AS-014` ×3, 🔑 `AS-002` ×2 | Oct 28 |
+| [xhs-downloader](https://github.com/JoeanAmier/XHS-Downloader) | `2.8` | 13.1k | **[A](tools/xhs-downloader.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 28 |
 | [puppeteer-mcp-server](https://github.com/merajmehrabi/puppeteer-mcp-server) | `0.7.2` | 13.0k/mo | **[C](tools/puppeteer-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×8, ⚡ `AS-006` | Oct 15 |
-| [ghost-mcp](https://github.com/MFYDev/ghost-mcp) | `0.2.0` | 13.0k/mo | **[A](tools/ghost-mcp.md)** | `AS-014` ×44, 🔑 `AS-002` ×11, ⚡ `AS-011` ×3 | Oct 27 |
-| [mcp-notion-server](https://github.com/suekou/mcp-notion-server) | `2.0.2` | 12.9k/mo | **[A](tools/mcp-notion-server.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×11, `AS-014` ×14 | Oct 27 |
 | [note-gen](https://github.com/codexu/note-gen) | `note-gen-v…` | 12.9k | **[B](tools/note-gen.md)** | `AS-012`, `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [mcp-chrome](https://github.com/hangwin/mcp-chrome) | `1.0.0` | 12.5k | **[A](tools/mcp-chrome.md)** | 🗝️ `AS-010` ×2, `AS-014` | Oct 27 |
-| [mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) | `0.20.0` | 12.5k/mo | **[A](tools/mediawiki-mcp-server.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×18, `AS-014` ×30 | Oct 27 |
-| [apple-docs-mcp](https://github.com/kimsungwhee/apple-docs-mcp) | `1.0.26` | 12.4k/mo | **[B](tools/apple-docs-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×9, `AS-014` ×18, 📐 `AS-003` | Oct 27 |
+| [mcp-chrome](https://github.com/hangwin/mcp-chrome) | `1.0.0` | 12.5k | **[A](tools/mcp-chrome.md)** | 🗝️ `AS-010` ×2, `AS-014` | Oct 28 |
 | [fastapi-mcp](https://github.com/tadata-org/fastapi_mcp) | `0.4.0` | 12.0k | **[I](tools/fastapi-mcp.md)** | ✅ None | Mar 18 |
-| [cursor-talk-to-figma-mcp](https://github.com/grab/cursor-talk-to-figma-mcp) | `0.3.5` | 11.9k/mo | **[A](tools/cursor-talk-to-figma-mcp.md)** | `AS-014` ×40, 🔑 `AS-002` ×8 | Oct 27 |
-| [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) | `4.15.14` | 11.8k/mo | **[A](tools/korean-law-mcp.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×30, `AS-014` ×54 | Oct 27 |
-| [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) | `9.8.2` | 11.8k | **[A](tools/pal-mcp-server.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` ×3 | Oct 27 |
+| [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) | `9.8.2` | 11.8k | **[A](tools/pal-mcp-server.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` ×3 | Oct 28 |
 | [airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | `1.14.0` | 11.7k/mo | **[A](tools/airtable-mcp-server.md)** | `AS-014` ×16, 🔑 `AS-002` ×10, ⚡ `AS-011` | Oct 15 |
-| [ghidramcp](https://github.com/LaurieWired/GhidraMCP) | `2.0` | 11.6k | **[I](tools/ghidramcp.md)** | `AS-018` | Oct 27 |
-| [shadcn-ui-mcp-server](https://github.com/Jpisnice/shadcn-ui-mcp-server) | `3.0.0` | 11.6k/mo | **[A](tools/shadcn-ui-mcp-server.md)** | `AS-014` ×10, 🔑 `AS-002` | Oct 27 |
-| [holaos](https://github.com/holaboss-ai/holaOS) | `latest` | 11.4k | **[A](tools/holaos.md)** | 🔑 `AS-002` ×6, `AS-014` ×7, ⚡ `AS-011` ×4 | Oct 27 |
+| [ghidramcp](https://github.com/LaurieWired/GhidraMCP) | `2.0` | 11.6k | **[I](tools/ghidramcp.md)** | `AS-018` | Oct 28 |
+| [holaos](https://github.com/holaboss-ai/holaOS) | `latest` | 11.4k | **[A](tools/holaos.md)** | 🔑 `AS-002` ×6, `AS-014` ×7, ⚡ `AS-011` ×4 | Oct 28 |
 | [mcp-server-gsc](https://github.com/ahonn/mcp-server-gsc) | `0.3.0` | 11.2k/mo | **[B](tools/mcp-server-gsc.md)** | `AS-012`, `AS-014` ×17, 🔑 `AS-002` ×16, ⚡ `AS-011` ×16 | Jul 29 |
-| [page-agent](https://github.com/alibaba/page-agent) | `1.12.4` | 11.1k/mo | **[A](tools/page-agent.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×8 | Oct 27 |
-| [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | `0.9.8` | 11.0k | **[A](tools/xiaozhi-esp32-server.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×5, `AS-014` ×5 | Oct 27 |
-| [mcp-use](https://github.com/mcp-use/mcp-use) | `1.5.0` | 10.8k | **[A](tools/mcp-use.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 27 |
-| [trail-code](https://github.com/trailhq/Trail-Code) | `0.21.1` | 10.8k | **[A](tools/trail-code.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Oct 27 |
-| [protocol-launcher](https://github.com/zhensherlock/protocol-launcher) | `@protocol-…` | 10.7k/mo | **[A](tools/protocol-launcher.md)** | `AS-014` ×62, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×4 | Oct 27 |
-| [windows-mcp](https://github.com/CursorTouch/Windows-MCP) | `0.8.8` | 10.4k | **[A](tools/windows-mcp.md)** | `AS-014` ×21, 🔑 `AS-002` ×6, ⚡ `AS-011` ×4 | Oct 27 |
-| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | `3.4.2` | 10.4k | **[A](tools/drawio-skill.md)** | 🔑 `AS-002`, `AS-014` | Oct 27 |
-| [mcp](https://github.com/awslabs/mcp) | `2026.10.20…` | 9.8k | **[I](tools/mcp.md)** | `AS-018` | Oct 27 |
+| [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) | `0.9.8` | 11.1k | **[A](tools/xiaozhi-esp32-server.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×5, `AS-014` ×5 | Oct 28 |
+| [mcp-excalidraw](https://github.com/yctimlin/mcp_excalidraw) | `2.1.2` | 11.0k/mo | **[A](tools/mcp-excalidraw.md)** | `AS-014` ×2, 🔑 `AS-002` | Oct 28 |
+| [mcp-use](https://github.com/mcp-use/mcp-use) | `1.5.0` | 10.8k | **[A](tools/mcp-use.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 28 |
+| [windows-mcp](https://github.com/CursorTouch/Windows-MCP) | `0.8.8` | 10.5k | **[A](tools/windows-mcp.md)** | `AS-014` ×21, 🔑 `AS-002` ×6, ⚡ `AS-011` ×4 | Oct 28 |
+| [page-agent](https://github.com/alibaba/page-agent) | `1.12.4` | 10.5k/mo | **[A](tools/page-agent.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×8 | Oct 28 |
+| [drawio-skill](https://github.com/Agents365-ai/drawio-skill) | `3.4.2` | 10.4k | **[A](tools/drawio-skill.md)** | 🔑 `AS-002`, `AS-014` | Oct 28 |
+| [ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) | `2.17.2` | 10.0k/mo | **[A](tools/ffmpeg-skill.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
+| [mcp](https://github.com/awslabs/mcp) | `2026.10.20…` | 9.8k | **[I](tools/mcp.md)** | `AS-018` | Oct 28 |
 | [mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 9.8k/mo | **[A](tools/mcp-server-serper.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [marcopesani-mcp-server-serper](https://github.com/marcopesani/mcp-server-serper) | `0.2.0` | 9.8k/mo | **[A](tools/marcopesani-mcp-server-serper.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
-| [composio](https://github.com/ComposioHQ/composio) | `ersioning-…` | 9.7k/mo | **[A](tools/composio.md)** | `AS-014` ×9 | Oct 27 |
 | [notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) | `2.0.0` | 9.6k/mo | **[A](tools/notebooklm-mcp.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×13, `AS-014` ×20 | Oct 15 |
-| [xberg](https://github.com/xberg-io/xberg) | `1.3.10` | 9.5k | **[A](tools/xberg.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×8 | Oct 27 |
+| [xberg](https://github.com/xberg-io/xberg) | `1.3.10` | 9.5k | **[A](tools/xberg.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×8 | Oct 28 |
 | [kreuzberg](https://github.com/kreuzberg-dev/kreuzberg) | `5.0.0-rc.30` | 9.4k | **[A](tools/kreuzberg.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×5, `AS-014` ×8 | Oct 15 |
-| [mcp-go](https://github.com/mark3labs/mcp-go) | `1.4.0` | 9.2k | **[I](tools/mcp-go.md)** | `AS-018` | Oct 27 |
-| [bifrost](https://github.com/maximhq/bifrost) | `transports…` | 9.1k | **[I](tools/bifrost.md)** | `AS-018` | Oct 27 |
-| [node9-proxy](https://github.com/node9-ai/node9-proxy) | `2.41.3` | 9.0k/mo | **[B](tools/node9-proxy.md)** | `AS-014` ×17, 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, 🗝️ `AS-010`, 📐 `AS-003` | Oct 27 |
+| [mcp-go](https://github.com/mark3labs/mcp-go) | `1.4.0` | 9.2k | **[I](tools/mcp-go.md)** | `AS-018` | Oct 28 |
+| [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) | `1.1.38` | 9.2k/mo | **[C](tools/bambu-printer-mcp.md)** | 🔑 `AS-002` ×52, 🗝️ `AS-010` ×28, ⚡ `AS-011` ×26, `AS-014` ×46, 📐 `AS-003` ×6, ⚡ `AS-006` | Oct 28 |
+| [bifrost](https://github.com/maximhq/bifrost) | `transports…` | 9.2k | **[I](tools/bifrost.md)** | `AS-018` | Oct 28 |
+| [standards-sdk](https://github.com/hashgraph-online/standards-sdk) | `0.1.192` | 9.0k/mo | **[A](tools/standards-sdk.md)** | `AS-014` ×8, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Oct 28 |
 | [astron-agent](https://github.com/iflytek/astron-agent) | `1.0.9` | 8.9k | **[B](tools/astron-agent.md)** | `AS-012`, `AS-014` ×13, 🔑 `AS-002` ×4, 🗝️ `AS-010` ×12, ⚡ `AS-011` ×2 | Oct 15 |
 | [yokingma-time-mcp](https://github.com/yokingma/time-mcp) | `1.0.6` | 8.8k/mo | **[A](tools/yokingma-time-mcp.md)** | `AS-014` ×6 | Oct 15 |
-| [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.5.0` | 8.8k/mo | **[A](tools/line-bot-mcp-server.md)** | 🔑 `AS-002` ×5, `AS-014` ×12 | Oct 27 |
+| [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | `workers-ob…` | 8.8k/mo | **[C](tools/mcp-server-cloudflare.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2, ⚡ `AS-006` | Oct 28 |
 | [lamda](https://github.com/firerpa/lamda) | `9.20` | 8.6k | **[I](tools/lamda.md)** | ✅ None | Mar 18 |
-| [stitch-skills](https://github.com/google-labs-code/stitch-skills) | `1.0` | 8.6k | **[A](tools/stitch-skills.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
-| [mcp-agent](https://github.com/lastmile-ai/mcp-agent) | `0.2.6` | 8.6k | **[B](tools/mcp-agent.md)** | `AS-012`, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×9 | Oct 27 |
+| [stitch-skills](https://github.com/google-labs-code/stitch-skills) | `1.0` | 8.6k | **[A](tools/stitch-skills.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
+| [mcp-agent](https://github.com/lastmile-ai/mcp-agent) | `0.2.6` | 8.6k | **[A](tools/mcp-agent.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×9 | Oct 28 |
 | [dcostenco-bcba](https://github.com/dcostenco/prism-coder) | `13.0.1` | 8.3k/mo | **[A](tools/dcostenco-bcba.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×9, `AS-014` ×19 | Oct 15 |
-| [mcp-graphql](https://github.com/blurrah/mcp-graphql) | `2.0.4` | 8.2k/mo | **[A](tools/mcp-graphql.md)** | 🔑 `AS-002` ×2, `AS-014` ×2, ⚡ `AS-011` | Oct 27 |
-| [osaurus](https://github.com/osaurus-ai/osaurus) | `wa-helper-…` | 8.1k | **[A](tools/osaurus.md)** | `AS-014` | Oct 27 |
-| [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) | `2026.10.26` | 8.0k | **[A](tools/awesome-agentic-ai-zh.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Oct 27 |
-| [awesome-mcp-zh](https://github.com/yzfly/Awesome-MCP-ZH) | `sha-3337f7…` | 7.7k | **[B](tools/awesome-mcp-zh.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Apr 10 |
-| [waha](https://github.com/devlikeapro/waha) | `2026.9.2` | 7.7k | **[I](tools/waha.md)** | `AS-018` | Oct 27 |
-| [engram](https://github.com/Gentleman-Programming/engram) | `3.6.0` | 7.6k | **[A](tools/engram.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 27 |
-| [codex-with-chatgpt](https://github.com/XiaoDuoYa/codex-with-chatgpt) | `0.1.4` | 7.6k | **[A](tools/codex-with-chatgpt.md)** | `AS-014` | Oct 27 |
-| [registry](https://github.com/modelcontextprotocol/registry) | `1.8.5` | 7.4k | **[B](tools/registry.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×10, `AS-014` ×10, 📐 `AS-003` | Oct 27 |
-| [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | `2.0.4` | 7.3k | **[C](tools/browser-tools-mcp.md)** | 🔑 `AS-002` ×19, ⚡ `AS-011` ×18, `AS-014` ×25, 📐 `AS-003` ×3, ⚡ `AS-006` | Oct 27 |
+| [osaurus](https://github.com/osaurus-ai/osaurus) | `wa-helper-…` | 8.1k | **[A](tools/osaurus.md)** | `AS-014` | Oct 28 |
+| [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh) | `2026.10.26` | 8.0k | **[A](tools/awesome-agentic-ai-zh.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Oct 28 |
+| [mcp-bigquery-server](https://github.com/ergut/mcp-bigquery-server) | `1.0.4` | 8.0k/mo | **[A](tools/mcp-bigquery-server.md)** | 🔑 `AS-002` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
+| [node9-proxy](https://github.com/node9-ai/node9-proxy) | `2.41.3` | 8.0k/mo | **[B](tools/node9-proxy.md)** | `AS-014` ×17, 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, 🗝️ `AS-010`, 📐 `AS-003` | Oct 28 |
+| [mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | `0.3.0` | 7.9k/mo | **[A](tools/mcp-server-airbnb.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
+| [awesome-mcp-zh](https://github.com/yzfly/Awesome-MCP-ZH) | `sha-3337f7…` | 7.8k | **[B](tools/awesome-mcp-zh.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Apr 10 |
+| [waha](https://github.com/devlikeapro/waha) | `2026.9.2` | 7.7k | **[I](tools/waha.md)** | `AS-018` | Oct 28 |
+| [engram](https://github.com/Gentleman-Programming/engram) | `3.6.0` | 7.7k | **[A](tools/engram.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 28 |
+| [codex-with-chatgpt](https://github.com/XiaoDuoYa/codex-with-chatgpt) | `0.1.4` | 7.6k | **[A](tools/codex-with-chatgpt.md)** | `AS-014` | Oct 28 |
+| [registry](https://github.com/modelcontextprotocol/registry) | `1.8.6` | 7.4k | **[B](tools/registry.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×10, `AS-014` ×10, 📐 `AS-003` | Oct 28 |
+| [browser-tools-mcp](https://github.com/AgentDeskAI/browser-tools-mcp) | `2.0.4` | 7.3k | **[C](tools/browser-tools-mcp.md)** | 🔑 `AS-002` ×19, ⚡ `AS-011` ×18, `AS-014` ×25, 📐 `AS-003` ×3, ⚡ `AS-006` | Oct 28 |
 | [reddit-mcp-buddy](https://github.com/karanb192/reddit-mcp-buddy) | `1.1.14` | 7.2k/mo | **[A](tools/reddit-mcp-buddy.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
-| [time-mcp](https://github.com/yokingma/time-mcp) | `1.0.6` | 7.2k/mo | **[A](tools/time-mcp.md)** | `AS-014` ×6 | Oct 27 |
-| [mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) | `0.0.8` | 7.1k/mo | **[A](tools/mcp-server-salesforce.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×15 | Oct 27 |
 | [ipollowork](https://github.com/Devin-AXIS/iPolloWork) | `0.17.26` | 7.0k | **[A](tools/ipollowork.md)** | `AS-014` ×17, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Oct 15 |
-| [whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | `0.0.1` | 6.7k | **[A](tools/whatsapp-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×19, ⚡ `AS-011` ×7 | Oct 27 |
-| [mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | `0.3.0` | 6.6k/mo | **[A](tools/mcp-server-airbnb.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
-| [mobilebuildmcp](https://github.com/getsentry/MobileBuildMCP) | `2.7.1` | 6.5k | **[I](tools/mobilebuildmcp.md)** | `AS-018` | Oct 27 |
+| [ssh-mcp-server](https://github.com/classfang/ssh-mcp-server) | `1.10.0` | 6.9k/mo | **[I](tools/ssh-mcp-server.md)** | `AS-018` | Oct 28 |
+| [protocol-launcher](https://github.com/zhensherlock/protocol-launcher) | `@protocol-…` | 6.8k/mo | **[A](tools/protocol-launcher.md)** | `AS-014` ×62, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×4 | Oct 28 |
+| [whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | `0.0.1` | 6.7k | **[A](tools/whatsapp-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×19, ⚡ `AS-011` ×7 | Oct 28 |
+| [mobilebuildmcp](https://github.com/getsentry/MobileBuildMCP) | `2.7.1` | 6.7k/mo | **[I](tools/mobilebuildmcp.md)** | `AS-018` | Oct 28 |
+| [time-mcp](https://github.com/yokingma/time-mcp) | `1.0.6` | 6.5k/mo | **[A](tools/time-mcp.md)** | `AS-014` ×6 | Oct 28 |
+| [paperclip](https://github.com/paperclipai/paperclip) | `2026.1023.0` | 6.5k/mo | **[I](tools/paperclip.md)** | `AS-018` | Oct 28 |
 | [jscpd](https://github.com/kucherenko/jscpd) | `5.2.0` | 6.4k | **[A](tools/jscpd.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 15 |
-| [gemini-notebook-mcp-cli](https://github.com/jacob-bd/gemini-notebook-mcp-cli) | `0.15.8` | 6.4k | **[A](tools/gemini-notebook-mcp-cli.md)** | 🔑 `AS-002` ×5, `AS-014` ×7, ⚡ `AS-011` ×3 | Oct 27 |
+| [gemini-notebook-mcp-cli](https://github.com/jacob-bd/gemini-notebook-mcp-cli) | `0.15.8` | 6.4k | **[A](tools/gemini-notebook-mcp-cli.md)** | 🔑 `AS-002` ×5, `AS-014` ×7, ⚡ `AS-011` ×3 | Oct 28 |
 | [notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) | `0.9.2` | 6.4k | **[A](tools/notebooklm-mcp-cli.md)** | 🔑 `AS-002` ×5, `AS-014` ×6, ⚡ `AS-011` ×3 | Oct 15 |
+| [ouroboros](https://github.com/Q00/ouroboros) | `0.59.9` | 6.3k | **[A](tools/ouroboros.md)** | `AS-014` ×11, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 28 |
 | [semble](https://github.com/MinishLab/semble) | `0.6.2` | 6.3k | **[I](tools/semble.md)** | `AS-018` | Oct 16 |
-| [ouroboros](https://github.com/Q00/ouroboros) | `0.59.9` | 6.3k | **[A](tools/ouroboros.md)** | `AS-014` ×11, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 27 |
-| [claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) | `3.44.1` | 6.3k | **[A](tools/claude-code-ultimate-guide.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 27 |
+| [claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) | `3.44.1` | 6.3k | **[A](tools/claude-code-ultimate-guide.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 28 |
 | [reddit-mcp-server](https://github.com/jordanburke/reddit-mcp-server) | `1.4.8` | 6.2k/mo | **[A](tools/reddit-mcp-server.md)** | `AS-014` ×15, 🔑 `AS-002` ×4, ⚡ `AS-011` | Oct 15 |
 | [memorix](https://github.com/AVIDS2/memorix) | `1.1.2` | 6.2k/mo | **[I](tools/memorix.md)** | `AS-018` | Oct 15 |
-| [anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) | `0.27.0` | 6.2k/mo | **[A](tools/anki-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, `AS-014` ×53 | Oct 27 |
-| [ssh-mcp-server](https://github.com/classfang/ssh-mcp-server) | `1.10.0` | 6.1k/mo | **[I](tools/ssh-mcp-server.md)** | `AS-018` | Oct 27 |
 | [cyanheads-clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) | `2.8.5` | 6.1k/mo | **[A](tools/cyanheads-clinicaltrialsgov-mcp-server.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×4, `AS-014` ×7 | Oct 15 |
-| [open-connector](https://github.com/oomol-lab/open-connector) | `1.9.3` | 6.1k | **[A](tools/open-connector.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
-| [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) | `0.23.1` | 6.1k | **[A](tools/mcp-atlassian.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×9, `AS-014` ×24 | Oct 27 |
-| [lemonade](https://github.com/lemonade-sdk/lemonade) | `2026.43.3` | 6.0k | **[A](tools/lemonade.md)** | `AS-014` ×5 | Oct 27 |
-| [ghidra-mcp](https://github.com/bethington/ghidra-mcp) | `7.0.0` | 5.9k | **[I](tools/ghidra-mcp.md)** | `AS-018` | Oct 27 |
+| [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) | `0.23.1` | 6.1k | **[A](tools/mcp-atlassian.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×9, `AS-014` ×24 | Oct 28 |
+| [lemonade](https://github.com/lemonade-sdk/lemonade) | `2026.43.3` | 6.0k | **[A](tools/lemonade.md)** | `AS-014` ×5 | Oct 28 |
+| [ghidra-mcp](https://github.com/bethington/ghidra-mcp) | `7.0.0` | 6.0k | **[I](tools/ghidra-mcp.md)** | `AS-018` | Oct 28 |
 | [linxule-mcp-music-studio](https://github.com/linxule/mcp-music-studio) | `0.4.3` | 5.9k/mo | **[A](tools/linxule-mcp-music-studio.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
+| [tailscale-mcp](https://github.com/HexSleeves/tailscale-mcp) | `1.3.4` | 5.9k/mo | **[I](tools/tailscale-mcp.md)** | `AS-018` | Oct 28 |
 | [dpflucas-mysql-mcp-server](https://github.com/dpflucas/mysql-mcp-server) | `0.1.3` | 5.9k/mo | **[A](tools/dpflucas-mysql-mcp-server.md)** | 🔑 `AS-002` ×4, `AS-014` ×4, ⚡ `AS-011` | Oct 15 |
-| [klavis](https://github.com/Klavis-AI/klavis) | `1.0.1` | 5.8k | **[I](tools/klavis.md)** | `AS-018` | Oct 27 |
-| [drawio-mcp](https://github.com/jgraph/drawio-mcp) | `sha-1feb15…` | 5.7k | **[A](tools/drawio-mcp.md)** | 🔑 `AS-002`, `AS-014` | Oct 27 |
-| [agentgateway](https://github.com/agentgateway/agentgateway) | `1.7.0-rc.1` | 5.7k | **[A](tools/agentgateway.md)** | `AS-014` | Oct 27 |
+| [klavis](https://github.com/Klavis-AI/klavis) | `1.0.1` | 5.8k | **[I](tools/klavis.md)** | `AS-018` | Oct 28 |
+| [anytype-mcp](https://github.com/anyproto/anytype-mcp) | `2.0.1` | 5.7k/mo | **[B](tools/anytype-mcp.md)** | `AS-014` ×18, 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, 📐 `AS-003` | Oct 28 |
+| [drawio-mcp](https://github.com/jgraph/drawio-mcp) | `sha-1feb15…` | 5.7k | **[A](tools/drawio-mcp.md)** | 🔑 `AS-002`, `AS-014` | Oct 28 |
+| [agentgateway](https://github.com/agentgateway/agentgateway) | `1.7.0` | 5.7k | **[A](tools/agentgateway.md)** | `AS-014` | Oct 28 |
+| [line-bot-mcp-server](https://github.com/line/line-bot-mcp-server) | `0.5.0` | 5.6k/mo | **[A](tools/line-bot-mcp-server.md)** | 🔑 `AS-002` ×5, `AS-014` ×12 | Oct 28 |
 | [mcp-client-server](https://github.com/willccbb/mcp-client-server) | `0.1.0` | 5.6k/mo | **[B](tools/mcp-client-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
-| [design-extract](https://github.com/Manavarya09/design-extract) | `13.3.2` | 5.6k/mo | **[A](tools/design-extract.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, `AS-014` ×15 | Oct 27 |
-| [excalidraw-mcp](https://github.com/excalidraw/excalidraw-mcp) | `0.3.2` | 5.6k | **[A](tools/excalidraw-mcp.md)** | `AS-014` ×2, 🔑 `AS-002` | Oct 27 |
+| [excalidraw-mcp](https://github.com/excalidraw/excalidraw-mcp) | `0.3.2` | 5.6k | **[A](tools/excalidraw-mcp.md)** | `AS-014` ×2, 🔑 `AS-002` | Oct 28 |
 | [purodelphi-mcpfirebird](https://github.com/PuroDelphi/mcpFirebird) | `2.6.0` | 5.5k/mo | **[I](tools/purodelphi-mcpfirebird.md)** | `AS-018` | Oct 15 |
-| [financetoolkit](https://github.com/JerBouma/FinanceToolkit) | `2.3.0` | 5.5k | **[A](tools/financetoolkit.md)** | `AS-014` ×27, 🔑 `AS-002` ×18, ⚡ `AS-011` ×16 | Oct 27 |
-| [paperclip](https://github.com/paperclipai/paperclip) | `2026.1023.0` | 5.4k/mo | **[I](tools/paperclip.md)** | `AS-018` | Oct 27 |
+| [financetoolkit](https://github.com/JerBouma/FinanceToolkit) | `2.3.0` | 5.5k | **[A](tools/financetoolkit.md)** | `AS-014` ×27, 🔑 `AS-002` ×18, ⚡ `AS-011` ×16 | Oct 28 |
 | [viper](https://github.com/FunnyWolf/Viper) | `3.1.11` | 5.3k | **[C](tools/viper.md)** | `AS-014` ×14, 🔑 `AS-002` ×8, ⚡ `AS-011` ×3, ⚡ `AS-006` | May 23 |
-| [code-graph-rag](https://github.com/vitali87/code-graph-rag) | `0.3.18` | 5.3k | **[A](tools/code-graph-rag.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×21, `AS-014` ×28 | Oct 27 |
-| [tradingview-mcp](https://github.com/atilaahmettaner/tradingview-mcp) | `0.8.0` | 5.1k | **[I](tools/tradingview-mcp.md)** | `AS-018` | Oct 27 |
+| [code-graph-rag](https://github.com/vitali87/code-graph-rag) | `0.3.20` | 5.3k | **[A](tools/code-graph-rag.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×21, `AS-014` ×28 | Oct 28 |
+| [tradingview-mcp](https://github.com/atilaahmettaner/tradingview-mcp) | `0.8.0` | 5.2k | **[I](tools/tradingview-mcp.md)** | `AS-018` | Oct 28 |
 | [pptagent](https://github.com/icip-cas/PPTAgent) | `2.0.0` | 5.1k | **[I](tools/pptagent.md)** | ✅ None | Mar 18 |
-| [mcp-bigquery-server](https://github.com/ergut/mcp-bigquery-server) | `1.0.4` | 5.0k/mo | **[A](tools/mcp-bigquery-server.md)** | 🔑 `AS-002` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
+| [anki-mcp-server](https://github.com/ankimcp/anki-mcp-server) | `0.27.0` | 5.1k/mo | **[A](tools/anki-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, `AS-014` ×53 | Oct 28 |
 | [aci](https://github.com/aipotheosis-labs/aci) | `0.0.1-beta.3` | 4.9k | **[B](tools/aci.md)** | `AS-012`, 🔑 `AS-002` ×43, ⚡ `AS-011` ×36, `AS-014` ×81, 🗝️ `AS-010` ×3, 📐 `AS-003` | Jul 29 |
+| [mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) | `0.0.8` | 4.8k/mo | **[A](tools/mcp-server-salesforce.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×15 | Oct 28 |
+| [mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) | `0.20.0` | 4.8k/mo | **[A](tools/mediawiki-mcp-server.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×18, `AS-014` ×30 | Oct 28 |
 | [professionalwiki-mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) | `0.6.5` | 4.8k/mo | **[B](tools/professionalwiki-mediawiki-mcp-server.md)** | `AS-012`, `AS-014` ×7, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 15 |
-| [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 4.8k/mo | **[A](tools/n8n-mcp-server.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 27 |
-| [mcp-context-forge](https://github.com/IBM/mcp-context-forge) | `1.1.0` | 4.7k | **[A](tools/mcp-context-forge.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×7 | Oct 27 |
+| [docs-mcp-server](https://github.com/arabold/docs-mcp-server) | `3.4.1` | 4.7k/mo | **[A](tools/docs-mcp-server.md)** | `AS-014` ×14, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 28 |
+| [mcp-context-forge](https://github.com/IBM/mcp-context-forge) | `1.1.0` | 4.7k | **[A](tools/mcp-context-forge.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×7 | Oct 28 |
 | [contextplus](https://github.com/forloopcodes/contextplus) | `1.0.9` | 4.6k/mo | **[A](tools/contextplus.md)** | 🔑 `AS-002` ×15, 🗝️ `AS-010`, `AS-014` ×17, ⚡ `AS-011` ×6 | Oct 15 |
 | [enscan-go](https://github.com/wgpsec/ENScan_GO) | `2.0.5` | 4.6k | **[I](tools/enscan-go.md)** | `AS-018` | Aug 11 |
-| [csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) | `2.3.0` | 4.6k | **[A](tools/csharp-sdk.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
-| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.10` | 4.6k/mo | **[C](tools/codex-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-006`, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 27 |
-| [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) | `com.ivanmu…` | 4.5k | **[A](tools/unity-mcp.md)** | `AS-014` ×50, 🔑 `AS-002` ×10, ⚡ `AS-011` | Oct 27 |
-| [bb-browser](https://github.com/epiral/bb-browser) | `0.14.0` | 4.5k/mo | **[A](tools/bb-browser.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
-| [mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) | `sha-5ee0b8…` | 4.5k | **[A](tools/mcp-obsidian.md)** | 🔑 `AS-002` ×9, `AS-014` ×13, ⚡ `AS-011` ×2 | Oct 27 |
+| [csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) | `2.3.0` | 4.6k | **[A](tools/csharp-sdk.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
+| [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) | `com.ivanmu…` | 4.5k | **[A](tools/unity-mcp.md)** | `AS-014` ×50, 🔑 `AS-002` ×10, ⚡ `AS-011` | Oct 28 |
+| [mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) | `sha-5ee0b8…` | 4.5k | **[A](tools/mcp-obsidian.md)** | 🔑 `AS-002` ×9, `AS-014` ×13, ⚡ `AS-011` ×2 | Oct 28 |
+| [flint-chart](https://github.com/microsoft/flint-chart) | `1.0` | 4.5k | **[A](tools/flint-chart.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [ivanmurzak-unity-mcp](https://github.com/IvanMurzak/Unity-MCP) | `0.69.0` | 4.5k | **[A](tools/ivanmurzak-unity-mcp.md)** | `AS-014` ×50, 🔑 `AS-002` ×10, ⚡ `AS-011` | Oct 15 |
-| [flint-chart](https://github.com/microsoft/flint-chart) | `1.0` | 4.5k | **[A](tools/flint-chart.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) | `0.1.1` | 4.4k/mo | **[A](tools/mcp-server-youtube-transcript.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
-| [archestra](https://github.com/archestra-ai/archestra) | `0.0.15` | 4.4k | **[A](tools/archestra.md)** | `AS-014` | Oct 27 |
+| [aisoc](https://github.com/beenuar/AiSOC) | `20.1.0` | 4.4k | **[A](tools/aisoc.md)** | `AS-014` ×19, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
+| [archestra](https://github.com/archestra-ai/archestra) | `0.0.15` | 4.4k | **[A](tools/archestra.md)** | `AS-014` | Oct 28 |
 | [mcpo](https://github.com/open-webui/mcpo) | `0.0.20` | 4.4k | **[I](tools/mcpo.md)** | ✅ None | Mar 18 |
 | [shinzo-labs-gmail-mcp](https://github.com/shinzo-labs/gmail-mcp) | `1.7.4` | 4.3k/mo | **[B](tools/shinzo-labs-gmail-mcp.md)** | `AS-012`, `AS-014` ×31, 🔑 `AS-002` ×20, ⚡ `AS-011` ×12 | Oct 15 |
+| [design-extract](https://github.com/Manavarya09/design-extract) | `13.3.2` | 4.3k/mo | **[A](tools/design-extract.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, `AS-014` ×15 | Oct 28 |
 | [httprunner](https://github.com/httprunner/httprunner) | `4.3.6` | 4.3k | **[I](tools/httprunner.md)** | ✅ None | Mar 18 |
-| [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | `0.1.0` | 4.3k/mo | **[A](tools/linear-mcp-server.md)** | `AS-014` ×25, 🔑 `AS-002` ×16, ⚡ `AS-011` ×7 | Oct 27 |
-| [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `2.2.2` | 4.3k | **[A](tools/excel-mcp-server.md)** | 🔑 `AS-002` ×21, `AS-014` ×46, ⚡ `AS-011` ×2 | Oct 27 |
-| [kubefwd](https://github.com/txn2/kubefwd) | `1.25.18` | 4.2k | **[A](tools/kubefwd.md)** | `AS-014` ×23, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
+| [excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | `2.2.2` | 4.3k | **[A](tools/excel-mcp-server.md)** | 🔑 `AS-002` ×21, `AS-014` ×46, ⚡ `AS-011` ×2 | Oct 28 |
+| [js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) | `4.0.5` | 4.3k/mo | **[C](tools/js-reverse-mcp.md)** | 🔑 `AS-002` ×24, ⚡ `AS-006` ×11, ⚡ `AS-011` ×21, `AS-014` ×24, 📐 `AS-003` ×6 | Oct 28 |
+| [kubefwd](https://github.com/txn2/kubefwd) | `1.25.18` | 4.2k | **[A](tools/kubefwd.md)** | `AS-014` ×23, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
 | [txn2-kubefwd](https://github.com/txn2/kubefwd) | `1.25.14` | 4.2k | **[A](tools/txn2-kubefwd.md)** | `AS-014` ×23, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 15 |
-| [ollama-mcp](https://github.com/rawveg/ollama-mcp) | `2.1.0` | 4.2k/mo | **[A](tools/ollama-mcp.md)** | `AS-014` ×13, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4 | Oct 27 |
+| [hyperresearch](https://github.com/jordan-gibbs/hyperresearch) | `0.13.0` | 4.2k | **[A](tools/hyperresearch.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×14, `AS-014` ×31 | Oct 28 |
 | [dainfernalcoder-perplexity-mcp](https://github.com/DaInfernalCoder/perplexity-mcp) | `Feature` | 4.1k/mo | **[A](tools/dainfernalcoder-perplexity-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
-| [hyperresearch](https://github.com/jordan-gibbs/hyperresearch) | `0.12.0` | 4.1k | **[A](tools/hyperresearch.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×14, `AS-014` ×31 | Oct 27 |
-| [rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) | `rmcp-v3.8.0` | 4.1k | **[C](tools/rust-sdk.md)** | 🔑 `AS-002` ×11, `AS-014` ×16, ⚡ `AS-011` ×7, ⚡ `AS-006` | Oct 27 |
+| [rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) | `rmcp-v3.8.0` | 4.1k | **[C](tools/rust-sdk.md)** | 🔑 `AS-002` ×11, `AS-014` ×16, ⚡ `AS-011` ×7, ⚡ `AS-006` | Oct 28 |
 | [wsl2-distro-manager](https://github.com/bostrot/wsl2-distro-manager) | `2.3.0` | 4.0k | **[A](tools/wsl2-distro-manager.md)** | `AS-014` ×4, 🔑 `AS-002` | Oct 15 |
-| [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.28.0` | 4.0k | **[A](tools/linkedin-mcp-server.md)** | 🔑 `AS-002` ×10, `AS-014` ×20, ⚡ `AS-011` ×7 | Oct 27 |
+| [linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.28.0` | 4.0k | **[A](tools/linkedin-mcp-server.md)** | 🔑 `AS-002` ×10, `AS-014` ×20, ⚡ `AS-011` ×7 | Oct 28 |
 | [ref-tools-ref-tools-mcp](https://github.com/ref-tools/ref-tools-mcp) | `3.0.3` | 4.0k/mo | **[A](tools/ref-tools-ref-tools-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
+| [mcp-notion-server](https://github.com/suekou/mcp-notion-server) | `2.0.2` | 4.0k/mo | **[A](tools/mcp-notion-server.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×11, `AS-014` ×14 | Oct 28 |
 | [stickerdaniel-linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) | `4.10.0` | 4.0k | **[A](tools/stickerdaniel-linkedin-mcp-server.md)** | 🔑 `AS-002` ×6, `AS-014` ×13, ⚡ `AS-011` ×4 | Oct 15 |
-| [aisoc](https://github.com/beenuar/AiSOC) | `20.1.0` | 4.0k | **[A](tools/aisoc.md)** | `AS-014` ×19, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
 | [jshookmcp](https://github.com/vmoranv/jshookmcp) | `0.4.2` | 4.0k/mo | **[A](tools/jshookmcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×8 | Oct 26 |
-| [fast-agent](https://github.com/evalstate/fast-agent) | `0.10.48` | 4.0k | **[A](tools/fast-agent.md)** | `AS-014` | Oct 27 |
-| [lean-ctx](https://github.com/yvgude/lean-ctx) | `scode-v0.2.0` | 3.9k | **[I](tools/lean-ctx.md)** | `AS-018` | Oct 27 |
-| [pipeshub-ai](https://github.com/pipeshub-ai/pipeshub-ai) | `0.10.0` | 3.9k | **[A](tools/pipeshub-ai.md)** | `AS-014` ×7, 🔑 `AS-002` ×7, ⚡ `AS-011` ×5 | Oct 27 |
-| [anything-analyzer](https://github.com/Mouseww/anything-analyzer) | `3.7.0` | 3.8k | **[A](tools/anything-analyzer.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Oct 27 |
-| [mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced) | `2.8.5` | 3.8k | **[A](tools/mcp-feedback-enhanced.md)** | `AS-014` ×11, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
-| [java-sdk](https://github.com/modelcontextprotocol/java-sdk) | `2.2.0-M1` | 3.7k | **[A](tools/java-sdk.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
-| [buildwithclaude](https://github.com/davepoon/buildwithclaude) | `1.1.0` | 3.7k | **[A](tools/buildwithclaude.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 27 |
-| [boost](https://github.com/laravel/boost) | `2.10.3` | 3.7k | **[A](tools/boost.md)** | 🔑 `AS-002` ×8, 🗝️ `AS-010` ×8, ⚡ `AS-011` ×7, `AS-014` ×8 | Oct 27 |
-| [core](https://github.com/opensumi/core) | `3.9.0` | 3.7k | **[B](tools/core.md)** | 🔑 `AS-002` ×2, 📐 `AS-003`, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [fast-agent](https://github.com/evalstate/fast-agent) | `0.10.48` | 4.0k | **[A](tools/fast-agent.md)** | `AS-014` | Oct 28 |
+| [cursor-talk-to-figma-mcp](https://github.com/grab/cursor-talk-to-figma-mcp) | `0.3.5` | 3.9k/mo | **[A](tools/cursor-talk-to-figma-mcp.md)** | `AS-014` ×40, 🔑 `AS-002` ×8 | Oct 28 |
+| [lean-ctx](https://github.com/yvgude/lean-ctx) | `scode-v0.2.0` | 3.9k | **[I](tools/lean-ctx.md)** | `AS-018` | Oct 28 |
+| [open-connector](https://github.com/oomol-lab/open-connector) | `1.9.4` | 3.9k/mo | **[A](tools/open-connector.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
+| [pipeshub-ai](https://github.com/pipeshub-ai/pipeshub-ai) | `1.0.0` | 3.9k | **[A](tools/pipeshub-ai.md)** | `AS-014` ×16, 🔑 `AS-002` ×15, ⚡ `AS-011` ×7 | Oct 28 |
+| [anything-analyzer](https://github.com/Mouseww/anything-analyzer) | `3.7.0` | 3.8k | **[A](tools/anything-analyzer.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Oct 28 |
+| [mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced) | `2.8.5` | 3.8k | **[A](tools/mcp-feedback-enhanced.md)** | `AS-014` ×11, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
+| [java-sdk](https://github.com/modelcontextprotocol/java-sdk) | `2.2.0-M1` | 3.7k | **[A](tools/java-sdk.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
+| [apple-docs-mcp](https://github.com/kimsungwhee/apple-docs-mcp) | `1.0.26` | 3.7k/mo | **[B](tools/apple-docs-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×9, `AS-014` ×18, 📐 `AS-003` | Oct 28 |
+| [mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) | `0.1.1` | 3.7k/mo | **[A](tools/mcp-server-youtube-transcript.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
+| [buildwithclaude](https://github.com/davepoon/buildwithclaude) | `1.1.0` | 3.7k | **[A](tools/buildwithclaude.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 28 |
+| [boost](https://github.com/laravel/boost) | `2.10.3` | 3.7k | **[A](tools/boost.md)** | 🔑 `AS-002` ×8, 🗝️ `AS-010` ×8, ⚡ `AS-011` ×7, `AS-014` ×8 | Oct 28 |
+| [core](https://github.com/opensumi/core) | `3.9.0` | 3.7k | **[B](tools/core.md)** | 🔑 `AS-002` ×2, 📐 `AS-003`, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
 | [isnow890-naver-search-mcp](https://github.com/isnow890/naver-search-mcp) | `1.0.47` | 3.7k/mo | **[A](tools/isnow890-naver-search-mcp.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×12 | Oct 15 |
 | [langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) | `langchain-…` | 3.6k | **[B](tools/langchain-mcp-adapters.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×9, `AS-014` ×10, 📐 `AS-003` ×2 | Oct 15 |
 | [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | `13.12.0` | 3.6k/mo | **[A](tools/antigravity-awesome-skills.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
-| [mcp-grafana](https://github.com/grafana/mcp-grafana) | `2.1.1` | 3.6k | **[I](tools/mcp-grafana.md)** | `AS-018` | Oct 27 |
-| [mcp-chinese-getting-started-guide](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) | `sha-a911d8…` | 3.6k | **[A](tools/mcp-chinese-getting-started-guide.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | `0.8.0` | 3.6k | **[A](tools/google-analytics-mcp.md)** | `AS-014` ×22, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 27 |
+| [codex-mcp-server](https://github.com/tuannvm/codex-mcp-server) | `1.4.10` | 3.6k/mo | **[C](tools/codex-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-006`, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 28 |
+| [mcp-grafana](https://github.com/grafana/mcp-grafana) | `2.1.1` | 3.6k | **[I](tools/mcp-grafana.md)** | `AS-018` | Oct 28 |
+| [mcp-chinese-getting-started-guide](https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide) | `sha-a911d8…` | 3.6k | **[A](tools/mcp-chinese-getting-started-guide.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | `0.8.0` | 3.6k | **[A](tools/google-analytics-mcp.md)** | `AS-014` ×22, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 28 |
 | [py-xiaozhi](https://github.com/huangjunsen0406/py-xiaozhi) | `1.1.8` | 3.5k | **[I](tools/py-xiaozhi.md)** | ✅ None | Mar 18 |
-| [mcp-sequentialthinking-tools](https://github.com/spences10/mcp-sequentialthinking-tools) | `0.1.1` | 3.5k/mo | **[A](tools/mcp-sequentialthinking-tools.md)** | 🔑 `AS-002`, `AS-014` ×3 | Oct 27 |
 | [mcp-database-server](https://github.com/executeautomation/mcp-database-server) | `1.1.0` | 3.5k/mo | **[B](tools/mcp-database-server.md)** | `AS-012`, 🔑 `AS-002` ×6, `AS-014` ×6, ⚡ `AS-011` ×3 | Oct 15 |
 | [mcp-server-code-runner](https://github.com/formulahendry/mcp-server-code-runner) | `0.1.8` | 3.5k/mo | **[C](tools/mcp-server-code-runner.md)** | ⚡ `AS-006`, `AS-014` | Oct 15 |
-| [punitarani-fli](https://github.com/punitarani/fli) | `0.9.0` | 3.4k | **[A](tools/punitarani-fli.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [postgres-mcp](https://github.com/crystaldba/postgres-mcp) | `0.3.0` | 3.4k | **[A](tools/postgres-mcp.md)** | 🔑 `AS-002`, `AS-014` | Oct 27 |
-| [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) | `0.0.28` | 3.4k/mo | **[A](tools/spec-workflow-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
-| [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | `2.2.1` | 3.4k | **[A](tools/google-workspace-mcp.md)** | `AS-014` ×10, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [cortex](https://github.com/cortex-docs/cortex) | `0.1.36` | 3.3k | **[A](tools/cortex.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×7, `AS-014` ×30 | Oct 27 |
-| [stealth-browser-mcp](https://github.com/vibheksoni/stealth-browser-mcp) | `0.2.5` | 3.3k | **[A](tools/stealth-browser-mcp.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [mcp-graphql](https://github.com/blurrah/mcp-graphql) | `2.0.4` | 3.5k/mo | **[A](tools/mcp-graphql.md)** | 🔑 `AS-002` ×2, `AS-014` ×2, ⚡ `AS-011` | Oct 28 |
+| [punitarani-fli](https://github.com/punitarani/fli) | `0.9.0` | 3.4k | **[A](tools/punitarani-fli.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 3.4k/mo | **[A](tools/openapi-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [postgres-mcp](https://github.com/crystaldba/postgres-mcp) | `0.3.0` | 3.4k | **[A](tools/postgres-mcp.md)** | 🔑 `AS-002`, `AS-014` | Oct 28 |
+| [google-workspace-mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | `2.2.1` | 3.4k | **[A](tools/google-workspace-mcp.md)** | `AS-014` ×10, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [ollama-mcp](https://github.com/rawveg/ollama-mcp) | `2.1.0` | 3.3k/mo | **[A](tools/ollama-mcp.md)** | `AS-014` ×13, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4 | Oct 28 |
+| [cortex](https://github.com/cortex-docs/cortex) | `0.1.36` | 3.3k | **[A](tools/cortex.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×7, `AS-014` ×30 | Oct 28 |
+| [stealth-browser-mcp](https://github.com/vibheksoni/stealth-browser-mcp) | `0.2.5` | 3.3k | **[A](tools/stealth-browser-mcp.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [vibheksoni-stealth-browser-mcp](https://github.com/vibheksoni/stealth-browser-mcp) | `0.2.5` | 3.3k | **[B](tools/vibheksoni-stealth-browser-mcp.md)** | `AS-012`, `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server) | `0.8.2` | 3.2k | **[A](tools/arxiv-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
-| [godot-ai](https://github.com/hi-godot/godot-ai) | `4.3.1` | 3.2k | **[A](tools/godot-ai.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
+| [godot-ai](https://github.com/hi-godot/godot-ai) | `4.3.1` | 3.2k | **[A](tools/godot-ai.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
+| [arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server) | `0.8.2` | 3.2k | **[A](tools/arxiv-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
 | [fli](https://github.com/punitarani/fli) | `0.9.0` | 3.2k | **[A](tools/fli.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
-| [redamon](https://github.com/samugit83/redamon) | `6.14.1` | 3.2k | **[I](tools/redamon.md)** | `AS-018` | Oct 27 |
-| [agent-scan](https://github.com/snyk/agent-scan) | `0.6.9` | 3.2k | **[A](tools/agent-scan.md)** | `AS-014` ×5 | Oct 27 |
+| [redamon](https://github.com/samugit83/redamon) | `6.14.1` | 3.2k | **[I](tools/redamon.md)** | `AS-018` | Oct 28 |
+| [agent-scan](https://github.com/snyk/agent-scan) | `0.6.9` | 3.2k | **[A](tools/agent-scan.md)** | `AS-014` ×5 | Oct 28 |
+| [mcp-sequentialthinking-tools](https://github.com/spences10/mcp-sequentialthinking-tools) | `0.1.1` | 3.1k/mo | **[A](tools/mcp-sequentialthinking-tools.md)** | 🔑 `AS-002`, `AS-014` ×3 | Oct 28 |
 | [hyperbrowserai-mcp](https://github.com/hyperbrowserai/mcp) | `1.1.0` | 3.1k/mo | **[A](tools/hyperbrowserai-mcp.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×6, `AS-014` ×10 | Oct 15 |
-| [ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) | `2.17.2` | 3.1k | **[A](tools/ffmpeg-skill.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
+| [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | `2.1.0` | 3.1k/mo | **[A](tools/mcp-server-fetch.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 28 |
 | [ddgs](https://github.com/deedy5/ddgs) | `9.14.4` | 3.0k | **[I](tools/ddgs.md)** | `AS-018` | Oct 15 |
-| [supabase-mcp](https://github.com/supabase/mcp) | `0.7.0` | 3.0k | **[B](tools/supabase-mcp.md)** | `AS-012`, 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×29 | Oct 27 |
-| [docs-mcp-server](https://github.com/arabold/docs-mcp-server) | `3.4.1` | 3.0k/mo | **[A](tools/docs-mcp-server.md)** | `AS-014` ×14, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 27 |
-| [paper-search-mcp](https://github.com/openags/paper-search-mcp) | `0.1.4` | 2.9k | **[A](tools/paper-search-mcp.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×12, `AS-014` ×13 | Oct 27 |
+| [supabase-mcp](https://github.com/supabase/mcp) | `0.7.0` | 3.0k | **[A](tools/supabase-mcp.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×29 | Oct 28 |
+| [paper-search-mcp](https://github.com/openags/paper-search-mcp) | `0.1.4` | 2.9k | **[A](tools/paper-search-mcp.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×12, `AS-014` ×13 | Oct 28 |
 | [omnisql-mcp](https://github.com/srthkdev/omnisql-mcp) | `3.0.0` | 2.9k/mo | **[A](tools/omnisql-mcp.md)** | 🔑 `AS-002` ×14, `AS-014` ×18, ⚡ `AS-011` ×4 | Oct 26 |
 | [janwilmake-openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 2.9k/mo | **[A](tools/janwilmake-openapi-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
 | [barryyip0625-mcp-discord](https://github.com/barryyip0625/mcp-discord) | `1.3.9` | 2.8k/mo | **[B](tools/barryyip0625-mcp-discord.md)** | `AS-012`, 🔑 `AS-002` ×12, `AS-014` ×22, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×4 | Oct 15 |
 | [solon](https://github.com/opensolon/solon) | `3.9.5` | 2.8k | **[A](tools/solon.md)** | ✅ None | Mar 10 |
+| [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) | `0.8.2` | 2.7k/mo | **[A](tools/mcp-server-commands.md)** | 🔑 `AS-002`, `AS-014` | Oct 28 |
 | [open-computer-use](https://github.com/iFurySt/open-computer-use) | `1.1.2` | 2.7k | **[A](tools/open-computer-use.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 25 |
-| [crosspaste-desktop](https://github.com/CrossPaste/crosspaste-desktop) | `1.0.1` | 2.7k | **[A](tools/crosspaste-desktop.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
+| [crosspaste-desktop](https://github.com/CrossPaste/crosspaste-desktop) | `1.0.1` | 2.7k | **[A](tools/crosspaste-desktop.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
 | [meigen-ai-design-mcp](https://github.com/jau123/MeiGen-AI-Design-MCP) | `3.1.1` | 2.6k/mo | **[B](tools/meigen-ai-design-mcp.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×14, `AS-014` ×17, 📐 `AS-003` | Oct 15 |
-| [cloakbrowser-mcp](https://github.com/swimmwatch/cloakbrowser-mcp) | `1.15.1` | 2.6k/mo | **[C](tools/cloakbrowser-mcp.md)** | `AS-014` ×27, 🔑 `AS-002` ×12, ⚡ `AS-006` ×2, ⚡ `AS-011` ×5 | Oct 26 |
 | [open-codex-computer-use](https://github.com/iFurySt/open-codex-computer-use) | `1.1.1` | 2.6k | **[A](tools/open-codex-computer-use.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 17 |
 | [deepseek-mcp-server](https://github.com/DMontgomery40/deepseek-mcp-server) | `0.5.0` | 2.6k/mo | **[A](tools/deepseek-mcp-server.md)** | 🗝️ `AS-010`, `AS-014` | Oct 15 |
 | [infobip-plantuml-mcp-server](https://github.com/infobip/plantuml-mcp-server) | `0.2.4` | 2.6k/mo | **[A](tools/infobip-plantuml-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 15 |
-| [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) | `1.17.0` | 2.6k/mo | **[A](tools/omnifocus-mcp.md)** | 🔑 `AS-002` ×8, `AS-014` ×12, ⚡ `AS-011` | Oct 27 |
-| [nitrostack](https://github.com/nitrocloudofficial/nitrostack) | `1.1.1` | 2.5k | **[B](tools/nitrostack.md)** | 🔑 `AS-002` ×31, `AS-014` ×35, 📐 `AS-003`, ⚡ `AS-011` ×9 | Oct 27 |
-| [radar](https://github.com/skyhook-io/radar) | `1.18.2` | 2.5k/mo | **[A](tools/radar.md)** | `AS-014` ×68, 🔑 `AS-002` ×20, ⚡ `AS-011` ×13 | Oct 27 |
+| [nitrostack](https://github.com/nitrocloudofficial/nitrostack) | `1.1.1` | 2.5k | **[B](tools/nitrostack.md)** | 🔑 `AS-002` ×31, `AS-014` ×35, 📐 `AS-003`, ⚡ `AS-011` ×9 | Oct 28 |
 | [paperbanana](https://github.com/llmsresearch/paperbanana) | `0.3.0` | 2.4k | **[A](tools/paperbanana.md)** | `AS-014` ×5, 🔑 `AS-002` | Oct 15 |
 | [mailtrap-mailtrap-mcp](https://github.com/mailtrap/mailtrap-mcp) | `0.3.0` | 2.4k/mo | **[A](tools/mailtrap-mailtrap-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×10 | Oct 15 |
-| [dexto](https://github.com/truffle-ai/dexto) | `1.1.3` | 2.4k/mo | **[I](tools/dexto.md)** | `AS-018` | Oct 27 |
-| [mcp-server](https://github.com/financial-datasets/mcp-server) | `99.0.0-dev` | 2.3k | **[I](tools/mcp-server.md)** | `AS-018` | Oct 27 |
+| [cloakbrowser-mcp](https://github.com/swimmwatch/cloakbrowser-mcp) | `1.15.1` | 2.4k/mo | **[C](tools/cloakbrowser-mcp.md)** | `AS-014` ×27, 🔑 `AS-002` ×12, ⚡ `AS-006` ×2, ⚡ `AS-011` ×5 | Oct 28 |
+| [mcp-server](https://github.com/financial-datasets/mcp-server) | `99.0.0-dev` | 2.3k | **[I](tools/mcp-server.md)** | `AS-018` | Oct 28 |
 | [toolhive](https://github.com/stacklok/toolhive) | `0.39.0` | 2.3k | **[I](tools/toolhive.md)** | `AS-018` | Jul 17 |
-| [inspector](https://github.com/MCPJam/inspector) | `3.17.0` | 2.3k | **[A](tools/inspector.md)** | `AS-014` ×9, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Oct 27 |
-| [arc-kit](https://github.com/tractorjuice/arc-kit) | `6.18.3` | 2.3k | **[A](tools/arc-kit.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
-| [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) | `3.8.0` | 2.3k/mo | **[A](tools/md2wechat-skill.md)** | 🔑 `AS-002` ×2, `AS-014` ×6 | Oct 27 |
+| [obsidian-local-rest-api](https://github.com/coddingtonbear/obsidian-local-rest-api) | `show` | 2.3k/mo | **[A](tools/obsidian-local-rest-api.md)** | `AS-014` | Oct 28 |
+| [inspector](https://github.com/MCPJam/inspector) | `3.17.0` | 2.3k | **[A](tools/inspector.md)** | `AS-014` ×9, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Oct 28 |
+| [arc-kit](https://github.com/tractorjuice/arc-kit) | `6.18.3` | 2.3k | **[A](tools/arc-kit.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
 | [unla](https://github.com/AmoyLab/Unla) | `0.10.0` | 2.2k | **[I](tools/unla.md)** | `AS-018` | Oct 15 |
 | [mcp-agent-mail](https://github.com/Dicklesworthstone/mcp_agent_mail) | `0.3.4` | 2.2k | **[A](tools/mcp-agent-mail.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, `AS-014` ×13, 🗝️ `AS-010` | Oct 15 |
-| [solana-mcp-vybe](https://github.com/vybenetwork/solana-mcp-vybe) | `1.1.2` | 2.2k | **[A](tools/solana-mcp-vybe.md)** | 🔑 `AS-002` ×14, `AS-014` ×16, ⚡ `AS-011` ×8 | Oct 27 |
+| [solana-mcp-vybe](https://github.com/vybenetwork/solana-mcp-vybe) | `1.1.2` | 2.2k | **[A](tools/solana-mcp-vybe.md)** | 🔑 `AS-002` ×14, `AS-014` ×16, ⚡ `AS-011` ×8 | Oct 28 |
 | [memory-bank-mcp](https://github.com/alioshr/memory-bank-mcp) | `0.2.1` | 2.2k/mo | **[A](tools/memory-bank-mcp.md)** | `AS-014` ×5, 🔑 `AS-002` ×4 | Oct 15 |
-| [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | `0.0.69` | 2.2k | **[A](tools/kubernetes-mcp-server.md)** | `AS-014` ×75, 🔑 `AS-002` ×17, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Oct 27 |
+| [linear-mcp-server](https://github.com/jerhadf/linear-mcp-server) | `0.1.0` | 2.2k/mo | **[A](tools/linear-mcp-server.md)** | `AS-014` ×25, 🔑 `AS-002` ×16, ⚡ `AS-011` ×7 | Oct 28 |
+| [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | `0.0.69` | 2.2k | **[A](tools/kubernetes-mcp-server.md)** | `AS-014` ×75, 🔑 `AS-002` ×17, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Oct 28 |
 | [skybridge](https://github.com/alpic-ai/skybridge) | `1.4.1` | 2.2k | **[I](tools/skybridge.md)** | `AS-018` | Sep 4 |
 | [financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) | `2.6.10` | 2.2k/mo | **[A](tools/financial-modeling-prep-mcp-server.md)** | 🔑 `AS-002` ×47, ⚡ `AS-011` ×38, `AS-014` ×253 | Oct 15 |
 | [imbenrabi-financial-modeling-prep-mcp-server](https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server) | `2.6.12` | 2.2k/mo | **[A](tools/imbenrabi-financial-modeling-prep-mcp-server.md)** | 🔑 `AS-002` ×47, ⚡ `AS-011` ×38, `AS-014` ×253 | Oct 15 |
-| [boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) | `3.0.1` | 2.2k | **[C](tools/boss-agent-cli.md)** | 🔑 `AS-002` ×2, 📐 `AS-003`, ⚡ `AS-006`, ⚡ `AS-011`, `AS-014` ×4 | Oct 27 |
+| [boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli) | `3.0.1` | 2.2k | **[C](tools/boss-agent-cli.md)** | 🔑 `AS-002` ×2, 📐 `AS-003`, ⚡ `AS-006`, ⚡ `AS-011`, `AS-014` ×4 | Oct 28 |
 | [portel-dev-ncp](https://github.com/portel-dev/ncp) | `1.6.0` | 2.1k/mo | **[A](tools/portel-dev-ncp.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
 | [mcp-router](https://github.com/mcp-router/mcp-router) | `0.6.3` | 2.1k | **[A](tools/mcp-router.md)** | 🔑 `AS-002`, `AS-014` ×2 | Oct 15 |
-| [mcp-server-guide](https://github.com/figma/mcp-server-guide) | `2.2.124-fi…` | 2.1k | **[A](tools/mcp-server-guide.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
+| [mcp-server-guide](https://github.com/figma/mcp-server-guide) | `2.2.124-fi…` | 2.1k | **[A](tools/mcp-server-guide.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
 | [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) | `1.1.11` | 2.1k | **[A](tools/office-word-mcp-server.md)** | `AS-014` ×5, 🔑 `AS-002` | Oct 15 |
 | [devdocs](https://github.com/cyberagiinc/DevDocs) | `0.1.0` | 2.1k | **[A](tools/devdocs.md)** | `AS-014` ×11, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Oct 15 |
-| [unreal-mcp](https://github.com/chongdashu/unreal-mcp) | `sha-4e5f00…` | 2.1k | **[I](tools/unreal-mcp.md)** | `AS-018` | Oct 27 |
-| [gonavi](https://github.com/Syngnat/GoNavi) | `1.1.5` | 2.1k | **[I](tools/gonavi.md)** | `AS-018` | Oct 27 |
-| [adr](https://github.com/uber/ADR) | `sensor-v1.…` | 2.1k | **[I](tools/adr.md)** | `AS-018` | Oct 27 |
-| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `12.4.0` | 2.0k | **[A](tools/mcp-memory-service.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Oct 27 |
-| [synapse-ai](https://github.com/synapseorch-ai/synapse-ai) | `1.9.2` | 2.0k/mo | **[A](tools/synapse-ai.md)** | `AS-014` ×80, 🔑 `AS-002` ×11, ⚡ `AS-011` | Oct 27 |
+| [unreal-mcp](https://github.com/chongdashu/unreal-mcp) | `sha-4e5f00…` | 2.1k | **[I](tools/unreal-mcp.md)** | `AS-018` | Oct 28 |
+| [gonavi](https://github.com/Syngnat/GoNavi) | `1.1.5` | 2.1k | **[I](tools/gonavi.md)** | `AS-018` | Oct 28 |
+| [adr](https://github.com/uber/ADR) | `sensor-v1.…` | 2.1k | **[I](tools/adr.md)** | `AS-018` | Oct 28 |
+| [mcp-memory-service](https://github.com/doobidoo/mcp-memory-service) | `12.4.0` | 2.1k | **[A](tools/mcp-memory-service.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Oct 28 |
 | [lobehub](https://github.com/lobehub/lobehub) | `2.2.16-can…` | 2.0k/mo | **[I](tools/lobehub.md)** | `AS-018` | Aug 31 |
 | [burtthecoder-mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) | `1.0.27` | 2.0k/mo | **[A](tools/burtthecoder-mcp-shodan.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×7 | Oct 15 |
-| [video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization) | `3.3.0` | 2.0k | **[A](tools/video-search-and-summarization.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 27 |
-| [one-search-mcp](https://github.com/yokingma/one-search-mcp) | `1.2.4` | 1.9k/mo | **[A](tools/one-search-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 27 |
-| [trpc-agent-go](https://github.com/trpc-group/trpc-agent-go) | `1.11.2` | 1.9k | **[A](tools/trpc-agent-go.md)** | `AS-014` ×13, 🔑 `AS-002` ×4, 🗝️ `AS-010` ×12, ⚡ `AS-011` ×2 | Oct 27 |
-| [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | `1.3.0` | 1.9k | **[A](tools/slack-mcp-server.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Oct 27 |
+| [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) | `1.17.0` | 2.0k/mo | **[A](tools/omnifocus-mcp.md)** | 🔑 `AS-002` ×8, `AS-014` ×12, ⚡ `AS-011` | Oct 28 |
+| [gateway](https://github.com/Portkey-AI/gateway) | `1.15.2` | 2.0k/mo | **[A](tools/gateway.md)** | `AS-014` ×15, 🗝️ `AS-010` ×14, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 28 |
+| [video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization) | `3.3.0` | 2.0k | **[A](tools/video-search-and-summarization.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 28 |
+| [trpc-agent-go](https://github.com/trpc-group/trpc-agent-go) | `1.11.2` | 1.9k | **[A](tools/trpc-agent-go.md)** | `AS-014` ×13, 🔑 `AS-002` ×4, 🗝️ `AS-010` ×12, ⚡ `AS-011` ×2 | Oct 28 |
+| [slack-mcp-server](https://github.com/korotovsky/slack-mcp-server) | `1.3.0` | 1.9k | **[A](tools/slack-mcp-server.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Oct 28 |
 | [deepseek-pp](https://github.com/zhu1090093659/deepseek-pp) | `1.14.0` | 1.9k | **[A](tools/deepseek-pp.md)** | 🗝️ `AS-010`, `AS-014` | Oct 15 |
+| [dexto](https://github.com/truffle-ai/dexto) | `1.1.3` | 1.9k/mo | **[I](tools/dexto.md)** | `AS-018` | Oct 28 |
 | [office-powerpoint-mcp-server](https://github.com/GongRzhe/Office-PowerPoint-MCP-Server) | `2.0.7` | 1.9k | **[A](tools/office-powerpoint-mcp-server.md)** | `AS-014` ×9, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 15 |
 | [mcp-brasil](https://github.com/Mcp-Brasil/mcp-brasil) | `0.14.0` | 1.8k | **[B](tools/mcp-brasil.md)** | `AS-012`, `AS-014` ×23, 🔑 `AS-002` ×9, ⚡ `AS-011` ×3 | Oct 15 |
-| [mcp-excalidraw](https://github.com/yctimlin/mcp_excalidraw) | `2.1.2` | 1.8k/mo | **[A](tools/mcp-excalidraw.md)** | `AS-014` ×2, 🔑 `AS-002` | Oct 27 |
 | [openosint](https://github.com/OpenOSINT/OpenOSINT) | `2.32.0` | 1.8k | **[I](tools/openosint.md)** | `AS-018` | Oct 10 |
-| [pentest-ai](https://github.com/0xSteph/pentest-ai) | `1.5.0` | 1.8k | **[A](tools/pentest-ai.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×8 | Oct 27 |
-| [tailscale-mcp](https://github.com/HexSleeves/tailscale-mcp) | `1.3.4` | 1.8k/mo | **[I](tools/tailscale-mcp.md)** | `AS-018` | Oct 27 |
-| [aoci-code](https://github.com/aoci-spec/aoci-code) | `0.1.0-rc22` | 1.8k | **[A](tools/aoci-code.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [pentest-ai](https://github.com/0xSteph/pentest-ai) | `1.5.0` | 1.8k | **[A](tools/pentest-ai.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×8 | Oct 28 |
+| [aoci-code](https://github.com/aoci-spec/aoci-code) | `0.1.0-rc22` | 1.8k | **[A](tools/aoci-code.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [bb-browser](https://github.com/epiral/bb-browser) | `0.14.0` | 1.8k/mo | **[A](tools/bb-browser.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
+| [cve-mcp-server](https://github.com/mukul975/cve-mcp-server) | `0.2.0` | 1.7k | **[A](tools/cve-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, `AS-014` ×16 | Oct 28 |
 | [mcp-server-apple-events](https://github.com/FradSer/mcp-server-apple-events) | `1.4.0` | 1.7k/mo | **[A](tools/mcp-server-apple-events.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×5 | Oct 15 |
 | [matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server) | `0.9.0` | 1.7k | **[B](tools/matlab-mcp-core-server.md)** | `AS-012`, `AS-014` ×9, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 15 |
-| [cve-mcp-server](https://github.com/mukul975/cve-mcp-server) | `0.2.0` | 1.7k | **[A](tools/cve-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, `AS-014` ×16 | Oct 27 |
-| [mcp-server-commands](https://github.com/g0t4/mcp-server-commands) | `0.8.2` | 1.6k/mo | **[A](tools/mcp-server-commands.md)** | 🔑 `AS-002`, `AS-014` | Oct 27 |
-| [mcptools](https://github.com/f/mcptools) | `0.7.1` | 1.6k | **[I](tools/mcptools.md)** | `AS-018` | Oct 27 |
-| [code-mode](https://github.com/universal-tool-calling-protocol/code-mode) | `1.0.6` | 1.6k | **[C](tools/code-mode.md)** | ⚡ `AS-006`, `AS-014` | Oct 27 |
-| [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | `0.1.1` | 1.6k | **[A](tools/mcp-language-server.md)** | `AS-014` | Oct 27 |
+| [mcptools](https://github.com/f/mcptools) | `0.7.1` | 1.6k | **[I](tools/mcptools.md)** | `AS-018` | Oct 28 |
+| [mcp-hub](https://github.com/ravitemer/mcp-hub) | `4.2.1` | 1.6k/mo | **[A](tools/mcp-hub.md)** | `AS-014` ×4, 🔑 `AS-002` ×2 | Oct 28 |
+| [code-mode](https://github.com/universal-tool-calling-protocol/code-mode) | `1.0.6` | 1.6k | **[C](tools/code-mode.md)** | ⚡ `AS-006`, `AS-014` | Oct 28 |
+| [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | `0.1.1` | 1.6k | **[A](tools/mcp-language-server.md)** | `AS-014` | Oct 28 |
 | [datagouv-mcp](https://github.com/datagouv/datagouv-mcp) | `0.2.29` | 1.6k | **[I](tools/datagouv-mcp.md)** | `AS-018` | Oct 15 |
-| [gateway](https://github.com/Portkey-AI/gateway) | `1.15.2` | 1.6k/mo | **[A](tools/gateway.md)** | `AS-014` ×15, 🗝️ `AS-010` ×14, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 27 |
+| [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) | `0.0.28` | 1.6k/mo | **[A](tools/spec-workflow-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
 | [imlewc-metabase-server](https://github.com/imlewc/metabase-server) | `0.1.0` | 1.6k/mo | **[A](tools/imlewc-metabase-server.md)** | `AS-014` ×12, 🔑 `AS-002` ×9, ⚡ `AS-011` ×6 | Oct 15 |
-| [mcp-hub](https://github.com/ravitemer/mcp-hub) | `4.2.1` | 1.6k/mo | **[A](tools/mcp-hub.md)** | `AS-014` ×4, 🔑 `AS-002` ×2 | Oct 27 |
-| [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) | `0.8.1` | 1.6k | **[A](tools/mcp-server-qdrant.md)** | `AS-014` ×11, 🔑 `AS-002` ×4, ⚡ `AS-011` | Oct 27 |
-| [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | `1.4.1` | 1.6k | **[I](tools/terraform-mcp-server.md)** | `AS-018` | Oct 27 |
-| [duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server) | `0.7.0` | 1.6k | **[A](tools/duckduckgo-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) | `0.8.1` | 1.6k | **[A](tools/mcp-server-qdrant.md)** | `AS-014` ×11, 🔑 `AS-002` ×4, ⚡ `AS-011` | Oct 28 |
+| [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | `1.2.17` | 1.6k/mo | **[C](tools/mcp-3d-printer-server.md)** | 🔑 `AS-002` ×37, 🗝️ `AS-010` ×14, ⚡ `AS-011` ×8, `AS-014` ×30, 📐 `AS-003`, ⚡ `AS-006` | Oct 28 |
+| [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | `1.4.1` | 1.6k | **[I](tools/terraform-mcp-server.md)** | `AS-018` | Oct 28 |
+| [duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server) | `0.7.0` | 1.6k | **[A](tools/duckduckgo-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
 | [cantian-ai-bazi-mcp](https://github.com/cantian-ai/bazi-mcp) | `0.1.0` | 1.6k/mo | **[A](tools/cantian-ai-bazi-mcp.md)** | `AS-014` ×3 | Oct 15 |
 | [litterbox](https://github.com/BlackSnufkin/LitterBox) | `5.0.0` | 1.6k | **[I](tools/litterbox.md)** | `AS-018` | Oct 15 |
-| [openapi-mcp-server](https://github.com/janwilmake/openapi-mcp-server) | `1.2.0-beta04` | 1.5k/mo | **[A](tools/openapi-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [solidworks-automation-skill](https://github.com/wzyn20051216/solidworks-automation-skill) | `2.0.0` | 1.5k | **[A](tools/solidworks-automation-skill.md)** | `AS-014` ×4, 🔑 `AS-002` | Oct 28 |
 | [data-api-builder](https://github.com/Azure/data-api-builder) | `2.0.0-rc` | 1.5k | **[A](tools/data-api-builder.md)** | 🔑 `AS-002` ×39, `AS-014` ×55, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 15 |
-| [solidworks-automation-skill](https://github.com/wzyn20051216/solidworks-automation-skill) | `2.0.0` | 1.5k | **[A](tools/solidworks-automation-skill.md)** | `AS-014` ×4, 🔑 `AS-002` | Oct 27 |
-| [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | `3.1.2` | 1.5k | **[A](tools/ros-mcp-server.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
-| [cli-agent-orchestrator](https://github.com/awslabs/cli-agent-orchestrator) | `2.5.4` | 1.5k | **[A](tools/cli-agent-orchestrator.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
+| [youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) | `1.0.2` | 1.5k/mo | **[A](tools/youtube-mcp-server.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×12 | Oct 28 |
+| [ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | `3.1.2` | 1.5k | **[A](tools/ros-mcp-server.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
+| [composio](https://github.com/ComposioHQ/composio) | `ersioning-…` | 1.5k/mo | **[A](tools/composio.md)** | `AS-014` ×9 | Oct 28 |
+| [cli-agent-orchestrator](https://github.com/awslabs/cli-agent-orchestrator) | `2.5.4` | 1.5k | **[A](tools/cli-agent-orchestrator.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
+| [radar](https://github.com/skyhook-io/radar) | `1.18.2` | 1.5k/mo | **[A](tools/radar.md)** | `AS-014` ×68, 🔑 `AS-002` ×20, ⚡ `AS-011` ×13 | Oct 28 |
 | [vscode-mcp-server](https://github.com/juehang/vscode-mcp-server) | `0.4.0` | 1.5k/mo | **[A](tools/vscode-mcp-server.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×2, `AS-014` ×9 | Oct 15 |
 | [mcptrustchecker](https://github.com/illiahaidar/mcptrustchecker) | `1.1.0` | 1.4k/mo | **[A](tools/mcptrustchecker.md)** | `AS-014` ×2 | Jul 26 |
 | [mnemox-ai-tradememory-protocol](https://github.com/mnemox-ai/tradememory-protocol) | `0.5.1` | 1.4k | **[B](tools/mnemox-ai-tradememory-protocol.md)** | `AS-012`, `AS-014` ×20, 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, 🗝️ `AS-010` | Oct 15 |
 | [helloggx-shadcn-vue-mcp](https://github.com/HelloGGX/shadcn-vue-mcp) | `1.0.1` | 1.4k/mo | **[A](tools/helloggx-shadcn-vue-mcp.md)** | `AS-014` ×6 | Oct 15 |
-| [youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) | `1.0.2` | 1.4k/mo | **[B](tools/youtube-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×12 | Oct 27 |
 | [mysql-mcp-server](https://github.com/designcomputer/mysql_mcp_server) | `0.2.2` | 1.4k | **[C](tools/mysql-mcp-server.md)** | 🔑 `AS-002` ×6, `AS-014` ×4, ⚡ `AS-011` | May 5 |
+| [n8n-mcp-server](https://github.com/leonardsellem/n8n-mcp-server) | `0.1.8` | 1.4k/mo | **[A](tools/n8n-mcp-server.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 28 |
 | [mirobody](https://github.com/thetahealth/mirobody) | `1.0.0` | 1.4k | **[A](tools/mirobody.md)** | `AS-014` ×12 | Oct 15 |
 | [xiaozhi-esp32-server-java](https://github.com/joey-zhou/xiaozhi-esp32-server-java) | `4.1.0` | 1.4k | **[A](tools/xiaozhi-esp32-server-java.md)** | 🔑 `AS-002` | Mar 31 |
-| [best-of-agent-harnesses](https://github.com/RyanAlberts/best-of-Agent-Harnesses) | `mcp-v0.8.0` | 1.4k | **[A](tools/best-of-agent-harnesses.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×11 | Oct 27 |
+| [best-of-agent-harnesses](https://github.com/RyanAlberts/best-of-Agent-Harnesses) | `mcp-v0.8.0` | 1.4k | **[A](tools/best-of-agent-harnesses.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×11 | Oct 28 |
 | [prismercloud](https://github.com/Prismer-AI/PrismerCloud) | `1.9.0` | 1.4k | **[B](tools/prismercloud.md)** | `AS-012`, `AS-014` ×12, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` ×2 | Oct 15 |
 | [xmcp](https://github.com/basementstudio/xmcp) | `@xmcp-dev/…` | 1.3k | **[I](tools/xmcp.md)** | `AS-018` | Oct 19 |
 | [conorluddy-xc-mcp](https://github.com/conorluddy/xc-mcp) | `3.2.0` | 1.3k/mo | **[B](tools/conorluddy-xc-mcp.md)** | `AS-012`, 🔑 `AS-002` ×58, ⚡ `AS-011` ×34, `AS-014` ×77, 🗝️ `AS-010` | Oct 15 |
-| [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | `1.0.101` | 1.3k | **[A](tools/meta-ads-mcp.md)** | `AS-014` ×5 | Oct 27 |
+| [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) | `1.0.101` | 1.3k | **[A](tools/meta-ads-mcp.md)** | `AS-014` ×5 | Oct 28 |
 | [todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server) | `0.1.0` | 1.3k/mo | **[A](tools/todoist-mcp-server.md)** | `AS-014` ×30, 🔑 `AS-002` ×17, ⚡ `AS-011` ×5 | Oct 15 |
-| [mcp-server-fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) | `2.1.0` | 1.3k/mo | **[A](tools/mcp-server-fetch.md)** | 🔑 `AS-002` ×12, `AS-014` ×12 | Oct 27 |
+| [bernstein](https://github.com/sipyourdrink-ltd/bernstein) | `3.13.0` | 1.3k | **[C](tools/bernstein.md)** | `AS-014` ×14, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, ⚡ `AS-006` | Oct 15 |
 | [markmap-mcp-server](https://github.com/jinzcdev/markmap-mcp-server) | `0.1.1` | 1.3k/mo | **[B](tools/markmap-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×4, ⚡ `AS-011`, `AS-014` ×4 | Oct 15 |
-| [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) | `2.2.4` | 1.3k | **[C](tools/jupyter-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×5, `AS-014` ×22, 🗝️ `AS-010` ×3, ⚡ `AS-006` ×2, 📐 `AS-003` | Oct 27 |
-| [open-reverselab](https://github.com/LING71671/open-reverselab) | `1.2.1` | 1.3k | **[A](tools/open-reverselab.md)** | `AS-014` ×38, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 27 |
-| [mcpjungle](https://github.com/mcpjungle/MCPJungle) | `0.1.14` | 1.3k | **[I](tools/mcpjungle.md)** | `AS-018` | Oct 27 |
+| [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) | `2.2.4` | 1.3k | **[C](tools/jupyter-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×5, `AS-014` ×22, 🗝️ `AS-010` ×3, ⚡ `AS-006` ×2, 📐 `AS-003` | Oct 28 |
+| [open-reverselab](https://github.com/LING71671/open-reverselab) | `1.2.1` | 1.3k | **[A](tools/open-reverselab.md)** | `AS-014` ×38, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 28 |
+| [mcpjungle](https://github.com/mcpjungle/MCPJungle) | `0.1.14` | 1.3k | **[I](tools/mcpjungle.md)** | `AS-018` | Oct 28 |
 | [mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) | `1.0.21` | 1.3k/mo | **[B](tools/mcp-shrimp-task-manager.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 15 |
 | [cjo4m06-mcp-shrimp-task-manager](https://github.com/cjo4m06/mcp-shrimp-task-manager) | `1.0.21` | 1.3k/mo | **[B](tools/cjo4m06-mcp-shrimp-task-manager.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 15 |
-| [reticle](https://github.com/reticlehq/reticle) | `3.8.2` | 1.3k | **[I](tools/reticle.md)** | `AS-018` | Oct 27 |
-| [iot-dc3](https://github.com/pnoker/iot-dc3) | `2026.10.10` | 1.3k | **[A](tools/iot-dc3.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×5, `AS-014` ×5 | Oct 27 |
+| [reticle](https://github.com/reticlehq/reticle) | `3.8.2` | 1.3k | **[I](tools/reticle.md)** | `AS-018` | Oct 28 |
+| [iot-dc3](https://github.com/pnoker/iot-dc3) | `2026.10.10` | 1.3k | **[A](tools/iot-dc3.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×5, `AS-014` ×5 | Oct 28 |
 | [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp) | `0.72.3` | 1.3k | **[A](tools/invisible-playwright-mcp.md)** | 🔑 `AS-002` ×10, `AS-014` ×8, ⚡ `AS-011` ×2 | Oct 21 |
-| [thclaws](https://github.com/thClaws/thClaws) | `0.146.0` | 1.2k | **[I](tools/thclaws.md)** | `AS-018` | Oct 27 |
-| [grafbase](https://github.com/grafbase/grafbase) | `sdk-0.27.4` | 1.2k | **[A](tools/grafbase.md)** | 🔑 `AS-002` ×3, `AS-014` ×3, ⚡ `AS-011` ×2 | Oct 27 |
-| [bernstein](https://github.com/sipyourdrink-ltd/bernstein) | `3.13.0` | 1.2k | **[C](tools/bernstein.md)** | `AS-014` ×14, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, ⚡ `AS-006` | Oct 15 |
-| [northcinder](https://github.com/cinderline/northcinder) | `0.2.1` | 1.2k | **[I](tools/northcinder.md)** | `AS-018` | Oct 27 |
+| [thclaws](https://github.com/thClaws/thClaws) | `0.146.0` | 1.2k | **[I](tools/thclaws.md)** | `AS-018` | Oct 28 |
+| [grafbase](https://github.com/grafbase/grafbase) | `sdk-0.27.4` | 1.2k | **[A](tools/grafbase.md)** | 🔑 `AS-002` ×3, `AS-014` ×3, ⚡ `AS-011` ×2 | Oct 28 |
+| [northcinder](https://github.com/cinderline/northcinder) | `0.2.1` | 1.2k | **[I](tools/northcinder.md)** | `AS-018` | Oct 28 |
 | [f4ww4z-mcp-mysql-server](https://github.com/f4ww4z/mcp-mysql-server) | `0.1.0` | 1.2k/mo | **[A](tools/f4ww4z-mcp-mysql-server.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010`, ⚡ `AS-011` ×3, `AS-014` ×5 | Oct 15 |
-| [zen](https://github.com/sheshbabu/zen) | `1.5.0` | 1.2k | **[B](tools/zen.md)** | `AS-012`, `AS-014` ×11, 🔑 `AS-002` ×2, ⚡ `AS-011`, 🗝️ `AS-010` | Oct 15 |
 | [better-chatbot](https://github.com/cgoinglove/better-chatbot) | `1.26.0` | 1.2k | **[A](tools/better-chatbot.md)** | 🔑 `AS-002` ×32, 🗝️ `AS-010` ×2, ⚡ `AS-011` ×14, `AS-014` ×75 | Oct 15 |
-| [modular-rag-mcp-server](https://github.com/jerry-ai-dev/MODULAR-RAG-MCP-SERVER) | `sha-f658c5…` | 1.2k | **[A](tools/modular-rag-mcp-server.md)** | 🔑 `AS-002` ×11, `AS-014` ×12, ⚡ `AS-011` | Oct 27 |
+| [modular-rag-mcp-server](https://github.com/jerry-ai-dev/MODULAR-RAG-MCP-SERVER) | `sha-f658c5…` | 1.2k | **[A](tools/modular-rag-mcp-server.md)** | 🔑 `AS-002` ×11, `AS-014` ×12, ⚡ `AS-011` | Oct 28 |
+| [zen](https://github.com/sheshbabu/zen) | `1.5.0` | 1.2k | **[B](tools/zen.md)** | `AS-012`, `AS-014` ×11, 🔑 `AS-002` ×2, ⚡ `AS-011`, 🗝️ `AS-010` | Oct 15 |
 | [tencentcloudbase-cloudbase-ai-toolkit](https://github.com/TencentCloudBase/CloudBase-MCP) | `2.18.0` | 1.1k | **[A](tools/tencentcloudbase-cloudbase-ai-toolkit.md)** | `AS-014` ×19, 🔑 `AS-002` ×14, ⚡ `AS-011` ×8 | Oct 15 |
 | [mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server) | `3.0.0-prer…` | 1.1k | **[I](tools/mongodb-mcp-server.md)** | `AS-018` | Sep 9 |
 | [jason-tan-swe-railway-mcp](https://github.com/jason-tan-swe/railway-mcp) | `1.3.0` | 1.1k/mo | **[A](tools/jason-tan-swe-railway-mcp.md)** | 🔑 `AS-002` ×32, `AS-014` ×38, ⚡ `AS-011` ×13, 🗝️ `AS-010` | Oct 15 |
 | [scrapeless-mcp-server](https://github.com/scrapeless-ai/scrapeless-mcp-server) | `0.4.9` | 1.1k/mo | **[A](tools/scrapeless-mcp-server.md)** | 🔑 `AS-002` ×24, `AS-014` ×25, ⚡ `AS-011` ×19 | Oct 15 |
 | [ronantakizawa-a11ymcp](https://github.com/ronantakizawa/a11ymcp) | `1.1.0` | 1.1k/mo | **[A](tools/ronantakizawa-a11ymcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Oct 15 |
+| [mcp-open-library](https://github.com/8enSmith/mcp-open-library) | `1.2.6` | 1.1k/mo | **[A](tools/mcp-open-library.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×7 | Oct 28 |
 | [stackql](https://github.com/stackql/stackql) | `0.12.732` | 1.1k | **[I](tools/stackql.md)** | `AS-018` | Oct 15 |
 | [greirson-mcp-todoist](https://github.com/greirson/mcp-todoist) | `1.0.3` | 1.1k/mo | **[A](tools/greirson-mcp-todoist.md)** | `AS-014` ×19, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
 | [wisp-science](https://github.com/xuzhougeng/wisp-science) | `1.16.0` | 1.1k | **[C](tools/wisp-science.md)** | 🔑 `AS-002` ×11, `AS-014` ×16, ⚡ `AS-011` ×7, ⚡ `AS-006` | Oct 15 |
+| [alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server) | `2.4.0` | 1.0k | **[A](tools/alpaca-mcp-server.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011`, `AS-014` ×35 | Oct 28 |
 | [stanislavlysenko0912-todoist-mcp-server](https://github.com/stanislavlysenko0912/todoist-mcp-server) | `1.3.4` | 1.0k/mo | **[A](tools/stanislavlysenko0912-todoist-mcp-server.md)** | `AS-014` ×30, 🔑 `AS-002` ×17, ⚡ `AS-011` ×5 | Oct 15 |
-| [alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server) | `2.4.0` | 1.0k | **[A](tools/alpaca-mcp-server.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011`, `AS-014` ×35 | Oct 27 |
-| [mcp-gateway-registry](https://github.com/agentic-community/mcp-gateway-registry) | `1.0.22` | 1.0k | **[A](tools/mcp-gateway-registry.md)** | `AS-014` ×7, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
+| [mcp-gateway-registry](https://github.com/agentic-community/mcp-gateway-registry) | `1.0.22` | 1.0k | **[A](tools/mcp-gateway-registry.md)** | `AS-014` ×7, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
 | [rashidazarang-airtable-mcp](https://github.com/rashidazarang/airtable-mcp) | `4.0.0` | 1.0k/mo | **[A](tools/rashidazarang-airtable-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×14, ⚡ `AS-011` ×8 | Oct 15 |
+| [unity-mcp-server](https://github.com/AnkleBreaker-Studio/unity-mcp-server) | `2.36.0` | 1.0k/mo | **[C](tools/unity-mcp-server.md)** | `AS-014` ×80, 🔑 `AS-002` ×21, ⚡ `AS-011` ×11, ⚡ `AS-006` | Oct 28 |
+| [ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) | `1.5.0` | 997/mo | **[I](tools/ntfy-me-mcp.md)** | `AS-018` | Oct 28 |
 | [supadata-ai-mcp](https://github.com/supadata-ai/mcp) | `1.2.2` | 987/mo | **[A](tools/supadata-ai-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×9 | Oct 15 |
 | [mcp-sequential-thinking](https://github.com/arben-adm/mcp-sequential-thinking) | `0.7.0` | 956 | **[A](tools/mcp-sequential-thinking.md)** | `AS-014` | Oct 15 |
-| [octocode](https://github.com/bgauryy/octocode) | `5.0.0` | 955 | **[A](tools/octocode.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×10 | Oct 27 |
-| [unity-mcp-server](https://github.com/AnkleBreaker-Studio/unity-mcp-server) | `2.36.0` | 952/mo | **[C](tools/unity-mcp-server.md)** | `AS-014` ×80, 🔑 `AS-002` ×21, ⚡ `AS-011` ×11, ⚡ `AS-006` | Oct 27 |
-| [bgauryy-octocode-mcp](https://github.com/bgauryy/octocode-mcp) | `5.0.0` | 950 | **[A](tools/bgauryy-octocode-mcp.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×10 | Oct 15 |
-| [ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) | `1.5.0` | 948/mo | **[I](tools/ntfy-me-mcp.md)** | `AS-018` | Oct 27 |
+| [octocode](https://github.com/bgauryy/octocode) | `5.0.0` | 956 | **[A](tools/octocode.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×10 | Oct 28 |
+| [bgauryy-octocode-mcp](https://github.com/bgauryy/octocode-mcp) | `5.0.0` | 956 | **[A](tools/bgauryy-octocode-mcp.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×10 | Oct 15 |
 | [shaikhspeare-wanderlog-mcp](https://github.com/shaikhspeare/wanderlog-mcp) | `0.2.0` | 941/mo | **[A](tools/shaikhspeare-wanderlog-mcp.md)** | `AS-014` ×13, 🔑 `AS-002` ×6, ⚡ `AS-011` ×4 | Oct 15 |
-| [mcp-bridge](https://github.com/SecretiveShell/MCP-Bridge) | `0.5.1` | 923 | **[A](tools/mcp-bridge.md)** | 🗝️ `AS-010` ×2, `AS-014` | Oct 27 |
+| [mcp-bridge](https://github.com/SecretiveShell/MCP-Bridge) | `0.5.1` | 923 | **[A](tools/mcp-bridge.md)** | 🗝️ `AS-010` ×2, `AS-014` | Oct 28 |
 | [graphlit-mcp-server](https://github.com/graphlit/graphlit-mcp-server) | `1.0.1` | 919/mo | **[I](tools/graphlit-mcp-server.md)** | `AS-018` | Oct 15 |
 | [sandbase-cli](https://github.com/sandbaseai/cli/tree/v0.1.17) | `0.1.17` | 914/mo | **[A](tools/sandbase-cli.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Sep 1 |
 | [iai-personal-memory-engine](https://github.com/CodeAbra/iai-personal-memory-engine) | `3.1.0` | 911 | **[B](tools/iai-personal-memory-engine.md)** | `AS-012`, 🔑 `AS-002` ×2, `AS-014` ×3 | Oct 15 |
 | [mcp-installer](https://github.com/anaisbetts/mcp-installer) | `0.5.0` | 906/mo | **[A](tools/mcp-installer.md)** | 🔑 `AS-002` ×2, `AS-014` ×2 | Oct 15 |
 | [agent-qa](https://github.com/vostride/agent-qa) | `0.1.21` | 896 | **[B](tools/agent-qa.md)** | 🔑 `AS-002` ×58, ⚡ `AS-011` ×31, `AS-014` ×109, 🗝️ `AS-010` ×4, 📐 `AS-003` ×2 | Oct 15 |
 | [octagon-mcp-server](https://github.com/OctagonAI/octagon-mcp-server) | `1.1.0` | 887/mo | **[B](tools/octagon-mcp-server.md)** | `AS-012`, `AS-014` ×8, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Oct 15 |
-| [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) | `security` | 864 | **[A](tools/mcp-kali-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [browser-use-mcp-server](https://github.com/kontext-security/browser-use-mcp-server) | `1.0.3` | 849 | **[A](tools/browser-use-mcp-server.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [one-search-mcp](https://github.com/yokingma/one-search-mcp) | `1.2.4` | 884/mo | **[A](tools/one-search-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 28 |
+| [mcp-kali-server](https://github.com/Wh0am123/MCP-Kali-Server) | `security` | 862 | **[A](tools/mcp-kali-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [browser-use-mcp-server](https://github.com/kontext-security/browser-use-mcp-server) | `1.0.3` | 849 | **[A](tools/browser-use-mcp-server.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [recraft-ai-mcp-recraft-server](https://github.com/recraft-ai/mcp-recraft-server) | `1.6.5` | 846/mo | **[A](tools/recraft-ai-mcp-recraft-server.md)** | `AS-014` ×9, 🔑 `AS-002` ×2 | Oct 15 |
-| [golf](https://github.com/golf-mcp/golf) | `0.4.1` | 840 | **[A](tools/golf.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [metatrader-mcp-server](https://github.com/ariadng/metatrader-mcp-server) | `0.2.3` | 840 | **[I](tools/metatrader-mcp-server.md)** | `AS-018` | Oct 27 |
-| [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) | `0.4` | 834 | **[A](tools/supabase-mcp-server.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×29 | Oct 27 |
-| [mcp-server-excel](https://github.com/sbroenne/mcp-server-excel) | `2.5.5` | 834 | **[A](tools/mcp-server-excel.md)** | `AS-014` ×18, 🔑 `AS-002` ×11, ⚡ `AS-011` ×4 | Oct 27 |
+| [golf](https://github.com/golf-mcp/golf) | `0.4.1` | 840 | **[A](tools/golf.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [metatrader-mcp-server](https://github.com/ariadng/metatrader-mcp-server) | `0.2.3` | 840 | **[I](tools/metatrader-mcp-server.md)** | `AS-018` | Oct 28 |
+| [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) | `0.4` | 834 | **[A](tools/supabase-mcp-server.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×29 | Oct 28 |
+| [mcp-server-excel](https://github.com/sbroenne/mcp-server-excel) | `2.5.7` | 834 | **[A](tools/mcp-server-excel.md)** | `AS-014` ×18, 🔑 `AS-002` ×11, ⚡ `AS-011` ×4 | Oct 28 |
 | [mcp-client-for-ollama](https://github.com/jonigl/mcp-client-for-ollama) | `0.33.3` | 831 | **[B](tools/mcp-client-for-ollama.md)** | `AS-012`, 🔑 `AS-002` ×9, ⚡ `AS-011` ×9, `AS-014` ×10, 📐 `AS-003` ×2 | Oct 15 |
 | [mnemox-ai-idea-reality-mcp](https://github.com/mnemox-ai/idea-reality-mcp) | `0.5.0` | 827 | **[A](tools/mnemox-ai-idea-reality-mcp.md)** | `AS-014` | Oct 15 |
 | [infranodus-mcp-server-infranodus](https://github.com/infranodus/mcp-server-infranodus) | `1.6.1` | 813/mo | **[B](tools/infranodus-mcp-server-infranodus.md)** | `AS-012`, 🔑 `AS-002` ×38, ⚡ `AS-011` ×24, `AS-014` ×40 | Oct 15 |
 | [vllora](https://github.com/vllora/vllora) | `.4.0-prere…` | 810 | **[A](tools/vllora.md)** | `AS-014` | Oct 15 |
-| [mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) | `0.4.0` | 786/mo | **[A](tools/mcp-rest-api.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×9, `AS-014` ×47, 🗝️ `AS-010` ×2 | Oct 27 |
-| [mem0-mcp](https://github.com/pinkpixel-dev/mem0-mcp) | `0.8.0` | 760/mo | **[A](tools/mem0-mcp.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Oct 27 |
-| [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | `2.3.0` | 753/mo | **[A](tools/drawio-mcp-server.md)** | 🔑 `AS-002`, `AS-014` | Oct 27 |
-| [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) | `0.3.0` | 749 | **[A](tools/mcp-server-docker.md)** | 🔑 `AS-002` ×4, `AS-014` ×5 | Oct 27 |
+| [mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) | `0.3.0` | 749 | **[A](tools/mcp-server-docker.md)** | 🔑 `AS-002` ×4, `AS-014` ×5 | Oct 28 |
 | [anythingmcp](https://github.com/HelpCode-ai/anythingmcp) | `0.12.0` | 748 | **[A](tools/anythingmcp.md)** | `AS-014` ×10 | Oct 15 |
+| [mcp-proxy](https://github.com/tbxark/mcp-proxy) | `1.1.0` | 743 | **[B](tools/mcp-proxy.md)** | `AS-014` ×17, 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, 🗝️ `AS-010`, 📐 `AS-003` | Oct 28 |
 | [8ensmith-mcp-open-library](https://github.com/8enSmith/mcp-open-library) | `1.0.2` | 742/mo | **[B](tools/8ensmith-mcp-open-library.md)** | `AS-012`, 🔑 `AS-002` ×7, ⚡ `AS-011` ×6, `AS-014` ×9 | Oct 15 |
-| [mcp-proxy](https://github.com/tbxark/mcp-proxy) | `1.1.0` | 742 | **[B](tools/mcp-proxy.md)** | `AS-014` ×17, 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, 🗝️ `AS-010`, 📐 `AS-003` | Oct 27 |
-| [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) | `1.1.37` | 740/mo | **[C](tools/bambu-printer-mcp.md)** | 🔑 `AS-002` ×52, 🗝️ `AS-010` ×28, ⚡ `AS-011` ×26, `AS-014` ×46, 📐 `AS-003` ×6, ⚡ `AS-006` | Oct 27 |
-| [mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch) | `0.4.6` | 725 | **[I](tools/mcp-server-elasticsearch.md)** | `AS-018` | Oct 27 |
-| [mcp-nest](https://github.com/rekog-labs/MCP-Nest) | `2.0.8` | 724 | **[A](tools/mcp-nest.md)** | `AS-014` ×17, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Oct 27 |
-| [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) | `0.2.0` | 723 | **[A](tools/polymarket-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 27 |
+| [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) | `0.2.0` | 728 | **[A](tools/polymarket-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 28 |
+| [mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch) | `0.4.6` | 726 | **[I](tools/mcp-server-elasticsearch.md)** | `AS-018` | Oct 28 |
+| [mcp-nest](https://github.com/rekog-labs/MCP-Nest) | `2.0.8` | 724 | **[A](tools/mcp-nest.md)** | `AS-014` ×17, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Oct 28 |
 | [jjlabsio-korea-stock-mcp](https://github.com/jjlabsio/korea-stock-mcp) | `1.4.0` | 708/mo | **[B](tools/jjlabsio-korea-stock-mcp.md)** | `AS-012`, `AS-014` ×13 | Oct 15 |
 | [xcode-mcp-server](https://github.com/r-huijts/xcode-mcp-server) | `1.0.3` | 703/mo | **[A](tools/xcode-mcp-server.md)** | 🔑 `AS-002` ×12, `AS-014` ×18, ⚡ `AS-011` ×2 | Oct 15 |
 | [docfork-docfork](https://github.com/docfork/docfork) | `2.1.0` | 700/mo | **[A](tools/docfork-docfork.md)** | 🔑 `AS-002` ×2, 🗝️ `AS-010`, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
 | [docfork-mcp](https://github.com/docfork/docfork) | `2.1.0` | 700/mo | **[A](tools/docfork-mcp.md)** | 🔑 `AS-002` ×2, 🗝️ `AS-010`, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
-| [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) | `0.11.1` | 693 | **[I](tools/mcp-filesystem-server.md)** | `AS-018` | Oct 27 |
+| [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) | `0.11.1` | 693 | **[I](tools/mcp-filesystem-server.md)** | `AS-018` | Oct 28 |
 | [yuna0x0-anilist-mcp](https://github.com/yuna0x0/anilist-mcp) | `1.4.0` | 690/mo | **[A](tools/yuna0x0-anilist-mcp.md)** | `AS-014` ×44, 🔑 `AS-002` ×16, ⚡ `AS-011` ×8 | Oct 15 |
 | [opencode-studio](https://github.com/Microck/opencode-studio) | `2.4.5` | 685/mo | **[B](tools/opencode-studio.md)** | `AS-012`, 🔑 `AS-002` ×4, `AS-014` ×5, ⚡ `AS-011` ×2 | Oct 15 |
-| [laravel-restify](https://github.com/BinarCode/laravel-restify) | `10.4.67` | 683 | **[A](tools/laravel-restify.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 27 |
+| [laravel-restify](https://github.com/BinarCode/laravel-restify) | `10.4.67` | 683 | **[A](tools/laravel-restify.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 28 |
 | [deuz-sdk](https://github.com/Deuz-AI/Deuz-SDK) | `2.0.0` | 682 | **[A](tools/deuz-sdk.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 15 |
 | [apktool-mcp-server](https://github.com/zinja-coder/apktool-mcp-server) | `3.0.0` | 677 | **[I](tools/apktool-mcp-server.md)** | ✅ None | Mar 18 |
-| [godot-mcp](https://github.com/Coding-Solo/godot-mcp) | `0.1.1` | 676/mo | **[A](tools/godot-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×14 | Oct 27 |
 | [mcp-client-cli](https://github.com/adhikasp/mcp-client-cli) | `1.0.5` | 675 | **[B](tools/mcp-client-cli.md)** | `AS-012`, 🔑 `AS-002` ×3, `AS-014` ×5, ⚡ `AS-011` ×2 | Oct 15 |
 | [mario-andreschak-mcp-abap-abap-adt-api](https://github.com/mario-andreschak/mcp-abap-abap-adt-api) | `0.1.1` | 669/mo | **[B](tools/mario-andreschak-mcp-abap-abap-adt-api.md)** | `AS-012`, 🔑 `AS-002` ×3, `AS-014` ×3 | Oct 15 |
-| [biomcp](https://github.com/genomoncology/biomcp) | `0.9.3` | 666 | **[A](tools/biomcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 27 |
-| [home-assistant-vibecode-agent](https://github.com/Coolver/home-assistant-vibecode-agent) | `2.10.50` | 646 | **[B](tools/home-assistant-vibecode-agent.md)** | `AS-012`, 🔑 `AS-002` ×7, `AS-014` ×8, ⚡ `AS-011` | Oct 27 |
-| [mcp-redis](https://github.com/redis/mcp-redis) | `0.5.1` | 641 | **[A](tools/mcp-redis.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
+| [biomcp](https://github.com/genomoncology/biomcp) | `0.9.3` | 667 | **[A](tools/biomcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 28 |
+| [home-assistant-vibecode-agent](https://github.com/Coolver/home-assistant-vibecode-agent) | `2.10.50` | 646 | **[A](tools/home-assistant-vibecode-agent.md)** | 🔑 `AS-002` ×7, `AS-014` ×8, ⚡ `AS-011` | Oct 28 |
+| [mcp-redis](https://github.com/redis/mcp-redis) | `0.5.1` | 641 | **[A](tools/mcp-redis.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
+| [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.1` | 641/mo | **[A](tools/ui-tars-desktop.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
 | [wenyan-mcp](https://github.com/caol64/wenyan-mcp) | `2.0.1` | 641/mo | **[A](tools/wenyan-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` ×4 | Oct 15 |
 | [ainativelang](https://github.com/sbhooley/ainativelang) | `1.8.0` | 639 | **[A](tools/ainativelang.md)** | `AS-014` ×19, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4 | Oct 15 |
 | [mcp-server-ccxt](https://github.com/doggybee/mcp-server-ccxt) | `1.2.1` | 621/mo | **[A](tools/mcp-server-ccxt.md)** | `AS-014` ×24, 🗝️ `AS-010` ×11, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
+| [godot-mcp](https://github.com/Coding-Solo/godot-mcp) | `0.1.1` | 617/mo | **[A](tools/godot-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×14 | Oct 28 |
 | [jezweb-twenty-mcp](https://github.com/jezweb/twenty-mcp) | `1.3.0` | 615/mo | **[A](tools/jezweb-twenty-mcp.md)** | `AS-014` ×6, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Oct 15 |
-| [dbt-mcp](https://github.com/dbt-labs/dbt-mcp) | `2.8.0` | 613 | **[B](tools/dbt-mcp.md)** | 🔑 `AS-002` ×26, ⚡ `AS-011` ×21, `AS-014` ×39, 📐 `AS-003` ×10 | Oct 27 |
+| [dbt-mcp](https://github.com/dbt-labs/dbt-mcp) | `2.9.0` | 613 | **[B](tools/dbt-mcp.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×22, `AS-014` ×40, 📐 `AS-003` ×10 | Oct 28 |
 | [emilia-protocol](https://github.com/emiliaprotocol/emilia-protocol) | `erify-v3.2…` | 611 | **[A](tools/emilia-protocol.md)** | `AS-014` ×62, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×4 | Oct 15 |
-| [tunnel-client](https://github.com/openai/tunnel-client) | `0.0.18` | 598 | **[A](tools/tunnel-client.md)** | 🔑 `AS-002` ×3, `AS-014` ×5, ⚡ `AS-011` ×2 | Oct 27 |
+| [tunnel-client](https://github.com/openai/tunnel-client) | `0.0.18` | 600 | **[A](tools/tunnel-client.md)** | 🔑 `AS-002` ×3, `AS-014` ×5, ⚡ `AS-011` ×2 | Oct 28 |
 | [claude-code-skills](https://github.com/levnikolaevich/claude-code-skills) | `2026.05.06` | 577 | **[B](tools/claude-code-skills.md)** | `AS-012`, `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
+| [rails-mcp-server](https://github.com/maquina-app/rails-mcp-server) | `2.0.0` | 574 | **[A](tools/rails-mcp-server.md)** | `AS-014` ×76, 🔑 `AS-002` ×25, ⚡ `AS-011` ×12 | Oct 28 |
 | [erudika-para](https://github.com/Erudika/para) | `1.52.3` | 574 | **[A](tools/erudika-para.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [rails-mcp-server](https://github.com/maquina-app/rails-mcp-server) | `2.0.0` | 573 | **[A](tools/rails-mcp-server.md)** | `AS-014` ×76, 🔑 `AS-002` ×25, ⚡ `AS-011` ×12 | Oct 27 |
 | [dart-mcp-server](https://github.com/its-dart/dart-mcp-server) | `0.2.1` | 563/mo | **[B](tools/dart-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×20, `AS-014` ×29, ⚡ `AS-011` ×2, 📐 `AS-003` | Oct 15 |
-| [n8n-claw](https://github.com/freddy-schuetz/n8n-claw) | `1.9.2` | 561 | **[B](tools/n8n-claw.md)** | `AS-012`, `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 27 |
+| [n8n-claw](https://github.com/freddy-schuetz/n8n-claw) | `1.9.2` | 561 | **[A](tools/n8n-claw.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 28 |
+| [sap-ai-mcp-servers](https://github.com/marianfoo/sap-ai-mcp-servers) | `1.0.0` | 548 | **[A](tools/sap-ai-mcp-servers.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×10, `AS-014` ×20 | Oct 28 |
 | [ida-mcp-server](https://github.com/MxIris-Reverse-Engineering/ida-mcp-server) | `0.3.4` | 548 | **[I](tools/ida-mcp-server.md)** | ✅ None | Mar 18 |
-| [sap-ai-mcp-servers](https://github.com/marianfoo/sap-ai-mcp-servers) | `1.0.0` | 546 | **[A](tools/sap-ai-mcp-servers.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×10, `AS-014` ×20 | Oct 27 |
-| [pg-mcp-server](https://github.com/stuzero/pg-mcp-server) | `0.3.0` | 541 | **[I](tools/pg-mcp-server.md)** | `AS-018` | Oct 27 |
-| [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.1.0` | 535 | **[A](tools/mcp-server-motherduck.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011`, `AS-014` ×5 | Oct 27 |
+| [pg-mcp-server](https://github.com/stuzero/pg-mcp-server) | `0.3.0` | 540 | **[I](tools/pg-mcp-server.md)** | `AS-018` | Oct 28 |
+| [mcp-server-motherduck](https://github.com/motherduckdb/mcp-server-motherduck) | `1.1.0` | 536 | **[A](tools/mcp-server-motherduck.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011`, `AS-014` ×5 | Oct 28 |
 | [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | `2.0.4` | 535/mo | **[A](tools/evm-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×2 | Oct 15 |
+| [mcp-server-weread](https://github.com/freestylefly/mcp-server-weread) | `0.2.2` | 528/mo | **[A](tools/mcp-server-weread.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | `1.6.2` | 521 | **[A](tools/prometheus-mcp-server.md)** | `AS-014` ×6, 🔑 `AS-002` ×2 | Oct 28 |
 | [mcp-server-siri-shortcuts](https://github.com/dvcrn/mcp-server-siri-shortcuts) | `1.1.0` | 521/mo | **[A](tools/mcp-server-siri-shortcuts.md)** | `AS-014` ×3, ⚡ `AS-006` | Oct 15 |
-| [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | `1.6.2` | 520 | **[A](tools/prometheus-mcp-server.md)** | `AS-014` ×6, 🔑 `AS-002` ×2 | Oct 27 |
 | [roam-code](https://github.com/Cranot/roam-code) | `13.6.1` | 517 | **[B](tools/roam-code.md)** | `AS-012`, 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, `AS-014` ×11 | Oct 15 |
-| [mcp-server-bash-sdk](https://github.com/muthuishere/mcp-server-bash-sdk) | `0.4.1` | 515 | **[A](tools/mcp-server-bash-sdk.md)** | `AS-014` ×3 | Oct 27 |
-| [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | `2.1.1` | 511/mo | **[A](tools/healthcare-mcp-public.md)** | 🔑 `AS-002` ×6, `AS-014` ×11, ⚡ `AS-011` ×4 | Oct 27 |
-| [web-agent-protocol](https://github.com/OTA-Tech-AI/web-agent-protocol) | `wap-replay…` | 507 | **[A](tools/web-agent-protocol.md)** | `AS-014` ×4, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 27 |
-| [copilot-mcp](https://github.com/VikashLoomba/copilot-mcp) | `0.0.97` | 506 | **[A](tools/copilot-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×7, 🗝️ `AS-010` | Oct 27 |
-| [lunar](https://github.com/TheLunarCompany/lunar) | `lunar-ts-i…` | 506 | **[A](tools/lunar.md)** | `AS-014` ×13, 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Oct 27 |
+| [mcp-server-bash-sdk](https://github.com/muthuishere/mcp-server-bash-sdk) | `0.4.1` | 516 | **[A](tools/mcp-server-bash-sdk.md)** | `AS-014` ×3 | Oct 28 |
+| [web-agent-protocol](https://github.com/OTA-Tech-AI/web-agent-protocol) | `wap-replay…` | 507 | **[A](tools/web-agent-protocol.md)** | `AS-014` ×4, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 28 |
+| [lunar](https://github.com/TheLunarCompany/lunar) | `lunar-ts-i…` | 506 | **[A](tools/lunar.md)** | `AS-014` ×13, 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Oct 28 |
+| [copilot-mcp](https://github.com/VikashLoomba/copilot-mcp) | `0.0.97` | 506 | **[A](tools/copilot-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×7, 🗝️ `AS-010` | Oct 28 |
 | [spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) | `1.0.0` | 487 | **[A](tools/spotify-mcp-server.md)** | 🔑 `AS-002`, `AS-014` | Oct 15 |
 | [opik-mcp](https://github.com/comet-ml/opik-mcp) | `2.0.1` | 485/mo | **[A](tools/opik-mcp.md)** | `AS-014` ×10, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) | `2.7.6` | 470/mo | **[B](tools/vibe-check-mcp-server.md)** | `AS-012`, `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) | `3.8.0` | 466/mo | **[A](tools/md2wechat-skill.md)** | 🔑 `AS-002` ×2, `AS-014` ×6 | Oct 28 |
 | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) | `1.8.0` | 466 | **[I](tools/db-mcp-server.md)** | ✅ None | Mar 18 |
 | [mcp-documentation-server](https://github.com/andrea9293/mcp-documentation-server) | `1.14.0` | 453/mo | **[B](tools/mcp-documentation-server.md)** | `AS-012`, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×9 | Oct 15 |
 | [mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | `1.0.10` | 448 | **[B](tools/mcp-teams-server.md)** | `AS-012`, `AS-014` ×26, 🔑 `AS-002` ×7, 🗝️ `AS-010` ×3, ⚡ `AS-011` ×6 | Oct 15 |
 | [k-jarzyna-mcp-miro](https://github.com/k-jarzyna/mcp-miro) | `1.0.9` | 438/mo | **[A](tools/k-jarzyna-mcp-miro.md)** | `AS-014` ×97, 🔑 `AS-002` ×53, ⚡ `AS-011` ×5 | Oct 15 |
 | [greatsumini-nanobanana-api-mcp](https://github.com/greatSumini/nanobanana-api-mcp) | `0.2.1` | 437/mo | **[A](tools/greatsumini-nanobanana-api-mcp.md)** | `AS-014` ×3 | Oct 15 |
-| [outlook-mcp](https://github.com/ryaker/outlook-mcp) | `2.0.0` | 435/mo | **[A](tools/outlook-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×6 | Oct 27 |
-| [mcp-server-weread](https://github.com/freestylefly/mcp-server-weread) | `0.2.2` | 434/mo | **[A](tools/mcp-server-weread.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
 | [quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) | `0.0.1` | 433 | **[B](tools/quickbooks-online-mcp-server.md)** | `AS-012`, `AS-014` ×292, 🔑 `AS-002` ×270, ⚡ `AS-011` ×137 | Oct 15 |
 | [pv-bhat-vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) | `2.7.6` | 427/mo | **[A](tools/pv-bhat-vibe-check-mcp-server.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [mcp-odoo](https://github.com/erpipe-org/mcp-odoo) | `1.3.2` | 425 | **[A](tools/mcp-odoo.md)** | `AS-014` ×6, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
-| [mcpadapt](https://github.com/grll/mcpadapt) | `0.1.20` | 425 | **[I](tools/mcpadapt.md)** | `AS-018` | Oct 27 |
-| [marm-memory](https://github.com/Lyellr88/marm-memory) | `2.60.1` | 424 | **[A](tools/marm-memory.md)** | `AS-014` ×16, 🔑 `AS-002` ×2 | Oct 27 |
+| [mcp-odoo](https://github.com/erpipe-org/mcp-odoo) | `1.3.2` | 425 | **[A](tools/mcp-odoo.md)** | `AS-014` ×6, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
+| [mcpadapt](https://github.com/grll/mcpadapt) | `0.1.20` | 425 | **[I](tools/mcpadapt.md)** | `AS-018` | Oct 28 |
+| [marm-memory](https://github.com/Lyellr88/marm-memory) | `2.60.1` | 424 | **[A](tools/marm-memory.md)** | `AS-014` ×16, 🔑 `AS-002` ×2 | Oct 28 |
 | [marm-systems](https://github.com/Lyellr88/MARM-Systems) | `2.18.0` | 422 | **[A](tools/marm-systems.md)** | `AS-014` ×7, 🔑 `AS-002` | Oct 15 |
-| [one-mcp](https://github.com/burugo/one-mcp) | `1.0.13` | 420 | **[B](tools/one-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4, 📐 `AS-003` ×2 | Oct 27 |
+| [one-mcp](https://github.com/burugo/one-mcp) | `1.0.13` | 420 | **[B](tools/one-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4, 📐 `AS-003` ×2 | Oct 28 |
 | [google-scholar-mcp-server](https://github.com/JackKuo666/Google-Scholar-MCP-Server) | `sha-738d60…` | 418 | **[A](tools/google-scholar-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 15 |
 | [comfyui-mcp-server](https://github.com/joenorton/comfyui-mcp-server) | `1.1.1` | 408 | **[I](tools/comfyui-mcp-server.md)** | `AS-018` | Oct 15 |
-| [mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo) | `0.9.0` | 407 | **[A](tools/mcp-server-odoo.md)** | `AS-014` ×6, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
-| [makafeli-n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) | `0.10.1` | 405/mo | **[B](tools/makafeli-n8n-workflow-builder.md)** | `AS-012`, `AS-014` ×23, 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, 📐 `AS-003` ×2, 🗝️ `AS-010` | Oct 15 |
+| [mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo) | `0.9.0` | 407 | **[A](tools/mcp-server-odoo.md)** | `AS-014` ×6, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
 | [n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) | `0.10.1` | 405/mo | **[B](tools/n8n-workflow-builder.md)** | `AS-014` ×23, 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, 📐 `AS-003` ×2, 🗝️ `AS-010` | Oct 15 |
+| [makafeli-n8n-workflow-builder](https://github.com/makafeli/n8n-workflow-builder) | `0.10.1` | 405/mo | **[B](tools/makafeli-n8n-workflow-builder.md)** | `AS-012`, `AS-014` ×23, 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, 📐 `AS-003` ×2, 🗝️ `AS-010` | Oct 15 |
 | [planexeorg-planexe](https://github.com/PlanExeOrg/PlanExe) | `2025-dec-31` | 403 | **[C](tools/planexeorg-planexe.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×5, `AS-014` ×11, ⚡ `AS-006` | Oct 15 |
 | [nanobanana-mcp-server](https://github.com/zhongweili/nanobanana-mcp-server) | `0.4.5` | 400 | **[A](tools/nanobanana-mcp-server.md)** | `AS-014` ×3 | Oct 15 |
 | [bradleygolden-hexdocs-mcp](https://github.com/bradleygolden/hexdocs-mcp) | `0.6.0` | 400/mo | **[A](tools/bradleygolden-hexdocs-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
 | [mssql-mcp-server](https://github.com/RichardHan/mssql_mcp_server) | `0.1.0` | 398 | **[I](tools/mssql-mcp-server.md)** | ✅ None | Mar 18 |
-| [veriteknik-pluggedin-mcp](https://github.com/VeriTeknik/pluggedin-mcp) | `2.0.0` | 396/mo | **[B](tools/veriteknik-pluggedin-mcp.md)** | `AS-012`, `AS-014` ×27, 🔑 `AS-002` ×9, ⚡ `AS-011` ×4 | Oct 15 |
 | [ableton-live-mcp-server](https://github.com/Simon-Kansara/ableton-live-mcp-server) | `sha-97e758…` | 396 | **[B](tools/ableton-live-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Oct 15 |
+| [veriteknik-pluggedin-mcp](https://github.com/VeriTeknik/pluggedin-mcp) | `2.0.0` | 396/mo | **[B](tools/veriteknik-pluggedin-mcp.md)** | `AS-012`, `AS-014` ×27, 🔑 `AS-002` ×9, ⚡ `AS-011` ×4 | Oct 15 |
 | [nextcloud-mcp-server](https://github.com/cbcoutinho/nextcloud-mcp-server) | `0.119.0` | 388 | **[A](tools/nextcloud-mcp-server.md)** | 🔑 `AS-002` ×20, `AS-014` ×30, ⚡ `AS-011` ×3 | Oct 15 |
 | [django-mcp-server](https://github.com/gts360/django-mcp-server) | `0.5.6` | 381 | **[I](tools/django-mcp-server.md)** | ✅ None | Mar 18 |
+| [synapse-ai](https://github.com/synapseorch-ai/synapse-ai) | `1.9.2` | 374/mo | **[A](tools/synapse-ai.md)** | `AS-014` ×80, 🔑 `AS-002` ×11, ⚡ `AS-011` | Oct 28 |
 | [facebook-ads-mcp-server](https://github.com/gomarble-ai/facebook-ads-mcp-server) | `sha-1a9406…` | 365 | **[A](tools/facebook-ads-mcp-server.md)** | `AS-014` ×21, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [open-webui](https://github.com/open-webui/open-webui) | `0.12.4` | 365/mo | **[B](tools/open-webui.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5, 📐 `AS-003` | Oct 27 |
 | [mcp-email-server](https://github.com/ai-zerolab/mcp-email-server) | `0.10.1` | 361 | **[B](tools/mcp-email-server.md)** | `AS-012`, `AS-014` ×21, 🔑 `AS-002` ×18, ⚡ `AS-011` ×10 | Oct 15 |
 | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | `1.24.0` | 361/mo | **[I](tools/kubectl-mcp-server.md)** | `AS-018` | Oct 22 |
-| [git-mcp](https://github.com/idosal/git-mcp) | `1.0.0` | 351/mo | **[A](tools/git-mcp.md)** | `AS-014` ×36, 🔑 `AS-002` ×18, ⚡ `AS-011` ×7 | Oct 27 |
 | [data-go-mcp-servers](https://github.com/Koomook/data-go-mcp-servers) | `sha-dd27f9…` | 350 | **[A](tools/data-go-mcp-servers.md)** | `AS-014` ×2 | Oct 15 |
 | [doris-mcp-server](https://github.com/apache/doris-mcp-server) | `0.6.0` | 350 | **[I](tools/doris-mcp-server.md)** | ✅ None | Mar 18 |
 | [plate](https://github.com/udecode/plate) | `54.0.0-bet…` | 347/mo | **[A](tools/plate.md)** | `AS-014` ×10, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Oct 27 |
 | [plane-mcp-server](https://github.com/makeplane/plane-mcp-server) | `2.5.0-phoe…` | 346 | **[C](tools/plane-mcp-server.md)** | `AS-012`, `AS-014` ×58, 🔑 `AS-002` ×59, ⚡ `AS-011` ×32, 🗝️ `AS-010` ×7, 📐 `AS-003` ×3, ⚡ `AS-006` | Oct 15 |
-| [generator](https://github.com/context-hub/generator) | `1.34.0-beta5` | 341 | **[A](tools/generator.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×7, 🗝️ `AS-010` ×5 | Oct 27 |
+| [generator](https://github.com/context-hub/generator) | `1.34.0-beta5` | 341 | **[A](tools/generator.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×7, 🗝️ `AS-010` ×5 | Oct 28 |
 | [desearch-ai-desearch](https://github.com/Desearch-ai/subnet-22) | `0.0.200` | 340 | **[B](tools/desearch-ai-desearch.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Apr 19 |
 | [mcp-server-code-execution-mode](https://github.com/elusznik/mcp-server-code-execution-mode) | `sha-27d23b…` | 340 | **[C](tools/mcp-server-code-execution-mode.md)** | `AS-012`, ⚡ `AS-006`, `AS-014` | Oct 15 |
 | [ospec](https://github.com/clawplays/ospec) | `1.6.1` | 339/mo | **[A](tools/ospec.md)** | 🔑 `AS-002` ×4, `AS-014` ×8, ⚡ `AS-011` | Oct 15 |
+| [mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) | `0.4.0` | 337/mo | **[A](tools/mcp-rest-api.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×9, `AS-014` ×47, 🗝️ `AS-010` ×2 | Oct 28 |
+| [proxima](https://github.com/Zen4-bit/Proxima) | `5.5.0` | 337/mo | **[I](tools/proxima.md)** | `AS-018` | Oct 28 |
 | [photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) | `0.1.11` | 335 | **[C](tools/photoshop-python-api-mcp-server.md)** | ⚡ `AS-006`, `AS-014` | Oct 15 |
 | [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) | `1.0.1` | 332 | **[A](tools/mcp-server-simulator-ios-idb.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×6, `AS-014` ×15 | Oct 15 |
-| [emcee](https://github.com/mattt/emcee) | `0.9.0` | 331 | **[I](tools/emcee.md)** | `AS-018` | Oct 27 |
+| [emcee](https://github.com/mattt/emcee) | `0.9.0` | 331 | **[I](tools/emcee.md)** | `AS-018` | Oct 28 |
+| [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) | `2.7.6` | 325/mo | **[A](tools/vibe-check-mcp-server.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [kite-mcp-server](https://github.com/zerodha/kite-mcp-server) | `0.4.0-dev3` | 324 | **[B](tools/kite-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×25, ⚡ `AS-011` ×12, `AS-014` ×40, 🗝️ `AS-010` | Oct 15 |
-| [standards-sdk-go](https://github.com/hashgraph-online/standards-sdk-go) | `0.1.20` | 321 | **[A](tools/standards-sdk-go.md)** | `AS-014` ×8, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Oct 27 |
+| [standards-sdk-go](https://github.com/hashgraph-online/standards-sdk-go) | `0.1.20` | 321 | **[A](tools/standards-sdk-go.md)** | `AS-014` ×8, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Oct 28 |
 | [linux-mcp-server](https://github.com/rhel-lightspeed/linux-mcp-server) | `1.4.1` | 317 | **[C](tools/linux-mcp-server.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×9, `AS-014` ×41, 🔓 `AS-005` ×4, ⚡ `AS-006` | Oct 15 |
 | [elasticsearch-mcp-server](https://github.com/cr7258/elasticsearch-mcp-server) | `2.0.19` | 313 | **[I](tools/elasticsearch-mcp-server.md)** | ✅ None | Mar 18 |
-| [mcp-3d-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | `1.2.16` | 312/mo | **[C](tools/mcp-3d-printer-server.md)** | 🔑 `AS-002` ×37, 🗝️ `AS-010` ×14, ⚡ `AS-011` ×8, `AS-014` ×30, 📐 `AS-003`, ⚡ `AS-006` | Oct 27 |
 | [mcp-server-tree-sitter](https://github.com/wrale/mcp-server-tree-sitter) | `0.7.0` | 309 | **[A](tools/mcp-server-tree-sitter.md)** | `AS-014` | Oct 15 |
-| [short-video-maker](https://github.com/gyoridavid/short-video-maker) | `1.3.4` | 307/mo | **[A](tools/short-video-maker.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 27 |
+| [oh-my-pi](https://github.com/can1357/oh-my-pi) | `18.13.2` | 305/mo | **[A](tools/oh-my-pi.md)** | `AS-014` ×5, 🔑 `AS-002` ×2 | Oct 28 |
 | [mcp-server-mas-sequential-thinking](https://github.com/FradSer/mcp-server-mas-sequential-thinking) | `0.8.0` | 305 | **[B](tools/mcp-server-mas-sequential-thinking.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [hf-mcp-server](https://github.com/huggingface/hf-mcp-server) | `0.3.20` | 304 | **[A](tools/hf-mcp-server.md)** | `AS-014` | Oct 15 |
 | [remote-mcp-server-with-auth](https://github.com/coleam00/remote-mcp-server-with-auth) | `0.0.1` | 302 | **[B](tools/remote-mcp-server-with-auth.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Oct 15 |
-| [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) | `0.3.1` | 296/mo | **[A](tools/ui-tars-desktop.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
 | [mcp-mongo-server](https://github.com/kiliczsh/mcp-mongo-server) | `2.0.2` | 282 | **[I](tools/mcp-mongo-server.md)** | ✅ None | Mar 18 |
 | [apple-health-mcp-server](https://github.com/the-momentum/apple-health-mcp-server) | `0.1.0` | 280 | **[A](tools/apple-health-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [mcp-proxy-server](https://github.com/adamwattis/mcp-proxy-server) | `0.1.0` | 279/mo | **[B](tools/mcp-proxy-server.md)** | `AS-012`, `AS-014` ×19, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 15 |
-| [gram](https://github.com/speakeasy-api/gram) | `tunnel@0.2.0` | 275 | **[A](tools/gram.md)** | `AS-014` ×17, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Oct 27 |
-| [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) | `1.5.2` | 275/mo | **[A](tools/pinkpixel-dev-web-scout-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [gram](https://github.com/speakeasy-api/gram) | `tunnel@0.2.0` | 275 | **[A](tools/gram.md)** | `AS-014` ×17, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Oct 28 |
+| [short-video-maker](https://github.com/gyoridavid/short-video-maker) | `1.3.4` | 272/mo | **[A](tools/short-video-maker.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 28 |
 | [ironcurtain](https://github.com/provos/ironcurtain) | `0.12.0` | 269/mo | **[I](tools/ironcurtain.md)** | `AS-018` | Oct 15 |
-| [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) | `0.5.5` | 257/mo | **[A](tools/mcp-neovim-server.md)** | 🔑 `AS-002` ×10, `AS-014` ×19, ⚡ `AS-011` ×4 | Oct 27 |
 | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) | `3.0.0` | 257 | **[A](tools/google-search-mcp-server.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 15 |
 | [gregorydickson-memory-graph](https://github.com/memory-graph/memory-graph) | `0.12.4` | 252 | **[A](tools/gregorydickson-memory-graph.md)** | `AS-014` ×9, 🔑 `AS-002` ×4, ⚡ `AS-011` | Oct 15 |
 | [agent-kit](https://github.com/KeyID-AI/agent-kit) | `0.2.0` | 251/mo | **[B](tools/agent-kit.md)** | `AS-014` ×64, 🔑 `AS-002` ×44, ⚡ `AS-011` ×30, 📐 `AS-003` | Oct 15 |
 | [mysql-mcp-server-pro](https://github.com/wenb1n-dev/mysql_mcp_server_pro) | `1.7.0` | 250 | **[B](tools/mysql-mcp-server-pro.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3, 📐 `AS-003` | Oct 15 |
-| [zig-mcp](https://github.com/zig-wasm/zig-mcp) | `1.4.0` | 249/mo | **[A](tools/zig-mcp.md)** | `AS-014` ×4, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
 | [weather-mcp-server](https://github.com/ezh0v/weather-mcp-server) | `1.3.0` | 246 | **[B](tools/weather-mcp-server.md)** | `AS-012`, `AS-014` ×8 | Oct 15 |
+| [drawio-mcp-server](https://github.com/lgazo/drawio-mcp-server) | `2.3.0` | 240/mo | **[A](tools/drawio-mcp-server.md)** | 🔑 `AS-002`, `AS-014` | Oct 28 |
 | [xiyan-mcp-server](https://github.com/XGenerationLab/xiyan_mcp_server) | `0.1.4` | 238 | **[I](tools/xiyan-mcp-server.md)** | ✅ None | Mar 18 |
 | [unsplash-mcp-server](https://github.com/hellokaton/unsplash-mcp-server) | `sha-856b89…` | 237 | **[A](tools/unsplash-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [zwldarren-akshare-one-mcp](https://github.com/zwldarren/akshare-one-mcp) | `0.3.9` | 233 | **[A](tools/zwldarren-akshare-one-mcp.md)** | `AS-014` ×9 | Oct 15 |
-| [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 233/mo | **[A](tools/deep-research.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
-| [kicad-mcp-server](https://github.com/mixelpixx/KiCAD-MCP-Server) | `2.8.3` | 232/mo | **[I](tools/kicad-mcp-server.md)** | `AS-018` | Oct 27 |
 | [razorpay-mcp-server](https://github.com/razorpay/razorpay-mcp-server) | `1.2.1` | 231 | **[I](tools/razorpay-mcp-server.md)** | `AS-018` | Oct 15 |
 | [facebook-mcp-server](https://github.com/HagaiHen/facebook-mcp-server) | `sha-e4cebf…` | 230 | **[A](tools/facebook-mcp-server.md)** | 🔑 `AS-002` ×19, ⚡ `AS-011` ×11, `AS-014` ×44 | Oct 15 |
 | [google-tag-manager-mcp-server](https://github.com/stape-io/google-tag-manager-mcp-server) | `3.0.6` | 230 | **[B](tools/google-tag-manager-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Oct 15 |
 | [bh-rat-context-awesome](https://github.com/bh-rat/context-awesome) | `0.1.1` | 227/mo | **[A](tools/bh-rat-context-awesome.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Oct 15 |
-| [oh-my-pi](https://github.com/can1357/oh-my-pi) | `18.13.1` | 227/mo | **[A](tools/oh-my-pi.md)** | `AS-014` ×5, 🔑 `AS-002` ×2 | Oct 27 |
 | [omega-memory-core](https://github.com/omega-memory/omega-memory) | `1.4.15` | 225 | **[A](tools/omega-memory-core.md)** | `AS-014` ×26, 🔑 `AS-002` ×9, ⚡ `AS-011` ×2 | Oct 15 |
+| [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 224/mo | **[A](tools/minecraft-mcp-server.md)** | `AS-014` ×17, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Oct 28 |
 | [qianniuspace-mcp-security-audit](https://github.com/qianniuspace/mcp-security-audit) | `1.0.4` | 223/mo | **[A](tools/qianniuspace-mcp-security-audit.md)** | `AS-014` | Oct 15 |
+| [server-google-news](https://github.com/ChanMeng666/server-google-news) | `1.0.1` | 223/mo | **[A](tools/server-google-news.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
 | [antarikshc-perfetto-mcp](https://github.com/antarikshc/perfetto-mcp) | `0.1.4` | 222 | **[I](tools/antarikshc-perfetto-mcp.md)** | `AS-018` | Oct 15 |
 | [mcp-server-spec-driven-development](https://github.com/formulahendry/mcp-server-spec-driven-development) | `0.1.1` | 221/mo | **[B](tools/mcp-server-spec-driven-development.md)** | `AS-012`, 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×2 | Oct 15 |
-| [glif-mcp-server](https://github.com/glifxyz/glif-mcp-server) | `1.0.1` | 216 | **[A](tools/glif-mcp-server.md)** | `AS-014` ×9, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, ⚡ `AS-006` | Oct 27 |
+| [glif-mcp-server](https://github.com/glifxyz/glif-mcp-server) | `1.0.1` | 216 | **[A](tools/glif-mcp-server.md)** | `AS-014` ×9, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, ⚡ `AS-006` | Oct 28 |
 | [mcp-server-deep-research](https://github.com/reading-plus-ai/mcp-server-deep-research) | `sha-640129…` | 214 | **[A](tools/mcp-server-deep-research.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [k8s-mcp-server](https://github.com/alexei-led/k8s-mcp-server) | `1.4.2` | 212 | **[A](tools/k8s-mcp-server.md)** | `AS-014` ×75, 🔑 `AS-002` ×17, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Oct 15 |
 | [augments-mcp-server](https://github.com/augmnt/augments-mcp-server) | `7.1.0` | 208/mo | **[A](tools/augments-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×8 | Oct 15 |
-| [obsidian-local-rest-api](https://github.com/coddingtonbear/obsidian-local-rest-api) | `show` | 205/mo | **[A](tools/obsidian-local-rest-api.md)** | `AS-014` | Oct 27 |
 | [mcp-apache-spark-history-server](https://github.com/kubeflow/mcp-apache-spark-history-server) | `0.3.0` | 205 | **[B](tools/mcp-apache-spark-history-server.md)** | `AS-012`, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×6 | Oct 15 |
 | [mcp-checklists](https://github.com/MCP-Manager/MCP-Checklists) | `0.0.2` | 199 | **[A](tools/mcp-checklists.md)** | `AS-014` ×7 | Oct 13 |
-| [mcp-security-checklists](https://github.com/MCP-Manager/MCP-Security-Checklists) | `0.0.2` | 199 | **[A](tools/mcp-security-checklists.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [dev-machine-guard](https://github.com/step-security/dev-machine-guard) | `1.18.1` | 196 | **[A](tools/dev-machine-guard.md)** | `AS-014` ×10, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Oct 27 |
+| [mcp-security-checklists](https://github.com/MCP-Manager/MCP-Security-Checklists) | `0.0.2` | 199 | **[A](tools/mcp-security-checklists.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [open-webui](https://github.com/open-webui/open-webui) | `0.12.4` | 199/mo | **[B](tools/open-webui.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5, 📐 `AS-003` | Oct 28 |
+| [dev-machine-guard](https://github.com/step-security/dev-machine-guard) | `1.18.1` | 196 | **[A](tools/dev-machine-guard.md)** | `AS-014` ×10, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Oct 28 |
 | [shinzo-labs-coinmarketcap-mcp](https://github.com/shinzo-labs/coinmarketcap-mcp) | `1.4.5` | 195/mo | **[I](tools/shinzo-labs-coinmarketcap-mcp.md)** | `AS-018` | Oct 15 |
-| [memento-mcp](https://github.com/gannonh/memento-mcp) | `0.3.9` | 189/mo | **[A](tools/memento-mcp.md)** | 🔑 `AS-002` ×8, `AS-014` ×17, ⚡ `AS-011` ×2 | Oct 27 |
-| [mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) | `0.1.1` | 189 | **[A](tools/mcp-telegram.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×8 | Oct 27 |
+| [mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) | `0.1.1` | 189 | **[A](tools/mcp-telegram.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×8 | Oct 28 |
+| [mcp-neovim-server](https://github.com/bigcodegen/mcp-neovim-server) | `0.5.5` | 188/mo | **[A](tools/mcp-neovim-server.md)** | 🔑 `AS-002` ×10, `AS-014` ×19, ⚡ `AS-011` ×4 | Oct 28 |
 | [aws-mcp-server](https://github.com/alexei-led/aws-mcp-server) | `1.7.0` | 186 | **[A](tools/aws-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Oct 15 |
-| [sentry-mcp](https://github.com/getsentry/toolkit) | `cli@0.47.0` | 186/mo | **[A](tools/sentry-mcp.md)** | `AS-014` ×19, 🔑 `AS-002` ×18, ⚡ `AS-011` ×17 | Oct 27 |
 | [cloud-mcp-server](https://github.com/alexei-led/cloud-mcp-server) | `1.7.0` | 186 | **[B](tools/cloud-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×6, ⚡ `AS-011` ×4, `AS-014` ×9 | Oct 15 |
-| [mcp-access-point](https://github.com/sxhxliang/mcp-access-point) | `0.3.0` | 185 | **[A](tools/mcp-access-point.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [kastalien-research-clear-thought-two](https://github.com/Kastalien-Research/thoughtbox) | `1.2.0` | 184/mo | **[A](tools/kastalien-research-clear-thought-two.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
-| [kastalien-research-thoughtbox](https://github.com/Kastalien-Research/thoughtbox) | `1.2.0` | 184/mo | **[A](tools/kastalien-research-thoughtbox.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
+| [mcp-access-point](https://github.com/sxhxliang/mcp-access-point) | `0.3.0` | 185 | **[A](tools/mcp-access-point.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | `0.1.1` | 184 | **[A](tools/aws-finops-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×6 | Oct 15 |
 | [mcp-server-reddit](https://github.com/Hawstein/mcp-server-reddit) | `sha-fb0816…` | 184 | **[A](tools/mcp-server-reddit.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×10 | Oct 15 |
-| [narsil-mcp](https://github.com/postrv/narsil-mcp) | `1.7.2` | 184 | **[I](tools/narsil-mcp.md)** | `AS-018` | Oct 27 |
-| [aws-finops-mcp-server](https://github.com/ravikiranvm/aws-finops-mcp-server) | `0.1.1` | 183 | **[A](tools/aws-finops-mcp-server.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×6 | Oct 15 |
-| [mcp-auth-proxy](https://github.com/sigbit/mcp-auth-proxy) | `2.10.2` | 183 | **[A](tools/mcp-auth-proxy.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
-| [serpapi-mcp](https://github.com/serpapi/serpapi-mcp) | `2.0.0` | 182 | **[A](tools/serpapi-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Oct 27 |
+| [kastalien-research-thoughtbox](https://github.com/Kastalien-Research/thoughtbox) | `1.2.0` | 184/mo | **[A](tools/kastalien-research-thoughtbox.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
+| [kastalien-research-clear-thought-two](https://github.com/Kastalien-Research/thoughtbox) | `1.2.0` | 184/mo | **[A](tools/kastalien-research-clear-thought-two.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 15 |
+| [narsil-mcp](https://github.com/postrv/narsil-mcp) | `1.7.2` | 184 | **[I](tools/narsil-mcp.md)** | `AS-018` | Oct 28 |
+| [mcp-auth-proxy](https://github.com/sigbit/mcp-auth-proxy) | `2.10.2` | 183 | **[A](tools/mcp-auth-proxy.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
+| [serpapi-mcp](https://github.com/serpapi/serpapi-mcp) | `2.0.0` | 182 | **[A](tools/serpapi-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Oct 28 |
 | [awesome-claude-dxt](https://github.com/milisp/awesome-claude-dxt) | `1.0.0` | 182 | **[A](tools/awesome-claude-dxt.md)** | 🔑 `AS-002` ×3, `AS-014` ×4, ⚡ `AS-011` ×2 | Oct 23 |
 | [render-mcp-server](https://github.com/render-oss/render-mcp-server) | `0.3.0` | 180 | **[A](tools/render-mcp-server.md)** | `AS-014` ×5, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 15 |
-| [mcp-salesforce](https://github.com/smn2gnt/MCP-Salesforce) | `0.1.18` | 180 | **[A](tools/mcp-salesforce.md)** | 🔑 `AS-002` ×96, ⚡ `AS-011` ×48, `AS-014` ×99, 🗝️ `AS-010` | Oct 27 |
+| [mcp-salesforce](https://github.com/smn2gnt/MCP-Salesforce) | `0.1.18` | 180 | **[A](tools/mcp-salesforce.md)** | 🔑 `AS-002` ×96, ⚡ `AS-011` ×48, `AS-014` ×99, 🗝️ `AS-010` | Oct 28 |
 | [mcp-server-apache-airflow](https://github.com/yangkyeongmo/mcp-server-apache-airflow) | `push` | 179 | **[A](tools/mcp-server-apache-airflow.md)** | `AS-014` ×6 | Jun 15 |
-| [think-mcp-server](https://github.com/PhillipRt/think-mcp-server) | `1.0.0` | 177/mo | **[B](tools/think-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [gtm-mcp-server](https://github.com/paolobietolini/gtm-mcp-server) | `1.6.0` | 177 | **[B](tools/gtm-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Oct 15 |
+| [think-mcp-server](https://github.com/PhillipRt/think-mcp-server) | `1.0.0` | 177/mo | **[B](tools/think-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
 | [mcp-server-langfuse](https://github.com/langfuse/mcp-server-langfuse) | `0.0.2-rc.0` | 176 | **[A](tools/mcp-server-langfuse.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 15 |
 | [figma-mcp-server](https://github.com/Antonytm/figma-mcp-server) | `0.1.18` | 175 | **[A](tools/figma-mcp-server.md)** | 🔑 `AS-002` ×41, `AS-014` ×49, ⚡ `AS-011` ×14, 🗝️ `AS-010` ×2 | Oct 15 |
 | [samihalawa-visual-ui-debug-agent-mcp](https://github.com/samihalawa/visual-ui-debug-agent-mcp) | `1.0.1` | 172/mo | **[B](tools/samihalawa-visual-ui-debug-agent-mcp.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 15 |
+| [zig-mcp](https://github.com/zig-wasm/zig-mcp) | `1.4.0` | 170/mo | **[A](tools/zig-mcp.md)** | `AS-014` ×4, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
 | [alibabacloud-observability-mcp-server](https://github.com/aliyun/alibabacloud-observability-mcp-server) | `2.0.2` | 169 | **[A](tools/alibabacloud-observability-mcp-server.md)** | `AS-014` ×10, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Oct 15 |
+| [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | `2.1.1` | 169/mo | **[A](tools/healthcare-mcp-public.md)** | 🔑 `AS-002` ×6, `AS-014` ×11, ⚡ `AS-011` ×4 | Oct 28 |
 | [mcp-endpoint-server](https://github.com/xinnan-tech/mcp-endpoint-server) | `0.0.7` | 168 | **[B](tools/mcp-endpoint-server.md)** | `AS-012`, `AS-014` ×52, 🔑 `AS-002` ×17, ⚡ `AS-011` ×14, 🗝️ `AS-010` ×3 | Oct 15 |
-| [1c-ai-development-kit](https://github.com/Arman-Kudaibergenov/1c-ai-development-kit) | `1.2.0` | 167 | **[A](tools/1c-ai-development-kit.md)** | `AS-014` ×5 | Oct 27 |
-| [remote-mcp-server](https://github.com/gleanwork/remote-mcp-server) | `1.2.1` | 166 | **[B](tools/remote-mcp-server.md)** | `AS-012`, 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
-| [proxima](https://github.com/Zen4-bit/Proxima) | `5.5.0` | 164/mo | **[I](tools/proxima.md)** | `AS-018` | Oct 27 |
+| [1c-ai-development-kit](https://github.com/Arman-Kudaibergenov/1c-ai-development-kit) | `1.2.0` | 167 | **[A](tools/1c-ai-development-kit.md)** | `AS-014` ×5 | Oct 28 |
+| [remote-mcp-server](https://github.com/gleanwork/remote-mcp-server) | `1.2.1` | 166 | **[A](tools/remote-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
+| [call518-mcp-postgresql-ops](https://github.com/call518/MCP-PostgreSQL-Ops) | `3.3.6` | 164 | **[A](tools/call518-mcp-postgresql-ops.md)** | 🔑 `AS-002`, `AS-014` | Oct 15 |
 | [foundry-mcp-server](https://github.com/PraneshASP/foundry-mcp-server) | `0.1.5` | 163/mo | **[C](tools/foundry-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×2, ⚡ `AS-006`, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 15 |
-| [server-google-news](https://github.com/ChanMeng666/server-google-news) | `1.0.1` | 161/mo | **[A](tools/server-google-news.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
-| [call518-mcp-postgresql-ops](https://github.com/call518/MCP-PostgreSQL-Ops) | `3.3.6` | 160 | **[A](tools/call518-mcp-postgresql-ops.md)** | 🔑 `AS-002`, `AS-014` | Oct 15 |
-| [iran-mcp](https://github.com/sepehr071/iran-mcp) | `2.0` | 158 | **[A](tools/iran-mcp.md)** | `AS-014` ×2 | Oct 27 |
+| [iran-mcp](https://github.com/sepehr071/iran-mcp) | `2.0` | 162 | **[A](tools/iran-mcp.md)** | `AS-014` ×2 | Oct 28 |
+| [awesome-iran-mcp](https://github.com/sepehr071/awesome-iran-mcp) | `2.0` | 162 | **[A](tools/awesome-iran-mcp.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Oct 23 |
 | [puremd-puremd-mcp](https://github.com/puremd/puremd-mcp) | `1.0.3` | 158/mo | **[A](tools/puremd-puremd-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
-| [ethanhenrickson-math-mcp](https://github.com/EthanHenrickson/math-mcp) | `0.1.3` | 157/mo | **[A](tools/ethanhenrickson-math-mcp.md)** | ⚡ `AS-006`, `AS-014` ×6 | Oct 27 |
-| [forgemax](https://github.com/postrv/forgemax) | `0.6.1` | 155 | **[I](tools/forgemax.md)** | `AS-018` | Oct 27 |
-| [docker](https://github.com/decionis/docker) | `mcp-v0.1.2` | 148 | **[A](tools/docker.md)** | 🔑 `AS-002` ×4, `AS-014` ×5 | Oct 27 |
-| [cocos-mcp-server](https://github.com/DaxianLee/cocos-mcp-server) | `1.5.4` | 148/mo | **[A](tools/cocos-mcp-server.md)** | 🔑 `AS-002` ×12, `AS-014` ×18, ⚡ `AS-011` ×2 | Oct 27 |
+| [kicad-mcp-server](https://github.com/mixelpixx/KiCAD-MCP-Server) | `2.8.3` | 157/mo | **[I](tools/kicad-mcp-server.md)** | `AS-018` | Oct 28 |
+| [git-mcp](https://github.com/idosal/git-mcp) | `1.0.0` | 155/mo | **[A](tools/git-mcp.md)** | `AS-014` ×36, 🔑 `AS-002` ×18, ⚡ `AS-011` ×7 | Oct 28 |
+| [forgemax](https://github.com/postrv/forgemax) | `0.6.1` | 155 | **[I](tools/forgemax.md)** | `AS-018` | Oct 28 |
+| [pinkpixel-dev-web-scout-mcp](https://github.com/pinkpixel-dev/web-scout-mcp) | `1.5.2` | 154/mo | **[A](tools/pinkpixel-dev-web-scout-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [docker](https://github.com/decionis/docker) | `mcp-v0.1.2` | 148 | **[A](tools/docker.md)** | 🔑 `AS-002` ×4, `AS-014` ×5 | Oct 28 |
 | [horizondatawave-hdw-mcp-server](https://github.com/anysiteio/anysite-mcp-server) | `0.7.1` | 148/mo | **[I](tools/horizondatawave-hdw-mcp-server.md)** | `AS-018` | Oct 15 |
 | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) | `1.1.0` | 147 | **[A](tools/express-rest-api-and-mcp-server-framework.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×10 | Oct 15 |
-| [awesome-iran-mcp](https://github.com/sepehr071/awesome-iran-mcp) | `2.0` | 146 | **[A](tools/awesome-iran-mcp.md)** | 🔑 `AS-002`, `AS-014` ×2, 🗝️ `AS-010` | Oct 23 |
 | [btp-sap-odata-to-mcp-server](https://github.com/lemaiwo/btp-sap-odata-to-mcp-server) | `1.0.0` | 144/mo | **[B](tools/btp-sap-odata-to-mcp-server.md)** | `AS-012`, 🔑 `AS-002` ×15, ⚡ `AS-011` ×10, `AS-014` ×20 | Oct 15 |
 | [scira-mcp-chat](https://github.com/zaidmukaddam/scira-mcp-chat) | `0.1.0` | 144/mo | **[B](tools/scira-mcp-chat.md)** | `AS-012`, `AS-014` ×22, 🔑 `AS-002` ×8, ⚡ `AS-011` ×3, 🗝️ `AS-010` ×5 | Oct 15 |
-| [caido-mcp-server](https://github.com/c0tton-fluff/caido-mcp-server) | `4.0.0` | 134 | **[I](tools/caido-mcp-server.md)** | `AS-018` | Oct 15 |
-| [benzsevern-goldenmatch](https://github.com/benseverndev-oss/goldenmatch) | `2.8.0` | 133 | **[A](tools/benzsevern-goldenmatch.md)** | `AS-014` ×6 | Oct 15 |
+| [mem0-mcp](https://github.com/pinkpixel-dev/mem0-mcp) | `0.8.0` | 138/mo | **[A](tools/mem0-mcp.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Oct 28 |
+| [next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io) | `0.5.0` | 137/mo | **[A](tools/next-ai-draw-io.md)** | 🔑 `AS-002`, `AS-014` | Oct 28 |
+| [caido-mcp-server](https://github.com/c0tton-fluff/caido-mcp-server) | `4.0.0` | 137 | **[I](tools/caido-mcp-server.md)** | `AS-018` | Oct 15 |
+| [benzsevern-goldenmatch](https://github.com/benseverndev-oss/goldenmatch) | `2.8.0` | 134 | **[A](tools/benzsevern-goldenmatch.md)** | `AS-014` ×6 | Oct 15 |
 | [mcp-montano-server](https://github.com/lucasmontano/mcp-montano-server) | `1.0.0` | 133 | **[I](tools/mcp-montano-server.md)** | `AS-018` | Oct 15 |
 | [kopfrechner-gitlab-mr-mcp](https://github.com/kopfrechner/gitlab-mr-mcp) | `0.1.0` | 132/mo | **[B](tools/kopfrechner-gitlab-mr-mcp.md)** | `AS-012`, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 15 |
 | [mikechao-brave-search-mcp](https://github.com/mikechao/brave-search-mcp) | `2.1.0` | 130 | **[A](tools/mikechao-brave-search-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 15 |
 | [signoz-mcp-server](https://github.com/SigNoz/signoz-mcp-server) | `0.4.2` | 128 | **[A](tools/signoz-mcp-server.md)** | `AS-014` ×38, 🔑 `AS-002` ×18, ⚡ `AS-011` ×6 | Oct 15 |
 | [tjhop-prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server) | `0.18.0` | 127 | **[A](tools/tjhop-prometheus-mcp-server.md)** | `AS-014` ×6, 🔑 `AS-002` ×2 | Oct 15 |
-| [fusion-360-mcp-server](https://github.com/AuraFriday/Fusion-360-MCP-Server) | `latest` | 127 | **[C](tools/fusion-360-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-006` ×2, `AS-014` ×3, ⚡ `AS-011` | Oct 27 |
-| [model-compose](https://github.com/hanyeol/model-compose) | `0.4.120` | 120 | **[A](tools/model-compose.md)** | `AS-014` | Oct 27 |
-| [bingowon-apple-rag-mcp](https://github.com/BingoWon/apple-rag-mcp) | `4.18.7` | 120 | **[A](tools/bingowon-apple-rag-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×12, ⚡ `AS-011` | Oct 15 |
+| [fusion-360-mcp-server](https://github.com/AuraFriday/Fusion-360-MCP-Server) | `latest` | 127 | **[C](tools/fusion-360-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-006` ×2, `AS-014` ×3, ⚡ `AS-011` | Oct 28 |
+| [sentry-mcp](https://github.com/getsentry/toolkit) | `cli@0.47.0` | 126/mo | **[A](tools/sentry-mcp.md)** | `AS-014` ×19, 🔑 `AS-002` ×18, ⚡ `AS-011` ×17 | Oct 28 |
+| [bingowon-apple-rag-mcp](https://github.com/BingoWon/apple-rag-mcp) | `4.18.7` | 121 | **[A](tools/bingowon-apple-rag-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×12, ⚡ `AS-011` | Oct 15 |
+| [model-compose](https://github.com/hanyeol/model-compose) | `0.4.120` | 119 | **[A](tools/model-compose.md)** | `AS-014` | Oct 28 |
 | [jfrog-mcp-jfrog](https://github.com/jfrog/mcp-jfrog) | `0.0.1` | 118 | **[A](tools/jfrog-mcp-jfrog.md)** | `AS-014` ×31, 🔑 `AS-002` ×15, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Oct 15 |
-| [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | `2.0.4` | 118/mo | **[I](tools/minecraft-mcp-server.md)** | `AS-018` | Oct 27 |
-| [mcp-open-library](https://github.com/8enSmith/mcp-open-library) | `1.2.6` | 117/mo | **[A](tools/mcp-open-library.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×7 | Oct 27 |
 | [knowall-ai-mcp-neo4j-agent-memory](https://github.com/knowall-ai/mcp-neo4j-agent-memory) | `0.2.5` | 111/mo | **[A](tools/knowall-ai-mcp-neo4j-agent-memory.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011`, `AS-014` ×9 | Oct 15 |
-| [dbhub](https://github.com/bytebase/dbhub) | `1.5.0` | 108/mo | **[A](tools/dbhub.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
-| [ecommerce-ai-skills](https://github.com/kangise/ecommerce-ai-skills) | `1.1.0` | 106 | **[A](tools/ecommerce-ai-skills.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Oct 27 |
+| [outlook-mcp](https://github.com/ryaker/outlook-mcp) | `2.0.0` | 110/mo | **[A](tools/outlook-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×6 | Oct 28 |
+| [ecommerce-ai-skills](https://github.com/kangise/ecommerce-ai-skills) | `1.1.0` | 108 | **[A](tools/ecommerce-ai-skills.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Oct 28 |
 | [gannonh-memento-mcp](https://github.com/gannonh/memento-mcp) | `0.3.9` | 106/mo | **[A](tools/gannonh-memento-mcp.md)** | 🔑 `AS-002` ×8, `AS-014` ×17, ⚡ `AS-011` ×2 | Oct 15 |
 | [atlas-mcp-server](https://github.com/cyanheads/atlas-mcp-server) | `2.8.15` | 105/mo | **[A](tools/atlas-mcp-server.md)** | `AS-014` ×89, 🔑 `AS-002` ×35, ⚡ `AS-011` ×27 | Oct 15 |
-| [cli](https://github.com/mcpgod/cli) | `0.1.1` | 101/mo | **[A](tools/cli.md)** | `AS-014` ×17, 🔑 `AS-002` ×9, ⚡ `AS-011` ×8, 🗝️ `AS-010` ×5 | Oct 27 |
-| [turbomcp](https://github.com/Epistates/turbomcp) | `4.0.0-alph…` | 99 | **[I](tools/turbomcp.md)** | `AS-018` | Oct 27 |
-| [ramparts](https://github.com/highflame-ai/ramparts) | `0.8.10` | 98 | **[I](tools/ramparts.md)** | `AS-018` | Oct 27 |
+| [easy-mcp](https://github.com/zcaceres/easy-mcp) | `1.0.1` | 102/mo | **[A](tools/easy-mcp.md)** | 🔑 `AS-002` ×4, `AS-014` ×22 | Oct 28 |
+| [turbomcp](https://github.com/Epistates/turbomcp) | `4.0.0-alph…` | 99 | **[I](tools/turbomcp.md)** | `AS-018` | Oct 28 |
+| [ramparts](https://github.com/highflame-ai/ramparts) | `0.8.10` | 98 | **[I](tools/ramparts.md)** | `AS-018` | Oct 28 |
 | [monsterxx03-gospy](https://github.com/monsterxx03/gospy) | `0.8.1` | 97 | **[A](tools/monsterxx03-gospy.md)** | `AS-014` ×4 | Oct 15 |
 | [wysh3-perplexity-mcp-server](https://github.com/wysh3/perplexity-mcp-zerver) | `0.3.1` | 97 | **[B](tools/wysh3-perplexity-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | May 4 |
-| [academia-mcp](https://github.com/IlyaGusev/academia_mcp) | `1.13.4` | 94 | **[I](tools/academia-mcp.md)** | `AS-018` | Oct 27 |
+| [academia-mcp](https://github.com/IlyaGusev/academia_mcp) | `1.13.4` | 94 | **[I](tools/academia-mcp.md)** | `AS-018` | Oct 28 |
 | [phuc-nt-mcp-atlassian-server](https://github.com/phuc-nt/mcp-atlassian-server) | `2.0.1` | 93/mo | **[A](tools/phuc-nt-mcp-atlassian-server.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×9, `AS-014` ×24 | Oct 15 |
-| [analytics-analytics](https://github.com/analytics/analytics) | `sha-43cc3b…` | 93 | **[B](tools/analytics-analytics.md)** | `AS-012`, `AS-014` ×22, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 15 |
 | [memory-mcp-server-go](https://github.com/okooo5km/memory-mcp-server-go) | `0.5.5` | 93 | **[B](tools/memory-mcp-server-go.md)** | `AS-012`, `AS-014` ×28, 🔑 `AS-002` ×8, ⚡ `AS-011` ×3 | Oct 15 |
-| [wasmcp](https://github.com/wasmcp/wasmcp) | `wit-v0.4.0` | 93 | **[I](tools/wasmcp.md)** | `AS-018` | Oct 27 |
-| [owasp-mcp-governance-and-risk-project](https://github.com/OWASP/OWASP-MCP-Governance-and-Risk-Project) | `1.0` | 92 | **[B](tools/owasp-mcp-governance-and-risk-project.md)** | `AS-012`, `AS-014` ×29, 🔑 `AS-002` ×10, ⚡ `AS-011` ×8 | Oct 27 |
+| [analytics-analytics](https://github.com/analytics/analytics) | `sha-43cc3b…` | 93 | **[B](tools/analytics-analytics.md)** | `AS-012`, `AS-014` ×22, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 15 |
+| [wasmcp](https://github.com/wasmcp/wasmcp) | `wit-v0.4.0` | 93 | **[I](tools/wasmcp.md)** | `AS-018` | Oct 28 |
+| [owasp-mcp-governance-and-risk-project](https://github.com/OWASP/OWASP-MCP-Governance-and-Risk-Project) | `1.0` | 92 | **[A](tools/owasp-mcp-governance-and-risk-project.md)** | `AS-014` ×29, 🔑 `AS-002` ×10, ⚡ `AS-011` ×8 | Oct 28 |
+| [cocos-mcp-server](https://github.com/DaxianLee/cocos-mcp-server) | `1.5.4` | 88/mo | **[A](tools/cocos-mcp-server.md)** | 🔑 `AS-002` ×12, `AS-014` ×18, ⚡ `AS-011` ×2 | Oct 28 |
 | [yuchenssr-multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp) | `1.0.0` | 88 | **[B](tools/yuchenssr-multi-ai-advisor-mcp.md)** | `AS-012`, `AS-014` ×37, 🔑 `AS-002` ×13, ⚡ `AS-011` ×10 | Oct 15 |
-| [pew-pew-plaza-packs](https://github.com/appboypov/pew-pew-plaza-packs) | `0.8.0` | 87 | **[A](tools/pew-pew-plaza-packs.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [pew-pew-plaza-packs](https://github.com/appboypov/pew-pew-plaza-packs) | `0.8.0` | 87 | **[A](tools/pew-pew-plaza-packs.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [ethanhenrickson-math-mcp](https://github.com/EthanHenrickson/math-mcp) | `0.1.3` | 86/mo | **[A](tools/ethanhenrickson-math-mcp.md)** | ⚡ `AS-006`, `AS-014` ×6 | Oct 28 |
 | [c-rick-jimeng-mcp](https://github.com/c-rick/jimeng-mcp) | `1.10.0` | 86/mo | **[I](tools/c-rick-jimeng-mcp.md)** | `AS-018` | Oct 15 |
 | [strudel-mcp-server](https://github.com/williamzujkowski/strudel-mcp-server) | `2.4.1` | 84/mo | **[A](tools/strudel-mcp-server.md)** | `AS-014` ×65, 🔑 `AS-002` ×7, ⚡ `AS-011` | Oct 15 |
 | [podman-mcp-server](https://github.com/manusa/podman-mcp-server) | `0.0.15` | 84 | **[I](tools/podman-mcp-server.md)** | `AS-018` | Oct 15 |
-| [template-agenticide-vibecoding](https://github.com/quboqin/template-agenticide-vibecoding) | `1.0.0` | 82 | **[A](tools/template-agenticide-vibecoding.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 27 |
-| [skill-of-skills](https://github.com/the911fund/skill-of-skills) | `3.13.0` | 79 | **[A](tools/skill-of-skills.md)** | `AS-014` ×4, 🔑 `AS-002` | Oct 27 |
+| [template-agenticide-vibecoding](https://github.com/quboqin/template-agenticide-vibecoding) | `1.0.0` | 82 | **[A](tools/template-agenticide-vibecoding.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 28 |
+| [skill-of-skills](https://github.com/the911fund/skill-of-skills) | `3.13.0` | 80 | **[A](tools/skill-of-skills.md)** | `AS-014` ×4, 🔑 `AS-002` | Oct 28 |
+| [memento-mcp](https://github.com/gannonh/memento-mcp) | `0.3.9` | 78/mo | **[A](tools/memento-mcp.md)** | 🔑 `AS-002` ×8, `AS-014` ×17, ⚡ `AS-011` ×2 | Oct 28 |
 | [conductor-tasks](https://github.com/hridaya423/conductor-tasks) | `0.2.4` | 77/mo | **[A](tools/conductor-tasks.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 15 |
 | [neobrowser](https://github.com/pitiflautico/neobrowser) | `3.7.0` | 77/mo | **[C](tools/neobrowser.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×9, `AS-014` ×27, 🗝️ `AS-010`, ⚡ `AS-006` | Sep 9 |
 | [claude-peers-mcp](https://github.com/louislva/claude-peers-mcp) | `0.1.0` | 76/mo | **[A](tools/claude-peers-mcp.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 15 |
 | [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) | `2.1.0` | 75 | **[A](tools/pagespeed-insights-mcp.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
-| [raindrop-io-mcp-server](https://github.com/hiromitsusasaki/raindrop-io-mcp-server) | `1.0.0` | 74 | **[A](tools/raindrop-io-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
+| [cli](https://github.com/mcpgod/cli) | `0.1.1` | 74/mo | **[A](tools/cli.md)** | `AS-014` ×17, 🔑 `AS-002` ×9, ⚡ `AS-011` ×8, 🗝️ `AS-010` ×5 | Oct 28 |
+| [raindrop-io-mcp-server](https://github.com/hiromitsusasaki/raindrop-io-mcp-server) | `1.0.0` | 74 | **[A](tools/raindrop-io-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
 | [hiromitsusasaki-raindrop-io-mcp-server](https://github.com/hiromitsusasaki/raindrop-io-mcp-server) | `1.0.0` | 74 | **[A](tools/hiromitsusasaki-raindrop-io-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 15 |
-| [easy-mcp](https://github.com/zcaceres/easy-mcp) | `1.0.1` | 73/mo | **[A](tools/easy-mcp.md)** | 🔑 `AS-002` ×4, `AS-014` ×22 | Oct 27 |
 | [airmang-hwpx-mcp-server](https://github.com/airmang/hwpx-mcp-server) | `2.2.6` | 68 | **[I](tools/airmang-hwpx-mcp-server.md)** | `AS-018` | Oct 15 |
 | [agent-identity-management](https://github.com/opena2a-org/agent-identity-management) | `1.23.0` | 67 | **[A](tools/agent-identity-management.md)** | `AS-014` ×35, 🔑 `AS-002` ×13, ⚡ `AS-011` ×5 | Oct 15 |
 | [laksh-star-mcp-server-tmdb](https://github.com/Laksh-star/mcp-server-tmdb) | `1.0.0` | 66/mo | **[A](tools/laksh-star-mcp-server-tmdb.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Oct 15 |
@@ -704,7 +703,6 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [france-mcp-servers](https://github.com/bsab/france-mcp-servers) | `1.0.0` | 62 | **[A](tools/france-mcp-servers.md)** | `AS-014` ×2 | Oct 15 |
 | [myriade-ai-myriade](https://github.com/myriade-ai/myriade) | `1.79.0` | 62 | **[A](tools/myriade-ai-myriade.md)** | 🔑 `AS-002` ×10, `AS-014` ×10, ⚡ `AS-011` ×3 | Oct 15 |
 | [mcp-difyworkflow-server](https://github.com/gotoolkits/mcp-difyworkflow-server) | `0.0.1` | 62 | **[I](tools/mcp-difyworkflow-server.md)** | `AS-018` | Oct 15 |
-| [next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io) | `0.5.0` | 61/mo | **[A](tools/next-ai-draw-io.md)** | 🔑 `AS-002`, `AS-014` | Oct 27 |
 | [kbsooo-mcp-atom-of-thoughts](https://github.com/kbsooo/MCP_Atom_of_Thoughts) | `1.0.0` | 61 | **[A](tools/kbsooo-mcp-atom-of-thoughts.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Oct 15 |
 | [visactor-vchart-mcp-server](https://github.com/VisActor/vchart-mcp-server) | `0.1.4` | 61/mo | **[A](tools/visactor-vchart-mcp-server.md)** | 🔑 `AS-002` ×11, `AS-014` ×10, ⚡ `AS-011` | Oct 15 |
 | [imprvhub-mcp-domain-availability](https://github.com/imprvhub/mcp-domain-availability) | `0.4.1` | 61 | **[B](tools/imprvhub-mcp-domain-availability.md)** | `AS-012`, `AS-014` ×2 | Oct 15 |
@@ -713,264 +711,266 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [arch-mcp](https://github.com/nihalxkumar/arch-mcp) | `3.4.0` | 60 | **[C](tools/arch-mcp.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×9, `AS-014` ×41, 🔓 `AS-005` ×4, ⚡ `AS-006` | Oct 15 |
 | [peta-core](https://github.com/dunialabs/peta-core) | `1.3.0` | 59 | **[B](tools/peta-core.md)** | `AS-012`, `AS-014` ×9, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 15 |
 | [claude-debugs-for-you](https://github.com/jasonjmcghee/claude-debugs-for-you) | `0.1.2` | 56/mo | **[A](tools/claude-debugs-for-you.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 15 |
+| [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | `1.0.0` | 56 | **[B](tools/buildkite-mcp-server.md)** | `AS-014` ×33, 🔑 `AS-002` ×20, ⚡ `AS-011` ×12, 📐 `AS-003` ×2 | Oct 15 |
 | [kafka-mcp-server](https://github.com/tuannvm/kafka-mcp-server) | `2.0.2` | 56 | **[I](tools/kafka-mcp-server.md)** | `AS-018` | Oct 15 |
-| [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | `1.0.0` | 55 | **[B](tools/buildkite-mcp-server.md)** | `AS-014` ×33, 🔑 `AS-002` ×20, ⚡ `AS-011` ×12, 📐 `AS-003` ×2 | Oct 15 |
 | [jeanibarz-knowledge-base-mcp-server](https://github.com/jeanibarz/knowledge-base-mcp-server) | `0.1.0` | 54/mo | **[A](tools/jeanibarz-knowledge-base-mcp-server.md)** | `AS-014` ×2, 🔑 `AS-002` | Oct 15 |
 | [kkjdaniel-bgg-mcp](https://github.com/kkjdaniel/bgg-mcp) | `1.6.1` | 53 | **[A](tools/kkjdaniel-bgg-mcp.md)** | 🔑 `AS-002` ×2, `AS-014` ×10, ⚡ `AS-011` | Oct 15 |
 | [henryhawke-mcp-titan](https://github.com/henryhawke/mcp-titan) | `3.0.0` | 53/mo | **[A](tools/henryhawke-mcp-titan.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×23, `AS-014` ×25 | Oct 15 |
+| [brianellin-bsky-mcp-server](https://github.com/brianellin/bsky-mcp-server) | `1.0.0` | 51 | **[A](tools/brianellin-bsky-mcp-server.md)** | `AS-014` ×21, 🔑 `AS-002` ×13, ⚡ `AS-011` ×11 | Oct 15 |
 | [cyreslab-ai-shodan-mcp-server](https://github.com/Cyreslab-AI/shodan-mcp-server) | `0.2.0` | 51 | **[A](tools/cyreslab-ai-shodan-mcp-server.md)** | `AS-014` ×23, 🔑 `AS-002` ×12, ⚡ `AS-011` ×9 | Oct 15 |
-| [brianellin-bsky-mcp-server](https://github.com/brianellin/bsky-mcp-server) | `1.0.0` | 50 | **[A](tools/brianellin-bsky-mcp-server.md)** | `AS-014` ×21, 🔑 `AS-002` ×13, ⚡ `AS-011` ×11 | Oct 15 |
 | [streamable-mcp-server-template](https://github.com/iceener/streamable-mcp-server-template) | `1.0.0` | 46/mo | **[A](tools/streamable-mcp-server-template.md)** | `AS-014` ×15, 🔑 `AS-002` | Oct 15 |
-| [reactive-resume](https://github.com/reactive-resume/reactive-resume) | `6.0.7` | 41/mo | **[A](tools/reactive-resume.md)** | `AS-014` ×11, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Oct 27 |
-| [dbx](https://github.com/t8y2/dbx) | `0.6.57` | 33/mo | **[I](tools/dbx.md)** | `AS-018` | Oct 27 |
-| [nuclear](https://github.com/nukeop/nuclear) | `website@2.…` | 33/mo | **[I](tools/nuclear.md)** | `AS-018` | Oct 27 |
-| [awesome-claude](https://github.com/JSONbored/awesome-claude) | `mcp-v0.14.9` | 32/mo | **[A](tools/awesome-claude.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 27 |
+| [reactive-resume](https://github.com/reactive-resume/reactive-resume) | `6.0.7` | 39/mo | **[A](tools/reactive-resume.md)** | `AS-014` ×11, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Oct 28 |
+| [dbhub](https://github.com/bytebase/dbhub) | `1.5.0` | 32/mo | **[A](tools/dbhub.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
+| [dbx](https://github.com/t8y2/dbx) | `0.6.59` | 32/mo | **[I](tools/dbx.md)** | `AS-018` | Oct 28 |
+| [deep-research](https://github.com/u14app/deep-research) | `0.11.0` | 31/mo | **[A](tools/deep-research.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
 | [dazeb-markdown-downloader](https://github.com/dazeb/markdown-downloader) | `1.0.0` | 30/mo | **[A](tools/dazeb-markdown-downloader.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 15 |
 | [streen9-react-mcp](https://github.com/kalivaraprasad-gonapa/react-mcp) | `0.1.0` | 28/mo | **[B](tools/streen9-react-mcp.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, `AS-014` ×16, 📐 `AS-003` | Oct 15 |
 | [claude-context](https://github.com/zilliztech/claude-context) | `0.1.11` | 27/mo | **[A](tools/claude-context.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 15 |
-| [mcp-unity](https://github.com/CoderGamester/mcp-unity) | `1.5.0` | 26/mo | **[A](tools/mcp-unity.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
-| [vestige](https://github.com/samvallad33/vestige) | `whitepaper…` | 22/mo | **[A](tools/vestige.md)** | `AS-014` ×18, 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 27 |
-| [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.9.1` | 21/mo | **[I](tools/nginx-ui.md)** | `AS-018` | Oct 27 |
-| [n8n](https://github.com/n8n-io/n8n) | `1` | 18/mo | **[A](tools/n8n.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 27 |
+| [mcp-unity](https://github.com/CoderGamester/mcp-unity) | `1.5.0` | 26/mo | **[A](tools/mcp-unity.md)** | 🔑 `AS-002` ×3, 🗝️ `AS-010` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
+| [nuclear](https://github.com/nukeop/nuclear) | `website@2.…` | 20/mo | **[I](tools/nuclear.md)** | `AS-018` | Oct 28 |
+| [n8n](https://github.com/n8n-io/n8n) | `1` | 18/mo | **[A](tools/n8n.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Oct 28 |
 | [general-analysis-mcp-guard](https://github.com/General-Analysis/mcp-guard) | `1.0.3` | 18/mo | **[B](tools/general-analysis-mcp-guard.md)** | `AS-012`, 🗝️ `AS-010`, `AS-014` ×12, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 15 |
+| [awesome-claude](https://github.com/JSONbored/awesome-claude) | `mcp-v0.14.9` | 12/mo | **[A](tools/awesome-claude.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×18, `AS-014` ×27 | Oct 28 |
 | [second-brain-cloudflare](https://github.com/rahilp/second-brain-cloudflare) | `2.2.0` | 12/mo | **[B](tools/second-brain-cloudflare.md)** | `AS-012`, `AS-014` ×19, 🔑 `AS-002` ×14, ⚡ `AS-011` ×4 | Oct 15 |
+| [vestige](https://github.com/samvallad33/vestige) | `whitepaper…` | 10/mo | **[A](tools/vestige.md)** | `AS-014` ×18, 🔑 `AS-002` ×14, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 28 |
 | [magic-hour-mcp](https://github.com/magichourhq/magic-hour-mcp/tree/958836e73d0fe0ba090f162654e2c922ad14292e) | `0.1.0+git.…` | 8 | **[A](tools/magic-hour-mcp.md)** | `AS-014` ×44, 🔑 `AS-002` ×43, ⚡ `AS-011` ×37, ⚡ `AS-006` | Oct 14 |
 | [hyperconsciousness](https://github.com/louis030195/hyperconsciousness/tree/9500fd232c2755e28f2fae1d738c76390b91eb8e) | `0.1.0-alph…` | 7 | **[A](tools/hyperconsciousness.md)** | `AS-014` ×10, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` | Oct 14 |
+| [nginx-ui](https://github.com/0xJacky/nginx-ui) | `2.9.1` | 6/mo | **[I](tools/nginx-ui.md)** | `AS-018` | Oct 28 |
 | [helix-pilot](https://github.com/tsunamayo7/helix-pilot) | `2.0.0` | 4 | **[F](tools/helix-pilot.md)** | 📦 `AS-004` ×2920, 🔑 `AS-002` ×5, ⚡ `AS-011` ×4 | Oct 15 |
 | [agentservices](https://github.com/vbkotecha/agentservices-api/tree/bdd9d9db2e35e0275dec7a6250c804483aa88511) | `5.3.0+git.…` | 2 | **[A](tools/agentservices.md)** | `AS-014` ×43, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×3 | Sep 1 |
-| [nageshyp-vsf-club](https://smithery.ai/server/nageshyp/vsf-club) | `smithery` | — | **[A](tools/nageshyp-vsf-club.md)** | 🔑 `AS-002`, `AS-014` | Jul 15 |
-| [hydavinci-weather-mcp](https://smithery.ai/server/hydavinci/weather_mcp) | `smithery` | — | **[A](tools/hydavinci-weather-mcp.md)** | `AS-014` ×8 | Apr 5 |
-| [axel-belfort-dex-quotes](https://smithery.ai/server/axel-belfort/dex-quotes) | `smithery` | — | **[A](tools/axel-belfort-dex-quotes.md)** | 🗝️ `AS-010` ×2, `AS-014` | Aug 12 |
-| [axel-belfort-diff-checker](https://smithery.ai/server/axel-belfort/diff-checker) | `smithery` | — | **[A](tools/axel-belfort-diff-checker.md)** | `AS-014` | Sep 20 |
-| [axel-belfort-defi-yields](https://smithery.ai/server/axel-belfort/defi-yields) | `smithery` | — | **[A](tools/axel-belfort-defi-yields.md)** | 🗝️ `AS-010`, `AS-014` | Sep 20 |
-| [srotzin-adqm-hiveconsult](https://smithery.ai/server/srotzin-adqm/hiveconsult) | `smithery` | — | **[A](tools/srotzin-adqm-hiveconsult.md)** | `AS-014` ×4 | Jun 2 |
-| [axel-belfort-email-deliverability](https://smithery.ai/server/axel-belfort/email-deliverability) | `smithery` | — | **[A](tools/axel-belfort-email-deliverability.md)** | `AS-014` | Sep 20 |
+| [axel-belfort-pii-detector](https://smithery.ai/server/axel-belfort/pii-detector) | `smithery` | — | **[A](tools/axel-belfort-pii-detector.md)** | `AS-014` | Aug 15 |
+| [vdineshk-sg-workpass-compass-mcp](https://smithery.ai/server/vdineshk/sg-workpass-compass-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-workpass-compass-mcp.md)** | `AS-014` ×4 | Jul 3 |
+| [vdineshk-sg-weather-data-mcp](https://smithery.ai/server/vdineshk/sg-weather-data-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-weather-data-mcp.md)** | `AS-014` ×4 | Aug 16 |
+| [vdineshk-sg-gst-calculator-mcp](https://smithery.ai/server/vdineshk/sg-gst-calculator-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-gst-calculator-mcp.md)** | `AS-014` ×4 | Jul 2 |
+| [vedastro-vedastro-mcp](https://smithery.ai/server/vedastro/vedastro-mcp) | `smithery` | — | **[A](tools/vedastro-vedastro-mcp.md)** | `AS-014` ×6 | May 4 |
+| [vdineshk-sg-cpf-calculator-mcp](https://smithery.ai/server/vdineshk/sg-cpf-calculator-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-cpf-calculator-mcp.md)** | `AS-014` ×4 | Aug 16 |
+| [google-finance](https://smithery.ai/server/google/finance) | `smithery` | — | **[A](tools/google-finance.md)** | 🔑 `AS-002`, `AS-014` | Jul 16 |
+| [vdineshk-sg-company-lookup-mcp](https://smithery.ai/server/vdineshk/sg-company-lookup-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-company-lookup-mcp.md)** | `AS-014` ×4 | Oct 28 |
+| [vdineshk-asean-trade-rules-mcp](https://smithery.ai/server/vdineshk/asean-trade-rules-mcp) | `smithery` | — | **[A](tools/vdineshk-asean-trade-rules-mcp.md)** | `AS-014` ×4 | Aug 16 |
+| [glianalabs-gliana-ai](https://smithery.ai/server/glianalabs/gliana-ai) | `smithery` | — | **[A](tools/glianalabs-gliana-ai.md)** | `AS-014` ×4 | Aug 6 |
+| [algovault-crypto-quant-signal-mcp](https://smithery.ai/server/algovault/crypto-quant-signal-mcp) | `smithery` | — | **[A](tools/algovault-crypto-quant-signal-mcp.md)** | `AS-014` ×3 | Jun 27 |
+| [alperenkocyigit-authorprofilemcp](https://smithery.ai/server/alperenkocyigit/authorprofilemcp) | `smithery` | — | **[A](tools/alperenkocyigit-authorprofilemcp.md)** | `AS-014` ×2 | Oct 28 |
+| [tusharboss8055-india-finance-mcp](https://smithery.ai/server/tusharboss8055/india-finance-mcp) | `smithery` | — | **[A](tools/tusharboss8055-india-finance-mcp.md)** | 🔑 `AS-002`, `AS-014` ×2 | Jul 3 |
+| [ghostrouter-lite-crypto](https://smithery.ai/server/ghostrouter/lite-crypto) | `smithery` | — | **[A](tools/ghostrouter-lite-crypto.md)** | `AS-014` ×2 | Apr 19 |
+| [gen-pdf-mcp](https://smithery.ai/server/gen-pdf/mcp) | `smithery` | — | **[A](tools/gen-pdf-mcp.md)** | `AS-014` | Apr 19 |
+| [thinkneo-ai-control-plane](https://smithery.ai/server/thinkneo-ai/control-plane) | `smithery` | — | **[A](tools/thinkneo-ai-control-plane.md)** | `AS-014` ×8 | Jul 4 |
+| [arabimaak-gulf-arabic](https://smithery.ai/server/arabimaak/gulf-arabic) | `smithery` | — | **[A](tools/arabimaak-gulf-arabic.md)** | `AS-014` ×4 | Jun 15 |
+| [arjunkmrm-devin](https://smithery.ai/server/arjunkmrm/devin) | `smithery` | — | **[A](tools/arjunkmrm-devin.md)** | `AS-014` ×3 | May 29 |
+| [arjunkmrm-simple-echo](https://smithery.ai/server/arjunkmrm/simple-echo) | `smithery` | — | **[A](tools/arjunkmrm-simple-echo.md)** | `AS-014` | May 4 |
+| [flynnhou-deep-dive-mcp](https://smithery.ai/server/flynnhou/deep-dive-mcp) | `smithery` | — | **[A](tools/flynnhou-deep-dive-mcp.md)** | `AS-014` ×2 | Apr 5 |
+| [artvepa80-hefestoai](https://smithery.ai/server/artvepa80/hefestoai) | `smithery` | — | **[A](tools/artvepa80-hefestoai.md)** | `AS-014` ×4 | Jun 6 |
+| [mcp-hive-hive-servers](https://smithery.ai/server/mcp-hive/hive-servers) | `smithery` | — | **[A](tools/mcp-hive-hive-servers.md)** | `AS-014` ×2 | Apr 19 |
+| [aitutor3-calculator-mcp-test](https://smithery.ai/server/AITutor3/calculator-mcp-test) | `smithery` | — | **[A](tools/aitutor3-calculator-mcp-test.md)** | `AS-014` ×4 | Oct 28 |
+| [astein91-stacksherpa-remote](https://smithery.ai/server/astein91/stacksherpa-remote) | `smithery` | — | **[A](tools/astein91-stacksherpa-remote.md)** | 🔑 `AS-002`, `AS-014` ×3 | Jun 20 |
+| [asterpay-mcp-server](https://smithery.ai/server/asterpay/mcp-server) | `smithery` | — | **[A](tools/asterpay-mcp-server.md)** | `AS-014` ×4 | Jul 2 |
 | [feriadosapi-brazilian-holidays](https://smithery.ai/server/feriadosapi/brazilian-holidays) | `smithery` | — | **[A](tools/feriadosapi-brazilian-holidays.md)** | `AS-014` ×7 | Apr 19 |
+| [stockvibes07-exchange-mcp](https://smithery.ai/server/stockvibes07/exchange-mcp) | `smithery` | — | **[A](tools/stockvibes07-exchange-mcp.md)** | `AS-014` ×4 | Aug 18 |
+| [autonomyforge-pressuredesk](https://smithery.ai/server/autonomyforge/pressuredesk) | `smithery` | — | **[A](tools/autonomyforge-pressuredesk.md)** | `AS-014` ×9 | Jul 3 |
+| [guillermo-ap5g-buda-mcp](https://smithery.ai/server/guillermo-ap5g/buda-mcp) | `smithery` | — | **[A](tools/guillermo-ap5g-buda-mcp.md)** | `AS-014` ×5 | May 15 |
+| [stexa-ai-voice-mcp](https://smithery.ai/server/stexa-ai/voice-mcp) | `smithery` | — | **[A](tools/stexa-ai-voice-mcp.md)** | `AS-014` ×4 | Oct 28 |
+| [aviadam-segel-onelev1](https://smithery.ai/server/aviadam-segel/onelev1) | `smithery` | — | **[A](tools/aviadam-segel-onelev1.md)** | `AS-014` ×2 | Apr 21 |
+| [mcp-foundry-real-estate](https://smithery.ai/server/MCP-Foundry/real-estate) | `smithery` | — | **[A](tools/mcp-foundry-real-estate.md)** | `AS-014` ×10 | Jul 15 |
+| [fabrecamimarlik-mimari-ai](https://smithery.ai/server/fabrecamimarlik/mimari-ai) | `smithery` | — | **[A](tools/fabrecamimarlik-mimari-ai.md)** | `AS-014` ×7 | Apr 19 |
+| [meetbot-schedule](https://smithery.ai/server/meetbot/schedule) | `smithery` | — | **[A](tools/meetbot-schedule.md)** | `AS-014` ×5 | Apr 19 |
+| [mefta-sadat2-pcx](https://smithery.ai/server/mefta.sadat2/pcx) | `smithery` | — | **[A](tools/mefta-sadat2-pcx.md)** | `AS-014` ×2 | Apr 8 |
+| [axel-belfort-address-validator](https://smithery.ai/server/axel-belfort/address-validator) | `smithery` | — | **[A](tools/axel-belfort-address-validator.md)** | `AS-014` | Sep 20 |
+| [axel-belfort-airdrop-checker](https://smithery.ai/server/axel-belfort/airdrop-checker) | `smithery` | — | **[A](tools/axel-belfort-airdrop-checker.md)** | `AS-014` | Aug 6 |
+| [axel-belfort-barcode-generator](https://smithery.ai/server/axel-belfort/barcode-generator) | `smithery` | — | **[A](tools/axel-belfort-barcode-generator.md)** | `AS-014` | Jul 24 |
+| [evan-follis-u0ll-preflight](https://smithery.ai/server/evan-follis-u0ll/preflight) | `smithery` | — | **[A](tools/evan-follis-u0ll-preflight.md)** | 🔑 `AS-002`, `AS-014` | Jul 4 |
+| [vocab-voyage-vocab-voyage-mcp](https://smithery.ai/server/vocab-voyage/vocab-voyage-mcp) | `smithery` | — | **[A](tools/vocab-voyage-vocab-voyage-mcp.md)** | `AS-014` ×7 | Jul 4 |
+| [axel-belfort-base-defi](https://smithery.ai/server/axel-belfort/base-defi) | `smithery` | — | **[A](tools/axel-belfort-base-defi.md)** | `AS-014` | Jul 24 |
+| [memxus-memxus](https://smithery.ai/server/memxus/memxus) | `smithery` | — | **[A](tools/memxus-memxus.md)** | `AS-014` ×8, 🔑 `AS-002` | Oct 28 |
+| [waleed-2002-prompt-enhancer](https://smithery.ai/server/waleed-2002/prompt-enhancer) | `smithery` | — | **[A](tools/waleed-2002-prompt-enhancer.md)** | `AS-014` | May 20 |
+| [heavysword1-agentdefi](https://smithery.ai/server/heavysword1/agentdefi) | `smithery` | — | **[A](tools/heavysword1-agentdefi.md)** | `AS-014` ×3 | Aug 14 |
+| [methia-farid2001-screenshotrender](https://smithery.ai/server/methia-farid2001/screenshotrender) | `smithery` | — | **[A](tools/methia-farid2001-screenshotrender.md)** | 🔑 `AS-002`, `AS-014` | Jul 12 |
+| [axel-belfort-bridge-routes](https://smithery.ai/server/axel-belfort/bridge-routes) | `smithery` | — | **[A](tools/axel-belfort-bridge-routes.md)** | 🗝️ `AS-010` ×2, `AS-014` | Sep 19 |
+| [axel-belfort-color-palette](https://smithery.ai/server/axel-belfort/color-palette) | `smithery` | — | **[A](tools/axel-belfort-color-palette.md)** | `AS-014` | Sep 20 |
+| [heavysword1-agentgeo](https://smithery.ai/server/heavysword1/agentgeo) | `smithery` | — | **[A](tools/heavysword1-agentgeo.md)** | `AS-014` ×3 | Jul 15 |
+| [heavysword1-agentmarket](https://smithery.ai/server/heavysword1/agentmarket) | `smithery` | — | **[A](tools/heavysword1-agentmarket.md)** | `AS-014` ×3 | Aug 2 |
+| [enrique-boletinclaro](https://smithery.ai/server/enrique/boletinclaro) | `smithery` | — | **[A](tools/enrique-boletinclaro.md)** | `AS-014` ×20 | Jul 27 |
+| [mirinda-cmd-reference-servers-check](https://smithery.ai/server/mirinda-cmd/reference-servers-check) | `smithery` | — | **[A](tools/mirinda-cmd-reference-servers-check.md)** | `AS-014` | Apr 4 |
+| [emailens-mcp-emailens-mcp](https://smithery.ai/server/emailens-mcp/emailens-mcp) | `smithery` | — | **[A](tools/emailens-mcp-emailens-mcp.md)** | `AS-014` ×7 | Apr 19 |
+| [axel-belfort-currency-converter](https://smithery.ai/server/axel-belfort/currency-converter) | `smithery` | — | **[A](tools/axel-belfort-currency-converter.md)** | `AS-014` | Aug 15 |
+| [axel-belfort-defi-yields](https://smithery.ai/server/axel-belfort/defi-yields) | `smithery` | — | **[A](tools/axel-belfort-defi-yields.md)** | 🗝️ `AS-010`, `AS-014` | Sep 20 |
+| [helix-song-coinex-mcp-server](https://smithery.ai/server/helix-song/coinex_mcp_server) | `smithery` | — | **[A](tools/helix-song-coinex-mcp-server.md)** | `AS-014` ×12 | May 11 |
+| [axel-belfort-dex-quotes](https://smithery.ai/server/axel-belfort/dex-quotes) | `smithery` | — | **[A](tools/axel-belfort-dex-quotes.md)** | 🗝️ `AS-010` ×2, `AS-014` | Aug 12 |
+| [hello-3ubk-booboooking](https://smithery.ai/server/hello-3ubk/booboooking) | `smithery` | — | **[A](tools/hello-3ubk-booboooking.md)** | `AS-014` ×3 | Apr 19 |
+| [wellnesspulse-wellnesspulse](https://smithery.ai/server/WellnessPulse/WellnessPulse) | `smithery` | — | **[A](tools/wellnesspulse-wellnesspulse.md)** | `AS-014` ×6 | Oct 28 |
+| [axel-belfort-diff-checker](https://smithery.ai/server/axel-belfort/diff-checker) | `smithery` | — | **[A](tools/axel-belfort-diff-checker.md)** | `AS-014` | Sep 20 |
+| [echo3s-echo3s-mcp](https://smithery.ai/server/echo3s/echo3s-mcp) | `smithery` | — | **[A](tools/echo3s-echo3s-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` | Jul 3 |
+| [srotzin-adqm-hiveconsult](https://smithery.ai/server/srotzin-adqm/hiveconsult) | `smithery` | — | **[A](tools/srotzin-adqm-hiveconsult.md)** | `AS-014` ×4 | Jun 2 |
+| [mpprimo-ratings](https://smithery.ai/server/mpprimo/ratings) | `smithery` | — | **[A](tools/mpprimo-ratings.md)** | `AS-014` ×3 | Apr 21 |
+| [hemantmahato-subconscious-unlock](https://smithery.ai/server/hemantmahato/subconscious-unlock) | `smithery` | — | **[A](tools/hemantmahato-subconscious-unlock.md)** | `AS-014` | Jun 29 |
+| [axel-belfort-email-deliverability](https://smithery.ai/server/axel-belfort/email-deliverability) | `smithery` | — | **[A](tools/axel-belfort-email-deliverability.md)** | `AS-014` | Sep 20 |
+| [aguskenari86-8bo7-cryptoiz-mcp](https://smithery.ai/server/aguskenari86-8bo7/cryptoiz-mcp) | `smithery` | — | **[A](tools/aguskenari86-8bo7-cryptoiz-mcp.md)** | `AS-014` ×9 | May 19 |
 | [axel-belfort-email-finder](https://smithery.ai/server/axel-belfort/email-finder) | `smithery` | — | **[A](tools/axel-belfort-email-finder.md)** | `AS-014` | Sep 20 |
+| [myappstackdev-decibel-shield](https://smithery.ai/server/myappstackdev/decibel-shield) | `smithery` | — | **[A](tools/myappstackdev-decibel-shield.md)** | `AS-014` ×6 | Jul 27 |
 | [axel-belfort-email-verification](https://smithery.ai/server/axel-belfort/email-verification) | `smithery` | — | **[A](tools/axel-belfort-email-verification.md)** | `AS-014` ×2 | Aug 3 |
 | [axel-belfort-ens-resolver](https://smithery.ai/server/axel-belfort/ens-resolver) | `smithery` | — | **[A](tools/axel-belfort-ens-resolver.md)** | `AS-014` | Sep 20 |
 | [axel-belfort-event-resolver](https://smithery.ai/server/axel-belfort/event-resolver) | `smithery` | — | **[A](tools/axel-belfort-event-resolver.md)** | `AS-014` ×3, 🔑 `AS-002` | Sep 19 |
+| [maxsambento-morfex](https://smithery.ai/server/maxsambento/morfex) | `smithery` | — | **[A](tools/maxsambento-morfex.md)** | `AS-014` ×4 | May 29 |
 | [axel-belfort-gas-estimator](https://smithery.ai/server/axel-belfort/gas-estimator) | `smithery` | — | **[A](tools/axel-belfort-gas-estimator.md)** | `AS-014` | Sep 20 |
+| [mavengence-ustidnr-mcp](https://smithery.ai/server/mavengence/ustidnr-mcp) | `smithery` | — | **[A](tools/mavengence-ustidnr-mcp.md)** | `AS-014` ×3 | Jun 29 |
 | [axel-belfort-hash-generator](https://smithery.ai/server/axel-belfort/hash-generator) | `smithery` | — | **[A](tools/axel-belfort-hash-generator.md)** | `AS-014` | Aug 10 |
 | [songjiangzhou-cpp-guidelines](https://smithery.ai/server/SongJiangzhou/cpp_guidelines) | `smithery` | — | **[A](tools/songjiangzhou-cpp-guidelines.md)** | 🔑 `AS-002` ×2, `AS-014` ×5 | Jul 4 |
-| [algovault-crypto-quant-signal-mcp](https://smithery.ai/server/algovault/crypto-quant-signal-mcp) | `smithery` | — | **[A](tools/algovault-crypto-quant-signal-mcp.md)** | `AS-014` ×3 | Jun 27 |
+| [nageshyp-vsf-club](https://smithery.ai/server/nageshyp/vsf-club) | `smithery` | — | **[A](tools/nageshyp-vsf-club.md)** | 🔑 `AS-002`, `AS-014` | Jul 15 |
+| [agentsim-agentsim](https://smithery.ai/server/agentsim/agentsim) | `smithery` | — | **[A](tools/agentsim-agentsim.md)** | `AS-014` ×5 | Jun 1 |
+| [dmasdfg8-test](https://smithery.ai/server/dmasdfg8/test) | `smithery` | — | **[A](tools/dmasdfg8-test.md)** | `AS-014` ×2 | Jul 2 |
 | [axel-belfort-hl-spot](https://smithery.ai/server/axel-belfort/hl-spot) | `smithery` | — | **[A](tools/axel-belfort-hl-spot.md)** | `AS-014` ×3 | Aug 15 |
-| [fabrecamimarlik-mimari-ai](https://smithery.ai/server/fabrecamimarlik/mimari-ai) | `smithery` | — | **[A](tools/fabrecamimarlik-mimari-ai.md)** | `AS-014` ×7 | Apr 19 |
-| [meetbot-schedule](https://smithery.ai/server/meetbot/schedule) | `smithery` | — | **[A](tools/meetbot-schedule.md)** | `AS-014` ×5 | Apr 19 |
+| [naimterrache-bjj-belt-progress](https://smithery.ai/server/naimterrache/bjj-belt-progress) | `smithery` | — | **[A](tools/naimterrache-bjj-belt-progress.md)** | `AS-014` ×11 | Oct 28 |
+| [naimterrache-paris-wedding-celebrant](https://smithery.ai/server/naimterrache/paris-wedding-celebrant) | `smithery` | — | **[A](tools/naimterrache-paris-wedding-celebrant.md)** | `AS-014` ×4 | Jun 20 |
 | [axel-belfort-hl-vaults](https://smithery.ai/server/axel-belfort/hl-vaults) | `smithery` | — | **[A](tools/axel-belfort-hl-vaults.md)** | `AS-014` | Sep 19 |
-| [mefta-sadat2-pcx](https://smithery.ai/server/mefta.sadat2/pcx) | `smithery` | — | **[A](tools/mefta-sadat2-pcx.md)** | `AS-014` ×2 | Apr 8 |
-| [mcp-hive-hive-servers](https://smithery.ai/server/mcp-hive/hive-servers) | `smithery` | — | **[A](tools/mcp-hive-hive-servers.md)** | `AS-014` ×2 | Apr 19 |
+| [marco280690-mcp](https://smithery.ai/server/marco280690/mcp) | `smithery` | — | **[A](tools/marco280690-mcp.md)** | `AS-014` | Apr 4 |
+| [mansamarkets-mansa](https://smithery.ai/server/mansamarkets/mansa) | `smithery` | — | **[A](tools/mansamarkets-mansa.md)** | `AS-014` ×14 | Oct 28 |
+| [agentmail](https://smithery.ai/server/agentmail) | `smithery` | — | **[A](tools/agentmail.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Jul 12 |
+| [makingendless-endless-mcp](https://smithery.ai/server/makingendless/endless-mcp) | `smithery` | — | **[A](tools/makingendless-endless-mcp.md)** | `AS-014` ×2 | Apr 5 |
 | [axel-belfort-html-to-markdown](https://smithery.ai/server/axel-belfort/html-to-markdown) | `smithery` | — | **[A](tools/axel-belfort-html-to-markdown.md)** | `AS-014` | Sep 20 |
 | [axel-belfort-hyperliquid-data](https://smithery.ai/server/axel-belfort/hyperliquid-data) | `smithery` | — | **[A](tools/axel-belfort-hyperliquid-data.md)** | `AS-014` ×3 | Sep 19 |
+| [wtf-just-happened-stock-moves-explained](https://smithery.ai/server/wtf-just-happened/stock-moves-explained) | `smithery` | — | **[A](tools/wtf-just-happened-stock-moves-explained.md)** | `AS-014` | Jul 16 |
+| [deniselewis200081-rail](https://smithery.ai/server/DeniseLewis200081/rail) | `smithery` | — | **[A](tools/deniselewis200081-rail.md)** | `AS-014` ×8 | Oct 28 |
 | [smithery-unicorn](https://smithery.ai/server/smithery/unicorn) | `smithery` | — | **[A](tools/smithery-unicorn.md)** | `AS-014` ×2 | Apr 19 |
+| [hydavinci-weather-mcp](https://smithery.ai/server/hydavinci/weather_mcp) | `smithery` | — | **[A](tools/hydavinci-weather-mcp.md)** | `AS-014` ×8 | Apr 5 |
+| [agentidx-agentcrawl](https://smithery.ai/server/agentidx/agentcrawl) | `smithery` | — | **[A](tools/agentidx-agentcrawl.md)** | `AS-014` ×3 | May 27 |
 | [axel-belfort-jwt-decoder](https://smithery.ai/server/axel-belfort/jwt-decoder) | `smithery` | — | **[A](tools/axel-belfort-jwt-decoder.md)** | 🗝️ `AS-010`, `AS-014` | Sep 20 |
-| [vdineshk-asean-trade-rules-mcp](https://smithery.ai/server/vdineshk/asean-trade-rules-mcp) | `smithery` | — | **[A](tools/vdineshk-asean-trade-rules-mcp.md)** | `AS-014` ×4 | Aug 16 |
-| [axel-belfort-language-detector](https://smithery.ai/server/axel-belfort/language-detector) | `smithery` | — | **[A](tools/axel-belfort-language-detector.md)** | `AS-014` | Sep 20 |
-| [guillermo-ap5g-buda-mcp](https://smithery.ai/server/guillermo-ap5g/buda-mcp) | `smithery` | — | **[A](tools/guillermo-ap5g-buda-mcp.md)** | `AS-014` ×5 | May 15 |
-| [evan-follis-u0ll-preflight](https://smithery.ai/server/evan-follis-u0ll/preflight) | `smithery` | — | **[A](tools/evan-follis-u0ll-preflight.md)** | 🔑 `AS-002`, `AS-014` | Jul 4 |
-| [vdineshk-sg-company-lookup-mcp](https://smithery.ai/server/vdineshk/sg-company-lookup-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-company-lookup-mcp.md)** | `AS-014` ×4 | Oct 27 |
-| [mcp-foundry-real-estate](https://smithery.ai/server/MCP-Foundry/real-estate) | `smithery` | — | **[A](tools/mcp-foundry-real-estate.md)** | `AS-014` ×10 | Jul 15 |
-| [axel-belfort-lorem-ipsum](https://smithery.ai/server/axel-belfort/lorem-ipsum) | `smithery` | — | **[A](tools/axel-belfort-lorem-ipsum.md)** | `AS-014` | Sep 20 |
-| [vdineshk-sg-cpf-calculator-mcp](https://smithery.ai/server/vdineshk/sg-cpf-calculator-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-cpf-calculator-mcp.md)** | `AS-014` ×4 | Aug 16 |
-| [vdineshk-sg-gst-calculator-mcp](https://smithery.ai/server/vdineshk/sg-gst-calculator-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-gst-calculator-mcp.md)** | `AS-014` ×4 | Jul 2 |
-| [memxus-memxus](https://smithery.ai/server/memxus/memxus) | `smithery` | — | **[A](tools/memxus-memxus.md)** | `AS-014` ×8, 🔑 `AS-002` | Oct 27 |
-| [methia-farid2001-screenshotrender](https://smithery.ai/server/methia-farid2001/screenshotrender) | `smithery` | — | **[A](tools/methia-farid2001-screenshotrender.md)** | 🔑 `AS-002`, `AS-014` | Jul 12 |
-| [axel-belfort-markdown-renderer](https://smithery.ai/server/axel-belfort/markdown-renderer) | `smithery` | — | **[A](tools/axel-belfort-markdown-renderer.md)** | `AS-014` | Sep 20 |
-| [axel-belfort-markdown-to-html](https://smithery.ai/server/axel-belfort/markdown-to-html) | `smithery` | — | **[A](tools/axel-belfort-markdown-to-html.md)** | `AS-014` | Sep 20 |
-| [vdineshk-sg-weather-data-mcp](https://smithery.ai/server/vdineshk/sg-weather-data-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-weather-data-mcp.md)** | `AS-014` ×4 | Aug 16 |
-| [axel-belfort-password-strength](https://smithery.ai/server/axel-belfort/password-strength) | `smithery` | — | **[A](tools/axel-belfort-password-strength.md)** | 🗝️ `AS-010`, `AS-014` | Aug 15 |
-| [vdineshk-sg-workpass-compass-mcp](https://smithery.ai/server/vdineshk/sg-workpass-compass-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-workpass-compass-mcp.md)** | `AS-014` ×4 | Jul 3 |
-| [vedastro-vedastro-mcp](https://smithery.ai/server/vedastro/vedastro-mcp) | `smithery` | — | **[A](tools/vedastro-vedastro-mcp.md)** | `AS-014` ×6 | May 4 |
-| [heavysword1-agentdefi](https://smithery.ai/server/heavysword1/agentdefi) | `smithery` | — | **[A](tools/heavysword1-agentdefi.md)** | `AS-014` ×3 | Aug 14 |
-| [enrique-boletinclaro](https://smithery.ai/server/enrique/boletinclaro) | `smithery` | — | **[A](tools/enrique-boletinclaro.md)** | `AS-014` ×20 | Jul 27 |
-| [axel-belfort-pdf-generator](https://smithery.ai/server/axel-belfort/pdf-generator) | `smithery` | — | **[A](tools/axel-belfort-pdf-generator.md)** | 🔑 `AS-002`, `AS-014` | Sep 19 |
-| [mirinda-cmd-reference-servers-check](https://smithery.ai/server/mirinda-cmd/reference-servers-check) | `smithery` | — | **[A](tools/mirinda-cmd-reference-servers-check.md)** | `AS-014` | Apr 4 |
-| [heavysword1-agentgeo](https://smithery.ai/server/heavysword1/agentgeo) | `smithery` | — | **[A](tools/heavysword1-agentgeo.md)** | `AS-014` ×3 | Jul 15 |
-| [heavysword1-agentmarket](https://smithery.ai/server/heavysword1/agentmarket) | `smithery` | — | **[A](tools/heavysword1-agentmarket.md)** | `AS-014` ×3 | Aug 2 |
-| [axel-belfort-currency-converter](https://smithery.ai/server/axel-belfort/currency-converter) | `smithery` | — | **[A](tools/axel-belfort-currency-converter.md)** | `AS-014` | Aug 15 |
-| [emailens-mcp-emailens-mcp](https://smithery.ai/server/emailens-mcp/emailens-mcp) | `smithery` | — | **[A](tools/emailens-mcp-emailens-mcp.md)** | `AS-014` ×7 | Apr 19 |
-| [axel-belfort-pii-detector](https://smithery.ai/server/axel-belfort/pii-detector) | `smithery` | — | **[A](tools/axel-belfort-pii-detector.md)** | `AS-014` | Aug 15 |
-| [axel-belfort-prediction-markets](https://smithery.ai/server/axel-belfort/prediction-markets) | `smithery` | — | **[A](tools/axel-belfort-prediction-markets.md)** | `AS-014` ×3 | Sep 19 |
-| [tusharboss8055-india-finance-mcp](https://smithery.ai/server/tusharboss8055/india-finance-mcp) | `smithery` | — | **[A](tools/tusharboss8055-india-finance-mcp.md)** | 🔑 `AS-002`, `AS-014` ×2 | Jul 3 |
-| [helix-song-coinex-mcp-server](https://smithery.ai/server/helix-song/coinex_mcp_server) | `smithery` | — | **[A](tools/helix-song-coinex-mcp-server.md)** | `AS-014` ×12 | May 11 |
-| [aitutor3-calculator-mcp-test](https://smithery.ai/server/AITutor3/calculator-mcp-test) | `smithery` | — | **[A](tools/aitutor3-calculator-mcp-test.md)** | `AS-014` ×4 | Oct 27 |
-| [hello-3ubk-booboooking](https://smithery.ai/server/hello-3ubk/booboooking) | `smithery` | — | **[A](tools/hello-3ubk-booboooking.md)** | `AS-014` ×3 | Apr 19 |
-| [echo3s-echo3s-mcp](https://smithery.ai/server/echo3s/echo3s-mcp) | `smithery` | — | **[A](tools/echo3s-echo3s-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` | Jul 3 |
-| [mpprimo-ratings](https://smithery.ai/server/mpprimo/ratings) | `smithery` | — | **[A](tools/mpprimo-ratings.md)** | `AS-014` ×3 | Apr 21 |
-| [axel-belfort-sentiment-analyzer](https://smithery.ai/server/axel-belfort/sentiment-analyzer) | `smithery` | — | **[A](tools/axel-belfort-sentiment-analyzer.md)** | `AS-014` ×2 | Aug 15 |
-| [axel-belfort-ssl-checker](https://smithery.ai/server/axel-belfort/ssl-checker) | `smithery` | — | **[A](tools/axel-belfort-ssl-checker.md)** | `AS-014` | Sep 20 |
-| [myappstackdev-decibel-shield](https://smithery.ai/server/myappstackdev/decibel-shield) | `smithery` | — | **[A](tools/myappstackdev-decibel-shield.md)** | `AS-014` ×6 | Jul 27 |
-| [hemantmahato-subconscious-unlock](https://smithery.ai/server/hemantmahato/subconscious-unlock) | `smithery` | — | **[A](tools/hemantmahato-subconscious-unlock.md)** | `AS-014` | Jun 29 |
-| [axel-belfort-color-palette](https://smithery.ai/server/axel-belfort/color-palette) | `smithery` | — | **[A](tools/axel-belfort-color-palette.md)** | `AS-014` | Sep 20 |
-| [axel-belfort-stock-price](https://smithery.ai/server/axel-belfort/stock-price) | `smithery` | — | **[A](tools/axel-belfort-stock-price.md)** | `AS-014` | Aug 15 |
-| [axel-belfort-text-classifier](https://smithery.ai/server/axel-belfort/text-classifier) | `smithery` | — | **[A](tools/axel-belfort-text-classifier.md)** | `AS-014` | Aug 15 |
-| [axel-belfort-text-to-speech](https://smithery.ai/server/axel-belfort/text-to-speech) | `smithery` | — | **[A](tools/axel-belfort-text-to-speech.md)** | `AS-014` | Sep 20 |
-| [axel-belfort-text-translator](https://smithery.ai/server/axel-belfort/text-translator) | `smithery` | — | **[A](tools/axel-belfort-text-translator.md)** | `AS-014` | Aug 9 |
-| [axel-belfort-timezone-converter](https://smithery.ai/server/axel-belfort/timezone-converter) | `smithery` | — | **[A](tools/axel-belfort-timezone-converter.md)** | `AS-014` | Jul 24 |
-| [axel-belfort-token-holders](https://smithery.ai/server/axel-belfort/token-holders) | `smithery` | — | **[A](tools/axel-belfort-token-holders.md)** | `AS-014` | Aug 15 |
-| [maxsambento-morfex](https://smithery.ai/server/maxsambento/morfex) | `smithery` | — | **[A](tools/maxsambento-morfex.md)** | `AS-014` ×4 | May 29 |
-| [vocab-voyage-vocab-voyage-mcp](https://smithery.ai/server/vocab-voyage/vocab-voyage-mcp) | `smithery` | — | **[A](tools/vocab-voyage-vocab-voyage-mcp.md)** | `AS-014` ×7 | Jul 4 |
-| [mavengence-ustidnr-mcp](https://smithery.ai/server/mavengence/ustidnr-mcp) | `smithery` | — | **[A](tools/mavengence-ustidnr-mcp.md)** | `AS-014` ×3 | Jun 29 |
-| [axel-belfort-token-price](https://smithery.ai/server/axel-belfort/token-price) | `smithery` | — | **[A](tools/axel-belfort-token-price.md)** | 🗝️ `AS-010`, `AS-014` | Sep 20 |
-| [axel-belfort-user-agent-parser](https://smithery.ai/server/axel-belfort/user-agent-parser) | `smithery` | — | **[A](tools/axel-belfort-user-agent-parser.md)** | `AS-014` | Aug 10 |
-| [axel-belfort-bridge-routes](https://smithery.ai/server/axel-belfort/bridge-routes) | `smithery` | — | **[A](tools/axel-belfort-bridge-routes.md)** | 🗝️ `AS-010` ×2, `AS-014` | Sep 19 |
-| [waleed-2002-prompt-enhancer](https://smithery.ai/server/waleed-2002/prompt-enhancer) | `smithery` | — | **[A](tools/waleed-2002-prompt-enhancer.md)** | `AS-014` | May 20 |
-| [axel-belfort-base-defi](https://smithery.ai/server/axel-belfort/base-defi) | `smithery` | — | **[A](tools/axel-belfort-base-defi.md)** | `AS-014` | Jul 24 |
-| [dmasdfg8-test](https://smithery.ai/server/dmasdfg8/test) | `smithery` | — | **[A](tools/dmasdfg8-test.md)** | `AS-014` ×2 | Jul 2 |
-| [axel-belfort-uuid-generator](https://smithery.ai/server/axel-belfort/uuid-generator) | `smithery` | — | **[A](tools/axel-belfort-uuid-generator.md)** | 🔑 `AS-002`, `AS-014` | Aug 15 |
-| [naimterrache-bjj-belt-progress](https://smithery.ai/server/naimterrache/bjj-belt-progress) | `smithery` | — | **[A](tools/naimterrache-bjj-belt-progress.md)** | `AS-014` ×11 | Oct 27 |
-| [naimterrache-paris-wedding-celebrant](https://smithery.ai/server/naimterrache/paris-wedding-celebrant) | `smithery` | — | **[A](tools/naimterrache-paris-wedding-celebrant.md)** | `AS-014` ×4 | Jun 20 |
-| [marco280690-mcp](https://smithery.ai/server/marco280690/mcp) | `smithery` | — | **[A](tools/marco280690-mcp.md)** | `AS-014` | Apr 4 |
-| [mansamarkets-mansa](https://smithery.ai/server/mansamarkets/mansa) | `smithery` | — | **[A](tools/mansamarkets-mansa.md)** | `AS-014` ×14 | Oct 27 |
-| [axel-belfort-wallet-portfolio](https://smithery.ai/server/axel-belfort/wallet-portfolio) | `smithery` | — | **[A](tools/axel-belfort-wallet-portfolio.md)** | `AS-014` ×2 | Aug 15 |
-| [makingendless-endless-mcp](https://smithery.ai/server/makingendless/endless-mcp) | `smithery` | — | **[A](tools/makingendless-endless-mcp.md)** | `AS-014` ×2 | Apr 5 |
-| [axel-belfort-weather-api](https://smithery.ai/server/axel-belfort/weather-api) | `smithery` | — | **[A](tools/axel-belfort-weather-api.md)** | `AS-014` | Jul 29 |
-| [axel-belfort-webhook-tester](https://smithery.ai/server/axel-belfort/webhook-tester) | `smithery` | — | **[A](tools/axel-belfort-webhook-tester.md)** | 🔑 `AS-002`, `AS-014` | Jul 29 |
-| [wellnesspulse-wellnesspulse](https://smithery.ai/server/WellnessPulse/WellnessPulse) | `smithery` | — | **[A](tools/wellnesspulse-wellnesspulse.md)** | `AS-014` ×6 | Oct 27 |
-| [axel-belfort-barcode-generator](https://smithery.ai/server/axel-belfort/barcode-generator) | `smithery` | — | **[A](tools/axel-belfort-barcode-generator.md)** | `AS-014` | Jul 24 |
-| [flynnhou-deep-dive-mcp](https://smithery.ai/server/flynnhou/deep-dive-mcp) | `smithery` | — | **[A](tools/flynnhou-deep-dive-mcp.md)** | `AS-014` ×2 | Apr 5 |
-| [alperenkocyigit-authorprofilemcp](https://smithery.ai/server/alperenkocyigit/authorprofilemcp) | `smithery` | — | **[A](tools/alperenkocyigit-authorprofilemcp.md)** | `AS-014` ×2 | Oct 27 |
-| [aguskenari86-8bo7-cryptoiz-mcp](https://smithery.ai/server/aguskenari86-8bo7/cryptoiz-mcp) | `smithery` | — | **[A](tools/aguskenari86-8bo7-cryptoiz-mcp.md)** | `AS-014` ×9 | May 19 |
-| [axel-belfort-airdrop-checker](https://smithery.ai/server/axel-belfort/airdrop-checker) | `smithery` | — | **[A](tools/axel-belfort-airdrop-checker.md)** | `AS-014` | Aug 6 |
 | [lylegill02-pawb-mcp](https://smithery.ai/server/lylegill02/pawb-mcp) | `smithery` | — | **[A](tools/lylegill02-pawb-mcp.md)** | 🔑 `AS-002`, `AS-014` ×4 | Jul 29 |
-| [axel-belfort-whale-alert](https://smithery.ai/server/axel-belfort/whale-alert) | `smithery` | — | **[A](tools/axel-belfort-whale-alert.md)** | `AS-014` | Aug 9 |
+| [axel-belfort-language-detector](https://smithery.ai/server/axel-belfort/language-detector) | `smithery` | — | **[A](tools/axel-belfort-language-detector.md)** | `AS-014` | Sep 20 |
 | [hypnoticmeditations-meditation-recommender](https://smithery.ai/server/hypnoticmeditations/meditation-recommender) | `smithery` | — | **[A](tools/hypnoticmeditations-meditation-recommender.md)** | `AS-014` ×2 | May 27 |
-| [lxxmng-ocean-schedules](https://smithery.ai/server/lxxmng/ocean-schedules) | `smithery` | — | **[A](tools/lxxmng-ocean-schedules.md)** | `AS-014` ×9, 🔑 `AS-002` | Oct 27 |
-| [axel-belfort-word-counter](https://smithery.ai/server/axel-belfort/word-counter) | `smithery` | — | **[A](tools/axel-belfort-word-counter.md)** | `AS-014` | Sep 19 |
+| [lxxmng-ocean-schedules](https://smithery.ai/server/lxxmng/ocean-schedules) | `smithery` | — | **[A](tools/lxxmng-ocean-schedules.md)** | `AS-014` ×9, 🔑 `AS-002` | Oct 28 |
+| [axel-belfort-lorem-ipsum](https://smithery.ai/server/axel-belfort/lorem-ipsum) | `smithery` | — | **[A](tools/axel-belfort-lorem-ipsum.md)** | `AS-014` | Sep 20 |
 | [iamfaham-investor-data-deploy-mcp](https://smithery.ai/server/iamfaham/investor-data-deploy-mcp) | `smithery` | — | **[A](tools/iamfaham-investor-data-deploy-mcp.md)** | `AS-014` | Apr 6 |
-| [deniselewis200081-rail](https://smithery.ai/server/DeniseLewis200081/rail) | `smithery` | — | **[A](tools/deniselewis200081-rail.md)** | `AS-014` ×8 | Oct 27 |
+| [deepwiki](https://smithery.ai/server/deepwiki) | `smithery` | — | **[A](tools/deepwiki.md)** | `AS-014` ×3 | Jul 16 |
 | [ic3moore-anchorregistry](https://smithery.ai/server/ic3moore/anchorregistry) | `smithery` | — | **[A](tools/ic3moore-anchorregistry.md)** | `AS-014` ×3 | Jun 2 |
 | [loyalspark-loyalty-protocol](https://smithery.ai/server/loyalspark/loyalty-protocol) | `smithery` | — | **[A](tools/loyalspark-loyalty-protocol.md)** | `AS-014` ×9, 🔑 `AS-002` ×2 | Jul 4 |
-| [logicroomx-crypto-mcp](https://smithery.ai/server/logicroomx/crypto-mcp) | `smithery` | — | **[A](tools/logicroomx-crypto-mcp.md)** | `AS-014` ×4 | Oct 27 |
-| [agentsim-agentsim](https://smithery.ai/server/agentsim/agentsim) | `smithery` | — | **[A](tools/agentsim-agentsim.md)** | `AS-014` ×5 | Jun 1 |
-| [axel-belfort-address-validator](https://smithery.ai/server/axel-belfort/address-validator) | `smithery` | — | **[A](tools/axel-belfort-address-validator.md)** | `AS-014` | Sep 20 |
-| [b-brown-mail-agent-treats-mcp](https://smithery.ai/server/b-brown-mail/agent-treats-mcp) | `smithery` | — | **[A](tools/b-brown-mail-agent-treats-mcp.md)** | `AS-014` ×7 | Jul 2 |
-| [seizedata-trx-categorization-mcp](https://smithery.ai/server/seizedata/trx-categorization-mcp) | `smithery` | — | **[A](tools/seizedata-trx-categorization-mcp.md)** | `AS-014` | May 18 |
-| [agentmail](https://smithery.ai/server/agentmail) | `smithery` | — | **[A](tools/agentmail.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Jul 12 |
+| [logicroomx-crypto-mcp](https://smithery.ai/server/logicroomx/crypto-mcp) | `smithery` | — | **[A](tools/logicroomx-crypto-mcp.md)** | `AS-014` ×4 | Oct 28 |
+| [axel-belfort-markdown-renderer](https://smithery.ai/server/axel-belfort/markdown-renderer) | `smithery` | — | **[A](tools/axel-belfort-markdown-renderer.md)** | `AS-014` | Sep 20 |
+| [axel-belfort-markdown-to-html](https://smithery.ai/server/axel-belfort/markdown-to-html) | `smithery` | — | **[A](tools/axel-belfort-markdown-to-html.md)** | `AS-014` | Sep 20 |
+| [nutribalance-nutribalance-mcp](https://smithery.ai/server/NutriBalance/nutribalance-mcp) | `smithery` | — | **[A](tools/nutribalance-nutribalance-mcp.md)** | `AS-014` ×5, 🔑 `AS-002` | Oct 28 |
+| [axel-belfort-password-strength](https://smithery.ai/server/axel-belfort/password-strength) | `smithery` | — | **[A](tools/axel-belfort-password-strength.md)** | 🗝️ `AS-010`, `AS-014` | Aug 15 |
+| [dante-r-g36u-onehq-comissions-calculator](https://smithery.ai/server/dante-r-g36u/onehq-comissions-calculator) | `smithery` | — | **[A](tools/dante-r-g36u-onehq-comissions-calculator.md)** | `AS-014` ×5 | Jun 1 |
 | [ifp-norge-nordic-energy-oracle](https://smithery.ai/server/ifp-norge/nordic-energy-oracle) | `smithery` | — | **[A](tools/ifp-norge-nordic-energy-oracle.md)** | `AS-014` ×7 | Apr 19 |
-| [wtf-just-happened-stock-moves-explained](https://smithery.ai/server/wtf-just-happened/stock-moves-explained) | `smithery` | — | **[A](tools/wtf-just-happened-stock-moves-explained.md)** | `AS-014` | Jul 16 |
-| [securelend-financial-services](https://smithery.ai/server/securelend/financial-services) | `smithery` | — | **[A](tools/securelend-financial-services.md)** | `AS-014` ×8, 🔑 `AS-002` ×2 | Oct 27 |
-| [deepwiki](https://smithery.ai/server/deepwiki) | `smithery` | — | **[A](tools/deepwiki.md)** | `AS-014` ×3 | Jul 16 |
-| [agentidx-agentcrawl](https://smithery.ai/server/agentidx/agentcrawl) | `smithery` | — | **[A](tools/agentidx-agentcrawl.md)** | `AS-014` ×3 | May 27 |
-| [bartek-ywte-gaproll](https://smithery.ai/server/bartek-ywte/gaproll) | `smithery` | — | **[A](tools/bartek-ywte-gaproll.md)** | `AS-014` ×3 | Jul 2 |
-| [aviadam-segel-onelev1](https://smithery.ai/server/aviadam-segel/onelev1) | `smithery` | — | **[A](tools/aviadam-segel-onelev1.md)** | `AS-014` ×2 | Apr 21 |
-| [ben-c8tp-orbuc](https://smithery.ai/server/ben-c8tp/orbuc) | `smithery` | — | **[A](tools/ben-c8tp-orbuc.md)** | `AS-014` ×12, 🔑 `AS-002` | Jul 5 |
-| [google-finance](https://smithery.ai/server/google/finance) | `smithery` | — | **[A](tools/google-finance.md)** | 🔑 `AS-002`, `AS-014` | Jul 16 |
-| [stexa-ai-voice-mcp](https://smithery.ai/server/stexa-ai/voice-mcp) | `smithery` | — | **[A](tools/stexa-ai-voice-mcp.md)** | `AS-014` ×4 | Oct 27 |
-| [lenderwiki-lending-data](https://smithery.ai/server/lenderwiki/lending-data) | `smithery` | — | **[A](tools/lenderwiki-lending-data.md)** | 🔑 `AS-002` ×3, `AS-014` ×4 | Jul 2 |
-| [scott-noa4-pricepilot](https://smithery.ai/server/scott-noa4/PricePilot) | `smithery` | — | **[A](tools/scott-noa4-pricepilot.md)** | `AS-014` ×6 | Jun 24 |
+| [axel-belfort-pdf-generator](https://smithery.ai/server/axel-belfort/pdf-generator) | `smithery` | — | **[A](tools/axel-belfort-pdf-generator.md)** | 🔑 `AS-002`, `AS-014` | Sep 19 |
+| [ofurkanuygur-tcmb-mcp](https://smithery.ai/server/ofurkanuygur/tcmb_mcp) | `smithery` | — | **[A](tools/ofurkanuygur-tcmb-mcp.md)** | `AS-014` ×6 | Aug 4 |
 | [agenciabakucl-usagewall](https://smithery.ai/server/agenciabakucl/usagewall) | `smithery` | — | **[A](tools/agenciabakucl-usagewall.md)** | `AS-014` ×6, 🗝️ `AS-010` ×3 | Jul 2 |
-| [autonomyforge-pressuredesk](https://smithery.ai/server/autonomyforge/pressuredesk) | `smithery` | — | **[A](tools/autonomyforge-pressuredesk.md)** | `AS-014` ×9 | Jul 3 |
+| [axel-belfort-prediction-markets](https://smithery.ai/server/axel-belfort/prediction-markets) | `smithery` | — | **[A](tools/axel-belfort-prediction-markets.md)** | `AS-014` ×3 | Sep 19 |
+| [cuthongthai-vimo-financial-intelligence](https://smithery.ai/server/cuthongthai/vimo-financial-intelligence) | `smithery` | — | **[A](tools/cuthongthai-vimo-financial-intelligence.md)** | `AS-014` ×10 | Jul 16 |
+| [axel-belfort-sentiment-analyzer](https://smithery.ai/server/axel-belfort/sentiment-analyzer) | `smithery` | — | **[A](tools/axel-belfort-sentiment-analyzer.md)** | `AS-014` ×2 | Aug 15 |
+| [axel-belfort-ssl-checker](https://smithery.ai/server/axel-belfort/ssl-checker) | `smithery` | — | **[A](tools/axel-belfort-ssl-checker.md)** | `AS-014` | Sep 20 |
+| [axel-belfort-stock-price](https://smithery.ai/server/axel-belfort/stock-price) | `smithery` | — | **[A](tools/axel-belfort-stock-price.md)** | `AS-014` | Aug 15 |
 | [xiaobenyang-com-markdown-to-notion](https://smithery.ai/server/xiaobenyang-com/markdown-to-notion) | `smithery` | — | **[A](tools/xiaobenyang-com-markdown-to-notion.md)** | `AS-014` | Apr 19 |
-| [nutribalance-nutribalance-mcp](https://smithery.ai/server/NutriBalance/nutribalance-mcp) | `smithery` | — | **[A](tools/nutribalance-nutribalance-mcp.md)** | `AS-014` ×5, 🔑 `AS-002` | Oct 27 |
-| [benzsevern-goldenflow](https://smithery.ai/server/benzsevern/goldenflow) | `smithery` | — | **[A](tools/benzsevern-goldenflow.md)** | 🔑 `AS-002` ×6, `AS-014` ×10 | Jul 3 |
+| [lenderwiki-lending-data](https://smithery.ai/server/lenderwiki/lending-data) | `smithery` | — | **[A](tools/lenderwiki-lending-data.md)** | 🔑 `AS-002` ×3, `AS-014` ×4 | Jul 2 |
+| [crypto](https://smithery.ai/server/crypto) | `smithery` | — | **[A](tools/crypto.md)** | `AS-014` ×9 | Apr 19 |
+| [adam-nntd-sickslip-verify](https://smithery.ai/server/adam-nntd/sickslip-verify) | `smithery` | — | **[A](tools/adam-nntd-sickslip-verify.md)** | `AS-014` | Oct 28 |
+| [axel-belfort-text-classifier](https://smithery.ai/server/axel-belfort/text-classifier) | `smithery` | — | **[A](tools/axel-belfort-text-classifier.md)** | `AS-014` | Aug 15 |
+| [xinkuang-china-stock-mcp](https://smithery.ai/server/xinkuang/china-stock-mcp) | `smithery` | — | **[A](tools/xinkuang-china-stock-mcp.md)** | `AS-014` | Apr 4 |
+| [axel-belfort-text-to-speech](https://smithery.ai/server/axel-belfort/text-to-speech) | `smithery` | — | **[A](tools/axel-belfort-text-to-speech.md)** | `AS-014` | Sep 20 |
+| [axel-belfort-text-translator](https://smithery.ai/server/axel-belfort/text-translator) | `smithery` | — | **[A](tools/axel-belfort-text-translator.md)** | `AS-014` | Aug 9 |
 | [labelhead-artist-momentum](https://smithery.ai/server/labelhead/artist-momentum) | `smithery` | — | **[A](tools/labelhead-artist-momentum.md)** | `AS-014` ×3 | May 15 |
 | [kylecassie-cakesmash-mcp](https://smithery.ai/server/kylecassie/cakesmash-mcp) | `smithery` | — | **[A](tools/kylecassie-cakesmash-mcp.md)** | `AS-014` ×4 | Jun 24 |
-| [adam-nntd-sickslip-verify](https://smithery.ai/server/adam-nntd/sickslip-verify) | `smithery` | — | **[A](tools/adam-nntd-sickslip-verify.md)** | `AS-014` | Oct 27 |
-| [xinkuang-china-stock-mcp](https://smithery.ai/server/xinkuang/china-stock-mcp) | `smithery` | — | **[A](tools/xinkuang-china-stock-mcp.md)** | `AS-014` | Apr 4 |
-| [dante-r-g36u-onehq-comissions-calculator](https://smithery.ai/server/dante-r-g36u/onehq-comissions-calculator) | `smithery` | — | **[A](tools/dante-r-g36u-onehq-comissions-calculator.md)** | `AS-014` ×5 | Jun 1 |
-| [infobip-mcp-search](https://smithery.ai/server/infobip-mcp/search) | `smithery` | — | **[A](tools/infobip-mcp-search.md)** | `AS-014` | Oct 27 |
-| [stockvibes07-exchange-mcp](https://smithery.ai/server/stockvibes07/exchange-mcp) | `smithery` | — | **[A](tools/stockvibes07-exchange-mcp.md)** | `AS-014` ×4 | Aug 18 |
-| [ksruthi1992-vsftest](https://smithery.ai/server/ksruthi1992/vsftest) | `smithery` | — | **[A](tools/ksruthi1992-vsftest.md)** | 🔑 `AS-002`, `AS-014` | Jul 12 |
-| [ofurkanuygur-tcmb-mcp](https://smithery.ai/server/ofurkanuygur/tcmb_mcp) | `smithery` | — | **[A](tools/ofurkanuygur-tcmb-mcp.md)** | `AS-014` ×6 | Aug 4 |
-| [cuthongthai-vimo-financial-intelligence](https://smithery.ai/server/cuthongthai/vimo-financial-intelligence) | `smithery` | — | **[A](tools/cuthongthai-vimo-financial-intelligence.md)** | `AS-014` ×10 | Jul 16 |
-| [abneesh-epl-mcp](https://smithery.ai/server/abneesh/epl-mcp) | `smithery` | — | **[A](tools/abneesh-epl-mcp.md)** | 🔑 `AS-002` ×3, `AS-014` ×6 | Oct 27 |
-| [koreafintech-korean-crypto-mcp](https://smithery.ai/server/koreafintech/korean-crypto-mcp) | `smithery` | — | **[A](tools/koreafintech-korean-crypto-mcp.md)** | `AS-014` ×7, 🔑 `AS-002` | Oct 27 |
-| [saju-from-seoul-saju](https://smithery.ai/server/saju-from-seoul/saju) | `smithery` | — | **[A](tools/saju-from-seoul-saju.md)** | `AS-014` ×4 | May 17 |
-| [bissell-skyler-cityparity](https://smithery.ai/server/bissell-skyler/cityparity) | `smithery` | — | **[A](tools/bissell-skyler-cityparity.md)** | `AS-014` ×6, 🔑 `AS-002` | Oct 27 |
-| [crypto](https://smithery.ai/server/crypto) | `smithery` | — | **[A](tools/crypto.md)** | `AS-014` ×9 | Apr 19 |
-| [ybolduc-ipayx-fx-audit](https://smithery.ai/server/ybolduc/ipayx-fx-audit) | `smithery` | — | **[A](tools/ybolduc-ipayx-fx-audit.md)** | `AS-014` ×3 | Jul 1 |
-| [ko-syun-japan-seasons](https://smithery.ai/server/ko-syun/japan-seasons) | `smithery` | — | **[A](tools/ko-syun-japan-seasons.md)** | `AS-014` ×10 | Jul 4 |
-| [ybouane-scrptly-ai-video-agent](https://smithery.ai/server/ybouane/scrptly-ai-video-agent) | `smithery` | — | **[A](tools/ybouane-scrptly-ai-video-agent.md)** | `AS-014` ×2 | Apr 19 |
-| [rowhint-ntm5-rowhint](https://smithery.ai/server/rowhint-ntm5/RowHint) | `smithery` | — | **[A](tools/rowhint-ntm5-rowhint.md)** | `AS-014` ×5 | Jul 15 |
+| [axel-belfort-timezone-converter](https://smithery.ai/server/axel-belfort/timezone-converter) | `smithery` | — | **[A](tools/axel-belfort-timezone-converter.md)** | `AS-014` | Jul 24 |
+| [axel-belfort-token-holders](https://smithery.ai/server/axel-belfort/token-holders) | `smithery` | — | **[A](tools/axel-belfort-token-holders.md)** | `AS-014` | Aug 15 |
 | [couchloop-ceq](https://smithery.ai/server/couchloop/ceq) | `smithery` | — | **[A](tools/couchloop-ceq.md)** | `AS-014` ×4 | Apr 19 |
-| [gen-pdf-mcp](https://smithery.ai/server/gen-pdf/mcp) | `smithery` | — | **[A](tools/gen-pdf-mcp.md)** | `AS-014` | Apr 19 |
+| [infobip-mcp-search](https://smithery.ai/server/infobip-mcp/search) | `smithery` | — | **[A](tools/infobip-mcp-search.md)** | `AS-014` | Oct 28 |
+| [axel-belfort-token-price](https://smithery.ai/server/axel-belfort/token-price) | `smithery` | — | **[A](tools/axel-belfort-token-price.md)** | 🗝️ `AS-010`, `AS-014` | Sep 20 |
+| [ksruthi1992-vsftest](https://smithery.ai/server/ksruthi1992/vsftest) | `smithery` | — | **[A](tools/ksruthi1992-vsftest.md)** | 🔑 `AS-002`, `AS-014` | Jul 12 |
 | [openclaw-ai-timestamp-converter](https://smithery.ai/server/openclaw-ai/timestamp-converter) | `smithery` | — | **[A](tools/openclaw-ai-timestamp-converter.md)** | `AS-014` ×5 | Apr 16 |
-| [kirandk-vsf1234](https://smithery.ai/server/kirandk/vsf1234) | `smithery` | — | **[A](tools/kirandk-vsf1234.md)** | 🔑 `AS-002`, `AS-014` | Jul 15 |
-| [refund-decide-notary](https://smithery.ai/server/refund-decide/notary) | `smithery` | — | **[A](tools/refund-decide-notary.md)** | `AS-014` | Jul 16 |
-| [brandomica-brandomica-mcp-server](https://smithery.ai/server/brandomica/brandomica-mcp-server) | `smithery` | — | **[A](tools/brandomica-brandomica-mcp-server.md)** | `AS-014` ×7 | Apr 19 |
+| [abneesh-epl-mcp](https://smithery.ai/server/abneesh/epl-mcp) | `smithery` | — | **[A](tools/abneesh-epl-mcp.md)** | 🔑 `AS-002` ×3, `AS-014` ×6 | Oct 28 |
+| [axel-belfort-user-agent-parser](https://smithery.ai/server/axel-belfort/user-agent-parser) | `smithery` | — | **[A](tools/axel-belfort-user-agent-parser.md)** | `AS-014` | Aug 10 |
+| [koreafintech-korean-crypto-mcp](https://smithery.ai/server/koreafintech/korean-crypto-mcp) | `smithery` | — | **[A](tools/koreafintech-korean-crypto-mcp.md)** | `AS-014` ×7, 🔑 `AS-002` | Oct 28 |
+| [axel-belfort-uuid-generator](https://smithery.ai/server/axel-belfort/uuid-generator) | `smithery` | — | **[A](tools/axel-belfort-uuid-generator.md)** | 🔑 `AS-002`, `AS-014` | Aug 15 |
+| [ybolduc-ipayx-fx-audit](https://smithery.ai/server/ybolduc/ipayx-fx-audit) | `smithery` | — | **[A](tools/ybolduc-ipayx-fx-audit.md)** | `AS-014` ×3 | Jul 1 |
+| [axel-belfort-wallet-portfolio](https://smithery.ai/server/axel-belfort/wallet-portfolio) | `smithery` | — | **[A](tools/axel-belfort-wallet-portfolio.md)** | `AS-014` ×2 | Aug 15 |
+| [ybouane-scrptly-ai-video-agent](https://smithery.ai/server/ybouane/scrptly-ai-video-agent) | `smithery` | — | **[A](tools/ybouane-scrptly-ai-video-agent.md)** | `AS-014` ×2 | Apr 19 |
+| [ko-syun-japan-seasons](https://smithery.ai/server/ko-syun/japan-seasons) | `smithery` | — | **[A](tools/ko-syun-japan-seasons.md)** | `AS-014` ×10 | Jul 4 |
+| [axel-belfort-weather-api](https://smithery.ai/server/axel-belfort/weather-api) | `smithery` | — | **[A](tools/axel-belfort-weather-api.md)** | `AS-014` | Jul 29 |
+| [axel-belfort-webhook-tester](https://smithery.ai/server/axel-belfort/webhook-tester) | `smithery` | — | **[A](tools/axel-belfort-webhook-tester.md)** | 🔑 `AS-002`, `AS-014` | Jul 29 |
 | [contact-ymj4-timers-studio](https://smithery.ai/server/contact-ymj4/timers-studio) | `smithery` | — | **[A](tools/contact-ymj4-timers-studio.md)** | `AS-014` ×4 | Jul 3 |
-| [asterpay-mcp-server](https://smithery.ai/server/asterpay/mcp-server) | `smithery` | — | **[A](tools/asterpay-mcp-server.md)** | `AS-014` ×4 | Jul 2 |
-| [kiennd-reference-servers](https://smithery.ai/server/kiennd/reference-servers) | `smithery` | — | **[A](tools/kiennd-reference-servers.md)** | `AS-014` | Apr 5 |
-| [a2a-llm-orchestration-agent](https://smithery.ai/server/a2a/llm-orchestration-agent) | `smithery` | — | **[A](tools/a2a-llm-orchestration-agent.md)** | `AS-014` ×2 | Oct 27 |
-| [brian-vx4n-patchistry-mcp](https://smithery.ai/server/brian-vx4n/Patchistry-mcp) | `smithery` | — | **[A](tools/brian-vx4n-patchistry-mcp.md)** | `AS-014` ×6, 🔑 `AS-002` | Jul 29 |
+| [axel-belfort-whale-alert](https://smithery.ai/server/axel-belfort/whale-alert) | `smithery` | — | **[A](tools/axel-belfort-whale-alert.md)** | `AS-014` | Aug 9 |
 | [orthosie-fungenerators](https://smithery.ai/server/orthosie/fungenerators) | `smithery` | — | **[A](tools/orthosie-fungenerators.md)** | `AS-014` ×2 | May 16 |
-| [astein91-stacksherpa-remote](https://smithery.ai/server/astein91/stacksherpa-remote) | `smithery` | — | **[A](tools/astein91-stacksherpa-remote.md)** | 🔑 `AS-002`, `AS-014` ×3 | Jun 20 |
+| [kirandk-vsf1234](https://smithery.ai/server/kirandk/vsf1234) | `smithery` | — | **[A](tools/kirandk-vsf1234.md)** | 🔑 `AS-002`, `AS-014` | Jul 15 |
+| [axel-belfort-word-counter](https://smithery.ai/server/axel-belfort/word-counter) | `smithery` | — | **[A](tools/axel-belfort-word-counter.md)** | `AS-014` | Sep 19 |
+| [compress-new-compress-tokens](https://smithery.ai/server/compress-new/compress-tokens) | `smithery` | — | **[A](tools/compress-new-compress-tokens.md)** | `AS-014` | Oct 28 |
+| [outtolunch-outtolunch](https://smithery.ai/server/outtolunch/outtolunch) | `smithery` | — | **[A](tools/outtolunch-outtolunch.md)** | `AS-014` ×3 | Jul 15 |
+| [b-brown-mail-agent-treats-mcp](https://smithery.ai/server/b-brown-mail/agent-treats-mcp) | `smithery` | — | **[A](tools/b-brown-mail-agent-treats-mcp.md)** | `AS-014` ×7 | Jul 2 |
+| [kiennd-reference-servers](https://smithery.ai/server/kiennd/reference-servers) | `smithery` | — | **[A](tools/kiennd-reference-servers.md)** | `AS-014` | Apr 5 |
+| [a2a-llm-orchestration-agent](https://smithery.ai/server/a2a/llm-orchestration-agent) | `smithery` | — | **[A](tools/a2a-llm-orchestration-agent.md)** | `AS-014` ×2 | Oct 28 |
+| [seizedata-trx-categorization-mcp](https://smithery.ai/server/seizedata/trx-categorization-mcp) | `smithery` | — | **[A](tools/seizedata-trx-categorization-mcp.md)** | `AS-014` | May 18 |
+| [securelend-financial-services](https://smithery.ai/server/securelend/financial-services) | `smithery` | — | **[A](tools/securelend-financial-services.md)** | `AS-014` ×8, 🔑 `AS-002` ×2 | Oct 28 |
+| [bartek-ywte-gaproll](https://smithery.ai/server/bartek-ywte/gaproll) | `smithery` | — | **[A](tools/bartek-ywte-gaproll.md)** | `AS-014` ×3 | Jul 2 |
 | [a2a-llm-observability-orchestration](https://smithery.ai/server/a2a/llm-observability-orchestration) | `smithery` | — | **[A](tools/a2a-llm-observability-orchestration.md)** | `AS-014` | Jul 24 |
-| [artvepa80-hefestoai](https://smithery.ai/server/artvepa80/hefestoai) | `smithery` | — | **[A](tools/artvepa80-hefestoai.md)** | `AS-014` ×4 | Jun 6 |
+| [ben-c8tp-orbuc](https://smithery.ai/server/ben-c8tp/orbuc) | `smithery` | — | **[A](tools/ben-c8tp-orbuc.md)** | `AS-014` ×12, 🔑 `AS-002` | Jul 5 |
 | [kennyckk-mcp-hkbus](https://smithery.ai/server/kennyckk/mcp_hkbus) | `smithery` | — | **[A](tools/kennyckk-mcp-hkbus.md)** | `AS-014` ×5 | Jul 15 |
 | [a2a-authenticated-mcp-agent](https://smithery.ai/server/a2a/authenticated-mcp-agent) | `smithery` | — | **[A](tools/a2a-authenticated-mcp-agent.md)** | `AS-014` | Jul 24 |
-| [compress-new-compress-tokens](https://smithery.ai/server/compress-new/compress-tokens) | `smithery` | — | **[A](tools/compress-new-compress-tokens.md)** | `AS-014` | Oct 27 |
+| [scott-noa4-pricepilot](https://smithery.ai/server/scott-noa4/PricePilot) | `smithery` | — | **[A](tools/scott-noa4-pricepilot.md)** | `AS-014` ×6 | Jun 24 |
 | [katie-a-delgado-talnexis](https://smithery.ai/server/katie-a-delgado/talnexis) | `smithery` | — | **[A](tools/katie-a-delgado-talnexis.md)** | `AS-014` ×7 | Jun 11 |
-| [outtolunch-outtolunch](https://smithery.ai/server/outtolunch/outtolunch) | `smithery` | — | **[A](tools/outtolunch-outtolunch.md)** | `AS-014` ×3 | Jul 15 |
-| [thinkneo-ai-control-plane](https://smithery.ai/server/thinkneo-ai/control-plane) | `smithery` | — | **[A](tools/thinkneo-ai-control-plane.md)** | `AS-014` ×8 | Jul 4 |
+| [benzsevern-goldenflow](https://smithery.ai/server/benzsevern/goldenflow) | `smithery` | — | **[A](tools/benzsevern-goldenflow.md)** | 🔑 `AS-002` ×6, `AS-014` ×10 | Jul 3 |
+| [penchala-ninar](https://smithery.ai/server/penchala/ninar) | `smithery` | — | **[A](tools/penchala-ninar.md)** | `AS-014` ×5 | Jul 17 |
 | [kaparnashilpa-vsfclubshilpa](https://smithery.ai/server/kaparnashilpa/vsfclubshilpa) | `smithery` | — | **[A](tools/kaparnashilpa-vsfclubshilpa.md)** | 🔑 `AS-002`, `AS-014` | Jun 29 |
 | [kakao-mobility](https://smithery.ai/server/kakao/mobility) | `smithery` | — | **[A](tools/kakao-mobility.md)** | `AS-014` ×2 | Aug 2 |
-| [arjunkmrm-simple-echo](https://smithery.ai/server/arjunkmrm/simple-echo) | `smithery` | — | **[A](tools/arjunkmrm-simple-echo.md)** | `AS-014` | May 4 |
-| [r-yoshikawa-shirabe-calendar](https://smithery.ai/server/r-yoshikawa/shirabe-calendar) | `smithery` | — | **[A](tools/r-yoshikawa-shirabe-calendar.md)** | `AS-014` ×3 | Oct 27 |
-| [carmex-tier-list](https://smithery.ai/server/carmex/tier-list) | `smithery` | — | **[A](tools/carmex-tier-list.md)** | `AS-014` | May 17 |
-| [justin-wx0z-inboxguard](https://smithery.ai/server/justin-wx0z/inboxguard) | `smithery` | — | **[A](tools/justin-wx0z-inboxguard.md)** | `AS-014` ×11 | Aug 15 |
-| [penchala-ninar](https://smithery.ai/server/penchala/ninar) | `smithery` | — | **[A](tools/penchala-ninar.md)** | `AS-014` ×5 | Jul 17 |
-| [glianalabs-gliana-ai](https://smithery.ai/server/glianalabs/gliana-ai) | `smithery` | — | **[A](tools/glianalabs-gliana-ai.md)** | `AS-014` ×4 | Aug 6 |
-| [janmacher02-xl8y-czech-vat-mcp](https://smithery.ai/server/janmacher02-xl8y/czech-vat-mcp) | `smithery` | — | **[A](tools/janmacher02-xl8y-czech-vat-mcp.md)** | `AS-014` ×4 | Jul 1 |
-| [a2a-auth-token-service](https://smithery.ai/server/a2a/auth-token-service) | `smithery` | — | **[A](tools/a2a-auth-token-service.md)** | `AS-014` | Jul 28 |
 | [clm-studios-nephyr-backtest](https://smithery.ai/server/clm-studios/nephyr-backtest) | `smithery` | — | **[A](tools/clm-studios-nephyr-backtest.md)** | `AS-014` ×3 | May 4 |
 | [clerk](https://smithery.ai/server/clerk) | `smithery` | — | **[A](tools/clerk.md)** | `AS-014` ×2 | Apr 19 |
-| [arjunkmrm-devin](https://smithery.ai/server/arjunkmrm/devin) | `smithery` | — | **[A](tools/arjunkmrm-devin.md)** | `AS-014` ×3 | May 29 |
-| [ghostrouter-lite-crypto](https://smithery.ai/server/ghostrouter/lite-crypto) | `smithery` | — | **[A](tools/ghostrouter-lite-crypto.md)** | `AS-014` ×2 | Apr 19 |
-| [prereason-briefings](https://smithery.ai/server/prereason/briefings) | `smithery` | — | **[A](tools/prereason-briefings.md)** | `AS-014` ×5 | Jul 28 |
-| [chairflow-mcp-server](https://smithery.ai/server/chairflow/mcp-server) | `smithery` | — | **[A](tools/chairflow-mcp-server.md)** | `AS-014` ×6 | May 29 |
 | [chiaha-queuesim](https://smithery.ai/server/chiaha/QueueSim) | `smithery` | — | **[A](tools/chiaha-queuesim.md)** | `AS-014` ×6 | Jul 3 |
-| [arabimaak-gulf-arabic](https://smithery.ai/server/arabimaak/gulf-arabic) | `smithery` | — | **[A](tools/arabimaak-gulf-arabic.md)** | `AS-014` ×4 | Jun 15 |
+| [justin-wx0z-inboxguard](https://smithery.ai/server/justin-wx0z/inboxguard) | `smithery` | — | **[A](tools/justin-wx0z-inboxguard.md)** | `AS-014` ×11 | Aug 15 |
+| [saju-from-seoul-saju](https://smithery.ai/server/saju-from-seoul/saju) | `smithery` | — | **[A](tools/saju-from-seoul-saju.md)** | `AS-014` ×4 | May 17 |
+| [chairflow-mcp-server](https://smithery.ai/server/chairflow/mcp-server) | `smithery` | — | **[A](tools/chairflow-mcp-server.md)** | `AS-014` ×6 | May 29 |
+| [janmacher02-xl8y-czech-vat-mcp](https://smithery.ai/server/janmacher02-xl8y/czech-vat-mcp) | `smithery` | — | **[A](tools/janmacher02-xl8y-czech-vat-mcp.md)** | `AS-014` ×4 | Jul 1 |
+| [a2a-auth-token-service](https://smithery.ai/server/a2a/auth-token-service) | `smithery` | — | **[A](tools/a2a-auth-token-service.md)** | `AS-014` | Jul 28 |
+| [prereason-briefings](https://smithery.ai/server/prereason/briefings) | `smithery` | — | **[A](tools/prereason-briefings.md)** | `AS-014` ×5 | Jul 28 |
+| [bissell-skyler-cityparity](https://smithery.ai/server/bissell-skyler/cityparity) | `smithery` | — | **[A](tools/bissell-skyler-cityparity.md)** | `AS-014` ×6, 🔑 `AS-002` | Oct 28 |
+| [rowhint-ntm5-rowhint](https://smithery.ai/server/rowhint-ntm5/RowHint) | `smithery` | — | **[A](tools/rowhint-ntm5-rowhint.md)** | `AS-014` ×5 | Jul 15 |
+| [carmex-tier-list](https://smithery.ai/server/carmex/tier-list) | `smithery` | — | **[A](tools/carmex-tier-list.md)** | `AS-014` | May 17 |
+| [refund-decide-notary](https://smithery.ai/server/refund-decide/notary) | `smithery` | — | **[A](tools/refund-decide-notary.md)** | `AS-014` | Jul 16 |
+| [brandomica-brandomica-mcp-server](https://smithery.ai/server/brandomica/brandomica-mcp-server) | `smithery` | — | **[A](tools/brandomica-brandomica-mcp-server.md)** | `AS-014` ×7 | Apr 19 |
+| [r-yoshikawa-shirabe-calendar](https://smithery.ai/server/r-yoshikawa/shirabe-calendar) | `smithery` | — | **[A](tools/r-yoshikawa-shirabe-calendar.md)** | `AS-014` ×3 | Oct 28 |
+| [brian-vx4n-patchistry-mcp](https://smithery.ai/server/brian-vx4n/Patchistry-mcp) | `smithery` | — | **[A](tools/brian-vx4n-patchistry-mcp.md)** | `AS-014` ×6, 🔑 `AS-002` | Jul 29 |
 | [postly-postly-social-publisher](https://smithery.ai/server/postly/postly-social-publisher) | `smithery` | — | **[A](tools/postly-postly-social-publisher.md)** | `AS-014` ×18, 🔑 `AS-002` ×11, ⚡ `AS-011` ×3 | Jul 17 |
 | [axel-belfort-http-headers](https://smithery.ai/server/axel-belfort/http-headers) | `smithery` | — | **[A](tools/axel-belfort-http-headers.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 20 |
 | [zev-lastlook-data](https://smithery.ai/server/zev/lastlook-data) | `smithery` | — | **[A](tools/zev-lastlook-data.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Aug 4 |
-| [jeremyd2255-clearmarket](https://smithery.ai/server/jeremyd2255/clearmarket) | `smithery` | — | **[A](tools/jeremyd2255-clearmarket.md)** | `AS-014` ×6, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 27 |
+| [jeremyd2255-clearmarket](https://smithery.ai/server/jeremyd2255/clearmarket) | `smithery` | — | **[A](tools/jeremyd2255-clearmarket.md)** | `AS-014` ×6, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 28 |
 | [jesse-dxju-docpull](https://smithery.ai/server/jesse-dxju/docpull) | `smithery` | — | **[A](tools/jesse-dxju-docpull.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Jun 30 |
 | [jarvis-stark1985-superhero-mcp-server](https://smithery.ai/server/jarvis-stark1985/superhero-mcp-server) | `smithery` | — | **[A](tools/jarvis-stark1985-superhero-mcp-server.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×10, `AS-014` ×24, 🗝️ `AS-010` | Jun 30 |
 | [janwilmake-x-search-mcp](https://smithery.ai/server/janwilmake/x-search-mcp) | `smithery` | — | **[A](tools/janwilmake-x-search-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 16 |
 | [zekebuilds-captcha-mcp](https://smithery.ai/server/zekebuilds/captcha-mcp) | `smithery` | — | **[A](tools/zekebuilds-captcha-mcp.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Aug 15 |
-| [zachary-royals-devmatch](https://smithery.ai/server/zachary-royals/devmatch) | `smithery` | — | **[A](tools/zachary-royals-devmatch.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
+| [zachary-royals-devmatch](https://smithery.ai/server/zachary-royals/devmatch) | `smithery` | — | **[A](tools/zachary-royals-devmatch.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
 | [jina](https://smithery.ai/server/jina) | `smithery` | — | **[A](tools/jina.md)** | 🔑 `AS-002` ×19, ⚡ `AS-011` ×14, `AS-014` ×21 | Aug 6 |
 | [youtube](https://smithery.ai/server/youtube) | `smithery` | — | **[A](tools/youtube.md)** | `AS-014` ×16, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Jul 25 |
 | [jl-3044-agentndx](https://smithery.ai/server/jl-3044/agentndx) | `smithery` | — | **[A](tools/jl-3044-agentndx.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Oct 23 |
 | [ychen20141229-douyin-insights](https://smithery.ai/server/ychen20141229/douyin-insights) | `smithery` | — | **[A](tools/ychen20141229-douyin-insights.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×11 | Aug 15 |
-| [yakenator-web-inspector](https://smithery.ai/server/yakenator/web-inspector) | `smithery` | — | **[A](tools/yakenator-web-inspector.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Oct 27 |
-| [xqb-vibe-pay](https://smithery.ai/server/xqb/vibe-pay) | `smithery` | — | **[A](tools/xqb-vibe-pay.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [yakenator-web-inspector](https://smithery.ai/server/yakenator/web-inspector) | `smithery` | — | **[A](tools/yakenator-web-inspector.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Oct 28 |
+| [xqb-vibe-pay](https://smithery.ai/server/xqb/vibe-pay) | `smithery` | — | **[A](tools/xqb-vibe-pay.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [xltnapps-octotrip-rental-cars](https://smithery.ai/server/xltnapps/octotrip-rental-cars) | `smithery` | — | **[A](tools/xltnapps-octotrip-rental-cars.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 12 |
 | [joeroy2027-tqp-site](https://smithery.ai/server/joeroy2027/tqp-site) | `smithery` | — | **[A](tools/joeroy2027-tqp-site.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×7, `AS-014` ×19 | Aug 6 |
 | [johanvd75-cracks-index](https://smithery.ai/server/johanvd75/cracks-index) | `smithery` | — | **[A](tools/johanvd75-cracks-index.md)** | `AS-014` ×15, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jun 28 |
 | [john-guignard-lacarotte](https://smithery.ai/server/john-guignard/lacarotte) | `smithery` | — | **[A](tools/john-guignard-lacarotte.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×11, 🗝️ `AS-010` ×4 | Jul 27 |
 | [xjtlumedia2-x24](https://smithery.ai/server/XJTLUmedia2/x24) | `smithery` | — | **[A](tools/xjtlumedia2-x24.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×21, 🗝️ `AS-010` | Aug 15 |
-| [xjtlumedia-x23](https://smithery.ai/server/XJTLUmedia/x23) | `smithery` | — | **[A](tools/xjtlumedia-x23.md)** | 🔑 `AS-002` ×29, `AS-014` ×34, ⚡ `AS-011` ×8 | Oct 27 |
+| [xjtlumedia-x23](https://smithery.ai/server/XJTLUmedia/x23) | `smithery` | — | **[A](tools/xjtlumedia-x23.md)** | 🔑 `AS-002` ×29, `AS-014` ×34, ⚡ `AS-011` ×8 | Oct 28 |
 | [achilles-safehavencalls-pentagonal](https://smithery.ai/server/achilles-safehavencalls/pentagonal) | `smithery` | — | **[A](tools/achilles-safehavencalls-pentagonal.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 12 |
 | [actiongate-actiongate](https://smithery.ai/server/actiongate/actiongate) | `smithery` | — | **[A](tools/actiongate-actiongate.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Jul 2 |
-| [jordan-s648-polymarketscan](https://smithery.ai/server/jordan-s648/PolymarketScan) | `smithery` | — | **[A](tools/jordan-s648-polymarketscan.md)** | `AS-014` ×8, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
+| [jordan-s648-polymarketscan](https://smithery.ai/server/jordan-s648/PolymarketScan) | `smithery` | — | **[A](tools/jordan-s648-polymarketscan.md)** | `AS-014` ×8, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
 | [jordanshabot-leap-morpheus-dreamgate](https://smithery.ai/server/jordanshabot/leap-morpheus-dreamgate) | `smithery` | — | **[A](tools/jordanshabot-leap-morpheus-dreamgate.md)** | `AS-014` ×8, 🔑 `AS-002`, ⚡ `AS-011` | Aug 1 |
 | [joseadrianoalmeida-bsd-mcp](https://smithery.ai/server/joseadrianoalmeida/bsd-mcp) | `smithery` | — | **[A](tools/joseadrianoalmeida-bsd-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×22 | Jul 30 |
-| [joshuaogabriel-anchor-compliance](https://smithery.ai/server/joshuaogabriel/anchor-compliance) | `smithery` | — | **[A](tools/joshuaogabriel-anchor-compliance.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 27 |
-| [janmacher02-xl8y-sec-edgar-mcp](https://smithery.ai/server/janmacher02-xl8y/sec-edgar-mcp) | `smithery` | — | **[A](tools/janmacher02-xl8y-sec-edgar-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 27 |
-| [adamamer20-paper-search-mcp-openai](https://smithery.ai/server/adamamer20/paper-search-mcp-openai) | `smithery` | — | **[A](tools/adamamer20-paper-search-mcp-openai.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×23, `AS-014` ×25 | Oct 27 |
+| [joshuaogabriel-anchor-compliance](https://smithery.ai/server/joshuaogabriel/anchor-compliance) | `smithery` | — | **[A](tools/joshuaogabriel-anchor-compliance.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 28 |
+| [janmacher02-xl8y-sec-edgar-mcp](https://smithery.ai/server/janmacher02-xl8y/sec-edgar-mcp) | `smithery` | — | **[A](tools/janmacher02-xl8y-sec-edgar-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 28 |
+| [adamamer20-paper-search-mcp-openai](https://smithery.ai/server/adamamer20/paper-search-mcp-openai) | `smithery` | — | **[A](tools/adamamer20-paper-search-mcp-openai.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×23, `AS-014` ×25 | Oct 28 |
 | [admin-8nvf-cerebrochain](https://smithery.ai/server/admin-8nvf/cerebrochain) | `smithery` | — | **[A](tools/admin-8nvf-cerebrochain.md)** | `AS-014` ×13, 🔑 `AS-002`, ⚡ `AS-011` | Jul 2 |
 | [agenticshelf-agentic-shelf](https://smithery.ai/server/agenticshelf/agentic-shelf) | `smithery` | — | **[A](tools/agenticshelf-agentic-shelf.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 16 |
 | [janmacher02-xl8y-amazon-intel-mcp](https://smithery.ai/server/janmacher02-xl8y/amazon-intel-mcp) | `smithery` | — | **[A](tools/janmacher02-xl8y-amazon-intel-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Jul 1 |
 | [agentladle-financial-reports](https://smithery.ai/server/agentladle/financial-reports) | `smithery` | — | **[A](tools/agentladle-financial-reports.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×5 | Jul 8 |
-| [jan-krat-kj4q-tulugar-real-estate](https://smithery.ai/server/jan-krat-kj4q/tulugar-real-estate) | `smithery` | — | **[A](tools/jan-krat-kj4q-tulugar-real-estate.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×8 | Oct 27 |
+| [jan-krat-kj4q-tulugar-real-estate](https://smithery.ai/server/jan-krat-kj4q/tulugar-real-estate) | `smithery` | — | **[A](tools/jan-krat-kj4q-tulugar-real-estate.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×8 | Oct 28 |
 | [jan-audioknihy-catalog](https://smithery.ai/server/jan/audioknihy-catalog) | `smithery` | — | **[A](tools/jan-audioknihy-catalog.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×9 | Jul 4 |
 | [jamesrobson87-push-realm](https://smithery.ai/server/jamesrobson87/push-realm) | `smithery` | — | **[A](tools/jamesrobson87-push-realm.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×8, `AS-014` ×31, 🗝️ `AS-010` ×3 | Aug 3 |
-| [kaimeilabs-guardian-engine](https://smithery.ai/server/kaimeilabs/guardian-engine) | `smithery` | — | **[A](tools/kaimeilabs-guardian-engine.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
+| [kaimeilabs-guardian-engine](https://smithery.ai/server/kaimeilabs/guardian-engine) | `smithery` | — | **[A](tools/kaimeilabs-guardian-engine.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
 | [kakao-daum-search](https://smithery.ai/server/kakao/daum-search) | `smithery` | — | **[A](tools/kakao-daum-search.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×6 | Aug 4 |
 | [kakao-maps](https://smithery.ai/server/kakao/maps) | `smithery` | — | **[A](tools/kakao-maps.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Aug 8 |
 | [agents-finance-bank](https://smithery.ai/server/agents-finance/bank) | `smithery` | — | **[A](tools/agents-finance-bank.md)** | `AS-014` ×14, 🗝️ `AS-010` ×7, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jun 25 |
-| [worldmonitor-wm-mcp](https://smithery.ai/server/worldmonitor/wm-mcp) | `smithery` | — | **[A](tools/worldmonitor-wm-mcp.md)** | 🔑 `AS-002` ×39, `AS-014` ×39, ⚡ `AS-011` ×5 | Oct 27 |
+| [worldmonitor-wm-mcp](https://smithery.ai/server/worldmonitor/wm-mcp) | `smithery` | — | **[A](tools/worldmonitor-wm-mcp.md)** | 🔑 `AS-002` ×39, `AS-014` ×39, ⚡ `AS-011` ×5 | Oct 28 |
 | [wkruithof-metricsign](https://smithery.ai/server/wkruithof/metricsign) | `smithery` | — | **[A](tools/wkruithof-metricsign.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Jun 20 |
-| [kangletian-paper-mcp](https://smithery.ai/server/kangletian/paper-mcp) | `smithery` | — | **[A](tools/kangletian-paper-mcp.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×19, `AS-014` ×41, 🗝️ `AS-010` | Oct 27 |
+| [kangletian-paper-mcp](https://smithery.ai/server/kangletian/paper-mcp) | `smithery` | — | **[A](tools/kangletian-paper-mcp.md)** | 🔑 `AS-002` ×22, ⚡ `AS-011` ×19, `AS-014` ×41, 🗝️ `AS-010` | Oct 28 |
 | [agentwings-exa-mcp-server](https://smithery.ai/server/AgentWings/exa-mcp-server) | `smithery` | — | **[A](tools/agentwings-exa-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×2, 🗝️ `AS-010` | Jul 8 |
-| [agonzalez-prueba-mcp-seeker](https://smithery.ai/server/agonzalez/prueba-mcp-seeker) | `smithery` | — | **[A](tools/agonzalez-prueba-mcp-seeker.md)** | `AS-014` ×9, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 27 |
+| [agonzalez-prueba-mcp-seeker](https://smithery.ai/server/agonzalez/prueba-mcp-seeker) | `smithery` | — | **[A](tools/agonzalez-prueba-mcp-seeker.md)** | `AS-014` ×9, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 28 |
 | [kapoost-humanmcp](https://smithery.ai/server/kapoost/humanMCP) | `smithery` | — | **[A](tools/kapoost-humanmcp.md)** | 🔑 `AS-002` ×15, `AS-014` ×39, ⚡ `AS-011` ×11, 🗝️ `AS-010` | Aug 18 |
 | [karl-plate](https://smithery.ai/server/karl/plate) | `smithery` | — | **[A](tools/karl-plate.md)** | `AS-014` ×10, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jul 16 |
-| [jalpp-chessagine](https://smithery.ai/server/jalpp/chessagine) | `smithery` | — | **[A](tools/jalpp-chessagine.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×20, `AS-014` ×37 | Oct 27 |
-| [ahmed2real-thinkzone](https://smithery.ai/server/ahmed2real/thinkzone) | `smithery` | — | **[A](tools/ahmed2real-thinkzone.md)** | 🔑 `AS-002` ×48, ⚡ `AS-011` ×11, `AS-014` ×58 | Oct 27 |
+| [jalpp-chessagine](https://smithery.ai/server/jalpp/chessagine) | `smithery` | — | **[A](tools/jalpp-chessagine.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×20, `AS-014` ×37 | Oct 28 |
+| [ahmed2real-thinkzone](https://smithery.ai/server/ahmed2real/thinkzone) | `smithery` | — | **[A](tools/ahmed2real-thinkzone.md)** | 🔑 `AS-002` ×48, ⚡ `AS-011` ×11, `AS-014` ×58 | Oct 28 |
 | [jackalope-digital-moxie-docs](https://smithery.ai/server/jackalope-digital/moxie-docs) | `smithery` | — | **[A](tools/jackalope-digital-moxie-docs.md)** | 🔑 `AS-002` ×9, `AS-014` ×10, ⚡ `AS-011` | Jul 16 |
 | [kazokus-mcp-server](https://smithery.ai/server/kazokus/mcp-server) | `smithery` | — | **[A](tools/kazokus-mcp-server.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 15 |
 | [ai-collection-ai-collection](https://smithery.ai/server/ai-collection/ai-collection) | `smithery` | — | **[A](tools/ai-collection-ai-collection.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×6 | Jun 26 |
@@ -983,20 +983,20 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [vottunio-aiact50](https://smithery.ai/server/vottunio/aiact50) | `smithery` | — | **[A](tools/vottunio-aiact50.md)** | 🔑 `AS-002`, `AS-014` ×5 | Jun 30 |
 | [khan-ashifur-hooklayer](https://smithery.ai/server/khan-ashifur/hooklayer) | `smithery` | — | **[A](tools/khan-ashifur-hooklayer.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×7 | Jul 17 |
 | [khromov-svelte-llm-mcp](https://smithery.ai/server/khromov/svelte-llm-mcp) | `smithery` | — | **[A](tools/khromov-svelte-llm-mcp.md)** | 🔑 `AS-002` ×2, `AS-014` ×2, ⚡ `AS-011` | Jul 15 |
-| [voidly-mcp-server](https://smithery.ai/server/voidly/mcp-server) | `smithery` | — | **[A](tools/voidly-mcp-server.md)** | `AS-014` ×82, 🔑 `AS-002` ×26, ⚡ `AS-011` ×24 | Oct 27 |
+| [voidly-mcp-server](https://smithery.ai/server/voidly/mcp-server) | `smithery` | — | **[A](tools/voidly-mcp-server.md)** | `AS-014` ×82, 🔑 `AS-002` ×26, ⚡ `AS-011` ×24 | Oct 28 |
 | [vncentwonggg-bounty-api](https://smithery.ai/server/vncentwonggg/bounty-api) | `smithery` | — | **[A](tools/vncentwonggg-bounty-api.md)** | 🔑 `AS-002` ×2, `AS-014` ×5, ⚡ `AS-011` | Jul 27 |
 | [kindrat86-vc-deal-flow-signal](https://smithery.ai/server/kindrat86/vc-deal-flow-signal) | `smithery` | — | **[A](tools/kindrat86-vc-deal-flow-signal.md)** | `AS-014` ×6, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Jul 2 |
-| [king-of-the-grackles-discourse-forum-mcp](https://smithery.ai/server/king-of-the-grackles/discourse-forum-mcp) | `smithery` | — | **[A](tools/king-of-the-grackles-discourse-forum-mcp.md)** | `AS-014` ×15, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 27 |
-| [vivaldoeuropes-vivaldo-product-discovery](https://smithery.ai/server/vivaldoeuropes/vivaldo-product-discovery) | `smithery` | — | **[A](tools/vivaldoeuropes-vivaldo-product-discovery.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [king-of-the-grackles-discourse-forum-mcp](https://smithery.ai/server/king-of-the-grackles/discourse-forum-mcp) | `smithery` | — | **[A](tools/king-of-the-grackles-discourse-forum-mcp.md)** | `AS-014` ×15, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Oct 28 |
+| [vivaldoeuropes-vivaldo-product-discovery](https://smithery.ai/server/vivaldoeuropes/vivaldo-product-discovery) | `smithery` | — | **[A](tools/vivaldoeuropes-vivaldo-product-discovery.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [aigen-agent-tools](https://smithery.ai/server/aigen/agent-tools) | `smithery` | — | **[A](tools/aigen-agent-tools.md)** | 🗝️ `AS-010` ×5, `AS-014` ×37, 🔑 `AS-002` ×7, ⚡ `AS-011` ×6 | Jul 4 |
-| [virtualsms-virtualsms-mcp](https://smithery.ai/server/virtualsms/virtualsms-mcp) | `smithery` | — | **[A](tools/virtualsms-virtualsms-mcp.md)** | `AS-014` ×18, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
+| [virtualsms-virtualsms-mcp](https://smithery.ai/server/virtualsms/virtualsms-mcp) | `smithery` | — | **[A](tools/virtualsms-virtualsms-mcp.md)** | `AS-014` ×18, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
 | [aigen-defi-data](https://smithery.ai/server/aigen/defi-data) | `smithery` | — | **[A](tools/aigen-defi-data.md)** | 🗝️ `AS-010` ×5, `AS-014` ×37, 🔑 `AS-002` ×7, ⚡ `AS-011` ×6 | Jul 4 |
 | [vinaybhosle-shippingrates](https://smithery.ai/server/vinaybhosle/shippingrates) | `smithery` | — | **[A](tools/vinaybhosle-shippingrates.md)** | `AS-014` ×24, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jul 2 |
-| [vinaybhosle-shippingrates-mcp-server](https://smithery.ai/server/vinaybhosle/shippingrates-mcp-server) | `smithery` | — | **[A](tools/vinaybhosle-shippingrates-mcp-server.md)** | `AS-014` ×19, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 27 |
+| [vinaybhosle-shippingrates-mcp-server](https://smithery.ai/server/vinaybhosle/shippingrates-mcp-server) | `smithery` | — | **[A](tools/vinaybhosle-shippingrates-mcp-server.md)** | `AS-014` ×19, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 28 |
 | [aisle-wedding](https://smithery.ai/server/aisle/wedding) | `smithery` | — | **[A](tools/aisle-wedding.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×10 | Jun 25 |
-| [intake-triage-steadyfetch](https://smithery.ai/server/intake-triage/steadyfetch) | `smithery` | — | **[A](tools/intake-triage-steadyfetch.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×5 | Oct 27 |
+| [intake-triage-steadyfetch](https://smithery.ai/server/intake-triage/steadyfetch) | `smithery` | — | **[A](tools/intake-triage-steadyfetch.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×5 | Oct 28 |
 | [aiwyn](https://smithery.ai/server/aiwyn) | `smithery` | — | **[A](tools/aiwyn.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×10 | Oct 12 |
-| [ajie-jiebang-jiebang-tools](https://smithery.ai/server/ajie-jiebang/jiebang-tools) | `smithery` | — | **[A](tools/ajie-jiebang-jiebang-tools.md)** | 🔑 `AS-002` ×10, `AS-014` ×20, ⚡ `AS-011` ×6 | Oct 27 |
+| [ajie-jiebang-jiebang-tools](https://smithery.ai/server/ajie-jiebang/jiebang-tools) | `smithery` | — | **[A](tools/ajie-jiebang-jiebang-tools.md)** | 🔑 `AS-002` ×10, `AS-014` ×20, ⚡ `AS-011` ×6 | Oct 28 |
 | [ajie-jiebang-tools](https://smithery.ai/server/ajie-jiebang/tools) | `smithery` | — | **[A](tools/ajie-jiebang-tools.md)** | 🔑 `AS-002` ×10, `AS-014` ×20, ⚡ `AS-011` ×6 | Jul 4 |
 | [kolmo-cosntruction](https://smithery.ai/server/kolmo/cosntruction) | `smithery` | — | **[A](tools/kolmo-cosntruction.md)** | `AS-014` ×12, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 2 |
 | [vercel-grep](https://smithery.ai/server/vercel/grep) | `smithery` | — | **[A](tools/vercel-grep.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Aug 4 |
@@ -1008,10 +1008,10 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [vdineshk-sg-regulatory-data-mcp](https://smithery.ai/server/vdineshk/sg-regulatory-data-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-regulatory-data-mcp.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` | Jul 3 |
 | [infoseekai-tesla](https://smithery.ai/server/InfoseekAI/Tesla) | `smithery` | — | **[A](tools/infoseekai-tesla.md)** | `AS-014` ×15, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Jul 31 |
 | [albert-dwqs-viatsy-mcp](https://smithery.ai/server/albert-dwqs/viatsy-mcp) | `smithery` | — | **[A](tools/albert-dwqs-viatsy-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Jul 25 |
-| [koumoul-ademe-opendata](https://smithery.ai/server/koumoul/ademe-opendata) | `smithery` | — | **[A](tools/koumoul-ademe-opendata.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 27 |
+| [koumoul-ademe-opendata](https://smithery.ai/server/koumoul/ademe-opendata) | `smithery` | — | **[A](tools/koumoul-ademe-opendata.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Oct 28 |
 | [vdineshk-sg-finance-data-mcp](https://smithery.ai/server/vdineshk/sg-finance-data-mcp) | `smithery` | — | **[A](tools/vdineshk-sg-finance-data-mcp.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Aug 16 |
 | [aldred-guard-mail](https://smithery.ai/server/aldred/guard-mail) | `smithery` | — | **[A](tools/aldred-guard-mail.md)** | 🗝️ `AS-010`, `AS-014` ×11, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jul 16 |
-| [vbhjckfd-lad-lviv-ua](https://smithery.ai/server/vbhjckfd/lad-lviv-ua) | `smithery` | — | **[A](tools/vbhjckfd-lad-lviv-ua.md)** | `AS-014` ×8, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
+| [vbhjckfd-lad-lviv-ua](https://smithery.ai/server/vbhjckfd/lad-lviv-ua) | `smithery` | — | **[A](tools/vbhjckfd-lad-lviv-ua.md)** | `AS-014` ×8, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
 | [aleksei-volga-openvan-travel](https://smithery.ai/server/aleksei-volga/openvan-travel) | `smithery` | — | **[A](tools/aleksei-volga-openvan-travel.md)** | `AS-014` ×11, 🔑 `AS-002`, ⚡ `AS-011` | Jul 3 |
 | [infoseekai-bookingdotcom](https://smithery.ai/server/InfoseekAI/bookingdotcom) | `smithery` | — | **[A](tools/infoseekai-bookingdotcom.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 12 |
 | [vannelier-french-business-analyser](https://smithery.ai/server/Vannelier/french-business-analyser) | `smithery` | — | **[A](tools/vannelier-french-business-analyser.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×2, `AS-014` ×14 | Jun 30 |
@@ -1019,37 +1019,37 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [info-ylms-agenttrust](https://smithery.ai/server/info-ylms/agenttrust) | `smithery` | — | **[A](tools/info-ylms-agenttrust.md)** | `AS-014` ×19, 🔑 `AS-002` ×10, ⚡ `AS-011` ×5 | Jul 8 |
 | [info-ybpr-gantta-mcp](https://smithery.ai/server/info-ybpr/gantta-mcp) | `smithery` | — | **[A](tools/info-ybpr-gantta-mcp.md)** | `AS-014` ×26, 🔑 `AS-002` ×9, ⚡ `AS-011` ×8 | Jul 8 |
 | [valentinlemaire-climate-impacts](https://smithery.ai/server/valentinlemaire/climate-impacts) | `smithery` | — | **[A](tools/valentinlemaire-climate-impacts.md)** | `AS-014` ×8, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Jul 15 |
-| [kuibin-dev-hsk-mcp](https://smithery.ai/server/kuibin-dev/hsk-mcp) | `smithery` | — | **[A](tools/kuibin-dev-hsk-mcp.md)** | `AS-014` ×13, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [kuibin-dev-hsk-mcp](https://smithery.ai/server/kuibin-dev/hsk-mcp) | `smithery` | — | **[A](tools/kuibin-dev-hsk-mcp.md)** | `AS-014` ×13, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [kulkarnianirudha8-byteaskai](https://smithery.ai/server/kulkarnianirudha8/byteaskai) | `smithery` | — | **[A](tools/kulkarnianirudha8-byteaskai.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Jul 16 |
 | [vairogs-vairogs](https://smithery.ai/server/vairogs/vairogs) | `smithery` | — | **[A](tools/vairogs-vairogs.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×7 | Aug 4 |
 | [info-sjbg-webcamexplore](https://smithery.ai/server/info-sjbg/webcamexplore) | `smithery` | — | **[A](tools/info-sjbg-webcamexplore.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jul 4 |
 | [info-rpjo-tvr-mcp](https://smithery.ai/server/info-rpjo/tvr-mcp) | `smithery` | — | **[A](tools/info-rpjo-tvr-mcp.md)** | `AS-014` ×11, 🔑 `AS-002` ×2, ⚡ `AS-011` | Jul 12 |
 | [labsofuniverse-legacy-mcp-analyzer](https://smithery.ai/server/labsofuniverse/legacy-mcp-analyzer) | `smithery` | — | **[A](tools/labsofuniverse-legacy-mcp-analyzer.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×8 | Jul 15 |
-| [utkarshgupta885-sportiq](https://smithery.ai/server/utkarshgupta885/sportiq) | `smithery` | — | **[A](tools/utkarshgupta885-sportiq.md)** | `AS-014` ×44, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, 🗝️ `AS-010` ×10 | Oct 27 |
+| [utkarshgupta885-sportiq](https://smithery.ai/server/utkarshgupta885/sportiq) | `smithery` | — | **[A](tools/utkarshgupta885-sportiq.md)** | `AS-014` ×44, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, 🗝️ `AS-010` ×10 | Oct 28 |
 | [info-ood9-openaccountants](https://smithery.ai/server/info-ood9/openaccountants) | `smithery` | — | **[A](tools/info-ood9-openaccountants.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Jul 4 |
 | [usdv-capital-real-estate-cfo](https://smithery.ai/server/usdv-capital/real-estate-cfo) | `smithery` | — | **[A](tools/usdv-capital-real-estate-cfo.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2, `AS-014` ×23 | Jul 4 |
-| [alex-kenny-lee-vfjv-panko-food-safety](https://smithery.ai/server/alex-kenny-lee-vfjv/panko-food-safety) | `smithery` | — | **[A](tools/alex-kenny-lee-vfjv-panko-food-safety.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Oct 27 |
+| [alex-kenny-lee-vfjv-panko-food-safety](https://smithery.ai/server/alex-kenny-lee-vfjv/panko-food-safety) | `smithery` | — | **[A](tools/alex-kenny-lee-vfjv-panko-food-safety.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Oct 28 |
 | [info-gateonai-gateonai-mcp-server](https://smithery.ai/server/info-gateonai/gateonai-mcp-server) | `smithery` | — | **[A](tools/info-gateonai-gateonai-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×8 | Aug 6 |
 | [lanonasis-lano-enterprise-mcp](https://smithery.ai/server/lanonasis/lano-enterprise-mcp) | `smithery` | — | **[A](tools/lanonasis-lano-enterprise-mcp.md)** | `AS-014` ×28, 🔑 `AS-002` ×14, ⚡ `AS-011` ×8 | Aug 3 |
 | [lanonasis-lanonasis-mcp](https://smithery.ai/server/lanonasis/lanonasis-mcp) | `smithery` | — | **[A](tools/lanonasis-lanonasis-mcp.md)** | 🔑 `AS-002` ×11, `AS-014` ×19, ⚡ `AS-011` ×8 | Jul 16 |
 | [uphealth-signal](https://smithery.ai/server/uphealth/signal) | `smithery` | — | **[A](tools/uphealth-signal.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×5 | Aug 6 |
-| [larrybuildsai-resultrail](https://smithery.ai/server/larrybuildsai/resultrail) | `smithery` | — | **[A](tools/larrybuildsai-resultrail.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
+| [larrybuildsai-resultrail](https://smithery.ai/server/larrybuildsai/resultrail) | `smithery` | — | **[A](tools/larrybuildsai-resultrail.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
 | [latlng-work-latlng](https://smithery.ai/server/latlng-work/latlng) | `smithery` | — | **[A](tools/latlng-work-latlng.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 15 |
-| [info-6d0w-backtesting-arena](https://smithery.ai/server/info-6d0w/backtesting-arena) | `smithery` | — | **[A](tools/info-6d0w-backtesting-arena.md)** | `AS-014` ×65, 🔑 `AS-002` ×11, ⚡ `AS-011` ×9 | Oct 27 |
+| [info-6d0w-backtesting-arena](https://smithery.ai/server/info-6d0w/backtesting-arena) | `smithery` | — | **[A](tools/info-6d0w-backtesting-arena.md)** | `AS-014` ×65, 🔑 `AS-002` ×11, ⚡ `AS-011` ×9 | Oct 28 |
 | [untitledfinancial-alternative-asset-literacy](https://smithery.ai/server/untitledfinancial/alternative-asset-literacy) | `smithery` | — | **[A](tools/untitledfinancial-alternative-asset-literacy.md)** | `AS-014` ×7, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jul 16 |
 | [alexandria-shai-eden-caselaw](https://smithery.ai/server/alexandria-shai-eden/caselaw) | `smithery` | — | **[A](tools/alexandria-shai-eden-caselaw.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Jul 3 |
 | [ali-7ogs-storyflo](https://smithery.ai/server/ali-7ogs/storyflo) | `smithery` | — | **[A](tools/ali-7ogs-storyflo.md)** | 🔑 `AS-002` ×18, ⚡ `AS-011` ×18, `AS-014` ×23, ⚡ `AS-006` | Aug 9 |
-| [underground-district-ucd-mcp](https://smithery.ai/server/underground-district/ucd-mcp) | `smithery` | — | **[A](tools/underground-district-ucd-mcp.md)** | `AS-014` ×21, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, 🗝️ `AS-010` | Oct 27 |
-| [info-07of-property-finance-mcp](https://smithery.ai/server/info-07of/property-finance-mcp) | `smithery` | — | **[A](tools/info-07of-property-finance-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 27 |
-| [industrylens-mcp](https://smithery.ai/server/industrylens/mcp) | `smithery` | — | **[A](tools/industrylens-mcp.md)** | 🔑 `AS-002` ×6, `AS-014` ×12, ⚡ `AS-011` ×5 | Oct 27 |
+| [underground-district-ucd-mcp](https://smithery.ai/server/underground-district/ucd-mcp) | `smithery` | — | **[A](tools/underground-district-ucd-mcp.md)** | `AS-014` ×21, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, 🗝️ `AS-010` | Oct 28 |
+| [info-07of-property-finance-mcp](https://smithery.ai/server/info-07of/property-finance-mcp) | `smithery` | — | **[A](tools/info-07of-property-finance-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Oct 28 |
+| [industrylens-mcp](https://smithery.ai/server/industrylens/mcp) | `smithery` | — | **[A](tools/industrylens-mcp.md)** | 🔑 `AS-002` ×6, `AS-014` ×12, ⚡ `AS-011` ×5 | Oct 28 |
 | [leonid-rise-base44-sdk-docs](https://smithery.ai/server/leonid-rise/base44-sdk-docs) | `smithery` | — | **[A](tools/leonid-rise-base44-sdk-docs.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Jul 5 |
 | [umg-gpt-moltpe](https://smithery.ai/server/umg-gpt/moltpe) | `smithery` | — | **[A](tools/umg-gpt-moltpe.md)** | `AS-014` ×11, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Aug 3 |
 | [ucpchecker-ucp-checker](https://smithery.ai/server/ucpchecker/ucp-checker) | `smithery` | — | **[A](tools/ucpchecker-ucp-checker.md)** | `AS-014` ×10, 🔑 `AS-002` ×6, ⚡ `AS-011` ×6 | Jul 27 |
 | [alperenkocyigit-semantic-scholar-graph-api](https://smithery.ai/server/alperenkocyigit/semantic-scholar-graph-api) | `smithery` | — | **[A](tools/alperenkocyigit-semantic-scholar-graph-api.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×12 | Jul 16 |
-| [li-fi-lifi-mcp](https://smithery.ai/server/li-fi/lifi-mcp) | `smithery` | — | **[A](tools/li-fi-lifi-mcp.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010` ×12, ⚡ `AS-011` ×18, `AS-014` ×25 | Oct 27 |
+| [li-fi-lifi-mcp](https://smithery.ai/server/li-fi/lifi-mcp) | `smithery` | — | **[A](tools/li-fi-lifi-mcp.md)** | 🔑 `AS-002` ×19, 🗝️ `AS-010` ×12, ⚡ `AS-011` ×18, `AS-014` ×25 | Oct 28 |
 | [turnbaibian-demo](https://smithery.ai/server/turnbaibian/demo) | `smithery` | — | **[A](tools/turnbaibian-demo.md)** | 🔑 `AS-002` ×3, `AS-014` ×4, ⚡ `AS-011` | Jul 16 |
 | [am-1m1k-muapi](https://smithery.ai/server/am-1m1k/muapi) | `smithery` | — | **[A](tools/am-1m1k-muapi.md)** | 🔑 `AS-002` ×19, ⚡ `AS-011` ×19, `AS-014` ×19 | Jul 16 |
-| [amalgix-document-intelligence](https://smithery.ai/server/amalgix/document-intelligence) | `smithery` | — | **[A](tools/amalgix-document-intelligence.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×8 | Oct 27 |
+| [amalgix-document-intelligence](https://smithery.ai/server/amalgix/document-intelligence) | `smithery` | — | **[A](tools/amalgix-document-intelligence.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×8 | Oct 28 |
 | [lilo-property-vacation-rentals](https://smithery.ai/server/lilo-property/vacation-rentals) | `smithery` | — | **[A](tools/lilo-property-vacation-rentals.md)** | `AS-014` ×64, 🔑 `AS-002` ×21, ⚡ `AS-011` ×15 | Jul 7 |
 | [imviky-zzzr-tickerr-live-status](https://smithery.ai/server/imviky-zzzr/tickerr-live-status) | `smithery` | — | **[A](tools/imviky-zzzr-tickerr-live-status.md)** | `AS-014` ×9, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` ×2 | Jul 3 |
 | [ilhami-sutci-alya-hub](https://smithery.ai/server/ilhami-sutci/alya-hub) | `smithery` | — | **[A](tools/ilhami-sutci-alya-hub.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×17 | Jul 17 |
@@ -1057,30 +1057,30 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [trust-security-scanner](https://smithery.ai/server/trust-security/scanner) | `smithery` | — | **[A](tools/trust-security-scanner.md)** | 🔑 `AS-002` ×8, `AS-014` ×9, ⚡ `AS-011` ×6 | Jul 4 |
 | [americandefault-research](https://smithery.ai/server/americandefault/research) | `smithery` | — | **[A](tools/americandefault-research.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Jun 25 |
 | [tripuck894-tripuck](https://smithery.ai/server/tripuck894/tripuck) | `smithery` | — | **[A](tools/tripuck894-tripuck.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Jul 15 |
-| [linkup-mcp-server](https://smithery.ai/server/LinkupPlatform/linkup-mcp-server) | `smithery` | — | **[A](tools/linkup-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [linkup-mcp-server](https://smithery.ai/server/LinkupPlatform/linkup-mcp-server) | `smithery` | — | **[A](tools/linkup-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
 | [trip1-trip1](https://smithery.ai/server/trip1/trip1) | `smithery` | — | **[A](tools/trip1-trip1.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Jul 15 |
-| [travis-kellogg1-coinrailz-mcp](https://smithery.ai/server/travis-kellogg1/coinrailz-mcp) | `smithery` | — | **[A](tools/travis-kellogg1-coinrailz-mcp.md)** | `AS-014` ×66, 🔑 `AS-002` ×8, ⚡ `AS-011` ×7, 🗝️ `AS-010` ×10 | Oct 27 |
+| [travis-kellogg1-coinrailz-mcp](https://smithery.ai/server/travis-kellogg1/coinrailz-mcp) | `smithery` | — | **[A](tools/travis-kellogg1-coinrailz-mcp.md)** | `AS-014` ×66, 🔑 `AS-002` ×8, ⚡ `AS-011` ×7, 🗝️ `AS-010` ×10 | Oct 28 |
 | [lionmaster-operations-lion-x402](https://smithery.ai/server/lionmaster-operations/lion-x402) | `smithery` | — | **[A](tools/lionmaster-operations-lion-x402.md)** | `AS-014` ×20, 🔑 `AS-002` ×8, ⚡ `AS-011` ×7, 🗝️ `AS-010` ×2 | Aug 15 |
 | [anthonypuggs-ausecon-mcp](https://smithery.ai/server/anthonypuggs/ausecon-mcp) | `smithery` | — | **[A](tools/anthonypuggs-ausecon-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×14 | Aug 4 |
-| [icosaedro-toolsnap-mcp](https://smithery.ai/server/icosaedro/toolsnap-mcp) | `smithery` | — | **[A](tools/icosaedro-toolsnap-mcp.md)** | `AS-014` ×17, 🔑 `AS-002` ×12, ⚡ `AS-011` ×12 | Oct 27 |
-| [lmktoday-commerce](https://smithery.ai/server/lmktoday/commerce) | `smithery` | — | **[A](tools/lmktoday-commerce.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×13 | Oct 27 |
-| [icons8community-icons8mpc](https://smithery.ai/server/icons8community/icons8mpc) | `smithery` | — | **[A](tools/icons8community-icons8mpc.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 27 |
+| [icosaedro-toolsnap-mcp](https://smithery.ai/server/icosaedro/toolsnap-mcp) | `smithery` | — | **[A](tools/icosaedro-toolsnap-mcp.md)** | `AS-014` ×17, 🔑 `AS-002` ×12, ⚡ `AS-011` ×12 | Oct 28 |
+| [lmktoday-commerce](https://smithery.ai/server/lmktoday/commerce) | `smithery` | — | **[A](tools/lmktoday-commerce.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×13 | Oct 28 |
+| [icons8community-icons8mpc](https://smithery.ai/server/icons8community/icons8mpc) | `smithery` | — | **[A](tools/icons8community-icons8mpc.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 28 |
 | [traderhc-agenthc](https://smithery.ai/server/traderhc/agenthc) | `smithery` | — | **[A](tools/traderhc-agenthc.md)** | `AS-014` ×28, 🔑 `AS-002`, ⚡ `AS-011` | Jul 15 |
 | [icons8community-icons8mcp](https://smithery.ai/server/icons8community/icons8mcp) | `smithery` | — | **[A](tools/icons8community-icons8mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Jul 16 |
 | [localgov-jp-mcp-server](https://smithery.ai/server/localgov-jp/mcp-server) | `smithery` | — | **[A](tools/localgov-jp-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×8, 🗝️ `AS-010` | Aug 10 |
 | [anusha5191-aicollectivetest](https://smithery.ai/server/anusha5191/aicollectivetest) | `smithery` | — | **[A](tools/anusha5191-aicollectivetest.md)** | 🔑 `AS-002` ×48, ⚡ `AS-011` ×11, `AS-014` ×58 | Jul 4 |
 | [anysearch-ai-anysearch](https://smithery.ai/server/anysearch-ai/anysearch) | `smithery` | — | **[A](tools/anysearch-ai-anysearch.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Jul 16 |
 | [tokenbel-financial-data](https://smithery.ai/server/tokenbel/financial-data) | `smithery` | — | **[A](tools/tokenbel-financial-data.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 16 |
-| [loved0543-kdata-gate](https://smithery.ai/server/loved0543/kdata-gate) | `smithery` | — | **[A](tools/loved0543-kdata-gate.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×13 | Oct 27 |
-| [aparajithn-agent-utils-mcp-new](https://smithery.ai/server/aparajithn/agent-utils-mcp-new) | `smithery` | — | **[A](tools/aparajithn-agent-utils-mcp-new.md)** | `AS-014` ×18, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Oct 27 |
+| [loved0543-kdata-gate](https://smithery.ai/server/loved0543/kdata-gate) | `smithery` | — | **[A](tools/loved0543-kdata-gate.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×13 | Oct 28 |
+| [aparajithn-agent-utils-mcp-new](https://smithery.ai/server/aparajithn/agent-utils-mcp-new) | `smithery` | — | **[A](tools/aparajithn-agent-utils-mcp-new.md)** | `AS-014` ×18, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Oct 28 |
 | [luca3-evm-copilot](https://smithery.ai/server/luca3/evm-copilot) | `smithery` | — | **[A](tools/luca3-evm-copilot.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×10 | Jul 5 |
 | [lucaperret-tidal](https://smithery.ai/server/lucaperret/tidal) | `smithery` | — | **[A](tools/lucaperret-tidal.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×8, `AS-014` ×40 | Jul 15 |
-| [aparajithn-agent-utils](https://smithery.ai/server/aparajithn/agent-utils) | `smithery` | — | **[A](tools/aparajithn-agent-utils.md)** | `AS-014` ×18, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Oct 27 |
-| [titansneaker-paper-search-mcp-openai-v2](https://smithery.ai/server/TitanSneaker/paper-search-mcp-openai-v2) | `smithery` | — | **[A](tools/titansneaker-paper-search-mcp-openai-v2.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×23, `AS-014` ×25 | Oct 27 |
+| [aparajithn-agent-utils](https://smithery.ai/server/aparajithn/agent-utils) | `smithery` | — | **[A](tools/aparajithn-agent-utils.md)** | `AS-014` ×18, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Oct 28 |
+| [titansneaker-paper-search-mcp-openai-v2](https://smithery.ai/server/TitanSneaker/paper-search-mcp-openai-v2) | `smithery` | — | **[A](tools/titansneaker-paper-search-mcp-openai-v2.md)** | 🔑 `AS-002` ×24, ⚡ `AS-011` ×23, `AS-014` ×25 | Oct 28 |
 | [timothy-walton45-squeezeos-api](https://smithery.ai/server/timothy-walton45/squeezeos-api) | `smithery` | — | **[A](tools/timothy-walton45-squeezeos-api.md)** | `AS-014` ×33, 🔑 `AS-002` ×8, 🗝️ `AS-010` ×6, ⚡ `AS-011` ×5 | Oct 25 |
 | [apatil0431-k8scortex-mcp](https://smithery.ai/server/apatil0431/k8scortex-mcp) | `smithery` | — | **[A](tools/apatil0431-k8scortex-mcp.md)** | `AS-014` ×75, 🔑 `AS-002` ×17, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Aug 6 |
 | [tikflydotio-tikfly-mcp](https://smithery.ai/server/tikflydotio/tikfly-mcp) | `smithery` | — | **[A](tools/tikflydotio-tikfly-mcp.md)** | `AS-014` ×12, 🔑 `AS-002` ×9, ⚡ `AS-011` ×5 | Jul 4 |
-| [tijaniismael62-revnuvo-dns](https://smithery.ai/server/tijaniismael62/revnuvo-dns) | `smithery` | — | **[A](tools/tijaniismael62-revnuvo-dns.md)** | `AS-014` ×9, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
+| [tijaniismael62-revnuvo-dns](https://smithery.ai/server/tijaniismael62/revnuvo-dns) | `smithery` | — | **[A](tools/tijaniismael62-revnuvo-dns.md)** | `AS-014` ×9, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
 | [luther-systems-insideout](https://smithery.ai/server/luther-systems/insideout) | `smithery` | — | **[A](tools/luther-systems-insideout.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×7, `AS-014` ×24, ⚡ `AS-006` | Jun 28 |
 | [thibault-ecomgraph](https://smithery.ai/server/thibault/ecomgraph) | `smithery` | — | **[A](tools/thibault-ecomgraph.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Aug 7 |
 | [thecolony-thecolony](https://smithery.ai/server/thecolony/thecolony) | `smithery` | — | **[A](tools/thecolony-thecolony.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×7 | Jul 4 |
@@ -1093,7 +1093,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [archtoolsdev-arch-tools](https://smithery.ai/server/archtoolsdev/arch-tools) | `smithery` | — | **[A](tools/archtoolsdev-arch-tools.md)** | 🗝️ `AS-010`, `AS-014` ×53, 🔑 `AS-002` ×21, ⚡ `AS-011` ×21 | Jul 11 |
 | [arithym-arithym](https://smithery.ai/server/Arithym/Arithym) | `smithery` | — | **[A](tools/arithym-arithym.md)** | `AS-014` ×62, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Jul 15 |
 | [teardrop-ai-teardrop](https://smithery.ai/server/teardrop-ai/teardrop) | `smithery` | — | **[A](tools/teardrop-ai-teardrop.md)** | `AS-014` ×25, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×6 | Jul 16 |
-| [arjunkmrm-grep](https://smithery.ai/server/arjunkmrm/grep) | `smithery` | — | **[A](tools/arjunkmrm-grep.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
+| [arjunkmrm-grep](https://smithery.ai/server/arjunkmrm/grep) | `smithery` | — | **[A](tools/arjunkmrm-grep.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
 | [mailwarm-mailx-tools](https://smithery.ai/server/mailwarm/mailx-tools) | `smithery` | — | **[A](tools/mailwarm-mailx-tools.md)** | `AS-014` ×16, 🔑 `AS-002` ×3, 🗝️ `AS-010` ×2, ⚡ `AS-011` ×2 | Jun 30 |
 | [tarashanziichuk-soloway](https://smithery.ai/server/tarashanziichuk/soloway) | `smithery` | — | **[A](tools/tarashanziichuk-soloway.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Jul 19 |
 | [tandem-docs-mcp](https://smithery.ai/server/tandem/docs-mcp) | `smithery` | — | **[A](tools/tandem-docs-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×13 | Jul 1 |
@@ -1103,14 +1103,14 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [synapselayer-synapse-protocol](https://smithery.ai/server/synapselayer/synapse-protocol) | `smithery` | — | **[A](tools/synapselayer-synapse-protocol.md)** | `AS-014` ×13, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, 🗝️ `AS-010` ×2 | Aug 14 |
 | [howard-eridani-spark](https://smithery.ai/server/howard-eridani/spark) | `smithery` | — | **[A](tools/howard-eridani-spark.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Jul 16 |
 | [arxiv](https://smithery.ai/server/arxiv) | `smithery` | — | **[A](tools/arxiv.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Jul 17 |
-| [housingassist-tokyo-housing](https://smithery.ai/server/housingassist/tokyo-housing) | `smithery` | — | **[A](tools/housingassist-tokyo-housing.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×7 | Oct 27 |
+| [housingassist-tokyo-housing](https://smithery.ai/server/housingassist/tokyo-housing) | `smithery` | — | **[A](tools/housingassist-tokyo-housing.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×7 | Oct 28 |
 | [honeybulr-etapa](https://smithery.ai/server/honeybulr/etapa) | `smithery` | — | **[A](tools/honeybulr-etapa.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jun 21 |
 | [swapp19902-designforyou](https://smithery.ai/server/swapp19902/designforyou) | `smithery` | — | **[A](tools/swapp19902-designforyou.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Aug 18 |
 | [svelte](https://smithery.ai/server/svelte) | `smithery` | — | **[A](tools/svelte.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×4 | Jul 4 |
-| [surprise-buddy-mcp-server](https://smithery.ai/server/surprise-buddy/mcp-server) | `smithery` | — | **[A](tools/surprise-buddy-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Oct 27 |
+| [surprise-buddy-mcp-server](https://smithery.ai/server/surprise-buddy/mcp-server) | `smithery` | — | **[A](tools/surprise-buddy-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Oct 28 |
 | [martin111ma-za5d-swiss-truth-mcp](https://smithery.ai/server/martin111ma-za5d/swiss-truth-mcp) | `smithery` | — | **[A](tools/martin111ma-za5d-swiss-truth-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×6 | Aug 6 |
-| [support-i3bt-kpi-depot](https://smithery.ai/server/support-i3bt/kpi-depot) | `smithery` | — | **[A](tools/support-i3bt-kpi-depot.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
-| [math-mcp](https://smithery.ai/server/EthanHenrickson/math-mcp) | `smithery` | — | **[A](tools/math-mcp.md)** | `AS-014` ×22, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 27 |
+| [support-i3bt-kpi-depot](https://smithery.ai/server/support-i3bt/kpi-depot) | `smithery` | — | **[A](tools/support-i3bt-kpi-depot.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
+| [math-mcp](https://smithery.ai/server/EthanHenrickson/math-mcp) | `smithery` | — | **[A](tools/math-mcp.md)** | `AS-014` ×22, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 28 |
 | [hithereiamaliff-mcp-ltadatamallsg](https://smithery.ai/server/hithereiamaliff/mcp-ltadatamallsg) | `smithery` | — | **[A](tools/hithereiamaliff-mcp-ltadatamallsg.md)** | `AS-014` ×7, 🔑 `AS-002`, ⚡ `AS-011` | Jul 1 |
 | [hithereiamaliff-mcp-ghostcms](https://smithery.ai/server/hithereiamaliff/mcp-ghostcms) | `smithery` | — | **[A](tools/hithereiamaliff-mcp-ghostcms.md)** | `AS-014` ×44, 🔑 `AS-002` ×11, ⚡ `AS-011` ×3 | Jul 31 |
 | [atars-mcp-aarnaai](https://smithery.ai/server/atars-MCP/aarnaai) | `smithery` | — | **[A](tools/atars-mcp-aarnaai.md)** | `AS-014` ×18, 🔑 `AS-002` ×5, ⚡ `AS-011` ×3 | Jul 16 |
@@ -1118,23 +1118,23 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [hissingspider-deerdawn](https://smithery.ai/server/hissingspider/DeerDawn) | `smithery` | — | **[A](tools/hissingspider-deerdawn.md)** | `AS-014` ×18, 🔑 `AS-002` ×10, ⚡ `AS-011` ×4 | Jul 18 |
 | [hiroshi-c9-edition](https://smithery.ai/server/hiroshi-c9/edition) | `smithery` | — | **[A](tools/hiroshi-c9-edition.md)** | `AS-014` ×31, 🔑 `AS-002` ×10, ⚡ `AS-011` ×9 | Jul 4 |
 | [hipaaagent-hipaa-agent](https://smithery.ai/server/hipaaagent/hipaa-agent) | `smithery` | — | **[A](tools/hipaaagent-hipaa-agent.md)** | `AS-014` ×36, 🔑 `AS-002` ×11, ⚡ `AS-011` ×10 | Jul 4 |
-| [subwayinfo](https://smithery.ai/server/subwayinfo) | `smithery` | — | **[A](tools/subwayinfo.md)** | 🔑 `AS-002` ×9, `AS-014` ×23, ⚡ `AS-011` ×5 | Oct 27 |
+| [subwayinfo](https://smithery.ai/server/subwayinfo) | `smithery` | — | **[A](tools/subwayinfo.md)** | 🔑 `AS-002` ×9, `AS-014` ×23, ⚡ `AS-011` ×5 | Oct 28 |
 | [stockvibes07-meeting-mcp](https://smithery.ai/server/stockvibes07/meeting-mcp) | `smithery` | — | **[A](tools/stockvibes07-meeting-mcp.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Aug 18 |
-| [hi-10f9-vetted-consumer](https://smithery.ai/server/hi-10f9/vetted-consumer) | `smithery` | — | **[A](tools/hi-10f9-vetted-consumer.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011`, 🗝️ `AS-010` | Oct 27 |
+| [hi-10f9-vetted-consumer](https://smithery.ai/server/hi-10f9/vetted-consumer) | `smithery` | — | **[A](tools/hi-10f9-vetted-consumer.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011`, 🗝️ `AS-010` | Oct 28 |
 | [aws-docs](https://smithery.ai/server/aws/docs) | `smithery` | — | **[A](tools/aws-docs.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Aug 15 |
 | [hellokitty-v-smithery-mcp-servers](https://smithery.ai/server/hellokitty-v/smithery-mcp-servers) | `smithery` | — | **[A](tools/hellokitty-v-smithery-mcp-servers.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Jun 20 |
-| [hello-uvza-sansfiction](https://smithery.ai/server/hello-uvza/sansfiction) | `smithery` | — | **[A](tools/hello-uvza-sansfiction.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2, `AS-014` ×16 | Oct 27 |
-| [hello-oipe-geppetto-robot-directory](https://smithery.ai/server/hello-oipe/Geppetto-Robot-Directory) | `smithery` | — | **[A](tools/hello-oipe-geppetto-robot-directory.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×5 | Oct 27 |
+| [hello-uvza-sansfiction](https://smithery.ai/server/hello-uvza/sansfiction) | `smithery` | — | **[A](tools/hello-uvza-sansfiction.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2, `AS-014` ×16 | Oct 28 |
+| [hello-oipe-geppetto-robot-directory](https://smithery.ai/server/hello-oipe/Geppetto-Robot-Directory) | `smithery` | — | **[A](tools/hello-oipe-geppetto-robot-directory.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×5 | Oct 28 |
 | [hello-lc0b-earlywire](https://smithery.ai/server/hello-lc0b/earlywire) | `smithery` | — | **[A](tools/hello-lc0b-earlywire.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 26 |
 | [helixboxai-pubfi-mcp](https://smithery.ai/server/helixboxai/pubfi-mcp) | `smithery` | — | **[A](tools/helixboxai-pubfi-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Jul 16 |
 | [axel-belfort-cron-parser](https://smithery.ai/server/axel-belfort/cron-parser) | `smithery` | — | **[A](tools/axel-belfort-cron-parser.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 20 |
-| [mcp-browserbase](https://smithery.ai/server/browserbasehq/mcp-browserbase) | `smithery` | — | **[A](tools/mcp-browserbase.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [mcp-browserbase](https://smithery.ai/server/browserbasehq/mcp-browserbase) | `smithery` | — | **[A](tools/mcp-browserbase.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [axel-belfort-crontab-generator](https://smithery.ai/server/axel-belfort/crontab-generator) | `smithery` | — | **[A](tools/axel-belfort-crontab-generator.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Aug 10 |
 | [heavysword1-agentpredict](https://smithery.ai/server/heavysword1/agentpredict) | `smithery` | — | **[A](tools/heavysword1-agentpredict.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Jul 26 |
 | [heavysword1-agentpatent](https://smithery.ai/server/heavysword1/agentpatent) | `smithery` | — | **[A](tools/heavysword1-agentpatent.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Jul 29 |
 | [heavysword1-agentfood](https://smithery.ai/server/heavysword1/agentfood) | `smithery` | — | **[A](tools/heavysword1-agentfood.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` ×3 | Aug 16 |
-| [standardaccounting-public-mcp](https://smithery.ai/server/standardaccounting/public-mcp) | `smithery` | — | **[A](tools/standardaccounting-public-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
-| [heavysword1-agentecon](https://smithery.ai/server/heavysword1/AgentEcon) | `smithery` | — | **[A](tools/heavysword1-agentecon.md)** | `AS-014` ×7, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [standardaccounting-public-mcp](https://smithery.ai/server/standardaccounting/public-mcp) | `smithery` | — | **[A](tools/standardaccounting-public-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
+| [heavysword1-agentecon](https://smithery.ai/server/heavysword1/AgentEcon) | `smithery` | — | **[A](tools/heavysword1-agentecon.md)** | `AS-014` ×7, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [heavysword1-agentai](https://smithery.ai/server/heavysword1/agentai) | `smithery` | — | **[A](tools/heavysword1-agentai.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Aug 16 |
 | [heather-macavelia-ai-agent-index](https://smithery.ai/server/heather-macavelia/ai-agent-index) | `smithery` | — | **[A](tools/heather-macavelia-ai-agent-index.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Jun 21 |
 | [hazoservices-gotimer-mcp](https://smithery.ai/server/hazoservices/gotimer-mcp) | `smithery` | — | **[A](tools/hazoservices-gotimer-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jul 3 |
@@ -1157,33 +1157,33 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [groundapi-groundapi](https://smithery.ai/server/groundapi/groundapi) | `smithery` | — | **[A](tools/groundapi-groundapi.md)** | 🗝️ `AS-010` ×13, `AS-014` ×13, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jul 4 |
 | [greg-agentorist](https://smithery.ai/server/greg/Agentorist) | `smithery` | — | **[A](tools/greg-agentorist.md)** | `AS-014` ×7, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jul 15 |
 | [greetwell-travel](https://smithery.ai/server/greetwell/travel) | `smithery` | — | **[A](tools/greetwell-travel.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jun 24 |
-| [smithery-ai-national-weather-service](https://smithery.ai/server/smithery-ai/national-weather-service) | `smithery` | — | **[A](tools/smithery-ai-national-weather-service.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [smithery-ai-national-weather-service](https://smithery.ai/server/smithery-ai/national-weather-service) | `smithery` | — | **[A](tools/smithery-ai-national-weather-service.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [smhussainm-0px3-brcuqtde2pisrtwto1kwscop4lwc7lngagj6v](https://smithery.ai/server/smhussainm-0px3/brcuqTdE2pIsrTwto1kwsCoP4lwc7lNGagJ6V) | `smithery` | — | **[A](tools/smhussainm-0px3-brcuqtde2pisrtwto1kwscop4lwc7lngagj6v.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×5 | Aug 15 |
-| [govbase-govbase](https://smithery.ai/server/govbase/govbase) | `smithery` | — | **[A](tools/govbase-govbase.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×10 | Oct 27 |
+| [govbase-govbase](https://smithery.ai/server/govbase/govbase) | `smithery` | — | **[A](tools/govbase-govbase.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×10 | Oct 28 |
 | [slookisen-lokal-norsk-matfinner](https://smithery.ai/server/slookisen/lokal-norsk-matfinner) | `smithery` | — | **[A](tools/slookisen-lokal-norsk-matfinner.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jul 3 |
 | [googletasks](https://smithery.ai/server/googletasks) | `smithery` | — | **[A](tools/googletasks.md)** | `AS-014` ×14, 🔑 `AS-002` ×9, ⚡ `AS-011` | Aug 6 |
-| [slmusayev-tls-radar](https://smithery.ai/server/slmusayev/tls-radar) | `smithery` | — | **[A](tools/slmusayev-tls-radar.md)** | `AS-014` ×17, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 27 |
-| [slack](https://smithery.ai/server/slack) | `smithery` | — | **[A](tools/slack.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Oct 27 |
-| [slack-smithery](https://smithery.ai/server/slack) | `smithery` | — | **[A](tools/slack-smithery.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Oct 27 |
+| [slmusayev-tls-radar](https://smithery.ai/server/slmusayev/tls-radar) | `smithery` | — | **[A](tools/slmusayev-tls-radar.md)** | `AS-014` ×17, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 28 |
+| [slack](https://smithery.ai/server/slack) | `smithery` | — | **[A](tools/slack.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Oct 28 |
+| [slack-smithery](https://smithery.ai/server/slack) | `smithery` | — | **[A](tools/slack-smithery.md)** | `AS-014` ×11, 🔑 `AS-002` ×3 | Oct 28 |
 | [axel-belfort-keyword-research](https://smithery.ai/server/axel-belfort/keyword-research) | `smithery` | — | **[A](tools/axel-belfort-keyword-research.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 19 |
 | [axel-belfort-nft-metadata](https://smithery.ai/server/axel-belfort/nft-metadata) | `smithery` | — | **[A](tools/axel-belfort-nft-metadata.md)** | 🔑 `AS-002`, 🗝️ `AS-010`, ⚡ `AS-011`, `AS-014` | Sep 19 |
-| [googledrive](https://smithery.ai/server/googledrive) | `smithery` | — | **[A](tools/googledrive.md)** | `AS-014` ×18, 🔑 `AS-002` ×17, ⚡ `AS-011` ×7 | Oct 27 |
-| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[A](tools/googledocs.md)** | `AS-014` ×14, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 27 |
+| [googledrive](https://smithery.ai/server/googledrive) | `smithery` | — | **[A](tools/googledrive.md)** | `AS-014` ×18, 🔑 `AS-002` ×17, ⚡ `AS-011` ×7 | Oct 28 |
+| [googledocs](https://smithery.ai/server/googledocs) | `smithery` | — | **[A](tools/googledocs.md)** | `AS-014` ×14, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, 🗝️ `AS-010` ×2 | Oct 28 |
 | [skone-pqc-khepra-mcp](https://smithery.ai/server/skone/pqc-khepra-mcp) | `smithery` | — | **[A](tools/skone-pqc-khepra-mcp.md)** | 🔑 `AS-002` ×32, `AS-014` ×72, ⚡ `AS-011` ×13, 🗝️ `AS-010` ×4 | Jul 16 |
 | [axel-belfort-ocr-extract](https://smithery.ai/server/axel-belfort/ocr-extract) | `smithery` | — | **[A](tools/axel-belfort-ocr-extract.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 20 |
 | [google-scholar](https://smithery.ai/server/google/scholar) | `smithery` | — | **[A](tools/google-scholar.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 16 |
 | [google-patents](https://smithery.ai/server/google/patents) | `smithery` | — | **[A](tools/google-patents.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 4 |
-| [google-news](https://smithery.ai/server/google/news) | `smithery` | — | **[A](tools/google-news.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
+| [google-news](https://smithery.ai/server/google/news) | `smithery` | — | **[A](tools/google-news.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
 | [skills-hub-ai-skill-search](https://smithery.ai/server/skills-hub-ai/skill-search) | `smithery` | — | **[A](tools/skills-hub-ai-skill-search.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Jul 2 |
 | [google-local](https://smithery.ai/server/google/local) | `smithery` | — | **[A](tools/google-local.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 4 |
 | [google-jobs](https://smithery.ai/server/google/jobs) | `smithery` | — | **[A](tools/google-jobs.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 4 |
 | [google-hotels](https://smithery.ai/server/google/hotels) | `smithery` | — | **[A](tools/google-hotels.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 10 |
 | [axel-belfort-person-enrichment](https://smithery.ai/server/axel-belfort/person-enrichment) | `smithery` | — | **[A](tools/axel-belfort-person-enrichment.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 20 |
 | [axel-belfort-qr-code](https://smithery.ai/server/axel-belfort/qr-code) | `smithery` | — | **[A](tools/axel-belfort-qr-code.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 20 |
-| [mcp-semantic-scholar](https://smithery.ai/server/hamid-vakilzadeh/mcpsemanticscholar) | `smithery` | — | **[A](tools/mcp-semantic-scholar.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×12 | Oct 27 |
+| [mcp-semantic-scholar](https://smithery.ai/server/hamid-vakilzadeh/mcpsemanticscholar) | `smithery` | — | **[A](tools/mcp-semantic-scholar.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×12 | Oct 28 |
 | [sincetoday-podcast-commerce-mcp](https://smithery.ai/server/sincetoday/podcast-commerce-mcp) | `smithery` | — | **[A](tools/sincetoday-podcast-commerce-mcp.md)** | 🔑 `AS-002` ×2, 🗝️ `AS-010` ×5, ⚡ `AS-011` ×2, `AS-014` ×5 | Jul 2 |
-| [simon-9wwy-toolzy-mcp](https://smithery.ai/server/simon-9wwy/toolzy-mcp) | `smithery` | — | **[A](tools/simon-9wwy-toolzy-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Oct 27 |
-| [gmail](https://smithery.ai/server/gmail) | `smithery` | — | **[A](tools/gmail.md)** | `AS-014` ×31, 🔑 `AS-002` ×20, ⚡ `AS-011` ×12 | Oct 27 |
+| [simon-9wwy-toolzy-mcp](https://smithery.ai/server/simon-9wwy/toolzy-mcp) | `smithery` | — | **[A](tools/simon-9wwy-toolzy-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Oct 28 |
+| [gmail](https://smithery.ai/server/gmail) | `smithery` | — | **[A](tools/gmail.md)** | `AS-014` ×31, 🔑 `AS-002` ×20, ⚡ `AS-011` ×12 | Oct 28 |
 | [axel-belfort-research-report](https://smithery.ai/server/axel-belfort/research-report) | `smithery` | — | **[A](tools/axel-belfort-research-report.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Sep 20 |
 | [signerlabs-shipswift](https://smithery.ai/server/signerlabs/shipswift) | `smithery` | — | **[A](tools/signerlabs-shipswift.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Jul 16 |
 | [sigai-cancersupport](https://smithery.ai/server/sigai/cancersupport) | `smithery` | — | **[A](tools/sigai-cancersupport.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jul 1 |
@@ -1197,10 +1197,10 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [ghostrouter-ghostrouter-web](https://smithery.ai/server/ghostrouter/ghostrouter-web) | `smithery` | — | **[A](tools/ghostrouter-ghostrouter-web.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Aug 15 |
 | [axel-belfort-trust-score](https://smithery.ai/server/axel-belfort/trust-score) | `smithery` | — | **[A](tools/axel-belfort-trust-score.md)** | ⚡ `AS-006`, `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Sep 20 |
 | [axel-belfort-twitter-scraper](https://smithery.ai/server/axel-belfort/twitter-scraper) | `smithery` | — | **[A](tools/axel-belfort-twitter-scraper.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Sep 20 |
-| [shawnnygoh-arxiv-scout](https://smithery.ai/server/shawnnygoh/arxiv-scout) | `smithery` | — | **[A](tools/shawnnygoh-arxiv-scout.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×8 | Oct 27 |
+| [shawnnygoh-arxiv-scout](https://smithery.ai/server/shawnnygoh/arxiv-scout) | `smithery` | — | **[A](tools/shawnnygoh-arxiv-scout.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×8 | Oct 28 |
 | [geromesportelli-snapforge](https://smithery.ai/server/geromesportelli/snapforge) | `smithery` | — | **[A](tools/geromesportelli-snapforge.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Jul 16 |
 | [axel-belfort-vector-search](https://smithery.ai/server/axel-belfort/vector-search) | `smithery` | — | **[A](tools/axel-belfort-vector-search.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Aug 15 |
-| [sfiorini-youtube-mcp](https://smithery.ai/server/sfiorini/youtube-mcp) | `smithery` | — | **[A](tools/sfiorini-youtube-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 27 |
+| [sfiorini-youtube-mcp](https://smithery.ai/server/sfiorini/youtube-mcp) | `smithery` | — | **[A](tools/sfiorini-youtube-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 28 |
 | [geobio-context7](https://smithery.ai/server/geobio/context7) | `smithery` | — | **[A](tools/geobio-context7.md)** | 🔑 `AS-002` ×2, `AS-014` ×2, 🗝️ `AS-010`, ⚡ `AS-011` | Jul 16 |
 | [settlegrid-settlegrid-discovery](https://smithery.ai/server/settlegrid/settlegrid-discovery) | `smithery` | — | **[A](tools/settlegrid-settlegrid-discovery.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×6 | Jul 3 |
 | [axel-belfort-web-search](https://smithery.ai/server/axel-belfort/web-search) | `smithery` | — | **[A](tools/axel-belfort-web-search.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Aug 15 |
@@ -1208,24 +1208,24 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [geertjan-xkcdforthat](https://smithery.ai/server/geertjan/xkcdforthat) | `smithery` | — | **[A](tools/geertjan-xkcdforthat.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Jul 15 |
 | [gce](https://smithery.ai/server/gce) | `smithery` | — | **[A](tools/gce.md)** | 🔑 `AS-002` ×5, `AS-014` ×29, ⚡ `AS-011` ×3 | Jul 22 |
 | [gautamgb-mcpindex](https://smithery.ai/server/gautamgb/mcpindex) | `smithery` | — | **[A](tools/gautamgb-mcpindex.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` | Aug 18 |
-| [senzing-entity-resolution](https://smithery.ai/server/senzing/entity-resolution) | `smithery` | — | **[A](tools/senzing-entity-resolution.md)** | 🔑 `AS-002` ×10, `AS-014` ×13, ⚡ `AS-011` ×6 | Oct 27 |
+| [senzing-entity-resolution](https://smithery.ai/server/senzing/entity-resolution) | `smithery` | — | **[A](tools/senzing-entity-resolution.md)** | 🔑 `AS-002` ×10, `AS-014` ×13, ⚡ `AS-011` ×6 | Oct 28 |
 | [garasegae-aiskillstore](https://smithery.ai/server/garasegae/aiskillstore) | `smithery` | — | **[A](tools/garasegae-aiskillstore.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×10, 🗝️ `AS-010` ×2 | Jul 9 |
 | [gaopengbin-cesium-mcp-runtime](https://smithery.ai/server/gaopengbin/cesium-mcp-runtime) | `smithery` | — | **[A](tools/gaopengbin-cesium-mcp-runtime.md)** | `AS-014` ×43, 🔑 `AS-002` ×12, ⚡ `AS-011` ×4 | Aug 15 |
 | [gantta-gantta-mcp](https://smithery.ai/server/gantta/gantta-mcp) | `smithery` | — | **[A](tools/gantta-gantta-mcp.md)** | `AS-014` ×26, 🔑 `AS-002` ×9, ⚡ `AS-011` ×8 | Jun 24 |
-| [sennebels-transita](https://smithery.ai/server/sennebels/transita) | `smithery` | — | **[A](tools/sennebels-transita.md)** | 🔑 `AS-002` ×3, `AS-014` ×6, ⚡ `AS-011` ×2 | Oct 27 |
+| [sennebels-transita](https://smithery.ai/server/sennebels/transita) | `smithery` | — | **[A](tools/sennebels-transita.md)** | 🔑 `AS-002` ×3, `AS-014` ×6, ⚡ `AS-011` ×2 | Oct 28 |
 | [g-scorpiosky-hpsilab-quantum-finance](https://smithery.ai/server/g-scorpiosky/hpsilab-quantum-finance) | `smithery` | — | **[A](tools/g-scorpiosky-hpsilab-quantum-finance.md)** | `AS-014` ×9, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jul 16 |
 | [bakyang2-x402watch](https://smithery.ai/server/bakyang2/x402watch) | `smithery` | — | **[A](tools/bakyang2-x402watch.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jun 23 |
 | [securityscan-api-securityscan](https://smithery.ai/server/securityscan-api/securityscan) | `smithery` | — | **[A](tools/securityscan-api-securityscan.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Jul 16 |
 | [fruitflies-connect](https://smithery.ai/server/fruitflies/connect) | `smithery` | — | **[A](tools/fruitflies-connect.md)** | `AS-014` ×22, 🔑 `AS-002` ×8, 🗝️ `AS-010` ×16, ⚡ `AS-011` ×3 | Oct 15 |
-| [friso-compliancecheckup](https://smithery.ai/server/friso/compliancecheckup) | `smithery` | — | **[A](tools/friso-compliancecheckup.md)** | 🔑 `AS-002` ×4, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
-| [secureship-docs](https://smithery.ai/server/secureship/docs) | `smithery` | — | **[A](tools/secureship-docs.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 27 |
+| [friso-compliancecheckup](https://smithery.ai/server/friso/compliancecheckup) | `smithery` | — | **[A](tools/friso-compliancecheckup.md)** | 🔑 `AS-002` ×4, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
+| [secureship-docs](https://smithery.ai/server/secureship/docs) | `smithery` | — | **[A](tools/secureship-docs.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 28 |
 | [secondsim-mcp-server](https://smithery.ai/server/secondsim/mcp-server) | `smithery` | — | **[A](tools/secondsim-mcp-server.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jun 30 |
-| [bbeksh-mcppedia](https://smithery.ai/server/bbeksh/mcppedia) | `smithery` | — | **[A](tools/bbeksh-mcppedia.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 27 |
+| [bbeksh-mcppedia](https://smithery.ai/server/bbeksh/mcppedia) | `smithery` | — | **[A](tools/bbeksh-mcppedia.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Oct 28 |
 | [seb-8pd6-vistoya](https://smithery.ai/server/seb-8pd6/vistoya) | `smithery` | — | **[A](tools/seb-8pd6-vistoya.md)** | 🔑 `AS-002`, `AS-014` ×5 | Jun 21 |
 | [foura-mcp](https://smithery.ai/server/foura/mcp) | `smithery` | — | **[A](tools/foura-mcp.md)** | 🔑 `AS-002` ×6, `AS-014` ×4 | Jul 15 |
 | [fouldomain-phish-analytics](https://smithery.ai/server/fouldomain/phish-analytics) | `smithery` | — | **[A](tools/fouldomain-phish-analytics.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×8 | Jul 1 |
 | [seahbk1006-seahboonkeong-chat-opendosm](https://smithery.ai/server/seahbk1006/seahboonkeong-chat-opendosm) | `smithery` | — | **[A](tools/seahbk1006-seahboonkeong-chat-opendosm.md)** | `AS-014` ×7, 🔑 `AS-002`, ⚡ `AS-011` | Jul 25 |
-| [seahbk1006-seahboonkeong-chat-bnmapi](https://smithery.ai/server/seahbk1006/seahboonkeong-chat-bnmapi) | `smithery` | — | **[A](tools/seahbk1006-seahboonkeong-chat-bnmapi.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [seahbk1006-seahboonkeong-chat-bnmapi](https://smithery.ai/server/seahbk1006/seahboonkeong-chat-bnmapi) | `smithery` | — | **[A](tools/seahbk1006-seahboonkeong-chat-bnmapi.md)** | `AS-014` ×26, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [beamer-complexity-cost-calculator-mcp](https://smithery.ai/server/beamer/complexity-cost-calculator-mcp) | `smithery` | — | **[A](tools/beamer-complexity-cost-calculator-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Jul 16 |
 | [flopsindex-flopsindex](https://smithery.ai/server/flopsindex/flopsindex) | `smithery` | — | **[A](tools/flopsindex-flopsindex.md)** | `AS-014` ×5, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jul 12 |
 | [scrappycmo-share-of-model](https://smithery.ai/server/scrappycmo/share-of-model) | `smithery` | — | **[A](tools/scrappycmo-share-of-model.md)** | 🔑 `AS-002` ×2, `AS-014` ×4, ⚡ `AS-011` | Jul 16 |
@@ -1233,35 +1233,35 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [scrapegraphai-inc-sgai](https://smithery.ai/server/scrapegraphai-inc/sgai) | `smithery` | — | **[A](tools/scrapegraphai-inc-sgai.md)** | 🔑 `AS-002` ×15, `AS-014` ×17, ⚡ `AS-011` ×4 | Jul 16 |
 | [benzsevern-goldencheck](https://smithery.ai/server/benzsevern/goldencheck) | `smithery` | — | **[A](tools/benzsevern-goldencheck.md)** | 🔑 `AS-002` ×14, `AS-014` ×19, ⚡ `AS-011` | Jun 24 |
 | [betterpost-betterpost](https://smithery.ai/server/betterpost/betterpost) | `smithery` | — | **[A](tools/betterpost-betterpost.md)** | 🔑 `AS-002` ×13, 🗝️ `AS-010` ×22, ⚡ `AS-011` ×9, `AS-014` ×22 | Jul 16 |
-| [fhl-fhl-mcp-server](https://smithery.ai/server/fhl/fhl-mcp-server) | `smithery` | — | **[A](tools/fhl-fhl-mcp-server.md)** | `AS-014` ×28, 🔑 `AS-002` ×9, ⚡ `AS-011` ×9 | Oct 27 |
+| [fhl-fhl-mcp-server](https://smithery.ai/server/fhl/fhl-mcp-server) | `smithery` | — | **[A](tools/fhl-fhl-mcp-server.md)** | `AS-014` ×28, 🔑 `AS-002` ×9, ⚡ `AS-011` ×9 | Oct 28 |
 | [ferryhopper](https://smithery.ai/server/ferryhopper) | `smithery` | — | **[A](tools/ferryhopper.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Aug 3 |
 | [savordish-savor-dish](https://smithery.ai/server/savordish/savor-dish) | `smithery` | — | **[A](tools/savordish-savor-dish.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×31 | Jul 4 |
 | [fcfrasca-agent-canvas-arena](https://smithery.ai/server/fcfrasca/agent-canvas-arena) | `smithery` | — | **[A](tools/fcfrasca-agent-canvas-arena.md)** | `AS-014` ×9, 🔑 `AS-002`, ⚡ `AS-011` | Jul 3 |
 | [mcpanalytics-mcp-analytics](https://smithery.ai/server/mcpanalytics/mcp-analytics) | `smithery` | — | **[A](tools/mcpanalytics-mcp-analytics.md)** | `AS-014` ×19, 🔑 `AS-002` ×8, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Jul 16 |
 | [saurabhsharma2u-call-for-papers](https://smithery.ai/server/saurabhsharma2u/Call-for-papers) | `smithery` | — | **[A](tools/saurabhsharma2u-call-for-papers.md)** | `AS-014` ×13, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jun 21 |
-| [samimeshkor-dynamic-feed](https://smithery.ai/server/samimeshkor/dynamic-feed) | `smithery` | — | **[A](tools/samimeshkor-dynamic-feed.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 27 |
+| [samimeshkor-dynamic-feed](https://smithery.ai/server/samimeshkor/dynamic-feed) | `smithery` | — | **[A](tools/samimeshkor-dynamic-feed.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 28 |
 | [fate-craft-profound](https://smithery.ai/server/fate-craft/profound) | `smithery` | — | **[A](tools/fate-craft-profound.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Jul 4 |
-| [faresyoussef94-aws-knowledge-mcp](https://smithery.ai/server/FaresYoussef94/aws-knowledge-mcp) | `smithery` | — | **[A](tools/faresyoussef94-aws-knowledge-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 27 |
+| [faresyoussef94-aws-knowledge-mcp](https://smithery.ai/server/FaresYoussef94/aws-knowledge-mcp) | `smithery` | — | **[A](tools/faresyoussef94-aws-knowledge-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Oct 28 |
 | [bibigpt-video-summarizer](https://smithery.ai/server/bibigpt/video-summarizer) | `smithery` | — | **[A](tools/bibigpt-video-summarizer.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×6 | Jul 4 |
 | [falazuki-finance-br](https://smithery.ai/server/falazuki/finance-br) | `smithery` | — | **[A](tools/falazuki-finance-br.md)** | `AS-014` ×52, 🔑 `AS-002` ×5, ⚡ `AS-011` ×2 | Aug 12 |
 | [safeagent-token-safety](https://smithery.ai/server/safeagent/token-safety) | `smithery` | — | **[A](tools/safeagent-token-safety.md)** | 🗝️ `AS-010` ×5, `AS-014` ×34, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5 | Jul 4 |
 | [fabsforward2-zhoi-sbb-mcp](https://smithery.ai/server/fabsforward2-zhoi/sbb-mcp) | `smithery` | — | **[A](tools/fabsforward2-zhoi-sbb-mcp.md)** | 🔑 `AS-002` ×5, `AS-014` ×9, ⚡ `AS-011` ×2 | Jul 4 |
-| [mdenius-titan-store](https://smithery.ai/server/mdenius/titan-store) | `smithery` | — | **[A](tools/mdenius-titan-store.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5, 🗝️ `AS-010` ×3 | Oct 27 |
+| [mdenius-titan-store](https://smithery.ai/server/mdenius/titan-store) | `smithery` | — | **[A](tools/mdenius-titan-store.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5, 🗝️ `AS-010` ×3 | Oct 28 |
 | [rustfreeone-trailweights-mcp](https://smithery.ai/server/rustfreeone/trailweights-mcp) | `smithery` | — | **[A](tools/rustfreeone-trailweights-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×7 | Oct 15 |
-| [bigquery](https://smithery.ai/server/bigquery) | `smithery` | — | **[A](tools/bigquery.md)** | 🔑 `AS-002` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
+| [bigquery](https://smithery.ai/server/bigquery) | `smithery` | — | **[A](tools/bigquery.md)** | 🔑 `AS-002` ×5, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
 | [bikefuchs-stub](https://smithery.ai/server/bikefuchs/stub) | `smithery` | — | **[A](tools/bikefuchs-stub.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×7 | Jul 16 |
 | [runpay-marketplace](https://smithery.ai/server/runpay/marketplace) | `smithery` | — | **[A](tools/runpay-marketplace.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Jul 16 |
 | [rubenayla-partle](https://smithery.ai/server/rubenayla/partle) | `smithery` | — | **[A](tools/rubenayla-partle.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×5 | Jul 1 |
-| [bitget-ai-bitget-mcp](https://smithery.ai/server/bitget-ai/bitget-mcp) | `smithery` | — | **[A](tools/bitget-ai-bitget-mcp.md)** | `AS-014` ×19, 🗝️ `AS-010`, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 27 |
+| [bitget-ai-bitget-mcp](https://smithery.ai/server/bitget-ai/bitget-mcp) | `smithery` | — | **[A](tools/bitget-ai-bitget-mcp.md)** | `AS-014` ×19, 🗝️ `AS-010`, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 28 |
 | [bitpoort-on-chain-data](https://smithery.ai/server/bitpoort/on-chain-data) | `smithery` | — | **[A](tools/bitpoort-on-chain-data.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×8, `AS-014` ×41 | Jul 10 |
 | [blueprint-infrastructure-solentic](https://smithery.ai/server/blueprint-infrastructure/Solentic) | `smithery` | — | **[A](tools/blueprint-infrastructure-solentic.md)** | 🗝️ `AS-010` ×3, `AS-014` ×26, 🔑 `AS-002` ×10, ⚡ `AS-011` ×7 | Jul 4 |
 | [memesio-meme-generator](https://smithery.ai/server/memesio/meme-generator) | `smithery` | — | **[A](tools/memesio-meme-generator.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×7, 🗝️ `AS-010` ×5 | Aug 6 |
 | [boar-network-blockchain-advanced](https://smithery.ai/server/boar-network/blockchain-advanced) | `smithery` | — | **[A](tools/boar-network-blockchain-advanced.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×13 | Jul 16 |
-| [exa](https://smithery.ai/server/exa) | `smithery` | — | **[A](tools/exa.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [exa](https://smithery.ai/server/exa) | `smithery` | — | **[A](tools/exa.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
 | [eveoy-mcp](https://smithery.ai/server/eveoy/mcp) | `smithery` | — | **[A](tools/eveoy-mcp.md)** | 🔑 `AS-002` ×7, `AS-014` ×11, ⚡ `AS-011` ×5 | Jul 29 |
 | [evan-7cwc-terminalfeed](https://smithery.ai/server/evan-7cwc/terminalfeed) | `smithery` | — | **[A](tools/evan-7cwc-terminalfeed.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×16, `AS-014` ×27 | Jul 5 |
 | [eugene-labonarsky-votura-app](https://smithery.ai/server/eugene-labonarsky/votura-app) | `smithery` | — | **[A](tools/eugene-labonarsky-votura-app.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Jul 30 |
-| [etweisberg-mlb-mcp](https://smithery.ai/server/etweisberg/mlb-mcp) | `smithery` | — | **[A](tools/etweisberg-mlb-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, `AS-014` ×46 | Oct 27 |
+| [etweisberg-mlb-mcp](https://smithery.ai/server/etweisberg/mlb-mcp) | `smithery` | — | **[A](tools/etweisberg-mlb-mcp.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, `AS-014` ×46 | Oct 28 |
 | [mesquared-visibility](https://smithery.ai/server/mesquared/visibility) | `smithery` | — | **[A](tools/mesquared-visibility.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 16 |
 | [erik-7clt-local-intel](https://smithery.ai/server/erik-7clt/local-intel) | `smithery` | — | **[A](tools/erik-7clt-local-intel.md)** | 🔑 `AS-002` ×7, `AS-014` ×20, ⚡ `AS-011` ×4 | Jul 10 |
 | [eren-solutions-report-needs](https://smithery.ai/server/eren-solutions/report-needs) | `smithery` | — | **[A](tools/eren-solutions-report-needs.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×7 | Jun 30 |
@@ -1269,27 +1269,27 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [meteomatics-meteomatics](https://smithery.ai/server/meteomatics/meteomatics) | `smithery` | — | **[A](tools/meteomatics-meteomatics.md)** | 🔑 `AS-002` ×2, `AS-014` ×9, ⚡ `AS-011` | Aug 15 |
 | [eren-solutions-mcp-security-audit](https://smithery.ai/server/eren-solutions/mcp-security-audit) | `smithery` | — | **[A](tools/eren-solutions-mcp-security-audit.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jul 15 |
 | [metrxbot-mcp-server](https://smithery.ai/server/metrxbot/mcp-server) | `smithery` | — | **[A](tools/metrxbot-mcp-server.md)** | `AS-014` ×23, 🔑 `AS-002` ×7, ⚡ `AS-011` ×5 | Jul 16 |
-| [meydancisezgi-gigora](https://smithery.ai/server/meydancisezgi/gigora) | `smithery` | — | **[A](tools/meydancisezgi-gigora.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 27 |
+| [meydancisezgi-gigora](https://smithery.ai/server/meydancisezgi/gigora) | `smithery` | — | **[A](tools/meydancisezgi-gigora.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Oct 28 |
 | [reyd8777-framefetch](https://smithery.ai/server/reyd8777/framefetch) | `smithery` | — | **[A](tools/reyd8777-framefetch.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Aug 6 |
 | [mi4uu-brain-md](https://smithery.ai/server/mi4uu/brain-md) | `smithery` | — | **[A](tools/mi4uu-brain-md.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×2, `AS-014` ×16, 🗝️ `AS-010` | Jul 16 |
-| [boar-network-blockchain-basic](https://smithery.ai/server/boar-network/blockchain-basic) | `smithery` | — | **[A](tools/boar-network-blockchain-basic.md)** | `AS-014` ×37, 🗝️ `AS-010` ×4, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
+| [boar-network-blockchain-basic](https://smithery.ai/server/boar-network/blockchain-basic) | `smithery` | — | **[A](tools/boar-network-blockchain-basic.md)** | `AS-014` ×37, 🗝️ `AS-010` ×4, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
 | [botoi-botoi-mcp](https://smithery.ai/server/botoi/botoi-mcp) | `smithery` | — | **[A](tools/botoi-botoi-mcp.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×11, `AS-014` ×49, 🗝️ `AS-010` ×6 | Jul 4 |
 | [ren89752-aidroid](https://smithery.ai/server/ren89752/aidroid) | `smithery` | — | **[A](tools/ren89752-aidroid.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Jul 3 |
 | [microsoft-learn-mcp](https://smithery.ai/server/microsoft/learn_mcp) | `smithery` | — | **[A](tools/microsoft-learn-mcp.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×3 | Jun 18 |
 | [bouch-celestine](https://smithery.ai/server/bouch/celestine) | `smithery` | — | **[A](tools/bouch-celestine.md)** | `AS-014` ×12, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 16 |
-| [middlebrick-api-security](https://smithery.ai/server/middlebrick/api-security) | `smithery` | — | **[A](tools/middlebrick-api-security.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Oct 27 |
+| [middlebrick-api-security](https://smithery.ai/server/middlebrick/api-security) | `smithery` | — | **[A](tools/middlebrick-api-security.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Oct 28 |
 | [bouch-govuk](https://smithery.ai/server/bouch/govuk) | `smithery` | — | **[A](tools/bouch-govuk.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2, `AS-014` ×7 | Jul 4 |
 | [rei02061986-patent-space-mcp](https://smithery.ai/server/Rei02061986/patent-space-mcp) | `smithery` | — | **[A](tools/rei02061986-patent-space-mcp.md)** | `AS-014` ×29, 🔑 `AS-002` ×20, ⚡ `AS-011` ×5 | Jul 3 |
-| [bouch-pinescript](https://smithery.ai/server/bouch/pinescript) | `smithery` | — | **[A](tools/bouch-pinescript.md)** | 🔑 `AS-002` ×5, `AS-014` ×10, ⚡ `AS-011` | Oct 27 |
+| [bouch-pinescript](https://smithery.ai/server/bouch/pinescript) | `smithery` | — | **[A](tools/bouch-pinescript.md)** | 🔑 `AS-002` ×5, `AS-014` ×10, ⚡ `AS-011` | Oct 28 |
 | [equipdash-equipdash](https://smithery.ai/server/equipdash/equipdash) | `smithery` | — | **[A](tools/equipdash-equipdash.md)** | `AS-014` ×15, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Aug 1 |
-| [entia-entity-verification](https://smithery.ai/server/entia/entity-verification) | `smithery` | — | **[A](tools/entia-entity-verification.md)** | `AS-014` ×12, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 27 |
+| [entia-entity-verification](https://smithery.ai/server/entia/entity-verification) | `smithery` | — | **[A](tools/entia-entity-verification.md)** | `AS-014` ×12, 🔑 `AS-002` ×4, ⚡ `AS-011` ×3 | Oct 28 |
 | [enji-ai-marketing-agent](https://smithery.ai/server/enji/ai-marketing-agent) | `smithery` | — | **[A](tools/enji-ai-marketing-agent.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×9 | Jun 25 |
-| [bouch-uk-due-diligence](https://smithery.ai/server/bouch/uk-due-diligence) | `smithery` | — | **[A](tools/bouch-uk-due-diligence.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×16 | Oct 27 |
+| [bouch-uk-due-diligence](https://smithery.ai/server/bouch/uk-due-diligence) | `smithery` | — | **[A](tools/bouch-uk-due-diligence.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×16 | Oct 28 |
 | [refetch-web](https://smithery.ai/server/refetch/web) | `smithery` | — | **[A](tools/refetch-web.md)** | `AS-014` ×6, 🔑 `AS-002` ×5, ⚡ `AS-011` ×5 | Jul 4 |
 | [bouch-uk-legal](https://smithery.ai/server/bouch/uk-legal) | `smithery` | — | **[A](tools/bouch-uk-legal.md)** | `AS-014` ×29, 🔑 `AS-002` ×16, ⚡ `AS-011` ×16 | Jul 4 |
 | [redilinxa-toyshub](https://smithery.ai/server/redilinxa/toyshub) | `smithery` | — | **[A](tools/redilinxa-toyshub.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Jul 27 |
-| [reddit](https://smithery.ai/server/reddit) | `smithery` | — | **[A](tools/reddit.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×10 | Oct 27 |
-| [bouch-whatdotheyknow](https://smithery.ai/server/bouch/whatdotheyknow) | `smithery` | — | **[A](tools/bouch-whatdotheyknow.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×8 | Oct 27 |
+| [reddit](https://smithery.ai/server/reddit) | `smithery` | — | **[A](tools/reddit.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×10 | Oct 28 |
+| [bouch-whatdotheyknow](https://smithery.ai/server/bouch/whatdotheyknow) | `smithery` | — | **[A](tools/bouch-whatdotheyknow.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×8 | Oct 28 |
 | [recursive-support](https://smithery.ai/server/recursive/support) | `smithery` | — | **[A](tools/recursive-support.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Jul 28 |
 | [brendan-parasure](https://smithery.ai/server/brendan/parasure) | `smithery` | — | **[A](tools/brendan-parasure.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 13 |
 | [ember-forge-pte-civilquants](https://smithery.ai/server/ember-forge-pte/civilquants) | `smithery` | — | **[A](tools/ember-forge-pte-civilquants.md)** | 🔑 `AS-002` ×49, ⚡ `AS-011` ×49, `AS-014` ×52 | Aug 1 |
@@ -1298,7 +1298,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [ravi8585-zgts-derma-roller](https://smithery.ai/server/ravi8585/zgts-derma-roller) | `smithery` | — | **[A](tools/ravi8585-zgts-derma-roller.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jul 3 |
 | [rationalbloks-rationalbloks](https://smithery.ai/server/rationalbloks/rationalbloks) | `smithery` | — | **[A](tools/rationalbloks-rationalbloks.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2, `AS-014` ×18 | Jul 4 |
 | [rashforddamion-rivalsearch](https://smithery.ai/server/rashforddamion/rivalsearch) | `smithery` | — | **[A](tools/rashforddamion-rivalsearch.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×11, `AS-014` ×18 | Jul 3 |
-| [ralf-fyndling](https://smithery.ai/server/ralf/fyndling) | `smithery` | — | **[A](tools/ralf-fyndling.md)** | `AS-014` ×8, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
+| [ralf-fyndling](https://smithery.ai/server/ralf/fyndling) | `smithery` | — | **[A](tools/ralf-fyndling.md)** | `AS-014` ×8, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
 | [bryanhellard-tt41-daedalmap](https://smithery.ai/server/bryanhellard-tt41/daedalmap) | `smithery` | — | **[A](tools/bryanhellard-tt41-daedalmap.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` | Jul 3 |
 | [modellix-modellix-docs](https://smithery.ai/server/modellix/modellix-docs) | `smithery` | — | **[A](tools/modellix-modellix-docs.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 4 |
 | [budgetfitter-budgetfitter](https://smithery.ai/server/budgetfitter/budgetfitter) | `smithery` | — | **[A](tools/budgetfitter-budgetfitter.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×4 | Aug 6 |
@@ -1309,86 +1309,86 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [moodtrip-agentroam](https://smithery.ai/server/moodtrip/agentroam) | `smithery` | — | **[A](tools/moodtrip-agentroam.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×11, 🗝️ `AS-010` ×3 | Aug 15 |
 | [burnmydays-civitae](https://smithery.ai/server/burnmydays/civitae) | `smithery` | — | **[A](tools/burnmydays-civitae.md)** | `AS-014` ×19, 🔑 `AS-002` ×6, 🗝️ `AS-010` ×8, ⚡ `AS-011` ×3 | Aug 8 |
 | [mosesy5688-free2aitools](https://smithery.ai/server/mosesy5688/free2aitools) | `smithery` | — | **[A](tools/mosesy5688-free2aitools.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Aug 9 |
-| [mostrecommendedbooks-books](https://smithery.ai/server/mostrecommendedbooks/books) | `smithery` | — | **[A](tools/mostrecommendedbooks-books.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 27 |
+| [mostrecommendedbooks-books](https://smithery.ai/server/mostrecommendedbooks/books) | `smithery` | — | **[A](tools/mostrecommendedbooks-books.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 28 |
 | [motivegrid-vehicle-database](https://smithery.ai/server/motivegrid/vehicle-database) | `smithery` | — | **[A](tools/motivegrid-vehicle-database.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Aug 17 |
 | [businesszilioli-arcadetrading](https://smithery.ai/server/businesszilioli/ArcadeTrading) | `smithery` | — | **[A](tools/businesszilioli-arcadetrading.md)** | `AS-014` ×8, 🔑 `AS-002` ×3, 🗝️ `AS-010` ×9, ⚡ `AS-011` ×3 | Jul 16 |
-| [mr-gigiliiii-d3vtools](https://smithery.ai/server/mr-gigiliiii/d3vtools) | `smithery` | — | **[A](tools/mr-gigiliiii-d3vtools.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [mr-gigiliiii-d3vtools](https://smithery.ai/server/mr-gigiliiii/d3vtools) | `smithery` | — | **[A](tools/mr-gigiliiii-d3vtools.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [caliper-caliper](https://smithery.ai/server/caliper/caliper) | `smithery` | — | **[A](tools/caliper-caliper.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×10, `AS-014` ×10 | Jul 15 |
 | [mrodasensio-aicol](https://smithery.ai/server/mrodasensio/aicol) | `smithery` | — | **[A](tools/mrodasensio-aicol.md)** | 🔑 `AS-002` ×48, ⚡ `AS-011` ×11, `AS-014` ×58 | Jul 4 |
 | [quotewise-quotewise](https://smithery.ai/server/quotewise/quotewise) | `smithery` | — | **[A](tools/quotewise-quotewise.md)** | 🔑 `AS-002` ×11, `AS-014` ×14, ⚡ `AS-011` ×5 | Aug 18 |
 | [calvinling2021-synapse-geo](https://smithery.ai/server/calvinling2021/synapse-geo) | `smithery` | — | **[A](tools/calvinling2021-synapse-geo.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×6 | Jun 28 |
-| [quelvio-mcp-server](https://smithery.ai/server/quelvio/mcp-server) | `smithery` | — | **[A](tools/quelvio-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` ×3 | Oct 27 |
+| [quelvio-mcp-server](https://smithery.ai/server/quelvio/mcp-server) | `smithery` | — | **[A](tools/quelvio-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` ×3 | Oct 28 |
 | [quantoracle-quantoracle](https://smithery.ai/server/QuantOracle/quantoracle) | `smithery` | — | **[A](tools/quantoracle-quantoracle.md)** | `AS-014` ×79, 🔑 `AS-002` ×19, ⚡ `AS-011` ×15, 🗝️ `AS-010` ×2, ⚡ `AS-006` | Aug 18 |
 | [qiq-social](https://smithery.ai/server/qiq/social) | `smithery` | — | **[A](tools/qiq-social.md)** | `AS-014` ×25, 🔑 `AS-002` ×9, ⚡ `AS-011` ×2 | Jul 29 |
 | [dynamycsound-domain-lookup](https://smithery.ai/server/dynamycsound/domain-lookup) | `smithery` | — | **[A](tools/dynamycsound-domain-lookup.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×15 | Jul 3 |
-| [cammac-ibanforge](https://smithery.ai/server/cammac/IBANforge) | `smithery` | — | **[A](tools/cammac-ibanforge.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×11, `AS-014` ×11 | Oct 27 |
-| [qbtlabs-openmm-mcp](https://smithery.ai/server/qbtlabs/openmm-mcp) | `smithery` | — | **[A](tools/qbtlabs-openmm-mcp.md)** | `AS-014` ×13, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 27 |
+| [cammac-ibanforge](https://smithery.ai/server/cammac/IBANforge) | `smithery` | — | **[A](tools/cammac-ibanforge.md)** | 🔑 `AS-002` ×11, ⚡ `AS-011` ×11, `AS-014` ×11 | Oct 28 |
+| [qbtlabs-openmm-mcp](https://smithery.ai/server/qbtlabs/openmm-mcp) | `smithery` | — | **[A](tools/qbtlabs-openmm-mcp.md)** | `AS-014` ×13, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 28 |
 | [dushyant30suthar-endiagram](https://smithery.ai/server/dushyant30suthar/endiagram) | `smithery` | — | **[A](tools/dushyant30suthar-endiagram.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` | Aug 1 |
 | [qasper-business-agents](https://smithery.ai/server/qasper/business-agents) | `smithery` | — | **[A](tools/qasper-business-agents.md)** | `AS-014` ×7, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jun 21 |
-| [capratesignals-cap-rate-signals](https://smithery.ai/server/capratesignals/cap-rate-signals) | `smithery` | — | **[A](tools/capratesignals-cap-rate-signals.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×14 | Oct 27 |
+| [capratesignals-cap-rate-signals](https://smithery.ai/server/capratesignals/cap-rate-signals) | `smithery` | — | **[A](tools/capratesignals-cap-rate-signals.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×14 | Oct 28 |
 | [carboncashmere-cryptointelligence](https://smithery.ai/server/carboncashmere/cryptointelligence) | `smithery` | — | **[A](tools/carboncashmere-cryptointelligence.md)** | `AS-014` ×104, 🔑 `AS-002` ×13, ⚡ `AS-011` ×12 | Jul 4 |
 | [dropbeacon-drop-beacon-mcp](https://smithery.ai/server/dropbeacon/drop-beacon-mcp) | `smithery` | — | **[A](tools/dropbeacon-drop-beacon-mcp.md)** | 🔑 `AS-002`, 🗝️ `AS-010` ×6, ⚡ `AS-011`, `AS-014` ×6 | Jul 2 |
-| [pubmed](https://smithery.ai/server/pubmed) | `smithery` | — | **[A](tools/pubmed.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011`, `AS-014` ×7 | Oct 27 |
-| [cavasotti-doorvault](https://smithery.ai/server/cavasotti/doorvault) | `smithery` | — | **[A](tools/cavasotti-doorvault.md)** | 🔑 `AS-002` ×2, `AS-014` ×5, ⚡ `AS-011` | Oct 27 |
-| [domainkits-domainkits](https://smithery.ai/server/DomainKits/domainkits) | `smithery` | — | **[A](tools/domainkits-domainkits.md)** | 🔑 `AS-002` ×12, `AS-014` ×28, ⚡ `AS-011` ×3 | Oct 27 |
+| [pubmed](https://smithery.ai/server/pubmed) | `smithery` | — | **[A](tools/pubmed.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011`, `AS-014` ×7 | Oct 28 |
+| [cavasotti-doorvault](https://smithery.ai/server/cavasotti/doorvault) | `smithery` | — | **[A](tools/cavasotti-doorvault.md)** | 🔑 `AS-002` ×2, `AS-014` ×5, ⚡ `AS-011` | Oct 28 |
+| [domainkits-domainkits](https://smithery.ai/server/DomainKits/domainkits) | `smithery` | — | **[A](tools/domainkits-domainkits.md)** | 🔑 `AS-002` ×12, `AS-014` ×28, ⚡ `AS-011` ×3 | Oct 28 |
 | [promptfax-promptfax](https://smithery.ai/server/promptfax/promptfax) | `smithery` | — | **[A](tools/promptfax-promptfax.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×8 | Jul 29 |
 | [prohall-hair](https://smithery.ai/server/prohall/hair) | `smithery` | — | **[A](tools/prohall-hair.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×4, `AS-014` ×6 | Jul 1 |
-| [do-droid-seoul-essentials](https://smithery.ai/server/do-droid/seoul-essentials) | `smithery` | — | **[A](tools/do-droid-seoul-essentials.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×4 | Oct 27 |
+| [do-droid-seoul-essentials](https://smithery.ai/server/do-droid/seoul-essentials) | `smithery` | — | **[A](tools/do-droid-seoul-essentials.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×4 | Oct 28 |
 | [cecilyspeaks-demand-discovery-ai](https://smithery.ai/server/cecilyspeaks/demand-discovery-ai) | `smithery` | — | **[A](tools/cecilyspeaks-demand-discovery-ai.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Jul 3 |
 | [cfocoder-financial-modeling-prep-mcp-server](https://smithery.ai/server/cfocoder/financial-modeling-prep-mcp-server) | `smithery` | — | **[A](tools/cfocoder-financial-modeling-prep-mcp-server.md)** | 🔑 `AS-002` ×47, ⚡ `AS-011` ×38, `AS-014` ×253 | Jul 11 |
 | [predictionmarketspicks-quant](https://smithery.ai/server/predictionmarketspicks/quant) | `smithery` | — | **[A](tools/predictionmarketspicks-quant.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` | Oct 3 |
 | [nakranimeet2005-codeforces-mcp-tools](https://smithery.ai/server/nakranimeet2005/codeforces-mcp-tools) | `smithery` | — | **[A](tools/nakranimeet2005-codeforces-mcp-tools.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×11 | Jun 23 |
 | [pranaviate-statscan-mcp](https://smithery.ai/server/pranaviate/statscan-mcp) | `smithery` | — | **[A](tools/pranaviate-statscan-mcp.md)** | `AS-014` ×15, 🔑 `AS-002` ×6, ⚡ `AS-011` ×6 | Jul 3 |
-| [dimitry-parse-mcp](https://smithery.ai/server/dimitry/parse-mcp) | `smithery` | — | **[A](tools/dimitry-parse-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×6 | Oct 27 |
+| [dimitry-parse-mcp](https://smithery.ai/server/dimitry/parse-mcp) | `smithery` | — | **[A](tools/dimitry-parse-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×6 | Oct 28 |
 | [nansen-ai-nansen-mcp](https://smithery.ai/server/nansen-ai/Nansen-MCP) | `smithery` | — | **[A](tools/nansen-ai-nansen-mcp.md)** | `AS-014` ×24, 🔑 `AS-002` ×9, ⚡ `AS-011` ×6 | Jul 5 |
 | [napalkovmihail-mycel](https://smithery.ai/server/napalkovmihail/mycel) | `smithery` | — | **[A](tools/napalkovmihail-mycel.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Jun 29 |
 | [potarix-enricher](https://smithery.ai/server/potarix/enricher) | `smithery` | — | **[A](tools/potarix-enricher.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×3, `AS-014` ×9 | Jul 31 |
-| [digby-oldridge-colour-memory-api](https://smithery.ai/server/digby-oldridge/colour-memory-api) | `smithery` | — | **[A](tools/digby-oldridge-colour-memory-api.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×45, `AS-014` ×91 | Oct 27 |
+| [digby-oldridge-colour-memory-api](https://smithery.ai/server/digby-oldridge/colour-memory-api) | `smithery` | — | **[A](tools/digby-oldridge-colour-memory-api.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×45, `AS-014` ×91 | Oct 28 |
 | [checklist-day-registry](https://smithery.ai/server/checklist-day/registry) | `smithery` | — | **[A](tools/checklist-day-registry.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 2 |
 | [cherkavskyi-memplato](https://smithery.ai/server/cherkavskyi/memplato) | `smithery` | — | **[A](tools/cherkavskyi-memplato.md)** | `AS-014` ×29, 🔑 `AS-002` ×9, ⚡ `AS-011` ×2 | Jul 16 |
 | [naver-captcha](https://smithery.ai/server/naver/captcha) | `smithery` | — | **[A](tools/naver-captcha.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jul 24 |
 | [naver-datalab](https://smithery.ai/server/naver/datalab) | `smithery` | — | **[A](tools/naver-datalab.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Jul 4 |
-| [naver-search](https://smithery.ai/server/naver/search) | `smithery` | — | **[A](tools/naver-search.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×12 | Oct 27 |
+| [naver-search](https://smithery.ai/server/naver/search) | `smithery` | — | **[A](tools/naver-search.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×12 | Oct 28 |
 | [chia-health-chia-mcp](https://smithery.ai/server/chia-health/chia-mcp) | `smithery` | — | **[A](tools/chia-health-chia-mcp.md)** | `AS-014` ×30, 🔑 `AS-002` ×11, ⚡ `AS-011` ×7, 🗝️ `AS-010` ×24 | Jul 4 |
 | [polaris-dayze](https://smithery.ai/server/polaris/dayze) | `smithery` | — | **[A](tools/polaris-dayze.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×13 | Jul 29 |
 | [nell-creedspace](https://smithery.ai/server/nell/creedspace) | `smithery` | — | **[A](tools/nell-creedspace.md)** | `AS-014` ×16, 🔑 `AS-002`, ⚡ `AS-011` | Aug 15 |
 | [chirag127-yahoo-finance](https://smithery.ai/server/chirag127/yahoo-finance) | `smithery` | — | **[A](tools/chirag127-yahoo-finance.md)** | `AS-014` ×4, 🔑 `AS-002` ×2, ⚡ `AS-011` | Aug 3 |
 | [pmort2222-stratproof](https://smithery.ai/server/pmort2222/stratproof) | `smithery` | — | **[A](tools/pmort2222-stratproof.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Jun 25 |
 | [chriscoynetalent-yhjh-metastamp](https://smithery.ai/server/chriscoynetalent-yhjh/metastamp) | `smithery` | — | **[A](tools/chriscoynetalent-yhjh-metastamp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Aug 15 |
-| [chuhuoyuan-cloudflare](https://smithery.ai/server/chuhuoyuan/cloudflare) | `smithery` | — | **[A](tools/chuhuoyuan-cloudflare.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 27 |
-| [pkobielak-social-superpowers](https://smithery.ai/server/pkobielak/social-superpowers) | `smithery` | — | **[A](tools/pkobielak-social-superpowers.md)** | `AS-014` ×10, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 27 |
-| [pipeworx-pipeworx](https://smithery.ai/server/pipeworx/pipeworx) | `smithery` | — | **[A](tools/pipeworx-pipeworx.md)** | `AS-014` ×32, 🔑 `AS-002` ×13, ⚡ `AS-011` ×11, 🗝️ `AS-010` ×2 | Oct 27 |
-| [ciprianpater-srv-d7aoqmh5pdvs7391dcqg](https://smithery.ai/server/ciprianpater/srv-d7aoqmh5pdvs7391dcqg) | `smithery` | — | **[A](tools/ciprianpater-srv-d7aoqmh5pdvs7391dcqg.md)** | `AS-014` ×70, 🔑 `AS-002` ×19, ⚡ `AS-011` ×15, 🗝️ `AS-010` ×12 | Oct 27 |
+| [chuhuoyuan-cloudflare](https://smithery.ai/server/chuhuoyuan/cloudflare) | `smithery` | — | **[A](tools/chuhuoyuan-cloudflare.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Oct 28 |
+| [pkobielak-social-superpowers](https://smithery.ai/server/pkobielak/social-superpowers) | `smithery` | — | **[A](tools/pkobielak-social-superpowers.md)** | `AS-014` ×10, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Oct 28 |
+| [pipeworx-pipeworx](https://smithery.ai/server/pipeworx/pipeworx) | `smithery` | — | **[A](tools/pipeworx-pipeworx.md)** | `AS-014` ×32, 🔑 `AS-002` ×13, ⚡ `AS-011` ×11, 🗝️ `AS-010` ×2 | Oct 28 |
+| [ciprianpater-srv-d7aoqmh5pdvs7391dcqg](https://smithery.ai/server/ciprianpater/srv-d7aoqmh5pdvs7391dcqg) | `smithery` | — | **[A](tools/ciprianpater-srv-d7aoqmh5pdvs7391dcqg.md)** | `AS-014` ×70, 🔑 `AS-002` ×19, ⚡ `AS-011` ×15, 🗝️ `AS-010` ×12 | Oct 28 |
 | [nexgendata-apify-academic-research-mcp-server](https://smithery.ai/server/nexgendata-apify/academic-research-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-academic-research-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jul 29 |
 | [nexgendata-apify-developer-tools-mcp-server](https://smithery.ai/server/nexgendata-apify/developer-tools-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-developer-tools-mcp-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×7, ⚡ `AS-006` | Jul 16 |
 | [nexgendata-apify-ecommerce-intelligence-mcp-server](https://smithery.ai/server/nexgendata-apify/ecommerce-intelligence-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-ecommerce-intelligence-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Aug 18 |
-| [nexgendata-apify-finance-mcp-server](https://smithery.ai/server/nexgendata-apify/finance-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-finance-mcp-server.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [nexgendata-apify-github-mcp-server](https://smithery.ai/server/nexgendata-apify/github-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-github-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 27 |
-| [nexgendata-apify-google-maps-mcp-server](https://smithery.ai/server/nexgendata-apify/google-maps-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-google-maps-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×3 | Oct 27 |
-| [pinksaltlamp75-your-echo-agent](https://smithery.ai/server/pinksaltlamp75/Your-Echo-Agent-) | `smithery` | — | **[A](tools/pinksaltlamp75-your-echo-agent.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [nexgendata-apify-legal-mcp-server](https://smithery.ai/server/nexgendata-apify/legal-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-legal-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 27 |
+| [nexgendata-apify-finance-mcp-server](https://smithery.ai/server/nexgendata-apify/finance-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-finance-mcp-server.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [nexgendata-apify-github-mcp-server](https://smithery.ai/server/nexgendata-apify/github-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-github-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×4 | Oct 28 |
+| [nexgendata-apify-google-maps-mcp-server](https://smithery.ai/server/nexgendata-apify/google-maps-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-google-maps-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×3 | Oct 28 |
+| [pinksaltlamp75-your-echo-agent](https://smithery.ai/server/pinksaltlamp75/Your-Echo-Agent-) | `smithery` | — | **[A](tools/pinksaltlamp75-your-echo-agent.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [nexgendata-apify-legal-mcp-server](https://smithery.ai/server/nexgendata-apify/legal-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-legal-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Oct 28 |
 | [nexgendata-apify-news-mcp-server](https://smithery.ai/server/nexgendata-apify/news-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-news-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5 | Aug 15 |
 | [pineapple-ai-skill-history](https://smithery.ai/server/pineapple-ai/skill-history) | `smithery` | — | **[A](tools/pineapple-ai-skill-history.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Jul 2 |
-| [nexgendata-apify-redfin-mcp-server](https://smithery.ai/server/nexgendata-apify/redfin-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-redfin-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [nexgendata-apify-redfin-mcp-server](https://smithery.ai/server/nexgendata-apify/redfin-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-redfin-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
 | [nexgendata-apify-seo-web-analysis-mcp-server](https://smithery.ai/server/nexgendata-apify/seo-web-analysis-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-seo-web-analysis-mcp-server.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Aug 15 |
 | [nexgendata-apify-social-content-mcp-server](https://smithery.ai/server/nexgendata-apify/social-content-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-social-content-mcp-server.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×4 | Aug 15 |
 | [nexgendata-apify-sports-mcp-server](https://smithery.ai/server/nexgendata-apify/sports-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-sports-mcp-server.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Aug 4 |
 | [nexgendata-apify-yahoo-finance-mcp-server](https://smithery.ai/server/nexgendata-apify/yahoo-finance-mcp-server) | `smithery` | — | **[A](tools/nexgendata-apify-yahoo-finance-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Jul 28 |
 | [devteams-hellobooks](https://smithery.ai/server/devteams/Hellobooks) | `smithery` | — | **[A](tools/devteams-hellobooks.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Jul 1 |
-| [ckbk-subwayinfo-nyc](https://smithery.ai/server/ckbk/subwayinfo-nyc) | `smithery` | — | **[A](tools/ckbk-subwayinfo-nyc.md)** | 🔑 `AS-002` ×9, `AS-014` ×22, ⚡ `AS-011` ×5 | Oct 27 |
+| [ckbk-subwayinfo-nyc](https://smithery.ai/server/ckbk/subwayinfo-nyc) | `smithery` | — | **[A](tools/ckbk-subwayinfo-nyc.md)** | 🔑 `AS-002` ×9, `AS-014` ×22, ⚡ `AS-011` ×5 | Oct 28 |
 | [devids77-mcp-market-russia](https://smithery.ai/server/devids77/mcp-market-russia) | `smithery` | — | **[A](tools/devids77-mcp-market-russia.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×21 | Jun 21 |
 | [nextcut-nextcut](https://smithery.ai/server/NextCut/nextcut) | `smithery` | — | **[A](tools/nextcut-nextcut.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×7, `AS-014` ×15 | Jul 2 |
 | [dev-bd37-clicks-protocol](https://smithery.ai/server/dev-bd37/clicks-protocol) | `smithery` | — | **[A](tools/dev-bd37-clicks-protocol.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | Jul 12 |
 | [nicholasallenfrench-stackswap](https://smithery.ai/server/nicholasallenfrench/stackswap) | `smithery` | — | **[A](tools/nicholasallenfrench-stackswap.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×7, `AS-014` ×17 | Jul 16 |
-| [philpof102-mainstreet](https://smithery.ai/server/philpof102/mainstreet) | `smithery` | — | **[A](tools/philpof102-mainstreet.md)** | `AS-014` ×17, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Oct 27 |
+| [philpof102-mainstreet](https://smithery.ai/server/philpof102/mainstreet) | `smithery` | — | **[A](tools/philpof102-mainstreet.md)** | `AS-014` ×17, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Oct 28 |
 | [nick-7409-webotee-amazon-mcp](https://smithery.ai/server/nick-7409/webotee-amazon-mcp) | `smithery` | — | **[A](tools/nick-7409-webotee-amazon-mcp.md)** | `AS-014` ×65, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | Jul 4 |
 | [philippvoss2212-huettentouren](https://smithery.ai/server/philippvoss2212/huettentouren) | `smithery` | — | **[A](tools/philippvoss2212-huettentouren.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 15 |
 | [philidor-defi](https://smithery.ai/server/philidor/defi) | `smithery` | — | **[A](tools/philidor-defi.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×10 | Jun 24 |
-| [dev-7bd0-mcp-server](https://smithery.ai/server/dev-7bd0/mcp-server) | `smithery` | — | **[A](tools/dev-7bd0-mcp-server.md)** | 🔑 `AS-002` ×54, ⚡ `AS-011` ×48, `AS-014` ×55 | Oct 27 |
+| [dev-7bd0-mcp-server](https://smithery.ai/server/dev-7bd0/mcp-server) | `smithery` | — | **[A](tools/dev-7bd0-mcp-server.md)** | 🔑 `AS-002` ×54, ⚡ `AS-011` ×48, `AS-014` ×55 | Oct 28 |
 | [demomagic-lucy-apro](https://smithery.ai/server/demomagic/lucy-apro) | `smithery` | — | **[A](tools/demomagic-lucy-apro.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×8 | Jul 13 |
 | [phantom-connect-sdk](https://smithery.ai/server/Phantom/connect-sdk) | `smithery` | — | **[A](tools/phantom-connect-sdk.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Jul 3 |
 | [petabloom-podcasts](https://smithery.ai/server/petabloom/podcasts) | `smithery` | — | **[A](tools/petabloom-podcasts.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×5 | Jun 18 |
-| [nitrofire-q-gread](https://smithery.ai/server/nitrofire-q/gread) | `smithery` | — | **[A](tools/nitrofire-q-gread.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2, `AS-014` ×5 | Oct 27 |
+| [nitrofire-q-gread](https://smithery.ai/server/nitrofire-q/gread) | `smithery` | — | **[A](tools/nitrofire-q-gread.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×2, `AS-014` ×5 | Oct 28 |
 | [coal-coal-payments](https://smithery.ai/server/coal/coal-payments) | `smithery` | — | **[A](tools/coal-coal-payments.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×7, `AS-014` ×13, 🗝️ `AS-010` ×2 | Jul 17 |
 | [nmedia-cloud-stockflow-mcp](https://smithery.ai/server/nmedia-cloud/stockflow-mcp) | `smithery` | — | **[A](tools/nmedia-cloud-stockflow-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×3 | Jul 15 |
 | [coastli-bazi-mcp](https://smithery.ai/server/coastli/bazi-mcp) | `smithery` | — | **[A](tools/coastli-bazi-mcp.md)** | 🔑 `AS-002`, `AS-014` ×7 | Apr 4 |
@@ -1406,7 +1406,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [courier-courier-mcp](https://smithery.ai/server/courier/courier-mcp) | `smithery` | — | **[A](tools/courier-courier-mcp.md)** | `AS-014` ×59, 🔑 `AS-002` ×26, ⚡ `AS-011` ×6, 🗝️ `AS-010` ×2 | Jul 4 |
 | [node2flow-n8n-management](https://smithery.ai/server/node2flow/n8n-management) | `smithery` | — | **[A](tools/node2flow-n8n-management.md)** | `AS-014` ×27, 🔑 `AS-002` ×21, ⚡ `AS-011` ×9, 🗝️ `AS-010` | Jul 15 |
 | [crabbitmq-crabbit-mq](https://smithery.ai/server/crabbitmq/crabbit-mq) | `smithery` | — | **[A](tools/crabbitmq-crabbit-mq.md)** | 🔑 `AS-002` ×3, `AS-014` ×5, 🗝️ `AS-010` ×4, ⚡ `AS-011` | Jun 25 |
-| [creativelead-unclick](https://smithery.ai/server/creativelead/unclick) | `smithery` | — | **[A](tools/creativelead-unclick.md)** | 🔑 `AS-002` ×110, ⚡ `AS-011` ×92, `AS-014` ×451, 🗝️ `AS-010` ×294 | Oct 27 |
+| [creativelead-unclick](https://smithery.ai/server/creativelead/unclick) | `smithery` | — | **[A](tools/creativelead-unclick.md)** | 🔑 `AS-002` ×110, ⚡ `AS-011` ×92, `AS-014` ×451, 🗝️ `AS-010` ×294 | Oct 28 |
 | [node2flow-slack](https://smithery.ai/server/node2flow/slack) | `smithery` | — | **[A](tools/node2flow-slack.md)** | 🔑 `AS-002` ×16, ⚡ `AS-011` ×6, `AS-014` ×38 | Jul 4 |
 | [cryptorefills-mcp-server](https://smithery.ai/server/cryptorefills/mcp-server) | `smithery` | — | **[A](tools/cryptorefills-mcp-server.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×8, `AS-014` ×10 | Jul 31 |
 | [onurd8898-evlek](https://smithery.ai/server/onurd8898/evlek) | `smithery` | — | **[A](tools/onurd8898-evlek.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×18 | Aug 6 |
@@ -1417,53 +1417,53 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [curly-mole-labs-supericons](https://smithery.ai/server/curly-mole-labs/supericons) | `smithery` | — | **[A](tools/curly-mole-labs-supericons.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jul 4 |
 | [cyanheads-nhtsa-vehicle-mcp-server](https://smithery.ai/server/cyanheads/nhtsa-vehicle-mcp-server) | `smithery` | — | **[A](tools/cyanheads-nhtsa-vehicle-mcp-server.md)** | 🔑 `AS-002` ×5, `AS-014` ×7, ⚡ `AS-011` ×3 | Jul 3 |
 | [dejaview](https://smithery.ai/server/dejaview) | `smithery` | — | **[A](tools/dejaview.md)** | `AS-014` ×11, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jul 15 |
-| [daniel-szerszen-redstone-finance](https://smithery.ai/server/daniel-szerszen/redstone-finance) | `smithery` | — | **[A](tools/daniel-szerszen-redstone-finance.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 27 |
-| [deficlow-zipp](https://smithery.ai/server/deficlow/zipp) | `smithery` | — | **[A](tools/deficlow-zipp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Oct 27 |
+| [daniel-szerszen-redstone-finance](https://smithery.ai/server/daniel-szerszen/redstone-finance) | `smithery` | — | **[A](tools/daniel-szerszen-redstone-finance.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | Oct 28 |
+| [deficlow-zipp](https://smithery.ai/server/deficlow/zipp) | `smithery` | — | **[A](tools/deficlow-zipp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Oct 28 |
 | [dannydarko-hauntapi](https://smithery.ai/server/dannydarko/hauntapi) | `smithery` | — | **[A](tools/dannydarko-hauntapi.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×7 | Jul 16 |
-| [defibabylon-defi-intel](https://smithery.ai/server/defibabylon/defi-intel) | `smithery` | — | **[A](tools/defibabylon-defi-intel.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 27 |
-| [defi-io-smartcontract](https://smithery.ai/server/defi-io/smartcontract) | `smithery` | — | **[A](tools/defi-io-smartcontract.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
+| [defibabylon-defi-intel](https://smithery.ai/server/defibabylon/defi-intel) | `smithery` | — | **[A](tools/defibabylon-defi-intel.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Oct 28 |
+| [defi-io-smartcontract](https://smithery.ai/server/defi-io/smartcontract) | `smithery` | — | **[A](tools/defi-io-smartcontract.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
 | [darek-claribi](https://smithery.ai/server/darek/claribi) | `smithery` | — | **[A](tools/darek-claribi.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×12, `AS-014` ×19, 🗝️ `AS-010` | Aug 1 |
-| [data-transform-agent-data-transform](https://smithery.ai/server/data-transform-agent/data-transform) | `smithery` | — | **[A](tools/data-transform-agent-data-transform.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Oct 27 |
-| [oblipali-sms-marketing](https://smithery.ai/server/oblipali/sms-marketing) | `smithery` | — | **[A](tools/oblipali-sms-marketing.md)** | `AS-014` ×22, 🔑 `AS-002` ×11, ⚡ `AS-011` ×2 | Oct 27 |
+| [data-transform-agent-data-transform](https://smithery.ai/server/data-transform-agent/data-transform) | `smithery` | — | **[A](tools/data-transform-agent-data-transform.md)** | `AS-014` ×3, 🔑 `AS-002`, ⚡ `AS-011` | Oct 28 |
+| [oblipali-sms-marketing](https://smithery.ai/server/oblipali/sms-marketing) | `smithery` | — | **[A](tools/oblipali-sms-marketing.md)** | `AS-014` ×22, 🔑 `AS-002` ×11, ⚡ `AS-011` ×2 | Oct 28 |
 | [o1labs-sterdan](https://smithery.ai/server/o1labs/sterdan) | `smithery` | — | **[A](tools/o1labs-sterdan.md)** | `AS-014` ×8, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jun 21 |
 | [davidcho-ca-building-code-mcp](https://smithery.ai/server/davidcho/ca-building-code-mcp) | `smithery` | — | **[A](tools/davidcho-ca-building-code-mcp.md)** | `AS-014` ×10, 🔑 `AS-002` ×2, ⚡ `AS-011` | Aug 4 |
 | [nullary-drug-discovery](https://smithery.ai/server/nullary/drug-discovery) | `smithery` | — | **[A](tools/nullary-drug-discovery.md)** | 🔑 `AS-002` ×29, ⚡ `AS-011` ×28, `AS-014` ×35 | Jul 4 |
 | [nusantara-goldprice](https://smithery.ai/server/nusantara/goldprice) | `smithery` | — | **[A](tools/nusantara-goldprice.md)** | `AS-014` ×7, 🔑 `AS-002` ×4, ⚡ `AS-011` ×4 | Jul 4 |
 | [contact-v901-vee3](https://smithery.ai/server/contact-v901/vee3) | `smithery` | — | **[A](tools/contact-v901-vee3.md)** | 🔑 `AS-002` ×65, ⚡ `AS-011` ×56, `AS-014` ×83 | Jul 16 |
 | [tony-jqzi-testmyvibes](https://smithery.ai/server/tony-jqzi/testmyvibes) | `smithery` | — | **[A](tools/tony-jqzi-testmyvibes.md)** | 🔑 `AS-002` ×19, ⚡ `AS-011` ×16, `AS-014` ×43, 🗝️ `AS-010` | Jul 4 |
-| [moodtrip-moodtrip-hotel-search](https://smithery.ai/server/moodtrip/moodtrip-hotel-search) | `smithery` | — | **[A](tools/moodtrip-moodtrip-hotel-search.md)** | `AS-014` ×12, 🔑 `AS-002` ×6, ⚡ `AS-011` ×4 | Oct 27 |
-| [rabqatab-lexlink-ko-mcp](https://smithery.ai/server/rabqatab/lexlink-ko-mcp) | `smithery` | — | **[A](tools/rabqatab-lexlink-ko-mcp.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×30, `AS-014` ×54 | Oct 27 |
+| [moodtrip-moodtrip-hotel-search](https://smithery.ai/server/moodtrip/moodtrip-hotel-search) | `smithery` | — | **[A](tools/moodtrip-moodtrip-hotel-search.md)** | `AS-014` ×12, 🔑 `AS-002` ×6, ⚡ `AS-011` ×4 | Oct 28 |
+| [rabqatab-lexlink-ko-mcp](https://smithery.ai/server/rabqatab/lexlink-ko-mcp) | `smithery` | — | **[A](tools/rabqatab-lexlink-ko-mcp.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×30, `AS-014` ×54 | Oct 28 |
 | [notion](https://smithery.ai/server/notion) | `smithery` | — | **[A](tools/notion.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×11, `AS-014` ×14 | Jul 16 |
 | [a7om-atom-mcp-server](https://smithery.ai/server/a7om/atom-mcp-server) | `smithery` | — | **[A](tools/a7om-atom-mcp-server.md)** | 🔑 `AS-002` ×5, 🗝️ `AS-010` ×8, ⚡ `AS-011` ×3, `AS-014` ×8 | Oct 15 |
-| [rafa-minhamorada-pt](https://smithery.ai/server/rafa/minhamorada-pt) | `smithery` | — | **[A](tools/rafa-minhamorada-pt.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×4 | Oct 27 |
-| [jobly-jobly-mcp](https://smithery.ai/server/jobly/jobly-mcp) | `smithery` | — | **[A](tools/jobly-jobly-mcp.md)** | 🗝️ `AS-010` ×22, `AS-014` ×29, 🔑 `AS-002` ×14, ⚡ `AS-011` ×7 | Oct 27 |
+| [rafa-minhamorada-pt](https://smithery.ai/server/rafa/minhamorada-pt) | `smithery` | — | **[A](tools/rafa-minhamorada-pt.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×4 | Oct 28 |
+| [jobly-jobly-mcp](https://smithery.ai/server/jobly/jobly-mcp) | `smithery` | — | **[A](tools/jobly-jobly-mcp.md)** | 🗝️ `AS-010` ×22, `AS-014` ×29, 🔑 `AS-002` ×14, ⚡ `AS-011` ×7 | Oct 28 |
 | [spencerdgarrett-trialpath](https://smithery.ai/server/spencerdgarrett/TRIALPATH) | `smithery` | — | **[A](tools/spencerdgarrett-trialpath.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×2, `AS-014` ×14 | Jul 4 |
 | [eliottreich-taskbounty](https://smithery.ai/server/eliottreich/taskbounty) | `smithery` | — | **[A](tools/eliottreich-taskbounty.md)** | `AS-014` ×11, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5 | Jul 16 |
 | [brayydentan-chieflab](https://smithery.ai/server/brayydentan/chieflab) | `smithery` | — | **[A](tools/brayydentan-chieflab.md)** | 🔑 `AS-002` ×49, ⚡ `AS-011` ×43, `AS-014` ×91, 🗝️ `AS-010` ×2 | Jul 4 |
 | [cyclesite-bikes](https://smithery.ai/server/cyclesite/bikes) | `smithery` | — | **[A](tools/cyclesite-bikes.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×8, `AS-014` ×31 | Jul 4 |
-| [dynamoi-music-youtube-marketing-mcp](https://smithery.ai/server/dynamoi/music-youtube-marketing-mcp) | `smithery` | — | **[A](tools/dynamoi-music-youtube-marketing-mcp.md)** | `AS-014` ×18, 🔑 `AS-002` ×11, ⚡ `AS-011` ×9 | Oct 27 |
+| [dynamoi-music-youtube-marketing-mcp](https://smithery.ai/server/dynamoi/music-youtube-marketing-mcp) | `smithery` | — | **[A](tools/dynamoi-music-youtube-marketing-mcp.md)** | `AS-014` ×18, 🔑 `AS-002` ×11, ⚡ `AS-011` ×9 | Oct 28 |
 | [justus-bushdrum-events](https://smithery.ai/server/justus/bushdrum-events) | `smithery` | — | **[A](tools/justus-bushdrum-events.md)** | `AS-014` ×2, 🔑 `AS-002` ×2, ⚡ `AS-011` | Jun 20 |
-| [agentry-agent-registry](https://smithery.ai/server/agentry/agent-registry) | `smithery` | — | **[A](tools/agentry-agent-registry.md)** | 🔑 `AS-002` ×37, ⚡ `AS-011` ×36, `AS-014` ×36, 🗝️ `AS-010` ×3 | Oct 27 |
+| [agentry-agent-registry](https://smithery.ai/server/agentry/agent-registry) | `smithery` | — | **[A](tools/agentry-agent-registry.md)** | 🔑 `AS-002` ×37, ⚡ `AS-011` ×36, `AS-014` ×36, 🗝️ `AS-010` ×3 | Oct 28 |
 | [kangaroo-ifly-soundside-ai](https://smithery.ai/server/kangaroo-Ifly/soundside-ai) | `smithery` | — | **[A](tools/kangaroo-ifly-soundside-ai.md)** | 🔑 `AS-002` ×16, `AS-014` ×12, ⚡ `AS-011`, 🗝️ `AS-010` | Jul 16 |
-| [receiptor-ai-receiptor-mcp](https://smithery.ai/server/receiptor-ai/receiptor-mcp) | `smithery` | — | **[A](tools/receiptor-ai-receiptor-mcp.md)** | `AS-014` ×51, 🔑 `AS-002` ×21, ⚡ `AS-011` ×10, ⚡ `AS-006` | Oct 27 |
-| [brave](https://smithery.ai/server/brave) | `smithery` | — | **[A](tools/brave.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 27 |
+| [receiptor-ai-receiptor-mcp](https://smithery.ai/server/receiptor-ai/receiptor-mcp) | `smithery` | — | **[A](tools/receiptor-ai-receiptor-mcp.md)** | `AS-014` ×51, 🔑 `AS-002` ×21, ⚡ `AS-011` ×10, ⚡ `AS-006` | Oct 28 |
+| [brave](https://smithery.ai/server/brave) | `smithery` | — | **[A](tools/brave.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×8, 🗝️ `AS-010` ×2 | Oct 28 |
 | [omegamemory-omega-memory](https://smithery.ai/server/omegamemory/omega-memory) | `smithery` | — | **[A](tools/omegamemory-omega-memory.md)** | `AS-014` ×26, 🔑 `AS-002` ×9, ⚡ `AS-011` ×2 | Aug 6 |
 | [cuttalosrl-depscope](https://smithery.ai/server/cuttalosrl/depscope) | `smithery` | — | **[A](tools/cuttalosrl-depscope.md)** | `AS-014` ×22, 🔑 `AS-002` ×6, ⚡ `AS-011` ×5 | Jul 8 |
-| [iwantfyi-iwant](https://smithery.ai/server/iwantfyi/iwant) | `smithery` | — | **[A](tools/iwantfyi-iwant.md)** | `AS-014` ×15, 🔑 `AS-002` ×10, ⚡ `AS-011` ×6 | Oct 27 |
-| [mirabelloconsultancy-mcp-server](https://smithery.ai/server/mirabelloconsultancy/mcp-server) | `smithery` | — | **[A](tools/mirabelloconsultancy-mcp-server.md)** | `AS-014` ×44, 🔑 `AS-002` ×24, ⚡ `AS-011` ×13 | Oct 27 |
-| [mirabelloconsultancy-investment-migration](https://smithery.ai/server/mirabelloconsultancy/investment-migration) | `smithery` | — | **[A](tools/mirabelloconsultancy-investment-migration.md)** | `AS-014` ×9, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 27 |
+| [iwantfyi-iwant](https://smithery.ai/server/iwantfyi/iwant) | `smithery` | — | **[A](tools/iwantfyi-iwant.md)** | `AS-014` ×15, 🔑 `AS-002` ×10, ⚡ `AS-011` ×6 | Oct 28 |
+| [mirabelloconsultancy-mcp-server](https://smithery.ai/server/mirabelloconsultancy/mcp-server) | `smithery` | — | **[A](tools/mirabelloconsultancy-mcp-server.md)** | `AS-014` ×44, 🔑 `AS-002` ×24, ⚡ `AS-011` ×13 | Oct 28 |
+| [mirabelloconsultancy-investment-migration](https://smithery.ai/server/mirabelloconsultancy/investment-migration) | `smithery` | — | **[A](tools/mirabelloconsultancy-investment-migration.md)** | `AS-014` ×9, 🔑 `AS-002` ×3, ⚡ `AS-011` | Oct 28 |
 | [michael-defon-merka2a](https://smithery.ai/server/michael-defon/merka2a) | `smithery` | — | **[A](tools/michael-defon-merka2a.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×17 | Aug 3 |
-| [cturkieh-france-data](https://smithery.ai/server/cturkieh/france-data) | `smithery` | — | **[A](tools/cturkieh-france-data.md)** | 🔑 `AS-002` ×16, `AS-014` ×37, ⚡ `AS-011` ×12 | Oct 27 |
+| [cturkieh-france-data](https://smithery.ai/server/cturkieh/france-data) | `smithery` | — | **[A](tools/cturkieh-france-data.md)** | 🔑 `AS-002` ×16, `AS-014` ×37, ⚡ `AS-011` ×12 | Oct 28 |
 | [roundtable-roundtable](https://smithery.ai/server/roundtable/roundtable) | `smithery` | — | **[A](tools/roundtable-roundtable.md)** | `AS-014` ×13, 🔑 `AS-002` ×10, ⚡ `AS-011` ×9 | Jul 17 |
 | [kiwi](https://smithery.ai/server/kiwi) | `smithery` | — | **[A](tools/kiwi.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×2 | Aug 4 |
-| [instagram](https://smithery.ai/server/instagram) | `smithery` | — | **[A](tools/instagram.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, `AS-014` ×16 | Oct 27 |
+| [instagram](https://smithery.ai/server/instagram) | `smithery` | — | **[A](tools/instagram.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, `AS-014` ×16 | Oct 28 |
 | [ink-ink](https://smithery.ai/server/ink/ink) | `smithery` | — | **[A](tools/ink-ink.md)** | `AS-014` ×32, 🔑 `AS-002` ×19, ⚡ `AS-011` ×9 | Jul 16 |
 | [douglas-banco-mcp](https://smithery.ai/server/douglas/banco-mcp) | `smithery` | — | **[A](tools/douglas-banco-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, `AS-014` ×24, 🗝️ `AS-010` | Jul 27 |
 | [runriva-quizbase](https://smithery.ai/server/runriva/quizbase) | `smithery` | — | **[A](tools/runriva-quizbase.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×6, `AS-014` ×12 | Jul 16 |
-| [lanchuske-local-mcp](https://smithery.ai/server/lanchuske/local-mcp) | `smithery` | — | **[A](tools/lanchuske-local-mcp.md)** | `AS-014` ×203, 🔑 `AS-002` ×109, ⚡ `AS-011` ×44, 🗝️ `AS-010`, ⚡ `AS-006` | Oct 27 |
+| [lanchuske-local-mcp](https://smithery.ai/server/lanchuske/local-mcp) | `smithery` | — | **[A](tools/lanchuske-local-mcp.md)** | `AS-014` ×203, 🔑 `AS-002` ×109, ⚡ `AS-011` ×44, 🗝️ `AS-010`, ⚡ `AS-006` | Oct 28 |
 | [top-yappers](https://smithery.ai/server/top/yappers) | `smithery` | — | **[A](tools/top-yappers.md)** | 🔑 `AS-002` ×9, ⚡ `AS-011` ×5, `AS-014` ×11 | Jul 15 |
 | [santiago-blanco-vilchez-aaav](https://smithery.ai/server/santiago.blanco.vilchez/aaav) | `smithery` | — | **[A](tools/santiago-blanco-vilchez-aaav.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Jul 27 |
-| [primitivedotdev-primitive](https://smithery.ai/server/primitivedotdev/primitive) | `smithery` | — | **[A](tools/primitivedotdev-primitive.md)** | `AS-014` ×28, 🔑 `AS-002` ×20, ⚡ `AS-011` ×18, 🗝️ `AS-010` | Oct 27 |
+| [primitivedotdev-primitive](https://smithery.ai/server/primitivedotdev/primitive) | `smithery` | — | **[A](tools/primitivedotdev-primitive.md)** | `AS-014` ×28, 🔑 `AS-002` ×20, ⚡ `AS-011` ×18, 🗝️ `AS-010` | Oct 28 |
 | [naimterrache-frigolog-haccp](https://smithery.ai/server/naimterrache/frigolog-haccp) | `smithery` | — | **[A](tools/naimterrache-frigolog-haccp.md)** | `AS-014` ×12, 🔑 `AS-002` ×8, ⚡ `AS-011` ×8 | May 21 |
 | [alphalatitude-optionsahoy](https://smithery.ai/server/alphalatitude/optionsahoy) | `smithery` | — | **[A](tools/alphalatitude-optionsahoy.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×4, `AS-014` ×7 | Jul 9 |
 | [santiago-blanco-vilchez-asd](https://smithery.ai/server/santiago.blanco.vilchez/asd) | `smithery` | — | **[A](tools/santiago-blanco-vilchez-asd.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Jul 28 |
@@ -1472,55 +1472,55 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [ilgrafico79-atlarium-habitat-database](https://smithery.ai/server/ilgrafico79/atlarium-habitat-database) | `smithery` | — | **[A](tools/ilgrafico79-atlarium-habitat-database.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×11, `AS-014` ×39 | Jul 16 |
 | [trello](https://smithery.ai/server/trello) | `smithery` | — | **[A](tools/trello.md)** | 🔑 `AS-002` ×106, `AS-014` ×200, ⚡ `AS-011` ×53, 🗝️ `AS-010` | Jul 16 |
 | [igor-vbfp-quintadb](https://smithery.ai/server/igor-vbfp/quintadb) | `smithery` | — | **[A](tools/igor-vbfp-quintadb.md)** | `AS-014` ×104, 🔑 `AS-002` ×64, ⚡ `AS-011` ×15, 🗝️ `AS-010` ×2 | Jul 16 |
-| [listentosadhu-corpus](https://smithery.ai/server/listentosadhu/corpus) | `smithery` | — | **[A](tools/listentosadhu-corpus.md)** | `AS-014` ×18, 🗝️ `AS-010` ×5, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 27 |
+| [listentosadhu-corpus](https://smithery.ai/server/listentosadhu/corpus) | `smithery` | — | **[A](tools/listentosadhu-corpus.md)** | `AS-014` ×18, 🗝️ `AS-010` ×5, 🔑 `AS-002` ×3, ⚡ `AS-011` ×2 | Oct 28 |
 | [tradingcalc-tradingcalc-mcp](https://smithery.ai/server/tradingcalc/tradingcalc-mcp) | `smithery` | — | **[A](tools/tradingcalc-tradingcalc-mcp.md)** | `AS-014` ×19, 🔑 `AS-002` ×2, ⚡ `AS-011` | Aug 18 |
 | [santiago-blanco-vilchez-santiago-cpa](https://smithery.ai/server/santiago.blanco.vilchez/santiago-cpa) | `smithery` | — | **[A](tools/santiago-blanco-vilchez-santiago-cpa.md)** | 🔑 `AS-002` ×4, 🗝️ `AS-010` ×4, ⚡ `AS-011` ×3, `AS-014` ×4 | Jul 18 |
-| [favcrm-favcrm](https://smithery.ai/server/favcrm/favcrm) | `smithery` | — | **[A](tools/favcrm-favcrm.md)** | 🔑 `AS-002` ×68, ⚡ `AS-011` ×29, `AS-014` ×132 | Oct 27 |
-| [nuancesmen-aeotool](https://smithery.ai/server/nuancesmen/aeotool) | `smithery` | — | **[A](tools/nuancesmen-aeotool.md)** | `AS-014` ×36, 🔑 `AS-002` ×11, ⚡ `AS-011` ×8 | Oct 27 |
+| [favcrm-favcrm](https://smithery.ai/server/favcrm/favcrm) | `smithery` | — | **[A](tools/favcrm-favcrm.md)** | 🔑 `AS-002` ×68, ⚡ `AS-011` ×29, `AS-014` ×132 | Oct 28 |
+| [nuancesmen-aeotool](https://smithery.ai/server/nuancesmen/aeotool) | `smithery` | — | **[A](tools/nuancesmen-aeotool.md)** | `AS-014` ×36, 🔑 `AS-002` ×11, ⚡ `AS-011` ×8 | Oct 28 |
 | [jobsbase-jobs](https://smithery.ai/server/jobsbase/jobs) | `smithery` | — | **[A](tools/jobsbase-jobs.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×3 | Jul 2 |
 | [contrastcyber-contrastapi](https://smithery.ai/server/contrastcyber/contrastapi) | `smithery` | — | **[A](tools/contrastcyber-contrastapi.md)** | 🔑 `AS-002` ×43, `AS-014` ×55, ⚡ `AS-011` ×37 | Aug 10 |
-| [lodikidsactivities-main](https://smithery.ai/server/lodikidsactivities/main) | `smithery` | — | **[A](tools/lodikidsactivities-main.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×12, `AS-014` ×72, 🗝️ `AS-010` | Oct 27 |
+| [lodikidsactivities-main](https://smithery.ai/server/lodikidsactivities/main) | `smithery` | — | **[A](tools/lodikidsactivities-main.md)** | 🔑 `AS-002` ×20, ⚡ `AS-011` ×12, `AS-014` ×72, 🗝️ `AS-010` | Oct 28 |
 | [iclickfreedownloads-mcp-server-airbnb](https://smithery.ai/server/iclickfreedownloads/mcp-server-airbnb) | `smithery` | — | **[A](tools/iclickfreedownloads-mcp-server-airbnb.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×4 | Jul 5 |
 | [ic3moore-defimind-ai](https://smithery.ai/server/ic3moore/defimind-ai) | `smithery` | — | **[A](tools/ic3moore-defimind-ai.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, `AS-014` ×11, 🗝️ `AS-010` ×2 | Jul 4 |
-| [satoshidata-wallet-intelligence](https://smithery.ai/server/satoshidata/wallet-intelligence) | `smithery` | — | **[A](tools/satoshidata-wallet-intelligence.md)** | `AS-014` ×44, 🔑 `AS-002` ×7, ⚡ `AS-011` ×5 | Oct 27 |
-| [nausika-nausika](https://smithery.ai/server/nausika/nausika) | `smithery` | — | **[A](tools/nausika-nausika.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×19 | Oct 27 |
-| [getgapup-gapup-mcp](https://smithery.ai/server/getgapup/gapup-mcp) | `smithery` | — | **[A](tools/getgapup-gapup-mcp.md)** | 🔑 `AS-002` ×98, `AS-014` ×271, ⚡ `AS-011` ×77, 🗝️ `AS-010` ×4 | Oct 27 |
+| [satoshidata-wallet-intelligence](https://smithery.ai/server/satoshidata/wallet-intelligence) | `smithery` | — | **[A](tools/satoshidata-wallet-intelligence.md)** | `AS-014` ×44, 🔑 `AS-002` ×7, ⚡ `AS-011` ×5 | Oct 28 |
+| [nausika-nausika](https://smithery.ai/server/nausika/nausika) | `smithery` | — | **[A](tools/nausika-nausika.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×19 | Oct 28 |
+| [getgapup-gapup-mcp](https://smithery.ai/server/getgapup/gapup-mcp) | `smithery` | — | **[A](tools/getgapup-gapup-mcp.md)** | 🔑 `AS-002` ×98, `AS-014` ×271, ⚡ `AS-011` ×77, 🗝️ `AS-010` ×4 | Oct 28 |
 | [shunshiai2026-s9as-bazi-reader-mcp](https://smithery.ai/server/shunshiai2026-s9as/bazi-reader-mcp) | `smithery` | — | **[A](tools/shunshiai2026-s9as-bazi-reader-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` | Jul 3 |
 | [glim-glim](https://smithery.ai/server/glim/glim) | `smithery` | — | **[A](tools/glim-glim.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, `AS-014` ×11 | Jul 4 |
 | [lylegill02-merch-studio-mcp](https://smithery.ai/server/lylegill02/merch-studio-mcp) | `smithery` | — | **[A](tools/lylegill02-merch-studio-mcp.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×16, 🗝️ `AS-010` | Jul 9 |
 | [node2flow-google-calendar](https://smithery.ai/server/node2flow/google-calendar) | `smithery` | — | **[A](tools/node2flow-google-calendar.md)** | 🔑 `AS-002` ×19, `AS-014` ×28, ⚡ `AS-011` ×7 | Jul 4 |
-| [theagenttimes-news](https://smithery.ai/server/theagenttimes/news) | `smithery` | — | **[A](tools/theagenttimes-news.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, `AS-014` ×18 | Oct 27 |
+| [theagenttimes-news](https://smithery.ai/server/theagenttimes/news) | `smithery` | — | **[A](tools/theagenttimes-news.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×5, `AS-014` ×18 | Oct 28 |
 | [outlook](https://smithery.ai/server/outlook) | `smithery` | — | **[A](tools/outlook.md)** | 🔑 `AS-002` ×38, `AS-014` ×51, ⚡ `AS-011` ×8, 🗝️ `AS-010` ×2 | Jul 17 |
 | [the402-mcp-server](https://smithery.ai/server/the402/mcp-server) | `smithery` | — | **[A](tools/the402-mcp-server.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×11, `AS-014` ×30 | Jul 4 |
 | [databr-api](https://smithery.ai/server/databr/api) | `smithery` | — | **[A](tools/databr-api.md)** | `AS-014` ×82, 🔑 `AS-002`, ⚡ `AS-011` | May 2 |
 | [mail-imi4-mu-mcp](https://smithery.ai/server/mail-imi4/mu-mcp) | `smithery` | — | **[A](tools/mail-imi4-mu-mcp.md)** | `AS-014` ×23, 🔑 `AS-002` ×19, ⚡ `AS-011` ×17 | Jul 16 |
-| [dialogbrain-dialogbrain](https://smithery.ai/server/dialogbrain/dialogbrain) | `smithery` | — | **[A](tools/dialogbrain-dialogbrain.md)** | 🔑 `AS-002` ×179, `AS-014` ×279, ⚡ `AS-011` ×107, 🗝️ `AS-010` ×4, ⚡ `AS-006` ×2 | Oct 27 |
-| [sincetomorrow-cultural-intelligence](https://smithery.ai/server/sincetomorrow/cultural-intelligence) | `smithery` | — | **[A](tools/sincetomorrow-cultural-intelligence.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×33 | Oct 27 |
+| [dialogbrain-dialogbrain](https://smithery.ai/server/dialogbrain/dialogbrain) | `smithery` | — | **[A](tools/dialogbrain-dialogbrain.md)** | 🔑 `AS-002` ×179, `AS-014` ×279, ⚡ `AS-011` ×107, 🗝️ `AS-010` ×4, ⚡ `AS-006` ×2 | Oct 28 |
+| [sincetomorrow-cultural-intelligence](https://smithery.ai/server/sincetomorrow/cultural-intelligence) | `smithery` | — | **[A](tools/sincetomorrow-cultural-intelligence.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×7, `AS-014` ×33 | Oct 28 |
 | [google-flights](https://smithery.ai/server/google/flights) | `smithery` | — | **[A](tools/google-flights.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` | Jul 4 |
 | [tavily](https://smithery.ai/server/Tavily) | `smithery` | — | **[A](tools/tavily.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×6, 🗝️ `AS-010` | Jul 16 |
 | [taskman-london-home-services](https://smithery.ai/server/taskman-london/home-services) | `smithery` | — | **[A](tools/taskman-london-home-services.md)** | `AS-014` ×20, 🔑 `AS-002` ×7, ⚡ `AS-011` ×3, 🗝️ `AS-010` ×10 | Jul 4 |
-| [googlecalendar](https://smithery.ai/server/googlecalendar) | `smithery` | — | **[A](tools/googlecalendar.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Oct 27 |
-| [googlesheets](https://smithery.ai/server/googlesheets) | `smithery` | — | **[A](tools/googlesheets.md)** | `AS-014` ×13, 🔑 `AS-002` ×13, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Oct 27 |
+| [googlecalendar](https://smithery.ai/server/googlecalendar) | `smithery` | — | **[A](tools/googlecalendar.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2, 🗝️ `AS-010` | Oct 28 |
+| [googlesheets](https://smithery.ai/server/googlesheets) | `smithery` | — | **[A](tools/googlesheets.md)** | `AS-014` ×13, 🔑 `AS-002` ×13, ⚡ `AS-011` ×5, 🗝️ `AS-010` ×2 | Oct 28 |
 | [christos-eoa-intermediaries](https://smithery.ai/server/christos/eoa-intermediaries) | `smithery` | — | **[A](tools/christos-eoa-intermediaries.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×5 | Jul 2 |
 | [syenite-ai-syenite](https://smithery.ai/server/syenite-ai/syenite) | `smithery` | — | **[A](tools/syenite-ai-syenite.md)** | 🔑 `AS-002` ×33, ⚡ `AS-011` ×28, `AS-014` ×46, 🗝️ `AS-010` ×5 | Jul 4 |
 | [paracetamol951-kash](https://smithery.ai/server/paracetamol951/kash) | `smithery` | — | **[A](tools/paracetamol951-kash.md)** | 🔑 `AS-002` ×27, ⚡ `AS-011` ×12, `AS-014` ×39, 🗝️ `AS-010` ×2 | Aug 15 |
-| [net-service-xpoz](https://smithery.ai/server/net-service/xpoz) | `smithery` | — | **[A](tools/net-service-xpoz.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×21, `AS-014` ×27 | Oct 27 |
+| [net-service-xpoz](https://smithery.ai/server/net-service/xpoz) | `smithery` | — | **[A](tools/net-service-xpoz.md)** | 🔑 `AS-002` ×25, ⚡ `AS-011` ×21, `AS-014` ×27 | Oct 28 |
 | [pjaudiomv-bmlt](https://smithery.ai/server/pjaudiomv/bmlt) | `smithery` | — | **[A](tools/pjaudiomv-bmlt.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×6, `AS-014` ×6 | Jul 3 |
 | [netfluid-nfld](https://smithery.ai/server/netfluid/NFLD) | `smithery` | — | **[A](tools/netfluid-nfld.md)** | 🗝️ `AS-010` ×180, `AS-014` ×133, 🔑 `AS-002` ×53, ⚡ `AS-011` ×44 | Aug 15 |
 | [hola-ps65-siil-ostomy-store](https://smithery.ai/server/hola-ps65/siil-ostomy-store) | `smithery` | — | **[A](tools/hola-ps65-siil-ostomy-store.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×8 | Aug 4 |
 | [support-ix87-onehaus](https://smithery.ai/server/support-ix87/onehaus) | `smithery` | — | **[A](tools/support-ix87-onehaus.md)** | 🔑 `AS-002` ×45, `AS-014` ×68, ⚡ `AS-011` ×8 | Aug 15 |
-| [googlesuper](https://smithery.ai/server/googlesuper) | `smithery` | — | **[A](tools/googlesuper.md)** | `AS-014` ×200, 🔑 `AS-002` ×130, ⚡ `AS-011` ×34, 🗝️ `AS-010` ×3 | Oct 27 |
+| [googlesuper](https://smithery.ai/server/googlesuper) | `smithery` | — | **[A](tools/googlesuper.md)** | `AS-014` ×200, 🔑 `AS-002` ×130, ⚡ `AS-011` ×34, 🗝️ `AS-010` ×3 | Oct 28 |
 | [ashish-sinha-xmagnet](https://smithery.ai/server/ashish-sinha/xmagnet) | `smithery` | — | **[A](tools/ashish-sinha-xmagnet.md)** | `AS-014` ×47, 🔑 `AS-002` ×26, ⚡ `AS-011` ×13 | Jul 4 |
 | [mcp-3ioj-everstake](https://smithery.ai/server/mcp-3ioj/everstake) | `smithery` | — | **[A](tools/mcp-3ioj-everstake.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×3, `AS-014` ×11 | Jul 4 |
 | [mrabi-google-flights-mcp](https://smithery.ai/server/mrabi/google-flights-mcp) | `smithery` | — | **[A](tools/mrabi-google-flights-mcp.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×2 | Aug 17 |
 | [nexbid-agentic-commerce](https://smithery.ai/server/nexbid/agentic_commerce) | `smithery` | — | **[A](tools/nexbid-agentic-commerce.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×5 | Jul 24 |
 | [ninetrinkets-projectbrain-mcp](https://smithery.ai/server/ninetrinkets/projectbrain-mcp) | `smithery` | — | **[A](tools/ninetrinkets-projectbrain-mcp.md)** | `AS-014` ×5, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4 | Aug 15 |
-| [himalayas-himalayas-mcp](https://smithery.ai/server/Himalayas/himalayas-mcp) | `smithery` | — | **[A](tools/himalayas-himalayas-mcp.md)** | 🔑 `AS-002` ×28, ⚡ `AS-011` ×15, `AS-014` ×34 | Oct 27 |
-| [autario-data](https://smithery.ai/server/autario/data) | `smithery` | — | **[A](tools/autario-data.md)** | 🔑 `AS-002` ×39, ⚡ `AS-011` ×23, `AS-014` ×58 | Oct 27 |
-| [gordgus-ignav-flights](https://smithery.ai/server/gordgus/ignav-flights) | `smithery` | — | **[A](tools/gordgus-ignav-flights.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 27 |
+| [himalayas-himalayas-mcp](https://smithery.ai/server/Himalayas/himalayas-mcp) | `smithery` | — | **[A](tools/himalayas-himalayas-mcp.md)** | 🔑 `AS-002` ×28, ⚡ `AS-011` ×15, `AS-014` ×34 | Oct 28 |
+| [autario-data](https://smithery.ai/server/autario/data) | `smithery` | — | **[A](tools/autario-data.md)** | 🔑 `AS-002` ×39, ⚡ `AS-011` ×23, `AS-014` ×58 | Oct 28 |
+| [gordgus-ignav-flights](https://smithery.ai/server/gordgus/ignav-flights) | `smithery` | — | **[A](tools/gordgus-ignav-flights.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×2 | Oct 28 |
 | [stayker-hotel-booking](https://smithery.ai/server/Stayker/hotel-booking) | `smithery` | — | **[A](tools/stayker-hotel-booking.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×3, `AS-014` ×7 | Jul 15 |
 | [mcp-dir-nubank-mcp](https://smithery.ai/server/mcp-dir/nubank-mcp) | `smithery` | — | **[A](tools/mcp-dir-nubank-mcp.md)** | 🔑 `AS-002` ×14, ⚡ `AS-011` ×12, `AS-014` ×24, 🗝️ `AS-010` | Jul 16 |
-| [hamrun-hamrun](https://smithery.ai/server/hamrun/hamrun) | `smithery` | — | **[A](tools/hamrun-hamrun.md)** | 🔑 `AS-002` ×7, `AS-014` ×11, ⚡ `AS-011` ×2 | Oct 27 |
+| [hamrun-hamrun](https://smithery.ai/server/hamrun/hamrun) | `smithery` | — | **[A](tools/hamrun-hamrun.md)** | 🔑 `AS-002` ×7, `AS-014` ×11, ⚡ `AS-011` ×2 | Oct 28 |
 | [stablebaseline-sb-mcp](https://smithery.ai/server/stablebaseline/sb-mcp) | `smithery` | — | **[A](tools/stablebaseline-sb-mcp.md)** | 🔑 `AS-002` ×100, ⚡ `AS-011` ×42, `AS-014` ×163, 🗝️ `AS-010` ×5 | Jul 4 |
 | [mcp-dir-nuvemshop-mcp](https://smithery.ai/server/mcp-dir/nuvemshop-mcp) | `smithery` | — | **[A](tools/mcp-dir-nuvemshop-mcp.md)** | `AS-014` ×24, 🔑 `AS-002` ×22, ⚡ `AS-011` ×15, 🗝️ `AS-010` | Jul 15 |
 | [mcp-dir-pagseguro-mcp](https://smithery.ai/server/mcp-dir/pagseguro-mcp) | `smithery` | — | **[A](tools/mcp-dir-pagseguro-mcp.md)** | `AS-014` ×17, 🔑 `AS-002` ×12, ⚡ `AS-011` ×11, 🗝️ `AS-010` | Jul 15 |
@@ -1565,12 +1565,12 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [convention-sh-toolkit](https://smithery.ai/server/convention-sh/toolkit) | `smithery` | — | **[A](tools/convention-sh-toolkit.md)** | 🔑 `AS-002`, `AS-014` | May 29 |
 | [learnnaga-ai-103](https://smithery.ai/server/learnnaga/ai-103) | `smithery` | — | **[A](tools/learnnaga-ai-103.md)** | 🔑 `AS-002`, `AS-014` | May 19 |
 | [legalfournier-spain-legal](https://smithery.ai/server/legalfournier/spain-legal) | `smithery` | — | **[A](tools/legalfournier-spain-legal.md)** | 🔑 `AS-002` ×2, `AS-014` ×6 | Jun 6 |
-| [framesail-framesail](https://smithery.ai/server/framesail/framesail) | `smithery` | — | **[B](tools/framesail-framesail.md)** | `AS-014` ×68, 🔑 `AS-002` ×30, ⚡ `AS-011` ×19, 📐 `AS-003` | Oct 27 |
+| [framesail-framesail](https://smithery.ai/server/framesail/framesail) | `smithery` | — | **[B](tools/framesail-framesail.md)** | `AS-014` ×68, 🔑 `AS-002` ×30, ⚡ `AS-011` ×19, 📐 `AS-003` | Oct 28 |
 | [alexandria-shai-eden-cbrowser](https://smithery.ai/server/alexandria-shai-eden/cbrowser) | `smithery` | — | **[B](tools/alexandria-shai-eden-cbrowser.md)** | 🔑 `AS-002` ×62, 🗝️ `AS-010` ×11, ⚡ `AS-011` ×44, `AS-014` ×105, 📐 `AS-003` | Aug 15 |
 | [stevejford1-shiply](https://smithery.ai/server/stevejford1/shiply) | `smithery` | — | **[B](tools/stevejford1-shiply.md)** | 🔑 `AS-002` ×54, 🗝️ `AS-010` ×2, ⚡ `AS-011` ×31, `AS-014` ×104, 📐 `AS-003` ×4 | Jul 4 |
 | [rafaelkocurek-nvob-agentview](https://smithery.ai/server/rafaelkocurek-nvob/agentview) | `smithery` | — | **[B](tools/rafaelkocurek-nvob-agentview.md)** | 🔑 `AS-002` ×39, ⚡ `AS-011` ×28, `AS-014` ×55, 🗝️ `AS-010` ×49, 📐 `AS-003` | Aug 1 |
 | [powersun-merx](https://smithery.ai/server/powersun/merx) | `smithery` | — | **[B](tools/powersun-merx.md)** | `AS-014` ×52, 🗝️ `AS-010` ×14, 🔑 `AS-002` ×13, ⚡ `AS-011` ×8, 📐 `AS-003` | Aug 9 |
-| [florian-weavely](https://smithery.ai/server/florian/weavely) | `smithery` | — | **[B](tools/florian-weavely.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×13, 📐 `AS-003` | Oct 27 |
+| [florian-weavely](https://smithery.ai/server/florian/weavely) | `smithery` | — | **[B](tools/florian-weavely.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×13, 📐 `AS-003` | Oct 28 |
 | [carrier-mcp](https://smithery.ai/server/carrier/mcp) | `smithery` | — | **[B](tools/carrier-mcp.md)** | 🔑 `AS-002` ×31, ⚡ `AS-011` ×29, `AS-014` ×65, 📐 `AS-003`, 🗝️ `AS-010` | Jun 27 |
 | [node2flow-postgrest](https://smithery.ai/server/node2flow/postgrest) | `smithery` | — | **[B](tools/node2flow-postgrest.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×3, `AS-014` ×10 | Apr 19 |
 | [coachsync-barbell-tools](https://smithery.ai/server/coachsync/barbell-tools) | `smithery` | — | **[B](tools/coachsync-barbell-tools.md)** | `AS-014` ×3, 🔑 `AS-002` ×2, ⚡ `AS-011` | Jun 2 |
@@ -1583,7 +1583,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [alberduris-summiz](https://smithery.ai/server/alberduris/summiz) | `smithery` | — | **[B](tools/alberduris-summiz.md)** | `AS-012`, 🔑 `AS-002` ×13, ⚡ `AS-011` ×12, `AS-014` ×13 | Oct 26 |
 | [openclaw-ai-agentforge-compare](https://smithery.ai/server/openclaw-ai/agentforge-compare) | `smithery` | — | **[B](tools/openclaw-ai-agentforge-compare.md)** | 🗝️ `AS-010` ×2, `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` | Apr 20 |
 | [getkin-agent-infrastructure](https://smithery.ai/server/getkin/agent-infrastructure) | `smithery` | — | **[B](tools/getkin-agent-infrastructure.md)** | 🗝️ `AS-010` ×2, `AS-014` ×6, 🔑 `AS-002` | Jun 2 |
-| [emblemai-emblem-mcp](https://smithery.ai/server/emblemai/emblem-mcp) | `smithery` | — | **[B](tools/emblemai-emblem-mcp.md)** | 🔑 `AS-002` ×39, ⚡ `AS-011` ×33, `AS-014` ×133, 🗝️ `AS-010` ×23, `AS-013` ×3 | Oct 27 |
+| [emblemai-emblem-mcp](https://smithery.ai/server/emblemai/emblem-mcp) | `smithery` | — | **[B](tools/emblemai-emblem-mcp.md)** | 🔑 `AS-002` ×39, ⚡ `AS-011` ×33, `AS-014` ×133, 🗝️ `AS-010` ×23, `AS-013` ×3 | Oct 28 |
 | [a2a-authenticated-llm-agent](https://smithery.ai/server/a2a/authenticated-llm-agent) | `smithery` | — | **[B](tools/a2a-authenticated-llm-agent.md)** | `AS-012`, `AS-014` | Jul 24 |
 | [hubertroy-test](https://smithery.ai/server/HuberTRoy/test) | `smithery` | — | **[B](tools/hubertroy-test.md)** | `AS-012`, `AS-014` ×2 | Apr 10 |
 | [memestack-mcp](https://smithery.ai/server/memestack/mcp) | `smithery` | — | **[B](tools/memestack-mcp.md)** | `AS-012`, 🔑 `AS-002` ×10, ⚡ `AS-011` ×7, `AS-014` ×20 | Aug 3 |
@@ -1614,7 +1614,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [nostr-ai-tools-jorgenclaw-nostr-ai-tools-jorgenclaw](https://smithery.ai/server/Nostr_AI_Tools_Jorgenclaw/Nostr_AI_Tools_Jorgenclaw) | `smithery` | — | **[B](tools/nostr-ai-tools-jorgenclaw-nostr-ai-tools-jorgenclaw.md)** | 🔑 `AS-002` ×6, `AS-014` ×23, ⚡ `AS-011` | May 4 |
 | [xtomd-x-to-markdown](https://smithery.ai/server/xtomd/x-to-markdown) | `smithery` | — | **[B](tools/xtomd-x-to-markdown.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | May 30 |
 | [ramadasmr-networkcalc-mcp](https://smithery.ai/server/ramadasmr/networkcalc-mcp) | `smithery` | — | **[B](tools/ramadasmr-networkcalc-mcp.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×5 | Jun 8 |
-| [joelasota-synmerco](https://smithery.ai/server/joelasota/synmerco) | `smithery` | — | **[B](tools/joelasota-synmerco.md)** | `AS-014` ×46, 🔑 `AS-002` ×19, ⚡ `AS-011` ×17, 📐 `AS-003` | Oct 27 |
+| [joelasota-synmerco](https://smithery.ai/server/joelasota/synmerco) | `smithery` | — | **[B](tools/joelasota-synmerco.md)** | `AS-014` ×46, 🔑 `AS-002` ×19, ⚡ `AS-011` ×17, 📐 `AS-003` | Oct 28 |
 | [xiaobenyang-com-rfc-server](https://smithery.ai/server/xiaobenyang-com/rfc-server) | `smithery` | — | **[B](tools/xiaobenyang-com-rfc-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | May 28 |
 | [rankiteo-rankiteo-mcp](https://smithery.ai/server/rankiteo/rankiteo-mcp) | `smithery` | — | **[B](tools/rankiteo-rankiteo-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Apr 19 |
 | [cyong80-subway-mcp](https://smithery.ai/server/cyong80/subway-mcp) | `smithery` | — | **[B](tools/cyong80-subway-mcp.md)** | `AS-012`, 🔑 `AS-002` ×9, `AS-014` ×22, ⚡ `AS-011` ×5 | Apr 5 |
@@ -1630,7 +1630,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [qflagg212-i66d-teres-io](https://smithery.ai/server/qflagg212-i66d/teres-io) | `smithery` | — | **[B](tools/qflagg212-i66d-teres-io.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011`, `AS-014` ×10 | Apr 19 |
 | [halismertkir-game-trends-mcp](https://smithery.ai/server/halismertkir/game-trends-mcp) | `smithery` | — | **[B](tools/halismertkir-game-trends-mcp.md)** | 🔑 `AS-002` ×2, `AS-014` ×10, ⚡ `AS-011` | Apr 4 |
 | [govping-regulatory-changes](https://smithery.ai/server/govping/regulatory-changes) | `smithery` | — | **[B](tools/govping-regulatory-changes.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Apr 19 |
-| [spacepacket-e3d-ai](https://smithery.ai/server/spacepacket/e3d-ai) | `smithery` | — | **[B](tools/spacepacket-e3d-ai.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×4, `AS-014` ×22, 🗝️ `AS-010` ×10, 📐 `AS-003` | Oct 27 |
+| [spacepacket-e3d-ai](https://smithery.ai/server/spacepacket/e3d-ai) | `smithery` | — | **[B](tools/spacepacket-e3d-ai.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×4, `AS-014` ×22, 🗝️ `AS-010` ×10, 📐 `AS-003` | Oct 28 |
 | [agentic-browsing-preclick](https://smithery.ai/server/agentic-browsing/preclick) | `smithery` | — | **[B](tools/agentic-browsing-preclick.md)** | 🔑 `AS-002` ×5, ⚡ `AS-011` ×5, `AS-014` ×6 | May 29 |
 | [janmacher02-xl8y-ares-mcp](https://smithery.ai/server/janmacher02-xl8y/ares-mcp) | `smithery` | — | **[B](tools/janmacher02-xl8y-ares-mcp.md)** | 🔑 `AS-002` ×2, `AS-014` ×5, ⚡ `AS-011` | Jun 8 |
 | [n3n-seoul-n3n-search-mcp-server](https://smithery.ai/server/N3N-Seoul/n3n-search-mcp-server) | `smithery` | — | **[B](tools/n3n-seoul-n3n-search-mcp-server.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Apr 5 |
@@ -1647,7 +1647,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [reitsmasieto-wq-overcome-stress](https://smithery.ai/server/reitsmasieto-wq/overcome-stress) | `smithery` | — | **[B](tools/reitsmasieto-wq-overcome-stress.md)** | `AS-014` ×5, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | May 17 |
 | [kapoost-humanmcp-marketplace](https://smithery.ai/server/kapoost/humanmcp-marketplace) | `smithery` | — | **[B](tools/kapoost-humanmcp-marketplace.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | Jun 6 |
 | [jackmmaher-sic-codes](https://smithery.ai/server/jackmmaher/sic-codes) | `smithery` | — | **[B](tools/jackmmaher-sic-codes.md)** | `AS-014` ×6, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | Jun 8 |
-| [ahmednegm-1711-maqami-travel](https://smithery.ai/server/ahmednegm-1711/maqami-travel) | `smithery` | — | **[B](tools/ahmednegm-1711-maqami-travel.md)** | 🔑 `AS-002` ×21, `AS-014` ×41, ⚡ `AS-011` ×14, 📐 `AS-003` | Oct 27 |
+| [ahmednegm-1711-maqami-travel](https://smithery.ai/server/ahmednegm-1711/maqami-travel) | `smithery` | — | **[B](tools/ahmednegm-1711-maqami-travel.md)** | 🔑 `AS-002` ×21, `AS-014` ×41, ⚡ `AS-011` ×14, 📐 `AS-003` | Oct 28 |
 | [michalis-koutridis-diavgeia-mcp](https://smithery.ai/server/michalis.koutridis/diavgeia-mcp) | `smithery` | — | **[B](tools/michalis-koutridis-diavgeia-mcp.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | May 12 |
 | [wcsdproducer-employee-zero](https://smithery.ai/server/wcsdproducer/employee-zero) | `smithery` | — | **[B](tools/wcsdproducer-employee-zero.md)** | `AS-014` ×4, 🔑 `AS-002`, ⚡ `AS-011` | May 30 |
 | [resumeoptimizerpro-resume-optimizer-pro](https://smithery.ai/server/resumeoptimizerpro/resume-optimizer-pro) | `smithery` | — | **[B](tools/resumeoptimizerpro-resume-optimizer-pro.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×2, `AS-014` ×3 | May 16 |
@@ -1655,16 +1655,16 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [wander8jackson-avocado-ai](https://smithery.ai/server/wander8jackson/avocado-ai) | `smithery` | — | **[B](tools/wander8jackson-avocado-ai.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Apr 19 |
 | [key-cryptopolitan-mcp](https://smithery.ai/server/key/cryptopolitan-mcp) | `smithery` | — | **[B](tools/key-cryptopolitan-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×5 | Apr 19 |
 | [rftsngl-newsmcp-mediastackapi](https://smithery.ai/server/rftsngl/newsmcp_mediastackapi) | `smithery` | — | **[B](tools/rftsngl-newsmcp-mediastackapi.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×2 | Apr 5 |
-| [rileycraig14-nexus-intelligence](https://smithery.ai/server/rileycraig14/nexus-intelligence) | `smithery` | — | **[B](tools/rileycraig14-nexus-intelligence.md)** | `AS-014` ×20, 🔑 `AS-002` ×10, ⚡ `AS-011` ×10, 📐 `AS-003` | Oct 27 |
-| [metavolve-labs-intelligence-aeternum](https://smithery.ai/server/metavolve-labs/intelligence-aeternum) | `smithery` | — | **[B](tools/metavolve-labs-intelligence-aeternum.md)** | `AS-014` ×12, 🔑 `AS-002` ×6, 📐 `AS-003`, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Oct 27 |
-| [delx-delx-mcp](https://smithery.ai/server/delx/delx-mcp) | `smithery` | — | **[B](tools/delx-delx-mcp.md)** | `AS-014` ×94, 🔑 `AS-002` ×35, 📐 `AS-003`, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Oct 27 |
+| [rileycraig14-nexus-intelligence](https://smithery.ai/server/rileycraig14/nexus-intelligence) | `smithery` | — | **[B](tools/rileycraig14-nexus-intelligence.md)** | `AS-014` ×20, 🔑 `AS-002` ×10, ⚡ `AS-011` ×10, 📐 `AS-003` | Oct 28 |
+| [metavolve-labs-intelligence-aeternum](https://smithery.ai/server/metavolve-labs/intelligence-aeternum) | `smithery` | — | **[B](tools/metavolve-labs-intelligence-aeternum.md)** | `AS-014` ×12, 🔑 `AS-002` ×6, 📐 `AS-003`, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Oct 28 |
+| [delx-delx-mcp](https://smithery.ai/server/delx/delx-mcp) | `smithery` | — | **[B](tools/delx-delx-mcp.md)** | `AS-014` ×94, 🔑 `AS-002` ×35, 📐 `AS-003`, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Oct 28 |
 | [ipogrid-ipo-research](https://smithery.ai/server/ipogrid/ipo-research) | `smithery` | — | **[B](tools/ipogrid-ipo-research.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | May 28 |
 | [investmentchacha-earningsprism](https://smithery.ai/server/investmentchacha/earningsprism) | `smithery` | — | **[B](tools/investmentchacha-earningsprism.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×5, 📐 `AS-003` ×2 | Aug 16 |
 | [integsec-turbopentest](https://smithery.ai/server/integsec/turbopentest) | `smithery` | — | **[B](tools/integsec-turbopentest.md)** | 🔑 `AS-002` ×4, ⚡ `AS-011` ×4, `AS-014` ×8 | May 19 |
 | [mem0ai-mem0-memory-mcp](https://smithery.ai/server/mem0ai/mem0-memory-mcp) | `smithery` | — | **[B](tools/mem0ai-mem0-memory-mcp.md)** | `AS-014` ×9, 🔑 `AS-002` ×6, ⚡ `AS-011` ×2 | Apr 19 |
 | [haraldcb-sportsbarwatch](https://smithery.ai/server/haraldcb/sportsbarwatch) | `smithery` | — | **[B](tools/haraldcb-sportsbarwatch.md)** | `AS-014` ×5, 🔑 `AS-002`, ⚡ `AS-011` | Apr 19 |
 | [clarityai](https://smithery.ai/server/clarityai) | `smithery` | — | **[B](tools/clarityai.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×6 | May 19 |
-| [pipeworx-gateway](https://smithery.ai/server/pipeworx/gateway) | `smithery` | — | **[B](tools/pipeworx-gateway.md)** | `AS-014` ×2530, 🔑 `AS-002` ×842, ⚡ `AS-011` ×663, 🗝️ `AS-010` ×237, ⚡ `AS-006` ×5, 📐 `AS-003` ×2, `AS-013` ×2, `AS-009` | Oct 27 |
+| [pipeworx-gateway](https://smithery.ai/server/pipeworx/gateway) | `smithery` | — | **[B](tools/pipeworx-gateway.md)** | `AS-014` ×2530, 🔑 `AS-002` ×842, ⚡ `AS-011` ×663, 🗝️ `AS-010` ×237, ⚡ `AS-006` ×5, 📐 `AS-003` ×2, `AS-013` ×2, `AS-009` | Oct 28 |
 | [victor-musashi](https://smithery.ai/server/victor/musashi) | `smithery` | — | **[B](tools/victor-musashi.md)** | `AS-014` ×8, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2 | May 4 |
 | [mcp-dir-olist-mcp](https://smithery.ai/server/mcp-dir/olist-mcp) | `smithery` | — | **[B](tools/mcp-dir-olist-mcp.md)** | 🔑 `AS-002` ×4, 📐 `AS-003`, ⚡ `AS-011` ×2, `AS-014` ×7, 🗝️ `AS-010` | Jul 15 |
 | [nickdesi-mcpffbb](https://smithery.ai/server/nickdesi/mcpffbb) | `smithery` | — | **[B](tools/nickdesi-mcpffbb.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×6 | Apr 21 |
@@ -1674,9 +1674,9 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [googleslides](https://smithery.ai/server/googleslides) | `smithery` | — | **[B](tools/googleslides.md)** | 🔑 `AS-002` ×4, `AS-014` ×6, ⚡ `AS-011` | Apr 19 |
 | [knitify-research-api](https://smithery.ai/server/knitify/research-api) | `smithery` | — | **[B](tools/knitify-research-api.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×2 | Apr 19 |
 | [fabricmarketplace-fabric-marketplace](https://smithery.ai/server/fabricmarketplace/fabric-marketplace) | `smithery` | — | **[B](tools/fabricmarketplace-fabric-marketplace.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×3, `AS-014` ×7 | Jun 1 |
-| [onesignal-onesignal](https://smithery.ai/server/onesignal/onesignal) | `smithery` | — | **[B](tools/onesignal-onesignal.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×13, `AS-014` ×34, 📐 `AS-003`, 🗝️ `AS-010` ×2 | Oct 27 |
+| [onesignal-onesignal](https://smithery.ai/server/onesignal/onesignal) | `smithery` | — | **[B](tools/onesignal-onesignal.md)** | 🔑 `AS-002` ×21, ⚡ `AS-011` ×13, `AS-014` ×34, 📐 `AS-003`, 🗝️ `AS-010` ×2 | Oct 28 |
 | [big-saltedfish-mcp-browser](https://smithery.ai/server/big-saltedfish/mcp-browser) | `smithery` | — | **[B](tools/big-saltedfish-mcp-browser.md)** | `AS-014` ×6, 🔑 `AS-002`, ⚡ `AS-011` | Apr 3 |
-| [vestara-america-law-graph](https://smithery.ai/server/vestara/america-law-graph) | `smithery` | — | **[B](tools/vestara-america-law-graph.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×11, 📐 `AS-003` | Oct 27 |
+| [vestara-america-law-graph](https://smithery.ai/server/vestara/america-law-graph) | `smithery` | — | **[B](tools/vestara-america-law-graph.md)** | 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, `AS-014` ×11, 📐 `AS-003` | Oct 28 |
 | [cbeggroup-gettreatmenthelp](https://smithery.ai/server/cbeggroup/gettreatmenthelp) | `smithery` | — | **[B](tools/cbeggroup-gettreatmenthelp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Apr 19 |
 | [kontakt-qy0g-food-recipe-mcp](https://smithery.ai/server/kontakt-qy0g/Food-Recipe-MCP) | `smithery` | — | **[B](tools/kontakt-qy0g-food-recipe-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Apr 24 |
 | [stackdump-pflow-pilot](https://smithery.ai/server/stackdump/pflow-pilot) | `smithery` | — | **[B](tools/stackdump-pflow-pilot.md)** | `AS-014` ×22, 🔑 `AS-002` ×9, ⚡ `AS-011` ×5 | May 12 |
@@ -1695,7 +1695,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [heavysword1-agentflight](https://smithery.ai/server/heavysword1/agentflight) | `smithery` | — | **[B](tools/heavysword1-agentflight.md)** | 🔑 `AS-002`, 📐 `AS-003`, ⚡ `AS-011`, `AS-014` ×2 | Aug 18 |
 | [lexbeam-software-eu-ai-act](https://smithery.ai/server/lexbeam-software/eu-ai-act) | `smithery` | — | **[B](tools/lexbeam-software-eu-ai-act.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×9 | Apr 19 |
 | [savordish-changeagent360](https://smithery.ai/server/savordish/changeagent360) | `smithery` | — | **[B](tools/savordish-changeagent360.md)** | 🔑 `AS-002` ×8, `AS-014` ×18, ⚡ `AS-011` ×4, 📐 `AS-003` | Jul 3 |
-| [fenglucc-ko-financial-data](https://smithery.ai/server/fenglucc/ko-financial-data) | `smithery` | — | **[B](tools/fenglucc-ko-financial-data.md)** | `AS-014` ×24, 🔑 `AS-002` ×12, 📐 `AS-003` ×2, ⚡ `AS-011` ×6 | Oct 27 |
+| [fenglucc-ko-financial-data](https://smithery.ai/server/fenglucc/ko-financial-data) | `smithery` | — | **[B](tools/fenglucc-ko-financial-data.md)** | `AS-014` ×24, 🔑 `AS-002` ×12, 📐 `AS-003` ×2, ⚡ `AS-011` ×6 | Oct 28 |
 | [sceneview-gateway](https://smithery.ai/server/sceneview/gateway) | `smithery` | — | **[B](tools/sceneview-gateway.md)** | `AS-014` ×63, 🔑 `AS-002` ×21, ⚡ `AS-011` ×16, 📐 `AS-003` | Jul 10 |
 | [coupang-mcp-coupang](https://smithery.ai/server/coupang-mcp/coupang) | `smithery` | — | **[B](tools/coupang-mcp-coupang.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | May 29 |
 | [fibonex-mcp-server](https://smithery.ai/server/fibonex/mcp-server) | `smithery` | — | **[B](tools/fibonex-mcp-server.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | May 19 |
@@ -1703,7 +1703,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [twohalves-cosmetic-regulatory](https://smithery.ai/server/twohalves/cosmetic-regulatory) | `smithery` | — | **[B](tools/twohalves-cosmetic-regulatory.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4 | Apr 28 |
 | [benedikt-mh4x-storylenses](https://smithery.ai/server/benedikt-mh4x/storylenses) | `smithery` | — | **[B](tools/benedikt-mh4x-storylenses.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Apr 19 |
 | [indigoint-librarian-nexus](https://smithery.ai/server/indigoint/librarian-nexus) | `smithery` | — | **[B](tools/indigoint-librarian-nexus.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Apr 19 |
-| [flashalpha-options-analytics](https://smithery.ai/server/FlashAlpha/options-analytics) | `smithery` | — | **[B](tools/flashalpha-options-analytics.md)** | 🗝️ `AS-010` ×71, `AS-014` ×71, 🔑 `AS-002` ×6, 📐 `AS-003`, ⚡ `AS-011` ×3 | Oct 27 |
+| [flashalpha-options-analytics](https://smithery.ai/server/FlashAlpha/options-analytics) | `smithery` | — | **[B](tools/flashalpha-options-analytics.md)** | 🗝️ `AS-010` ×71, `AS-014` ×71, 🔑 `AS-002` ×6, 📐 `AS-003`, ⚡ `AS-011` ×3 | Oct 28 |
 | [correkt-marketplace](https://smithery.ai/server/correkt/marketplace) | `smithery` | — | **[B](tools/correkt-marketplace.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Apr 19 |
 | [forage-shopping-forage-shopping](https://smithery.ai/server/forage-shopping/forage-shopping) | `smithery` | — | **[B](tools/forage-shopping-forage-shopping.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×3 | May 17 |
 | [node2flow-instagram](https://smithery.ai/server/node2flow/instagram) | `smithery` | — | **[B](tools/node2flow-instagram.md)** | 🔑 `AS-002` ×12, `AS-014` ×22, ⚡ `AS-011` ×9 | Apr 19 |
@@ -1713,9 +1713,9 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [steve-3c61-askcyborgfinancialresearch](https://smithery.ai/server/steve-3c61/askcyborgfinancialresearch) | `smithery` | — | **[B](tools/steve-3c61-askcyborgfinancialresearch.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×4, 📐 `AS-003` | Jul 2 |
 | [tim-i59w-ainumbers](https://smithery.ai/server/tim-i59w/ainumbers) | `smithery` | — | **[B](tools/tim-i59w-ainumbers.md)** | 🔑 `AS-002` ×327, ⚡ `AS-011` ×327, `AS-014` ×327, 📐 `AS-003` | Jul 16 |
 | [fuddyduddy-kyrgyz-news-mcp](https://smithery.ai/server/fuddyduddy/kyrgyz-news-mcp) | `smithery` | — | **[B](tools/fuddyduddy-kyrgyz-news-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×4 | Jun 3 |
-| [segellfosc-dev-ayfx-menjometre](https://smithery.ai/server/segellfosc-dev-ayfx/menjometre) | `smithery` | — | **[B](tools/segellfosc-dev-ayfx-menjometre.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×8, `AS-014` ×48, 📐 `AS-003` | Oct 27 |
+| [segellfosc-dev-ayfx-menjometre](https://smithery.ai/server/segellfosc-dev-ayfx/menjometre) | `smithery` | — | **[B](tools/segellfosc-dev-ayfx-menjometre.md)** | 🔑 `AS-002` ×13, ⚡ `AS-011` ×8, `AS-014` ×48, 📐 `AS-003` | Oct 28 |
 | [lunarcrush](https://smithery.ai/server/lunarcrush) | `smithery` | — | **[B](tools/lunarcrush.md)** | `AS-014` ×13, 🔑 `AS-002` ×6, ⚡ `AS-011` ×6, 🗝️ `AS-010` | Apr 19 |
-| [ticktick](https://smithery.ai/server/ticktick) | `smithery` | — | **[B](tools/ticktick.md)** | `AS-014` ×11, 🔑 `AS-002` ×10, ⚡ `AS-011` ×2, `AS-013` | Oct 27 |
+| [ticktick](https://smithery.ai/server/ticktick) | `smithery` | — | **[B](tools/ticktick.md)** | `AS-014` ×11, 🔑 `AS-002` ×10, ⚡ `AS-011` ×2, `AS-013` | Oct 28 |
 | [thrownlemon-medical-mcp](https://smithery.ai/server/ThrownLemon/medical-mcp) | `smithery` | — | **[B](tools/thrownlemon-medical-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Apr 5 |
 | [gandli-yanyue-mcp](https://smithery.ai/server/gandli/yanyue-mcp) | `smithery` | — | **[B](tools/gandli-yanyue-mcp.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` | Apr 4 |
 | [sentinelsignal-scoring](https://smithery.ai/server/sentinelsignal/scoring) | `smithery` | — | **[B](tools/sentinelsignal-scoring.md)** | `AS-014` ×8, 🔑 `AS-002` ×3, ⚡ `AS-011` ×3 | Jun 10 |
@@ -1734,12 +1734,12 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [manifold](https://smithery.ai/server/manifold) | `smithery` | — | **[B](tools/manifold.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011` ×2, `AS-014` ×5 | Apr 19 |
 | [nefesh-ai-human-state](https://smithery.ai/server/nefesh-ai/human-state) | `smithery` | — | **[B](tools/nefesh-ai-human-state.md)** | `AS-014` ×6, 🔑 `AS-002` ×4, ⚡ `AS-011` ×2 | May 27 |
 | [shibui-finance](https://smithery.ai/server/shibui/finance) | `smithery` | — | **[B](tools/shibui-finance.md)** | 🔑 `AS-002` ×12, ⚡ `AS-011` ×4, `AS-014` ×12, 📐 `AS-003` | Aug 4 |
-| [delx-witness-protocol](https://smithery.ai/server/delx/witness-protocol) | `smithery` | — | **[B](tools/delx-witness-protocol.md)** | `AS-014` ×54, 🔑 `AS-002` ×8, 📐 `AS-003`, ⚡ `AS-011` ×5 | Oct 27 |
+| [delx-witness-protocol](https://smithery.ai/server/delx/witness-protocol) | `smithery` | — | **[B](tools/delx-witness-protocol.md)** | `AS-014` ×54, 🔑 `AS-002` ×8, 📐 `AS-003`, ⚡ `AS-011` ×5 | Oct 28 |
 | [shige-f-k-research](https://smithery.ai/server/shige-f-k/research) | `smithery` | — | **[B](tools/shige-f-k-research.md)** | 🔑 `AS-002` ×31, ⚡ `AS-011` ×30, `AS-014` ×127, 📐 `AS-003`, 🗝️ `AS-010` | Aug 2 |
 | [shining55-peach-p0lb-formlova](https://smithery.ai/server/shining55-peach-p0lb/formlova) | `smithery` | — | **[B](tools/shining55-peach-p0lb-formlova.md)** | `AS-014` ×127, 🔑 `AS-002` ×71, ⚡ `AS-011` ×54, 📐 `AS-003` ×9, 🗝️ `AS-010` ×14 | Jul 4 |
 | [polymarket-polymarket-mcp](https://smithery.ai/server/polymarket/polymarket-mcp) | `smithery` | — | **[B](tools/polymarket-polymarket-mcp.md)** | 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×7 | Apr 29 |
 | [artificer-lex-oracle](https://smithery.ai/server/artificer/lex-oracle) | `smithery` | — | **[B](tools/artificer-lex-oracle.md)** | `AS-014` ×14, 🔑 `AS-002` ×2, 📐 `AS-003` ×2, ⚡ `AS-011` ×2 | Aug 16 |
-| [github](https://smithery.ai/server/github) | `smithery` | — | **[B](tools/github.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Oct 27 |
+| [github](https://smithery.ai/server/github) | `smithery` | — | **[B](tools/github.md)** | 🔑 `AS-002` ×52, ⚡ `AS-011` ×36, `AS-014` ×86, 📐 `AS-003`, 🗝️ `AS-010` | Oct 28 |
 | [marcward-xbrlus-mcp](https://smithery.ai/server/marcward/xbrlus-mcp) | `smithery` | — | **[B](tools/marcward-xbrlus-mcp.md)** | 🔑 `AS-002` ×10, ⚡ `AS-011` ×10, `AS-014` ×10 | Apr 19 |
 | [swell-archetype](https://smithery.ai/server/swell/archetype) | `smithery` | — | **[B](tools/swell-archetype.md)** | `AS-014` ×2, 🔑 `AS-002`, ⚡ `AS-011` | Apr 19 |
 | [glane0303-woogoro-auto-repair](https://smithery.ai/server/glane0303/woogoro-auto-repair) | `smithery` | — | **[B](tools/glane0303-woogoro-auto-repair.md)** | 🔑 `AS-002`, ⚡ `AS-011`, `AS-014` ×5 | Jun 3 |
@@ -1895,19 +1895,19 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [todoist](https://smithery.ai/server/todoist) | `smithery` | — | **[C](tools/todoist.md)** | `AS-014` ×30, 🔑 `AS-002` ×19, ⚡ `AS-011` ×5 | Apr 19 |
 | [pictify-pictify-mcp](https://smithery.ai/server/pictify/pictify-mcp) | `smithery` | — | **[C](tools/pictify-pictify-mcp.md)** | 🔑 `AS-002` ×30, ⚡ `AS-011` ×18, `AS-014` ×31 | Apr 19 |
 | [jonathan-7udh-inferventis-finance](https://smithery.ai/server/jonathan-7udh/inferventis-finance) | `smithery` | — | **[C](tools/jonathan-7udh-inferventis-finance.md)** | `AS-014` ×19, 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, ⚡ `AS-006` | Aug 14 |
-| [daniel-abbay-compuute-scan-api](https://smithery.ai/server/daniel-abbay/compuute-scan-api) | `smithery` | — | **[C](tools/daniel-abbay-compuute-scan-api.md)** | 🔑 `AS-002`, ⚡ `AS-006`, ⚡ `AS-011`, `AS-014` | Oct 27 |
+| [daniel-abbay-compuute-scan-api](https://smithery.ai/server/daniel-abbay/compuute-scan-api) | `smithery` | — | **[C](tools/daniel-abbay-compuute-scan-api.md)** | 🔑 `AS-002`, ⚡ `AS-006`, ⚡ `AS-011`, `AS-014` | Oct 28 |
 | [rfi-irfos-ternlang](https://smithery.ai/server/rfi-irfos/ternlang) | `smithery` | — | **[C](tools/rfi-irfos-ternlang.md)** | `AS-014` ×34, 🔑 `AS-002` ×11, ⚡ `AS-006`, ⚡ `AS-011` ×4 | Jul 4 |
 | [consensus](https://smithery.ai/server/consensus) | `smithery` | — | **[C](tools/consensus.md)** | 🔑 `AS-002` ×3, ⚡ `AS-011`, `AS-014` | Apr 19 |
 | [rlhf-loop-mcp-memory-gateway-v2](https://smithery.ai/server/rlhf-loop/mcp-memory-gateway-v2) | `smithery` | — | **[C](tools/rlhf-loop-mcp-memory-gateway-v2.md)** | `AS-014` ×29, 🔑 `AS-002` ×17, ⚡ `AS-011` ×4, 🗝️ `AS-010` | May 4 |
 | [sentry](https://smithery.ai/server/sentry) | `smithery` | — | **[C](tools/sentry.md)** | `AS-014` ×19, 🔑 `AS-002` ×34, ⚡ `AS-011` ×17 | Apr 19 |
 | [ssemble-mcp-server](https://smithery.ai/server/ssemble/mcp-server) | `smithery` | — | **[C](tools/ssemble-mcp-server.md)** | 🔑 `AS-002` ×7, ⚡ `AS-011` ×4, `AS-014` ×9 | Apr 19 |
 | [nicholasemccormick-meetsync-mcp](https://smithery.ai/server/nicholasemccormick/meetsync-mcp) | `smithery` | — | **[C](tools/nicholasemccormick-meetsync-mcp.md)** | `AS-014` ×19, 🔑 `AS-002` ×10, ⚡ `AS-011` ×4 | May 28 |
-| [openclaw-hal9000-romulus-31780](https://smithery.ai/server/openclaw-hal9000/romulus-31780) | `smithery` | — | **[C](tools/openclaw-hal9000-romulus-31780.md)** | 🛡️ `AS-001`, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 27 |
+| [openclaw-hal9000-romulus-31780](https://smithery.ai/server/openclaw-hal9000/romulus-31780) | `smithery` | — | **[C](tools/openclaw-hal9000-romulus-31780.md)** | 🛡️ `AS-001`, 🔑 `AS-002` ×2, ⚡ `AS-011` ×2, `AS-014` ×3 | Oct 28 |
 | [zobr-script-zobr-script](https://smithery.ai/server/zobr-script/zobr-script) | `smithery` | — | **[C](tools/zobr-script-zobr-script.md)** | 🔑 `AS-002` ×2, ⚡ `AS-006`, ⚡ `AS-011` ×2, `AS-014` ×3 | Jun 20 |
 | [strale-agent-tools](https://smithery.ai/server/strale/agent-tools) | `smithery` | — | **[C](tools/strale-agent-tools.md)** | `AS-014` ×8, 🔑 `AS-002` ×5, ⚡ `AS-006`, ⚡ `AS-011` ×5 | Jul 2 |
 | [protostatis-dev-unbrowser](https://smithery.ai/server/protostatis-dev/unbrowser) | `smithery` | — | **[C](tools/protostatis-dev-unbrowser.md)** | 🔑 `AS-002` ×20, ⚡ `AS-006` ×6, ⚡ `AS-011` ×19, `AS-014` ×32 | Jul 16 |
 | [andrew-schreiber1-desktopinsights](https://smithery.ai/server/andrew-schreiber1/desktopinsights) | `smithery` | — | **[C](tools/andrew-schreiber1-desktopinsights.md)** | `AS-014` ×4, 🔑 `AS-002` ×3, ⚡ `AS-011` | Apr 19 |
-| [ramboweb3-hivecast-x711](https://smithery.ai/server/ramboweb3/hivecast-x711) | `smithery` | — | **[C](tools/ramboweb3-hivecast-x711.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×11, `AS-014` ×27, ⚡ `AS-006`, 🗝️ `AS-010` | Oct 27 |
+| [ramboweb3-hivecast-x711](https://smithery.ai/server/ramboweb3/hivecast-x711) | `smithery` | — | **[C](tools/ramboweb3-hivecast-x711.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×11, `AS-014` ×27, ⚡ `AS-006`, 🗝️ `AS-010` | Oct 28 |
 | [zeintesit-forkit](https://smithery.ai/server/zeintesit/forkit) | `smithery` | — | **[C](tools/zeintesit-forkit.md)** | 🔑 `AS-002` ×4, ⚡ `AS-006`, ⚡ `AS-011` ×3, `AS-014` ×7, 📐 `AS-003` ×2 | Jul 22 |
 | [docapi-docapi-mcp](https://smithery.ai/server/docapi/docapi-mcp) | `smithery` | — | **[C](tools/docapi-docapi-mcp.md)** | 🔑 `AS-002` ×8, ⚡ `AS-011` ×5, `AS-014` ×5 | Apr 19 |
 | [vicente-litvak-siimaster](https://smithery.ai/server/vicente-litvak/siimaster) | `smithery` | — | **[C](tools/vicente-litvak-siimaster.md)** | `AS-014` ×173, 🗝️ `AS-010` ×3, 🔑 `AS-002` ×37, ⚡ `AS-011` ×17, ⚡ `AS-006` | Jul 4 |
@@ -2040,7 +2040,7 @@ All 1951 audited tools. [← Back to README](../README.md#-security-registry)
 | [navanithbharadwaj-stream](https://smithery.ai/server/navanithbharadwaj/stream) | `smithery` | — | **[C](tools/navanithbharadwaj-stream.md)** | 🔑 `AS-002` ×11, `AS-014` ×5, ⚡ `AS-011` ×3 | Apr 27 |
 | [apify-mcp](https://smithery.ai/server/apify/mcp) | `smithery` | — | **[C](tools/apify-mcp.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×7, `AS-014` ×8 | Apr 19 |
 | [apify](https://smithery.ai/server/apify) | `smithery` | — | **[C](tools/apify.md)** | 🔑 `AS-002` ×15, ⚡ `AS-011` ×7, `AS-014` ×8 | Apr 19 |
-| [ia-qa-api](https://smithery.ai/server/ia-qa/api) | `smithery` | — | **[C](tools/ia-qa-api.md)** | `AS-014` ×151, 🔑 `AS-002` ×64, ⚡ `AS-011` ×46, ⚡ `AS-006` ×12, 🗝️ `AS-010` ×34, 📐 `AS-003` ×2 | Oct 27 |
+| [ia-qa-api](https://smithery.ai/server/ia-qa/api) | `smithery` | — | **[C](tools/ia-qa-api.md)** | `AS-014` ×151, 🔑 `AS-002` ×64, ⚡ `AS-011` ×46, ⚡ `AS-006` ×12, 🗝️ `AS-010` ×34, 📐 `AS-003` ×2 | Oct 28 |
 | [nimble-nimble-mcp](https://smithery.ai/server/nimble/nimble-mcp) | `smithery` | — | **[C](tools/nimble-nimble-mcp.md)** | 🔑 `AS-002` ×32, ⚡ `AS-011` ×12, `AS-014` ×18 | Apr 19 |
 | [postman](https://smithery.ai/server/postman) | `smithery` | — | **[C](tools/postman.md)** | 🔑 `AS-002` ×53, ⚡ `AS-011` ×15, `AS-014` ×41 | Apr 19 |
 | [fantastic-breeze-mcp](https://smithery.ai/server/fantastic/breeze-mcp) | `smithery` | — | **[C](tools/fantastic-breeze-mcp.md)** | `AS-014` ×6, 🗝️ `AS-010` ×5, 🔑 `AS-002` ×4 | Apr 19 |

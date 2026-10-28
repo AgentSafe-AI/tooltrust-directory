@@ -29,7 +29,7 @@ Install snippets, examples, and smoke tests:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [favcrm-favcrm](https://smithery.ai/server/favcrm/favcrm) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.9` |
 | **Vendor** | iflytek |
-| **Stars** | ⭐ 8893 |
+| **Stars** | ⭐ 8933 |
 | **Language** | Java |
 | **Source** | [astron-agent](https://github.com/iflytek/astron-agent) |
 | **Scan Date** | 2026-10-15 |

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0` |
 | **Vendor** | sepehr071 |
-| **Stars** | ⭐ 158 |
+| **Stars** | ⭐ 162 |
 | **Language** | Python |
 | **Source** | [iran-mcp](https://github.com/sepehr071/iran-mcp) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

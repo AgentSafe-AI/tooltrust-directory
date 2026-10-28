@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `3.13.0` |
 | **Vendor** | sipyourdrink-ltd |
-| **Stars** | ⭐ 1227 |
+| **Stars** | ⭐ 1328 |
 | **Language** | Python |
 | **Source** | [bernstein](https://github.com/sipyourdrink-ltd/bernstein) |
 | **Scan Date** | 2026-10-15 |

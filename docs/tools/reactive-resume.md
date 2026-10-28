@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `6.0.7` |
 | **Vendor** | reactive-resume |
-| **Stars** | ⭐ 44908 |
+| **Stars** | ⭐ 44956 |
 | **npm Package** | `reactive-resume` |
-| **npm Downloads (30d)** | 41 |
+| **npm Downloads (30d)** | 39 |
 | **Language** | TypeScript |
 | **Source** | [reactive-resume](https://github.com/reactive-resume/reactive-resume) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

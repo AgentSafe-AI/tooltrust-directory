@@ -10,10 +10,10 @@
 | **Vendor** | epiral |
 | **Stars** | ⭐ 6252 |
 | **npm Package** | `bb-browser` |
-| **npm Downloads (30d)** | 4.5k |
+| **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [bb-browser](https://github.com/epiral/bb-browser) |
-| **Scan Date** | 2026-10-27 |
+| **Scan Date** | 2026-10-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

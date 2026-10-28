@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.0` |
 | **Vendor** | buildkite |
-| **Stars** | ⭐ 55 |
+| **Stars** | ⭐ 56 |
 | **Language** | Go |
 | **Source** | [buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) |
 | **Scan Date** | 2026-10-15 |

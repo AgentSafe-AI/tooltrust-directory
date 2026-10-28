@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | brianellin |
-| **Stars** | ⭐ 50 |
+| **Stars** | ⭐ 51 |
 | **npm Package** | `bsky-mcp-server` |
 | **Language** | TypeScript |
 | **Source** | [brianellin-bsky-mcp-server](https://github.com/brianellin/bsky-mcp-server) |
