@@ -10,10 +10,10 @@
 | **Vendor** | cyanheads |
 | **Stars** | ⭐ 700 |
 | **npm Package** | `obsidian-mcp-server` |
-| **npm Downloads (30d)** | 19.0k |
+| **npm Downloads (30d)** | 20.0k |
 | **Language** | TypeScript |
 | **Source** | [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

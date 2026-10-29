@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.2` |
 | **Vendor** | excalidraw |
-| **Stars** | ⭐ 5582 |
+| **Stars** | ⭐ 5594 |
 | **npm Package** | `@mcp-demos/excalidraw-server` |
 | **Language** | TypeScript |
 | **Source** | [excalidraw-mcp](https://github.com/excalidraw/excalidraw-mcp) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

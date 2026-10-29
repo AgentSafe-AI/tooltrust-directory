@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `2026.05.06` |
 | **Vendor** | levnikolaevich |
-| **Stars** | ⭐ 577 |
+| **Stars** | ⭐ 584 |
 | **Language** | JavaScript |
 | **Source** | [claude-code-skills](https://github.com/levnikolaevich/claude-code-skills) |
 | **Scan Date** | 2026-10-15 |

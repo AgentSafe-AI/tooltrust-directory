@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 216 |
 | **Language** | JavaScript |
 | **Source** | [glif-mcp-server](https://github.com/glifxyz/glif-mcp-server) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

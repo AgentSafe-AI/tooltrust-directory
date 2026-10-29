@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-orcid-mcp-server",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-10-28T03:25:31.604748584Z",
+  "scan_date": "2026-10-29T03:50:55.57752518Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/orcid-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
-  "stars": 5,
+  "stars": 6,
   "npm_package": "@cyanheads/orcid-mcp-server",
-  "npm_downloads_monthly": 1319,
+  "npm_downloads_monthly": 1344,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Search and retrieve researcher profiles, works, affiliations, funding, and peer review records from the ORCID registry via MCP. STDIO or Streamable HTTP.",
@@ -43,7 +43,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, filesystem access, database access",
+      "description": "declared capabilities: network access, filesystem access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "orcid_search_researchers"
     },
@@ -131,7 +131,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, network access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "orcid_get_funding"
     },
@@ -281,6 +281,7 @@
       "action": "ALLOW",
       "grade": "A",
       "destinations": [
+        "dynamic email recipient (year_to)",
         "hardcoded domain: orcid.org"
       ],
       "dependency_visibility": "No dependency data",
@@ -870,6 +871,12 @@
     },
     {
       "scan_date": "2026-10-27T03:17:38Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.3.4"
+    },
+    {
+      "scan_date": "2026-10-28T03:25:31Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.3.4"

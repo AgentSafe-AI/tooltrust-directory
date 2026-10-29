@@ -1,6 +1,6 @@
 # 🟢 agent-device
 
-> Mobile app automation and verification for AI coding agents. CLI, MCP server, and typed Node.js API for iOS, Android, HarmonyOS, TV, web, macOS, and Linux.
+> Open source device layer for AI coding agents: a CLI, MCP server, and typed Node.js API to control mobile, web, TV, and desktop apps on devices and simulators, locally or in the cloud.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.21.33` |
 | **Vendor** | callstack |
-| **Stars** | ⭐ 5169 |
+| **Stars** | ⭐ 5180 |
 | **npm Package** | `agent-device` |
-| **npm Downloads (30d)** | 1.1M |
+| **npm Downloads (30d)** | 1.2M |
 | **Language** | TypeScript |
 | **Source** | [agent-device](https://github.com/callstack/agent-device) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

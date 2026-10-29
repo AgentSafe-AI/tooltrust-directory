@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.13.14` |
 | **Vendor** | browser-use |
-| **Stars** | ⭐ 119324 |
+| **Stars** | ⭐ 119418 |
 | **Language** | Python |
 | **Source** | [browser-use](https://github.com/browser-use/browser-use) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

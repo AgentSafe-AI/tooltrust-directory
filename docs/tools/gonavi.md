@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.5` |
 | **Vendor** | Syngnat |
-| **Stars** | ⭐ 2088 |
+| **Stars** | ⭐ 2089 |
 | **Language** | TypeScript |
 | **Source** | [gonavi](https://github.com/Syngnat/GoNavi) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

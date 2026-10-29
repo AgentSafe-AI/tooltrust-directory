@@ -1,19 +1,37 @@
 {
-  "tool_id": "contextstream-mcp-server",
-  "version": "0.4.74",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T02:50:39.141511198Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/contextstream/mcp-server",
   "category": "Developer Tools",
-  "vendor": "contextstream",
-  "stars": 44,
-  "npm_package": "@contextstream/mcp-server",
-  "npm_downloads_monthly": 7686,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 4,
   "description": "Persistent memory and cross-session learning for AI coding assistants. Cloud-based context management via MCP.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 3,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/http-gateway.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 244,
+      "snippet": "new McpServer(",
+      "file": "src/http-gateway.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/index.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 153,
+      "snippet": "new McpServer(",
+      "file": "src/index.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -73,71 +91,22 @@
       "tool_name": "init"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 1,
-    "info": 4
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 12,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 3,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/http-gateway.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 244,
-      "snippet": "new McpServer(",
-      "file": "src/http-gateway.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/index.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 153,
-      "snippet": "new McpServer(",
-      "file": "src/index.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "account",
-    "init"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "account",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (email)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "init",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-10-28T17:18:12Z",
+  "last_release_at": "2026-10-28T17:10:13Z",
+  "latest_release_name": "MCP 1.0.38",
+  "latest_release_tag": "v1.0.38",
+  "latest_release_url": "https://github.com/contextstream/mcp-server/releases/tag/v1.0.38",
+  "latest_release_version": "v1.0.38",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 7686,
+  "npm_package": "@contextstream/mcp-server",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:50:39.141511198Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:42:21Z",
@@ -241,5 +210,44 @@
       "risk_score": 0,
       "version": "0.4.74"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/contextstream/mcp-server",
+  "stars": 44,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 4
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "account",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (email)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "init",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "contextstream-mcp-server",
+  "tool_names": [
+    "account",
+    "init"
+  ],
+  "vendor": "contextstream",
+  "version": "0.4.74"
 }

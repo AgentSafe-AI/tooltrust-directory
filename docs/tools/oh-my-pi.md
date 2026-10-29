@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `18.13.2` |
+| **Version** | `18.13.3` |
 | **Vendor** | can1357 |
-| **Stars** | ⭐ 36858 |
+| **Stars** | ⭐ 36999 |
 | **npm Package** | `omp` |
-| **npm Downloads (30d)** | 305 |
+| **npm Downloads (30d)** | 309 |
 | **Language** | TypeScript |
 | **Source** | [oh-my-pi](https://github.com/can1357/oh-my-pi) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

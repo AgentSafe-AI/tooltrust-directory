@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 184 |
 | **Language** | Rust |
 | **Source** | [narsil-mcp](https://github.com/postrv/narsil-mcp) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

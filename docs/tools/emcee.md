@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.9.0` |
 | **Vendor** | mattt |
-| **Stars** | ⭐ 331 |
+| **Stars** | ⭐ 332 |
 | **Language** | Go |
 | **Source** | [emcee](https://github.com/mattt/emcee) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

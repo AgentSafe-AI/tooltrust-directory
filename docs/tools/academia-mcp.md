@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 94 |
 | **Language** | Python |
 | **Source** | [academia-mcp](https://github.com/IlyaGusev/academia_mcp) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

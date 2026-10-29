@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 148 |
 | **Language** | Go |
 | **Source** | [docker](https://github.com/decionis/docker) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

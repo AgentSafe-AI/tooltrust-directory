@@ -1,17 +1,23 @@
 {
-  "tool_id": "clockworked247-flights-mcp-ts",
-  "version": "1.0.0",
-  "grade": "B",
-  "risk_score": 15,
-  "scan_date": "2026-10-15T02:57:51.774305362Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/clockworked247/flights-mcp-ts",
   "category": "Developer Tools",
-  "vendor": "clockworked247",
-  "stars": 4,
-  "npm_package": "flights-mcp-ts",
-  "language": "TypeScript",
+  "contributors": 1,
   "description": "A TypeScript implementation of a flight \u0026 stay search MCP server that uses the Duffel API to search for flights. This MCP server provides tools to search for one-way, round-trip, and multi-city flights.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 4,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "src/server.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 20,
+      "snippet": "new McpServer(",
+      "file": "src/server.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-012",
@@ -63,49 +69,20 @@
       "tool_name": "hasdata_google_travel_flights_getGoogleFlights"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 1,
-    "info": 3
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 4,
+  "grade": "B",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 4,
-      "snippet": "'@modelcontextprotocol/sdk",
-      "file": "src/server.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 20,
-      "snippet": "new McpServer(",
-      "file": "src/server.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "hasdata_google_travel_flights_getGoogleFlights"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "hasdata_google_travel_flights_getGoogleFlights",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (bookingToken)",
-        "dynamic email recipient (departureToken)",
-        "dynamic email recipient (stops)",
-        "hardcoded domain: www.iata.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2025-04-16T09:14:01Z",
+  "last_release_at": "",
+  "latest_release_name": "",
+  "latest_release_tag": "",
+  "latest_release_url": "",
+  "latest_release_version": "",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_package": "flights-mcp-ts",
+  "risk_score": 15,
+  "scan_date": "2026-10-15T02:57:51.774305362Z",
   "scan_history": [
     {
       "scan_date": "2026-04-11T01:46:26Z",
@@ -269,5 +246,36 @@
       "risk_score": 15,
       "version": "1.0.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/clockworked247/flights-mcp-ts",
+  "stars": 4,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1,
+    "info": 3
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "hasdata_google_travel_flights_getGoogleFlights",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (bookingToken)",
+        "dynamic email recipient (departureToken)",
+        "dynamic email recipient (stops)",
+        "hardcoded domain: www.iata.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "clockworked247-flights-mcp-ts",
+  "tool_names": [
+    "hasdata_google_travel_flights_getGoogleFlights"
+  ],
+  "vendor": "clockworked247",
+  "version": "1.0.0"
 }

@@ -10,10 +10,10 @@
 | **Vendor** | PV-Bhat |
 | **Stars** | ⭐ 502 |
 | **npm Package** | `@pv-bhat/vibe-check-mcp` |
-| **npm Downloads (30d)** | 325 |
+| **npm Downloads (30d)** | 326 |
 | **Language** | TypeScript |
 | **Source** | [vibe-check-mcp-server](https://github.com/PV-Bhat/vibe-check-mcp-server) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

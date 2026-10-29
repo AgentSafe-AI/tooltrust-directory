@@ -10,10 +10,10 @@
 | **Vendor** | rawveg |
 | **Stars** | ⭐ 176 |
 | **npm Package** | `ollama-mcp` |
-| **npm Downloads (30d)** | 3.3k |
+| **npm Downloads (30d)** | 3.4k |
 | **Language** | TypeScript |
 | **Source** | [ollama-mcp](https://github.com/rawveg/ollama-mcp) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-29 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

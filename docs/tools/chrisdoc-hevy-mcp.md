@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.23.3` |
 | **Vendor** | chrisdoc |
-| **Stars** | ⭐ 511 |
+| **Stars** | ⭐ 528 |
 | **npm Package** | `hevy-mcp` |
 | **npm Downloads (30d)** | 157.0k |
 | **Language** | TypeScript |
