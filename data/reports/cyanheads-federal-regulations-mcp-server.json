@@ -1,13 +1,25 @@
 {
+  "tool_id": "cyanheads-federal-regulations-mcp-server",
+  "version": "0.6.1",
+  "grade": "A",
+  "risk_score": 4,
+  "scan_date": "2026-10-30T03:57:11.235347133Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/federal-regulations-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 1,
+  "npm_package": "@cyanheads/federal-regulations-mcp-server",
+  "npm_downloads_monthly": 1248,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Search and trace US federal rules across the Federal Register (proposed/final rules and notices), the eCFR (codified, point-in-time CFR full text, locally mirrored), and Regulations.gov (rulemaking dockets and public comments) via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: code/command execution, network access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "regulations_search_rules"
     },
@@ -15,7 +27,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "input schema exposes 22 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "regulations_search_rules"
     },
@@ -156,21 +168,113 @@
       "tool_name": "regulations_list_open_comments"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-28T12:25:34Z",
-  "last_release_at": "2026-10-28T12:26:39Z",
-  "latest_release_name": "v0.6.0: Regulatory research guide and framework maintenance",
-  "latest_release_tag": "v0.6.0",
-  "latest_release_url": "https://github.com/cyanheads/federal-regulations-mcp-server/releases/tag/v0.6.0",
-  "latest_release_version": "v0.6.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 6,
+    "info": 13
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1007,
-  "npm_package": "@cyanheads/federal-regulations-mcp-server",
-  "risk_score": 4,
-  "scan_date": "2026-10-29T03:51:49.156325678Z",
+  "tool_names": [
+    "regulations_browse_cfr",
+    "regulations_find_comments",
+    "regulations_get_cfr_section",
+    "regulations_get_docket",
+    "regulations_get_document",
+    "regulations_list_open_comments",
+    "regulations_search_rules"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "regulations_search_rules",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Regulations.gov",
+        "hardcoded domain: presidential.number",
+        "hardcoded domain: presidential.president.slug"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "regulations_get_document",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Regulations.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "regulations_browse_cfr",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "regulations_get_cfr_section",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "hardcoded domain: part.section"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "regulations_get_docket",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded API endpoint: api.data.gov",
+        "hardcoded domain: Regulations.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "regulations_find_comments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded API endpoint: api.data.gov",
+        "hardcoded domain: Regulations.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "regulations_list_open_comments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Regulations.gov"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-08-06T02:03:24Z",
@@ -651,115 +755,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.5.4"
+    },
+    {
+      "scan_date": "2026-10-29T03:51:49Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.6.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/federal-regulations-mcp-server",
-  "stars": 1,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 6,
-    "info": 13
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "regulations_search_rules",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Regulations.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "regulations_get_document",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Regulations.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "regulations_browse_cfr",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "regulations_get_cfr_section",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: part.section"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "regulations_get_docket",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: api.data.gov",
-        "hardcoded domain: Regulations.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "regulations_find_comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded API endpoint: api.data.gov",
-        "hardcoded domain: Regulations.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "regulations_list_open_comments",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Regulations.gov"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-federal-regulations-mcp-server",
-  "tool_names": [
-    "regulations_browse_cfr",
-    "regulations_find_comments",
-    "regulations_get_cfr_section",
-    "regulations_get_docket",
-    "regulations_get_document",
-    "regulations_list_open_comments",
-    "regulations_search_rules"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.6.0"
+  ]
 }

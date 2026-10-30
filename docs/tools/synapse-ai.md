@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.9.3` |
 | **Vendor** | synapseorch-ai |
-| **Stars** | ⭐ 335 |
+| **Stars** | ⭐ 336 |
 | **npm Package** | `synapse-orch-ai` |
-| **npm Downloads (30d)** | 391 |
+| **npm Downloads (30d)** | 560 |
 | **Language** | Python |
 | **Source** | [synapse-ai](https://github.com/synapseorch-ai/synapse-ai) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

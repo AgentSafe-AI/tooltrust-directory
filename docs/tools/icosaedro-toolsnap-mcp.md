@@ -15,7 +15,7 @@ Pay per call with USDC on Base via x402 (no account), prepay a balance (min $0.5
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [icosaedro-toolsnap-mcp](https://smithery.ai/server/icosaedro/toolsnap-mcp) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

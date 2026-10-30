@@ -11,7 +11,7 @@ Quantitative crypto backtesting & Bitcoin market-regime analytics. 73 MCP tools:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [info-6d0w-backtesting-arena](https://smithery.ai/server/info-6d0w/backtesting-arena) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

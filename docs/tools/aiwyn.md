@@ -9,8 +9,8 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [aiwyn](https://smithery.ai/server/aiwyn) |
-| **Scan Date** | 2026-10-12 |
-| **Scanner** | tooltrust-scanner/v0.3.19 |
+| **Scan Date** | 2026-10-30 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 

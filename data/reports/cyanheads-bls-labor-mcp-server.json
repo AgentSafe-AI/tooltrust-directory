@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-bls-labor-mcp-server",
+  "version": "0.6.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-30T03:57:27.550295342Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/bls-labor-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 1,
+  "npm_package": "@cyanheads/bls-labor-mcp-server",
+  "npm_downloads_monthly": 1025,
+  "license": "NOASSERTION",
+  "language": "TypeScript",
   "description": "Fetch US Bureau of Labor Statistics data — CPI, unemployment, wages, JOLTS, and more via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -92,21 +104,65 @@
       "tool_name": "bls_get_series"
     }
   ],
-  "forks": 1,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-19T02:00:26Z",
-  "last_release_at": "2026-10-19T02:05:55Z",
-  "latest_release_name": "v0.6.0: Catalog coverage and geographic search",
-  "latest_release_tag": "v0.6.0",
-  "latest_release_url": "https://github.com/cyanheads/bls-labor-mcp-server/releases/tag/v0.6.0",
-  "latest_release_version": "v0.6.0",
-  "license": "NOASSERTION",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 8
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 874,
-  "npm_package": "@cyanheads/bls-labor-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-29T03:51:47.161161119Z",
+  "tool_names": [
+    "bls_get_latest",
+    "bls_get_series",
+    "bls_list_surveys",
+    "bls_search_series"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "bls_list_surveys",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bls_search_series",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bls_get_latest",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "bls_get_series",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: dataset.name",
+        "hardcoded domain: enrichment.annualAverageRows",
+        "hardcoded domain: enrichment.calculationsApplied",
+        "hardcoded domain: observation.available"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-09-24T02:38:55Z",
@@ -311,70 +367,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.6.0"
+    },
+    {
+      "scan_date": "2026-10-29T03:51:47Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.6.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/bls-labor-mcp-server",
-  "stars": 1,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 8
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "bls_list_surveys",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bls_search_series",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bls_get_latest",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "bls_get_series",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: dataset.name",
-        "hardcoded domain: enrichment.annualAverageRows",
-        "hardcoded domain: enrichment.calculationsApplied",
-        "hardcoded domain: observation.available"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-bls-labor-mcp-server",
-  "tool_names": [
-    "bls_get_latest",
-    "bls_get_series",
-    "bls_list_surveys",
-    "bls_search_series"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.6.0"
+  ]
 }

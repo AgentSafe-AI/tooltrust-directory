@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `9.14.4` |
 | **Vendor** | deedy5 |
-| **Stars** | ⭐ 3018 |
+| **Stars** | ⭐ 3039 |
 | **Language** | Python |
 | **Source** | [ddgs](https://github.com/deedy5/ddgs) |
 | **Scan Date** | 2026-10-15 |

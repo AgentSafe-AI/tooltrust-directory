@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.0` |
 | **Vendor** | Cyreslab-AI |
-| **Stars** | ⭐ 51 |
+| **Stars** | ⭐ 52 |
 | **npm Package** | `mcp-shodan-server` |
 | **Language** | JavaScript |
 | **Source** | [cyreslab-ai-shodan-mcp-server](https://github.com/Cyreslab-AI/shodan-mcp-server) |

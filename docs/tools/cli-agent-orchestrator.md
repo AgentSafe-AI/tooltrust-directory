@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `2.5.4` |
 | **Vendor** | awslabs |
-| **Stars** | ⭐ 1485 |
+| **Stars** | ⭐ 1489 |
 | **Language** | Python |
 | **Source** | [cli-agent-orchestrator](https://github.com/awslabs/cli-agent-orchestrator) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

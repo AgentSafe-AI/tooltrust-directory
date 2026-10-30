@@ -6,10 +6,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.0` |
 | **Vendor** | googleanalytics |
-| **Stars** | ⭐ 3581 |
+| **Stars** | ⭐ 3593 |
 | **Language** | Python |
 | **Source** | [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

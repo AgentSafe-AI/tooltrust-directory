@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.14.0` |
 | **Vendor** | zhu1090093659 |
-| **Stars** | ⭐ 1864 |
+| **Stars** | ⭐ 1851 |
 | **npm Package** | `deepseek-plus-plus` |
 | **Language** | TypeScript |
 | **Source** | [deepseek-pp](https://github.com/zhu1090093659/deepseek-pp) |

@@ -23,7 +23,7 @@ Read-only, public, no API key needed to browse. Authentication for the actual sh
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [secureship-docs](https://smithery.ai/server/secureship/docs) |
-| **Scan Date** | 2026-10-28 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

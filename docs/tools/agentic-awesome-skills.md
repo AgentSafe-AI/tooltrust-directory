@@ -1,19 +1,19 @@
 # 🟢 agentic-awesome-skills
 
-> AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,750+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.
+> 2,877+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `20.1.0` |
+| **Version** | `20.2.0` |
 | **Vendor** | sickn33 |
-| **Stars** | ⭐ 48684 |
+| **Stars** | ⭐ 48757 |
 | **npm Package** | `agentic-awesome-skills` |
-| **npm Downloads (30d)** | 25.1k |
+| **npm Downloads (30d)** | 24.9k |
 | **Language** | Python |
 | **Source** | [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

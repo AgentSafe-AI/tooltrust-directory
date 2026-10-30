@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | docfork |
-| **Stars** | ⭐ 486 |
+| **Stars** | ⭐ 484 |
 | **npm Package** | `docfork` |
 | **npm Downloads (30d)** | 700 |
 | **Language** | TypeScript |

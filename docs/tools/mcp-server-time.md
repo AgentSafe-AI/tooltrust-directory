@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 91651 |
+| **Stars** | ⭐ 91686 |
 | **npm Package** | `mcp-server-time` |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-time](https://github.com/modelcontextprotocol/servers/tree/main/src/time) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

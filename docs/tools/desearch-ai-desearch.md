@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.0.200` |
 | **Vendor** | Desearch-ai |
-| **Stars** | ⭐ 340 |
+| **Stars** | ⭐ 336 |
 | **Language** | Python |
 | **Source** | [desearch-ai-desearch](https://github.com/Desearch-ai/subnet-22) |
 | **Scan Date** | 2026-04-19 |

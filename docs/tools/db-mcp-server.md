@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.8.0` |
 | **Vendor** | FreePeak |
-| **Stars** | ⭐ 466 |
+| **Stars** | ⭐ 474 |
 | **Language** | Go |
 | **Source** | [db-mcp-server](https://github.com/FreePeak/db-mcp-server) |
 | **Scan Date** | 2026-03-18 |

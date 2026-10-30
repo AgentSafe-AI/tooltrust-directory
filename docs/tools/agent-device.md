@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `0.21.33` |
+| **Version** | `0.21.35` |
 | **Vendor** | callstack |
-| **Stars** | ⭐ 5180 |
+| **Stars** | ⭐ 5189 |
 | **npm Package** | `agent-device` |
-| **npm Downloads (30d)** | 1.2M |
+| **npm Downloads (30d)** | 1.3M |
 | **Language** | TypeScript |
 | **Source** | [agent-device](https://github.com/callstack/agent-device) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 521 |
 | **Language** | Python |
 | **Source** | [prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

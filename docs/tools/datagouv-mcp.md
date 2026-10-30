@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.29` |
 | **Vendor** | datagouv |
-| **Stars** | ⭐ 1602 |
+| **Stars** | ⭐ 1604 |
 | **Language** | Python |
 | **Source** | [datagouv-mcp](https://github.com/datagouv/datagouv-mcp) |
 | **Scan Date** | 2026-10-15 |

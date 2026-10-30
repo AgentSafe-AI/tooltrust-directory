@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `1.0.0` |
 | **Vendor** | pipeshub-ai |
-| **Stars** | ⭐ 3877 |
+| **Stars** | ⭐ 3895 |
 | **Language** | Python |
 | **Source** | [pipeshub-ai](https://github.com/pipeshub-ai/pipeshub-ai) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

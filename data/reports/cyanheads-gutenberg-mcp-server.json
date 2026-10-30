@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-gutenberg-mcp-server",
+  "version": "0.3.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-30T03:56:30.807772446Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/gutenberg-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 4,
+  "npm_package": "@cyanheads/gutenberg-mcp-server",
+  "npm_downloads_monthly": 1320,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Search, browse, and read 75,000+ public-domain books from Project Gutenberg with full plain-text retrieval and offset/limit chunking via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -100,21 +112,72 @@
       "tool_name": "gutenberg_browse_popular"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-17T23:01:45Z",
-  "last_release_at": "2026-10-17T22:42:18Z",
-  "latest_release_name": "v0.2.0: Mirror-backed catalog discovery",
-  "latest_release_tag": "v0.2.0",
-  "latest_release_url": "https://github.com/cyanheads/gutenberg-mcp-server/releases/tag/v0.2.0",
-  "latest_release_version": "v0.2.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 4,
+    "info": 8
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1251,
-  "npm_package": "@cyanheads/gutenberg-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-29T03:51:14.258135843Z",
+  "tool_names": [
+    "gutenberg_browse_popular",
+    "gutenberg_get_book",
+    "gutenberg_get_text",
+    "gutenberg_search_books"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "gutenberg_search_books",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "gutenberg_get_book",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: gutenberg.org"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "gutenberg_get_text",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "gutenberg_browse_popular",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-09-21T02:44:06Z",
@@ -343,77 +406,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.2.0"
+    },
+    {
+      "scan_date": "2026-10-29T03:51:14Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.2.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/gutenberg-mcp-server",
-  "stars": 4,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 4,
-    "info": 8
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "gutenberg_search_books",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "gutenberg_get_book",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: gutenberg.org"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "gutenberg_get_text",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "gutenberg_browse_popular",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-gutenberg-mcp-server",
-  "tool_names": [
-    "gutenberg_browse_popular",
-    "gutenberg_get_book",
-    "gutenberg_get_text",
-    "gutenberg_search_books"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.2.0"
+  ]
 }

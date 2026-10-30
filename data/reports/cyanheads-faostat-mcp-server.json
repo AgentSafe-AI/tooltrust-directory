@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-faostat-mcp-server",
+  "version": "0.5.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-10-30T03:56:31.351446329Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/faostat-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 3,
+  "npm_package": "@cyanheads/faostat-mcp-server",
+  "npm_downloads_monthly": 1616,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Global food \u0026 agriculture statistics from the UN FAOSTAT bulk-download corpus, served from a local SQLite mirror with a DataCanvas SQL surface, via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -140,21 +152,90 @@
       "tool_name": "faostat_dataframe_describe"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-28T12:16:47Z",
-  "last_release_at": "2026-10-28T12:18:40Z",
-  "latest_release_name": "v0.5.0: FAOSTAT analysis guide and framework maintenance",
-  "latest_release_tag": "v0.5.0",
-  "latest_release_url": "https://github.com/cyanheads/faostat-mcp-server/releases/tag/v0.5.0",
-  "latest_release_version": "v0.5.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 5,
+    "info": 12
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1300,
-  "npm_package": "@cyanheads/faostat-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-10-29T03:51:16.75088901Z",
+  "tool_names": [
+    "faostat_commodity_profile",
+    "faostat_dataframe_describe",
+    "faostat_dataframe_query",
+    "faostat_list_domains",
+    "faostat_query_observations",
+    "faostat_resolve_codes"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "faostat_list_domains",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (topic)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "faostat_resolve_codes",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "faostat_query_observations",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "faostat_commodity_profile",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (top_n)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "faostat_dataframe_query",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "faostat_dataframe_describe",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-08-07T02:23:32Z",
@@ -641,95 +722,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.4.1"
+    },
+    {
+      "scan_date": "2026-10-29T03:51:16Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.5.0"
     }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/faostat-mcp-server",
-  "stars": 3,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 5,
-    "info": 12
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "faostat_list_domains",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (topic)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "faostat_resolve_codes",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "faostat_query_observations",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "faostat_commodity_profile",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (top_n)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "faostat_dataframe_query",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "faostat_dataframe_describe",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
-  "tool_id": "cyanheads-faostat-mcp-server",
-  "tool_names": [
-    "faostat_commodity_profile",
-    "faostat_dataframe_describe",
-    "faostat_dataframe_query",
-    "faostat_list_domains",
-    "faostat_query_observations",
-    "faostat_resolve_codes"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.5.0"
+  ]
 }

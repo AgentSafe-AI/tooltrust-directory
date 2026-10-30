@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.7.0` |
 | **Vendor** | agentgateway |
-| **Stars** | ⭐ 5740 |
+| **Stars** | ⭐ 5785 |
 | **Language** | Rust |
 | **Source** | [agentgateway](https://github.com/agentgateway/agentgateway) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

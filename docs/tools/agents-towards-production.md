@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `book-v1.0` |
 | **Vendor** | NirDiamant |
-| **Stars** | ⭐ 21789 |
+| **Stars** | ⭐ 21796 |
 | **Language** | Jupyter Notebook |
 | **Source** | [agents-towards-production](https://github.com/NirDiamant/agents-towards-production) |
-| **Scan Date** | 2026-10-29 |
+| **Scan Date** | 2026-10-30 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
