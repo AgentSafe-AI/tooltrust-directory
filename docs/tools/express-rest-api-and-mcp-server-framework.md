@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.0` |
 | **Vendor** | iolufemi |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 148 |
 | **npm Package** | `Express-REST-API-and-MCP-Server-Framework` |
 | **Language** | TypeScript |
 | **Source** | [express-rest-api-and-mcp-server-framework](https://github.com/iolufemi/Express-REST-API-and-MCP-Server-Framework) |

@@ -1,19 +1,19 @@
 {
   "tool_id": "mobile-mcp",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-30T03:48:05.226892303Z",
+  "scan_date": "2026-10-31T03:33:05.551494371Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/mobile-next/mobile-mcp",
   "category": "Developer Tools",
   "vendor": "mobile-next",
-  "stars": 10124,
+  "stars": 10154,
   "npm_package": "@mobilenext/mobile-mcp",
-  "npm_downloads_monthly": 194495,
+  "npm_downloads_monthly": 193786,
   "license": "Apache-2.0",
   "language": "TypeScript",
-  "description": "Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)",
+  "description": "Mobile MCP: let AI agents drive your iOS and Android apps. MCP server for simulators, emulators and real devices. Works with Claude Code, Codex, Cursor and any MCP client.",
   "findings": [
     {
       "id": "AS-014",
@@ -166,6 +166,22 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "mobile_terminate_app"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "mobile_clear_app_data"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "mobile_clear_app_data"
     },
     {
       "id": "AS-002",
@@ -453,13 +469,14 @@
     "high": 0,
     "medium": 0,
     "low": 7,
-    "info": 47
+    "info": 49
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
     "get_more_tools",
     "mobile_allocate_remote_device",
     "mobile_batch_commands",
+    "mobile_clear_app_data",
     "mobile_click_on_screen_at_coordinates",
     "mobile_clipboard",
     "mobile_double_tap_on_screen",
@@ -573,6 +590,13 @@
     },
     {
       "tool_name": "mobile_terminate_app",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "mobile_clear_app_data",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -2119,6 +2143,12 @@
     },
     {
       "scan_date": "2026-10-29T03:45:17Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.0.14"
+    },
+    {
+      "scan_date": "2026-10-30T03:48:05Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.0.14"

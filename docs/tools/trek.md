@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `5.0.1` |
 | **Vendor** | liketrek |
-| **Stars** | ⭐ 15226 |
+| **Stars** | ⭐ 15261 |
 | **npm Package** | `@trek/root` |
 | **Language** | TypeScript |
 | **Source** | [trek](https://github.com/liketrek/TREK) |
-| **Scan Date** | 2026-10-30 |
+| **Scan Date** | 2026-10-31 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 82 |
 | **Language** | Shell |
 | **Source** | [template-agenticide-vibecoding](https://github.com/quboqin/template-agenticide-vibecoding) |
-| **Scan Date** | 2026-10-30 |
+| **Scan Date** | 2026-10-31 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

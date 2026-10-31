@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.3` |
 | **Vendor** | dpflucas |
-| **Stars** | ⭐ 72 |
+| **Stars** | ⭐ 74 |
 | **npm Package** | `mysql-mcp-server` |
 | **npm Downloads (30d)** | 5.9k |
 | **Language** | JavaScript |

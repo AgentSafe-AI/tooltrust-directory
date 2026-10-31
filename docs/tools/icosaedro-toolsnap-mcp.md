@@ -1,6 +1,8 @@
 # 🟢 icosaedro-toolsnap-mcp
 
-> Deterministic, context-efficient microtools for AI agents. 47 tools total, 36 free. tools/list shows a curated core of 17; the rest is one free tool_catalog call away and runs via use_tool.
+> Connect directly: https://mcp.toolsnap.app/mcp (Streamable HTTP, free tools need no account). The run.tools URL on this page stopped working when Smithery's proxy shut down on 2026-10-31.
+
+Deterministic, context-efficient microtools for AI agents. 47 tools total, 36 free. tools/list shows a curated core of 17; the rest is one free tool_catalog call away and runs via use_tool.
 
 Free flagships: fetch_extract (median 98.1% token reduction vs raw HTML, 53,820 → 2,001 tokens on 11 real pages) and fetch_html, plus html_to_markdown, fetch_metadata, PDF text, CSV/JSON queries, sitemaps, RSS/Atom feeds, link checking and utilities (UUID, hash, Base64, regex, diff, token count...). Extraction is pure parsing: no LLM in the loop, stable output.
 
@@ -15,7 +17,7 @@ Pay per call with USDC on Base via x402 (no account), prepay a balance (min $0.5
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [icosaedro-toolsnap-mcp](https://smithery.ai/server/icosaedro/toolsnap-mcp) |
-| **Scan Date** | 2026-10-30 |
+| **Scan Date** | 2026-10-31 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

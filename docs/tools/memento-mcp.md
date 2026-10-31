@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.9` |
 | **Vendor** | gannonh |
-| **Stars** | ⭐ 424 |
+| **Stars** | ⭐ 423 |
 | **npm Package** | `@gannonh/memento-mcp` |
-| **npm Downloads (30d)** | 80 |
+| **npm Downloads (30d)** | 90 |
 | **Language** | TypeScript |
 | **Source** | [memento-mcp](https://github.com/gannonh/memento-mcp) |
-| **Scan Date** | 2026-10-30 |
+| **Scan Date** | 2026-10-31 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

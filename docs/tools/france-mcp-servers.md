@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | bsab |
-| **Stars** | ⭐ 62 |
+| **Stars** | ⭐ 56 |
 | **Language** | Python |
 | **Source** | [france-mcp-servers](https://github.com/bsab/france-mcp-servers) |
 | **Scan Date** | 2026-10-15 |

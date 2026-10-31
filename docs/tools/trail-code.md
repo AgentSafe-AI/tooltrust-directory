@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.21.1` |
 | **Vendor** | trailhq |
-| **Stars** | ⭐ 10922 |
+| **Stars** | ⭐ 10964 |
 | **npm Package** | `@nanonets/graft` |
-| **npm Downloads (30d)** | 93.3k |
+| **npm Downloads (30d)** | 91.2k |
 | **Language** | TypeScript |
 | **Source** | [trail-code](https://github.com/trailhq/Trail-Code) |
-| **Scan Date** | 2026-10-30 |
+| **Scan Date** | 2026-10-31 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
