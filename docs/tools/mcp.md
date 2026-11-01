@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 9853 |
 | **Language** | Python |
 | **Source** | [mcp](https://github.com/awslabs/mcp) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

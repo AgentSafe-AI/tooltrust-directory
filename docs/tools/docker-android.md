@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.9.0-p1` |
 | **Vendor** | budtmo |
-| **Stars** | ⭐ 16071 |
+| **Stars** | ⭐ 16073 |
 | **Language** | Python |
 | **Source** | [docker-android](https://github.com/budtmo/docker-android) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

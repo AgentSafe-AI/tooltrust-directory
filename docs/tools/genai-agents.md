@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `book-v1.0` |
 | **Vendor** | NirDiamant |
-| **Stars** | ⭐ 24741 |
+| **Stars** | ⭐ 24754 |
 | **Language** | Jupyter Notebook |
 | **Source** | [genai-agents](https://github.com/NirDiamant/GenAI_Agents) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

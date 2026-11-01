@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.1` |
 | **Vendor** | HelloGGX |
-| **Stars** | ⭐ 108 |
+| **Stars** | ⭐ 109 |
 | **npm Package** | `mcp-server` |
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |

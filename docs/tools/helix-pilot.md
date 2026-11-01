@@ -8,7 +8,7 @@
 | **Risk Score** | 2192 |
 | **Version** | `2.0.0` |
 | **Vendor** | tsunamayo7 |
-| **Stars** | ⭐ 4 |
+| **Stars** | ⭐ 5 |
 | **Language** | Python |
 | **Source** | [helix-pilot](https://github.com/tsunamayo7/helix-pilot) |
 | **Scan Date** | 2026-10-15 |

@@ -19,7 +19,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [fhl-fhl-mcp-server](https://smithery.ai/server/fhl/fhl-mcp-server) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

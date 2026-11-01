@@ -1,11 +1,11 @@
-# 🟢 vestige
+# 🟡 vestige
 
-> Think before doing, prove before saving.  Vestige is a local, deterministic safety kernel for AI agents. Every memory write and agent action is recorded in Strata, an append-only log, so you can see exactly what your agent did and why.
+> Think before doing, prove before saving. Vestige is the local-first cognitive operating system and deterministic safety kernel for autonomous AI agents. Powered by FSRS-6 causal graph memory, cryptographic Merkle-chained state ledgers, and out-of-band kernel gates bringing frontier PhD reasoning to local silicon with zero cloud token tax.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
-| **Risk Score** | 4 |
+| **Grade** | **B** |
+| **Risk Score** | 15 |
 | **Version** | `whitepaper-tr-2026-01` |
 | **Vendor** | samvallad33 |
 | **Stars** | ⭐ 658 |
@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 17 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -23,12 +23,36 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 0 |
+| High     | 1 |
 | Medium   | 0 |
-| Low      | 12 |
-| Info     | 26 |
+| Low      | 11 |
+| Info     | 28 |
 
 ## Detailed Findings
+
+### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
+
+**Severity:** High
+
+**Description:**
+Tool set changed silently at vwhitepaper-tr-2026-01: 1 tool(s) added, 0 tool(s) removed without a version bump.
+
+**Recommendation:**
+The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
 
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
@@ -366,18 +390,6 @@ Review and remediate the identified issue.
 
 ---
 
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 16 properties (threshold: 10)
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
 ### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
 **Severity:** Info
@@ -438,12 +450,24 @@ Review and remediate the identified issue.
 
 ---
 
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
 ### 🔵 🔑 `AS-002` — Excessive Permission Surface
 
 **Severity:** Low
 
 **Description:**
-input schema exposes 16 properties (threshold: 10)
+input schema exposes 19 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

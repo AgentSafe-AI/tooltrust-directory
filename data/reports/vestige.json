@@ -1,9 +1,9 @@
 {
   "tool_id": "vestige",
   "version": "whitepaper-tr-2026-01",
-  "grade": "A",
-  "risk_score": 4,
-  "scan_date": "2026-10-31T03:37:45.990847766Z",
+  "grade": "B",
+  "risk_score": 15,
+  "scan_date": "2026-11-01T03:36:19.375593779Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/samvallad33/vestige",
   "category": "Other",
@@ -13,8 +13,30 @@
   "npm_downloads_monthly": 17,
   "license": "AGPL-3.0",
   "language": "Rust",
-  "description": "Think before doing, prove before saving.  Vestige is a local, deterministic safety kernel for AI agents. Every memory write and agent action is recorded in Strata, an append-only log, so you can see exactly what your agent did and why.",
+  "description": "Think before doing, prove before saving. Vestige is the local-first cognitive operating system and deterministic safety kernel for autonomous AI agents. Powered by FSRS-6 causal graph memory, cryptographic Merkle-chained state ledgers, and out-of-band kernel gates bringing frontier PhD reasoning to local silicon with zero cloud token tax.",
   "findings": [
+    {
+      "id": "AS-012",
+      "severity": "High",
+      "title": "Rug-Pull (Post-Install Description Change)",
+      "description": "Tool set changed silently at vwhitepaper-tr-2026-01: 1 tool(s) added, 0 tool(s) removed without a version bump.",
+      "recommendation": "The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.",
+      "metadata": {
+        "added": [
+          "backfill"
+        ],
+        "removed": null,
+        "version": "whitepaper-tr-2026-01"
+      }
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "backfill"
+    },
     {
       "id": "AS-014",
       "severity": "Info",
@@ -240,14 +262,6 @@
       "tool_name": "project"
     },
     {
-      "id": "AS-002",
-      "severity": "Low",
-      "title": "Excessive Permission Surface",
-      "description": "input schema exposes 16 properties (threshold: 10)",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "recall"
-    },
-    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -289,9 +303,17 @@
     },
     {
       "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "smart_ingest"
+    },
+    {
+      "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 16 properties (threshold: 10)",
+      "description": "input schema exposes 19 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "smart_ingest"
     },
@@ -322,13 +344,14 @@
   ],
   "summary": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0,
-    "low": 12,
-    "info": 26
+    "low": 11,
+    "info": 28
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "backfill",
     "causal_walk",
     "codebase",
     "dedup",
@@ -349,6 +372,13 @@
     "suppress"
   ],
   "tool_contexts": [
+    {
+      "tool_name": "backfill",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
     {
       "tool_name": "causal_walk",
       "action": "ALLOW",
@@ -473,10 +503,6 @@
       "tool_name": "recall",
       "action": "ALLOW",
       "grade": "A",
-      "destinations": [
-        "dynamic email recipient (context_topics)",
-        "dynamic email recipient (topic)"
-      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -508,6 +534,9 @@
       "tool_name": "smart_ingest",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "destinations": [
         "dynamic email recipient (acceptedTagSuggestions)"
       ],
@@ -645,6 +674,12 @@
     },
     {
       "scan_date": "2026-10-30T03:52:43Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "whitepaper-tr-2026-01"
+    },
+    {
+      "scan_date": "2026-10-31T03:37:45Z",
       "grade": "A",
       "risk_score": 4,
       "version": "whitepaper-tr-2026-01"

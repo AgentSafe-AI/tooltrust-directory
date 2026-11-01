@@ -1,14 +1,14 @@
 {
   "tool_id": "linkedin-mcp-server",
-  "version": "4.28.0",
+  "version": "4.29.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-10-31T03:34:29.760588098Z",
+  "scan_date": "2026-11-01T03:33:19.055988429Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/stickerdaniel/linkedin-mcp-server",
   "category": "Developer Tools",
   "vendor": "stickerdaniel",
-  "stars": 4056,
+  "stars": 4070,
   "license": "Apache-2.0",
   "language": "Python",
   "description": "Open-source MCP server for LinkedIn. Give Claude and any MCP-compatible AI agent access to profiles, companies, jobs, and messages.",
@@ -158,6 +158,14 @@
       "tool_name": "get_job_apply_url"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_easy_apply_form"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -188,6 +196,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "get_saved_jobs"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "dismiss_job"
     },
     {
       "id": "AS-002",
@@ -254,6 +270,14 @@
       "tool_name": "search_conversations"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "archive_conversation"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -302,6 +326,22 @@
       "tool_name": "search_posts"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get_session_status"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "get_session_status"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -315,16 +355,19 @@
     "high": 0,
     "medium": 0,
     "low": 7,
-    "info": 30
+    "info": 35
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "archive_conversation",
     "close_session",
     "connect_with_person",
+    "dismiss_job",
     "get_company_employees",
     "get_company_posts",
     "get_company_profile",
     "get_conversation",
+    "get_easy_apply_form",
     "get_feed",
     "get_inbox",
     "get_job_apply_url",
@@ -332,6 +375,7 @@
     "get_my_profile",
     "get_person_profile",
     "get_saved_jobs",
+    "get_session_status",
     "get_sidebar_profiles",
     "search_companies",
     "search_conversations",
@@ -428,6 +472,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "get_easy_apply_form",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "search_jobs",
       "action": "ALLOW",
       "grade": "A",
@@ -439,6 +490,13 @@
     },
     {
       "tool_name": "get_saved_jobs",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "dismiss_job",
       "action": "ALLOW",
       "grade": "A",
       "dependency_visibility": "No dependency data",
@@ -479,6 +537,13 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
+      "tool_name": "archive_conversation",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
       "tool_name": "send_message",
       "action": "ALLOW",
       "grade": "A",
@@ -501,6 +566,16 @@
       "grade": "A",
       "behavior": [
         "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "get_session_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
@@ -1878,6 +1953,12 @@
     },
     {
       "scan_date": "2026-10-30T03:49:26Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "4.28.0"
+    },
+    {
+      "scan_date": "2026-10-31T03:34:29Z",
       "grade": "A",
       "risk_score": 2,
       "version": "4.28.0"

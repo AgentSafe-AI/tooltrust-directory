@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **B** |
 | **Risk Score** | 17 |
-| **Version** | `2.42.0` |
+| **Version** | `2.44.0` |
 | **Vendor** | node9-ai |
 | **Stars** | ⭐ 223 |
 | **npm Package** | `@node9/proxy` |
 | **npm Downloads (30d)** | 7.8k |
 | **Language** | TypeScript |
 | **Source** | [node9-proxy](https://github.com/node9-ai/node9-proxy) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

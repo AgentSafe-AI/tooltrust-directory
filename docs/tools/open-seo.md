@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.22` |
 | **Vendor** | every-app |
-| **Stars** | ⭐ 25787 |
+| **Stars** | ⭐ 25927 |
 | **npm Package** | `open-seo` |
 | **Language** | TypeScript |
 | **Source** | [open-seo](https://github.com/every-app/open-seo) |
-| **Scan Date** | 2026-10-31 |
+| **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
